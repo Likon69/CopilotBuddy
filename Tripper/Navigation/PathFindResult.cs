@@ -10,6 +10,12 @@ namespace Tripper.Navigation
     public class PathFindResult
     {
         /// <summary>
+        /// Mesh manager that produced this result.
+        /// HB 6.2.3 exposes this on PathFindResult for manager-level follow-up queries.
+        /// </summary>
+        public IMeshManager? Manager { get; internal set; }
+
+        /// <summary>
         /// Time elapsed during pathfinding operation.
         /// </summary>
         public TimeSpan Elapsed { get; internal set; }
@@ -117,6 +123,7 @@ namespace Tripper.Navigation
             Aborted = false;
             IsPartialPath = false;
             FailStep = PathFindStep.None;
+            Manager = null;
         }
 
         /// <summary>
