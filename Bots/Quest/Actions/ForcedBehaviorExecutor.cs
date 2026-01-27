@@ -241,12 +241,15 @@ public class ForcedBehaviorExecutor : Composite
 
     private static ForcedQuestTurnIn CreateQuestTurnIn(TurnInNode turnInNode_0)
     {
-        PlayerQuest questById = ObjectManager.Me.QuestLog.GetQuestById(turnInNode_0.QuestId);
-        if (questById == null)
+        // Check if quest is in log using ContainsQuest (more reliable than GetQuestById which can fail on cache miss)
+        if (!ObjectManager.Me.QuestLog.ContainsQuest(turnInNode_0.QuestId))
         {
-            Logging.Write("Can not turn in quest {0} (ID: {1}) because I don't have it in my quest log. Or do I? {2}", (object)Utilities.GetObjectString((object)turnInNode_0.QuestName, "(null)"), (object)turnInNode_0.QuestId, (object)ObjectManager.Me.QuestLog.ContainsQuest(turnInNode_0.QuestId));
+            Logging.Write("Can not turn in quest {0} (ID: {1}) because it's not in the quest log.", (object)Utilities.GetObjectString((object)turnInNode_0.QuestName, "(null)"), (object)turnInNode_0.QuestId);
             return (ForcedQuestTurnIn)null;
         }
+        
+        // Try to get quest object for completion info (may be null if not in cache)
+        PlayerQuest questById = ObjectManager.Me.QuestLog.GetQuestById(turnInNode_0.QuestId);
         if (ProfileManager.CurrentProfile != (Profile)null)
         {
             QuestInfo quest = ProfileManager.CurrentProfile.FindQuest(turnInNode_0.QuestId);
@@ -257,7 +260,11 @@ public class ForcedBehaviorExecutor : Composite
                     return new ForcedQuestTurnIn(turnInNode_0.QuestId, turnInNode_0.QuestName, turnInNode_0.TurnInId, turnIn.Location);
             }
         }
-        WoWQuestCompletionInfo completionInfo = questById.GetCompletionInfo();
+        
+        // If quest object is null (cache miss), use profile or NPC location as fallback
+        WoWQuestCompletionInfo completionInfo = new WoWQuestCompletionInfo();
+        if (questById != null)
+            completionInfo = questById.GetCompletionInfo();
         WoWQuestStep? nullable = new WoWQuestStep?();
         foreach (WoWQuestStep step in completionInfo.Steps.Steps)
         {
@@ -286,10 +293,18 @@ public class ForcedBehaviorExecutor : Composite
 
     private static Bots.Quest.Objectives.QuestObjective CreateQuestObjective(ObjectiveNode objectiveNode_0)
     {
+        // Check if quest is in log using ContainsQuest
+        if (!ObjectManager.Me.QuestLog.ContainsQuest(objectiveNode_0.QuestId))
+        {
+            Logging.Write("Could not find quest with ID {0} in quest log.", (object)objectiveNode_0.QuestId);
+            return (Bots.Quest.Objectives.QuestObjective)null;
+        }
+        
+        // Try to get quest object (may be null if not in cache)
         PlayerQuest questById = ObjectManager.Me.QuestLog.GetQuestById(objectiveNode_0.QuestId);
         if (questById == null)
         {
-            Logging.Write("Could not find quest with ID {0}. Or could I? {1}", (object)objectiveNode_0.QuestId, (object)ObjectManager.Me.QuestLog.ContainsQuest(objectiveNode_0.QuestId));
+            Logging.Write("Quest {0} is in log but not in cache - skipping objective creation.", (object)objectiveNode_0.QuestId);
             return (Bots.Quest.Objectives.QuestObjective)null;
         }
         WoWQuestCompletionInfo completionInfo = questById.GetCompletionInfo();

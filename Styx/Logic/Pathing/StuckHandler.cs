@@ -49,12 +49,9 @@ namespace Styx.Logic.Pathing
                 return false;
             }
 
-            if (!me.MovementInfo.IsMoving)
-            {
-                _movementStopwatch.Restart();
-                _lastCheckLocation = WoWPoint.Empty;
-                return false;
-            }
+            // Don't check IsMoving here - when stuck, IsMoving stays true but player doesn't move
+            // WoD uses OnMovementFlagsChanged event to reset, but we don't have that in WotLK
+            // So we let the stopwatch run and rely on PathDistance check below
 
             if (_movementStopwatch.ElapsedMilliseconds < 500L)
                 return false;

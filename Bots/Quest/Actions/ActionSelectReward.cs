@@ -17,39 +17,47 @@ namespace Bots.Quest.Actions;
 
 public class ActionSelectReward : Action
 {
-    private readonly WeightSetEx weightSetEx_0 = WeightSetEx.CurrentWeightSet;
-
     protected override RunStatus Run(object context)
     {
+        // Get weight set lazily (may be null if not loaded)
+        WeightSetEx weightSetEx_0 = WeightSetEx.CurrentWeightSet;
+        
         Styx.Logic.Questing.Quest currentShownQuest = QuestManager.QuestFrame.CurrentShownQuest;
         float num1 = float.MinValue;
         int index1 = -1;
         string str = "";
         Styx.WoWInternals.WoWCache.WoWCache.QuestCacheEntry internalInfo = currentShownQuest.InternalInfo;
-        for (int index2 = 0; index2 < internalInfo.RewardChoiceItem.Length; ++index2)
+        
+        // Only use weight set evaluation if we have one loaded
+        if (weightSetEx_0 != null)
         {
-            int itemId = internalInfo.RewardChoiceItem[index2];
-            int num2 = internalInfo.RewardChoiceItemCount[index2];
-            if (itemId != 0 && num2 != 0)
+            for (int index2 = 0; index2 < internalInfo.RewardChoiceItem.Length; ++index2)
             {
-                ItemInfo itemInfo = ItemInfo.FromId((uint)itemId);
-                if (itemInfo != null && ObjectManager.Me.CanEquipItem(itemInfo))
+                int itemId = internalInfo.RewardChoiceItem[index2];
+                int num2 = internalInfo.RewardChoiceItemCount[index2];
+                if (itemId != 0 && num2 != 0)
                 {
-                    string returnVal = Lua.GetReturnVal<string>($"return GetQuestItemLink('choice', {index2 + 1})", 0U);
-                    if (!string.IsNullOrEmpty(returnVal))
+                    ItemInfo itemInfo = ItemInfo.FromId((uint)itemId);
+                    if (itemInfo != null && ObjectManager.Me.CanEquipItem(itemInfo))
                     {
-                        ItemStats itemStats = new ItemStats(returnVal);
-                        float num3 = this.weightSetEx_0.EvaluateItem(itemInfo, itemStats);
-                        if ((double)num3 > (double)num1)
+                        string returnVal = Lua.GetReturnVal<string>($"return GetQuestItemLink('choice', {index2 + 1})", 0U);
+                        if (!string.IsNullOrEmpty(returnVal))
                         {
-                            num1 = num3;
-                            index1 = index2;
-                            str = itemInfo.Name;
+                            ItemStats itemStats = new ItemStats(returnVal);
+                            float num3 = weightSetEx_0.EvaluateItem(itemInfo, itemStats);
+                            if ((double)num3 > (double)num1)
+                            {
+                                num1 = num3;
+                                index1 = index2;
+                                str = itemInfo.Name;
+                            }
                         }
                     }
                 }
             }
         }
+        
+        // Fallback: select based on vendor price if no weight set match or no weight set loaded
         if (index1 == -1)
         {
             float num4 = float.MinValue;
