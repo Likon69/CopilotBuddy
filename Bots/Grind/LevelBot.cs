@@ -840,10 +840,26 @@ namespace Bots.Grind
                                             ),
                                             // Check if need to mail
                                             new DecoratorContinue(
-                                                ctx => NeedToMail() && ProfileManager.CurrentProfile.MailboxManager.GetClosestMailbox() != null,
-                                                new ActionSetPoi(ctx => new BotPoi(
-                                                    ProfileManager.CurrentProfile.MailboxManager.GetClosestMailbox().Location, 
-                                                    PoiType.Mail))
+                                                ctx =>
+                                                {
+                                                    if (!NeedToMail())
+                                                        return false;
+                                                    var mailbox = ProfileManager.CurrentProfile?.MailboxManager?.GetClosestMailbox();
+                                                    if (mailbox == null)
+                                                        return false;
+                                                    // Store mailbox in context for ActionSetPoi
+                                                    if (ctx is Dictionary<string, object> dict)
+                                                        dict["_mailbox"] = mailbox;
+                                                    return true;
+                                                },
+                                                new Sequence(
+                                                    new ActionSetPoi(ctx =>
+                                                    {
+                                                        if (ctx is Dictionary<string, object> dict && dict.TryGetValue("_mailbox", out var mb) && mb is Mailbox mailbox)
+                                                            return new BotPoi(mailbox.Location, PoiType.Mail);
+                                                        return BotPoi.Current;
+                                                    })
+                                                )
                                             ),
                                             new DecoratorContinue(
                                                 ctx => BotPoi.Current.Type != PoiType.Mail,
