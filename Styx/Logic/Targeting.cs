@@ -16,18 +16,18 @@ namespace Styx.Logic
 {
     public class Targeting
     {
-        private static readonly List<string> list_0;
-        private static Targeting targeting_0;
+        private static readonly List<string> _blacklistedMobNames;
+        private static Targeting _instance;
         private TargetListUpdateFinishedDelegate targetListUpdateFinishedDelegate_0;
         private IncludeTargetsFilterDelegate includeTargetsFilterDelegate_0;
         private RemoveTargetsFilterDelegate removeTargetsFilterDelegate_0;
         private WeighTargetsDelegate weighTargetsDelegate_0;
-        private static readonly HashSet<uint> hashSet_0;
-        private bool bool_0;
-        private bool bool_1;
-        private bool bool_2;
-        private List<WoWObject> list_1;
-        private int int_0;
+        private static readonly HashSet<uint> _blacklistedMobIds;
+        private bool _includeWorldPlayers;
+        private bool _includeElites;
+        private bool _displayTargetingExceptions;
+        private List<WoWObject> _objectList;
+        private int _maxTargets;
         private static Converter<WoWObject, WoWUnit> converter_0;
         private static Func<WoWObject, bool> func_0;
         private static Func<WoWObject, bool> func_1;
@@ -46,7 +46,7 @@ namespace Styx.Logic
 
         static Targeting()
         {
-            Targeting.list_0 = new List<string>();
+            Targeting._blacklistedMobNames = new List<string>();
             HashSet<uint> hashSet = new HashSet<uint>();
             hashSet.Add(28093U);
             hashSet.Add(22979U);
@@ -63,7 +63,7 @@ namespace Styx.Logic
             hashSet.Add(32522U);
             hashSet.Add(24879U);
             hashSet.Add(25040U);
-            Targeting.hashSet_0 = hashSet;
+            Targeting._blacklistedMobIds = hashSet;
         }
 
         public static double PullDistance
@@ -124,18 +124,18 @@ namespace Styx.Logic
                 {
                     return true;
                 }
-                return this.bool_0;
+                return this._includeWorldPlayers;
             }
             set
             {
-                this.bool_0 = value;
+                this._includeWorldPlayers = value;
             }
         }
 
         public bool IncludeElites
         {
-            get { return this.bool_1; }
-            set { this.bool_1 = value; }
+            get { return this._includeElites; }
+            set { this._includeElites = value; }
         }
 
         public bool KillBetweenHotspots
@@ -148,8 +148,8 @@ namespace Styx.Logic
 
         public bool DisplayTargetingExceptions
         {
-            get { return this.bool_2; }
-            set { this.bool_2 = value; }
+            get { return this._displayTargetingExceptions; }
+            set { this._displayTargetingExceptions = value; }
         }
 
         public static Targeting Instance
@@ -157,9 +157,9 @@ namespace Styx.Logic
             get
             {
                 Targeting targeting;
-                if ((targeting = Targeting.targeting_0) == null)
+                if ((targeting = Targeting._instance) == null)
                 {
-                    targeting = (Targeting.targeting_0 = new Targeting());
+                    targeting = (Targeting._instance = new Targeting());
                 }
                 return targeting;
             }
@@ -192,14 +192,14 @@ namespace Styx.Logic
 
         protected List<WoWObject> ObjectList
         {
-            get { return this.list_1; }
-            private set { this.list_1 = value; }
+            get { return this._objectList; }
+            private set { this._objectList = value; }
         }
 
         public int MaxTargets
         {
-            get { return this.int_0; }
-            set { this.int_0 = value; }
+            get { return this._maxTargets; }
+            set { this._maxTargets = value; }
         }
 
         public event TargetListUpdateFinishedDelegate OnTargetListUpdateFinished
@@ -397,14 +397,14 @@ namespace Styx.Logic
                             Targeting.func_5 = new Func<TargetPriority, WoWObject>(GetObject);
                         }
                         this.ObjectList = source3.Select(Targeting.func_5).ToList<WoWObject>();
-                        Targeting.list_0.Clear();
-                        foreach (TargetPriority targetPriority in list.Take(this.MaxTargets).ToList<TargetPriority>())
+                        Targeting._blacklistedMobNames.Clear();
+                        foreach (TargetPriority targetPriority in list)
                         {
-                            Targeting.list_0.Add(string.Format("{0} Dist: {1}", targetPriority.Object.Name, Math.Ceiling(targetPriority.Object.Distance)));
+                            Targeting._blacklistedMobNames.Add(string.Format("{0} Dist: {1}", targetPriority.Object.Name, Math.Ceiling(targetPriority.Object.Distance)));
                         }
                         if (this.targetListUpdateFinishedDelegate_0 != null)
                         {
-                            this.targetListUpdateFinishedDelegate_0(Targeting.list_0);
+                            this.targetListUpdateFinishedDelegate_0(Targeting._blacklistedMobNames);
                         }
                     }
                 }
@@ -469,7 +469,7 @@ namespace Styx.Logic
                 {
                     WoWUnit woWUnit = (WoWUnit)woWObject;
                     if ((woWUnit is WoWPlayer || !woWUnit.Combat || !woWUnit.IsTargetingMeOrPet) && 
-                        (Targeting.hashSet_0.Contains(woWUnit.Entry) || 
+                        (Targeting._blacklistedMobIds.Contains(woWUnit.Entry) || 
                          woWUnit.Level < num2 || 
                          woWUnit.Level > num3 || 
                          Blacklist.Contains(woWUnit.Guid, false) || 
