@@ -18,7 +18,7 @@ namespace Styx.Logic
     public static class MountHelper
     {
         // Engineering and profession-gated mounts (spell IDs)
-        internal static readonly HashSet<int> hashSet_0 = new HashSet<int>()
+        internal static readonly HashSet<int> _restrictedMountSpellIds = new HashSet<int>()
         {
             44151,  // Turbo-Charged Flying Machine
             44153,  // Flying Machine
@@ -33,18 +33,18 @@ namespace Styx.Logic
             93326   // Sandstone Drake (Cata, but kept for compatibility)
         };
         
-        private static WaitTimer waitTimer_0 = new WaitTimer(TimeSpan.FromMinutes(5.0));
-        private static List<MountWrapper> list_0;
-        private static ulong ulong_0;
+        private static WaitTimer _refreshTimer = new WaitTimer(TimeSpan.FromMinutes(5.0));
+        private static List<MountWrapper> _mountCache;
+        private static ulong _cachedPlayerGuid;
 
         static MountHelper()
         {
-            BotEvents.Player.OnMapChanged += new BotEvents.Player.MapChangedDelegate(smethod_0);
+            BotEvents.Player.OnMapChanged += new BotEvents.Player.MapChangedDelegate(OnMapChanged);
         }
 
-        private static void smethod_0(BotEvents.Player.MapChangedEventArgs mapChangedEventArgs_0)
+        private static void OnMapChanged(BotEvents.Player.MapChangedEventArgs mapChangedEventArgs_0)
         {
-            list_0 = null;
+            _mountCache = null;
         }
 
         /// <summary>
@@ -59,15 +59,15 @@ namespace Styx.Logic
         {
             get
             {
-                if (waitTimer_0.IsFinished || (long)ulong_0 != (long)StyxWoW.Me.Guid)
+                if (_refreshTimer.IsFinished || (long)_cachedPlayerGuid != (long)StyxWoW.Me.Guid)
                 {
-                    list_0 = null;
-                    waitTimer_0.Reset();
+                    _mountCache = null;
+                    _refreshTimer.Reset();
                 }
                 
-                if (list_0 == null)
+                if (_mountCache == null)
                 {
-                    ulong_0 = StyxWoW.Me.Guid;
+                    _cachedPlayerGuid = StyxWoW.Me.Guid;
                     using (new FrameLock())
                     {
                         List<MountWrapper> mountWrapperList = new List<MountWrapper>();
@@ -110,7 +110,7 @@ namespace Styx.Logic
                                         goto case -1;
                                 }
                                 
-                                if (hashSet_0.Contains(mountWrapper.CreatureSpellId))
+                                if (_restrictedMountSpellIds.Contains(mountWrapper.CreatureSpellId))
                                 {
                                     if (isBattleground)
                                         continue;
@@ -123,10 +123,10 @@ namespace Styx.Logic
                                 Logging.Write($"Error getting mount info for mount slot {slot}. Exception: {ex}");
                             }
                         }
-                        list_0 = mountWrapperList;
+                        _mountCache = mountWrapperList;
                     }
                 }
-                return list_0;
+                return _mountCache;
             }
         }
 
@@ -141,7 +141,7 @@ namespace Styx.Logic
                     m.Type == MountType.Ground || 
                     m.Type == MountType.EpicGroundOnly || 
                     m.Type == MountType.Scaling || 
-                    hashSet_0.Contains(m.CreatureSpellId))
+                    _restrictedMountSpellIds.Contains(m.CreatureSpellId))
                     .ToList();
             }
         }
@@ -157,7 +157,7 @@ namespace Styx.Logic
                     m.Type == MountType.Flying || 
                     m.Type == MountType.TransformFlight || 
                     m.Type == MountType.Scaling || 
-                    hashSet_0.Contains(m.CreatureSpellId))
+                    _restrictedMountSpellIds.Contains(m.CreatureSpellId))
                     .ToList();
             }
         }
