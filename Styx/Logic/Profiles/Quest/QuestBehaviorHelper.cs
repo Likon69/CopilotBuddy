@@ -18,30 +18,30 @@ namespace Styx.Logic.Profiles.Quest;
 
 public class QuestBehaviorHelper
 {
-    private static readonly Dictionary<string, Assembly> dictionary_0 = new Dictionary<string, Assembly>();
-    private static readonly object object_0 = new object();
-    private Assembly assembly_0;
-    private bool bool_0;
+    private static readonly Dictionary<string, Assembly> _assemblyCache = new Dictionary<string, Assembly>();
+    private static readonly object _lockObject = new object();
+    private Assembly _cachedAssembly;
+    private bool _isCompiled;
 
     public QuestBehaviorHelper(string path)
     {
         this.Path = path;
         if (!StyxSettings.Instance.ProfileDebuggingMode)
             return;
-        this.assembly_0 = this.method_0();
-        this.bool_0 = true;
+        this._cachedAssembly = this.CompileAssembly();
+        this._isCompiled = true;
     }
 
     public string Path { get; private set; }
 
-    private Assembly method_0()
+    private Assembly CompileAssembly()
     {
         string lower = this.Path.ToLower();
         Assembly assembly1;
-        if (dictionary_0.TryGetValue(lower, out assembly1))
+        if (_assemblyCache.TryGetValue(lower, out assembly1))
             return assembly1;
         Assembly assembly2;
-        lock (object_0)
+        lock (_lockObject)
         {
             Logging.WriteDebug("Compiling quest behavior from '{0}'", this.Path);
             
@@ -75,12 +75,12 @@ public class QuestBehaviorHelper
                 Logging.WriteDebug("Could not compile quest behavior from '{0}'", this.Path);
                 foreach (CompilerError compilerError in compilerResults.Errors.OfType<CompilerError>().Where(e => !e.IsWarning))
                     Logging.WriteDebug("Line {0}: {1}", compilerError.Line, compilerError.ErrorText);
-                dictionary_0.Add(lower, null);
+                _assemblyCache.Add(lower, null);
                 assembly2 = null;
             }
             else
             {
-                dictionary_0.Add(lower, compilerResults.CompiledAssembly);
+                _assemblyCache.Add(lower, compilerResults.CompiledAssembly);
                 assembly2 = compilerResults.CompiledAssembly;
             }
         }
@@ -89,12 +89,12 @@ public class QuestBehaviorHelper
 
     public Assembly GetAssembly()
     {
-        if (!this.bool_0)
+        if (!this._isCompiled)
         {
-            this.assembly_0 = this.method_0();
-            this.bool_0 = true;
+            this._cachedAssembly = this.CompileAssembly();
+            this._isCompiled = true;
         }
-        return this.assembly_0;
+        return this._cachedAssembly;
     }
 
     public static Func<Assembly> GetAssemblyCompiler(string path)
