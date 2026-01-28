@@ -114,15 +114,15 @@ namespace DynamicCondition{_conditionId}
             return conditionString;
         }
 
-        internal static Func<bool> smethod_0(XAttribute xattribute_0)
+        internal static Func<bool> CompileCondition(XAttribute conditionAttribute)
         {
             Func<bool> func;
             try
             {
-                IXmlLineInfo xmlLineInfo = (IXmlLineInfo)xattribute_0;
+                IXmlLineInfo xmlLineInfo = (IXmlLineInfo)conditionAttribute;
                 func = !xmlLineInfo.HasLineInfo()
-                    ? new Func<bool>(new CompiledCondition(xattribute_0.Value).Evaluate)
-                    : new Func<bool>(new CompiledCondition(xattribute_0.Value, xmlLineInfo.LineNumber).Evaluate);
+                    ? new Func<bool>(new CompiledCondition(conditionAttribute.Value).Evaluate)
+                    : new Func<bool>(new CompiledCondition(conditionAttribute.Value, xmlLineInfo.LineNumber).Evaluate);
             }
             catch (Styx.CantCompileException)
             {

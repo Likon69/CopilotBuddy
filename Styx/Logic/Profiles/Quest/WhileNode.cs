@@ -41,7 +41,7 @@ public class WhileNode : OrderNode, INodeContainer
         if (conditionAttr == null)
             throw new ProfileMissingAttributeException("condition", element);
 
-        Func<bool> condition = ConditionHelper.smethod_0(conditionAttr);
+        Func<bool> condition = ConditionHelper.CompileCondition(conditionAttr);
         if (condition == null)
             throw new ProfileException($"Could not parse 'While'. Condition code \"{conditionAttr.Value}\" could not be compiled into C# code.");
 
