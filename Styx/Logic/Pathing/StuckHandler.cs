@@ -96,6 +96,7 @@ namespace Styx.Logic.Pathing
 
             float rotation = me.Rotation;
 
+            // HB pattern: Dismount -> Jump while moving -> Strafe sides -> Blackspot
             if (!_triedDismount && me.Mounted)
             {
                 WoWPoint forward = location.RayCast(rotation, DismountRaycastDistance).Add(0f, 0f, 1f);
@@ -111,18 +112,19 @@ namespace Styx.Logic.Pathing
             }
             else if (!_triedJump)
             {
+                // HB pattern: Jump WHILE moving forward (don't stop movement)
                 WoWPoint forward = location.RayCast(rotation, JumpRaycastDistance).Add(0f, 0f, 2f);
                 WoWPoint start = location.Add(0f, 0f, 2f);
                 if (GameWorld.IsInLineOfSight(start, forward))
                 {
-                    Logging.WriteDebug("[STUCK] Trying jump.");
-                    MoveInDirection(WoWMovement.MovementDirection.Forward | WoWMovement.MovementDirection.JumpAscend, 100);
-                    Thread.Sleep(200);
+                    Logging.WriteDebug("[STUCK] Trying jump while moving forward.");
+                    PerformJump();
                 }
                 _triedJump = true;
             }
             else if (!_triedStrafeForwardLeft)
             {
+                // HB pattern: Strafe to the side using raycast to find best direction
                 Logging.WriteDebug("[STUCK] Trying strafe forward left for {0}ms", duration);
                 MoveInDirection(WoWMovement.MovementDirection.Forward | WoWMovement.MovementDirection.StrafeLeft, duration);
                 _triedStrafeForwardLeft = true;
@@ -157,6 +159,33 @@ namespace Styx.Logic.Pathing
             }
 
             _movementStopwatch.Restart();
+        }
+
+        /// <summary>
+        /// Performs a jump while moving forward, like HB's LocalPlayerMover.PerformJump().
+        /// Does NOT stop movement - triggers jump while character continues walking.
+        /// </summary>
+        private void PerformJump()
+        {
+            // Start moving forward if not already
+            WoWMovement.Move(WoWMovement.MovementDirection.Forward);
+            
+            // HB pattern: JumpOrAscendStart() then AscendStop() after 50ms
+            // This triggers a jump without stopping forward movement
+            Lua.DoString("JumpOrAscendStart()");
+            Thread.Sleep(50);
+            Lua.DoString("AscendStop()");
+
+            // Wait for landing (up to 2.5 seconds like HB)
+            var me = ObjectManager.Me;
+            int startTick = Environment.TickCount;
+            while (me != null && me.IsFalling && (Environment.TickCount - startTick) < 2500)
+            {
+                Thread.Sleep(50);
+            }
+
+            // Continue moving forward briefly after landing
+            Thread.Sleep(200);
         }
 
         public void Reset()
