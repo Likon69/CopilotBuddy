@@ -66,6 +66,7 @@ namespace Tripper.Navigation
             public IntPtr StraightPathFlags;   // unsigned char* (StraightPathFlags)
             public IntPtr PolyTypes;           // unsigned char* (AreaType)
             public IntPtr AbilityFlags;        // unsigned char* (AbilityFlags)
+            public IntPtr PolyRefs;            // uint64_t* array (polygon references for each point)
             public int Length;
             public uint Status;                // NavStatusFlag bits
             public int FailStep;               // NavPathFindStep
@@ -143,6 +144,30 @@ namespace Tripper.Navigation
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         internal static extern float FindDistanceToWall(
             uint mapId,
+            XYZ position,
+            float maxRadius,
+            out XYZ hitPoint);
+
+        /// <summary>
+        /// Finds distance to nearest wall/boundary with extended output.
+        /// Returns the polygon reference of the point as well.
+        /// </summary>
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        internal static extern float FindDistanceToWallEx(
+            uint mapId,
+            XYZ position,
+            float maxRadius,
+            out XYZ hitPoint,
+            out ulong polyRef);
+
+        /// <summary>
+        /// Finds distance to nearest wall from a specific polygon.
+        /// Used when we already know which polygon the point is on.
+        /// </summary>
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        internal static extern float FindDistanceToWallFromPoly(
+            uint mapId,
+            ulong polyRef,
             XYZ position,
             float maxRadius,
             out XYZ hitPoint);
