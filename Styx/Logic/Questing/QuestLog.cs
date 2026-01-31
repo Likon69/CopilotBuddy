@@ -271,7 +271,7 @@ namespace Styx.Logic.Questing
 			}
 
 			_completedQuestCacheTime = DateTime.Now;
-			Styx.Helpers.Logging.Write("[QuestLog] GetCompletedQuests() found {0} completed quests", _completedQuestIds.Count);
+			// Debug log removed - not in HB 4.3.4
 		}
 
 		/// <summary>
