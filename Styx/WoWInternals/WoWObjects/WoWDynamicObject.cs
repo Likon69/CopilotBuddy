@@ -16,12 +16,14 @@ namespace Styx.WoWInternals.WoWObjects
         
         #region Descriptor Offsets - DYNAMICOBJECT_FIELD
         
-        // DynamicObjectFields pour 3.3.5a (offset depuis descriptors)
-        private const int DYNAMICOBJECT_CASTER = 0x0;          // 8 bytes (ulong) - Caster GUID
-        private const int DYNAMICOBJECT_BYTES = 0x8;           // 4 bytes (type + unk)
-        private const int DYNAMICOBJECT_SPELLID = 0xC;         // 4 bytes - Spell ID
-        private const int DYNAMICOBJECT_RADIUS = 0x10;         // 4 bytes (float) - Radius
-        private const int DYNAMICOBJECT_CASTTIME = 0x14;       // 4 bytes - Cast time
+        // DynamicObjectFields pour 3.3.5a (Offsets.txt ligne 5002-5007: indices × 4)
+        // Source: Offsets.txt WoWDynamicObjectFields
+        // Note: GetDescriptorField() attend des byte offsets, pas des indices
+        private const int DYNAMICOBJECT_CASTER = 0x6 * 4;      // 24 bytes - Caster GUID (8 bytes ulong)
+        private const int DYNAMICOBJECT_BYTES = 0x8 * 4;       // 32 bytes - Type + unk (4 bytes)
+        private const int DYNAMICOBJECT_SPELLID = 0x9 * 4;     // 36 bytes - Spell ID (4 bytes)
+        private const int DYNAMICOBJECT_RADIUS = 0xA * 4;      // 40 bytes - Radius (4 bytes float)
+        private const int DYNAMICOBJECT_CASTTIME = 0xB * 4;    // 44 bytes - Cast time (4 bytes)
         
         #endregion
         
@@ -109,12 +111,14 @@ namespace Styx.WoWInternals.WoWObjects
         
         public float Radius => GetDescriptorField<float>(DYNAMICOBJECT_RADIUS);
         public uint CastTime => GetDescriptorField<uint>(DYNAMICOBJECT_CASTTIME);
-        private uint Bytes => GetDescriptorField<uint>(DYNAMICOBJECT_BYTES);
+        
+        internal byte[] Bytes => BitConverter.GetBytes(GetDescriptorField<uint>(DYNAMICOBJECT_BYTES));
         public DynamicObjectType DynObjType
         {
             get
             {
-                return (DynamicObjectType)(Bytes & 0xFF);
+                var bytes = GetDescriptorField<uint>(DYNAMICOBJECT_BYTES);
+                return (DynamicObjectType)(bytes & 0xFF);
             }
         }
         
@@ -129,11 +133,11 @@ namespace Styx.WoWInternals.WoWObjects
                 if (caster == null) return false;
                 
                 // Si le caster est hostile au joueur, le dynobj est hostile
-                // Check if caster is friendly to player
-                if (caster.IsPlayer)
-                    return true; // Player's own objects are friendly
+                // Si c'est nous ou un joueur allié, ce n'est pas hostile
+                if (IsMine)
+                    return false; // Nos propres objets ne sont pas hostiles
                     
-                return caster.IsFriendly;
+                return !caster.IsFriendly; // Hostile si le caster n'est pas ami
             }
         }
         public bool AmIInRange
