@@ -58,7 +58,35 @@ namespace Styx.Logic.Profiles.Quest
 					Logging.WriteDebug(ex.Message);
 				}
 			}
-			useObjectObjectiveInfo.OverridedHotspots = HotspotCollection.FromXElement(element, "Hotspot");
+			
+			// Parse child elements for <Hotspots>
+			foreach (XElement childElement in element.Elements())
+			{
+				try
+				{
+					string? text;
+					if ((text = childElement.Name.ToString().ToLower()) != null)
+					{
+						if (text == "hotspots" || text == "spots" || text == "locations")
+						{
+							var hotspots = HotspotCollection.FromXElement(childElement, "hotspot", "spot", "location");
+							if (useObjectObjectiveInfo.OverridedHotspots == null)
+							{
+								useObjectObjectiveInfo.OverridedHotspots = hotspots;
+							}
+							else if (hotspots != null)
+							{
+								useObjectObjectiveInfo.OverridedHotspots.AddRange(hotspots);
+							}
+						}
+					}
+				}
+				catch (ProfileException ex)
+				{
+					Logging.WriteDebug(ex.Message);
+				}
+			}
+			
 			return useObjectObjectiveInfo;
 		}
 	}
