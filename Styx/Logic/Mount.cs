@@ -247,14 +247,24 @@ namespace Styx.Logic
 
 		public static bool CanMount()
 		{
+			LocalPlayer? me = Me;
+			if (me == null)
+				return false;
+
+			// Check if player can use mounts at all
+			// WotLK: Ground mounts at level 20 (except Paladin/Warlock at 20)
+			int requiredLevel = 20;
+			if (me.Level < requiredLevel)
+				return false;
+
+			// Check if player has any mounts available
+			if (MountHelper.NumMounts <= 0)
+				return false;
+
 			if (!_combatTimer.IsFinished)
 				return false;
 
 			if (!_mountTimer.IsFinished)
-				return false;
-
-			LocalPlayer? me = Me;
-			if (me == null)
 				return false;
 
 			if (me.Dead || me.IsGhost)
