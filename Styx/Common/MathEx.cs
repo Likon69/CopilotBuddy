@@ -110,12 +110,12 @@ namespace Styx.Common
         /// </summary>
         public static float WrapAngle(float radian)
         {
-            double num = Math.IEEERemainder(radian, Math.PI * 2.0);
-            if (num <= -Math.PI)
-                num += Math.PI * 2.0;
-            else if (num > Math.PI)
-                num -= Math.PI * 2.0;
-            return (float)num;
+            double normalizedRadian = Math.IEEERemainder(radian, Math.PI * 2.0);
+            if (normalizedRadian <= -Math.PI)
+                normalizedRadian += Math.PI * 2.0;
+            else if (normalizedRadian > Math.PI)
+                normalizedRadian -= Math.PI * 2.0;
+            return (float)normalizedRadian;
         }
 
         /// <summary>
@@ -132,11 +132,11 @@ namespace Styx.Common
         /// </summary>
         public static int ComputeDirection(double xi, double yi, double xj, double yj, double xk, double yk)
         {
-            double num = (xk - xi) * (yj - yi);
-            double num2 = (xj - xi) * (yk - yi);
-            if (num < num2)
+            double crossProduct1 = (xk - xi) * (yj - yi);
+            double crossProduct2 = (xj - xi) * (yk - yi);
+            if (crossProduct1 < crossProduct2)
                 return -1;
-            if (num <= num2)
+            if (crossProduct1 <= crossProduct2)
                 return 0;
             return 1;
         }
