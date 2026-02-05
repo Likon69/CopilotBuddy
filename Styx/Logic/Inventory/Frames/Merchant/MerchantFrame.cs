@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using GreenMagic;
+using Styx.Logic.Combat;
 using Styx.WoWInternals;
 using Styx.WoWInternals.WoWObjects;
 
@@ -271,6 +272,101 @@ namespace Styx.Logic.Inventory.Frames.Merchant
             WoWBag inventory = StyxWoW.Me.Inventory;
             uint slotId = ObjectManager.Wow.Read<uint>((uint)(12554488 + index * 4));
             return inventory.GetItemBySlot(slotId);
+        }
+
+        /// <summary>
+        /// Gets the best drink the merchant sells that the player can use.
+        /// Returns -1 if none found.
+        /// </summary>
+        public int GetBestDrinkFromVendor()
+        {
+            try
+            {
+                return GetBestConsumableFromVendor("Drink");
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
+        /// Gets the best food the merchant sells that the player can use.
+        /// Returns -1 if none found.
+        /// </summary>
+        public int GetBestFoodFromVendor()
+        {
+            try
+            {
+                return GetBestConsumableFromVendor("Food");
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
+        /// Gets the best consumable of a specific type from a vendor.
+        /// </summary>
+        private int GetBestConsumableFromVendor(string consumableType)
+        {
+            int bestIndex = -1;
+            int bestLevel = -1;
+            int playerLevel = StyxWoW.Me?.Level ?? 1;
+
+            foreach (var item in GetAllMerchantItems())
+            {
+                if (item.ItemInfo == null)
+                    continue;
+
+                // Check if item has the spell effect (Food/Drink)
+                int[] spellIds = item.ItemInfo.SpellId;
+                if (spellIds == null || spellIds.Length == 0 || spellIds[0] == 0)
+                    continue;
+
+                WoWSpell spell = WoWSpell.FromId(spellIds[0]);
+                if (spell == null || spell.Name != consumableType)
+                    continue;
+
+                // Check if player can use this item (level check)
+                if (item.ItemInfo.RequiredLevel > playerLevel)
+                    continue;
+
+                // Find highest level item that player can use
+                if (item.ItemInfo.RequiredLevel > bestLevel)
+                {
+                    bestLevel = item.ItemInfo.RequiredLevel;
+                    bestIndex = item.Index;
+                }
+            }
+
+            return bestIndex;
+        }
+
+        /// <summary>
+        /// Gets a merchant item by its index.
+        /// </summary>
+        public MerchantItem GetMerchantItemByIndex(int index)
+        {
+            if (index < 0 || index >= MerchantNumItems)
+                return null;
+            return GetMerchantItemAtIndex(index);
+        }
+
+        /// <summary>
+        /// Returns true if the buy operation was successful.
+        /// </summary>
+        public bool BuyItem(int index, int amount, out bool success)
+        {
+            if (index < 0 || amount <= 0)
+            {
+                success = false;
+                return false;
+            }
+            Lua.DoString("BuyMerchantItem(" + index + "," + amount + ")");
+            success = true;
+            return true;
         }
 
         public static readonly MerchantFrame Instance;
