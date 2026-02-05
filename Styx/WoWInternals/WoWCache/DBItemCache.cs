@@ -1,6 +1,7 @@
 using System;
 using GreenMagic;
 using Styx.Helpers;
+using Styx.Patchables;
 
 namespace Styx.WoWInternals.WoWCache
 {
@@ -10,8 +11,6 @@ namespace Styx.WoWInternals.WoWCache
     /// </summary>
     public static class DBItemCache
     {
-        // Offset de la fonction native GetItemInfoBlock pour 3.3.5a
-        private const uint GET_ITEM_INFO_BLOCK = 0x67D330; // 6801968
 
         /// <summary>
         /// Récupère un bloc d'information item depuis le cache DB.
@@ -44,7 +43,7 @@ namespace Styx.WoWInternals.WoWCache
                     executor.AddLine($"push {paramPtr}");
                     executor.AddLine($"push {index}");
                     executor.AddLine($"mov ecx, {caller}");
-                    executor.AddLine($"call {GET_ITEM_INFO_BLOCK}");
+                    executor.AddLine($"call {GlobalOffsets.DBItemCache_GetInfoBlockByID}");
                     executor.AddLine("retn");
                     executor.Execute();
 
