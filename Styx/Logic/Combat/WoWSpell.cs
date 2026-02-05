@@ -369,6 +369,7 @@ namespace Styx.Logic.Combat
                 throw new IndexOutOfRangeException("Index can't be higher than 2 for SpellEffects!");
             }
             return new SpellEffect(
+                (WoWSpellEffectType)_spellEntry.Effect[index],
                 (WoWApplyAuraType)_spellEntry.EffectApplyAuraName[index],
                 _spellEntry.EffectRealPointsPerLevel[index],
                 _spellEntry.EffectBasePoints[index],
