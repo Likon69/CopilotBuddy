@@ -150,12 +150,12 @@ namespace Styx.Logic.Combat
                 if (HasNoDuration)
                     return TimeSpan.MaxValue;
                 
-                // Get current performance counter from ObjectManager
-                uint currentTime = ObjectManager.PerformanceCounter;
+                // Use WoWClient.PerformanceCounter() for consistency with HB 4.3.4
+                ulong currentTime = StyxWoW.WoWClient.PerformanceCounter();
                 if (currentTime == 0 || EndTime <= currentTime)
                     return TimeSpan.Zero;
                 
-                uint remaining = EndTime - currentTime;
+                uint remaining = EndTime - (uint)currentTime;
                 return TimeSpan.FromMilliseconds(remaining);
             }
         }
@@ -170,11 +170,11 @@ namespace Styx.Logic.Combat
                 if (HasNoDuration)
                     return uint.MaxValue;
                 
-                uint currentTime = ObjectManager.PerformanceCounter;
+                ulong currentTime = StyxWoW.WoWClient.PerformanceCounter();
                 if (currentTime == 0 || EndTime <= currentTime)
                     return 0;
                 
-                return EndTime - currentTime;
+                return EndTime - (uint)currentTime;
             }
         }
         
@@ -255,6 +255,7 @@ namespace Styx.Logic.Combat
         
         /// <summary>
         /// Attempts to cancel this aura (if it's cancellable).
+        /// Only works for auras on the player.
         /// </summary>
         /// <returns>True if the aura was cancelled, false otherwise.</returns>
         public bool TryCancel()
@@ -262,10 +263,31 @@ namespace Styx.Logic.Combat
             if (!Cancellable || IsHarmful)
                 return false;
             
+            // Verify this aura belongs to the player
+            var me = ObjectManager.Me;
+            if (me == null || CreatorGuid != me.Guid)
+                return false;
+            
             try
             {
-                // Cancel aura using Lua
-                WoWInternals.Lua.DoString($"CancelUnitBuff(\"player\", \"{Name}\")");
+                // Use index-based cancellation to avoid name escaping issues
+                // Find the aura index by spell ID
+                var auras = me.GetAllAuras();
+                int index = 1; // Lua uses 1-based indexing
+                foreach (var aura in auras)
+                {
+                    if (aura.SpellId == SpellId)
+                    {
+                        WoWInternals.Lua.DoString($"CancelUnitBuff(\"player\", {index})");
+                        Helpers.Logging.WriteDebug("[WoWAura] Cancelled aura: {0} (index {1})", Name, index);
+                        return true;
+                    }
+                    index++;
+                }
+                
+                // Fallback to name-based cancellation (escape quotes)
+                string safeName = Name.Replace("\"", "\\\"");
+                WoWInternals.Lua.DoString($"CancelUnitBuff(\"player\", \"{safeName}\")");
                 Helpers.Logging.WriteDebug("[WoWAura] Cancelled aura: {0}", Name);
                 return true;
             }
