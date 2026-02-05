@@ -102,11 +102,11 @@ namespace Styx
 
         public static void ResetAfk()
         {
-            uint num = (uint)WoWClient.PerformanceCounter();
+            uint currentCounter = (uint)WoWClient.PerformanceCounter();
             uint lastHardwareAction = LastHardwareAction;
-            if (num >= lastHardwareAction)
+            if (currentCounter >= lastHardwareAction)
             {
-                LastHardwareAction = num;
+                LastHardwareAction = currentCounter;
             }
         }
 
