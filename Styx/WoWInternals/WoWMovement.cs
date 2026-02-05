@@ -12,9 +12,9 @@ namespace Styx.WoWInternals
 		#region Constants - Offsets 3.3.5a (12340)
 
 		// Click to move function address - FROM 335offsetsall.txt
-		private const uint CTM_Function = 0x00727400;  // 7509504 decimal
-		// Stop movement function
-		private const uint StopMovement_Function = 0x0072B3A0;  // 7519904 decimal
+		private const uint CTM_Function = 0x00727400;  // 7509504 decimal (CGPlayer_C__ClickToMove)
+		// Stop movement function - FROM HB 3.3.5a GlobalOffsets.cs
+		private const uint CTM_Stop_Function = 0x0072B3A0;  // 7517088 decimal (CGPlayer_C__ClickToMoveStop)
 		// Click to move base address - FROM HB 3.3.5a (0xCA11D8)
 		private const uint ClickToMove_Base = 0xCA11D8;  // 13243864 decimal
 		// Active input control pointer
@@ -134,8 +134,17 @@ namespace Styx.WoWInternals
 
 		public static void MoveStop()
 		{
+			// Stop keyboard movement
 			StopMovement(MovementDirection.AllAllowed);
 			Lua.DoString("MoveForwardStop();MoveBackwardStop();StrafeLeftStop();StrafeRightStop();");
+			
+			// Stop Click-to-Move if active (like HB 3.3.5a)
+			if (ClickToMoveInfo.Type == ClickToMoveType.Move || 
+			    ClickToMoveInfo.Type == ClickToMoveType.NpcInteract ||
+			    ClickToMoveInfo.Type == ClickToMoveType.Loot)
+			{
+				ClickToMoveStop();
+			}
 		}
 
 		public static void MoveStop(MovementDirection direction)
@@ -215,6 +224,31 @@ namespace Styx.WoWInternals
 					executor.AddLine("retn");
 					executor.Execute();
 				}
+			}
+		}
+
+		/// <summary>
+		/// Stops the current Click-to-Move action.
+		/// Calls CGPlayer_C__ClickToMoveStop like HB 3.3.5a.
+		/// </summary>
+		public static void ClickToMoveStop()
+		{
+			StyxWoW.ResetAfk();
+
+			ExecutorRand? executor = ObjectManager.Executor;
+			if (executor == null)
+				throw new Exception("Invalid executor used in CGPlayer_C__ClickToMoveStop");
+
+			LocalPlayer? me = ObjectManager.Me;
+			if (me == null) return;
+
+			lock (executor.AssemblyLock)
+			{
+				executor.Clear();
+				executor.AddLine("mov ecx, {0}", me.BaseAddress);
+				executor.AddLine("call {0}", CTM_Stop_Function);
+				executor.AddLine("retn");
+				executor.Execute();
 			}
 		}
 
