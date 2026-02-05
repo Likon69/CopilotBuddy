@@ -220,7 +220,6 @@ namespace Styx.Loaders
                     "System.Collections.dll",
                     "netstandard.dll",
                     "System.Drawing.Primitives.dll",
-                    "System.Drawing.Common.dll",
                     "System.Text.RegularExpressions.dll",
                     "System.Linq.dll",
                     "System.Linq.Expressions.dll"
@@ -232,6 +231,17 @@ namespace Styx.Loaders
                     {
                         references.Add(MetadataReference.CreateFromFile(refPath));
                     }
+                }
+            }
+
+            // Add System.Drawing.Common from application directory (NuGet package)
+            var appDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            if (appDir != null)
+            {
+                var drawingCommonPath = Path.Combine(appDir, "System.Drawing.Common.dll");
+                if (File.Exists(drawingCommonPath) && !references.Any(r => r.Display?.Contains("System.Drawing.Common") == true))
+                {
+                    references.Add(MetadataReference.CreateFromFile(drawingCommonPath));
                 }
             }
 
