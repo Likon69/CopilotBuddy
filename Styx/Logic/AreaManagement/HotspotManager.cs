@@ -49,9 +49,9 @@ namespace Styx.Logic.AreaManagement
 					{
 						try
 						{
-							float? num = null;
-							float? num2 = null;
-							float? num3 = null;
+							float? xCoord = null;
+							float? yCoord = null;
+							float? zCoord = null;
 							XAttribute[] array = xelement.Attributes().ToArray();
 							foreach (XAttribute xattribute in array)
 							{
@@ -62,31 +62,31 @@ namespace Styx.Logic.AreaManagement
 									{
 										if (text == "X")
 										{
-											if (!float.TryParse(xattribute.Value, out float num6))
+											if (!float.TryParse(xattribute.Value, out float parsedX))
 											{
 												throw new ProfileAttributeExpectedException<float>(xattribute);
 											}
-											num = num6;
+											xCoord = parsedX;
 										}
 										else if (text == "Y")
 										{
-											if (!float.TryParse(xattribute.Value, out float num5))
+											if (!float.TryParse(xattribute.Value, out float parsedY))
 											{
 												throw new ProfileAttributeExpectedException<float>(xattribute);
 											}
-											num2 = num5;
+											yCoord = parsedY;
 										}
 										else if (text == "Z")
 										{
-											if (num == null || num2 == null)
+											if (xCoord == null || yCoord == null)
 											{
 												throw new ProfileException("You have placed the 'Z' attribute before the 'X' and 'Y' attribute!");
 											}
-											if (!float.TryParse(xattribute.Value, out float num4))
+											if (!float.TryParse(xattribute.Value, out float parsedZ))
 											{
 												throw new ProfileAttributeExpectedException<float>(xattribute);
 											}
-											num3 = num4;
+											zCoord = parsedZ;
 										}
 										else
 										{
@@ -103,11 +103,11 @@ namespace Styx.Logic.AreaManagement
 									Logging.WriteException(ex);
 								}
 							}
-							if (num == null || num2 == null || num3 == null)
+							if (xCoord == null || yCoord == null || zCoord == null)
 							{
-								throw new ProfileMissingAttributeException<float>((num != null) ? ((num2 != null) ? "Z" : "Y") : "X", xelement);
+								throw new ProfileMissingAttributeException<float>((xCoord != null) ? ((yCoord != null) ? "Z" : "Y") : "X", xelement);
 							}
-							Hotspots.Add(new WoWPoint(num.Value, num2.Value, num3.Value));
+							Hotspots.Add(new WoWPoint(xCoord.Value, yCoord.Value, zCoord.Value));
 							continue;
 						}
 						catch (ProfileException ex2)
@@ -145,13 +145,13 @@ namespace Styx.Logic.AreaManagement
 		public void CycleToNearest()
 		{
 			WoWPoint woWPoint = WoWPoint.Zero;
-			float num = float.MaxValue;
+			float shortestDistance = float.MaxValue;
 			foreach (WoWPoint woWPoint2 in Hotspots)
 			{
-				float num2 = woWPoint2.Distance(ObjectManager.Me.Location);
-				if (num2 < num)
+				float currentDistance = woWPoint2.Distance(ObjectManager.Me.Location);
+				if (currentDistance < shortestDistance)
 				{
-					num = num2;
+					shortestDistance = currentDistance;
 					woWPoint = woWPoint2;
 				}
 			}
