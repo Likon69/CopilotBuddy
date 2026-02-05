@@ -512,9 +512,9 @@ namespace Styx.Logic
 
         protected virtual void DefaultTargetWeight(List<TargetPriority> units)
         {
-            bool flag = StyxWoW.Me.PetInCombat || StyxWoW.Me.Combat;
+            bool isInCombat = StyxWoW.Me.PetInCombat || StyxWoW.Me.Combat;
             ulong currentTargetGuid = StyxWoW.Me.CurrentTargetGuid;
-            bool flag2 = currentTargetGuid != 0UL;
+            bool hasCurrentTarget = currentTargetGuid != 0UL;
             LocalPlayer me = StyxWoW.Me;
             Profile currentProfile = ProfileManager.CurrentProfile;
 
@@ -534,17 +534,17 @@ namespace Styx.Logic
             while (j >= 0)
             {
                 WoWUnit woWUnit = units[j].Object.ToUnit();
-                double num = 200.0 - 2.0 * woWUnit.Distance;
+                double targetScore = 200.0 - 2.0 * woWUnit.Distance;
                 double distance = woWUnit.Distance;
                 ulong guid = woWUnit.Guid;
                 ulong currentTargetGuid2 = woWUnit.CurrentTargetGuid;
-                if (flag)
+                if (isInCombat)
                 {
-                    if (flag2 && me.CurrentTarget != null && me.CurrentTarget.MaxMana > 1 && me.CurrentTarget.ManaPercent > 0.0)
+                    if (hasCurrentTarget && me.CurrentTarget != null && me.CurrentTarget.MaxMana > 1 && me.CurrentTarget.ManaPercent > 0.0)
                     {
-                        num += woWUnit.ManaPercent;
+                        targetScore += woWUnit.ManaPercent;
                     }
-                    num -= woWUnit.HealthPercent;
+                    targetScore -= woWUnit.HealthPercent;
                 }
                 else
                 {
@@ -556,7 +556,7 @@ namespace Styx.Logic
                             j--;
                             continue;
                         }
-                        num -= 1000.0;
+                        targetScore -= 1000.0;
                     }
                     if (Blacklist.Contains(guid))
                     {
@@ -566,43 +566,43 @@ namespace Styx.Logic
                             j--;
                             continue;
                         }
-                        num -= 1000.0;
+                        targetScore -= 1000.0;
                     }
                     if (woWUnit.MyReaction <= WoWUnitReaction.Neutral && distance < 30.0)
                     {
-                        num += (30.0 - distance) * (double)(WoWUnitReaction.Friendly - woWUnit.MyReaction);
+                        targetScore += (30.0 - distance) * (double)(WoWUnitReaction.Friendly - woWUnit.MyReaction);
                     }
 
                     // Check current target or POI
                     if (currentTargetGuid2 == guid || (BotPoi.Current.Type == PoiType.Kill && BotPoi.Current.Guid == woWUnit.Guid))
                     {
-                        num += 150.0;
+                        targetScore += 150.0;
                     }
 
                     if (woWUnit.IsPet)
                     {
-                        num -= 50.0;
+                        targetScore -= 50.0;
                     }
                     float myAggroRange = woWUnit.MyAggroRange;
                     if (myAggroRange != 0f && distance < (double)(myAggroRange + 5f))
                     {
-                        num += 100.0;
+                        targetScore += 100.0;
                     }
 
                     // Adjust score based on line of sight
                     if (!losResults[j])
                     {
-                        num += 25.0; // In line of sight - bonus
+                        targetScore += 25.0; // In line of sight - bonus
                     }
                     else
                     {
-                        num -= 25.0; // Not in line of sight - penalty
+                        targetScore -= 25.0; // Not in line of sight - penalty
                     }
 
                     // Penalty for nearby units
-                    num -= (double)(5 * CountUnitsNearLocation(woWUnit.Location, 15f));
+                    targetScore -= (double)(5 * CountUnitsNearLocation(woWUnit.Location, 15f));
                 }
-                units[j].Score += num;
+                units[j].Score += targetScore;
                 j--;
             }
         }
