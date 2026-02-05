@@ -157,7 +157,7 @@ public abstract class CustomForcedBehavior
 
   private bool TryProcessSingleNumberedAttribute<T>(
     string string_1,
-    CustomForcedBehavior.IConstraintChecker<T> iconstraintChecker_0,
+    CustomForcedBehavior.IConstraintChecker<T> constraintChecker,
     List<T> list_1)
   {
     string string_1_1 = string_1;
@@ -168,7 +168,7 @@ public abstract class CustomForcedBehavior
       if (!string_1.EndsWith("X") && this.Args.ContainsKey(string_1_1 + "X"))
         return false;
     }
-    object obj = this.GetAttributeValueAsObject<T>(string_1_1, false, iconstraintChecker_0, (string[]) null);
+    object obj = this.GetAttributeValueAsObject<T>(string_1_1, false, constraintChecker, (string[]) null);
     if (obj == null)
       return true;
     list_1.Add((T) obj);
@@ -178,12 +178,12 @@ public abstract class CustomForcedBehavior
   private object GetAttributeValueAsObject<T>(
     string string_1,
     bool bool_1,
-    CustomForcedBehavior.IConstraintChecker<T> iconstraintChecker_0,
+    CustomForcedBehavior.IConstraintChecker<T> constraintChecker,
     string[] string_2)
   {
     if (typeof (T) == typeof (WoWPoint))
       return this.ParseWoWPointArray(string_1, bool_1, string_2);
-    iconstraintChecker_0 = iconstraintChecker_0 ?? (CustomForcedBehavior.IConstraintChecker<T>) new CustomForcedBehavior.ConstrainTo.Anything<T>();
+    constraintChecker = constraintChecker ?? (CustomForcedBehavior.IConstraintChecker<T>) new CustomForcedBehavior.ConstrainTo.Anything<T>();
     string str = this.FindAttributeKeyOrAlias(bool_1, string_1, string_2);
     if (str == null || !this.Args.ContainsKey(str))
       return (object) null;
@@ -202,7 +202,7 @@ public abstract class CustomForcedBehavior
     }
     return obj2;
 label_7:
-    string format = iconstraintChecker_0.Check(str, obj1);
+    string format = constraintChecker.Check(str, obj1);
     if (format == null)
       return (object) obj1;
     this.LogMessage("error", format);
@@ -1444,16 +1444,16 @@ label_8:
 
   public sealed class ConfigMemento
   {
-    private XElement xelement_0;
-    private bool bool_0;
-    private XElement xelement_1;
-    private XElement xelement_2;
+    private XElement _characterSettingsBackup;
+    private bool _isDisposed;
+    private XElement _levelbotSettingsBackup;
+    private XElement _styxSettingsBackup;
 
     public ConfigMemento()
     {
-      this.xelement_0 = CharacterSettings.Instance.GetXML();
-      this.xelement_1 = LevelbotSettings.Instance.GetXML();
-      this.xelement_2 = StyxSettings.Instance.GetXML();
+      this._characterSettingsBackup = CharacterSettings.Instance.GetXML();
+      this._levelbotSettingsBackup = LevelbotSettings.Instance.GetXML();
+      this._styxSettingsBackup = StyxSettings.Instance.GetXML();
     }
 
     ~ConfigMemento() => this.Dispose(false);
@@ -1466,41 +1466,41 @@ label_8:
 
     public void Dispose(bool isExplicitlyInitiatedDispose)
     {
-      if (!this.bool_0)
+      if (!this._isDisposed)
       {
-        if (this.xelement_0 != null)
+        if (this._characterSettingsBackup != null)
         {
-          CharacterSettings.Instance.LoadFromXML(this.xelement_0);
+          CharacterSettings.Instance.LoadFromXML(this._characterSettingsBackup);
           CharacterSettings.Instance.Save();
         }
-        if (this.xelement_1 != null)
+        if (this._levelbotSettingsBackup != null)
         {
-          LevelbotSettings.Instance.LoadFromXML(this.xelement_1);
+          LevelbotSettings.Instance.LoadFromXML(this._levelbotSettingsBackup);
           LevelbotSettings.Instance.Save();
         }
-        if (this.xelement_2 != null)
+        if (this._styxSettingsBackup != null)
         {
-          StyxSettings.Instance.LoadFromXML(this.xelement_2);
+          StyxSettings.Instance.LoadFromXML(this._styxSettingsBackup);
           StyxSettings.Instance.Save();
         }
-        this.xelement_0 = (XElement) null;
-        this.xelement_1 = (XElement) null;
-        this.xelement_2 = (XElement) null;
+        this._characterSettingsBackup = (XElement) null;
+        this._levelbotSettingsBackup = (XElement) null;
+        this._styxSettingsBackup = (XElement) null;
       }
-      this.bool_0 = true;
+      this._isDisposed = true;
     }
 
     public override string ToString()
     {
       string str = "";
-      if (this.bool_0)
+      if (this._isDisposed)
         throw new ObjectDisposedException(this.GetType().Name);
-      if (this.xelement_0 != null)
-        str = $"{str}{this.xelement_0.ToString()}\n";
-      if (this.xelement_1 != null)
-        str = $"{str}{this.xelement_1.ToString()}\n";
-      if (this.xelement_2 != null)
-        str = $"{str}{this.xelement_2.ToString()}\n";
+      if (this._characterSettingsBackup != null)
+        str = $"{str}{this._characterSettingsBackup.ToString()}\n";
+      if (this._levelbotSettingsBackup != null)
+        str = $"{str}{this._levelbotSettingsBackup.ToString()}\n";
+      if (this._styxSettingsBackup != null)
+        str = $"{str}{this._styxSettingsBackup.ToString()}\n";
       return str;
     }
   }
