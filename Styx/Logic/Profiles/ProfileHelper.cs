@@ -12,7 +12,29 @@ namespace Styx.Logic.Profiles
     internal static class ProfileHelper
     {
         /// <summary>
+        /// Parses a float value that may use comma OR dot as decimal separator.
+        /// Handles French locale (comma) and international format (dot).
+        /// </summary>
+        private static float ParseFloatLocaleAgnostic(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                return 0f;
+
+            // First try with InvariantCulture (dot as decimal separator)
+            if (float.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out float result))
+                return result;
+
+            // If that fails, try replacing comma with dot (French locale)
+            string normalized = value.Replace(',', '.');
+            if (float.TryParse(normalized, NumberStyles.Float, CultureInfo.InvariantCulture, out result))
+                return result;
+
+            return 0f;
+        }
+
+        /// <summary>
         /// Parses a WoWPoint from an XML element with X, Y, Z attributes.
+        /// Handles both dot and comma as decimal separators.
         /// </summary>
         public static WoWPoint ParseLocation(XElement element)
         {
@@ -23,13 +45,13 @@ namespace Styx.Logic.Profiles
                 switch (attr.Name.LocalName.ToLowerInvariant())
                 {
                     case "x":
-                        float.TryParse(attr.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out x);
+                        x = ParseFloatLocaleAgnostic(attr.Value);
                         break;
                     case "y":
-                        float.TryParse(attr.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out y);
+                        y = ParseFloatLocaleAgnostic(attr.Value);
                         break;
                     case "z":
-                        float.TryParse(attr.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out z);
+                        z = ParseFloatLocaleAgnostic(attr.Value);
                         break;
                 }
             }
@@ -59,13 +81,12 @@ namespace Styx.Logic.Profiles
 
         /// <summary>
         /// Parses a float attribute value.
+        /// Handles both dot and comma as decimal separators.
         /// </summary>
         public static float ParseFloat(XAttribute attr, float defaultValue = 0f)
         {
             if (attr == null) return defaultValue;
-            return float.TryParse(attr.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out float result) 
-                ? result 
-                : defaultValue;
+            return ParseFloatLocaleAgnostic(attr.Value);
         }
     }
 }
