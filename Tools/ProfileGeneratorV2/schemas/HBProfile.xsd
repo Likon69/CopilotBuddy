@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <!-- Root Element -->
+  <xs:element name="HBProfile">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="Name" type="xs:string" minOccurs="0"/>
+        <xs:element name="MinLevel" type="xs:integer" minOccurs="0"/>
+        <xs:element name="MaxLevel" type="xs:integer" minOccurs="0"/>
+        <xs:element name="MinDurability" type="xs:decimal" minOccurs="0"/>
+        <xs:element name="MinFreeBagSlots" type="xs:integer" minOccurs="0"/>
+        <xs:element name="SellGrey" type="xs:boolean" minOccurs="0"/>
+        <xs:element name="SellWhite" type="xs:boolean" minOccurs="0"/>
+        <xs:element name="SellGreen" type="xs:boolean" minOccurs="0"/>
+        <xs:element name="MailGrey" type="xs:boolean" minOccurs="0"/>
+        <xs:element name="MailWhite" type="xs:boolean" minOccurs="0"/>
+        <xs:element name="MailGreen" type="xs:boolean" minOccurs="0"/>
+        <xs:element name="MailBlue" type="xs:boolean" minOccurs="0"/>
+        <xs:element name="MailPurple" type="xs:boolean" minOccurs="0"/>
+        <xs:element name="TargetElites" type="xs:boolean" minOccurs="0"/>
+        <xs:element name="Blackspots" type="BlackspotsType" minOccurs="0"/>
+        <xs:element name="Vendors" type="VendorsType" minOccurs="0"/>
+        <xs:element name="Mailboxes" type="MailboxesType" minOccurs="0"/>
+        <xs:element name="AvoidMobs" type="AvoidMobsType" minOccurs="0"/>
+        <xs:element name="GrindArea" type="GrindAreaType" minOccurs="0"/>
+        <xs:element name="QuestOrder" type="QuestOrderType" minOccurs="0"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ==================== HEADER TYPES ==================== -->
+  
+  <!-- Blackspots -->
+  <xs:complexType name="BlackspotsType">
+    <xs:sequence>
+      <xs:element name="Blackspot" maxOccurs="unbounded" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="X" type="xs:decimal" use="required"/>
+          <xs:attribute name="Y" type="xs:decimal" use="required"/>
+          <xs:attribute name="Z" type="xs:decimal" use="required"/>
+          <xs:attribute name="Radius" type="xs:decimal" use="required"/>
+          <xs:attribute name="Height" type="xs:decimal"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Vendors -->
+  <xs:complexType name="VendorsType">
+    <xs:sequence>
+      <xs:element name="Vendor" maxOccurs="unbounded" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="Name" type="xs:string" use="required"/>
+          <xs:attribute name="Entry" type="xs:integer" use="required"/>
+          <xs:attribute name="Type" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Food"/>
+                <xs:enumeration value="Repair"/>
+                <xs:enumeration value="Sell"/>
+                <xs:enumeration value="General"/>
+                <xs:enumeration value="Ammo"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="X" type="xs:decimal" use="required"/>
+          <xs:attribute name="Y" type="xs:decimal" use="required"/>
+          <xs:attribute name="Z" type="xs:decimal" use="required"/>
+          <xs:attribute name="Nav" type="NavType"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Mailboxes -->
+  <xs:complexType name="MailboxesType">
+    <xs:sequence>
+      <xs:element name="Mailbox" maxOccurs="unbounded" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="X" type="xs:decimal" use="required"/>
+          <xs:attribute name="Y" type="xs:decimal" use="required"/>
+          <xs:attribute name="Z" type="xs:decimal" use="required"/>
+          <xs:attribute name="Nav" type="NavType"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- AvoidMobs -->
+  <xs:complexType name="AvoidMobsType">
+    <xs:sequence>
+      <xs:element name="Mob" maxOccurs="unbounded" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="Entry" type="xs:integer" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ==================== QUEST ORDER TYPE ==================== -->
+  
+  <xs:complexType name="QuestOrderType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element name="PickUp" type="PickUpType"/>
+      <xs:element name="TurnIn" type="TurnInType"/>
+      <xs:element name="Objective" type="ObjectiveType"/>
+      <xs:element name="RunTo" type="RunToType"/>
+      <xs:element name="If" type="IfType"/>
+      <xs:element name="While" type="WhileType"/>
+      <xs:element name="CustomBehavior" type="CustomBehaviorType"/>
+      <xs:element name="SetGrindArea" type="SetGrindAreaType"/>
+      <xs:element name="GrindTo" type="GrindToType"/>
+      <xs:element name="Code" type="xs:string"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <!-- ==================== QUEST ACTIONS ==================== -->
+
+  <!-- PickUp Quest -->
+  <xs:complexType name="PickUpType">
+    <xs:attribute name="QuestName" type="xs:string" use="required"/>
+    <xs:attribute name="QuestId" type="xs:integer" use="required"/>
+    <xs:attribute name="GiverName" type="xs:string"/>
+    <xs:attribute name="GiverId" type="xs:integer"/>
+    <xs:attribute name="X" type="xs:decimal"/>
+    <xs:attribute name="Y" type="xs:decimal"/>
+    <xs:attribute name="Z" type="xs:decimal"/>
+    <xs:attribute name="Nav" type="NavType"/>
+  </xs:complexType>
+
+  <!-- TurnIn Quest -->
+  <xs:complexType name="TurnInType">
+    <xs:attribute name="QuestName" type="xs:string" use="required"/>
+    <xs:attribute name="QuestId" type="xs:integer" use="required"/>
+    <xs:attribute name="TurnInName" type="xs:string"/>
+    <xs:attribute name="TurnInId" type="xs:integer"/>
+    <xs:attribute name="X" type="xs:decimal"/>
+    <xs:attribute name="Y" type="xs:decimal"/>
+    <xs:attribute name="Z" type="xs:decimal"/>
+    <xs:attribute name="Nav" type="NavType"/>
+  </xs:complexType>
+
+  <!-- Objective -->
+  <xs:complexType name="ObjectiveType">
+    <xs:sequence>
+      <xs:element name="Hotspots" type="HotspotsType" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="QuestName" type="xs:string"/>
+    <xs:attribute name="QuestId" type="xs:integer"/>
+    <xs:attribute name="Type" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="KillMob"/>
+          <xs:enumeration value="CollectItem"/>
+          <xs:enumeration value="InteractWith"/>
+          <xs:enumeration value="UseObject"/>
+          <xs:enumeration value="TalkTo"/>
+          <xs:enumeration value="Location"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="MobId" type="xs:integer"/>
+    <xs:attribute name="MobName" type="xs:string"/>
+    <xs:attribute name="KillCount" type="xs:integer"/>
+    <xs:attribute name="ItemId" type="xs:integer"/>
+    <xs:attribute name="ItemName" type="xs:string"/>
+    <xs:attribute name="CollectCount" type="xs:integer"/>
+    <xs:attribute name="ObjectId" type="xs:integer"/>
+    <xs:attribute name="X" type="xs:decimal"/>
+    <xs:attribute name="Y" type="xs:decimal"/>
+    <xs:attribute name="Z" type="xs:decimal"/>
+  </xs:complexType>
+
+  <!-- RunTo -->
+  <xs:complexType name="RunToType">
+    <xs:attribute name="X" type="xs:decimal" use="required"/>
+    <xs:attribute name="Y" type="xs:decimal" use="required"/>
+    <xs:attribute name="Z" type="xs:decimal" use="required"/>
+    <xs:attribute name="QuestId" type="xs:integer"/>
+    <xs:attribute name="Nav" type="NavType"/>
+    <xs:attribute name="MovementBy" type="MovementByType"/>
+  </xs:complexType>
+
+  <!-- ==================== CONTROL FLOW ==================== -->
+
+  <!-- If Statement -->
+  <xs:complexType name="IfType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element name="PickUp" type="PickUpType"/>
+      <xs:element name="TurnIn" type="TurnInType"/>
+      <xs:element name="Objective" type="ObjectiveType"/>
+      <xs:element name="RunTo" type="RunToType"/>
+      <xs:element name="If" type="IfType"/>
+      <xs:element name="While" type="WhileType"/>
+      <xs:element name="CustomBehavior" type="CustomBehaviorType"/>
+      <xs:element name="SetGrindArea" type="SetGrindAreaType"/>
+      <xs:element name="GrindTo" type="GrindToType"/>
+      <xs:element name="Code" type="xs:string"/>
+    </xs:choice>
+    <xs:attribute name="Condition" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <!-- While Loop -->
+  <xs:complexType name="WhileType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element name="PickUp" type="PickUpType"/>
+      <xs:element name="TurnIn" type="TurnInType"/>
+      <xs:element name="Objective" type="ObjectiveType"/>
+      <xs:element name="RunTo" type="RunToType"/>
+      <xs:element name="If" type="IfType"/>
+      <xs:element name="While" type="WhileType"/>
+      <xs:element name="CustomBehavior" type="CustomBehaviorType"/>
+      <xs:element name="Code" type="xs:string"/>
+    </xs:choice>
+    <xs:attribute name="Condition" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <!-- ==================== CUSTOM BEHAVIORS ==================== -->
+
+  <xs:complexType name="CustomBehaviorType">
+    <xs:sequence>
+      <xs:element name="HuntingGrounds" type="HuntingGroundsType" minOccurs="0"/>
+      <xs:element name="Hotspots" type="HotspotsType" minOccurs="0"/>
+    </xs:sequence>
+    
+    <!-- Required -->
+    <xs:attribute name="File" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <!-- Core Behaviors -->
+          <xs:enumeration value="InteractWith"/>
+          <xs:enumeration value="Message"/>
+          <xs:enumeration value="LoadProfile"/>
+          <xs:enumeration value="UseTransport"/>
+          <xs:enumeration value="TaxiRide"/>
+          <xs:enumeration value="FlyTo"/>
+          <xs:enumeration value="ForceSetVendor"/>
+          <xs:enumeration value="SetHearthstone"/>
+          <xs:enumeration value="UseHearthstone"/>
+          <xs:enumeration value="WaitTimer"/>
+          <xs:enumeration value="RunMacro"/>
+          <xs:enumeration value="RunLua"/>
+          <xs:enumeration value="Escort"/>
+          <xs:enumeration value="MyCTM"/>
+          <xs:enumeration value="SpecificMobLoot"/>
+          <xs:enumeration value="UseItem"/>
+          <xs:enumeration value="UseItemOn"/>
+          <xs:enumeration value="CastSpellOn"/>
+          <xs:enumeration value="CombatUseItemOn"/>
+          <xs:enumeration value="BasicUseObject"/>
+          <xs:enumeration value="MoveToAndUseItem"/>
+          <xs:enumeration value="CollectThings"/>
+          <xs:enumeration value="CompleteLogQuest"/>
+          <xs:enumeration value="Misc\RunCode"/>
+          <xs:enumeration value="Misc\Interrupt"/>
+          <!-- Cava Custom Behaviors -->
+          <xs:enumeration value="Cava\CastSpellOn"/>
+          <xs:enumeration value="Cava\GoSavedInn"/>
+          <xs:enumeration value="Cava\BuyBags"/>
+          <xs:enumeration value="Cava\SetHearthstone"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    
+    <!-- Common Optional Attributes -->
+    <xs:attribute name="QuestId" type="xs:integer"/>
+    <xs:attribute name="QuestName" type="xs:string"/>
+    <xs:attribute name="MobId" type="xs:integer"/>
+    <xs:attribute name="MobIds" type="xs:string"/>
+    <xs:attribute name="ObjectId" type="xs:integer"/>
+    <xs:attribute name="ObjectIds" type="xs:string"/>
+    <xs:attribute name="ItemId" type="xs:integer"/>
+    <xs:attribute name="NumOfTimes" type="xs:integer"/>
+    <xs:attribute name="CollectionDistance" type="xs:integer"/>
+    <xs:attribute name="WaitTime" type="xs:integer"/>
+    <xs:attribute name="Range" type="xs:decimal"/>
+    <xs:attribute name="MinRange" type="xs:decimal"/>
+    <xs:attribute name="X" type="xs:decimal"/>
+    <xs:attribute name="Y" type="xs:decimal"/>
+    <xs:attribute name="Z" type="xs:decimal"/>
+    <xs:attribute name="Nav" type="NavType"/>
+    <xs:attribute name="MovementBy" type="MovementByType"/>
+    
+    <!-- InteractWith Specific -->
+    <xs:attribute name="InteractByUsingItemId" type="xs:integer"/>
+    <xs:attribute name="InteractByCastingSpellId" type="xs:integer"/>
+    <xs:attribute name="InteractByBuyingItemId" type="xs:integer"/>
+    <xs:attribute name="InteractByQuestFrameAction">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Accept"/>
+          <xs:enumeration value="Complete"/>
+          <xs:enumeration value="Continue"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="InteractByGossipOptions" type="xs:string"/>
+    <xs:attribute name="InteractByLooting" type="xs:boolean"/>
+    <xs:attribute name="MobState">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Alive"/>
+          <xs:enumeration value="AliveNotInCombat"/>
+          <xs:enumeration value="BelowHp"/>
+          <xs:enumeration value="Dead"/>
+          <xs:enumeration value="DontCare"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="AuraIdOnMob" type="xs:integer"/>
+    <xs:attribute name="AuraIdMissingFromMob" type="xs:integer"/>
+    <xs:attribute name="NonCompeteDistance" type="xs:integer"/>
+    <xs:attribute name="KeepTargetSelected" type="xs:boolean"/>
+    <xs:attribute name="NotMoving" type="xs:boolean"/>
+    <xs:attribute name="IgnoreMobsInBlackspots" type="xs:boolean"/>
+    <xs:attribute name="IgnoreCombat" type="xs:boolean"/>
+    <xs:attribute name="ProactiveCombatStrategy">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ClearAll"/>
+          <xs:enumeration value="ClearMobsTargetingUs"/>
+          <xs:enumeration value="ClearMobsThatWillAggro"/>
+          <xs:enumeration value="NoClear"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    
+    <!-- Message Specific -->
+    <xs:attribute name="Text" type="xs:string"/>
+    <xs:attribute name="LogColor">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Red"/>
+          <xs:enumeration value="Green"/>
+          <xs:enumeration value="Blue"/>
+          <xs:enumeration value="Yellow"/>
+          <xs:enumeration value="Orange"/>
+          <xs:enumeration value="Aquamarine"/>
+          <xs:enumeration value="White"/>
+          <xs:enumeration value="Gray"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    
+    <!-- LoadProfile Specific -->
+    <xs:attribute name="ProfileName" type="xs:string"/>
+    
+    <!-- UseTransport Specific -->
+    <xs:attribute name="TransportId" type="xs:integer"/>
+    <xs:attribute name="TransportStartX" type="xs:decimal"/>
+    <xs:attribute name="TransportStartY" type="xs:decimal"/>
+    <xs:attribute name="TransportStartZ" type="xs:decimal"/>
+    <xs:attribute name="TransportEndX" type="xs:decimal"/>
+    <xs:attribute name="TransportEndY" type="xs:decimal"/>
+    <xs:attribute name="TransportEndZ" type="xs:decimal"/>
+    <xs:attribute name="WaitAtX" type="xs:decimal"/>
+    <xs:attribute name="WaitAtY" type="xs:decimal"/>
+    <xs:attribute name="WaitAtZ" type="xs:decimal"/>
+    <xs:attribute name="GetOffX" type="xs:decimal"/>
+    <xs:attribute name="GetOffY" type="xs:decimal"/>
+    <xs:attribute name="GetOffZ" type="xs:decimal"/>
+    <xs:attribute name="StandOnX" type="xs:decimal"/>
+    <xs:attribute name="StandOnY" type="xs:decimal"/>
+    <xs:attribute name="StandOnZ" type="xs:decimal"/>
+    
+    <!-- TaxiRide Specific -->
+    <xs:attribute name="TaxiNumber" type="xs:integer"/>
+    <xs:attribute name="DestName" type="xs:string"/>
+    <xs:attribute name="NpcId" type="xs:integer"/>
+    
+    <!-- Spell Cast Specific -->
+    <xs:attribute name="SpellId" type="xs:integer"/>
+    <xs:attribute name="MobHpPercentLeft" type="xs:integer"/>
+    
+    <!-- SetHearthstone Specific -->
+    <xs:attribute name="BindPointAreaId" type="xs:integer"/>
+    
+    <!-- WaitTimer Specific -->
+    <xs:attribute name="WaitTimeMs" type="xs:integer"/>
+  </xs:complexType>
+
+  <!-- ==================== GRIND TYPES ==================== -->
+
+  <xs:complexType name="GrindAreaType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" minOccurs="0"/>
+      <xs:element name="Factions" type="xs:string" minOccurs="0"/>
+      <xs:element name="TargetMinLevel" type="xs:integer" minOccurs="0"/>
+      <xs:element name="TargetMaxLevel" type="xs:integer" minOccurs="0"/>
+      <xs:element name="Hotspots" type="HotspotsType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SetGrindAreaType">
+    <xs:sequence>
+      <xs:element name="GrindArea" type="GrindAreaType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GrindToType">
+    <xs:attribute name="Level" type="xs:integer" use="required"/>
+  </xs:complexType>
+
+  <!-- ==================== HOTSPOTS ==================== -->
+
+  <xs:complexType name="HotspotsType">
+    <xs:sequence>
+      <xs:element name="Hotspot" maxOccurs="unbounded" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="X" type="xs:decimal" use="required"/>
+          <xs:attribute name="Y" type="xs:decimal" use="required"/>
+          <xs:attribute name="Z" type="xs:decimal" use="required"/>
+          <xs:attribute name="Radius" type="xs:decimal"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="HuntingGroundsType">
+    <xs:sequence>
+      <xs:element name="Hotspot" maxOccurs="unbounded" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="X" type="xs:decimal" use="required"/>
+          <xs:attribute name="Y" type="xs:decimal" use="required"/>
+          <xs:attribute name="Z" type="xs:decimal" use="required"/>
+          <xs:attribute name="Radius" type="xs:decimal"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="WaypointVisitStrategy">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Random"/>
+          <xs:enumeration value="InOrder"/>
+          <xs:enumeration value="NearestFirst"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <!-- ==================== COMMON TYPES ==================== -->
+
+  <xs:simpleType name="NavType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Fly"/>
+      <xs:enumeration value="Run"/>
+      <xs:enumeration value="CTM"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="MovementByType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FlightorPreferred"/>
+      <xs:enumeration value="NavigatorPreferred"/>
+      <xs:enumeration value="ClickToMoveOnly"/>
+      <xs:enumeration value="NavigatorOnly"/>
+      <xs:enumeration value="None"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

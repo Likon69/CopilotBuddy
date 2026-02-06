@@ -1,0 +1,296 @@
+{
+  "HBProfile Template": {
+    "prefix": "hbprofile",
+    "body": [
+      "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
+      "<HBProfile>",
+      "  <Name>$1</Name>",
+      "",
+      "  <MinLevel>$2</MinLevel>",
+      "  <MaxLevel>$3</MaxLevel>",
+      "",
+      "  <MinDurability>0.3</MinDurability>",
+      "  <MinFreeBagSlots>2</MinFreeBagSlots>",
+      "",
+      "  <!-- Vendors -->",
+      "  <Vendors>",
+      "    <Vendor Name=\"$4\" Entry=\"$5\" Type=\"${6|Food,Repair,Sell,General|}\" X=\"$7\" Y=\"$8\" Z=\"$9\" />",
+      "  </Vendors>",
+      "",
+      "  <!-- Mailboxes -->",
+      "  <Mailboxes>",
+      "    <Mailbox X=\"$10\" Y=\"$11\" Z=\"$12\" />",
+      "  </Mailboxes>",
+      "",
+      "  <!-- Blackspots -->",
+      "  <Blackspots>",
+      "    $0",
+      "  </Blackspots>",
+      "",
+      "  <QuestOrder>",
+      "    <CustomBehavior File=\"Message\" Text=\"Starting profile: $1\" LogColor=\"Green\" />",
+      "",
+      "  </QuestOrder>",
+      "</HBProfile>"
+    ],
+    "description": "Complete HBProfile template with Vendors, Mailboxes, Blackspots"
+  },
+  
+  "PickUp Quest": {
+    "prefix": "pickup",
+    "body": [
+      "<PickUp QuestName=\"$1\" QuestId=\"$2\" GiverName=\"$3\" GiverId=\"$4\" X=\"$5\" Y=\"$6\" Z=\"$7\" />"
+    ],
+    "description": "PickUp quest action with coordinates"
+  },
+  
+  "TurnIn Quest": {
+    "prefix": "turnin",
+    "body": [
+      "<TurnIn QuestName=\"$1\" QuestId=\"$2\" TurnInName=\"$3\" TurnInId=\"$4\" X=\"$5\" Y=\"$6\" Z=\"$7\" />"
+    ],
+    "description": "TurnIn quest action with coordinates"
+  },
+  
+  "Kill Objective": {
+    "prefix": "killobj",
+    "body": [
+      "<Objective QuestName=\"$1\" QuestId=\"$2\" Type=\"KillMob\" MobId=\"$3\" MobName=\"$4\" KillCount=\"$5\" />"
+    ],
+    "description": "Kill mob objective"
+  },
+  
+  "Collect Objective": {
+    "prefix": "collectobj",
+    "body": [
+      "<Objective QuestName=\"$1\" QuestId=\"$2\" Type=\"CollectItem\" ItemId=\"$3\" ItemName=\"$4\" CollectCount=\"$5\" />"
+    ],
+    "description": "Collect item objective"
+  },
+  
+  "While Quest Loop": {
+    "prefix": "whilequest",
+    "body": [
+      "<While Condition=\"HasQuest($1) &amp;&amp; !IsQuestCompleted($1)\">",
+      "  $0",
+      "</While>"
+    ],
+    "description": "While loop for quest completion"
+  },
+  
+  "If Class Condition": {
+    "prefix": "ifclass",
+    "body": [
+      "<If Condition=\"Me.Class == WoWClass.${1|Warrior,Paladin,Hunter,Rogue,Priest,Shaman,Mage,Warlock,Druid,DeathKnight|}\">",
+      "  $0",
+      "</If>"
+    ],
+    "description": "If condition for class check"
+  },
+  
+  "If Race Condition": {
+    "prefix": "ifrace",
+    "body": [
+      "<If Condition=\"Me.Race == WoWRace.${1|Human,Dwarf,NightElf,Gnome,Draenei,Orc,Undead,Tauren,Troll,BloodElf|}\">",
+      "  $0",
+      "</If>"
+    ],
+    "description": "If condition for race check"
+  },
+  
+  "If HasQuest": {
+    "prefix": "ifhasquest",
+    "body": [
+      "<If Condition=\"HasQuest($1) &amp;&amp; !IsQuestCompleted($1)\">",
+      "  $0",
+      "</If>"
+    ],
+    "description": "If condition checking if player has quest"
+  },
+  
+  "If Not HasQuest": {
+    "prefix": "ifnotquest",
+    "body": [
+      "<If Condition=\"((!HasQuest($1)) &amp;&amp; (!IsQuestCompleted($1)))\">",
+      "  $0",
+      "</If>"
+    ],
+    "description": "If condition checking if player does not have quest"
+  },
+  
+  "InteractWith Basic": {
+    "prefix": "interact",
+    "body": [
+      "<CustomBehavior File=\"InteractWith\" QuestId=\"$1\" MobId=\"$2\" NumOfTimes=\"$3\" X=\"$4\" Y=\"$5\" Z=\"$6\" />"
+    ],
+    "description": "Basic InteractWith CustomBehavior"
+  },
+  
+  "InteractWith HuntingGrounds": {
+    "prefix": "interacthunt",
+    "body": [
+      "<CustomBehavior File=\"InteractWith\" QuestId=\"$1\" MobId=\"$2\" NumOfTimes=\"$3\" ProactiveCombatStrategy=\"ClearMobsTargetingUs\">",
+      "  <HuntingGrounds>",
+      "    <Hotspot X=\"$4\" Y=\"$5\" Z=\"$6\" />",
+      "    <Hotspot X=\"$7\" Y=\"$8\" Z=\"$9\" />",
+      "    $0",
+      "  </HuntingGrounds>",
+      "</CustomBehavior>"
+    ],
+    "description": "InteractWith with HuntingGrounds hotspots"
+  },
+  
+  "InteractWith ItemUse": {
+    "prefix": "interactitem",
+    "body": [
+      "<CustomBehavior File=\"InteractWith\" QuestId=\"$1\" MobId=\"$2\" InteractByUsingItemId=\"$3\" NumOfTimes=\"$4\" X=\"$5\" Y=\"$6\" Z=\"$7\" />"
+    ],
+    "description": "InteractWith using an item on mob"
+  },
+  
+  "InteractWith SpellCast": {
+    "prefix": "interactspell",
+    "body": [
+      "<CustomBehavior File=\"InteractWith\" QuestId=\"$1\" MobId=\"$2\" InteractByCastingSpellId=\"$3\" NumOfTimes=\"$4\" X=\"$5\" Y=\"$6\" Z=\"$7\" />"
+    ],
+    "description": "InteractWith by casting spell on mob"
+  },
+  
+  "InteractWith BuyItem": {
+    "prefix": "interactbuy",
+    "body": [
+      "<CustomBehavior File=\"InteractWith\" MobId=\"$1\" MobState=\"Alive\" InteractByBuyingItemId=\"$2\" WaitTime=\"4000\" NonCompeteDistance=\"0\" X=\"$3\" Y=\"$4\" Z=\"$5\" />"
+    ],
+    "description": "InteractWith to buy item from vendor"
+  },
+  
+  "Message": {
+    "prefix": "message",
+    "body": [
+      "<CustomBehavior File=\"Message\" Text=\"$1\" LogColor=\"${2|Green,Red,Blue,Yellow,Orange,Aquamarine,White|}\" />"
+    ],
+    "description": "Display message in log"
+  },
+  
+  "LoadProfile": {
+    "prefix": "loadprofile",
+    "body": [
+      "<CustomBehavior File=\"LoadProfile\" ProfileName=\"$1\" />"
+    ],
+    "description": "Load another profile"
+  },
+  
+  "UseTransport": {
+    "prefix": "transport",
+    "body": [
+      "<CustomBehavior File=\"UseTransport\" TransportId=\"$1\"",
+      "  WaitAtX=\"$2\" WaitAtY=\"$3\" WaitAtZ=\"$4\"",
+      "  GetOffX=\"$5\" GetOffY=\"$6\" GetOffZ=\"$7\"",
+      "  StandOnX=\"$8\" StandOnY=\"$9\" StandOnZ=\"${10}\"",
+      "  TransportStartX=\"${11}\" TransportStartY=\"${12}\" TransportStartZ=\"${13}\"",
+      "  TransportEndX=\"${14}\" TransportEndY=\"${15}\" TransportEndZ=\"${16}\" />"
+    ],
+    "description": "Use transport (boat, zeppelin)"
+  },
+  
+  "TaxiRide": {
+    "prefix": "taxi",
+    "body": [
+      "<CustomBehavior File=\"TaxiRide\" TaxiNumber=\"$1\" DestName=\"$2\" NpcId=\"$3\" X=\"$4\" Y=\"$5\" Z=\"$6\" />"
+    ],
+    "description": "Take a taxi/flight path"
+  },
+  
+  "RunTo": {
+    "prefix": "runto",
+    "body": [
+      "<RunTo X=\"$1\" Y=\"$2\" Z=\"$3\" />"
+    ],
+    "description": "Run to coordinates"
+  },
+  
+  "SetGrindArea": {
+    "prefix": "grindarea",
+    "body": [
+      "<SetGrindArea>",
+      "  <GrindArea>",
+      "    <Name>$1</Name>",
+      "    <Factions>$2</Factions>",
+      "    <TargetMinLevel>$3</TargetMinLevel>",
+      "    <TargetMaxLevel>$4</TargetMaxLevel>",
+      "    <Hotspots>",
+      "      <Hotspot X=\"$5\" Y=\"$6\" Z=\"$7\" />",
+      "      $0",
+      "    </Hotspots>",
+      "  </GrindArea>",
+      "</SetGrindArea>"
+    ],
+    "description": "Set grind area for mob grinding"
+  },
+  
+  "GrindTo Level": {
+    "prefix": "grindto",
+    "body": [
+      "<GrindTo Level=\"$1\" />"
+    ],
+    "description": "Grind until specific level"
+  },
+  
+  "Vendor Entry": {
+    "prefix": "vendor",
+    "body": [
+      "<Vendor Name=\"$1\" Entry=\"$2\" Type=\"${3|Food,Repair,Sell,General,Ammo|}\" X=\"$4\" Y=\"$5\" Z=\"$6\" />"
+    ],
+    "description": "Vendor declaration"
+  },
+  
+  "Mailbox Entry": {
+    "prefix": "mailbox",
+    "body": [
+      "<Mailbox X=\"$1\" Y=\"$2\" Z=\"$3\" />"
+    ],
+    "description": "Mailbox declaration"
+  },
+  
+  "Blackspot Entry": {
+    "prefix": "blackspot",
+    "body": [
+      "<Blackspot X=\"$1\" Y=\"$2\" Z=\"$3\" Radius=\"$4\" />"
+    ],
+    "description": "Blackspot (avoid area) declaration"
+  },
+  
+  "Hotspot": {
+    "prefix": "hotspot",
+    "body": [
+      "<Hotspot X=\"$1\" Y=\"$2\" Z=\"$3\" />"
+    ],
+    "description": "Single hotspot coordinate"
+  },
+  
+  "Bag Check and Buy": {
+    "prefix": "bagcheck",
+    "body": [
+      "<If Condition=\"((Lua.GetReturnVal&lt;int&gt;(&quot;return GetContainerNumSlots($1)&quot;, 0)) &lt; 6) &amp;&amp; Me.Silver >= 5\">",
+      "  <CustomBehavior File=\"Message\" Text=\"Buying bag...\" LogColor=\"Aquamarine\" />",
+      "  <CustomBehavior File=\"InteractWith\" MobId=\"$2\" MobState=\"Alive\" InteractByBuyingItemId=\"4496\" WaitTime=\"4000\" NonCompeteDistance=\"0\" X=\"$3\" Y=\"$4\" Z=\"$5\" />",
+      "</If>"
+    ],
+    "description": "Check bag slot and buy if needed"
+  },
+  
+  "Quest Override": {
+    "prefix": "questoverride",
+    "body": [
+      "<Quest Id=\"$1\" Name=\"$2\">",
+      "  <Objective Type=\"${3|KillMob,CollectItem,InteractWith,UseObject|}\" ${4:MobId}=\"$5\" ${6:KillCount}=\"${7:1}\">",
+      "    <Hotspots>",
+      "      <Hotspot X=\"$8\" Y=\"$9\" Z=\"${10}\" />",
+      "      $0",
+      "    </Hotspots>",
+      "  </Objective>",
+      "</Quest>"
+    ],
+    "description": "Quest Override with Hotspots"
+  }
+}

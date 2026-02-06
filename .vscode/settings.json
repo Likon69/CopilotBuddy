@@ -1,0 +1,20 @@
+{
+  "xml.fileAssociations": [
+    {
+      "pattern": "**/output_v2/**/*.xml",
+      "systemId": "${workspaceFolder}/Tools/ProfileGeneratorV2/schemas/HBProfile.xsd"
+    },
+    {
+      "pattern": "**/*Profile*.xml",
+      "systemId": "${workspaceFolder}/Tools/ProfileGeneratorV2/schemas/HBProfile.xsd"
+    },
+    {
+      "pattern": "**/*Quest*.xml",
+      "systemId": "${workspaceFolder}/Tools/ProfileGeneratorV2/schemas/HBProfile.xsd"
+    }
+  ],
+  "xml.validation.enabled": true,
+  "xml.completion.autoCloseTags": true,
+  "xml.format.enabled": true,
+  "xml.format.splitAttributes": false
+}
