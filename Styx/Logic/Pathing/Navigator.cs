@@ -223,6 +223,10 @@ namespace Styx.Logic.Pathing
 					var start = new Vector3(me.Location.X, me.Location.Y, me.Location.Z);
 					var end = new Vector3(destination.X, destination.Y, destination.Z);
 
+					// Ensure blackspots are marked on navmesh before pathfinding
+					// This is HB 4.3.4's OnTileLoaded workaround
+					BlackspotManager.EnsureBlackspotsMarked();
+
 					var result = TripperNavigator.FindPath(mapId, start, end, true);
 					if (result.Status.Succeeded && result.Points != null && result.Points.Length > 0)
 					{
@@ -354,6 +358,9 @@ namespace Styx.Logic.Pathing
 			var startVec = new Vector3(start.X, start.Y, start.Z);
 			var endVec = new Vector3(destination.X, destination.Y, destination.Z);
 
+			// Ensure blackspots are marked before pathfinding
+			BlackspotManager.EnsureBlackspotsMarked();
+
 			var result = TripperNavigator.FindPath(mapId, startVec, endVec, true);
 			
 			// Check if path is complete (reached destination)
@@ -382,6 +389,9 @@ namespace Styx.Logic.Pathing
 			uint mapId = (uint)(GetCurrentMapId());
 			var startVec = new Vector3(start.X, start.Y, start.Z);
 			var endVec = new Vector3(destination.X, destination.Y, destination.Z);
+
+			// Ensure blackspots are marked before pathfinding
+			BlackspotManager.EnsureBlackspotsMarked();
 
 			var result = TripperNavigator.FindPath(mapId, startVec, endVec, true);
 			if (result.Status.Succeeded && result.Points != null && result.Points.Length > 0)
