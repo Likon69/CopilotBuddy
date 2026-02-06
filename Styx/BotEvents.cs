@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Styx.Helpers;
 using Styx.Logic.BehaviorTree;
+using Styx.WoWInternals;
 using Styx.WoWInternals.WoWObjects;
 
 namespace Styx
@@ -22,6 +23,9 @@ namespace Styx
 		static BotEvents()
 		{
 			_eventCheckers = new List<Action>();
+			// HB 4.3.4 pattern: register event checkers that run each pulse
+			_eventCheckers.Add(Player.CheckLevelChange);
+			_eventCheckers.Add(Player.CheckMapChange);
 		}
 
 		/// <summary>
@@ -362,6 +366,64 @@ namespace Styx
 			private static MobLootedDelegate _onMobLooted;
 			private static MapChangedDelegate _onMapChanged;
 			private static PlayerDiedDelegate _onPlayerDied;
+
+			// HB 4.3.4 pattern: track last known level/map to detect changes
+			private static int _lastKnownLevel;
+			private static uint? _lastKnownMapId;
+
+			/// <summary>
+			/// HB 4.3.4 pattern: Check if player level changed since last pulse.
+			/// Called every pulse by BotEvents.PulseEvents().
+			/// </summary>
+			internal static void CheckLevelChange()
+			{
+				if (ObjectManager.Me == null || !StyxWoW.IsInGame)
+					return;
+
+				int currentLevel = ObjectManager.Me.Level;
+
+				// Initialize on first check
+				if (_lastKnownLevel == 0)
+				{
+					_lastKnownLevel = currentLevel;
+					return;
+				}
+
+				// Level increased
+				if (currentLevel > _lastKnownLevel)
+				{
+					int oldLevel = _lastKnownLevel;
+					_lastKnownLevel = currentLevel;
+					RaiseLevelUp(oldLevel, currentLevel);
+				}
+			}
+
+			/// <summary>
+			/// HB 4.3.4 pattern: Check if map changed since last pulse.
+			/// Called every pulse by BotEvents.PulseEvents().
+			/// </summary>
+			internal static void CheckMapChange()
+			{
+				if (ObjectManager.Me == null || !StyxWoW.IsInGame)
+					return;
+
+				uint currentMapId = ObjectManager.Me.MapId;
+
+				// Initialize on first check
+				if (!_lastKnownMapId.HasValue)
+				{
+					_lastKnownMapId = currentMapId;
+					return;
+				}
+
+				// Map changed
+				if (currentMapId != _lastKnownMapId.Value)
+				{
+					uint oldMapId = _lastKnownMapId.Value;
+					_lastKnownMapId = currentMapId;
+					RaiseMapChanged(oldMapId, currentMapId);
+				}
+			}
 
 			public static event LevelUpDelegate OnLevelUp
 			{
