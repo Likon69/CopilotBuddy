@@ -26,7 +26,7 @@ class Hotspot:
 @dataclass 
 class QuestStep:
     """Represents a single step in a quest profile"""
-    step_type: str  # PickUp, TurnIn, Objective, etc.
+    step_type: str  # PickUp, TurnIn, Objective, UseItem, InteractWith, etc.
     quest_id: Optional[int] = None
     quest_name: Optional[str] = None
     npc_id: Optional[int] = None
@@ -46,6 +46,13 @@ class QuestStep:
     objective_index: Optional[int] = None
     game_object_id: Optional[int] = None  # For clickable world objects
     game_object_name: Optional[str] = None
+    # Phase 1: CustomBehavior fields
+    use_item_id: Optional[int] = None  # For UseItemOn behavior
+    use_item_name: Optional[str] = None
+    target_mob_id: Optional[int] = None  # Target for UseItemOn/CastSpellOn
+    target_mob_name: Optional[str] = None
+    num_of_times: int = 1  # Number of uses/interactions
+    gossip_options: Optional[str] = None  # For InteractWith dialog selection
 
 @dataclass
 class QuestInfo:
@@ -180,6 +187,12 @@ PATTERN_QUEST_OBJ = re.compile(r'\|q\s+(\d+)/(\d+)')
 PATTERN_ONLY_IF = re.compile(r'\|only\s+(?:if\s+)?(.+)$')  # Handles both |only if X and |only X
 # Match click with optional ID: click Name##ID or click Name
 PATTERN_CLICK = re.compile(r'click\s+([^#\n]+?)(?:##(\d+))?(?:\s|$|\|)')
+
+# Phase 1: New patterns for CustomBehaviors
+# Match use Item##ID |q QuestID - for UseItemOn behavior
+PATTERN_USE = re.compile(r'use\s+([^#]+)##(\d+)')
+# Match use with target: use Item##ID |use NPC##ID or implied target
+PATTERN_USE_TARGET = re.compile(r'\|use\s+([^#]+)##(\d+)')
 
 # Race patterns for filtering (Scourge = Undead in Zygor guides)
 RACE_KEYWORDS = ['Orc', 'Troll', 'Tauren', 'Undead', 'Scourge', 'BloodElf', 'Goblin',
@@ -549,17 +562,140 @@ class ZygorParser:
                     if next_line.startswith('|only'):
                         line_race_filter, line_class_filter, line_negate_filter = extract_filter(next_line)
                 
-                # Parse click (sets current GameObject for collect)
+                # Parse click - creates InteractWith step AND sets context for collect
                 click_match = PATTERN_CLICK.search(line)
                 if click_match:
                     current_game_object_name = click_match.group(1).strip()
                     current_game_object_id = int(click_match.group(2)) if click_match.group(2) else None
+                    
+                    # Get quest ID from |q QuestID/ObjectiveIndex
+                    quest_obj_match = PATTERN_QUEST_OBJ.search(line)
+                    quest_id = int(quest_obj_match.group(1)) if quest_obj_match else None
+                    obj_index = int(quest_obj_match.group(2)) if quest_obj_match else None
+                    
+                    # Get quest name from active quests or Questie
+                    quest_name = None
+                    if quest_id:
+                        quest_name = active_quests.get(quest_id)
+                        if not quest_name and quest_id in self.questie_quests:
+                            quest_name = self.questie_quests[quest_id].name
+                    
+                    # Determine num_of_times from objective text if available
+                    num_times = 1
+                    if quest_id and quest_id in self.questie_quests:
+                        quest_info = self.questie_quests[quest_id]
+                        for text in quest_info.objectives_text:
+                            # Look for patterns like "Rescue 5 Crusaders"
+                            count_match = re.search(r'(\d+)\s+' + re.escape(current_game_object_name.lower()), text.lower())
+                            if count_match:
+                                num_times = int(count_match.group(1))
+                                break
+                    
+                    # Create InteractWith step for click actions
+                    if current_game_object_id:
+                        step = QuestStep(
+                            step_type="InteractWith",
+                            quest_id=quest_id,
+                            quest_name=quest_name,
+                            game_object_id=current_game_object_id,
+                            game_object_name=current_game_object_name,
+                            num_of_times=num_times,
+                            zone=current_zone,
+                            map_id=current_map_id,
+                            objective_index=obj_index,
+                            race_filter=line_race_filter,
+                            class_filter=line_class_filter,
+                            negate_filter=line_negate_filter
+                        )
+                        if current_coords:
+                            step.hotspots.append(Hotspot(x=current_coords[0], y=current_coords[1]))
+                        guide.steps.append(step)
                 
-                # Parse talk (sets current NPC for accept/turnin)
+                # Parse use Item##ID - creates UseItemOn step
+                use_match = PATTERN_USE.search(line)
+                if use_match:
+                    item_name = use_match.group(1).strip()
+                    item_id = int(use_match.group(2))
+                    
+                    # Get quest ID from |q QuestID/ObjectiveIndex
+                    quest_obj_match = PATTERN_QUEST_OBJ.search(line)
+                    quest_id = int(quest_obj_match.group(1)) if quest_obj_match else None
+                    obj_index = int(quest_obj_match.group(2)) if quest_obj_match else None
+                    
+                    # Get quest name
+                    quest_name = None
+                    if quest_id:
+                        quest_name = active_quests.get(quest_id)
+                        if not quest_name and quest_id in self.questie_quests:
+                            quest_name = self.questie_quests[quest_id].name
+                    
+                    # Check for target mob: |use Mob##ID on same line
+                    target_mob_id = None
+                    target_mob_name = None
+                    use_target_match = PATTERN_USE_TARGET.search(line)
+                    if use_target_match:
+                        target_mob_name = use_target_match.group(1).strip()
+                        target_mob_id = int(use_target_match.group(2))
+                    
+                    # Create UseItem step
+                    step = QuestStep(
+                        step_type="UseItem",
+                        quest_id=quest_id,
+                        quest_name=quest_name,
+                        use_item_id=item_id,
+                        use_item_name=item_name,
+                        target_mob_id=target_mob_id,
+                        target_mob_name=target_mob_name,
+                        zone=current_zone,
+                        map_id=current_map_id,
+                        objective_index=obj_index,
+                        race_filter=line_race_filter,
+                        class_filter=line_class_filter,
+                        negate_filter=line_negate_filter
+                    )
+                    if current_coords:
+                        step.hotspots.append(Hotspot(x=current_coords[0], y=current_coords[1]))
+                    guide.steps.append(step)
+                
+                # Parse talk - sets current NPC AND creates InteractWith if quest-related
                 talk_match = PATTERN_TALK.search(line)
                 if talk_match:
                     current_npc_name = talk_match.group(1).strip()
                     current_npc_id = int(talk_match.group(2))
+                    
+                    # Check if this is a standalone talk (quest objective, not accept/turnin)
+                    # If |q ID/N is present but no 'accept' or 'turnin' on this line, it's an InteractWith
+                    quest_obj_match = PATTERN_QUEST_OBJ.search(line)
+                    has_accept = PATTERN_ACCEPT.search(line)
+                    has_turnin = PATTERN_TURNIN.search(line)
+                    
+                    if quest_obj_match and not has_accept and not has_turnin:
+                        quest_id = int(quest_obj_match.group(1))
+                        obj_index = int(quest_obj_match.group(2))
+                        
+                        # Get quest name
+                        quest_name = active_quests.get(quest_id)
+                        if not quest_name and quest_id in self.questie_quests:
+                            quest_name = self.questie_quests[quest_id].name
+                        
+                        # Create InteractWith step for talk with quest objective
+                        step = QuestStep(
+                            step_type="InteractWith",
+                            quest_id=quest_id,
+                            quest_name=quest_name,
+                            npc_id=current_npc_id,
+                            npc_name=current_npc_name,
+                            gossip_options="1",  # Default to first dialog option
+                            zone=current_zone,
+                            map_id=current_map_id,
+                            objective_index=obj_index,
+                            race_filter=line_race_filter,
+                            class_filter=line_class_filter,
+                            negate_filter=line_negate_filter
+                        )
+                        if current_coords:
+                            step.hotspots.append(Hotspot(x=current_coords[0], y=current_coords[1]))
+                        guide.steps.append(step)
                 
                 # Parse accept quest
                 accept_match = PATTERN_ACCEPT.search(line)
@@ -1037,6 +1173,48 @@ class ProfileGenerator:
                     attrs.append(f'ItemName="{self._escape_xml(step.item_name)}"')
                 attrs.append(f'CollectCount="{step.collect_count}"')
                 return f'{indent}<Objective {" ".join(attrs)} />'
+        
+        # Phase 1: UseItemOn CustomBehavior for 'use Item##ID' actions
+        elif step.step_type == "UseItem":
+            if step.use_item_id:
+                attrs = ['File="UseItemOn"']
+                if step.quest_id:
+                    attrs.append(f'QuestId="{step.quest_id}"')
+                attrs.append(f'ItemId="{step.use_item_id}"')
+                
+                # MobId: target mob if specified, else 0 (use on ground/self)
+                mob_id = step.target_mob_id or 0
+                attrs.append(f'MobId="{mob_id}"')
+                
+                # Standard parameters
+                attrs.append('NumOfTimes="1"')
+                attrs.append('CollectionDistance="30"')
+                attrs.append('WaitTime="1500"')
+                
+                return f'{indent}<CustomBehavior {" ".join(attrs)} />'
+        
+        # Phase 1: InteractWith CustomBehavior for 'click Object##ID' and 'talk NPC##ID |q' actions
+        elif step.step_type == "InteractWith":
+            # Target can be NPC (npc_id) or GameObject (game_object_id)
+            target_id = step.npc_id or step.game_object_id
+            if target_id:
+                attrs = ['File="InteractWith"']
+                if step.quest_id:
+                    attrs.append(f'QuestId="{step.quest_id}"')
+                attrs.append(f'MobId="{target_id}"')
+                
+                # NumOfTimes from step or default 1
+                num_times = step.num_of_times if step.num_of_times > 1 else 1
+                attrs.append(f'NumOfTimes="{num_times}"')
+                
+                # GossipOptions if talking to NPC (for dialog selection)
+                if step.gossip_options:
+                    attrs.append(f'GossipOptions="{step.gossip_options}"')
+                
+                # Standard parameters
+                attrs.append('CollectionDistance="100"')
+                
+                return f'{indent}<CustomBehavior {" ".join(attrs)} />'
         
         return None
     

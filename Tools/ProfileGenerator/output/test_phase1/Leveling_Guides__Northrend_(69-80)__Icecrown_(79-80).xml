@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Northrend (69-80)\\Icecrown (79-80)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>80</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="13130" Name="The Stone That Started A Revolution">
+    <Objective Type="CollectItem" ItemId="43217" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Crystalline Heartwood" Id="192908" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="5190.21" Y="-550.72" Z="158.29" />
+        <Hotspot X="5193.58" Y="-745.84" Z="171.52" />
+        <Hotspot X="5202.85" Y="-523.49" Z="158.93" />
+        <Hotspot X="5208.22" Y="-480.03" Z="165.03" />
+        <Hotspot X="5209.88" Y="-424.4" Z="163.29" />
+        <Hotspot X="5216.55" Y="-376.95" Z="164.35" />
+        <Hotspot X="5225.73" Y="-289.27" Z="163.06" />
+        <Hotspot X="5248.26" Y="-349.01" Z="168.73" />
+        <Hotspot X="5252.09" Y="-425.73" Z="169.26" />
+        <Hotspot X="5255.4" Y="-653.26" Z="161.67" />
+        <Hotspot X="5257.4" Y="-244.59" Z="164.89" />
+        <Hotspot X="5269.51" Y="-226.24" Z="163.65" />
+        <Hotspot X="5271.9" Y="-388.62" Z="172.92" />
+        <Hotspot X="5271.92" Y="-290.39" Z="170.3" />
+        <Hotspot X="5292.29" Y="-515.03" Z="164.04" />
+        <Hotspot X="5296.73" Y="-637.24" Z="163.09" />
+        <Hotspot X="5311.18" Y="-177.52" Z="161.22" />
+        <Hotspot X="5319.35" Y="-147.81" Z="155.16" />
+        <Hotspot X="5323.51" Y="-724.96" Z="162.92" />
+        <Hotspot X="5340.48" Y="-478.35" Z="171.97" />
+        <Hotspot X="5344.52" Y="-141.9" Z="154.85" />
+        <Hotspot X="5345.17" Y="-524.66" Z="165.89" />
+        <Hotspot X="5360.88" Y="-182.32" Z="161.84" />
+        <Hotspot X="5361.66" Y="-790.08" Z="161.06" />
+        <Hotspot X="5424.16" Y="-135.82" Z="149.69" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="43218" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Ancient Elven Masonry" Id="192909" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="5268.77" Y="-721.29" Z="166.35" />
+        <Hotspot X="5354.96" Y="-812.44" Z="165.44" />
+        <Hotspot X="5362.9" Y="-777.92" Z="156.71" />
+        <Hotspot X="5426.18" Y="-953.74" Z="163.57" />
+        <Hotspot X="5465.24" Y="-556.62" Z="157.92" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12838" Name="Intelligence Gathering">
+    <Objective Type="CollectItem" ItemId="40640" CollectCount="5">
+      <CollectFrom>
+        <GameObject Name="Scarlet Onslaught Trunk" Id="191543" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7489.22" Y="4810.58" Z="45.99" />
+        <Hotspot X="7511.52" Y="4886.39" Z="43.54" />
+        <Hotspot X="7520.19" Y="4765.9" Z="47.13" />
+        <Hotspot X="7549.66" Y="4891.61" Z="43.82" />
+        <Hotspot X="7563.18" Y="5065.6" Z="14.11" />
+        <Hotspot X="7576.99" Y="4916.52" Z="65.82" />
+        <Hotspot X="7584.19" Y="4662.59" Z="0.24" />
+        <Hotspot X="7597.44" Y="4980.11" Z="16.28" />
+        <Hotspot X="7600.41" Y="5085.66" Z="25.88" />
+        <Hotspot X="7611.01" Y="4865.4" Z="42.92" />
+        <Hotspot X="7614.83" Y="5118.76" Z="14.39" />
+        <Hotspot X="7616.25" Y="4931.21" Z="25.87" />
+        <Hotspot X="7618.98" Y="4939.71" Z="14.26" />
+        <Hotspot X="7635.05" Y="4778.91" Z="26.1" />
+        <Hotspot X="7665.67" Y="5086.51" Z="8.53" />
+        <Hotspot X="7675.99" Y="4997.1" Z="13.23" />
+        <Hotspot X="7676.96" Y="4996.17" Z="8.18" />
+        <Hotspot X="7679.29" Y="5095.15" Z="7.99" />
+        <Hotspot X="7679.41" Y="5095.29" Z="13.04" />
+        <Hotspot X="7691.3" Y="4861.3" Z="19.25" />
+        <Hotspot X="7691.97" Y="5088.43" Z="0.6" />
+        <Hotspot X="7703.76" Y="5003.9" Z="8.18" />
+        <Hotspot X="7714.74" Y="5085.72" Z="0.72" />
+        <Hotspot X="7715.47" Y="4999.3" Z="0.91" />
+        <Hotspot X="7718.83" Y="5092.97" Z="7.99" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="13174" Name="Amidst the Confusion">
+    <Objective Type="CollectItem" ItemId="43690" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Weeping Quarry Schedule" Id="193406" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7687.57" Y="3109.39" Z="558.59" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="43691" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Weeping Quarry Map" Id="193405" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7779.92" Y="3022.13" Z="519.57" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="43689" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Weeping Quarry Ledger" Id="193404" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7887.31" Y="2982.18" Z="519.18" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="43688" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Weeping Quarry Document" Id="193403" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="8022.29" Y="2991.09" Z="565.2" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Icecrown (79-80)" LogColor="Green" />
+    <PickUp QuestName="Preparations for War" QuestId="13419" GiverName="Sky-Reaver Klum" GiverId="31085" />
+    <PickUp QuestName="Honor Above All Else" QuestId="13036" GiverName="Highlord Tirion Fordring" GiverId="28179" />
+    <TurnIn QuestName="Honor Above All Else" QuestId="13036" TurnInName="Crusade Commander Entari" TurnInId="30223" />
+    <PickUp QuestName="Scourge Tactics" QuestId="13008" GiverName="Crusade Commander Entari" GiverId="30223" />
+    <PickUp QuestName="Curing The Incurable" QuestId="13040" GiverName="Father Gustav" GiverId="30226" />
+    <PickUp QuestName="Defending The Vanguard" QuestId="13039" GiverName="Crusader Lord Dalfors" GiverId="30224" />
+    <Objective QuestName="Curing The Incurable" QuestId="13040" Type="CollectItem" ItemId="42770" ItemName="Forgotten Depths Venom Sac" CollectCount="10" />
+    <TurnIn QuestName="Defending The Vanguard" QuestId="13039" TurnInName="Crusader Lord Dalfors" TurnInId="30224" />
+    <TurnIn QuestName="Curing The Incurable" QuestId="13040" TurnInName="Father Gustav" TurnInId="30226" />
+    <TurnIn QuestName="Scourge Tactics" QuestId="13008" TurnInName="Crusade Commander Entari" TurnInId="30223" />
+    <PickUp QuestName="If There Are Survivors..." QuestId="13044" GiverName="Crusade Commander Entari" GiverId="30223" />
+    <TurnIn QuestName="If There Are Survivors..." QuestId="13044" TurnInName="Penumbrius" TurnInId="30227" />
+    <PickUp QuestName="Into The Wild Green Yonder" QuestId="13045" GiverName="Penumbrius" GiverId="30227" />
+    <TurnIn QuestName="Into The Wild Green Yonder" QuestId="13045" TurnInName="Highlord Tirion Fordring" TurnInId="28179" />
+    <PickUp QuestName="A Cold Front Approaches" QuestId="13070" GiverName="Highlord Tirion Fordring" GiverId="28179" />
+    <TurnIn QuestName="A Cold Front Approaches" QuestId="13070" TurnInName="Siegemaster Fezzik" TurnInId="30657" />
+    <PickUp QuestName="The Last Line Of Defense" QuestId="13086" GiverName="Siegemaster Fezzik" GiverId="30657" />
+    <Objective QuestName="The Last Line Of Defense" QuestId="13086" Type="KillMob" MobId="30575" MobName="Frostbrood Destroyer" KillCount="3" />
+    <TurnIn QuestName="The Last Line Of Defense" QuestId="13086" TurnInName="Siegemaster Fezzik" TurnInId="30657" />
+    <If Condition="(Me.Class == WoWClass.DeathKnight)">
+      <PickUp QuestName="Once More Unto The Breach, Hero" QuestId="13105" GiverName="Highlord Tirion Fordring" GiverId="30677" />
+    </If>
+    <If Condition="!((Me.Class == WoWClass.DeathKnight))">
+      <PickUp QuestName="Once More Unto The Breach, Hero" QuestId="13104" GiverName="Highlord Tirion Fordring" GiverId="30677" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.DeathKnight)">
+      <TurnIn QuestName="Once More Unto The Breach, Hero" QuestId="13105" TurnInName="The Ebon Watcher" TurnInId="30596" />
+    </If>
+    <If Condition="!((Me.Class == WoWClass.DeathKnight))">
+      <TurnIn QuestName="Once More Unto The Breach, Hero" QuestId="13104" TurnInName="The Ebon Watcher" TurnInId="30596" />
+    </If>
+    <PickUp QuestName="The Purging Of Scourgeholme" QuestId="13118" GiverName="The Ebon Watcher" GiverId="30596" />
+    <PickUp QuestName="The Scourgestone" QuestId="13122" GiverName="The Ebon Watcher" GiverId="30596" />
+    <PickUp QuestName="The Stone That Started A Revolution" QuestId="13130" GiverName="Crusade Architect Silas" GiverId="30686" />
+    <PickUp QuestName="It Could Kill Us All" QuestId="13135" GiverName="Crusade Engineer Spitzpatrick" GiverId="30714" />
+    <PickUp QuestName="The Restless Dead" QuestId="13110" GiverName="Father Gustav" GiverId="30683" />
+    <Objective QuestName="The Stone That Started A Revolution" QuestId="13130" Type="CollectItem" ItemId="43217" ItemName="Crystalline Heartwood" CollectCount="10" />
+    <Objective QuestName="The Stone That Started A Revolution" QuestId="13130" Type="CollectItem" ItemId="43218" ItemName="Ancient Elven Masonry" CollectCount="10" />
+    <Objective QuestName="It Could Kill Us All" QuestId="13135" Type="CollectItem" ItemId="43225" ItemName="Crystallized Energy" CollectCount="8" />
+    <TurnIn QuestName="The Stone That Started A Revolution" QuestId="13130" TurnInName="Crusade Architect Silas" TurnInId="30686" />
+    <TurnIn QuestName="It Could Kill Us All" QuestId="13135" TurnInName="Crusade Engineer Spitzpatrick" TurnInId="30714" />
+    <Objective QuestName="The Purging Of Scourgeholme" QuestId="13118" Type="KillMob" MobId="31037" MobName="Forgotten Depths High Priest" KillCount="3" />
+    <Objective QuestName="The Purging Of Scourgeholme" QuestId="13118" Type="KillMob" MobId="31039" MobName="Forgotten Depths Underking" KillCount="3" />
+    <Objective QuestName="The Purging Of Scourgeholme" QuestId="13118" Type="KillMob" MobId="31043" MobName="Reanimated Crusader" KillCount="8" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="31043" MobName="Reanimated Crusader" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="43153" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="The Scourgestone" QuestId="13122" Type="CollectItem" ItemId="43169" ItemName="Scourgestone" CollectCount="15" />
+    <TurnIn QuestName="The Purging Of Scourgeholme" QuestId="13118" TurnInName="The Ebon Watcher" TurnInId="30596" />
+    <TurnIn QuestName="The Scourgestone" QuestId="13122" TurnInName="The Ebon Watcher" TurnInId="30596" />
+    <PickUp QuestName="The Air Stands Still" QuestId="13125" GiverName="The Ebon Watcher" GiverId="30596" />
+    <TurnIn QuestName="The Restless Dead" QuestId="13110" TurnInName="Father Gustav" TurnInId="30683" />
+    <CustomBehavior File="UseItemOn" ItemId="43206" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="The Air Stands Still" QuestId="13125" Type="KillMob" MobId="30829" MobName="Salranax the Flesh Render" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="43206" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="The Air Stands Still" QuestId="13125" Type="KillMob" MobId="30831" MobName="High Priest Yath&apos;amon" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="43206" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="The Air Stands Still" QuestId="13125" Type="KillMob" MobId="30830" MobName="Underking Talonox" KillCount="1" />
+    <TurnIn QuestName="The Air Stands Still" QuestId="13125" TurnInName="The Ebon Watcher" TurnInId="30596" />
+    <PickUp QuestName="Into The Frozen Heart Of Northrend" QuestId="13139" GiverName="Father Gustav" GiverId="30683" />
+    <TurnIn QuestName="Into The Frozen Heart Of Northrend" QuestId="13139" TurnInName="Highlord Tirion Fordring" TurnInId="30677" />
+    <PickUp QuestName="The Battle For Crusaders&apos; Pinnacle" QuestId="13141" GiverName="Highlord Tirion Fordring" GiverId="30677" />
+    <CustomBehavior File="UseItemOn" ItemId="43243" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30989" MobName="Halof the Deathbringer" KillCount="1" />
+    <TurnIn QuestName="The Battle For Crusaders&apos; Pinnacle" QuestId="13141" TurnInName="Father Gustav" TurnInId="30683" />
+    <PickUp QuestName="The Crusaders&apos; Pinnacle" QuestId="13157" GiverName="Father Gustav" GiverId="30683" />
+    <TurnIn QuestName="The Crusaders&apos; Pinnacle" QuestId="13157" TurnInName="Highlord Tirion Fordring" TurnInId="31044" />
+    <PickUp QuestName="A Tale of Valor" QuestId="13068" GiverName="Highlord Tirion Fordring" GiverId="31044" />
+    <PickUp QuestName="Orgrim&apos;s Hammer" QuestId="13224" GiverName="Warlord Hork Strongbrow" GiverId="31240" />
+    <TurnIn QuestName="Preparations for War" QuestId="13419" TurnInName="Sky-Reaver Korm Blackscar" TurnInId="30824" />
+    <TurnIn QuestName="Orgrim&apos;s Hammer" QuestId="13224" TurnInName="Sky-Reaver Korm Blackscar" TurnInId="30824" />
+    <PickUp QuestName="The Broken Front" QuestId="13228" GiverName="Sky-Reaver Korm Blackscar" GiverId="30824" />
+    <PickUp QuestName="It&apos;s All Fun and Games" QuestId="12892" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <PickUp QuestName="Blood of the Chosen" QuestId="13330" GiverName="Warbringer Davos Rioht" GiverId="32301" />
+    <PickUp QuestName="Joining the Assault" QuestId="13340" GiverName="Warbringer Davos Rioht" GiverId="32301" />
+    <PickUp QuestName="Slaves to Saronite" QuestId="13302" GiverName="Brother Keltan" GiverId="31261" />
+    <PickUp QuestName="Get to Ymirheim!" QuestId="13293" GiverName="Chief Engineer Copperclaw" GiverId="30825" />
+    <TurnIn QuestName="A Tale of Valor" QuestId="13068" TurnInName="Crusader Bridenbrad" TurnInId="30562" />
+    <PickUp QuestName="A Hero Remains" QuestId="13072" GiverName="Crusader Bridenbrad" GiverId="30562" />
+    <CustomBehavior File="UseItemOn" ItemId="41265" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="It&apos;s All Fun and Games" QuestId="12892" TurnInName="Baron Sliver" TurnInId="29804" />
+    <PickUp QuestName="I Have an Idea, But First..." QuestId="12891" GiverName="Baron Sliver" GiverId="29804" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="29717" MobName="Shadow Cultist" KillCount="1" />
+    <Objective QuestName="I Have an Idea, But First..." QuestId="12891" Type="CollectItem" ItemId="41359" ItemName="Cultist Rod" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="29719" MobName="Morbid Carcass" KillCount="1" />
+    <Objective QuestName="I Have an Idea, But First..." QuestId="12891" Type="CollectItem" ItemId="41361" ItemName="Abomination Hook" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="29720" MobName="Vault Geist" KillCount="1" />
+    <Objective QuestName="I Have an Idea, But First..." QuestId="12891" Type="CollectItem" ItemId="41362" ItemName="Geist Rope" CollectCount="1" />
+    <Objective QuestName="I Have an Idea, But First..." QuestId="12891" Type="CollectItem" ItemId="41363" ItemName="Scourge Essence" CollectCount="5" />
+    <TurnIn QuestName="I Have and Idea, But First..." QuestId="12891" TurnInName="Baron Sliver" TurnInId="29804" />
+    <PickUp QuestName="Free Your Mind" QuestId="12893" GiverName="Baron Sliver" GiverId="29804" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="29769" MobName="Vile" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="41366" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="29770" MobName="Lady Nightswood" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="41366" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="29840" MobName="The Leaper" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="41366" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Free Your Mind" QuestId="12893" TurnInName="Baron Sliver" TurnInId="29804" />
+    <PickUp QuestName="If He Cannot Be Turned" QuestId="12897" GiverName="Baron Sliver" GiverId="29804" />
+    <Objective QuestName="If He Cannot Be Turned" QuestId="12897" Type="KillMob" MobId="29851" MobName="General Lightsbane" KillCount="1" />
+    <TurnIn QuestName="Joining the Assault" QuestId="13340" TurnInName="Ground Commander Xutjja" TurnInId="31834" />
+    <PickUp QuestName="Assault by Air" QuestId="13310" GiverName="Ground Commander Xutjja" GiverId="31834" />
+    <TurnIn QuestName="Assault by Air" QuestId="13310" TurnInName="Ground Commander Xutjja" TurnInId="31834" />
+    <PickUp QuestName="Assault by Ground" QuestId="13301" GiverName="Kor&apos;kron Squad Leader" GiverId="31833" />
+    <TurnIn QuestName="Get to Ymirheim!" QuestId="13293" TurnInName="Blast Thunderbomb" TurnInId="31781" />
+    <PickUp QuestName="King of the Mountain" QuestId="13283" GiverName="Blast Thunderbomb" GiverId="31781" />
+    <TurnIn QuestName="King of the Mountain" QuestId="13283" TurnInName="Blast Thunderbomb" TurnInId="31781" />
+    <PickUp QuestName="Avenge Me!" QuestId="13230" GiverName="Dying Berserker" GiverId="31273" />
+    <TurnIn QuestName="A Hero Remains" QuestId="13072" TurnInName="Highlord Tirion Fordring" TurnInId="31044" />
+    <PickUp QuestName="The Keeper&apos;s Favor" QuestId="13073" GiverName="Highlord Tirion Fordring" GiverId="31044" />
+    <TurnIn QuestName="The Keeper&apos;s Favor" QuestId="13073" TurnInName="Keeper Remulos" TurnInId="11832" />
+    <PickUp QuestName="Hope Within the Emerald Nightmare" QuestId="13074" GiverName="Keeper Remulos" GiverId="11832" />
+    <Objective QuestName="Hope Within the Emerald Nightmare" QuestId="13074" Type="CollectItem" ItemId="43006" ItemName="Emerald Acorn" CollectCount="3" />
+    <TurnIn QuestName="Hope Within the Emerald Nightmare" QuestId="13074" TurnInName="Keeper Remulos" TurnInId="11832" />
+    <PickUp QuestName="The Boon of Remulos" QuestId="13075" GiverName="Keeper Remulos" GiverId="11832" />
+    <TurnIn QuestName="The Boon of Remulos" QuestId="13075" TurnInName="Crusader Bridenbrad" TurnInId="30562" />
+    <PickUp QuestName="Time Yet Remains" QuestId="13076" GiverName="Crusader Bridenbrad" GiverId="30562" />
+    <TurnIn QuestName="If He Cannot Be Turned" QuestId="12897" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <PickUp QuestName="The Shadow Vault" QuestId="12899" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <TurnIn QuestName="The Broken Front" QuestId="13228" TurnInName="Sky-Reaver Korm Blackscar" TurnInId="30824" />
+    <TurnIn QuestName="Avenge Me!" QuestId="13230" TurnInName="Sky-Reaver Korm Blackscar" TurnInId="30824" />
+    <PickUp QuestName="Good For Something?" QuestId="13238" GiverName="Sky-Reaver Korm Blackscar" GiverId="30824" />
+    <PickUp QuestName="Takes One to Know One" QuestId="13260" GiverName="Sky-Reaver Korm Blackscar" GiverId="30824" />
+    <TurnIn QuestName="Takes One to Know One" QuestId="13260" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <PickUp QuestName="Poke and Prod" QuestId="13237" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <TurnIn QuestName="Blood of the Chosen" QuestId="13330" TurnInName="Warbringer Davos Rioht" TurnInId="32301" />
+    <TurnIn QuestName="Slaves to Saronite" QuestId="13302" TurnInName="Brother Keltan" TurnInId="31261" />
+    <TurnIn QuestName="Good For Something?" QuestId="13238" TurnInName="Chief Engineer Copperclaw" TurnInId="30825" />
+    <PickUp QuestName="Volatility" QuestId="13239" GiverName="Chief Engineer Copperclaw" GiverId="30825" />
+    <TurnIn QuestName="Assault by Ground" QuestId="13301" TurnInName="Ground Commander Xutjja" TurnInId="31834" />
+    <TurnIn QuestName="The Shadow Vault" QuestId="12899" TurnInName="Baron Sliver" TurnInId="29343" />
+    <PickUp QuestName="The Duke" QuestId="12938" GiverName="Baron Sliver" GiverId="29343" />
+    <PickUp QuestName="Blackwatch" QuestId="13106" GiverName="Baron Sliver" GiverId="29343" />
+    <TurnIn QuestName="The Duke" QuestId="12938" TurnInName="Duke Lankral" TurnInId="30002" />
+    <PickUp QuestName="Honor Challenge" QuestId="12939" GiverName="Duke Lankral" GiverId="30002" />
+    <PickUp QuestName="Eliminate the Competition" QuestId="12955" GiverName="The Leaper" GiverId="30074" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30081" MobName="Efrem the Faithful" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30162" MobName="Tinky Wickwhistle" KillCount="1" />
+    <Objective QuestName="Eliminate the Competition" QuestId="12955" Type="KillMob" MobId="30086" MobName="Sigrid Iceborn" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30180" MobName="Onu&apos;zun" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="41372" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30037" MobName="Mjordin Combatant" KillCount="1" />
+    <TurnIn QuestName="Eliminate the Competition" QuestId="12955" TurnInName="The Leaper" TurnInId="30074" />
+    <PickUp QuestName="The Bone Witch" QuestId="12999" GiverName="The Leaper" GiverId="30074" />
+    <TurnIn QuestName="Honor Challenge" QuestId="12939" TurnInName="Duke Lankral" TurnInId="30002" />
+    <PickUp QuestName="Shadow Vault Decree" QuestId="12943" GiverName="Duke Lankral" GiverId="30002" />
+    <PickUp QuestName="Get the Key" QuestId="12949" GiverName="Vaelen the Flayed" GiverId="30056" />
+    <CustomBehavior File="UseItemOn" ItemId="41776" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Shadow Vault Decree" QuestId="12943" Type="KillMob" MobId="29919" MobName="Thane Ulfrang the Mighty" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="29915" MobName="Instructor Hroegar" KillCount="1" />
+    <Objective QuestName="Get the Key" QuestId="12949" Type="CollectItem" ItemId="41843" ItemName="Key to Vaelan&apos;s Chains" CollectCount="1" />
+    <TurnIn QuestName="Get the Key" QuestId="12949" TurnInName="Vaelen the Flayed" TurnInId="30056" />
+    <PickUp QuestName="Let the Baron Know" QuestId="12951" GiverName="Vaelen the Flayed" GiverId="30056" />
+    <TurnIn QuestName="Let the Baron Know" QuestId="12951" TurnInName="Baron Sliver" TurnInId="29343" />
+    <PickUp QuestName="Vaelen Has Returned" QuestId="13085" GiverName="Baron Sliver" GiverId="29343" />
+    <PickUp QuestName="Leave Our Mark" QuestId="12995" GiverName="Baron Sliver" GiverId="29343" />
+    <PickUp QuestName="Crush Dem Vrykuls!" QuestId="12992" GiverName="Vile" GiverId="30216" />
+    <TurnIn QuestName="Vaelen Has Returned" QuestId="13085" TurnInName="Vaelen the Flayed" TurnInId="30218" />
+    <PickUp QuestName="Ebon Blade Prisoners" QuestId="12982" GiverName="Vaelen the Flayed" GiverId="30218" />
+    <TurnIn QuestName="Shadow Vault Decree" QuestId="12943" TurnInName="Duke Lankral" TurnInId="30002" />
+    <PickUp QuestName="Vandalizing Jotunheim" QuestId="13084" GiverName="Duke Lankral" GiverId="30002" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="42422" ItemName="Jotunheim Cage Key" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="43089" ItemName="Vrykul Bones" CollectCount="15" />
+    <TurnIn QuestName="The Bone Witch" QuestId="12999" TurnInName="The Bone Witch" TurnInId="30232" />
+    <PickUp QuestName="Deep in the Bowels of the Underhalls" QuestId="13042" GiverName="The Bone Witch" GiverId="30232" />
+    <PickUp QuestName="Reading the Bones" QuestId="13092" GiverName="The Bone Witch" GiverId="30232" />
+    <TurnIn QuestName="Reading the Bones" QuestId="13092" TurnInName="The Bone Witch" TurnInId="30232" />
+    <PickUp QuestName="Revenge for the Vargul" QuestId="13059" GiverName="Bethod Feigr" GiverId="30406" />
+    <CustomBehavior File="UseItemOn" ItemId="42928" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Revenge for the Vargul" QuestId="13059" Type="KillMob" MobId="30475" MobName="Thane Illskar" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30409" MobName="Apprentice Osterkilgr" KillCount="1" />
+    <Objective QuestName="Deep in the Bowels of the Underhalls" QuestId="13042" Type="KillMob" MobId="30409" MobName="Apprentice Osterkilgr" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="42772" ItemName="Dr. Terrible&apos;s &quot;Building a Better Flesh Giant&quot;" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="42772" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <PickUp QuestName="The Sum is Greater than the Parts" QuestId="13043" GiverName="Bethod Feigr" GiverId="30406" />
+    <Objective QuestName="The Sum is Greater than the Parts" QuestId="13043" Type="KillMob" MobId="30404" MobName="Dr. Terrible" KillCount="1" />
+    <TurnIn QuestName="Revenge for the Vargul" QuestId="13059" TurnInName="Bethod Feigr" TurnInId="30406" />
+    <CustomBehavior File="UseItemOn" ItemId="42480" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Deep in the Bowels of the Underhalls" QuestId="13042" TurnInName="The Bone Witch" TurnInId="30232" />
+    <TurnIn QuestName="The Sum is Greater than the Parts" QuestId="13043" TurnInName="The Bone Witch" TurnInId="30232" />
+    <PickUp QuestName="The Art of Being a Water Terror" QuestId="13091" GiverName="The Bone Witch" GiverId="30232" />
+    <TurnIn QuestName="The Art of Being a Water Terror" QuestId="13091" TurnInName="The Bone Witch" TurnInId="30232" />
+    <PickUp QuestName="Through the Eye" QuestId="13121" GiverName="The Bone Witch" GiverId="30232" />
+    <TurnIn QuestName="Leave Our Mark" QuestId="12995" TurnInName="Baron Sliver" TurnInId="29343" />
+    <TurnIn QuestName="Crush Dem Vrykuls!" QuestId="12992" TurnInName="Vile" TurnInId="30216" />
+    <PickUp QuestName="Vile Like Fire!" QuestId="13071" GiverName="Vile" GiverId="30216" />
+    <TurnIn QuestName="Ebon Blade Prisoners" QuestId="12982" TurnInName="Vaelen the Flayed" TurnInId="30218" />
+    <TurnIn QuestName="Vandalizing Jotunheim" QuestId="13084" TurnInName="Duke Lankral" TurnInId="30002" />
+    <PickUp QuestName="To the Rise with all Due Haste!" QuestId="12806" GiverName="Baron Sliver" GiverId="29343" />
+    <PickUp QuestName="Shoot &apos;Em Up" QuestId="13069" GiverName="The Leaper" GiverId="30074" />
+    <TurnIn QuestName="To the Rise with all Due Haste!" QuestId="12806" TurnInName="Lord-Commander Arete" TurnInId="29344" />
+    <PickUp QuestName="The Story Thus Far..." QuestId="12807" GiverName="Lord-Commander Arete" GiverId="29344" />
+    <TurnIn QuestName="The Story Thus Far..." QuestId="12807" TurnInName="Lord-Commander Arete" TurnInId="29344" />
+    <PickUp QuestName="Blood in the Water" QuestId="12810" GiverName="Lord-Commander Arete" GiverId="29344" />
+    <PickUp QuestName="From Their Corpses, Rise!" QuestId="12813" GiverName="Setaal Darkmender" GiverId="29396" />
+    <PickUp QuestName="Intelligence Gathering" QuestId="12838" GiverName="Aurochs Grimbane" GiverId="29456" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="40652" ItemName="Scarlet Onslaught Trunk Key" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="40666" ItemName="Note from the Grand Admiral" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="40666" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <PickUp QuestName="The Grand (Admiral&apos;s) Plan" QuestId="12839" GiverName="Dreadwind" GiverId="31078" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="40652" ItemName="Scarlet Onslaught Trunk Key" CollectCount="1" />
+    <Objective QuestName="Intelligence Gathering" QuestId="12838" Type="CollectItem" ItemId="40640" ItemName="Onslaught Intel Documents" CollectCount="5" />
+    <CustomBehavior File="UseItemOn" ItemId="40587" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="29392" MobName="Ravenous Jaws" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="40551" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Blood in the Water" QuestId="12810" TurnInName="Lord-Commander Arete" TurnInId="29344" />
+    <PickUp QuestName="You&apos;ll Need a Gryphon" QuestId="12814" GiverName="Lord-Commander Arete" GiverId="29344" />
+    <TurnIn QuestName="The Grand (Admiral&apos;s) Plan" QuestId="12839" TurnInName="Lord-Commander Arete" TurnInId="29344" />
+    <PickUp QuestName="In Strict Confidence" QuestId="12840" GiverName="Lord-Commander Arete" GiverId="29344" />
+    <TurnIn QuestName="From Their Corpses, Rise!" QuestId="12813" TurnInName="Setaal Darkmender" TurnInId="29396" />
+    <TurnIn QuestName="Intelligence Gathering" QuestId="12838" TurnInName="Aurochs Grimbane" TurnInId="29456" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="29490" MobName="Captain Hartford" KillCount="1" />
+    <Objective QuestName="In Strict Confidence" QuestId="12840" Type="KillMob" MobId="29489" MobName="Captain Welsington" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="29333" MobName="Onslaught Gryphon Rider" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="40970" ItemName="Onslaught Gryphon Reins" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="40970" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="You&apos;ll Need a Gryphon" QuestId="12814" TurnInName="Uzo Deathcaller" TurnInId="29405" />
+    <PickUp QuestName="No Fly Zone" QuestId="12815" GiverName="Uzo Deathcaller" GiverId="29405" />
+    <TurnIn QuestName="In Strict Confidence" QuestId="12840" TurnInName="Lord-Commander Arete" TurnInId="29344" />
+    <Objective QuestName="No Fly Zone" QuestId="12815" Type="KillMob" MobId="29333" MobName="Onslaught Gryphon Rider" KillCount="10" />
+    <TurnIn QuestName="No Fly Zone" QuestId="12815" TurnInName="Uzo Deathcaller" TurnInId="29405" />
+    <TurnIn QuestName="Blackwatch" QuestId="13106" TurnInName="Darkrider Arly" TurnInId="30631" />
+    <PickUp QuestName="Where Are They Coming From?" QuestId="13117" GiverName="Darkrider Arly" GiverId="30631" />
+    <TurnIn QuestName="Where Are They Coming From?" QuestId="13117" TurnInName="Darkrider Arly" TurnInId="30631" />
+    <PickUp QuestName="Destroying the Altars" QuestId="13119" GiverName="Darkrider Arly" GiverId="30631" />
+    <PickUp QuestName="Death&apos;s Gaze" QuestId="13120" GiverName="Darkrider Arly" GiverId="30631" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30746" MobName="Master Summoner Zarod" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="43159" ItemName="Master Summoner&apos;s Staff" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="43159" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="43159" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="43159" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="43159" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Destroying the Altars" QuestId="13119" TurnInName="Darkrider Arly" TurnInId="30631" />
+    <TurnIn QuestName="Death&apos;s Gaze" QuestId="13120" TurnInName="Darkrider Arly" TurnInId="30631" />
+    <PickUp QuestName="Spill Their Blood" QuestId="13134" GiverName="Darkrider Arly" GiverId="30631" />
+    <PickUp QuestName="I&apos;m Not Dead Yet!" QuestId="13229" GiverName="Father Kamaros" GiverId="31279" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30597" MobName="Spiked Ghoul" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="43242" ItemName="Jagged Shard" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="43242" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <PickUp QuestName="Jagged Shards" QuestId="13136" GiverName="Father Kamaros" GiverId="31279" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30597" MobName="Spiked Ghoul" KillCount="1" />
+    <Objective QuestName="Jagged Shards" QuestId="13136" Type="CollectItem" ItemId="43242" ItemName="Jagged Shard" CollectCount="10" />
+    <TurnIn QuestName="Spill Their Blood" QuestId="13134" TurnInName="Darkrider Arly" TurnInId="30631" />
+    <TurnIn QuestName="Jagged Shards" QuestId="13136" TurnInName="Crusader Olakin Sainrith" TurnInId="30708" />
+    <PickUp QuestName="I&apos;m Smelting... Smelting!" QuestId="13138" GiverName="Crusader Olakin Sainrith" GiverId="30708" />
+    <PickUp QuestName="The Runesmiths of Malykriss" QuestId="13140" GiverName="Crusader Olakin Sainrith" GiverId="30708" />
+    <CustomBehavior File="UseItemOn" ItemId="43289" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="I&apos;m Smelting... Smelting!" QuestId="13138" Type="CollectItem" ItemId="43288" ItemName="Smelted Metal Bar" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30921" MobName="Skeletal Runesmith" KillCount="1" />
+    <Objective QuestName="The Runesmiths of Malykriss" QuestId="13140" Type="CollectItem" ItemId="43291" ItemName="Runed Saronite Plate" CollectCount="5" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="43609" ItemName="Pile of Bones" CollectCount="3" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="43616" ItemName="Abandoned Armor" CollectCount="3" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="43610" ItemName="Abandoned Helm" CollectCount="3" />
+    <CustomBehavior File="UseItemOn" ItemId="43608" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Poke and Prod" QuestId="13237" Type="KillMob" MobId="31140" MobName="Hulking Abomination" KillCount="5" />
+    <Objective QuestName="Poke and Prod" QuestId="13237" Type="KillMob" MobId="31155" MobName="Malefic Necromancer" KillCount="5" />
+    <Objective QuestName="Poke and Prod" QuestId="13237" Type="KillMob" MobId="31145" MobName="Shadow Adept" KillCount="5" />
+    <TurnIn QuestName="Time Yet Remains" QuestId="13076" TurnInName="Highlord Tirion Fordring" TurnInId="31044" />
+    <PickUp QuestName="The Touch of an Aspect" QuestId="13077" GiverName="Highlord Tirion Fordring" GiverId="31044" />
+    <TurnIn QuestName="The Touch of an Aspect" QuestId="13077" TurnInName="Alexstrasza the Life-Binder" TurnInId="26917" />
+    <PickUp QuestName="Dahlia&apos;s Tears" QuestId="13078" GiverName="Alexstrasza the Life-Binder" GiverId="26917" />
+    <Objective QuestName="Dahlia&apos;s Tears" QuestId="13078" Type="CollectItem" ItemId="43084" ItemName="Dahlia&apos;s Tears" CollectCount="1" />
+    <TurnIn QuestName="Dahlia&apos;s Tears" QuestId="13078" TurnInName="Alexstrasza the Life-Binder" TurnInId="26917" />
+    <PickUp QuestName="The Boon of Alexstrasza" QuestId="13079" GiverName="Alexstrasza the Life-Binder" GiverId="26917" />
+    <TurnIn QuestName="The Boon of Alexstrasza" QuestId="13079" TurnInName="Crusader Bridenbrad" TurnInId="30562" />
+    <PickUp QuestName="Hope Yet Remains" QuestId="13080" GiverName="Crusader Bridenbrad" GiverId="30562" />
+    <TurnIn QuestName="Poke and Prod" QuestId="13237" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <PickUp QuestName="That&apos;s Abominable!" QuestId="13264" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <PickUp QuestName="Opportunity" QuestId="13258" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <TurnIn QuestName="I&apos;m Not Dead Yet!" QuestId="13229" TurnInName="Brother Keltan" TurnInId="31261" />
+    <TurnIn QuestName="Volatility" QuestId="13239" TurnInName="Chief Engineer Copperclaw" TurnInId="30825" />
+    <PickUp QuestName="Volatility" QuestId="13261" GiverName="Chief Engineer Copperclaw" GiverId="30825" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="43609" ItemName="Pile of Bones" CollectCount="3" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="43616" ItemName="Abandoned Armor" CollectCount="3" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="43610" ItemName="Abandoned Helm" CollectCount="3" />
+    <CustomBehavior File="UseItemOn" ItemId="43608" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="31140" MobName="Hulking Abomination" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="43966" ItemName="Chilled Abomination Guts" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="43968" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Opportunity" QuestId="13258" TurnInName="Sergeant Kregga" TurnInId="31440" />
+    <PickUp QuestName="Establishing Superiority" QuestId="13259" GiverName="Sergeant Kregga" GiverId="31440" />
+    <Objective QuestName="Establishing Superiority" QuestId="13259" Type="KillMob" MobId="31413" MobName="Hulking Horror" KillCount="10" />
+    <TurnIn QuestName="Establishing Superiority" QuestId="13259" TurnInName="Sergeant Kregga" TurnInId="31440" />
+    <PickUp QuestName="Blow it Up!" QuestId="13262" GiverName="Sergeant Kregga" GiverId="31440" />
+    <TurnIn QuestName="Blow it Up!" QuestId="13262" TurnInName="Sergeant Kregga" TurnInId="31440" />
+    <PickUp QuestName="A Short Fuse" QuestId="13263" GiverName="Sergeant Kregga" GiverId="31440" />
+    <TurnIn QuestName="A Short Fuse" QuestId="13263" TurnInName="Sergeant Kregga" TurnInId="31440" />
+    <PickUp QuestName="A Voice in the Dark" QuestId="13271" GiverName="Sergeant Kregga" GiverId="31440" />
+    <TurnIn QuestName="A Voice in the Dark" QuestId="13271" TurnInName="Matthias Lehner" TurnInId="31237" />
+    <PickUp QuestName="Time to Hide" QuestId="13275" GiverName="Matthias Lehner" GiverId="31237" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="31691" MobName="Faceless Lurker" KillCount="1" />
+    <Objective QuestName="Time to Hide" QuestId="13275" Type="CollectItem" ItemId="44001" ItemName="Faceless One&apos;s Blood" CollectCount="3" />
+    <TurnIn QuestName="Time to Hide" QuestId="13275" TurnInName="Matthias Lehner" TurnInId="31237" />
+    <PickUp QuestName="Return to the Surface" QuestId="13282" GiverName="Matthias Lehner" GiverId="31237" />
+    <TurnIn QuestName="Hope Yet Remains" QuestId="13080" TurnInName="Highlord Tirion Fordring" TurnInId="31044" />
+    <PickUp QuestName="The Will of the Naaru" QuestId="13081" GiverName="Highlord Tirion Fordring" GiverId="31044" />
+    <TurnIn QuestName="The Will of the Naaru" QuestId="13081" TurnInName="A&apos;dal" TurnInId="18481" />
+    <PickUp QuestName="The Boon of A&apos;dal" QuestId="13082" GiverName="A&apos;dal" GiverId="18481" />
+    <TurnIn QuestName="The Boon of A&apos;dal" QuestId="13082" TurnInName="Crusader Bridenbrad" TurnInId="30562" />
+    <PickUp QuestName="Light Within the Darkness" QuestId="13083" GiverName="Crusader Bridenbrad" GiverId="30562" />
+    <TurnIn QuestName="That&apos;s Abominable!" QuestId="13264" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <TurnIn QuestName="Return to the Surface" QuestId="13282" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <PickUp QuestName="Field Repairs" QuestId="13304" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <PickUp QuestName="Sneak Preview" QuestId="13351" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <TurnIn QuestName="Vile Like Fire!" QuestId="13071" TurnInName="Vile" TurnInId="30216" />
+    <TurnIn QuestName="Shoot &apos;Em Up" QuestId="13069" TurnInName="The Leaper" TurnInId="30074" />
+    <PickUp QuestName="Parting Gifts" QuestId="13168" GiverName="Keritose Bloodblade" GiverId="30946" />
+    <TurnIn QuestName="Parting Gifts" QuestId="13168" TurnInName="Keritose Bloodblade" TurnInId="30946" />
+    <PickUp QuestName="An Undead&apos;s Best Friend" QuestId="13169" GiverName="Keritose Bloodblade" GiverId="30946" />
+    <PickUp QuestName="Honor is for the Weak" QuestId="13170" GiverName="Keritose Bloodblade" GiverId="30946" />
+    <PickUp QuestName="From Whence They Came" QuestId="13171" GiverName="Keritose Bloodblade" GiverId="30946" />
+    <TurnIn QuestName="An Undead&apos;s Best Friend" QuestId="13169" TurnInName="Keritose Bloodblade" TurnInId="30946" />
+    <TurnIn QuestName="Honor is for the Weak" QuestId="13170" TurnInName="Keritose Bloodblade" TurnInId="30946" />
+    <TurnIn QuestName="From Whence They Came" QuestId="13171" TurnInName="Keritose Bloodblade" TurnInId="30946" />
+    <PickUp QuestName="Seeds of Chaos" QuestId="13172" GiverName="Keritose Bloodblade" GiverId="30946" />
+    <PickUp QuestName="Amidst the Confusion" QuestId="13174" GiverName="Keritose Bloodblade" GiverId="30946" />
+    <Objective QuestName="Amidst the Confusion" QuestId="13174" Type="CollectItem" ItemId="43690" ItemName="Weeping Quarry Schedule" CollectCount="1" />
+    <Objective QuestName="Amidst the Confusion" QuestId="13174" Type="CollectItem" ItemId="43691" ItemName="Weeping Quarry Map" CollectCount="1" />
+    <Objective QuestName="Amidst the Confusion" QuestId="13174" Type="CollectItem" ItemId="43689" ItemName="Weeping Quarry Ledger" CollectCount="1" />
+    <Objective QuestName="Amidst the Confusion" QuestId="13174" Type="CollectItem" ItemId="43688" ItemName="Weeping Quarry Document" CollectCount="1" />
+    <TurnIn QuestName="Seeds of Chaos" QuestId="13172" TurnInName="Keritose Bloodblade" TurnInId="30946" />
+    <TurnIn QuestName="Amidst the Confusion" QuestId="13174" TurnInName="Keritose Bloodblade" TurnInId="30946" />
+    <PickUp QuestName="Vereth the Cunning" QuestId="13155" GiverName="Keritose Bloodblade" GiverId="30946" />
+    <TurnIn QuestName="Through the Eye" QuestId="13121" TurnInName="The Bone Witch" TurnInId="30232" />
+    <PickUp QuestName="Find the Ancient Hero" QuestId="13133" GiverName="The Bone Witch" GiverId="30232" />
+    <CustomBehavior File="UseItemOn" ItemId="43166" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Find the Ancient Hero" QuestId="13133" TurnInName="The Bone Witch" TurnInId="30232" />
+    <TurnIn QuestName="I&apos;m Smelting... Smelting!" QuestId="13138" TurnInName="Crusader Olakin Sainrith" TurnInId="30708" />
+    <TurnIn QuestName="The Runesmiths of Malykriss" QuestId="13140" TurnInName="Crusader Olakin Sainrith" TurnInId="30708" />
+    <PickUp QuestName="By Fire Be Purged" QuestId="13211" GiverName="Crusader Olakin Sainrith" GiverId="30708" />
+    <PickUp QuestName="A Visit to the Doctor" QuestId="13152" GiverName="Darkrider Arly" GiverId="30631" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30992" MobName="Doctor Sabnok" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="43524" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="By Fire Be Purged" QuestId="13211" TurnInName="Crusader Olakin Sainrith" TurnInId="30708" />
+    <TurnIn QuestName="A Visit to the Doctor" QuestId="13152" TurnInName="Darkrider Arly" TurnInId="30631" />
+    <PickUp QuestName="Killing Two Scourge With One Skeleton" QuestId="13144" GiverName="Darkrider Arly" GiverId="30631" />
+    <TurnIn QuestName="Killing Two Scourge With One Skeleton" QuestId="13144" TurnInName="Darkrider Arly" TurnInId="30631" />
+    <PickUp QuestName="He&apos;s Gone to Pieces" QuestId="13212" GiverName="Darkrider Arly" GiverId="30631" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30696" MobName="Corpulent Horror" KillCount="1" />
+    <Objective QuestName="He&apos;s Gone to Pieces" QuestId="13212" Type="CollectItem" ItemId="43526" ItemName="Olakin&apos;s Torso" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30696" MobName="Corpulent Horror" KillCount="1" />
+    <Objective QuestName="He&apos;s Gone to Pieces" QuestId="13212" Type="CollectItem" ItemId="43527" ItemName="Olakin&apos;s Legs" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30696" MobName="Corpulent Horror" KillCount="1" />
+    <Objective QuestName="He&apos;s Gone to Pieces" QuestId="13212" Type="CollectItem" ItemId="43528" ItemName="Olakin&apos;s Left Arm" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30696" MobName="Corpulent Horror" KillCount="1" />
+    <Objective QuestName="He&apos;s Gone to Pieces" QuestId="13212" Type="CollectItem" ItemId="43529" ItemName="Olakin&apos;s Right Arm" CollectCount="1" />
+    <TurnIn QuestName="He&apos;s Gone to Pieces" QuestId="13212" TurnInName="Darkrider Arly" TurnInId="30631" />
+    <PickUp QuestName="Putting Olakin Back Together Again" QuestId="13220" GiverName="Darkrider Arly" GiverId="30631" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="43567" ItemName="Spool of Thread" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="43568" ItemName="The Doctor&apos;s Cleaver" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="43564" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Putting Olakin Back Together Again" QuestId="13220" TurnInName="Darkrider Arly" TurnInId="30631" />
+    <PickUp QuestName="The Flesh Giant Champion" QuestId="13235" GiverName="Darkrider Arly" GiverId="30631" />
+    <Objective QuestName="The Flesh Giant Champion" QuestId="13235" Type="KillMob" MobId="30698" MobName="Morbidus" KillCount="1" />
+    <TurnIn QuestName="The Flesh Giant Champion" QuestId="13235" TurnInName="Darkrider Arly" TurnInId="30631" />
+    <TurnIn QuestName="Vereth the Cunning" QuestId="13155" TurnInName="Vereth the Cunning" TurnInId="30944" />
+    <PickUp QuestName="New Recruit" QuestId="13143" GiverName="Vereth the Cunning" GiverId="30944" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="30894" MobName="Lithe Stalker" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="43315" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="New Recruit" QuestId="13143" TurnInName="Vereth the Cunning" TurnInId="30944" />
+    <PickUp QuestName="The Vile Hold" QuestId="13145" GiverName="Vereth the Cunning" GiverId="30944" />
+    <TurnIn QuestName="The Vile Hold" QuestId="13145" TurnInName="Vereth the Cunning" TurnInId="30944" />
+    <PickUp QuestName="Generosity Abounds" QuestId="13146" GiverName="Vereth the Cunning" GiverId="30944" />
+    <PickUp QuestName="Matchmaker" QuestId="13147" GiverName="Vereth the Cunning" GiverId="30944" />
+    <PickUp QuestName="Stunning View" QuestId="13160" GiverName="Vereth the Cunning" GiverId="30944" />
+    <TurnIn QuestName="Generosity Abounds" QuestId="13146" TurnInName="Vereth the Cunning" TurnInId="30944" />
+    <TurnIn QuestName="Matchmaker" QuestId="13147" TurnInName="Vereth the Cunning" TurnInId="30944" />
+    <TurnIn QuestName="Stunning View" QuestId="13160" TurnInName="Vereth the Cunning" TurnInId="30944" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="31847" MobName="Scavenging Geist" KillCount="1" />
+    <Objective QuestName="Field Repairs" QuestId="13304" Type="CollectItem" ItemId="44529" ItemName="Demolisher Parts" CollectCount="5" />
+    <TurnIn QuestName="Field Repairs" QuestId="13304" TurnInName="Wrecked Demolisher" TurnInId="31868" />
+    <PickUp QuestName="Do Your Worst" QuestId="13305" GiverName="Matthias Lehner" GiverId="32408" />
+    <Objective QuestName="Do Your Worst" QuestId="13305" Type="KillMob" MobId="31815" MobName="Bone Giant" KillCount="2" />
+    <Objective QuestName="Do Your Worst" QuestId="13305" Type="KillMob" MobId="31813" MobName="Frostskull Magus" KillCount="20" />
+    <Objective QuestName="Do Your Worst" QuestId="13305" Type="KillMob" MobId="31812" MobName="Decomposed Ghoul" KillCount="150" />
+    <TurnIn QuestName="Do Your Worst" QuestId="13305" TurnInName="Matthias Lehner" TurnInId="32404" />
+    <PickUp QuestName="Army of the Damned" QuestId="13236" GiverName="Matthias Lehner" GiverId="32404" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="31254" MobName="Lordaeron Footsoldier" KillCount="1" />
+    <TurnIn QuestName="Army of the Damned" QuestId="13236" TurnInName="Matthias Lehner" TurnInId="32404" />
+    <PickUp QuestName="Futility" QuestId="13348" GiverName="Matthias Lehner" GiverId="32404" />
+    <TurnIn QuestName="Futility" QuestId="13348" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <PickUp QuestName="Cradle of the Frostbrood" QuestId="13349" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <TurnIn QuestName="Sneak Preview" QuestId="13351" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <PickUp QuestName="Cannot Reproduce" QuestId="13355" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <PickUp QuestName="Chain of Command" QuestId="13354" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <PickUp QuestName="Drag and Drop" QuestId="13352" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <TurnIn QuestName="Volatility" QuestId="13261" TurnInName="Chief Engineer Copperclaw" TurnInId="30825" />
+    <PickUp QuestName="Green Technology" QuestId="13379" GiverName="Chief Engineer Copperclaw" GiverId="30825" />
+    <Objective QuestName="Chain of Command" QuestId="13354" Type="KillMob" MobId="32250" MobName="Overseer Faedris" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="32238" MobName="Bitter Initiate" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="44246" ItemName="Orb of Illusion" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="44246" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="44251" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="44251" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="44251" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Chain of Command" QuestId="13354" Type="KillMob" MobId="32291" MobName="Overseer Savryn" KillCount="1" />
+    <Objective QuestName="Chain of Command" QuestId="13354" Type="KillMob" MobId="32285" MobName="Overseer Jhaeqon" KillCount="1" />
+    <Objective QuestName="Chain of Command" QuestId="13354" Type="KillMob" MobId="32263" MobName="Overseer Veraj" KillCount="1" />
+    <TurnIn QuestName="Green Technology" QuestId="13379" TurnInName="Fringe Engineer Tezzla" TurnInId="32430" />
+    <PickUp QuestName="Fringe Science Benefits" QuestId="13373" GiverName="Fringe Engineer Tezzla" GiverId="32430" />
+    <TurnIn QuestName="Fringe Science Benefits" QuestId="13373" TurnInName="Fringe Engineer Tezzla" TurnInId="32430" />
+    <TurnIn QuestName="Drag and Drop" QuestId="13352" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <TurnIn QuestName="Chain of Command" QuestId="13354" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <PickUp QuestName="Drag and Drop" QuestId="13353" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <PickUp QuestName="Not a Bug" QuestId="13358" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <PickUp QuestName="Need More Info" QuestId="13366" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <TurnIn QuestName="Cannot Reproduce" QuestId="13355" TurnInName="Chief Engineer Copperclaw" TurnInId="30825" />
+    <PickUp QuestName="Retest Now" QuestId="13356" GiverName="Chief Engineer Copperclaw" GiverId="30825" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="32238" MobName="Bitter Initiate" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="44246" ItemName="Orb of Illusion" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="44246" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="32260" MobName="Enslaved Minion" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="44433" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="44434" ItemName="Dark Matter" CollectCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="32297" MobName="Cult Researcher" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="44459" ItemName="Cult of the Damned Research - Page 1" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="44460" ItemName="Cult of the Damned Research - Page 2" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="44461" ItemName="Cult of the Damned Research - Page 3" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="44459" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Need More Info" QuestId="13366" Type="CollectItem" ItemId="44462" ItemName="Cult of the Damned Thesis" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="44307" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="44301" ItemName="Tainted Essence" CollectCount="10" />
+    <CustomBehavior File="UseItemOn" ItemId="44301" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="44304" ItemName="Writhing Mass" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="44304" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="6948" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <PickUp QuestName="Where Dragons Fell" QuestId="13359" GiverName="Matthias Lehner" GiverId="32423" />
+    <Objective QuestName="Cradle of the Frostbrood" QuestId="13349" Type="KillMob" MobId="31731" MobName="Wyrm Reanimator" KillCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="31718" MobName="Frostbrood Whelp" KillCount="1" />
+    <Objective QuestName="Where Dragons Fell" QuestId="13359" Type="CollectItem" ItemId="44631" ItemName="Whelp Bone Dust" CollectCount="6" />
+    <Objective QuestName="Cradle of the Frostbrood" QuestId="13349" Type="KillMob" MobId="31738" MobName="Cultist Corrupter" KillCount="8" />
+    <Objective QuestName="Cradle of the Frostbrood" QuestId="13349" Type="KillMob" MobId="31783" MobName="Vrykul Necrolord" KillCount="3" />
+    <TurnIn QuestName="Where Dragons Fell" QuestId="13359" TurnInName="Matthias Lehner" TurnInId="32423" />
+    <PickUp QuestName="Time for Answers" QuestId="13360" GiverName="Matthias Lehner" GiverId="32423" />
+    <TurnIn QuestName="Drag and Drop" QuestId="13353" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <TurnIn QuestName="Not a Bug" QuestId="13358" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <TurnIn QuestName="Cradle of the Frostbrood" QuestId="13349" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <TurnIn QuestName="Need More Info" QuestId="13366" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <PickUp QuestName="Raise the Barricades" QuestId="13306" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <PickUp QuestName="Not a Bug" QuestId="13365" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <TurnIn QuestName="Retest Now" QuestId="13356" TurnInName="Chief Engineer Copperclaw" TurnInId="30825" />
+    <PickUp QuestName="Retest Now" QuestId="13357" GiverName="Chief Engineer Copperclaw" GiverId="30825" />
+    <CustomBehavior File="UseItemOn" ItemId="44127" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="32260" MobName="Enslaved Minion" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="44433" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="44434" ItemName="Dark Matter" CollectCount="5" />
+    <CustomBehavior File="UseItemOn" ItemId="44307" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="44301" ItemName="Tainted Essence" CollectCount="10" />
+    <CustomBehavior File="UseItemOn" ItemId="44301" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="44304" ItemName="Writhing Mass" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="44304" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Time for Answers" QuestId="13360" TurnInName="Matthias Lehner" TurnInId="32497" />
+    <PickUp QuestName="The Hunter and the Prince" QuestId="13361" GiverName="Matthias Lehner" GiverId="32497" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="32588" MobName="Illidan Stormrage" KillCount="1" />
+    <TurnIn QuestName="The Hunter and the Prince" QuestId="13361" TurnInName="Matthias Lehner" TurnInId="32497" />
+    <PickUp QuestName="Knowledge is a Terrible Burden" QuestId="13362" GiverName="Matthias Lehner" GiverId="32497" />
+    <TurnIn QuestName="Raise the Barricades" QuestId="13306" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <TurnIn QuestName="Knowledge is a Terrible Burden" QuestId="13362" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <TurnIn QuestName="Not a Bug" QuestId="13365" TurnInName="Koltira Deathweaver" TurnInId="29795" />
+    <PickUp QuestName="Argent Aid" QuestId="13363" GiverName="Koltira Deathweaver" GiverId="29795" />
+    <TurnIn QuestName="Retest Now" QuestId="13357" TurnInName="Chief Engineer Copperclaw" TurnInId="30825" />
+    <TurnIn QuestName="Light Within the Darkness" QuestId="13083" TurnInName="Highlord Tirion Fordring" TurnInId="31044" />
+    <TurnIn QuestName="Argent Aid" QuestId="13363" TurnInName="Highlord Tirion Fordring" TurnInId="31044" />
+    <PickUp QuestName="Tirion&apos;s Gambit" QuestId="13364" GiverName="Highlord Tirion Fordring" GiverId="31044" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="32507" MobName="Cultist Acolyte" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="44784" ItemName="Cultist Acolyte&apos;s Hood" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="44784" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Tirion&apos;s Gambit" QuestId="13364" TurnInName="Highlord Tirion Fordring" TurnInId="31044" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Icecrown (79-80) Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

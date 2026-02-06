@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Northrend (69-80)\\Howling Fjord (69-71)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>71</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="11167" Name="The New Plague">
+    <Objective Type="CollectItem" ItemId="33099" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Plague Container" Id="186390" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1655.8" Y="-6273.97" Z="0.2" />
+        <Hotspot X="1662.28" Y="-6307.52" Z="13.38" />
+        <Hotspot X="1663.53" Y="-6301.37" Z="-14.72" />
+        <Hotspot X="1668.98" Y="-6297.84" Z="-6.73" />
+        <Hotspot X="1673.39" Y="-6260.75" Z="0.82" />
+        <Hotspot X="1684.36" Y="-6290.1" Z="-7.61" />
+        <Hotspot X="1688.77" Y="-6303.85" Z="-7.58" />
+        <Hotspot X="1694.29" Y="-6286.38" Z="-8.15" />
+        <Hotspot X="1702.55" Y="-6275.95" Z="-1.41" />
+        <Hotspot X="1702.84" Y="-6293.21" Z="-8.45" />
+        <Hotspot X="1705.51" Y="-6246.14" Z="-2.67" />
+        <Hotspot X="1707.46" Y="-6278.97" Z="-8.87" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11351" Name="Mastering the Runes">
+    <Objective Type="CollectItem" ItemId="33794" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Iron Rune Carving Tools" Id="186684" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1957.19" Y="-5698.66" Z="215.83" />
+        <Hotspot X="2113.1" Y="-5829.53" Z="223.85" />
+        <Hotspot X="2176.19" Y="-5481.26" Z="242.2" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11298" Name="What&apos;s in That Brew?">
+    <Objective Type="CollectItem" ItemId="33541" CollectCount="5">
+      <CollectFrom>
+        <GameObject Name="Dwarven Keg" Id="186632" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1480.03" Y="-3432.66" Z="88.07" />
+        <Hotspot X="1480.33" Y="-3082.04" Z="39.12" />
+        <Hotspot X="1497.97" Y="-3251.75" Z="75.53" />
+        <Hotspot X="1512.93" Y="-3499.75" Z="57.78" />
+        <Hotspot X="1524.27" Y="-3191.74" Z="68.57" />
+        <Hotspot X="1532.51" Y="-3144.1" Z="1.9" />
+        <Hotspot X="1542.13" Y="-3394.98" Z="98.31" />
+        <Hotspot X="1546.63" Y="-3448.37" Z="101.26" />
+        <Hotspot X="1548.27" Y="-3515.34" Z="108.14" />
+        <Hotspot X="1548.42" Y="-3425.63" Z="59.35" />
+        <Hotspot X="1569.66" Y="-3468.72" Z="52.97" />
+        <Hotspot X="1572.01" Y="-3581.68" Z="112.56" />
+        <Hotspot X="1588.18" Y="-3527.44" Z="163.65" />
+        <Hotspot X="1591.46" Y="-3548.1" Z="108.0" />
+        <Hotspot X="1597.91" Y="-3320.89" Z="6.31" />
+        <Hotspot X="1598.43" Y="-3334.34" Z="74.01" />
+        <Hotspot X="1630.67" Y="-3452.69" Z="30.11" />
+        <Hotspot X="1631.4" Y="-3495.56" Z="32.0" />
+        <Hotspot X="1634.46" Y="-3492.48" Z="143.86" />
+        <Hotspot X="1636.41" Y="-3259.6" Z="3.21" />
+        <Hotspot X="1637.23" Y="-3593.77" Z="107.39" />
+        <Hotspot X="1647.0" Y="-3408.93" Z="79.36" />
+        <Hotspot X="1648.27" Y="-3367.13" Z="81.18" />
+        <Hotspot X="1650.58" Y="-3252.07" Z="71.19" />
+        <Hotspot X="1676.25" Y="-3696.39" Z="151.57" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11423" Name="The Enemy&apos;s Legacy">
+    <Objective Type="CollectItem" ItemId="34042" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Saga of the Val" Id="186830" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="812.54" Y="-5474.08" Z="212.43" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="34040" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Saga of the Twins" Id="186831" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="957.1" Y="-5308.23" Z="189.35" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="34041" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Saga of the Winter Curse" Id="186832" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="995.31" Y="-5565.83" Z="188.56" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11434" Name="Forgotten Treasure">
+    <Objective Type="CollectItem" ItemId="34070" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Eagle Figurine" Id="186886" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-299.4" Y="-3683.89" Z="-80.06" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="34069" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Amani Vase" Id="186885" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-334.94" Y="-3643.0" Z="-104.97" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11512" Name="The Frozen Heart of Isuldof">
+    <Objective Type="CollectItem" ItemId="34237" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="The Frozen Heart of Isuldof" Id="187032" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-54.67" Y="-3352.6" Z="2.22" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11567" Name="The Ancient Armor of the Kvaldir">
+    <Objective Type="CollectItem" ItemId="34239" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="The Ancient Armor of the Kvaldir" Id="187381" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="137.36" Y="-6341.78" Z="2.29" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Howling Fjord (69-71)" LogColor="Green" />
+    <PickUp QuestName="The New Plague" QuestId="11167" GiverName="Apothecary Lysander" GiverId="24126" />
+    <PickUp QuestName="Let Them Eat Crow" QuestId="11227" GiverName="Pontius" GiverId="23938" />
+    <PickUp QuestName="War is Hell" QuestId="11270" GiverName="High Executor Anselm" GiverId="23780" />
+    <CustomBehavior File="UseItemOn" ItemId="33221" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23945" MobName="Fjord Crow" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33238" ItemName="Crow Meat" CollectCount="5" />
+    <CustomBehavior File="UseItemOn" ItemId="33238" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33278" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="The New Plague" QuestId="11167" Type="CollectItem" ItemId="33099" ItemName="Intact Plague Container" CollectCount="10" />
+    <TurnIn QuestName="War is Hell" QuestId="11270" TurnInName="High Executor Anselm" TurnInId="23780" />
+    <PickUp QuestName="Reports from the Field" QuestId="11221" GiverName="High Executor Anselm" GiverId="23780" />
+    <TurnIn QuestName="Let Them Eat Crow" QuestId="11227" TurnInName="Pontius" TurnInId="23938" />
+    <PickUp QuestName="Sniff Out the Enemy" QuestId="11253" GiverName="Pontius" GiverId="23938" />
+    <TurnIn QuestName="The New Plague" QuestId="11167" TurnInName="Apothecary Lysander" TurnInId="24126" />
+    <PickUp QuestName="Spiking the Mix" QuestId="11168" GiverName="Apothecary Lysander" GiverId="24126" />
+    <TurnIn QuestName="Sniff Out the Enemy" QuestId="11253" TurnInName="Apothecary Lysander" TurnInId="24126" />
+    <PickUp QuestName="The Dragonskin Map" QuestId="11254" GiverName="Apothecary Lysander" GiverId="24126" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23929" MobName="Giant Tidecrawler" KillCount="1" />
+    <Objective QuestName="Spiking the Mix" QuestId="11168" Type="CollectItem" ItemId="33337" ItemName="Giant Toxin Gland" CollectCount="3" />
+    <TurnIn QuestName="Spiking the Mix" QuestId="11168" TurnInName="Apothecary Lysander" TurnInId="24126" />
+    <PickUp QuestName="Test at Sea" QuestId="11170" GiverName="Apothecary Lysander" GiverId="24126" />
+    <TurnIn QuestName="The Dragonskin Map" QuestId="11254" TurnInName="High Executor Anselm" TurnInId="23780" />
+    <PickUp QuestName="The Offensive Begins" QuestId="11295" GiverName="High Executor Anselm" GiverId="23780" />
+    <CustomBehavior File="UseItemOn" ItemId="33349" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Test at Sea" QuestId="11170" TurnInName="Apothecary Lysander" TurnInId="24126" />
+    <TurnIn QuestName="Reports from the Field" QuestId="11221" TurnInName="High Executor Anselm" TurnInId="23780" />
+    <PickUp QuestName="The Windrunner Fleet" QuestId="11229" GiverName="High Executor Anselm" GiverId="23780" />
+    <TurnIn QuestName="The Windrunner Fleet" QuestId="11229" TurnInName="Captain Harker" TurnInId="24037" />
+    <PickUp QuestName="Ambushed!" QuestId="11230" GiverName="Captain Harker" GiverId="24037" />
+    <Objective QuestName="Ambushed!" QuestId="11230" Type="KillMob" MobId="23983" MobName="North Fleet Marine" KillCount="15" />
+    <TurnIn QuestName="Ambushed!" QuestId="11230" TurnInName="Captain Harker" TurnInId="24037" />
+    <PickUp QuestName="Guide Our Sights" QuestId="11232" GiverName="Captain Harker" GiverId="24037" />
+    <CustomBehavior File="UseItemOn" ItemId="33335" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33335" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Guide Our Sights" QuestId="11232" TurnInName="Dark Ranger Lyana" TurnInId="23778" />
+    <PickUp QuestName="Landing the Killing Blow" QuestId="11233" GiverName="Dark Ranger Lyana" GiverId="23778" />
+    <Objective QuestName="Landing the Killing Blow" QuestId="11233" Type="KillMob" MobId="23963" MobName="Sergeant Lorric" KillCount="1" />
+    <Objective QuestName="Landing the Killing Blow" QuestId="11233" Type="KillMob" MobId="23962" MobName="Captain Olster" KillCount="1" />
+    <Objective QuestName="Landing the Killing Blow" QuestId="11233" Type="KillMob" MobId="23964" MobName="Lieutenant Celeyne" KillCount="1" />
+    <PickUp QuestName="Trail of Fire" QuestId="11241" GiverName="Apothecary Hanes" GiverId="23784" />
+    <TurnIn QuestName="Landing the Killing Blow" QuestId="11233" TurnInName="Dark Ranger Lyana" TurnInId="23778" />
+    <PickUp QuestName="Report to Anselm" QuestId="11234" GiverName="Dark Ranger Lyana" GiverId="23778" />
+    <TurnIn QuestName="Report to Anselm" QuestId="11234" TurnInName="High Executor Anselm" TurnInId="23780" />
+    <TurnIn QuestName="Trail of Fire" QuestId="11241" TurnInName="Apothecary Lysander" TurnInId="24126" />
+    <PickUp QuestName="New Agamand" QuestId="11304" GiverName="Apothecary Lysander" GiverId="24126" />
+    <PickUp QuestName="Help for Camp Winterhoof" QuestId="12566" GiverName="Longrunner Nanik" GiverId="28314" />
+    <TurnIn QuestName="The Offensive Begins" QuestId="11295" TurnInName="Sergeant Gorth" TurnInId="24027" />
+    <PickUp QuestName="A Lesson in Fear" QuestId="11282" GiverName="Sergeant Gorth" GiverId="24027" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24015" MobName="Winterskorn Defender" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24161" MobName="Oric the Baleful" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33563" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24015" MobName="Winterskorn Defender" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24162" MobName="Gunnar Thorvardsson" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33563" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24015" MobName="Winterskorn Defender" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24016" MobName="Ulf the Bloodletter" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33563" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="A Lesson in Fear" QuestId="11282" TurnInName="Sergeant Gorth" TurnInId="24027" />
+    <PickUp QuestName="Baleheim Bodycount" QuestId="11283" GiverName="Sergeant Gorth" GiverId="24027" />
+    <PickUp QuestName="Baleheim Must Burn!" QuestId="11285" GiverName="Sergeant Gorth" GiverId="24027" />
+    <CustomBehavior File="UseItemOn" ItemId="33472" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33472" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33472" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33472" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Baleheim Bodycount" QuestId="11283" TurnInName="Sergeant Gorth" TurnInId="24027" />
+    <TurnIn QuestName="Baleheim Must Burn!" QuestId="11285" TurnInName="Sergeant Gorth" TurnInId="24027" />
+    <PickUp QuestName="The Ambush" QuestId="11303" GiverName="Sergeant Gorth" GiverId="24027" />
+    <TurnIn QuestName="The Ambush" QuestId="11303" TurnInName="Lydell" TurnInId="24458" />
+    <PickUp QuestName="Adding Injury to Insult" QuestId="12481" GiverName="Lydell" GiverId="24458" />
+    <CustomBehavior File="UseItemOn" ItemId="33581" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24238" MobName="Bjorn Halgurdsson" KillCount="1" />
+    <TurnIn QuestName="Adding Injury to Insult" QuestId="12481" TurnInName="Lydell" TurnInId="24458" />
+    <TurnIn QuestName="Help for Camp Winterhoof" QuestId="12566" TurnInName="Chieftain Ashtotem" TurnInId="24129" />
+    <PickUp QuestName="Hasty Preparations" QuestId="11271" GiverName="Ahota Whitefrost" GiverId="24127" />
+    <PickUp QuestName="Suppressing the Elements" QuestId="11311" GiverName="Wind Tamer Kagan" GiverId="24256" />
+    <PickUp QuestName="Making the Horn" QuestId="11275" GiverName="Nokoma Snowseer" GiverId="24123" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23740" MobName="Frosthorn Ram" KillCount="1" />
+    <Objective QuestName="Making the Horn" QuestId="11275" Type="CollectItem" ItemId="33351" ItemName="Undamaged Ram Horn" CollectCount="6" />
+    <TurnIn QuestName="Making the Horn" QuestId="11275" TurnInName="Nokoma Snowseer" TurnInId="24123" />
+    <PickUp QuestName="Mimicking Nature&apos;s Call" QuestId="11281" GiverName="Nokoma Snowseer" GiverId="24123" />
+    <PickUp QuestName="The Frozen Glade" QuestId="11312" GiverName="Nokoma Snowseer" GiverId="24123" />
+    <PickUp QuestName="The Book of Runes" QuestId="11350" GiverName="Longrunner Pembe" GiverId="24362" />
+    <PickUp QuestName="Keeping Watch on the Interlopers" QuestId="11297" GiverName="Junat the Wanderer" GiverId="24234" />
+    <CustomBehavior File="UseItemOn" ItemId="33450" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Mimicking Nature&apos;s Call" QuestId="11281" Type="KillMob" MobId="24173" MobName="Frostgore" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24228" MobName="Iceshard Elemental" KillCount="1" />
+    <TurnIn QuestName="The Frozen Glade" QuestId="11312" TurnInName="Lurielle" TurnInId="24117" />
+    <PickUp QuestName="Spirits of the Ice" QuestId="11313" GiverName="Lurielle" GiverId="24117" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23919" MobName="Ice Elemental" KillCount="1" />
+    <Objective QuestName="Spirits of the Ice" QuestId="11313" Type="CollectItem" ItemId="33605" ItemName="Icy Core" CollectCount="15" />
+    <TurnIn QuestName="Spirits of the Ice" QuestId="11313" TurnInName="Lurielle" TurnInId="24117" />
+    <PickUp QuestName="The Fallen Sisters" QuestId="11314" GiverName="Lurielle" GiverId="24117" />
+    <PickUp QuestName="Wild Vines" QuestId="11315" GiverName="Lurielle" GiverId="24117" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33778" ItemName="Book of Runes - Chapter 1" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33779" ItemName="Book of Runes - Chapter 2" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33780" ItemName="Book of Runes - Chapter 3" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33778" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="The Book of Runes" QuestId="11350" Type="CollectItem" ItemId="33781" ItemName="The Book of Runes" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="6948" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Mimicking Nature&apos;s Call" QuestId="11281" TurnInName="Nokoma Snowseer" TurnInId="24123" />
+    <TurnIn QuestName="The Book of Runes" QuestId="11350" TurnInName="Longrunner Pembe" TurnInId="24362" />
+    <PickUp QuestName="Mastering the Runes" QuestId="11351" GiverName="Longrunner Pembe" GiverId="24362" />
+    <TurnIn QuestName="Suppressing the Elements" QuestId="11311" TurnInName="Wind Tamer Kagan" TurnInId="24256" />
+    <PickUp QuestName="Skorn Must Fall!" QuestId="11256" GiverName="Chieftain Ashtotem" GiverId="24129" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23678" MobName="Chill Nymph" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33606" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Wild Vines" QuestId="11315" Type="KillMob" MobId="23763" MobName="Scarlet Ivy" KillCount="8" />
+    <TurnIn QuestName="The Fallen Sisters" QuestId="11314" TurnInName="Lurielle" TurnInId="24117" />
+    <TurnIn QuestName="Wild Vines" QuestId="11315" TurnInName="Lurielle" TurnInId="24117" />
+    <PickUp QuestName="Spawn of the Twisted Glade" QuestId="11316" GiverName="Lurielle" GiverId="24117" />
+    <PickUp QuestName="Seeds of the Blacksouled Keepers" QuestId="11319" GiverName="Lurielle" GiverId="24117" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23876" MobName="Spore" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33607" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Spawn of the Twisted Glade" QuestId="11316" Type="KillMob" MobId="23874" MobName="Thornvine Creeper" KillCount="10" />
+    <TurnIn QuestName="Spawn of the Twisted Glade" QuestId="11316" TurnInName="Lurielle" TurnInId="24117" />
+    <TurnIn QuestName="Seeds of the Blacksouled Keepers" QuestId="11319" TurnInName="Lurielle" TurnInId="24117" />
+    <PickUp QuestName="Keeper Witherleaf" QuestId="11428" GiverName="Lurielle" GiverId="24117" />
+    <Objective QuestName="Mastering the Runes" QuestId="11351" Type="CollectItem" ItemId="33794" ItemName="Iron Rune Carving Tools" CollectCount="1" />
+    <Objective QuestName="Keeper Witherleaf" QuestId="11428" Type="KillMob" MobId="24638" MobName="Keeper Witherleaf" KillCount="1" />
+    <Objective QuestName="Hasty Preparations" QuestId="11271" Type="CollectItem" ItemId="33348" ItemName="Spotted Hippogryph Down" CollectCount="10" />
+    <TurnIn QuestName="Mastering the Runes" QuestId="11351" TurnInName="Longrunner Pembe" TurnInId="24362" />
+    <PickUp QuestName="The Rune of Command" QuestId="11352" GiverName="Longrunner Pembe" GiverId="24362" />
+    <TurnIn QuestName="Hasty Preparations" QuestId="11271" TurnInName="Ahota Whitefrost" TurnInId="24127" />
+    <TurnIn QuestName="Keeper Witherleaf" QuestId="11428" TurnInName="Lurielle" TurnInId="24117" />
+    <CustomBehavior File="UseItemOn" ItemId="33796" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="The Rune of Command" QuestId="11352" Type="KillMob" MobId="24334" MobName="Binder Murdis" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33340" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Skorn Must Fall!" QuestId="11256" TurnInName="Winterhoof Brave" TurnInId="24130" />
+    <PickUp QuestName="Gruesome, But Necessary" QuestId="11257" GiverName="Winterhoof Brave" GiverId="24130" />
+    <PickUp QuestName="Burn Skorn, Burn!" QuestId="11258" GiverName="Winterhoof Brave" GiverId="24130" />
+    <PickUp QuestName="Towers of Certain Doom" QuestId="11259" GiverName="Winterhoof Brave" GiverId="24130" />
+    <CustomBehavior File="UseItemOn" ItemId="33344" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33344" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33344" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33343" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33340" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Burn Skorn, Burn!" QuestId="11258" TurnInName="Winterhoof Brave" TurnInId="24130" />
+    <CustomBehavior File="UseItemOn" ItemId="33344" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33344" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33345" ItemName="Vrykul Scroll of Ascension" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33345" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <PickUp QuestName="Stop the Ascension!" QuestId="11260" GiverName="Winterhoof Brave" GiverId="24130" />
+    <CustomBehavior File="UseItemOn" ItemId="33346" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Stop the Ascension!" QuestId="11260" Type="KillMob" MobId="23671" MobName="Halfdan the Ice-Hearted" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33343" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33340" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Gruesome, But Necessary" QuestId="11257" TurnInName="Winterhoof Brave" TurnInId="24130" />
+    <CustomBehavior File="UseItemOn" ItemId="33344" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33340" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Towers of Certain Doom" QuestId="11259" TurnInName="Winterhoof Brave" TurnInId="24130" />
+    <PickUp QuestName="The Conqueror of Skorn!" QuestId="11261" GiverName="Winterhoof Brave" GiverId="24130" />
+    <CustomBehavior File="UseItemOn" ItemId="6948" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="The Conqueror of Skorn!" QuestId="11261" TurnInName="Chieftain Ashtotem" TurnInId="24129" />
+    <PickUp QuestName="Dealing With Gjalerbron" QuestId="11263" GiverName="Chieftain Ashtotem" GiverId="24129" />
+    <TurnIn QuestName="Stop the Ascension!" QuestId="11260" TurnInName="Greatmother Ankha" TurnInId="24135" />
+    <PickUp QuestName="Of Keys and Cages" QuestId="11265" GiverName="Greatmother Ankha" GiverId="24135" />
+    <PickUp QuestName="Find Sage Mistwalker" QuestId="11287" GiverName="Greatmother Ankha" GiverId="24135" />
+    <TurnIn QuestName="The Rune of Command" QuestId="11352" TurnInName="Longrunner Pembe" TurnInId="24362" />
+    <PickUp QuestName="Rivenwood Captives" QuestId="11296" GiverName="Longrunner Skycloud" GiverId="24209" />
+    <TurnIn QuestName="Find Sage Mistwalker" QuestId="11287" TurnInName="Sage Mistwalker" TurnInId="24186" />
+    <PickUp QuestName="The Artifacts of Steel Gate" QuestId="11286" GiverName="Sage Mistwalker" GiverId="24186" />
+    <Objective QuestName="The Artifacts of Steel Gate" QuestId="11286" Type="CollectItem" ItemId="33109" ItemName="Steel Gate Artifact" CollectCount="10" />
+    <TurnIn QuestName="The Artifacts of Steel Gate" QuestId="11286" TurnInName="Sage Mistwalker" TurnInId="24186" />
+    <PickUp QuestName="The Cleansing" QuestId="11317" GiverName="Sage Mistwalker" GiverId="24186" />
+    <PickUp QuestName="And You Thought Murlocs Smelled Bad!" QuestId="11397" GiverName="Apothecary Anastasia" GiverId="24359" />
+    <TurnIn QuestName="Keeping Watch on the Interlopers" QuestId="11297" TurnInName="Apothecary Malthus" TurnInId="24152" />
+    <PickUp QuestName="What&apos;s in That Brew?" QuestId="11298" GiverName="Apothecary Malthus" GiverId="24152" />
+    <PickUp QuestName="Brains! Brains! Brains!" QuestId="11301" GiverName="Apothecary Grick" GiverId="24218" />
+    <Objective QuestName="The Cleansing" QuestId="11317" Type="KillMob" MobId="27959" MobName="Your Inner Turmoil" KillCount="1" />
+    <TurnIn QuestName="The Cleansing" QuestId="11317" TurnInName="Sage Mistwalker" TurnInId="24186" />
+    <PickUp QuestName="In Worg&apos;s Clothing" QuestId="11323" GiverName="Sage Mistwalker" GiverId="24186" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24210" MobName="Riven Widow Cocoon" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33618" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="In Worg&apos;s Clothing" QuestId="11323" TurnInName="Ulfang" TurnInId="24261" />
+    <PickUp QuestName="Brother Betrayers" QuestId="11415" GiverName="Ulfang" GiverId="24261" />
+    <Objective QuestName="Brother Betrayers" QuestId="11415" Type="KillMob" MobId="24516" MobName="Bjomolf" KillCount="1" />
+    <TurnIn QuestName="Rivenwood Captives" QuestId="11296" TurnInName="Longrunner Skycloud" TurnInId="24209" />
+    <Objective QuestName="Brother Betrayers" QuestId="11415" Type="KillMob" MobId="24517" MobName="Varg" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33284" ItemName="Gjalerbron Cage Key" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33290" ItemName="Large Gjalerbron Cage Key" CollectCount="1" />
+    <Objective QuestName="Dealing With Gjalerbron" QuestId="11263" Type="KillMob" MobId="23991" MobName="Gjalerbron Warrior" KillCount="15" />
+    <Objective QuestName="Dealing With Gjalerbron" QuestId="11263" Type="KillMob" MobId="23990" MobName="Gjalerbron Rune-Caster" KillCount="8" />
+    <Objective QuestName="Dealing With Gjalerbron" QuestId="11263" Type="KillMob" MobId="23989" MobName="Gjalerbron Sleep-Watcher" KillCount="8" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33347" ItemName="Gjalerbron Attack Plans" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33347" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <PickUp QuestName="Gjalerbron Attack Plans" QuestId="11266" GiverName="Longrunner Skycloud" GiverId="24209" />
+    <CustomBehavior File="UseItemOn" ItemId="33618" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Brother Betrayers" QuestId="11415" TurnInName="Ulfang" TurnInId="24261" />
+    <PickUp QuestName="Eyes of the Eagle" QuestId="11417" GiverName="Ulfang" GiverId="24261" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24518" MobName="Talonshrike" KillCount="1" />
+    <Objective QuestName="Eyes of the Eagle" QuestId="11417" Type="CollectItem" ItemId="34027" ItemName="Eyes of the Eagle" CollectCount="1" />
+    <Objective QuestName="What&apos;s in That Brew?" QuestId="11298" Type="CollectItem" ItemId="33541" ItemName="Dwarven Keg" CollectCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23967" MobName="Deranged Explorer" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33554" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Brains! Brains! Brains!" QuestId="11301" Type="CollectItem" ItemId="33558" ItemName="Deranged Explorer Brain" CollectCount="12" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33962" ItemName="Scourge Device" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33962" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <PickUp QuestName="It&apos;s a Scourge Device" QuestId="11398" GiverName="Ulfang" GiverId="24261" />
+    <TurnIn QuestName="What&apos;s in That Brew?" QuestId="11298" TurnInName="Apothecary Malthus" TurnInId="24152" />
+    <TurnIn QuestName="It&apos;s a Scourge Device" QuestId="11398" TurnInName="Apothecary Anastasia" TurnInId="24359" />
+    <PickUp QuestName="Bring Down Those Shields" QuestId="11399" GiverName="Apothecary Anastasia" GiverId="24359" />
+    <TurnIn QuestName="Brains! Brains! Brains!" QuestId="11301" TurnInName="Apothecary Grick" TurnInId="24218" />
+    <CustomBehavior File="UseItemOn" ItemId="33960" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Bring Down Those Shields" QuestId="11399" Type="KillMob" MobId="24464" MobName="Scourging Crystal" KillCount="3" />
+    <CustomBehavior File="UseItemOn" ItemId="33960" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Bring Down Those Shields" QuestId="11399" Type="KillMob" MobId="24464" MobName="Scourging Crystal" KillCount="3" />
+    <CustomBehavior File="UseItemOn" ItemId="33960" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Bring Down Those Shields" QuestId="11399" Type="KillMob" MobId="24464" MobName="Scourging Crystal" KillCount="3" />
+    <PickUp QuestName="Trident of the Son" QuestId="11422" GiverName="Old Icefin" GiverId="24544" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24546" MobName="Rotgill" KillCount="1" />
+    <Objective QuestName="Trident of the Son" QuestId="11422" Type="CollectItem" ItemId="34035" ItemName="Rotgill&apos;s Trident" CollectCount="1" />
+    <TurnIn QuestName="Trident of the Son" QuestId="11422" TurnInName="Old Icefin" TurnInId="24544" />
+    <TurnIn QuestName="And You Thought Murlocs Smelled Bad!" QuestId="11397" TurnInName="Apothecary Anastasia" TurnInId="24359" />
+    <TurnIn QuestName="Bring Down Those Shields" QuestId="11399" TurnInName="Apothecary Anastasia" TurnInId="24359" />
+    <TurnIn QuestName="Gjalerbron Attack Plans" QuestId="11266" TurnInName="Celea Frozenmane" TurnInId="24032" />
+    <TurnIn QuestName="Of Keys and Cages" QuestId="11265" TurnInName="Greatmother Ankha" TurnInId="24135" />
+    <PickUp QuestName="The Walking Dead" QuestId="11268" GiverName="Greatmother Ankha" GiverId="24135" />
+    <TurnIn QuestName="Dealing With Gjalerbron" QuestId="11263" TurnInName="Chieftain Ashtotem" TurnInId="24129" />
+    <PickUp QuestName="Necro Overlord Mezhen" QuestId="11264" GiverName="Chieftain Ashtotem" GiverId="24129" />
+    <PickUp QuestName="Sleeping Giants" QuestId="11433" GiverName="Ahota Whitefrost" GiverId="24127" />
+    <CustomBehavior File="UseItemOn" ItemId="33618" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Eyes of the Eagle" QuestId="11417" TurnInName="Ulfang" TurnInId="24261" />
+    <PickUp QuestName="Alpha Worg" QuestId="11324" GiverName="Ulfang" GiverId="24261" />
+    <Objective QuestName="Alpha Worg" QuestId="11324" Type="KillMob" MobId="24277" MobName="Garwal" KillCount="1" />
+    <Objective QuestName="Necro Overlord Mezhen" QuestId="11264" Type="KillMob" MobId="24018" MobName="Necro Overlord Mezhen" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="34091" ItemName="Mezhen&apos;s Writings" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="34091" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <PickUp QuestName="The Slumbering King" QuestId="11453" GiverName="Ulfang" GiverId="24261" />
+    <Objective QuestName="The Slumbering King" QuestId="11453" Type="KillMob" MobId="24023" MobName="Queen Angerboda" KillCount="1" />
+    <Objective QuestName="The Walking Dead" QuestId="11268" Type="KillMob" MobId="24013" MobName="Deathless Watcher" KillCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24014" MobName="Necrolord" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="34083" ItemName="Awakening Rod" CollectCount="5" />
+    <Objective QuestName="The Walking Dead" QuestId="11268" Type="KillMob" MobId="23992" MobName="Putrid Wight" KillCount="2" />
+    <CustomBehavior File="UseItemOn" ItemId="34083" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Sleeping Giants" QuestId="11433" Type="KillMob" MobId="24669" MobName="Dormant Vrykul" KillCount="5" />
+    <Objective QuestName="The Walking Dead" QuestId="11268" Type="KillMob" MobId="24073" MobName="Fearsome Horror" KillCount="4" />
+    <CustomBehavior File="UseItemOn" ItemId="6948" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Sleeping Giants" QuestId="11433" TurnInName="Ahota Whitefrost" TurnInId="24127" />
+    <TurnIn QuestName="The Walking Dead" QuestId="11268" TurnInName="Greatmother Ankha" TurnInId="24135" />
+    <TurnIn QuestName="Necro Overlord Mezhen" QuestId="11264" TurnInName="Chieftain Ashtotem" TurnInId="24129" />
+    <TurnIn QuestName="The Slumbering King" QuestId="11453" TurnInName="Chieftain Ashtotem" TurnInId="24129" />
+    <TurnIn QuestName="Alpha Worg" QuestId="11324" TurnInName="Sage Mistwalker" TurnInId="24186" />
+    <PickUp QuestName="The Dead Rise!" QuestId="11504" GiverName="Orfus of Kamagua" GiverId="23804" />
+    <PickUp QuestName="Green Eggs and Whelps" QuestId="11279" GiverName="Plaguebringer Tillinghast" GiverId="24157" />
+    <TurnIn QuestName="New Agamand" QuestId="11304" TurnInName="Chief Plaguebringer Harris" TurnInId="24251" />
+    <PickUp QuestName="A Tailor-Made Formula" QuestId="11305" GiverName="Chief Plaguebringer Harris" GiverId="24251" />
+    <PickUp QuestName="Shield Hill" QuestId="11424" GiverName="&quot;Hacksaw&quot; Jenny" GiverId="24252" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="27926" MobName="Thorvald" KillCount="1" />
+    <Objective QuestName="A Tailor-Made Formula" QuestId="11305" Type="CollectItem" ItemId="38098" ItemName="Dragonflayer Patriarch&apos;s Blood" CollectCount="1" />
+    <TurnIn QuestName="A Tailor-Made Formula" QuestId="11305" TurnInName="Chief Plaguebringer Harris" TurnInId="24251" />
+    <PickUp QuestName="Apply Heat and Stir" QuestId="11306" GiverName="Chief Plaguebringer Harris" GiverId="24251" />
+    <CustomBehavior File="UseItemOn" ItemId="33614" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33614" ItemName="Flask of Vrykul Blood" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="33615" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Apply Heat and Stir" QuestId="11306" Type="CollectItem" ItemId="33617" ItemName="Balanced Concoction" CollectCount="1" />
+    <TurnIn QuestName="Apply Heat and Stir" QuestId="11306" TurnInName="Chief Plaguebringer Harris" TurnInId="24251" />
+    <PickUp QuestName="Field Test" QuestId="11307" GiverName="Chief Plaguebringer Harris" GiverId="24251" />
+    <CustomBehavior File="UseItemOn" ItemId="33621" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <PickUp QuestName="Root Causes" QuestId="11182" GiverName="Ember Clutch Ancient" GiverId="23870" />
+    <Objective QuestName="Root Causes" QuestId="11182" Type="KillMob" MobId="23940" MobName="Skeld Drakeson" KillCount="1" />
+    <Objective QuestName="Root Causes" QuestId="11182" Type="KillMob" MobId="23871" MobName="Dragonflayer Handler" KillCount="5" />
+    <TurnIn QuestName="Root Causes" QuestId="11182" TurnInName="Ember Clutch Ancient" TurnInId="23870" />
+    <CustomBehavior File="UseItemOn" ItemId="33418" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24160" MobName="Plagued Proto-Whelp" KillCount="1" />
+    <Objective QuestName="Green Eggs and Whelps" QuestId="11279" Type="CollectItem" ItemId="33420" ItemName="Plagued Proto-Whelp Specimen" CollectCount="10" />
+    <TurnIn QuestName="Green Eggs and Whelps" QuestId="11279" TurnInName="Plaguebringer Tillinghast" TurnInId="24157" />
+    <PickUp QuestName="Draconis Gastritis" QuestId="11280" GiverName="Plaguebringer Tillinghast" GiverId="24157" />
+    <TurnIn QuestName="Field Test" QuestId="11307" TurnInName="Chief Plaguebringer Harris" TurnInId="24251" />
+    <PickUp QuestName="Time for Cleanup" QuestId="11308" GiverName="Chief Plaguebringer Harris" GiverId="24251" />
+    <TurnIn QuestName="Time for Cleanup" QuestId="11308" TurnInName="&quot;Hacksaw&quot; Jenny" TurnInId="24252" />
+    <PickUp QuestName="Parts for the Job" QuestId="11309" GiverName="&quot;Hacksaw&quot; Jenny" GiverId="24252" />
+    <Objective QuestName="The Dead Rise!" QuestId="11504" Type="CollectItem" ItemId="34222" ItemName="Fengir&apos;s Clue" CollectCount="1" />
+    <Objective QuestName="The Dead Rise!" QuestId="11504" Type="CollectItem" ItemId="34223" ItemName="Rodin&apos;s Clue" CollectCount="1" />
+    <Objective QuestName="The Dead Rise!" QuestId="11504" Type="CollectItem" ItemId="34224" ItemName="Isuldof&apos;s Clue" CollectCount="1" />
+    <CustomBehavior File="InteractWith" MobId="187027" NumOfTimes="1" CollectionDistance="100" />
+    <Objective QuestName="The Dead Rise!" QuestId="11504" Type="CollectItem" ItemId="34225" ItemName="Windan&apos;s Clue" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24871" MobName="Risen Vrykul Ancestor" KillCount="1" />
+    <Objective QuestName="Shield Hill" QuestId="11424" Type="CollectItem" ItemId="34043" ItemName="Ancient Vrykul Bone" CollectCount="5" />
+    <PickUp QuestName="Against Nifflevar" QuestId="12482" GiverName="Ranger Captain Areiel" GiverId="27922" />
+    <PickUp QuestName="The Enemy&apos;s Legacy" QuestId="11423" GiverName="Scribe Seguine" GiverId="24548" />
+    <Objective QuestName="The Enemy&apos;s Legacy" QuestId="11423" Type="CollectItem" ItemId="34042" ItemName="Saga of the Val&apos;kyr" CollectCount="1" />
+    <Objective QuestName="The Enemy&apos;s Legacy" QuestId="11423" Type="CollectItem" ItemId="34040" ItemName="Saga of the Twins" CollectCount="1" />
+    <Objective QuestName="The Enemy&apos;s Legacy" QuestId="11423" Type="CollectItem" ItemId="34041" ItemName="Saga of the Winter Curse" CollectCount="1" />
+    <Objective QuestName="Against Nifflevar" QuestId="12482" Type="KillMob" MobId="23654" MobName="Dragonflayer Warrior" KillCount="5" />
+    <Objective QuestName="Against Nifflevar" QuestId="12482" Type="KillMob" MobId="23656" MobName="Dragonflayer Rune-Seer" KillCount="4" />
+    <Objective QuestName="Against Nifflevar" QuestId="12482" Type="KillMob" MobId="23994" MobName="Dragonflayer Hunting Hound" KillCount="4" />
+    <TurnIn QuestName="Against Nifflevar" QuestId="12482" TurnInName="Ranger Captain Areiel" TurnInId="27922" />
+    <TurnIn QuestName="The Enemy&apos;s Legacy" QuestId="11423" TurnInName="Scribe Seguine" TurnInId="24548" />
+    <Objective QuestName="Parts for the Job" QuestId="11309" Type="CollectItem" ItemId="33611" ItemName="Shoveltusk Ligament" CollectCount="6" />
+    <TurnIn QuestName="Parts for the Job" QuestId="11309" TurnInName="&quot;Hacksaw&quot; Jenny" TurnInId="24252" />
+    <PickUp QuestName="Warning: Some Assembly Required" QuestId="11310" GiverName="&quot;Hacksaw&quot; Jenny" GiverId="24252" />
+    <TurnIn QuestName="Shield Hill" QuestId="11424" TurnInName="&quot;Hacksaw&quot; Jenny" TurnInId="24252" />
+    <CustomBehavior File="UseItemOn" ItemId="33613" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="33441" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="The Dead Rise!" QuestId="11504" TurnInName="Orfus of Kamagua" TurnInId="23804" />
+    <PickUp QuestName="Elder Atuik and Kamagua" QuestId="11507" GiverName="Orfus of Kamagua" GiverId="23804" />
+    <TurnIn QuestName="Elder Atuik and Kamagua" QuestId="11507" TurnInName="Elder Atuik" TurnInId="24755" />
+    <PickUp QuestName="Grezzix Spindlesnap" QuestId="11508" GiverName="Elder Atuik" GiverId="24755" />
+    <PickUp QuestName="Feeding the Survivors" QuestId="11456" GiverName="Elder Atuik" GiverId="24755" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24681" MobName="Island Shoveltusk" KillCount="1" />
+    <Objective QuestName="Feeding the Survivors" QuestId="11456" Type="CollectItem" ItemId="36776" ItemName="Island Shoveltusk Meat" CollectCount="6" />
+    <TurnIn QuestName="Feeding the Survivors" QuestId="11456" TurnInName="Elder Atuik" TurnInId="24755" />
+    <PickUp QuestName="Arming Kamagua" QuestId="11457" GiverName="Elder Atuik" GiverId="24755" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24673" MobName="Frostwing Chimaera" KillCount="1" />
+    <Objective QuestName="Arming Kamagua" QuestId="11457" Type="CollectItem" ItemId="34101" ItemName="Chimaera Horn" CollectCount="3" />
+    <TurnIn QuestName="Arming Kamagua" QuestId="11457" TurnInName="Elder Atuik" TurnInId="24755" />
+    <PickUp QuestName="Avenge Iskaal" QuestId="11458" GiverName="Elder Atuik" GiverId="24755" />
+    <TurnIn QuestName="Grezzix Spindlesnap" QuestId="11508" TurnInName="Grezzix Spindlesnap" TurnInId="24643" />
+    <PickUp QuestName="Street &quot;Cred&quot;" QuestId="11509" GiverName="Grezzix Spindlesnap" GiverId="24643" />
+    <TurnIn QuestName="Street &quot;Cred&quot;" QuestId="11509" TurnInName="&quot;Silvermoon&quot; Harry" TurnInId="24539" />
+    <PickUp QuestName="&quot;Scoodles&quot;" QuestId="11510" GiverName="&quot;Silvermoon&quot; Harry" GiverId="24539" />
+    <PickUp QuestName="Forgotten Treasure" QuestId="11434" GiverName="Handsome Terry" GiverId="24537" />
+    <PickUp QuestName="Swabbin&apos; Soap" QuestId="11469" GiverName="Scuttle Frostprow" GiverId="24784" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24899" MobName="&quot;Scoodles&quot;" KillCount="1" />
+    <Objective QuestName="&quot;Scoodles&quot;" QuestId="11510" Type="CollectItem" ItemId="34235" ItemName="Sin&apos;dorei Scrying Crystal" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="34076" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Forgotten Treasure" QuestId="11434" Type="CollectItem" ItemId="34070" ItemName="Eagle Figurine" CollectCount="1" />
+    <Objective QuestName="Forgotten Treasure" QuestId="11434" Type="CollectItem" ItemId="34069" ItemName="Amani Vase" CollectCount="1" />
+    <TurnIn QuestName="Forgotten Treasure" QuestId="11434" TurnInName="Handsome Terry" TurnInId="24537" />
+    <PickUp QuestName="The Fragrance of Money" QuestId="11455" GiverName="Handsome Terry" GiverId="24537" />
+    <PickUp QuestName="Gambling Debt" QuestId="11464" GiverName="Taruk" GiverId="24541" />
+    <TurnIn QuestName="&quot;Scoodles&quot;" QuestId="11510" TurnInName="&quot;Silvermoon&quot; Harry" TurnInId="24539" />
+    <PickUp QuestName="The Staff of Storm&apos;s Fury" QuestId="11511" GiverName="&quot;Silvermoon&quot; Harry" GiverId="24539" />
+    <PickUp QuestName="The Frozen Heart of Isuldof" QuestId="11512" GiverName="&quot;Silvermoon&quot; Harry" GiverId="24539" />
+    <PickUp QuestName="The Lost Shield of the Aesirites" QuestId="11519" GiverName="&quot;Silvermoon&quot; Harry" GiverId="24539" />
+    <PickUp QuestName="The Ancient Armor of the Kvaldir" QuestId="11567" GiverName="&quot;Silvermoon&quot; Harry" GiverId="24539" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24539" MobName="&quot;Silvermoon&quot; Harry" KillCount="1" />
+    <Objective QuestName="Gambling Debt" QuestId="11464" Type="CollectItem" ItemId="34115" ItemName="&quot;Silvermoon&quot; Harry&apos;s Debt" CollectCount="1" />
+    <TurnIn QuestName="Gambling Debt" QuestId="11464" TurnInName="Taruk" TurnInId="24541" />
+    <PickUp QuestName="Jack Likes His Drink" QuestId="11466" GiverName="Taruk" GiverId="24541" />
+    <Objective QuestName="Jack Likes His Drink" QuestId="11466" Type="CollectItem" ItemId="34116" ItemName="Jack Adams&apos; Debt" CollectCount="1" />
+    <TurnIn QuestName="Jack Likes His Drink" QuestId="11466" TurnInName="Taruk" TurnInId="24541" />
+    <PickUp QuestName="Dead Man&apos;s Debt" QuestId="11467" GiverName="Taruk" GiverId="24541" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24633" MobName="Rabid Brown Bear" KillCount="1" />
+    <Objective QuestName="The Fragrance of Money" QuestId="11455" Type="CollectItem" ItemId="34084" ItemName="Bear Musk" CollectCount="4" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24785" MobName="Big Roy" KillCount="1" />
+    <Objective QuestName="Swabbin&apos; Soap" QuestId="11469" Type="CollectItem" ItemId="34122" ItemName="Big Roy&apos;s Blubber" CollectCount="1" />
+    <TurnIn QuestName="The Fragrance of Money" QuestId="11455" TurnInName="Handsome Terry" TurnInId="24537" />
+    <PickUp QuestName="A Traitor Among Us" QuestId="11473" GiverName="Handsome Terry" GiverId="24537" />
+    <TurnIn QuestName="A Traitor Among Us" QuestId="11473" TurnInName="Zeh&apos;gehn" TurnInId="24525" />
+    <PickUp QuestName="Zeh&apos;gehn Sez" QuestId="11459" GiverName="Zeh&apos;gehn" GiverId="24525" />
+    <TurnIn QuestName="Zeh&apos;gehn Sez" QuestId="11459" TurnInName="Handsome Terry" TurnInId="24537" />
+    <PickUp QuestName="A Carver and a Croaker" QuestId="11476" GiverName="Handsome Terry" GiverId="24537" />
+    <Objective QuestName="A Carver and a Croaker" QuestId="11476" Type="CollectItem" ItemId="35813" ItemName="Shiny Knife" CollectCount="1" />
+    <Objective QuestName="A Carver and a Croaker" QuestId="11476" Type="CollectItem" ItemId="35803" ItemName="Scalawag Frog" CollectCount="1" />
+    <TurnIn QuestName="A Carver and a Croaker" QuestId="11476" TurnInName="Zeh&apos;gehn" TurnInId="24525" />
+    <PickUp QuestName="&quot;Crowleg&quot; Dan" QuestId="11479" GiverName="Zeh&apos;gehn" GiverId="24525" />
+    <Objective QuestName="&quot;Crowleg&quot; Dan" QuestId="11479" Type="KillMob" MobId="24713" MobName="&quot;Crowleg&quot; Dan" KillCount="1" />
+    <TurnIn QuestName="&quot;Crowleg&quot; Dan" QuestId="11479" TurnInName="Handsome Terry" TurnInId="24537" />
+    <PickUp QuestName="Meet Number Two" QuestId="11480" GiverName="Handsome Terry" GiverId="24537" />
+    <TurnIn QuestName="Meet Number Two" QuestId="11480" TurnInName="Annie Bonn" TurnInId="24741" />
+    <PickUp QuestName="The Jig is Up" QuestId="11471" GiverName="Annie Bonn" GiverId="24741" />
+    <TurnIn QuestName="Swabbin&apos; Soap" QuestId="11469" TurnInName="Scuttle Frostprow" TurnInId="24784" />
+    <TurnIn QuestName="The Lost Shield of the Aesirites" QuestId="11519" TurnInName="Captain Ellis" TurnInId="24910" />
+    <PickUp QuestName="Mutiny on the Mercy" QuestId="11527" GiverName="Captain Ellis" GiverId="24910" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="25026" MobName="Mutinous Sea Dog" KillCount="1" />
+    <Objective QuestName="Mutiny on the Mercy" QuestId="11527" Type="CollectItem" ItemId="34387" ItemName="Barrel of Blasting Powder" CollectCount="5" />
+    <TurnIn QuestName="Mutiny on the Mercy" QuestId="11527" TurnInName="Captain Ellis" TurnInId="24910" />
+    <PickUp QuestName="Sorlof&apos;s Booty" QuestId="11529" GiverName="Captain Ellis" GiverId="24910" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24914" MobName="Sorlof" KillCount="1" />
+    <Objective QuestName="Sorlof&apos;s Booty" QuestId="11529" Type="CollectItem" ItemId="34468" ItemName="Sorlof&apos;s Booty" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24742" MobName="&quot;Mad&quot; Jonah Sterling" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24547" MobName="Hozzer" KillCount="1" />
+    <Objective QuestName="The Jig is Up" QuestId="11471" Type="CollectItem" ItemId="34128" ItemName="Jonah Sterling&apos;s Spyglass" CollectCount="1" />
+    <Objective QuestName="The Frozen Heart of Isuldof" QuestId="11512" Type="CollectItem" ItemId="34237" ItemName="The Frozen Heart of Isuldof" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="24790" MobName="Black Conrad&apos;s Ghost" KillCount="1" />
+    <Objective QuestName="Dead Man&apos;s Debt" QuestId="11467" Type="CollectItem" ItemId="34118" ItemName="Black Conrad&apos;s Treasure" CollectCount="1" />
+    <Objective QuestName="Avenge Iskaal" QuestId="11458" Type="KillMob" MobId="24676" MobName="Crazed Northsea Slaver" KillCount="8" />
+    <Objective QuestName="The Staff of Storm&apos;s Fury" QuestId="11511" Type="CollectItem" ItemId="34236" ItemName="The Staff of Storm&apos;s Fury" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="6948" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Avenge Iskaal" QuestId="11458" TurnInName="Elder Atuik" TurnInId="24755" />
+    <PickUp QuestName="Travel to Moa&apos;ki Harbor" QuestId="12117" GiverName="Anuniaq" GiverId="24810" />
+    <PickUp QuestName="Travel to Moa&apos;ki Harbor" QuestId="12118" GiverName="Anuniaq" GiverId="24810" />
+    <TurnIn QuestName="The Jig is Up" QuestId="11471" TurnInName="Annie Bonn" TurnInId="24741" />
+    <TurnIn QuestName="Dead Man&apos;s Debt" QuestId="11467" TurnInName="Taruk" TurnInId="24541" />
+    <Objective QuestName="The Ancient Armor of the Kvaldir" QuestId="11567" Type="CollectItem" ItemId="34239" ItemName="The Ancient Armor of the Kvaldir" CollectCount="1" />
+    <TurnIn QuestName="Sorlof&apos;s Booty" QuestId="11529" TurnInName="Captain Ellis" TurnInId="24910" />
+    <PickUp QuestName="The Shield of the Aesirites" QuestId="11530" GiverName="Captain Ellis" GiverId="24910" />
+    <TurnIn QuestName="The Shield of the Aesirites" QuestId="11530" TurnInName="Orfus of Kamagua" TurnInId="23804" />
+    <TurnIn QuestName="The Staff of Storm&apos;s Fury" QuestId="11511" TurnInName="Orfus of Kamagua" TurnInId="23804" />
+    <TurnIn QuestName="The Frozen Heart of Isuldof" QuestId="11512" TurnInName="Orfus of Kamagua" TurnInId="23804" />
+    <TurnIn QuestName="The Ancient Armor of the Kvaldir" QuestId="11567" TurnInName="Orfus of Kamagua" TurnInId="23804" />
+    <PickUp QuestName="A Return to Resting" QuestId="11568" GiverName="Orfus of Kamagua" GiverId="23804" />
+    <TurnIn QuestName="Draconis Gastritis" QuestId="11280" TurnInName="Plaguebringer Tillinghast" TurnInId="24157" />
+    <TurnIn QuestName="Warning: Some Assembly Required" QuestId="11310" TurnInName="&quot;Hacksaw&quot; Jenny" TurnInId="24252" />
+    <CustomBehavior File="UseItemOn" ItemId="34624" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="34624" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="34624" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="34624" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="A Return to Resting" QuestId="11568" TurnInName="Orfus of Kamagua" TurnInId="23804" />
+    <PickUp QuestName="Return to Atuik" QuestId="11572" GiverName="Orfus of Kamagua" GiverId="23804" />
+    <TurnIn QuestName="Return to Atuik" QuestId="11572" TurnInName="Elder Atuik" TurnInId="24755" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Howling Fjord (69-71) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Northrend_(69-80)__Borean_Tundra_(70-72)" />
+  </QuestOrder>
+</HBProfile>

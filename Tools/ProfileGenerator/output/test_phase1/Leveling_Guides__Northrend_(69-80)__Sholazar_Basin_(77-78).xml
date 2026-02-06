@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Northrend (69-80)\\Sholazar Basin (77-78)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>78</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="12522" Name="Need an Engine, Take an Engine">
+    <Objective Type="CollectItem" ItemId="38334" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Flying Machine Engine" Id="190447" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="5640.34" Y="5243.94" Z="-134.8" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12523" Name="Have a Part, Give a Part">
+    <Objective Type="CollectItem" ItemId="38349" CollectCount="7">
+      <CollectFrom>
+        <GameObject Name="Venture Co. Spare Parts" Id="190453" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="5810.23" Y="5339.57" Z="-90.89" />
+        <Hotspot X="5860.98" Y="5408.45" Z="-88.74" />
+        <Hotspot X="5865.16" Y="5438.04" Z="-79.9" />
+        <Hotspot X="5892.04" Y="5492.04" Z="-76.97" />
+        <Hotspot X="5903.4" Y="5368.38" Z="-106.31" />
+        <Hotspot X="5923.95" Y="5505.28" Z="-82.13" />
+        <Hotspot X="5930.28" Y="5381.09" Z="-106.31" />
+        <Hotspot X="5936.1" Y="5495.27" Z="-85.22" />
+        <Hotspot X="5936.66" Y="5364.58" Z="-98.6" />
+        <Hotspot X="5948.37" Y="5454.08" Z="-93.61" />
+        <Hotspot X="5953.18" Y="5404.57" Z="-95.44" />
+        <Hotspot X="5958.78" Y="5492.62" Z="-77.84" />
+        <Hotspot X="5958.83" Y="5389.85" Z="-97.86" />
+        <Hotspot X="5968.22" Y="5453.81" Z="-91.01" />
+        <Hotspot X="5982.06" Y="5453.45" Z="-90.1" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12560" Name="Crocolisk Mastery: The Plan">
+    <Objective Type="CollectItem" ItemId="38553" CollectCount="5">
+      <CollectFrom>
+        <GameObject Name="Sandfern" Id="190533" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="4953.47" Y="5013.43" Z="-107.75" />
+        <Hotspot X="5008.18" Y="4970.83" Z="-111.76" />
+        <Hotspot X="5151.6" Y="4782.19" Z="-134.47" />
+        <Hotspot X="5168.02" Y="4917.02" Z="-134.9" />
+        <Hotspot X="5174.97" Y="5009.06" Z="-134.12" />
+        <Hotspot X="5181.48" Y="4868.67" Z="-126.81" />
+        <Hotspot X="5189.63" Y="4964.87" Z="-134.29" />
+        <Hotspot X="5196.05" Y="4778.4" Z="-133.9" />
+        <Hotspot X="5198.1" Y="4833.59" Z="-119.3" />
+        <Hotspot X="5218.75" Y="4964.77" Z="-130.46" />
+        <Hotspot X="5234.83" Y="4849.06" Z="-128.37" />
+        <Hotspot X="5237.57" Y="4827.95" Z="-136.46" />
+        <Hotspot X="5240.55" Y="4894.19" Z="-130.44" />
+        <Hotspot X="5281.83" Y="4876.12" Z="-128.15" />
+        <Hotspot X="5283.61" Y="5017.45" Z="-136.1" />
+        <Hotspot X="5289.04" Y="4928.65" Z="-131.42" />
+        <Hotspot X="5293.39" Y="4780.71" Z="-138.31" />
+        <Hotspot X="5305.86" Y="4814.67" Z="-135.09" />
+        <Hotspot X="5307.76" Y="4851.25" Z="-130.87" />
+        <Hotspot X="5312.1" Y="4914.01" Z="-129.99" />
+        <Hotspot X="5337.37" Y="4958.92" Z="-131.69" />
+        <Hotspot X="5347.99" Y="5060.87" Z="-137.43" />
+        <Hotspot X="5411.1" Y="4908.53" Z="-194.15" />
+        <Hotspot X="5433.96" Y="5643.77" Z="-100.23" />
+        <Hotspot X="5475.89" Y="5775.69" Z="-81.44" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12658" Name="My Pet Roc">
+    <Objective Type="CollectItem" ItemId="38705" CollectCount="7">
+      <CollectFrom>
+        <GameObject Name="Roc Egg" Id="190660" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6346.91" Y="4290.73" Z="-48.64" />
+        <Hotspot X="6390.87" Y="4297.17" Z="-48.95" />
+        <Hotspot X="6394.99" Y="4230.42" Z="-43.42" />
+        <Hotspot X="6395.35" Y="4343.69" Z="-47.29" />
+        <Hotspot X="6405.9" Y="4283.05" Z="-46.73" />
+        <Hotspot X="6427.52" Y="4361.32" Z="-49.42" />
+        <Hotspot X="6438.85" Y="4466.86" Z="-57.68" />
+        <Hotspot X="6445.37" Y="4419.02" Z="-52.95" />
+        <Hotspot X="6477.37" Y="4516.27" Z="-63.13" />
+        <Hotspot X="6479.91" Y="4556.75" Z="-65.03" />
+        <Hotspot X="6480.72" Y="4476.31" Z="-58.08" />
+        <Hotspot X="6496.2" Y="4663.46" Z="-65.55" />
+        <Hotspot X="6515.16" Y="4350.1" Z="-45.13" />
+        <Hotspot X="6519.78" Y="4624.88" Z="-65.88" />
+        <Hotspot X="6533.12" Y="4383.97" Z="-45.32" />
+        <Hotspot X="6537.28" Y="4295.96" Z="-13.56" />
+        <Hotspot X="6548.76" Y="4495.22" Z="-51.73" />
+        <Hotspot X="6561.76" Y="4511.64" Z="-52.02" />
+        <Hotspot X="6575.41" Y="4420.96" Z="-21.59" />
+        <Hotspot X="6591.74" Y="4663.28" Z="-29.78" />
+        <Hotspot X="6594.46" Y="4567.35" Z="-48.02" />
+        <Hotspot X="6596.32" Y="4482.09" Z="-40.24" />
+        <Hotspot X="6597.61" Y="4332.43" Z="47.29" />
+        <Hotspot X="6610.36" Y="4445.82" Z="2.12" />
+        <Hotspot X="6619.61" Y="4585.2" Z="-22.33" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12535" Name="Mischief in the Making">
+    <Objective Type="CollectItem" ItemId="38504" CollectCount="8">
+      <CollectFrom>
+        <GameObject Name="Skyreach Crystal Formation" Id="190500" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="4740.6" Y="4349.06" Z="-42.8" />
+        <Hotspot X="4750.25" Y="4626.83" Z="-57.71" />
+        <Hotspot X="4762.29" Y="4290.82" Z="-32.64" />
+        <Hotspot X="4762.41" Y="4241.44" Z="-20.2" />
+        <Hotspot X="4768.71" Y="4526.27" Z="-60.05" />
+        <Hotspot X="4783.72" Y="4449.52" Z="-65.26" />
+        <Hotspot X="4787.96" Y="4267.36" Z="-46.95" />
+        <Hotspot X="4788.75" Y="4740.78" Z="-78.59" />
+        <Hotspot X="4790.94" Y="4537.65" Z="-72.38" />
+        <Hotspot X="4795.33" Y="4784.33" Z="-81.6" />
+        <Hotspot X="4796.59" Y="4224.81" Z="-22.24" />
+        <Hotspot X="4797.01" Y="4300.89" Z="-57.04" />
+        <Hotspot X="4801.48" Y="4532.41" Z="-66.35" />
+        <Hotspot X="4809.12" Y="4290.98" Z="-44.42" />
+        <Hotspot X="4824.58" Y="4262.67" Z="-36.21" />
+        <Hotspot X="4827.41" Y="4581.93" Z="-61.77" />
+        <Hotspot X="4831.02" Y="4692.83" Z="-68.0" />
+        <Hotspot X="4833.67" Y="4347.14" Z="-56.84" />
+        <Hotspot X="4849.33" Y="4604.23" Z="-67.92" />
+        <Hotspot X="4850.73" Y="4578.76" Z="-63.3" />
+        <Hotspot X="4866.2" Y="4616.57" Z="-69.02" />
+        <Hotspot X="4867.84" Y="4648.72" Z="-68.66" />
+        <Hotspot X="4877.52" Y="4858.54" Z="-94.05" />
+        <Hotspot X="4890.12" Y="4826.26" Z="-100.96" />
+        <Hotspot X="4892.42" Y="4530.67" Z="-68.51" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12575" Name="The Lost Mistwhisper Treasure">
+    <Objective Type="CollectItem" ItemId="38601" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Mistwhisper Treasure" Id="190578" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6721.81" Y="5112.9" Z="-14.36" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Sholazar Basin (77-78)" LogColor="Green" />
+    <PickUp QuestName="Where in the World is Hemet Nesingwary?" QuestId="12521" GiverName="Archmage Pentarus" GiverId="28160" />
+    <TurnIn QuestName="Where in the World is Hemet Nesingwary?" QuestId="12521" TurnInName="Monte Muzzleshot" TurnInId="27987" />
+    <PickUp QuestName="Welcome to Sholazar Basin" QuestId="12489" GiverName="Monte Muzzleshot" GiverId="27987" />
+    <PickUp QuestName="Venture Co. Misadventure" QuestId="12524" GiverName="Debaar" GiverId="28032" />
+    <PickUp QuestName="It Could Be Anywhere!" QuestId="12624" GiverName="Chad" GiverId="28497" />
+    <TurnIn QuestName="Welcome to Sholazar Basin" QuestId="12489" TurnInName="Hemet Nesingwary" TurnInId="27986" />
+    <PickUp QuestName="Need an Engine, Take an Engine" QuestId="12522" GiverName="Weslex Quickwrench" GiverId="28033" />
+    <Objective QuestName="Need an Engine, Take an Engine" QuestId="12522" Type="CollectItem" ItemId="38334" ItemName="Flying Machine Engine" CollectCount="1" />
+    <PickUp QuestName="Engineering a Disaster" QuestId="12688" GiverName="Engineer Helice" GiverId="28787" />
+    <TurnIn QuestName="Venture Co. Misadventure" QuestId="12524" TurnInName="Debaar" TurnInId="28032" />
+    <PickUp QuestName="Wipe That Grin Off His Face" QuestId="12525" GiverName="Debaar" GiverId="28032" />
+    <TurnIn QuestName="It Could Be Anywhere!" QuestId="12624" TurnInName="Chad" TurnInId="28497" />
+    <TurnIn QuestName="Engineering a Disaster" QuestId="12688" TurnInName="Hemet Nesingwary" TurnInId="27986" />
+    <TurnIn QuestName="Need an Engine, Take an Engine" QuestId="12522" TurnInName="Weslex Quickwrench" TurnInId="28033" />
+    <PickUp QuestName="Have a Part, Give a Part" QuestId="12523" GiverName="Weslex Quickwrench" GiverId="28033" />
+    <Objective QuestName="Wipe That Grin Off His Face" QuestId="12525" Type="KillMob" MobId="28188" MobName="Meatpie" KillCount="1" />
+    <Objective QuestName="Wipe That Grin Off His Face" QuestId="12525" Type="KillMob" MobId="28186" MobName="Foreman Swindlegrin" KillCount="1" />
+    <Objective QuestName="Have a Part, Give a Part" QuestId="12523" Type="CollectItem" ItemId="38349" ItemName="Venture Co. Spare Parts" CollectCount="7" />
+    <TurnIn QuestName="Have a Part, Give a Part" QuestId="12523" TurnInName="Weslex Quickwrench" TurnInId="28033" />
+    <PickUp QuestName="Aerial Surveillance" QuestId="12696" GiverName="Professor Calvert" GiverId="28266" />
+    <TurnIn QuestName="Wipe That Grin Off His Face" QuestId="12525" TurnInName="Debaar" TurnInId="28032" />
+    <PickUp QuestName="Kick, What Kick?" QuestId="12589" GiverName="Drostan" GiverId="28328" />
+    <CustomBehavior File="UseItemOn" ItemId="38573" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Kick, What Kick?" QuestId="12589" TurnInName="Drostan" TurnInId="28328" />
+    <PickUp QuestName="The Great Hunter&apos;s Challenge" QuestId="12592" GiverName="Drostan" GiverId="28328" />
+    <PickUp QuestName="Dreadsaber Mastery: Becoming a Predator" QuestId="12549" GiverName="Buck Cantwell" GiverId="28031" />
+    <PickUp QuestName="Rhino Mastery: The Test" QuestId="12520" GiverName="Hemet Nesingwary" GiverId="27986" />
+    <Objective QuestName="Dreadsaber Mastery: Becoming a Predator" QuestId="12549" Type="KillMob" MobId="28001" MobName="Dreadsaber" KillCount="15" />
+    <Objective QuestName="Rhino Mastery: The Test" QuestId="12520" Type="KillMob" MobId="28009" MobName="Shardhorn Rhino" KillCount="15" />
+    <TurnIn QuestName="Rhino Mastery: The Test" QuestId="12520" TurnInName="Hemet Nesingwary" TurnInId="27986" />
+    <PickUp QuestName="Rhino Mastery: The Chase" QuestId="12526" GiverName="Hemet Nesingwary" GiverId="27986" />
+    <TurnIn QuestName="Dreadsaber Mastery: Becoming a Predator" QuestId="12549" TurnInName="Buck Cantwell" TurnInId="28031" />
+    <PickUp QuestName="Dreadsaber Mastery: Stalking the Prey" QuestId="12550" GiverName="Buck Cantwell" GiverId="28031" />
+    <PickUp QuestName="A Steak Fit for a Hunter" QuestId="12804" GiverName="Korg the Cleaver" GiverId="28046" />
+    <PickUp QuestName="Some Make Lemonade, Some Make Liquor" QuestId="12634" GiverName="Grimbooze Thunderbrew" GiverId="29157" />
+    <PickUp QuestName="Crocolisk Mastery: The Trial" QuestId="12551" GiverName="Debaar" GiverId="28032" />
+    <TurnIn QuestName="Rhino Mastery: The Chase" QuestId="12526" TurnInName="Oracle Soo-rahm" TurnInId="28191" />
+    <PickUp QuestName="An Offering for Soo-rahm" QuestId="12543" GiverName="Oracle Soo-rahm" GiverId="28191" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28129" MobName="Longneck Grazer" KillCount="1" />
+    <Objective QuestName="A Steak Fit for a Hunter" QuestId="12804" Type="CollectItem" ItemId="40394" ItemName="Longneck Grazer Steak" CollectCount="5" />
+    <Objective QuestName="Some Make Lemonade, Some Make Liquor" QuestId="12634" Type="CollectItem" ItemId="38656" ItemName="Orange" CollectCount="1" />
+    <Objective QuestName="Some Make Lemonade, Some Make Liquor" QuestId="12634" Type="CollectItem" ItemId="38653" ItemName="Banana Bunch" CollectCount="2" />
+    <Objective QuestName="Some Make Lemonade, Some Make Liquor" QuestId="12634" Type="CollectItem" ItemId="38655" ItemName="Papaya" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28011" MobName="Emperor Cobra" KillCount="1" />
+    <Objective QuestName="An Offering for Soo-rahm" QuestId="12543" Type="CollectItem" ItemId="38505" ItemName="Intact Cobra Fang" CollectCount="5" />
+    <Objective QuestName="Crocolisk Mastery: The Trial" QuestId="12551" Type="KillMob" MobId="28002" MobName="Mangal Crocolisk" KillCount="15" />
+    <Objective QuestName="It Could Be Anywhere!" QuestId="12624" Type="CollectItem" ItemId="38642" ItemName="Golden Engagement Ring" CollectCount="1" />
+    <TurnIn QuestName="Dreadsaber Mastery: Stalking the Prey" QuestId="12550" TurnInName="Buck Cantwell" TurnInId="28031" />
+    <PickUp QuestName="Dreadsaber Mastery: Ready to Pounce" QuestId="12558" GiverName="Buck Cantwell" GiverId="28031" />
+    <TurnIn QuestName="A Steak Fit for a Hunter" QuestId="12804" TurnInName="Korg the Cleaver" TurnInId="28046" />
+    <TurnIn QuestName="Some Make Lemonade, Some Make Liquor" QuestId="12634" TurnInName="Grimbooze Thunderbrew" TurnInId="29157" />
+    <PickUp QuestName="Still At It" QuestId="12644" GiverName="Grimbooze Thunderbrew" GiverId="29157" />
+    <Objective QuestName="Still At It" QuestId="12644" Type="CollectItem" ItemId="38688" ItemName="Thunderbrew&apos;s Jungle Punch" CollectCount="1" />
+    <TurnIn QuestName="Still At It" QuestId="12644" TurnInName="Grimbooze Thunderbrew" TurnInId="29157" />
+    <PickUp QuestName="The Taste Test" QuestId="12645" GiverName="Grimbooze Thunderbrew" GiverId="29157" />
+    <TurnIn QuestName="The Great Hunter&apos;s Challenge" QuestId="12592" TurnInName="Drostan" TurnInId="28328" />
+    <TurnIn QuestName="Crocolisk Mastery: The Trial" QuestId="12551" TurnInName="Debaar" TurnInId="28032" />
+    <PickUp QuestName="Crocolisk Mastery: The Plan" QuestId="12560" GiverName="Debaar" GiverId="28032" />
+    <CustomBehavior File="UseItemOn" ItemId="38697" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="38697" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="An Offering for Soo-rahm" QuestId="12543" TurnInName="Oracle Soo-rahm" TurnInId="28191" />
+    <PickUp QuestName="The Bones of Nozronn" QuestId="12544" GiverName="Oracle Soo-rahm" GiverId="28191" />
+    <CustomBehavior File="UseItemOn" ItemId="38519" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="The Bones of Nozronn" QuestId="12544" TurnInName="Hemet Nesingwary" TurnInId="27986" />
+    <PickUp QuestName="Rhino Mastery: The Kill" QuestId="12556" GiverName="Hemet Nesingwary" GiverId="27986" />
+    <Objective QuestName="Crocolisk Mastery: The Plan" QuestId="12560" Type="CollectItem" ItemId="38553" ItemName="Sandfern" CollectCount="5" />
+    <TurnIn QuestName="Aerial Surveillance" QuestId="12696" TurnInName="Pilot Vic" TurnInId="28746" />
+    <PickUp QuestName="An Embarassing Incident" QuestId="12699" GiverName="Pilot Vic" GiverId="28746" />
+    <PickUp QuestName="Force of Nature" QuestId="12803" GiverName="Pilot Vic" GiverId="28746" />
+    <CustomBehavior File="UseItemOn" ItemId="38697" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <PickUp QuestName="The Part-time Hunter" QuestId="12654" GiverName="Tamara Wobblesprocket" GiverId="28568" />
+    <CustomBehavior File="UseItemOn" ItemId="40390" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="An Embarassing Incident" QuestId="12699" Type="CollectItem" ItemId="39264" ItemName="Vic&apos;s Keys" CollectCount="1" />
+    <TurnIn QuestName="An Embarassing Incident" QuestId="12699" TurnInName="Pilot Vic" TurnInId="28746" />
+    <PickUp QuestName="Reconnaissance Flight" QuestId="12671" GiverName="Pilot Vic" GiverId="28746" />
+    <TurnIn QuestName="Reconnaissance Flight" QuestId="12671" TurnInName="Pilot Vic" TurnInId="28746" />
+    <TurnIn QuestName="The Taste Test" QuestId="12645" TurnInName="Grimbooze Thunderbrew" TurnInId="29157" />
+    <TurnIn QuestName="Crocolisk Mastery: The Plan" QuestId="12560" TurnInName="Debaar" TurnInId="28032" />
+    <PickUp QuestName="Crocolisk Mastery: The Ambush" QuestId="12569" GiverName="Debaar" GiverId="28032" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28297" MobName="Shango" KillCount="1" />
+    <Objective QuestName="Dreadsaber Mastery: Ready to Pounce" QuestId="12558" Type="CollectItem" ItemId="38523" ItemName="Shango&apos;s Pelt" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28288" MobName="Farunn" KillCount="1" />
+    <Objective QuestName="Rhino Mastery: The Kill" QuestId="12556" Type="CollectItem" ItemId="38522" ItemName="Farunn&apos;s Horn" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="38564" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28317" MobName="Bushwhacker" KillCount="1" />
+    <Objective QuestName="Crocolisk Mastery: The Ambush" QuestId="12569" Type="CollectItem" ItemId="38559" ItemName="Bushwhacker&apos;s Jaw" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28097" MobName="Pitch" KillCount="1" />
+    <Objective QuestName="The Part-time Hunter" QuestId="12654" Type="CollectItem" ItemId="38703" ItemName="Pitch&apos;s Remains" CollectCount="1" />
+    <PickUp QuestName="Playing Along" QuestId="12528" GiverName="Tracker Gekgek" GiverId="28095" />
+    <TurnIn QuestName="The Part-time Hunter" QuestId="12654" TurnInName="Tamara Wobblesprocket" TurnInId="28568" />
+    <TurnIn QuestName="Rhino Mastery: The Kill" QuestId="12556" TurnInName="Hemet Nesingwary" TurnInId="27986" />
+    <TurnIn QuestName="Dreadsaber Mastery: Ready to Pounce" QuestId="12558" TurnInName="Buck Cantwell" TurnInId="28031" />
+    <TurnIn QuestName="Crocolisk Mastery: The Ambush" QuestId="12569" TurnInName="Debaar" TurnInId="28032" />
+    <PickUp QuestName="In Search of Bigger Game" QuestId="12595" GiverName="Hemet Nesingwary" GiverId="27986" />
+    <TurnIn QuestName="In Search of Bigger Game" QuestId="12595" TurnInName="Dorian Drakestalker" TurnInId="28376" />
+    <PickUp QuestName="Sharpening Your Talons" QuestId="12603" GiverName="Dorian Drakestalker" GiverId="28376" />
+    <PickUp QuestName="Securing the Bait" QuestId="12605" GiverName="Dorian Drakestalker" GiverId="28376" />
+    <PickUp QuestName="Burning to Help" QuestId="12683" GiverName="Colvin Norrington" GiverId="28771" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28003" MobName="Bittertide Hydra" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="39164" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Burning to Help" QuestId="12683" Type="KillMob" MobId="28003" MobName="Bittertide Hydra" KillCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28408" MobName="Primordial Drake Egg" KillCount="1" />
+    <Objective QuestName="Securing the Bait" QuestId="12605" Type="CollectItem" ItemId="38600" ItemName="Primordial Hatchling" CollectCount="6" />
+    <Objective QuestName="Sharpening Your Talons" QuestId="12603" Type="KillMob" MobId="28378" MobName="Primordial Drake" KillCount="6" />
+    <TurnIn QuestName="Sharpening Your Talons" QuestId="12603" TurnInName="Dorian Drakestalker" TurnInId="28376" />
+    <TurnIn QuestName="Securing the Bait" QuestId="12605" TurnInName="Dorian Drakestalker" TurnInId="28376" />
+    <TurnIn QuestName="Burning to Help" QuestId="12683" TurnInName="Colvin Norrington" TurnInId="28771" />
+    <PickUp QuestName="Reagent Agent" QuestId="12681" GiverName="Colvin Norrington" GiverId="28771" />
+    <PickUp QuestName="A Mammoth Undertaking" QuestId="12607" GiverName="Zootfizzle" GiverId="28374" />
+    <PickUp QuestName="My Pet Roc" QuestId="12658" GiverName="Zootfizzle" GiverId="28374" />
+    <CustomBehavior File="UseItemOn" ItemId="38627" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="A Mammoth Undertaking" QuestId="12607" TurnInName="Zootfizzle" TurnInId="28374" />
+    <PickUp QuestName="Post-partum Aggression" QuestId="12614" GiverName="Dorian Drakestalker" GiverId="28376" />
+    <Objective QuestName="Post-partum Aggression" QuestId="12614" Type="KillMob" MobId="28467" MobName="Broodmother Slivina" KillCount="1" />
+    <Objective QuestName="My Pet Roc" QuestId="12658" Type="CollectItem" ItemId="38705" ItemName="Roc Egg" CollectCount="7" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28004" MobName="Goretalon Rocs" KillCount="1" />
+    <Objective QuestName="Reagent Agent" QuestId="12681" Type="CollectItem" ItemId="39161" ItemName="Twisted Roc Talon" CollectCount="5" />
+    <TurnIn QuestName="Post-partum Aggression" QuestId="12614" TurnInName="Dorian Drakestalker" TurnInId="28376" />
+    <TurnIn QuestName="Reagent Agent" QuestId="12681" TurnInName="Colvin Norrington" TurnInId="28771" />
+    <TurnIn QuestName="My Pet Roc" QuestId="12658" TurnInName="Zootfizzle" TurnInId="28374" />
+    <TurnIn QuestName="Force of Nature" QuestId="12803" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <PickUp QuestName="An Issue of Trust" QuestId="12561" GiverName="Avatar of Freya" GiverId="27801" />
+    <Objective QuestName="An Issue of Trust" QuestId="12561" Type="KillMob" MobId="28101" MobName="Blighted Corpse" KillCount="6" />
+    <Objective QuestName="An Issue of Trust" QuestId="12561" Type="KillMob" MobId="28108" MobName="Bonescythe Ravager" KillCount="10" />
+    <TurnIn QuestName="An Issue of Trust" QuestId="12561" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <PickUp QuestName="Returned Sevenfold" QuestId="12611" GiverName="Avatar of Freya" GiverId="27801" />
+    <CustomBehavior File="UseItemOn" ItemId="38657" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Returned Sevenfold" QuestId="12611" Type="KillMob" MobId="28443" MobName="Thalgran Blightbringer" KillCount="1" />
+    <TurnIn QuestName="Returned Sevenfold" QuestId="12611" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <PickUp QuestName="The Fallen Pillar" QuestId="12612" GiverName="Avatar of Freya" GiverId="27801" />
+    <PickUp QuestName="Salvaging Life&apos;s Strength" QuestId="12805" GiverName="Avatar of Freya" GiverId="27801" />
+    <TurnIn QuestName="The Fallen Pillar" QuestId="12612" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <PickUp QuestName="Cultist Incursion" QuestId="12608" GiverName="Avatar of Freya" GiverId="27801" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="29124" MobName="Lifeblood Elemental" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="40397" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Salvaging Life&apos;s Strength" QuestId="12805" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <TurnIn QuestName="Cultist Incursion" QuestId="12608" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <PickUp QuestName="Exterminate the Intruders" QuestId="12617" GiverName="Avatar of Freya" GiverId="27801" />
+    <PickUp QuestName="Weapons of Destruction" QuestId="12660" GiverName="Avatar of Freya" GiverId="27801" />
+    <Objective QuestName="Exterminate the Intruders" QuestId="12617" Type="KillMob" MobId="28373" MobName="Cultist Infiltrator" KillCount="8" />
+    <TurnIn QuestName="Exterminate the Intruders" QuestId="12617" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <TurnIn QuestName="Weapons of Destruction" QuestId="12660" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <PickUp QuestName="The Lifewarden&apos;s Wrath" QuestId="12620" GiverName="Avatar of Freya" GiverId="27801" />
+    <CustomBehavior File="UseItemOn" ItemId="38684" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="The Lifewarden&apos;s Wrath" QuestId="12620" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <PickUp QuestName="Freya&apos;s Pact" QuestId="12621" GiverName="Avatar of Freya" GiverId="27801" />
+    <TurnIn QuestName="Freya&apos;s Pact" QuestId="12621" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <PickUp QuestName="Powering the Waygate - The Maker&apos;s Perch" QuestId="12559" GiverName="Avatar of Freya" GiverId="27801" />
+    <TurnIn QuestName="Powering the Waygate - The Maker&apos;s Perch" QuestId="12559" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <PickUp QuestName="Powering the Waygate - The Maker&apos;s Overlook" QuestId="12613" GiverName="Avatar of Freya" GiverId="27801" />
+    <PickUp QuestName="A Timeworn Coffer" QuestId="12691" GiverName="Avatar of Freya" GiverId="27801" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28069" MobName="Sholazar Guardian" KillCount="1" />
+    <Objective QuestName="A Timeworn Coffer" QuestId="12691" Type="CollectItem" ItemId="39227" ItemName="Huge Stone Key" CollectCount="1" />
+    <TurnIn QuestName="A Timeworn Coffer" QuestId="12691" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <TurnIn QuestName="Powering the Waygate - The Maker&apos;s Overlook" QuestId="12613" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <PickUp QuestName="The Etymidian" QuestId="12548" GiverName="Avatar of Freya" GiverId="27801" />
+    <TurnIn QuestName="The Etymidian" QuestId="12548" TurnInName="The Etymidian" TurnInId="28092" />
+    <PickUp QuestName="The Activation Rune" QuestId="12547" GiverName="The Etymidian" GiverId="28092" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28601" MobName="High Cultist Herenn" KillCount="1" />
+    <Objective QuestName="The Activation Rune" QuestId="12547" Type="CollectItem" ItemId="38708" ItemName="Omega Rune" CollectCount="1" />
+    <TurnIn QuestName="The Activation Rune" QuestId="12547" TurnInName="The Etymidian" TurnInId="28092" />
+    <PickUp QuestName="Back Through the Waygate" QuestId="12797" GiverName="The Etymidian" GiverId="28092" />
+    <TurnIn QuestName="Playing Along" QuestId="12528" TurnInName="High-Shaman Rakjak" TurnInId="28082" />
+    <PickUp QuestName="The Ape Hunter&apos;s Slave" QuestId="12529" GiverName="High-Shaman Rakjak" GiverId="28082" />
+    <PickUp QuestName="Tormenting the Softknuckles" QuestId="12530" GiverName="Goregek the Gorilla Hunter" GiverId="28214" />
+    <Objective QuestName="The Ape Hunter&apos;s Slave" QuestId="12529" Type="KillMob" MobId="28098" MobName="Hardknuckle Forager" KillCount="8" />
+    <CustomBehavior File="UseItemOn" ItemId="38467" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Tormenting the Softknuckles" QuestId="12530" Type="KillMob" MobId="28213" MobName="Hardknuckle Matriarch" KillCount="1" />
+    <Objective QuestName="The Ape Hunter&apos;s Slave" QuestId="12529" Type="KillMob" MobId="28096" MobName="Hardknuckle Charger" KillCount="6" />
+    <TurnIn QuestName="The Ape Hunter&apos;s Slave" QuestId="12529" TurnInName="High-Shaman Rakjak" TurnInId="28082" />
+    <TurnIn QuestName="Tormenting the Softknuckles" QuestId="12530" TurnInName="High-Shaman Rakjak" TurnInId="28082" />
+    <PickUp QuestName="The Wasp Hunter&apos;s Apprentice" QuestId="12533" GiverName="High-Shaman Rakjak" GiverId="28082" />
+    <PickUp QuestName="The Sapphire Queen" QuestId="12534" GiverName="Elder Harkek" GiverId="28138" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28087" MobName="Sapphire Hive Queen" KillCount="1" />
+    <Objective QuestName="The Sapphire Queen" QuestId="12534" Type="CollectItem" ItemId="38477" ItemName="Stinger of the Sapphire Queen" CollectCount="1" />
+    <Objective QuestName="The Wasp Hunter&apos;s Apprentice" QuestId="12533" Type="KillMob" MobId="28086" MobName="Sapphire Hive Wasp" KillCount="6" />
+    <Objective QuestName="The Wasp Hunter&apos;s Apprentice" QuestId="12533" Type="KillMob" MobId="28085" MobName="Sapphire Hive Drone" KillCount="9" />
+    <TurnIn QuestName="The Wasp Hunter&apos;s Apprentice" QuestId="12533" TurnInName="High-Shaman Rakjak" TurnInId="28082" />
+    <TurnIn QuestName="The Sapphire Queen" QuestId="12534" TurnInName="High-Shaman Rakjak" TurnInId="28082" />
+    <PickUp QuestName="Flown the Coop!" QuestId="12532" GiverName="Elder Harkek" GiverId="28138" />
+    <CustomBehavior File="UseItemOn" ItemId="38689" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Flown the Coop!" QuestId="12532" Type="CollectItem" ItemId="38483" ItemName="Captured Chicken" CollectCount="12" />
+    <TurnIn QuestName="Flown the Coop!" QuestId="12532" TurnInName="Elder Harkek" TurnInId="28138" />
+    <PickUp QuestName="The Underground Menace" QuestId="12531" GiverName="Elder Harkek" GiverId="28138" />
+    <PickUp QuestName="Mischief in the Making" QuestId="12535" GiverName="High-Shaman Rakjak" GiverId="28082" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28083" MobName="Serfex the Reaver" KillCount="1" />
+    <Objective QuestName="The Underground Menace" QuestId="12531" Type="CollectItem" ItemId="38473" ItemName="Claw of Serfex" CollectCount="1" />
+    <Objective QuestName="Mischief in the Making" QuestId="12535" Type="CollectItem" ItemId="38504" ItemName="Skyreach Crystal Cluster" CollectCount="8" />
+    <TurnIn QuestName="The Underground Menace" QuestId="12531" TurnInName="High-Shaman Rakjak" TurnInId="28082" />
+    <TurnIn QuestName="Mischief in the Making" QuestId="12535" TurnInName="High-Shaman Rakjak" TurnInId="28082" />
+    <PickUp QuestName="A Rough Ride" QuestId="12536" GiverName="High-Shaman Rakjak" GiverId="28082" />
+    <CustomBehavior File="UseItemOn" ItemId="44064" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="38512" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="A Rough Ride" QuestId="12536" TurnInName="Zepik the Gorloc Hunter" TurnInId="28668" />
+    <PickUp QuestName="Lightning Definitely Strikes Twice" QuestId="12537" GiverName="Zepik the Gorloc Hunter" GiverId="28668" />
+    <PickUp QuestName="The Mist Isn&apos;t Listening" QuestId="12538" GiverName="Zepik the Gorloc Hunter" GiverId="28668" />
+    <CustomBehavior File="UseItemOn" ItemId="38510" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="38512" ItemName="Zepik&apos;s Hunting Horn" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="38512" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Lightning Definitely Strikes Twice" QuestId="12537" TurnInName="Zepik the Gorloc Hunter" TurnInId="28216" />
+    <TurnIn QuestName="The Mist Isn&apos;t Listening" QuestId="12538" TurnInName="Zepik the Gorloc Hunter" TurnInId="28216" />
+    <PickUp QuestName="Hoofing It" QuestId="12539" GiverName="Zepik the Gorloc Hunter" GiverId="28216" />
+    <TurnIn QuestName="Hoofing It" QuestId="12539" TurnInName="High-Shaman Rakjak" TurnInId="28082" />
+    <PickUp QuestName="Just Following Orders" QuestId="12540" GiverName="High-Shaman Rakjak" GiverId="28082" />
+    <Objective QuestName="Just Following Orders" QuestId="12540" Type="KillMob" MobId="28325" MobName="Ravenous Mangal Crocolisk" KillCount="1" />
+    <TurnIn QuestName="Just Following Orders" QuestId="12540" TurnInName="Injured Rainspeaker Oracle" TurnInId="28217" />
+    <PickUp QuestName="Fortunate Misunderstandings" QuestId="12570" GiverName="Injured Rainspeaker Oracle" GiverId="28217" />
+    <TurnIn QuestName="Fortunate Misunderstandings" QuestId="12570" TurnInName="High-Oracle Soo-say" TurnInId="28027" />
+    <PickUp QuestName="Make the Bad Snake Go Away" QuestId="12571" GiverName="High-Oracle Soo-say" GiverId="28027" />
+    <CustomBehavior File="UseItemOn" ItemId="38622" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <PickUp QuestName="Gods like Shiny Things" QuestId="12572" GiverName="Lafoo" GiverId="28120" />
+    <CustomBehavior File="UseItemOn" ItemId="44065" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Make the Bad Snake Go Away" QuestId="12571" Type="KillMob" MobId="28358" MobName="Venomtip" KillCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="38622" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Gods like Shiny Things" QuestId="12572" Type="CollectItem" ItemId="38575" ItemName="Shiny Treasures" CollectCount="6" />
+    <Objective QuestName="Make the Bad Snake Go Away" QuestId="12571" Type="KillMob" MobId="28011" MobName="Emperor Cobra" KillCount="10" />
+    <TurnIn QuestName="Make the Bad Snake Go Away" QuestId="12571" TurnInName="High-Oracle Soo-say" TurnInId="28027" />
+    <TurnIn QuestName="Gods like Shiny Things" QuestId="12572" TurnInName="High-Oracle Soo-say" TurnInId="28027" />
+    <PickUp QuestName="Making Peace" QuestId="12573" GiverName="High-Oracle Soo-say" GiverId="28027" />
+    <TurnIn QuestName="Making Peace" QuestId="12573" TurnInName="High-Oracle Soo-say" TurnInId="28027" />
+    <PickUp QuestName="Back So Soon?" QuestId="12574" GiverName="High-Oracle Soo-say" GiverId="28027" />
+    <TurnIn QuestName="Back So Soon?" QuestId="12574" TurnInName="Mistcaller Soo-gan" TurnInId="28114" />
+    <PickUp QuestName="The Lost Mistwhisper Treasure" QuestId="12575" GiverName="Mistcaller Soo-gan" GiverId="28114" />
+    <PickUp QuestName="Forced Hand" QuestId="12576" GiverName="Mistcaller Soo-gan" GiverId="28114" />
+    <CustomBehavior File="UseItemOn" ItemId="38623" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="The Lost Mistwhisper Treasure" QuestId="12575" Type="CollectItem" ItemId="38601" ItemName="Mistwhisper Treasure" CollectCount="1" />
+    <Objective QuestName="The Lost Mistwhisper Treasure" QuestId="12575" Type="KillMob" MobId="28105" MobName="Warlord Tartek" KillCount="1" />
+    <Objective QuestName="Forced Hand" QuestId="12576" Type="KillMob" MobId="28080" MobName="Frenzyheart Spearbearer" KillCount="8" />
+    <Objective QuestName="Forced Hand" QuestId="12576" Type="KillMob" MobId="28081" MobName="Frenzyheart Scavenger" KillCount="6" />
+    <TurnIn QuestName="The Lost Mistwhisper Treasure" QuestId="12575" TurnInName="Mistcaller Soo-gan" TurnInId="28114" />
+    <TurnIn QuestName="Forced Hand" QuestId="12576" TurnInName="Mistcaller Soo-gan" TurnInId="28114" />
+    <PickUp QuestName="Home Time!" QuestId="12577" GiverName="Mistcaller Soo-gan" GiverId="28114" />
+    <TurnIn QuestName="Home Time!" QuestId="12577" TurnInName="High-Oracle Soo-say" TurnInId="28027" />
+    <PickUp QuestName="The Angry Gorloc" QuestId="12578" GiverName="High-Oracle Soo-say" GiverId="28027" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="38624" ItemName="Moodle&apos;s Stress Ball" CollectCount="1" />
+    <TurnIn QuestName="Back Through the Waygate" QuestId="12797" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <PickUp QuestName="Reclamation" QuestId="12546" GiverName="Avatar of Freya" GiverId="27801" />
+    <CustomBehavior File="UseItemOn" ItemId="38709" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <Objective QuestName="Reclamation" QuestId="12546" Type="KillMob" MobId="28212" MobName="Bythius the Flesh-Shaper" KillCount="1" />
+    <Objective QuestName="Reclamation" QuestId="12546" Type="KillMob" MobId="28103" MobName="Urgreth of the Thousand Tombs" KillCount="1" />
+    <Objective QuestName="Reclamation" QuestId="12546" Type="KillMob" MobId="28208" MobName="Hailscorn" KillCount="1" />
+    <TurnIn QuestName="Reclamation" QuestId="12546" TurnInName="Avatar of Freya" TurnInId="27801" />
+    <CustomBehavior File="UseItemOn" ItemId="38624" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="38624" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="The Angry Gorloc" QuestId="12578" TurnInName="Moodle" TurnInId="28122" />
+    <PickUp QuestName="The Mosswalker Savior" QuestId="12580" GiverName="Moodle" GiverId="28122" />
+    <PickUp QuestName="Lifeblood of the Mosswalker Shrine" QuestId="12579" GiverName="Moodle" GiverId="28122" />
+    <CustomBehavior File="UseItemOn" ItemId="44065" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <CustomBehavior File="UseItemOn" ItemId="38624" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="The Mosswalker Savior" QuestId="12580" TurnInName="Moodle" TurnInId="28122" />
+    <Objective QuestName="Lifeblood of the Mosswalker Shrine" QuestId="12579" Type="CollectItem" ItemId="39063" ItemName="Lifeblood Shard" CollectCount="10" />
+    <CustomBehavior File="UseItemOn" ItemId="38624" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+    <TurnIn QuestName="Lifeblood of the Mosswalker Shrine" QuestId="12579" TurnInName="Moodle" TurnInId="28122" />
+    <PickUp QuestName="A Hero&apos;s Burden" QuestId="12581" GiverName="Moodle" GiverId="28122" />
+    <Objective QuestName="A Hero&apos;s Burden" QuestId="12581" Type="KillMob" MobId="28659" MobName="Artruis the Heartless" KillCount="1" />
+    <TurnIn QuestName="A Hero&apos;s Burden" QuestId="12581" TurnInName="Moodle" TurnInId="28122" />
+    <PickUp QuestName="Hand of the Oracles" QuestId="12689" GiverName="Jaloot" GiverId="28667" />
+    <PickUp QuestName="Return of the Friendly Dryskin" QuestId="12695" GiverName="Jaloot" GiverId="28667" />
+    <PickUp QuestName="Frenzyheart Champion" QuestId="12582" GiverName="Zepik the Gorloc Hunter" GiverId="28668" />
+    <PickUp QuestName="Return of the Lich Hunter" QuestId="12692" GiverName="Zepik the Gorloc Hunter" GiverId="28668" />
+    <TurnIn QuestName="Return of the Friendly Dryskin" QuestId="12695" TurnInName="High-Oracle Soo-say" TurnInId="28027" />
+    <TurnIn QuestName="Return of the Lich Hunter" QuestId="12692" TurnInName="Elder Harkek" TurnInId="28138" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Sholazar Basin (77-78) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Northrend_(69-80)__The_Storm_Peaks_(78-79)" />
+  </QuestOrder>
+</HBProfile>
