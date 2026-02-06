@@ -203,13 +203,18 @@ namespace CopilotBuddy.UI
             WoWUnit currentTarget = ObjectManager.Me.CurrentTarget;
             string displayName = currentTarget.Name ?? "Unknown";
             WoWPoint location = currentTarget.Location;
-            string posStr = $"<{location.X}, {location.Y}, {location.Z}>";
+            
+            // Use InvariantCulture to ensure dots as decimal separators (not French commas)
+            string xStr = location.X.ToString(CultureInfo.InvariantCulture);
+            string yStr = location.Y.ToString(CultureInfo.InvariantCulture);
+            string zStr = location.Z.ToString(CultureInfo.InvariantCulture);
+            string posStr = $"<{xStr}, {yStr}, {zStr}>";
 
             Logging.Write("Name = {0}\r\nWowhead Id = {1}\r\nFaction = {2} [Unknown]\r\nLocation = {3}",
                 displayName, currentTarget.Entry, currentTarget.FactionId, posStr);
 
             string vendorType = !currentTarget.IsFoodVendor ? (!currentTarget.IsAmmoVendor ? "Repair" : "Ammo") : "Food";
-            string xml = $"<Vendor Name=\"{displayName}\" Entry=\"{currentTarget.Entry}\" Type=\"{vendorType}\" X=\"{location.X}\" Y=\"{location.Y}\" Z=\"{location.Z}\" />";
+            string xml = $"<Vendor Name=\"{displayName}\" Entry=\"{currentTarget.Entry}\" Type=\"{vendorType}\" X=\"{xStr}\" Y=\"{yStr}\" Z=\"{zStr}\" />";
             Logging.Write(xml);
             System.Windows.Clipboard.SetText(xml);
         }
