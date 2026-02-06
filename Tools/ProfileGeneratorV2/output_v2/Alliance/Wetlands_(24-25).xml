@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Wetlands (24-25)</Name>
+  <Name>Alliance\\Wetlands (24-25)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>25</MaxLevel>
@@ -41,7 +41,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Wetlands (24-25)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Wetlands (24-25)" LogColor="Green" />
     <PickUp QuestName="Young Crocolisk Skins" QuestId="484" GiverName="James Halloran" GiverId="2094" />
     <PickUp QuestName="Claws from the Deep" QuestId="279" GiverName="Karl Boran" GiverId="1242" />
     <PickUp QuestName="The Third Fleet" QuestId="288" GiverName="First Mate Fitzsimmons" GiverId="1239" />
@@ -193,7 +193,7 @@
       </If>
       <TurnIn QuestName="Aquatic Form" QuestId="5061" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Wetlands (24-25) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Wetlands (24-25) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Redridge_Mountains_(25-25)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Stranglethorn Vale (43-44)</Name>
+  <Name>Alliance\\Stranglethorn Vale (43-44)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>44</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (43-44)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (43-44)" LogColor="Green" />
     <Objective QuestName="Sunken Treasure" QuestId="669" Type="CollectItem" ItemId="4502" ItemName="Sample Elven Gem" CollectCount="1" />
     <PickUp QuestName="Mazen&apos;s Behest" QuestId="1363" GiverName="Mazen Mac&apos;Nadir" GiverId="338" />
     <TurnIn QuestName="Mazen&apos;s Behest" QuestId="1363" TurnInName="Acolyte Dellis" TurnInId="5386" />
@@ -80,7 +80,7 @@
     </If>
     <TurnIn QuestName="Return to MacKinley" QuestId="607" TurnInName="&quot;Sea Wolf&quot; MacKinley" TurnInId="2501" />
     <PickUp QuestName="Stoley&apos;s Debt" QuestId="2872" GiverName="&quot;Sea Wolf&quot; MacKinley" GiverId="2501" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (43-44) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (43-44) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Tanaris_(44-44)" />
   </QuestOrder>
 </HBProfile>

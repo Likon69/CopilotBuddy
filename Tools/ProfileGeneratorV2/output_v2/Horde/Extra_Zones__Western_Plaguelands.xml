@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Extra Zones\\Western Plaguelands</Name>
+  <Name>Horde\\Extra Zones\\Western Plaguelands</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -60,7 +60,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Western Plaguelands" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Extra Zones\\Western Plaguelands" LogColor="Green" />
     <CustomBehavior File="SetHearthstone" MobId="6741" AreaId="1497" X="67.73" Y="37.89" Z="0" /> <!-- Set hearth: Undercity -->
     <Objective QuestName="The Everlook Report" QuestId="6029" Type="CollectItem" ItemId="15788" ItemName="The Everlook Report" CollectCount="1" />
     <Objective QuestName="Duke Nicholas Zverenhoff" QuestId="6030" Type="CollectItem" ItemId="15790" ItemName="Studies in Spirit Speaking" CollectCount="1" />
@@ -330,6 +330,6 @@
     </While>
     <Objective QuestName="Melding of Influences" QuestId="4642" Type="KillMob" MobId="9621" MobName="Gargantuan Ooze" KillCount="1" />
     <Objective QuestName="Melding of Influences" QuestId="4642" Type="CollectItem" ItemId="12291" ItemName="Merged Ooze Sample" CollectCount="1" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Western Plaguelands Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Extra Zones\\Western Plaguelands Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Starter Guides (1-12)\\Eversong Woods (1-13) [Blood Elf Starter]</Name>
+  <Name>Horde\\Starter Guides (1-12)\\Eversong Woods (1-13) [Blood Elf Starter]</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>13</MaxLevel>
@@ -81,7 +81,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-12)\\Eversong Woods (1-13) [Blood Elf Starter]" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Starter Guides (1-12)\\Eversong Woods (1-13) [Blood Elf Starter]" LogColor="Green" />
     <PickUp QuestName="Reclaiming Sunstrider Isle" QuestId="8325" GiverName="Magistrix Erona" GiverId="15278" />
     <Objective QuestName="Reclaiming Sunstrider Isle" QuestId="8325" Type="KillMob" MobId="15274" MobName="Mana Wyrm" KillCount="8" />
     <If Condition="Me.Level &lt; 2">
@@ -746,7 +746,7 @@
       <TurnIn QuestName="Redeeming the Dead" QuestId="9685" TurnInName="Knight-Lord Bloodvalor" TurnInId="17717" />
     </If>
     <PickUp QuestName="Conscript of the Horde" QuestId="840" GiverName="Takrin Pathseeker" GiverId="3336" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-12)\\Eversong Woods (1-13) [Blood Elf Starter] Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Starter Guides (1-12)\\Eversong Woods (1-13) [Blood Elf Starter] Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__The_Barrens_(12-15)" />
   </QuestOrder>
 </HBProfile>

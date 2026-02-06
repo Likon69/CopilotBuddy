@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Ashenvale (22-24)</Name>
+  <Name>Alliance\\Ashenvale (22-24)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>24</MaxLevel>
@@ -40,7 +40,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Ashenvale (22-24)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Ashenvale (22-24)" LogColor="Green" />
     <TurnIn QuestName="The Tower of Althalaxx" QuestId="967" TurnInName="Delgren the Purifier" TurnInId="3663" />
     <If Condition="((!HasQuest(970)) &amp;&amp; (!IsQuestCompleted(970)))">
       <PickUp QuestName="The Tower of Althalaxx" QuestId="970" GiverName="Delgren the Purifier" GiverId="3663" />
@@ -131,7 +131,7 @@
       </If>
       <TurnIn QuestName="Call of Water" QuestId="9509" TurnInName="Farseer Nobundo" TurnInId="17204" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Ashenvale (22-24) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Ashenvale (22-24) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Wetlands_(24-25)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Stranglethorn Vale (47-47)</Name>
+  <Name>Horde\\Classic (12-58)\\Stranglethorn Vale (47-47)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -32,7 +32,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (47-47)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stranglethorn Vale (47-47)" LogColor="Green" />
     <If Condition="((!HasQuest(608)) &amp;&amp; (!IsQuestCompleted(608)))">
       <PickUp QuestName="The Bloodsail Buccaneers" QuestId="608" GiverName="Fleet Master Seahorn" GiverId="2487" />
     </If>
@@ -67,7 +67,7 @@
     <PickUp QuestName="Cortello&apos;s Riddle" QuestId="624" GiverName="Princess Poobah" GiverId="2634" />
     <Objective QuestName="Caught!" QuestId="4449" Type="CollectItem" ItemId="4306" ItemName="Silk Cloth" CollectCount="15" />
     <TurnIn QuestName="The Bloodsail Buccaneers" QuestId="608" TurnInName="Fleet Master Seahorn" TurnInId="2487" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (47-47) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stranglethorn Vale (47-47) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Searing_Gorge_(47-48)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Western Plaguelands (56-57)</Name>
+  <Name>Alliance\\Western Plaguelands (56-57)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>57</MaxLevel>
@@ -45,7 +45,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Western Plaguelands (56-57)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Western Plaguelands (56-57)" LogColor="Green" />
     <If Condition="((!HasQuest(5216)) &amp;&amp; (!IsQuestCompleted(5216)))">
       <PickUp QuestName="Target: Felstone Field" QuestId="5216" GiverName="High Priestess MacDonnell" GiverId="11053" />
     </If>
@@ -178,7 +178,7 @@
       <PickUp QuestName="The Wildlife Suffers Too" QuestId="4985" GiverName="Mulgris Deepriver" GiverId="10739" />
     </If>
     <Objective QuestName="The Wildlife Suffers Too" QuestId="4985" Type="KillMob" MobId="1816" MobName="Diseased Grizzly" KillCount="8" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Western Plaguelands (56-57) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Western Plaguelands (56-57) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Eastern_Plaguelands_(57-58)" />
   </QuestOrder>
 </HBProfile>

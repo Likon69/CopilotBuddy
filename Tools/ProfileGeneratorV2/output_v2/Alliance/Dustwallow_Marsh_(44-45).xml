@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Dustwallow Marsh (44-45)</Name>
+  <Name>Alliance\\Dustwallow Marsh (44-45)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>45</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Dustwallow Marsh (44-45)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Dustwallow Marsh (44-45)" LogColor="Green" />
     <If Condition="((!HasQuest(11160)) &amp;&amp; (!IsQuestCompleted(11160)))">
       <PickUp QuestName="Banner of the Stonemaul" QuestId="11160" GiverName="Brogg" GiverId="23579" />
     </If>
@@ -99,7 +99,7 @@
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <TurnIn QuestName="Peace at Last" QuestId="11152" TurnInName="Captain Garran Vimes" TurnInId="4944" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Dustwallow Marsh (44-45) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Dustwallow Marsh (44-45) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Stranglethorn_Vale_(45-46)" />
   </QuestOrder>
 </HBProfile>

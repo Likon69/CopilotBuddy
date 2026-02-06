@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Starter Guides (1-11)\\Human Starter (1-11)</Name>
+  <Name>Alliance\\Starter Guides (1-11)\\Human Starter (1-11)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>11</MaxLevel>
@@ -55,7 +55,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-11)\\Human Starter (1-11)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Starter Guides (1-11)\\Human Starter (1-11)" LogColor="Green" />
     <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Human)">
       <PickUp QuestName="The Stolen Tome" QuestId="1598" GiverName="Drusilla La Salle" GiverId="459" />
       <Objective QuestName="The Stolen Tome" QuestId="1598" Type="CollectItem" ItemId="6785" ItemName="Powers of the Void" CollectCount="1" />
@@ -347,7 +347,7 @@
       </If>
       <TurnIn QuestName="Bartleby&apos;s Mug" QuestId="1665" TurnInName="Harry Burlguard" TurnInId="6089" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-11)\\Human Starter (1-11) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Starter Guides (1-11)\\Human Starter (1-11) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Darkshore_(11-14)" />
   </QuestOrder>
 </HBProfile>

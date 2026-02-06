@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Western Plaguelands (58-59)</Name>
+  <Name>Alliance\\Western Plaguelands (58-59)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>59</MaxLevel>
@@ -50,7 +50,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Western Plaguelands (58-59)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Western Plaguelands (58-59)" LogColor="Green" />
     <TurnIn QuestName="Return to Chillwind Camp" QuestId="5223" TurnInName="High Priestess MacDonnell" TurnInId="11053" />
     <If Condition="((!HasQuest(5225)) &amp;&amp; (!IsQuestCompleted(5225)))">
       <PickUp QuestName="Target: Gahrron&apos;s Withering" QuestId="5225" GiverName="High Priestess MacDonnell" GiverId="11053" />
@@ -127,7 +127,7 @@
     <TurnIn QuestName="Brother Carlin" QuestId="5210" TurnInName="Carlin Redpath" TurnInId="11063" />
     <TurnIn QuestName="The Blightcaller Cometh" QuestId="6186" TurnInName="King Varian Wrynn" TurnInId="29611" />
     <CustomBehavior File="SetHearthstone" MobId="6791" AreaId="17" X="62.05" Y="39.41" Z="0" /> <!-- Set hearth: Ratchet -->
-    <CustomBehavior File="Message" Text="Leveling Guides\\Western Plaguelands (58-59) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Western Plaguelands (58-59) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Silithus_(59-60)" />
   </QuestOrder>
 </HBProfile>

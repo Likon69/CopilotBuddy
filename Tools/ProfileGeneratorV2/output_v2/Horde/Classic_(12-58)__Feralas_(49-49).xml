@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Feralas (49-49)</Name>
+  <Name>Horde\\Classic (12-58)\\Feralas (49-49)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Feralas (49-49)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Feralas (49-49)" LogColor="Green" />
     <TurnIn QuestName="Return to Witch Doctor Uzer&apos;i" QuestId="3122" TurnInName="Witch Doctor Uzer&apos;i" TurnInId="8115" />
     <PickUp QuestName="The Sunken Temple" QuestId="3380" GiverName="Witch Doctor Uzer&apos;i" GiverId="8115" />
     <If Condition="((!HasQuest(7734)) &amp;&amp; (!IsQuestCompleted(7734)))">
@@ -54,7 +54,7 @@
     <TurnIn QuestName="Perfect Yeti Hide" QuestId="7738" TurnInName="Jangdor Swiftstrider" TurnInId="7854" />
     <TurnIn QuestName="Dark Heart" QuestId="3062" TurnInName="Talo Thornhoof" TurnInId="7776" />
     <TurnIn QuestName="Vengeance on the Northspring" QuestId="3063" TurnInName="Talo Thornhoof" TurnInId="7776" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Feralas (49-49) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Feralas (49-49) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Tanaris_(49-50)" />
   </QuestOrder>
 </HBProfile>

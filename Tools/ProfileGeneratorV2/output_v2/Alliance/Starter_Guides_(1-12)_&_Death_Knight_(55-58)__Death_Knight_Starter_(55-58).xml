@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Starter Guides (1-12) &amp; Death Knight (55-58)\\Death Knight Starter (55-58)</Name>
+  <Name>Alliance\\Starter Guides (1-12) &amp; Death Knight (55-58)\\Death Knight Starter (55-58)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -110,7 +110,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-12) &amp; Death Knight (55-58)\\Death Knight Starter (55-58)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Starter Guides (1-12) &amp; Death Knight (55-58)\\Death Knight Starter (55-58)" LogColor="Green" />
     <PickUp QuestName="In Service Of The Lich King" QuestId="12593" GiverName="The Lich King" GiverId="25462" />
     <TurnIn QuestName="In Service Of The Lich King" QuestId="12593" TurnInName="Instructor Razuvious" TurnInId="28357" />
     <If Condition="((!HasQuest(12619)) &amp;&amp; (!IsQuestCompleted(12619)))">
@@ -451,6 +451,6 @@
       <PickUp QuestName="Where Kings Walk" QuestId="13188" GiverName="Highlord Darion Mograine" GiverId="31084" />
     </If>
     <TurnIn QuestName="Where Kings Walk" QuestId="13188" TurnInName="King Varian Wrynn" TurnInId="29611" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-12) &amp; Death Knight (55-58)\\Death Knight Starter (55-58) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Starter Guides (1-12) &amp; Death Knight (55-58)\\Death Knight Starter (55-58) Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

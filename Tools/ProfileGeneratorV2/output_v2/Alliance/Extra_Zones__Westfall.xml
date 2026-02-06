@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Extra Zones\\Westfall</Name>
+  <Name>Alliance\\Extra Zones\\Westfall</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>21</MaxLevel>
@@ -45,7 +45,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Westfall" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Extra Zones\\Westfall" LogColor="Green" />
     <PickUp QuestName="The Forgotten Heirloom" QuestId="64" GiverName="Farmer Furlbrow" GiverId="237" />
     <PickUp QuestName="Westfall Stew" QuestId="36" GiverName="Verna Furlbrow" GiverId="238" />
     <PickUp QuestName="Poor Old Blanchy" QuestId="151" GiverName="Verna Furlbrow" GiverId="238" />
@@ -146,6 +146,6 @@
     <Objective QuestName="The Coastal Menace" QuestId="104" Type="KillMob" MobId="391" MobName="Old Murk-Eye" KillCount="1" />
     <TurnIn QuestName="The Coastal Menace" QuestId="104" TurnInName="Captain Grayson" TurnInId="392" />
     <TurnIn QuestName="The Defias Brotherhood" QuestId="155" TurnInName="Gryan Stoutmantle" TurnInId="234" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Westfall Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Extra Zones\\Westfall Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

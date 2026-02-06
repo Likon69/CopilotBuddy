@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Northrend (69-80)\\Dragonblight (72-74)</Name>
+  <Name>Alliance\\Northrend (69-80)\\Dragonblight (72-74)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>74</MaxLevel>
@@ -133,7 +133,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Dragonblight (72-74)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Northrend (69-80)\\Dragonblight (72-74)" LogColor="Green" />
     <If Condition="((!HasQuest(12000)) &amp;&amp; (!IsQuestCompleted(12000)))">
       <PickUp QuestName="Rifle the Bodies" QuestId="12000" GiverName="Image of Archmage Modera" GiverId="26673" />
     </If>
@@ -847,7 +847,7 @@
     <TurnIn QuestName="Learning to Leave and Return: the Magical Way" QuestId="12790" TurnInName="Archmage Celindra" TurnInId="29156" />
     <TurnIn QuestName="Reborn From The Ashes" QuestId="13347" TurnInName="King Varian Wrynn" TurnInId="29611" />
     <PickUp QuestName="The Hills Have Us" QuestId="12511" GiverName="Gryphon Commander Urik" GiverId="27317" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Dragonblight (72-74) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Northrend (69-80)\\Dragonblight (72-74) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)__Grizzly_Hills_(74-75)" />
   </QuestOrder>
 </HBProfile>

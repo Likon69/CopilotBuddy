@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Thousand Needles (33-34)</Name>
+  <Name>Alliance\\Thousand Needles (33-34)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>34</MaxLevel>
@@ -30,7 +30,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Thousand Needles (33-34)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Thousand Needles (33-34)" LogColor="Green" />
     <Objective QuestName="Lonebrow&apos;s Journal" QuestId="1100" Type="CollectItem" ItemId="5791" ItemName="Henrig Lonebrow&apos;s Journal" CollectCount="1" />
     <CustomBehavior File="UseItemOn" ItemId="5791" MobId="0" NumOfTimes="1" />
     <PickUp QuestName="Lonebrow&apos;s Journal" QuestId="1100" />
@@ -60,7 +60,7 @@
       <PickUp QuestName="Goblin Sponsorship" QuestId="1178" GiverName="Pozzik" GiverId="4630" />
     </If>
     <TurnIn QuestName="A Bump in the Road" QuestId="1175" TurnInName="Trackmaster Zherin" TurnInId="4629" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Thousand Needles (33-34) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Thousand Needles (33-34) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Dustwallow_Marsh_(34-34)" />
   </QuestOrder>
 </HBProfile>

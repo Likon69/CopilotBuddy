@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Stranglethorn Vale (45-46)</Name>
+  <Name>Alliance\\Stranglethorn Vale (45-46)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>46</MaxLevel>
@@ -51,7 +51,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (45-46)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (45-46)" LogColor="Green" />
     <If Condition="((!HasQuest(609)) &amp;&amp; (!IsQuestCompleted(609)))">
       <PickUp QuestName="Voodoo Dues" QuestId="609" GiverName="&quot;Sea Wolf&quot; MacKinley" GiverId="2501" />
     </If>
@@ -134,7 +134,7 @@
       <PickUp QuestName="Akiris by the Bundle" QuestId="623" GiverName="Privateer Bloads" GiverId="2494" />
     </If>
     <TurnIn QuestName="Voodoo Dues" QuestId="609" TurnInName="&quot;Sea Wolf&quot; MacKinley" TurnInId="2501" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (45-46) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (45-46) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Swamp_of_Sorrows_(46-46)" />
   </QuestOrder>
 </HBProfile>

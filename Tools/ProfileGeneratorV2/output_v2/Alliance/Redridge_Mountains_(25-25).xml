@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Redridge Mountains (25-25)</Name>
+  <Name>Alliance\\Redridge Mountains (25-25)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>25</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Redridge Mountains (25-25)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Redridge Mountains (25-25)" LogColor="Green" />
     <PickUp QuestName="A Watchful Eye" QuestId="94" GiverName="Theocritus" GiverId="313" />
     <PickUp QuestName="Encroaching Gnolls" QuestId="244" GiverName="Guard Parker" GiverId="464" />
     <TurnIn QuestName="Encroaching Gnolls" QuestId="244" TurnInName="Deputy Feldon" TurnInId="1070" />
@@ -74,7 +74,7 @@
       </If>
       <TurnIn QuestName="The Touch of Zanzil" QuestId="2608" TurnInName="Doc Mixilpixil" TurnInId="7207" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Redridge Mountains (25-25) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Redridge Mountains (25-25) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Duskwood_(25-27)" />
   </QuestOrder>
 </HBProfile>

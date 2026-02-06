@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Wetlands (28-30)</Name>
+  <Name>Alliance\\Wetlands (28-30)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>30</MaxLevel>
@@ -56,7 +56,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Wetlands (28-30)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Wetlands (28-30)" LogColor="Green" />
     <If Condition="((!HasQuest(281)) &amp;&amp; (!IsQuestCompleted(281)))">
       <PickUp QuestName="Reclaiming Goods" QuestId="281" GiverName="Karl Boran" GiverId="1242" />
     </If>
@@ -211,7 +211,7 @@
       </If>
       <TurnIn QuestName="Call of Air" QuestId="9554" TurnInName="Farseer Nobundo" TurnInId="17204" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Wetlands (28-30) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Wetlands (28-30) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Duskwood_(30-31)" />
   </QuestOrder>
 </HBProfile>

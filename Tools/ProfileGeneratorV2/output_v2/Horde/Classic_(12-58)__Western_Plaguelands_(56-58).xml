@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Western Plaguelands (56-58)</Name>
+  <Name>Horde\\Classic (12-58)\\Western Plaguelands (56-58)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>58</MaxLevel>
@@ -31,7 +31,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Western Plaguelands (56-58)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Western Plaguelands (56-58)" LogColor="Green" />
     <CustomBehavior File="SetHearthstone" MobId="6741" AreaId="1497" X="67.73" Y="37.89" Z="0" /> <!-- Set hearth: Undercity -->
     <Objective QuestName="The Everlook Report" QuestId="6029" Type="CollectItem" ItemId="15788" ItemName="The Everlook Report" CollectCount="1" />
     <Objective QuestName="Duke Nicholas Zverenhoff" QuestId="6030" Type="CollectItem" ItemId="15790" ItemName="Studies in Spirit Speaking" CollectCount="1" />
@@ -191,7 +191,7 @@
     </If>
     <TurnIn QuestName="The Jeremiah Blues" QuestId="5049" TurnInName="Jeremiah Payson" TurnInId="8403" />
     <TurnIn QuestName="The So-Called Mark of the Lightbringer" QuestId="9443" TurnInName="Mehlar Dawnblade" TurnInId="17099" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Western Plaguelands (56-58) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Western Plaguelands (56-58) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="The_Burning_Crusade_(58-70)__Hellfire_Peninsula_(58-62)" />
   </QuestOrder>
 </HBProfile>

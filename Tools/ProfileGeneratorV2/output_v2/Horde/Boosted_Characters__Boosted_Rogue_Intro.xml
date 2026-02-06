@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Boosted Characters\\Boosted Rogue Intro</Name>
+  <Name>Horde\\Boosted Characters\\Boosted Rogue Intro</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Boosted Characters\\Boosted Rogue Intro" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Boosted Characters\\Boosted Rogue Intro" LogColor="Green" />
     <PickUp QuestName="A New Beginning" QuestId="64046" />
     <TurnIn QuestName="A New Beginning" QuestId="64046" TurnInName="Ormok" TurnInId="3328" />
     <PickUp QuestName="Tools for Survival" QuestId="64048" GiverName="Ormok" GiverId="3328" />
@@ -26,6 +26,6 @@
     <PickUp QuestName="The Dark Portal" QuestId="64063" GiverName="Ormok" GiverId="3328" />
     <TurnIn QuestName="The Dark Portal" QuestId="64063" TurnInName="Warlord Dar&apos;toon" TurnInId="19254" />
     <PickUp QuestName="Through the Dark Portal" QuestId="9407" GiverName="Warlord Dar&apos;toon" GiverId="19254" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Boosted Characters\\Boosted Rogue Intro Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Boosted Characters\\Boosted Rogue Intro Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

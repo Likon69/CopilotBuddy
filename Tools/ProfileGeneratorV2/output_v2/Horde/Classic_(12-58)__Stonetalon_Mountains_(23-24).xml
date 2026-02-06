@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Stonetalon Mountains (23-24)</Name>
+  <Name>Horde\\Classic (12-58)\\Stonetalon Mountains (23-24)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>24</MaxLevel>
@@ -32,7 +32,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stonetalon Mountains (23-24)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stonetalon Mountains (23-24)" LogColor="Green" />
     <If Condition="((!HasQuest(1087)) &amp;&amp; (!IsQuestCompleted(1087)))">
       <PickUp QuestName="Cenarius&apos; Legacy" QuestId="1087" GiverName="Braelyn Firehand" GiverId="4198" />
     </If>
@@ -85,7 +85,7 @@
     <TurnIn QuestName="Gerenzo Wrenchwhistle" QuestId="1096" TurnInName="Ziz Fizziks" TurnInId="4201" />
     <TurnIn QuestName="Jin&apos;Zil&apos;s Forest Magic" QuestId="1058" TurnInName="Witch Doctor Jin&apos;Zil" TurnInId="3995" />
     <TurnIn QuestName="Shredding Machines" QuestId="1068" TurnInName="Seereth Stonebreak" TurnInId="4049" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stonetalon Mountains (23-24) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stonetalon Mountains (23-24) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__The_Barrens_(24-25)" />
   </QuestOrder>
 </HBProfile>

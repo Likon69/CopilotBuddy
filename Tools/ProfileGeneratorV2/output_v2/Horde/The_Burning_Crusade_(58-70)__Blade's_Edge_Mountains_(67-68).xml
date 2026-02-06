@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68)</Name>
+  <Name>Horde\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>68</MaxLevel>
@@ -59,7 +59,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68)" LogColor="Green" />
     <PickUp QuestName="The Ogre Threat" QuestId="9795" GiverName="Shadow Hunter Denjai" GiverId="18013" />
     <PickUp QuestName="Killing the Crawlers" QuestId="10928" GiverName="Grunt Grahk" GiverId="22489" />
     <Objective QuestName="Killing the Crawlers" QuestId="10928" Type="KillMob" MobId="22044" MobName="Cavern Crawler" KillCount="6" />
@@ -489,7 +489,7 @@
     <Objective QuestName="There Can Be Only One Response" QuestId="10867" Type="CollectItem" ItemId="30890" ItemName="Collection of Souls" CollectCount="1" />
     <TurnIn QuestName="Ruuan Weald" QuestId="10615" TurnInName="Timeon" TurnInId="21782" />
     <TurnIn QuestName="There Can Be Only One Response" QuestId="10867" TurnInName="Spiritcaller Dohgar" TurnInId="22312" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="The_Burning_Crusade_(58-70)__Netherstorm_(68-70)" />
   </QuestOrder>
 </HBProfile>

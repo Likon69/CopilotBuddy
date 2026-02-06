@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Tanaris (49-50)</Name>
+  <Name>Horde\\Classic (12-58)\\Tanaris (49-50)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>50</MaxLevel>
@@ -39,7 +39,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Tanaris (49-50)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Tanaris (49-50)" LogColor="Green" />
     <PickUp QuestName="Thistleshrub Valley" QuestId="3362" GiverName="Tran&apos;rek" GiverId="7876" />
     <PickUp QuestName="Super Sticky" QuestId="4504" GiverName="Tran&apos;rek" GiverId="7876" />
     <If Condition="((!HasQuest(5863)) &amp;&amp; (!IsQuestCompleted(5863)))">
@@ -113,7 +113,7 @@
     </If>
     <Objective QuestName="Seeping Corruption" QuestId="3568" Type="CollectItem" ItemId="10695" ItemName="Box of Empty Vials" CollectCount="1" />
     <Objective QuestName="The Atal&apos;ai Exile" QuestId="1429" Type="CollectItem" ItemId="6193" ItemName="Bundle of Atal&apos;ai Artifacts" CollectCount="1" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Tanaris (49-50) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Tanaris (49-50) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Azshara_(50-50)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Thousand Needles (24-25)</Name>
+  <Name>Horde\\Classic (12-58)\\Thousand Needles (24-25)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>25</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Thousand Needles (24-25)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Thousand Needles (24-25)" LogColor="Green" />
     <TurnIn QuestName="Calling in the Reserves" QuestId="5881" TurnInName="Grish Longrunner" TurnInId="12576" />
     <PickUp QuestName="Message to Freewind Post" QuestId="4542" GiverName="Brave Moonhorn" GiverId="10079" />
     <PickUp QuestName="Alien Egg" QuestId="4821" GiverName="Hagar Lightninghoof" GiverId="10539" />
@@ -38,7 +38,7 @@
       <PickUp QuestName="Grimtotem Spying" QuestId="5064" GiverName="Cliffwatcher Longhorn" GiverId="10537" />
     </If>
     <PickUp QuestName="Wind Rider" QuestId="4767" GiverName="Elu" GiverId="10377" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Thousand Needles (24-25) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Thousand Needles (24-25) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Ashenvale_(25-26)" />
   </QuestOrder>
 </HBProfile>

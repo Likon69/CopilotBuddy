@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Thousand Needles (38-38)</Name>
+  <Name>Horde\\Classic (12-58)\\Thousand Needles (38-38)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Thousand Needles (38-38)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Thousand Needles (38-38)" LogColor="Green" />
     <TurnIn QuestName="Alliance Relations" QuestId="1436" TurnInName="Keldran" TurnInId="5640" />
     <TurnIn QuestName="Frostmaw" QuestId="1136" TurnInName="Melor Stonehoof" TurnInId="3441" />
     <PickUp QuestName="Deadmire" QuestId="1205" GiverName="Melor Stonehoof" GiverId="3441" />
@@ -54,7 +54,7 @@
     <If Condition="((!HasQuest(1184)) &amp;&amp; (!IsQuestCompleted(1184)))">
       <PickUp QuestName="Parts of the Swarm" QuestId="1184" GiverName="Korran" GiverId="3428" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Thousand Needles (38-38) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Thousand Needles (38-38) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Dustwallow_Marsh_(38-39)" />
   </QuestOrder>
 </HBProfile>

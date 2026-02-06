@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Tanaris (47-49)</Name>
+  <Name>Alliance\\Tanaris (47-49)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>49</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Tanaris (47-49)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Tanaris (47-49)" LogColor="Green" />
     <PickUp QuestName="The Thirsty Goblin" QuestId="2605" GiverName="Marin Noggenfogger" GiverId="7564" />
     <If Condition="((!HasQuest(1691)) &amp;&amp; (!IsQuestCompleted(1691)))">
       <PickUp QuestName="More Wastewander Justice" QuestId="1691" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
@@ -127,7 +127,7 @@
     <If Condition="((!HasQuest(162)) &amp;&amp; (!IsQuestCompleted(162)))">
       <PickUp QuestName="Rise of the Silithid" QuestId="162" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Tanaris (47-49) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Tanaris (47-49) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="The_Hinterlands_(49-50)" />
   </QuestOrder>
 </HBProfile>

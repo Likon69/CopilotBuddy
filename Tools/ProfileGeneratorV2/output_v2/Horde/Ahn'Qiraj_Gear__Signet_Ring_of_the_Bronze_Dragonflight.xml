@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Ahn&apos;Qiraj Gear\\Signet Ring of the Bronze Dragonflight</Name>
+  <Name>Horde\\Ahn&apos;Qiraj Gear\\Signet Ring of the Bronze Dragonflight</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Ahn&apos;Qiraj Gear\\Signet Ring of the Bronze Dragonflight" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Ahn&apos;Qiraj Gear\\Signet Ring of the Bronze Dragonflight" LogColor="Green" />
     <If Condition="((!HasQuest(8757)) &amp;&amp; (!IsQuestCompleted(8757)))">
       <PickUp QuestName="The Path of the Invoker" QuestId="8757" GiverName="Anachronos" GiverId="15192" />
     </If>
@@ -73,6 +73,6 @@
     <If Condition="((!HasQuest(8766)) &amp;&amp; (!IsQuestCompleted(8766)))">
       <PickUp QuestName="The Changing of Paths - Conqueror No More" QuestId="8766" GiverName="Anachronos" GiverId="15192" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Ahn&apos;Qiraj Gear\\Signet Ring of the Bronze Dragonflight Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Ahn&apos;Qiraj Gear\\Signet Ring of the Bronze Dragonflight Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

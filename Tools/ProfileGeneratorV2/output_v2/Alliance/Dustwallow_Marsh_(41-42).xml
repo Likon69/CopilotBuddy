@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Dustwallow Marsh (41-42)</Name>
+  <Name>Alliance\\Dustwallow Marsh (41-42)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>42</MaxLevel>
@@ -75,7 +75,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Dustwallow Marsh (41-42)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Dustwallow Marsh (41-42)" LogColor="Green" />
     <If Condition="((!HasQuest(1286)) &amp;&amp; (!IsQuestCompleted(1286)))">
       <PickUp QuestName="The Deserters" QuestId="1286" GiverName="Captain Garran Vimes" GiverId="4944" />
     </If>
@@ -330,7 +330,7 @@
       <PickUp QuestName="Survey Alcaz Island" QuestId="11142" GiverName="Lady Jaina Proudmoore" GiverId="4968" />
     </If>
     <TurnIn QuestName="Survey Alcaz Island" QuestId="11142" TurnInName="Lady Jaina Proudmoore" TurnInId="4968" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Dustwallow Marsh (41-42) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Dustwallow Marsh (41-42) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Badlands_(42-43)" />
   </QuestOrder>
 </HBProfile>

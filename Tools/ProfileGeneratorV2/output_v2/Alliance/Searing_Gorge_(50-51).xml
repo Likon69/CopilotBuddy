@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Searing Gorge (50-51)</Name>
+  <Name>Alliance\\Searing Gorge (50-51)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>51</MaxLevel>
@@ -80,7 +80,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Searing Gorge (50-51)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Searing Gorge (50-51)" LogColor="Green" />
     <PickUp QuestName="Curse These Fat Fingers" QuestId="7723" GiverName="Hansel Heavyhands" GiverId="14627" />
     <PickUp QuestName="Fiery Menace!" QuestId="7724" GiverName="Hansel Heavyhands" GiverId="14627" />
     <PickUp QuestName="Incendosaurs? Whateverosaur is More Like It" QuestId="7727" GiverName="Hansel Heavyhands" GiverId="14627" />
@@ -190,7 +190,7 @@
     </If>
     <TurnIn QuestName="Noggenfogger Elixir" QuestId="2662" TurnInName="Marin Noggenfogger" TurnInId="7564" />
     <TurnIn QuestName="The Stone Circle" QuestId="3444" TurnInName="Marvon Rivetseeker" TurnInId="7771" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Searing Gorge (50-51) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Searing Gorge (50-51) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Un&apos;Goro_Crater_(51-52)" />
   </QuestOrder>
 </HBProfile>

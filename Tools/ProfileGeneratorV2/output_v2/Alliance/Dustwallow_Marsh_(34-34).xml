@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Dustwallow Marsh (34-34)</Name>
+  <Name>Alliance\\Dustwallow Marsh (34-34)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Dustwallow Marsh (34-34)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Dustwallow Marsh (34-34)" LogColor="Green" />
     <TurnIn QuestName="The Orc Report" QuestId="1219" TurnInName="Theramore Lieutenant" TurnInId="23951" />
     <If Condition="((!HasQuest(1220)) &amp;&amp; (!IsQuestCompleted(1220)))">
       <PickUp QuestName="Captain Vimes" QuestId="1220" GiverName="Theramore Lieutenant" GiverId="4947" />
@@ -58,7 +58,7 @@
     <If Condition="((!HasQuest(1112)) &amp;&amp; (!IsQuestCompleted(1112)))">
       <PickUp QuestName="Parts for Kravel" QuestId="1112" GiverName="Wharfmaster Dizzywig" GiverId="3453" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Dustwallow Marsh (34-34) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Dustwallow Marsh (34-34) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Stranglethorn_Vale_(34-35)" />
   </QuestOrder>
 </HBProfile>

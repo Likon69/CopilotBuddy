@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Netherstorm Group Quests</Name>
+  <Name>Horde\\The Burning Crusade (58-70)\\Netherstorm Group Quests</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -122,7 +122,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Netherstorm Group Quests" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Netherstorm Group Quests" LogColor="Green" />
     <If Condition="Me.Level &lt; 67">
       <GrindTo Level="67" />
     </If>
@@ -548,6 +548,6 @@
       <PickUp QuestName="Sabotag the Warp-Gate!" QuestId="10310" GiverName="Drijya" GiverId="20281" />
     </If>
     <TurnIn QuestName="Sabotag the Warp-Gate!" QuestId="10310" TurnInName="Gahruj" TurnInId="20066" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Netherstorm Group Quests Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Netherstorm Group Quests Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

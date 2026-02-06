@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Silithus (59-60)</Name>
+  <Name>Alliance\\Silithus (59-60)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -26,7 +26,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Silithus (59-60)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Silithus (59-60)" LogColor="Green" />
     <TurnIn QuestName="Taking Back Silithus" QuestId="8275" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
     <If Condition="((!HasQuest(8280)) &amp;&amp; (!IsQuestCompleted(8280)))">
       <PickUp QuestName="Securing the Supply Lines" QuestId="8280" GiverName="Windcaller Proudhorn" GiverId="15191" />
@@ -70,6 +70,6 @@
     <TurnIn QuestName="Noggle&apos;s Last Hope" QuestId="8278" TurnInName="Beetix Ficklespragg" TurnInId="15189" />
     <TurnIn QuestName="The Twilight Mystery" QuestId="8284" TurnInName="Geologist Larksbane" TurnInId="15183" />
     <TurnIn QuestName="Dearest Natalia" QuestId="8304" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Silithus (59-60) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Silithus (59-60) Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

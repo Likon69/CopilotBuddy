@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Un&apos;Goro Crater (51-52)</Name>
+  <Name>Alliance\\Un&apos;Goro Crater (51-52)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>52</MaxLevel>
@@ -55,7 +55,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Un&apos;Goro Crater (51-52)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Un&apos;Goro Crater (51-52)" LogColor="Green" />
     <If Condition="((!HasQuest(4289)) &amp;&amp; (!IsQuestCompleted(4289)))">
       <PickUp QuestName="The Apes of Un&apos;Goro" QuestId="4289" GiverName="Torwa Pathfinder" GiverId="9619" />
     </If>
@@ -119,7 +119,7 @@
     <If Condition="((!HasQuest(5090)) &amp;&amp; (!IsQuestCompleted(5090)))">
       <PickUp QuestName="A Call to Arms: The Plaguelands!" QuestId="5090" GiverName="Courier Hammerfall" GiverId="10877" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Un&apos;Goro Crater (51-52) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Un&apos;Goro Crater (51-52) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Western_Plaguelands_(52-52)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Hillsbrad Foothills (32-33)</Name>
+  <Name>Alliance\\Hillsbrad Foothills (32-33)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>33</MaxLevel>
@@ -36,7 +36,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Hillsbrad Foothills (32-33)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Hillsbrad Foothills (32-33)" LogColor="Green" />
     <PickUp QuestName="Costly Menace" QuestId="564" GiverName="Darren Malvew" GiverId="2382" />
     <TurnIn QuestName="Southshore" QuestId="538" TurnInName="Loremaster Dibbs" TurnInId="2277" />
     <PickUp QuestName="Missing Crystals" QuestId="9435" GiverName="Huraan" GiverId="17218" />
@@ -88,7 +88,7 @@
     <PickUp QuestName="Hints of a New Plague?" QuestId="659" GiverName="Phin Odelic" GiverId="2711" />
     <TurnIn QuestName="Syndicate Assassins" QuestId="505" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
     <TurnIn QuestName="Foreboding Plans" QuestId="510" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Hillsbrad Foothills (32-33) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Hillsbrad Foothills (32-33) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Arathi_Highlands_(33-33)" />
   </QuestOrder>
 </HBProfile>

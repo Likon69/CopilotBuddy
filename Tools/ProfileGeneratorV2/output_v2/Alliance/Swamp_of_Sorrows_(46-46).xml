@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Swamp of Sorrows (46-46)</Name>
+  <Name>Alliance\\Swamp of Sorrows (46-46)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Swamp of Sorrows (46-46)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Swamp of Sorrows (46-46)" LogColor="Green" />
     <TurnIn QuestName="Vital Supplies" QuestId="1477" TurnInName="Watchmaster Sorigal" TurnInId="5464" />
     <TurnIn QuestName="Cortello&apos;s Riddle" QuestId="624" TurnInName="Object_2553" TurnInType="Object" TurnInId="2553" />
     <If Condition="((!HasQuest(625)) &amp;&amp; (!IsQuestCompleted(625)))">
@@ -37,7 +37,7 @@
     <If Condition="((!HasQuest(1122)) &amp;&amp; (!IsQuestCompleted(1122)))">
       <PickUp QuestName="Report Back to Fizzlebub" QuestId="1122" GiverName="Kravel Koalbeard" GiverId="4452" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Swamp of Sorrows (46-46) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Swamp of Sorrows (46-46) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Feralas_(46-47)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Northrend (69-80)\\Sholazar Basin (77-78)</Name>
+  <Name>Alliance\\Northrend (69-80)\\Sholazar Basin (77-78)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>78</MaxLevel>
@@ -157,7 +157,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Sholazar Basin (77-78)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Northrend (69-80)\\Sholazar Basin (77-78)" LogColor="Green" />
     <PickUp QuestName="Where in the World is Hemet Nesingwary?" QuestId="12521" GiverName="Archmage Pentarus" GiverId="28160" />
     <CustomBehavior File="SetHearthstone" MobId="31557" AreaId="4395" X="50.25" Y="39.52" Z="0" /> <!-- Set hearth: Dalaran -->
     <TurnIn QuestName="Where in the World is Hemet Nesingwary?" QuestId="12521" TurnInName="Monte Muzzleshot" TurnInId="27987" />
@@ -677,7 +677,7 @@
     </If>
     <TurnIn QuestName="Return of the Friendly Dryskin" QuestId="12695" TurnInName="High-Oracle Soo-say" TurnInId="28027" />
     <TurnIn QuestName="Return of the Lich Hunter" QuestId="12692" TurnInName="Elder Harkek" TurnInId="28138" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Sholazar Basin (77-78) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Northrend (69-80)\\Sholazar Basin (77-78) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)__The_Storm_Peaks_(78-79)" />
   </QuestOrder>
 </HBProfile>

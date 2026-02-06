@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Northrend (69-80)\\Howling Fjord (69-71)</Name>
+  <Name>Horde\\Northrend (69-80)\\Howling Fjord (69-71)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>71</MaxLevel>
@@ -142,7 +142,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Howling Fjord (69-71)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Northrend (69-80)\\Howling Fjord (69-71)" LogColor="Green" />
     <PickUp QuestName="The New Plague" QuestId="11167" GiverName="Apothecary Lysander" GiverId="24126" />
     <CustomBehavior File="SetHearthstone" MobId="26709" AreaId="3537" X="79.73" Y="30.84" Z="0" /> <!-- Set hearth: Vengeance Landing -->
     <If Condition="((!HasQuest(11227)) &amp;&amp; (!IsQuestCompleted(11227)))">
@@ -975,7 +975,7 @@
       <PickUp QuestName="Return to Atuik" QuestId="11572" GiverName="Orfus of Kamagua" GiverId="23804" />
     </If>
     <TurnIn QuestName="Return to Atuik" QuestId="11572" TurnInName="Elder Atuik" TurnInId="24755" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Howling Fjord (69-71) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Northrend (69-80)\\Howling Fjord (69-71) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)__Borean_Tundra_(70-72)" />
   </QuestOrder>
 </HBProfile>

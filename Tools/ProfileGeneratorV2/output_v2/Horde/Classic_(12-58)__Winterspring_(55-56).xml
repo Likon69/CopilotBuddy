@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Winterspring (55-56)</Name>
+  <Name>Horde\\Classic (12-58)\\Winterspring (55-56)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>56</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Winterspring (55-56)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Winterspring (55-56)" LogColor="Green" />
     <TurnIn QuestName="Speak to Salfa" QuestId="8465" TurnInName="Salfa" TurnInId="11556" />
     <If Condition="((!HasQuest(8464)) &amp;&amp; (!IsQuestCompleted(8464)))">
       <PickUp QuestName="Winterfall Activity" QuestId="8464" GiverName="Salfa" GiverId="11556" />
@@ -54,7 +54,7 @@
     <TurnIn QuestName="Threat of the Winterfall" QuestId="5082" TurnInName="Donova Snowden" TurnInId="9298" />
     <TurnIn QuestName="Winterfall Firewater" QuestId="5083" TurnInName="Donova Snowden" TurnInId="9298" />
     <TurnIn QuestName="Winterfall Activity" QuestId="8464" TurnInName="Salfa" TurnInId="11556" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Winterspring (55-56) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Winterspring (55-56) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Felwood_(56-56)" />
   </QuestOrder>
 </HBProfile>

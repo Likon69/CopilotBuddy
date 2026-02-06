@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alterac Mountains (39-39)</Name>
+  <Name>Alliance\\Alterac Mountains (39-39)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alterac Mountains (39-39)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Alterac Mountains (39-39)" LogColor="Green" />
     <CustomBehavior File="SetHearthstone" MobId="2352" AreaId="267" X="51.17" Y="58.93" Z="0" /> <!-- Set hearth: Southshore -->
     <PickUp QuestName="Crushridge Bounty" QuestId="500" GiverName="Marshal Redpath" GiverId="2263" />
     <TurnIn QuestName="Further Mysteries" QuestId="525" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
@@ -88,7 +88,7 @@
     <If Condition="((!HasQuest(554)) &amp;&amp; (!IsQuestCompleted(554)))">
       <PickUp QuestName="Stormpike&apos;s Deciphering" QuestId="554" GiverName="Loremaster Dibbs" GiverId="2277" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alterac Mountains (39-39) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Alterac Mountains (39-39) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Arathi_Highlands_(39-41)" />
   </QuestOrder>
 </HBProfile>

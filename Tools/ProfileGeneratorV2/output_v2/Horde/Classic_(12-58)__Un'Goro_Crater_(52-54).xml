@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Un&apos;Goro Crater (52-54)</Name>
+  <Name>Horde\\Classic (12-58)\\Un&apos;Goro Crater (52-54)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>54</MaxLevel>
@@ -56,7 +56,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Un&apos;Goro Crater (52-54)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Un&apos;Goro Crater (52-54)" LogColor="Green" />
     <Objective QuestName="Chasing A-Me 01" QuestId="4244" Type="CollectItem" ItemId="10561" ItemName="Mithril Casing" CollectCount="1" />
     <Objective QuestName="The Stone Circle" QuestId="3444" Type="CollectItem" ItemId="10556" ItemName="Stone Circle" CollectCount="1" />
     <Objective QuestName="Sprinkle&apos;s Secret Ingredient" QuestId="2641" Type="CollectItem" ItemId="8526" ItemName="Violet Tragan" CollectCount="1" />
@@ -268,7 +268,7 @@
     <TurnIn QuestName="Marvon&apos;s Workshop" QuestId="4147" TurnInName="Liv Rizzlefix" TurnInId="8496" />
     <Objective QuestName="A Taste of Flame" QuestId="4022" Type="CollectItem" ItemId="10575" ItemName="Black Dragonflight Molt" CollectCount="1" />
     <TurnIn QuestName="Vivian Lagrave" QuestId="4133" TurnInName="Shadowmage Vivian Lagrave" TurnInId="9078" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Un&apos;Goro Crater (52-54) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Un&apos;Goro Crater (52-54) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Burning_Steppes_(54-54)" />
   </QuestOrder>
 </HBProfile>

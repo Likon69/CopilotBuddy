@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Eastern Plaguelands (57-58)</Name>
+  <Name>Alliance\\Eastern Plaguelands (57-58)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>58</MaxLevel>
@@ -71,7 +71,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Eastern Plaguelands (57-58)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Eastern Plaguelands (57-58)" LogColor="Green" />
     <If Condition="((!HasQuest(5542)) &amp;&amp; (!IsQuestCompleted(5542)))">
       <PickUp QuestName="Demon Dogs" QuestId="5542" GiverName="Tirion Fordring" GiverId="1855" />
     </If>
@@ -134,7 +134,7 @@
     <Objective QuestName="Zaeldarr the Outcast" QuestId="6021" Type="CollectItem" ItemId="15785" ItemName="Zaeldarr&apos;s Head" CollectCount="1" />
     <TurnIn QuestName="Zaeldarr the Outcast" QuestId="6021" TurnInName="Caretaker Alen" TurnInId="11038" />
     <TurnIn QuestName="Defenders of Darrowshire" QuestId="5211" TurnInName="Carlin Redpath" TurnInId="11063" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Eastern Plaguelands (57-58) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Eastern Plaguelands (57-58) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Western_Plaguelands_(58-59)" />
   </QuestOrder>
 </HBProfile>

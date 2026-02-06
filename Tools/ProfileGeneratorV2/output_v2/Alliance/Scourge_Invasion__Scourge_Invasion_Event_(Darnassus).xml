@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Scourge Invasion\\Scourge Invasion Event (Darnassus)</Name>
+  <Name>Alliance\\Scourge Invasion\\Scourge Invasion Event (Darnassus)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Scourge Invasion\\Scourge Invasion Event (Darnassus)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Scourge Invasion\\Scourge Invasion Event (Darnassus)" LogColor="Green" />
     <PickUp QuestName="Investigate the Scourge of Darnassus" QuestId="9262" GiverName="Lieutenant Beitha" GiverId="16495" />
     <Objective QuestName="Investigate the Scourge of Darnassus" QuestId="9262" Type="CollectItem" ItemId="22892" ItemName="Dim Necrotic Stone" CollectCount="3" />
     <TurnIn QuestName="Investigate the Scourge of Darnassus" QuestId="9262" TurnInName="Lieutenant Beitha" TurnInId="16495" />
@@ -90,6 +90,6 @@
     <PickUp QuestName="Chamber of Secrets" QuestId="12616" GiverName="Argent Emissary" GiverId="16285" />
     <Objective QuestName="Chamber of Secrets" QuestId="12616" Type="KillMob" MobId="28194" MobName="Prince Tenris Mirkblood" KillCount="1" />
     <TurnIn QuestName="Chamber of Secrets" QuestId="12616" TurnInName="Argent Emissary" TurnInId="16285" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Scourge Invasion\\Scourge Invasion Event (Darnassus) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Scourge Invasion\\Scourge Invasion Event (Darnassus) Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

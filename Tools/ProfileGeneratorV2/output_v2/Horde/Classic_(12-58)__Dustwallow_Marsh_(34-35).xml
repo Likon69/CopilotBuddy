@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Dustwallow Marsh (34-35)</Name>
+  <Name>Horde\\Classic (12-58)\\Dustwallow Marsh (34-35)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>35</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Dustwallow Marsh (34-35)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Dustwallow Marsh (34-35)" LogColor="Green" />
     <CustomBehavior File="InteractWith" MobId="21015" NumOfTimes="1" />
     <PickUp QuestName="Suspicious Hoofprints" QuestId="1268" />
     <PickUp QuestName="Lieutenant Paval Reethe" QuestId="1269" />
@@ -31,7 +31,7 @@
     <If Condition="((!HasQuest(1112)) &amp;&amp; (!IsQuestCompleted(1112)))">
       <PickUp QuestName="Parts for Kravel" QuestId="1112" GiverName="Wharfmaster Dizzywig" GiverId="3453" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Dustwallow Marsh (34-35) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Dustwallow Marsh (34-35) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Stranglethorn_Vale_(35-36)" />
   </QuestOrder>
 </HBProfile>

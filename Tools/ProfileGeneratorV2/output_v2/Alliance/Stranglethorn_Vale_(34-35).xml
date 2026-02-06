@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Stranglethorn Vale (34-35)</Name>
+  <Name>Alliance\\Stranglethorn Vale (34-35)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>35</MaxLevel>
@@ -46,7 +46,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (34-35)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (34-35)" LogColor="Green" />
     <TurnIn QuestName="Goblin Sponsorship" QuestId="1180" TurnInName="Wharfmaster Lozgil" TurnInId="4631" />
     <If Condition="((!HasQuest(1181)) &amp;&amp; (!IsQuestCompleted(1181)))">
       <PickUp QuestName="Goblin Sponsorship" QuestId="1181" GiverName="Wharfmaster Lozgil" GiverId="4631" />
@@ -144,7 +144,7 @@
         <PickUp QuestName="Cyclonian" QuestId="1712" GiverName="Bath&apos;rah the Windwatcher" GiverId="6176" />
       </If>
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (34-35) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (34-35) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Desolace_(35-37)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Felwood (55-56)</Name>
+  <Name>Alliance\\Felwood (55-56)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>56</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Felwood (55-56)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Felwood (55-56)" LogColor="Green" />
     <TurnIn QuestName="Cleansed Water Returns to Felwood" QuestId="5159" TurnInName="Greta Mosshoof" TurnInId="10922" />
     <If Condition="((!HasQuest(5165)) &amp;&amp; (!IsQuestCompleted(5165)))">
       <PickUp QuestName="Dousing the Flames of Protection" QuestId="5165" GiverName="Greta Mosshoof" GiverId="10922" />
@@ -29,7 +29,7 @@
     <TurnIn QuestName="A Strange Red Key" QuestId="5202" TurnInName="Captured Arko&apos;narin" TurnInId="11016" />
     <Objective QuestName="Toxic Horrors" QuestId="5086" Type="KillMob" MobId="7132" MobName="Toxic Horror" KillCount="1" />
     <Objective QuestName="Toxic Horrors" QuestId="5086" Type="CollectItem" ItemId="12822" ItemName="Toxic Horror Droplet" CollectCount="3" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Felwood (55-56) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Felwood (55-56) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Winterspring_(56-56)" />
   </QuestOrder>
 </HBProfile>

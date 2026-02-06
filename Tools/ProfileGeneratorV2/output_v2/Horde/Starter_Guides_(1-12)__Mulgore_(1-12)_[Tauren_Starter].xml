@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Starter Guides (1-12)\\Mulgore (1-12) [Tauren Starter]</Name>
+  <Name>Horde\\Starter Guides (1-12)\\Mulgore (1-12) [Tauren Starter]</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>12</MaxLevel>
@@ -68,7 +68,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-12)\\Mulgore (1-12) [Tauren Starter]" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Starter Guides (1-12)\\Mulgore (1-12) [Tauren Starter]" LogColor="Green" />
     <PickUp QuestName="The Hunt Begins" QuestId="747" GiverName="Grull Hawkwind" GiverId="2980" />
     <PickUp QuestName="A Humble Task" QuestId="752" GiverName="Chief Hawkwind" GiverId="2981" />
     <TurnIn QuestName="A Humble Task" QuestId="752" TurnInName="Greatmother Hawkwind" TurnInId="2991" />
@@ -617,7 +617,7 @@
       <TurnIn QuestName="Journey to the Crossroads" QuestId="854" TurnInName="Thork" TurnInId="3429" />
     </If>
     <PickUp QuestName="Conscript of the Horde" QuestId="840" GiverName="Takrin Pathseeker" GiverId="3336" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-12)\\Mulgore (1-12) [Tauren Starter] Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Starter Guides (1-12)\\Mulgore (1-12) [Tauren Starter] Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__The_Barrens_(12-15)" />
   </QuestOrder>
 </HBProfile>

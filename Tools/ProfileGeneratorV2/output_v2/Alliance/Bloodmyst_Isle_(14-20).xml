@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Bloodmyst Isle (14-20)</Name>
+  <Name>Alliance\\Bloodmyst Isle (14-20)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>20</MaxLevel>
@@ -205,7 +205,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Bloodmyst Isle (14-20)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Bloodmyst Isle (14-20)" LogColor="Green" />
     <PickUp QuestName="A Favorite Treat" QuestId="9624" GiverName="Aonar" GiverId="17599" />
     <TurnIn QuestName="Elekks Are Serious Business" QuestId="9625" TurnInName="Vorkhan the Elekk Herder" TurnInId="17586" />
     <If Condition="((!HasQuest(9634)) &amp;&amp; (!IsQuestCompleted(9634)))">
@@ -493,7 +493,7 @@
         <PickUp QuestName="Call of Water" QuestId="9504" GiverName="Aqueous" GiverId="17275" />
       </If>
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Bloodmyst Isle (14-20) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Bloodmyst Isle (14-20) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Darkshore_(20-22)" />
   </QuestOrder>
 </HBProfile>

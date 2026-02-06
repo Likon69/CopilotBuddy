@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Class Quests\\Paladin Class Quests</Name>
+  <Name>Alliance\\Class Quests\\Paladin Class Quests</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -32,7 +32,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Paladin Class Quests" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Class Quests\\Paladin Class Quests" LogColor="Green" />
     <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Human)">
       <If Condition="((!HasQuest(2998)) &amp;&amp; (!IsQuestCompleted(2998)))">
         <PickUp QuestName="Tome of Divinity" QuestId="2998" GiverName="Brother Wilhelm" GiverId="927" />
@@ -374,6 +374,6 @@
     <If Condition="(Me.Class == WoWClass.Paladin)">
       <TurnIn QuestName="Judgment and Redemption" QuestId="7647" TurnInName="Darkreaver&apos;s Fallen Charger" TurnInId="14568" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Paladin Class Quests Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Class Quests\\Paladin Class Quests Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

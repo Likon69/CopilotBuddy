@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Azshara (46-47)</Name>
+  <Name>Horde\\Classic (12-58)\\Azshara (46-47)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>47</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Azshara (46-47)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Azshara (46-47)" LogColor="Green" />
     <PickUp QuestName="Spiritual Unrest" QuestId="5535" GiverName="Loh&apos;atu" GiverId="11548" />
     <If Condition="((!HasQuest(5536)) &amp;&amp; (!IsQuestCompleted(5536)))">
       <PickUp QuestName="A Land Filled with Hatred" QuestId="5536" GiverName="Loh&apos;atu" GiverId="11548" />
@@ -35,7 +35,7 @@
     </If>
     <Objective QuestName="Back to Booty Bay" QuestId="1118" Type="CollectItem" ItemId="5826" ItemName="Kravel&apos;s Scheme" CollectCount="1" />
     <Objective QuestName="Deliver to MacKinley" QuestId="2874" Type="CollectItem" ItemId="9245" ItemName="Stoley&apos;s Bottle" CollectCount="1" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Azshara (46-47) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Azshara (46-47) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Stranglethorn_Vale_(47-47)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Cenarion Battlegear</Name>
+  <Name>Horde\\Cenarion Battlegear</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Battlegear" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Cenarion Battlegear" LogColor="Green" />
     <PickUp QuestName="Cenarion Battlegear" QuestId="8800" GiverName="Windcaller Kaldon" GiverId="15540" />
     <TurnIn QuestName="Cenarion Battlegear" QuestId="8800" TurnInName="Vargus" TurnInId="15176" />
     <If Condition="((!HasQuest(8548)) &amp;&amp; (!IsQuestCompleted(8548)))">
@@ -42,6 +42,6 @@
     <Objective QuestName="Stalwart&apos;s Battlegear" QuestId="8574" Type="CollectItem" ItemId="20801" ItemName="Cenarion Tactical Badge" CollectCount="17" />
     <Objective QuestName="Stalwart&apos;s Battlegear" QuestId="8574" Type="CollectItem" ItemId="21515" ItemName="Mark of Remulos" CollectCount="1" />
     <TurnIn QuestName="Stalwart&apos;s Battlegear" QuestId="8574" TurnInName="Vargus" TurnInId="15176" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Battlegear Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Cenarion Battlegear Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

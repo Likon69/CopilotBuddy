@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Class Quests\\Mage Class Quests</Name>
+  <Name>Horde\\Class Quests\\Mage Class Quests</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -45,7 +45,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Mage Class Quests" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Class Quests\\Mage Class Quests" LogColor="Green" />
     <If Condition="(Me.Class == WoWClass.Mage)">
       <If Condition="((!HasQuest(1883)) &amp;&amp; (!IsQuestCompleted(1883)))">
         <PickUp QuestName="Speak with Un&apos;thuwa" QuestId="1883" GiverName="Uthel&apos;nay" GiverId="7311" />
@@ -208,6 +208,6 @@
       <Objective QuestName="Arcane Refreshment" QuestId="7463" Type="CollectItem" ItemId="18299" ItemName="Hydrospawn Essence" CollectCount="1" />
       <TurnIn QuestName="Arcane Refreshment" QuestId="7463" TurnInName="Lorekeeper Lydros" TurnInId="14368" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Mage Class Quests Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Class Quests\\Mage Class Quests Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

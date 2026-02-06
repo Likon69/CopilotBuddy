@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Stranglethorn Vale (42-43)</Name>
+  <Name>Horde\\Classic (12-58)\\Stranglethorn Vale (42-43)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>43</MaxLevel>
@@ -40,7 +40,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (42-43)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stranglethorn Vale (42-43)" LogColor="Green" />
     <If Condition="((!HasQuest(604)) &amp;&amp; (!IsQuestCompleted(604)))">
       <PickUp QuestName="The Bloodsail Buccaneers" QuestId="604" GiverName="Fleet Master Seahorn" GiverId="2487" />
     </If>
@@ -130,7 +130,7 @@
     <TurnIn QuestName="Voodoo Dues" QuestId="609" TurnInName="&quot;Sea Wolf&quot; MacKinley" TurnInId="2501" />
     <PickUp QuestName="Stoley&apos;s Debt" QuestId="2872" GiverName="&quot;Sea Wolf&quot; MacKinley" GiverId="2501" />
     <TurnIn QuestName="Keep An Eye Out" QuestId="576" TurnInName="Dizzy One-Eye" TurnInId="2493" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (42-43) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stranglethorn Vale (42-43) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Dustwallow_Marsh_(43-44)" />
   </QuestOrder>
 </HBProfile>

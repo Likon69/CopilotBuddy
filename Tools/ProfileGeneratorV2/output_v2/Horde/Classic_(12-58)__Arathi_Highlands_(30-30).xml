@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Arathi Highlands (30-30)</Name>
+  <Name>Horde\\Classic (12-58)\\Arathi Highlands (30-30)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Arathi Highlands (30-30)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Arathi Highlands (30-30)" LogColor="Green" />
     <PickUp QuestName="Hammerfall" QuestId="655" GiverName="Gor&apos;mul" GiverId="2792" />
     <TurnIn QuestName="Hammerfall" QuestId="655" TurnInName="Tor&apos;gan" TurnInId="2706" />
     <If Condition="((!HasQuest(672)) &amp;&amp; (!IsQuestCompleted(672)))">
@@ -47,7 +47,7 @@
       </If>
       <TurnIn QuestName="Call of Air" QuestId="1531" TurnInName="Prate Cloudseer" TurnInId="5905" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Arathi Highlands (30-30) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Arathi Highlands (30-30) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Stranglethorn_Vale_(30-31)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Dustwallow Marsh (38-39)</Name>
+  <Name>Horde\\Classic (12-58)\\Dustwallow Marsh (38-39)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>39</MaxLevel>
@@ -66,7 +66,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Dustwallow Marsh (38-39)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Dustwallow Marsh (38-39)" LogColor="Green" />
     <PickUp QuestName="Theramore Spies" QuestId="1201" GiverName="Nazeer Bloodpike" GiverId="4791" />
     <PickUp QuestName="Check Up on Tabetha" QuestId="11213" GiverName="Nazeer Bloodpike" GiverId="4791" />
     <If Condition="((!HasQuest(1322)) &amp;&amp; (!IsQuestCompleted(1322)))">
@@ -199,7 +199,7 @@
     <TurnIn QuestName="Signs of Treachery?" QuestId="11186" TurnInName="Nazeer Bloodpike" TurnInId="4791" />
     <TurnIn QuestName="Deadmire" QuestId="1205" TurnInName="Melor Stonehoof" TurnInId="3441" />
     <TurnIn QuestName="Stinky&apos;s Escape" QuestId="1270" TurnInName="Mebok Mizzyrix" TurnInId="3446" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Dustwallow Marsh (38-39) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Dustwallow Marsh (38-39) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Stranglethorn_Vale_(39-39)" />
   </QuestOrder>
 </HBProfile>

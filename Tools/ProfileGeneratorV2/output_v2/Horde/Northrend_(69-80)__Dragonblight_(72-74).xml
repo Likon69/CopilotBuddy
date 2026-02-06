@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Northrend (69-80)\\Dragonblight (72-74)</Name>
+  <Name>Horde\\Northrend (69-80)\\Dragonblight (72-74)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>74</MaxLevel>
@@ -176,7 +176,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Dragonblight (72-74)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Northrend (69-80)\\Dragonblight (72-74)" LogColor="Green" />
     <PickUp QuestName="Give it a Name" QuestId="12181" GiverName="Chief Plaguebringer Harris" GiverId="24251" />
     <TurnIn QuestName="Give it a Name" QuestId="12181" TurnInName="Tobias Sarkhoff" TurnInId="24155" />
     <If Condition="((!HasQuest(12182)) &amp;&amp; (!IsQuestCompleted(12182)))">
@@ -1013,7 +1013,7 @@
     <PickUp QuestName="Learning to Leave and Return: the Magical Way" QuestId="12790" GiverName="Archmage Celindra" GiverId="29156" />
     <TurnIn QuestName="Learning to Leave and Return: the Magical Way" QuestId="12790" TurnInName="Archmage Celindra" TurnInId="29156" />
     <PickUp QuestName="To Conquest Hold, But Be Careful!" QuestId="12487" GiverName="High Executor Wroth" GiverId="27243" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Dragonblight (72-74) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Northrend (69-80)\\Dragonblight (72-74) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)__Grizzly_Hills_(74-75)" />
   </QuestOrder>
 </HBProfile>

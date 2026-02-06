@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Stranglethorn Vale (31-32)</Name>
+  <Name>Alliance\\Stranglethorn Vale (31-32)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>32</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (31-32)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (31-32)" LogColor="Green" />
     <PickUp QuestName="Jungle Secrets" QuestId="215" GiverName="Private Thorsen" GiverId="738" />
     <PickUp QuestName="Welcome to the Jungle" QuestId="583" GiverName="Barnil Stonepot" GiverId="716" />
     <TurnIn QuestName="Welcome to the Jungle" QuestId="583" TurnInName="Hemet Nesingwary" TurnInId="715" />
@@ -92,7 +92,7 @@
       <PickUp QuestName="The Missing Diplomat" QuestId="1264" GiverName="Mikhail" GiverId="4963" />
     </If>
     <CustomBehavior File="SetHearthstone" MobId="23995" AreaId="15" X="10.7" Y="60.95" Z="0" /> <!-- Set hearth: Deepwater Tavern -->
-    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (31-32) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (31-32) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Hillsbrad_Foothills_(32-33)" />
   </QuestOrder>
 </HBProfile>

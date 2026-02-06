@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Dustwallow Marsh (48-49)</Name>
+  <Name>Horde\\Classic (12-58)\\Dustwallow Marsh (48-49)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>49</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Dustwallow Marsh (48-49)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Dustwallow Marsh (48-49)" LogColor="Green" />
     <If Condition="((!HasQuest(1172)) &amp;&amp; (!IsQuestCompleted(1172)))">
       <PickUp QuestName="The Brood of Onyxia" QuestId="1172" GiverName="Draz&apos;Zilb" GiverId="4501" />
     </If>
@@ -36,7 +36,7 @@
     </If>
     <Objective QuestName="Challenge Overlord Mok&apos;Morokk" QuestId="1173" Type="KillMob" MobId="4500" MobName="Overlord Mok&apos;Morokk" KillCount="1" />
     <TurnIn QuestName="Challenge Overlord Mok&apos;Morokk" QuestId="1173" TurnInName="Draz&apos;Zilb" TurnInId="4501" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Dustwallow Marsh (48-49) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Dustwallow Marsh (48-49) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Feralas_(49-49)" />
   </QuestOrder>
 </HBProfile>

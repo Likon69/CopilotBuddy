@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Extra Zones\\Eastern Plaguelands</Name>
+  <Name>Horde\\Extra Zones\\Eastern Plaguelands</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -55,7 +55,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Eastern Plaguelands" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Extra Zones\\Eastern Plaguelands" LogColor="Green" />
     <If Condition="((!HasQuest(5542)) &amp;&amp; (!IsQuestCompleted(5542)))">
       <PickUp QuestName="Demon Dogs" QuestId="5542" GiverName="Tirion Fordring" GiverId="1855" />
     </If>
@@ -183,6 +183,6 @@
     <If Condition="((!HasQuest(1004)) &amp;&amp; (!IsQuestCompleted(1004)))">
       <PickUp QuestName="The New Frontier" QuestId="1004" GiverName="Harbinger Balthazad" GiverId="10879" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Eastern Plaguelands Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Extra Zones\\Eastern Plaguelands Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

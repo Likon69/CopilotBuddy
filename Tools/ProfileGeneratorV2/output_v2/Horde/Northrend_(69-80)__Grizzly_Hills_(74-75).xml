@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Northrend (69-80)\\Grizzly Hills (74-75)</Name>
+  <Name>Horde\\Northrend (69-80)\\Grizzly Hills (74-75)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>75</MaxLevel>
@@ -282,7 +282,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Grizzly Hills (74-75)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Northrend (69-80)\\Grizzly Hills (74-75)" LogColor="Green" />
     <PickUp QuestName="Supplemental Income" QuestId="12436" GiverName="Provisioner Lorkran" GiverId="26868" />
     <PickUp QuestName="Gray Worg Hides" QuestId="12175" GiverName="Hidetrader Jun&apos;ik" GiverId="27037" />
     <TurnIn QuestName="To Conquest Hold, But Be Careful!" QuestId="12487" TurnInName="Conqueror Krenna" TurnInId="26860" />
@@ -883,7 +883,7 @@
     <If Condition="((!HasQuest(12763)) &amp;&amp; (!IsQuestCompleted(12763)))">
       <PickUp QuestName="Shifting Priorities" QuestId="12763" GiverName="Scout Vor&apos;takh" GiverId="26666" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Grizzly Hills (74-75) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Northrend (69-80)\\Grizzly Hills (74-75) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)__Zul&apos;Drak_(75-77)" />
   </QuestOrder>
 </HBProfile>

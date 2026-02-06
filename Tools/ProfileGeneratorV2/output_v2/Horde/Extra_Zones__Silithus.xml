@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Extra Zones\\Silithus</Name>
+  <Name>Horde\\Extra Zones\\Silithus</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -44,7 +44,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Silithus" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Extra Zones\\Silithus" LogColor="Green" />
     <TurnIn QuestName="Wasteland" QuestId="1124" TurnInName="Layo Starstrike" TurnInId="13220" />
     <If Condition="((!HasQuest(1125)) &amp;&amp; (!IsQuestCompleted(1125)))">
       <PickUp QuestName="The Spirits of Southwind" QuestId="1125" GiverName="Layo Starstrike" GiverId="13220" />
@@ -221,6 +221,6 @@
     <Objective QuestName="Vyral the Vile" QuestId="8321" Type="CollectItem" ItemId="20466" ItemName="Vyral&apos;s Signet Ring" CollectCount="1" />
     <TurnIn QuestName="Vyral the Vile" QuestId="8321" TurnInName="Huum Wildmane" TurnInId="15270" />
     <TurnIn QuestName="Into The Maw of Madness" QuestId="8306" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Silithus Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Extra Zones\\Silithus Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

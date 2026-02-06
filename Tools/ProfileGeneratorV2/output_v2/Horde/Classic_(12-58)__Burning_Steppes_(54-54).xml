@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Burning Steppes (54-54)</Name>
+  <Name>Horde\\Classic (12-58)\\Burning Steppes (54-54)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Burning Steppes (54-54)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Burning Steppes (54-54)" LogColor="Green" />
     <PickUp QuestName="The Rise of the Machines" QuestId="4061" GiverName="Hierophant Theodora Mulvadania" GiverId="9079" />
     <PickUp QuestName="Dreadmaul Rock" QuestId="3821" GiverName="Thal&apos;trak Proudtusk" GiverId="9082" />
     <PickUp QuestName="Broodling Essence" QuestId="4726" GiverName="Tinkee Steamboil" GiverId="10267" />
@@ -49,7 +49,7 @@
     </If>
     <TurnIn QuestName="Krom&apos;Grul" QuestId="3822" TurnInName="Thal&apos;trak Proudtusk" TurnInId="9082" />
     <TurnIn QuestName="The Rise of the Machines" QuestId="4062" TurnInName="Lotwil Veriatus" TurnInId="2921" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Burning Steppes (54-54) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Burning Steppes (54-54) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Azshara_(54-55)" />
   </QuestOrder>
 </HBProfile>

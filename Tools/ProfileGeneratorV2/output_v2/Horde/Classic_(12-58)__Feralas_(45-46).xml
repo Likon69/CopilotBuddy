@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Feralas (45-46)</Name>
+  <Name>Horde\\Classic (12-58)\\Feralas (45-46)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>46</MaxLevel>
@@ -41,7 +41,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Feralas (45-46)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Feralas (45-46)" LogColor="Green" />
     <PickUp QuestName="A New Cloak&apos;s Sheen" QuestId="2973" GiverName="Krueg Skullsplitter" GiverId="4544" />
     <If Condition="((!HasQuest(2975)) &amp;&amp; (!IsQuestCompleted(2975)))">
       <PickUp QuestName="The Ogres of Feralas" QuestId="2975" GiverName="Rok Orhan" GiverId="7777" />
@@ -164,7 +164,7 @@
       <PickUp QuestName="Service to the Horde" QuestId="7541" GiverName="Zor Lonetree" GiverId="4047" />
     </If>
     <TurnIn QuestName="The Gordunni Orb" QuestId="3002" TurnInName="Uthel&apos;nay" TurnInId="7311" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Feralas (45-46) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Feralas (45-46) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Azshara_(46-47)" />
   </QuestOrder>
 </HBProfile>

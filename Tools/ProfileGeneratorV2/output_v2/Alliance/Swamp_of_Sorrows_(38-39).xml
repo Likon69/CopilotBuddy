@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Swamp of Sorrows (38-39)</Name>
+  <Name>Alliance\\Swamp of Sorrows (38-39)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>39</MaxLevel>
@@ -29,7 +29,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Swamp of Sorrows (38-39)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Swamp of Sorrows (38-39)" LogColor="Green" />
     <PickUp QuestName="In Search of The Temple" QuestId="1448" GiverName="Brohann Caskbelly" GiverId="5384" />
     <PickUp QuestName="Morgan Stern" QuestId="1260" GiverName="Angus Stern" GiverId="1141" />
     <Objective QuestName="Dream Dust in the Swamp" QuestId="1116" Type="CollectItem" ItemId="5803" ItemName="Speck of Dream Dust" CollectCount="10" />
@@ -93,7 +93,7 @@
     <If Condition="(Me.Class == WoWClass.Warrior)">
       <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4479" ItemName="Burning Charm" CollectCount="8" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Swamp of Sorrows (38-39) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Swamp of Sorrows (38-39) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Alterac_Mountains_(39-39)" />
   </QuestOrder>
 </HBProfile>

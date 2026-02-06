@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Hellfire Peninsula Group</Name>
+  <Name>Horde\\The Burning Crusade (58-70)\\Hellfire Peninsula Group</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Hellfire Peninsula Group" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Hellfire Peninsula Group" LogColor="Green" />
     <If Condition="Me.Level &lt; 58">
       <GrindTo Level="58" />
     </If>
@@ -133,6 +133,6 @@
     </While>
     <Objective QuestName="Natural Rememdies" QuestId="10351" Type="KillMob" MobId="19305" MobName="Goliathon" KillCount="1" />
     <TurnIn QuestName="Natural Rememdies" QuestId="10351" TurnInName="Earthbinder Galandria Nightbreeze" TurnInId="19294" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Hellfire Peninsula Group Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Hellfire Peninsula Group Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Hillsbrad Foothills (29-30)</Name>
+  <Name>Horde\\Classic (12-58)\\Hillsbrad Foothills (29-30)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>30</MaxLevel>
@@ -26,7 +26,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Hillsbrad Foothills (29-30)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Hillsbrad Foothills (29-30)" LogColor="Green" />
     <If Condition="!((Me.Class == WoWClass.Shaman))">
       <PickUp QuestName="Journey to Hillsbrad Foothills" QuestId="493" GiverName="Apothecary Renferrel" GiverId="1937" />
       <PickUp QuestName="Time To Strike" QuestId="494" GiverName="Deathstalker Lesh" GiverId="2214" />
@@ -81,7 +81,7 @@
     <TurnIn QuestName="Battle of Hillsbrad" QuestId="527" TurnInName="High Executor Darthalia" TurnInId="2215" />
     <TurnIn QuestName="Dangerous!" QuestId="567" TurnInName="High Executor Darthalia" TurnInId="2215" />
     <PickUp QuestName="Regthar Deathgate" QuestId="1361" GiverName="Krusk" GiverId="2229" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Hillsbrad Foothills (29-30) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Hillsbrad Foothills (29-30) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Arathi_Highlands_(30-30)" />
   </QuestOrder>
 </HBProfile>

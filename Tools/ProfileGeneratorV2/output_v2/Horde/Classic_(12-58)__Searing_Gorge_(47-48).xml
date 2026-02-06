@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Searing Gorge (47-48)</Name>
+  <Name>Horde\\Classic (12-58)\\Searing Gorge (47-48)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>48</MaxLevel>
@@ -31,7 +31,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Searing Gorge (47-48)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Searing Gorge (47-48)" LogColor="Green" />
     <PickUp QuestName="Caught!" QuestId="4449" />
     <Objective QuestName="Caught!" QuestId="4449" Type="KillMob" MobId="5839" MobName="Dark Iron Geologist" KillCount="8" />
     <TurnIn QuestName="Caught!" QuestId="4449" TurnInName="Object_173265" TurnInType="Object" TurnInId="173265" />
@@ -124,7 +124,7 @@
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <Objective QuestName="A Taste of Flame" QuestId="4022" Type="CollectItem" ItemId="10575" ItemName="Black Dragonflight Molt" CollectCount="1" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Searing Gorge (47-48) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Searing Gorge (47-48) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Swamp_of_Sorrows_(48-48)" />
   </QuestOrder>
 </HBProfile>

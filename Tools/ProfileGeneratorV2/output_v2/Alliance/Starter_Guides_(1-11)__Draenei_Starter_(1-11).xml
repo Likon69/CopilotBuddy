@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Starter Guides (1-11)\\Draenei Starter (1-11)</Name>
+  <Name>Alliance\\Starter Guides (1-11)\\Draenei Starter (1-11)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>11</MaxLevel>
@@ -198,7 +198,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-11)\\Draenei Starter (1-11)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Starter Guides (1-11)\\Draenei Starter (1-11)" LogColor="Green" />
     <If Condition="(Me.Race == WoWRace.Draenei)">
       <PickUp QuestName="You Survived!" QuestId="9279" GiverName="Megelon" GiverId="16475" />
     </If>
@@ -679,7 +679,7 @@
     <If Condition="(Me.Class == WoWClass.Mage) &amp;&amp; (Me.Race == WoWRace.Draenei)">
       <TurnIn QuestName="Control" QuestId="9595" TurnInName="Bati" TurnInId="17514" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-11)\\Draenei Starter (1-11) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Starter Guides (1-11)\\Draenei Starter (1-11) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Darkshore_(11-14)" />
   </QuestOrder>
 </HBProfile>

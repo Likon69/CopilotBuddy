@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Northrend (69-80)\\Zul&apos;Drak (75-77)</Name>
+  <Name>Horde\\Northrend (69-80)\\Zul&apos;Drak (75-77)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>77</MaxLevel>
@@ -235,7 +235,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Zul&apos;Drak (75-77)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Northrend (69-80)\\Zul&apos;Drak (75-77)" LogColor="Green" />
     <TurnIn QuestName="Shifting Priorities" QuestId="12763" TurnInName="Sergeant Riannah" TurnInId="29137" />
     <If Condition="((!HasQuest(12859)) &amp;&amp; (!IsQuestCompleted(12859)))">
       <PickUp QuestName="This Just In: Fire Still Hot!" QuestId="12859" GiverName="Elder Shaman Moky" GiverId="29733" />
@@ -954,7 +954,7 @@
     <TurnIn QuestName="Wooly Justice" QuestId="12707" TurnInName="Scalper Ahunae" TurnInId="28484" />
     <TurnIn QuestName="Hexed Caches" QuestId="12709" TurnInName="Chronicler To&apos;kini" TurnInId="28527" />
     <TurnIn QuestName="The Key of Warlord Zol&apos;Maz" QuestId="12712" TurnInName="Har&apos;koa" TurnInId="28401" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Zul&apos;Drak (75-77) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Northrend (69-80)\\Zul&apos;Drak (75-77) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)__Sholazar_Basin_(77-78)" />
   </QuestOrder>
 </HBProfile>

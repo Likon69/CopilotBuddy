@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Shadowmoon Valley (70-70)</Name>
+  <Name>Alliance\\The Burning Crusade (58-70)\\Shadowmoon Valley (70-70)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -73,7 +73,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Shadowmoon Valley (70-70)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Burning Crusade (58-70)\\Shadowmoon Valley (70-70)" LogColor="Green" />
     <If Condition="Me.Level &lt; 70">
       <GrindTo Level="70" />
     </If>
@@ -358,6 +358,6 @@
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <TurnIn QuestName="Thwart the Dark Conclave" QuestId="10808" TurnInName="Parshah" TurnInId="22024" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Shadowmoon Valley (70-70) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Burning Crusade (58-70)\\Shadowmoon Valley (70-70) Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

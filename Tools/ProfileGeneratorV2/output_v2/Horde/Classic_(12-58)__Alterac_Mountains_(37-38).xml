@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Alterac Mountains (37-38)</Name>
+  <Name>Horde\\Classic (12-58)\\Alterac Mountains (37-38)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>38</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Alterac Mountains (37-38)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Alterac Mountains (37-38)" LogColor="Green" />
     <If Condition="((!HasQuest(544)) &amp;&amp; (!IsQuestCompleted(544)))">
       <PickUp QuestName="Prison Break In" QuestId="544" GiverName="Magus Wordeen Voidglare" GiverId="2410" />
     </If>
@@ -51,7 +51,7 @@
     <Objective QuestName="Goblin Sponsorship" QuestId="1183" Type="CollectItem" ItemId="5852" ItemName="Fuel Regulator Blueprints" CollectCount="1" />
     <Objective QuestName="Parts for Kravel" QuestId="1112" Type="CollectItem" ItemId="5800" ItemName="Kravel&apos;s Parts" CollectCount="1" />
     <Objective QuestName="Frostmaw" QuestId="1136" Type="CollectItem" ItemId="5838" ItemName="Kodo Skin Scroll" CollectCount="1" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Alterac Mountains (37-38) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Alterac Mountains (37-38) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Thousand_Needles_(38-38)" />
   </QuestOrder>
 </HBProfile>

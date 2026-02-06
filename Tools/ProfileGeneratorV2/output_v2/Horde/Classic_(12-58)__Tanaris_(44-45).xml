@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Tanaris (44-45)</Name>
+  <Name>Horde\\Classic (12-58)\\Tanaris (44-45)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>45</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Tanaris (44-45)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Tanaris (44-45)" LogColor="Green" />
     <TurnIn QuestName="Tran&apos;rek" QuestId="2864" TurnInName="Tran&apos;rek" TurnInId="7876" />
     <PickUp QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" GiverName="Tran&apos;rek" GiverId="7876" />
     <PickUp QuestName="WANTED: Andre Firebeard" QuestId="2875" GiverName="Tran&apos;rek" GiverId="7876" />
@@ -95,7 +95,7 @@
     <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5623" MobName="Wastewander Assassin" KillCount="6" />
     <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5617" MobName="Wastewander Shadow Mage" KillCount="10" />
     <TurnIn QuestName="More Wastewander Justice" QuestId="1691" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Tanaris (44-45) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Tanaris (44-45) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Feralas_(45-46)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Class Quests\\Warlock Class Quests</Name>
+  <Name>Alliance\\Class Quests\\Warlock Class Quests</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -49,7 +49,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Warlock Class Quests" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Class Quests\\Warlock Class Quests" LogColor="Green" />
     <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Human)">
       <PickUp QuestName="The Stolen Tome" QuestId="1598" GiverName="Drusilla La Salle" GiverId="459" />
       <Objective QuestName="The Stolen Tome" QuestId="1598" Type="CollectItem" ItemId="6785" ItemName="Powers of the Void" CollectCount="1" />
@@ -338,6 +338,6 @@
     <If Condition="(Me.Class == WoWClass.Warlock)">
       <TurnIn QuestName="Dreadsteed of Xoroth" QuestId="7631" TurnInName="Dreadsteed Spirit" TurnInId="14504" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Warlock Class Quests Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Class Quests\\Warlock Class Quests Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

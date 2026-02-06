@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Stranglethorn Vale (37-38)</Name>
+  <Name>Alliance\\Stranglethorn Vale (37-38)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>38</MaxLevel>
@@ -45,7 +45,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (37-38)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (37-38)" LogColor="Green" />
     <If Condition="((!HasQuest(577)) &amp;&amp; (!IsQuestCompleted(577)))">
       <PickUp QuestName="Some Assembly Required" QuestId="577" GiverName="Drizzlik" GiverId="2495" />
     </If>
@@ -124,7 +124,7 @@
       <PickUp QuestName="Report to Doren" QuestId="331" GiverName="Corporal Sethman" GiverId="1422" />
     </If>
     <TurnIn QuestName="Report to Doren" QuestId="331" TurnInName="Lieutenant Doren" TurnInId="469" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (37-38) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (37-38) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Swamp_of_Sorrows_(38-39)" />
   </QuestOrder>
 </HBProfile>

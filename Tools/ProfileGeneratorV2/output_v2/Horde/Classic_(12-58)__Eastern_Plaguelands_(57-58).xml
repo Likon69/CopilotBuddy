@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Eastern Plaguelands (57-58)</Name>
+  <Name>Horde\\Classic (12-58)\\Eastern Plaguelands (57-58)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -55,7 +55,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Eastern Plaguelands (57-58)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Eastern Plaguelands (57-58)" LogColor="Green" />
     <If Condition="((!HasQuest(5542)) &amp;&amp; (!IsQuestCompleted(5542)))">
       <PickUp QuestName="Demon Dogs" QuestId="5542" GiverName="Tirion Fordring" GiverId="1855" />
     </If>
@@ -183,7 +183,7 @@
       </SetGrindArea>
       <GrindTo Level="58" /> <!--  (grind Mercutio Filthgorger) -->
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Eastern Plaguelands (57-58) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Eastern Plaguelands (57-58) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Silithus_(58-59)" />
   </QuestOrder>
 </HBProfile>

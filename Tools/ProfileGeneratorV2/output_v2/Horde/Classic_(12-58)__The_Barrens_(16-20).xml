@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\The Barrens (16-20)</Name>
+  <Name>Horde\\Classic (12-58)\\The Barrens (16-20)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>20</MaxLevel>
@@ -52,7 +52,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Barrens (16-20)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\The Barrens (16-20)" LogColor="Green" />
     <If Condition="(Me.Class == WoWClass.Druid)">
       <PickUp QuestName="A Lesson to Learn" QuestId="26" GiverName="Turak Runetotem" GiverId="3033" />
     </If>
@@ -378,7 +378,7 @@
     <If Condition="((!HasQuest(1195)) &amp;&amp; (!IsQuestCompleted(1195)))">
       <PickUp QuestName="The Sacred Flame" QuestId="1195" GiverName="Zangen Stonehoof" GiverId="4721" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Barrens (16-20) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\The Barrens (16-20) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Stonetalon_Mountains_(20-21)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Terokkar Forest Group Quests</Name>
+  <Name>Alliance\\The Burning Crusade (58-70)\\Terokkar Forest Group Quests</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Terokkar Forest Group Quests" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Burning Crusade (58-70)\\Terokkar Forest Group Quests" LogColor="Green" />
     <If Condition="Me.Level &lt; 62">
       <GrindTo Level="62" />
     </If>
@@ -153,6 +153,6 @@
     <Objective QuestName="Crackin&apos; Some Skulls" QuestId="10009" Type="KillMob" MobId="18588" MobName="Floon" KillCount="1" />
     <Objective QuestName="Crackin&apos; Some Skulls" QuestId="10009" Type="CollectItem" ItemId="25769" ItemName="Floon&apos;s Debt" CollectCount="1" />
     <TurnIn QuestName="Crackin&apos; Some Skulls" QuestId="10009" TurnInName="Sal&apos;salabim" TurnInId="18584" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Terokkar Forest Group Quests Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Burning Crusade (58-70)\\Terokkar Forest Group Quests Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

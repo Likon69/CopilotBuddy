@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Zangarmarsh (62-63)</Name>
+  <Name>Horde\\The Burning Crusade (58-70)\\Zangarmarsh (62-63)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>63</MaxLevel>
@@ -134,7 +134,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Zangarmarsh (62-63)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Zangarmarsh (62-63)" LogColor="Green" />
     <If Condition="((!HasQuest(9747)) &amp;&amp; (!IsQuestCompleted(9747)))">
       <PickUp QuestName="The Umbrafen Tribe" QuestId="9747" GiverName="Ikeyen" GiverId="17956" />
     </If>
@@ -432,7 +432,7 @@
       <PickUp QuestName="Return to the Marsh" QuestId="9732" GiverName="Amythiel Mistwalker" GiverId="16885" />
     </If>
     <TurnIn QuestName="Return to the Marsh" QuestId="9732" TurnInName="Ysiel Windsinger" TurnInId="17841" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Zangarmarsh (62-63) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Zangarmarsh (62-63) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="The_Burning_Crusade_(58-70)__Terokkar_Forest_(63-65)" />
   </QuestOrder>
 </HBProfile>

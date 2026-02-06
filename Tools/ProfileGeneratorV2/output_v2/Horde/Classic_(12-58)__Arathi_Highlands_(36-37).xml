@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Arathi Highlands (36-37)</Name>
+  <Name>Horde\\Classic (12-58)\\Arathi Highlands (36-37)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>37</MaxLevel>
@@ -37,7 +37,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Arathi Highlands (36-37)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Arathi Highlands (36-37)" LogColor="Green" />
     <If Condition="((!HasQuest(1164)) &amp;&amp; (!IsQuestCompleted(1164)))">
       <PickUp QuestName="To Steal From Thieves" QuestId="1164" GiverName="Genavie Callow" GiverId="4486" />
     </If>
@@ -81,7 +81,7 @@
       <PickUp QuestName="Guile of the Raptor" QuestId="847" GiverName="Gor&apos;mul" GiverId="2792" />
     </If>
     <TurnIn QuestName="Guile of the Raptor" QuestId="847" TurnInName="Tor&apos;gan" TurnInId="2706" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Arathi Highlands (36-37) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Arathi Highlands (36-37) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Alterac_Mountains_(37-38)" />
   </QuestOrder>
 </HBProfile>

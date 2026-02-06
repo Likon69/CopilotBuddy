@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Un&apos;Goro Crater (54-55)</Name>
+  <Name>Alliance\\Un&apos;Goro Crater (54-55)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>55</MaxLevel>
@@ -55,7 +55,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Un&apos;Goro Crater (54-55)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Un&apos;Goro Crater (54-55)" LogColor="Green" />
     <Objective QuestName="The Bait for Lar&apos;korwi" QuestId="4292" Type="CollectItem" ItemId="11568" ItemName="Torwa&apos;s Pouch" CollectCount="1" />
     <Objective QuestName="Chasing A-Me 01" QuestId="4244" Type="CollectItem" ItemId="10561" ItemName="Mithril Casing" CollectCount="1" />
     <PickUp QuestName="Super Sticky" QuestId="4504" GiverName="Tran&apos;rek" GiverId="7876" />
@@ -204,7 +204,7 @@
     <If Condition="((!HasQuest(5250)) &amp;&amp; (!IsQuestCompleted(5250)))">
       <PickUp QuestName="Starfall" QuestId="5250" GiverName="Daryn Lightwind" GiverId="7907" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Un&apos;Goro Crater (54-55) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Un&apos;Goro Crater (54-55) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Winterspring_(55-55)" />
   </QuestOrder>
 </HBProfile>

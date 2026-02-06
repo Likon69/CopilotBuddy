@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Winterspring (53-53)</Name>
+  <Name>Alliance\\Winterspring (53-53)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -45,10 +45,10 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Winterspring (53-53)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Winterspring (53-53)" LogColor="Green" />
     <TurnIn QuestName="It&apos;s a Secret to Everybody" QuestId="3908" TurnInName="Donova Snowden" TurnInId="9298" />
     <Objective QuestName="Moontouched Wildkin" QuestId="978" Type="CollectItem" ItemId="12383" ItemName="Moontouched Feather" CollectCount="10" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Winterspring (53-53) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Winterspring (53-53) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Burning_Steppes_(53-54)" />
   </QuestOrder>
 </HBProfile>

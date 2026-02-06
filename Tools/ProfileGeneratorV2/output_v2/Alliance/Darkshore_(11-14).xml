@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Darkshore (11-14)</Name>
+  <Name>Alliance\\Darkshore (11-14)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>14</MaxLevel>
@@ -31,7 +31,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Darkshore (11-14)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Darkshore (11-14)" LogColor="Green" />
     <PickUp QuestName="For Love Eternal" QuestId="963" GiverName="Cerellean Whiteclaw" GiverId="3644" />
     <PickUp QuestName="Buzzbox 827" QuestId="983" GiverName="Wizbang Cranktoggle" GiverId="3666" />
     <PickUp QuestName="Washed Ashore" QuestId="3524" GiverName="Gwennyth Bly&apos;Leggonde" GiverId="10219" />
@@ -125,7 +125,7 @@
     <TurnIn QuestName="How Big a Threat?" QuestId="985" TurnInName="Terenthis" TurnInId="3693" />
     <TurnIn QuestName="Beached Sea Turtle" QuestId="4722" TurnInName="Gwennyth Bly&apos;Leggonde" TurnInId="10219" />
     <TurnIn QuestName="For Love Eternal" QuestId="963" TurnInName="Cerellean Whiteclaw" TurnInId="3644" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Darkshore (11-14) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Darkshore (11-14) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Bloodmyst_Isle_(14-20)" />
   </QuestOrder>
 </HBProfile>

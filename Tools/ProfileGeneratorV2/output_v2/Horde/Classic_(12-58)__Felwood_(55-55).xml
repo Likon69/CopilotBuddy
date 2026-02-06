@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Felwood (55-55)</Name>
+  <Name>Horde\\Classic (12-58)\\Felwood (55-55)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Felwood (55-55)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Felwood (55-55)" LogColor="Green" />
     <If Condition="((!HasQuest(8460)) &amp;&amp; (!IsQuestCompleted(8460)))">
       <PickUp QuestName="Timbermaw Ally" QuestId="8460" GiverName="Grazle" GiverId="11554" />
     </If>
@@ -47,7 +47,7 @@
     <Objective QuestName="Deadwood of the North" QuestId="8461" Type="KillMob" MobId="7158" MobName="Deadwood Shaman" KillCount="6" />
     <TurnIn QuestName="Deadwood of the North" QuestId="8461" TurnInName="Nafien" TurnInId="15395" />
     <PickUp QuestName="Speak to Salfa" QuestId="8465" GiverName="Nafien" GiverId="15395" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Felwood (55-55) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Felwood (55-55) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Winterspring_(55-56)" />
   </QuestOrder>
 </HBProfile>

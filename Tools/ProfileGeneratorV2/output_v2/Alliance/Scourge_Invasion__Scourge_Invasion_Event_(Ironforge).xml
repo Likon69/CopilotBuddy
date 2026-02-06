@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Scourge Invasion\\Scourge Invasion Event (Ironforge)</Name>
+  <Name>Alliance\\Scourge Invasion\\Scourge Invasion Event (Ironforge)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Scourge Invasion\\Scourge Invasion Event (Ironforge)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Scourge Invasion\\Scourge Invasion Event (Ironforge)" LogColor="Green" />
     <PickUp QuestName="Investigate the Scourge of Ironforge" QuestId="9261" GiverName="Lieutenant Nevell" GiverId="16484" />
     <Objective QuestName="Investigate the Scourge of Ironforge" QuestId="9261" Type="CollectItem" ItemId="22892" ItemName="Dim Necrotic Stone" CollectCount="3" />
     <TurnIn QuestName="Investigate the Scourge of Ironforge" QuestId="9261" TurnInName="Lieutenant Nevell" TurnInId="16484" />
@@ -90,6 +90,6 @@
     <PickUp QuestName="Chamber of Secrets" QuestId="12616" GiverName="Argent Emissary" GiverId="16285" />
     <Objective QuestName="Chamber of Secrets" QuestId="12616" Type="KillMob" MobId="28194" MobName="Prince Tenris Mirkblood" KillCount="1" />
     <TurnIn QuestName="Chamber of Secrets" QuestId="12616" TurnInName="Argent Emissary" TurnInId="16285" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Scourge Invasion\\Scourge Invasion Event (Ironforge) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Scourge Invasion\\Scourge Invasion Event (Ironforge) Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

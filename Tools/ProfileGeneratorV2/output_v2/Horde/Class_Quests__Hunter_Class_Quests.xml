@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Class Quests\\Hunter Class Quests</Name>
+  <Name>Horde\\Class Quests\\Hunter Class Quests</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Hunter Class Quests" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Class Quests\\Hunter Class Quests" LogColor="Green" />
     <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.Troll)">
       <PickUp QuestName="Taming the Beast" QuestId="6062" GiverName="Thotar" GiverId="3171" />
     </If>
@@ -174,6 +174,6 @@
     <If Condition="(Me.Class == WoWClass.Hunter)">
       <Objective QuestName="A Proper String" QuestId="7635" Type="CollectItem" ItemId="18715" ItemName="Lok&apos;delar, Stave of the Ancient Keepers" CollectCount="1" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Hunter Class Quests Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Class Quests\\Hunter Class Quests Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

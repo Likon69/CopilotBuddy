@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Hinterlands (49-50)</Name>
+  <Name>Alliance\\The Hinterlands (49-50)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>50</MaxLevel>
@@ -123,7 +123,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Hinterlands (49-50)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Hinterlands (49-50)" LogColor="Green" />
     <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6257" ItemName="Roc Gizzard" CollectCount="3" />
     <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6258" ItemName="Ironfur Liver" CollectCount="3" />
     <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6259" ItemName="Groddoc Liver" CollectCount="3" />
@@ -186,7 +186,7 @@
     </If>
     <Objective QuestName="Caught!" QuestId="4449" Type="CollectItem" ItemId="4306" ItemName="Silk Cloth" CollectCount="15" />
     <CustomBehavior File="SetHearthstone" MobId="5111" AreaId="1537" X="18.15" Y="51.46" Z="0" /> <!-- Set hearth: Ironforge -->
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Hinterlands (49-50) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Hinterlands (49-50) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Searing_Gorge_(50-51)" />
   </QuestOrder>
 </HBProfile>

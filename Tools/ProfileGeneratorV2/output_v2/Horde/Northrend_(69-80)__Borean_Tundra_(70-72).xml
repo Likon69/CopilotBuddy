@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Northrend (69-80)\\Borean Tundra (70-72)</Name>
+  <Name>Horde\\Northrend (69-80)\\Borean Tundra (70-72)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>72</MaxLevel>
@@ -155,7 +155,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Borean Tundra (70-72)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Northrend (69-80)\\Borean Tundra (70-72)" LogColor="Green" />
     <If Condition="((!HasQuest(11585)) &amp;&amp; (!IsQuestCompleted(11585)))">
       <PickUp QuestName="Hellscream&apos;s Vigil" QuestId="11585" GiverName="Warsong Recruitment Officer" GiverId="25273" />
     </If>
@@ -1166,7 +1166,7 @@
     <TurnIn QuestName="Put Them to Rest" QuestId="11594" TurnInName="Grunt Ragefist" TurnInId="25336" />
     <TurnIn QuestName="We Strike!" QuestId="11592" TurnInName="Overlord Bor&apos;gorok" TurnInId="25326" />
     <TurnIn QuestName="Monitoring the Rift: Winterfin Cavern" QuestId="12728" TurnInName="Librarian Garren" TurnInId="25291" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Borean Tundra (70-72) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Northrend (69-80)\\Borean Tundra (70-72) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)__Dragonblight_(72-74)" />
   </QuestOrder>
 </HBProfile>

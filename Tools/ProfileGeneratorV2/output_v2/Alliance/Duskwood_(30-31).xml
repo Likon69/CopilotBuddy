@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Duskwood (30-31)</Name>
+  <Name>Alliance\\Duskwood (30-31)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>31</MaxLevel>
@@ -41,7 +41,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Duskwood (30-31)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Duskwood (30-31)" LogColor="Green" />
     <PickUp QuestName="The Brassbolts Brothers" QuestId="1179" GiverName="Pilot Longbeard" GiverId="2092" />
     <TurnIn QuestName="Blessed Arm" QuestId="322" TurnInName="Grimand Elmore" TurnInId="1416" />
     <If Condition="((!HasQuest(325)) &amp;&amp; (!IsQuestCompleted(325)))">
@@ -161,7 +161,7 @@
     <TurnIn QuestName="Look To The Stars" QuestId="181" TurnInName="Viktori Prism&apos;Antras" TurnInId="276" />
     <Objective QuestName="Worgen in the Woods" QuestId="222" Type="KillMob" MobId="920" MobName="Nightbane Tainted One" KillCount="8" />
     <Objective QuestName="Worgen in the Woods" QuestId="222" Type="KillMob" MobId="206" MobName="Nightbane Vile Fang" KillCount="8" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Duskwood (30-31) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Duskwood (30-31) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Stranglethorn_Vale_(31-32)" />
   </QuestOrder>
 </HBProfile>

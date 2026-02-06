@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Starter Guides (1-11)\\Dwarf &amp; Gnome Starter (1-11)</Name>
+  <Name>Alliance\\Starter Guides (1-11)\\Dwarf &amp; Gnome Starter (1-11)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>11</MaxLevel>
@@ -36,7 +36,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-11)\\Dwarf &amp; Gnome Starter (1-11)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Starter Guides (1-11)\\Dwarf &amp; Gnome Starter (1-11)" LogColor="Green" />
     <PickUp QuestName="Dwarven Outfitters" QuestId="179" GiverName="Sten Stoutarm" GiverId="658" />
     <Objective QuestName="Dwarven Outfitters" QuestId="179" Type="CollectItem" ItemId="750" ItemName="Tough Wolf Meat" CollectCount="8" />
     <TurnIn QuestName="Dwarven Outfitters" QuestId="179" TurnInName="Sten Stoutarm" TurnInId="658" />
@@ -468,7 +468,7 @@
     <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Dwarf)">
       <!-- Quest 5635 may auto-complete (no turn-in found) -->
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-11)\\Dwarf &amp; Gnome Starter (1-11) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Starter Guides (1-11)\\Dwarf &amp; Gnome Starter (1-11) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Darkshore_(11-14)" />
   </QuestOrder>
 </HBProfile>

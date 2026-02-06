@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Class Quests\\Mage Class Quests</Name>
+  <Name>Alliance\\Class Quests\\Mage Class Quests</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -64,7 +64,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Mage Class Quests" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Class Quests\\Mage Class Quests" LogColor="Green" />
     <If Condition="(Me.Class == WoWClass.Mage)">
       <If Condition="((!HasQuest(1860)) &amp;&amp; (!IsQuestCompleted(1860)))">
         <PickUp QuestName="Speak with Jennea" QuestId="1860" GiverName="Zaldimar Wefhellt" GiverId="328" />
@@ -231,6 +231,6 @@
       <Objective QuestName="Arcane Refreshment" QuestId="7463" Type="CollectItem" ItemId="18299" ItemName="Hydrospawn Essence" CollectCount="1" />
       <TurnIn QuestName="Arcane Refreshment" QuestId="7463" TurnInName="Lorekeeper Lydros" TurnInId="14368" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Mage Class Quests Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Class Quests\\Mage Class Quests Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

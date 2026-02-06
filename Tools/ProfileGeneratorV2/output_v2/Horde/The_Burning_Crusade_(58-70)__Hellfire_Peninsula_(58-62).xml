@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Hellfire Peninsula (58-62)</Name>
+  <Name>Horde\\The Burning Crusade (58-70)\\Hellfire Peninsula (58-62)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>62</MaxLevel>
@@ -100,7 +100,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Hellfire Peninsula (58-62)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Hellfire Peninsula (58-62)" LogColor="Green" />
     <PickUp QuestName="Through the Dark Portal" QuestId="9407" GiverName="Warlord Dar&apos;toon" GiverId="19254" />
     <TurnIn QuestName="Through the Dark Portal" QuestId="9407" TurnInName="Lieutenant General Orion" TurnInId="19253" />
     <If Condition="((!HasQuest(10120)) &amp;&amp; (!IsQuestCompleted(10120)))">
@@ -649,7 +649,7 @@
       </SetGrindArea>
       <GrindTo Level="62" /> <!--  (grind Thornfang Venomspitter) -->
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Hellfire Peninsula (58-62) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Hellfire Peninsula (58-62) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="The_Burning_Crusade_(58-70)__Zangarmarsh_(62-63)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Duskwood (25-27)</Name>
+  <Name>Alliance\\Duskwood (25-27)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>27</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Duskwood (25-27)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Duskwood (25-27)" LogColor="Green" />
     <PickUp QuestName="The Legend of Stalvan" QuestId="66" GiverName="Madame Eva" GiverId="265" />
     <If Condition="((!HasQuest(101)) &amp;&amp; (!IsQuestCompleted(101)))">
       <PickUp QuestName="The Totem of Infliction" QuestId="101" GiverName="Madame Eva" GiverId="265" />
@@ -175,7 +175,7 @@
       <PickUp QuestName="Juice Delivery" QuestId="159" GiverName="Tavernkeep Smitts" GiverId="273" />
     </If>
     <TurnIn QuestName="The Night Watch" QuestId="57" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Duskwood (25-27) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Duskwood (25-27) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Redridge_Mountains_(27-28)" />
   </QuestOrder>
 </HBProfile>

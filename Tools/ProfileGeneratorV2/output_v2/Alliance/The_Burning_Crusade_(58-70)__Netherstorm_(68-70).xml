@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Netherstorm (68-70)</Name>
+  <Name>Alliance\\The Burning Crusade (58-70)\\Netherstorm (68-70)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>70</MaxLevel>
@@ -284,7 +284,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Netherstorm (68-70)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Burning Crusade (58-70)\\Netherstorm (68-70)" LogColor="Green" />
     <PickUp QuestName="A&apos;dal" QuestId="10210" GiverName="Haggard War Veteran" GiverId="19684" />
     <TurnIn QuestName="A&apos;dal" QuestId="10210" TurnInName="A&apos;dal" TurnInId="18481" />
     <If Condition="((!HasQuest(10211)) &amp;&amp; (!IsQuestCompleted(10211)))">
@@ -1116,7 +1116,7 @@
       </SetGrindArea>
       <GrindTo Level="70" /> <!--  (grind Wind Trader Marid) -->
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Netherstorm (68-70) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Burning Crusade (58-70)\\Netherstorm (68-70) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="The_Burning_Crusade_(58-70)__Shadowmoon_Valley_(70-70)" />
   </QuestOrder>
 </HBProfile>

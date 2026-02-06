@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Starter Guides (1-12)\\Durotar (1-12) [Orc &amp; Troll Starter]</Name>
+  <Name>Horde\\Starter Guides (1-12)\\Durotar (1-12) [Orc &amp; Troll Starter]</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>12</MaxLevel>
@@ -134,7 +134,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-12)\\Durotar (1-12) [Orc &amp; Troll Starter]" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Starter Guides (1-12)\\Durotar (1-12) [Orc &amp; Troll Starter]" LogColor="Green" />
     <PickUp QuestName="Your Place In The World" QuestId="4641" GiverName="Kaltunk" GiverId="10176" />
     <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Orc)">
       <PickUp QuestName="Vile Familiars" QuestId="1485" GiverName="Ruzan" GiverId="5765" />
@@ -713,7 +713,7 @@
     </If>
     <TurnIn QuestName="Hidden Enemies" QuestId="5727" TurnInName="Thrall" TurnInId="4949" />
     <PickUp QuestName="Conscript of the Horde" QuestId="840" GiverName="Takrin Pathseeker" GiverId="3336" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-12)\\Durotar (1-12) [Orc &amp; Troll Starter] Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Starter Guides (1-12)\\Durotar (1-12) [Orc &amp; Troll Starter] Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__The_Barrens_(12-15)" />
   </QuestOrder>
 </HBProfile>

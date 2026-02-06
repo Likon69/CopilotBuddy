@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Stranglethorn Vale (30-31)</Name>
+  <Name>Horde\\Classic (12-58)\\Stranglethorn Vale (30-31)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>31</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (30-31)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stranglethorn Vale (30-31)" LogColor="Green" />
     <PickUp QuestName="Welcome to the Jungle" QuestId="583" GiverName="Barnil Stonepot" GiverId="716" />
     <TurnIn QuestName="Welcome to the Jungle" QuestId="583" TurnInName="Hemet Nesingwary" TurnInId="715" />
     <If Condition="((!HasQuest(194)) &amp;&amp; (!IsQuestCompleted(194)))">
@@ -76,7 +76,7 @@
     </If>
     <TurnIn QuestName="Chapter IV" QuestId="342" TurnInName="Barnil Stonepot" TurnInId="716" />
     <TurnIn QuestName="The Green Hills of Stranglethorn" QuestId="338" TurnInName="Barnil Stonepot" TurnInId="716" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (30-31) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stranglethorn Vale (30-31) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Thousand_Needles_(31-32)" />
   </QuestOrder>
 </HBProfile>

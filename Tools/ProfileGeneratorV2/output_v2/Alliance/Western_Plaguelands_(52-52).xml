@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Western Plaguelands (52-52)</Name>
+  <Name>Alliance\\Western Plaguelands (52-52)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Western Plaguelands (52-52)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Western Plaguelands (52-52)" LogColor="Green" />
     <TurnIn QuestName="A Call to Arms: The Plaguelands!" QuestId="5090" TurnInName="Commander Ashlam Valorfist" TurnInId="10838" />
     <If Condition="((!HasQuest(5092)) &amp;&amp; (!IsQuestCompleted(5092)))">
       <PickUp QuestName="Clear the Way" QuestId="5092" GiverName="Commander Ashlam Valorfist" GiverId="10838" />
@@ -29,7 +29,7 @@
     <TurnIn QuestName="Rise of the Silithid" QuestId="162" TurnInName="Gracina Spiritmight" TurnInId="7740" />
     <PickUp QuestName="March of the Silithid" QuestId="4493" GiverName="Gracina Spiritmight" GiverId="7740" />
     <CustomBehavior File="SetHearthstone" MobId="6735" AreaId="1657" X="67.42" Y="15.65" Z="0" /> <!-- Set hearth: Darnassus -->
-    <CustomBehavior File="Message" Text="Leveling Guides\\Western Plaguelands (52-52) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Western Plaguelands (52-52) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Felwood_(52-53)" />
   </QuestOrder>
 </HBProfile>

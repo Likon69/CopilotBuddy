@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Hellfire Peninsula (58-62)</Name>
+  <Name>Alliance\\The Burning Crusade (58-70)\\Hellfire Peninsula (58-62)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>62</MaxLevel>
@@ -132,7 +132,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Hellfire Peninsula (58-62)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Burning Crusade (58-70)\\Hellfire Peninsula (58-62)" LogColor="Green" />
     <PickUp QuestName="Through the Dark Portal" QuestId="10119" GiverName="Watch Commander Relthorn Netherwane" GiverId="16841" />
     <TurnIn QuestName="Through the Dark Portal" QuestId="10119" TurnInName="Commander Duron" TurnInId="19229" />
     <If Condition="((!HasQuest(10288)) &amp;&amp; (!IsQuestCompleted(10288)))">
@@ -625,7 +625,7 @@
       </SetGrindArea>
       <GrindTo Level="62" /> <!--  (grind Uncontrolled Voidwalker) -->
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Hellfire Peninsula (58-62) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Burning Crusade (58-70)\\Hellfire Peninsula (58-62) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="The_Burning_Crusade_(58-70)__Zangarmarsh_(62-63)" />
   </QuestOrder>
 </HBProfile>

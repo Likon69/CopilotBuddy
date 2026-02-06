@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Nagrand (65-67)</Name>
+  <Name>Horde\\The Burning Crusade (58-70)\\Nagrand (65-67)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>67</MaxLevel>
@@ -79,7 +79,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Nagrand (65-67)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Nagrand (65-67)" LogColor="Green" />
     <PickUp QuestName="A&apos;dal" QuestId="10210" GiverName="Haggard War Veteran" GiverId="19684" />
     <TurnIn QuestName="A&apos;dal" QuestId="10210" TurnInName="A&apos;dal" TurnInId="18481" />
     <If Condition="((!HasQuest(10211)) &amp;&amp; (!IsQuestCompleted(10211)))">
@@ -431,7 +431,7 @@
       </SetGrindArea>
       <GrindTo Level="67" /> <!--  (grind Mogor) -->
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Nagrand (65-67) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Nagrand (65-67) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="The_Burning_Crusade_(58-70)__Blade&apos;s_Edge_Mountains_(67-68)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Stonetalon Mountains (20-21)</Name>
+  <Name>Horde\\Classic (12-58)\\Stonetalon Mountains (20-21)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>21</MaxLevel>
@@ -44,7 +44,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stonetalon Mountains (20-21)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stonetalon Mountains (20-21)" LogColor="Green" />
     <TurnIn QuestName="Letter to Jin&apos;Zil" QuestId="1060" TurnInName="Witch Doctor Jin&apos;Zil" TurnInId="3995" />
     <If Condition="((!HasQuest(1058)) &amp;&amp; (!IsQuestCompleted(1058)))">
       <PickUp QuestName="Jin&apos;Zil&apos;s Forest Magic" QuestId="1058" GiverName="Witch Doctor Jin&apos;Zil" GiverId="3995" />
@@ -88,7 +88,7 @@
     <If Condition="((!HasQuest(1068)) &amp;&amp; (!IsQuestCompleted(1068)))">
       <PickUp QuestName="Shredding Machines" QuestId="1068" GiverName="Seereth Stonebreak" GiverId="4049" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stonetalon Mountains (20-21) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stonetalon Mountains (20-21) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Ashenvale_(21-21)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Blasted Lands (51-52)</Name>
+  <Name>Horde\\Classic (12-58)\\Blasted Lands (51-52)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>52</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Blasted Lands (51-52)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Blasted Lands (51-52)" LogColor="Green" />
     <TurnIn QuestName="Return to Fel&apos;Zerul" QuestId="1444" TurnInName="Fel&apos;zerul" TurnInId="1443" />
     <If Condition="((!HasQuest(2581)) &amp;&amp; (!IsQuestCompleted(2581)))">
       <PickUp QuestName="Snickerfang Jowls" QuestId="2581" GiverName="Bloodmage Drazial" GiverId="7505" />
@@ -36,7 +36,7 @@
     <TurnIn QuestName="Snickerfang Jowls" QuestId="2581" TurnInName="Bloodmage Drazial" TurnInId="7505" />
     <TurnIn QuestName="A Boar&apos;s Vitality" QuestId="2583" TurnInName="Bloodmage Drazial" TurnInId="7505" />
     <TurnIn QuestName="The Decisive Striker" QuestId="2585" TurnInName="Bloodmage Drazial" TurnInId="7505" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Blasted Lands (51-52) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Blasted Lands (51-52) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Un&apos;Goro_Crater_(52-54)" />
   </QuestOrder>
 </HBProfile>

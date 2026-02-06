@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Starter Guides (1-12)\\Tirisfal Glades (1-12) [Undead Starter]</Name>
+  <Name>Horde\\Starter Guides (1-12)\\Tirisfal Glades (1-12) [Undead Starter]</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>12</MaxLevel>
@@ -136,7 +136,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-12)\\Tirisfal Glades (1-12) [Undead Starter]" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Starter Guides (1-12)\\Tirisfal Glades (1-12) [Undead Starter]" LogColor="Green" />
     <PickUp QuestName="Rude Awakening" QuestId="363" GiverName="Undertaker Mordo" GiverId="1568" />
     <TurnIn QuestName="Rude Awakening" QuestId="363" TurnInName="Shadow Priest Sarvis" TurnInId="1569" />
     <If Condition="((!HasQuest(364)) &amp;&amp; (!IsQuestCompleted(364)))">
@@ -559,7 +559,7 @@
     <Objective QuestName="At War With The Scarlet Crusade" QuestId="372" Type="KillMob" MobId="1660" MobName="Scarlet Bodyguard" KillCount="2" />
     <TurnIn QuestName="At War With The Scarlet Crusade" QuestId="372" TurnInName="Executor Zygand" TurnInId="1515" />
     <PickUp QuestName="Conscript of the Horde" QuestId="840" GiverName="Takrin Pathseeker" GiverId="3336" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-12)\\Tirisfal Glades (1-12) [Undead Starter] Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Starter Guides (1-12)\\Tirisfal Glades (1-12) [Undead Starter] Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__The_Barrens_(12-15)" />
   </QuestOrder>
 </HBProfile>

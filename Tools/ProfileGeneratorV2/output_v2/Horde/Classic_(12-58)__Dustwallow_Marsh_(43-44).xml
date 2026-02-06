@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Dustwallow Marsh (43-44)</Name>
+  <Name>Horde\\Classic (12-58)\\Dustwallow Marsh (43-44)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>44</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Dustwallow Marsh (43-44)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Dustwallow Marsh (43-44)" LogColor="Green" />
     <If Condition="((!HasQuest(1166)) &amp;&amp; (!IsQuestCompleted(1166)))">
       <PickUp QuestName="Overlord Mok&apos;Morokk&apos;s Concern" QuestId="1166" GiverName="Overlord Mok&apos;Morokk" GiverId="4500" />
     </If>
@@ -95,7 +95,7 @@
       <PickUp QuestName="The Brood of Onyxia" QuestId="1171" GiverName="Overlord Mok&apos;Morokk" GiverId="4500" />
     </If>
     <TurnIn QuestName="The Brood of Onyxia" QuestId="1171" TurnInName="Draz&apos;Zilb" TurnInId="4501" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Dustwallow Marsh (43-44) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Dustwallow Marsh (43-44) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Tanaris_(44-45)" />
   </QuestOrder>
 </HBProfile>

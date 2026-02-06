@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Silithus (58-59)</Name>
+  <Name>Horde\\Classic (12-58)\\Silithus (58-59)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>59</MaxLevel>
@@ -44,7 +44,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Silithus (58-59)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Silithus (58-59)" LogColor="Green" />
     <If Condition="((!HasQuest(1004)) &amp;&amp; (!IsQuestCompleted(1004)))">
       <PickUp QuestName="The New Frontier" QuestId="1004" GiverName="Harbinger Balthazad" GiverId="10879" />
     </If>
@@ -186,7 +186,7 @@
     <If Condition="((!HasQuest(1185)) &amp;&amp; (!IsQuestCompleted(1185)))">
       <PickUp QuestName="Under the Chitin Was..." QuestId="1185" GiverName="Umber" GiverId="11939" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Silithus (58-59) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Silithus (58-59) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Winterspring_(59-60)" />
   </QuestOrder>
 </HBProfile>

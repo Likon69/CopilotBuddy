@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Redridge Mountains (27-28)</Name>
+  <Name>Alliance\\Redridge Mountains (27-28)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>28</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Redridge Mountains (27-28)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Redridge Mountains (27-28)" LogColor="Green" />
     <PickUp QuestName="Blackrock Bounty" QuestId="128" GiverName="Guard Howe" GiverId="903" />
     <If Condition="((!HasQuest(19)) &amp;&amp; (!IsQuestCompleted(19)))">
       <PickUp QuestName="Tharil&apos;zun" QuestId="19" GiverName="Marshal Marris" GiverId="382" />
@@ -45,7 +45,7 @@
       <PickUp QuestName="The Doomed Fleet" QuestId="270" GiverName="Bishop Farthing" GiverId="1212" />
     </If>
     <TurnIn QuestName="Tinkmaster Overspark" QuestId="2923" TurnInName="Tinkmaster Overspark" TurnInId="7944" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Redridge Mountains (27-28) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Redridge Mountains (27-28) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Wetlands_(28-30)" />
   </QuestOrder>
 </HBProfile>

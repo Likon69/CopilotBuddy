@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Desolace (35-37)</Name>
+  <Name>Alliance\\Desolace (35-37)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>37</MaxLevel>
@@ -51,7 +51,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Desolace (35-37)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Desolace (35-37)" LogColor="Green" />
     <PickUp QuestName="Vahlarriel&apos;s Search" QuestId="1437" GiverName="Vahlarriel Demonslayer" GiverId="5642" />
     <PickUp QuestName="Centaur Bounty" QuestId="1387" GiverName="Corporal Melkins" GiverId="5752" />
     <PickUp QuestName="Strange Alliance" QuestId="1382" GiverName="Captain Pentigast" GiverId="5396" />
@@ -160,7 +160,7 @@
     <If Condition="((!HasQuest(1187)) &amp;&amp; (!IsQuestCompleted(1187)))">
       <PickUp QuestName="Razzeric&apos;s Tweaking" QuestId="1187" GiverName="Razzeric" GiverId="4706" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Desolace (35-37) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Desolace (35-37) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Stranglethorn_Vale_(37-38)" />
   </QuestOrder>
 </HBProfile>

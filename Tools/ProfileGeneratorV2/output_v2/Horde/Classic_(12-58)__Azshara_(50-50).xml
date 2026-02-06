@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Azshara (50-50)</Name>
+  <Name>Horde\\Classic (12-58)\\Azshara (50-50)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -25,7 +25,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Azshara (50-50)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Azshara (50-50)" LogColor="Green" />
     <If Condition="((!HasQuest(3517)) &amp;&amp; (!IsQuestCompleted(3517)))">
       <PickUp QuestName="Stealing Knowledge" QuestId="3517" GiverName="Jediga" GiverId="8587" />
     </If>
@@ -87,7 +87,7 @@
     <If Condition="((!HasQuest(4294)) &amp;&amp; (!IsQuestCompleted(4294)))">
       <PickUp QuestName="... and a Batch of Ooze" QuestId="4294" GiverName="Chemist Fuely" GiverId="10136" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Azshara (50-50) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Azshara (50-50) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__The_Hinterlands_(50-51)" />
   </QuestOrder>
 </HBProfile>

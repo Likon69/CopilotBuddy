@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Desolace (32-34)</Name>
+  <Name>Horde\\Classic (12-58)\\Desolace (32-34)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>34</MaxLevel>
@@ -72,7 +72,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Desolace (32-34)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Desolace (32-34)" LogColor="Green" />
     <Objective QuestName="The Corrupter" QuestId="1482" Type="CollectItem" ItemId="5996" ItemName="Elixir of Water Breathing" CollectCount="4" />
     <TurnIn QuestName="The Swarm Grows" QuestId="1145" TurnInName="Belgrom Rockmaul" TurnInId="4485" />
     <If Condition="((!HasQuest(1146)) &amp;&amp; (!IsQuestCompleted(1146)))">
@@ -274,7 +274,7 @@
     <TurnIn QuestName="Stealing Supplies" QuestId="1370" TurnInName="Uthek the Wise" TurnInId="5397" />
     <TurnIn QuestName="Other Fish to Fry" QuestId="6143" TurnInName="Drulzegar Skraghook" TurnInId="12340" />
     <TurnIn QuestName="Clam Bait" QuestId="6142" TurnInName="Mai&apos;Lahii" TurnInId="12031" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Desolace (32-34) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Desolace (32-34) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Dustwallow_Marsh_(34-35)" />
   </QuestOrder>
 </HBProfile>

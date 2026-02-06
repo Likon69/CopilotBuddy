@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Northrend (69-80)\\Grizzly Hills (74-75)</Name>
+  <Name>Alliance\\Northrend (69-80)\\Grizzly Hills (74-75)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>75</MaxLevel>
@@ -302,7 +302,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Grizzly Hills (74-75)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Northrend (69-80)\\Grizzly Hills (74-75)" LogColor="Green" />
     <CustomBehavior File="InteractWith" MobId="188667" NumOfTimes="1" />
     <PickUp QuestName="Mmm... Amberseeds!" QuestId="12225" GiverName="Vana Grey" GiverId="26880" />
     <TurnIn QuestName="Mmm... Amberseeds!" QuestId="12225" TurnInName="Master Woodsman Anderhol" TurnInId="27277" />
@@ -963,7 +963,7 @@
     <If Condition="((!HasQuest(12770)) &amp;&amp; (!IsQuestCompleted(12770)))">
       <PickUp QuestName="Reallocating Resources" QuestId="12770" GiverName="Captain Gryan Stoutmantle" GiverId="26212" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Grizzly Hills (74-75) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Northrend (69-80)\\Grizzly Hills (74-75) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)__Zul&apos;Drak_(75-77)" />
   </QuestOrder>
 </HBProfile>

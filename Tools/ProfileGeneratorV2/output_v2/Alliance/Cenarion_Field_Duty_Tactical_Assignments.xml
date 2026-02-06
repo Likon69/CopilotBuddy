@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Cenarion Field Duty Tactical Assignments</Name>
+  <Name>Alliance\\Cenarion Field Duty Tactical Assignments</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Field Duty Tactical Assignments" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Cenarion Field Duty Tactical Assignments" LogColor="Green" />
     <If Condition="((!HasQuest(8507)) &amp;&amp; (!IsQuestCompleted(8507)))">
       <PickUp QuestName="Field Duty" QuestId="8507" GiverName="Windcaller Kaldon" GiverId="15540" />
     </If>
@@ -120,6 +120,6 @@
     <TurnIn QuestName="Twilight Battle Orders" QuestId="8498" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
     <TurnIn QuestName="Hive&apos;Ashi Scout Report" QuestId="8739" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
     <Objective QuestName="Field Duty Papers" QuestId="8508" Type="CollectItem" ItemId="20809" ItemName="Tactical Assignment" CollectCount="1" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Field Duty Tactical Assignments Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Cenarion Field Duty Tactical Assignments Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

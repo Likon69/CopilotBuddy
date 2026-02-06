@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Ashenvale (25-26)</Name>
+  <Name>Horde\\Classic (12-58)\\Ashenvale (25-26)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>26</MaxLevel>
@@ -35,7 +35,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Ashenvale (25-26)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Ashenvale (25-26)" LogColor="Green" />
     <PickUp QuestName="Vorsha the Lasher" QuestId="6641" GiverName="Muglash" GiverId="12717" />
     <Objective QuestName="Vorsha the Lasher" QuestId="6641" Type="KillMob" MobId="12940" MobName="Vorsha the Lasher" KillCount="1" />
     <TurnIn QuestName="Vorsha the Lasher" QuestId="6641" TurnInName="Warsong Runner" TurnInId="12863" />
@@ -161,7 +161,7 @@
       <TurnIn QuestName="Hinott&apos;s Assistance" QuestId="2480" TurnInName="Serge Hinott" TurnInId="2391" />
     </If>
     <CustomBehavior File="UseItemOn" ItemId="8095" MobId="0" NumOfTimes="1" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Ashenvale (25-26) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Ashenvale (25-26) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Stonetalon_Mountains_(26-27)" />
   </QuestOrder>
 </HBProfile>

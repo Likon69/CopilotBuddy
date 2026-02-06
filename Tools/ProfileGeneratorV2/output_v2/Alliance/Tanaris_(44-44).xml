@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Tanaris (44-44)</Name>
+  <Name>Alliance\\Tanaris (44-44)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Tanaris (44-44)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Tanaris (44-44)" LogColor="Green" />
     <Objective QuestName="Rumors for Kravel" QuestId="1117" Type="CollectItem" ItemId="5804" ItemName="Goblin Rumors" CollectCount="1" />
     <Objective QuestName="Razzeric&apos;s Tweaking" QuestId="1187" Type="CollectItem" ItemId="5862" ItemName="Seaforium Booster" CollectCount="1" />
     <TurnIn QuestName="Tran&apos;rek" QuestId="2864" TurnInName="Tran&apos;rek" TurnInId="7876" />
@@ -63,7 +63,7 @@
     <TurnIn QuestName="Wastewander Justice" QuestId="1690" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
     <TurnIn QuestName="Water Pouch Bounty" QuestId="1707" TurnInName="Spigot Operator Luglunket" TurnInId="7408" />
     <CustomBehavior File="SetHearthstone" MobId="6807" AreaId="33" X="52.51" Y="27.92" Z="0" /> <!-- Set hearth: Gadgetzan -->
-    <CustomBehavior File="Message" Text="Leveling Guides\\Tanaris (44-44) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Tanaris (44-44) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Dustwallow_Marsh_(44-45)" />
   </QuestOrder>
 </HBProfile>

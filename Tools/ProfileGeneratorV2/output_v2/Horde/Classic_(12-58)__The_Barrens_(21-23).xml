@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\The Barrens (21-23)</Name>
+  <Name>Horde\\Classic (12-58)\\The Barrens (21-23)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>23</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Barrens (21-23)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\The Barrens (21-23)" LogColor="Green" />
     <TurnIn QuestName="Further Instructions" QuestId="1094" TurnInName="Sputtervalve" TurnInId="3442" />
     <If Condition="((!HasQuest(1095)) &amp;&amp; (!IsQuestCompleted(1095)))">
       <PickUp QuestName="Further Instructions" QuestId="1095" GiverName="Sputtervalve" GiverId="3442" />
@@ -120,7 +120,7 @@
     <TurnIn QuestName="Betrayal from Within" QuestId="906" TurnInName="Thork" TurnInId="3429" />
     <TurnIn QuestName="Egg Hunt" QuestId="868" TurnInName="Korran" TurnInId="3428" />
     <TurnIn QuestName="Chen&apos;s Empty Keg" QuestId="822" TurnInName="Brewmaster Drohn" TurnInId="3292" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Barrens (21-23) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\The Barrens (21-23) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Stonetalon_Mountains_(23-24)" />
   </QuestOrder>
 </HBProfile>

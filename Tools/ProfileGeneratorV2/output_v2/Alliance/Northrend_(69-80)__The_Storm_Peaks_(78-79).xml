@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Northrend (69-80)\\The Storm Peaks (78-79)</Name>
+  <Name>Alliance\\Northrend (69-80)\\The Storm Peaks (78-79)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>79</MaxLevel>
@@ -211,7 +211,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\The Storm Peaks (78-79)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Northrend (69-80)\\The Storm Peaks (78-79)" LogColor="Green" />
     <PickUp QuestName="Clean Up" QuestId="12818" GiverName="Jeer Sparksocket" GiverId="29431" />
     <If Condition="((!HasQuest(12843)) &amp;&amp; (!IsQuestCompleted(12843)))">
       <PickUp QuestName="They Took Our Men!" QuestId="12843" GiverName="Gretchen Fizzlespark" GiverId="29473" />
@@ -767,7 +767,7 @@
     <TurnIn QuestName="Battling the Elements" QuestId="12967" TurnInName="Njormeld" TurnInId="30099" />
     <TurnIn QuestName="Forging an Alliance" QuestId="12924" TurnInName="Njormeld" TurnInId="30127" />
     <TurnIn QuestName="Fervor of the Frostborn" QuestId="12874" TurnInName="Yorg Stormheart" TurnInId="29593" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\The Storm Peaks (78-79) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Northrend (69-80)\\The Storm Peaks (78-79) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)__Icecrown_(79-80)" />
   </QuestOrder>
 </HBProfile>

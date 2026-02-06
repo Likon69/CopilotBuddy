@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Terokkar Forest (63-65)</Name>
+  <Name>Horde\\The Burning Crusade (58-70)\\Terokkar Forest (63-65)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>65</MaxLevel>
@@ -136,7 +136,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Terokkar Forest (63-65)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Terokkar Forest (63-65)" LogColor="Green" />
     <PickUp QuestName="A&apos;dal" QuestId="10210" GiverName="Haggard War Veteran" GiverId="19684" />
     <PickUp QuestName="Rather Be Fishin&apos;" QuestId="10037" GiverName="Seth" GiverId="18653" />
     <TurnIn QuestName="A&apos;dal" QuestId="10210" TurnInName="A&apos;dal" TurnInId="18481" />
@@ -468,7 +468,7 @@
     <TurnIn QuestName="Veil Lithic: Preemptive Strike" QuestId="10861" TurnInName="Kirrik the Awakened" TurnInId="22272" />
     <TurnIn QuestName="Helping the Lost Find Their Way" QuestId="10031" TurnInName="Soolaveen" TurnInId="18675" />
     <TurnIn QuestName="Ezekiel" QuestId="10228" TurnInName="Ezekiel" TurnInId="19715" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Terokkar Forest (63-65) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Terokkar Forest (63-65) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="The_Burning_Crusade_(58-70)__Nagrand_(65-67)" />
   </QuestOrder>
 </HBProfile>

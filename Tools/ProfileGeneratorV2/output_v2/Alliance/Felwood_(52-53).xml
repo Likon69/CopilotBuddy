@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Felwood (52-53)</Name>
+  <Name>Alliance\\Felwood (52-53)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>53</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Felwood (52-53)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Felwood (52-53)" LogColor="Green" />
     <PickUp QuestName="Cleansing Felwood" QuestId="4101" GiverName="Arathandris Silversky" GiverId="9528" />
     <If Condition="((!HasQuest(5155)) &amp;&amp; (!IsQuestCompleted(5155)))">
       <PickUp QuestName="Forces of Jaedenar" QuestId="5155" GiverName="Greta Mosshoof" GiverId="10922" />
@@ -103,7 +103,7 @@
       <PickUp QuestName="Salve via Hunting" QuestId="5882" GiverName="Arathandris Silversky" GiverId="9528" />
     </If>
     <TurnIn QuestName="Speak to Nafien" QuestId="8462" TurnInName="Nafien" TurnInId="15395" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Felwood (52-53) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Felwood (52-53) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Winterspring_(53-53)" />
   </QuestOrder>
 </HBProfile>

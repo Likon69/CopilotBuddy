@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Darkshore (20-22)</Name>
+  <Name>Alliance\\Darkshore (20-22)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>22</MaxLevel>
@@ -126,7 +126,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Darkshore (20-22)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Darkshore (20-22)" LogColor="Green" />
     <PickUp QuestName="A Lesson to Learn" QuestId="26" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
     <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
       <PickUp QuestName="Lessons Anew" QuestId="6121" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
@@ -301,7 +301,7 @@
     <If Condition="((!HasQuest(994)) &amp;&amp; (!IsQuestCompleted(994)))">
       <PickUp QuestName="Escape Through Force" QuestId="994" GiverName="Volcor" GiverId="3692" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Darkshore (20-22) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Darkshore (20-22) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Ashenvale_(22-24)" />
   </QuestOrder>
 </HBProfile>

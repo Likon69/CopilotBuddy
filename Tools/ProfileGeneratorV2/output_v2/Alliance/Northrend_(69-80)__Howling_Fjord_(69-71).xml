@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Northrend (69-80)\\Howling Fjord (69-71)</Name>
+  <Name>Alliance\\Northrend (69-80)\\Howling Fjord (69-71)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>71</MaxLevel>
@@ -304,7 +304,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Howling Fjord (69-71)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Northrend (69-80)\\Howling Fjord (69-71)" LogColor="Green" />
     <PickUp QuestName="Hell Has Frozen Over..." QuestId="11228" GiverName="Macalroy" GiverId="23547" />
     <TurnIn QuestName="Hell Has Frozen Over..." QuestId="11228" TurnInName="Vice Admiral Keller" TurnInId="23546" />
     <If Condition="((!HasQuest(11243)) &amp;&amp; (!IsQuestCompleted(11243)))">
@@ -1225,7 +1225,7 @@
     <TurnIn QuestName="Necro Overlord Mezhen" QuestId="11236" TurnInName="Captain Adams" TurnInId="23749" />
     <TurnIn QuestName="The Slumbering King" QuestId="11452" TurnInName="Captain Adams" TurnInId="23749" />
     <TurnIn QuestName="In Service to the Light" QuestId="11239" TurnInName="Father Levariol" TurnInId="24038" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Howling Fjord (69-71) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Northrend (69-80)\\Howling Fjord (69-71) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)__Borean_Tundra_(70-72)" />
   </QuestOrder>
 </HBProfile>

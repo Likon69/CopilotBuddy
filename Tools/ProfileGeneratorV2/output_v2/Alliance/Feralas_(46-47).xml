@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Feralas (46-47)</Name>
+  <Name>Alliance\\Feralas (46-47)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>47</MaxLevel>
@@ -29,7 +29,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Feralas (46-47)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Feralas (46-47)" LogColor="Green" />
     <PickUp QuestName="Handle With Care" QuestId="3022" GiverName="Curgle Cranklehop" GiverId="7763" />
     <Objective QuestName="Screecher Spirits" QuestId="3520" Type="CollectItem" ItemId="10699" ItemName="Yeh&apos;kinya&apos;s Bramble" CollectCount="1" />
     <PickUp QuestName="The Mark of Quality" QuestId="2821" GiverName="Pratt McGrubben" GiverId="7852" />
@@ -156,7 +156,7 @@
     <TurnIn QuestName="Rise of the Silithid" QuestId="4267" TurnInName="Gracina Spiritmight" TurnInId="7740" />
     <TurnIn QuestName="Doling Justice" QuestId="2972" TurnInName="Tyrande Whisperwind" TurnInId="7999" />
     <TurnIn QuestName="Thalanaar Delivery" QuestId="4281" TurnInName="Falfindel Waywarder" TurnInId="4048" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Feralas (46-47) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Feralas (46-47) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Tanaris_(47-49)" />
   </QuestOrder>
 </HBProfile>

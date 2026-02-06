@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Cenarion Field Duty Logistics Assignments</Name>
+  <Name>Horde\\Cenarion Field Duty Logistics Assignments</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Field Duty Logistics Assignments" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Cenarion Field Duty Logistics Assignments" LogColor="Green" />
     <If Condition="((!HasQuest(8731)) &amp;&amp; (!IsQuestCompleted(8731)))">
       <PickUp QuestName="Field Duty" QuestId="8731" GiverName="Windcaller Kaldon" GiverId="15540" />
     </If>
@@ -145,6 +145,6 @@
     <TurnIn QuestName="Extraordinary Materials" QuestId="8809" TurnInName="Vargus" TurnInId="15176" />
     <TurnIn QuestName="The Ultimate Deception" QuestId="8829" TurnInName="Aurel Goldleaf" TurnInId="15282" />
     <Objective QuestName="Unknown" Type="CollectItem" ItemId="21266" ItemName="Logistics Assignment" CollectCount="1" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Field Duty Logistics Assignments Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Cenarion Field Duty Logistics Assignments Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

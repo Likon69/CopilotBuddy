@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Class Quests\\Warlock Class Quests</Name>
+  <Name>Horde\\Class Quests\\Warlock Class Quests</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -39,7 +39,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Warlock Class Quests" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Class Quests\\Warlock Class Quests" LogColor="Green" />
     <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Orc)">
       <PickUp QuestName="Vile Familiars" QuestId="1485" GiverName="Ruzan" GiverId="5765" />
     </If>
@@ -369,6 +369,6 @@
     <If Condition="(Me.Class == WoWClass.Warlock)">
       <TurnIn QuestName="Dreadsteed of Xoroth" QuestId="7631" TurnInName="Dreadsteed Spirit" TurnInId="14504" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Warlock Class Quests Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Class Quests\\Warlock Class Quests Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

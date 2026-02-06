@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Isle of Quel&apos;danas</Name>
+  <Name>Horde\\The Burning Crusade (58-70)\\Isle of Quel&apos;danas</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Isle of Quel&apos;danas" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Isle of Quel&apos;danas" LogColor="Green" />
     <PickUp QuestName="Crisis at the Sunwell" QuestId="11481" GiverName="Adyen the Lightwarden" GiverId="18537" />
     <PickUp QuestName="Duty Calls" QuestId="11482" GiverName="Dathris Sunstriker" GiverId="18594" />
     <PickUp QuestName="Enter, the Deceiver..." QuestId="11550" GiverName="General Tiras&apos;alan" GiverId="25167" />
@@ -39,6 +39,6 @@
     <Objective QuestName="Hard to Kill" QuestId="29685" Type="KillMob" MobId="24664" MobName="Kael&apos;thas Sunstrider" KillCount="1" />
     <Objective QuestName="Hard to Kill" QuestId="29685" Type="CollectItem" ItemId="34157" ItemName="Head of Kael&apos;thas" CollectCount="1" />
     <TurnIn QuestName="Hard to Kill" QuestId="29685" TurnInName="Exarch Larethor" TurnInId="55007" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Isle of Quel&apos;danas Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\The Burning Crusade (58-70)\\Isle of Quel&apos;danas Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Stranglethorn Vale (39-39)</Name>
+  <Name>Horde\\Classic (12-58)\\Stranglethorn Vale (39-39)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>40</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (39-39)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stranglethorn Vale (39-39)" LogColor="Green" />
     <PickUp QuestName="The Bloodsail Buccaneers" QuestId="595" GiverName="First Mate Crazz" GiverId="2490" />
     <PickUp QuestName="Scaring Shaky" QuestId="606" GiverName="&quot;Sea Wolf&quot; MacKinley" GiverId="2501" />
     <CustomBehavior File="SetHearthstone" MobId="7733" AreaId="440" X="27.04" Y="77.31" Z="0" /> <!-- Set hearth: Booty Bay -->
@@ -85,7 +85,7 @@
       <PickUp QuestName="Mok&apos;thardin&apos;s Enchantment" QuestId="573" GiverName="Far Seer Mok&apos;thardin" GiverId="2465" />
     </If>
     <CustomBehavior File="SetHearthstone" MobId="12196" AreaId="331" X="31.49" Y="29.75" Z="0" /> <!-- Set hearth: Grom&apos;gol Base Camp -->
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (39-39) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stranglethorn Vale (39-39) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Swamp_of_Sorrows_(39-40)" />
   </QuestOrder>
 </HBProfile>

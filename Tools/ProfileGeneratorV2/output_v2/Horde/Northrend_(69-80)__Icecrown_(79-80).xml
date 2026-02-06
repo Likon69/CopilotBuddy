@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Northrend (69-80)\\Icecrown (79-80)</Name>
+  <Name>Horde\\Northrend (69-80)\\Icecrown (79-80)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>80</MaxLevel>
@@ -297,7 +297,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Icecrown (79-80)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Northrend (69-80)\\Icecrown (79-80)" LogColor="Green" />
     <PickUp QuestName="Preparations for War" QuestId="13419" GiverName="Sky-Reaver Klum" GiverId="31085" />
     <PickUp QuestName="Honor Above All Else" QuestId="13036" GiverName="Highlord Tirion Fordring" GiverId="28179" />
     <TurnIn QuestName="Honor Above All Else" QuestId="13036" TurnInName="Crusade Commander Entari" TurnInId="30223" />
@@ -1198,6 +1198,6 @@
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <TurnIn QuestName="Tirion&apos;s Gambit" QuestId="13364" TurnInName="Highlord Tirion Fordring" TurnInId="31044" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Icecrown (79-80) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Northrend (69-80)\\Icecrown (79-80) Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

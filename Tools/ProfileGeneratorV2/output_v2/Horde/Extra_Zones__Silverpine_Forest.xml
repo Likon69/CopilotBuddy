@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Extra Zones\\Silverpine Forest</Name>
+  <Name>Horde\\Extra Zones\\Silverpine Forest</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>21</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Silverpine Forest" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Extra Zones\\Silverpine Forest" LogColor="Green" />
     <PickUp QuestName="Escorting Erland" QuestId="435" GiverName="Deathstalker Erland" GiverId="1978" />
     <TurnIn QuestName="Escorting Erland" QuestId="435" TurnInName="Rane Yorick" TurnInId="1950" />
     <If Condition="((!HasQuest(449)) &amp;&amp; (!IsQuestCompleted(449)))">
@@ -185,6 +185,6 @@
     <Objective QuestName="Beren&apos;s Peril" QuestId="516" Type="KillMob" MobId="1974" MobName="Ravenclaw Drudger" KillCount="6" />
     <Objective QuestName="Beren&apos;s Peril" QuestId="516" Type="KillMob" MobId="1973" MobName="Ravenclaw Guardian" KillCount="6" />
     <TurnIn QuestName="Beren&apos;s Peril" QuestId="516" TurnInName="Shadow Priest Allister" TurnInId="2121" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Silverpine Forest Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Extra Zones\\Silverpine Forest Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

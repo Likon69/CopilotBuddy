@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Swamp of Sorrows (48-48)</Name>
+  <Name>Horde\\Classic (12-58)\\Swamp of Sorrows (48-48)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Swamp of Sorrows (48-48)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Swamp of Sorrows (48-48)" LogColor="Green" />
     <PickUp QuestName="Fall From Grace" QuestId="2784" GiverName="Fallen Hero of the Horde" GiverId="7572" />
     <TurnIn QuestName="Fall From Grace" QuestId="2784" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
     <If Condition="((!HasQuest(2621)) &amp;&amp; (!IsQuestCompleted(2621)))">
@@ -38,7 +38,7 @@
     <TurnIn QuestName="A Tale of Sorrow" QuestId="2801" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
     <PickUp QuestName="Whiskey Slim&apos;s Lost Grog" QuestId="580" GiverName="Whiskey Slim" GiverId="2491" />
     <Objective QuestName="Return to Witch Doctor Uzer&apos;i" QuestId="3122" Type="CollectItem" ItemId="9628" ItemName="Neeru&apos;s Herb Pouch" CollectCount="1" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Swamp of Sorrows (48-48) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Swamp of Sorrows (48-48) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Dustwallow_Marsh_(48-49)" />
   </QuestOrder>
 </HBProfile>

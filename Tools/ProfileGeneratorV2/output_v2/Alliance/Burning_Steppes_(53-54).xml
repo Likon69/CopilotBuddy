@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Burning Steppes (53-54)</Name>
+  <Name>Alliance\\Burning Steppes (53-54)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>54</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Burning Steppes (53-54)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Burning Steppes (53-54)" LogColor="Green" />
     <Objective QuestName="A Taste of Flame" QuestId="4022" Type="CollectItem" ItemId="10575" ItemName="Black Dragonflight Molt" CollectCount="1" />
     <TurnIn QuestName="A Little Slime Goes a Long Way" QuestId="4512" TurnInName="Laris Geardawdle" TurnInId="9616" />
     <If Condition="((!HasQuest(3823)) &amp;&amp; (!IsQuestCompleted(3823)))">
@@ -65,7 +65,7 @@
     <If Condition="((!HasQuest(5159)) &amp;&amp; (!IsQuestCompleted(5159)))">
       <PickUp QuestName="Cleansed Water Returns to Felwood" QuestId="5159" GiverName="Islen Waterseer" GiverId="5901" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Burning Steppes (53-54) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Burning Steppes (53-54) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Un&apos;Goro_Crater_(54-55)" />
   </QuestOrder>
 </HBProfile>

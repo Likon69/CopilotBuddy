@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Extra Zones\\Ghostlands</Name>
+  <Name>Horde\\Extra Zones\\Ghostlands</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -56,7 +56,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Ghostlands" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Extra Zones\\Ghostlands" LogColor="Green" />
     <If Condition="((!HasQuest(9148)) &amp;&amp; (!IsQuestCompleted(9148)))">
       <PickUp QuestName="Delivery to Tranquillien" QuestId="9148" GiverName="Courier Dawnstrider" GiverId="16183" />
     </If>
@@ -308,6 +308,6 @@
     <TurnIn QuestName="Dar&apos;Khan&apos;s Lieutenants" QuestId="9170" TurnInName="Magister Idonis" TurnInId="16204" />
     <PickUp QuestName="Journey to Undercity" QuestId="9177" GiverName="High Executor Mavren" GiverId="16252" />
     <!-- Quest 9177 may auto-complete (no turn-in found) -->
-    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Ghostlands Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Extra Zones\\Ghostlands Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

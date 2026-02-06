@@ -1158,10 +1158,13 @@ class ProfileGeneratorV2:
         if race_filter:
             steps = [s for s in steps if not s.race_filter or s.race_filter == race_filter]
         
+        # Display name includes faction for user-facing messages
+        display_name = f"{guide.faction}\\{guide.name}"
+        
         xml_lines = [
             '<?xml version="1.0" encoding="utf-8"?>',
             '<HBProfile>',
-            f'  <Name>{self._escape_xml(guide.name)}</Name>',
+            f'  <Name>{self._escape_xml(display_name)}</Name>',
             '',
             f'  <MinLevel>{guide.min_level}</MinLevel>',
             f'  <MaxLevel>{guide.max_level}</MaxLevel>',
@@ -1180,7 +1183,7 @@ class ProfileGeneratorV2:
         
         xml_lines.extend([
             '  <QuestOrder>',
-            f'    <CustomBehavior File="Message" Text="{self._escape_xml(guide.name)}" LogColor="Green" />',
+            f'    <CustomBehavior File="Message" Text="Leveling Guides\\{self._escape_xml(display_name)}" LogColor="Green" />',
         ])
         
         seen_pickups = set()
@@ -1218,7 +1221,7 @@ class ProfileGeneratorV2:
             xml_lines.append('    </If>')
         
         # End message and chain
-        xml_lines.append(f'    <CustomBehavior File="Message" Text="{self._escape_xml(guide.name)} Complete" LogColor="Orange" />')
+        xml_lines.append(f'    <CustomBehavior File="Message" Text="Leveling Guides\\{self._escape_xml(display_name)} Complete" LogColor="Orange" />')
         
         if guide.next_guide:
             next_filename = re.sub(r'[\\/*?:"<>|]', '_', guide.next_guide)

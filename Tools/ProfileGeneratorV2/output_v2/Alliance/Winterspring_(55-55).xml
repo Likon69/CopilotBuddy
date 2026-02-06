@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Winterspring (55-55)</Name>
+  <Name>Alliance\\Winterspring (55-55)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Winterspring (55-55)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Winterspring (55-55)" LogColor="Green" />
     <TurnIn QuestName="The New Springs" QuestId="980" TurnInName="Donova Snowden" TurnInId="9298" />
     <If Condition="((!HasQuest(4842)) &amp;&amp; (!IsQuestCompleted(4842)))">
       <PickUp QuestName="Strange Sources" QuestId="4842" GiverName="Donova Snowden" GiverId="9298" />
@@ -49,7 +49,7 @@
     <If Condition="((!HasQuest(5086)) &amp;&amp; (!IsQuestCompleted(5086)))">
       <PickUp QuestName="Toxic Horrors" QuestId="5086" GiverName="Donova Snowden" GiverId="9298" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Winterspring (55-55) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Winterspring (55-55) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Felwood_(55-56)" />
   </QuestOrder>
 </HBProfile>

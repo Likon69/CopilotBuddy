@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Starter Guides (1-11)\\Night Elf Starter (1-11)</Name>
+  <Name>Alliance\\Starter Guides (1-11)\\Night Elf Starter (1-11)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>11</MaxLevel>
@@ -131,7 +131,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-11)\\Night Elf Starter (1-11)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Starter Guides (1-11)\\Night Elf Starter (1-11)" LogColor="Green" />
     <PickUp QuestName="The Balance of Nature" QuestId="456" GiverName="Conservator Ilthalaine" GiverId="2079" />
     <Objective QuestName="The Balance of Nature" QuestId="456" Type="KillMob" MobId="2031" MobName="Young Nightsaber" KillCount="7" />
     <Objective QuestName="The Balance of Nature" QuestId="456" Type="KillMob" MobId="1984" MobName="Young Thistle Boar" KillCount="4" />
@@ -502,7 +502,7 @@
       </If>
       <TurnIn QuestName="Flight to Auberdine" QuestId="6342" TurnInName="Laird" TurnInId="4200" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-11)\\Night Elf Starter (1-11) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Starter Guides (1-11)\\Night Elf Starter (1-11) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Darkshore_(11-14)" />
   </QuestOrder>
 </HBProfile>

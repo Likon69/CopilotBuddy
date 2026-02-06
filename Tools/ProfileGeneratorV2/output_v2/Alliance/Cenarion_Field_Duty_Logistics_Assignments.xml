@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Cenarion Field Duty Logistics Assignments</Name>
+  <Name>Alliance\\Cenarion Field Duty Logistics Assignments</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Field Duty Logistics Assignments" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Cenarion Field Duty Logistics Assignments" LogColor="Green" />
     <If Condition="((!HasQuest(8507)) &amp;&amp; (!IsQuestCompleted(8507)))">
       <PickUp QuestName="Field Duty" QuestId="8507" GiverName="Windcaller Kaldon" GiverId="15540" />
     </If>
@@ -153,6 +153,6 @@
     <TurnIn QuestName="Extraordinary Materials" QuestId="8783" TurnInName="Vargus" TurnInId="15176" />
     <TurnIn QuestName="The Ultimate Deception" QuestId="8829" TurnInName="Aurel Goldleaf" TurnInId="15282" />
     <Objective QuestName="Field Duty Papers" QuestId="8508" Type="CollectItem" ItemId="21132" ItemName="Logistics Assignment" CollectCount="1" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Field Duty Logistics Assignments Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Cenarion Field Duty Logistics Assignments Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

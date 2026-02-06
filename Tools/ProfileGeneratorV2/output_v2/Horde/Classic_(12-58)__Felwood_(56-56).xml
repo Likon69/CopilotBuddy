@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Felwood (56-56)</Name>
+  <Name>Horde\\Classic (12-58)\\Felwood (56-56)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Felwood (56-56)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Felwood (56-56)" LogColor="Green" />
     <TurnIn QuestName="Wild Guardians" QuestId="4521" TurnInName="Trull Failbane" TurnInId="10306" />
     <TurnIn QuestName="Forces of Jaedenar" QuestId="5155" TurnInName="Greta Mosshoof" TurnInId="10922" />
     <If Condition="((!HasQuest(5157)) &amp;&amp; (!IsQuestCompleted(5157)))">
@@ -42,7 +42,7 @@
     <CustomBehavior File="SetHearthstone" MobId="6929" AreaId="1637" X="54.09" Y="68.41" Z="0" /> <!-- Set hearth: Orgrimmar -->
     <TurnIn QuestName="Seeking Spiritual Aid" QuestId="5158" TurnInName="Islen Waterseer" TurnInId="5901" />
     <TurnIn QuestName="The Strength of Corruption" QuestId="4120" TurnInName="Talo Thornhoof" TurnInId="7776" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Felwood (56-56) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Felwood (56-56) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Western_Plaguelands_(56-58)" />
   </QuestOrder>
 </HBProfile>

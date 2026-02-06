@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Thousand Needles (27-29)</Name>
+  <Name>Horde\\Classic (12-58)\\Thousand Needles (27-29)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>29</MaxLevel>
@@ -64,7 +64,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Thousand Needles (27-29)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Thousand Needles (27-29)" LogColor="Green" />
     <TurnIn QuestName="The Sacred Flame" QuestId="1196" TurnInName="Rau Cliffrunner" TurnInId="4722" />
     <If Condition="((!HasQuest(1197)) &amp;&amp; (!IsQuestCompleted(1197)))">
       <PickUp QuestName="The Sacred Flame" QuestId="1197" GiverName="Rau Cliffrunner" GiverId="4722" />
@@ -147,7 +147,7 @@
     <If Condition="((!HasQuest(1136)) &amp;&amp; (!IsQuestCompleted(1136)))">
       <PickUp QuestName="Frostmaw" QuestId="1136" GiverName="Melor Stonehoof" GiverId="3441" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Thousand Needles (27-29) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Thousand Needles (27-29) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Hillsbrad_Foothills_(29-30)" />
   </QuestOrder>
 </HBProfile>

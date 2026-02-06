@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Badlands (42-43)</Name>
+  <Name>Alliance\\Badlands (42-43)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>43</MaxLevel>
@@ -21,7 +21,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Badlands (42-43)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Badlands (42-43)" LogColor="Green" />
     <TurnIn QuestName="Stormpike&apos;s Deciphering" QuestId="554" TurnInName="Prospector Stormpike" TurnInId="1356" />
     <PickUp QuestName="Ironband Wants You!" QuestId="707" GiverName="Prospector Stormpike" GiverId="1356" />
     <If Condition="((!HasQuest(2500)) &amp;&amp; (!IsQuestCompleted(2500)))">
@@ -84,7 +84,7 @@
     <CustomBehavior File="SetHearthstone" MobId="5111" AreaId="1537" X="35.53" Y="48.4" Z="0" /> <!-- Set hearth: Stoutlager Inn -->
     <TurnIn QuestName="Badlands Reagent Run" QuestId="2500" TurnInName="Ghak Healtouch" TurnInId="1470" />
     <TurnIn QuestName="Murdaloc" QuestId="739" TurnInName="Prospector Ironband" TurnInId="1344" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Badlands (42-43) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Badlands (42-43) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Stranglethorn_Vale_(43-44)" />
   </QuestOrder>
 </HBProfile>

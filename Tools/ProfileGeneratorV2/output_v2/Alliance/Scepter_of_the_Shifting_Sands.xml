@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Scepter of the Shifting Sands</Name>
+  <Name>Alliance\\Scepter of the Shifting Sands</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -9,7 +9,7 @@
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Scepter of the Shifting Sands" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Scepter of the Shifting Sands" LogColor="Green" />
     <PickUp QuestName="What Tomorrow Brings" QuestId="8286" GiverName="Baristolth of the Shifting Sands" GiverId="15180" />
     <TurnIn QuestName="What Tomorrow Brings" QuestId="8286" TurnInName="Baristolth of the Shifting Sands" TurnInId="15180" />
     <If Condition="((!HasQuest(8288)) &amp;&amp; (!IsQuestCompleted(8288)))">
@@ -206,6 +206,6 @@
     <If Condition="((!HasQuest(8745)) &amp;&amp; (!IsQuestCompleted(8745)))">
       <PickUp QuestName="Treasure of the Timeless One" QuestId="8745" GiverName="Jonathan the Revelator" GiverId="15693" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Scepter of the Shifting Sands Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Scepter of the Shifting Sands Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

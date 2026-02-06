@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Swamp of Sorrows (39-40)</Name>
+  <Name>Horde\\Classic (12-58)\\Swamp of Sorrows (39-40)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>41</MaxLevel>
@@ -29,7 +29,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Swamp of Sorrows (39-40)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Swamp of Sorrows (39-40)" LogColor="Green" />
     <PickUp QuestName="Nothing But The Truth" QuestId="1372" GiverName="Deathstalker Zraedus" GiverId="5418" />
     <TurnIn QuestName="Nothing But The Truth" QuestId="1372" TurnInName="Apothecary Faustin" TurnInId="5414" />
     <Objective QuestName="Dream Dust in the Swamp" QuestId="1116" Type="CollectItem" ItemId="5803" ItemName="Speck of Dream Dust" CollectCount="10" />
@@ -89,7 +89,7 @@
       <PickUp QuestName="The Atal&apos;ai Exile" QuestId="1429" GiverName="Fel&apos;zerul" GiverId="1443" />
     </If>
     <TurnIn QuestName="Parts of the Swarm" QuestId="1184" TurnInName="Belgrom Rockmaul" TurnInId="4485" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Swamp of Sorrows (39-40) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Swamp of Sorrows (39-40) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Badlands_(41-42)" />
   </QuestOrder>
 </HBProfile>

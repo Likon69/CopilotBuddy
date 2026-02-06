@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Arathi Highlands (39-41)</Name>
+  <Name>Alliance\\Arathi Highlands (39-41)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>41</MaxLevel>
@@ -70,7 +70,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Arathi Highlands (39-41)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Arathi Highlands (39-41)" LogColor="Green" />
     <Objective QuestName="Hints of a New Plague?" QuestId="658" Type="KillMob" MobId="2714" MobName="Forsaken Courier" KillCount="1" />
     <Objective QuestName="Hints of a New Plague?" QuestId="658" Type="CollectItem" ItemId="4482" ItemName="Sealed Folder" CollectCount="1" />
     <If Condition="((!HasQuest(691)) &amp;&amp; (!IsQuestCompleted(691)))">
@@ -148,7 +148,7 @@
       <PickUp QuestName="The Tome of Nobility" QuestId="1661" GiverName="Duthorian Rall" GiverId="6171" />
       <!-- Quest 1661 may auto-complete (no turn-in found) -->
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Arathi Highlands (39-41) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Arathi Highlands (39-41) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Dustwallow_Marsh_(41-42)" />
   </QuestOrder>
 </HBProfile>

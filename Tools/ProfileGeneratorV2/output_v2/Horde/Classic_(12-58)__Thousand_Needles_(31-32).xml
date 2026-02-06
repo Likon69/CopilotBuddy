@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Thousand Needles (31-32)</Name>
+  <Name>Horde\\Classic (12-58)\\Thousand Needles (31-32)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>32</MaxLevel>
@@ -30,7 +30,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Thousand Needles (31-32)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Thousand Needles (31-32)" LogColor="Green" />
     <PickUp QuestName="The Swarm Grows" QuestId="1145" GiverName="Korran" GiverId="3428" />
     <TurnIn QuestName="Regthar Deathgate" QuestId="1361" TurnInName="Regthar Deathgate" TurnInId="3389" />
     <PickUp QuestName="The Kolkar of Desolace" QuestId="1362" GiverName="Regthar Deathgate" GiverId="3389" />
@@ -72,7 +72,7 @@
     <Objective QuestName="A Bump in the Road" QuestId="1175" Type="KillMob" MobId="4151" MobName="Saltstone Crystalhide" KillCount="10" />
     <TurnIn QuestName="A Bump in the Road" QuestId="1175" TurnInName="Trackmaster Zherin" TurnInId="4629" />
     <PickUp QuestName="Family Tree" QuestId="5361" GiverName="Cliffwatcher Longhorn" GiverId="10537" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Thousand Needles (31-32) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Thousand Needles (31-32) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Desolace_(32-34)" />
   </QuestOrder>
 </HBProfile>

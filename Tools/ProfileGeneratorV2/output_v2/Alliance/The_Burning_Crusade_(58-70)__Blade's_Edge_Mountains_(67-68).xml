@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68)</Name>
+  <Name>Alliance\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>68</MaxLevel>
@@ -51,7 +51,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68)" LogColor="Green" />
     <PickUp QuestName="No Time for Curiosity" QuestId="9794" GiverName="Timothy Daniels" GiverId="18019" />
     <PickUp QuestName="Killing the Crawlers" QuestId="10927" GiverName="Sentinel Moonwhisper" GiverId="22488" />
     <Objective QuestName="Killing the Crawlers" QuestId="10927" Type="KillMob" MobId="22044" MobName="Cavern Crawler" KillCount="6" />
@@ -462,7 +462,7 @@
     <TurnIn QuestName="Whelps of the Wyrmcult" QuestId="10747" TurnInName="Samia Inkling" TurnInId="21983" />
     <TurnIn QuestName="Meeting at the Blackwing Coven" QuestId="10722" TurnInName="Tree Warden Chawn" TurnInId="22007" />
     <TurnIn QuestName="The Truth Unorbed" QuestId="10825" TurnInName="Tree Warden Chawn" TurnInId="22007" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="The_Burning_Crusade_(58-70)__Netherstorm_(68-70)" />
   </QuestOrder>
 </HBProfile>

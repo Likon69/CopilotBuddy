@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Northrend (69-80)\\Borean Tundra (70-72)</Name>
+  <Name>Alliance\\Northrend (69-80)\\Borean Tundra (70-72)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>72</MaxLevel>
@@ -99,7 +99,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Borean Tundra (70-72)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Northrend (69-80)\\Borean Tundra (70-72)" LogColor="Green" />
     <CustomBehavior File="SetHearthstone" MobId="26669" AreaId="1196" X="58.28" Y="68.05" Z="0" /> <!-- Set hearth: Valiance Keep -->
     <PickUp QuestName="Enlistment Day" QuestId="11672" GiverName="Recruitment Officer Blythe" GiverId="25307" />
     <TurnIn QuestName="Enlistment Day" QuestId="11672" TurnInName="General Arlos" TurnInId="25250" />
@@ -936,7 +936,7 @@
     </While>
     <Objective QuestName="Deploy the Shake-n-Quake!" QuestId="11723" Type="KillMob" MobId="25629" MobName="Lord Kryxix" KillCount="1" />
     <TurnIn QuestName="Deploy the Shake-n-Quake!" QuestId="11723" TurnInName="Abner Fizzletorque" TurnInId="25780" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Northrend (69-80)\\Borean Tundra (70-72) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Northrend (69-80)\\Borean Tundra (70-72) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)__Dragonblight_(72-74)" />
   </QuestOrder>
 </HBProfile>

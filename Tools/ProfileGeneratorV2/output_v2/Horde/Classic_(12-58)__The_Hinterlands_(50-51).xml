@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\The Hinterlands (50-51)</Name>
+  <Name>Horde\\Classic (12-58)\\The Hinterlands (50-51)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>51</MaxLevel>
@@ -70,7 +70,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Hinterlands (50-51)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\The Hinterlands (50-51)" LogColor="Green" />
     <TurnIn QuestName="Ripple Recovery" QuestId="650" TurnInName="Gilveradin Sunchaser" TurnInId="7801" />
     <TurnIn QuestName="The Atal&apos;ai Exile" QuestId="1429" TurnInName="Atal&apos;ai Exile" TurnInId="5598" />
     <If Condition="((!HasQuest(1444)) &amp;&amp; (!IsQuestCompleted(1444)))">
@@ -97,7 +97,7 @@
     <Objective QuestName="The Stone Circle" QuestId="3444" Type="CollectItem" ItemId="10556" ItemName="Stone Circle" CollectCount="1" />
     <PickUp QuestName="Volcanic Activity" QuestId="4502" GiverName="Liv Rizzlefix" GiverId="8496" />
     <TurnIn QuestName="Whiskey Slim&apos;s Lost Grog" QuestId="580" TurnInName="Whiskey Slim" TurnInId="2491" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Hinterlands (50-51) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\The Hinterlands (50-51) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Blasted_Lands_(51-52)" />
   </QuestOrder>
 </HBProfile>

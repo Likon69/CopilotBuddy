@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Badlands (41-42)</Name>
+  <Name>Horde\\Classic (12-58)\\Badlands (41-42)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>42</MaxLevel>
@@ -27,7 +27,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Badlands (41-42)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Badlands (41-42)" LogColor="Green" />
     <Objective QuestName="Coolant Heads Prevail" QuestId="713" Type="CollectItem" ItemId="3829" ItemName="Frost Oil" CollectCount="1" />
     <Objective QuestName="Gyro... What?" QuestId="714" Type="CollectItem" ItemId="4389" ItemName="Gyrochronatom" CollectCount="1" />
     <Objective QuestName="Liquid Stone" QuestId="715" Type="CollectItem" ItemId="929" ItemName="Healing Potion" CollectCount="1" />
@@ -118,7 +118,7 @@
     <TurnIn QuestName="Coyote Thieves" QuestId="1419" TurnInName="Neeka Bloodscar" TurnInId="5394" />
     <TurnIn QuestName="Barbecued Buzzard Wings" QuestId="703" TurnInName="Rigglefuzz" TurnInId="2817" />
     <TurnIn QuestName="Report to Helgrum" QuestId="1420" TurnInName="Helgrum the Swift" TurnInId="1442" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Badlands (41-42) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Badlands (41-42) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Stranglethorn_Vale_(42-43)" />
   </QuestOrder>
 </HBProfile>

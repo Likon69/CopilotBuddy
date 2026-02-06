@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Classic (12-58)\\Stranglethorn Vale (35-36)</Name>
+  <Name>Horde\\Classic (12-58)\\Stranglethorn Vale (35-36)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>36</MaxLevel>
@@ -31,7 +31,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (35-36)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stranglethorn Vale (35-36)" LogColor="Green" />
     <TurnIn QuestName="Goblin Sponsorship" QuestId="1180" TurnInName="Wharfmaster Lozgil" TurnInId="4631" />
     <If Condition="((!HasQuest(1181)) &amp;&amp; (!IsQuestCompleted(1181)))">
       <PickUp QuestName="Goblin Sponsorship" QuestId="1181" GiverName="Wharfmaster Lozgil" GiverId="4631" />
@@ -150,7 +150,7 @@
     <TurnIn QuestName="Headhunting" QuestId="582" TurnInName="Nimboya" TurnInId="2497" />
     <TurnIn QuestName="The Vile Reef" QuestId="629" TurnInName="Kin&apos;weelay" TurnInId="2519" />
     <PickUp QuestName="Trollbane" QuestId="638" GiverName="Nimboya" GiverId="2497" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (35-36) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Classic (12-58)\\Stranglethorn Vale (35-36) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)__Arathi_Highlands_(36-37)" />
   </QuestOrder>
 </HBProfile>
