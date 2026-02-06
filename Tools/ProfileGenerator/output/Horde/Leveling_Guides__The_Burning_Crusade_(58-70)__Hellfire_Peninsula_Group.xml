@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\The Burning Crusade (58-70)\\Hellfire Peninsula Group</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Hellfire Peninsula Group" LogColor="Green" />
+    <PickUp QuestName="Through the Dark Portal" QuestId="9407" GiverName="Warlord Dar&apos;toon" GiverId="19254" />
+    <TurnIn QuestName="Through the Dark Portal" QuestId="9407" TurnInName="Lieutenant General Orion" TurnInId="19253" />
+    <PickUp QuestName="Arrival in Outland" QuestId="10120" GiverName="Lieutenant General Orion" GiverId="19253" />
+    <TurnIn QuestName="Arrival in Outland" QuestId="10120" TurnInName="Vlagga Freyfeather" TurnInId="18930" />
+    <PickUp QuestName="Journey to Thrallmar" QuestId="10289" GiverName="Vlagga Freyfeather" GiverId="18930" />
+    <TurnIn QuestName="Journey to Thrallmar" QuestId="10289" TurnInName="General Krakork" TurnInId="19255" />
+    <PickUp QuestName="Bonechewer Blood" QuestId="10450" GiverName="Vurtok Axebreaker" GiverId="21256" />
+    <Objective QuestName="Bonechewer Blood" QuestId="10450" Type="CollectItem" ItemId="30327" ItemName="Bonechewer Blood" CollectCount="12" />
+    <TurnIn QuestName="Bonechewer Blood" QuestId="10450" TurnInName="Vurtok Axebreaker" TurnInId="21256" />
+    <PickUp QuestName="Apothecary Zelana" QuestId="10449" GiverName="Vurtok Axebreaker" GiverId="21256" />
+    <TurnIn QuestName="Apothecary Zelana" QuestId="10449" TurnInName="Apothecary Zelana" TurnInId="21257" />
+    <PickUp QuestName="Spinebreaker Post" QuestId="10242" GiverName="Apothecary Zelana" GiverId="21257" />
+    <TurnIn QuestName="Spinebreaker Post" QuestId="10242" TurnInName="Apothecary Albreck" TurnInId="21279" />
+    <PickUp QuestName="Boiling Blood" QuestId="10538" GiverName="Apothecary Albreck" GiverId="21279" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="30425" ItemName="Bleeding Hollow Blood" CollectCount="12" />
+    <Objective QuestName="Boiling Blood" QuestId="10538" Type="CollectItem" ItemId="30430" ItemName="Boiled Blood" CollectCount="12" />
+    <TurnIn QuestName="Boiling Blood" QuestId="10538" TurnInName="Apothecary Albreck" TurnInId="21279" />
+    <PickUp QuestName="Apothecary Antonivich" QuestId="10835" GiverName="Apothecary Albreck" GiverId="21279" />
+    <TurnIn QuestName="Apothecary Antonivich" QuestId="10835" TurnInName="Apothecary Antonivich" TurnInId="16588" />
+    <PickUp QuestName="A Burden of Souls" QuestId="10864" GiverName="Apothecary Antonivich" GiverId="16588" />
+    <TurnIn QuestName="A Burden of Souls" QuestId="10864" TurnInName="Apothecary Antonivich" TurnInId="16588" />
+    <PickUp QuestName="The Demoniac Scryer" QuestId="10838" GiverName="Apothecary Antonivich" GiverId="16588" />
+    <TurnIn QuestName="The Demoniac Scryer" QuestId="10838" TurnInName="Apothecary Antonivich" TurnInId="16588" />
+    <PickUp QuestName="The Eyes of Grillok" QuestId="10813" GiverName="Zezzak" GiverId="22231" />
+    <TurnIn QuestName="The Eyes of Grillok" QuestId="10813" TurnInName="Zezzak" TurnInId="22231" />
+    <PickUp QuestName="Grillok &quot;Darkeye&quot;" QuestId="10834" GiverName="Zezzak" GiverId="22231" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19457" MobName="Grillok &quot;Darkeye&quot;" KillCount="1" />
+    <Objective QuestName="Grillok &quot;Darkeye&quot;" QuestId="10834" Type="CollectItem" ItemId="31529" ItemName="Grillok&apos;s Eyepatch" CollectCount="1" />
+    <TurnIn QuestName="Grillok &quot;Darkeye&quot;" QuestId="10834" TurnInName="Zezzak" TurnInId="22231" />
+    <PickUp QuestName="Cruel&apos;s Intentions" QuestId="10136" GiverName="Nazgrel" GiverId="3230" />
+    <Objective QuestName="Cruel&apos;s Intentions" QuestId="10136" Type="KillMob" MobId="19191" MobName="Arazzius the Cruel" KillCount="1" />
+    <TurnIn QuestName="Cruel&apos;s Intentions" QuestId="10136" TurnInName="Nazgrel" TurnInId="3230" />
+    <PickUp QuestName="Wanted: Blacktalon the Savage" QuestId="9466" GiverName="Nazgrel" GiverId="3230" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17057" MobName="Blacktalon the Savage" KillCount="1" />
+    <Objective QuestName="Wanted: Blacktalon the Savage" QuestId="9466" Type="CollectItem" ItemId="23687" ItemName="Blacktalon&apos;s Claws" CollectCount="1" />
+    <TurnIn QuestName="Wanted: Blacktalon the Savage" QuestId="9466" TurnInName="Ranger Captain Venn&apos;ren" TurnInId="16789" />
+    <PickUp QuestName="Colossal Menace" QuestId="10132" GiverName="Tola&apos;thion" GiverId="19293" />
+    <Objective QuestName="Colossal Menace" QuestId="10132" Type="KillMob" MobId="19188" MobName="Raging Colossus" KillCount="5" />
+    <Objective QuestName="Colossal Menace" QuestId="10132" Type="KillMob" MobId="19188" MobName="Raging Colossus" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="29476" ItemName="Crimson Crystal Shard" CollectCount="1" />
+    <PickUp QuestName="Crimson Cystal Clue" QuestId="10134" GiverName="Tola&apos;thion" GiverId="19293" />
+    <TurnIn QuestName="Colossal Menace" QuestId="10132" TurnInName="Tola&apos;thion" TurnInId="19293" />
+    <TurnIn QuestName="Crimson Cystal Clue" QuestId="10134" TurnInName="Tola&apos;thion" TurnInId="19293" />
+    <PickUp QuestName="The Earthbinder" QuestId="10349" GiverName="Tola&apos;thion" GiverId="19293" />
+    <TurnIn QuestName="The Earthbinder" QuestId="10349" TurnInName="Earthbinder Galandria Nightbreeze" TurnInId="19294" />
+    <PickUp QuestName="Natural Rememdies" QuestId="10351" GiverName="Earthbinder Galandria Nightbreeze" GiverId="19294" />
+    <Objective QuestName="Natural Rememdies" QuestId="10351" Type="KillMob" MobId="19305" MobName="Goliathon" KillCount="1" />
+    <TurnIn QuestName="Natural Rememdies" QuestId="10351" TurnInName="Earthbinder Galandria Nightbreeze" TurnInId="19294" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Hellfire Peninsula Group Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

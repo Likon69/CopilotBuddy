@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Burning Steppes (53-54)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>54</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Burning Steppes (53-54)" LogColor="Green" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10575" ItemName="Black Dragonflight Molt" CollectCount="1" />
+    <TurnIn QuestName="A Little Slime Goes a Long Way" QuestId="4512" TurnInName="Laris Geardawdle" TurnInId="9616" />
+    <PickUp QuestName="Extinguish the Firegut" QuestId="3823" GiverName="Oralius" GiverId="9177" />
+    <PickUp QuestName="FIFTY! YEP!" QuestId="4283" GiverName="Oralius" GiverId="9177" />
+    <PickUp QuestName="Dragonkin Menace" QuestId="4182" GiverName="Helendis Riverhorn" GiverId="9562" />
+    <Objective QuestName="Extinguish the Firegut" QuestId="3823" Type="KillMob" MobId="7033" MobName="Firegut Ogre" KillCount="15" />
+    <Objective QuestName="Extinguish the Firegut" QuestId="3823" Type="KillMob" MobId="7035" MobName="Firegut Brute" KillCount="7" />
+    <Objective QuestName="Extinguish the Firegut" QuestId="3823" Type="KillMob" MobId="7034" MobName="Firegut Ogre Mage" KillCount="15" />
+    <TurnIn QuestName="Extinguish the Firegut" QuestId="3823" TurnInName="Oralius" TurnInId="9177" />
+    <PickUp QuestName="Gor&apos;tesh the Brute Lord" QuestId="3824" GiverName="Oralius" GiverId="9177" />
+    <PickUp QuestName="Broodling Essence" QuestId="4726" GiverName="Tinkee Steamboil" GiverId="10267" />
+    <PickUp QuestName="Tablet of the Seven" QuestId="4296" GiverName="Maxwort Uberglint" GiverId="9536" />
+    <TurnIn QuestName="Yuka Screwspigot" QuestId="4324" TurnInName="Yuka Screwspigot" TurnInId="9544" />
+    <Objective QuestName="Broodling Essence" QuestId="4726" Type="CollectItem" ItemId="12283" ItemName="Broodling Essence" CollectCount="8" />
+    <PickUp QuestName="A Taste of Flame" QuestId="4022" GiverName="Cyrus Therepentous" GiverId="9459" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="9461" MobName="Frenzied Black Drake" KillCount="1" />
+    <Objective QuestName="A Taste of Flame" QuestId="4022" Type="CollectItem" ItemId="10575" ItemName="Black Dragonflight Molt" CollectCount="1" />
+    <TurnIn QuestName="A Taste of Flame" QuestId="4022" TurnInName="Cyrus Therepentous" TurnInId="9459" />
+    <Objective QuestName="Dragonkin Menace" QuestId="4182" Type="KillMob" MobId="7044" MobName="Black Drake" KillCount="1" />
+    <Objective QuestName="Dragonkin Menace" QuestId="4182" Type="KillMob" MobId="7041" MobName="Black Wyrmkin" KillCount="4" />
+    <Objective QuestName="Dragonkin Menace" QuestId="4182" Type="KillMob" MobId="7040" MobName="Black Dragonspawn" KillCount="10" />
+    <Objective QuestName="Dragonkin Menace" QuestId="4182" Type="KillMob" MobId="7047" MobName="Black Broodling" KillCount="15" />
+    <Objective QuestName="Tablet of the Seven" QuestId="4296" Type="CollectItem" ItemId="11470" ItemName="Tablet Transcript" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="9176" MobName="Gor&apos;tesh" KillCount="1" />
+    <Objective QuestName="Gor&apos;tesh the Brute Lord" QuestId="3824" Type="CollectItem" ItemId="11080" ItemName="Gor&apos;tesh&apos;s Lopped Off Head" CollectCount="1" />
+    <Objective QuestName="FIFTY! YEP!" QuestId="4283" Type="CollectItem" ItemId="11467" ItemName="Blackrock Medallion" CollectCount="50" />
+    <TurnIn QuestName="Gor&apos;tesh the Brute Lord" QuestId="3824" TurnInName="Oralius" TurnInId="9177" />
+    <PickUp QuestName="Ogre Head On A Stick = Party" QuestId="3825" GiverName="Oralius" GiverId="9177" />
+    <TurnIn QuestName="FIFTY! YEP!" QuestId="4283" TurnInName="Oralius" TurnInId="9177" />
+    <TurnIn QuestName="Dragonkin Menace" QuestId="4182" TurnInName="Helendis Riverhorn" TurnInId="9562" />
+    <TurnIn QuestName="Broodling Essence" QuestId="4726" TurnInName="Tinkee Steamboil" TurnInId="10267" />
+    <PickUp QuestName="Felnok Steelspring" QuestId="4808" GiverName="Tinkee Steamboil" GiverId="10267" />
+    <TurnIn QuestName="Tablet of the Seven" QuestId="4296" TurnInName="Maxwort Uberglint" TurnInId="9536" />
+    <TurnIn QuestName="Ogre Head On A Stick = Party" QuestId="3825" TurnInName="Oralius" TurnInId="9177" />
+    <TurnIn QuestName="Seeking Spiritual Aid" QuestId="5158" TurnInName="Islen Waterseer" TurnInId="5901" />
+    <PickUp QuestName="Cleansed Water Returns to Felwood" QuestId="5159" GiverName="Islen Waterseer" GiverId="5901" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Burning Steppes (53-54) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Un&apos;Goro_Crater_(54-55)" />
+  </QuestOrder>
+</HBProfile>

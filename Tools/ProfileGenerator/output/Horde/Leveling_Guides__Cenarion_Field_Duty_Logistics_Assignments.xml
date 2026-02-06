@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Cenarion Field Duty Logistics Assignments</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Field Duty Logistics Assignments" LogColor="Green" />
+    <PickUp QuestName="Field Duty" QuestId="8731" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="23024" ItemName="Prepared Field Duty Papers" CollectCount="1" />
+    <PickUp QuestName="Field Duty Papers" QuestId="8732" GiverName="Krug Skullsplit" GiverId="15612" />
+    <Objective QuestName="Field Duty" QuestId="8507" Type="CollectItem" ItemId="20810" ItemName="Signed Field Duty Papers" CollectCount="1" />
+    <TurnIn QuestName="Field Duty" QuestId="8507" TurnInName="Windcaller Kaldon" TurnInId="15540" />
+    <PickUp QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Scrying Materials" QuestId="8807" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Arms for the Field" QuestId="8786" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Armor Kits for the Field" QuestId="8787" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Bandages for the Field" QuestId="8810" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <Objective QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" Type="CollectItem" ItemId="8956" ItemName="Oil of Immolation" CollectCount="8" />
+    <Objective QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" Type="CollectItem" ItemId="8152" ItemName="Flask of Big Mojo" CollectCount="6" />
+    <Objective QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" Type="CollectItem" ItemId="15992" ItemName="Powerful Mojo" CollectCount="6" />
+    <Objective QuestName="Scrying Materials" QuestId="8807" Type="CollectItem" ItemId="14344" ItemName="Large Brilliant Shard" CollectCount="1" />
+    <Objective QuestName="Scrying Materials" QuestId="8807" Type="CollectItem" ItemId="11178" ItemName="Large Radiant Shard" CollectCount="1" />
+    <Objective QuestName="Scrying Materials" QuestId="8807" Type="CollectItem" ItemId="12364" ItemName="Huge Emerald" CollectCount="1" />
+    <Objective QuestName="Arms for the Field" QuestId="8786" Type="CollectItem" ItemId="3855" ItemName="Massive Iron Axe" CollectCount="2" />
+    <Objective QuestName="Armor Kits for the Field" QuestId="8787" Type="CollectItem" ItemId="15564" ItemName="Rugged Armor Kit" CollectCount="8" />
+    <Objective QuestName="Armor Kits for the Field" QuestId="8787" Type="CollectItem" ItemId="4265" ItemName="Heavy Armor Kit" CollectCount="8" />
+    <Objective QuestName="Bandages for the Field" QuestId="8810" Type="CollectItem" ItemId="14530" ItemName="Heavy Runecloth Bandage" CollectCount="30" />
+    <Objective QuestName="Bandages for the Field" QuestId="8810" Type="CollectItem" ItemId="8545" ItemName="Heavy Mageweave Bandage" CollectCount="30" />
+    <Objective QuestName="Bandages for the Field" QuestId="8810" Type="CollectItem" ItemId="6451" ItemName="Heavy Silk Bandage" CollectCount="30" />
+    <TurnIn QuestName="Scrying Materials" QuestId="8807" TurnInName="Geologist Larksbane" TurnInId="15183" />
+    <TurnIn QuestName="Bandages for the Field" QuestId="8810" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
+    <TurnIn QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" TurnInName="Shadow Priestess Shai" TurnInId="15615" />
+    <TurnIn QuestName="Arms for the Field" QuestId="8786" TurnInName="Merok Longstride" TurnInId="15613" />
+    <TurnIn QuestName="Armor Kits for the Field" QuestId="8787" TurnInName="Merok Longstride" TurnInId="15613" />
+    <PickUp QuestName="Desert Survival Kits" QuestId="8804" GiverName="Merok Longstride" GiverId="15613" />
+    <PickUp QuestName="Boots for the Guard" QuestId="8805" GiverName="Merok Longstride" GiverId="15613" />
+    <PickUp QuestName="Grinding Stones for the Guard" QuestId="8806" GiverName="Merok Longstride" GiverId="15613" />
+    <PickUp QuestName="Uniform Supplies" QuestId="8808" GiverName="Merok Longstride" GiverId="15613" />
+    <PickUp QuestName="Extraordinary Materials" QuestId="8809" GiverName="Merok Longstride" GiverId="15613" />
+    <PickUp QuestName="The Ultimate Deception" QuestId="8829" GiverName="Merok Longstride" GiverId="15613" />
+    <Objective QuestName="Boots for the Guard" QuestId="8805" Type="CollectItem" ItemId="7936" ItemName="Ornate Mithril Boots" CollectCount="3" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7132" MobName="Toxic Horror" KillCount="1" />
+    <Objective QuestName="Desert Survival Kits" QuestId="8804" Type="CollectItem" ItemId="7079" ItemName="Globe of Water" CollectCount="4" />
+    <Objective QuestName="Desert Survival Kits" QuestId="8804" Type="CollectItem" ItemId="19440" ItemName="Powerful Anti-Venom" CollectCount="4" />
+    <Objective QuestName="Desert Survival Kits" QuestId="8804" Type="CollectItem" ItemId="20452" ItemName="Smoked Desert Dumplings" CollectCount="4" />
+    <Objective QuestName="Grinding Stones for the Guard" QuestId="8806" Type="CollectItem" ItemId="12644" ItemName="Dense Grinding Stone" CollectCount="10" />
+    <Objective QuestName="Grinding Stones for the Guard" QuestId="8806" Type="CollectItem" ItemId="7966" ItemName="Solid Grinding Stone" CollectCount="10" />
+    <Objective QuestName="Grinding Stones for the Guard" QuestId="8806" Type="CollectItem" ItemId="3486" ItemName="Heavy Grinding Stone" CollectCount="10" />
+    <Objective QuestName="Uniform Supplies" QuestId="8808" Type="CollectItem" ItemId="14342" ItemName="Mooncloth" CollectCount="1" />
+    <Objective QuestName="Uniform Supplies" QuestId="8808" Type="CollectItem" ItemId="14048" ItemName="Bolt of Runecloth" CollectCount="2" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1824" MobName="Plague Lurker" KillCount="1" />
+    <Objective QuestName="Uniform Supplies" QuestId="8808" Type="CollectItem" ItemId="14227" ItemName="Ironweb Spider Silk" CollectCount="1" />
+    <Objective QuestName="Extraordinary Materials" QuestId="8809" Type="CollectItem" ItemId="12655" ItemName="Enchanted Thorium Bar" CollectCount="10" />
+    <Objective QuestName="Extraordinary Materials" QuestId="8809" Type="CollectItem" ItemId="12810" ItemName="Solid Grinding Stone" CollectCount="10" />
+    <Objective QuestName="The Ultimate Deception" QuestId="8829" Type="CollectItem" ItemId="12753" ItemName="Skin of Shadow" CollectCount="1" />
+    <Objective QuestName="The Ultimate Deception" QuestId="8829" Type="CollectItem" ItemId="12735" ItemName="Frayed Abomination Stitching" CollectCount="3" />
+    <Objective QuestName="The Ultimate Deception" QuestId="8829" Type="CollectItem" ItemId="20407" ItemName="Twilight Cultist Robe" CollectCount="1" />
+    <TurnIn QuestName="Desert Survival Kits" QuestId="8804" TurnInName="Calandrath" TurnInId="15174" />
+    <TurnIn QuestName="Grinding Stones for the Guard" QuestId="8806" TurnInName="Vish Kozus" TurnInId="15182" />
+    <TurnIn QuestName="Boots for the Guard" QuestId="8805" TurnInName="Vish Kozus" TurnInId="15182" />
+    <TurnIn QuestName="Uniform Supplies" QuestId="8808" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
+    <TurnIn QuestName="Extraordinary Materials" QuestId="8809" TurnInName="Vargus" TurnInId="15176" />
+    <TurnIn QuestName="The Ultimate Deception" QuestId="8829" TurnInName="Aurel Goldleaf" TurnInId="15282" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="21266" ItemName="Logistics Assignment" CollectCount="1" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Field Duty Logistics Assignments Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

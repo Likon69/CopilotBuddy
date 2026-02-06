@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Felwood (52-53)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>53</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Felwood (52-53)" LogColor="Green" />
+    <PickUp QuestName="Cleansing Felwood" QuestId="4101" GiverName="Arathandris Silversky" GiverId="9528" />
+    <PickUp QuestName="Forces of Jaedenar" QuestId="5155" GiverName="Greta Mosshoof" GiverId="10922" />
+    <PickUp QuestName="The Corruption of the Jadefire" QuestId="4421" GiverName="Eridan Bluewind" GiverId="9116" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11914" ItemName="Empty Cursed Ooze Jar" CollectCount="6" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11948" ItemName="Empty Tainted Ooze Jar" CollectCount="6" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7086" MobName="Cursed Ooze" KillCount="1" />
+    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="CollectItem" ItemId="11947" ItemName="Filled Cursed Ooze Jar" CollectCount="6" />
+    <Objective QuestName="The Corruption of the Jadefire" QuestId="4421" Type="KillMob" MobId="9454" MobName="Xavathras" KillCount="1" />
+    <Objective QuestName="The Corruption of the Jadefire" QuestId="4421" Type="KillMob" MobId="7109" MobName="Jadefire Felsworn" KillCount="11" />
+    <Objective QuestName="The Corruption of the Jadefire" QuestId="4421" Type="KillMob" MobId="7110" MobName="Jadefire Shadowstalker" KillCount="9" />
+    <Objective QuestName="The Corruption of the Jadefire" QuestId="4421" Type="KillMob" MobId="7106" MobName="Jadefire Rogue" KillCount="9" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7092" MobName="Tainted Ooze" KillCount="1" />
+    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="CollectItem" ItemId="11949" ItemName="Filled Tainted Ooze Jar" CollectCount="6" />
+    <Objective QuestName="Forces of Jaedenar" QuestId="5155" Type="KillMob" MobId="7125" MobName="Jaedenar Hound" KillCount="4" />
+    <Objective QuestName="Forces of Jaedenar" QuestId="5155" Type="KillMob" MobId="7113" MobName="Jaedenar Guardian" KillCount="4" />
+    <Objective QuestName="Forces of Jaedenar" QuestId="5155" Type="KillMob" MobId="7115" MobName="Jaedenar Adept" KillCount="6" />
+    <Objective QuestName="Forces of Jaedenar" QuestId="5155" Type="KillMob" MobId="7112" MobName="Jaedenar Cultist" KillCount="6" />
+    <TurnIn QuestName="Forces of Jaedenar" QuestId="5155" TurnInName="Greta Mosshoof" TurnInId="10922" />
+    <PickUp QuestName="Collection of the Corrupt Water" QuestId="5157" GiverName="Greta Mosshoof" GiverId="10922" />
+    <TurnIn QuestName="The Corruption of the Jadefire" QuestId="4421" TurnInName="Eridan Bluewind" TurnInId="9116" />
+    <PickUp QuestName="Further Corruption" QuestId="4906" GiverName="Eridan Bluewind" GiverId="9116" />
+    <PickUp QuestName="Verifying the Corruption" QuestId="5156" GiverName="Taronn Redfeather" GiverId="10921" />
+    <PickUp QuestName="Timbermaw Ally" QuestId="8460" GiverName="Grazle" GiverId="11554" />
+    <Objective QuestName="Timbermaw Ally" QuestId="8460" Type="KillMob" MobId="7153" MobName="Deadwood Warrior" KillCount="6" />
+    <Objective QuestName="Timbermaw Ally" QuestId="8460" Type="KillMob" MobId="7155" MobName="Deadwood Pathfinder" KillCount="6" />
+    <Objective QuestName="Timbermaw Ally" QuestId="8460" Type="KillMob" MobId="7154" MobName="Deadwood Gardener" KillCount="6" />
+    <TurnIn QuestName="Timbermaw Ally" QuestId="8460" TurnInName="Grazle" TurnInId="11554" />
+    <PickUp QuestName="Speak to Nafien" QuestId="8462" GiverName="Grazle" GiverId="11554" />
+    <Objective QuestName="Collection of the Corrupt Water" QuestId="5157" Type="CollectItem" ItemId="12907" ItemName="Corrupt Moonwell Water" CollectCount="1" />
+    <Objective QuestName="Verifying the Corruption" QuestId="5156" Type="KillMob" MobId="9878" MobName="Entropic Beast" KillCount="2" />
+    <Objective QuestName="Verifying the Corruption" QuestId="5156" Type="KillMob" MobId="9879" MobName="Entropic Horror" KillCount="2" />
+    <Objective QuestName="Further Corruption" QuestId="4906" Type="KillMob" MobId="10648" MobName="Xavaric" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11668" ItemName="Flute of Xavaric" CollectCount="1" />
+    <PickUp QuestName="Flute of Xavaric" QuestId="939" GiverName="Grazle" GiverId="11554" />
+    <Objective QuestName="Flute of Xavaric" QuestId="939" Type="CollectItem" ItemId="11674" ItemName="Jadefire Felbind" CollectCount="5" />
+    <Objective QuestName="Further Corruption" QuestId="4906" Type="KillMob" MobId="7111" MobName="Jadefire Hellcaller" KillCount="8" />
+    <Objective QuestName="Further Corruption" QuestId="4906" Type="KillMob" MobId="7108" MobName="Jadefire Betrayer" KillCount="8" />
+    <Objective QuestName="Further Corruption" QuestId="4906" Type="KillMob" MobId="7107" MobName="Jadefire Trickster" KillCount="8" />
+    <Objective QuestName="Cleansing Felwood" QuestId="4101" Type="CollectItem" ItemId="11503" ItemName="Blood Amber" CollectCount="15" />
+    <TurnIn QuestName="Collection of the Corrupt Water" QuestId="5157" TurnInName="Greta Mosshoof" TurnInId="10922" />
+    <PickUp QuestName="Seeking Spiritual Aid" QuestId="5158" GiverName="Greta Mosshoof" GiverId="10922" />
+    <TurnIn QuestName="Flute of Xavaric" QuestId="939" TurnInName="Eridan Bluewind" TurnInId="9116" />
+    <PickUp QuestName="Felbound Ancients" QuestId="4441" GiverName="Eridan Bluewind" GiverId="9116" />
+    <TurnIn QuestName="Further Corruption" QuestId="4906" TurnInName="Eridan Bluewind" TurnInId="9116" />
+    <TurnIn QuestName="Verifying the Corruption" QuestId="5156" TurnInName="Taronn Redfeather" TurnInId="10921" />
+    <TurnIn QuestName="Cleansing Felwood" QuestId="4101" TurnInName="Arathandris Silversky" TurnInId="9528" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11511" ItemName="Cenarion Beacon" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11515" ItemName="Corrupted Soul Shard" CollectCount="6" />
+    <PickUp QuestName="Salve via Hunting" QuestId="5882" GiverName="Arathandris Silversky" GiverId="9528" />
+    <TurnIn QuestName="Speak to Nafien" QuestId="8462" TurnInName="Nafien" TurnInId="15395" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Felwood (52-53) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Winterspring_(53-53)" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\The Hinterlands (50-51)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>51</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="2641" Name="Sprinkle&apos;s Secret Ingredient">
+    <Objective Type="CollectItem" ItemId="8526" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Violet Tragan" Id="141853" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-80.74" Y="-3153.22" Z="103.26" />
+        <Hotspot X="-74.05" Y="-3095.58" Z="105.82" />
+        <Hotspot X="-69.08" Y="-3117.58" Z="100.22" />
+        <Hotspot X="-67.85" Y="-3153.98" Z="97.69" />
+        <Hotspot X="-49.44" Y="-3140.39" Z="100.7" />
+        <Hotspot X="-46.25" Y="-3174.9" Z="100.0" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="580" Name="Whiskey Slim&apos;s Lost Grog">
+    <Objective Type="CollectItem" ItemId="3900" CollectCount="12">
+      <CollectFrom>
+        <GameObject Name="Pupellyverbos Port" Id="2068" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-983.61" Y="-4394.97" Z="10.34" />
+        <Hotspot X="-932.44" Y="-4419.02" Z="2.97" />
+        <Hotspot X="-897.3" Y="-4397.14" Z="9.57" />
+        <Hotspot X="-802.87" Y="-4460.14" Z="8.75" />
+        <Hotspot X="-743.03" Y="-4465.44" Z="9.26" />
+        <Hotspot X="-731.01" Y="-4510.92" Z="6.03" />
+        <Hotspot X="-670.49" Y="-4553.04" Z="5.86" />
+        <Hotspot X="-646.19" Y="-4594.06" Z="9.1" />
+        <Hotspot X="-631.21" Y="-4505.6" Z="14.11" />
+        <Hotspot X="-628.32" Y="-4639.52" Z="10.41" />
+        <Hotspot X="-607.98" Y="-4582.3" Z="9.72" />
+        <Hotspot X="-557.49" Y="-4620.13" Z="10.61" />
+        <Hotspot X="-528.29" Y="-4589.23" Z="9.63" />
+        <Hotspot X="-521.84" Y="-4502.74" Z="10.14" />
+        <Hotspot X="-493.69" Y="-4610.89" Z="7.73" />
+        <Hotspot X="-488.09" Y="-4548.03" Z="10.28" />
+        <Hotspot X="-485.25" Y="-4604.51" Z="7.43" />
+        <Hotspot X="-478.87" Y="-4597.85" Z="8.48" />
+        <Hotspot X="-473.16" Y="-4588.85" Z="8.9" />
+        <Hotspot X="-457.8" Y="-4549.83" Z="6.88" />
+        <Hotspot X="-346.47" Y="-4605.1" Z="8.97" />
+        <Hotspot X="-337.58" Y="-4633.88" Z="9.87" />
+        <Hotspot X="-334.88" Y="-4481.4" Z="10.96" />
+        <Hotspot X="-215.66" Y="-4570.68" Z="11.15" />
+        <Hotspot X="-112.02" Y="-4656.11" Z="6.37" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="3444" Name="The Stone Circle">
+    <Objective Type="CollectItem" ItemId="10556" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Marvon" Id="149036" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-991.67" Y="-3710.49" Z="4.46" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Hinterlands (50-51)" LogColor="Green" />
+    <TurnIn QuestName="Ripple Recovery" QuestId="650" TurnInName="Gilveradin Sunchaser" TurnInId="7801" />
+    <TurnIn QuestName="The Atal&apos;ai Exile" QuestId="1429" TurnInName="Atal&apos;ai Exile" TurnInId="5598" />
+    <PickUp QuestName="Return to Fel&apos;Zerul" QuestId="1444" GiverName="Atal&apos;ai Exile" GiverId="5598" />
+    <Objective QuestName="Sprinkle&apos;s Secret Ingredient" QuestId="2641" Type="CollectItem" ItemId="8526" ItemName="Violet Tragan" CollectCount="1" />
+    <PickUp QuestName="Lard Lost His Lunch" QuestId="7840" GiverName="Lard" GiverId="14731" />
+    <PickUp QuestName="Snapjaws, Mon!" QuestId="7815" GiverName="Katoom the Angler" GiverId="14740" />
+    <PickUp QuestName="Gammerita, Mon!" QuestId="7816" GiverName="Katoom the Angler" GiverId="14740" />
+    <Objective QuestName="Whiskey Slim&apos;s Lost Grog" QuestId="580" Type="CollectItem" ItemId="3900" ItemName="Pupellyverbos Port" CollectCount="12" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7977" MobName="Gammerita" KillCount="1" />
+    <Objective QuestName="Gammerita, Mon!" QuestId="7816" Type="CollectItem" ItemId="19023" ItemName="Katoom&apos;s Best Lure" CollectCount="1" />
+    <Objective QuestName="Lard Lost His Lunch" QuestId="7840" Type="CollectItem" ItemId="19034" ItemName="Lard&apos;s Lunch" CollectCount="1" />
+    <TurnIn QuestName="Cortello&apos;s Riddle" QuestId="626" TurnInName="Gorkas" TurnInId="4314" />
+    <Objective QuestName="Snapjaws, Mon!" QuestId="7815" Type="KillMob" MobId="2505" MobName="Saltwater Snapjaw" KillCount="10" />
+    <TurnIn QuestName="Lard Lost His Lunch" QuestId="7840" TurnInName="Lard" TurnInId="14731" />
+    <TurnIn QuestName="Snapjaws, Mon!" QuestId="7815" TurnInName="Katoom the Angler" TurnInId="14740" />
+    <TurnIn QuestName="Gammerita, Mon!" QuestId="7816" TurnInName="Katoom the Angler" TurnInId="14740" />
+    <TurnIn QuestName="Jes&apos;rimon&apos;s Payment to Jediga" QuestId="3563" TurnInName="Jediga" TurnInId="8587" />
+    <TurnIn QuestName="Magatha&apos;s Payment to Jediga" QuestId="3562" TurnInName="Jediga" TurnInId="8587" />
+    <TurnIn QuestName="Andron&apos;s Payment to Jediga" QuestId="3564" TurnInName="Jediga" TurnInId="8587" />
+    <Objective QuestName="The Stone Circle" QuestId="3444" Type="CollectItem" ItemId="10556" ItemName="Stone Circle" CollectCount="1" />
+    <PickUp QuestName="Volcanic Activity" QuestId="4502" GiverName="Liv Rizzlefix" GiverId="8496" />
+    <TurnIn QuestName="Whiskey Slim&apos;s Lost Grog" QuestId="580" TurnInName="Whiskey Slim" TurnInId="2491" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Hinterlands (50-51) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Blasted_Lands_(51-52)" />
+  </QuestOrder>
+</HBProfile>

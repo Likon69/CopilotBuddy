@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Dustwallow Marsh (41-42)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>42</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="11128" Name="Propaganda War">
+    <Objective Type="CollectItem" ItemId="33008" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Deserter Propaganda" Id="186266" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4088.65" Y="-4541.65" Z="6.38" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1187" Name="Razzeric&apos;s Tweaking">
+    <Objective Type="CollectItem" ItemId="5862" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Gizmorium Shipping Crate" Id="20727" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4010.62" Y="-3813.58" Z="37.34" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11207" Name="Secure the Cargo!">
+    <Objective Type="CollectItem" ItemId="33163" CollectCount="8">
+      <CollectFrom>
+        <GameObject Name="Zeppelin Cargo" Id="186450" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4184.71" Y="-3701.5" Z="52.4" />
+        <Hotspot X="-4151.63" Y="-3588.12" Z="41.55" />
+        <Hotspot X="-4126.17" Y="-3725.11" Z="37.9" />
+        <Hotspot X="-4125.91" Y="-3536.05" Z="34.06" />
+        <Hotspot X="-4104.36" Y="-3687.28" Z="45.0" />
+        <Hotspot X="-4099.83" Y="-3656.84" Z="44.32" />
+        <Hotspot X="-4097.73" Y="-3509.59" Z="37.92" />
+        <Hotspot X="-4094.93" Y="-3790.06" Z="36.38" />
+        <Hotspot X="-4067.84" Y="-3743.76" Z="40.0" />
+        <Hotspot X="-4060.56" Y="-3847.67" Z="36.66" />
+        <Hotspot X="-4050.4" Y="-3494.15" Z="39.43" />
+        <Hotspot X="-4048.43" Y="-3615.76" Z="47.38" />
+        <Hotspot X="-4045.37" Y="-3672.55" Z="43.45" />
+        <Hotspot X="-4015.71" Y="-3502.92" Z="35.97" />
+        <Hotspot X="-4008.56" Y="-3735.68" Z="45.79" />
+        <Hotspot X="-3990.25" Y="-3643.93" Z="44.68" />
+        <Hotspot X="-3987.02" Y="-3688.77" Z="46.96" />
+        <Hotspot X="-3984.55" Y="-3772.04" Z="40.94" />
+        <Hotspot X="-3984.16" Y="-3808.6" Z="36.45" />
+        <Hotspot X="-3963.13" Y="-3492.72" Z="30.86" />
+        <Hotspot X="-3951.3" Y="-3723.65" Z="45.11" />
+        <Hotspot X="-3941.57" Y="-3842.56" Z="35.88" />
+        <Hotspot X="-3934.03" Y="-3691.96" Z="42.79" />
+        <Hotspot X="-3920.49" Y="-3755.76" Z="38.92" />
+        <Hotspot X="-3901.86" Y="-3852.01" Z="47.32" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11139" Name="Secondhand Diving Gear">
+    <Objective Type="CollectItem" ItemId="33038" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Damaged Diving Gear" Id="186273" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-2671.49" Y="-4263.42" Z="3.6" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Dustwallow Marsh (41-42)" LogColor="Green" />
+    <PickUp QuestName="The Deserters" QuestId="1286" GiverName="Captain Garran Vimes" GiverId="4944" />
+    <PickUp QuestName="Tabetha&apos;s Farm" QuestId="11212" GiverName="Guard Byron" GiverId="4921" />
+    <TurnIn QuestName="Morgan Stern" QuestId="1260" TurnInName="Morgan Stern" TurnInId="4794" />
+    <PickUp QuestName="Mudrock Soup and Bugs" QuestId="1204" GiverName="Morgan Stern" GiverId="4794" />
+    <PickUp QuestName="Mission to Mudsprocket" QuestId="11214" GiverName="Lieutenant Aden" GiverId="23951" />
+    <PickUp QuestName="Propaganda War" QuestId="11128" GiverName="Calia Hastings" GiverId="23566" />
+    <PickUp QuestName="This Old Lighthouse" QuestId="11191" GiverName="Sergeant Amelyn" GiverId="23835" />
+    <Objective QuestName="Propaganda War" QuestId="11128" Type="CollectItem" ItemId="33008" ItemName="Deserter Propaganda" CollectCount="1" />
+    <TurnIn QuestName="Propaganda War" QuestId="11128" TurnInName="Calia Hastings" TurnInId="23566" />
+    <PickUp QuestName="Discrediting the Deserters" QuestId="11133" GiverName="Calia Hastings" GiverId="23566" />
+    <TurnIn QuestName="Discrediting the Deserters" QuestId="11133" TurnInName="Calia Hastings" TurnInId="23566" />
+    <PickUp QuestName="The End of the Deserters" QuestId="11134" GiverName="Calia Hastings" GiverId="23566" />
+    <TurnIn QuestName="This Old Lighthouse" QuestId="11191" TurnInName="Babs Fizzletorque" TurnInId="23892" />
+    <PickUp QuestName="Thresher Oil" QuestId="11192" GiverName="Babs Fizzletorque" GiverId="23892" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="4388" MobName="Young Murk Thresher" KillCount="1" />
+    <Objective QuestName="Thresher Oil" QuestId="11192" Type="CollectItem" ItemId="33126" ItemName="Thresher Oil" CollectCount="4" />
+    <Objective QuestName="The End of the Deserters" QuestId="11134" Type="KillMob" MobId="23941" MobName="Gavis Greyshield" KillCount="1" />
+    <TurnIn QuestName="Thresher Oil" QuestId="11192" TurnInName="Babs Fizzletorque" TurnInId="23892" />
+    <PickUp QuestName="Dastardly Denizens of the Deep" QuestId="11193" GiverName="Babs Fizzletorque" GiverId="23892" />
+    <TurnIn QuestName="Dastardly Denizens of the Deep" QuestId="11193" TurnInName="&quot;Dirty&quot; Michael Crowe" TurnInId="23896" />
+    <PickUp QuestName="Is it Real?" QuestId="11194" GiverName="&quot;Dirty&quot; Michael Crowe" GiverId="23896" />
+    <TurnIn QuestName="The End of the Deserters" QuestId="11134" TurnInName="Calia Hastings" TurnInId="23566" />
+    <TurnIn QuestName="Is it Real?" QuestId="11194" TurnInName="Nat Pagle" TurnInId="12919" />
+    <PickUp QuestName="Nat&apos;s Bargain" QuestId="11209" GiverName="Nat Pagle" GiverId="12919" />
+    <Objective QuestName="Nat&apos;s Bargain" QuestId="11209" Type="KillMob" MobId="23928" MobName="Lurking Shark" KillCount="1" />
+    <TurnIn QuestName="Nat&apos;s Bargain" QuestId="11209" TurnInName="Nat Pagle" TurnInId="12919" />
+    <PickUp QuestName="Oh, It&apos;s Real" QuestId="11210" GiverName="Nat Pagle" GiverId="12919" />
+    <PickUp QuestName="Corrosion Prevention" QuestId="11174" GiverName="Moxie Steelgrille" GiverId="23797" />
+    <PickUp QuestName="Secure the Cargo!" QuestId="11207" GiverName="Moxie Steelgrille" GiverId="23797" />
+    <Objective QuestName="Razzeric&apos;s Tweaking" QuestId="1187" Type="CollectItem" ItemId="5862" ItemName="Seaforium Booster" CollectCount="1" />
+    <Objective QuestName="Secure the Cargo!" QuestId="11207" Type="CollectItem" ItemId="33163" ItemName="Zeppelin Cargo" CollectCount="8" />
+    <TurnIn QuestName="Corrosion Prevention" QuestId="11174" TurnInName="Moxie Steelgrille" TurnInId="23797" />
+    <TurnIn QuestName="Secure the Cargo!" QuestId="11207" TurnInName="Moxie Steelgrille" TurnInId="23797" />
+    <PickUp QuestName="Delivery for Drazzit" QuestId="11208" GiverName="Moxie Steelgrille" GiverId="23797" />
+    <TurnIn QuestName="Tabetha&apos;s Farm" QuestId="11212" TurnInName="Tabetha" TurnInId="6546" />
+    <PickUp QuestName="The Reagent Thief" QuestId="11173" GiverName="Apprentice Garion" GiverId="23601" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="5089" MobName="Balos Jacken" KillCount="1" />
+    <TurnIn QuestName="The Deserters" QuestId="1286" TurnInName="Apprentice Garion" TurnInId="23601" />
+    <PickUp QuestName="The Deserters" QuestId="1287" GiverName="Apprentice Garion" GiverId="23601" />
+    <Objective QuestName="The Reagent Thief" QuestId="11173" Type="CollectItem" ItemId="33103" ItemName="Marsh Venom" CollectCount="6" />
+    <TurnIn QuestName="The Reagent Thief" QuestId="11173" TurnInName="Apprentice Garion" TurnInId="23601" />
+    <TurnIn QuestName="Delivery for Drazzit" QuestId="11208" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+    <TurnIn QuestName="Mission to Mudsprocket" QuestId="11214" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+    <PickUp QuestName="WANTED: Goreclaw the Ravenous" QuestId="11184" GiverName="Drazzit Dripvalve" GiverId="23572" />
+    <PickUp QuestName="Bloodfen Feathers" QuestId="11158" GiverName="Brogg" GiverId="23579" />
+    <Objective QuestName="WANTED: Goreclaw the Ravenous" QuestId="11184" Type="KillMob" MobId="23873" MobName="Goreclaw the Ravenous" KillCount="1" />
+    <Objective QuestName="Bloodfen Feathers" QuestId="11158" Type="CollectItem" ItemId="33085" ItemName="Bloodfen Feather" CollectCount="5" />
+    <TurnIn QuestName="WANTED: Goreclaw the Ravenous" QuestId="11184" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+    <TurnIn QuestName="Bloodfen Feathers" QuestId="11158" TurnInName="Brogg" TurnInId="23579" />
+    <TurnIn QuestName="Oh, It&apos;s Real" QuestId="11210" TurnInName="Major Mills" TurnInId="23905" />
+    <PickUp QuestName="Take Down Tethyr!" QuestId="11198" GiverName="Major Mills" GiverId="23905" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23899" MobName="Tethyr" KillCount="1" />
+    <TurnIn QuestName="Take Down Tethyr!" QuestId="11198" TurnInName="Major Mills" TurnInId="23905" />
+    <PickUp QuestName="The Hermit of Swamplight Manor" QuestId="11177" GiverName="Sergeant Amelyn" GiverId="23835" />
+    <TurnIn QuestName="The Deserters" QuestId="1287" TurnInName="Captain Garran Vimes" TurnInId="4944" />
+    <PickUp QuestName="A Grim Connection" QuestId="11143" GiverName="Captain Garran Vimes" GiverId="4944" />
+    <PickUp QuestName="A Disturbing Development" QuestId="11136" GiverName="Lieutenant Aden" GiverId="23951" />
+    <TurnIn QuestName="The Missing Diplomat" QuestId="1265" TurnInName="Archmage Tervosh" TurnInId="4967" />
+    <PickUp QuestName="The Missing Diplomat" QuestId="1266" GiverName="Archmage Tervosh" GiverId="4967" />
+    <TurnIn QuestName="A Disturbing Development" QuestId="11136" TurnInName="Captain Wymor" TurnInId="5086" />
+    <PickUp QuestName="Defias in Dustwallow?" QuestId="11137" GiverName="Captain Wymor" GiverId="5086" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23679" MobName="Garn Mathers" KillCount="1" />
+    <Objective QuestName="Defias in Dustwallow?" QuestId="11137" Type="CollectItem" ItemId="33037" ItemName="Defias Orders" CollectCount="1" />
+    <TurnIn QuestName="Defias in Dustwallow?" QuestId="11137" TurnInName="Captain Wymor" TurnInId="5086" />
+    <PickUp QuestName="Renn McGill" QuestId="11138" GiverName="Captain Wymor" GiverId="5086" />
+    <Objective QuestName="Mudrock Soup and Bugs" QuestId="1204" Type="CollectItem" ItemId="5883" ItemName="Forked Mudrock Tongue" CollectCount="8" />
+    <TurnIn QuestName="Renn McGill" QuestId="11138" TurnInName="Renn McGill" TurnInId="23569" />
+    <PickUp QuestName="Secondhand Diving Gear" QuestId="11139" GiverName="Renn McGill" GiverId="23569" />
+    <Objective QuestName="Secondhand Diving Gear" QuestId="11139" Type="CollectItem" ItemId="33038" ItemName="Damaged Diving Gear" CollectCount="1" />
+    <TurnIn QuestName="Secondhand Diving Gear" QuestId="11139" TurnInName="Renn McGill" TurnInId="23569" />
+    <PickUp QuestName="Recover the Cargo!" QuestId="11140" GiverName="Renn McGill" GiverId="23569" />
+    <Objective QuestName="Recover the Cargo!" QuestId="11140" Type="CollectItem" ItemId="33044" ItemName="Salvage Kit" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33040" ItemName="Repaired Diving Gear" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23701" MobName="Mirefin Ambusher" KillCount="1" />
+    <Objective QuestName="Recover the Cargo!" QuestId="11140" Type="CollectItem" ItemId="33041" ItemName="Salvaged Strongbox" CollectCount="6" />
+    <TurnIn QuestName="Recover the Cargo!" QuestId="11140" TurnInName="Renn McGill" TurnInId="23569" />
+    <PickUp QuestName="Jaina Must Know" QuestId="11141" GiverName="Renn McGill" GiverId="23569" />
+    <Objective QuestName="Hungry!" QuestId="1177" Type="CollectItem" ItemId="5847" ItemName="Mirefin Head" CollectCount="12" />
+    <TurnIn QuestName="The Hermit of Swamplight Manor" QuestId="11177" TurnInName="&quot;Swamp Eye&quot; Jarl" TurnInId="4792" />
+    <PickUp QuestName="Marsh Frog Legs" QuestId="1218" GiverName="&quot;Swamp Eye&quot; Jarl" GiverId="4792" />
+    <PickUp QuestName="What&apos;s Haunting Witch Hill?" QuestId="11180" GiverName="Mordant Grimsby" GiverId="23843" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23979" MobName="Giant Marsh Frog" KillCount="1" />
+    <Objective QuestName="Marsh Frog Legs" QuestId="1218" Type="CollectItem" ItemId="33202" ItemName="Marsh Frog Leg" CollectCount="10" />
+    <TurnIn QuestName="Marsh Frog Legs" QuestId="1218" TurnInName="&quot;Swamp Eye&quot; Jarl" TurnInId="4792" />
+    <PickUp QuestName="Jarl Needs Eyes" QuestId="1206" GiverName="&quot;Swamp Eye&quot; Jarl" GiverId="4792" />
+    <TurnIn QuestName="What&apos;s Haunting Witch Hill?" QuestId="11180" TurnInName="Mordant Grimsby" TurnInId="23843" />
+    <PickUp QuestName="The Witch&apos;s Bane" QuestId="11181" GiverName="Mordant Grimsby" GiverId="23843" />
+    <Objective QuestName="The Witch&apos;s Bane" QuestId="11181" Type="CollectItem" ItemId="33112" ItemName="Witchbane" CollectCount="9" />
+    <TurnIn QuestName="The Witch&apos;s Bane" QuestId="11181" TurnInName="Mordant Grimsby" TurnInId="23843" />
+    <PickUp QuestName="Cleansing Witch Hill" QuestId="11183" GiverName="Mordant Grimsby" GiverId="23843" />
+    <Objective QuestName="Cleansing Witch Hill" QuestId="11183" Type="KillMob" MobId="23864" MobName="Zelfrax" KillCount="1" />
+    <TurnIn QuestName="Cleansing Witch Hill" QuestId="11183" TurnInName="Mordant Grimsby" TurnInId="23843" />
+    <PickUp QuestName="Raptor Captor" QuestId="11146" GiverName="Sergeant Lukas" GiverId="23723" />
+    <TurnIn QuestName="A Grim Connection" QuestId="11143" TurnInName="Captain Darill" TurnInId="23568" />
+    <PickUp QuestName="Confirming the Suspicion" QuestId="11144" GiverName="Captain Darill" GiverId="23568" />
+    <PickUp QuestName="Arms of the Grimtotems" QuestId="11148" GiverName="Captain Darill" GiverId="23568" />
+    <TurnIn QuestName="The Missing Diplomat" QuestId="1266" TurnInName="Private Hendel" TurnInId="4966" />
+    <PickUp QuestName="The Missing Diplomat" QuestId="1324" GiverName="Private Hendel" GiverId="4966" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="4966" MobName="Private Hendel" KillCount="1" />
+    <TurnIn QuestName="The Missing Diplomat" QuestId="1324" TurnInName="Archmage Tervosh" TurnInId="4967" />
+    <PickUp QuestName="The Missing Diplomat" QuestId="1267" GiverName="Lady Jaina Proudmoore" GiverId="4968" />
+    <PickUp QuestName="Stinky&apos;s Escape" QuestId="1222" GiverName="&quot;Stinky&quot; Ignatz" GiverId="4880" />
+    <TurnIn QuestName="Raptor Captor" QuestId="11146" TurnInName="Sergeant Lukas" TurnInId="23723" />
+    <PickUp QuestName="Prisoners of the Grimtotems" QuestId="11145" GiverName="Sergeant Lukas" GiverId="23723" />
+    <PickUp QuestName="Unleash the Raptors" QuestId="11147" GiverName="Sergeant Lukas" GiverId="23723" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33061" ItemName="Grimtotem Key" CollectCount="1" />
+    <Objective QuestName="Arms of the Grimtotems" QuestId="11148" Type="CollectItem" ItemId="33071" ItemName="Blackhoof Armaments" CollectCount="7" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23714" MobName="Grimtotem Elder" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33050" ItemName="Grimtotem Note" CollectCount="4" />
+    <Objective QuestName="Confirming the Suspicion" QuestId="11144" Type="CollectItem" ItemId="33051" ItemName="Grimtotem Battle Plan" CollectCount="1" />
+    <TurnIn QuestName="Prisoners of the Grimtotems" QuestId="11145" TurnInName="Sergeant Lukas" TurnInId="23723" />
+    <TurnIn QuestName="Unleash the Raptors" QuestId="11147" TurnInName="Sergeant Lukas" TurnInId="23723" />
+    <TurnIn QuestName="Confirming the Suspicion" QuestId="11144" TurnInName="Captain Darill" TurnInId="23568" />
+    <TurnIn QuestName="Arms of the Grimtotems" QuestId="11148" TurnInName="Captain Darill" TurnInId="23568" />
+    <PickUp QuestName="Tabetha&apos;s Assistance" QuestId="11149" GiverName="Captain Darill" GiverId="23568" />
+    <Objective QuestName="Jarl Needs Eyes" QuestId="1206" Type="CollectItem" ItemId="5884" ItemName="Unpopped Darkmist Eye" CollectCount="20" />
+    <TurnIn QuestName="Hungry!" QuestId="1177" TurnInName="Mudcrush Durtfeet" TurnInId="4503" />
+    <TurnIn QuestName="Mudrock Soup and Bugs" QuestId="1204" TurnInName="Morgan Stern" TurnInId="4794" />
+    <TurnIn QuestName="Stinky&apos;s Escape" QuestId="1222" TurnInName="Morgan Stern" TurnInId="4794" />
+    <TurnIn QuestName="Jarl Needs Eyes" QuestId="1206" TurnInName="&quot;Swamp Eye&quot; Jarl" TurnInId="4792" />
+    <PickUp QuestName="Jarl Needs a Blade" QuestId="1203" GiverName="&quot;Swamp Eye&quot; Jarl" GiverId="4792" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23841" MobName="Razorspine" KillCount="1" />
+    <Objective QuestName="Jarl Needs a Blade" QuestId="1203" Type="CollectItem" ItemId="33110" ItemName="Razorspine&apos;s Sword" CollectCount="1" />
+    <TurnIn QuestName="Jarl Needs a Blade" QuestId="1203" TurnInName="&quot;Swamp Eye&quot; Jarl" TurnInId="4792" />
+    <TurnIn QuestName="Jaina Must Know" QuestId="11141" TurnInName="Lady Jaina Proudmoore" TurnInId="4968" />
+    <PickUp QuestName="Survey Alcaz Island" QuestId="11142" GiverName="Lady Jaina Proudmoore" GiverId="4968" />
+    <TurnIn QuestName="Survey Alcaz Island" QuestId="11142" TurnInName="Lady Jaina Proudmoore" TurnInId="4968" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Dustwallow Marsh (41-42) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Badlands_(42-43)" />
+  </QuestOrder>
+</HBProfile>

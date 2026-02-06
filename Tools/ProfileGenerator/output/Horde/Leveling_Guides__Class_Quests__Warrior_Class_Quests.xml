@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Class Quests\\Warrior Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="1503" Name="Forged Steel">
+    <Objective Type="CollectItem" ItemId="6534" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Stolen Iron Chest" Id="58369" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-188.27" Y="-2955.17" Z="91.75" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1821" Name="Agamand Heirlooms">
+    <Objective Type="CollectItem" ItemId="7569" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Agamand Weapon Rack" Id="105172" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3023.03" Y="653.81" Z="75.35" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="7568" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Agamand Weapon Rack" Id="105171" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3019.9" Y="688.8" Z="66.45" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="7567" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Agamand Weapon Rack" Id="105170" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3063.67" Y="697.92" Z="66.45" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="7566" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Agamand Weapon Rack" Id="105169" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3058.62" Y="653.59" Z="58.11" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Warrior Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Tauren)">
+      <PickUp QuestName="Veteran Uzzek" QuestId="1505" GiverName="Krang Stonehoof" GiverId="3063" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Troll)">
+    </If>
+    <TurnIn QuestName="Veteran Uzzek" QuestId="1505" TurnInName="Uzzek" TurnInId="5810" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Tauren)">
+      <PickUp QuestName="Path of Defense" QuestId="1498" GiverName="Uzzek" GiverId="5810" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3130" MobName="Thunder Lizard" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Tauren)">
+      <Objective QuestName="Path of Defense" QuestId="1498" Type="CollectItem" ItemId="6486" ItemName="Singed Scale" CollectCount="5" />
+    </If>
+    <TurnIn QuestName="Path of Defense" QuestId="1498" TurnInName="Uzzek" TurnInId="5810" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Tauren)">
+      <PickUp QuestName="Thun&apos;grim Firegaze" QuestId="1502" GiverName="Uzzek" GiverId="5810" />
+    </If>
+    <TurnIn QuestName="Thun&apos;grim Firegaze" QuestId="1502" TurnInName="Thun&apos;grim Firegaze" TurnInId="5878" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Tauren)">
+      <PickUp QuestName="Forged Steel" QuestId="1503" GiverName="Thun&apos;grim Firegaze" GiverId="5878" />
+      <Objective QuestName="Forged Steel" QuestId="1503" Type="CollectItem" ItemId="6534" ItemName="Forged Steel Bars" CollectCount="1" />
+      <TurnIn QuestName="Forged Steel" QuestId="1503" TurnInName="Thun&apos;grim Firegaze" TurnInId="5878" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Speak with Dillinger" QuestId="1818" GiverName="Austil de Mon" GiverId="2131" />
+    </If>
+    <TurnIn QuestName="Speak with Dillinger" QuestId="1818" TurnInName="Deathguard Dillinger" TurnInId="1496" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Ulag the Cleaver" QuestId="1819" GiverName="Deathguard Dillinger" GiverId="1496" />
+      <Objective QuestName="Ulag the Cleaver" QuestId="1819" Type="KillMob" MobId="6390" MobName="Ulag the Cleaver" KillCount="1" />
+    </If>
+    <TurnIn QuestName="Ulag the Cleaver" QuestId="1819" TurnInName="Deathguard Dillinger" TurnInId="1496" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Speak with Coleman" QuestId="1820" GiverName="Deathguard Dillinger" GiverId="1496" />
+    </If>
+    <TurnIn QuestName="Speak with Coleman" QuestId="1820" TurnInName="Coleman Farthing" TurnInId="1500" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Agamand Heirlooms" QuestId="1821" GiverName="Coleman Farthing" GiverId="1500" />
+      <Objective QuestName="Agamand Heirlooms" QuestId="1821" Type="CollectItem" ItemId="7569" ItemName="Agamand Family Mace" CollectCount="1" />
+      <Objective QuestName="Agamand Heirlooms" QuestId="1821" Type="CollectItem" ItemId="7568" ItemName="Agamand Family Dagger" CollectCount="1" />
+      <Objective QuestName="Agamand Heirlooms" QuestId="1821" Type="CollectItem" ItemId="7567" ItemName="Agamand Family Axe" CollectCount="1" />
+      <Objective QuestName="Agamand Heirlooms" QuestId="1821" Type="CollectItem" ItemId="7566" ItemName="Agamand Family Sword" CollectCount="1" />
+      <TurnIn QuestName="Agamand Heirlooms" QuestId="1821" TurnInName="Coleman Farthing" TurnInId="1500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="The Islander" QuestId="1718" GiverName="Sorek" GiverId="3354" />
+    </If>
+    <TurnIn QuestName="The Islander" QuestId="1718" TurnInName="Klannoc Macleod" TurnInId="6236" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="The Affray" QuestId="1719" GiverName="Klannoc Macleod" GiverId="6236" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="6240" MobName="Affray Challenger" KillCount="1" />
+    <Objective QuestName="The Affray" QuestId="1719" Type="KillMob" MobId="6238" MobName="Big Will" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <TurnIn QuestName="The Affray" QuestId="1719" TurnInName="Klannoc Macleod" TurnInId="6236" />
+    </If>
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="3357" ItemName="Liferoot" CollectCount="8" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="The Windwatcher" QuestId="1791" GiverName="Klannoc Macleod" GiverId="6236" />
+    </If>
+    <TurnIn QuestName="The Windwatcher" QuestId="1791" TurnInName="Bath&apos;rah the Windwatcher" TurnInId="6176" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="Cyclonian" QuestId="1712" GiverName="Bath&apos;rah the Windwatcher" GiverId="6176" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2760" MobName="Burning Exile" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="4479" ItemName="Burning Charm" CollectCount="8" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2762" MobName="Thundering Exile" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="4480" ItemName="Thundering Charm" CollectCount="8" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2761" MobName="Cresting Exile" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="4481" ItemName="Cresting Charm" CollectCount="8" />
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="3901" ItemName="Bloodscalp Tusk" CollectCount="30" />
+    </If>
+    <PickUp QuestName="Essence of the Exile" QuestId="1714" GiverName="Bath&apos;rah the Windwatcher" GiverId="6176" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="6851" ItemName="Essence of the Exile" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Cyclonian" QuestId="1712" TurnInName="Bath&apos;rah the Windwatcher" TurnInId="6176" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="The Summoning" QuestId="1713" GiverName="Bath&apos;rah the Windwatcher" GiverId="6176" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="6239" MobName="Cyclonian" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="The Summoning" QuestId="1713" Type="CollectItem" ItemId="6894" ItemName="Whirlwind Heart" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="The Summoning" QuestId="1713" TurnInName="Bath&apos;rah the Windwatcher" TurnInId="6176" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="Whirlwind Weapon" QuestId="1792" GiverName="Bath&apos;rah the Windwatcher" GiverId="6176" />
+      <PickUp QuestName="A Troubled Spirit" QuestId="8417" GiverName="Sorek" GiverId="3354" />
+    </If>
+    <TurnIn QuestName="A Troubled Spirit" QuestId="8417" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="Warrior Kinship" QuestId="8423" GiverName="Fallen Hero of the Horde" GiverId="7572" />
+    </If>
+    <Objective QuestName="Warrior Kinship" QuestId="8423" Type="KillMob" MobId="5993" MobName="Helboar" KillCount="7" />
+    <TurnIn QuestName="Warrior Kinship" QuestId="8423" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="War on the Shadowsworn" QuestId="8424" GiverName="Fallen Hero of the Horde" GiverId="7572" />
+      <Objective QuestName="War on the Shadowsworn" QuestId="8424" Type="KillMob" MobId="6006" MobName="Shadowsworn Adept" KillCount="20" />
+      <Objective QuestName="War on the Shadowsworn" QuestId="8424" Type="KillMob" MobId="6004" MobName="Shadowsworn Cultist" KillCount="10" />
+      <Objective QuestName="War on the Shadowsworn" QuestId="8424" Type="KillMob" MobId="6005" MobName="Shadowsworn Thug" KillCount="20" />
+    </If>
+    <TurnIn QuestName="War on the Shadowsworn" QuestId="8424" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="Voodoo Feathers" QuestId="8425" GiverName="Fallen Hero of the Horde" GiverId="7572" />
+    </If>
+    <Objective QuestName="Voodoo Feathers" QuestId="8425" Type="CollectItem" ItemId="20606" ItemName="Amber Voodoo Feather" CollectCount="2" />
+    <Objective QuestName="Voodoo Feathers" QuestId="8425" Type="CollectItem" ItemId="20607" ItemName="Blue Voodoo Feather" CollectCount="2" />
+    <Objective QuestName="Voodoo Feathers" QuestId="8425" Type="CollectItem" ItemId="20608" ItemName="Green Voodoo Feather" CollectCount="2" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <TurnIn QuestName="Voodoo Feathers" QuestId="8425" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Warrior Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

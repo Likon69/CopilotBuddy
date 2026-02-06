@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Tanaris (49-50)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>50</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Tanaris (49-50)" LogColor="Green" />
+    <PickUp QuestName="Thistleshrub Valley" QuestId="3362" GiverName="Tran&apos;rek" GiverId="7876" />
+    <PickUp QuestName="Super Sticky" QuestId="4504" GiverName="Tran&apos;rek" GiverId="7876" />
+    <PickUp QuestName="The Dunemaul Compound" QuestId="5863" GiverName="Andi Lynn" GiverId="11758" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="8564" ItemName="Hippogryph Egg" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10699" ItemName="Yeh&apos;kinya&apos;s Bramble" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11727" ItemName="Goodsteel Ledger" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11723" ItemName="Goodsteel&apos;s Balanced Flameberge" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11725" ItemName="Solid Crystal Leg Shaft" CollectCount="20" />
+    <TurnIn QuestName="Into the Field" QuestId="243" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <PickUp QuestName="Slake That Thirst" QuestId="379" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
+    <PickUp QuestName="The Super Egg-O-Matic" QuestId="2741" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
+    <PickUp QuestName="The Thirsty Goblin" QuestId="2605" GiverName="Marin Noggenfogger" GiverId="7564" />
+    <TurnIn QuestName="Ledger from Tanaris" QuestId="4450" TurnInName="Krinkle Goodsteel" TurnInId="5411" />
+    <PickUp QuestName="Noxious Lair Investigation" QuestId="82" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    <TurnIn QuestName="The Sunken Temple" QuestId="3380" TurnInName="Marvon Rivetseeker" TurnInId="7771" />
+    <PickUp QuestName="The Stone Circle" QuestId="3444" GiverName="Marvon Rivetseeker" GiverId="7771" />
+    <PickUp QuestName="Gahz&apos;ridian" QuestId="3161" GiverName="Marvon Rivetseeker" GiverId="7771" />
+    <Objective QuestName="Noxious Lair Investigation" QuestId="82" Type="CollectItem" ItemId="8587" ItemName="Centipaar Insect Parts" CollectCount="5" />
+    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="12046" MobName="Gor&apos;marok the Ravager" KillCount="1" />
+    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="5474" MobName="Dunemaul Brute" KillCount="10" />
+    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="5472" MobName="Dunemaul Enforcer" KillCount="10" />
+    <Objective QuestName="Gahz&apos;ridian" QuestId="3161" Type="CollectItem" ItemId="8443" ItemName="Gahz&apos;ridian Ornament" CollectCount="30" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="5481" MobName="Thistleshrub Dew Collector" KillCount="1" />
+    <Objective QuestName="The Thirsty Goblin" QuestId="2605" Type="CollectItem" ItemId="8428" ItemName="Laden Dew Gland" CollectCount="1" />
+    <Objective QuestName="Thistleshrub Valley" QuestId="3362" Type="KillMob" MobId="5490" MobName="Gnarled Thistleshrub" KillCount="8" />
+    <Objective QuestName="Thistleshrub Valley" QuestId="3362" Type="KillMob" MobId="5485" MobName="Thistleshrub Rootshaper" KillCount="8" />
+    <PickUp QuestName="Tooga&apos;s Quest" QuestId="1560" GiverName="Marvon Rivetseeker" GiverId="7771" />
+    <TurnIn QuestName="Tooga&apos;s Quest" QuestId="1560" TurnInName="Torta" TurnInId="6015" />
+    <PickUp QuestName="Yuka Screwspigot" QuestId="4324" GiverName="Yorba Screwspigot" GiverId="9706" />
+    <TurnIn QuestName="Screecher Spirits" QuestId="3520" TurnInName="Yeh&apos;kinya" TurnInId="8579" />
+    <Objective QuestName="Slake That Thirst" QuestId="379" Type="CollectItem" ItemId="8483" ItemName="Wastewander Water Pouch" CollectCount="5" />
+    <TurnIn QuestName="The Thirsty Goblin" QuestId="2605" TurnInName="Marin Noggenfogger" TurnInId="7564" />
+    <PickUp QuestName="In Good Taste" QuestId="2606" GiverName="Marin Noggenfogger" GiverId="7564" />
+    <TurnIn QuestName="Slake That Thirst" QuestId="379" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <TurnIn QuestName="In Good Taste" QuestId="2606" TurnInName="Sprinkle" TurnInId="7583" />
+    <PickUp QuestName="Sprinkle&apos;s Secret Ingredient" QuestId="2641" GiverName="Sprinkle" GiverId="7583" />
+    <TurnIn QuestName="Noxious Lair Investigation" QuestId="82" TurnInName="Alchemist Pestlezugg" TurnInId="5594" />
+    <PickUp QuestName="The Scrimshank Redemption" QuestId="10" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    <TurnIn QuestName="Thistleshrub Valley" QuestId="3362" TurnInName="Tran&apos;rek" TurnInId="7876" />
+    <TurnIn QuestName="The Dunemaul Compound" QuestId="5863" TurnInName="Andi Lynn" TurnInId="11758" />
+    <TurnIn QuestName="Gahz&apos;ridian" QuestId="3161" TurnInName="Marvon Rivetseeker" TurnInId="7771" />
+    <Objective QuestName="The Scrimshank Redemption" QuestId="10" Type="CollectItem" ItemId="8593" ItemName="Scrimshank&apos;s Surveying Gear" CollectCount="1" />
+    <TurnIn QuestName="The Scrimshank Redemption" QuestId="10" TurnInName="Senior Surveyor Fizzledowser" TurnInId="7724" />
+    <PickUp QuestName="Insect Part Analysis" QuestId="110" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    <TurnIn QuestName="Insect Part Analysis" QuestId="110" TurnInName="Alchemist Pestlezugg" TurnInId="5594" />
+    <PickUp QuestName="Insect Part Analysis" QuestId="113" GiverName="Alchemist Pestlezugg" GiverId="5594" />
+    <TurnIn QuestName="Insect Part Analysis" QuestId="113" TurnInName="Senior Surveyor Fizzledowser" TurnInId="7724" />
+    <PickUp QuestName="Rise of the Silithid" QuestId="32" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10695" ItemName="Box of Empty Vials" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="6193" ItemName="Bundle of Atal&apos;ai Artifacts" CollectCount="1" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Tanaris (49-50) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Azshara_(50-50)" />
+  </QuestOrder>
+</HBProfile>

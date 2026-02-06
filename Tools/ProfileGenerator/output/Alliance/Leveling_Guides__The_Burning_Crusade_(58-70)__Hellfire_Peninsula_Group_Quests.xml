@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\The Burning Crusade (58-70)\\Hellfire Peninsula Group Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Hellfire Peninsula Group Quests" LogColor="Green" />
+    <PickUp QuestName="Through the Dark Portal" QuestId="10119" GiverName="Watch Commander Relthorn Netherwane" GiverId="16841" />
+    <TurnIn QuestName="Through the Dark Portal" QuestId="10119" TurnInName="Commander Duron" TurnInId="19229" />
+    <PickUp QuestName="Arrival in Outland" QuestId="10288" GiverName="Commander Duron" GiverId="19229" />
+    <TurnIn QuestName="Arrival in Outland" QuestId="10288" TurnInName="Amish Wildhammer" TurnInId="18931" />
+    <PickUp QuestName="Journey to Honor Hold" QuestId="10140" GiverName="Amish Wildhammer" GiverId="18931" />
+    <TurnIn QuestName="Journey to Honor Hold" QuestId="10140" TurnInName="Marshal Isildor" TurnInId="19308" />
+    <PickUp QuestName="Force Commander Danath" QuestId="10254" GiverName="Marshal Isildor" GiverId="19308" />
+    <TurnIn QuestName="Force Commander Danath" QuestId="10254" TurnInName="Force Commander Danath Trollbane" TurnInId="16819" />
+    <PickUp QuestName="Know your Enemy" QuestId="10160" GiverName="Force Commander Danath Trollbane" GiverId="16819" />
+    <TurnIn QuestName="Know your Enemy" QuestId="10160" TurnInName="Lieutenant Amadi" TurnInId="16820" />
+    <PickUp QuestName="Fel Orc Scavengers" QuestId="10482" GiverName="Lieutenant Amadi" GiverId="16820" />
+    <TurnIn QuestName="Fel Orc Scavengers" QuestId="10482" TurnInName="Lieutenant Amadi" TurnInId="16820" />
+    <PickUp QuestName="Ill Omens" QuestId="10483" GiverName="Lieutenant Amadi" GiverId="16820" />
+    <Objective QuestName="Ill Omens" QuestId="10483" Type="CollectItem" ItemId="30157" ItemName="Cursed Talisman" CollectCount="1" />
+    <TurnIn QuestName="Ill Omens" QuestId="10483" TurnInName="Corporal Ironridge" TurnInId="21133" />
+    <PickUp QuestName="Cursed Talismans" QuestId="10484" GiverName="Corporal Ironridge" GiverId="21133" />
+    <Objective QuestName="Cursed Talismans" QuestId="10484" Type="CollectItem" ItemId="30157" ItemName="Cursed Talisman" CollectCount="12" />
+    <TurnIn QuestName="Cursed Talismans" QuestId="10484" TurnInName="Corporal Ironridge" TurnInId="21133" />
+    <PickUp QuestName="Warlord of the Bleeding Hollow" QuestId="10485" GiverName="Corporal Ironridge" GiverId="21133" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="16964" MobName="Warlord Morkh" KillCount="1" />
+    <Objective QuestName="Warlord of the Bleeding Hollow" QuestId="10485" Type="CollectItem" ItemId="30158" ItemName="Morkh&apos;s Shattered Armor" CollectCount="1" />
+    <TurnIn QuestName="Warlord of the Bleeding Hollow" QuestId="10485" TurnInName="Corporal Ironridge" TurnInId="21133" />
+    <PickUp QuestName="Return to Honor Hold" QuestId="10903" GiverName="Corporal Ironridge" GiverId="21133" />
+    <TurnIn QuestName="Return to Honor Hold" QuestId="10903" TurnInName="Assistant Klatu" TurnInId="22430" />
+    <PickUp QuestName="Fel Spirits" QuestId="10909" GiverName="Assistant Klatu" GiverId="22430" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="16878" MobName="Shattered Hand Berserker" KillCount="1" />
+    <Objective QuestName="Fel Spirits" QuestId="10909" Type="KillMob" MobId="22454" MobName="Fel Spirit" KillCount="1" />
+    <TurnIn QuestName="Fel Spirits" QuestId="10909" TurnInName="Assistant Klatu" TurnInId="22430" />
+    <PickUp QuestName="The Exorcism of Colonel Jules" QuestId="10935" GiverName="Assistant Klatu" GiverId="22430" />
+    <TurnIn QuestName="The Exorcism of Colonel Jules" QuestId="10935" TurnInName="Assistant Klatu" TurnInId="22430" />
+    <PickUp QuestName="Trollbane is Looking for You" QuestId="10936" GiverName="Assistant Klatu" GiverId="22430" />
+    <TurnIn QuestName="Trollbane is Looking for You" QuestId="10936" TurnInName="Force Commander Danath Trollbane" TurnInId="16819" />
+    <PickUp QuestName="Drill the Drillmaster" QuestId="10937" GiverName="Force Commander Danath Trollbane" GiverId="16819" />
+    <Objective QuestName="Drill the Drillmaster" QuestId="10937" Type="KillMob" MobId="19312" MobName="Drillmaster Zurok" KillCount="1" />
+    <TurnIn QuestName="Drill the Drillmaster" QuestId="10937" TurnInName="Force Commander Danath Trollbane" TurnInId="16819" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19298" MobName="Warbringer Arix&apos;Amal" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="29588" ItemName="Burning Legion Missive" CollectCount="1" />
+    <PickUp QuestName="The Dark Missive" QuestId="10395" GiverName="Force Commander Danath Trollbane" GiverId="16819" />
+    <TurnIn QuestName="The Dark Missive" QuestId="10395" TurnInName="Warp-Scryer Kryv" TurnInId="16839" />
+    <PickUp QuestName="The Heart of Darkness" QuestId="10399" GiverName="Warp-Scryer Kryv" GiverId="16839" />
+    <Objective QuestName="The Heart of Darkness" QuestId="10399" Type="KillMob" MobId="16951" MobName="Terrorfiend" KillCount="10" />
+    <TurnIn QuestName="The Heart of Darkness" QuestId="10399" TurnInName="Warp-Scryer Kryv" TurnInId="16839" />
+    <PickUp QuestName="Overlord" QuestId="10400" GiverName="Force Commander Danath Trollbane" GiverId="16819" />
+    <Objective QuestName="Overlord" QuestId="10400" Type="KillMob" MobId="19191" MobName="Arazzius the Cruel" KillCount="1" />
+    <TurnIn QuestName="Overlord" QuestId="10400" TurnInName="Force Commander Danath Trollbane" TurnInId="16819" />
+    <PickUp QuestName="The Rock Flayer Matriarch" QuestId="9490" GiverName="Ikan" GiverId="16799" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17057" MobName="Blacktalon the Savage" KillCount="1" />
+    <Objective QuestName="The Rock Flayer Matriarch" QuestId="9490" Type="CollectItem" ItemId="23687" ItemName="Blacktalon&apos;s Claws" CollectCount="1" />
+    <TurnIn QuestName="The Rock Flayer Matriarch" QuestId="9490" TurnInName="Ikan" TurnInId="16799" />
+    <PickUp QuestName="Colossal Menace" QuestId="10132" GiverName="Tola&apos;thion" GiverId="19293" />
+    <Objective QuestName="Colossal Menace" QuestId="10132" Type="KillMob" MobId="19188" MobName="Raging Colossus" KillCount="5" />
+    <Objective QuestName="Colossal Menace" QuestId="10132" Type="KillMob" MobId="19188" MobName="Raging Colossus" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="29476" ItemName="Crimson Crystal Shard" CollectCount="1" />
+    <PickUp QuestName="Crimson Crystal Clue" QuestId="10134" GiverName="Tola&apos;thion" GiverId="19293" />
+    <TurnIn QuestName="Colossal Menace" QuestId="10132" TurnInName="Tola&apos;thion" TurnInId="19293" />
+    <TurnIn QuestName="Crimson Crystal Clue" QuestId="10134" TurnInName="Tola&apos;thion" TurnInId="19293" />
+    <PickUp QuestName="The Earthbinder" QuestId="10349" GiverName="Tola&apos;thion" GiverId="19293" />
+    <TurnIn QuestName="The Earthbinder" QuestId="10349" TurnInName="Earthbinder Galandria Nightbreeze" TurnInId="19294" />
+    <PickUp QuestName="Natural Rememdies" QuestId="10351" GiverName="Earthbinder Galandria Nightbreeze" GiverId="19294" />
+    <Objective QuestName="Natural Rememdies" QuestId="10351" Type="KillMob" MobId="19305" MobName="Goliathon" KillCount="1" />
+    <TurnIn QuestName="Natural Rememdies" QuestId="10351" TurnInName="Earthbinder Galandria Nightbreeze" TurnInId="19294" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Hellfire Peninsula Group Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

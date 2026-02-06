@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Starter Guides (1-11)\\Draenei Starter (1-11)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>11</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="9799" Name="Botanical Legwork">
+    <Objective Type="CollectItem" ItemId="24416" CollectCount="3">
+      <CollectFrom>
+        <GameObject Name="Corrupted Flower" Id="182127" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4249.06" Y="-13496.8" Z="47.89" />
+        <Hotspot X="-4248.36" Y="-13494.3" Z="47.85" />
+        <Hotspot X="-4242.54" Y="-13461.3" Z="45.96" />
+        <Hotspot X="-4231.02" Y="-13482.6" Z="46.14" />
+        <Hotspot X="-4228.42" Y="-13525.7" Z="48.07" />
+        <Hotspot X="-4220.19" Y="-13452.1" Z="45.14" />
+        <Hotspot X="-4210.19" Y="-13489.5" Z="46.61" />
+        <Hotspot X="-4205.75" Y="-13542.3" Z="49.01" />
+        <Hotspot X="-4203.69" Y="-13440.4" Z="44.15" />
+        <Hotspot X="-4202.67" Y="-13415.2" Z="46.35" />
+        <Hotspot X="-4189.38" Y="-13506.4" Z="48.55" />
+        <Hotspot X="-4180.06" Y="-13441.6" Z="44.28" />
+        <Hotspot X="-4171.02" Y="-13548.7" Z="50.73" />
+        <Hotspot X="-4165.84" Y="-13464.1" Z="47.69" />
+        <Hotspot X="-4159.33" Y="-13431.7" Z="48.07" />
+        <Hotspot X="-4152.15" Y="-13538.9" Z="51.33" />
+        <Hotspot X="-4149.41" Y="-13494.4" Z="48.51" />
+        <Hotspot X="-4148.97" Y="-13447.3" Z="47.55" />
+        <Hotspot X="-4125.8" Y="-13432.8" Z="50.33" />
+        <Hotspot X="-4124.75" Y="-13495.9" Z="50.12" />
+        <Hotspot X="-4122.9" Y="-13549.0" Z="51.97" />
+        <Hotspot X="-4117.2" Y="-13472.6" Z="46.05" />
+        <Hotspot X="-4110.52" Y="-13417.2" Z="53.74" />
+        <Hotspot X="-4100.96" Y="-13451.5" Z="50.91" />
+        <Hotspot X="-4089.15" Y="-13542.5" Z="54.41" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9305" Name="Spare Parts">
+    <Objective Type="CollectItem" ItemId="22978" CollectCount="4">
+      <CollectFrom>
+        <GameObject Name="Emitter Spare Part" Id="181283" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4669.27" Y="-13969.6" Z="87.42" />
+        <Hotspot X="-4664.73" Y="-14010.5" Z="90.12" />
+        <Hotspot X="-4653.51" Y="-13962.2" Z="86.33" />
+        <Hotspot X="-4651.87" Y="-14013.8" Z="89.33" />
+        <Hotspot X="-4631.32" Y="-13934.2" Z="86.07" />
+        <Hotspot X="-4627.41" Y="-13987.1" Z="83.26" />
+        <Hotspot X="-4608.13" Y="-14000.2" Z="86.5" />
+        <Hotspot X="-4564.55" Y="-13958.7" Z="86.64" />
+        <Hotspot X="-4562.02" Y="-13915.8" Z="88.29" />
+        <Hotspot X="-4553.59" Y="-13967.1" Z="86.41" />
+        <Hotspot X="-4521.63" Y="-14027.0" Z="109.96" />
+        <Hotspot X="-4437.34" Y="-13797.3" Z="82.38" />
+        <Hotspot X="-4424.19" Y="-13799.4" Z="82.31" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9506" Name="A Small Start">
+    <Objective Type="CollectItem" ItemId="23739" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Nautical Map" Id="181674" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4595.62" Y="-12885.6" Z="8.09" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="23738" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Nautical Compass" Id="181675" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4630.08" Y="-12925.3" Z="9.63" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9530" Name="I&apos;ve Got a Plant">
+    <Objective Type="CollectItem" ItemId="23790" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Hollowed Out Tree" Id="181696" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4576.18" Y="-12369.7" Z="20.42" />
+        <Hotspot X="-4508.17" Y="-12506.8" Z="4.34" />
+        <Hotspot X="-4507.92" Y="-12454.3" Z="3.55" />
+        <Hotspot X="-4483.82" Y="-12369.6" Z="16.94" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="23791" CollectCount="5">
+      <CollectFrom>
+        <GameObject Name="Pile of Leaves" Id="181697" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4817.1" Y="-12079.9" Z="42.59" />
+        <Hotspot X="-4809.38" Y="-11874.4" Z="23.78" />
+        <Hotspot X="-4747.33" Y="-12046.5" Z="47.31" />
+        <Hotspot X="-4728.14" Y="-12125.3" Z="39.18" />
+        <Hotspot X="-4707.56" Y="-12327.6" Z="11.62" />
+        <Hotspot X="-4680.85" Y="-12054.3" Z="40.38" />
+        <Hotspot X="-4676.76" Y="-12004.2" Z="39.41" />
+        <Hotspot X="-4675.85" Y="-12123.3" Z="37.35" />
+        <Hotspot X="-4664.17" Y="-12313.8" Z="13.99" />
+        <Hotspot X="-4662.75" Y="-12230.0" Z="22.99" />
+        <Hotspot X="-4616.55" Y="-12649.1" Z="4.2" />
+        <Hotspot X="-4613.95" Y="-12177.1" Z="34.57" />
+        <Hotspot X="-4612.9" Y="-12544.4" Z="10.5" />
+        <Hotspot X="-4589.63" Y="-12386.3" Z="17.04" />
+        <Hotspot X="-4587.67" Y="-12593.2" Z="10.56" />
+        <Hotspot X="-4586.5" Y="-12231.0" Z="23.31" />
+        <Hotspot X="-4582.52" Y="-12282.5" Z="15.73" />
+        <Hotspot X="-4553.12" Y="-12580.8" Z="13.64" />
+        <Hotspot X="-4551.62" Y="-12467.4" Z="7.34" />
+        <Hotspot X="-4545.37" Y="-12720.0" Z="10.57" />
+        <Hotspot X="-4526.66" Y="-12772.7" Z="11.77" />
+        <Hotspot X="-4519.53" Y="-12822.0" Z="14.98" />
+        <Hotspot X="-4509.7" Y="-12551.7" Z="5.5" />
+        <Hotspot X="-4477.13" Y="-12761.0" Z="16.59" />
+        <Hotspot X="-4473.92" Y="-12508.0" Z="0.57" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9473" Name="An Alternative Alternative">
+    <Objective Type="CollectItem" ItemId="23692" CollectCount="5">
+      <CollectFrom>
+        <GameObject Name="Azure Snapdragon" Id="181644" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4450.94" Y="-12106.2" Z="5.56" />
+        <Hotspot X="-4417.68" Y="-12617.9" Z="18.45" />
+        <Hotspot X="-4416.73" Y="-12617.0" Z="18.37" />
+        <Hotspot X="-4401.47" Y="-12539.6" Z="7.65" />
+        <Hotspot X="-4401.24" Y="-12637.0" Z="19.28" />
+        <Hotspot X="-4394.02" Y="-12483.8" Z="8.17" />
+        <Hotspot X="-4390.54" Y="-12539.9" Z="7.1" />
+        <Hotspot X="-4390.34" Y="-12638.9" Z="19.19" />
+        <Hotspot X="-4385.8" Y="-12427.6" Z="15.78" />
+        <Hotspot X="-4385.3" Y="-12505.4" Z="11.08" />
+        <Hotspot X="-4383.85" Y="-12275.6" Z="10.36" />
+        <Hotspot X="-4378.43" Y="-12702.8" Z="16.88" />
+        <Hotspot X="-4377.04" Y="-12411.0" Z="15.43" />
+        <Hotspot X="-4372.12" Y="-12709.0" Z="16.51" />
+        <Hotspot X="-4371.19" Y="-12683.5" Z="19.09" />
+        <Hotspot X="-4364.15" Y="-12747.4" Z="17.82" />
+        <Hotspot X="-4349.13" Y="-12650.3" Z="19.09" />
+        <Hotspot X="-4348.53" Y="-12316.6" Z="10.71" />
+        <Hotspot X="-4346.82" Y="-12405.9" Z="17.61" />
+        <Hotspot X="-4334.46" Y="-12715.6" Z="18.15" />
+        <Hotspot X="-4332.38" Y="-12505.8" Z="18.0" />
+        <Hotspot X="-4319.21" Y="-12540.2" Z="26.89" />
+        <Hotspot X="-4307.58" Y="-12662.2" Z="22.83" />
+        <Hotspot X="-4294.28" Y="-12664.4" Z="22.97" />
+        <Hotspot X="-4293.79" Y="-12385.5" Z="19.01" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9523" Name="Precious and Fragile Things Need Special Handling">
+    <Objective Type="CollectItem" ItemId="23779" CollectCount="8">
+      <CollectFrom>
+        <GameObject Name="Ancient Relic" Id="181683" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-5052.51" Y="-11813.8" Z="-1.31" />
+        <Hotspot X="-5002.21" Y="-11662.6" Z="8.13" />
+        <Hotspot X="-4970.85" Y="-11753.4" Z="13.99" />
+        <Hotspot X="-4967.47" Y="-11789.2" Z="12.45" />
+        <Hotspot X="-4962.86" Y="-11696.4" Z="11.21" />
+        <Hotspot X="-4956.34" Y="-11719.6" Z="10.93" />
+        <Hotspot X="-4953.43" Y="-11672.2" Z="10.97" />
+        <Hotspot X="-4951.62" Y="-11733.3" Z="23.27" />
+        <Hotspot X="-4947.43" Y="-11931.1" Z="11.71" />
+        <Hotspot X="-4946.98" Y="-11634.5" Z="12.54" />
+        <Hotspot X="-4938.65" Y="-11925.2" Z="12.66" />
+        <Hotspot X="-4935.91" Y="-11782.6" Z="23.51" />
+        <Hotspot X="-4934.63" Y="-11888.8" Z="12.13" />
+        <Hotspot X="-4930.14" Y="-11648.7" Z="11.25" />
+        <Hotspot X="-4929.92" Y="-12135.6" Z="-3.75" />
+        <Hotspot X="-4926.33" Y="-11752.8" Z="22.84" />
+        <Hotspot X="-4922.17" Y="-11718.3" Z="12.3" />
+        <Hotspot X="-4920.83" Y="-11933.5" Z="17.28" />
+        <Hotspot X="-4914.24" Y="-11949.4" Z="18.16" />
+        <Hotspot X="-4913.11" Y="-11781.9" Z="24.75" />
+        <Hotspot X="-4905.39" Y="-11769.7" Z="23.83" />
+        <Hotspot X="-4902.33" Y="-11807.3" Z="21.83" />
+        <Hotspot X="-4901.67" Y="-11670.4" Z="15.93" />
+        <Hotspot X="-4901.65" Y="-11749.0" Z="23.79" />
+        <Hotspot X="-4900.23" Y="-11905.0" Z="19.33" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-11)\\Draenei Starter (1-11)" LogColor="Green" />
+    <If Condition="(Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="You Survived!" QuestId="9279" GiverName="Megelon" GiverId="16475" />
+    </If>
+    <TurnIn QuestName="You Survived!" QuestId="9279" TurnInName="Proenitus" TurnInId="16477" />
+    <If Condition="(Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Replenishing the Healing Crystals" QuestId="9280" GiverName="Proenitus" GiverId="16477" />
+    </If>
+    <If Condition="!((Me.Race == WoWRace.Draenei))">
+      <PickUp QuestName="Replenishing the Healing Crystals" QuestId="9369" GiverName="Proenitus" GiverId="16477" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="16520" MobName="Vale Moth" KillCount="1" />
+    <Objective QuestName="Replenishing the Healing Crystals" QuestId="9280" Type="CollectItem" ItemId="22889" ItemName="Vial of Moth Blood" CollectCount="8" />
+    <Objective QuestName="Replenishing the Healing Crystals" QuestId="9369" Type="CollectItem" ItemId="22899" ItemName="Vial of Moth Blood" CollectCount="8" />
+    <TurnIn QuestName="Replenishing the Healing Crystals" QuestId="9280" TurnInName="Proenitus" TurnInId="16477" />
+    <TurnIn QuestName="Replenishing the Healing Crystals" QuestId="9369" TurnInName="Proenitus" TurnInId="16477" />
+    <PickUp QuestName="Urgent Delivery!" QuestId="9409" GiverName="Proenitus" GiverId="16477" />
+    <TurnIn QuestName="Urgent Delivery!" QuestId="9409" TurnInName="Zalduun" TurnInId="16502" />
+    <If Condition="(Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Rescue the Survivors!" QuestId="9283" GiverName="Zalduun" GiverId="16502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Hunter Training" QuestId="9288" GiverName="Keilnei" GiverId="16499" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Paladin Training" QuestId="9287" GiverName="Aurelon" GiverId="16501" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Warrior Training" QuestId="9289" GiverName="Kore" GiverId="16503" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Shaman Training" QuestId="9421" GiverName="Firmanvaar" GiverId="17089" />
+    </If>
+    <PickUp QuestName="Botanist Taerix" QuestId="9371" GiverName="Proenitus" GiverId="16477" />
+    <TurnIn QuestName="Botanist Taerix" QuestId="9371" TurnInName="Botanist Taerix" TurnInId="16514" />
+    <PickUp QuestName="Volatile Mutations" QuestId="10302" GiverName="Botanist Taerix" GiverId="16514" />
+    <Objective QuestName="Volatile Mutations" QuestId="10302" Type="KillMob" MobId="16516" MobName="Volatile Mutation" KillCount="8" />
+    <TurnIn QuestName="Volatile Mutations" QuestId="10302" TurnInName="Botanist Taerix" TurnInId="16514" />
+    <PickUp QuestName="What Must Be Done..." QuestId="9293" GiverName="Botanist Taerix" GiverId="16514" />
+    <PickUp QuestName="Botanical Legwork" QuestId="9799" GiverName="Apprentice Vishael" GiverId="20233" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="16517" MobName="Mutated Root Lasher" KillCount="1" />
+    <Objective QuestName="What Must Be Done..." QuestId="9293" Type="CollectItem" ItemId="22934" ItemName="Lasher Sample" CollectCount="10" />
+    <Objective QuestName="Botanical Legwork" QuestId="9799" Type="CollectItem" ItemId="24416" ItemName="Corrupted Flower" CollectCount="3" />
+    <TurnIn QuestName="Botanical Legwork" QuestId="9799" TurnInName="Apprentice Vishael" TurnInId="20233" />
+    <TurnIn QuestName="What Must Be Done..." QuestId="9293" TurnInName="Botanist Taerix" TurnInId="16514" />
+    <PickUp QuestName="Healing the Lake" QuestId="9294" GiverName="Botanist Taerix" GiverId="16514" />
+    <TurnIn QuestName="Rescue the Survivors!" QuestId="9283" TurnInName="Zalduun" TurnInId="16502" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Earth" QuestId="9449" GiverName="Firmanvaar" GiverId="17089" />
+    </If>
+    <TurnIn QuestName="Call of Earth" QuestId="9449" TurnInName="Spirit of the Vale" TurnInId="17087" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Earth" QuestId="9450" GiverName="Spirit of the Vale" GiverId="17087" />
+      <Objective QuestName="Call of Earth" QuestId="9450" Type="KillMob" MobId="17179" MobName="Restless Spirit of Earth" KillCount="4" />
+    </If>
+    <TurnIn QuestName="Call of Earth" QuestId="9450" TurnInName="Spirit of the Vale" TurnInId="17087" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Earth" QuestId="9451" GiverName="Spirit of the Vale" GiverId="17087" />
+      <TurnIn QuestName="Call of Earth" QuestId="9451" TurnInName="Firmanvaar" TurnInId="17089" />
+    </If>
+    <PickUp QuestName="Spare Parts" QuestId="9305" GiverName="Technician Zhanaa" GiverId="17071" />
+    <PickUp QuestName="Inoculation" QuestId="9303" GiverName="Vindicator Aldar" GiverId="16535" />
+    <Objective QuestName="Spare Parts" QuestId="9305" Type="CollectItem" ItemId="22978" ItemName="Emitter Spare Part" CollectCount="4" />
+    <TurnIn QuestName="Healing the Lake" QuestId="9294" TurnInName="Botanist Taerix" TurnInId="16514" />
+    <TurnIn QuestName="Spare Parts" QuestId="9305" TurnInName="Technician Zhanaa" TurnInId="17071" />
+    <TurnIn QuestName="Inoculation" QuestId="9303" TurnInName="Vindicator Aldar" TurnInId="16535" />
+    <PickUp QuestName="The Missing Scout" QuestId="9309" GiverName="Vindicator Aldar" GiverId="16535" />
+    <TurnIn QuestName="The Missing Scout" QuestId="9309" TurnInName="Tolaan" TurnInId="16546" />
+    <PickUp QuestName="The Blood Elves" QuestId="10303" GiverName="Tolaan" GiverId="16546" />
+    <Objective QuestName="The Blood Elves" QuestId="10303" Type="KillMob" MobId="16521" MobName="Blood Elf Scout" KillCount="10" />
+    <TurnIn QuestName="The Blood Elves" QuestId="10303" TurnInName="Tolaan" TurnInId="16546" />
+    <PickUp QuestName="Blood Elf Spy" QuestId="9311" GiverName="Tolaan" GiverId="16546" />
+    <Objective QuestName="Blood Elf Spy" QuestId="9311" Type="KillMob" MobId="16522" MobName="Surveyor Candress" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="24414" ItemName="Blood Elf Plans" CollectCount="1" />
+    <PickUp QuestName="Blood Elf Plans" QuestId="9798" GiverName="Tolaan" GiverId="16546" />
+    <TurnIn QuestName="Blood Elf Spy" QuestId="9311" TurnInName="Vindicator Aldar" TurnInId="16535" />
+    <TurnIn QuestName="Blood Elf Plans" QuestId="9798" TurnInName="Vindicator Aldar" TurnInId="16535" />
+    <PickUp QuestName="The Emitter" QuestId="9312" GiverName="Vindicator Aldar" GiverId="16535" />
+    <TurnIn QuestName="The Emitter" QuestId="9312" TurnInName="Technician Zhanaa" TurnInId="17071" />
+    <PickUp QuestName="Travel to Azure Watch" QuestId="9313" GiverName="Technician Zhanaa" GiverId="17071" />
+    <PickUp QuestName="Word from Azure Watch" QuestId="9314" GiverName="Aeun" GiverId="16554" />
+    <PickUp QuestName="Red Snapper - Very Tasty!" QuestId="9452" GiverName="Diktynna" GiverId="17101" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17102" MobName="Angry Murloc" KillCount="1" />
+    <Objective QuestName="Red Snapper - Very Tasty!" QuestId="9452" Type="CollectItem" ItemId="23614" ItemName="Red Snapper" CollectCount="10" />
+    <TurnIn QuestName="Red Snapper - Very Tasty!" QuestId="9452" TurnInName="Diktynna" TurnInId="17101" />
+    <PickUp QuestName="Find Acteon!" QuestId="9453" GiverName="Diktynna" GiverId="17101" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17202" MobName="Infected Nightstalker Runt" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="23678" ItemName="Faintly Glowing Crystal" CollectCount="1" />
+    <PickUp QuestName="Strange Findings" QuestId="9455" GiverName="Diktynna" GiverId="17101" />
+    <TurnIn QuestName="Find Acteon!" QuestId="9453" TurnInName="Acteon" TurnInId="17110" />
+    <PickUp QuestName="The Great Moongraze Hunt" QuestId="9454" GiverName="Acteon" GiverId="17110" />
+    <If Condition="(Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Medicinal Purpose" QuestId="9463" GiverName="Anchorite Fateema" GiverId="17214" />
+    </If>
+    <TurnIn QuestName="Travel to Azure Watch" QuestId="9313" TurnInName="Technician Dyvuun" TurnInId="16551" />
+    <TurnIn QuestName="Word from Azure Watch" QuestId="9314" TurnInName="Caregiver Chellan" TurnInId="16553" />
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Help Tavara" QuestId="9586" GiverName="Guvan" GiverId="17482" />
+      <TurnIn QuestName="Help Tavara" QuestId="9586" TurnInName="Guvan" TurnInId="17482" />
+    </If>
+    <TurnIn QuestName="Strange Findings" QuestId="9455" TurnInName="Exarch Menelaous" TurnInId="17116" />
+    <PickUp QuestName="Nightstalker Clean Up, Isle 2..." QuestId="9456" GiverName="Exarch Menelaous" GiverId="17116" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17200" MobName="Moongraze Stag" KillCount="1" />
+    <Objective QuestName="The Great Moongraze Hunt" QuestId="9454" Type="CollectItem" ItemId="23676" ItemName="Moongraze Stag Tenderloin" CollectCount="6" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17196" MobName="Root Trapper" KillCount="1" />
+    <Objective QuestName="Medicinal Purpose" QuestId="9463" Type="CollectItem" ItemId="23685" ItemName="Root Trapper Vine" CollectCount="8" />
+    <PickUp QuestName="A Small Start" QuestId="9506" GiverName="Admiral Odesyus" GiverId="17240" />
+    <PickUp QuestName="Cookie&apos;s Jumbo Gumbo" QuestId="9512" GiverName="&quot;Cookie&quot; McWeaksauce" GiverId="17246" />
+    <Objective QuestName="A Small Start" QuestId="9506" Type="CollectItem" ItemId="23739" ItemName="Nautical Map" CollectCount="1" />
+    <Objective QuestName="A Small Start" QuestId="9506" Type="CollectItem" ItemId="23738" ItemName="Nautical Compass" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17216" MobName="Skittering Crawler" KillCount="1" />
+    <Objective QuestName="Cookie&apos;s Jumbo Gumbo" QuestId="9512" Type="CollectItem" ItemId="23757" ItemName="Skittering Crawler Meat" CollectCount="6" />
+    <TurnIn QuestName="Cookie&apos;s Jumbo Gumbo" QuestId="9512" TurnInName="&quot;Cookie&quot; McWeaksauce" TurnInId="17246" />
+    <TurnIn QuestName="A Small Start" QuestId="9506" TurnInName="Admiral Odesyus" TurnInId="17240" />
+    <PickUp QuestName="I&apos;ve Got a Plant" QuestId="9530" GiverName="Admiral Odesyus" GiverId="17240" />
+    <PickUp QuestName="Reclaiming the Ruins" QuestId="9513" GiverName="Priestess Kyleen Il&apos;dinare" GiverId="17241" />
+    <PickUp QuestName="Precious and Fragile Things Need Special Handling" QuestId="9523" GiverName="Archaeologist Adamant Ironheart" GiverId="17242" />
+    <Objective QuestName="I&apos;ve Got a Plant" QuestId="9530" Type="CollectItem" ItemId="23790" ItemName="Hollowed Out Tree" CollectCount="1" />
+    <Objective QuestName="I&apos;ve Got a Plant" QuestId="9530" Type="CollectItem" ItemId="23791" ItemName="Pile of Leaves" CollectCount="5" />
+    <TurnIn QuestName="I&apos;ve Got a Plant" QuestId="9530" TurnInName="Admiral Odesyus" TurnInId="17240" />
+    <PickUp QuestName="Tree&apos;s Company" QuestId="9531" GiverName="Admiral Odesyus" GiverId="17240" />
+    <TurnIn QuestName="Medicinal Purpose" QuestId="9463" TurnInName="Anchorite Fateema" TurnInId="17214" />
+    <If Condition="(Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="An Alternative Alternative" QuestId="9473" GiverName="Daedal" GiverId="17215" />
+    </If>
+    <TurnIn QuestName="The Great Moongraze Hunt" QuestId="9454" TurnInName="Acteon" TurnInId="17110" />
+    <PickUp QuestName="The Great Moongraze Hunt" QuestId="10324" GiverName="Acteon" GiverId="17110" />
+    <PickUp QuestName="The Missing Fisherman" QuestId="10428" GiverName="Dulvi" GiverId="17488" />
+    <PickUp QuestName="Learning the Language" QuestId="9538" GiverName="Cryptographer Aurren" GiverId="17232" />
+    <TurnIn QuestName="Learning the Language" QuestId="9538" TurnInName="Cryptographer Aurren" TurnInId="17232" />
+    <PickUp QuestName="Totem of Coo" QuestId="9539" GiverName="Cryptographer Aurren" GiverId="17232" />
+    <Objective QuestName="An Alternative Alternative" QuestId="9473" Type="CollectItem" ItemId="23692" ItemName="Azure Snapdragon Bulb" CollectCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17201" MobName="Moongraze Buck" KillCount="1" />
+    <Objective QuestName="The Great Moongraze Hunt" QuestId="10324" Type="CollectItem" ItemId="23677" ItemName="Moongraze Buck Hide" CollectCount="6" />
+    <Objective QuestName="Nightstalker Clean Up, Isle 2..." QuestId="9456" Type="KillMob" MobId="17202" MobName="Infected Nightstalker Runt" KillCount="8" />
+    <TurnIn QuestName="Totem of Coo" QuestId="9539" TurnInName="Cryptographer Aurren" TurnInId="17232" />
+    <PickUp QuestName="Totem of Tikti" QuestId="9540" GiverName="Cryptographer Aurren" GiverId="17232" />
+    <TurnIn QuestName="Totem of Tikti" QuestId="9540" TurnInName="Cryptographer Aurren" TurnInId="17232" />
+    <PickUp QuestName="Totem of Yor" QuestId="9541" GiverName="Cryptographer Aurren" GiverId="17232" />
+    <TurnIn QuestName="Totem of Yor" QuestId="9541" TurnInName="Cryptographer Aurren" TurnInId="17232" />
+    <PickUp QuestName="Totem of Vark" QuestId="9542" GiverName="Cryptographer Aurren" GiverId="17232" />
+    <TurnIn QuestName="Totem of Vark" QuestId="9542" TurnInName="Cryptographer Aurren" TurnInId="17232" />
+    <PickUp QuestName="The Prophecy of Akida" QuestId="9544" GiverName="Cryptographer Aurren" GiverId="17232" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="23801" ItemName="Bristlelimb Key" CollectCount="1" />
+    <Objective QuestName="Precious and Fragile Things Need Special Handling" QuestId="9523" Type="CollectItem" ItemId="23779" ItemName="Ancient Relic" CollectCount="8" />
+    <Objective QuestName="Reclaiming the Ruins" QuestId="9513" Type="KillMob" MobId="17194" MobName="Wrathscale Myrmidon" KillCount="5" />
+    <Objective QuestName="Reclaiming the Ruins" QuestId="9513" Type="KillMob" MobId="17193" MobName="Wrathscale Naga" KillCount="5" />
+    <Objective QuestName="Reclaiming the Ruins" QuestId="9513" Type="KillMob" MobId="17195" MobName="Wrathscale Siren" KillCount="5" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="23759" ItemName="Rune Covered Tablet" CollectCount="1" />
+    <PickUp QuestName="Rune Covered Tablet" QuestId="9514" GiverName="Cryptographer Aurren" GiverId="17232" />
+    <TurnIn QuestName="The Missing Fisherman" QuestId="10428" TurnInName="Cowlen" TurnInId="17311" />
+    <PickUp QuestName="All That Remains" QuestId="9527" GiverName="Cowlen" GiverId="17311" />
+    <Objective QuestName="All That Remains" QuestId="9527" Type="CollectItem" ItemId="23789" ItemName="Remains of Cowlen&apos;s Family" CollectCount="1" />
+    <TurnIn QuestName="All That Remains" QuestId="9527" TurnInName="Cowlen" TurnInId="17311" />
+    <TurnIn QuestName="Tree&apos;s Company" QuestId="9531" TurnInName="Admiral Odesyus" TurnInId="17240" />
+    <PickUp QuestName="Show Gnomercy" QuestId="9537" GiverName="Admiral Odesyus" GiverId="17240" />
+    <TurnIn QuestName="Precious and Fragile Things Need Special Handling" QuestId="9523" TurnInName="Archaeologist Adamant Ironheart" TurnInId="17242" />
+    <TurnIn QuestName="Reclaiming the Ruins" QuestId="9513" TurnInName="Priestess Kyleen Il&apos;dinare" TurnInId="17241" />
+    <TurnIn QuestName="Rune Covered Tablet" QuestId="9514" TurnInName="Priestess Kyleen Il&apos;dinare" TurnInId="17241" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17243" MobName="Engineer &quot;Spark&quot; Overgrind" KillCount="1" />
+    <Objective QuestName="Show Gnomercy" QuestId="9537" Type="CollectItem" ItemId="23899" ItemName="Traitor&apos;s Communication" CollectCount="1" />
+    <TurnIn QuestName="Show Gnomercy" QuestId="9537" TurnInName="Admiral Odesyus" TurnInId="17240" />
+    <PickUp QuestName="Deliver Them From Evil..." QuestId="9602" GiverName="Admiral Odesyus" GiverId="17240" />
+    <PickUp QuestName="Warlord Sriss&apos;tiz" QuestId="9515" GiverName="Priestess Kyleen Il&apos;dinare" GiverId="17241" />
+    <Objective QuestName="Warlord Sriss&apos;tiz" QuestId="9515" Type="KillMob" MobId="17298" MobName="Warlord Sriss&apos;tiz" KillCount="1" />
+    <TurnIn QuestName="Warlord Sriss&apos;tiz" QuestId="9515" TurnInName="Priestess Kyleen Il&apos;dinare" TurnInId="17241" />
+    <TurnIn QuestName="The Great Moongraze Hunt" QuestId="10324" TurnInName="Acteon" TurnInId="17110" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Strength of One" QuestId="9582" GiverName="Ruada" GiverId="17480" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Seek Huntress Kella Nightbow" QuestId="9757" GiverName="Acteon" GiverId="17110" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Control" QuestId="9595" GiverName="Semid" GiverId="17481" />
+    </If>
+    <TurnIn QuestName="The Prophecy of Akida" QuestId="9544" TurnInName="Arugoo the Stillpine" TurnInId="17114" />
+    <PickUp QuestName="Stillpine Hold" QuestId="9559" GiverName="Arugoo the Stillpine" GiverId="17114" />
+    <TurnIn QuestName="An Alternative Alternative" QuestId="9473" TurnInName="Daedal" TurnInId="17215" />
+    <TurnIn QuestName="Nightstalker Clean Up, Isle 2..." QuestId="9456" TurnInName="Exarch Menelaous" TurnInId="17116" />
+    <TurnIn QuestName="Deliver Them From Evil..." QuestId="9602" TurnInName="Exarch Menelaous" TurnInId="17116" />
+    <PickUp QuestName="Coming of Age" QuestId="9623" GiverName="Exarch Menelaous" GiverId="17116" />
+    <TurnIn QuestName="Coming of Age" QuestId="9623" TurnInName="Torallius the Pack Handler" TurnInId="17584" />
+    <PickUp QuestName="Elekks Are Serious Business" QuestId="9625" GiverName="Torallius the Pack Handler" GiverId="17584" />
+    <TurnIn QuestName="Seek Huntress Kella Nightbow" QuestId="9757" TurnInName="Huntress Kella Nightbow" TurnInId="17614" />
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Taming the Beast" QuestId="9591" GiverName="Huntress Kella Nightbow" GiverId="17614" />
+    </If>
+    <TurnIn QuestName="Taming the Beast" QuestId="9591" TurnInName="Huntress Kella Nightbow" TurnInId="17614" />
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Taming the Beast" QuestId="9592" GiverName="Huntress Kella Nightbow" GiverId="17614" />
+    </If>
+    <TurnIn QuestName="Taming the Beast" QuestId="9592" TurnInName="Huntress Kella Nightbow" TurnInId="17614" />
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Taming the Beast" QuestId="9593" GiverName="Huntress Kella Nightbow" GiverId="17614" />
+    </If>
+    <TurnIn QuestName="Taming the Beast" QuestId="9593" TurnInName="Huntress Kella Nightbow" TurnInId="17614" />
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Beast Training" QuestId="9675" GiverName="Huntress Kella Nightbow" GiverId="17614" />
+      <TurnIn QuestName="Beast Training" QuestId="9675" TurnInName="Ganaar" TurnInId="16712" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Fire" QuestId="9462" GiverName="Sulaa" GiverId="17219" />
+    </If>
+    <TurnIn QuestName="Call of Fire" QuestId="9462" TurnInName="Tuluun" TurnInId="17212" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Fire" QuestId="9464" GiverName="Tuluun" GiverId="17212" />
+    </If>
+    <PickUp QuestName="Beasts of the Apocalypse!" QuestId="9560" GiverName="Moordo" GiverId="17442" />
+    <PickUp QuestName="Murlocs... Why Here? Why Now?" QuestId="9562" GiverName="Gurf" GiverId="17441" />
+    <TurnIn QuestName="Stillpine Hold" QuestId="9559" TurnInName="High Chief Stillpine" TurnInId="17440" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17199" MobName="Ravager Specimen" KillCount="1" />
+    <Objective QuestName="Beasts of the Apocalypse!" QuestId="9560" Type="CollectItem" ItemId="23845" ItemName="Ravager Hide" CollectCount="8" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <Objective QuestName="Strength of One" QuestId="9582" Type="KillMob" MobId="17556" MobName="Death Ravager" KillCount="1" />
+    </If>
+    <TurnIn QuestName="Call of Fire" QuestId="9464" TurnInName="Temper" TurnInId="17205" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Fire" QuestId="9465" GiverName="Temper" GiverId="17205" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17591" MobName="Blood Elf Bandit" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="23910" ItemName="Blood Elf Communication" CollectCount="1" />
+    <PickUp QuestName="Bandits!" QuestId="9616" GiverName="Temper" GiverId="17205" />
+    <TurnIn QuestName="Beasts of the Apocalypse!" QuestId="9560" TurnInName="Moordo" TurnInId="17442" />
+    <Objective QuestName="Murlocs... Why Here? Why Now?" QuestId="9562" Type="CollectItem" ItemId="23849" ItemName="Stillpine Grain" CollectCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17475" MobName="Murgurgala" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="23850" ItemName="Gurf&apos;s Dignity" CollectCount="1" />
+    <PickUp QuestName="Gurf&apos;s Dignity" QuestId="9564" GiverName="Moordo" GiverId="17442" />
+    <Objective QuestName="Control" QuestId="9595" Type="KillMob" MobId="17612" MobName="Quel&apos;dorei Magewraith" KillCount="1" />
+    <TurnIn QuestName="Gurf&apos;s Dignity" QuestId="9564" TurnInName="Gurf" TurnInId="17441" />
+    <TurnIn QuestName="Murlocs... Why Here? Why Now?" QuestId="9562" TurnInName="Gurf" TurnInId="17441" />
+    <PickUp QuestName="Chieftain Oomooroo" QuestId="9573" GiverName="Stillpine the Younger" GiverId="17445" />
+    <PickUp QuestName="Search Stillpine Hold" QuestId="9565" GiverName="High Chief Stillpine" GiverId="17440" />
+    <Objective QuestName="Chieftain Oomooroo" QuestId="9573" Type="KillMob" MobId="17448" MobName="Chieftain Oomooroo" KillCount="1" />
+    <TurnIn QuestName="Search Stillpine Hold" QuestId="9565" TurnInName="High Chief Stillpine" TurnInId="17440" />
+    <PickUp QuestName="Blood Crystals" QuestId="9566" GiverName="High Chief Stillpine" GiverId="17440" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17189" MobName="Crazed Wildkin" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <Objective QuestName="Call of Fire" QuestId="9465" Type="CollectItem" ItemId="23733" ItemName="Ritual Torch" CollectCount="1" />
+    </If>
+    <Objective QuestName="Chieftain Oomooroo" QuestId="9573" Type="KillMob" MobId="17189" MobName="Crazed Wildkin" KillCount="9" />
+    <TurnIn QuestName="Blood Crystals" QuestId="9566" TurnInName="High Chief Stillpine" TurnInId="17440" />
+    <TurnIn QuestName="Chieftain Oomooroo" QuestId="9573" TurnInName="Stillpine the Younger" TurnInId="17445" />
+    <PickUp QuestName="The Kurken is Lurkin&apos;" QuestId="9570" GiverName="Kurz the Revelator" GiverId="17443" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17447" MobName="The Kurken" KillCount="1" />
+    <Objective QuestName="The Kurken is Lurkin&apos;" QuestId="9570" Type="CollectItem" ItemId="23860" ItemName="The Kurken&apos;s Hide" CollectCount="1" />
+    <TurnIn QuestName="The Kurken is Lurkin&apos;" QuestId="9570" TurnInName="Kurz the Revelator" TurnInId="17443" />
+    <PickUp QuestName="The Kurken&apos;s Hide" QuestId="9571" GiverName="Kurz the Revelator" GiverId="17443" />
+    <PickUp QuestName="Warn Your People" QuestId="9622" GiverName="High Chief Stillpine" GiverId="17440" />
+    <TurnIn QuestName="The Kurken&apos;s Hide" QuestId="9571" TurnInName="Moordo" TurnInId="17442" />
+    <TurnIn QuestName="Call of Fire" QuestId="9465" TurnInName="Temper" TurnInId="17205" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Fire" QuestId="9467" GiverName="Temper" GiverId="17205" />
+    </If>
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="23682" ItemName="Ritual Torch" CollectCount="1" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="24335" ItemName="Orb of Returning" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Jol" QuestId="10366" GiverName="Tullas" GiverId="17483" />
+    </If>
+    <TurnIn QuestName="Strength of One" QuestId="9582" TurnInName="Ruada" TurnInId="17480" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Behomat" QuestId="10350" GiverName="Ruada" GiverId="17480" />
+    </If>
+    <TurnIn QuestName="Bandits!" QuestId="9616" TurnInName="Exarch Menelaous" TurnInId="17116" />
+    <TurnIn QuestName="Warn Your People" QuestId="9622" TurnInName="Exarch Menelaous" TurnInId="17116" />
+    <TurnIn QuestName="Jol" QuestId="10366" TurnInName="Jol" TurnInId="17509" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Redemption" QuestId="9598" GiverName="Jol" GiverId="17509" />
+    </If>
+    <TurnIn QuestName="Redemption" QuestId="9598" TurnInName="Jol" TurnInId="17509" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Redemption" QuestId="9600" GiverName="Jol" GiverId="17509" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <TurnIn QuestName="Behomat" QuestId="10350" TurnInName="Behomat" TurnInId="17120" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17206" MobName="Hauteur" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <Objective QuestName="Call of Fire" QuestId="9467" Type="CollectItem" ItemId="23688" ItemName="Hauteur&apos;s Ashes" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Call of Fire" QuestId="9467" TurnInName="Temper" TurnInId="17205" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Fire" QuestId="9468" GiverName="Temper" GiverId="17205" />
+    </If>
+    <TurnIn QuestName="Call of Fire" QuestId="9468" TurnInName="Tuluun" TurnInId="17212" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Fire" QuestId="9461" GiverName="Tuluun" GiverId="17212" />
+    </If>
+    <TurnIn QuestName="Call of Fire" QuestId="9461" TurnInName="Prophet Velen" TurnInId="17468" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Fire" QuestId="9555" GiverName="Prophet Velen" GiverId="17468" />
+      <TurnIn QuestName="Call of Fire" QuestId="9555" TurnInName="Farseer Nobundo" TurnInId="17204" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <TurnIn QuestName="Control" QuestId="9595" TurnInName="Bati" TurnInId="17514" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Starter Guides (1-11)\\Draenei Starter (1-11) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Darkshore_(11-14)" />
+  </QuestOrder>
+</HBProfile>

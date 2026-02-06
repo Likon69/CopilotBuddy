@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Cenarion Field Duty Tactical Assignments</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Field Duty Tactical Assignments" LogColor="Green" />
+    <PickUp QuestName="Field Duty" QuestId="8731" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="23024" ItemName="Prepared Field Duty Papers" CollectCount="1" />
+    <PickUp QuestName="Field Duty Papers" QuestId="8732" GiverName="Krug Skullsplit" GiverId="15612" />
+    <Objective QuestName="Field Duty" QuestId="8507" Type="CollectItem" ItemId="20810" ItemName="Signed Field Duty Papers" CollectCount="1" />
+    <TurnIn QuestName="Field Duty" QuestId="8507" TurnInName="Windcaller Kaldon" TurnInId="15540" />
+    <PickUp QuestName="Azure Templar" QuestId="8737" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Earthen Templar" QuestId="8536" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Hive&apos;Zora Scout Report" QuestId="8534" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Hive&apos;Regal Scout Report" QuestId="8738" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Twilight Marauders" QuestId="8740" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <Objective QuestName="Azure Templar" QuestId="8737" Type="KillMob" MobId="15211" MobName="Azure Templar" KillCount="1" />
+    <Objective QuestName="Earthen Templar" QuestId="8536" Type="KillMob" MobId="15307" MobName="Earthen Templar" KillCount="1" />
+    <Objective QuestName="Hive&apos;Zora Scout Report" QuestId="8534" Type="CollectItem" ItemId="21158" ItemName="Hive&apos;Zora Scout Report" CollectCount="1" />
+    <Objective QuestName="Hive&apos;Regal Scout Report" QuestId="8738" Type="CollectItem" ItemId="21160" ItemName="Hive&apos;Regal Scout Report" CollectCount="1" />
+    <Objective QuestName="Twilight Marauders" QuestId="8740" Type="KillMob" MobId="15541" MobName="Twilight Marauder Morna" KillCount="1" />
+    <Objective QuestName="Twilight Marauders" QuestId="8740" Type="KillMob" MobId="15542" MobName="Twilight Marauder" KillCount="2" />
+    <TurnIn QuestName="Azure Templar" QuestId="8737" TurnInName="Bor Wildmane" TurnInId="15306" />
+    <TurnIn QuestName="Earthen Templar" QuestId="8536" TurnInName="Bor Wildmane" TurnInId="15306" />
+    <TurnIn QuestName="Hive&apos;Zora Scout Report" QuestId="8534" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
+    <TurnIn QuestName="Hive&apos;Regal Scout Report" QuestId="8738" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
+    <TurnIn QuestName="Twilight Marauders" QuestId="8740" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
+    <PickUp QuestName="Crimson Templar" QuestId="8537" GiverName="Windcaller Proudhorn" GiverId="15191" />
+    <PickUp QuestName="Hoary Templar" QuestId="8535" GiverName="Windcaller Proudhorn" GiverId="15191" />
+    <PickUp QuestName="The Four Dukes" QuestId="8538" GiverName="Windcaller Proudhorn" GiverId="15191" />
+    <PickUp QuestName="Hive&apos;Ashi Scout Report" QuestId="8739" GiverName="Windcaller Proudhorn" GiverId="15191" />
+    <PickUp QuestName="Twilight Battle Orders" QuestId="8498" GiverName="Windcaller Proudhorn" GiverId="15191" />
+    <Objective QuestName="Crimson Templar" QuestId="8537" Type="KillMob" MobId="15209" MobName="Crimson Templar" KillCount="1" />
+    <Objective QuestName="Hoary Templar" QuestId="8535" Type="KillMob" MobId="15212" MobName="Hoary Templar" KillCount="1" />
+    <Objective QuestName="The Four Dukes" QuestId="8538" Type="KillMob" MobId="15206" MobName="The Duke of Cynders" KillCount="1" />
+    <Objective QuestName="The Four Dukes" QuestId="8538" Type="KillMob" MobId="15207" MobName="The Duke of Fathoms" KillCount="1" />
+    <Objective QuestName="The Four Dukes" QuestId="8538" Type="KillMob" MobId="15220" MobName="The Duke of Zephyrs" KillCount="1" />
+    <Objective QuestName="The Four Dukes" QuestId="8538" Type="KillMob" MobId="15208" MobName="The Duke of Shards" KillCount="1" />
+    <Objective QuestName="Hive&apos;Ashi Scout Report" QuestId="8739" Type="CollectItem" ItemId="21161" ItemName="Hive&apos;Ashi Scout Report" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="15308" MobName="Twilight Prophet" KillCount="1" />
+    <Objective QuestName="Twilight Battle Orders" QuestId="8498" Type="CollectItem" ItemId="20803" ItemName="Twilight Battle Orders" CollectCount="1" />
+    <TurnIn QuestName="Crimson Templar" QuestId="8537" TurnInName="Bor Wildmane" TurnInId="15306" />
+    <TurnIn QuestName="Hoary Templar" QuestId="8535" TurnInName="Bor Wildmane" TurnInId="15306" />
+    <TurnIn QuestName="The Four Dukes" QuestId="8538" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Twilight Battle Orders" QuestId="8498" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Hive&apos;Ashi Scout Report" QuestId="8739" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="20809" ItemName="Tactical Assignment" CollectCount="1" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Field Duty Tactical Assignments Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

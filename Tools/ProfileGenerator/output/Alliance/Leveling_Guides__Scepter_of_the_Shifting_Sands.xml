@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Scepter of the Shifting Sands</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Scepter of the Shifting Sands" LogColor="Green" />
+    <PickUp QuestName="What Tomorrow Brings" QuestId="8286" GiverName="Baristolth of the Shifting Sands" GiverId="15180" />
+    <TurnIn QuestName="What Tomorrow Brings" QuestId="8286" TurnInName="Baristolth of the Shifting Sands" TurnInId="15180" />
+    <PickUp QuestName="Only One May Rise" QuestId="8288" GiverName="Baristolth of the Shifting Sands" GiverId="15180" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="12017" MobName="Broodlord Lashlayer" KillCount="1" />
+    <Objective QuestName="Only One May Rise" QuestId="8288" Type="CollectItem" ItemId="20383" ItemName="Head of the Broodlord Lashlayer" CollectCount="1" />
+    <TurnIn QuestName="Only One May Rise" QuestId="8288" TurnInName="Baristolth of the Shifting Sands" TurnInId="15180" />
+    <PickUp QuestName="The Path of the Righteous" QuestId="8301" GiverName="Baristolth of the Shifting Sands" GiverId="15180" />
+    <Objective QuestName="The Path of the Righteous" QuestId="8301" Type="CollectItem" ItemId="20384" ItemName="Silithid Carapace Fragment" CollectCount="200" />
+    <TurnIn QuestName="The Path of the Righteous" QuestId="8301" TurnInName="Baristolth of the Shifting Sands" TurnInId="15180" />
+    <PickUp QuestName="The Hand of the Righteous" QuestId="8302" GiverName="Baristolth of the Shifting Sands" GiverId="15180" />
+    <Objective QuestName="The Hand of the Righteous" QuestId="8302" Type="CollectItem" ItemId="20384" ItemName="Silithid Carapace Fragment" CollectCount="200" />
+    <TurnIn QuestName="The Hand of the Righteous" QuestId="8302" TurnInName="Baristolth of the Shifting Sands" TurnInId="15180" />
+    <PickUp QuestName="Anachronos" QuestId="8303" GiverName="Baristolth of the Shifting Sands" GiverId="15180" />
+    <TurnIn QuestName="Anachronos" QuestId="8303" TurnInName="Anachronos" TurnInId="15192" />
+    <PickUp QuestName="Long Forgotten Memories" QuestId="8305" GiverName="Anachronos" GiverId="15192" />
+    <TurnIn QuestName="Long Forgotten Memories" QuestId="8305" TurnInName="Anachronos" TurnInId="15192" />
+    <PickUp QuestName="A Pawn on the Eternal Board" QuestId="8519" GiverName="Anachronos" GiverId="15192" />
+    <TurnIn QuestName="A Pawn on the Eternal Board" QuestId="8519" TurnInName="Anachronos" TurnInId="15192" />
+    <PickUp QuestName="The Charge of the Dragonflights" QuestId="8555" GiverName="Anachronos" GiverId="15192" />
+    <TurnIn QuestName="The Charge of the Dragonflights" QuestId="8555" TurnInName="Anachronos" TurnInId="15192" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="9061" ItemName="Goblin Rocket Fuel" CollectCount="20" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="8150" ItemName="Deeprock Salt" CollectCount="20" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12360" ItemName="Arcanite Bar" CollectCount="20" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="13996" MobName="Blackwing Technician" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="18562" ItemName="Elementium Ore" CollectCount="10" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12800" ItemName="Azerothian Diamond" CollectCount="10" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12361" ItemName="Blue Sapphire" CollectCount="10" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="20949" ItemName="Magical Ledger" CollectCount="1" />
+    <PickUp QuestName="Azuregos&apos;s Magical Ledger" QuestId="8575" GiverName="Spirit of Azuregos" GiverId="15481" />
+    <TurnIn QuestName="Azuregos&apos;s Magical Ledger" QuestId="8575" TurnInName="Narain Soothfancy" TurnInId="11811" />
+    <PickUp QuestName="Translating the Ledger" QuestId="8576" GiverName="Narain Soothfancy" GiverId="11811" />
+    <TurnIn QuestName="Translating the Ledger" QuestId="8576" TurnInName="Narain Soothfancy" TurnInId="11811" />
+    <PickUp QuestName="Stewvul, Ex-B.F.F." QuestId="8577" GiverName="Narain Soothfancy" GiverId="11811" />
+    <PickUp QuestName="Never Ask Me About My Business" QuestId="8584" GiverName="Narain Soothfancy" GiverId="11811" />
+    <PickUp QuestName="Draconic for Dummies" QuestId="8597" GiverName="Narain Soothfancy" GiverId="11811" />
+    <PickUp QuestName="Love Song for Narain" QuestId="8599" GiverName="Meridith the Mermaiden" GiverId="15526" />
+    <TurnIn QuestName="Love Song for Narain" QuestId="8599" TurnInName="Narain Soothfancy" TurnInId="11811" />
+    <TurnIn QuestName="Draconic for Dummies" QuestId="8597" TurnInName="Meridith the Mermaiden" TurnInId="15526" />
+    <PickUp QuestName="rAnS0m" QuestId="8598" GiverName="Meridith the Mermaiden" GiverId="15526" />
+    <TurnIn QuestName="rAnS0m" QuestId="8598" TurnInName="Narain Soothfancy" TurnInId="11811" />
+    <PickUp QuestName="Decoy!" QuestId="8606" GiverName="Narain Soothfancy" GiverId="11811" />
+    <TurnIn QuestName="Never Ask Me About My Business" QuestId="8584" TurnInName="Dirge Quikcleave" TurnInId="8125" />
+    <PickUp QuestName="The Isle of Dread!" QuestId="8585" GiverName="Dirge Quikcleave" GiverId="8125" />
+    <Objective QuestName="Decoy!" QuestId="8606" Type="KillMob" MobId="15554" MobName="Number Two" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="12803" MobName="Lord Lakmaeran" KillCount="1" />
+    <Objective QuestName="The Isle of Dread!" QuestId="8585" Type="CollectItem" ItemId="21027" ItemName="Lakmaeran&apos;s Carcass" CollectCount="1" />
+    <Objective QuestName="The Isle of Dread!" QuestId="8585" Type="CollectItem" ItemId="21024" ItemName="Chimaerok Tenderloin" CollectCount="20" />
+    <TurnIn QuestName="The Isle of Dread!" QuestId="8585" TurnInName="Dirge Quikcleave" TurnInId="8125" />
+    <PickUp QuestName="Dirge&apos;s Kickin&apos; Chimaerok Chops" QuestId="8586" GiverName="Dirge Quikcleave" GiverId="8125" />
+    <TurnIn QuestName="Decoy!" QuestId="8606" TurnInName="Narain Soothfancy" TurnInId="11811" />
+    <PickUp QuestName="The Only Prescription" QuestId="8620" GiverName="Narain Soothfancy" GiverId="11811" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="15552" MobName="Doctor Weavil" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="10184" MobName="Onyxia" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="2" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="3" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="8" />
+    <TurnIn QuestName="Stewvul, Ex-B.F.F." QuestId="8577" TurnInName="Narain Soothfancy" TurnInId="11811" />
+    <PickUp QuestName="Scrying Goggles? No Problem!" QuestId="8578" GiverName="Narain Soothfancy" GiverId="11811" />
+    <Objective QuestName="Dirge&apos;s Kickin&apos; Chimaerok Chops" QuestId="8586" Type="CollectItem" ItemId="8150" ItemName="Deeprock Salt" CollectCount="20" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="14601" MobName="Ebonroc" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="6" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="11502" MobName="Ragnaros" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="5" />
+    <Objective QuestName="Scrying Goggles? No Problem!" QuestId="8578" Type="CollectItem" ItemId="20951" ItemName="Narain&apos;s Scrying Goggles" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="7" />
+    <PickUp QuestName="Eranikus, Tyrant of the Dream" QuestId="8733" GiverName="Malfurion Stormrage" GiverId="15362" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="4" />
+    <TurnIn QuestName="Eranikus, Tyrant of the Dream" QuestId="8733" TurnInName="Forest Wisp" TurnInId="15624" />
+    <PickUp QuestName="Tyrande and Remulos" QuestId="8734" GiverName="Forest Wisp" GiverId="15624" />
+    <TurnIn QuestName="Tyrande and Remulos" QuestId="8734" TurnInName="Keeper Remulos" TurnInId="11832" />
+    <PickUp QuestName="The Nightmare&apos;s Corruption" QuestId="8735" GiverName="Keeper Remulos" GiverId="11832" />
+    <Objective QuestName="The Nightmare&apos;s Corruption" QuestId="8735" Type="CollectItem" ItemId="21147" ItemName="Fragment of the Nightmare&apos;s Corruption" CollectCount="1" />
+    <Objective QuestName="The Nightmare&apos;s Corruption" QuestId="8735" Type="CollectItem" ItemId="21148" ItemName="Fragment of the Nightmare&apos;s Corruption" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="15625" MobName="Twilight Corrupter" KillCount="1" />
+    <Objective QuestName="The Nightmare&apos;s Corruption" QuestId="8735" Type="CollectItem" ItemId="21149" ItemName="Fragment of the Nightmare&apos;s Corruption" CollectCount="1" />
+    <Objective QuestName="The Nightmare&apos;s Corruption" QuestId="8735" Type="CollectItem" ItemId="21146" ItemName="Fragment of the Nightmare&apos;s Corruption" CollectCount="1" />
+    <TurnIn QuestName="The Nightmare&apos;s Corruption" QuestId="8735" TurnInName="Keeper Remulos" TurnInId="11832" />
+    <PickUp QuestName="The Nightmare Manifests" QuestId="8736" GiverName="Keeper Remulos" GiverId="11832" />
+    <TurnIn QuestName="The Nightmare Manifests" QuestId="8736" TurnInName="Keeper Remulos" TurnInId="11832" />
+    <PickUp QuestName="The Champion Returns" QuestId="8741" GiverName="Keeper Remulos" GiverId="11832" />
+    <Objective QuestName="Dirge&apos;s Kickin&apos; Chimaerok Chops" QuestId="8586" Type="CollectItem" ItemId="9061" ItemName="Goblin Rocket Fuel" CollectCount="20" />
+    <TurnIn QuestName="Dirge&apos;s Kickin&apos; Chimaerok Chops" QuestId="8586" TurnInName="Dirge Quikcleave" TurnInId="8125" />
+    <PickUp QuestName="Return to Narain" QuestId="8587" GiverName="Dirge Quikcleave" GiverId="8125" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21111" ItemName="Draconic For Dummies: Volume II" CollectCount="1" />
+    <TurnIn QuestName="Scrying Goggles? No Problem!" QuestId="8578" TurnInName="Narain Soothfancy" TurnInId="11811" />
+    <TurnIn QuestName="Return to Narain" QuestId="8587" TurnInName="Narain Soothfancy" TurnInId="11811" />
+    <TurnIn QuestName="The Only Prescription" QuestId="8620" TurnInName="Narain Soothfancy" TurnInId="11811" />
+    <TurnIn QuestName="The Champion Returns" QuestId="8741" TurnInName="Anachronos" TurnInId="15192" />
+    <PickUp QuestName="Nefarius&apos;s Corruption" QuestId="8730" GiverName="Vaelastrasz the Corrupt" GiverId="13020" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="11583" MobName="Nefarian" KillCount="1" />
+    <Objective QuestName="Nefarius&apos;s Corruption" QuestId="8730" Type="CollectItem" ItemId="21138" ItemName="Red Scepter Shard" CollectCount="1" />
+    <TurnIn QuestName="Nefarius&apos;s Corruption" QuestId="8730" TurnInName="Anachronos" TurnInId="15192" />
+    <PickUp QuestName="The Good News and The Bad News" QuestId="8728" GiverName="Narain Soothfancy" GiverId="11811" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12360" ItemName="Arcanite Bar" CollectCount="20" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="13996" MobName="Blackwing Technician" KillCount="1" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="18562" ItemName="Elementium Ore" CollectCount="10" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12800" ItemName="Azerothian Diamond" CollectCount="10" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12361" ItemName="Blue Sapphire" CollectCount="10" />
+    <TurnIn QuestName="The Good News and The Bad News" QuestId="8728" TurnInName="Narain Soothfancy" TurnInId="11811" />
+    <PickUp QuestName="The Wrath of Neptulon" QuestId="8729" GiverName="Narain Soothfancy" GiverId="11811" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="15571" MobName="Maws" KillCount="1" />
+    <Objective QuestName="The Wrath of Neptulon" QuestId="8729" Type="CollectItem" ItemId="21137" ItemName="Blue Scepter Shard" CollectCount="1" />
+    <TurnIn QuestName="The Wrath of Neptulon" QuestId="8729" TurnInName="Anachronos" TurnInId="15192" />
+    <PickUp QuestName="The Might of Kalimdor" QuestId="8742" GiverName="Anachronos" GiverId="15192" />
+    <PickUp QuestName="Bang a Gong!" QuestId="8743" GiverName="Anachronos" GiverId="15192" />
+    <TurnIn QuestName="Bang a Gong!" QuestId="8743" TurnInName="Anachronos" TurnInId="15192" />
+    <PickUp QuestName="Treasure of the Timeless One" QuestId="8745" GiverName="Jonathan the Revelator" GiverId="15693" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Scepter of the Shifting Sands Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Western Plaguelands (52-52)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Western Plaguelands (52-52)" LogColor="Green" />
+    <TurnIn QuestName="A Call to Arms: The Plaguelands!" QuestId="5090" TurnInName="Commander Ashlam Valorfist" TurnInId="10838" />
+    <PickUp QuestName="Clear the Way" QuestId="5092" GiverName="Commander Ashlam Valorfist" GiverId="10838" />
+    <Objective QuestName="Clear the Way" QuestId="5092" Type="KillMob" MobId="1783" MobName="Skeletal Flayer" KillCount="10" />
+    <Objective QuestName="Clear the Way" QuestId="5092" Type="KillMob" MobId="1791" MobName="Slavering Ghoul" KillCount="10" />
+    <TurnIn QuestName="Clear the Way" QuestId="5092" TurnInName="Commander Ashlam Valorfist" TurnInId="10838" />
+    <PickUp QuestName="The Scourge Cauldrons" QuestId="5215" GiverName="Commander Ashlam Valorfist" GiverId="10838" />
+    <TurnIn QuestName="The Scourge Cauldrons" QuestId="5215" TurnInName="High Priestess MacDonnell" TurnInId="11053" />
+    <TurnIn QuestName="Favored of Elune?" QuestId="3661" TurnInName="Erelas Ambersky" TurnInId="7916" />
+    <PickUp QuestName="Moontouched Wildkin" QuestId="978" GiverName="Erelas Ambersky" GiverId="7916" />
+    <TurnIn QuestName="The Super Snapper FX" QuestId="2944" TurnInName="Daryn Lightwind" TurnInId="7907" />
+    <TurnIn QuestName="Rise of the Silithid" QuestId="162" TurnInName="Gracina Spiritmight" TurnInId="7740" />
+    <PickUp QuestName="March of the Silithid" QuestId="4493" GiverName="Gracina Spiritmight" GiverId="7740" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Western Plaguelands (52-52) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Felwood_(52-53)" />
+  </QuestOrder>
+</HBProfile>

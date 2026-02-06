@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Western Plaguelands (56-57)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>57</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Western Plaguelands (56-57)" LogColor="Green" />
+    <PickUp QuestName="Target: Felstone Field" QuestId="5216" GiverName="High Priestess MacDonnell" GiverId="11053" />
+    <TurnIn QuestName="The Everlook Report" QuestId="6028" TurnInName="Argent Officer Pureheart" TurnInId="10840" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="11075" MobName="Cauldron Lord Bilemaw" KillCount="1" />
+    <Objective QuestName="Target: Felstone Field" QuestId="5216" Type="CollectItem" ItemId="13194" ItemName="Felstone Field Cauldron Key" CollectCount="1" />
+    <TurnIn QuestName="Target: Felstone Field" QuestId="5216" TurnInName="Argent Officer Pureheart" TurnInId="10840" />
+    <PickUp QuestName="Return to Chillwind Camp" QuestId="5217" GiverName="Argent Officer Pureheart" GiverId="10840" />
+    <PickUp QuestName="Better Late Than Never" QuestId="5021" GiverName="Janice Felstone" GiverId="10778" />
+    <TurnIn QuestName="Better Late Than Never" QuestId="5021" TurnInName="Janice Felstone" TurnInId="10778" />
+    <PickUp QuestName="Better Late Than Never" QuestId="5022" GiverName="Janice Felstone" GiverId="10778" />
+    <TurnIn QuestName="Return to Chillwind Camp" QuestId="5217" TurnInName="High Priestess MacDonnell" TurnInId="11053" />
+    <PickUp QuestName="Taking Back Silithus" QuestId="8275" GiverName="Cenarion Emissary Jademoon" GiverId="15187" />
+    <TurnIn QuestName="The Smoldering Ruins of Thaurissan" QuestId="3701" TurnInName="Royal Historian Archesonus" TurnInId="8879" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12891" ItemName="Jaron&apos;s Pick" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12896" ItemName="First Relic Fragment" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12897" ItemName="Second Relic Fragment" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12898" ItemName="Third Relic Fragment" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12899" ItemName="Fourth Relic Fragment" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="15790" ItemName="Studies in Spirit Speaking" CollectCount="1" />
+    <TurnIn QuestName="Better Late Than Never" QuestId="5022" TurnInName="Royal Factor Bathrilor" TurnInId="10782" />
+    <PickUp QuestName="Good Natured Emma" QuestId="5048" GiverName="Royal Factor Bathrilor" GiverId="10782" />
+    <TurnIn QuestName="Good Natured Emma" QuestId="5048" TurnInName="Ol&apos; Emma" TurnInId="3520" />
+    <PickUp QuestName="Good Luck Charm" QuestId="5050" GiverName="Ol&apos; Emma" GiverId="3520" />
+    <PickUp QuestName="The First and the Last" QuestId="6182" GiverName="King Varian Wrynn" GiverId="29611" />
+    <TurnIn QuestName="The First and the Last" QuestId="6182" TurnInName="Master Mathias Shaw" TurnInId="332" />
+    <PickUp QuestName="Honor the Dead" QuestId="6183" GiverName="Master Mathias Shaw" GiverId="332" />
+    <TurnIn QuestName="Honor the Dead" QuestId="6183" TurnInName="Master Mathias Shaw" TurnInId="332" />
+    <PickUp QuestName="Flint Shadowmore" QuestId="6184" GiverName="Master Mathias Shaw" GiverId="332" />
+    <PickUp QuestName="Target: Dalson&apos;s Tears" QuestId="5219" GiverName="High Priestess MacDonnell" GiverId="11053" />
+    <PickUp QuestName="All Along the Watchtowers" QuestId="5097" GiverName="Commander Ashlam Valorfist" GiverId="10838" />
+    <PickUp QuestName="Argent Dawn Commission" QuestId="5401" GiverName="Argent Officer Pureheart" GiverId="10840" />
+    <TurnIn QuestName="Flint Shadowmore" QuestId="6184" TurnInName="Flint Shadowmore" TurnInId="12425" />
+    <PickUp QuestName="The Eastern Plagues" QuestId="6185" GiverName="Flint Shadowmore" GiverId="12425" />
+    <PickUp QuestName="The Wildlife Suffers Too" QuestId="4984" GiverName="Mulgris Deepriver" GiverId="10739" />
+    <Objective QuestName="The Wildlife Suffers Too" QuestId="4984" Type="KillMob" MobId="1817" MobName="Diseased Wolf" KillCount="8" />
+    <PickUp QuestName="Mrs. Dalson&apos;s Diary" QuestId="5058" GiverName="Mulgris Deepriver" GiverId="10739" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="10816" MobName="Wandering Skeleton" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12738" ItemName="Dalson Outhouse Key" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="10836" MobName="Farmer Dalson" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12739" ItemName="Dalson Cabinet Key" CollectCount="1" />
+    <PickUp QuestName="Locked Away" QuestId="5060" GiverName="Mulgris Deepriver" GiverId="10739" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="11077" MobName="Cauldron Lord Malvinious" KillCount="1" />
+    <Objective QuestName="Target: Dalson&apos;s Tears" QuestId="5219" Type="CollectItem" ItemId="13195" ItemName="Dalson&apos;s Tears Cauldron Key" CollectCount="1" />
+    <TurnIn QuestName="Target: Dalson&apos;s Tears" QuestId="5219" TurnInName="Mulgris Deepriver" TurnInId="10739" />
+    <PickUp QuestName="Return to Chillwind Camp" QuestId="5220" GiverName="Mulgris Deepriver" GiverId="10739" />
+    <TurnIn QuestName="Good Luck Charm" QuestId="5050" TurnInName="Janice Felstone" TurnInId="10778" />
+    <PickUp QuestName="Two Halves Become One" QuestId="5051" GiverName="Janice Felstone" GiverId="10778" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="10801" MobName="Jabbering Ghoul" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12722" ItemName="Good Luck Other-Half-Charm" CollectCount="1" />
+    <Objective QuestName="Two Halves Become One" QuestId="5051" Type="CollectItem" ItemId="12723" ItemName="Good Luck Charm" CollectCount="1" />
+    <TurnIn QuestName="Two Halves Become One" QuestId="5051" TurnInName="Janice Felstone" TurnInId="10778" />
+    <TurnIn QuestName="All Along the Watchtowers" QuestId="5097" TurnInName="Commander Ashlam Valorfist" TurnInId="10838" />
+    <PickUp QuestName="Scholomance" QuestId="5533" GiverName="Commander Ashlam Valorfist" GiverId="10838" />
+    <TurnIn QuestName="Scholomance" QuestId="5533" TurnInName="Alchemist Arbington" TurnInId="11056" />
+    <PickUp QuestName="Skeletal Fragments" QuestId="5537" GiverName="Alchemist Arbington" GiverId="11056" />
+    <TurnIn QuestName="Return to Chillwind Camp" QuestId="5220" TurnInName="High Priestess MacDonnell" TurnInId="11053" />
+    <PickUp QuestName="Target: Writhing Haunt" QuestId="5222" GiverName="High Priestess MacDonnell" GiverId="11053" />
+    <PickUp QuestName="A Plague Upon Thee" QuestId="5903" GiverName="Nathaniel Dumah" GiverId="11616" />
+    <Objective QuestName="Skeletal Fragments" QuestId="5537" Type="CollectItem" ItemId="14619" ItemName="Skeletal Fragments" CollectCount="15" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="11076" MobName="Cauldron Lord Razarch" KillCount="1" />
+    <Objective QuestName="Target: Writhing Haunt" QuestId="5222" Type="CollectItem" ItemId="13197" ItemName="Writhing Haunt Cauldron Key" CollectCount="1" />
+    <TurnIn QuestName="Target: Writhing Haunt" QuestId="5222" TurnInName="Nathaniel Dumah" TurnInId="11616" />
+    <PickUp QuestName="Return to Chillwind Camp" QuestId="5223" GiverName="Nathaniel Dumah" GiverId="11616" />
+    <TurnIn QuestName="The Wildlife Suffers Too" QuestId="4984" TurnInName="Mulgris Deepriver" TurnInId="10739" />
+    <PickUp QuestName="The Wildlife Suffers Too" QuestId="4985" GiverName="Mulgris Deepriver" GiverId="10739" />
+    <Objective QuestName="The Wildlife Suffers Too" QuestId="4985" Type="KillMob" MobId="1816" MobName="Diseased Grizzly" KillCount="8" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Western Plaguelands (56-57) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Eastern_Plaguelands_(57-58)" />
+  </QuestOrder>
+</HBProfile>

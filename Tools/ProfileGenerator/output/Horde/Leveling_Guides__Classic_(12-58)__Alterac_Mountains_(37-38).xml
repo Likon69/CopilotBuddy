@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Alterac Mountains (37-38)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>38</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Alterac Mountains (37-38)" LogColor="Green" />
+    <PickUp QuestName="Prison Break In" QuestId="544" GiverName="Magus Wordeen Voidglare" GiverId="2410" />
+    <PickUp QuestName="Stone Tokens" QuestId="556" GiverName="Keeper Bel&apos;varil" GiverId="2437" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5810" ItemName="Fresh Carcass" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="4504" MobName="Frostmaw" KillCount="1" />
+    <Objective QuestName="Frostmaw" QuestId="1136" Type="CollectItem" ItemId="5811" ItemName="Frostmaw&apos;s Mane" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2411" MobName="Ricter" KillCount="1" />
+    <Objective QuestName="Prison Break In" QuestId="544" Type="CollectItem" ItemId="3689" ItemName="Bloodstone Marble" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2412" MobName="Alina" KillCount="1" />
+    <Objective QuestName="Prison Break In" QuestId="544" Type="CollectItem" ItemId="3690" ItemName="Bloodstone Shard" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2413" MobName="Dermot" KillCount="1" />
+    <Objective QuestName="Prison Break In" QuestId="544" Type="CollectItem" ItemId="3691" ItemName="Bloodstone Wedge" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2414" MobName="Kegan Darkmar" KillCount="1" />
+    <Objective QuestName="Prison Break In" QuestId="544" Type="CollectItem" ItemId="3688" ItemName="Bloodstone Oval" CollectCount="1" />
+    <Objective QuestName="Stone Tokens" QuestId="556" Type="CollectItem" ItemId="3714" ItemName="Worn Stone Token" CollectCount="10" />
+    <TurnIn QuestName="Helcular&apos;s Revenge" QuestId="553" TurnInName="Keeper Bel&apos;varil" TurnInId="2437" />
+    <TurnIn QuestName="Prison Break In" QuestId="544" TurnInName="Magus Wordeen Voidglare" TurnInId="2410" />
+    <TurnIn QuestName="Stone Tokens" QuestId="556" TurnInName="Keeper Bel&apos;varil" TurnInId="2437" />
+    <TurnIn QuestName="To Steal From Thieves" QuestId="1164" TurnInName="Genavie Callow" TurnInId="4486" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5850" ItemName="Belgrom&apos;s Sealed Note" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5852" ItemName="Fuel Regulator Blueprints" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5800" ItemName="Kravel&apos;s Parts" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5838" ItemName="Kodo Skin Scroll" CollectCount="1" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Alterac Mountains (37-38) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Thousand_Needles_(38-38)" />
+  </QuestOrder>
+</HBProfile>

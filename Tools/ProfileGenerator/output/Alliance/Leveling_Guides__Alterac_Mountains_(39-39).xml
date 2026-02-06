@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Alterac Mountains (39-39)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alterac Mountains (39-39)" LogColor="Green" />
+    <PickUp QuestName="Crushridge Bounty" QuestId="500" GiverName="Marshal Redpath" GiverId="2263" />
+    <TurnIn QuestName="Further Mysteries" QuestId="525" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
+    <PickUp QuestName="Dark Council" QuestId="537" GiverName="Magistrate Henry Maleb" GiverId="2276" />
+    <PickUp QuestName="Noble Deaths" QuestId="512" GiverName="Magistrate Henry Maleb" GiverId="2276" />
+    <TurnIn QuestName="Magical Analysis" QuestId="602" TurnInName="Archmage Ansirem Runeweaver" TurnInId="2543" />
+    <PickUp QuestName="Ansirem&apos;s Key" QuestId="603" GiverName="Archmage Ansirem Runeweaver" GiverId="2543" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2320" MobName="Nagaz" KillCount="1" />
+    <Objective QuestName="Dark Council" QuestId="537" Type="CollectItem" ItemId="3672" ItemName="Head of Nagaz" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="3706" ItemName="Ensorcelled Parchment" CollectCount="1" />
+    <PickUp QuestName="The Ensorcelled Parchment" QuestId="551" GiverName="Archmage Ansirem Runeweaver" GiverId="2543" />
+    <Objective QuestName="Dark Council" QuestId="537" Type="KillMob" MobId="2318" MobName="Argus Shadow Mage" KillCount="4" />
+    <Objective QuestName="Noble Deaths" QuestId="512" Type="CollectItem" ItemId="3505" ItemName="Alterac Signet Ring" CollectCount="7" />
+    <Objective QuestName="Crushridge Bounty" QuestId="500" Type="CollectItem" ItemId="2843" ItemName="Dirty Knucklebones" CollectCount="9" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="6851" ItemName="Essence of the Exile" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Cyclonian" QuestId="1712" TurnInName="Bath&apos;rah the Windwatcher" TurnInId="6176" />
+    <PickUp QuestName="The Summoning" QuestId="1713" GiverName="Bath&apos;rah the Windwatcher" GiverId="6176" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="6239" MobName="Cyclonian" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="The Summoning" QuestId="1713" Type="CollectItem" ItemId="6894" ItemName="Whirlwind Heart" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="The Summoning" QuestId="1713" TurnInName="Bath&apos;rah the Windwatcher" TurnInId="6176" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="Whirlwind Weapon" QuestId="1792" GiverName="Bath&apos;rah the Windwatcher" GiverId="6176" />
+    </If>
+    <TurnIn QuestName="To The Hinterlands" QuestId="1449" TurnInName="Falstad Wildhammer" TurnInId="5635" />
+    <PickUp QuestName="Gryphon Master Talonaxe" QuestId="1450" GiverName="Falstad Wildhammer" GiverId="5635" />
+    <TurnIn QuestName="Gryphon Master Talonaxe" QuestId="1450" TurnInName="Gryphon Master Talonaxe" TurnInId="5636" />
+    <PickUp QuestName="Rhapsody Shindigger" QuestId="1451" GiverName="Gryphon Master Talonaxe" GiverId="5636" />
+    <TurnIn QuestName="Rhapsody Shindigger" QuestId="1451" TurnInName="Rhapsody Shindigger" TurnInId="5634" />
+    <PickUp QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" GiverName="Rhapsody Shindigger" GiverId="5634" />
+    <TurnIn QuestName="Crushridge Bounty" QuestId="500" TurnInName="Marshal Redpath" TurnInId="2263" />
+    <TurnIn QuestName="Dark Council" QuestId="537" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
+    <TurnIn QuestName="Noble Deaths" QuestId="512" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
+    <TurnIn QuestName="The Ensorcelled Parchment" QuestId="551" TurnInName="Loremaster Dibbs" TurnInId="2277" />
+    <PickUp QuestName="Stormpike&apos;s Deciphering" QuestId="554" GiverName="Loremaster Dibbs" GiverId="2277" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Alterac Mountains (39-39) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Arathi_Highlands_(39-41)" />
+  </QuestOrder>
+</HBProfile>

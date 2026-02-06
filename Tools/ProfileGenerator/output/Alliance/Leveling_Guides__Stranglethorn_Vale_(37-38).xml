@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Stranglethorn Vale (37-38)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>38</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="207" Name="Kurzen&apos;s Mystery">
+    <Objective Type="CollectItem" ItemId="2005" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Moon Over the Vale" Id="57" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-11983.2" Y="339.58" Z="2.9" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="2006" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Gri" Id="58" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-12148.3" Y="636.77" Z="-70.06" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="2008" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="The Emperor" Id="54" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-11548.5" Y="644.69" Z="59.98" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="2007" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Fall of Gurubashi" Id="52" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-11680.0" Y="756.47" Z="50.63" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (37-38)" LogColor="Green" />
+    <PickUp QuestName="Some Assembly Required" QuestId="577" GiverName="Drizzlik" GiverId="2495" />
+    <TurnIn QuestName="The Rumormonger" QuestId="1115" TurnInName="Krazek" TurnInId="773" />
+    <PickUp QuestName="Bloodscalp Ears" QuestId="189" GiverName="Kebok" GiverId="737" />
+    <PickUp QuestName="Water Elementals" QuestId="601" GiverName="Baron Revilgaz" GiverId="2496" />
+    <PickUp QuestName="Kurzen&apos;s Mystery" QuestId="207" GiverName="Brother Nimetz" GiverId="739" />
+    <PickUp QuestName="Special Forces" QuestId="574" GiverName="Sergeant Yohwa" GiverId="733" />
+    <PickUp QuestName="Bookie Herod" QuestId="200" GiverName="Lieutenant Doren" GiverId="469" />
+    <TurnIn QuestName="Bookie Herod" QuestId="200" TurnInName="Lieutenant Doren" TurnInId="469" />
+    <PickUp QuestName="The Hidden Key" QuestId="328" GiverName="Lieutenant Doren" GiverId="469" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="940" MobName="Kurzen Medicine Man" KillCount="1" />
+    <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="3357" ItemName="Liferoot" CollectCount="8" />
+    <TurnIn QuestName="The Hidden Key" QuestId="328" TurnInName="Lieutenant Doren" TurnInId="469" />
+    <PickUp QuestName="The Spy Revealed!" QuestId="329" GiverName="Lieutenant Doren" GiverId="469" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="4306" ItemName="Silk Cloth" CollectCount="15" />
+    <Objective QuestName="Special Forces" QuestId="574" Type="KillMob" MobId="941" MobName="Kurzen Headshrinker" KillCount="6" />
+    <Objective QuestName="Special Forces" QuestId="574" Type="KillMob" MobId="938" MobName="Kurzen Commando" KillCount="10" />
+    <Objective QuestName="Panther Mastery" QuestId="192" Type="KillMob" MobId="684" MobName="Shadowmaw Panther" KillCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1152" MobName="Snapjaw Crocolisk" KillCount="1" />
+    <Objective QuestName="Some Assembly Required" QuestId="577" Type="CollectItem" ItemId="4104" ItemName="Snapjaw Crocolisk Skin" CollectCount="5" />
+    <Objective QuestName="Raptor Mastery" QuestId="195" Type="KillMob" MobId="686" MobName="Lashtail Raptor" KillCount="10" />
+    <Objective QuestName="Tiger Mastery" QuestId="187" Type="KillMob" MobId="1085" MobName="Elder Stranglethorn Tiger" KillCount="10" />
+    <TurnIn QuestName="Raptor Mastery" QuestId="195" TurnInName="Hemet Nesingwary" TurnInId="715" />
+    <PickUp QuestName="Raptor Mastery" QuestId="196" GiverName="Hemet Nesingwary" GiverId="715" />
+    <TurnIn QuestName="Tiger Mastery" QuestId="187" TurnInName="Ajeck Rouack" TurnInId="717" />
+    <PickUp QuestName="Tiger Mastery" QuestId="188" GiverName="Ajeck Rouack" GiverId="717" />
+    <TurnIn QuestName="Panther Mastery" QuestId="192" TurnInName="Sir S. J. Erlgadin" TurnInId="718" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="729" MobName="Sin&apos;Dall" KillCount="1" />
+    <Objective QuestName="Tiger Mastery" QuestId="188" Type="CollectItem" ItemId="3879" ItemName="Paw of Sin&apos;Dall" CollectCount="1" />
+    <Objective QuestName="Kurzen&apos;s Mystery" QuestId="207" Type="CollectItem" ItemId="2005" ItemName="The First Troll Legend" CollectCount="1" />
+    <Objective QuestName="Kurzen&apos;s Mystery" QuestId="207" Type="CollectItem" ItemId="2006" ItemName="The Second Troll Legend" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="691" MobName="Lesser Water Elemental" KillCount="1" />
+    <Objective QuestName="Water Elementals" QuestId="601" Type="CollectItem" ItemId="3923" ItemName="Water Elemental Bracers" CollectCount="6" />
+    <Objective QuestName="Kurzen&apos;s Mystery" QuestId="207" Type="CollectItem" ItemId="2008" ItemName="The Fourth Troll Legend" CollectCount="1" />
+    <Objective QuestName="Kurzen&apos;s Mystery" QuestId="207" Type="CollectItem" ItemId="2007" ItemName="The Third Troll Legend" CollectCount="1" />
+    <Objective QuestName="Bloodscalp Ears" QuestId="189" Type="CollectItem" ItemId="1519" ItemName="Bloodscalp Ear" CollectCount="15" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="3901" ItemName="Bloodscalp Tusk" CollectCount="9" />
+    </If>
+    <TurnIn QuestName="Tiger Mastery" QuestId="188" TurnInName="Ajeck Rouack" TurnInId="717" />
+    <PickUp QuestName="Dream Dust in the Swamp" QuestId="1116" GiverName="Krazek" GiverId="773" />
+    <TurnIn QuestName="Bloodscalp Ears" QuestId="189" TurnInName="Kebok" TurnInId="737" />
+    <TurnIn QuestName="Water Elementals" QuestId="601" TurnInName="Baron Revilgaz" TurnInId="2496" />
+    <PickUp QuestName="Magical Analysis" QuestId="602" GiverName="Baron Revilgaz" GiverId="2496" />
+    <TurnIn QuestName="Some Assembly Required" QuestId="577" TurnInName="Drizzlik" TurnInId="2495" />
+    <TurnIn QuestName="Kurzen&apos;s Mystery" QuestId="207" TurnInName="Brother Nimetz" TurnInId="739" />
+    <TurnIn QuestName="Special Forces" QuestId="574" TurnInName="Lieutenant Doren" TurnInId="469" />
+    <TurnIn QuestName="The Spy Revealed!" QuestId="329" TurnInName="Lieutenant Doren" TurnInId="469" />
+    <PickUp QuestName="Patrol Schedules" QuestId="330" GiverName="Lieutenant Doren" GiverId="469" />
+    <TurnIn QuestName="Patrol Schedules" QuestId="330" TurnInName="Corporal Sethman" TurnInId="1422" />
+    <PickUp QuestName="Report to Doren" QuestId="331" GiverName="Corporal Sethman" GiverId="1422" />
+    <TurnIn QuestName="Report to Doren" QuestId="331" TurnInName="Lieutenant Doren" TurnInId="469" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (37-38) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Swamp_of_Sorrows_(38-39)" />
+  </QuestOrder>
+</HBProfile>

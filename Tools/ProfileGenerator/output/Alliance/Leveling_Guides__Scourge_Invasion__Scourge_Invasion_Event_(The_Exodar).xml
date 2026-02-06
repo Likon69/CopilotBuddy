@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Scourge Invasion\\Scourge Invasion Event (The Exodar)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Scourge Invasion\\Scourge Invasion Event (The Exodar)" LogColor="Green" />
+    <PickUp QuestName="Investigate the Scourge of Exodar" QuestId="12817" GiverName="Lieutenant Kregor" GiverId="29442" />
+    <Objective QuestName="Investigate the Scourge of Exodar" QuestId="12817" Type="CollectItem" ItemId="22892" ItemName="Dim Necrotic Stone" CollectCount="3" />
+    <TurnIn QuestName="Investigate the Scourge of Exodar" QuestId="12817" TurnInName="Lieutenant Kregor" TurnInId="29442" />
+    <PickUp QuestName="Light&apos;s Hope Chapel" QuestId="9154" GiverName="Argent Recruiter" GiverId="16241" />
+    <TurnIn QuestName="Light&apos;s Hope Chapel" QuestId="9154" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <PickUp QuestName="Under the Shadow" QuestId="9153" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <PickUp QuestName="Shadows of Doom" QuestId="9085" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <Objective QuestName="Shadows of Doom" QuestId="9085" Type="KillMob" MobId="16143" MobName="Shadow of Doom" KillCount="1" />
+    <Objective QuestName="Under the Shadow" QuestId="9153" Type="CollectItem" ItemId="22484" ItemName="Necrotic Rune" CollectCount="10" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="22974" ItemName="A Ragged Page" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="22973" ItemName="A Crumpeled Missive" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="22975" ItemName="A Smudged Document" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="22977" ItemName="A Torn Letter" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="22970" ItemName="A Bloodstained Envelope" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="22972" ItemName="A Careworn Note" CollectCount="1" />
+    <TurnIn QuestName="Under the Shadow" QuestId="9153" TurnInName="Commander Thomas Helleran" TurnInId="16361" />
+    <TurnIn QuestName="Shadows of Doom" QuestId="9085" TurnInName="Commander Thomas Helleran" TurnInId="16361" />
+    <PickUp QuestName="Page from the Front" QuestId="9300" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <PickUp QuestName="Missive from the Front" QuestId="9302" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <PickUp QuestName="Document from the Front" QuestId="9304" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <PickUp QuestName="Letter from the Front" QuestId="9295" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <PickUp QuestName="Envelope from the Front" QuestId="9301" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <PickUp QuestName="Note from the Front" QuestId="9299" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <TurnIn QuestName="Page from the Front" QuestId="9300" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <TurnIn QuestName="Missive from the Front" QuestId="9302" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <TurnIn QuestName="Document from the Front" QuestId="9304" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <TurnIn QuestName="Letter from the Front" QuestId="9295" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <TurnIn QuestName="Envelope from the Front" QuestId="9301" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <TurnIn QuestName="Note from the Front" QuestId="9299" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <PickUp QuestName="Chamber of Secrets" QuestId="12616" GiverName="Argent Emissary" GiverId="16285" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="28194" MobName="Prince Tenris Mirkblood" KillCount="1" />
+    <TurnIn QuestName="Chamber of Secrets" QuestId="12616" TurnInName="Argent Emissary" TurnInId="16285" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Scourge Invasion\\Scourge Invasion Event (The Exodar) Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

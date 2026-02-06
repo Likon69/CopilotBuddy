@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Stonetalon Mountains (15-16)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>16</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stonetalon Mountains (15-16)" LogColor="Green" />
+    <PickUp QuestName="Goblin Invaders" QuestId="1062" GiverName="Seereth Stonebreak" GiverId="4049" />
+    <PickUp QuestName="Avenge My Village" QuestId="6548" GiverName="Makaba Flathoof" GiverId="11857" />
+    <Objective QuestName="Avenge My Village" QuestId="6548" Type="KillMob" MobId="11910" MobName="Grimtotem Ruffian" KillCount="8" />
+    <Objective QuestName="Avenge My Village" QuestId="6548" Type="KillMob" MobId="11911" MobName="Grimtotem Mercenary" KillCount="6" />
+    <TurnIn QuestName="Avenge My Village" QuestId="6548" TurnInName="Makaba Flathoof" TurnInId="11857" />
+    <PickUp QuestName="Kill Grundig Darkcloud" QuestId="6629" GiverName="Makaba Flathoof" GiverId="11857" />
+    <Objective QuestName="Kill Grundig Darkcloud" QuestId="6629" Type="KillMob" MobId="11858" MobName="Grundig Darkcloud" KillCount="1" />
+    <Objective QuestName="Kill Grundig Darkcloud" QuestId="6629" Type="KillMob" MobId="11912" MobName="Grimtotem Brute" KillCount="6" />
+    <PickUp QuestName="Protect Kaya" QuestId="6523" GiverName="Kaya Flathoof" GiverId="11856" />
+    <TurnIn QuestName="Kill Grundig Darkcloud" QuestId="6629" TurnInName="Makaba Flathoof" TurnInId="11857" />
+    <TurnIn QuestName="Protect Kaya" QuestId="6523" TurnInName="Makaba Flathoof" TurnInId="11857" />
+    <PickUp QuestName="Kaya&apos;s Alive" QuestId="6401" GiverName="Makaba Flathoof" GiverId="11857" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stonetalon Mountains (15-16) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__The_Barrens_(16-20)" />
+  </QuestOrder>
+</HBProfile>

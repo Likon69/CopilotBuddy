@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Duskwood (30-31)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>31</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="75" Name="The Legend of Stalvan">
+    <Objective Type="CollectItem" ItemId="921" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Marshal Haggard" Id="1562" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-9549.08" Y="-1439.21" Z="62.29" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1244" Name="The Missing Diplomat">
+    <Objective Type="CollectItem" ItemId="5947" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Defias Strongbox" Id="21052" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-11014.0" Y="187.36" Z="28.79" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="335" Name="A Noble Brew">
+    <Objective Type="CollectItem" ItemId="2779" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Tear of Tilloa" Id="321" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-10363.7" Y="-1282.15" Z="35.4" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Duskwood (30-31)" LogColor="Green" />
+    <PickUp QuestName="The Brassbolts Brothers" QuestId="1179" GiverName="Pilot Longbeard" GiverId="2092" />
+    <TurnIn QuestName="Blessed Arm" QuestId="322" TurnInName="Grimand Elmore" TurnInId="1416" />
+    <PickUp QuestName="Armed and Ready" QuestId="325" GiverName="Grimand Elmore" GiverId="1416" />
+    <TurnIn QuestName="Cleansing the Eye" QuestId="293" TurnInName="Archbishop Benedictus" TurnInId="1284" />
+    <PickUp QuestName="The Missing Diplomat" QuestId="1274" GiverName="Thomas" GiverId="4982" />
+    <TurnIn QuestName="The Missing Diplomat" QuestId="1274" TurnInName="Bishop DeLavey" TurnInId="4960" />
+    <PickUp QuestName="The Missing Diplomat" QuestId="1241" GiverName="Bishop DeLavey" GiverId="4960" />
+    <TurnIn QuestName="The Missing Diplomat" QuestId="1241" TurnInName="Jorgen" TurnInId="4959" />
+    <PickUp QuestName="The Missing Diplomat" QuestId="1242" GiverName="Jorgen" GiverId="4959" />
+    <TurnIn QuestName="The Missing Diplomat" QuestId="1242" TurnInName="Elling Trias" TurnInId="482" />
+    <PickUp QuestName="The Missing Diplomat" QuestId="1243" GiverName="Elling Trias" GiverId="482" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="916" ItemName="A Torn Journal Page" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="1451" ItemName="Bottle of Zombie Juice" CollectCount="1" />
+    <PickUp QuestName="Look To The Stars" QuestId="181" GiverName="Viktori Prism&apos;Antras" GiverId="276" />
+    <PickUp QuestName="Worgen in the Woods" QuestId="173" GiverName="Calor" GiverId="663" />
+    <PickUp QuestName="The Night Watch" QuestId="58" GiverName="Commander Althea Ebonlocke" GiverId="264" />
+    <TurnIn QuestName="The Missing Diplomat" QuestId="1243" TurnInName="Watcher Backus" TurnInId="840" />
+    <PickUp QuestName="The Missing Diplomat" QuestId="1244" GiverName="Watcher Backus" GiverId="840" />
+    <Objective QuestName="Worgen in the Woods" QuestId="173" Type="KillMob" MobId="533" MobName="Nightbane Shadow Weaver" KillCount="6" />
+    <TurnIn QuestName="Worgen in the Woods" QuestId="173" TurnInName="Calor" TurnInId="663" />
+    <PickUp QuestName="Worgen in the Woods" QuestId="221" GiverName="Calor" GiverId="663" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="2794" ItemName="An Old History Book" CollectCount="1" />
+    <PickUp QuestName="An Old History Book" QuestId="337" GiverName="Avette Fellwood" GiverId="228" />
+    <Objective QuestName="Worgen in the Woods" QuestId="221" Type="KillMob" MobId="205" MobName="Nightbane Dark Runner" KillCount="12" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="74" TurnInName="Marshal Haggard" TurnInId="294" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="75" GiverName="Marshal Haggard" GiverId="294" />
+    <Objective QuestName="The Legend of Stalvan" QuestId="75" Type="CollectItem" ItemId="921" ItemName="A Faded Journal Page" CollectCount="1" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="75" TurnInName="Marshal Haggard" TurnInId="294" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="78" GiverName="Marshal Haggard" GiverId="294" />
+    <TurnIn QuestName="Juice Delivery" QuestId="159" TurnInName="Abercrombie" TurnInId="289" />
+    <PickUp QuestName="Ghoulish Effigy" QuestId="133" GiverName="Abercrombie" GiverId="289" />
+    <Objective QuestName="Ghoulish Effigy" QuestId="133" Type="CollectItem" ItemId="884" ItemName="Ghoul Rib" CollectCount="7" />
+    <Objective QuestName="The Night Watch" QuestId="58" Type="KillMob" MobId="604" MobName="Plague Spreader" KillCount="20" />
+    <TurnIn QuestName="Ghoulish Effigy" QuestId="133" TurnInName="Abercrombie" TurnInId="289" />
+    <PickUp QuestName="Ogre Thieves" QuestId="134" GiverName="Abercrombie" GiverId="289" />
+    <Objective QuestName="The Missing Diplomat" QuestId="1244" Type="CollectItem" ItemId="5947" ItemName="Defias Docket" CollectCount="1" />
+    <Objective QuestName="Ogre Thieves" QuestId="134" Type="CollectItem" ItemId="1349" ItemName="Abercrombie&apos;s Crate" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="300" MobName="Zzarc&apos; Vul" KillCount="1" />
+    <Objective QuestName="Look To The Stars" QuestId="181" Type="CollectItem" ItemId="1968" ItemName="Ogre&apos;s Monocle" CollectCount="1" />
+    <TurnIn QuestName="Ogre Thieves" QuestId="134" TurnInName="Abercrombie" TurnInId="289" />
+    <PickUp QuestName="Note to the Mayor" QuestId="160" GiverName="Abercrombie" GiverId="289" />
+    <TurnIn QuestName="Armed and Ready" QuestId="325" TurnInName="Sven Yorgen" TurnInId="311" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="78" TurnInName="Tavernkeep Smitts" TurnInId="273" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="79" GiverName="Tavernkeep Smitts" GiverId="273" />
+    <TurnIn QuestName="The Night Watch" QuestId="58" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="79" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="80" GiverName="Commander Althea Ebonlocke" GiverId="264" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="80" TurnInName="Clerk Daltry" TurnInId="267" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="97" GiverName="Clerk Daltry" GiverId="267" />
+    <TurnIn QuestName="Note to the Mayor" QuestId="160" TurnInName="Lord Ello Ebonlocke" TurnInId="263" />
+    <PickUp QuestName="Translate Abercrombie&apos;s Note" QuestId="251" GiverName="Lord Ello Ebonlocke" GiverId="263" />
+    <TurnIn QuestName="Translate Abercrombie&apos;s Note" QuestId="251" TurnInName="Sirra Von&apos;Indi" TurnInId="268" />
+    <PickUp QuestName="Wait for Sirra to Finish" QuestId="401" GiverName="Sirra Von&apos;Indi" GiverId="268" />
+    <TurnIn QuestName="Wait for Sirra to Finish" QuestId="401" TurnInName="Sirra Von&apos;Indi" TurnInId="268" />
+    <PickUp QuestName="Translation to Ello" QuestId="252" GiverName="Sirra Von&apos;Indi" GiverId="268" />
+    <TurnIn QuestName="Translation to Ello" QuestId="252" TurnInName="Lord Ello Ebonlocke" TurnInId="263" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="97" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="98" GiverName="Commander Althea Ebonlocke" GiverId="264" />
+    <TurnIn QuestName="Worgen in the Woods" QuestId="221" TurnInName="Calor" TurnInId="663" />
+    <PickUp QuestName="Worgen in the Woods" QuestId="222" GiverName="Calor" GiverId="663" />
+    <TurnIn QuestName="The Missing Diplomat" QuestId="1244" TurnInName="Watcher Backus" TurnInId="840" />
+    <PickUp QuestName="The Missing Diplomat" QuestId="1245" GiverName="Watcher Backus" GiverId="840" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="315" MobName="Stalvan Mistmantle" KillCount="1" />
+    <Objective QuestName="The Legend of Stalvan" QuestId="98" Type="CollectItem" ItemId="3629" ItemName="Mistmantle Family Ring" CollectCount="1" />
+    <Objective QuestName="A Noble Brew" QuestId="335" Type="CollectItem" ItemId="2779" ItemName="Tear of Tilloa" CollectCount="1" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="98" TurnInName="Madame Eva" TurnInId="265" />
+    <TurnIn QuestName="Look To The Stars" QuestId="181" TurnInName="Viktori Prism&apos;Antras" TurnInId="276" />
+    <Objective QuestName="Worgen in the Woods" QuestId="222" Type="KillMob" MobId="920" MobName="Nightbane Tainted One" KillCount="8" />
+    <Objective QuestName="Worgen in the Woods" QuestId="222" Type="KillMob" MobId="206" MobName="Nightbane Vile Fang" KillCount="8" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Duskwood (30-31) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Stranglethorn_Vale_(31-32)" />
+  </QuestOrder>
+</HBProfile>

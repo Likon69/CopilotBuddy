@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Searing Gorge (50-51)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>51</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="7722" Name="What the Flux?">
+    <Objective Type="CollectItem" ItemId="18922" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Secret Plans: Fiery Flux" Id="179826" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-6631.63" Y="-1225.39" Z="210.62" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Searing Gorge (50-51)" LogColor="Green" />
+    <PickUp QuestName="Curse These Fat Fingers" QuestId="7723" GiverName="Hansel Heavyhands" GiverId="14627" />
+    <PickUp QuestName="Fiery Menace!" QuestId="7724" GiverName="Hansel Heavyhands" GiverId="14627" />
+    <PickUp QuestName="Incendosaurs? Whateverosaur is More Like It" QuestId="7727" GiverName="Hansel Heavyhands" GiverId="14627" />
+    <PickUp QuestName="WANTED: Overseer Maltorius" QuestId="7701" GiverName="Hansel Heavyhands" GiverId="14627" />
+    <PickUp QuestName="STOLEN: Smithing Tuyere and Lookout&apos;s Spyglass" QuestId="7728" GiverName="Hansel Heavyhands" GiverId="14627" />
+    <PickUp QuestName="JOB OPPORTUNITY: Culling the Competition" QuestId="7729" GiverName="Hansel Heavyhands" GiverId="14627" />
+    <PickUp QuestName="What the Flux?" QuestId="7722" GiverName="Master Smith Burninate" GiverId="14624" />
+    <PickUp QuestName="Divine Retribution" QuestId="3441" GiverName="Kalaran Windblade" GiverId="8479" />
+    <TurnIn QuestName="Divine Retribution" QuestId="3441" TurnInName="Kalaran Windblade" TurnInId="8479" />
+    <PickUp QuestName="The Flawless Flame" QuestId="3442" GiverName="Kalaran Windblade" GiverId="8479" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="8566" MobName="Dark Iron Lookout" KillCount="1" />
+    <Objective QuestName="STOLEN: Smithing Tuyere and Lookout&apos;s Spyglass" QuestId="7728" Type="CollectItem" ItemId="18960" ItemName="Lookout&apos;s Spyglass" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="5840" MobName="Dark Iron Steamsmith" KillCount="1" />
+    <Objective QuestName="STOLEN: Smithing Tuyere and Lookout&apos;s Spyglass" QuestId="7728" Type="CollectItem" ItemId="18959" ItemName="Smithing Tuyere" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11818" ItemName="Grimesilt Outhouse Key" CollectCount="1" />
+    <PickUp QuestName="The Key to Freedom" QuestId="4451" GiverName="Kalaran Windblade" GiverId="8479" />
+    <Objective QuestName="The Flawless Flame" QuestId="3442" Type="CollectItem" ItemId="10511" ItemName="Golem Oil" CollectCount="4" />
+    <Objective QuestName="The Flawless Flame" QuestId="3442" Type="CollectItem" ItemId="10509" ItemName="Heart of Flame" CollectCount="4" />
+    <TurnIn QuestName="The Flawless Flame" QuestId="3442" TurnInName="Kalaran Windblade" TurnInId="8479" />
+    <PickUp QuestName="Forging the Shaft" QuestId="3443" GiverName="Kalaran Windblade" GiverId="8479" />
+    <Objective QuestName="Fiery Menace!" QuestId="7724" Type="KillMob" MobId="5858" MobName="Greater Lava Spider" KillCount="20" />
+    <Objective QuestName="Curse These Fat Fingers" QuestId="7723" Type="KillMob" MobId="5854" MobName="Heavy War Golem" KillCount="20" />
+    <Objective QuestName="Incendosaurs? Whateverosaur is More Like It" QuestId="7727" Type="KillMob" MobId="9318" MobName="Incendosaur" KillCount="20" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="14621" MobName="Overseer Maltorius" KillCount="1" />
+    <Objective QuestName="WANTED: Overseer Maltorius" QuestId="7701" Type="CollectItem" ItemId="18946" ItemName="Head of Overseer Maltorius" CollectCount="1" />
+    <Objective QuestName="What the Flux?" QuestId="7722" Type="CollectItem" ItemId="18922" ItemName="Secret Plans: Fiery Flux" CollectCount="1" />
+    <Objective QuestName="Forging the Shaft" QuestId="3443" Type="CollectItem" ItemId="10551" ItemName="Thorium Plated Dagger" CollectCount="8" />
+    <Objective QuestName="JOB OPPORTUNITY: Culling the Competition" QuestId="7729" Type="KillMob" MobId="5846" MobName="Dark Iron Taskmaster" KillCount="15" />
+    <Objective QuestName="JOB OPPORTUNITY: Culling the Competition" QuestId="7729" Type="KillMob" MobId="5844" MobName="Dark Iron Slaver" KillCount="15" />
+    <TurnIn QuestName="WANTED: Overseer Maltorius" QuestId="7701" TurnInName="Lookout Captain Lolo Longstriker" TurnInId="14634" />
+    <TurnIn QuestName="Curse These Fat Fingers" QuestId="7723" TurnInName="Hansel Heavyhands" TurnInId="14627" />
+    <TurnIn QuestName="Fiery Menace!" QuestId="7724" TurnInName="Hansel Heavyhands" TurnInId="14627" />
+    <TurnIn QuestName="Incendosaurs? Whateverosaur is More Like It" QuestId="7727" TurnInName="Hansel Heavyhands" TurnInId="14627" />
+    <TurnIn QuestName="STOLEN: Smithing Tuyere and Lookout&apos;s Spyglass" QuestId="7728" TurnInName="Taskmaster Scrange" TurnInId="14626" />
+    <TurnIn QuestName="JOB OPPORTUNITY: Culling the Competition" QuestId="7729" TurnInName="Taskmaster Scrange" TurnInId="14626" />
+    <TurnIn QuestName="What the Flux?" QuestId="7722" TurnInName="Master Smith Burninate" TurnInId="14624" />
+    <TurnIn QuestName="Forging the Shaft" QuestId="3443" TurnInName="Kalaran Windblade" TurnInId="8479" />
+    <PickUp QuestName="The Flame&apos;s Casing" QuestId="3452" GiverName="Kalaran Windblade" GiverId="8479" />
+    <Objective QuestName="The Flame&apos;s Casing" QuestId="3452" Type="CollectItem" ItemId="10552" ItemName="Symbol of Ragnaros" CollectCount="1" />
+    <TurnIn QuestName="The Flame&apos;s Casing" QuestId="3452" TurnInName="Kalaran Windblade" TurnInId="8479" />
+    <PickUp QuestName="The Torch of Retribution" QuestId="3453" GiverName="Kalaran Windblade" GiverId="8479" />
+    <TurnIn QuestName="The Torch of Retribution" QuestId="3453" TurnInName="Kalaran Windblade" TurnInId="8479" />
+    <PickUp QuestName="The Torch of Retribution" QuestId="3454" GiverName="Kalaran Windblade" GiverId="8479" />
+    <TurnIn QuestName="The Torch of Retribution" QuestId="3454" TurnInName="Kalaran Windblade" TurnInId="8479" />
+    <PickUp QuestName="Squire Maltrake" QuestId="3462" GiverName="Kalaran Windblade" GiverId="8479" />
+    <TurnIn QuestName="Squire Maltrake" QuestId="3462" TurnInName="Squire Maltrake" TurnInId="8509" />
+    <PickUp QuestName="Set Them Ablaze!" QuestId="3463" GiverName="Squire Maltrake" GiverId="8509" />
+    <TurnIn QuestName="The Key to Freedom" QuestId="4451" TurnInName="Squire Maltrake" TurnInId="8509" />
+    <PickUp QuestName="Caught!" QuestId="4449" GiverName="Squire Maltrake" GiverId="8509" />
+    <Objective QuestName="Caught!" QuestId="4449" Type="KillMob" MobId="5839" MobName="Dark Iron Geologist" KillCount="8" />
+    <TurnIn QuestName="Caught!" QuestId="4449" TurnInName="Squire Maltrake" TurnInId="8509" />
+    <PickUp QuestName="Suntara Stones" QuestId="3367" GiverName="Dorius Stonetender" GiverId="8284" />
+    <TurnIn QuestName="Suntara Stones" QuestId="3367" TurnInName="Dorius Stonetender" TurnInId="8284" />
+    <PickUp QuestName="Suntara Stones" QuestId="3368" GiverName="Dorius Stonetender" GiverId="8284" />
+    <TurnIn QuestName="Set Them Ablaze!" QuestId="3463" TurnInName="Squire Maltrake" TurnInId="8509" />
+    <PickUp QuestName="Trinkets..." QuestId="3481" GiverName="Squire Maltrake" GiverId="8509" />
+    <TurnIn QuestName="Trinkets..." QuestId="3481" TurnInName="Squire Maltrake" TurnInId="8509" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10575" ItemName="Black Dragonflight Molt" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5807" ItemName="Fool&apos;s Stout Report" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="9245" ItemName="Stoley&apos;s Bottle" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="3900" ItemName="Pupellyverbos Port" CollectCount="12" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10556" ItemName="Stone Circle" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="8526" ItemName="Violet Tragan" CollectCount="1" />
+    <TurnIn QuestName="Whiskey Slim&apos;s Lost Grog" QuestId="580" TurnInName="Whiskey Slim" TurnInId="2491" />
+    <TurnIn QuestName="Report Back to Fizzlebub" QuestId="1122" TurnInName="Crank Fizzlebub" TurnInId="2498" />
+    <TurnIn QuestName="Deliver to MacKinley" QuestId="2874" TurnInName="&quot;Sea Wolf&quot; MacKinley" TurnInId="2501" />
+    <TurnIn QuestName="Sprinkle&apos;s Secret Ingredient" QuestId="2641" TurnInName="Sprinkle" TurnInId="7583" />
+    <PickUp QuestName="Delivery for Marin" QuestId="2661" GiverName="Sprinkle" GiverId="7583" />
+    <TurnIn QuestName="Delivery for Marin" QuestId="2661" TurnInName="Marin Noggenfogger" TurnInId="7564" />
+    <PickUp QuestName="Noggenfogger Elixir" QuestId="2662" GiverName="Marin Noggenfogger" GiverId="7564" />
+    <TurnIn QuestName="Noggenfogger Elixir" QuestId="2662" TurnInName="Marin Noggenfogger" TurnInId="7564" />
+    <TurnIn QuestName="The Stone Circle" QuestId="3444" TurnInName="Marvon Rivetseeker" TurnInId="7771" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Searing Gorge (50-51) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Un&apos;Goro_Crater_(51-52)" />
+  </QuestOrder>
+</HBProfile>

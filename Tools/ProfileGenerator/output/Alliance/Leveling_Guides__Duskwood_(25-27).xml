@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Duskwood (25-27)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>27</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="70" Name="The Legend of Stalvan">
+    <Objective Type="CollectItem" ItemId="910" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Storage Chest" Id="1560" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-9463.14" Y="-2.23" Z="63.82" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Duskwood (25-27)" LogColor="Green" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="66" GiverName="Madame Eva" GiverId="265" />
+    <PickUp QuestName="The Totem of Infliction" QuestId="101" GiverName="Madame Eva" GiverId="265" />
+    <PickUp QuestName="The Night Watch" QuestId="56" GiverName="Commander Althea Ebonlocke" GiverId="264" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="66" TurnInName="Clerk Daltry" TurnInId="267" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="67" GiverName="Clerk Daltry" GiverId="267" />
+    <PickUp QuestName="Raven Hill" QuestId="163" GiverName="Elaine Carevin" GiverId="633" />
+    <PickUp QuestName="The Hermit" QuestId="165" GiverName="Elaine Carevin" GiverId="633" />
+    <PickUp QuestName="Deliveries to Sven" QuestId="164" GiverName="Elaine Carevin" GiverId="633" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="4371" ItemName="Bronze Tube" CollectCount="1" />
+    <PickUp QuestName="Look To The Stars" QuestId="174" GiverName="Viktori Prism&apos;Antras" GiverId="276" />
+    <TurnIn QuestName="Look To The Stars" QuestId="174" TurnInName="Viktori Prism&apos;Antras" TurnInId="276" />
+    <PickUp QuestName="Look To The Stars" QuestId="175" GiverName="Viktori Prism&apos;Antras" GiverId="276" />
+    <TurnIn QuestName="Look To The Stars" QuestId="175" TurnInName="Blind Mary" TurnInId="302" />
+    <PickUp QuestName="Look To The Stars" QuestId="177" GiverName="Blind Mary" GiverId="302" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="511" MobName="Insane Ghoul" KillCount="1" />
+    <Objective QuestName="Look To The Stars" QuestId="177" Type="CollectItem" ItemId="1946" ItemName="Mary&apos;s Looking Glass" CollectCount="1" />
+    <Objective QuestName="The Totem of Infliction" QuestId="101" Type="CollectItem" ItemId="2378" ItemName="Skeleton Finger" CollectCount="10" />
+    <Objective QuestName="The Night Watch" QuestId="56" Type="KillMob" MobId="203" MobName="Skeletal Mage" KillCount="6" />
+    <Objective QuestName="The Night Watch" QuestId="56" Type="KillMob" MobId="48" MobName="Skeletal Warrior" KillCount="8" />
+    <TurnIn QuestName="Raven Hill" QuestId="163" TurnInName="Jitters" TurnInId="288" />
+    <PickUp QuestName="Jitters&apos; Growling Gut" QuestId="5" GiverName="Jitters" GiverId="288" />
+    <TurnIn QuestName="Deliveries to Sven" QuestId="164" TurnInName="Sven Yorgen" TurnInId="311" />
+    <PickUp QuestName="Sven&apos;s Revenge" QuestId="95" GiverName="Sven Yorgen" GiverId="311" />
+    <PickUp QuestName="Wolves at Our Heels" QuestId="226" GiverName="Lars" GiverId="893" />
+    <Objective QuestName="Wolves at Our Heels" QuestId="226" Type="KillMob" MobId="213" MobName="Starving Dire Wolf" KillCount="12" />
+    <Objective QuestName="Wolves at Our Heels" QuestId="226" Type="KillMob" MobId="565" MobName="Rabid Dire Wolf" KillCount="8" />
+    <TurnIn QuestName="The Hermit" QuestId="165" TurnInName="Abercrombie" TurnInId="289" />
+    <PickUp QuestName="Supplies from Darkshire" QuestId="148" GiverName="Abercrombie" GiverId="289" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="930" MobName="Black Widow Hatchling" KillCount="1" />
+    <Objective QuestName="The Totem of Infliction" QuestId="101" Type="CollectItem" ItemId="1130" ItemName="Vial of Spider Venom" CollectCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="930" MobName="Black Widow Hatchling" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="2251" ItemName="Gooey Spider Leg" CollectCount="6" />
+    <Objective QuestName="The Totem of Infliction" QuestId="101" Type="CollectItem" ItemId="1129" ItemName="Ghoul Fang" CollectCount="10" />
+    <PickUp QuestName="The Weathered Grave" QuestId="225" GiverName="Abercrombie" GiverId="289" />
+    <TurnIn QuestName="Wolves at Our Heels" QuestId="226" TurnInName="Lars" TurnInId="893" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="67" TurnInName="Thor" TurnInId="523" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="68" GiverName="Thor" GiverId="523" />
+    <TurnIn QuestName="Jitters&apos; Growling Gut" QuestId="5" TurnInName="Chef Grual" TurnInId="272" />
+    <PickUp QuestName="Dusky Crab Cakes" QuestId="93" GiverName="Chef Grual" GiverId="272" />
+    <TurnIn QuestName="Dusky Crab Cakes" QuestId="93" TurnInName="Chef Grual" TurnInId="272" />
+    <PickUp QuestName="Return to Jitters" QuestId="240" GiverName="Chef Grual" GiverId="272" />
+    <TurnIn QuestName="The Night Watch" QuestId="56" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
+    <PickUp QuestName="The Night Watch" QuestId="57" GiverName="Commander Althea Ebonlocke" GiverId="264" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="68" TurnInName="Clerk Daltry" TurnInId="267" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="69" GiverName="Clerk Daltry" GiverId="267" />
+    <TurnIn QuestName="The Weathered Grave" QuestId="225" TurnInName="Sirra Von&apos;Indi" TurnInId="268" />
+    <PickUp QuestName="Morgan Ladimore" QuestId="227" GiverName="Sirra Von&apos;Indi" GiverId="268" />
+    <TurnIn QuestName="Morgan Ladimore" QuestId="227" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
+    <TurnIn QuestName="The Totem of Infliction" QuestId="101" TurnInName="Madame Eva" TurnInId="265" />
+    <TurnIn QuestName="Supplies from Darkshire" QuestId="148" TurnInName="Madame Eva" TurnInId="265" />
+    <PickUp QuestName="Ghost Hair Thread" QuestId="149" GiverName="Madame Eva" GiverId="265" />
+    <TurnIn QuestName="Look To The Stars" QuestId="177" TurnInName="Viktori Prism&apos;Antras" TurnInId="276" />
+    <TurnIn QuestName="Ghost Hair Thread" QuestId="149" TurnInName="Blind Mary" TurnInId="302" />
+    <PickUp QuestName="Return the Comb" QuestId="154" GiverName="Blind Mary" GiverId="302" />
+    <TurnIn QuestName="Return the Comb" QuestId="154" TurnInName="Madame Eva" TurnInId="265" />
+    <PickUp QuestName="Deliver the Thread" QuestId="157" GiverName="Madame Eva" GiverId="265" />
+    <TurnIn QuestName="Sven&apos;s Revenge" QuestId="95" TurnInName="Madame Eva" TurnInId="265" />
+    <PickUp QuestName="Sven&apos;s Camp" QuestId="230" GiverName="Madame Eva" GiverId="265" />
+    <TurnIn QuestName="Return to Jitters" QuestId="240" TurnInName="Jitters" TurnInId="288" />
+    <TurnIn QuestName="Sven&apos;s Camp" QuestId="230" TurnInName="Sven Yorgen" TurnInId="311" />
+    <PickUp QuestName="The Shadowy Figure" QuestId="262" GiverName="Sven Yorgen" GiverId="311" />
+    <TurnIn QuestName="Deliver the Thread" QuestId="157" TurnInName="Abercrombie" TurnInId="289" />
+    <PickUp QuestName="Zombie Juice" QuestId="158" GiverName="Abercrombie" GiverId="289" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="69" TurnInName="Innkeeper Farley" TurnInId="295" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="70" GiverName="Innkeeper Farley" GiverId="295" />
+    <Objective QuestName="The Legend of Stalvan" QuestId="70" Type="CollectItem" ItemId="910" ItemName="An Undelivered Letter" CollectCount="1" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="70" TurnInName="Caretaker Folsom" TurnInId="297" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="72" GiverName="Caretaker Folsom" GiverId="297" />
+    <TurnIn QuestName="The Legend of Stalvan" QuestId="72" TurnInName="Caretaker Folsom" TurnInId="297" />
+    <PickUp QuestName="The Legend of Stalvan" QuestId="74" GiverName="Caretaker Folsom" GiverId="297" />
+    <PickUp QuestName="A Noble Brew" QuestId="335" GiverName="Zardeth of the Black Claw" GiverId="1435" />
+    <TurnIn QuestName="The Shadowy Figure" QuestId="262" TurnInName="Madame Eva" TurnInId="265" />
+    <PickUp QuestName="The Shadowy Search Continues" QuestId="265" GiverName="Madame Eva" GiverId="265" />
+    <TurnIn QuestName="The Shadowy Search Continues" QuestId="265" TurnInName="Clerk Daltry" TurnInId="267" />
+    <PickUp QuestName="Inquire at the Inn" QuestId="266" GiverName="Clerk Daltry" GiverId="267" />
+    <TurnIn QuestName="Inquire at the Inn" QuestId="266" TurnInName="Tavernkeep Smitts" TurnInId="273" />
+    <PickUp QuestName="Finding the Shadowy Figure" QuestId="453" GiverName="Tavernkeep Smitts" GiverId="273" />
+    <TurnIn QuestName="Zombie Juice" QuestId="158" TurnInName="Tavernkeep Smitts" TurnInId="273" />
+    <PickUp QuestName="Gather Rot Blossoms" QuestId="156" GiverName="Tavernkeep Smitts" GiverId="273" />
+    <TurnIn QuestName="Finding the Shadowy Figure" QuestId="453" TurnInName="Jitters" TurnInId="288" />
+    <PickUp QuestName="Return to Sven" QuestId="268" GiverName="Jitters" GiverId="288" />
+    <Objective QuestName="Gather Rot Blossoms" QuestId="156" Type="CollectItem" ItemId="1598" ItemName="Rot Blossom" CollectCount="8" />
+    <Objective QuestName="The Night Watch" QuestId="57" Type="KillMob" MobId="531" MobName="Skeletal Fiend" KillCount="15" />
+    <Objective QuestName="The Night Watch" QuestId="57" Type="KillMob" MobId="202" MobName="Skeletal Horror" KillCount="15" />
+    <TurnIn QuestName="Return to Sven" QuestId="268" TurnInName="Sven Yorgen" TurnInId="311" />
+    <PickUp QuestName="Proving Your Worth" QuestId="323" GiverName="Sven Yorgen" GiverId="311" />
+    <Objective QuestName="Proving Your Worth" QuestId="323" Type="KillMob" MobId="785" MobName="Skeletal Warder" KillCount="3" />
+    <Objective QuestName="Proving Your Worth" QuestId="323" Type="KillMob" MobId="787" MobName="Skeletal Healer" KillCount="3" />
+    <Objective QuestName="Proving Your Worth" QuestId="323" Type="KillMob" MobId="1110" MobName="Skeletal Raider" KillCount="15" />
+    <TurnIn QuestName="Proving Your Worth" QuestId="323" TurnInName="Sven Yorgen" TurnInId="311" />
+    <PickUp QuestName="Seeking Wisdom" QuestId="269" GiverName="Sven Yorgen" GiverId="311" />
+    <TurnIn QuestName="Gather Rot Blossoms" QuestId="156" TurnInName="Tavernkeep Smitts" TurnInId="273" />
+    <PickUp QuestName="Juice Delivery" QuestId="159" GiverName="Tavernkeep Smitts" GiverId="273" />
+    <TurnIn QuestName="The Night Watch" QuestId="57" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Duskwood (25-27) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Redridge_Mountains_(27-28)" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Tanaris (47-49)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>49</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Tanaris (47-49)" LogColor="Green" />
+    <PickUp QuestName="The Thirsty Goblin" QuestId="2605" GiverName="Marin Noggenfogger" GiverId="7564" />
+    <PickUp QuestName="More Wastewander Justice" QuestId="1691" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
+    <PickUp QuestName="The Dunemaul Compound" QuestId="5863" GiverName="Andi Lynn" GiverId="11758" />
+    <PickUp QuestName="The Super Egg-O-Matic" QuestId="2741" GiverName="Andi Lynn" GiverId="11758" />
+    <TurnIn QuestName="The Borrower" QuestId="2941" TurnInName="Curgle Cranklehop" TurnInId="7763" />
+    <PickUp QuestName="The Super Snapper FX" QuestId="2944" GiverName="Curgle Cranklehop" GiverId="7763" />
+    <PickUp QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" GiverName="Curgle Cranklehop" GiverId="7763" />
+    <PickUp QuestName="WANTED: Andre Firebeard" QuestId="2875" GiverName="Curgle Cranklehop" GiverId="7763" />
+    <PickUp QuestName="Thistleshrub Valley" QuestId="3362" GiverName="Tran&apos;rek" GiverId="7876" />
+    <PickUp QuestName="Noxious Lair Investigation" QuestId="82" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    <PickUp QuestName="Pirate Hats Ahoy!" QuestId="8365" GiverName="Haughty Modiste" GiverId="15165" />
+    <TurnIn QuestName="Screecher Spirits" QuestId="3520" TurnInName="Yeh&apos;kinya" TurnInId="8579" />
+    <PickUp QuestName="Southsea Shakedown" QuestId="8366" GiverName="Security Chief Bilgewhizzle" GiverId="7882" />
+    <PickUp QuestName="Stoley&apos;s Shipment" QuestId="2873" GiverName="Stoley" GiverId="7881" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7847" MobName="Caliph Scorpidsting" KillCount="1" />
+    <Objective QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" Type="CollectItem" ItemId="8723" ItemName="Caliph Scorpidsting&apos;s Head" CollectCount="1" />
+    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5615" MobName="Wastewander Rogue" KillCount="8" />
+    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5623" MobName="Wastewander Assassin" KillCount="6" />
+    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5617" MobName="Wastewander Shadow Mage" KillCount="10" />
+    <Objective QuestName="Stoley&apos;s Shipment" QuestId="2873" Type="CollectItem" ItemId="9244" ItemName="Stoley&apos;s Shipment" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7883" MobName="Andre Firebeard" KillCount="1" />
+    <Objective QuestName="WANTED: Andre Firebeard" QuestId="2875" Type="CollectItem" ItemId="9246" ItemName="Firebeard&apos;s Head" CollectCount="1" />
+    <Objective QuestName="Pirate Hats Ahoy!" QuestId="8365" Type="CollectItem" ItemId="20519" ItemName="Southsea Pirate Hat" CollectCount="20" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7855" MobName="Southsea Pirate" KillCount="10" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7856" MobName="Southsea Freebooter" KillCount="10" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7857" MobName="Southsea Dock Worker" KillCount="10" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7858" MobName="Southsea Swashbuckler" KillCount="10" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="9276" ItemName="Pirate&apos;s Footlocker" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="9250" ItemName="Ship Schedule" CollectCount="1" />
+    <PickUp QuestName="Ship Schedules" QuestId="2876" GiverName="Stoley" GiverId="7881" />
+    <TurnIn QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <TurnIn QuestName="More Wastewander Justice" QuestId="1691" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <TurnIn QuestName="The Sunken Temple" QuestId="3445" TurnInName="Marvon Rivetseeker" TurnInId="7771" />
+    <PickUp QuestName="The Stone Circle" QuestId="3444" GiverName="Marvon Rivetseeker" GiverId="7771" />
+    <PickUp QuestName="Gahz&apos;ridian" QuestId="3161" GiverName="Marvon Rivetseeker" GiverId="7771" />
+    <Objective QuestName="Noxious Lair Investigation" QuestId="82" Type="CollectItem" ItemId="8587" ItemName="Centipaar Insect Parts" CollectCount="5" />
+    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="12046" MobName="Gor&apos;marok the Ravager" KillCount="1" />
+    <Objective QuestName="Gahz&apos;ridian" QuestId="3161" Type="CollectItem" ItemId="8443" ItemName="Gahz&apos;ridian Ornament" CollectCount="30" />
+    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="5474" MobName="Dunemaul Brute" KillCount="10" />
+    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="5472" MobName="Dunemaul Enforcer" KillCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="5481" MobName="Thistleshrub Dew Collector" KillCount="1" />
+    <Objective QuestName="The Thirsty Goblin" QuestId="2605" Type="CollectItem" ItemId="8428" ItemName="Laden Dew Gland" CollectCount="1" />
+    <Objective QuestName="Thistleshrub Valley" QuestId="3362" Type="KillMob" MobId="5490" MobName="Gnarled Thistleshrub" KillCount="8" />
+    <Objective QuestName="Thistleshrub Valley" QuestId="3362" Type="KillMob" MobId="5485" MobName="Thistleshrub Rootshaper" KillCount="8" />
+    <PickUp QuestName="Tooga&apos;s Quest" QuestId="1560" GiverName="Marvon Rivetseeker" GiverId="7771" />
+    <TurnIn QuestName="Gahz&apos;ridian" QuestId="3161" TurnInName="Marvon Rivetseeker" TurnInId="7771" />
+    <TurnIn QuestName="Tooga&apos;s Quest" QuestId="1560" TurnInName="Torta" TurnInId="6015" />
+    <TurnIn QuestName="WANTED: Andre Firebeard" QuestId="2875" TurnInName="Security Chief Bilgewhizzle" TurnInId="7882" />
+    <TurnIn QuestName="Southsea Shakedown" QuestId="8366" TurnInName="Security Chief Bilgewhizzle" TurnInId="7882" />
+    <TurnIn QuestName="Ship Schedules" QuestId="2876" TurnInName="Security Chief Bilgewhizzle" TurnInId="7882" />
+    <TurnIn QuestName="Stoley&apos;s Shipment" QuestId="2873" TurnInName="Stoley" TurnInId="7881" />
+    <PickUp QuestName="Deliver to MacKinley" QuestId="2874" GiverName="Stoley" GiverId="7881" />
+    <PickUp QuestName="Yuka Screwspigot" QuestId="4324" GiverName="Yorba Screwspigot" GiverId="9706" />
+    <TurnIn QuestName="Pirate Hats Ahoy!" QuestId="8365" TurnInName="Haughty Modiste" TurnInId="15165" />
+    <TurnIn QuestName="The Thirsty Goblin" QuestId="2605" TurnInName="Marin Noggenfogger" TurnInId="7564" />
+    <PickUp QuestName="In Good Taste" QuestId="2606" GiverName="Marin Noggenfogger" GiverId="7564" />
+    <TurnIn QuestName="In Good Taste" QuestId="2606" TurnInName="Sprinkle" TurnInId="7583" />
+    <PickUp QuestName="Sprinkle&apos;s Secret Ingredient" QuestId="2641" GiverName="Sprinkle" GiverId="7583" />
+    <TurnIn QuestName="Noxious Lair Investigation" QuestId="82" TurnInName="Alchemist Pestlezugg" TurnInId="5594" />
+    <PickUp QuestName="The Scrimshank Redemption" QuestId="10" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    <TurnIn QuestName="Thistleshrub Valley" QuestId="3362" TurnInName="Tran&apos;rek" TurnInId="7876" />
+    <TurnIn QuestName="The Dunemaul Compound" QuestId="5863" TurnInName="Andi Lynn" TurnInId="11758" />
+    <PickUp QuestName="Find OOX-17/TN!" QuestId="351" GiverName="Krinkle Goodsteel" GiverId="5411" />
+    <TurnIn QuestName="Find OOX-17/TN!" QuestId="351" TurnInName="Homing Robot OOX-17/TN" TurnInId="7784" />
+    <Objective QuestName="The Scrimshank Redemption" QuestId="10" Type="CollectItem" ItemId="8593" ItemName="Scrimshank&apos;s Surveying Gear" CollectCount="1" />
+    <TurnIn QuestName="The Scrimshank Redemption" QuestId="10" TurnInName="Senior Surveyor Fizzledowser" TurnInId="7724" />
+    <PickUp QuestName="Insect Part Analysis" QuestId="110" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    <TurnIn QuestName="Insect Part Analysis" QuestId="110" TurnInName="Alchemist Pestlezugg" TurnInId="5594" />
+    <PickUp QuestName="Insect Part Analysis" QuestId="113" GiverName="Alchemist Pestlezugg" GiverId="5594" />
+    <TurnIn QuestName="Insect Part Analysis" QuestId="113" TurnInName="Senior Surveyor Fizzledowser" TurnInId="7724" />
+    <PickUp QuestName="Rise of the Silithid" QuestId="162" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Tanaris (47-49) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__The_Hinterlands_(49-50)" />
+  </QuestOrder>
+</HBProfile>

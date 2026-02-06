@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Badlands (42-43)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>43</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="718" Name="Mirages">
+    <Objective Type="CollectItem" ItemId="4629" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Excavation Supply Crate" Id="2867" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-6278.5" Y="-3743.92" Z="243.81" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Badlands (42-43)" LogColor="Green" />
+    <TurnIn QuestName="Stormpike&apos;s Deciphering" QuestId="554" TurnInName="Prospector Stormpike" TurnInId="1356" />
+    <PickUp QuestName="Ironband Wants You!" QuestId="707" GiverName="Prospector Stormpike" GiverId="1356" />
+    <PickUp QuestName="Badlands Reagent Run" QuestId="2500" GiverName="Ghak Healtouch" GiverId="1470" />
+    <TurnIn QuestName="Ironband Wants You!" QuestId="707" TurnInName="Prospector Ironband" TurnInId="1344" />
+    <PickUp QuestName="Find Agmond" QuestId="738" GiverName="Prospector Ironband" GiverId="1344" />
+    <PickUp QuestName="A Sign of Hope" QuestId="720" GiverName="Prospector Ironband" GiverId="1344" />
+    <TurnIn QuestName="A Sign of Hope" QuestId="720" TurnInName="Prospector Ryedol" TurnInId="2910" />
+    <PickUp QuestName="A Dwarf and His Tools" QuestId="719" GiverName="Prospector Ryedol" GiverId="2910" />
+    <PickUp QuestName="Mirages" QuestId="718" GiverName="Sigrun Ironhew" GiverId="2860" />
+    <Objective QuestName="A Dwarf and His Tools" QuestId="719" Type="CollectItem" ItemId="4616" ItemName="Ryedol&apos;s Lucky Pick" CollectCount="1" />
+    <Objective QuestName="Mirages" QuestId="718" Type="CollectItem" ItemId="4629" ItemName="Supply Crate" CollectCount="1" />
+    <TurnIn QuestName="A Dwarf and His Tools" QuestId="719" TurnInName="Prospector Ryedol" TurnInId="2910" />
+    <TurnIn QuestName="Mirages" QuestId="718" TurnInName="Sigrun Ironhew" TurnInId="2860" />
+    <PickUp QuestName="Scrounging" QuestId="733" GiverName="Sigrun Ironhew" GiverId="2860" />
+    <PickUp QuestName="Barbecued Buzzard Wings" QuestId="703" GiverName="Rigglefuzz" GiverId="2817" />
+    <TurnIn QuestName="Martek the Exiled" QuestId="1106" TurnInName="Martek the Exiled" TurnInId="4618" />
+    <PickUp QuestName="Indurium" QuestId="1108" GiverName="Martek the Exiled" GiverId="4618" />
+    <TurnIn QuestName="Find Agmond" QuestId="738" TurnInName="Jazzrik" TurnInId="9179" />
+    <PickUp QuestName="Murdaloc" QuestId="739" GiverName="Jazzrik" GiverId="9179" />
+    <Objective QuestName="Murdaloc" QuestId="739" Type="KillMob" MobId="2945" MobName="Murdaloc" KillCount="1" />
+    <Objective QuestName="Murdaloc" QuestId="739" Type="KillMob" MobId="2893" MobName="Stonevault Bonesnapper" KillCount="12" />
+    <Objective QuestName="Indurium" QuestId="1108" Type="CollectItem" ItemId="5797" ItemName="Indurium Flake" CollectCount="10" />
+    <TurnIn QuestName="Indurium" QuestId="1108" TurnInName="Martek the Exiled" TurnInId="4618" />
+    <PickUp QuestName="News for Fizzle" QuestId="1137" GiverName="Martek the Exiled" GiverId="4618" />
+    <PickUp QuestName="Study of the Elements: Rock" QuestId="710" GiverName="Lotwil Veriatus" GiverId="2921" />
+    <Objective QuestName="Badlands Reagent Run" QuestId="2500" Type="CollectItem" ItemId="7848" ItemName="Rock Elemental Shard" CollectCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2735" MobName="Lesser Rock Elemental" KillCount="1" />
+    <Objective QuestName="Study of the Elements: Rock" QuestId="710" Type="CollectItem" ItemId="4626" ItemName="Small Stone Shard" CollectCount="10" />
+    <TurnIn QuestName="Study of the Elements: Rock" QuestId="710" TurnInName="Lotwil Veriatus" TurnInId="2921" />
+    <PickUp QuestName="Study of the Elements: Rock" QuestId="711" GiverName="Lotwil Veriatus" GiverId="2921" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="92" MobName="Rock Elemental" KillCount="1" />
+    <Objective QuestName="Study of the Elements: Rock" QuestId="711" Type="CollectItem" ItemId="4627" ItemName="Large Stone Slab" CollectCount="3" />
+    <TurnIn QuestName="Study of the Elements: Rock" QuestId="711" TurnInName="Lotwil Veriatus" TurnInId="2921" />
+    <PickUp QuestName="Study of the Elements: Rock" QuestId="712" GiverName="Lotwil Veriatus" GiverId="2921" />
+    <Objective QuestName="Badlands Reagent Run" QuestId="2500" Type="CollectItem" ItemId="7847" ItemName="Buzzard Gizzard" CollectCount="5" />
+    <Objective QuestName="Barbecued Buzzard Wings" QuestId="703" Type="CollectItem" ItemId="3404" ItemName="Buzzard Wing" CollectCount="4" />
+    <Objective QuestName="Badlands Reagent Run" QuestId="2500" Type="CollectItem" ItemId="7846" ItemName="Crag Coyote Fang" CollectCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2736" MobName="Greater Rock Elemental" KillCount="1" />
+    <Objective QuestName="Study of the Elements: Rock" QuestId="712" Type="CollectItem" ItemId="4628" ItemName="Bracers of Rock Binding" CollectCount="5" />
+    <Objective QuestName="Scrounging" QuestId="733" Type="CollectItem" ItemId="4630" ItemName="Scrap Metal" CollectCount="7" />
+    <TurnIn QuestName="Study of the Elements: Rock" QuestId="712" TurnInName="Lotwil Veriatus" TurnInId="2921" />
+    <TurnIn QuestName="Barbecued Buzzard Wings" QuestId="703" TurnInName="Rigglefuzz" TurnInId="2817" />
+    <TurnIn QuestName="Scrounging" QuestId="733" TurnInName="Sigrun Ironhew" TurnInId="2860" />
+    <TurnIn QuestName="Badlands Reagent Run" QuestId="2500" TurnInName="Ghak Healtouch" TurnInId="1470" />
+    <TurnIn QuestName="Murdaloc" QuestId="739" TurnInName="Prospector Ironband" TurnInId="1344" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Badlands (42-43) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Stranglethorn_Vale_(43-44)" />
+  </QuestOrder>
+</HBProfile>

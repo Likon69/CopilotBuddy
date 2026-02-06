@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Un&apos;Goro Crater (52-54)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>54</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="4290" Name="The Fare of Lar&apos;korwi">
+    <Objective Type="CollectItem" ItemId="11504" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Fresh Threshadon Carcass" Id="166863" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-7365.4" Y="-2009.94" Z="-270.04" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="3881" Name="Expedition Salvation">
+    <Objective Type="CollectItem" ItemId="11112" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Research Equipment" Id="161521" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-7596.07" Y="-889.45" Z="-271.75" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Un&apos;Goro Crater (52-54)" LogColor="Green" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10561" ItemName="Mithril Casing" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10556" ItemName="Stone Circle" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="8526" ItemName="Violet Tragan" CollectCount="1" />
+    <TurnIn QuestName="Sprinkle&apos;s Secret Ingredient" QuestId="2641" TurnInName="Sprinkle" TurnInId="7583" />
+    <PickUp QuestName="Delivery for Marin" QuestId="2661" GiverName="Sprinkle" GiverId="7583" />
+    <TurnIn QuestName="March of the Silithid" QuestId="4494" TurnInName="Alchemist Pestlezugg" TurnInId="5594" />
+    <PickUp QuestName="Bungle in the Jungle" QuestId="4496" GiverName="Alchemist Pestlezugg" GiverId="5594" />
+    <TurnIn QuestName="Delivery for Marin" QuestId="2661" TurnInName="Marin Noggenfogger" TurnInId="7564" />
+    <PickUp QuestName="Noggenfogger Elixir" QuestId="2662" GiverName="Marin Noggenfogger" GiverId="7564" />
+    <TurnIn QuestName="Noggenfogger Elixir" QuestId="2662" TurnInName="Marin Noggenfogger" TurnInId="7564" />
+    <TurnIn QuestName="The Stone Circle" QuestId="3444" TurnInName="Marvon Rivetseeker" TurnInId="7771" />
+    <PickUp QuestName="The Apes of Un&apos;Goro" QuestId="4289" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <PickUp QuestName="The Fare of Lar&apos;korwi" QuestId="4290" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <Objective QuestName="The Fare of Lar&apos;korwi" QuestId="4290" Type="CollectItem" ItemId="11504" ItemName="Piece of Threshadon Carcass" CollectCount="1" />
+    <PickUp QuestName="Chasing A-Me 01" QuestId="4243" GiverName="Karna Remtravel" GiverId="9618" />
+    <PickUp QuestName="Shizzle&apos;s Flyer" QuestId="4503" GiverName="Shizzle" GiverId="9998" />
+    <PickUp QuestName="Beware of Pterrordax" QuestId="4501" GiverName="Shizzle" GiverId="9998" />
+    <PickUp QuestName="Roll the Bones" QuestId="3882" GiverName="Spark Nilminer" GiverId="9272" />
+    <PickUp QuestName="Alien Ecology" QuestId="3883" GiverName="Hol&apos;anyee Marshal" GiverId="9271" />
+    <TurnIn QuestName="Williden&apos;s Journal" QuestId="3884" TurnInName="Williden Marshal" TurnInId="9270" />
+    <PickUp QuestName="Expedition Salvation" QuestId="3881" GiverName="Williden Marshal" GiverId="9270" />
+    <PickUp QuestName="Larion and Muigin" QuestId="4145" GiverName="Larion" GiverId="9118" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="9166" MobName="Pterrordax" KillCount="1" />
+    <Objective QuestName="Super Sticky" QuestId="4504" Type="CollectItem" ItemId="11834" ItemName="Super Sticky Tar" CollectCount="12" />
+    <Objective QuestName="Larion and Muigin" QuestId="4145" Type="KillMob" MobId="6510" MobName="Bloodpetal Flayer" KillCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="6514" MobName="Un&apos;Goro Gorilla" KillCount="1" />
+    <Objective QuestName="The Apes of Un&apos;Goro" QuestId="4289" Type="CollectItem" ItemId="11478" ItemName="Un&apos;Goro Gorilla Pelt" CollectCount="2" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="6513" MobName="Un&apos;Goro Stomper" KillCount="1" />
+    <Objective QuestName="The Apes of Un&apos;Goro" QuestId="4289" Type="CollectItem" ItemId="11479" ItemName="Un&apos;Goro Stomper Pelt" CollectCount="2" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="6516" MobName="Un&apos;Goro Thunderer" KillCount="1" />
+    <Objective QuestName="The Apes of Un&apos;Goro" QuestId="4289" Type="CollectItem" ItemId="11480" ItemName="Un&apos;Goro Thunderer Pelt" CollectCount="2" />
+    <TurnIn QuestName="Chasing A-Me 01" QuestId="4243" TurnInName="A-Me 01" TurnInId="9623" />
+    <PickUp QuestName="Chasing A-Me 01" QuestId="4244" GiverName="A-Me 01" GiverId="9623" />
+    <TurnIn QuestName="Chasing A-Me 01" QuestId="4244" TurnInName="A-Me 01" TurnInId="9623" />
+    <PickUp QuestName="Chasing A-Me 01" QuestId="4245" GiverName="A-Me 01" GiverId="9623" />
+    <TurnIn QuestName="Chasing A-Me 01" QuestId="4245" TurnInName="Karna Remtravel" TurnInId="9618" />
+    <Objective QuestName="Larion and Muigin" QuestId="4145" Type="KillMob" MobId="6511" MobName="Bloodpetal Thresher" KillCount="5" />
+    <Objective QuestName="Larion and Muigin" QuestId="4145" Type="KillMob" MobId="6509" MobName="Bloodpetal Lasher" KillCount="5" />
+    <Objective QuestName="Expedition Salvation" QuestId="3881" Type="CollectItem" ItemId="11113" ItemName="Crate of Foodstuffs" CollectCount="1" />
+    <TurnIn QuestName="The Apes of Un&apos;Goro" QuestId="4289" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <TurnIn QuestName="The Fare of Lar&apos;korwi" QuestId="4290" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <PickUp QuestName="The Scent of Lar&apos;korwi" QuestId="4291" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <PickUp QuestName="The Mighty U&apos;cha" QuestId="4301" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="9683" MobName="Lar&apos;korwi Mate" KillCount="1" />
+    <Objective QuestName="The Scent of Lar&apos;korwi" QuestId="4291" Type="CollectItem" ItemId="11509" ItemName="Ravasaur Pheromone Gland" CollectCount="2" />
+    <PickUp QuestName="It&apos;s a Secret to Everybody" QuestId="3844" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <TurnIn QuestName="It&apos;s a Secret to Everybody" QuestId="3844" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <PickUp QuestName="It&apos;s a Secret to Everybody" QuestId="3845" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <Objective QuestName="Bone-Bladed Weapons" QuestId="4300" Type="CollectItem" ItemId="11477" ItemName="White Ravasaur Claw" CollectCount="8" />
+    <TurnIn QuestName="The Scent of Lar&apos;korwi" QuestId="4291" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <PickUp QuestName="The Bait for Lar&apos;korwi" QuestId="4292" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <Objective QuestName="Beware of Pterrordax" QuestId="4501" Type="KillMob" MobId="9166" MobName="Pterrordax" KillCount="10" />
+    <Objective QuestName="Alien Ecology" QuestId="3883" Type="CollectItem" ItemId="11131" ItemName="Hive Wall Sample" CollectCount="1" />
+    <Objective QuestName="Bungle in the Jungle" QuestId="4496" Type="CollectItem" ItemId="11837" ItemName="Gorishi Scent Gland" CollectCount="1" />
+    <Objective QuestName="Expedition Salvation" QuestId="3881" Type="CollectItem" ItemId="11112" ItemName="Research Equipment" CollectCount="1" />
+    <PickUp QuestName="Finding the Source" QuestId="974" GiverName="Krakle" GiverId="10302" />
+    <Objective QuestName="Larion and Muigin" QuestId="4145" Type="KillMob" MobId="6512" MobName="Bloodpetal Trapper" KillCount="5" />
+    <Objective QuestName="Beware of Pterrordax" QuestId="4501" Type="KillMob" MobId="9167" MobName="Frenzied Pterrordax" KillCount="10" />
+    <Objective QuestName="Shizzle&apos;s Flyer" QuestId="4503" Type="CollectItem" ItemId="11831" ItemName="Webbed Pterrordax Scale" CollectCount="8" />
+    <Objective QuestName="Roll the Bones" QuestId="3882" Type="CollectItem" ItemId="11114" ItemName="Dinosaur Bone" CollectCount="8" />
+    <Objective QuestName="Shizzle&apos;s Flyer" QuestId="4503" Type="CollectItem" ItemId="11830" ItemName="Webbed Diemetradon Scale" CollectCount="8" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12235" ItemName="Un&apos;Goro Slime Sample" CollectCount="30" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11018" ItemName="Un&apos;Goro Soil" CollectCount="20" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11186" ItemName="Red Power Crystal" CollectCount="7" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11188" ItemName="Yellow Power Crystal" CollectCount="7" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11185" ItemName="Green Power Crystal" CollectCount="7" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11184" ItemName="Blue Power Crystal" CollectCount="7" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11116" ItemName="A Mangled Journal" CollectCount="1" />
+    <PickUp QuestName="Williden&apos;s Journal" QuestId="3884" GiverName="Krakle" GiverId="10302" />
+    <TurnIn QuestName="Shizzle&apos;s Flyer" QuestId="4503" TurnInName="Shizzle" TurnInId="9998" />
+    <TurnIn QuestName="Beware of Pterrordax" QuestId="4501" TurnInName="Spraggle Frock" TurnInId="9997" />
+    <PickUp QuestName="Lost!" QuestId="4492" GiverName="Spraggle Frock" GiverId="9997" />
+    <TurnIn QuestName="Roll the Bones" QuestId="3882" TurnInName="Spark Nilminer" TurnInId="9272" />
+    <TurnIn QuestName="Alien Ecology" QuestId="3883" TurnInName="Hol&apos;anyee Marshal" TurnInId="9271" />
+    <TurnIn QuestName="Expedition Salvation" QuestId="3881" TurnInName="Williden Marshal" TurnInId="9270" />
+    <PickUp QuestName="Crystals of Power" QuestId="4284" GiverName="J.D. Collie" GiverId="9117" />
+    <TurnIn QuestName="Crystals of Power" QuestId="4284" TurnInName="J.D. Collie" TurnInId="9117" />
+    <PickUp QuestName="The Northern Pylon" QuestId="4285" GiverName="J.D. Collie" GiverId="9117" />
+    <PickUp QuestName="The Eastern Pylon" QuestId="4287" GiverName="J.D. Collie" GiverId="9117" />
+    <PickUp QuestName="The Western Pylon" QuestId="4288" GiverName="J.D. Collie" GiverId="9117" />
+    <Objective QuestName="It&apos;s a Secret to Everybody" QuestId="3845" Type="CollectItem" ItemId="11104" ItemName="Large Compass" CollectCount="1" />
+    <Objective QuestName="It&apos;s a Secret to Everybody" QuestId="3845" Type="CollectItem" ItemId="11105" ItemName="Curled Map Parchment" CollectCount="1" />
+    <Objective QuestName="It&apos;s a Secret to Everybody" QuestId="3845" Type="CollectItem" ItemId="11106" ItemName="Lion-headed Key" CollectCount="1" />
+    <TurnIn QuestName="Larion and Muigin" QuestId="4145" TurnInName="Larion" TurnInId="9118" />
+    <PickUp QuestName="Marvon&apos;s Workshop" QuestId="4147" GiverName="Larion" GiverId="9118" />
+    <TurnIn QuestName="It&apos;s a Secret to Everybody" QuestId="3845" TurnInName="Linken" TurnInId="8737" />
+    <PickUp QuestName="It&apos;s a Secret to Everybody" QuestId="3908" GiverName="Linken" GiverId="8737" />
+    <Objective QuestName="Volcanic Activity" QuestId="4502" Type="CollectItem" ItemId="11829" ItemName="Un&apos;Goro Ash" CollectCount="9" />
+    <TurnIn QuestName="Lost!" QuestId="4492" TurnInName="Ringo" TurnInId="9999" />
+    <PickUp QuestName="A Little Help From My Friends" QuestId="4491" GiverName="Ringo" GiverId="9999" />
+    <TurnIn QuestName="A Little Help From My Friends" QuestId="4491" TurnInName="Spraggle Frock" TurnInId="9997" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="9622" MobName="U&apos;cha" KillCount="1" />
+    <Objective QuestName="The Mighty U&apos;cha" QuestId="4301" Type="CollectItem" ItemId="11476" ItemName="U&apos;cha&apos;s Pelt" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11569" ItemName="Preserved Threshadon Meat" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11570" ItemName="Preserved Pheromone Mixture" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="9684" MobName="Lar&apos;korwi" KillCount="1" />
+    <Objective QuestName="The Bait for Lar&apos;korwi" QuestId="4292" Type="CollectItem" ItemId="11510" ItemName="Lar&apos;korwi&apos;s Head" CollectCount="1" />
+    <TurnIn QuestName="The Mighty U&apos;cha" QuestId="4301" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <TurnIn QuestName="The Bait for Lar&apos;korwi" QuestId="4292" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <TurnIn QuestName="Finding the Source" QuestId="974" TurnInName="Krakle" TurnInId="10302" />
+    <PickUp QuestName="The New Springs" QuestId="980" GiverName="Krakle" GiverId="10302" />
+    <TurnIn QuestName="The Northern Pylon" QuestId="4285" TurnInName="J.D. Collie" TurnInId="9117" />
+    <TurnIn QuestName="The Eastern Pylon" QuestId="4287" TurnInName="J.D. Collie" TurnInId="9117" />
+    <TurnIn QuestName="The Western Pylon" QuestId="4288" TurnInName="J.D. Collie" TurnInId="9117" />
+    <PickUp QuestName="Making Sense of It" QuestId="4321" GiverName="J.D. Collie" GiverId="9117" />
+    <TurnIn QuestName="Making Sense of It" QuestId="4321" TurnInName="J.D. Collie" TurnInId="9117" />
+    <TurnIn QuestName="Super Sticky" QuestId="4504" TurnInName="Tran&apos;rek" TurnInId="7876" />
+    <TurnIn QuestName="Bungle in the Jungle" QuestId="4496" TurnInName="Alchemist Pestlezugg" TurnInId="5594" />
+    <PickUp QuestName="Un&apos;Goro Soil" QuestId="3761" GiverName="Arch Druid Hamuul Runetotem" GiverId="5769" />
+    <TurnIn QuestName="Un&apos;Goro Soil" QuestId="3761" TurnInName="Ghede" TurnInId="9076" />
+    <PickUp QuestName="Morrowgrain Research" QuestId="3782" GiverName="Arch Druid Hamuul Runetotem" GiverId="5769" />
+    <TurnIn QuestName="Morrowgrain Research" QuestId="3782" TurnInName="Bashana Runetotem" TurnInId="9087" />
+    <TurnIn QuestName="Volcanic Activity" QuestId="4502" TurnInName="Liv Rizzlefix" TurnInId="8496" />
+    <TurnIn QuestName="Marvon&apos;s Workshop" QuestId="4147" TurnInName="Liv Rizzlefix" TurnInId="8496" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10575" ItemName="Black Dragonflight Molt" CollectCount="1" />
+    <TurnIn QuestName="Vivian Lagrave" QuestId="4133" TurnInName="Shadowmage Vivian Lagrave" TurnInId="9078" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Un&apos;Goro Crater (52-54) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Burning_Steppes_(54-54)" />
+  </QuestOrder>
+</HBProfile>

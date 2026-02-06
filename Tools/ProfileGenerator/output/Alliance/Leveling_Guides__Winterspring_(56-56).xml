@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Winterspring (56-56)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="5245" Name="Troubled Spirits of Kel&apos;Theril">
+    <Objective Type="CollectItem" ItemId="12897" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Highborne Relic Fragment" Id="175891" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6558.83" Y="-3929.28" Z="659.25" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="12899" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Highborne Relic Fragment" Id="175893" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6568.88" Y="-4038.71" Z="659.2" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="12898" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Highborne Relic Fragment" Id="175892" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6477.24" Y="-4101.61" Z="659.44" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="12896" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Highborne Relic Fragment" Id="175888" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6498.79" Y="-4231.49" Z="659.38" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Winterspring (56-56)" LogColor="Green" />
+    <TurnIn QuestName="Toxic Horrors" QuestId="5086" TurnInName="Donova Snowden" TurnInId="9298" />
+    <PickUp QuestName="Winterfall Runners" QuestId="5087" GiverName="Donova Snowden" GiverId="9298" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="10916" MobName="Winterfall Runner" KillCount="1" />
+    <Objective QuestName="Winterfall Runners" QuestId="5087" Type="CollectItem" ItemId="12829" ItemName="Winterfall Crate" CollectCount="1" />
+    <TurnIn QuestName="Starfall" QuestId="5250" TurnInName="Wynd Nightchaser" TurnInId="11079" />
+    <PickUp QuestName="The Ruins of Kel&apos;Theril" QuestId="5244" GiverName="Wynd Nightchaser" GiverId="11079" />
+    <TurnIn QuestName="The Ruins of Kel&apos;Theril" QuestId="5244" TurnInName="Jaron Stoneshaper" TurnInId="10301" />
+    <PickUp QuestName="Troubled Spirits of Kel&apos;Theril" QuestId="5245" GiverName="Jaron Stoneshaper" GiverId="10301" />
+    <PickUp QuestName="Enraged Wildkin" QuestId="4861" GiverName="Jaron Stoneshaper" GiverId="10301" />
+    <Objective QuestName="Troubled Spirits of Kel&apos;Theril" QuestId="5245" Type="CollectItem" ItemId="12897" ItemName="Second Relic Fragment" CollectCount="1" />
+    <Objective QuestName="Troubled Spirits of Kel&apos;Theril" QuestId="5245" Type="CollectItem" ItemId="12899" ItemName="Fourth Relic Fragment" CollectCount="1" />
+    <Objective QuestName="Troubled Spirits of Kel&apos;Theril" QuestId="5245" Type="CollectItem" ItemId="12898" ItemName="Third Relic Fragment" CollectCount="1" />
+    <Objective QuestName="Troubled Spirits of Kel&apos;Theril" QuestId="5245" Type="CollectItem" ItemId="12896" ItemName="First Relic Fragment" CollectCount="1" />
+    <PickUp QuestName="Are We There, Yeti?" QuestId="3783" GiverName="Umi Rumplesnicker" GiverId="10305" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12438" ItemName="Tinkee&apos;s Letter" CollectCount="1" />
+    <TurnIn QuestName="Felnok Steelspring" QuestId="4808" TurnInName="Felnok Steelspring" TurnInId="10468" />
+    <Objective QuestName="Are We There, Yeti?" QuestId="3783" Type="CollectItem" ItemId="12366" ItemName="Thick Yeti Fur" CollectCount="10" />
+    <TurnIn QuestName="Enraged Wildkin" QuestId="4861" TurnInName="Felnok Steelspring" TurnInId="10468" />
+    <PickUp QuestName="Enraged Wildkin" QuestId="4863" GiverName="Felnok Steelspring" GiverId="10468" />
+    <TurnIn QuestName="Enraged Wildkin" QuestId="4863" TurnInName="Felnok Steelspring" TurnInId="10468" />
+    <PickUp QuestName="Enraged Wildkin" QuestId="4864" GiverName="Felnok Steelspring" GiverId="10468" />
+    <Objective QuestName="Enraged Wildkin" QuestId="4864" Type="CollectItem" ItemId="12525" ItemName="Jaron&apos;s Supplies" CollectCount="1" />
+    <TurnIn QuestName="Find Ranshalla" QuestId="979" TurnInName="Ranshalla" TurnInId="10300" />
+    <PickUp QuestName="Guardians of the Altar" QuestId="4901" GiverName="Ranshalla" GiverId="10300" />
+    <Objective QuestName="Enraged Wildkin" QuestId="4864" Type="CollectItem" ItemId="12524" ItemName="Blue-feathered Amulet" CollectCount="1" />
+    <PickUp QuestName="The Everlook Report" QuestId="6028" GiverName="Gregor Greystone" GiverId="10431" />
+    <PickUp QuestName="Duke Nicholas Zverenhoff" QuestId="6030" GiverName="Gregor Greystone" GiverId="10431" />
+    <PickUp QuestName="Sister Pamela" QuestId="5601" GiverName="Jessica Redpath" GiverId="11629" />
+    <TurnIn QuestName="Are We There, Yeti?" QuestId="3783" TurnInName="Umi Rumplesnicker" TurnInId="10305" />
+    <TurnIn QuestName="Enraged Wildkin" QuestId="4864" TurnInName="Jaron Stoneshaper" TurnInId="10301" />
+    <TurnIn QuestName="Strange Sources" QuestId="4842" TurnInName="Donova Snowden" TurnInId="9298" />
+    <TurnIn QuestName="Winterfall Runners" QuestId="5087" TurnInName="Donova Snowden" TurnInId="9298" />
+    <TurnIn QuestName="Dousing the Flames of Protection" QuestId="5165" TurnInName="Greta Mosshoof" TurnInId="10922" />
+    <TurnIn QuestName="Guardians of the Altar" QuestId="4901" TurnInName="Erelas Ambersky" TurnInId="7916" />
+    <PickUp QuestName="Wildkin of Elune" QuestId="4902" GiverName="Erelas Ambersky" GiverId="7916" />
+    <TurnIn QuestName="Wildkin of Elune" QuestId="4902" TurnInName="Arch Druid Fandral Staghelm" TurnInId="3516" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Winterspring (56-56) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Western_Plaguelands_(56-57)" />
+  </QuestOrder>
+</HBProfile>

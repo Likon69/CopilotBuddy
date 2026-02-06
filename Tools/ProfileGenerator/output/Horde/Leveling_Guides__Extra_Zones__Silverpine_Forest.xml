@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Extra Zones\\Silverpine Forest</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>21</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="422" Name="Arugal&apos;s Folly">
+    <Objective Type="CollectItem" ItemId="3155" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Dusty Spellbooks" Id="1571" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="866.42" Y="1231.33" Z="52.6" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Silverpine Forest" LogColor="Green" />
+    <PickUp QuestName="Escorting Erland" QuestId="435" GiverName="Deathstalker Erland" GiverId="1978" />
+    <TurnIn QuestName="Escorting Erland" QuestId="435" TurnInName="Rane Yorick" TurnInId="1950" />
+    <PickUp QuestName="The Deathstalkers&apos; Report" QuestId="449" GiverName="Rane Yorick" GiverId="1950" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="3164" ItemName="Discolored Worg Heart" CollectCount="6" />
+    <PickUp QuestName="Prove Your Worth" QuestId="421" GiverName="Dalar Dawnweaver" GiverId="1938" />
+    <PickUp QuestName="Border Crossings" QuestId="477" GiverName="Shadow Priest Allister" GiverId="2121" />
+    <If Condition="(Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Supplying the Sepulcher" QuestId="6321" GiverName="Deathguard Podrig" GiverId="6389" />
+      <TurnIn QuestName="Delivery to Silverpine Forest" QuestId="445" TurnInName="Apothecary Renferrel" TurnInId="1937" />
+    </If>
+    <PickUp QuestName="A Recipe For Death" QuestId="447" GiverName="Apothecary Renferrel" GiverId="1937" />
+    <TurnIn QuestName="The Deathstalkers&apos; Report" QuestId="449" TurnInName="High Executor Hadrec" TurnInId="1952" />
+    <PickUp QuestName="Speak with Renferrel" QuestId="3221" GiverName="High Executor Hadrec" GiverId="1952" />
+    <PickUp QuestName="Lost Deathstalkers" QuestId="428" GiverName="High Executor Hadrec" GiverId="1952" />
+    <PickUp QuestName="The Dead Fields" QuestId="437" GiverName="High Executor Hadrec" GiverId="1952" />
+    <TurnIn QuestName="Speak with Renferrel" QuestId="3221" TurnInName="Apothecary Renferrel" TurnInId="1937" />
+    <PickUp QuestName="Zinge&apos;s Delivery" QuestId="1359" GiverName="Apothecary Renferrel" GiverId="1937" />
+    <TurnIn QuestName="Supplying the Sepulcher" QuestId="6321" TurnInName="Karos Razok" TurnInId="2226" />
+    <If Condition="(Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Ride to the Undercity" QuestId="6323" GiverName="Karos Razok" GiverId="2226" />
+    </If>
+    <TurnIn QuestName="Ride to the Undercity" QuestId="6323" TurnInName="Gordon Wendham" TurnInId="4556" />
+    <If Condition="(Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Michael Garrett" QuestId="6322" GiverName="Gordon Wendham" GiverId="4556" />
+    </If>
+    <TurnIn QuestName="Michael Garrett" QuestId="6322" TurnInName="Michael Garrett" TurnInId="4551" />
+    <If Condition="(Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Return to Podrig" QuestId="6324" GiverName="Michael Garrett" GiverId="4551" />
+      <TurnIn QuestName="Return to Podrig" QuestId="6324" TurnInName="Deathguard Podrig" TurnInId="6389" />
+    </If>
+    <Objective QuestName="Prove Your Worth" QuestId="421" Type="KillMob" MobId="1769" MobName="Moonrage Whitescalp" KillCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1778" MobName="Ferocious Grizzled Bear" KillCount="1" />
+    <Objective QuestName="A Recipe For Death" QuestId="447" Type="CollectItem" ItemId="3253" ItemName="Grizzled Bear Heart" CollectCount="6" />
+    <TurnIn QuestName="Prove Your Worth" QuestId="421" TurnInName="Dalar Dawnweaver" TurnInId="1938" />
+    <PickUp QuestName="Arugal&apos;s Folly" QuestId="422" GiverName="Dalar Dawnweaver" GiverId="1938" />
+    <Objective QuestName="Arugal&apos;s Folly" QuestId="422" Type="CollectItem" ItemId="3155" ItemName="Remedy of Arugal" CollectCount="1" />
+    <TurnIn QuestName="Lost Deathstalkers" QuestId="428" TurnInName="Rane Yorick" TurnInId="1950" />
+    <PickUp QuestName="Wild Hearts" QuestId="429" GiverName="Rane Yorick" GiverId="1950" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1983" MobName="Nightlash" KillCount="1" />
+    <Objective QuestName="The Dead Fields" QuestId="437" Type="CollectItem" ItemId="3622" ItemName="Essence of Nightlash" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1780" MobName="Moss Stalker" KillCount="1" />
+    <Objective QuestName="A Recipe For Death" QuestId="447" Type="CollectItem" ItemId="3254" ItemName="Skittering Blood" CollectCount="6" />
+    <TurnIn QuestName="Wild Hearts" QuestId="429" TurnInName="Apothecary Renferrel" TurnInId="1937" />
+    <PickUp QuestName="Return to Quinn" QuestId="430" GiverName="Apothecary Renferrel" GiverId="1937" />
+    <TurnIn QuestName="The Dead Fields" QuestId="437" TurnInName="High Executor Hadrec" TurnInId="1952" />
+    <PickUp QuestName="The Decrepit Ferry" QuestId="438" GiverName="High Executor Hadrec" GiverId="1952" />
+    <TurnIn QuestName="Arugal&apos;s Folly" QuestId="422" TurnInName="Dalar Dawnweaver" TurnInId="1938" />
+    <PickUp QuestName="Arugal&apos;s Folly" QuestId="423" GiverName="Dalar Dawnweaver" GiverId="1938" />
+    <TurnIn QuestName="A Recipe For Death" QuestId="447" TurnInName="Master Apothecary Faranell" TurnInId="2055" />
+    <TurnIn QuestName="Zinge&apos;s Delivery" QuestId="1359" TurnInName="Apothecary Zinge" TurnInId="5204" />
+    <PickUp QuestName="Sample for Helbrim" QuestId="1358" GiverName="Apothecary Zinge" GiverId="5204" />
+    <TurnIn QuestName="Border Crossings" QuestId="477" TurnInName="Apothecary Zinge" TurnInId="5204" />
+    <PickUp QuestName="Maps and Runes" QuestId="478" GiverName="Apothecary Zinge" GiverId="5204" />
+    <TurnIn QuestName="The Decrepit Ferry" QuestId="438" TurnInName="Apothecary Zinge" TurnInId="5204" />
+    <PickUp QuestName="Rot Hide Clues" QuestId="439" GiverName="Apothecary Zinge" GiverId="5204" />
+    <TurnIn QuestName="Return to Quinn" QuestId="430" TurnInName="Quinn Yorick" TurnInId="1951" />
+    <PickUp QuestName="Ivar the Foul" QuestId="425" GiverName="Rane Yorick" GiverId="1950" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1971" MobName="Ivar the Foul" KillCount="1" />
+    <Objective QuestName="Ivar the Foul" QuestId="425" Type="CollectItem" ItemId="3621" ItemName="Ivar&apos;s Head" CollectCount="1" />
+    <TurnIn QuestName="Ivar the Foul" QuestId="425" TurnInName="Rane Yorick" TurnInId="1950" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1782" MobName="Moonrage Darksoul" KillCount="1" />
+    <Objective QuestName="Arugal&apos;s Folly" QuestId="423" Type="CollectItem" ItemId="3157" ItemName="Darksoul Shackle" CollectCount="3" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1779" MobName="Moonrage Glutton" KillCount="1" />
+    <Objective QuestName="Arugal&apos;s Folly" QuestId="423" Type="CollectItem" ItemId="3156" ItemName="Glutton Shackle" CollectCount="6" />
+    <TurnIn QuestName="Rot Hide Clues" QuestId="439" TurnInName="High Executor Hadrec" TurnInId="1952" />
+    <PickUp QuestName="The Engraved Ring" QuestId="440" GiverName="High Executor Hadrec" GiverId="1952" />
+    <TurnIn QuestName="Maps and Runes" QuestId="478" TurnInName="Shadow Priest Allister" TurnInId="2121" />
+    <PickUp QuestName="Dalar&apos;s Analysis" QuestId="481" GiverName="Shadow Priest Allister" GiverId="2121" />
+    <TurnIn QuestName="Arugal&apos;s Folly" QuestId="423" TurnInName="Dalar Dawnweaver" TurnInId="1938" />
+    <PickUp QuestName="Arugal&apos;s Folly" QuestId="424" GiverName="Dalar Dawnweaver" GiverId="1938" />
+    <TurnIn QuestName="Dalar&apos;s Analysis" QuestId="481" TurnInName="Dalar Dawnweaver" TurnInId="1938" />
+    <PickUp QuestName="Dalaran&apos;s Intentions" QuestId="482" GiverName="Dalar Dawnweaver" GiverId="1938" />
+    <TurnIn QuestName="Dalaran&apos;s Intentions" QuestId="482" TurnInName="Shadow Priest Allister" TurnInId="2121" />
+    <PickUp QuestName="Ambermill Investigations" QuestId="479" GiverName="Shadow Priest Allister" GiverId="2121" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1972" MobName="Grimson the Pale" KillCount="1" />
+    <Objective QuestName="Arugal&apos;s Folly" QuestId="424" Type="CollectItem" ItemId="3634" ItemName="Head of Grimson" CollectCount="1" />
+    <Objective QuestName="Ambermill Investigations" QuestId="479" Type="CollectItem" ItemId="3354" ItemName="Dalaran Pendant" CollectCount="8" />
+    <TurnIn QuestName="Arugal&apos;s Folly" QuestId="424" TurnInName="Dalar Dawnweaver" TurnInId="1938" />
+    <TurnIn QuestName="Ambermill Investigations" QuestId="479" TurnInName="Shadow Priest Allister" TurnInId="2121" />
+    <TurnIn QuestName="The Engraved Ring" QuestId="440" TurnInName="Magistrate Sevren" TurnInId="1499" />
+    <PickUp QuestName="Raleigh and the Undercity" QuestId="441" GiverName="Magistrate Sevren" GiverId="1499" />
+    <PickUp QuestName="Until Death Do Us Part" QuestId="264" GiverName="Clarice Foster" GiverId="5543" />
+    <TurnIn QuestName="Raleigh and the Undercity" QuestId="441" TurnInName="Raleigh Andrean" TurnInId="2050" />
+    <PickUp QuestName="A Husband&apos;s Revenge" QuestId="530" GiverName="Raleigh Andrean" GiverId="2050" />
+    <TurnIn QuestName="Until Death Do Us Part" QuestId="264" TurnInName="Raleigh Andrean" TurnInId="2050" />
+    <PickUp QuestName="Rot Hide Ichor" QuestId="443" GiverName="High Executor Hadrec" GiverId="1952" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2332" MobName="Valdred Moray" KillCount="1" />
+    <Objective QuestName="A Husband&apos;s Revenge" QuestId="530" Type="CollectItem" ItemId="3613" ItemName="Valdred&apos;s Hands" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="3317" ItemName="A Talking Head" CollectCount="1" />
+    <PickUp QuestName="Resting in Pieces" QuestId="460" GiverName="High Executor Hadrec" GiverId="1952" />
+    <Objective QuestName="Rot Hide Ichor" QuestId="443" Type="CollectItem" ItemId="3236" ItemName="Rot Hide Ichor" CollectCount="8" />
+    <TurnIn QuestName="Resting in Pieces" QuestId="460" TurnInName="High Executor Hadrec" TurnInId="1952" />
+    <PickUp QuestName="The Hidden Niche" QuestId="461" GiverName="High Executor Hadrec" GiverId="1952" />
+    <TurnIn QuestName="The Hidden Niche" QuestId="461" TurnInName="High Executor Hadrec" TurnInId="1952" />
+    <PickUp QuestName="Wand to Bethor" QuestId="491" GiverName="High Executor Hadrec" GiverId="1952" />
+    <TurnIn QuestName="Rot Hide Ichor" QuestId="443" TurnInName="Apothecary Renferrel" TurnInId="1937" />
+    <PickUp QuestName="Rot Hide Origins" QuestId="444" GiverName="Apothecary Renferrel" GiverId="1937" />
+    <TurnIn QuestName="A Husband&apos;s Revenge" QuestId="530" TurnInName="Raleigh Andrean" TurnInId="2050" />
+    <TurnIn QuestName="Rot Hide Origins" QuestId="444" TurnInName="Bethor Iceshard" TurnInId="1498" />
+    <TurnIn QuestName="Wand to Bethor" QuestId="491" TurnInName="Bethor Iceshard" TurnInId="1498" />
+    <PickUp QuestName="Beren&apos;s Peril" QuestId="516" GiverName="Shadow Priest Allister" GiverId="2121" />
+    <PickUp QuestName="Journey to Hillsbrad Foothills" QuestId="493" GiverName="Apothecary Renferrel" GiverId="1937" />
+    <Objective QuestName="Beren&apos;s Peril" QuestId="516" Type="KillMob" MobId="1974" MobName="Ravenclaw Drudger" KillCount="6" />
+    <Objective QuestName="Beren&apos;s Peril" QuestId="516" Type="KillMob" MobId="1973" MobName="Ravenclaw Guardian" KillCount="6" />
+    <TurnIn QuestName="Beren&apos;s Peril" QuestId="516" TurnInName="Shadow Priest Allister" TurnInId="2121" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Silverpine Forest Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Feralas (49-49)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Feralas (49-49)" LogColor="Green" />
+    <TurnIn QuestName="Return to Witch Doctor Uzer&apos;i" QuestId="3122" TurnInName="Witch Doctor Uzer&apos;i" TurnInId="8115" />
+    <PickUp QuestName="The Sunken Temple" QuestId="3380" GiverName="Witch Doctor Uzer&apos;i" GiverId="8115" />
+    <PickUp QuestName="Improved Quality" QuestId="7734" GiverName="Jangdor Swiftstrider" GiverId="7854" />
+    <PickUp QuestName="Dark Heart" QuestId="3062" GiverName="Talo Thornhoof" GiverId="7776" />
+    <PickUp QuestName="Vengeance on the Northspring" QuestId="3063" GiverName="Talo Thornhoof" GiverId="7776" />
+    <PickUp QuestName="The Strength of Corruption" QuestId="4120" GiverName="Talo Thornhoof" GiverId="7776" />
+    <PickUp QuestName="Zapped Giants" QuestId="7003" GiverName="Zorbin Fandazzle" GiverId="14637" />
+    <PickUp QuestName="Fuel for the Zapping" QuestId="7721" GiverName="Zorbin Fandazzle" GiverId="14637" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="14638" MobName="Zapped Wave Strider" KillCount="1" />
+    <Objective QuestName="Zapped Giants" QuestId="7003" Type="CollectItem" ItemId="18956" ItemName="Miniaturization Residue" CollectCount="15" />
+    <Objective QuestName="Fuel for the Zapping" QuestId="7721" Type="CollectItem" ItemId="18958" ItemName="Water Elemental Core" CollectCount="10" />
+    <TurnIn QuestName="Zapped Giants" QuestId="7003" TurnInName="Zorbin Fandazzle" TurnInId="14637" />
+    <TurnIn QuestName="Fuel for the Zapping" QuestId="7721" TurnInName="Zorbin Fandazzle" TurnInId="14637" />
+    <Objective QuestName="Improved Quality" QuestId="7734" Type="CollectItem" ItemId="18947" ItemName="Rage Scar Yeti Hide" CollectCount="10" />
+    <PickUp QuestName="Perfect Yeti Hide" QuestId="7738" GiverName="Zorbin Fandazzle" GiverId="14637" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="9530" ItemName="Horn of Hatetalon" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="8075" MobName="Edana Hatetalon" KillCount="1" />
+    <Objective QuestName="Dark Heart" QuestId="3062" Type="CollectItem" ItemId="9528" ItemName="Edana&apos;s Dark Heart" CollectCount="1" />
+    <Objective QuestName="Vengeance on the Northspring" QuestId="3063" Type="KillMob" MobId="5362" MobName="Northspring Harpy" KillCount="4" />
+    <Objective QuestName="Vengeance on the Northspring" QuestId="3063" Type="KillMob" MobId="5363" MobName="Northspring Roguefeather" KillCount="4" />
+    <Objective QuestName="Vengeance on the Northspring" QuestId="3063" Type="KillMob" MobId="5364" MobName="Northspring Slayer" KillCount="4" />
+    <Objective QuestName="Vengeance on the Northspring" QuestId="3063" Type="KillMob" MobId="5366" MobName="Northspring Windcaller" KillCount="4" />
+    <TurnIn QuestName="Improved Quality" QuestId="7734" TurnInName="Jangdor Swiftstrider" TurnInId="7854" />
+    <TurnIn QuestName="Perfect Yeti Hide" QuestId="7738" TurnInName="Jangdor Swiftstrider" TurnInId="7854" />
+    <TurnIn QuestName="Dark Heart" QuestId="3062" TurnInName="Talo Thornhoof" TurnInId="7776" />
+    <TurnIn QuestName="Vengeance on the Northspring" QuestId="3063" TurnInName="Talo Thornhoof" TurnInId="7776" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Feralas (49-49) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Tanaris_(49-50)" />
+  </QuestOrder>
+</HBProfile>

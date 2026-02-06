@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\The Burning Crusade (58-70)\\Zangarmarsh Group Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Zangarmarsh Group Quests" LogColor="Green" />
+    <PickUp QuestName="Leader of the Darkcrest" QuestId="9730" />
+    <PickUp QuestName="Leader of the Bloodscale" QuestId="9817" />
+    <Objective QuestName="Leader of the Darkcrest" QuestId="9730" Type="KillMob" MobId="18046" MobName="Rajah Haghazed" KillCount="1" />
+    <Objective QuestName="Leader of the Bloodscale" QuestId="9817" Type="KillMob" MobId="18044" MobName="Rajis Fyashe" KillCount="1" />
+    <TurnIn QuestName="Leader of the Darkcrest" QuestId="9730" TurnInName="Warden Hamoot" TurnInId="17858" />
+    <PickUp QuestName="Wanted: Chieftain Mummaki" QuestId="10117" GiverName="Warden Hamoot" GiverId="17858" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19174" MobName="Chieftain Mummaki" KillCount="1" />
+    <Objective QuestName="Wanted: Chieftain Mummaki" QuestId="10117" Type="CollectItem" ItemId="27943" ItemName="Chieftain Mummaki&apos;s Totem" CollectCount="1" />
+    <TurnIn QuestName="Wanted: Chieftain Mummaki" QuestId="10117" TurnInName="Shadow Hunter Denjai" TurnInId="18013" />
+    <PickUp QuestName="Safeguarding the Watchers" QuestId="9894" GiverName="Windcaller Blackhoof" GiverId="18070" />
+    <Objective QuestName="Safeguarding the Watchers" QuestId="9894" Type="KillMob" MobId="18282" MobName="Lord Klaq" KillCount="1" />
+    <TurnIn QuestName="Safeguarding the Watchers" QuestId="9894" TurnInName="Windcaller Blackhoof" TurnInId="18070" />
+    <PickUp QuestName="The Dying Balance" QuestId="9895" GiverName="Lethyn Moonfire" GiverId="17834" />
+    <Objective QuestName="The Dying Balance" QuestId="9895" Type="KillMob" MobId="18281" MobName="Boglash" KillCount="1" />
+    <TurnIn QuestName="The Dying Balance" QuestId="9895" TurnInName="Lethyn Moonfire" TurnInId="17834" />
+    <PickUp QuestName="Fhwoor Smash!" QuestId="9729" GiverName="Fhwoor" GiverId="17877" />
+    <TurnIn QuestName="Fhwoor Smash!" QuestId="9729" TurnInName="Gzhun&apos;tt" TurnInId="17856" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Zangarmarsh Group Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

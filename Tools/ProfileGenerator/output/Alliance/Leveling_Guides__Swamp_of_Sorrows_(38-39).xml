@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Swamp of Sorrows (38-39)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>39</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="1389" Name="Draenethyst Crystals">
+    <Objective Type="CollectItem" ItemId="6071" CollectCount="6">
+      <CollectFrom>
+        <GameObject Name="Draenethyst Crystals" Id="22550" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-10080.8" Y="-3486.49" Z="23.7" />
+        <Hotspot X="-10063.3" Y="-3501.32" Z="23.07" />
+        <Hotspot X="-10002.2" Y="-3539.66" Z="22.92" />
+        <Hotspot X="-9981.25" Y="-3652.04" Z="21.81" />
+        <Hotspot X="-9970.3" Y="-3712.3" Z="22.85" />
+        <Hotspot X="-9968.0" Y="-3708.24" Z="22.18" />
+        <Hotspot X="-9964.19" Y="-3646.9" Z="22.15" />
+        <Hotspot X="-9960.04" Y="-3603.0" Z="22.25" />
+        <Hotspot X="-9931.97" Y="-3722.25" Z="21.68" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Swamp of Sorrows (38-39)" LogColor="Green" />
+    <PickUp QuestName="In Search of The Temple" QuestId="1448" GiverName="Brohann Caskbelly" GiverId="5384" />
+    <PickUp QuestName="Morgan Stern" QuestId="1260" GiverName="Angus Stern" GiverId="1141" />
+    <Objective QuestName="Dream Dust in the Swamp" QuestId="1116" Type="CollectItem" ItemId="5803" ItemName="Speck of Dream Dust" CollectCount="10" />
+    <PickUp QuestName="Encroaching Wildlife" QuestId="1396" GiverName="Watcher Biggs" GiverId="5476" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="5477" MobName="Noboru the Cudgel" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="6196" ItemName="Noboru&apos;s Cudgel" CollectCount="1" />
+    <PickUp QuestName="Noboru the Cudgel" QuestId="1392" GiverName="Watcher Biggs" GiverId="5476" />
+    <TurnIn QuestName="Noboru the Cudgel" QuestId="1392" TurnInName="Magtoor" TurnInId="1776" />
+    <PickUp QuestName="Draenethyst Crystals" QuestId="1389" GiverName="Magtoor" GiverId="1776" />
+    <Objective QuestName="Encroaching Wildlife" QuestId="1396" Type="KillMob" MobId="1084" MobName="Young Sawtooth Crocolisk" KillCount="8" />
+    <Objective QuestName="Encroaching Wildlife" QuestId="1396" Type="KillMob" MobId="858" MobName="Sorrow Spinner" KillCount="10" />
+    <Objective QuestName="Encroaching Wildlife" QuestId="1396" Type="KillMob" MobId="767" MobName="Swamp Jaguar" KillCount="10" />
+    <Objective QuestName="Dream Dust in the Swamp" QuestId="1116" Type="CollectItem" ItemId="5803" ItemName="Speck of Dream Dust" CollectCount="10" />
+    <TurnIn QuestName="Encroaching Wildlife" QuestId="1396" TurnInName="Watcher Biggs" TurnInId="5476" />
+    <PickUp QuestName="The Lost Caravan" QuestId="1421" GiverName="Watcher Biggs" GiverId="5476" />
+    <Objective QuestName="The Lost Caravan" QuestId="1421" Type="CollectItem" ItemId="6170" ItemName="Wizards&apos; Reagents" CollectCount="1" />
+    <PickUp QuestName="Galen&apos;s Escape" QuestId="1393" GiverName="Galen Goodward" GiverId="5391" />
+    <Objective QuestName="Draenethyst Crystals" QuestId="1389" Type="CollectItem" ItemId="6071" ItemName="Draenethyst Crystal" CollectCount="6" />
+    <TurnIn QuestName="Galen&apos;s Escape" QuestId="1393" TurnInName="Galen Goodward" TurnInId="5391" />
+    <TurnIn QuestName="Draenethyst Crystals" QuestId="1389" TurnInName="Magtoor" TurnInId="1776" />
+    <TurnIn QuestName="The Lost Caravan" QuestId="1421" TurnInName="Watcher Biggs" TurnInId="5476" />
+    <TurnIn QuestName="Dream Dust in the Swamp" QuestId="1116" TurnInName="Krazek" TurnInId="773" />
+    <PickUp QuestName="Rumors for Kravel" QuestId="1117" GiverName="Krazek" GiverId="773" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="6245" ItemName="Karnitol&apos;s Satchel" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="3960" ItemName="Bag of Water Elemental Bracers" CollectCount="1" />
+    <If Condition="!((Me.Class == WoWClass.Druid))">
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="5996" ItemName="Elixir of Water Breathing" CollectCount="2" />
+    </If>
+    <TurnIn QuestName="In Search of The Temple" QuestId="1448" TurnInName="Brohann Caskbelly" TurnInId="5384" />
+    <PickUp QuestName="To The Hinterlands" QuestId="1449" GiverName="Brohann Caskbelly" GiverId="5384" />
+    <TurnIn QuestName="The Karnitol Shipwreck" QuestId="1457" TurnInName="Roetten Stonehammer" TurnInId="5637" />
+    <PickUp QuestName="Further Mysteries" QuestId="525" GiverName="Prospector Stormpike" GiverId="1356" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="4480" ItemName="Thundering Charm" CollectCount="8" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="4479" ItemName="Burning Charm" CollectCount="8" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="4481" ItemName="Cresting Charm" CollectCount="8" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="6052" ItemName="Nature Protection Potion" CollectCount="2" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2761" MobName="Cresting Exile" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="4481" ItemName="Cresting Charm" CollectCount="8" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2762" MobName="Thundering Exile" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="4480" ItemName="Thundering Charm" CollectCount="8" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2760" MobName="Burning Exile" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="4479" ItemName="Burning Charm" CollectCount="8" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Swamp of Sorrows (38-39) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Alterac_Mountains_(39-39)" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Felwood (56-56)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Felwood (56-56)" LogColor="Green" />
+    <TurnIn QuestName="Wild Guardians" QuestId="4521" TurnInName="Trull Failbane" TurnInId="10306" />
+    <TurnIn QuestName="Forces of Jaedenar" QuestId="5155" TurnInName="Greta Mosshoof" TurnInId="10922" />
+    <PickUp QuestName="Collection of the Corrupt Water" QuestId="5157" GiverName="Greta Mosshoof" GiverId="10922" />
+    <TurnIn QuestName="Verifying the Corruption" QuestId="5156" TurnInName="Taronn Redfeather" TurnInId="10921" />
+    <TurnIn QuestName="Cleansing Felwood" QuestId="4102" TurnInName="Maybess Riverbreeze" TurnInId="9529" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11511" ItemName="Cenarion Beacon" CollectCount="1" />
+    <Objective QuestName="Well of Corruption" QuestId="4505" Type="CollectItem" ItemId="12567" ItemName="Filled Flasket" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11515" ItemName="Corrupted Soul Shard" CollectCount="6" />
+    <Objective QuestName="Collection of the Corrupt Water" QuestId="5157" Type="CollectItem" ItemId="12907" ItemName="Corrupt Moonwell Water" CollectCount="1" />
+    <TurnIn QuestName="Well of Corruption" QuestId="4505" TurnInName="Winna Hazzard" TurnInId="9996" />
+    <TurnIn QuestName="Collection of the Corrupt Water" QuestId="5157" TurnInName="Greta Mosshoof" TurnInId="10922" />
+    <PickUp QuestName="Seeking Spiritual Aid" QuestId="5158" GiverName="Greta Mosshoof" GiverId="10922" />
+    <PickUp QuestName="Salve via Hunting" QuestId="5887" GiverName="Maybess Riverbreeze" GiverId="9529" />
+    <TurnIn QuestName="Seeking Spiritual Aid" QuestId="5158" TurnInName="Islen Waterseer" TurnInId="5901" />
+    <TurnIn QuestName="The Strength of Corruption" QuestId="4120" TurnInName="Talo Thornhoof" TurnInId="7776" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Felwood (56-56) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Western_Plaguelands_(56-58)" />
+  </QuestOrder>
+</HBProfile>

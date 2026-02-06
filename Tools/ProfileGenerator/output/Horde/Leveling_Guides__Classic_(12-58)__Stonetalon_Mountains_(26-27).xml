@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Stonetalon Mountains (26-27)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>27</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stonetalon Mountains (26-27)" LogColor="Green" />
+    <Objective QuestName="Elemental War" QuestId="6393" Type="CollectItem" ItemId="16312" ItemName="Incendrites" CollectCount="10" />
+    <Objective QuestName="Harpies Threaten" QuestId="6282" Type="KillMob" MobId="4022" MobName="Bloodfury Harpy" KillCount="7" />
+    <Objective QuestName="Harpies Threaten" QuestId="6282" Type="KillMob" MobId="4025" MobName="Bloodfury Ambusher" KillCount="7" />
+    <Objective QuestName="Harpies Threaten" QuestId="6282" Type="KillMob" MobId="4024" MobName="Bloodfury Slayer" KillCount="7" />
+    <Objective QuestName="Harpies Threaten" QuestId="6282" Type="KillMob" MobId="4023" MobName="Bloodfury Roguefeather" KillCount="7" />
+    <TurnIn QuestName="Elemental War" QuestId="6393" TurnInName="Tsunaman" TurnInId="11862" />
+    <TurnIn QuestName="Harpies Threaten" QuestId="6282" TurnInName="Maggran Earthbinder" TurnInId="11860" />
+    <PickUp QuestName="Bloodfury Bloodline" QuestId="6283" GiverName="Maggran Earthbinder" GiverId="11860" />
+    <TurnIn QuestName="New Life" QuestId="6381" TurnInName="Tammra Windfield" TurnInId="11864" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="12579" MobName="Bloodfury Ripper" KillCount="1" />
+    <Objective QuestName="Bloodfury Bloodline" QuestId="6283" Type="CollectItem" ItemId="16190" ItemName="Bloodfury Ripper&apos;s Remains" CollectCount="1" />
+    <TurnIn QuestName="Bloodfury Bloodline" QuestId="6283" TurnInName="Maggran Earthbinder" TurnInId="11860" />
+    <TurnIn QuestName="The Sacred Flame" QuestId="1195" TurnInName="Zangen Stonehoof" TurnInId="4721" />
+    <PickUp QuestName="The Sacred Flame" QuestId="1196" GiverName="Zangen Stonehoof" GiverId="4721" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stonetalon Mountains (26-27) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Thousand_Needles_(27-29)" />
+  </QuestOrder>
+</HBProfile>

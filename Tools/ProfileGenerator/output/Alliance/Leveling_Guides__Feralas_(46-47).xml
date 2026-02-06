@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Feralas (46-47)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>47</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Feralas (46-47)" LogColor="Green" />
+    <PickUp QuestName="Handle With Care" QuestId="3022" GiverName="Curgle Cranklehop" GiverId="7763" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10699" ItemName="Yeh&apos;kinya&apos;s Bramble" CollectCount="1" />
+    <PickUp QuestName="The Mark of Quality" QuestId="2821" GiverName="Pratt McGrubben" GiverId="7852" />
+    <PickUp QuestName="The Missing Courier" QuestId="4124" GiverName="Latronicus Moonspear" GiverId="7877" />
+    <PickUp QuestName="The Ruins of Solarsal" QuestId="2866" GiverName="Shandris Feathermoon" GiverId="3936" />
+    <PickUp QuestName="In Search of Knowledge" QuestId="2939" GiverName="Troyas Moonbreeze" GiverId="7764" />
+    <PickUp QuestName="The High Wilderness" QuestId="2982" GiverName="Angelas Moonbreeze" GiverId="7900" />
+    <TurnIn QuestName="The Missing Courier" QuestId="4124" TurnInName="Ginro Hearthkindle" TurnInId="7880" />
+    <PickUp QuestName="The Missing Courier" QuestId="4125" GiverName="Ginro Hearthkindle" GiverId="7880" />
+    <TurnIn QuestName="The Ruins of Solarsal" QuestId="2866" TurnInName="Ginro Hearthkindle" TurnInId="7880" />
+    <PickUp QuestName="Return to Feathermoon Stronghold" QuestId="2867" GiverName="Ginro Hearthkindle" GiverId="7880" />
+    <TurnIn QuestName="Return to Feathermoon Stronghold" QuestId="2867" TurnInName="Shandris Feathermoon" TurnInId="3936" />
+    <PickUp QuestName="Against the Hatecrest" QuestId="3130" GiverName="Shandris Feathermoon" GiverId="3936" />
+    <TurnIn QuestName="Against the Hatecrest" QuestId="3130" TurnInName="Latronicus Moonspear" TurnInId="7877" />
+    <PickUp QuestName="Against the Hatecrest" QuestId="2869" GiverName="Latronicus Moonspear" GiverId="7877" />
+    <Objective QuestName="Against the Hatecrest" QuestId="2869" Type="CollectItem" ItemId="9247" ItemName="Hatecrest Naga Scale" CollectCount="10" />
+    <TurnIn QuestName="Against the Hatecrest" QuestId="2869" TurnInName="Latronicus Moonspear" TurnInId="7877" />
+    <PickUp QuestName="Against Lord Shalzaru" QuestId="2870" GiverName="Latronicus Moonspear" GiverId="7877" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="8136" MobName="Lord Shalzaru" KillCount="1" />
+    <Objective QuestName="Against Lord Shalzaru" QuestId="2870" Type="CollectItem" ItemId="9248" ItemName="Mysterious Relic" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="8705" ItemName="OOX-22/FE Distress Beacon" CollectCount="1" />
+    <PickUp QuestName="Find OOX-22/FE!" QuestId="2766" GiverName="Faralorn" GiverId="7942" />
+    <TurnIn QuestName="The Missing Courier" QuestId="4125" TurnInName="Faralorn" TurnInId="7942" />
+    <PickUp QuestName="Boat Wreckage" QuestId="4127" GiverName="Faralorn" GiverId="7942" />
+    <TurnIn QuestName="Boat Wreckage" QuestId="4127" TurnInName="Ginro Hearthkindle" TurnInId="7880" />
+    <PickUp QuestName="The Knife Revealed" QuestId="4129" GiverName="Ginro Hearthkindle" GiverId="7880" />
+    <TurnIn QuestName="Against Lord Shalzaru" QuestId="2870" TurnInName="Latronicus Moonspear" TurnInId="7877" />
+    <PickUp QuestName="Delivering the Relic" QuestId="2871" GiverName="Latronicus Moonspear" GiverId="7877" />
+    <TurnIn QuestName="Delivering the Relic" QuestId="2871" TurnInName="Vestia Moonspear" TurnInId="7878" />
+    <TurnIn QuestName="The Knife Revealed" QuestId="4129" TurnInName="Quintis Jonespyre" TurnInId="7879" />
+    <PickUp QuestName="Psychometric Reading" QuestId="4130" GiverName="Quintis Jonespyre" GiverId="7879" />
+    <TurnIn QuestName="Psychometric Reading" QuestId="4130" TurnInName="Ginro Hearthkindle" TurnInId="7880" />
+    <PickUp QuestName="The Woodpaw Gnolls" QuestId="4131" GiverName="Ginro Hearthkindle" GiverId="7880" />
+    <TurnIn QuestName="Find OOX-22/FE!" QuestId="2766" TurnInName="Homing Robot OOX-22/FE" TurnInId="7807" />
+    <Objective QuestName="The Mark of Quality" QuestId="2821" Type="CollectItem" ItemId="8973" ItemName="Thick Yeti Hide" CollectCount="10" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="8564" ItemName="Hippogryph Egg" CollectCount="1" />
+    <Objective QuestName="The High Wilderness" QuestId="2982" Type="KillMob" MobId="5236" MobName="Gordunni Shaman" KillCount="8" />
+    <Objective QuestName="The High Wilderness" QuestId="2982" Type="KillMob" MobId="5240" MobName="Gordunni Warlock" KillCount="8" />
+    <Objective QuestName="The High Wilderness" QuestId="2982" Type="KillMob" MobId="5232" MobName="Gordunni Brute" KillCount="8" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="5268" MobName="Ironfur Bear" KillCount="1" />
+    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6258" ItemName="Ironfur Liver" CollectCount="3" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="5260" MobName="Groddoc Ape" KillCount="1" />
+    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6259" ItemName="Groddoc Liver" CollectCount="3" />
+    <PickUp QuestName="Freedom for All Creatures" QuestId="2969" GiverName="Kindal Moonweaver" GiverId="7956" />
+    <TurnIn QuestName="Freedom for All Creatures" QuestId="2969" TurnInName="Kindal Moonweaver" TurnInId="7956" />
+    <PickUp QuestName="Doling Justice" QuestId="2970" GiverName="Jer&apos;kai Moonweaver" GiverId="7957" />
+    <Objective QuestName="Doling Justice" QuestId="2970" Type="KillMob" MobId="7727" MobName="Grimtotem Shaman" KillCount="6" />
+    <Objective QuestName="Doling Justice" QuestId="2970" Type="KillMob" MobId="7725" MobName="Grimtotem Raider" KillCount="10" />
+    <Objective QuestName="Doling Justice" QuestId="2970" Type="KillMob" MobId="7726" MobName="Grimtotem Naturalist" KillCount="12" />
+    <TurnIn QuestName="Doling Justice" QuestId="2970" TurnInName="Jer&apos;kai Moonweaver" TurnInId="7957" />
+    <PickUp QuestName="Doling Justice" QuestId="2972" GiverName="Jer&apos;kai Moonweaver" GiverId="7957" />
+    <TurnIn QuestName="The Woodpaw Gnolls" QuestId="4131" TurnInName="Jer&apos;kai Moonweaver" TurnInId="7957" />
+    <PickUp QuestName="The Writhing Deep" QuestId="4135" GiverName="Jer&apos;kai Moonweaver" GiverId="7957" />
+    <PickUp QuestName="Thalanaar Delivery" QuestId="4281" GiverName="Jer&apos;kai Moonweaver" GiverId="7957" />
+    <TurnIn QuestName="The Writhing Deep" QuestId="4135" TurnInName="Jer&apos;kai Moonweaver" TurnInId="7957" />
+    <PickUp QuestName="Freed from the Hive" QuestId="4265" GiverName="Jer&apos;kai Moonweaver" GiverId="7957" />
+    <TurnIn QuestName="The Mark of Quality" QuestId="2821" TurnInName="Pratt McGrubben" TurnInId="7852" />
+    <TurnIn QuestName="The High Wilderness" QuestId="2982" TurnInName="Angelas Moonbreeze" TurnInId="7900" />
+    <PickUp QuestName="The Sunken Temple" QuestId="3445" GiverName="Angelas Moonbreeze" GiverId="7900" />
+    <TurnIn QuestName="Freed from the Hive" QuestId="4265" TurnInName="Ginro Hearthkindle" TurnInId="7880" />
+    <PickUp QuestName="A Hero&apos;s Welcome" QuestId="4266" GiverName="Ginro Hearthkindle" GiverId="7880" />
+    <TurnIn QuestName="A Hero&apos;s Welcome" QuestId="4266" TurnInName="Shandris Feathermoon" TurnInId="3936" />
+    <PickUp QuestName="Rise of the Silithid" QuestId="4267" GiverName="Shandris Feathermoon" GiverId="3936" />
+    <TurnIn QuestName="Handle With Care" QuestId="3022" TurnInName="Erelas Ambersky" TurnInId="7916" />
+    <PickUp QuestName="Favored of Elune?" QuestId="3661" GiverName="Erelas Ambersky" GiverId="7916" />
+    <TurnIn QuestName="In Search of Knowledge" QuestId="2939" TurnInName="Daryn Lightwind" TurnInId="7907" />
+    <PickUp QuestName="Feralas: A History" QuestId="2940" GiverName="Daryn Lightwind" GiverId="7907" />
+    <TurnIn QuestName="Feralas: A History" QuestId="2940" TurnInName="Daryn Lightwind" TurnInId="7907" />
+    <PickUp QuestName="The Borrower" QuestId="2941" GiverName="Daryn Lightwind" GiverId="7907" />
+    <TurnIn QuestName="Rise of the Silithid" QuestId="4267" TurnInName="Gracina Spiritmight" TurnInId="7740" />
+    <TurnIn QuestName="Doling Justice" QuestId="2972" TurnInName="Tyrande Whisperwind" TurnInId="7999" />
+    <TurnIn QuestName="Thalanaar Delivery" QuestId="4281" TurnInName="Falfindel Waywarder" TurnInId="4048" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Feralas (46-47) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Tanaris_(47-49)" />
+  </QuestOrder>
+</HBProfile>

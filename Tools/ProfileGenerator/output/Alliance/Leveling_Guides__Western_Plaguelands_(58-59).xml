@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Western Plaguelands (58-59)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>59</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="5154" Name="The Annals of Darrowshire">
+    <Objective Type="CollectItem" ItemId="12900" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Musty Tome" Id="176150" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1368.85" Y="-1449.31" Z="56.97" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4972" Name="Counting Out Time">
+    <Objective Type="CollectItem" ItemId="12638" CollectCount="5">
+      <CollectFrom>
+        <GameObject Name="Small Lockbox" Id="175802" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1247.33" Y="-1425.4" Z="57.44" />
+        <Hotspot X="1253.12" Y="-1527.2" Z="59.86" />
+        <Hotspot X="1257.36" Y="-1379.93" Z="49.87" />
+        <Hotspot X="1259.74" Y="-1457.78" Z="60.08" />
+        <Hotspot X="1275.18" Y="-1578.36" Z="59.47" />
+        <Hotspot X="1278.55" Y="-1511.36" Z="59.68" />
+        <Hotspot X="1297.67" Y="-1384.63" Z="49.53" />
+        <Hotspot X="1347.66" Y="-1510.8" Z="59.03" />
+        <Hotspot X="1363.71" Y="-1358.37" Z="51.15" />
+        <Hotspot X="1366.37" Y="-1677.68" Z="65.46" />
+        <Hotspot X="1370.68" Y="-1228.98" Z="61.66" />
+        <Hotspot X="1371.54" Y="-1419.11" Z="48.94" />
+        <Hotspot X="1395.32" Y="-1405.5" Z="56.33" />
+        <Hotspot X="1408.24" Y="-1429.33" Z="56.64" />
+        <Hotspot X="1412.98" Y="-1314.18" Z="59.27" />
+        <Hotspot X="1416.45" Y="-1256.14" Z="61.86" />
+        <Hotspot X="1442.58" Y="-1339.81" Z="60.92" />
+        <Hotspot X="1460.78" Y="-1587.64" Z="67.83" />
+        <Hotspot X="1461.21" Y="-1317.0" Z="62.28" />
+        <Hotspot X="1476.04" Y="-1518.45" Z="56.29" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Western Plaguelands (58-59)" LogColor="Green" />
+    <TurnIn QuestName="Return to Chillwind Camp" QuestId="5223" TurnInName="High Priestess MacDonnell" TurnInId="11053" />
+    <PickUp QuestName="Target: Gahrron&apos;s Withering" QuestId="5225" GiverName="High Priestess MacDonnell" GiverId="11053" />
+    <TurnIn QuestName="Skeletal Fragments" QuestId="5537" TurnInName="Alchemist Arbington" TurnInId="11056" />
+    <TurnIn QuestName="The Eastern Plagues" QuestId="6185" TurnInName="Flint Shadowmore" TurnInId="12425" />
+    <PickUp QuestName="The Blightcaller Cometh" QuestId="6186" GiverName="Flint Shadowmore" GiverId="12425" />
+    <TurnIn QuestName="A Plague Upon Thee" QuestId="5903" TurnInName="Nathaniel Dumah" TurnInId="11616" />
+    <PickUp QuestName="A Plague Upon Thee" QuestId="5904" GiverName="Nathaniel Dumah" GiverId="11616" />
+    <TurnIn QuestName="Auntie Marlene" QuestId="5152" TurnInName="Marlene Redpath" TurnInId="10927" />
+    <PickUp QuestName="A Strange Historian" QuestId="5153" GiverName="Marlene Redpath" GiverId="10927" />
+    <Objective QuestName="A Strange Historian" QuestId="5153" Type="CollectItem" ItemId="12894" ItemName="Joseph&apos;s Wedding Ring" CollectCount="1" />
+    <TurnIn QuestName="A Strange Historian" QuestId="5153" TurnInName="Chromie" TurnInId="10667" />
+    <PickUp QuestName="The Annals of Darrowshire" QuestId="5154" GiverName="Chromie" GiverId="10667" />
+    <PickUp QuestName="A Matter of Time" QuestId="4971" GiverName="Chromie" GiverId="10667" />
+    <Objective QuestName="A Matter of Time" QuestId="4971" Type="KillMob" MobId="10717" MobName="Temporal Parasite" KillCount="15" />
+    <Objective QuestName="The Annals of Darrowshire" QuestId="5154" Type="CollectItem" ItemId="12900" ItemName="Annals of Darrowshire" CollectCount="1" />
+    <TurnIn QuestName="A Matter of Time" QuestId="4971" TurnInName="Chromie" TurnInId="10667" />
+    <TurnIn QuestName="The Annals of Darrowshire" QuestId="5154" TurnInName="Chromie" TurnInId="10667" />
+    <PickUp QuestName="Counting Out Time" QuestId="4972" GiverName="Chromie" GiverId="10667" />
+    <PickUp QuestName="Brother Carlin" QuestId="5210" GiverName="Chromie" GiverId="10667" />
+    <Objective QuestName="Counting Out Time" QuestId="4972" Type="CollectItem" ItemId="12638" ItemName="Andorhal Watch" CollectCount="5" />
+    <TurnIn QuestName="Counting Out Time" QuestId="4972" TurnInName="Chromie" TurnInId="10667" />
+    <TurnIn QuestName="The Wildlife Suffers Too" QuestId="4985" TurnInName="Mulgris Deepriver" TurnInId="10739" />
+    <PickUp QuestName="Glyphed Oaken Branch" QuestId="4986" GiverName="Mulgris Deepriver" GiverId="10739" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="11078" MobName="Cauldron Lord Soulwrath" KillCount="1" />
+    <Objective QuestName="Target: Gahrron&apos;s Withering" QuestId="5225" Type="CollectItem" ItemId="13196" ItemName="Gahrron&apos;s Withering Cauldron Key" CollectCount="1" />
+    <TurnIn QuestName="Target: Gahrron&apos;s Withering" QuestId="5225" TurnInName="Mulgris Deepriver" TurnInId="10739" />
+    <PickUp QuestName="Return to Chillwind Point" QuestId="5226" GiverName="Mulgris Deepriver" GiverId="10739" />
+    <TurnIn QuestName="A Plague Upon Thee" QuestId="5904" TurnInName="Mulgris Deepriver" TurnInId="10739" />
+    <PickUp QuestName="A Plague Upon Thee" QuestId="6389" GiverName="Mulgris Deepriver" GiverId="10739" />
+    <PickUp QuestName="Unfinished Business" QuestId="6004" GiverName="Kirsta Deepshadow" GiverId="11610" />
+    <Objective QuestName="Unfinished Business" QuestId="6004" Type="KillMob" MobId="10605" MobName="Scarlet Medic" KillCount="2" />
+    <Objective QuestName="Unfinished Business" QuestId="6004" Type="KillMob" MobId="1831" MobName="Scarlet Hunter" KillCount="2" />
+    <Objective QuestName="Unfinished Business" QuestId="6004" Type="KillMob" MobId="1826" MobName="Scarlet Mage" KillCount="2" />
+    <Objective QuestName="Unfinished Business" QuestId="6004" Type="KillMob" MobId="1833" MobName="Scarlet Knight" KillCount="2" />
+    <TurnIn QuestName="Unfinished Business" QuestId="6004" TurnInName="Kirsta Deepshadow" TurnInId="11610" />
+    <PickUp QuestName="Unfinished Business" QuestId="6023" GiverName="Kirsta Deepshadow" GiverId="11610" />
+    <Objective QuestName="Unfinished Business" QuestId="6023" Type="KillMob" MobId="11613" MobName="Huntsman Radley" KillCount="1" />
+    <Objective QuestName="Unfinished Business" QuestId="6023" Type="KillMob" MobId="11611" MobName="Cavalier Durgen" KillCount="1" />
+    <TurnIn QuestName="Unfinished Business" QuestId="6023" TurnInName="Kirsta Deepshadow" TurnInId="11610" />
+    <TurnIn QuestName="Return to Chillwind Camp" QuestId="5226" TurnInName="High Priestess MacDonnell" TurnInId="11053" />
+    <PickUp QuestName="Mission Accomplished!" QuestId="5237" GiverName="Commander Ashlam Valorfist" GiverId="10838" />
+    <TurnIn QuestName="A Plague Upon Thee" QuestId="6389" TurnInName="Nathaniel Dumah" TurnInId="11616" />
+    <TurnIn QuestName="Brother Carlin" QuestId="5210" TurnInName="Carlin Redpath" TurnInId="11063" />
+    <TurnIn QuestName="The Blightcaller Cometh" QuestId="6186" TurnInName="King Varian Wrynn" TurnInId="29611" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Western Plaguelands (58-59) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Silithus_(59-60)" />
+  </QuestOrder>
+</HBProfile>

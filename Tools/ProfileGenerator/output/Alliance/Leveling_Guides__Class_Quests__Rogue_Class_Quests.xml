@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Class Quests\\Rogue Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Rogue Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="Mathias and the Defias" QuestId="2360" GiverName="Master Mathias Shaw" GiverId="332" />
+    </If>
+    <TurnIn QuestName="Mathias and the Defias" QuestId="2360" TurnInName="Agent Kearnen" TurnInId="7024" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="Klaven&apos;s Tower" QuestId="2359" GiverName="Agent Kearnen" GiverId="7024" />
+    </If>
+    <Objective QuestName="Klaven&apos;s Tower" QuestId="2359" Type="CollectItem" ItemId="7923" ItemName="Defias Tower Key" CollectCount="1" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Klaven&apos;s Tower" QuestId="2359" Type="CollectItem" ItemId="7908" ItemName="Klaven Mortwake&apos;s Journal" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Klaven&apos;s Tower" QuestId="2359" TurnInName="Master Mathias Shaw" TurnInId="332" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="The Touch of Zanzil" QuestId="2607" GiverName="Master Mathias Shaw" GiverId="332" />
+    </If>
+    <TurnIn QuestName="The Touch of Zanzil" QuestId="2607" TurnInName="Doc Mixilpixil" TurnInId="7207" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="The Touch of Zanzil" QuestId="2608" GiverName="Doc Mixilpixil" GiverId="7207" />
+      <TurnIn QuestName="The Touch of Zanzil" QuestId="2608" TurnInName="Doc Mixilpixil" TurnInId="7207" />
+      <PickUp QuestName="A Simple Request" QuestId="8233" GiverName="Lord Tony Romano" GiverId="13283" />
+    </If>
+    <TurnIn QuestName="A Simple Request" QuestId="8233" TurnInName="Lord Jorach Ravenholdt" TurnInId="6768" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="Sealed Azure Bag" QuestId="8234" GiverName="Lord Jorach Ravenholdt" GiverId="6768" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="6188" MobName="Timbermaw Shaman" KillCount="1" />
+    <Objective QuestName="Sealed Azure Bag" QuestId="8234" Type="CollectItem" ItemId="19775" ItemName="Sealed Azure Bag" CollectCount="1" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="Meeting with the Master" QuestId="3503" GiverName="Sanath Lim-yo" GiverId="8395" />
+    </If>
+    <TurnIn QuestName="Sealed Azure Bag" QuestId="8234" TurnInName="Archmage Xylem" TurnInId="8379" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="Encoded Fragments" QuestId="8235" GiverName="Archmage Xylem" GiverId="8379" />
+      <PickUp QuestName="Return Trip" QuestId="3421" GiverName="Nyrill" GiverId="8399" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="8766" MobName="Forest Ooze" KillCount="1" />
+    <Objective QuestName="Encoded Fragments" QuestId="8235" Type="CollectItem" ItemId="20023" ItemName="Encoded Fragment" CollectCount="10" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+    </If>
+    <TurnIn QuestName="Encoded Fragments" QuestId="8235" TurnInName="Archmage Xylem" TurnInId="8379" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="The Azure Key" QuestId="8236" GiverName="Archmage Xylem" GiverId="8379" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="5719" MobName="Morphaz" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="The Azure Key" QuestId="8236" Type="CollectItem" ItemId="20022" ItemName="Azure Key" CollectCount="1" />
+      <TurnIn QuestName="The Azure Key" QuestId="8236" TurnInName="Lord Jorach Ravenholdt" TurnInId="6768" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Rogue Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

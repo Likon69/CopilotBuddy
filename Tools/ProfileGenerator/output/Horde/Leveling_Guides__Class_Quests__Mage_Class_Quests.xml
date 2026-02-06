@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Class Quests\\Mage Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="1960" Name="Investigate the Alchemist Shop">
+    <Objective Type="CollectItem" ItemId="7308" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Cantation of Manifestation" Id="105175" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-8986.0" Y="863.66" Z="30.64" />
+        <Hotspot X="-8984.55" Y="861.03" Z="30.67" />
+        <Hotspot X="1813.6" Y="50.23" Z="-46.32" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="7247" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Chest of Containment Coffers" Id="105174" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-8987.37" Y="862.75" Z="30.63" />
+        <Hotspot X="-8986.0" Y="863.66" Z="30.64" />
+        <Hotspot X="1813.73" Y="52.65" Z="-46.32" />
+        <Hotspot X="1814.54" Y="51.31" Z="-46.32" />
+        <Hotspot X="1814.59" Y="53.17" Z="-46.32" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1951" Name="Rituals of Power">
+    <Objective Type="CollectItem" ItemId="7274" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Rituals of Power" Id="103664" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="277.59" Y="-429.49" Z="21.42" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Mage Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Speak with Un&apos;thuwa" QuestId="1883" GiverName="Uthel&apos;nay" GiverId="7311" />
+    </If>
+    <TurnIn QuestName="Speak with Un&apos;thuwa" QuestId="1883" TurnInName="Un&apos;Thuwa" TurnInId="5880" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Ju-Ju Heaps" QuestId="1884" GiverName="Un&apos;Thuwa" GiverId="5880" />
+      <TurnIn QuestName="Ju-Ju Heaps" QuestId="1884" TurnInName="Un&apos;Thuwa" TurnInId="5880" />
+      <PickUp QuestName="Report to Anastasia" QuestId="1959" GiverName="Uthel&apos;nay" GiverId="7311" />
+    </If>
+    <TurnIn QuestName="Report to Anastasia" QuestId="1959" TurnInName="Anastasia Hartwell" TurnInId="4568" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Investigate the Alchemist Shop" QuestId="1960" GiverName="Anastasia Hartwell" GiverId="4568" />
+      <Objective QuestName="Investigate the Alchemist Shop" QuestId="1960" Type="CollectItem" ItemId="7308" ItemName="Cantation of Manifestation" CollectCount="1" />
+      <Objective QuestName="Investigate the Alchemist Shop" QuestId="1960" Type="CollectItem" ItemId="7247" ItemName="Chest of Containment Coffers" CollectCount="1" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="6492" MobName="Rift Spawn" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Investigate the Alchemist Shop" QuestId="1960" Type="CollectItem" ItemId="7292" ItemName="Filled Containment Coffer" CollectCount="3" />
+    </If>
+    <TurnIn QuestName="Investigate the Alchemist Shop" QuestId="1960" TurnInName="Anastasia Hartwell" TurnInId="4568" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Gathering Materials" QuestId="1961" GiverName="Anastasia Hartwell" GiverId="4568" />
+      <Objective QuestName="Gathering Materials" QuestId="1961" Type="CollectItem" ItemId="7293" ItemName="Dalaran Mana Gem" CollectCount="6" />
+      <Objective QuestName="Gathering Materials" QuestId="1961" Type="CollectItem" ItemId="2589" ItemName="Linen Cloth" CollectCount="10" />
+    </If>
+    <TurnIn QuestName="Gathering Materials" QuestId="1961" TurnInName="Josef Gregorian" TurnInId="4576" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Spellfire Robes" QuestId="1962" GiverName="Josef Gregorian" GiverId="4576" />
+      <PickUp QuestName="Speak with Deino" QuestId="1943" GiverName="Anastasia Hartwell" GiverId="4568" />
+    </If>
+    <TurnIn QuestName="Speak with Deino" QuestId="1943" TurnInName="Deino" TurnInId="5885" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Waters of Xavian" QuestId="1944" GiverName="Deino" GiverId="5885" />
+      <Objective QuestName="Waters of Xavian" QuestId="1944" Type="CollectItem" ItemId="7268" ItemName="Xavian Water Sample" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Waters of Xavian" QuestId="1944" TurnInName="Deino" TurnInId="5885" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Laughing Sisters" QuestId="1945" GiverName="Deino" GiverId="5885" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="4054" MobName="Laughing Sister" KillCount="1" />
+    <Objective QuestName="Laughing Sisters" QuestId="1945" Type="CollectItem" ItemId="7270" ItemName="Laughing Sister&apos;s Hair" CollectCount="12" />
+    <TurnIn QuestName="Laughing Sisters" QuestId="1945" TurnInName="Kil&apos;hala" TurnInId="3484" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Nether-lace Garment" QuestId="1946" GiverName="Kil&apos;hala" GiverId="3484" />
+      <PickUp QuestName="Journey to the Marsh" QuestId="1947" GiverName="Deino" GiverId="5885" />
+    </If>
+    <TurnIn QuestName="Journey to the Marsh" QuestId="1947" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Hidden Secrets" QuestId="1949" GiverName="Tabetha" GiverId="6546" />
+    </If>
+    <TurnIn QuestName="Hidden Secrets" QuestId="1949" TurnInName="Magus Tirth" TurnInId="6548" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Get the Scoop" QuestId="1950" GiverName="Magus Tirth" GiverId="6548" />
+    </If>
+    <TurnIn QuestName="Get the Scoop" QuestId="1950" TurnInName="Magus Tirth" TurnInId="6548" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Rituals of Power" QuestId="1951" GiverName="Magus Tirth" GiverId="6548" />
+      <Objective QuestName="Rituals of Power" QuestId="1951" Type="CollectItem" ItemId="7274" ItemName="Rituals of Power" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Rituals of Power" QuestId="1951" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Mage&apos;s Wand" QuestId="1952" GiverName="Tabetha" GiverId="6546" />
+      <TurnIn QuestName="Mage&apos;s Wand" QuestId="1952" TurnInName="Tabetha" TurnInId="6546" />
+      <PickUp QuestName="Return to the Marsh" QuestId="1953" GiverName="Anastasia Hartwell" GiverId="4568" />
+    </If>
+    <TurnIn QuestName="Return to the Marsh" QuestId="1953" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="The Infernal Orb" QuestId="1954" GiverName="Tabetha" GiverId="6546" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="4668" MobName="Burning Blade Summoner" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="The Infernal Orb" QuestId="1954" Type="CollectItem" ItemId="7291" ItemName="Infernal Orb" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="The Infernal Orb" QuestId="1954" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="The Exorcism" QuestId="1955" GiverName="Tabetha" GiverId="6546" />
+      <Objective QuestName="The Exorcism" QuestId="1955" Type="KillMob" MobId="6549" MobName="Demon of the Orb" KillCount="1" />
+    </If>
+    <TurnIn QuestName="The Exorcism" QuestId="1955" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Power in Uldaman" QuestId="1956" GiverName="Tabetha" GiverId="6546" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7023" MobName="Obsidian Sentinel" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Power in Uldaman" QuestId="1956" Type="CollectItem" ItemId="8053" ItemName="Obsidian Power Source" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Power in Uldaman" QuestId="1956" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Mana Surges" QuestId="1957" GiverName="Tabetha" GiverId="6546" />
+    </If>
+    <Objective QuestName="Mana Surges" QuestId="1957" Type="KillMob" MobId="6550" MobName="Mana Surge" KillCount="1" />
+    <TurnIn QuestName="Mana Surges" QuestId="1957" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Celestial Power" QuestId="1958" GiverName="Tabetha" GiverId="6546" />
+      <PickUp QuestName="Tabetha&apos;s Task" QuestId="2861" GiverName="Anastasia Hartwell" GiverId="4568" />
+    </If>
+    <TurnIn QuestName="Tabetha&apos;s Task" QuestId="2861" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Tiara of the Deep" QuestId="2846" GiverName="Tabetha" GiverId="6546" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7795" MobName="Hydromancer Velratha" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Tiara of the Deep" QuestId="2846" Type="CollectItem" ItemId="9234" ItemName="Tiara of the Deep" CollectCount="1" />
+      <TurnIn QuestName="Tiara of the Deep" QuestId="2846" TurnInName="Tabetha" TurnInId="6546" />
+      <PickUp QuestName="Arcane Refreshment" QuestId="7463" GiverName="Lorekeeper Lydros" GiverId="14368" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="13280" MobName="Hydrospawn" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Arcane Refreshment" QuestId="7463" Type="CollectItem" ItemId="18299" ItemName="Hydrospawn Essence" CollectCount="1" />
+      <TurnIn QuestName="Arcane Refreshment" QuestId="7463" TurnInName="Lorekeeper Lydros" TurnInId="14368" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Mage Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

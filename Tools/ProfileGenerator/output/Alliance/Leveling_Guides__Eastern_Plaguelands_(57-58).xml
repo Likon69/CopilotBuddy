@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Eastern Plaguelands (57-58)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>58</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="6185" Name="The Eastern Plagues">
+    <Objective Type="CollectItem" ItemId="16002" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Mangled Human Remains" Id="177805" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1867.17" Y="-3300.52" Z="124.8" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="16001" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Mangled Human Remains" Id="177804" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1865.05" Y="-3236.6" Z="125.54" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="16003" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Mangled Human Remains" Id="177806" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1739.04" Y="-3300.72" Z="97.73" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="5903" Name="A Plague Upon Thee">
+    <Objective Type="CollectItem" ItemId="15043" CollectCount="100">
+      <CollectFrom>
+        <GameObject Name="Large Termite Mound" Id="177464" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2813.03" Y="-3816.65" Z="104.48" />
+        <Hotspot X="2821.56" Y="-3159.57" Z="114.98" />
+        <Hotspot X="2831.32" Y="-3211.77" Z="130.28" />
+        <Hotspot X="2876.65" Y="-3425.46" Z="106.6" />
+        <Hotspot X="2900.32" Y="-3685.61" Z="116.88" />
+        <Hotspot X="2917.48" Y="-3844.04" Z="119.69" />
+        <Hotspot X="2921.3" Y="-3961.48" Z="106.72" />
+        <Hotspot X="2924.76" Y="-2940.54" Z="103.58" />
+        <Hotspot X="2963.69" Y="-3288.09" Z="123.33" />
+        <Hotspot X="2980.26" Y="-3578.71" Z="146.56" />
+        <Hotspot X="2988.2" Y="-3757.75" Z="128.97" />
+        <Hotspot X="3033.55" Y="-3197.28" Z="146.29" />
+        <Hotspot X="3035.01" Y="-3398.77" Z="151.75" />
+        <Hotspot X="3101.7" Y="-2973.57" Z="123.89" />
+        <Hotspot X="3112.57" Y="-3902.23" Z="134.88" />
+        <Hotspot X="3134.35" Y="-3492.04" Z="156.37" />
+        <Hotspot X="3149.18" Y="-3107.17" Z="162.39" />
+        <Hotspot X="3150.41" Y="-3781.63" Z="133.5" />
+        <Hotspot X="3174.8" Y="-3875.18" Z="127.32" />
+        <Hotspot X="3185.19" Y="-3051.57" Z="142.78" />
+        <Hotspot X="3186.21" Y="-3561.96" Z="152.48" />
+        <Hotspot X="3203.84" Y="-3721.22" Z="147.66" />
+        <Hotspot X="3204.61" Y="-3344.22" Z="163.94" />
+        <Hotspot X="3243.74" Y="-3361.21" Z="145.95" />
+        <Hotspot X="3246.43" Y="-3053.01" Z="158.99" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Eastern Plaguelands (57-58)" LogColor="Green" />
+    <PickUp QuestName="Demon Dogs" QuestId="5542" GiverName="Tirion Fordring" GiverId="1855" />
+    <PickUp QuestName="Blood Tinged Skies" QuestId="5543" GiverName="Tirion Fordring" GiverId="1855" />
+    <PickUp QuestName="Carrion Grubbage" QuestId="5544" GiverName="Tirion Fordring" GiverId="1855" />
+    <Objective QuestName="The Eastern Plagues" QuestId="6185" Type="CollectItem" ItemId="16002" ItemName="SI:7 Insignia (Turyen)" CollectCount="1" />
+    <Objective QuestName="The Eastern Plagues" QuestId="6185" Type="CollectItem" ItemId="16001" ItemName="SI:7 Insignia (Fredo)" CollectCount="1" />
+    <Objective QuestName="The Eastern Plagues" QuestId="6185" Type="CollectItem" ItemId="16003" ItemName="SI:7 Insignia (Rutger)" CollectCount="1" />
+    <TurnIn QuestName="Sister Pamela" QuestId="5601" TurnInName="Pamela Redpath" TurnInId="10926" />
+    <PickUp QuestName="Pamela&apos;s Doll" QuestId="5149" GiverName="Pamela Redpath" GiverId="10926" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12886" ItemName="Pamela&apos;s Doll&apos;s Head" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12887" ItemName="Pamela&apos;s Doll&apos;s Left Side" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12888" ItemName="Pamela&apos;s Doll&apos;s Right Side" CollectCount="1" />
+    <Objective QuestName="Pamela&apos;s Doll" QuestId="5149" Type="CollectItem" ItemId="12885" ItemName="Pamela&apos;s Doll" CollectCount="1" />
+    <TurnIn QuestName="Pamela&apos;s Doll" QuestId="5149" TurnInName="Pamela Redpath" TurnInId="10926" />
+    <PickUp QuestName="Auntie Marlene" QuestId="5152" GiverName="Pamela Redpath" GiverId="10926" />
+    <PickUp QuestName="Uncle Carlin" QuestId="5241" GiverName="Pamela Redpath" GiverId="10926" />
+    <Objective QuestName="Blood Tinged Skies" QuestId="5543" Type="KillMob" MobId="8600" MobName="Plaguebat" KillCount="30" />
+    <Objective QuestName="Demon Dogs" QuestId="5542" Type="KillMob" MobId="8596" MobName="Plaguehound Runt" KillCount="20" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="8603" MobName="Carrion Grub" KillCount="1" />
+    <Objective QuestName="Carrion Grubbage" QuestId="5544" Type="CollectItem" ItemId="13853" ItemName="Slab of Carrion Worm Meat" CollectCount="15" />
+    <Objective QuestName="Demon Dogs" QuestId="5542" Type="KillMob" MobId="8597" MobName="Plaguehound" KillCount="20" />
+    <PickUp QuestName="Zaeldarr the Outcast" QuestId="6021" GiverName="Caretaker Alen" GiverId="11038" />
+    <PickUp QuestName="The Restless Souls" QuestId="5281" GiverName="Caretaker Alen" GiverId="11038" />
+    <TurnIn QuestName="Duke Nicholas Zverenhoff" QuestId="6030" TurnInName="Duke Nicholas Zverenhoff" TurnInId="11039" />
+    <TurnIn QuestName="Uncle Carlin" QuestId="5241" TurnInName="Carlin Redpath" TurnInId="11063" />
+    <PickUp QuestName="Defenders of Darrowshire" QuestId="5211" GiverName="Carlin Redpath" GiverId="11063" />
+    <TurnIn QuestName="Troubled Spirits of Kel&apos;Theril" QuestId="5245" TurnInName="Aurora Skycaller" TurnInId="10304" />
+    <Objective QuestName="Demon Dogs" QuestId="5542" Type="KillMob" MobId="8598" MobName="Frenzied Plaguehound" KillCount="5" />
+    <Objective QuestName="A Plague Upon Thee" QuestId="5903" Type="CollectItem" ItemId="15043" ItemName="Plagueland Termites" CollectCount="100" />
+    <TurnIn QuestName="The Restless Souls" QuestId="5281" TurnInName="Egan" TurnInId="11140" />
+    <PickUp QuestName="Augustus&apos; Receipt Book" QuestId="6164" GiverName="Augustus the Touched" GiverId="12384" />
+    <Objective QuestName="Augustus&apos; Receipt Book" QuestId="6164" Type="CollectItem" ItemId="15884" ItemName="Augustus&apos; Receipt Book" CollectCount="1" />
+    <TurnIn QuestName="Augustus&apos; Receipt Book" QuestId="6164" TurnInName="Augustus the Touched" TurnInId="12384" />
+    <TurnIn QuestName="Demon Dogs" QuestId="5542" TurnInName="Tirion Fordring" TurnInId="1855" />
+    <TurnIn QuestName="Blood Tinged Skies" QuestId="5543" TurnInName="Tirion Fordring" TurnInId="1855" />
+    <TurnIn QuestName="Carrion Grubbage" QuestId="5544" TurnInName="Tirion Fordring" TurnInId="1855" />
+    <PickUp QuestName="Redemption" QuestId="5742" GiverName="Tirion Fordring" GiverId="1855" />
+    <TurnIn QuestName="Redemption" QuestId="5742" TurnInName="Tirion Fordring" TurnInId="1855" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="12250" MobName="Zaeldarr the Outcast" KillCount="1" />
+    <Objective QuestName="Zaeldarr the Outcast" QuestId="6021" Type="CollectItem" ItemId="15785" ItemName="Zaeldarr&apos;s Head" CollectCount="1" />
+    <TurnIn QuestName="Zaeldarr the Outcast" QuestId="6021" TurnInName="Caretaker Alen" TurnInId="11038" />
+    <TurnIn QuestName="Defenders of Darrowshire" QuestId="5211" TurnInName="Carlin Redpath" TurnInId="11063" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Eastern Plaguelands (57-58) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Western_Plaguelands_(58-59)" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Wetlands (28-30)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>30</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="299" Name="Uncovering the Past">
+    <Objective Type="CollectItem" ItemId="2661" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Loose Soil" Id="331" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-3563.83" Y="-1767.35" Z="79.1" />
+        <Hotspot X="-3308.06" Y="-1899.06" Z="31.74" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="2660" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Ancient Relic" Id="333" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-3371.96" Y="-1846.54" Z="16.52" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="2659" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Ancient Relic" Id="334" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-3373.47" Y="-1810.15" Z="16.24" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="2658" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Ancient Relic" Id="35252" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-3444.59" Y="-1833.84" Z="24.91" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="335" Name="A Noble Brew">
+    <Objective Type="CollectItem" ItemId="2784" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Musquash Root" Id="2084" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4223.8" Y="-3068.66" Z="8.37" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Wetlands (28-30)" LogColor="Green" />
+    <PickUp QuestName="Reclaiming Goods" QuestId="281" GiverName="Karl Boran" GiverId="1242" />
+    <PickUp QuestName="The Cursed Crew" QuestId="289" GiverName="First Mate Fitzsimmons" GiverId="1239" />
+    <TurnIn QuestName="The Doomed Fleet" QuestId="270" TurnInName="Glorin Steelbrow" TurnInId="1217" />
+    <PickUp QuestName="The Absent Minded Prospector" QuestId="943" GiverName="Archaeologist Flagongut" GiverId="2911" />
+    <PickUp QuestName="Fall of Dun Modr" QuestId="472" GiverName="Harlo Barnaby" GiverId="2097" />
+    <PickUp QuestName="War Banners" QuestId="464" GiverName="Captain Stoutfist" GiverId="2104" />
+    <PickUp QuestName="In Search of The Excavation Team" QuestId="305" GiverName="Tarrel Rockweaver" GiverId="2096" />
+    <TurnIn QuestName="Reclaiming Goods" QuestId="281" TurnInName="Tarrel Rockweaver" TurnInId="2096" />
+    <PickUp QuestName="The Search Continues" QuestId="284" GiverName="Tarrel Rockweaver" GiverId="2096" />
+    <TurnIn QuestName="The Search Continues" QuestId="284" TurnInName="Tarrel Rockweaver" TurnInId="2096" />
+    <PickUp QuestName="Search More Hovels" QuestId="285" GiverName="Tarrel Rockweaver" GiverId="2096" />
+    <TurnIn QuestName="Search More Hovels" QuestId="285" TurnInName="Tarrel Rockweaver" TurnInId="2096" />
+    <PickUp QuestName="Return the Statuette" QuestId="286" GiverName="Tarrel Rockweaver" GiverId="2096" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1159" MobName="First Mate Snellig" KillCount="1" />
+    <Objective QuestName="The Cursed Crew" QuestId="289" Type="CollectItem" ItemId="3619" ItemName="Snellig&apos;s Snuffbox" CollectCount="1" />
+    <Objective QuestName="The Cursed Crew" QuestId="289" Type="KillMob" MobId="1158" MobName="Cursed Marine" KillCount="5" />
+    <Objective QuestName="The Cursed Crew" QuestId="289" Type="KillMob" MobId="1157" MobName="Cursed Sailor" KillCount="13" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2089" MobName="Giant Wetlands Crocolisk" KillCount="1" />
+    <Objective QuestName="Apprentice&apos;s Duties" QuestId="471" Type="CollectItem" ItemId="3348" ItemName="Giant Crocolisk Skin" CollectCount="6" />
+    <Objective QuestName="Fire Taboo" QuestId="277" Type="CollectItem" ItemId="2611" ItemName="Crude Flint" CollectCount="9" />
+    <PickUp QuestName="Ormer&apos;s Revenge" QuestId="294" GiverName="Ormer Ironbraid" GiverId="1078" />
+    <TurnIn QuestName="In Search of The Excavation Team" QuestId="305" TurnInName="Merrin Rockweaver" TurnInId="1076" />
+    <PickUp QuestName="In Search of The Excavation Team" QuestId="306" GiverName="Merrin Rockweaver" GiverId="1076" />
+    <Objective QuestName="The Absent Minded Prospector" QuestId="943" Type="CollectItem" ItemId="5234" ItemName="Flagongut&apos;s Fossil" CollectCount="1" />
+    <Objective QuestName="Ormer&apos;s Revenge" QuestId="294" Type="KillMob" MobId="1020" MobName="Mottled Raptor" KillCount="10" />
+    <Objective QuestName="Ormer&apos;s Revenge" QuestId="294" Type="KillMob" MobId="1021" MobName="Mottled Screecher" KillCount="10" />
+    <TurnIn QuestName="Ormer&apos;s Revenge" QuestId="294" TurnInName="Ormer Ironbraid" TurnInId="1078" />
+    <PickUp QuestName="Ormer&apos;s Revenge" QuestId="295" GiverName="Ormer Ironbraid" GiverId="1078" />
+    <PickUp QuestName="Uncovering the Past" QuestId="299" GiverName="Prospector Whelgar" GiverId="1077" />
+    <Objective QuestName="Uncovering the Past" QuestId="299" Type="CollectItem" ItemId="2661" ItemName="Neru Fragment" CollectCount="1" />
+    <Objective QuestName="Uncovering the Past" QuestId="299" Type="CollectItem" ItemId="2660" ItemName="Golm Fragment" CollectCount="1" />
+    <Objective QuestName="Uncovering the Past" QuestId="299" Type="CollectItem" ItemId="2659" ItemName="Modr Fragment" CollectCount="1" />
+    <Objective QuestName="Uncovering the Past" QuestId="299" Type="CollectItem" ItemId="2658" ItemName="Ados Fragment" CollectCount="1" />
+    <Objective QuestName="Ormer&apos;s Revenge" QuestId="295" Type="KillMob" MobId="1022" MobName="Mottled Scytheclaw" KillCount="10" />
+    <Objective QuestName="Ormer&apos;s Revenge" QuestId="295" Type="KillMob" MobId="1023" MobName="Mottled Razormaw" KillCount="10" />
+    <TurnIn QuestName="Ormer&apos;s Revenge" QuestId="295" TurnInName="Ormer Ironbraid" TurnInId="1078" />
+    <PickUp QuestName="Ormer&apos;s Revenge" QuestId="296" GiverName="Ormer Ironbraid" GiverId="1078" />
+    <TurnIn QuestName="Uncovering the Past" QuestId="299" TurnInName="Prospector Whelgar" TurnInId="1077" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1353" MobName="Sarltooth" KillCount="1" />
+    <Objective QuestName="Ormer&apos;s Revenge" QuestId="296" Type="CollectItem" ItemId="3638" ItemName="Sarltooth&apos;s Talon" CollectCount="1" />
+    <TurnIn QuestName="Ormer&apos;s Revenge" QuestId="296" TurnInName="Ormer Ironbraid" TurnInId="1078" />
+    <Objective QuestName="The Absent Minded Prospector" QuestId="943" Type="CollectItem" ItemId="5233" ItemName="Stone of Relu" CollectCount="1" />
+    <Objective QuestName="War Banners" QuestId="464" Type="CollectItem" ItemId="3337" ItemName="Dragonmaw War Banner" CollectCount="8" />
+    <TurnIn QuestName="Fire Taboo" QuestId="277" TurnInName="Rethiel the Greenwarden" TurnInId="1244" />
+    <PickUp QuestName="Blisters on The Land" QuestId="275" GiverName="Rethiel the Greenwarden" GiverId="1244" />
+    <Objective QuestName="Blisters on The Land" QuestId="275" Type="KillMob" MobId="1040" MobName="Fen Creeper" KillCount="8" />
+    <TurnIn QuestName="Blisters on The Land" QuestId="275" TurnInName="Rethiel the Greenwarden" TurnInId="1244" />
+    <Objective QuestName="A Noble Brew" QuestId="335" Type="CollectItem" ItemId="2784" ItemName="Musquash Root" CollectCount="1" />
+    <PickUp QuestName="Lightforge Iron" QuestId="321" GiverName="Glorin Steelbrow" GiverId="1217" />
+    <TurnIn QuestName="The Absent Minded Prospector" QuestId="943" TurnInName="Archaeologist Flagongut" TurnInId="2911" />
+    <TurnIn QuestName="The Cursed Crew" QuestId="289" TurnInName="First Mate Fitzsimmons" TurnInId="1239" />
+    <PickUp QuestName="Lifting the Curse" QuestId="290" GiverName="First Mate Fitzsimmons" GiverId="1239" />
+    <TurnIn QuestName="Return the Statuette" QuestId="286" TurnInName="Karl Boran" TurnInId="1242" />
+    <TurnIn QuestName="Apprentice&apos;s Duties" QuestId="471" TurnInName="James Halloran" TurnInId="2094" />
+    <TurnIn QuestName="War Banners" QuestId="464" TurnInName="Captain Stoutfist" TurnInId="2104" />
+    <PickUp QuestName="Nek&apos;rosh&apos;s Gambit" QuestId="465" GiverName="Captain Stoutfist" GiverId="2104" />
+    <TurnIn QuestName="Lightforge Iron" QuestId="321" TurnInName="Edwina Monzor" TurnInId="1462" />
+    <PickUp QuestName="The Lost Ingots" QuestId="324" GiverName="Edwina Monzor" GiverId="1462" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1418" MobName="Bluegill Raider" KillCount="1" />
+    <Objective QuestName="The Lost Ingots" QuestId="324" Type="CollectItem" ItemId="2702" ItemName="Lightforge Ingot" CollectCount="5" />
+    <TurnIn QuestName="The Lost Ingots" QuestId="324" TurnInName="Glorin Steelbrow" TurnInId="1217" />
+    <PickUp QuestName="Blessed Arm" QuestId="322" GiverName="Glorin Steelbrow" GiverId="1217" />
+    <TurnIn QuestName="In Search of The Excavation Team" QuestId="306" TurnInName="Tarrel Rockweaver" TurnInId="2096" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1160" MobName="Captain Halyndor" KillCount="1" />
+    <Objective QuestName="Lifting the Curse" QuestId="290" Type="CollectItem" ItemId="2629" ItemName="Intrepid Strongbox Key" CollectCount="1" />
+    <TurnIn QuestName="Lifting the Curse" QuestId="290" TurnInName="Tarrel Rockweaver" TurnInId="2096" />
+    <PickUp QuestName="The Eye of Paleth" QuestId="292" GiverName="Tarrel Rockweaver" GiverId="2096" />
+    <TurnIn QuestName="Nek&apos;rosh&apos;s Gambit" QuestId="465" TurnInName="Tarrel Rockweaver" TurnInId="2096" />
+    <PickUp QuestName="Defeat Nek&apos;rosh" QuestId="474" GiverName="Tarrel Rockweaver" GiverId="2096" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2091" MobName="Chieftain Nek&apos;rosh" KillCount="1" />
+    <Objective QuestName="Defeat Nek&apos;rosh" QuestId="474" Type="CollectItem" ItemId="3625" ItemName="Nek&apos;rosh&apos;s Head" CollectCount="1" />
+    <TurnIn QuestName="Fall of Dun Modr" QuestId="472" TurnInName="Longbraid the Grim" TurnInId="1071" />
+    <PickUp QuestName="The Thandol Span" QuestId="631" GiverName="Rhag Garmason" GiverId="1075" />
+    <PickUp QuestName="The Dark Iron War" QuestId="303" GiverName="Motley Garmason" GiverId="1074" />
+    <Objective QuestName="The Dark Iron War" QuestId="303" Type="KillMob" MobId="1051" MobName="Dark Iron Dwarf" KillCount="10" />
+    <Objective QuestName="The Dark Iron War" QuestId="303" Type="KillMob" MobId="1053" MobName="Dark Iron Tunneler" KillCount="5" />
+    <Objective QuestName="The Dark Iron War" QuestId="303" Type="KillMob" MobId="1052" MobName="Dark Iron Saboteur" KillCount="5" />
+    <Objective QuestName="The Dark Iron War" QuestId="303" Type="KillMob" MobId="1054" MobName="Dark Iron Demolitionist" KillCount="5" />
+    <TurnIn QuestName="The Dark Iron War" QuestId="303" TurnInName="Motley Garmason" TurnInId="1074" />
+    <TurnIn QuestName="The Thandol Span" QuestId="631" TurnInName="Motley Garmason" TurnInId="1074" />
+    <PickUp QuestName="The Thandol Span" QuestId="632" GiverName="Motley Garmason" GiverId="1074" />
+    <TurnIn QuestName="The Thandol Span" QuestId="632" TurnInName="Rhag Garmason" TurnInId="1075" />
+    <PickUp QuestName="The Thandol Span" QuestId="633" GiverName="Rhag Garmason" GiverId="1075" />
+    <TurnIn QuestName="The Thandol Span" QuestId="633" TurnInName="Rhag Garmason" TurnInId="1075" />
+    <PickUp QuestName="Plea To The Alliance" QuestId="634" GiverName="Rhag Garmason" GiverId="1075" />
+    <TurnIn QuestName="Plea To The Alliance" QuestId="634" TurnInName="Captain Nials" TurnInId="2700" />
+    <TurnIn QuestName="The Eye of Paleth" QuestId="292" TurnInName="Glorin Steelbrow" TurnInId="1217" />
+    <PickUp QuestName="Cleansing the Eye" QuestId="293" GiverName="Glorin Steelbrow" GiverId="1217" />
+    <TurnIn QuestName="Defeat Nek&apos;rosh" QuestId="474" TurnInName="Captain Stoutfist" TurnInId="2104" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Call of Air" QuestId="9552" GiverName="Farseer Nobundo" GiverId="17204" />
+    </If>
+    <TurnIn QuestName="Call of Air" QuestId="9552" TurnInName="Velaada" TurnInId="17431" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Call of Air" QuestId="9553" GiverName="Velaada" GiverId="17431" />
+    </If>
+    <TurnIn QuestName="Call of Air" QuestId="9553" TurnInName="Susurrus" TurnInId="17435" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Call of Air" QuestId="9554" GiverName="Susurrus" GiverId="17435" />
+      <TurnIn QuestName="Call of Air" QuestId="9554" TurnInName="Farseer Nobundo" TurnInId="17204" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Wetlands (28-30) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Duskwood_(30-31)" />
+  </QuestOrder>
+</HBProfile>

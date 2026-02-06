@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Ahn&apos;Qiraj Gear\\Temple of Ahn&apos;Qiraj Helm Quest</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Ahn&apos;Qiraj Gear\\Temple of Ahn&apos;Qiraj Helm Quest" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <PickUp QuestName="Genesis Helm" QuestId="8667" GiverName="Andorgos" GiverId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <PickUp QuestName="Striker&apos;s Diadem" QuestId="8657" GiverName="Andorgos" GiverId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Enigma Circlet" QuestId="8632" GiverName="Andorgos" GiverId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="Avenger&apos;s Crown" QuestId="8628" GiverName="Andorgos" GiverId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <PickUp QuestName="Tiara of the Oracle" QuestId="8592" GiverName="Andorgos" GiverId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="Deathdealer&apos;s Helm" QuestId="8639" GiverName="Andorgos" GiverId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Stormcaller&apos;s Diadem" QuestId="8623" GiverName="Andorgos" GiverId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="Doomcaller&apos;s Circlet" QuestId="8662" GiverName="Andorgos" GiverId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="Conqueror&apos;s Crown" QuestId="8561" GiverName="Andorgos" GiverId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Genesis Helm" QuestId="8667" Type="CollectItem" ItemId="20930" ItemName="Vek&apos;lor&apos;s Diadem" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Striker&apos;s Diadem" QuestId="8657" Type="CollectItem" ItemId="20930" ItemName="Vek&apos;lor&apos;s Diadem" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Enigma Circlet" QuestId="8632" Type="CollectItem" ItemId="20926" ItemName="Vek&apos;nilash&apos;s Circlet" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Avenger&apos;s Crown" QuestId="8628" Type="CollectItem" ItemId="20930" ItemName="Vek&apos;lor&apos;s Diadem" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Tiara of the Oracle" QuestId="8592" Type="CollectItem" ItemId="20926" ItemName="Vek&apos;nilash&apos;s Circlet" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Deathdealer&apos;s Helm" QuestId="8639" Type="CollectItem" ItemId="20930" ItemName="Vek&apos;lor&apos;s Diadem" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Stormcaller&apos;s Diadem" QuestId="8623" Type="CollectItem" ItemId="20930" ItemName="Vek&apos;lor&apos;s Diadem" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Doomcaller&apos;s Circlet" QuestId="8662" Type="CollectItem" ItemId="20926" ItemName="Vek&apos;nilash&apos;s Circlet" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Conqueror&apos;s Crown" QuestId="8561" Type="CollectItem" ItemId="20926" ItemName="Vek&apos;nilash&apos;s Circlet" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Genesis Helm" QuestId="8667" Type="CollectItem" ItemId="20879" ItemName="Idol of Life" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Striker&apos;s Diadem" QuestId="8657" Type="CollectItem" ItemId="20881" ItemName="Idol of Strife" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Enigma Circlet" QuestId="8632" Type="CollectItem" ItemId="20875" ItemName="Idol of Night" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Avenger&apos;s Crown" QuestId="8628" Type="CollectItem" ItemId="20878" ItemName="Idol of Rebirth" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Tiara of the Oracle" QuestId="8592" Type="CollectItem" ItemId="20877" ItemName="Idol of the Sage" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Deathdealer&apos;s Helm" QuestId="8639" Type="CollectItem" ItemId="20882" ItemName="Idol of War" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Stormcaller&apos;s Diadem" QuestId="8623" Type="CollectItem" ItemId="20878" ItemName="Idol of Rebirth" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Doomcaller&apos;s Circlet" QuestId="8662" Type="CollectItem" ItemId="20876" ItemName="Idol of Death" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Conqueror&apos;s Crown" QuestId="8561" Type="CollectItem" ItemId="20874" ItemName="Idol of the Sun" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Genesis Helm" QuestId="8667" Type="CollectItem" ItemId="20859" ItemName="Gold Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Striker&apos;s Diadem" QuestId="8657" Type="CollectItem" ItemId="20861" ItemName="Bronze Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Enigma Circlet" QuestId="8632" Type="CollectItem" ItemId="20861" ItemName="Bronze Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Avenger&apos;s Crown" QuestId="8628" Type="CollectItem" ItemId="20858" ItemName="Stone Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Tiara of the Oracle" QuestId="8592" Type="CollectItem" ItemId="20860" ItemName="Silver Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Deathdealer&apos;s Helm" QuestId="8639" Type="CollectItem" ItemId="20863" ItemName="Clay Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Stormcaller&apos;s Diadem" QuestId="8623" Type="CollectItem" ItemId="20858" ItemName="Stone Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Doomcaller&apos;s Circlet" QuestId="8662" Type="CollectItem" ItemId="20860" ItemName="Silver Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Conqueror&apos;s Crown" QuestId="8561" Type="CollectItem" ItemId="20862" ItemName="Crystal Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Genesis Helm" QuestId="8667" Type="CollectItem" ItemId="20863" ItemName="Clay Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Striker&apos;s Diadem" QuestId="8657" Type="CollectItem" ItemId="20865" ItemName="Ivory Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Enigma Circlet" QuestId="8632" Type="CollectItem" ItemId="20865" ItemName="Ivory Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Avenger&apos;s Crown" QuestId="8628" Type="CollectItem" ItemId="20862" ItemName="Crystal Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Tiara of the Oracle" QuestId="8592" Type="CollectItem" ItemId="20864" ItemName="Bone Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Deathdealer&apos;s Helm" QuestId="8639" Type="CollectItem" ItemId="20859" ItemName="Gold Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Stormcaller&apos;s Diadem" QuestId="8623" Type="CollectItem" ItemId="20862" ItemName="Crystal Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Doomcaller&apos;s Circlet" QuestId="8662" Type="CollectItem" ItemId="20864" ItemName="Bone Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Conqueror&apos;s Crown" QuestId="8561" Type="CollectItem" ItemId="20858" ItemName="Stone Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <TurnIn QuestName="Genesis Helm" QuestId="8667" TurnInName="Andorgos" TurnInId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <TurnIn QuestName="Striker&apos;s Diadem" QuestId="8657" TurnInName="Andorgos" TurnInId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <TurnIn QuestName="Enigma Circlet" QuestId="8632" TurnInName="Andorgos" TurnInId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <TurnIn QuestName="Avenger&apos;s Crown" QuestId="8628" TurnInName="Andorgos" TurnInId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <TurnIn QuestName="Tiara of the Oracle" QuestId="8592" TurnInName="Andorgos" TurnInId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <TurnIn QuestName="Deathdealer&apos;s Helm" QuestId="8639" TurnInName="Andorgos" TurnInId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <TurnIn QuestName="Stormcaller&apos;s Diadem" QuestId="8623" TurnInName="Andorgos" TurnInId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <TurnIn QuestName="Doomcaller&apos;s Circlet" QuestId="8662" TurnInName="Andorgos" TurnInId="15502" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <TurnIn QuestName="Conqueror&apos;s Crown" QuestId="8561" TurnInName="Andorgos" TurnInId="15502" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Ahn&apos;Qiraj Gear\\Temple of Ahn&apos;Qiraj Helm Quest Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

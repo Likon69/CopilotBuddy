@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\The Burning Crusade (58-70)\\Terokkar Forest Group Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="10877" Name="The Dread Relic">
+    <Objective Type="CollectItem" ItemId="31697" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Massive Treasure Chest" Id="185220" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-3750.31" Y="4711.77" Z="-17.32" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Terokkar Forest Group Quests" LogColor="Green" />
+    <PickUp QuestName="Escape from Firewing Point!" QuestId="10051" GiverName="Isla Starmane" GiverId="18760" />
+    <TurnIn QuestName="Escape from Firewing Point!" QuestId="10051" TurnInName="Captain Auric Sunchaser" TurnInId="18745" />
+    <PickUp QuestName="Skywing" QuestId="10898" GiverName="Skywing" GiverId="22424" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18533" MobName="Luanga the Imprisoner" KillCount="1" />
+    <TurnIn QuestName="Skywing" QuestId="10898" TurnInName="Rilak the Redeemed" TurnInId="22292" />
+    <PickUp QuestName="The Vengeful Harbinger" QuestId="10842" GiverName="High Priest Orgium" GiverId="22278" />
+    <Objective QuestName="The Vengeful Harbinger" QuestId="10842" Type="KillMob" MobId="21638" MobName="Vengeful Harbinger" KillCount="1" />
+    <TurnIn QuestName="The Vengeful Harbinger" QuestId="10842" TurnInName="Draenei Tomb Guardian" TurnInId="22285" />
+    <PickUp QuestName="The Dread Relic" QuestId="10877" GiverName="Oakun" GiverId="22456" />
+    <Objective QuestName="The Dread Relic" QuestId="10877" Type="CollectItem" ItemId="31697" ItemName="Dread Relic" CollectCount="1" />
+    <TurnIn QuestName="The Dread Relic" QuestId="10877" TurnInName="Oakun" TurnInId="22456" />
+    <PickUp QuestName="Evil Draws Near" QuestId="10923" GiverName="Oakun" GiverId="22456" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="31812" ItemName="Doom Skull" CollectCount="1" />
+    <Objective QuestName="Evil Draws Near" QuestId="10923" Type="KillMob" MobId="22441" MobName="Teribus the Cursed" KillCount="1" />
+    <TurnIn QuestName="Evil Draws Near" QuestId="10923" TurnInName="Oakun" TurnInId="22456" />
+    <PickUp QuestName="Wanted: Bonelashers Dead!" QuestId="10033" GiverName="Oakun" GiverId="22456" />
+    <Objective QuestName="Wanted: Bonelashers Dead!" QuestId="10033" Type="KillMob" MobId="18470" MobName="Bonelasher" KillCount="20" />
+    <TurnIn QuestName="Wanted: Bonelashers Dead!" QuestId="10033" TurnInName="Taela Everstride" TurnInId="18704" />
+    <PickUp QuestName="Wanted: Torgos!" QuestId="10035" GiverName="Taela Everstride" GiverId="18704" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21515" MobName="Trachela" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="30618" ItemName="Trachela&apos;s Carcass" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18707" MobName="Torgos" KillCount="1" />
+    <Objective QuestName="Wanted: Torgos!" QuestId="10035" Type="CollectItem" ItemId="25852" ItemName="Tail Feather of Torgos" CollectCount="1" />
+    <TurnIn QuestName="Wanted: Torgos!" QuestId="10035" TurnInName="Taela Everstride" TurnInId="18704" />
+    <PickUp QuestName="Digging Through Bones" QuestId="10922" GiverName="Chief Archaeologist Letoll" GiverId="22458" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="22466" MobName="Bone Sifter" KillCount="1" />
+    <TurnIn QuestName="Digging Through Bones" QuestId="10922" TurnInName="Dwarfowitz" TurnInId="22481" />
+    <PickUp QuestName="Fumping" QuestId="10929" GiverName="Dwarfowitz" GiverId="22481" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="22482" MobName="Mature Bone Sifter" KillCount="1" />
+    <TurnIn QuestName="Fumping" QuestId="10929" TurnInName="Dwarfowitz" TurnInId="22481" />
+    <PickUp QuestName="The Big Bone Worm" QuestId="10930" GiverName="Dwarfowitz" GiverId="22481" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="22105" MobName="Decrepit Clefthoof" KillCount="1" />
+    <Objective QuestName="The Big Bone Worm" QuestId="10930" Type="CollectItem" ItemId="31826" ItemName="Enormous Bone Worm Organs" CollectCount="1" />
+    <TurnIn QuestName="The Big Bone Worm" QuestId="10930" TurnInName="Dwarfowitz" TurnInId="22481" />
+    <PickUp QuestName="He Called Himself Altruis..." QuestId="9982" GiverName="Huntress Kima" GiverId="18416" />
+    <TurnIn QuestName="He Called Himself Altruis..." QuestId="9982" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <PickUp QuestName="Survey the Land" QuestId="9991" GiverName="Altruis the Sufferer" GiverId="18417" />
+    <TurnIn QuestName="Survey the Land" QuestId="9991" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <PickUp QuestName="Buying Time" QuestId="9999" GiverName="Altruis the Sufferer" GiverId="18417" />
+    <Objective QuestName="Buying Time" QuestId="9999" Type="KillMob" MobId="17152" MobName="Felguard Legionnaire" KillCount="2" />
+    <Objective QuestName="Buying Time" QuestId="9999" Type="KillMob" MobId="16945" MobName="Mo&apos;arg Engineer" KillCount="3" />
+    <Objective QuestName="Buying Time" QuestId="9999" Type="KillMob" MobId="17151" MobName="Gan&apos;arg Tinkerer" KillCount="8" />
+    <TurnIn QuestName="Buying Time" QuestId="9999" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <PickUp QuestName="The Master Planner" QuestId="10001" GiverName="Altruis the Sufferer" GiverId="18417" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18567" MobName="Mo&apos;arg Master Planner" KillCount="1" />
+    <Objective QuestName="The Master Planner" QuestId="10001" Type="CollectItem" ItemId="25751" ItemName="The Master Planner&apos;s Blueprints" CollectCount="1" />
+    <TurnIn QuestName="The Master Planner" QuestId="10001" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <PickUp QuestName="Patience and Understanding" QuestId="10004" GiverName="Altruis the Sufferer" GiverId="18417" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18584" MobName="Sal&apos;salabim" KillCount="1" />
+    <TurnIn QuestName="Patience and Understanding" QuestId="10004" TurnInName="Sal&apos;salabim" TurnInId="18584" />
+    <PickUp QuestName="Crackin&apos; Some Skulls" QuestId="10009" GiverName="Sal&apos;salabim" GiverId="18584" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18585" MobName="Raliq the Drunk" KillCount="1" />
+    <Objective QuestName="Crackin&apos; Some Skulls" QuestId="10009" Type="CollectItem" ItemId="25767" ItemName="Raliq&apos;s Debt" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18586" MobName="Coosh&apos;coosh" KillCount="1" />
+    <Objective QuestName="Crackin&apos; Some Skulls" QuestId="10009" Type="CollectItem" ItemId="25768" ItemName="Coosh&apos;coosh&apos;s Debt" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18588" MobName="Floon" KillCount="1" />
+    <Objective QuestName="Crackin&apos; Some Skulls" QuestId="10009" Type="CollectItem" ItemId="25769" ItemName="Floon&apos;s Debt" CollectCount="1" />
+    <TurnIn QuestName="Crackin&apos; Some Skulls" QuestId="10009" TurnInName="Sal&apos;salabim" TurnInId="18584" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Terokkar Forest Group Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

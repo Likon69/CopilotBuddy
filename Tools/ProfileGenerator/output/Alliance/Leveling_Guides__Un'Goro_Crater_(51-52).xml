@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Un&apos;Goro Crater (51-52)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>52</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="4290" Name="The Fare of Lar&apos;korwi">
+    <Objective Type="CollectItem" ItemId="11504" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Fresh Threshadon Carcass" Id="166863" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-7365.4" Y="-2009.94" Z="-270.04" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Un&apos;Goro Crater (51-52)" LogColor="Green" />
+    <PickUp QuestName="The Apes of Un&apos;Goro" QuestId="4289" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <PickUp QuestName="The Fare of Lar&apos;korwi" QuestId="4290" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <PickUp QuestName="It&apos;s a Secret to Everybody" QuestId="3844" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <TurnIn QuestName="It&apos;s a Secret to Everybody" QuestId="3844" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <PickUp QuestName="It&apos;s a Secret to Everybody" QuestId="3845" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <Objective QuestName="The Fare of Lar&apos;korwi" QuestId="4290" Type="CollectItem" ItemId="11504" ItemName="Piece of Threshadon Carcass" CollectCount="1" />
+    <PickUp QuestName="Muigin and Larion" QuestId="4141" GiverName="Muigin" GiverId="9119" />
+    <TurnIn QuestName="The Fare of Lar&apos;korwi" QuestId="4290" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <PickUp QuestName="The Scent of Lar&apos;korwi" QuestId="4291" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="9683" MobName="Lar&apos;korwi Mate" KillCount="1" />
+    <Objective QuestName="The Scent of Lar&apos;korwi" QuestId="4291" Type="CollectItem" ItemId="11509" ItemName="Ravasaur Pheromone Gland" CollectCount="2" />
+    <TurnIn QuestName="The Scent of Lar&apos;korwi" QuestId="4291" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <PickUp QuestName="The Bait for Lar&apos;korwi" QuestId="4292" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11186" ItemName="Red Power Crystal" CollectCount="7" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11188" ItemName="Yellow Power Crystal" CollectCount="7" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11185" ItemName="Green Power Crystal" CollectCount="7" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11184" ItemName="Blue Power Crystal" CollectCount="7" />
+    <Objective QuestName="Muigin and Larion" QuestId="4141" Type="CollectItem" ItemId="11316" ItemName="Bloodpetal" CollectCount="15" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11116" ItemName="A Mangled Journal" CollectCount="1" />
+    <PickUp QuestName="Williden&apos;s Journal" QuestId="3884" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <TurnIn QuestName="Muigin and Larion" QuestId="4141" TurnInName="Muigin" TurnInId="9119" />
+    <Objective QuestName="It&apos;s a Secret to Everybody" QuestId="3845" Type="CollectItem" ItemId="11104" ItemName="Large Compass" CollectCount="1" />
+    <Objective QuestName="It&apos;s a Secret to Everybody" QuestId="3845" Type="CollectItem" ItemId="11105" ItemName="Curled Map Parchment" CollectCount="1" />
+    <Objective QuestName="It&apos;s a Secret to Everybody" QuestId="3845" Type="CollectItem" ItemId="11106" ItemName="Lion-headed Key" CollectCount="1" />
+    <TurnIn QuestName="It&apos;s a Secret to Everybody" QuestId="3845" TurnInName="Linken" TurnInId="8737" />
+    <PickUp QuestName="It&apos;s a Secret to Everybody" QuestId="3908" GiverName="Linken" GiverId="8737" />
+    <TurnIn QuestName="Williden&apos;s Journal" QuestId="3884" TurnInName="Williden Marshal" TurnInId="9270" />
+    <PickUp QuestName="Crystals of Power" QuestId="4284" GiverName="J.D. Collie" GiverId="9117" />
+    <TurnIn QuestName="Crystals of Power" QuestId="4284" TurnInName="J.D. Collie" TurnInId="9117" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="11018" ItemName="Un&apos;Goro Soil" CollectCount="20" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10561" ItemName="Mithril Casing" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="8594" ItemName="Insect Analysis Report" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="9328" ItemName="Super Snapper FX" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="9330" ItemName="Snapshot of Gammerita" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10819" ItemName="Wildkin Feather" CollectCount="15" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10443" ItemName="Singed Letter" CollectCount="1" />
+    <TurnIn QuestName="Suntara Stones" QuestId="3368" TurnInName="Curator Thorius" TurnInId="8256" />
+    <PickUp QuestName="A Little Slime Goes a Long Way" QuestId="4512" GiverName="Laris Geardawdle" GiverId="9616" />
+    <PickUp QuestName="A Call to Arms: The Plaguelands!" QuestId="5090" GiverName="Courier Hammerfall" GiverId="10877" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Un&apos;Goro Crater (51-52) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Western_Plaguelands_(52-52)" />
+  </QuestOrder>
+</HBProfile>

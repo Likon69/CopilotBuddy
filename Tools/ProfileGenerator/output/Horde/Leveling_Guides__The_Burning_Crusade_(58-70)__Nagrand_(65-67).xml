@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\The Burning Crusade (58-70)\\Nagrand (65-67)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>67</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="9800" Name="A Rare Bean">
+    <Objective Type="CollectItem" ItemId="24419" CollectCount="15">
+      <CollectFrom>
+        <GameObject Name="Dung" Id="182128" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-1084.75" Y="7482.2" Z="33.26" />
+        <Hotspot X="-1078.95" Y="7423.4" Z="34.32" />
+        <Hotspot X="-1075.8" Y="7381.32" Z="34.46" />
+        <Hotspot X="-1052.83" Y="7515.94" Z="29.6" />
+        <Hotspot X="-1047.89" Y="7400.45" Z="35.24" />
+        <Hotspot X="-1033.23" Y="7340.89" Z="33.08" />
+        <Hotspot X="-1027.46" Y="7547.56" Z="32.24" />
+        <Hotspot X="-1009.89" Y="7470.65" Z="33.72" />
+        <Hotspot X="-998.16" Y="7366.7" Z="34.78" />
+        <Hotspot X="-989.8" Y="7375.67" Z="34.58" />
+        <Hotspot X="-964.12" Y="7378.1" Z="34.06" />
+        <Hotspot X="-950.98" Y="7507.4" Z="35.62" />
+        <Hotspot X="-937.87" Y="7377.23" Z="34.29" />
+        <Hotspot X="-932.11" Y="7426.17" Z="34.5" />
+        <Hotspot X="-904.89" Y="7389.3" Z="33.49" />
+        <Hotspot X="-900.03" Y="7510.4" Z="44.79" />
+        <Hotspot X="-897.25" Y="7351.49" Z="32.9" />
+        <Hotspot X="-872.39" Y="7290.06" Z="34.91" />
+        <Hotspot X="-855.81" Y="7291.07" Z="33.35" />
+        <Hotspot X="-847.16" Y="7436.9" Z="43.36" />
+        <Hotspot X="-833.38" Y="7451.42" Z="43.65" />
+        <Hotspot X="-833.1" Y="7267.59" Z="34.08" />
+        <Hotspot X="-826.11" Y="7318.74" Z="37.56" />
+        <Hotspot X="-823.09" Y="7395.16" Z="41.11" />
+        <Hotspot X="-816.92" Y="7227.44" Z="32.79" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9916" Name="Bleeding Hollow Supply Crates">
+    <Objective Type="CollectItem" ItemId="25460" CollectCount="20">
+      <CollectFrom>
+        <GameObject Name="Bleeding Hollow Supply Crate" Id="182265" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-2093.58" Y="7384.43" Z="-100.94" />
+        <Hotspot X="-2093.26" Y="7382.27" Z="-100.94" />
+        <Hotspot X="-2092.3" Y="7456.98" Z="-101.75" />
+        <Hotspot X="-2086.54" Y="7367.89" Z="-104.11" />
+        <Hotspot X="-2085.89" Y="7399.08" Z="-101.31" />
+        <Hotspot X="-2076.68" Y="7362.38" Z="-102.81" />
+        <Hotspot X="-2076.59" Y="7391.01" Z="-105.57" />
+        <Hotspot X="-2073.52" Y="7465.26" Z="-100.69" />
+        <Hotspot X="-2068.23" Y="7374.21" Z="-104.44" />
+        <Hotspot X="-2065.01" Y="7460.58" Z="-98.69" />
+        <Hotspot X="-2063.95" Y="7358.79" Z="-101.53" />
+        <Hotspot X="-2059.26" Y="7434.12" Z="-101.99" />
+        <Hotspot X="-2058.45" Y="7467.15" Z="-101.7" />
+        <Hotspot X="-2057.34" Y="7513.97" Z="-95.44" />
+        <Hotspot X="-2055.48" Y="7407.87" Z="-103.29" />
+        <Hotspot X="-2048.68" Y="7454.97" Z="-101.82" />
+        <Hotspot X="-2037.09" Y="7478.15" Z="-97.2" />
+        <Hotspot X="-2035.71" Y="7440.26" Z="-98.47" />
+        <Hotspot X="-2025.2" Y="7489.77" Z="-96.73" />
+        <Hotspot X="-2022.24" Y="7399.29" Z="-99.69" />
+        <Hotspot X="-2021.07" Y="7418.31" Z="-95.67" />
+        <Hotspot X="-2013.07" Y="7440.32" Z="-93.37" />
+        <Hotspot X="-2006.41" Y="7409.13" Z="-95.12" />
+        <Hotspot X="-2003.99" Y="7465.17" Z="-97.06" />
+        <Hotspot X="-2001.47" Y="7453.89" Z="-94.26" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Nagrand (65-67)" LogColor="Green" />
+    <PickUp QuestName="A&apos;dal" QuestId="10210" GiverName="Haggard War Veteran" GiverId="19684" />
+    <TurnIn QuestName="A&apos;dal" QuestId="10210" TurnInName="A&apos;dal" TurnInId="18481" />
+    <PickUp QuestName="City of Light" QuestId="10211" GiverName="Archmage Khadgar" GiverId="18166" />
+    <TurnIn QuestName="City of Light" QuestId="10211" TurnInName="Archmage Khadgar" TurnInId="18166" />
+    <PickUp QuestName="Allegiance to the Aldor" QuestId="10551" GiverName="Archmage Khadgar" GiverId="18166" />
+    <PickUp QuestName="Allegiance to the Scryers" QuestId="10552" GiverName="Archmage Khadgar" GiverId="18166" />
+    <PickUp QuestName="Reinforcements for Garadar" QuestId="9797" GiverName="Messenger Gazgrigg" GiverId="18091" />
+    <PickUp QuestName="Windroc Mastery" QuestId="9854" GiverName="Shado &apos;Fitz&apos; Farstrider" GiverId="18200" />
+    <PickUp QuestName="Clefthoof Mastery" QuestId="9789" GiverName="Hemet Nesingwary" GiverId="18180" />
+    <PickUp QuestName="Talbuk Mastery" QuestId="9857" GiverName="Harold Lane" GiverId="18218" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17158" MobName="Dust Howler" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="24504" ItemName="Howling Wind" CollectCount="1" />
+    <PickUp QuestName="The Howling Wind" QuestId="9861" GiverName="Harold Lane" GiverId="18218" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18334" MobName="Wild Elekk" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="25463" ItemName="Pair of Ivory Tusks" CollectCount="3" />
+    <Objective QuestName="Talbuk Mastery" QuestId="9857" Type="KillMob" MobId="17130" MobName="Talbuk Stag" KillCount="12" />
+    <Objective QuestName="Clefthoof Mastery" QuestId="9789" Type="KillMob" MobId="18205" MobName="Clefthoof" KillCount="12" />
+    <Objective QuestName="Windroc Mastery" QuestId="9854" Type="KillMob" MobId="17128" MobName="Windroc" KillCount="12" />
+    <TurnIn QuestName="Windroc Mastery" QuestId="9854" TurnInName="Shado &apos;Fitz&apos; Farstrider" TurnInId="18200" />
+    <PickUp QuestName="Windroc Mastery" QuestId="9855" GiverName="Shado &apos;Fitz&apos; Farstrider" GiverId="18200" />
+    <TurnIn QuestName="Clefthoof Mastery" QuestId="9789" TurnInName="Hemet Nesingwary" TurnInId="18180" />
+    <PickUp QuestName="Clefthoof Mastery" QuestId="9850" GiverName="Hemet Nesingwary" GiverId="18180" />
+    <TurnIn QuestName="Talbuk Mastery" QuestId="9857" TurnInName="Harold Lane" TurnInId="18218" />
+    <PickUp QuestName="Talbuk Mastery" QuestId="9858" GiverName="Harold Lane" GiverId="18218" />
+    <PickUp QuestName="Proving Your Strength" QuestId="10479" GiverName="Warden Bullrok" GiverId="18407" />
+    <PickUp QuestName="Wanted: Giselda the Crone" QuestId="9935" GiverName="Warden Bullrok" GiverId="18407" />
+    <PickUp QuestName="Wanted: Zorbo the Advisor" QuestId="9939" GiverName="Warden Bullrok" GiverId="18407" />
+    <PickUp QuestName="The Impotent Leader" QuestId="9888" GiverName="Jorin Deadeye" GiverId="18106" />
+    <TurnIn QuestName="Reinforcements for Garadar" QuestId="9797" TurnInName="Captain Kroghan" TurnInId="18090" />
+    <PickUp QuestName="The Throne of the Elements" QuestId="9870" GiverName="Elementalist Yal&apos;hah" GiverId="18234" />
+    <PickUp QuestName="Vile Idolatry" QuestId="9863" GiverName="Farseer Kurkush" GiverId="18066" />
+    <PickUp QuestName="The Missing War Party" QuestId="9864" GiverName="Farseer Corhuk" GiverId="18067" />
+    <PickUp QuestName="Murkblood Leaders..." QuestId="9867" GiverName="Farseer Margadesh" GiverId="18068" />
+    <PickUp QuestName="Missing Mag&apos;hari Procession" QuestId="9944" GiverName="Matron Drakia" GiverId="18302" />
+    <PickUp QuestName="The Consortium Needs You!" QuestId="9913" GiverName="Consortium Recruiter" GiverId="18335" />
+    <TurnIn QuestName="The Howling Wind" QuestId="9861" TurnInName="Elementalist Morgh" TurnInId="18074" />
+    <PickUp QuestName="Murkblood Corrupters" QuestId="9862" GiverName="Elementalist Morgh" GiverId="18074" />
+    <TurnIn QuestName="The Throne of the Elements" QuestId="9870" TurnInName="Elementalist Sharvak" TurnInId="18072" />
+    <PickUp QuestName="A Rare Bean" QuestId="9800" GiverName="Elementalist Lo&apos;ap" GiverId="18073" />
+    <PickUp QuestName="Muck Diving" QuestId="9815" GiverName="Elementalist Lo&apos;ap" GiverId="18073" />
+    <PickUp QuestName="The Underneath" QuestId="9818" GiverName="Elementalist Untrag" GiverId="18071" />
+    <TurnIn QuestName="The Underneath" QuestId="9818" TurnInName="Gordawg" TurnInId="18099" />
+    <PickUp QuestName="The Tortured Earth" QuestId="9819" GiverName="Gordawg" GiverId="18099" />
+    <Objective QuestName="The Tortured Earth" QuestId="9819" Type="KillMob" MobId="17156" MobName="Tortured Earth Spirit" KillCount="10" />
+    <TurnIn QuestName="The Tortured Earth" QuestId="9819" TurnInName="Gordawg" TurnInId="18099" />
+    <PickUp QuestName="Eating Damnation" QuestId="9821" GiverName="Gordawg" GiverId="18099" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18062" MobName="Enraged Crusher" KillCount="1" />
+    <Objective QuestName="Eating Damnation" QuestId="9821" Type="CollectItem" ItemId="24473" ItemName="Enraged Crusher Core" CollectCount="15" />
+    <Objective QuestName="A Rare Bean" QuestId="9800" Type="CollectItem" ItemId="24419" ItemName="Digested Caracoli" CollectCount="15" />
+    <Objective QuestName="Talbuk Mastery" QuestId="9858" Type="KillMob" MobId="17131" MobName="Talbuk Thorngrazer" KillCount="12" />
+    <Objective QuestName="Clefthoof Mastery" QuestId="9850" Type="KillMob" MobId="17132" MobName="Clefthoof Bull" KillCount="12" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18238" MobName="Murkblood Invader" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="24558" ItemName="Murkblood Invasion Plans" CollectCount="1" />
+    <PickUp QuestName="Murkblood Invaders" QuestId="9872" GiverName="Gordawg" GiverId="18099" />
+    <TurnIn QuestName="Murkblood Invaders" QuestId="9872" TurnInName="Garrosh" TurnInId="18063" />
+    <TurnIn QuestName="Eating Damnation" QuestId="9821" TurnInName="Gordawg" TurnInId="18099" />
+    <PickUp QuestName="Shattering the Veil" QuestId="9849" GiverName="Gordawg" GiverId="18099" />
+    <TurnIn QuestName="A Rare Bean" QuestId="9800" TurnInName="Elementalist Lo&apos;ap" TurnInId="18073" />
+    <PickUp QuestName="Agitated Spirits of Skysong" QuestId="9804" GiverName="Elementalist Lo&apos;ap" GiverId="18073" />
+    <Objective QuestName="Agitated Spirits of Skysong" QuestId="9804" Type="KillMob" MobId="17153" MobName="Lake Spirit" KillCount="8" />
+    <TurnIn QuestName="Agitated Spirits of Skysong" QuestId="9804" TurnInName="Elementalist Lo&apos;ap" TurnInId="18073" />
+    <PickUp QuestName="Blessing of Incineratus" QuestId="9805" GiverName="Elementalist Lo&apos;ap" GiverId="18073" />
+    <Objective QuestName="Windroc Mastery" QuestId="9855" Type="KillMob" MobId="18220" MobName="Ravenous Windroc" KillCount="12" />
+    <PickUp QuestName="I Must Have Them!" QuestId="10109" GiverName="Wazat" GiverId="19035" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17158" MobName="Dust Howler" KillCount="1" />
+    <Objective QuestName="I Must Have Them!" QuestId="10109" Type="CollectItem" ItemId="27807" ItemName="Air Elemental Gas" CollectCount="3" />
+    <TurnIn QuestName="Talbuk Mastery" QuestId="9858" TurnInName="Harold Lane" TurnInId="18218" />
+    <TurnIn QuestName="Clefthoof Mastery" QuestId="9850" TurnInName="Hemet Nesingwary" TurnInId="18180" />
+    <TurnIn QuestName="Windroc Mastery" QuestId="9855" TurnInName="Shado &apos;Fitz&apos; Farstrider" TurnInId="18200" />
+    <TurnIn QuestName="I Must Have Them!" QuestId="10109" TurnInName="Wazat" TurnInId="19035" />
+    <TurnIn QuestName="The Impotent Leader" QuestId="9888" TurnInName="Kilrath" TurnInId="18273" />
+    <PickUp QuestName="Don&apos;t Kill the Fat One" QuestId="9889" GiverName="Kilrath" GiverId="18273" />
+    <Objective QuestName="Don&apos;t Kill the Fat One" QuestId="9889" Type="KillMob" MobId="18260" MobName="Boulderfist Invader" KillCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18262" MobName="Unkor the Ruthless" KillCount="1" />
+    <TurnIn QuestName="Don&apos;t Kill the Fat One" QuestId="9889" TurnInName="Unkor the Ruthless" TurnInId="18262" />
+    <PickUp QuestName="Success!" QuestId="9890" GiverName="Unkor the Ruthless" GiverId="18262" />
+    <TurnIn QuestName="Success!" QuestId="9890" TurnInName="Kilrath" TurnInId="18273" />
+    <PickUp QuestName="Because Kilrath is a Coward" QuestId="9891" GiverName="Kilrath" GiverId="18273" />
+    <TurnIn QuestName="Because Kilrath is a Coward" QuestId="9891" TurnInName="Jorin Deadeye" TurnInId="18106" />
+    <PickUp QuestName="Message in a Battle" QuestId="9906" GiverName="Jorin Deadeye" GiverId="18106" />
+    <PickUp QuestName="Standards and Practices" QuestId="9910" GiverName="Elkay&apos;gan the Mystic" GiverId="18300" />
+    <Objective QuestName="Proving Your Strength" QuestId="10479" Type="CollectItem" ItemId="25433" ItemName="Obsidian Warbeads" CollectCount="10" />
+    <Objective QuestName="Message in a Battle" QuestId="9906" Type="KillMob" MobId="17135" MobName="Boulderfist Mystic" KillCount="8" />
+    <Objective QuestName="Message in a Battle" QuestId="9906" Type="KillMob" MobId="17134" MobName="Boulderfist Crusher" KillCount="8" />
+    <TurnIn QuestName="Proving Your Strength" QuestId="10479" TurnInName="Warden Bullrok" TurnInId="18407" />
+    <TurnIn QuestName="Standards and Practices" QuestId="9910" TurnInName="Elkay&apos;gan the Mystic" TurnInId="18300" />
+    <PickUp QuestName="Bleeding Hollow Supply Crates" QuestId="9916" GiverName="Elkay&apos;gan the Mystic" GiverId="18300" />
+    <TurnIn QuestName="Message in a Battle" QuestId="9906" TurnInName="Jorin Deadeye" TurnInId="18106" />
+    <PickUp QuestName="An Audacious Advance" QuestId="9907" GiverName="Jorin Deadeye" GiverId="18106" />
+    <TurnIn QuestName="Blessing of Incineratus" QuestId="9805" TurnInName="Elementalist Lo&apos;ap" TurnInId="18073" />
+    <PickUp QuestName="The Spirit Polluted" QuestId="9810" GiverName="Elementalist Lo&apos;ap" GiverId="18073" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17154" MobName="Muck Spawn" KillCount="1" />
+    <Objective QuestName="Muck Diving" QuestId="9815" Type="CollectItem" ItemId="24469" ItemName="Muck-ridden Core" CollectCount="5" />
+    <Objective QuestName="Bleeding Hollow Supply Crates" QuestId="9916" Type="CollectItem" ItemId="25460" ItemName="Bleeding Hollow Supply Crate" CollectCount="20" />
+    <Objective QuestName="An Audacious Advance" QuestId="9907" Type="KillMob" MobId="17136" MobName="Boulderfist Warrior" KillCount="10" />
+    <Objective QuestName="An Audacious Advance" QuestId="9907" Type="KillMob" MobId="17137" MobName="Boulderfist Mage" KillCount="10" />
+    <TurnIn QuestName="An Audacious Advance" QuestId="9907" TurnInName="Jorin Deadeye" TurnInId="18106" />
+    <PickUp QuestName="Diplomatic Measures" QuestId="10107" GiverName="Jorin Deadeye" GiverId="18106" />
+    <TurnIn QuestName="Bleeding Hollow Supply Crates" QuestId="9916" TurnInName="Elkay&apos;gan the Mystic" TurnInId="18300" />
+    <TurnIn QuestName="The Missing War Party" QuestId="9864" TurnInName="Saurfang the Younger" TurnInId="18229" />
+    <PickUp QuestName="Once Were Warriors" QuestId="9865" GiverName="Saurfang the Younger" GiverId="18229" />
+    <TurnIn QuestName="Missing Mag&apos;hari Procession" QuestId="9944" TurnInName="Elder Yorley" TurnInId="18414" />
+    <PickUp QuestName="War on the Warmaul" QuestId="9945" GiverName="Elder Yorley" GiverId="18414" />
+    <PickUp QuestName="Finding the Survivors" QuestId="9948" GiverName="Elder Ungriz" GiverId="18415" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="25604" ItemName="Warmaul Prison Key" CollectCount="1" />
+    <Objective QuestName="War on the Warmaul" QuestId="9945" Type="KillMob" MobId="18065" MobName="Warmaul Brute" KillCount="8" />
+    <Objective QuestName="War on the Warmaul" QuestId="9945" Type="KillMob" MobId="18037" MobName="Warmaul Warlock" KillCount="8" />
+    <TurnIn QuestName="War on the Warmaul" QuestId="9945" TurnInName="Elder Yorley" TurnInId="18414" />
+    <TurnIn QuestName="Finding the Survivors" QuestId="9948" TurnInName="Elder Ungriz" TurnInId="18415" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18204" MobName="Ortor of Murkblood" KillCount="1" />
+    <Objective QuestName="Murkblood Leaders..." QuestId="9867" Type="CollectItem" ItemId="24543" ItemName="Head of Ortor of Murkblood" CollectCount="1" />
+    <Objective QuestName="Vile Idolatry" QuestId="9863" Type="CollectItem" ItemId="24542" ItemName="Murkblood Idol" CollectCount="20" />
+    <Objective QuestName="Murkblood Corrupters" QuestId="9862" Type="KillMob" MobId="18202" MobName="Murkblood Putrifier" KillCount="5" />
+    <Objective QuestName="Once Were Warriors" QuestId="9865" Type="KillMob" MobId="18203" MobName="Murkblood Raider" KillCount="10" />
+    <Objective QuestName="Once Were Warriors" QuestId="9865" Type="KillMob" MobId="18207" MobName="Murkblood Scavenger" KillCount="20" />
+    <Objective QuestName="The Spirit Polluted" QuestId="9810" Type="KillMob" MobId="18145" MobName="Watoosun&apos;s Polluted Essence" KillCount="1" />
+    <Objective QuestName="The Spirit Polluted" QuestId="9810" Type="KillMob" MobId="17155" MobName="Lake Surger" KillCount="8" />
+    <TurnIn QuestName="Once Were Warriors" QuestId="9865" TurnInName="Saurfang the Younger" TurnInId="18229" />
+    <PickUp QuestName="He Will Walk The Earth..." QuestId="9866" GiverName="Saurfang the Younger" GiverId="18229" />
+    <PickUp QuestName="He Called Himself Altruis..." QuestId="9983" GiverName="Matron Celestine" GiverId="18301" />
+    <TurnIn QuestName="He Called Himself Altruis..." QuestId="9983" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <PickUp QuestName="Survey the Land" QuestId="9991" GiverName="Altruis the Sufferer" GiverId="18417" />
+    <TurnIn QuestName="Survey the Land" QuestId="9991" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <PickUp QuestName="Gava&apos;xi" QuestId="9900" GiverName="Zerid" GiverId="18276" />
+    <PickUp QuestName="Matters of Security" QuestId="9925" GiverName="Zerid" GiverId="18276" />
+    <TurnIn QuestName="The Consortium Needs You!" QuestId="9913" TurnInName="Gezhe" TurnInId="18265" />
+    <PickUp QuestName="Stealing from Thieves" QuestId="9882" GiverName="Gezhe" GiverId="18265" />
+    <PickUp QuestName="A Head Full of Ivory" QuestId="9914" GiverName="Shadrek" GiverId="18333" />
+    <TurnIn QuestName="A Head Full of Ivory" QuestId="9914" TurnInName="Shadrek" TurnInId="18333" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17157" MobName="Shattered Rumbler" KillCount="1" />
+    <Objective QuestName="Shattering the Veil" QuestId="9849" Type="KillMob" MobId="18181" MobName="Minion of Gurok" KillCount="30" />
+    <Objective QuestName="Stealing from Thieves" QuestId="9882" Type="CollectItem" ItemId="25416" ItemName="Oshu&apos;gun Crystal Fragment" CollectCount="10" />
+    <Objective QuestName="Matters of Security" QuestId="9925" Type="KillMob" MobId="17981" MobName="Voidspawn" KillCount="8" />
+    <Objective QuestName="Gava&apos;xi" QuestId="9900" Type="KillMob" MobId="18298" MobName="Gava&apos;xi" KillCount="1" />
+    <TurnIn QuestName="Gava&apos;xi" QuestId="9900" TurnInName="Zerid" TurnInId="18276" />
+    <TurnIn QuestName="Matters of Security" QuestId="9925" TurnInName="Zerid" TurnInId="18276" />
+    <TurnIn QuestName="Stealing from Thieves" QuestId="9882" TurnInName="Gezhe" TurnInId="18265" />
+    <TurnIn QuestName="Vile Idolatry" QuestId="9863" TurnInName="Farseer Kurkush" TurnInId="18066" />
+    <TurnIn QuestName="He Will Walk The Earth..." QuestId="9866" TurnInName="Farseer Corhuk" TurnInId="18067" />
+    <TurnIn QuestName="Murkblood Leaders..." QuestId="9867" TurnInName="Farseer Margadesh" TurnInId="18068" />
+    <TurnIn QuestName="Diplomatic Measures" QuestId="10107" TurnInName="Lantresor of the Blade" TurnInId="18261" />
+    <PickUp QuestName="Armaments for Deception" QuestId="9928" GiverName="Lantresor of the Blade" GiverId="18261" />
+    <PickUp QuestName="Ruthless Cunning" QuestId="9927" GiverName="Lantresor of the Blade" GiverId="18261" />
+    <Objective QuestName="Wanted: Giselda the Crone" QuestId="9935" Type="KillMob" MobId="18391" MobName="Giselda the Crone" KillCount="1" />
+    <Objective QuestName="Armaments for Deception" QuestId="9928" Type="CollectItem" ItemId="25554" ItemName="Kil&apos;sorrow Armaments" CollectCount="20" />
+    <TurnIn QuestName="Armaments for Deception" QuestId="9928" TurnInName="Lantresor of the Blade" TurnInId="18261" />
+    <TurnIn QuestName="Ruthless Cunning" QuestId="9927" TurnInName="Lantresor of the Blade" TurnInId="18261" />
+    <PickUp QuestName="Returning the Favor" QuestId="9931" GiverName="Lantresor of the Blade" GiverId="18261" />
+    <PickUp QuestName="Body of Evidence" QuestId="9932" GiverName="Lantresor of the Blade" GiverId="18261" />
+    <Objective QuestName="Wanted: Zorbo the Advisor" QuestId="9939" Type="KillMob" MobId="18413" MobName="Zorbo the Advisor" KillCount="1" />
+    <Objective QuestName="Wanted: Zorbo the Advisor" QuestId="9939" Type="KillMob" MobId="18064" MobName="Warmaul Shaman" KillCount="5" />
+    <Objective QuestName="Wanted: Zorbo the Advisor" QuestId="9939" Type="KillMob" MobId="17138" MobName="Warmaul Reaver" KillCount="5" />
+    <TurnIn QuestName="Returning the Favor" QuestId="9931" TurnInName="Lantresor of the Blade" TurnInId="18261" />
+    <TurnIn QuestName="Body of Evidence" QuestId="9932" TurnInName="Lantresor of the Blade" TurnInId="18261" />
+    <PickUp QuestName="Message to Garadar" QuestId="9934" GiverName="Lantresor of the Blade" GiverId="18261" />
+    <TurnIn QuestName="Wanted: Giselda the Crone" QuestId="9935" TurnInName="Warden Bullrok" TurnInId="18407" />
+    <TurnIn QuestName="Wanted: Zorbo the Advisor" QuestId="9939" TurnInName="Warden Bullrok" TurnInId="18407" />
+    <TurnIn QuestName="Message to Garadar" QuestId="9934" TurnInName="Garrosh" TurnInId="18063" />
+    <TurnIn QuestName="Shattering the Veil" QuestId="9849" TurnInName="Gordawg" TurnInId="18099" />
+    <TurnIn QuestName="The Spirit Polluted" QuestId="9810" TurnInName="Elementalist Lo&apos;ap" TurnInId="18073" />
+    <TurnIn QuestName="Muck Diving" QuestId="9815" TurnInName="Elementalist Lo&apos;ap" TurnInId="18073" />
+    <TurnIn QuestName="Murkblood Corrupters" QuestId="9862" TurnInName="Elementalist Morgh" TurnInId="18074" />
+    <PickUp QuestName="The Ring of Blood: Brokentoe" QuestId="9962" GiverName="Gurgthock" GiverId="18471" />
+    <Objective QuestName="The Ring of Blood: Brokentoe" QuestId="9962" Type="KillMob" MobId="18398" MobName="Brokentoe" KillCount="1" />
+    <TurnIn QuestName="The Ring of Blood: Brokentoe" QuestId="9962" TurnInName="Wodin the Troll-Servant" TurnInId="22893" />
+    <PickUp QuestName="The Ring of Blood: The Blue Brothers" QuestId="9967" GiverName="Gurgthock" GiverId="18471" />
+    <Objective QuestName="The Ring of Blood: The Blue Brothers" QuestId="9967" Type="KillMob" MobId="18399" MobName="Murkblood Twin" KillCount="1" />
+    <TurnIn QuestName="The Ring of Blood: The Blue Brothers" QuestId="9967" TurnInName="Wodin the Troll-Servant" TurnInId="22893" />
+    <PickUp QuestName="The Ring of Blood: Rokdar the Sundered Lord" QuestId="9970" GiverName="Gurgthock" GiverId="18471" />
+    <Objective QuestName="The Ring of Blood: Rokdar the Sundered Lord" QuestId="9970" Type="KillMob" MobId="18400" MobName="Rokdar the Sundered Lord" KillCount="1" />
+    <TurnIn QuestName="The Ring of Blood: Rokdar the Sundered Lord" QuestId="9970" TurnInName="Wodin the Troll-Servant" TurnInId="22893" />
+    <PickUp QuestName="The Ring of Blood: Skra&apos;gath" QuestId="9972" GiverName="Gurgthock" GiverId="18471" />
+    <Objective QuestName="The Ring of Blood: Skra&apos;gath" QuestId="9972" Type="KillMob" MobId="18401" MobName="Skra&apos;gath" KillCount="1" />
+    <TurnIn QuestName="The Ring of Blood: Skra&apos;gath" QuestId="9972" TurnInName="Wodin the Troll-Servant" TurnInId="22893" />
+    <PickUp QuestName="The Ring of Blood: The Warmaul Champion" QuestId="9973" GiverName="Gurgthock" GiverId="18471" />
+    <Objective QuestName="The Ring of Blood: The Warmaul Champion" QuestId="9973" Type="KillMob" MobId="18402" MobName="Warmaul Champion" KillCount="1" />
+    <TurnIn QuestName="The Ring of Blood: The Warmaul Champion" QuestId="9973" TurnInName="Wodin the Troll-Servant" TurnInId="22893" />
+    <PickUp QuestName="The Ring of Blood: The Final Challenge" QuestId="9977" GiverName="Gurgthock" GiverId="18471" />
+    <Objective QuestName="The Ring of Blood: The Final Challenge" QuestId="9977" Type="KillMob" MobId="18069" MobName="Mogor" KillCount="1" />
+    <TurnIn QuestName="The Ring of Blood: The Final Challenge" QuestId="9977" TurnInName="Wodin the Troll-Servant" TurnInId="22893" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Nagrand (65-67) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__The_Burning_Crusade_(58-70)__Blade&apos;s_Edge_Mountains_(67-68)" />
+  </QuestOrder>
+</HBProfile>

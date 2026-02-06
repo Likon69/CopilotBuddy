@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Ahn&apos;Qiraj Gear\\Ruins of Ahn&apos;Qiraj Cloak Quest</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Ahn&apos;Qiraj Gear\\Ruins of Ahn&apos;Qiraj Cloak Quest" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <PickUp QuestName="Cloak of Unending Life" QuestId="8692" GiverName="Keyl Swiftclaw" GiverId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <PickUp QuestName="Cloak of the Unseen Path" QuestId="8696" GiverName="Keyl Swiftclaw" GiverId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Drape of Vaulted Secrets" QuestId="8691" GiverName="Keyl Swiftclaw" GiverId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="Cape of Eternal Justice" QuestId="8695" GiverName="Keyl Swiftclaw" GiverId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <PickUp QuestName="Shroud of Infinite Wisdom" QuestId="8689" GiverName="Keyl Swiftclaw" GiverId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="Cloak of Veiled Shadows" QuestId="8693" GiverName="Keyl Swiftclaw" GiverId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Cloak of the Gathering Storm" QuestId="8690" GiverName="Keyl Swiftclaw" GiverId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="Shroud of Unspoken Names" QuestId="8694" GiverName="Keyl Swiftclaw" GiverId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="Drape of Unyielding Strength" QuestId="8557" GiverName="Keyl Swiftclaw" GiverId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Cloak of Unending Life" QuestId="8692" Type="CollectItem" ItemId="20889" ItemName="Qiraji Regal Drape" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Cloak of the Unseen Path" QuestId="8696" Type="CollectItem" ItemId="20889" ItemName="Qiraji Regal Drape" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Drape of Vaulted Secrets" QuestId="8691" Type="CollectItem" ItemId="20885" ItemName="Qiraji Martial Drape" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Cape of Eternal Justice" QuestId="8695" Type="CollectItem" ItemId="20889" ItemName="Qiraji Regal Drape" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Shroud of Infinite Wisdom" QuestId="8689" Type="CollectItem" ItemId="20885" ItemName="Qiraji Martial Drape" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Cloak of Veiled Shadows" QuestId="8693" Type="CollectItem" ItemId="20885" ItemName="Qiraji Martial Drape" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Cloak of the Gathering Storm" QuestId="8690" Type="CollectItem" ItemId="20889" ItemName="Qiraji Regal Drape" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Shroud of Unspoken Names" QuestId="8694" Type="CollectItem" ItemId="20889" ItemName="Qiraji Regal Drape" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Drape of Unyielding Strength" QuestId="8557" Type="CollectItem" ItemId="20885" ItemName="Qiraji Martial Drape" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Cloak of Unending Life" QuestId="8692" Type="CollectItem" ItemId="20872" ItemName="Vermillion Idol" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Cloak of the Unseen Path" QuestId="8696" Type="CollectItem" ItemId="20868" ItemName="Lambent Idol" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Drape of Vaulted Secrets" QuestId="8691" Type="CollectItem" ItemId="20873" ItemName="Alabaster Idol" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Cape of Eternal Justice" QuestId="8695" Type="CollectItem" ItemId="20871" ItemName="Obsidian Idol" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Shroud of Infinite Wisdom" QuestId="8689" Type="CollectItem" ItemId="20870" ItemName="Jasper Idol" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Cloak of Veiled Shadows" QuestId="8693" Type="CollectItem" ItemId="20866" ItemName="Azure Idol" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Cloak of the Gathering Storm" QuestId="8690" Type="CollectItem" ItemId="20871" ItemName="Obsidian Idol" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Shroud of Unspoken Names" QuestId="8694" Type="CollectItem" ItemId="20869" ItemName="Amber Idol" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Drape of Unyielding Strength" QuestId="8557" Type="CollectItem" ItemId="20867" ItemName="Onyx Idol" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Cloak of Unending Life" QuestId="8692" Type="CollectItem" ItemId="20864" ItemName="Bone Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Cloak of the Unseen Path" QuestId="8696" Type="CollectItem" ItemId="20858" ItemName="Stone Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Drape of Vaulted Secrets" QuestId="8691" Type="CollectItem" ItemId="20858" ItemName="Stone Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Cape of Eternal Justice" QuestId="8695" Type="CollectItem" ItemId="20859" ItemName="Gold Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Shroud of Infinite Wisdom" QuestId="8689" Type="CollectItem" ItemId="20859" ItemName="Gold Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Cloak of Veiled Shadows" QuestId="8693" Type="CollectItem" ItemId="20861" ItemName="Bronze Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Cloak of the Gathering Storm" QuestId="8690" Type="CollectItem" ItemId="20863" ItemName="Clay Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Shroud of Unspoken Names" QuestId="8694" Type="CollectItem" ItemId="20861" ItemName="Bronze Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Drape of Unyielding Strength" QuestId="8557" Type="CollectItem" ItemId="20864" ItemName="Bone Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Cloak of Unending Life" QuestId="8692" Type="CollectItem" ItemId="20860" ItemName="Silver Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Cloak of the Unseen Path" QuestId="8696" Type="CollectItem" ItemId="20862" ItemName="Crystal Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Drape of Vaulted Secrets" QuestId="8691" Type="CollectItem" ItemId="20862" ItemName="Crystal Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Cape of Eternal Justice" QuestId="8695" Type="CollectItem" ItemId="20863" ItemName="Clay Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Shroud of Infinite Wisdom" QuestId="8689" Type="CollectItem" ItemId="20863" ItemName="Clay Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Cloak of Veiled Shadows" QuestId="8693" Type="CollectItem" ItemId="20865" ItemName="Ivory Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Cloak of the Gathering Storm" QuestId="8690" Type="CollectItem" ItemId="20859" ItemName="Gold Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Shroud of Unspoken Names" QuestId="8694" Type="CollectItem" ItemId="20865" ItemName="Ivory Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Drape of Unyielding Strength" QuestId="8557" Type="CollectItem" ItemId="20860" ItemName="Silver Scarab" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <TurnIn QuestName="Cloak of Unending Life" QuestId="8692" TurnInName="Keyl Swiftclaw" TurnInId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <TurnIn QuestName="Cloak of the Unseen Path" QuestId="8696" TurnInName="Keyl Swiftclaw" TurnInId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <TurnIn QuestName="Drape of Vaulted Secrets" QuestId="8691" TurnInName="Keyl Swiftclaw" TurnInId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <TurnIn QuestName="Cape of Eternal Justice" QuestId="8695" TurnInName="Keyl Swiftclaw" TurnInId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <TurnIn QuestName="Shroud of Infinite Wisdom" QuestId="8689" TurnInName="Keyl Swiftclaw" TurnInId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <TurnIn QuestName="Cloak of Veiled Shadows" QuestId="8693" TurnInName="Keyl Swiftclaw" TurnInId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <TurnIn QuestName="Cloak of the Gathering Storm" QuestId="8690" TurnInName="Keyl Swiftclaw" TurnInId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <TurnIn QuestName="Shroud of Unspoken Names" QuestId="8694" TurnInName="Keyl Swiftclaw" TurnInId="15500" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <TurnIn QuestName="Drape of Unyielding Strength" QuestId="8557" TurnInName="Keyl Swiftclaw" TurnInId="15500" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Ahn&apos;Qiraj Gear\\Ruins of Ahn&apos;Qiraj Cloak Quest Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

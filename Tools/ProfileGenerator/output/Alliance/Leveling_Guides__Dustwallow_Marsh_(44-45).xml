@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Dustwallow Marsh (44-45)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>45</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="11160" Name="Banner of the Stonemaul">
+    <Objective Type="CollectItem" ItemId="33086" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Stonemaul Clan Banner" Id="186329" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4464.58" Y="-2975.96" Z="30.32" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Dustwallow Marsh (44-45)" LogColor="Green" />
+    <PickUp QuestName="Banner of the Stonemaul" QuestId="11160" GiverName="Brogg" GiverId="23579" />
+    <PickUp QuestName="The Essence of Enmity" QuestId="11161" GiverName="Brogg" GiverId="23579" />
+    <PickUp QuestName="Catch a Dragon by the Tail" QuestId="11217" GiverName="Gizzix Grimegurgle" GiverId="23570" />
+    <Objective QuestName="Banner of the Stonemaul" QuestId="11160" Type="CollectItem" ItemId="33086" ItemName="Stonemaul Banner" CollectCount="1" />
+    <Objective QuestName="The Essence of Enmity" QuestId="11161" Type="CollectItem" ItemId="33087" ItemName="Black Dragonkin Essence" CollectCount="10" />
+    <TurnIn QuestName="Banner of the Stonemaul" QuestId="11160" TurnInName="Brogg" TurnInId="23579" />
+    <TurnIn QuestName="The Essence of Enmity" QuestId="11161" TurnInName="Brogg" TurnInId="23579" />
+    <PickUp QuestName="Spirits of Stonemaul Hold" QuestId="11159" GiverName="Brogg" GiverId="23579" />
+    <Objective QuestName="Spirits of Stonemaul Hold" QuestId="11159" Type="KillMob" MobId="23786" MobName="Stonemaul Spirit" KillCount="10" />
+    <PickUp QuestName="Direhorn Raiders" QuestId="11156" GiverName="Apprentice Morlann" GiverId="23600" />
+    <TurnIn QuestName="Tabetha&apos;s Assistance" QuestId="11149" TurnInName="Tabetha" TurnInId="6546" />
+    <PickUp QuestName="Raze Direhorn Post!" QuestId="11150" GiverName="Tabetha" GiverId="6546" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="23881" MobName="Apothecary Cylla" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="33114" ItemName="Sealed Letter" CollectCount="1" />
+    <PickUp QuestName="The Apothecary&apos;s Letter" QuestId="11185" GiverName="Tabetha" GiverId="6546" />
+    <TurnIn QuestName="The Apothecary&apos;s Letter" QuestId="11185" TurnInName="Andello Porter" TurnInId="23942" />
+    <TurnIn QuestName="Direhorn Raiders" QuestId="11156" TurnInName="Apprentice Morlann" TurnInId="23600" />
+    <TurnIn QuestName="Raze Direhorn Post!" QuestId="11150" TurnInName="Tabetha" TurnInId="6546" />
+    <PickUp QuestName="Justice for the Hyals" QuestId="11151" GiverName="Tabetha" GiverId="6546" />
+    <PickUp QuestName="Help for Mudsprocket" QuestId="11211" GiverName="Tabetha" GiverId="6546" />
+    <TurnIn QuestName="Help for Mudsprocket" QuestId="11211" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+    <TurnIn QuestName="Spirits of Stonemaul Hold" QuestId="11159" TurnInName="Brogg" TurnInId="23579" />
+    <PickUp QuestName="Challenge to the Black Flight" QuestId="11162" GiverName="Brogg" GiverId="23579" />
+    <Objective QuestName="Challenge to the Black Flight" QuestId="11162" Type="KillMob" MobId="23789" MobName="Smolderwing" KillCount="1" />
+    <Objective QuestName="Catch a Dragon by the Tail" QuestId="11217" Type="CollectItem" ItemId="33175" ItemName="Wyrmtail" CollectCount="8" />
+    <TurnIn QuestName="Challenge to the Black Flight" QuestId="11162" TurnInName="Brogg" TurnInId="23579" />
+    <TurnIn QuestName="Catch a Dragon by the Tail" QuestId="11217" TurnInName="Gizzix Grimegurgle" TurnInId="23570" />
+    <TurnIn QuestName="Justice for the Hyals" QuestId="11151" TurnInName="Captain Garran Vimes" TurnInId="4944" />
+    <PickUp QuestName="Peace at Last" QuestId="11152" GiverName="Captain Garran Vimes" GiverId="4944" />
+    <TurnIn QuestName="Peace at Last" QuestId="11152" TurnInName="Captain Garran Vimes" TurnInId="4944" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Dustwallow Marsh (44-45) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Stranglethorn_Vale_(45-46)" />
+  </QuestOrder>
+</HBProfile>

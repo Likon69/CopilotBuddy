@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\The Burning Crusade (58-70)\\Netherstorm (68-70)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>70</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="10186" Name="You&apos;re Hired!">
+    <Objective Type="CollectItem" ItemId="28364" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Etherlithium Matrix Crystal" Id="183767" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3364.13" Y="3689.98" Z="142.81" />
+        <Hotspot X="3370.52" Y="3657.9" Z="143.78" />
+        <Hotspot X="3396.22" Y="3502.35" Z="140.89" />
+        <Hotspot X="3405.44" Y="3682.84" Z="147.39" />
+        <Hotspot X="3408.04" Y="3614.71" Z="141.65" />
+        <Hotspot X="3413.56" Y="3463.8" Z="146.28" />
+        <Hotspot X="3415.49" Y="3508.39" Z="144.6" />
+        <Hotspot X="3420.25" Y="3719.69" Z="139.31" />
+        <Hotspot X="3428.65" Y="3474.49" Z="144.94" />
+        <Hotspot X="3435.99" Y="3663.29" Z="152.61" />
+        <Hotspot X="3440.48" Y="3703.48" Z="146.66" />
+        <Hotspot X="3449.34" Y="3519.34" Z="144.65" />
+        <Hotspot X="3451.78" Y="3660.44" Z="152.61" />
+        <Hotspot X="3455.13" Y="3572.6" Z="173.24" />
+        <Hotspot X="3463.66" Y="3478.37" Z="146.82" />
+        <Hotspot X="3466.5" Y="3519.94" Z="146.0" />
+        <Hotspot X="3468.57" Y="3578.79" Z="168.31" />
+        <Hotspot X="3469.47" Y="3633.1" Z="140.69" />
+        <Hotspot X="3489.64" Y="3576.06" Z="158.87" />
+        <Hotspot X="3499.71" Y="3624.47" Z="154.56" />
+        <Hotspot X="3510.09" Y="3579.61" Z="149.89" />
+        <Hotspot X="3522.24" Y="3584.62" Z="144.19" />
+        <Hotspot X="3547.47" Y="3624.41" Z="126.01" />
+        <Hotspot X="3551.6" Y="3570.12" Z="128.39" />
+        <Hotspot X="3572.51" Y="3627.47" Z="133.79" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10206" Name="Pick Your Part">
+    <Objective Type="CollectItem" ItemId="28457" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Ethereal Technology" Id="183813" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2472.14" Y="4035.78" Z="128.34" />
+        <Hotspot X="2485.74" Y="3853.05" Z="126.25" />
+        <Hotspot X="2495.67" Y="4051.69" Z="133.99" />
+        <Hotspot X="2515.21" Y="3991.38" Z="131.53" />
+        <Hotspot X="2519.72" Y="3980.89" Z="128.99" />
+        <Hotspot X="2523.34" Y="3788.7" Z="134.69" />
+        <Hotspot X="2541.39" Y="3849.15" Z="139.91" />
+        <Hotspot X="2548.23" Y="4004.1" Z="133.42" />
+        <Hotspot X="2643.89" Y="3767.14" Z="143.6" />
+        <Hotspot X="2673.89" Y="3710.83" Z="144.07" />
+        <Hotspot X="2680.41" Y="3803.87" Z="139.86" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10343" Name="The Unending Invasion">
+    <Objective Type="CollectItem" ItemId="29461" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Mana Bomb Fragment" Id="184433" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2216.23" Y="2379.13" Z="103.6" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10239" Name="Potential Energy Source">
+    <Objective Type="CollectItem" ItemId="28564" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Energy Isolation Cube" Id="183945" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2315.04" Y="2706.76" Z="127.46" />
+        <Hotspot X="2334.96" Y="2819.59" Z="134.51" />
+        <Hotspot X="2352.55" Y="2685.86" Z="126.86" />
+        <Hotspot X="2363.45" Y="2766.91" Z="134.49" />
+        <Hotspot X="2364.28" Y="2746.57" Z="134.49" />
+        <Hotspot X="2374.24" Y="2577.59" Z="135.74" />
+        <Hotspot X="2375.56" Y="2593.96" Z="135.72" />
+        <Hotspot X="2375.83" Y="2670.54" Z="131.43" />
+        <Hotspot X="2375.87" Y="2703.48" Z="133.08" />
+        <Hotspot X="2380.05" Y="2659.1" Z="131.3" />
+        <Hotspot X="2380.25" Y="2734.68" Z="134.49" />
+        <Hotspot X="2381.34" Y="2557.76" Z="136.69" />
+        <Hotspot X="2382.11" Y="2726.07" Z="134.49" />
+        <Hotspot X="2383.82" Y="2790.99" Z="134.49" />
+        <Hotspot X="2389.93" Y="2867.32" Z="131.54" />
+        <Hotspot X="2394.98" Y="2806.15" Z="134.49" />
+        <Hotspot X="2402.98" Y="2807.1" Z="134.43" />
+        <Hotspot X="2403.14" Y="2665.95" Z="132.97" />
+        <Hotspot X="2403.74" Y="2624.48" Z="134.32" />
+        <Hotspot X="2405.71" Y="2629.9" Z="134.32" />
+        <Hotspot X="2406.56" Y="2720.17" Z="134.49" />
+        <Hotspot X="2411.6" Y="2863.94" Z="131.52" />
+        <Hotspot X="2411.88" Y="2659.79" Z="132.96" />
+        <Hotspot X="2412.06" Y="2603.96" Z="134.81" />
+        <Hotspot X="2412.11" Y="2756.99" Z="135.38" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10417" Name="Run a Diagnostic!">
+    <Objective Type="CollectItem" ItemId="29741" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Diagnostic Equipment" Id="184589" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3412.24" Y="2794.63" Z="148.41" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10348" Name="New Opportunities">
+    <Objective Type="CollectItem" ItemId="29474" CollectCount="15">
+      <CollectFrom>
+        <GameObject Name="Ivory Bell" Id="184443" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3310.34" Y="2884.89" Z="141.15" />
+        <Hotspot X="3310.81" Y="2955.97" Z="142.22" />
+        <Hotspot X="3311.62" Y="2982.22" Z="143.98" />
+        <Hotspot X="3311.72" Y="3015.77" Z="138.19" />
+        <Hotspot X="3324.99" Y="2913.17" Z="140.71" />
+        <Hotspot X="3328.01" Y="2921.08" Z="140.98" />
+        <Hotspot X="3330.71" Y="2968.79" Z="142.78" />
+        <Hotspot X="3331.8" Y="2851.3" Z="142.48" />
+        <Hotspot X="3345.2" Y="3045.33" Z="140.71" />
+        <Hotspot X="3350.48" Y="2833.84" Z="142.2" />
+        <Hotspot X="3351.1" Y="3012.38" Z="142.24" />
+        <Hotspot X="3369.62" Y="3035.79" Z="141.28" />
+        <Hotspot X="3377.41" Y="2931.91" Z="149.55" />
+        <Hotspot X="3385.32" Y="3092.97" Z="132.23" />
+        <Hotspot X="3388.31" Y="2817.71" Z="147.86" />
+        <Hotspot X="3394.33" Y="2919.46" Z="155.39" />
+        <Hotspot X="3407.5" Y="2823.72" Z="146.45" />
+        <Hotspot X="3409.52" Y="2949.59" Z="157.48" />
+        <Hotspot X="3411.4" Y="3093.48" Z="134.8" />
+        <Hotspot X="3416.91" Y="2996.36" Z="150.34" />
+        <Hotspot X="3433.51" Y="3111.29" Z="132.4" />
+        <Hotspot X="3434.87" Y="3082.48" Z="138.57" />
+        <Hotspot X="3448.25" Y="2821.78" Z="147.43" />
+        <Hotspot X="3451.52" Y="2794.32" Z="150.77" />
+        <Hotspot X="3453.22" Y="3005.59" Z="144.31" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10234" Name="One Demon&apos;s Trash...">
+    <Objective Type="CollectItem" ItemId="28551" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Fel Reaver Part" Id="183935" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3182.91" Y="2771.27" Z="148.42" />
+        <Hotspot X="3193.3" Y="2699.65" Z="141.43" />
+        <Hotspot X="3194.19" Y="2731.35" Z="146.79" />
+        <Hotspot X="3214.93" Y="2731.04" Z="148.52" />
+        <Hotspot X="3225.18" Y="2606.54" Z="136.14" />
+        <Hotspot X="3241.54" Y="2663.03" Z="143.65" />
+        <Hotspot X="3258.32" Y="2778.3" Z="155.9" />
+        <Hotspot X="3278.0" Y="2776.52" Z="152.99" />
+        <Hotspot X="3278.36" Y="2720.45" Z="152.42" />
+        <Hotspot X="3292.72" Y="2624.46" Z="142.49" />
+        <Hotspot X="3304.93" Y="2675.64" Z="153.76" />
+        <Hotspot X="3345.2" Y="2692.89" Z="158.73" />
+        <Hotspot X="3373.48" Y="2692.73" Z="159.38" />
+        <Hotspot X="3394.87" Y="2669.06" Z="158.43" />
+        <Hotspot X="3398.71" Y="2723.7" Z="158.54" />
+        <Hotspot X="3454.53" Y="2666.85" Z="154.5" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10267" Name="Rightful Repossession">
+    <Objective Type="CollectItem" ItemId="28913" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Box of Surveying Equipment" Id="184031" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2936.24" Y="2161.09" Z="165.33" />
+        <Hotspot X="2948.41" Y="2195.51" Z="165.32" />
+        <Hotspot X="2955.55" Y="2207.19" Z="165.33" />
+        <Hotspot X="2957.57" Y="2133.98" Z="165.31" />
+        <Hotspot X="2958.41" Y="2274.49" Z="161.71" />
+        <Hotspot X="2970.89" Y="2212.05" Z="165.33" />
+        <Hotspot X="2978.06" Y="2274.75" Z="161.71" />
+        <Hotspot X="2985.92" Y="2279.49" Z="161.71" />
+        <Hotspot X="2986.7" Y="2130.12" Z="165.33" />
+        <Hotspot X="2994.88" Y="2318.48" Z="162.7" />
+        <Hotspot X="3004.12" Y="2133.9" Z="165.33" />
+        <Hotspot X="3008.28" Y="2203.85" Z="165.31" />
+        <Hotspot X="3012.06" Y="2199.64" Z="165.33" />
+        <Hotspot X="3013.14" Y="2308.53" Z="161.58" />
+        <Hotspot X="3016.11" Y="2143.0" Z="165.32" />
+        <Hotspot X="3064.55" Y="2253.25" Z="150.1" />
+        <Hotspot X="3066.02" Y="2306.02" Z="151.38" />
+        <Hotspot X="3069.46" Y="2317.78" Z="151.39" />
+        <Hotspot X="3070.15" Y="2241.55" Z="150.1" />
+        <Hotspot X="3086.57" Y="2237.35" Z="150.72" />
+        <Hotspot X="3101.75" Y="2303.83" Z="150.92" />
+        <Hotspot X="3114.39" Y="2198.74" Z="149.48" />
+        <Hotspot X="3116.28" Y="2164.02" Z="149.51" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10435" Name="Retrieving the Goods">
+    <Objective Type="CollectItem" ItemId="29798" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Dome Generator Segment" Id="184607" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="4911.45" Y="2937.14" Z="155.88" />
+        <Hotspot X="4914.48" Y="3027.26" Z="99.69" />
+        <Hotspot X="4945.0" Y="2846.77" Z="86.46" />
+        <Hotspot X="4945.95" Y="2971.1" Z="89.95" />
+        <Hotspot X="4978.5" Y="2913.46" Z="116.14" />
+        <Hotspot X="4997.85" Y="2852.08" Z="86.38" />
+        <Hotspot X="5007.89" Y="2995.65" Z="97.35" />
+        <Hotspot X="5023.57" Y="3025.06" Z="90.8" />
+        <Hotspot X="5027.07" Y="2972.95" Z="99.86" />
+        <Hotspot X="5064.09" Y="2947.87" Z="87.78" />
+        <Hotspot X="5066.84" Y="2891.22" Z="79.22" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10270" Name="A Not-So-Modest Proposal">
+    <Objective Type="CollectItem" ItemId="28969" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Teleporter Power Pack" Id="184075" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3913.18" Y="2083.83" Z="139.66" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10272" Name="A Promising Start">
+    <Objective Type="CollectItem" ItemId="28971" CollectCount="15">
+      <CollectFrom>
+        <GameObject Name="Nether Dragonkin Egg" Id="184077" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3815.79" Y="1489.44" Z="-132.53" />
+        <Hotspot X="3856.11" Y="1499.71" Z="-132.93" />
+        <Hotspot X="3857.99" Y="1391.57" Z="-140.13" />
+        <Hotspot X="3883.22" Y="1432.46" Z="-131.57" />
+        <Hotspot X="3896.13" Y="1415.18" Z="-129.73" />
+        <Hotspot X="3906.07" Y="1411.49" Z="-128.16" />
+        <Hotspot X="3910.43" Y="1500.12" Z="-119.76" />
+        <Hotspot X="3932.67" Y="1484.05" Z="-120.68" />
+        <Hotspot X="3942.69" Y="1486.11" Z="-117.85" />
+        <Hotspot X="3951.44" Y="1368.69" Z="-136.97" />
+        <Hotspot X="3957.02" Y="1591.19" Z="-30.31" />
+        <Hotspot X="3958.78" Y="1430.24" Z="-127.22" />
+        <Hotspot X="3975.76" Y="1435.19" Z="-125.72" />
+        <Hotspot X="3980.14" Y="1448.45" Z="-123.38" />
+        <Hotspot X="3982.08" Y="1470.9" Z="-119.83" />
+        <Hotspot X="3982.51" Y="1554.07" Z="-23.43" />
+        <Hotspot X="3983.85" Y="1391.53" Z="-127.55" />
+        <Hotspot X="4006.04" Y="1387.92" Z="-124.66" />
+        <Hotspot X="4024.17" Y="1520.0" Z="-116.08" />
+        <Hotspot X="4045.67" Y="1330.94" Z="-128.82" />
+        <Hotspot X="4058.15" Y="1563.7" Z="7.79" />
+        <Hotspot X="4072.01" Y="1447.28" Z="-121.11" />
+        <Hotspot X="4073.14" Y="1356.98" Z="-121.35" />
+        <Hotspot X="4074.18" Y="1439.19" Z="-120.81" />
+        <Hotspot X="4075.38" Y="1343.12" Z="-122.56" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10384" Name="Ethereum Data">
+    <Objective Type="CollectItem" ItemId="29582" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Ethereum Data Cell" Id="184560" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3973.69" Y="2374.2" Z="112.82" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Netherstorm (68-70)" LogColor="Green" />
+    <PickUp QuestName="A&apos;dal" QuestId="10210" GiverName="Haggard War Veteran" GiverId="19684" />
+    <TurnIn QuestName="A&apos;dal" QuestId="10210" TurnInName="A&apos;dal" TurnInId="18481" />
+    <PickUp QuestName="City of Light" QuestId="10211" GiverName="Archmage Khadgar" GiverId="18166" />
+    <TurnIn QuestName="City of Light" QuestId="10211" TurnInName="Archmage Khadgar" TurnInId="18166" />
+    <PickUp QuestName="Allegiance to the Aldor" QuestId="10551" GiverName="Archmage Khadgar" GiverId="18166" />
+    <PickUp QuestName="Allegiance to the Scryers" QuestId="10552" GiverName="Archmage Khadgar" GiverId="18166" />
+    <PickUp QuestName="Off To Area 52" QuestId="10183" GiverName="Netherologist Coppernickels" GiverId="19569" />
+    <PickUp QuestName="Recharging the Batteries" QuestId="10190" GiverName="Bot-Specialist Alley" GiverId="19578" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18879" MobName="Phase Hunter" KillCount="1" />
+    <TurnIn QuestName="Recharging the Batteries" QuestId="10190" TurnInName="Bot-Specialist Alley" TurnInId="19578" />
+    <PickUp QuestName="Securing the Shaleskin Shale" QuestId="10342" GiverName="Boots" GiverId="19617" />
+    <TurnIn QuestName="Off To Area 52" QuestId="10183" TurnInName="Rocket-Chief Fuselage" TurnInId="19570" />
+    <PickUp QuestName="You&apos;re Hired!" QuestId="10186" GiverName="Rocket-Chief Fuselage" GiverId="19570" />
+    <PickUp QuestName="Manaforge B&apos;naar" QuestId="10189" GiverName="Spymaster Thalodien" GiverId="19468" />
+    <PickUp QuestName="Distraction at Manaforge B&apos;naar" QuestId="10241" GiverName="Exarch Orelis" GiverId="19466" />
+    <PickUp QuestName="The Archmage&apos;s Staff" QuestId="10173" GiverName="Ravandwyr" GiverId="19217" />
+    <PickUp QuestName="Mark V is Alive!" QuestId="10191" GiverName="Maxx A. Million Mk. V" GiverId="19589" />
+    <TurnIn QuestName="Mark V is Alive!" QuestId="10191" TurnInName="Bot-Specialist Alley" TurnInId="19578" />
+    <Objective QuestName="You&apos;re Hired!" QuestId="10186" Type="CollectItem" ItemId="28364" ItemName="Etherlithium Matrix Crystal" CollectCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20210" MobName="Shaleskin Flayer" KillCount="1" />
+    <Objective QuestName="Securing the Shaleskin Shale" QuestId="10342" Type="CollectItem" ItemId="29464" ItemName="Shaleskin Shale" CollectCount="5" />
+    <TurnIn QuestName="Securing the Shaleskin Shale" QuestId="10342" TurnInName="Boots" TurnInId="19617" />
+    <PickUp QuestName="That Little Extra Kick" QuestId="10199" GiverName="Boots" GiverId="19617" />
+    <TurnIn QuestName="You&apos;re Hired!" QuestId="10186" TurnInName="Rocket-Chief Fuselage" TurnInId="19570" />
+    <PickUp QuestName="Invaluable Asset Zapping" QuestId="10203" GiverName="Rocket-Chief Fuselage" GiverId="19570" />
+    <PickUp QuestName="Report to Engineering" QuestId="10225" GiverName="Rocket-Chief Fuselage" GiverId="19570" />
+    <TurnIn QuestName="Report to Engineering" QuestId="10225" TurnInName="Chief Engineer Trep" TurnInId="19709" />
+    <PickUp QuestName="Essence for the Engines" QuestId="10224" GiverName="Chief Engineer Trep" GiverId="19709" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18864" MobName="Mana Wraith" KillCount="1" />
+    <Objective QuestName="Essence for the Engines" QuestId="10224" Type="CollectItem" ItemId="28527" ItemName="Mana Wraith Essence" CollectCount="7" />
+    <TurnIn QuestName="Essence for the Engines" QuestId="10224" TurnInName="Chief Engineer Trep" TurnInId="19709" />
+    <PickUp QuestName="Elemental Power Extraction" QuestId="10226" GiverName="Chief Engineer Trep" GiverId="19709" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19635" MobName="Captain Arathyn" KillCount="1" />
+    <Objective QuestName="Manaforge B&apos;naar" QuestId="10189" Type="CollectItem" ItemId="28376" ItemName="B&apos;naar Personnel Roster" CollectCount="1" />
+    <Objective QuestName="Distraction at Manaforge B&apos;naar" QuestId="10241" Type="KillMob" MobId="18855" MobName="Sunfury Magister" KillCount="8" />
+    <Objective QuestName="Distraction at Manaforge B&apos;naar" QuestId="10241" Type="KillMob" MobId="18853" MobName="Sunfury Bloodwarder" KillCount="8" />
+    <Objective QuestName="Elemental Power Extraction" QuestId="10226" Type="CollectItem" ItemId="28548" ItemName="Elemental Power" CollectCount="5" />
+    <TurnIn QuestName="Distraction at Manaforge B&apos;naar" QuestId="10241" TurnInName="Exarch Orelis" TurnInId="19466" />
+    <PickUp QuestName="Measuring Warp Energies" QuestId="10313" GiverName="Exarch Orelis" GiverId="19466" />
+    <PickUp QuestName="Naaru Technology" QuestId="10243" GiverName="Anchorite Karja" GiverId="19467" />
+    <PickUp QuestName="Assisting the Consortium" QuestId="10263" GiverName="Anchorite Karja" GiverId="19467" />
+    <TurnIn QuestName="Manaforge B&apos;naar" QuestId="10189" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <PickUp QuestName="High Value Targets" QuestId="10193" GiverName="Spymaster Thalodien" GiverId="19468" />
+    <PickUp QuestName="Bloodgem Crystals" QuestId="10204" GiverName="Magistrix Larynna" GiverId="19469" />
+    <TurnIn QuestName="Assisting the Consortium" QuestId="10263" TurnInName="Nether-Stalker Khay&apos;ji" TurnInId="19880" />
+    <PickUp QuestName="Consortium Crystal Collection" QuestId="10265" GiverName="Nether-Stalker Khay&apos;ji" GiverId="19880" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20215" MobName="Pentatharon" KillCount="1" />
+    <Objective QuestName="Consortium Crystal Collection" QuestId="10265" Type="CollectItem" ItemId="28829" ItemName="Arklon Crystal Artifact" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19493" MobName="Ekkorash the Inquisitor" KillCount="1" />
+    <Objective QuestName="The Archmage&apos;s Staff" QuestId="10173" Type="CollectItem" ItemId="28292" ItemName="Archmage Vargoth&apos;s Staff" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18880" MobName="Nether Ray" KillCount="1" />
+    <Objective QuestName="That Little Extra Kick" QuestId="10199" Type="CollectItem" ItemId="28417" ItemName="Nether Ray Stinger" CollectCount="5" />
+    <TurnIn QuestName="Invaluable Asset Zapping" QuestId="10203" TurnInName="Lead Sapper Blastfizzle" TurnInId="19634" />
+    <PickUp QuestName="Dr. Boom!" QuestId="10221" GiverName="Lead Sapper Blastfizzle" GiverId="19634" />
+    <TurnIn QuestName="Consortium Crystal Collection" QuestId="10265" TurnInName="Nether-Stalker Khay&apos;ji" TurnInId="19880" />
+    <PickUp QuestName="A Heap of Ethereals" QuestId="10262" GiverName="Nether-Stalker Khay&apos;ji" GiverId="19880" />
+    <TurnIn QuestName="That Little Extra Kick" QuestId="10199" TurnInName="Boots" TurnInId="19617" />
+    <PickUp QuestName="Pick Your Part" QuestId="10206" GiverName="Papa Wheeler" GiverId="19645" />
+    <TurnIn QuestName="The Archmage&apos;s Staff" QuestId="10173" TurnInName="Ravandwyr" TurnInId="19217" />
+    <PickUp QuestName="Rebuilding the Staff" QuestId="10300" GiverName="Ravandwyr" GiverId="19217" />
+    <TurnIn QuestName="Elemental Power Extraction" QuestId="10226" TurnInName="Chief Engineer Trep" TurnInId="19709" />
+    <Objective QuestName="Dr. Boom!" QuestId="10221" Type="KillMob" MobId="20284" MobName="Dr. Boom" KillCount="1" />
+    <Objective QuestName="Rebuilding the Staff" QuestId="10300" Type="CollectItem" ItemId="29216" ItemName="Flawless Crystal Shard" CollectCount="4" />
+    <TurnIn QuestName="Dr. Boom!" QuestId="10221" TurnInName="Lead Sapper Blastfizzle" TurnInId="19634" />
+    <TurnIn QuestName="Rebuilding the Staff" QuestId="10300" TurnInName="Ravandwyr" TurnInId="19217" />
+    <PickUp QuestName="Curse of the Violet Tower" QuestId="10174" GiverName="Ravandwyr" GiverId="19217" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18855" MobName="Sunfury Magister" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="28452" ItemName="Bloodgem Shard" CollectCount="1" />
+    <Objective QuestName="High Value Targets" QuestId="10193" Type="KillMob" MobId="19779" MobName="Sunfury Geologist" KillCount="8" />
+    <Objective QuestName="High Value Targets" QuestId="10193" Type="KillMob" MobId="18857" MobName="Sunfury Warp-Master" KillCount="2" />
+    <Objective QuestName="High Value Targets" QuestId="10193" Type="KillMob" MobId="18852" MobName="Sunfury Warp-Engineer" KillCount="6" />
+    <TurnIn QuestName="Naaru Technology" QuestId="10243" TurnInName="Ravandwyr" TurnInId="19217" />
+    <PickUp QuestName="B&apos;naar Console Transcription" QuestId="10245" GiverName="Ravandwyr" GiverId="19217" />
+    <Objective QuestName="Pick Your Part" QuestId="10206" Type="CollectItem" ItemId="28457" ItemName="Ethereal Technology" CollectCount="10" />
+    <Objective QuestName="A Heap of Ethereals" QuestId="10262" Type="CollectItem" ItemId="29209" ItemName="Zaxxis Insignia" CollectCount="10" />
+    <TurnIn QuestName="Measuring Warp Energies" QuestId="10313" TurnInName="Exarch Orelis" TurnInId="19466" />
+    <TurnIn QuestName="B&apos;naar Console Transcription" QuestId="10245" TurnInName="Anchorite Karja" TurnInId="19467" />
+    <PickUp QuestName="Shutting Down Manaforge B&apos;naar" QuestId="10299" GiverName="Anchorite Karja" GiverId="19467" />
+    <TurnIn QuestName="High Value Targets" QuestId="10193" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <PickUp QuestName="Shutting Down Manaforge B&apos;naar" QuestId="10329" GiverName="Spymaster Thalodien" GiverId="19468" />
+    <TurnIn QuestName="Bloodgem Crystals" QuestId="10204" TurnInName="Magistrix Larynna" TurnInId="19469" />
+    <TurnIn QuestName="A Heap of Ethereals" QuestId="10262" TurnInName="Nether-Stalker Khay&apos;ji" TurnInId="19880" />
+    <PickUp QuestName="Warp-Raider Nesaad" QuestId="10205" GiverName="Nether-Stalker Khay&apos;ji" GiverId="19880" />
+    <TurnIn QuestName="Pick Your Part" QuestId="10206" TurnInName="Papa Wheeler" TurnInId="19645" />
+    <PickUp QuestName="In A Scrap With The Legion" QuestId="10232" GiverName="Papa Wheeler" GiverId="19645" />
+    <PickUp QuestName="Help Mama Wheeler" QuestId="10333" GiverName="Papa Wheeler" GiverId="19645" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20416" MobName="Overseer Theredis" KillCount="1" />
+    <Objective QuestName="Shutting Down Manaforge B&apos;naar" QuestId="10299" Type="CollectItem" ItemId="29366" ItemName="B&apos;naar Access Crystal" CollectCount="1" />
+    <Objective QuestName="Shutting Down Manaforge B&apos;naar" QuestId="10329" Type="CollectItem" ItemId="29366" ItemName="B&apos;naar Access Crystal" CollectCount="1" />
+    <Objective QuestName="Warp-Raider Nesaad" QuestId="10205" Type="KillMob" MobId="19641" MobName="Warp-Raider Nesaad" KillCount="1" />
+    <TurnIn QuestName="Shutting Down Manaforge B&apos;naar" QuestId="10299" TurnInName="Anchorite Karja" TurnInId="19467" />
+    <PickUp QuestName="Shutting Down Manaforge Coruu" QuestId="10321" GiverName="Anchorite Karja" GiverId="19467" />
+    <PickUp QuestName="Attack on Manaforge Coruu" QuestId="10246" GiverName="Exarch Orelis" GiverId="19466" />
+    <TurnIn QuestName="Shutting Down Manaforge B&apos;naar" QuestId="10329" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <PickUp QuestName="Stealth Flight" QuestId="10194" GiverName="Spymaster Thalodien" GiverId="19468" />
+    <TurnIn QuestName="Warp-Raider Nesaad" QuestId="10205" TurnInName="Nether-Stalker Khay&apos;ji" TurnInId="19880" />
+    <PickUp QuestName="Request for Assistance" QuestId="10266" GiverName="Nether-Stalker Khay&apos;ji" GiverId="19880" />
+    <TurnIn QuestName="Stealth Flight" QuestId="10194" TurnInName="Veronia" TurnInId="20162" />
+    <PickUp QuestName="Behind Enemy Lines" QuestId="10652" GiverName="Veronia" GiverId="20162" />
+    <TurnIn QuestName="Behind Enemy Lines" QuestId="10652" TurnInName="Caledis Brightdawn" TurnInId="19840" />
+    <PickUp QuestName="A Convincing Disguise" QuestId="10197" GiverName="Caledis Brightdawn" GiverId="19840" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20134" MobName="Sunfury Arcanist" KillCount="1" />
+    <Objective QuestName="A Convincing Disguise" QuestId="10197" Type="CollectItem" ItemId="28635" ItemName="Sunfury Arcanist Robes" CollectCount="1" />
+    <Objective QuestName="Attack on Manaforge Coruu" QuestId="10246" Type="KillMob" MobId="20136" MobName="Sunfury Researcher" KillCount="5" />
+    <Objective QuestName="A Convincing Disguise" QuestId="10197" Type="CollectItem" ItemId="28636" ItemName="Sunfury Researcher Gloves" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18850" MobName="Sunfury Guardsmen" KillCount="1" />
+    <Objective QuestName="A Convincing Disguise" QuestId="10197" Type="CollectItem" ItemId="28637" ItemName="Sunfury Guardsman Medallion" CollectCount="1" />
+    <TurnIn QuestName="A Convincing Disguise" QuestId="10197" TurnInName="Caledis Brightdawn" TurnInId="19840" />
+    <PickUp QuestName="Information Gathering" QuestId="10198" GiverName="Caledis Brightdawn" GiverId="19840" />
+    <TurnIn QuestName="Information Gathering" QuestId="10198" TurnInName="Caledis Brightdawn" TurnInId="19840" />
+    <PickUp QuestName="Shutting Down Manaforge Coruu" QuestId="10330" GiverName="Caledis Brightdawn" GiverId="19840" />
+    <Objective QuestName="Attack on Manaforge Coruu" QuestId="10246" Type="KillMob" MobId="20134" MobName="Sunfury Arcanist" KillCount="8" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20397" MobName="Overseer Seylanna" KillCount="1" />
+    <Objective QuestName="Shutting Down Manaforge Coruu" QuestId="10330" Type="CollectItem" ItemId="29396" ItemName="Coruu Access Crystal" CollectCount="1" />
+    <Objective QuestName="Shutting Down Manaforge Coruu" QuestId="10321" Type="CollectItem" ItemId="29396" ItemName="Coruu Access Crystal" CollectCount="1" />
+    <Objective QuestName="Attack on Manaforge Coruu" QuestId="10246" Type="KillMob" MobId="20136" MobName="Sunfury Researcher" KillCount="5" />
+    <TurnIn QuestName="Shutting Down Manaforge Coruu" QuestId="10330" TurnInName="Caledis Brightdawn" TurnInId="19840" />
+    <PickUp QuestName="Return to Thalodien" QuestId="10200" GiverName="Caledis Brightdawn" GiverId="19840" />
+    <PickUp QuestName="Needs More Cowbell" QuestId="10334" GiverName="Thadell" GiverId="20464" />
+    <PickUp QuestName="Indispensable Tools" QuestId="10331" GiverName="Apprentice Andrethan" GiverId="20463" />
+    <PickUp QuestName="Malevolent Remnants" QuestId="10184" GiverName="Custodian Dieworth" GiverId="19488" />
+    <TurnIn QuestName="Curse of the Violet Tower" QuestId="10174" TurnInName="Image of Archmage Vargoth" TurnInId="19644" />
+    <PickUp QuestName="The Sigil of Krasus" QuestId="10188" GiverName="Image of Archmage Vargoth" GiverId="19644" />
+    <PickUp QuestName="A Fate Worse Than Death" QuestId="10185" GiverName="Custodian Dieworth" GiverId="19488" />
+    <PickUp QuestName="The Unending Invasion" QuestId="10343" GiverName="Lieutenant-Sorcerer Morran" GiverId="19489" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19546" MobName="Abjurist Belmara" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="29234" ItemName="Belmara&apos;s Tome" CollectCount="1" />
+    <PickUp QuestName="Abjurist Belmara" QuestId="10305" GiverName="Lieutenant-Sorcerer Morran" GiverId="19489" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19543" MobName="Battle-Mage Dathric" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="29233" ItemName="Dathric&apos;s Blade" CollectCount="1" />
+    <PickUp QuestName="Battle-Mage Dathric" QuestId="10182" GiverName="Lieutenant-Sorcerer Morran" GiverId="19489" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19545" MobName="Cohlien Frostweaver" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="29236" ItemName="Cohlien&apos;s Cap" CollectCount="1" />
+    <PickUp QuestName="Cohlien Frostweaver" QuestId="10307" GiverName="Lieutenant-Sorcerer Morran" GiverId="19489" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20409" MobName="Kirin&apos;Var Apprentice" KillCount="1" />
+    <Objective QuestName="Indispensable Tools" QuestId="10331" Type="CollectItem" ItemId="29365" ItemName="Smithing Hammer" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19544" MobName="Conjurer Luminrath" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="29235" ItemName="Luminrath&apos;s Mantle" CollectCount="1" />
+    <PickUp QuestName="Conjurer Luminrath" QuestId="10306" GiverName="Lieutenant-Sorcerer Morran" GiverId="19489" />
+    <TurnIn QuestName="Needs More Cowbell" QuestId="10334" TurnInName="Bessy" TurnInId="20415" />
+    <PickUp QuestName="When the Cows Come Home" QuestId="10337" GiverName="Bessy" GiverId="20415" />
+    <TurnIn QuestName="When the Cows Come Home" QuestId="10337" TurnInName="Thadell" TurnInId="20464" />
+    <TurnIn QuestName="Indispensable Tools" QuestId="10331" TurnInName="Apprentice Andrethan" TurnInId="20463" />
+    <PickUp QuestName="Master Smith Rhonsus" QuestId="10332" GiverName="Apprentice Andrethan" GiverId="20463" />
+    <TurnIn QuestName="Malevolent Remnants" QuestId="10184" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <PickUp QuestName="The Annals of Kirin&apos;Var" QuestId="10312" GiverName="Custodian Dieworth" GiverId="19488" />
+    <Objective QuestName="The Unending Invasion" QuestId="10343" Type="CollectItem" ItemId="29461" ItemName="Mana Bomb Fragment" CollectCount="1" />
+    <Objective QuestName="A Fate Worse Than Death" QuestId="10185" Type="KillMob" MobId="18867" MobName="Mana Seeker" KillCount="10" />
+    <Objective QuestName="A Fate Worse Than Death" QuestId="10185" Type="KillMob" MobId="18866" MobName="Mageslayer" KillCount="10" />
+    <TurnIn QuestName="Abjurist Belmara" QuestId="10305" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <TurnIn QuestName="A Fate Worse Than Death" QuestId="10185" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <TurnIn QuestName="Battle-Mage Dathric" QuestId="10182" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <TurnIn QuestName="Cohlien Frostweaver" QuestId="10307" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <TurnIn QuestName="Conjurer Luminrath" QuestId="10306" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <TurnIn QuestName="The Unending Invasion" QuestId="10343" TurnInName="Lieutenant-Sorcerer Morran" TurnInId="19489" />
+    <PickUp QuestName="Potential Energy Source" QuestId="10239" GiverName="Lieutenant-Sorcerer Morran" GiverId="19489" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19543" MobName="Battle-Mage Dathric" KillCount="1" />
+    <Objective QuestName="The Annals of Kirin&apos;Var" QuestId="10312" Type="CollectItem" ItemId="29331" ItemName="Annals of Kirin&apos;Var" CollectCount="1" />
+    <Objective QuestName="Master Smith Rhonsus" QuestId="10332" Type="KillMob" MobId="20410" MobName="Rhonsus" KillCount="1" />
+    <TurnIn QuestName="Master Smith Rhonsus" QuestId="10332" TurnInName="Apprentice Andrethan" TurnInId="20463" />
+    <TurnIn QuestName="The Annals of Kirin&apos;Var" QuestId="10312" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <PickUp QuestName="Searching for Evidence" QuestId="10316" GiverName="Custodian Dieworth" GiverId="19488" />
+    <TurnIn QuestName="Searching for Evidence" QuestId="10316" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <PickUp QuestName="A Lingering Suspicion" QuestId="10314" GiverName="Custodian Dieworth" GiverId="19488" />
+    <Objective QuestName="A Lingering Suspicion" QuestId="10314" Type="CollectItem" ItemId="29338" ItemName="Loathsome Remnant" CollectCount="10" />
+    <TurnIn QuestName="A Lingering Suspicion" QuestId="10314" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <PickUp QuestName="Capturing the Phylactery" QuestId="10319" GiverName="Custodian Dieworth" GiverId="19488" />
+    <Objective QuestName="Capturing the Phylactery" QuestId="10319" Type="CollectItem" ItemId="29361" ItemName="Naberius&apos;s Phylactery" CollectCount="1" />
+    <TurnIn QuestName="Capturing the Phylactery" QuestId="10319" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19593" MobName="Spellbinder Maryana" KillCount="1" />
+    <Objective QuestName="The Sigil of Krasus" QuestId="10188" Type="CollectItem" ItemId="28368" ItemName="Sigil of Krasus" CollectCount="1" />
+    <Objective QuestName="Potential Energy Source" QuestId="10239" Type="CollectItem" ItemId="28564" ItemName="Energy Isolation Cube" CollectCount="10" />
+    <TurnIn QuestName="The Sigil of Krasus" QuestId="10188" TurnInName="Image of Archmage Vargoth" TurnInId="19644" />
+    <PickUp QuestName="Krasus&apos;s Compendium" QuestId="10192" GiverName="Image of Archmage Vargoth" GiverId="19644" />
+    <TurnIn QuestName="Potential Energy Source" QuestId="10239" TurnInName="Lieutenant-Sorcerer Morran" TurnInId="19489" />
+    <PickUp QuestName="Building a Perimeter" QuestId="10240" GiverName="Lieutenant-Sorcerer Morran" GiverId="19489" />
+    <PickUp QuestName="The Sunfury Garrison" QuestId="10222" GiverName="Custodian Dieworth" GiverId="19488" />
+    <Objective QuestName="Krasus&apos;s Compendium" QuestId="10192" Type="CollectItem" ItemId="28473" ItemName="Krasus&apos;s Compendium - Chapter 2" CollectCount="1" />
+    <Objective QuestName="Krasus&apos;s Compendium" QuestId="10192" Type="CollectItem" ItemId="28472" ItemName="Krasus&apos;s Compendium - Chapter 1" CollectCount="1" />
+    <Objective QuestName="Krasus&apos;s Compendium" QuestId="10192" Type="CollectItem" ItemId="28474" ItemName="Krasus&apos;s Compendium - Chapter 3" CollectCount="1" />
+    <TurnIn QuestName="Krasus&apos;s Compendium" QuestId="10192" TurnInName="Image of Archmage Vargoth" TurnInId="19644" />
+    <PickUp QuestName="Unlocking the Compendium" QuestId="10301" GiverName="Image of Archmage Vargoth" GiverId="19644" />
+    <PickUp QuestName="Torching Sunfury Hold" QuestId="10233" GiverName="Lieutenant-Sorcerer Morran" GiverId="19489" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19926" MobName="Spellreaver Marathelle" KillCount="1" />
+    <Objective QuestName="Unlocking the Compendium" QuestId="10301" Type="CollectItem" ItemId="28475" ItemName="Heliotrope Oculus" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20221" MobName="Sunfury Flamekeeper" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="28550" ItemName="Flaming Torch" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20221" MobName="Sunfury Flamekeeper" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="28550" ItemName="Flaming Torch" CollectCount="1" />
+    <Objective QuestName="The Sunfury Garrison" QuestId="10222" Type="KillMob" MobId="19707" MobName="Sunfury Archer" KillCount="10" />
+    <TurnIn QuestName="Unlocking the Compendium" QuestId="10301" TurnInName="Image of Archmage Vargoth" TurnInId="19644" />
+    <PickUp QuestName="Summoner Kanthin&apos;s Prize" QuestId="10209" GiverName="Image of Archmage Vargoth" GiverId="19644" />
+    <TurnIn QuestName="The Sunfury Garrison" QuestId="10222" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <PickUp QuestName="Down With Daellis" QuestId="10223" GiverName="Custodian Dieworth" GiverId="19488" />
+    <TurnIn QuestName="Building a Perimeter" QuestId="10240" TurnInName="Lieutenant-Sorcerer Morran" TurnInId="19489" />
+    <TurnIn QuestName="Torching Sunfury Hold" QuestId="10233" TurnInName="Lieutenant-Sorcerer Morran" TurnInId="19489" />
+    <Objective QuestName="Down With Daellis" QuestId="10223" Type="KillMob" MobId="19705" MobName="Master Daellis Dawnstrike" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19657" MobName="Summoner Kanthin" KillCount="1" />
+    <Objective QuestName="Summoner Kanthin&apos;s Prize" QuestId="10209" Type="CollectItem" ItemId="28479" ItemName="Stone of Glacius" CollectCount="1" />
+    <TurnIn QuestName="Summoner Kanthin&apos;s Prize" QuestId="10209" TurnInName="Image of Archmage Vargoth" TurnInId="19644" />
+    <PickUp QuestName="Ar&apos;kelos the Guardian" QuestId="10176" GiverName="Image of Archmage Vargoth" GiverId="19644" />
+    <PickUp QuestName="Bloody Imp-ossible!" QuestId="10924" GiverName="Sab&apos;aoth" GiverId="22479" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="18884" MobName="Warp Chaser" KillCount="1" />
+    <Objective QuestName="Bloody Imp-ossible!" QuestId="10924" Type="CollectItem" ItemId="31813" ItemName="Warp Chaser Blood" CollectCount="8" />
+    <TurnIn QuestName="Bloody Imp-ossible!" QuestId="10924" TurnInName="Sab&apos;aoth" TurnInId="22479" />
+    <TurnIn QuestName="Down With Daellis" QuestId="10223" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <Objective QuestName="Ar&apos;kelos the Guardian" QuestId="10176" Type="KillMob" MobId="19494" MobName="Ar&apos;kelos" KillCount="1" />
+    <TurnIn QuestName="Ar&apos;kelos the Guardian" QuestId="10176" TurnInName="Archmage Vargoth" TurnInId="19481" />
+    <TurnIn QuestName="Attack on Manaforge Coruu" QuestId="10246" TurnInName="Exarch Orelis" TurnInId="19466" />
+    <TurnIn QuestName="Shutting Down Manaforge Coruu" QuestId="10321" TurnInName="Anchorite Karja" TurnInId="19467" />
+    <PickUp QuestName="Shutting Down Manaforge Duro" QuestId="10322" GiverName="Anchorite Karja" GiverId="19467" />
+    <PickUp QuestName="Sunfury Briefings" QuestId="10328" GiverName="Exarch Orelis" GiverId="19466" />
+    <TurnIn QuestName="Return to Thalodien" QuestId="10200" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <PickUp QuestName="Kick Them While They&apos;re Down" QuestId="10341" GiverName="Magistrix Larynna" GiverId="19469" />
+    <PickUp QuestName="Shutting Down Manaforge Duro" QuestId="10338" GiverName="Spymaster Thalodien" GiverId="19468" />
+    <TurnIn QuestName="Request for Assistance" QuestId="10266" TurnInName="Gahruj" TurnInId="20066" />
+    <PickUp QuestName="Rightful Repossession" QuestId="10267" GiverName="Gahruj" GiverId="20066" />
+    <PickUp QuestName="Drijya Needs Your Help" QuestId="10311" GiverName="Gahruj" GiverId="20066" />
+    <TurnIn QuestName="Help Mama Wheeler" QuestId="10333" TurnInName="Mama Wheeler" TurnInId="19728" />
+    <PickUp QuestName="One Demon&apos;s Trash..." QuestId="10234" GiverName="Mama Wheeler" GiverId="19728" />
+    <PickUp QuestName="New Opportunities" QuestId="10348" GiverName="Mehrdad" GiverId="20810" />
+    <PickUp QuestName="Run a Diagnostic!" QuestId="10417" GiverName="Mehrdad" GiverId="20810" />
+    <PickUp QuestName="Keeping Up Appearances" QuestId="10433" GiverName="Shauly Pore" GiverId="20921" />
+    <Objective QuestName="Run a Diagnostic!" QuestId="10417" Type="CollectItem" ItemId="29741" ItemName="Diagnostic Results" CollectCount="1" />
+    <Objective QuestName="New Opportunities" QuestId="10348" Type="CollectItem" ItemId="29474" ItemName="Ivory Bell" CollectCount="15" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20671" MobName="Ripfang Lynx" KillCount="1" />
+    <Objective QuestName="Keeping Up Appearances" QuestId="10433" Type="CollectItem" ItemId="29801" ItemName="Ripfang Lynx Pelt" CollectCount="10" />
+    <TurnIn QuestName="Keeping Up Appearances" QuestId="10433" TurnInName="Shauly Pore" TurnInId="20921" />
+    <PickUp QuestName="The Dynamic Duo" QuestId="10434" GiverName="Shauly Pore" GiverId="20921" />
+    <TurnIn QuestName="New Opportunities" QuestId="10348" TurnInName="Mehrdad" TurnInId="20810" />
+    <TurnIn QuestName="Run a Diagnostic!" QuestId="10417" TurnInName="Mehrdad" TurnInId="20810" />
+    <PickUp QuestName="Deal With the Saboteurs" QuestId="10418" GiverName="Mehrdad" GiverId="20810" />
+    <Objective QuestName="One Demon&apos;s Trash..." QuestId="10234" Type="CollectItem" ItemId="28551" ItemName="Fel Reaver Part" CollectCount="10" />
+    <Objective QuestName="In A Scrap With The Legion" QuestId="10232" Type="KillMob" MobId="16948" MobName="Gan&apos;arg Engineer" KillCount="15" />
+    <Objective QuestName="In A Scrap With The Legion" QuestId="10232" Type="KillMob" MobId="16944" MobName="Mo&apos;arg Doomsmith" KillCount="5" />
+    <TurnIn QuestName="One Demon&apos;s Trash..." QuestId="10234" TurnInName="Mama Wheeler" TurnInId="19728" />
+    <PickUp QuestName="Declawing Doomclaw" QuestId="10235" GiverName="Mama Wheeler" GiverId="19728" />
+    <Objective QuestName="Deal With the Saboteurs" QuestId="10418" Type="KillMob" MobId="20773" MobName="Barbscale Crocolisk" KillCount="8" />
+    <TurnIn QuestName="Deal With the Saboteurs" QuestId="10418" TurnInName="Mehrdad" TurnInId="20810" />
+    <PickUp QuestName="To the Stormspire" QuestId="10423" GiverName="Mehrdad" GiverId="20810" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19738" MobName="Doomclaw" KillCount="1" />
+    <Objective QuestName="Declawing Doomclaw" QuestId="10235" Type="CollectItem" ItemId="28563" ItemName="Doomclaw&apos;s Hand" CollectCount="1" />
+    <TurnIn QuestName="Drijya Needs Your Help" QuestId="10311" TurnInName="Drijya" TurnInId="20281" />
+    <Objective QuestName="Kick Them While They&apos;re Down" QuestId="10341" Type="KillMob" MobId="20139" MobName="Sunfury Conjurer" KillCount="8" />
+    <Objective QuestName="Sunfury Briefings" QuestId="10328" Type="CollectItem" ItemId="29546" ItemName="Sunfury Arcane Briefing" CollectCount="1" />
+    <Objective QuestName="Sunfury Briefings" QuestId="10328" Type="CollectItem" ItemId="29545" ItemName="Sunfury Military Briefing" CollectCount="1" />
+    <Objective QuestName="Kick Them While They&apos;re Down" QuestId="10341" Type="KillMob" MobId="20139" MobName="Sunfury Conjurer" KillCount="8" />
+    <Objective QuestName="Kick Them While They&apos;re Down" QuestId="10341" Type="KillMob" MobId="20207" MobName="Sunfury Bowman" KillCount="6" />
+    <Objective QuestName="Kick Them While They&apos;re Down" QuestId="10341" Type="KillMob" MobId="20140" MobName="Sunfury Centurions" KillCount="4" />
+    <Objective QuestName="Rightful Repossession" QuestId="10267" Type="CollectItem" ItemId="28913" ItemName="Box of Surveying Equipment" CollectCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20435" MobName="Overseer Athanel" KillCount="1" />
+    <Objective QuestName="Shutting Down Manaforge Duro" QuestId="10322" Type="CollectItem" ItemId="29397" ItemName="Duro Access Crystal" CollectCount="1" />
+    <Objective QuestName="Shutting Down Manaforge Duro" QuestId="10338" Type="CollectItem" ItemId="29397" ItemName="Duro Access Crystal" CollectCount="1" />
+    <TurnIn QuestName="Rightful Repossession" QuestId="10267" TurnInName="Gahruj" TurnInId="20066" />
+    <PickUp QuestName="An Audience with the Prince" QuestId="10268" GiverName="Gahruj" GiverId="20066" />
+    <TurnIn QuestName="Declawing Doomclaw" QuestId="10235" TurnInName="Mama Wheeler" TurnInId="19728" />
+    <PickUp QuestName="Warn Area 52!" QuestId="10237" GiverName="Mama Wheeler" GiverId="19728" />
+    <PickUp QuestName="Flora of the Eco-Domes" QuestId="10426" GiverName="Aurine Moonblaze" GiverId="20871" />
+    <TurnIn QuestName="To the Stormspire" QuestId="10423" TurnInName="Ghabar" TurnInId="20811" />
+    <PickUp QuestName="Diagnosis: Critical" QuestId="10424" GiverName="Ghabar" GiverId="20811" />
+    <PickUp QuestName="The Minions of Culuthas" QuestId="10336" GiverName="Nether-Stalker Nauthis" GiverId="20471" />
+    <PickUp QuestName="Fel Reavers, No Thanks!" QuestId="10855" GiverName="Nether-Stalker Nauthis" GiverId="20471" />
+    <PickUp QuestName="Surveying the Ruins" QuestId="10335" GiverName="Zephyrion" GiverId="20470" />
+    <TurnIn QuestName="The Dynamic Duo" QuestId="10434" TurnInName="Audi the Needle" TurnInId="20205" />
+    <PickUp QuestName="Retrieving the Goods" QuestId="10435" GiverName="Audi the Needle" GiverId="20205" />
+    <TurnIn QuestName="An Audience with the Prince" QuestId="10268" TurnInName="Image of Nexus-Prince Haramad" TurnInId="20084" />
+    <PickUp QuestName="Triangulation Point One" QuestId="10269" GiverName="Image of Nexus-Prince Haramad" GiverId="20084" />
+    <TurnIn QuestName="In A Scrap With The Legion" QuestId="10232" TurnInName="Papa Wheeler" TurnInId="19645" />
+    <TurnIn QuestName="Warn Area 52!" QuestId="10237" TurnInName="Rocket-Chief Fuselage" TurnInId="19570" />
+    <PickUp QuestName="Doctor Vomisa, Ph.T." QuestId="10247" GiverName="Rocket-Chief Fuselage" GiverId="19570" />
+    <TurnIn QuestName="Sunfury Briefings" QuestId="10328" TurnInName="Exarch Orelis" TurnInId="19466" />
+    <PickUp QuestName="Outside Assistance" QuestId="10431" GiverName="Exarch Orelis" GiverId="19466" />
+    <TurnIn QuestName="Shutting Down Manaforge Duro" QuestId="10322" TurnInName="Anchorite Karja" TurnInId="19467" />
+    <TurnIn QuestName="Shutting Down Manaforge Duro" QuestId="10338" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <TurnIn QuestName="Kick Them While They&apos;re Down" QuestId="10341" TurnInName="Magistrix Larynna" TurnInId="19469" />
+    <PickUp QuestName="A Defector" QuestId="10202" GiverName="Magistrix Larynna" GiverId="19469" />
+    <TurnIn QuestName="Doctor Vomisa, Ph.T." QuestId="10247" TurnInName="Doctor Vomisa, Ph.T." TurnInId="19832" />
+    <TurnIn QuestName="Flora of the Eco-Domes" QuestId="10426" TurnInName="Aurine Moonblaze" TurnInId="20871" />
+    <PickUp QuestName="Creatures of the Eco-Domes" QuestId="10427" GiverName="Aurine Moonblaze" GiverId="20871" />
+    <TurnIn QuestName="Creatures of the Eco-Domes" QuestId="10427" TurnInName="Aurine Moonblaze" TurnInId="20871" />
+    <PickUp QuestName="When Nature Goes Too Far" QuestId="10429" GiverName="Aurine Moonblaze" GiverId="20871" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20775" MobName="Markaru" KillCount="1" />
+    <Objective QuestName="When Nature Goes Too Far" QuestId="10429" Type="CollectItem" ItemId="29768" ItemName="Hulking Hydra Heart" CollectCount="1" />
+    <Objective QuestName="Diagnosis: Critical" QuestId="10424" Type="CollectItem" ItemId="29769" ItemName="Diagnostic Results" CollectCount="1" />
+    <Objective QuestName="The Minions of Culuthas" QuestId="10336" Type="KillMob" MobId="20141" MobName="Hound of Culuthas" KillCount="10" />
+    <Objective QuestName="The Minions of Culuthas" QuestId="10336" Type="KillMob" MobId="20394" MobName="Eye of Culuthas" KillCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="16949" MobName="Gan&apos;arg Mekgineer" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="31653" ItemName="Condensed Nether Gas" CollectCount="5" />
+    <TurnIn QuestName="Outside Assistance" QuestId="10431" TurnInName="Kaylaan" TurnInId="20780" />
+    <PickUp QuestName="A Dark Pact" QuestId="10380" GiverName="Kaylaan" GiverId="20780" />
+    <PickUp QuestName="Dealing with the Foreman" QuestId="10317" GiverName="Wind Trader Tuluman" GiverId="20112" />
+    <PickUp QuestName="Neutralizing the Nethermancers" QuestId="10315" GiverName="Nether-Stalker Oazul" GiverId="20341" />
+    <TurnIn QuestName="A Defector" QuestId="10202" TurnInName="Magister Theledorn" TurnInId="20920" />
+    <PickUp QuestName="Damning Evidence" QuestId="10432" GiverName="Magister Theledorn" GiverId="20920" />
+    <Objective QuestName="A Dark Pact" QuestId="10380" Type="KillMob" MobId="18860" MobName="Daughter of Destiny" KillCount="1" />
+    <Objective QuestName="A Dark Pact" QuestId="10380" Type="KillMob" MobId="18860" MobName="Daughter of Destiny" KillCount="2" />
+    <TurnIn QuestName="Dealing with the Foreman" QuestId="10317" TurnInName="Foreman Sundown" TurnInId="20393" />
+    <PickUp QuestName="Dealing with the Overmaster" QuestId="10318" GiverName="Foreman Sundown" GiverId="20393" />
+    <Objective QuestName="Dealing with the Overmaster" QuestId="10318" Type="KillMob" MobId="20803" MobName="Overmaster Grindgarr" KillCount="1" />
+    <Objective QuestName="A Dark Pact" QuestId="10380" Type="KillMob" MobId="20326" MobName="Mo&apos;arg Warp-Master" KillCount="3" />
+    <Objective QuestName="A Dark Pact" QuestId="10380" Type="KillMob" MobId="20285" MobName="Gan&apos;arg Warp-Tinker" KillCount="6" />
+    <Objective QuestName="Damning Evidence" QuestId="10432" Type="CollectItem" ItemId="29797" ItemName="Orders From Kael&apos;thas" CollectCount="8" />
+    <Objective QuestName="A Dark Pact" QuestId="10380" Type="KillMob" MobId="18860" MobName="Daughter of Destiny" KillCount="3" />
+    <Objective QuestName="Neutralizing the Nethermancers" QuestId="10315" Type="KillMob" MobId="20248" MobName="Sunfury Nethermancer" KillCount="15" />
+    <TurnIn QuestName="Neutralizing the Nethermancers" QuestId="10315" TurnInName="Nether-Stalker Oazul" TurnInId="20341" />
+    <TurnIn QuestName="Dealing with the Overmaster" QuestId="10318" TurnInName="Wind Trader Tuluman" TurnInId="20112" />
+    <TurnIn QuestName="A Dark Pact" QuestId="10380" TurnInName="Kaylaan" TurnInId="20780" />
+    <PickUp QuestName="Aldor No More" QuestId="10381" GiverName="Kaylaan" GiverId="20780" />
+    <TurnIn QuestName="Diagnosis: Critical" QuestId="10424" TurnInName="Ghabar" TurnInId="20811" />
+    <PickUp QuestName="Testing the Prototype" QuestId="10430" GiverName="Ghabar" GiverId="20811" />
+    <TurnIn QuestName="The Minions of Culuthas" QuestId="10336" TurnInName="Nether-Stalker Nauthis" TurnInId="20471" />
+    <TurnIn QuestName="Fel Reavers, No Thanks!" QuestId="10855" TurnInName="Nether-Stalker Nauthis" TurnInId="20471" />
+    <PickUp QuestName="The Best Defense" QuestId="10856" GiverName="Nether-Stalker Nauthis" GiverId="20471" />
+    <TurnIn QuestName="Surveying the Ruins" QuestId="10335" TurnInName="Zephyrion" TurnInId="20470" />
+    <TurnIn QuestName="When Nature Goes Too Far" QuestId="10429" TurnInName="Aurine Moonblaze" TurnInId="20871" />
+    <Objective QuestName="The Best Defense" QuestId="10856" Type="KillMob" MobId="18858" MobName="Wrathbringer" KillCount="12" />
+    <TurnIn QuestName="Testing the Prototype" QuestId="10430" TurnInName="Tashar" TurnInId="20913" />
+    <PickUp QuestName="All Clear!" QuestId="10436" GiverName="Tashar" GiverId="20913" />
+    <Objective QuestName="Retrieving the Goods" QuestId="10435" Type="CollectItem" ItemId="29798" ItemName="Dome Generator Segment" CollectCount="10" />
+    <Objective QuestName="All Clear!" QuestId="10436" Type="KillMob" MobId="20634" MobName="Scythetooth Raptor" KillCount="12" />
+    <TurnIn QuestName="All Clear!" QuestId="10436" TurnInName="Tashar" TurnInId="20913" />
+    <PickUp QuestName="Success!" QuestId="10440" GiverName="Tashar" GiverId="20913" />
+    <TurnIn QuestName="Success!" QuestId="10440" TurnInName="Ghabar" TurnInId="20811" />
+    <TurnIn QuestName="The Best Defense" QuestId="10856" TurnInName="Nether-Stalker Nauthis" TurnInId="20471" />
+    <PickUp QuestName="Teleport This!" QuestId="10857" GiverName="Nether-Stalker Nauthis" GiverId="20471" />
+    <TurnIn QuestName="Retrieving the Goods" QuestId="10435" TurnInName="Audi the Needle" TurnInId="20205" />
+    <PickUp QuestName="A Not-So-Modest Proposal" QuestId="10270" GiverName="Wind Trader Marid" GiverId="20071" />
+    <PickUp QuestName="Electro-Shock Goodness!" QuestId="10411" GiverName="Researcher Navuud" GiverId="20449" />
+    <PickUp QuestName="Recipe for Destruction" QuestId="10437" GiverName="Professor Dabiri" GiverId="20907" />
+    <PickUp QuestName="Captain Tyralius" QuestId="10422" GiverName="Flesh Handler Viridius" GiverId="20450" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20770" MobName="Warden Icoshock" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="29742" ItemName="The Warden&apos;s Key" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20778" MobName="Void Waste" KillCount="1" />
+    <Objective QuestName="Electro-Shock Goodness!" QuestId="10411" Type="KillMob" MobId="20805" MobName="Void Waste Globule" KillCount="30" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20501" MobName="Seeping Sludge" KillCount="1" />
+    <Objective QuestName="Electro-Shock Goodness!" QuestId="10411" Type="KillMob" MobId="20806" MobName="Seeping Sludge Globule" KillCount="30" />
+    <TurnIn QuestName="Electro-Shock Goodness!" QuestId="10411" TurnInName="Researcher Navuud" TurnInId="20449" />
+    <TurnIn QuestName="Captain Tyralius" QuestId="10422" TurnInName="Flesh Handler Viridius" TurnInId="20450" />
+    <PickUp QuestName="The Flesh Lies..." QuestId="10345" GiverName="Agent Araxes" GiverId="20551" />
+    <PickUp QuestName="Arconus the Insatiable" QuestId="10353" GiverName="Agent Ya-six" GiverId="20552" />
+    <Objective QuestName="A Not-So-Modest Proposal" QuestId="10270" Type="CollectItem" ItemId="28969" ItemName="Teleporter Power Pack" CollectCount="1" />
+    <Objective QuestName="Arconus the Insatiable" QuestId="10353" Type="KillMob" MobId="20554" MobName="Arconus the Insatiable" KillCount="1" />
+    <TurnIn QuestName="The Flesh Lies..." QuestId="10345" TurnInName="Agent Araxes" TurnInId="20551" />
+    <Objective QuestName="Recipe for Destruction" QuestId="10437" Type="CollectItem" ItemId="29822" ItemName="Fragment of Dimensius" CollectCount="8" />
+    <TurnIn QuestName="A Not-So-Modest Proposal" QuestId="10270" TurnInName="Image of Wind Trader Marid" TurnInId="20518" />
+    <PickUp QuestName="Getting Down to Business" QuestId="10271" GiverName="Image of Wind Trader Marid" GiverId="20518" />
+    <Objective QuestName="Getting Down to Business" QuestId="10271" Type="CollectItem" ItemId="28970" ItemName="Nether Dragon Essence" CollectCount="8" />
+    <TurnIn QuestName="Getting Down to Business" QuestId="10271" TurnInName="Shrouded Figure" TurnInId="20154" />
+    <PickUp QuestName="Formal Introductions" QuestId="10281" GiverName="Shrouded Figure" GiverId="20154" />
+    <TurnIn QuestName="Formal Introductions" QuestId="10281" TurnInName="Tyri" TurnInId="20110" />
+    <PickUp QuestName="A Promising Start" QuestId="10272" GiverName="Tyri" GiverId="20110" />
+    <Objective QuestName="A Promising Start" QuestId="10272" Type="CollectItem" ItemId="28971" ItemName="Nether Dragonkin Egg" CollectCount="15" />
+    <TurnIn QuestName="A Promising Start" QuestId="10272" TurnInName="Tyri" TurnInId="20110" />
+    <PickUp QuestName="Troublesome Distractions" QuestId="10273" GiverName="Tyri" GiverId="20110" />
+    <TurnIn QuestName="Recipe for Destruction" QuestId="10437" TurnInName="Professor Dabiri" TurnInId="20907" />
+    <PickUp QuestName="On Nethery Wings" QuestId="10438" GiverName="Professor Dabiri" GiverId="20907" />
+    <TurnIn QuestName="Arconus the Insatiable" QuestId="10353" TurnInName="Commander Ameer" TurnInId="20448" />
+    <TurnIn QuestName="Triangulation Point One" QuestId="10269" TurnInName="Dealer Hazzin" TurnInId="20092" />
+    <PickUp QuestName="Triangulation Point Two" QuestId="10275" GiverName="Dealer Hazzin" GiverId="20092" />
+    <Objective QuestName="Troublesome Distractions" QuestId="10273" Type="KillMob" MobId="20071" MobName="Wind Trader Marid" KillCount="1" />
+    <TurnIn QuestName="On Nethery Wings" QuestId="10438" TurnInName="Professor Dabiri" TurnInId="20907" />
+    <TurnIn QuestName="Troublesome Distractions" QuestId="10273" TurnInName="Tyri" TurnInId="20110" />
+    <TurnIn QuestName="Teleport This!" QuestId="10857" TurnInName="Nether-Stalker Nauthis" TurnInId="20471" />
+    <TurnIn QuestName="Triangulation Point Two" QuestId="10275" TurnInName="Wind Trader Tuluman" TurnInId="20112" />
+    <TurnIn QuestName="Aldor No More" QuestId="10381" TurnInName="Exarch Orelis" TurnInId="19466" />
+    <TurnIn QuestName="Damning Evidence" QuestId="10432" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <PickUp QuestName="The Ethereum" QuestId="10339" GiverName="Commander Ameer" GiverId="20448" />
+    <Objective QuestName="The Ethereum" QuestId="10339" Type="KillMob" MobId="20727" MobName="Captain Zovax" KillCount="1" />
+    <Objective QuestName="The Ethereum" QuestId="10339" Type="KillMob" MobId="20452" MobName="Ethereum Assassin" KillCount="5" />
+    <Objective QuestName="The Ethereum" QuestId="10339" Type="KillMob" MobId="20453" MobName="Ethereum Shocktrooper" KillCount="5" />
+    <Objective QuestName="The Ethereum" QuestId="10339" Type="KillMob" MobId="20456" MobName="Ethereum Researcher" KillCount="2" />
+    <TurnIn QuestName="The Ethereum" QuestId="10339" TurnInName="Image of Commander Ameer" TurnInId="20482" />
+    <PickUp QuestName="Ethereum Data" QuestId="10384" GiverName="Image of Commander Ameer" GiverId="20482" />
+    <Objective QuestName="Ethereum Data" QuestId="10384" Type="CollectItem" ItemId="29582" ItemName="Ethereum Data Cell" CollectCount="1" />
+    <TurnIn QuestName="Ethereum Data" QuestId="10384" TurnInName="Image of Commander Ameer" TurnInId="20482" />
+    <PickUp QuestName="Potential for Brain Damage = High" QuestId="10385" GiverName="Image of Commander Ameer" GiverId="20482" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="29482" ItemName="Ethereum Essence" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20619" MobName="Ethereum Relay" KillCount="1" />
+    <Objective QuestName="Potential for Brain Damage = High" QuestId="10385" Type="CollectItem" ItemId="29459" ItemName="Ethereum Relay Data" CollectCount="15" />
+    <TurnIn QuestName="Potential for Brain Damage = High" QuestId="10385" TurnInName="Image of Commander Ameer" TurnInId="20482" />
+    <PickUp QuestName="S-A-B-O-T-A-G-E" QuestId="10405" GiverName="Image of Commander Ameer" GiverId="20482" />
+    <Objective QuestName="S-A-B-O-T-A-G-E" QuestId="10405" Type="CollectItem" ItemId="29591" ItemName="Prepared Ethereum Wrapping" CollectCount="1" />
+    <TurnIn QuestName="S-A-B-O-T-A-G-E" QuestId="10405" TurnInName="Image of Commander Ameer" TurnInId="20482" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Netherstorm (68-70) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__The_Burning_Crusade_(58-70)__Shadowmoon_Valley_(70-70)" />
+  </QuestOrder>
+</HBProfile>

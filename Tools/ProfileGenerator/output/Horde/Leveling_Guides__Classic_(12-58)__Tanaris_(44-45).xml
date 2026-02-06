@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Tanaris (44-45)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>45</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Tanaris (44-45)" LogColor="Green" />
+    <TurnIn QuestName="Tran&apos;rek" QuestId="2864" TurnInName="Tran&apos;rek" TurnInId="7876" />
+    <PickUp QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" GiverName="Tran&apos;rek" GiverId="7876" />
+    <PickUp QuestName="WANTED: Andre Firebeard" QuestId="2875" GiverName="Tran&apos;rek" GiverId="7876" />
+    <PickUp QuestName="Water Pouch Bounty" QuestId="1707" GiverName="Spigot Operator Luglunket" GiverId="7408" />
+    <PickUp QuestName="Wastewander Justice" QuestId="1690" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5804" ItemName="Goblin Rumors" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5862" ItemName="Seaforium Booster" CollectCount="1" />
+    <PickUp QuestName="Gadgetzan Water Survey" QuestId="992" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    <TurnIn QuestName="Rumors for Kravel" QuestId="1117" TurnInName="Kravel Koalbeard" TurnInId="4452" />
+    <PickUp QuestName="Back to Booty Bay" QuestId="1118" GiverName="Kravel Koalbeard" GiverId="4452" />
+    <TurnIn QuestName="News for Fizzle" QuestId="1137" TurnInName="Fizzle Brassbolts" TurnInId="4454" />
+    <TurnIn QuestName="Razzeric&apos;s Tweaking" QuestId="1187" TurnInName="Razzeric" TurnInId="4706" />
+    <PickUp QuestName="Safety First" QuestId="1188" GiverName="Razzeric" GiverId="4706" />
+    <PickUp QuestName="Keeping Pace" QuestId="1190" GiverName="Pozzik" GiverId="4630" />
+    <TurnIn QuestName="Keeping Pace" QuestId="1190" TurnInName="Zamek" TurnInId="4709" />
+    <PickUp QuestName="Rizzle&apos;s Schematics" QuestId="1194" GiverName="Zamek" GiverId="4709" />
+    <TurnIn QuestName="Rizzle&apos;s Schematics" QuestId="1194" TurnInName="Pozzik" TurnInId="4630" />
+    <TurnIn QuestName="Safety First" QuestId="1188" TurnInName="Shreev" TurnInId="4708" />
+    <Objective QuestName="Water Pouch Bounty" QuestId="1707" Type="CollectItem" ItemId="8483" ItemName="Wastewander Water Pouch" CollectCount="5" />
+    <Objective QuestName="Wastewander Justice" QuestId="1690" Type="KillMob" MobId="5618" MobName="Wastewander Bandit" KillCount="10" />
+    <Objective QuestName="Wastewander Justice" QuestId="1690" Type="KillMob" MobId="5616" MobName="Wastewander Thief" KillCount="10" />
+    <PickUp QuestName="Pirate Hats Ahoy!" QuestId="8365" GiverName="Haughty Modiste" GiverId="15165" />
+    <PickUp QuestName="Screecher Spirits" QuestId="3520" GiverName="Yeh&apos;kinya" GiverId="8579" />
+    <PickUp QuestName="Southsea Shakedown" QuestId="8366" GiverName="Security Chief Bilgewhizzle" GiverId="7882" />
+    <TurnIn QuestName="Stoley&apos;s Debt" QuestId="2872" TurnInName="Stoley" TurnInId="7881" />
+    <PickUp QuestName="Stoley&apos;s Shipment" QuestId="2873" GiverName="Stoley" GiverId="7881" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7847" MobName="Caliph Scorpidsting" KillCount="1" />
+    <Objective QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" Type="CollectItem" ItemId="8723" ItemName="Caliph Scorpidsting&apos;s Head" CollectCount="1" />
+    <Objective QuestName="Stoley&apos;s Shipment" QuestId="2873" Type="CollectItem" ItemId="9244" ItemName="Stoley&apos;s Shipment" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7883" MobName="Andre Firebeard" KillCount="1" />
+    <Objective QuestName="WANTED: Andre Firebeard" QuestId="2875" Type="CollectItem" ItemId="9246" ItemName="Firebeard&apos;s Head" CollectCount="1" />
+    <Objective QuestName="Pirate Hats Ahoy!" QuestId="8365" Type="CollectItem" ItemId="20519" ItemName="Southsea Pirate Hat" CollectCount="20" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7855" MobName="Southsea Pirate" KillCount="10" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7856" MobName="Southsea Freebooter" KillCount="10" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7857" MobName="Southsea Dock Worker" KillCount="10" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7858" MobName="Southsea Swashbuckler" KillCount="10" />
+    <TurnIn QuestName="Water Pouch Bounty" QuestId="1707" TurnInName="Spigot Operator Luglunket" TurnInId="7408" />
+    <TurnIn QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <TurnIn QuestName="Wastewander Justice" QuestId="1690" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <PickUp QuestName="More Wastewander Justice" QuestId="1691" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
+    <Objective QuestName="Gadgetzan Water Survey" QuestId="992" Type="CollectItem" ItemId="8585" ItemName="Tapped Dowsing Widget" CollectCount="1" />
+    <TurnIn QuestName="Gadgetzan Water Survey" QuestId="992" TurnInName="Senior Surveyor Fizzledowser" TurnInId="7724" />
+    <TurnIn QuestName="Pirate Hats Ahoy!" QuestId="8365" TurnInName="Haughty Modiste" TurnInId="15165" />
+    <TurnIn QuestName="WANTED: Andre Firebeard" QuestId="2875" TurnInName="Security Chief Bilgewhizzle" TurnInId="7882" />
+    <TurnIn QuestName="Southsea Shakedown" QuestId="8366" TurnInName="Security Chief Bilgewhizzle" TurnInId="7882" />
+    <TurnIn QuestName="Stoley&apos;s Shipment" QuestId="2873" TurnInName="Stoley" TurnInId="7881" />
+    <PickUp QuestName="Deliver to MacKinley" QuestId="2874" GiverName="Stoley" GiverId="7881" />
+    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5615" MobName="Wastewander Rogue" KillCount="8" />
+    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5623" MobName="Wastewander Assassin" KillCount="6" />
+    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5617" MobName="Wastewander Shadow Mage" KillCount="10" />
+    <TurnIn QuestName="More Wastewander Justice" QuestId="1691" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Tanaris (44-45) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Feralas_(45-46)" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Stranglethorn Vale (43-44)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>44</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (43-44)" LogColor="Green" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="4502" ItemName="Sample Elven Gem" CollectCount="1" />
+    <PickUp QuestName="Mazen&apos;s Behest" QuestId="1363" GiverName="Mazen Mac&apos;Nadir" GiverId="338" />
+    <TurnIn QuestName="Mazen&apos;s Behest" QuestId="1363" TurnInName="Acolyte Dellis" TurnInId="5386" />
+    <PickUp QuestName="Mazen&apos;s Behest" QuestId="1364" GiverName="Acolyte Dellis" GiverId="5386" />
+    <PickUp QuestName="Vital Supplies" QuestId="1477" GiverName="High Sorcerer Andromath" GiverId="5694" />
+    <PickUp QuestName="Troll Witchery" QuestId="205" GiverName="Brother Nimetz" GiverId="739" />
+    <TurnIn QuestName="Some Assembly Required" QuestId="577" TurnInName="Drizzlik" TurnInId="2495" />
+    <PickUp QuestName="Excelsior" QuestId="628" GiverName="Drizzlik" GiverId="2495" />
+    <PickUp QuestName="Scaring Shaky" QuestId="606" GiverName="&quot;Sea Wolf&quot; MacKinley" GiverId="2501" />
+    <PickUp QuestName="Venture Company Mining" QuestId="600" GiverName="Crank Fizzlebub" GiverId="2498" />
+    <TurnIn QuestName="Ansirem&apos;s Key" QuestId="603" TurnInName="Catelyn the Blade" TurnInId="2542" />
+    <PickUp QuestName="&quot;Pretty Boy&quot; Duncan" QuestId="610" GiverName="Catelyn the Blade" GiverId="2542" />
+    <PickUp QuestName="Skullsplitter Tusks" QuestId="209" GiverName="Kebok" GiverId="737" />
+    <TurnIn QuestName="Sunken Treasure" QuestId="669" TurnInName="Fleet Master Seahorn" TurnInId="2487" />
+    <PickUp QuestName="The Bloodsail Buccaneers" QuestId="595" GiverName="First Mate Crazz" GiverId="2490" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2545" MobName="&quot;Pretty Boy&quot; Duncan" KillCount="1" />
+    <Objective QuestName="&quot;Pretty Boy&quot; Duncan" QuestId="610" Type="CollectItem" ItemId="4027" ItemName="Catelyn&apos;s Blade" CollectCount="1" />
+    <TurnIn QuestName="The Bloodsail Buccaneers" QuestId="595" TurnInName="First Mate Crazz" TurnInId="2490" />
+    <PickUp QuestName="The Bloodsail Buccaneers" QuestId="597" GiverName="First Mate Crazz" GiverId="2490" />
+    <TurnIn QuestName="The Bloodsail Buccaneers" QuestId="597" TurnInName="First Mate Crazz" TurnInId="2490" />
+    <PickUp QuestName="The Bloodsail Buccaneers" QuestId="599" GiverName="First Mate Crazz" GiverId="2490" />
+    <TurnIn QuestName="&quot;Pretty Boy&quot; Duncan" QuestId="610" TurnInName="Catelyn the Blade" TurnInId="2542" />
+    <PickUp QuestName="The Curse of the Tides" QuestId="611" GiverName="Catelyn the Blade" GiverId="2542" />
+    <TurnIn QuestName="The Bloodsail Buccaneers" QuestId="599" TurnInName="Fleet Master Seahorn" TurnInId="2487" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1557" MobName="Elder Mistvale Gorilla" KillCount="1" />
+    <Objective QuestName="Scaring Shaky" QuestId="606" Type="CollectItem" ItemId="3919" ItemName="Mistvale Giblets" CollectCount="5" />
+    <Objective QuestName="Raptor Mastery" QuestId="196" Type="KillMob" MobId="687" MobName="Jungle Stalker" KillCount="10" />
+    <Objective QuestName="Venture Company Mining" QuestId="600" Type="CollectItem" ItemId="3917" ItemName="Singing Blue Crystal" CollectCount="10" />
+    <Objective QuestName="Troll Witchery" QuestId="205" Type="CollectItem" ItemId="2466" ItemName="Skullsplitter Fetish" CollectCount="4" />
+    <Objective QuestName="Skullsplitter Tusks" QuestId="209" Type="CollectItem" ItemId="1524" ItemName="Skullsplitter Tusk" CollectCount="18" />
+    <TurnIn QuestName="Troll Witchery" QuestId="205" TurnInName="Brother Nimetz" TurnInId="739" />
+    <PickUp QuestName="Panther Mastery" QuestId="193" GiverName="Sir S. J. Erlgadin" GiverId="718" />
+    <TurnIn QuestName="Raptor Mastery" QuestId="196" TurnInName="Hemet Nesingwary" TurnInId="715" />
+    <PickUp QuestName="Raptor Mastery" QuestId="197" GiverName="Hemet Nesingwary" GiverId="715" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2635" MobName="Elder Saltwater Crocolisk" KillCount="1" />
+    <Objective QuestName="Excelsior" QuestId="628" Type="CollectItem" ItemId="4105" ItemName="Elder Crocolisk Skin" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2624" MobName="Gazban" KillCount="1" />
+    <Objective QuestName="The Curse of the Tides" QuestId="611" Type="CollectItem" ItemId="4034" ItemName="Stone of the Tides" CollectCount="1" />
+    <TurnIn QuestName="Venture Company Mining" QuestId="600" TurnInName="Crank Fizzlebub" TurnInId="2498" />
+    <PickUp QuestName="Tran&apos;rek" QuestId="2864" GiverName="Krazek" GiverId="773" />
+    <TurnIn QuestName="Skullsplitter Tusks" QuestId="209" TurnInName="Kebok" TurnInId="737" />
+    <TurnIn QuestName="The Curse of the Tides" QuestId="611" TurnInName="Baron Revilgaz" TurnInId="2496" />
+    <TurnIn QuestName="Excelsior" QuestId="628" TurnInName="Drizzlik" TurnInId="2495" />
+    <TurnIn QuestName="Scaring Shaky" QuestId="606" TurnInName="&quot;Shaky&quot; Phillipe" TurnInId="2502" />
+    <PickUp QuestName="Return to MacKinley" QuestId="607" GiverName="&quot;Shaky&quot; Phillipe" GiverId="2502" />
+    <TurnIn QuestName="Return to MacKinley" QuestId="607" TurnInName="&quot;Sea Wolf&quot; MacKinley" TurnInId="2501" />
+    <PickUp QuestName="Stoley&apos;s Debt" QuestId="2872" GiverName="&quot;Sea Wolf&quot; MacKinley" GiverId="2501" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (43-44) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Tanaris_(44-44)" />
+  </QuestOrder>
+</HBProfile>

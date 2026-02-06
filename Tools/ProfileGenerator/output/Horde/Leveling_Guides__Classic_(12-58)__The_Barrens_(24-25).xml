@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\The Barrens (24-25)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Barrens (24-25)" LogColor="Green" />
+    <Objective QuestName="Revenge of Gann" QuestId="846" Type="CollectItem" ItemId="5017" ItemName="Nitroglycerin" CollectCount="6" />
+    <Objective QuestName="Revenge of Gann" QuestId="846" Type="CollectItem" ItemId="5018" ItemName="Wood Pulp" CollectCount="6" />
+    <Objective QuestName="Revenge of Gann" QuestId="846" Type="CollectItem" ItemId="5019" ItemName="Sodium Nitrate" CollectCount="6" />
+    <TurnIn QuestName="Revenge of Gann" QuestId="846" TurnInName="Gann Stonespire" TurnInId="3341" />
+    <PickUp QuestName="Revenge of Gann" QuestId="849" GiverName="Gann Stonespire" GiverId="3341" />
+    <TurnIn QuestName="Revenge of Gann" QuestId="849" TurnInName="Gann Stonespire" TurnInId="3341" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Barrens (24-25) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Thousand_Needles_(24-25)" />
+  </QuestOrder>
+</HBProfile>

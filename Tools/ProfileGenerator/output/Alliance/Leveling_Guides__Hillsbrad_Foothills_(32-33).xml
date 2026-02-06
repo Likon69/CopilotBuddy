@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Hillsbrad Foothills (32-33)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>33</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="9435" Name="Missing Crystals">
+    <Objective Type="CollectItem" ItemId="23646" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Unopened Crate" Id="181620" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-351.38" Y="-711.55" Z="57.74" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="689" Name="A King&apos;s Tribute">
+    <Objective Type="CollectItem" ItemId="4521" CollectCount="5">
+      <CollectFrom>
+        <GameObject Name="Alterac Granite" Id="2714" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-302.11" Y="-310.97" Z="44.22" />
+        <Hotspot X="-270.23" Y="-336.39" Z="64.4" />
+        <Hotspot X="-243.97" Y="-326.68" Z="46.36" />
+        <Hotspot X="-203.45" Y="-378.42" Z="48.66" />
+        <Hotspot X="-196.54" Y="-313.81" Z="74.02" />
+        <Hotspot X="-137.53" Y="-379.94" Z="53.25" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Hillsbrad Foothills (32-33)" LogColor="Green" />
+    <PickUp QuestName="Costly Menace" QuestId="564" GiverName="Darren Malvew" GiverId="2382" />
+    <TurnIn QuestName="Southshore" QuestId="538" TurnInName="Loremaster Dibbs" TurnInId="2277" />
+    <PickUp QuestName="Missing Crystals" QuestId="9435" GiverName="Huraan" GiverId="17218" />
+    <PickUp QuestName="Down the Coast" QuestId="536" GiverName="Lieutenant Farren Orinelle" GiverId="2228" />
+    <PickUp QuestName="Soothing Turtle Bisque" QuestId="555" GiverName="Chef Jessen" GiverId="2430" />
+    <Objective QuestName="Down the Coast" QuestId="536" Type="KillMob" MobId="2377" MobName="Torn Fin Tidehunter" KillCount="10" />
+    <Objective QuestName="Down the Coast" QuestId="536" Type="KillMob" MobId="2376" MobName="Torn Fin Oracle" KillCount="10" />
+    <TurnIn QuestName="Down the Coast" QuestId="536" TurnInName="Lieutenant Farren Orinelle" TurnInId="2228" />
+    <PickUp QuestName="Farren&apos;s Proof" QuestId="559" GiverName="Lieutenant Farren Orinelle" GiverId="2228" />
+    <Objective QuestName="Farren&apos;s Proof" QuestId="559" Type="CollectItem" ItemId="3716" ItemName="Murloc Head" CollectCount="10" />
+    <TurnIn QuestName="Farren&apos;s Proof" QuestId="559" TurnInName="Lieutenant Farren Orinelle" TurnInId="2228" />
+    <PickUp QuestName="Farren&apos;s Proof" QuestId="560" GiverName="Lieutenant Farren Orinelle" GiverId="2228" />
+    <TurnIn QuestName="Farren&apos;s Proof" QuestId="560" TurnInName="Marshal Redpath" TurnInId="2263" />
+    <PickUp QuestName="Farren&apos;s Proof" QuestId="561" GiverName="Marshal Redpath" GiverId="2263" />
+    <PickUp QuestName="Syndicate Assassins" QuestId="505" GiverName="Magistrate Henry Maleb" GiverId="2276" />
+    <TurnIn QuestName="Farren&apos;s Proof" QuestId="561" TurnInName="Lieutenant Farren Orinelle" TurnInId="2228" />
+    <PickUp QuestName="Stormwind Ho!" QuestId="562" GiverName="Lieutenant Farren Orinelle" GiverId="2228" />
+    <Objective QuestName="Stormwind Ho!" QuestId="562" Type="KillMob" MobId="2369" MobName="Daggerspine Shorehunter" KillCount="10" />
+    <Objective QuestName="Stormwind Ho!" QuestId="562" Type="KillMob" MobId="2371" MobName="Daggerspine Siren" KillCount="10" />
+    <TurnIn QuestName="Stormwind Ho!" QuestId="562" TurnInName="Lieutenant Farren Orinelle" TurnInId="2228" />
+    <PickUp QuestName="Reassignment" QuestId="563" GiverName="Lieutenant Farren Orinelle" GiverId="2228" />
+    <Objective QuestName="Missing Crystals" QuestId="9435" Type="CollectItem" ItemId="23646" ItemName="Shipment of Rare Crystals" CollectCount="1" />
+    <Objective QuestName="A King&apos;s Tribute" QuestId="689" Type="CollectItem" ItemId="4521" ItemName="Alterac Granite" CollectCount="5" />
+    <Objective QuestName="Costly Menace" QuestId="564" Type="KillMob" MobId="2406" MobName="Mountain Lion" KillCount="8" />
+    <Objective QuestName="Costly Menace" QuestId="564" Type="KillMob" MobId="2407" MobName="Hulking Mountain Lion" KillCount="10" />
+    <PickUp QuestName="Foreboding Plans" QuestId="510" GiverName="Micha Yance" GiverId="2381" />
+    <PickUp QuestName="Encrypted Letter" QuestId="511" GiverName="Micha Yance" GiverId="2381" />
+    <Objective QuestName="Syndicate Assassins" QuestId="505" Type="KillMob" MobId="2241" MobName="Syndicate Thief" KillCount="8" />
+    <Objective QuestName="Syndicate Assassins" QuestId="505" Type="KillMob" MobId="2240" MobName="Syndicate Footpad" KillCount="12" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2408" MobName="Snapjaw" KillCount="1" />
+    <Objective QuestName="Soothing Turtle Bisque" QuestId="555" Type="CollectItem" ItemId="3712" ItemName="Turtle Meat" CollectCount="10" />
+    <TurnIn QuestName="Costly Menace" QuestId="564" TurnInName="Darren Malvew" TurnInId="2382" />
+    <TurnIn QuestName="Encrypted Letter" QuestId="511" TurnInName="Loremaster Dibbs" TurnInId="2277" />
+    <PickUp QuestName="Letter to Stormpike" QuestId="514" GiverName="Loremaster Dibbs" GiverId="2277" />
+    <TurnIn QuestName="Missing Crystals" QuestId="9435" TurnInName="Huraan" TurnInId="17218" />
+    <TurnIn QuestName="Soothing Turtle Bisque" QuestId="555" TurnInName="Chef Jessen" TurnInId="2430" />
+    <PickUp QuestName="Hints of a New Plague?" QuestId="659" GiverName="Phin Odelic" GiverId="2711" />
+    <TurnIn QuestName="Syndicate Assassins" QuestId="505" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
+    <TurnIn QuestName="Foreboding Plans" QuestId="510" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Hillsbrad Foothills (32-33) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Arathi_Highlands_(33-33)" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Class Quests\\Druid Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="6123" Name="Gathering the Cure">
+    <Objective Type="CollectItem" ItemId="15851" CollectCount="12">
+      <CollectFrom>
+        <GameObject Name="Lunar Fungal Bloom" Id="177750" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6006.32" Y="-45.77" Z="22.25" />
+        <Hotspot X="6008.21" Y="-29.08" Z="21.08" />
+        <Hotspot X="6017.09" Y="-40.42" Z="21.86" />
+        <Hotspot X="6039.14" Y="166.16" Z="21.81" />
+        <Hotspot X="6046.65" Y="152.96" Z="21.51" />
+        <Hotspot X="6126.37" Y="71.03" Z="25.32" />
+        <Hotspot X="6128.16" Y="60.84" Z="27.12" />
+        <Hotspot X="6133.3" Y="88.19" Z="23.85" />
+        <Hotspot X="6136.07" Y="-51.12" Z="36.29" />
+        <Hotspot X="6140.04" Y="72.5" Z="24.79" />
+        <Hotspot X="6142.73" Y="-67.49" Z="36.15" />
+        <Hotspot X="6186.37" Y="106.66" Z="31.1" />
+        <Hotspot X="6189.27" Y="91.93" Z="31.62" />
+        <Hotspot X="6201.33" Y="96.5" Z="31.14" />
+        <Hotspot X="6324.93" Y="100.74" Z="21.87" />
+        <Hotspot X="6328.28" Y="-116.31" Z="26.01" />
+        <Hotspot X="6334.71" Y="111.11" Z="21.76" />
+        <Hotspot X="6335.26" Y="93.94" Z="21.72" />
+        <Hotspot X="6338.85" Y="-94.4" Z="27.05" />
+        <Hotspot X="6339.93" Y="-120.8" Z="25.74" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="29" Name="Trial of the Lake">
+    <Objective Type="CollectItem" ItemId="15877" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Bauble Container" Id="177785" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7634.21" Y="-2634.78" Z="396.33" />
+        <Hotspot X="7718.84" Y="-2631.14" Z="411.32" />
+        <Hotspot X="7745.94" Y="-2604.55" Z="387.03" />
+        <Hotspot X="7775.02" Y="-2641.81" Z="405.52" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9052" Name="Bloodpetal Poison">
+    <Objective Type="CollectItem" ItemId="22434" CollectCount="8">
+      <CollectFrom>
+        <GameObject Name="Bloodpetal Sprout" Id="164958" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-7953.48" Y="-1000.99" Z="-273.1" />
+        <Hotspot X="-7908.92" Y="-795.78" Z="-272.31" />
+        <Hotspot X="-7822.17" Y="-1808.88" Z="-271.98" />
+        <Hotspot X="-7787.23" Y="-1010.0" Z="-266.9" />
+        <Hotspot X="-7786.12" Y="-1116.57" Z="-263.09" />
+        <Hotspot X="-7734.7" Y="-567.25" Z="-265.8" />
+        <Hotspot X="-7702.4" Y="-1440.36" Z="-266.92" />
+        <Hotspot X="-7679.2" Y="-1217.47" Z="-270.96" />
+        <Hotspot X="-7678.82" Y="-1013.74" Z="-270.65" />
+        <Hotspot X="-7649.27" Y="-725.64" Z="-265.75" />
+        <Hotspot X="-7641.12" Y="-1939.97" Z="-269.84" />
+        <Hotspot X="-7622.38" Y="-494.91" Z="-270.63" />
+        <Hotspot X="-7615.91" Y="-655.98" Z="-254.42" />
+        <Hotspot X="-7527.5" Y="-2170.57" Z="-270.9" />
+        <Hotspot X="-7520.01" Y="-2215.79" Z="-271.97" />
+        <Hotspot X="-7470.31" Y="-683.38" Z="-263.11" />
+        <Hotspot X="-7425.95" Y="-530.78" Z="-273.09" />
+        <Hotspot X="-7408.88" Y="-1065.22" Z="-269.48" />
+        <Hotspot X="-7382.56" Y="-2123.65" Z="-275.23" />
+        <Hotspot X="-7338.21" Y="-425.84" Z="-271.7" />
+        <Hotspot X="-7314.31" Y="-2251.81" Z="-272.5" />
+        <Hotspot X="-7313.05" Y="-2076.85" Z="-269.49" />
+        <Hotspot X="-7293.43" Y="-358.48" Z="-267.86" />
+        <Hotspot X="-7267.73" Y="-619.58" Z="-270.14" />
+        <Hotspot X="-7208.4" Y="-996.52" Z="-270.85" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Druid Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Heeding the Call" QuestId="5923" GiverName="Denatharion" GiverId="4218" />
+    </If>
+    <TurnIn QuestName="Heeding the Call" QuestId="5923" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Moonglade" QuestId="5921" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+    </If>
+    <TurnIn QuestName="Moonglade" QuestId="5921" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Great Bear Spirit" QuestId="5929" GiverName="Dendrite Starblaze" GiverId="11802" />
+    </If>
+    <TurnIn QuestName="Great Bear Spirit" QuestId="5929" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Back to Darnassus" QuestId="5931" GiverName="Dendrite Starblaze" GiverId="11802" />
+    </If>
+    <TurnIn QuestName="Back to Darnassus" QuestId="5931" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Body and Heart" QuestId="6001" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="12138" MobName="Lunaclaw" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="Body and Heart" QuestId="6001" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
+    </If>
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="2449" ItemName="Earthroot" CollectCount="5" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Lessons Anew" QuestId="6121" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+    </If>
+    <TurnIn QuestName="Lessons Anew" QuestId="6121" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="The Principal Source" QuestId="6122" GiverName="Dendrite Starblaze" GiverId="11802" />
+      <Objective QuestName="The Principal Source" QuestId="6122" Type="CollectItem" ItemId="15845" ItemName="Filled Cliffspring Falls Sampler" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="The Principal Source" QuestId="6122" TurnInName="Alanndarian Nightsong" TurnInId="3702" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Gathering the Cure" QuestId="6123" GiverName="Alanndarian Nightsong" GiverId="3702" />
+    </If>
+    <Objective QuestName="Gathering the Cure" QuestId="6123" Type="CollectItem" ItemId="15851" ItemName="Lunar Fungus" CollectCount="12" />
+    <TurnIn QuestName="Gathering the Cure" QuestId="6123" TurnInName="Alanndarian Nightsong" TurnInId="3702" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Curing the Sick" QuestId="6124" GiverName="Alanndarian Nightsong" GiverId="3702" />
+    </If>
+    <TurnIn QuestName="Curing the Sick" QuestId="6124" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Power over Poison" QuestId="6125" GiverName="Dendrite Starblaze" GiverId="11802" />
+      <TurnIn QuestName="Power over Poison" QuestId="6125" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
+      <PickUp QuestName="A Lesson to Learn" QuestId="26" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+    </If>
+    <TurnIn QuestName="A Lesson to Learn" QuestId="26" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Trial of the Lake" QuestId="29" GiverName="Dendrite Starblaze" GiverId="11802" />
+      <Objective QuestName="Trial of the Lake" QuestId="29" Type="CollectItem" ItemId="15877" ItemName="Shrine Bauble" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Trial of the Lake" QuestId="29" TurnInName="Tajarri" TurnInId="11799" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Trial of the Sea Lion" QuestId="272" GiverName="Tajarri" GiverId="11799" />
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="15883" ItemName="Half Pendant of Aquatic Agility" CollectCount="1" />
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="15882" ItemName="Half Pendant of Aquatic Endurance" CollectCount="1" />
+      <Objective QuestName="Trial of the Sea Lion" QuestId="272" Type="CollectItem" ItemId="15885" ItemName="Pendant of the Sea Lion" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Trial of the Sea Lion" QuestId="272" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Aquatic Form" QuestId="5061" GiverName="Dendrite Starblaze" GiverId="11802" />
+      <TurnIn QuestName="Aquatic Form" QuestId="5061" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
+      <PickUp QuestName="Torwa Pathfinder" QuestId="9063" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+    </If>
+    <TurnIn QuestName="Torwa Pathfinder" QuestId="9063" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Bloodpetal Poison" QuestId="9052" GiverName="Torwa Pathfinder" GiverId="9619" />
+      <Objective QuestName="Bloodpetal Poison" QuestId="9052" Type="CollectItem" ItemId="22435" ItemName="Gorishi Sting" CollectCount="8" />
+    </If>
+    <Objective QuestName="Bloodpetal Poison" QuestId="9052" Type="CollectItem" ItemId="22434" ItemName="Bloodcap" CollectCount="8" />
+    <TurnIn QuestName="Bloodpetal Poison" QuestId="9052" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Toxic Test" QuestId="9051" GiverName="Torwa Pathfinder" GiverId="9619" />
+    </If>
+    <TurnIn QuestName="Toxic Test" QuestId="9051" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="A Better Ingredient" QuestId="9053" GiverName="Torwa Pathfinder" GiverId="9619" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="8580" MobName="Atal&apos;alarion" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <Objective QuestName="A Better Ingredient" QuestId="9053" Type="CollectItem" ItemId="22444" ItemName="Putrid Vine" CollectCount="1" />
+      <TurnIn QuestName="A Better Ingredient" QuestId="9053" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Druid Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

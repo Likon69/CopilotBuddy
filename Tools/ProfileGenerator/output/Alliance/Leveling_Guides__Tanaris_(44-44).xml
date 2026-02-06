@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Tanaris (44-44)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Tanaris (44-44)" LogColor="Green" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5804" ItemName="Goblin Rumors" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5862" ItemName="Seaforium Booster" CollectCount="1" />
+    <TurnIn QuestName="Tran&apos;rek" QuestId="2864" TurnInName="Tran&apos;rek" TurnInId="7876" />
+    <TurnIn QuestName="Rumors for Kravel" QuestId="1117" TurnInName="Kravel Koalbeard" TurnInId="4452" />
+    <PickUp QuestName="Back to Booty Bay" QuestId="1118" GiverName="Kravel Koalbeard" GiverId="4452" />
+    <TurnIn QuestName="News for Fizzle" QuestId="1137" TurnInName="Fizzle Brassbolts" TurnInId="4454" />
+    <PickUp QuestName="Keeping Pace" QuestId="1190" GiverName="Pozzik" GiverId="4630" />
+    <TurnIn QuestName="Razzeric&apos;s Tweaking" QuestId="1187" TurnInName="Razzeric" TurnInId="4706" />
+    <PickUp QuestName="Safety First" QuestId="1188" GiverName="Razzeric" GiverId="4706" />
+    <TurnIn QuestName="Keeping Pace" QuestId="1190" TurnInName="Zamek" TurnInId="4709" />
+    <PickUp QuestName="Rizzle&apos;s Schematics" QuestId="1194" GiverName="Zamek" GiverId="4709" />
+    <TurnIn QuestName="Rizzle&apos;s Schematics" QuestId="1194" TurnInName="Pozzik" TurnInId="4630" />
+    <TurnIn QuestName="Safety First" QuestId="1188" TurnInName="Shreev" TurnInId="4708" />
+    <PickUp QuestName="Water Pouch Bounty" QuestId="1707" GiverName="Spigot Operator Luglunket" GiverId="7408" />
+    <PickUp QuestName="Wastewander Justice" QuestId="1690" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
+    <PickUp QuestName="Gadgetzan Water Survey" QuestId="992" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6257" ItemName="Roc Gizzard" CollectCount="3" />
+    <Objective QuestName="Gadgetzan Water Survey" QuestId="992" Type="CollectItem" ItemId="8585" ItemName="Tapped Dowsing Widget" CollectCount="1" />
+    <TurnIn QuestName="Gadgetzan Water Survey" QuestId="992" TurnInName="Senior Surveyor Fizzledowser" TurnInId="7724" />
+    <PickUp QuestName="Screecher Spirits" QuestId="3520" GiverName="Yeh&apos;kinya" GiverId="8579" />
+    <TurnIn QuestName="Stoley&apos;s Debt" QuestId="2872" TurnInName="Stoley" TurnInId="7881" />
+    <Objective QuestName="Water Pouch Bounty" QuestId="1707" Type="CollectItem" ItemId="8483" ItemName="Wastewander Water Pouch" CollectCount="5" />
+    <Objective QuestName="Wastewander Justice" QuestId="1690" Type="KillMob" MobId="5618" MobName="Wastewander Bandit" KillCount="10" />
+    <Objective QuestName="Wastewander Justice" QuestId="1690" Type="KillMob" MobId="5616" MobName="Wastewander Thief" KillCount="10" />
+    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6257" ItemName="Roc Gizzard" CollectCount="3" />
+    <TurnIn QuestName="Wastewander Justice" QuestId="1690" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <TurnIn QuestName="Water Pouch Bounty" QuestId="1707" TurnInName="Spigot Operator Luglunket" TurnInId="7408" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Tanaris (44-44) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Dustwallow_Marsh_(44-45)" />
+  </QuestOrder>
+</HBProfile>

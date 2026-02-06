@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Winterspring (53-53)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="978" Name="Moontouched Wildkin">
+    <Objective Type="CollectItem" ItemId="12383" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Moontouched Feather" Id="175407" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="5913.81" Y="-4749.21" Z="762.95" />
+        <Hotspot X="5944.81" Y="-4814.14" Z="756.26" />
+        <Hotspot X="5949.43" Y="-4952.26" Z="776.95" />
+        <Hotspot X="6002.91" Y="-5063.72" Z="794.5" />
+        <Hotspot X="6047.48" Y="-4959.49" Z="769.98" />
+        <Hotspot X="6140.93" Y="-5056.44" Z="789.06" />
+        <Hotspot X="6184.2" Y="-4842.02" Z="739.3" />
+        <Hotspot X="6294.32" Y="-5006.27" Z="775.65" />
+        <Hotspot X="6303.67" Y="-4824.15" Z="754.97" />
+        <Hotspot X="6307.61" Y="-2513.79" Z="543.32" />
+        <Hotspot X="6324.26" Y="-2402.99" Z="553.21" />
+        <Hotspot X="6359.31" Y="-2789.68" Z="582.86" />
+        <Hotspot X="6366.6" Y="-2896.57" Z="606.39" />
+        <Hotspot X="6369.4" Y="-2962.51" Z="603.33" />
+        <Hotspot X="6370.13" Y="-2999.56" Z="604.02" />
+        <Hotspot X="6378.06" Y="-2542.62" Z="538.35" />
+        <Hotspot X="6391.78" Y="-2459.59" Z="546.22" />
+        <Hotspot X="6399.4" Y="-3061.63" Z="583.11" />
+        <Hotspot X="6401.18" Y="-3720.78" Z="712.46" />
+        <Hotspot X="6408.47" Y="-3420.4" Z="643.38" />
+        <Hotspot X="6416.76" Y="-3504.17" Z="664.15" />
+        <Hotspot X="6421.33" Y="-5100.43" Z="757.14" />
+        <Hotspot X="6433.75" Y="-2644.12" Z="553.28" />
+        <Hotspot X="6438.38" Y="-3625.51" Z="697.76" />
+        <Hotspot X="6438.62" Y="-3524.33" Z="649.41" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Winterspring (53-53)" LogColor="Green" />
+    <TurnIn QuestName="It&apos;s a Secret to Everybody" QuestId="3908" TurnInName="Donova Snowden" TurnInId="9298" />
+    <Objective QuestName="Moontouched Wildkin" QuestId="978" Type="CollectItem" ItemId="12383" ItemName="Moontouched Feather" CollectCount="10" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Winterspring (53-53) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Burning_Steppes_(53-54)" />
+  </QuestOrder>
+</HBProfile>

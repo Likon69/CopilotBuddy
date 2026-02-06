@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\The Burning Crusade (58-70)\\Shadowmoon Valley (70-70)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="10597" Name="Setting Up the Bomb">
+    <Objective Type="CollectItem" ItemId="30631" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Fel Reaver Armor Plating" Id="184860" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-3251.53" Y="3003.72" Z="137.64" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="30628" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Fel Reaver Power Core" Id="184859" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-3461.17" Y="2778.33" Z="107.66" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10624" Name="A Haunted History">
+    <Objective Type="CollectItem" ItemId="30716" CollectCount="15">
+      <CollectFrom>
+        <GameObject Name="Ever-burning Ash" Id="184948" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4259.44" Y="1689.52" Z="90.82" />
+        <Hotspot X="-4252.47" Y="1700.52" Z="89.37" />
+        <Hotspot X="-4251.42" Y="1845.85" Z="125.44" />
+        <Hotspot X="-4250.57" Y="1665.68" Z="94.5" />
+        <Hotspot X="-4228.09" Y="2000.7" Z="56.91" />
+        <Hotspot X="-4219.07" Y="1851.98" Z="121.06" />
+        <Hotspot X="-4209.0" Y="2028.4" Z="52.25" />
+        <Hotspot X="-4206.61" Y="1875.05" Z="113.02" />
+        <Hotspot X="-4201.62" Y="1977.69" Z="55.38" />
+        <Hotspot X="-4200.87" Y="1752.41" Z="91.03" />
+        <Hotspot X="-4192.88" Y="1639.88" Z="93.76" />
+        <Hotspot X="-4187.59" Y="1993.26" Z="55.11" />
+        <Hotspot X="-4178.12" Y="1981.04" Z="54.4" />
+        <Hotspot X="-4178.06" Y="1744.4" Z="92.48" />
+        <Hotspot X="-4161.44" Y="2025.95" Z="55.31" />
+        <Hotspot X="-4158.29" Y="2059.33" Z="67.64" />
+        <Hotspot X="-4150.88" Y="1932.02" Z="66.63" />
+        <Hotspot X="-4149.17" Y="1984.45" Z="64.1" />
+        <Hotspot X="-4144.94" Y="2003.99" Z="54.93" />
+        <Hotspot X="-4137.36" Y="1957.82" Z="64.55" />
+        <Hotspot X="-4130.31" Y="2040.97" Z="71.53" />
+        <Hotspot X="-4118.31" Y="2011.92" Z="80.14" />
+        <Hotspot X="-4115.27" Y="1945.79" Z="72.01" />
+        <Hotspot X="-4104.19" Y="2030.06" Z="74.2" />
+        <Hotspot X="-4097.39" Y="2022.21" Z="74.63" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10778" Name="The Rod of Lianthe">
+    <Objective Type="CollectItem" ItemId="31317" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Lianthe" Id="185128" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4576.67" Y="1610.02" Z="175.59" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Shadowmoon Valley (70-70)" LogColor="Green" />
+    <PickUp QuestName="A&apos;dal" QuestId="10210" GiverName="Haggard War Veteran" GiverId="19684" />
+    <TurnIn QuestName="A&apos;dal" QuestId="10210" TurnInName="A&apos;dal" TurnInId="18481" />
+    <PickUp QuestName="City of Light" QuestId="10211" GiverName="Archmage Khadgar" GiverId="18166" />
+    <TurnIn QuestName="City of Light" QuestId="10211" TurnInName="Archmage Khadgar" TurnInId="18166" />
+    <PickUp QuestName="Allegiance to the Aldor" QuestId="10551" GiverName="Archmage Khadgar" GiverId="18166" />
+    <PickUp QuestName="Allegiance to the Scryers" QuestId="10552" GiverName="Archmage Khadgar" GiverId="18166" />
+    <PickUp QuestName="The Apprentice&apos;s Request" QuestId="11047" GiverName="Agadai" GiverId="23280" />
+    <PickUp QuestName="Besieged!" QuestId="10595" GiverName="Blood Guard Gulmok" GiverId="21359" />
+    <Objective QuestName="Besieged!" QuestId="10595" Type="KillMob" MobId="21419" MobName="Infernal Attacker" KillCount="10" />
+    <TurnIn QuestName="Besieged!" QuestId="10595" TurnInName="Blood Guard Gulmok" TurnInId="21359" />
+    <PickUp QuestName="To Legion Hold" QuestId="10596" GiverName="Blood Guard Gulmok" GiverId="21359" />
+    <PickUp QuestName="The Sketh&apos;lon Wreckage" QuestId="10760" GiverName="Sergeant Kargrul" GiverId="22043" />
+    <PickUp QuestName="What Strange Creatures..." QuestId="10660" GiverName="Researcher Tiorus" GiverId="21770" />
+    <PickUp QuestName="A Haunted History" QuestId="10624" GiverName="Chief Apothecary Hildagard" GiverId="21772" />
+    <PickUp QuestName="The Hand of Gul&apos;dan" QuestId="10681" GiverName="Earthmender Splinthoof" GiverId="21938" />
+    <PickUp QuestName="A Grunt&apos;s Work..." QuestId="10702" GiverName="Overlord Or&apos;barokh" GiverId="21769" />
+    <TurnIn QuestName="The Apprentice&apos;s Request" QuestId="11047" TurnInName="Dama Wildmane" TurnInId="20494" />
+    <TurnIn QuestName="To Legion Hold" QuestId="10596" TurnInName="Blood Guard Gulmok" TurnInId="21359" />
+    <PickUp QuestName="Setting Up the Bomb" QuestId="10597" GiverName="Blood Guard Gulmok" GiverId="21359" />
+    <Objective QuestName="Setting Up the Bomb" QuestId="10597" Type="CollectItem" ItemId="30631" ItemName="Fel Reaver Armor Plating" CollectCount="1" />
+    <Objective QuestName="Setting Up the Bomb" QuestId="10597" Type="CollectItem" ItemId="30628" ItemName="Fel Reaver Power Core" CollectCount="1" />
+    <TurnIn QuestName="Setting Up the Bomb" QuestId="10597" TurnInName="Blood Guard Gulmok" TurnInId="21359" />
+    <PickUp QuestName="Blast the Infernals!" QuestId="10598" GiverName="Blood Guard Gulmok" GiverId="21359" />
+    <TurnIn QuestName="Blast the Infernals!" QuestId="10598" TurnInName="Blood Guard Gulmok" TurnInId="21359" />
+    <PickUp QuestName="The Deathforge" QuestId="10599" GiverName="Blood Guard Gulmok" GiverId="21359" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21408" MobName="Felfire Diemetradon" KillCount="1" />
+    <Objective QuestName="What Strange Creatures..." QuestId="10660" Type="CollectItem" ItemId="30819" ItemName="Felfire Spleen" CollectCount="8" />
+    <Objective QuestName="A Haunted History" QuestId="10624" Type="CollectItem" ItemId="30716" ItemName="Ever-Burning Ash" CollectCount="15" />
+    <TurnIn QuestName="The Hand of Gul&apos;dan" QuestId="10681" TurnInName="Earthmender Torlok" TurnInId="21024" />
+    <PickUp QuestName="Enraged Spirits of Fire and Earth" QuestId="10458" GiverName="Earthmender Torlok" GiverId="21024" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21050" MobName="Enraged Earth Spirit" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21061" MobName="Enraged Fire Spirit" KillCount="1" />
+    <TurnIn QuestName="Enraged Spirits of Fire and Earth" QuestId="10458" TurnInName="Earthmender Torlok" TurnInId="21024" />
+    <PickUp QuestName="Enraged Spirits of Water" QuestId="10480" GiverName="Earthmender Torlok" GiverId="21024" />
+    <TurnIn QuestName="The Deathforge" QuestId="10599" TurnInName="Scout Zagran" TurnInId="21475" />
+    <PickUp QuestName="Minions of the Shadow Council" QuestId="10600" GiverName="Scout Zagran" GiverId="21475" />
+    <Objective QuestName="Minions of the Shadow Council" QuestId="10600" Type="KillMob" MobId="20878" MobName="Deathforge Guardian" KillCount="10" />
+    <Objective QuestName="Minions of the Shadow Council" QuestId="10600" Type="KillMob" MobId="20872" MobName="Deathforge Summoner" KillCount="5" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="30809" ItemName="Mark of Sargeras" CollectCount="10" />
+    <TurnIn QuestName="Minions of the Shadow Council" QuestId="10600" TurnInName="Scout Zagran" TurnInId="21475" />
+    <PickUp QuestName="The Fate of Kagrosh" QuestId="10601" GiverName="Scout Zagran" GiverId="21475" />
+    <PickUp QuestName="The Summoning Chamber" QuestId="10602" GiverName="Scout Zagran" GiverId="21475" />
+    <Objective QuestName="The Summoning Chamber" QuestId="10602" Type="CollectItem" ItemId="30672" ItemName="Elemental Displacer" CollectCount="1" />
+    <Objective QuestName="The Fate of Kagrosh" QuestId="10601" Type="CollectItem" ItemId="30659" ItemName="Kagrosh&apos;s Pack" CollectCount="1" />
+    <Objective QuestName="The Summoning Chamber" QuestId="10602" Type="KillMob" MobId="21735" MobName="Infernal Oversoul" KillCount="1" />
+    <TurnIn QuestName="The Fate of Kagrosh" QuestId="10601" TurnInName="Scout Zagran" TurnInId="21475" />
+    <TurnIn QuestName="The Summoning Chamber" QuestId="10602" TurnInName="Scout Zagran" TurnInId="21475" />
+    <PickUp QuestName="Bring Down the Warbringer!" QuestId="10603" GiverName="Scout Zagran" GiverId="21475" />
+    <Objective QuestName="Bring Down the Warbringer!" QuestId="10603" Type="KillMob" MobId="21287" MobName="Warbringer Razuun" KillCount="1" />
+    <Objective QuestName="Bring Down the Warbringer!" QuestId="10603" Type="KillMob" MobId="21287" MobName="Warbringer Razuun" KillCount="1" />
+    <Objective QuestName="Bring Down the Warbringer!" QuestId="10603" Type="CollectItem" ItemId="30689" ItemName="Razuun&apos;s Orders" CollectCount="1" />
+    <Objective QuestName="The Sketh&apos;lon Wreckage" QuestId="10760" Type="CollectItem" ItemId="31260" ItemName="Sketh&apos;lon Commander&apos;s Journal - Page 1" CollectCount="1" />
+    <Objective QuestName="The Sketh&apos;lon Wreckage" QuestId="10760" Type="CollectItem" ItemId="31261" ItemName="Sketh&apos;lon Commander&apos;s Journal - Page 2" CollectCount="1" />
+    <Objective QuestName="The Sketh&apos;lon Wreckage" QuestId="10760" Type="CollectItem" ItemId="31262" ItemName="Sketh&apos;lon Commander&apos;s Journal - Page 3" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21059" MobName="Enraged Water Spirit" KillCount="1" />
+    <TurnIn QuestName="A Haunted History" QuestId="10624" TurnInName="Chief Apothecary Hildagard" TurnInId="21772" />
+    <PickUp QuestName="Spectrecles" QuestId="10625" GiverName="Chief Apothecary Hildagard" GiverId="21772" />
+    <TurnIn QuestName="What Strange Creatures..." QuestId="10660" TurnInName="Researcher Tiorus" TurnInId="21770" />
+    <PickUp QuestName="Frankly, It Makes No Sense..." QuestId="10672" GiverName="Researcher Tiorus" GiverId="21770" />
+    <TurnIn QuestName="A Grunt&apos;s Work..." QuestId="10702" TurnInName="Overlord Or&apos;barokh" TurnInId="21769" />
+    <TurnIn QuestName="The Sketh&apos;lon Wreckage" QuestId="10760" TurnInName="Sergeant Kargrul" TurnInId="22043" />
+    <PickUp QuestName="Find the Deserter" QuestId="10761" GiverName="Sergeant Kargrul" GiverId="22043" />
+    <Objective QuestName="Spectrecles" QuestId="10625" Type="KillMob" MobId="21788" MobName="Shadowmoon Zealot" KillCount="12" />
+    <TurnIn QuestName="Spectrecles" QuestId="10625" TurnInName="Chief Apothecary Hildagard" TurnInId="21772" />
+    <PickUp QuestName="Teron Gorefiend - Lore and Legend" QuestId="10633" GiverName="Chief Apothecary Hildagard" GiverId="21772" />
+    <TurnIn QuestName="Bring Down the Warbringer!" QuestId="10603" TurnInName="Blood Guard Gulmok" TurnInId="21359" />
+    <PickUp QuestName="Gaining Access" QuestId="10604" GiverName="Blood Guard Gulmok" GiverId="21359" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21499" MobName="Overseer Ripsaw" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="30579" ItemName="Illidari-Bane Shard" CollectCount="1" />
+    <PickUp QuestName="Illidari-Bane Shard" QuestId="10623" GiverName="Blood Guard Gulmok" GiverId="21359" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19755" MobName="Mo&apos;arg Weaponsmith" KillCount="1" />
+    <Objective QuestName="Gaining Access" QuestId="10604" Type="CollectItem" ItemId="30695" ItemName="Legion Teleporter Control" CollectCount="1" />
+    <TurnIn QuestName="Gaining Access" QuestId="10604" TurnInName="Blood Guard Gulmok" TurnInId="21359" />
+    <TurnIn QuestName="Illidari-Bane Shard" QuestId="10623" TurnInName="Grokom Deatheye" TurnInId="19333" />
+    <TurnIn QuestName="Find the Deserter" QuestId="10761" TurnInName="Parshah" TurnInId="22024" />
+    <PickUp QuestName="Asghar&apos;s Totem" QuestId="10777" GiverName="Parshah" GiverId="22024" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="22025" MobName="Asghar" KillCount="1" />
+    <Objective QuestName="Asghar&apos;s Totem" QuestId="10777" Type="CollectItem" ItemId="31169" ItemName="Sketh&apos;lon War Totem" CollectCount="1" />
+    <TurnIn QuestName="Asghar&apos;s Totem" QuestId="10777" TurnInName="Parshah" TurnInId="22024" />
+    <PickUp QuestName="The Rod of Lianthe" QuestId="10778" GiverName="Parshah" GiverId="22024" />
+    <TurnIn QuestName="Enraged Spirits of Water" QuestId="10480" TurnInName="Earthmender Torlok" TurnInId="21024" />
+    <PickUp QuestName="Enraged Spirits of Air" QuestId="10481" GiverName="Earthmender Torlok" GiverId="21024" />
+    <Objective QuestName="The Rod of Lianthe" QuestId="10778" Type="CollectItem" ItemId="31316" ItemName="Lianthe&apos;s Key" CollectCount="1" />
+    <Objective QuestName="The Rod of Lianthe" QuestId="10778" Type="CollectItem" ItemId="31317" ItemName="Rod of Lianthe" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="30810" ItemName="Sunfury Signets" CollectCount="10" />
+    <PickUp QuestName="The Ashtongue Broken" QuestId="10807" GiverName="Varen the Reclaimer" GiverId="21953" />
+    <PickUp QuestName="Sunfury Signets" QuestId="10824" GiverName="Battlemage Vyara" GiverId="22211" />
+    <TurnIn QuestName="Sunfury Signets" QuestId="10824" TurnInName="Battlemage Vyara" TurnInId="22211" />
+    <PickUp QuestName="Tablets of Baa&apos;ri" QuestId="10683" GiverName="Arcanist Thelis" GiverId="21955" />
+    <TurnIn QuestName="Teron Gorefiend - Lore and Legend" QuestId="10633" TurnInName="Ancient Shadowmoon Spirit" TurnInId="21797" />
+    <PickUp QuestName="Divination: Gorefiend&apos;s Cloak" QuestId="10635" GiverName="Ancient Shadowmoon Spirit" GiverId="21797" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21060" MobName="Enraged Air Spirit" KillCount="1" />
+    <PickUp QuestName="Kindness" QuestId="10804" GiverName="Mordenai" GiverId="22113" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="31373" ItemName="Rocknail Flayer Giblets" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="31372" ItemName="Rocknail Flayer Carcass" CollectCount="1" />
+    <TurnIn QuestName="Kindness" QuestId="10804" TurnInName="Mordenai" TurnInId="22113" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21815" MobName="Cleric of Karabor" KillCount="1" />
+    <Objective QuestName="Divination: Gorefiend&apos;s Cloak" QuestId="10635" Type="CollectItem" ItemId="30799" ItemName="Gorefiend&apos;s Cloak" CollectCount="1" />
+    <TurnIn QuestName="Divination: Gorefiend&apos;s Cloak" QuestId="10635" TurnInName="Ancient Shadowmoon Spirit" TurnInId="21797" />
+    <PickUp QuestName="The Ashtongue Tribe" QuestId="10619" GiverName="Vindicator Aluumen" GiverId="21822" />
+    <PickUp QuestName="Tablets of Baa&apos;ri" QuestId="10568" GiverName="Anchorite Ceyla" GiverId="21402" />
+    <PickUp QuestName="Marks of Sargeras" QuestId="10826" GiverName="Harbinger Saronen" GiverId="22214" />
+    <TurnIn QuestName="Marks of Sargeras" QuestId="10826" TurnInName="Harbinger Saronen" TurnInId="22214" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21455" MobName="Ashtongue Worker" KillCount="1" />
+    <Objective QuestName="Tablets of Baa&apos;ri" QuestId="10568" Type="CollectItem" ItemId="30596" ItemName="Baa&apos;ri Tablet Fragment" CollectCount="12" />
+    <Objective QuestName="The Ashtongue Tribe" QuestId="10619" Type="KillMob" MobId="21803" MobName="Ashtongue Handler" KillCount="3" />
+    <Objective QuestName="The Ashtongue Tribe" QuestId="10619" Type="KillMob" MobId="21454" MobName="Ashtongue Warrior" KillCount="4" />
+    <Objective QuestName="The Ashtongue Tribe" QuestId="10619" Type="KillMob" MobId="21453" MobName="Ashtongue Shaman" KillCount="6" />
+    <TurnIn QuestName="The Ashtongue Tribe" QuestId="10619" TurnInName="Vindicator Aluumen" TurnInId="21822" />
+    <TurnIn QuestName="Tablets of Baa&apos;ri" QuestId="10568" TurnInName="Anchorite Ceyla" TurnInId="21402" />
+    <PickUp QuestName="Oronu the Elder" QuestId="10571" GiverName="Anchorite Ceyla" GiverId="21402" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21663" MobName="Oronu the Elder" KillCount="1" />
+    <Objective QuestName="Oronu the Elder" QuestId="10571" Type="CollectItem" ItemId="30649" ItemName="Orders From Akama" CollectCount="1" />
+    <TurnIn QuestName="Oronu the Elder" QuestId="10571" TurnInName="Anchorite Ceyla" TurnInId="21402" />
+    <TurnIn QuestName="Frankly, It Makes No Sense..." QuestId="10672" TurnInName="Researcher Tiorus" TurnInId="21770" />
+    <PickUp QuestName="Felspine the Greater" QuestId="10673" GiverName="Researcher Tiorus" GiverId="21770" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21897" MobName="Felspine the Greater" KillCount="1" />
+    <Objective QuestName="Felspine the Greater" QuestId="10673" Type="CollectItem" ItemId="30851" ItemName="Felspine&apos;s Hide" CollectCount="1" />
+    <TurnIn QuestName="Felspine the Greater" QuestId="10673" TurnInName="Researcher Tiorus" TurnInId="21770" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21455" MobName="Ashtongue Worker" KillCount="1" />
+    <Objective QuestName="Tablets of Baa&apos;ri" QuestId="10683" Type="CollectItem" ItemId="30596" ItemName="Baa&apos;ri Tablet Fragment" CollectCount="12" />
+    <Objective QuestName="The Ashtongue Broken" QuestId="10807" Type="KillMob" MobId="21803" MobName="Ashtongue Handler" KillCount="3" />
+    <Objective QuestName="The Ashtongue Broken" QuestId="10807" Type="KillMob" MobId="21454" MobName="Ashtongue Warrior" KillCount="4" />
+    <Objective QuestName="The Ashtongue Broken" QuestId="10807" Type="KillMob" MobId="21453" MobName="Ashtongue Shaman" KillCount="6" />
+    <TurnIn QuestName="Tablets of Baa&apos;ri" QuestId="10683" TurnInName="Arcanist Thelis" TurnInId="21955" />
+    <PickUp QuestName="Oronu the Elder" QuestId="10684" GiverName="Arcanist Thelis" GiverId="21955" />
+    <TurnIn QuestName="The Ashtongue Broken" QuestId="10807" TurnInName="Varen the Reclaimer" TurnInId="21953" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21663" MobName="Oronu the Elder" KillCount="1" />
+    <Objective QuestName="Oronu the Elder" QuestId="10684" Type="CollectItem" ItemId="30649" ItemName="Orders From Akama" CollectCount="1" />
+    <TurnIn QuestName="Oronu the Elder" QuestId="10684" TurnInName="Arcanist Thelis" TurnInId="21955" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21897" MobName="Felspine the Greater" KillCount="1" />
+    <Objective QuestName="Felspine the Greater" QuestId="10673" Type="CollectItem" ItemId="30851" ItemName="Felspine&apos;s Hide" CollectCount="1" />
+    <TurnIn QuestName="The Rod of Lianthe" QuestId="10778" TurnInName="Parshah" TurnInId="22024" />
+    <PickUp QuestName="Sketh&apos;lon Feathers" QuestId="10780" GiverName="Parshah" GiverId="22024" />
+    <Objective QuestName="Sketh&apos;lon Feathers" QuestId="10780" Type="CollectItem" ItemId="31324" ItemName="Sketh&apos;lon Feather" CollectCount="8" />
+    <TurnIn QuestName="Sketh&apos;lon Feathers" QuestId="10780" TurnInName="Parshah" TurnInId="22024" />
+    <PickUp QuestName="Imbuing the Headpiece" QuestId="10782" GiverName="Parshah" GiverId="22024" />
+    <TurnIn QuestName="Enraged Spirits of Air" QuestId="10481" TurnInName="Earthmender Torlok" TurnInId="21024" />
+    <Objective QuestName="Imbuing the Headpiece" QuestId="10782" Type="CollectItem" ItemId="31365" ItemName="Energized Headpiece" CollectCount="1" />
+    <TurnIn QuestName="Imbuing the Headpiece" QuestId="10782" TurnInName="Parshah" TurnInId="22024" />
+    <PickUp QuestName="Thwart the Dark Conclave" QuestId="10808" GiverName="Parshah" GiverId="22024" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="22138" MobName="Dark Conclave Ritualist" KillCount="1" />
+    <TurnIn QuestName="Thwart the Dark Conclave" QuestId="10808" TurnInName="Parshah" TurnInId="22024" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Shadowmoon Valley (70-70) Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

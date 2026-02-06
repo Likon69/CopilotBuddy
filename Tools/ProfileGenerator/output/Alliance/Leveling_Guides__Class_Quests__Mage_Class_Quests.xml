@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Class Quests\\Mage Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="1920" Name="Investigate the Blue Recluse">
+    <Objective Type="CollectItem" ItemId="7247" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Chest of Containment Coffers" Id="105174" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-8987.37" Y="862.75" Z="30.63" />
+        <Hotspot X="-8986.0" Y="863.66" Z="30.64" />
+        <Hotspot X="1813.73" Y="52.65" Z="-46.32" />
+        <Hotspot X="1814.54" Y="51.31" Z="-46.32" />
+        <Hotspot X="1814.59" Y="53.17" Z="-46.32" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="7308" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Cantation of Manifestation" Id="105175" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-8986.0" Y="863.66" Z="30.64" />
+        <Hotspot X="-8984.55" Y="861.03" Z="30.67" />
+        <Hotspot X="1813.6" Y="50.23" Z="-46.32" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1921" Name="Gathering Materials">
+    <Objective Type="CollectItem" ItemId="7249" CollectCount="6">
+      <CollectFrom>
+        <GameObject Name="Miners" Id="271" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4982.02" Y="-2961.62" Z="316.31" />
+        <Hotspot X="-4979.14" Y="-2953.52" Z="314.86" />
+        <Hotspot X="-4974.81" Y="-2937.46" Z="315.9" />
+        <Hotspot X="-4967.33" Y="-3007.32" Z="318.48" />
+        <Hotspot X="-4943.1" Y="-2993.83" Z="319.94" />
+        <Hotspot X="-4936.05" Y="-2967.32" Z="317.69" />
+        <Hotspot X="-4934.41" Y="-2978.7" Z="321.8" />
+        <Hotspot X="-4918.71" Y="-2956.49" Z="316.89" />
+        <Hotspot X="-4868.35" Y="-2998.27" Z="317.41" />
+        <Hotspot X="-4853.3" Y="-2971.94" Z="321.51" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1951" Name="Rituals of Power">
+    <Objective Type="CollectItem" ItemId="7274" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Rituals of Power" Id="103664" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="277.59" Y="-429.49" Z="21.42" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Mage Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Speak with Jennea" QuestId="1860" GiverName="Zaldimar Wefhellt" GiverId="328" />
+    </If>
+    <TurnIn QuestName="Speak with Jennea" QuestId="1860" TurnInName="Jennea Cannon" TurnInId="5497" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Mirror Lake" QuestId="1861" GiverName="Jennea Cannon" GiverId="5497" />
+    </If>
+    <Objective QuestName="Mirror Lake" QuestId="1861" Type="CollectItem" ItemId="7206" ItemName="Mirror Lake Water Sample" CollectCount="1" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <TurnIn QuestName="Mirror Lake" QuestId="1861" TurnInName="Jennea Cannon" TurnInId="5497" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage) &amp;&amp; (Me.Race == WoWRace.Gnome)">
+      <PickUp QuestName="Report to Jennea" QuestId="1919" GiverName="Dink" GiverId="7312" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage) &amp;&amp; (Me.Race == WoWRace.Human)">
+    </If>
+    <TurnIn QuestName="Report to Jennea" QuestId="1919" TurnInName="Jennea Cannon" TurnInId="5497" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Investigate the Blue Recluse" QuestId="1920" GiverName="Jennea Cannon" GiverId="5497" />
+      <Objective QuestName="Investigate the Blue Recluse" QuestId="1920" Type="CollectItem" ItemId="7247" ItemName="Chest of Containment Coffers" CollectCount="1" />
+      <Objective QuestName="Investigate the Blue Recluse" QuestId="1920" Type="CollectItem" ItemId="7308" ItemName="Cantation of Manifestation" CollectCount="1" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="6492" MobName="Rift Spawn" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Investigate the Blue Recluse" QuestId="1920" Type="CollectItem" ItemId="7292" ItemName="Filled Containment Coffer" CollectCount="3" />
+    </If>
+    <TurnIn QuestName="Investigate the Blue Recluse" QuestId="1920" TurnInName="Jennea Cannon" TurnInId="5497" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Gathering Materials" QuestId="1921" GiverName="Jennea Cannon" GiverId="5497" />
+      <Objective QuestName="Gathering Materials" QuestId="1921" Type="CollectItem" ItemId="7249" ItemName="Charged Rift Gem" CollectCount="6" />
+    </If>
+    <Objective QuestName="Gathering Materials" QuestId="1921" Type="CollectItem" ItemId="2589" ItemName="Linen Cloth" CollectCount="10" />
+    <TurnIn QuestName="Gathering Materials" QuestId="1921" TurnInName="Wynne Larson" TurnInId="1309" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Manaweave Robe" QuestId="1941" GiverName="Wynne Larson" GiverId="1309" />
+      <PickUp QuestName="High Sorcerer Andromath" QuestId="1939" GiverName="Jennea Cannon" GiverId="5497" />
+    </If>
+    <TurnIn QuestName="High Sorcerer Andromath" QuestId="1939" TurnInName="High Sorcerer Andromath" TurnInId="5694" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Ur&apos;s Treatise on Shadow Magic" QuestId="1938" GiverName="High Sorcerer Andromath" GiverId="5694" />
+      <Objective QuestName="Ur&apos;s Treatise on Shadow Magic" QuestId="1938" Type="CollectItem" ItemId="7266" ItemName="Ur&apos;s Treatise on Shadow Magic" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Ur&apos;s Treatise on Shadow Magic" QuestId="1938" TurnInName="High Sorcerer Andromath" TurnInId="5694" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Pristine Spider Silk" QuestId="1940" GiverName="High Sorcerer Andromath" GiverId="5694" />
+    </If>
+    <Objective QuestName="Pristine Spider Silk" QuestId="1940" Type="CollectItem" ItemId="7267" ItemName="Pristine Spider Silk" CollectCount="8" />
+    <TurnIn QuestName="Pristine Spider Silk" QuestId="1940" TurnInName="Wynne Larson" TurnInId="1309" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Astral Knot Garment" QuestId="1942" GiverName="Wynne Larson" GiverId="1309" />
+      <PickUp QuestName="Journey to the Marsh" QuestId="1947" GiverName="Jennea Cannon" GiverId="5497" />
+    </If>
+    <TurnIn QuestName="Journey to the Marsh" QuestId="1947" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Hidden Secrets" QuestId="1949" GiverName="Tabetha" GiverId="6546" />
+    </If>
+    <TurnIn QuestName="Hidden Secrets" QuestId="1949" TurnInName="Magus Tirth" TurnInId="6548" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Get the Scoop" QuestId="1950" GiverName="Magus Tirth" GiverId="6548" />
+    </If>
+    <TurnIn QuestName="Get the Scoop" QuestId="1950" TurnInName="Magus Tirth" TurnInId="6548" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Rituals of Power" QuestId="1951" GiverName="Magus Tirth" GiverId="6548" />
+      <Objective QuestName="Rituals of Power" QuestId="1951" Type="CollectItem" ItemId="7274" ItemName="Rituals of Power" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Rituals of Power" QuestId="1951" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Mage&apos;s Wand" QuestId="1952" GiverName="Tabetha" GiverId="6546" />
+      <TurnIn QuestName="Mage&apos;s Wand" QuestId="1952" TurnInName="Tabetha" TurnInId="6546" />
+      <PickUp QuestName="Return to the Marsh" QuestId="1953" GiverName="Jennea Cannon" GiverId="5497" />
+    </If>
+    <TurnIn QuestName="Return to the Marsh" QuestId="1953" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="The Infernal Orb" QuestId="1954" GiverName="Tabetha" GiverId="6546" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="4668" MobName="Burning Blade Summoner" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="The Infernal Orb" QuestId="1954" Type="CollectItem" ItemId="7291" ItemName="Infernal Orb" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="The Infernal Orb" QuestId="1954" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="The Exorcism" QuestId="1955" GiverName="Tabetha" GiverId="6546" />
+      <Objective QuestName="The Exorcism" QuestId="1955" Type="KillMob" MobId="6549" MobName="Demon of the Orb" KillCount="1" />
+    </If>
+    <TurnIn QuestName="The Exorcism" QuestId="1955" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Power in Uldaman" QuestId="1956" GiverName="Tabetha" GiverId="6546" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7023" MobName="Obsidian Sentinel" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Power in Uldaman" QuestId="1956" Type="CollectItem" ItemId="8053" ItemName="Obsidian Power Source" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Power in Uldaman" QuestId="1956" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Mana Surges" QuestId="1957" GiverName="Tabetha" GiverId="6546" />
+    </If>
+    <Objective QuestName="Mana Surges" QuestId="1957" Type="KillMob" MobId="6550" MobName="Mana Surge" KillCount="1" />
+    <TurnIn QuestName="Mana Surges" QuestId="1957" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Celestial Power" QuestId="1958" GiverName="Tabetha" GiverId="6546" />
+      <PickUp QuestName="Tabetha&apos;s Task" QuestId="2861" GiverName="Jennea Cannon" GiverId="5497" />
+    </If>
+    <TurnIn QuestName="Tabetha&apos;s Task" QuestId="2861" TurnInName="Tabetha" TurnInId="6546" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <PickUp QuestName="Tiara of the Deep" QuestId="2846" GiverName="Tabetha" GiverId="6546" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7795" MobName="Hydromancer Velratha" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Tiara of the Deep" QuestId="2846" Type="CollectItem" ItemId="9234" ItemName="Tiara of the Deep" CollectCount="1" />
+      <TurnIn QuestName="Tiara of the Deep" QuestId="2846" TurnInName="Tabetha" TurnInId="6546" />
+      <PickUp QuestName="Arcane Refreshment" QuestId="7463" GiverName="Lorekeeper Lydros" GiverId="14368" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="13280" MobName="Hydrospawn" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Arcane Refreshment" QuestId="7463" Type="CollectItem" ItemId="18299" ItemName="Hydrospawn Essence" CollectCount="1" />
+      <TurnIn QuestName="Arcane Refreshment" QuestId="7463" TurnInName="Lorekeeper Lydros" TurnInId="14368" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Mage Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

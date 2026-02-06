@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Wetlands (24-25)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>25</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="1738" Name="Heartswood">
+    <Objective Type="CollectItem" ItemId="6912" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Heartswood" Id="93192" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3461.31" Y="-118.27" Z="3.71" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Wetlands (24-25)" LogColor="Green" />
+    <PickUp QuestName="Young Crocolisk Skins" QuestId="484" GiverName="James Halloran" GiverId="2094" />
+    <PickUp QuestName="Claws from the Deep" QuestId="279" GiverName="Karl Boran" GiverId="1242" />
+    <PickUp QuestName="The Third Fleet" QuestId="288" GiverName="First Mate Fitzsimmons" GiverId="1239" />
+    <PickUp QuestName="The Greenwarden" QuestId="463" GiverName="First Mate Fitzsimmons" GiverId="1239" />
+    <TurnIn QuestName="The Absent Minded Prospector" QuestId="942" TurnInName="Archaeologist Flagongut" TurnInId="2911" />
+    <TurnIn QuestName="The Third Fleet" QuestId="288" TurnInName="First Mate Fitzsimmons" TurnInId="1239" />
+    <PickUp QuestName="Digging Through the Ooze" QuestId="470" GiverName="Sida" GiverId="2111" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1417" MobName="Young Wetlands Crocolisk" KillCount="1" />
+    <Objective QuestName="Young Crocolisk Skins" QuestId="484" Type="CollectItem" ItemId="3397" ItemName="Young Crocolisk Skin" CollectCount="4" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1259" MobName="Gobbler" KillCount="1" />
+    <Objective QuestName="Claws from the Deep" QuestId="279" Type="CollectItem" ItemId="3618" ItemName="Gobbler&apos;s Head" CollectCount="1" />
+    <Objective QuestName="Digging Through the Ooze" QuestId="470" Type="CollectItem" ItemId="3349" ItemName="Sida&apos;s Bag" CollectCount="1" />
+    <PickUp QuestName="Daily Delivery" QuestId="469" GiverName="Einar Stonegrip" GiverId="2093" />
+    <TurnIn QuestName="The Greenwarden" QuestId="463" TurnInName="Rethiel the Greenwarden" TurnInId="1244" />
+    <PickUp QuestName="Tramping Paws" QuestId="276" GiverName="Rethiel the Greenwarden" GiverId="1244" />
+    <Objective QuestName="Tramping Paws" QuestId="276" Type="KillMob" MobId="1008" MobName="Mosshide Mongrel" KillCount="10" />
+    <Objective QuestName="Tramping Paws" QuestId="276" Type="KillMob" MobId="1007" MobName="Mosshide Gnoll" KillCount="15" />
+    <TurnIn QuestName="Tramping Paws" QuestId="276" TurnInName="Rethiel the Greenwarden" TurnInId="1244" />
+    <PickUp QuestName="Fire Taboo" QuestId="277" GiverName="Rethiel the Greenwarden" GiverId="1244" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="4433" ItemName="Waterlogged Envelope" CollectCount="1" />
+    <TurnIn QuestName="Digging Through the Ooze" QuestId="470" TurnInName="Sida" TurnInId="2111" />
+    <TurnIn QuestName="Young Crocolisk Skins" QuestId="484" TurnInName="James Halloran" TurnInId="2094" />
+    <TurnIn QuestName="Daily Delivery" QuestId="469" TurnInName="James Halloran" TurnInId="2094" />
+    <PickUp QuestName="Apprentice&apos;s Duties" QuestId="471" GiverName="James Halloran" GiverId="2094" />
+    <TurnIn QuestName="Claws from the Deep" QuestId="279" TurnInName="Karl Boran" TurnInId="1242" />
+    <PickUp QuestName="Sully Balloo&apos;s Letter" QuestId="637" GiverName="Karl Boran" GiverId="1242" />
+    <TurnIn QuestName="Sully Balloo&apos;s Letter" QuestId="637" TurnInName="Sara Balloo" TurnInId="2695" />
+    <PickUp QuestName="Sara Balloo&apos;s Plea" QuestId="683" GiverName="Sara Balloo" GiverId="2695" />
+    <TurnIn QuestName="Sara Balloo&apos;s Plea" QuestId="683" TurnInName="King Magni Bronzebeard" TurnInId="2784" />
+    <PickUp QuestName="A King&apos;s Tribute" QuestId="686" GiverName="King Magni Bronzebeard" GiverId="2784" />
+    <TurnIn QuestName="A King&apos;s Tribute" QuestId="686" TurnInName="Grand Mason Marblesten" TurnInId="2790" />
+    <PickUp QuestName="A King&apos;s Tribute" QuestId="689" GiverName="Grand Mason Marblesten" GiverId="2790" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="A Warrior&apos;s Training" QuestId="1638" GiverName="Ilsa Corbin" GiverId="5480" />
+    </If>
+    <TurnIn QuestName="A Warrior&apos;s Training" QuestId="1638" TurnInName="Harry Burlguard" TurnInId="6089" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Bartleby the Drunk" QuestId="1639" GiverName="Harry Burlguard" GiverId="6089" />
+    </If>
+    <TurnIn QuestName="Bartleby the Drunk" QuestId="1639" TurnInName="Bartleby" TurnInId="6090" />
+    <PickUp QuestName="Beat Bartleby" QuestId="1640" GiverName="Bartleby" GiverId="6090" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="6090" MobName="Bartleby" KillCount="1" />
+    <TurnIn QuestName="Beat Bartleby" QuestId="1640" TurnInName="Bartleby" TurnInId="6090" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Bartleby&apos;s Mug" QuestId="1665" GiverName="Bartleby" GiverId="6090" />
+      <TurnIn QuestName="Bartleby&apos;s Mug" QuestId="1665" TurnInName="Harry Burlguard" TurnInId="6089" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="Redridge Rendezvous" QuestId="2281" GiverName="Renzik &quot;The Shiv&quot;" GiverId="6946" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Tome of Valor" QuestId="1793" GiverName="Duthorian Rall" GiverId="6171" />
+      <PickUp QuestName="The Tome of Valor" QuestId="1649" GiverName="Duthorian Rall" GiverId="6171" />
+    </If>
+    <TurnIn QuestName="The Tome of Valor" QuestId="1649" TurnInName="Duthorian Rall" TurnInId="6171" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Tome of Valor" QuestId="1650" GiverName="Duthorian Rall" GiverId="6171" />
+    </If>
+    <TurnIn QuestName="The Tome of Valor" QuestId="1650" TurnInName="Daphne Stilwell" TurnInId="6182" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Tome of Valor" QuestId="1651" GiverName="Daphne Stilwell" GiverId="6182" />
+    </If>
+    <TurnIn QuestName="The Tome of Valor" QuestId="1651" TurnInName="Daphne Stilwell" TurnInId="6182" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Tome of Valor" QuestId="1652" GiverName="Daphne Stilwell" GiverId="6182" />
+      <TurnIn QuestName="The Tome of Valor" QuestId="1652" TurnInName="Duthorian Rall" TurnInId="6171" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="Devourer of Souls" QuestId="1716" GiverName="Gakin the Darkbinder" GiverId="6122" />
+    </If>
+    <TurnIn QuestName="Devourer of Souls" QuestId="1716" TurnInName="Takar the Seer" TurnInId="6244" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="Heartswood" QuestId="1738" GiverName="Takar the Seer" GiverId="6244" />
+      <Objective QuestName="Heartswood" QuestId="1738" Type="CollectItem" ItemId="6912" ItemName="Heartswood" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Heartswood" QuestId="1738" TurnInName="Gakin the Darkbinder" TurnInId="6122" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="The Binding" QuestId="1739" GiverName="Gakin the Darkbinder" GiverId="6122" />
+      <Objective QuestName="The Binding" QuestId="1739" Type="KillMob" MobId="5677" MobName="Summoned Succubus" KillCount="1" />
+      <TurnIn QuestName="The Binding" QuestId="1739" TurnInName="Gakin the Darkbinder" TurnInId="6122" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="15882" ItemName="Half Pendant of Aquatic Endurance" CollectCount="1" />
+      <Objective QuestName="Trial of the Sea Lion" QuestId="272" Type="CollectItem" ItemId="15885" ItemName="Pendant of the Sea Lion" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Trial of the Sea Lion" QuestId="272" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Aquatic Form" QuestId="5061" GiverName="Dendrite Starblaze" GiverId="11802" />
+      <TurnIn QuestName="Aquatic Form" QuestId="5061" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Wetlands (24-25) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Redridge_Mountains_(25-25)" />
+  </QuestOrder>
+</HBProfile>

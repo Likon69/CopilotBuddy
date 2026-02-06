@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Extra Zones\\Ghostlands</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="9157" Name="Forgotten Rituals">
+    <Objective Type="CollectItem" ItemId="22674" CollectCount="8">
+      <CollectFrom>
+        <GameObject Name="Glistening Mud" Id="181151" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7628.17" Y="-7634.8" Z="128.27" />
+        <Hotspot X="7642.07" Y="-7659.08" Z="125.85" />
+        <Hotspot X="7659.0" Y="-7677.83" Z="125.5" />
+        <Hotspot X="7685.55" Y="-7685.56" Z="121.56" />
+        <Hotspot X="7724.14" Y="-7706.14" Z="134.99" />
+        <Hotspot X="7746.44" Y="-7685.02" Z="139.64" />
+        <Hotspot X="7763.87" Y="-7706.39" Z="135.91" />
+        <Hotspot X="7777.67" Y="-7715.42" Z="135.3" />
+        <Hotspot X="7778.78" Y="-7640.75" Z="134.32" />
+        <Hotspot X="7782.48" Y="-7599.07" Z="126.09" />
+        <Hotspot X="7793.39" Y="-7715.74" Z="132.92" />
+        <Hotspot X="7802.47" Y="-7708.98" Z="132.17" />
+        <Hotspot X="7829.67" Y="-7591.23" Z="125.73" />
+        <Hotspot X="7853.14" Y="-7579.73" Z="119.81" />
+        <Hotspot X="7888.21" Y="-7608.03" Z="130.77" />
+        <Hotspot X="7931.08" Y="-7636.33" Z="113.05" />
+        <Hotspot X="7963.77" Y="-7631.9" Z="117.42" />
+        <Hotspot X="7965.36" Y="-7614.17" Z="117.34" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9176" Name="The Twin Ziggurats">
+    <Objective Type="CollectItem" ItemId="22598" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Dented Chest" Id="181238" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7217.95" Y="-6415.17" Z="59.17" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="22599" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Worn Chest" Id="181239" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7172.07" Y="-6615.57" Z="63.66" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Ghostlands" LogColor="Green" />
+    <PickUp QuestName="Delivery to Tranquillien" QuestId="9148" GiverName="Courier Dawnstrider" GiverId="16183" />
+    <TurnIn QuestName="Delivery to Tranquillien" QuestId="9148" TurnInName="Arcanist Vandril" TurnInId="16197" />
+    <If Condition="(Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="The Forsaken" QuestId="9327" GiverName="Arcanist Vandril" GiverId="16197" />
+    </If>
+    <If Condition="!((Me.Race == WoWRace.BloodElf))">
+      <PickUp QuestName="the Forsaken" QuestId="9329" GiverName="Arcanist Vandril" GiverId="16197" />
+    </If>
+    <TurnIn QuestName="The Forsaken" QuestId="9329" TurnInName="High Executor Mavren" TurnInId="16252" />
+    <TurnIn QuestName="The Forsaken" QuestId="9327" TurnInName="High Executor Mavren" TurnInId="16252" />
+    <PickUp QuestName="Return to Arcanist Vandril" QuestId="9758" GiverName="High Executor Mavren" GiverId="16252" />
+    <TurnIn QuestName="The Plagued Coast" QuestId="9149" TurnInName="Apothecary Renzithen" TurnInId="16198" />
+    <PickUp QuestName="Tomber&apos;s Supplies" QuestId="9152" GiverName="Rathis Tomber" GiverId="16224" />
+    <If Condition="(Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="Goods from Silvermoon City" QuestId="9130" GiverName="Quartermaster Lymel" GiverId="16187" />
+    </If>
+    <TurnIn QuestName="Goods from Silvermoon City" QuestId="9130" TurnInName="Skymaster Sunwing" TurnInId="16189" />
+    <If Condition="(Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="Fly to Silvermoon City" QuestId="9133" GiverName="Skymaster Sunwing" GiverId="16189" />
+    </If>
+    <TurnIn QuestName="Fly to Silvermoon City" QuestId="9133" TurnInName="Sathren Azuredawn" TurnInId="16191" />
+    <If Condition="(Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="Skymistress Gloaming" QuestId="9134" GiverName="Sathren Azuredawn" GiverId="16191" />
+    </If>
+    <TurnIn QuestName="Skymistress Gloaming" QuestId="9134" TurnInName="Skymistress Gloaming" TurnInId="16192" />
+    <If Condition="(Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="Return to Quartermaster Lymel" QuestId="9135" GiverName="Skymistress Gloaming" GiverId="16192" />
+      <TurnIn QuestName="Return to Quartermaster Lymel" QuestId="9135" TurnInName="Quartermaster Lymel" TurnInId="16187" />
+    </If>
+    <TurnIn QuestName="Return to Arcanist Vandril" QuestId="9758" TurnInName="Arcanist Vandril" TurnInId="16197" />
+    <PickUp QuestName="Suncrown Village" QuestId="9138" GiverName="Arcanist Vandril" GiverId="16197" />
+    <PickUp QuestName="Anok&apos;suten" QuestId="9315" GiverName="Dying Blood Elf" GiverId="16601" />
+    <Objective QuestName="Anok&apos;suten" QuestId="9315" Type="KillMob" MobId="16357" MobName="Anok&apos;suten" KillCount="1" />
+    <Objective QuestName="Suncrown Village" QuestId="9138" Type="KillMob" MobId="16313" MobName="Nerubis Guard" KillCount="10" />
+    <TurnIn QuestName="Suncrown Village" QuestId="9138" TurnInName="Arcanist Vandril" TurnInId="16197" />
+    <PickUp QuestName="Goldenmist Village" QuestId="9139" GiverName="Arcanist Vandril" GiverId="16197" />
+    <TurnIn QuestName="Anok&apos;suten" QuestId="9315" TurnInName="Arcanist Vandril" TurnInId="16197" />
+    <PickUp QuestName="Help Ranger Valanna!" QuestId="9145" GiverName="Ranger Lethvalin" GiverId="16213" />
+    <PickUp QuestName="Investigate An&apos;daroth" QuestId="9160" GiverName="Dame Auriferous" GiverId="16231" />
+    <PickUp QuestName="Trouble at the Underlight Mines" QuestId="9192" GiverName="Deathstalker Maltendis" GiverId="16251" />
+    <PickUp QuestName="Salvaging the Past" QuestId="9150" GiverName="Magister Darenis" GiverId="16199" />
+    <PickUp QuestName="Down the Dead Scar" QuestId="9155" GiverName="Deathstalker Rathiel" GiverId="16200" />
+    <PickUp QuestName="Culinary Crunch" QuestId="9171" GiverName="Master Chef Mouldier" GiverId="16253" />
+    <Objective QuestName="Investigate An&apos;daroth" QuestId="9160" Type="KillMob" MobId="16330" MobName="Sentinel Spy" KillCount="12" />
+    <Objective QuestName="Goldenmist Village" QuestId="9139" Type="KillMob" MobId="16325" MobName="Quel&apos;dorei Ghost" KillCount="6" />
+    <Objective QuestName="Goldenmist Village" QuestId="9139" Type="KillMob" MobId="16326" MobName="Quel&apos;dorei Wraith" KillCount="4" />
+    <Objective QuestName="Tomber&apos;s Supplies" QuestId="9152" Type="CollectItem" ItemId="22583" ItemName="Rathis Tomber&apos;s Supplies" CollectCount="1" />
+    <Objective QuestName="Salvaging the Past" QuestId="9150" Type="CollectItem" ItemId="22580" ItemName="Crystallized Mana Essence" CollectCount="8" />
+    <Objective QuestName="Down the Dead Scar" QuestId="9155" Type="KillMob" MobId="16301" MobName="Risen Hungerer" KillCount="10" />
+    <Objective QuestName="Down the Dead Scar" QuestId="9155" Type="KillMob" MobId="16309" MobName="Gangled Cannibal" KillCount="10" />
+    <TurnIn QuestName="Goldenmist Village" QuestId="9139" TurnInName="Arcanist Vandril" TurnInId="16197" />
+    <PickUp QuestName="Windrunner Village" QuestId="9140" GiverName="Arcanist Vandril" GiverId="16197" />
+    <TurnIn QuestName="Tomber&apos;s Supplies" QuestId="9152" TurnInName="Rathis Tomber" TurnInId="16224" />
+    <TurnIn QuestName="Salvaging the Past" QuestId="9150" TurnInName="Magister Darenis" TurnInId="16199" />
+    <TurnIn QuestName="Down the Dead Scar" QuestId="9155" TurnInName="Deathstalker Rathiel" TurnInId="16200" />
+    <TurnIn QuestName="Investigate An&apos;daroth" QuestId="9160" TurnInName="Dame Auriferous" TurnInId="16231" />
+    <PickUp QuestName="Into Occupied Territory" QuestId="9163" GiverName="Dame Auriferous" GiverId="16231" />
+    <PickUp QuestName="Troll Juju" QuestId="9199" GiverName="Deathstalker Maltendis" GiverId="16251" />
+    <PickUp QuestName="Investigate the Amani Catacombs" QuestId="9193" GiverName="Advisor Valwyn" GiverId="16289" />
+    <PickUp QuestName="Bearers of the Plague" QuestId="9158" GiverName="Farstrider Sedina" GiverId="16202" />
+    <PickUp QuestName="Spirits of the Drowned" QuestId="9274" GiverName="Ranger Krenn&apos;an" GiverId="16462" />
+    <Objective QuestName="Bearers of the Plague" QuestId="9158" Type="KillMob" MobId="16348" MobName="Ghostclaw Lynx" KillCount="10" />
+    <TurnIn QuestName="Bearers of the Plague" QuestId="9158" TurnInName="Farstrider Sedina" TurnInId="16202" />
+    <PickUp QuestName="Curbing the Plague" QuestId="9159" GiverName="Farstrider Sedina" GiverId="16202" />
+    <TurnIn QuestName="Help Ranger Valanna!" QuestId="9145" TurnInName="Ranger Valanna" TurnInId="16219" />
+    <PickUp QuestName="Dealing with Zeb&apos;Sora" QuestId="9143" GiverName="Ranger Valanna" GiverId="16219" />
+    <Objective QuestName="Dealing with Zeb&apos;Sora" QuestId="9143" Type="CollectItem" ItemId="22639" ItemName="Zeb&apos;Sora Troll Ear" CollectCount="6" />
+    <TurnIn QuestName="Dealing with Zeb&apos;Sora" QuestId="9143" TurnInName="Ranger Valanna" TurnInId="16219" />
+    <PickUp QuestName="Report to Captain Helios" QuestId="9146" GiverName="Ranger Valanna" GiverId="16219" />
+    <TurnIn QuestName="Report to Captain Helios" QuestId="9146" TurnInName="Captain Helios" TurnInId="16220" />
+    <PickUp QuestName="Shadowpine Weaponry" QuestId="9214" GiverName="Captain Helios" GiverId="16220" />
+    <PickUp QuestName="The Traitor&apos;s Shadow" QuestId="9161" GiverName="Ranger Vynna" GiverId="16203" />
+    <PickUp QuestName="Attack on Zeb&apos;Tela" QuestId="9276" GiverName="Farstrider Solanna" GiverId="16463" />
+    <PickUp QuestName="Forgotten Rituals" QuestId="9157" GiverName="Geranis Whitemorn" GiverId="16201" />
+    <Objective QuestName="Spirits of the Drowned" QuestId="9274" Type="KillMob" MobId="16327" MobName="Ravening Apparition" KillCount="8" />
+    <Objective QuestName="Spirits of the Drowned" QuestId="9274" Type="KillMob" MobId="16328" MobName="Vengeful Apparition" KillCount="8" />
+    <Objective QuestName="Forgotten Rituals" QuestId="9157" Type="CollectItem" ItemId="22674" ItemName="Wavefront Medallion" CollectCount="8" />
+    <TurnIn QuestName="Forgotten Rituals" QuestId="9157" TurnInName="Geranis Whitemorn" TurnInId="16201" />
+    <PickUp QuestName="Vanquishing Aquantion" QuestId="9174" GiverName="Geranis Whitemorn" GiverId="16201" />
+    <Objective QuestName="Vanquishing Aquantion" QuestId="9174" Type="KillMob" MobId="16292" MobName="Aquantion" KillCount="1" />
+    <TurnIn QuestName="Vanquishing Aquantion" QuestId="9174" TurnInName="Geranis Whitemorn" TurnInId="16201" />
+    <TurnIn QuestName="The Traitor&apos;s Shadow" QuestId="9161" TurnInName="Geranis Whitemorn" TurnInId="16201" />
+    <PickUp QuestName="Hints of the Past" QuestId="9162" GiverName="Geranis Whitemorn" GiverId="16201" />
+    <TurnIn QuestName="Spirits of the Drowned" QuestId="9274" TurnInName="Ranger Krenn&apos;an" TurnInId="16462" />
+    <TurnIn QuestName="Hints of the Past" QuestId="9162" TurnInName="Ranger Vynna" TurnInId="16203" />
+    <PickUp QuestName="Report to Magister Kaendris" QuestId="9172" GiverName="Ranger Vynna" GiverId="16203" />
+    <TurnIn QuestName="Report to Magister Kaendris" QuestId="9172" TurnInName="Magister Kaendris" TurnInId="16239" />
+    <PickUp QuestName="The Twin Ziggurats" QuestId="9176" GiverName="Magister Kaendris" GiverId="16239" />
+    <PickUp QuestName="Retaking Windrunner Spire" QuestId="9173" GiverName="High Executor Mavren" GiverId="16252" />
+    <PickUp QuestName="Rotting Hearts" QuestId="9216" GiverName="Magistrix Aminel" GiverId="16205" />
+    <PickUp QuestName="Spinal Dust" QuestId="9218" GiverName="Magistrix Aminel" GiverId="16205" />
+    <Objective QuestName="The Plagued Coast" QuestId="9149" Type="CollectItem" ItemId="22579" ItemName="Plagued Murloc Spine" CollectCount="6" />
+    <Objective QuestName="Into Occupied Territory" QuestId="9163" Type="CollectItem" ItemId="22590" ItemName="Night Elf Plans: An&apos;daroth" CollectCount="1" />
+    <Objective QuestName="Into Occupied Territory" QuestId="9163" Type="CollectItem" ItemId="22591" ItemName="Night Elf Plans: An&apos;owyn" CollectCount="1" />
+    <Objective QuestName="Into Occupied Territory" QuestId="9163" Type="CollectItem" ItemId="22592" ItemName="Night Elf Plans: Scrying on the Sin&apos;dorei" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="16350" MobName="Spindleweb Spider" KillCount="1" />
+    <Objective QuestName="Culinary Crunch" QuestId="9171" Type="CollectItem" ItemId="22644" ItemName="Crunchy Spider Leg" CollectCount="5" />
+    <Objective QuestName="Curbing the Plague" QuestId="9159" Type="KillMob" MobId="16351" MobName="Spindleweb Lurker" KillCount="8" />
+    <Objective QuestName="Curbing the Plague" QuestId="9159" Type="KillMob" MobId="16354" MobName="Vampiric Mistbat" KillCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="16323" MobName="Phantasmal Seeker" KillCount="1" />
+    <Objective QuestName="Windrunner Village" QuestId="9140" Type="CollectItem" ItemId="22566" ItemName="Phantasmal Substance" CollectCount="6" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="16324" MobName="Stonewing Slayer" KillCount="1" />
+    <Objective QuestName="Windrunner Village" QuestId="9140" Type="CollectItem" ItemId="22567" ItemName="Gargoyle Fragment" CollectCount="4" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="22597" ItemName="The Lady&apos;s Necklace" CollectCount="1" />
+    <PickUp QuestName="The Lady&apos;s Necklace" QuestId="9175" GiverName="Magistrix Aminel" GiverId="16205" />
+    <Objective QuestName="Retaking Windrunner Spire" QuestId="9173" Type="KillMob" MobId="16315" MobName="Deatholme Acolyte" KillCount="8" />
+    <Objective QuestName="Retaking Windrunner Spire" QuestId="9173" Type="KillMob" MobId="16314" MobName="Fallen Ranger" KillCount="10" />
+    <PickUp QuestName="Underlight Ore Samples" QuestId="9207" GiverName="Apprentice Shatharia" GiverId="16293" />
+    <Objective QuestName="Underlight Ore Samples" QuestId="9207" Type="CollectItem" ItemId="22634" ItemName="Underlight Ore" CollectCount="6" />
+    <Objective QuestName="Trouble at the Underlight Mines" QuestId="9192" Type="KillMob" MobId="16337" MobName="Blackpaw Shaman" KillCount="4" />
+    <Objective QuestName="Trouble at the Underlight Mines" QuestId="9192" Type="KillMob" MobId="16335" MobName="Blackpaw Scavenger" KillCount="6" />
+    <Objective QuestName="Trouble at the Underlight Mines" QuestId="9192" Type="KillMob" MobId="16334" MobName="Blackpaw Gnoll" KillCount="8" />
+    <Objective QuestName="The Twin Ziggurats" QuestId="9176" Type="CollectItem" ItemId="22598" ItemName="Stone of Light" CollectCount="1" />
+    <Objective QuestName="Spinal Dust" QuestId="9218" Type="CollectItem" ItemId="22642" ItemName="Spinal Dust" CollectCount="10" />
+    <Objective QuestName="Rotting Hearts" QuestId="9216" Type="CollectItem" ItemId="22641" ItemName="Rotting Heart" CollectCount="10" />
+    <Objective QuestName="The Twin Ziggurats" QuestId="9176" Type="CollectItem" ItemId="22599" ItemName="Stone of Flame" CollectCount="1" />
+    <TurnIn QuestName="Into Occupied Territory" QuestId="9163" TurnInName="Dame Auriferous" TurnInId="16231" />
+    <PickUp QuestName="Deliver the Plans to An&apos;telas" QuestId="9166" GiverName="Dame Auriferous" GiverId="16231" />
+    <TurnIn QuestName="Retaking Windrunner Spire" QuestId="9173" TurnInName="High Executor Mavren" TurnInId="16252" />
+    <TurnIn QuestName="The Lady&apos;s Necklace" QuestId="9175" TurnInName="High Executor Mavren" TurnInId="16252" />
+    <TurnIn QuestName="Trouble at the Underlight Mines" QuestId="9192" TurnInName="Deathstalker Maltendis" TurnInId="16251" />
+    <PickUp QuestName="The Sanctum of the Sun" QuestId="9151" GiverName="Magister Darenis" GiverId="16199" />
+    <TurnIn QuestName="Culinary Crunch" QuestId="9171" TurnInName="Master Chef Mouldier" TurnInId="16253" />
+    <TurnIn QuestName="Rotting Hearts" QuestId="9216" TurnInName="Magistrix Aminel" TurnInId="16205" />
+    <TurnIn QuestName="Spinal Dust" QuestId="9218" TurnInName="Magistrix Aminel" TurnInId="16205" />
+    <TurnIn QuestName="Windrunner Village" QuestId="9140" TurnInName="Arcanist Vandril" TurnInId="16197" />
+    <Objective QuestName="Troll Juju" QuestId="9199" Type="CollectItem" ItemId="22633" ItemName="Troll Juju" CollectCount="8" />
+    <PickUp QuestName="Escape from the Catacombs" QuestId="9212" GiverName="Ranger Lilatha" GiverId="16295" />
+    <TurnIn QuestName="Curbing the Plague" QuestId="9159" TurnInName="Farstrider Sedina" TurnInId="16202" />
+    <TurnIn QuestName="Escape from the Catacombs" QuestId="9212" TurnInName="Captain Helios" TurnInId="16220" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="16344" MobName="Shadowpine Headhunter" KillCount="1" />
+    <Objective QuestName="Shadowpine Weaponry" QuestId="9214" Type="CollectItem" ItemId="23165" ItemName="Headhunter Axe" CollectCount="3" />
+    <Objective QuestName="Attack on Zeb&apos;Tela" QuestId="9276" Type="KillMob" MobId="16469" MobName="Shadowpine Shadowcaster" KillCount="8" />
+    <Objective QuestName="Shadowpine Weaponry" QuestId="9214" Type="CollectItem" ItemId="23167" ItemName="Shadowcaster Mace" CollectCount="3" />
+    <Objective QuestName="Attack on Zeb&apos;Tela" QuestId="9276" Type="KillMob" MobId="16469" MobName="Shadowpine Shadowcaster" KillCount="8" />
+    <Objective QuestName="Attack on Zeb&apos;Tela" QuestId="9276" Type="KillMob" MobId="16344" MobName="Shadowpine Headhunter" KillCount="8" />
+    <TurnIn QuestName="Attack on Zeb&apos;Tela" QuestId="9276" TurnInName="Farstrider Solanna" TurnInId="16463" />
+    <PickUp QuestName="Assault on Zeb&apos;Nowa" QuestId="9277" GiverName="Farstrider Solanna" GiverId="16463" />
+    <PickUp QuestName="A Little Dash of Seasoning" QuestId="9275" GiverName="Apothecary Venustus" GiverId="16464" />
+    <TurnIn QuestName="Deliver the Plans to An&apos;telas" QuestId="9166" TurnInName="Magister Sylastor" TurnInId="16237" />
+    <PickUp QuestName="Deactivate An&apos;owyn" QuestId="9169" GiverName="Magister Sylastor" GiverId="16237" />
+    <Objective QuestName="Assault on Zeb&apos;Nowa" QuestId="9277" Type="KillMob" MobId="16345" MobName="Shadowpine Catlord" KillCount="10" />
+    <Objective QuestName="Shadowpine Weaponry" QuestId="9214" Type="CollectItem" ItemId="22677" ItemName="Catlord Claws" CollectCount="3" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="16346" MobName="Shadowpine Hexxer" KillCount="1" />
+    <Objective QuestName="Shadowpine Weaponry" QuestId="9214" Type="CollectItem" ItemId="23166" ItemName="Hexxer Stave" CollectCount="3" />
+    <Objective QuestName="Assault on Zeb&apos;Nowa" QuestId="9277" Type="KillMob" MobId="16345" MobName="Shadowpine Catlord" KillCount="10" />
+    <Objective QuestName="Assault on Zeb&apos;Nowa" QuestId="9277" Type="KillMob" MobId="16346" MobName="Shadowpine Hexxer" KillCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="16333" MobName="Sentinel Infiltrator" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="23191" ItemName="Crystal Controlling Orb" CollectCount="1" />
+    <TurnIn QuestName="Assault on Zeb&apos;Nowa" QuestId="9277" TurnInName="Farstrider Solanna" TurnInId="16463" />
+    <TurnIn QuestName="Shadowpine Weaponry" QuestId="9214" TurnInName="Captain Helios" TurnInId="16220" />
+    <TurnIn QuestName="A Little Dash of Seasoning" QuestId="9275" TurnInName="Apothecary Venustus" TurnInId="16464" />
+    <TurnIn QuestName="Deactivate An&apos;owyn" QuestId="9169" TurnInName="Magister Sylastor" TurnInId="16237" />
+    <TurnIn QuestName="The Twin Ziggurats" QuestId="9176" TurnInName="Magister Kaendris" TurnInId="16239" />
+    <TurnIn QuestName="Underlight Ore Samples" QuestId="9207" TurnInName="Magister Quallestis" TurnInId="16291" />
+    <TurnIn QuestName="The Sanctum of the Sun" QuestId="9151" TurnInName="Magister Idonis" TurnInId="16204" />
+    <PickUp QuestName="War on Deatholme" QuestId="9220" GiverName="Magister Idonis" GiverId="16204" />
+    <PickUp QuestName="Clearing the Way" QuestId="9281" GiverName="Apprentice Vor&apos;el" GiverId="16480" />
+    <Objective QuestName="Clearing the Way" QuestId="9281" Type="KillMob" MobId="16352" MobName="Greater Spindleweb" KillCount="10" />
+    <Objective QuestName="Clearing the Way" QuestId="9281" Type="KillMob" MobId="16349" MobName="Ghostclaw Ravager" KillCount="10" />
+    <Objective QuestName="War on Deatholme" QuestId="9220" Type="KillMob" MobId="16319" MobName="Nerubis Centurion" KillCount="6" />
+    <Objective QuestName="War on Deatholme" QuestId="9220" Type="KillMob" MobId="16320" MobName="Eye of Dar&apos;Khan" KillCount="5" />
+    <Objective QuestName="War on Deatholme" QuestId="9220" Type="KillMob" MobId="16321" MobName="Wailer" KillCount="6" />
+    <TurnIn QuestName="Clearing the Way" QuestId="9281" TurnInName="Apprentice Vor&apos;el" TurnInId="16480" />
+    <TurnIn QuestName="War on Deatholme" QuestId="9220" TurnInName="Magister Idonis" TurnInId="16204" />
+    <PickUp QuestName="Dar&apos;Khan&apos;s Lieutenants" QuestId="9170" GiverName="Magister Idonis" GiverId="16204" />
+    <PickUp QuestName="A Restorative Draught" QuestId="9877" GiverName="Arcanist Janeda" GiverId="16240" />
+    <TurnIn QuestName="A Restorative Draught" QuestId="9877" TurnInName="Apothecary Renzithen" TurnInId="16198" />
+    <PickUp QuestName="Captives at Deatholme" QuestId="9164" GiverName="Apothecary Renzithen" GiverId="16198" />
+    <TurnIn QuestName="Investigate the Amani Catacombs" QuestId="9193" TurnInName="Advisor Valwyn" TurnInId="16289" />
+    <TurnIn QuestName="Troll Juju" QuestId="9199" TurnInName="Deathstalker Maltendis" TurnInId="16251" />
+    <Objective QuestName="Dar&apos;Khan&apos;s Lieutenants" QuestId="9170" Type="KillMob" MobId="16248" MobName="Jurion the Deceiver" KillCount="1" />
+    <Objective QuestName="Dar&apos;Khan&apos;s Lieutenants" QuestId="9170" Type="KillMob" MobId="16249" MobName="Masophet the Black" KillCount="1" />
+    <Objective QuestName="Dar&apos;Khan&apos;s Lieutenants" QuestId="9170" Type="KillMob" MobId="16247" MobName="Borgoth the Bloodletter" KillCount="1" />
+    <Objective QuestName="Dar&apos;Khan&apos;s Lieutenants" QuestId="9170" Type="KillMob" MobId="16249" MobName="Masophet the Black" KillCount="1" />
+    <Objective QuestName="Dar&apos;Khan&apos;s Lieutenants" QuestId="9170" Type="KillMob" MobId="16247" MobName="Borgoth the Bloodletter" KillCount="1" />
+    <Objective QuestName="Dar&apos;Khan&apos;s Lieutenants" QuestId="9170" Type="KillMob" MobId="16250" MobName="Mirdoran the Fallen" KillCount="1" />
+    <TurnIn QuestName="Captives at Deatholme" QuestId="9164" TurnInName="Arcanist Janeda" TurnInId="16240" />
+    <TurnIn QuestName="Dar&apos;Khan&apos;s Lieutenants" QuestId="9170" TurnInName="Magister Idonis" TurnInId="16204" />
+    <PickUp QuestName="Journey to Undercity" QuestId="9177" GiverName="High Executor Mavren" GiverId="16252" />
+    <TurnIn QuestName="Journey to Undercity" QuestId="9177" TurnInName="Lady Sylvanas Windrunner" TurnInId="10181" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Extra Zones\\Ghostlands Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

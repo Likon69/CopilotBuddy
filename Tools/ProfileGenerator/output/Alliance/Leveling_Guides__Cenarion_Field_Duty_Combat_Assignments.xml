@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Cenarion Field Duty Combat Assignments</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Field Duty Combat Assignments" LogColor="Green" />
+    <PickUp QuestName="Field Duty" QuestId="8507" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="23024" ItemName="Prepared Field Duty Papers" CollectCount="1" />
+    <PickUp QuestName="Field Duty Papers" QuestId="8508" GiverName="Captain Blackanvil" GiverId="15440" />
+    <Objective QuestName="Field Duty" QuestId="8507" Type="CollectItem" ItemId="20810" ItemName="Signed Field Duty Papers" CollectCount="1" />
+    <TurnIn QuestName="Field Duty" QuestId="8507" TurnInName="Windcaller Kaldon" TurnInId="15540" />
+    <PickUp QuestName="Target: Hive&apos;Ashi Defenders" QuestId="8770" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive&apos;Ashi Sandstalkers" QuestId="8771" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive&apos;Ashi Workers" QuestId="8502" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive&apos;Zora Reavers" QuestId="8773" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive&apos;Zora Hive Sisters" QuestId="8539" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive&apos;Zora Waywatchers" QuestId="8772" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive&apos;Zora Tunnelers" QuestId="8687" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive&apos;Regal Ambushers" QuestId="8774" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive&apos;Regal Spitfires" QuestId="8775" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive&apos;Regal Slavemakers" QuestId="8776" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive&apos;Regal Burrowers" QuestId="8777" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive&apos;Ashi Stingers" QuestId="8501" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <Objective QuestName="Target: Hive&apos;Ashi Defenders" QuestId="8770" Type="KillMob" MobId="11722" MobName="Hive&apos;Ashi Defender" KillCount="30" />
+    <Objective QuestName="Target: Hive&apos;Ashi Sandstalkers" QuestId="8771" Type="KillMob" MobId="11723" MobName="Hive&apos;Ashi Sandstalker" KillCount="30" />
+    <Objective QuestName="Target: Hive&apos;Ashi Workers" QuestId="8502" Type="KillMob" MobId="11721" MobName="Hive&apos;Ashi Worker" KillCount="30" />
+    <Objective QuestName="Target: Hive&apos;Zora Reavers" QuestId="8773" Type="KillMob" MobId="11728" MobName="Hive&apos;Zora Reaver" KillCount="30" />
+    <Objective QuestName="Target: Hive&apos;Zora Hive Sisters" QuestId="8539" Type="KillMob" MobId="11729" MobName="Hive&apos;Zora Hive Sister" KillCount="30" />
+    <Objective QuestName="Target: Hive&apos;Zora Waywatchers" QuestId="8772" Type="KillMob" MobId="11725" MobName="Hive&apos;Zora Waywatcher" KillCount="30" />
+    <Objective QuestName="Target: Hive&apos;Zora Tunnelers" QuestId="8687" Type="KillMob" MobId="11726" MobName="Hive&apos;Zora Tunneler" KillCount="30" />
+    <Objective QuestName="Target: Hive&apos;Regal Ambushers" QuestId="8774" Type="KillMob" MobId="11730" MobName="Hive&apos;Regal Ambusher" KillCount="30" />
+    <Objective QuestName="Target: Hive&apos;Regal Spitfires" QuestId="8775" Type="KillMob" MobId="11732" MobName="Hive&apos;Regal Spitfire" KillCount="30" />
+    <Objective QuestName="Target: Hive&apos;Regal Slavemakers" QuestId="8776" Type="KillMob" MobId="11733" MobName="Hive&apos;Regal Slavemaker" KillCount="30" />
+    <Objective QuestName="Target: Hive&apos;Regal Burrowers" QuestId="8777" Type="KillMob" MobId="11731" MobName="Hive&apos;Regal Burrower" KillCount="30" />
+    <Objective QuestName="Target: Hive&apos;Ashi Stingers" QuestId="8501" Type="KillMob" MobId="11698" MobName="Hive&apos;Ashi Stinger" KillCount="30" />
+    <TurnIn QuestName="Target: Hive&apos;Ashi Defenders" QuestId="8770" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive&apos;Ashi Sandstalkers" QuestId="8771" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive&apos;Ashi Workers" QuestId="8502" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive&apos;Zora Reavers" QuestId="8773" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive&apos;Zora Hive Sisters" QuestId="8539" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive&apos;Zora Waywatchers" QuestId="8772" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive&apos;Zora Tunnelers" QuestId="8687" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive&apos;Regal Ambushers" QuestId="8774" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive&apos;Regal Spitfires" QuestId="8775" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive&apos;Regal Slavemakers" QuestId="8776" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive&apos;Regal Burrowers" QuestId="8777" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive&apos;Ashi Stingers" QuestId="8501" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Cenarion Field Duty Combat Assignments Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

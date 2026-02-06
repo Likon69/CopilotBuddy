@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\The Barrens (21-23)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>23</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Barrens (21-23)" LogColor="Green" />
+    <TurnIn QuestName="Further Instructions" QuestId="1094" TurnInName="Sputtervalve" TurnInId="3442" />
+    <PickUp QuestName="Further Instructions" QuestId="1095" GiverName="Sputtervalve" GiverId="3442" />
+    <TurnIn QuestName="Deepmoss Spider Eggs" QuestId="1069" TurnInName="Mebok Mizzyrix" TurnInId="3446" />
+    <TurnIn QuestName="Call of Water" QuestId="1534" TurnInName="Brine" TurnInId="5899" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Call of Water" QuestId="220" GiverName="Brine" GiverId="5899" />
+    </If>
+    <TurnIn QuestName="Call of Water" QuestId="220" TurnInName="Islen Waterseer" TurnInId="5901" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Call of Water" QuestId="63" GiverName="Islen Waterseer" GiverId="5901" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="58" MobName="Corrupt Minor Manifestation of Water" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Call of Water" QuestId="63" Type="CollectItem" ItemId="7812" ItemName="Corrupt Manifestation&apos;s Bracers" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Call of Water" QuestId="63" TurnInName="Islen Waterseer" TurnInId="5901" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Call of Water" QuestId="100" GiverName="Islen Waterseer" GiverId="5901" />
+    </If>
+    <TurnIn QuestName="Call of Water" QuestId="100" TurnInName="Minor Manifestation of Water" TurnInId="5895" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Call of Water" QuestId="96" GiverName="Minor Manifestation of Water" GiverId="5895" />
+      <TurnIn QuestName="Call of Water" QuestId="96" TurnInName="Islen Waterseer" TurnInId="5901" />
+    </If>
+    <PickUp QuestName="Betrayal from Within" QuestId="879" GiverName="Mangletooth" GiverId="3430" />
+    <PickUp QuestName="Weapons of Choice" QuestId="893" GiverName="Tatternack Steelforge" GiverId="3433" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3473" MobName="Owatanka" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5102" ItemName="Owatanka&apos;s Tailspike" CollectCount="1" />
+    <PickUp QuestName="Owatanka" QuestId="884" GiverName="Innkeeper Byula" GiverId="7714" />
+    <Objective QuestName="Egg Hunt" QuestId="868" Type="CollectItem" ItemId="5058" ItemName="Silithid Egg" CollectCount="12" />
+    <PickUp QuestName="Gann&apos;s Reclamation" QuestId="843" GiverName="Gann Stonespire" GiverId="3341" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3436" MobName="Kuz" KillCount="1" />
+    <Objective QuestName="Betrayal from Within" QuestId="879" Type="CollectItem" ItemId="5074" ItemName="Kuz&apos;s Skull" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3434" MobName="Nak" KillCount="1" />
+    <Objective QuestName="Betrayal from Within" QuestId="879" Type="CollectItem" ItemId="5073" ItemName="Nak&apos;s Skull" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3435" MobName="Lok Orcbane" KillCount="1" />
+    <Objective QuestName="Betrayal from Within" QuestId="879" Type="CollectItem" ItemId="5072" ItemName="Lok&apos;s Skull" CollectCount="1" />
+    <Objective QuestName="Weapons of Choice" QuestId="893" Type="CollectItem" ItemId="5093" ItemName="Razormane Backstabber" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3458" MobName="Razormane Seer" KillCount="1" />
+    <Objective QuestName="Weapons of Choice" QuestId="893" Type="CollectItem" ItemId="5092" ItemName="Charred Razormane Wand" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3459" MobName="Razormane Warfrenzy" KillCount="1" />
+    <Objective QuestName="Weapons of Choice" QuestId="893" Type="CollectItem" ItemId="5094" ItemName="Razormane War Shield" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3472" MobName="Washte Pawne" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5103" ItemName="Washte Pawne&apos;s Feather" CollectCount="1" />
+    <PickUp QuestName="Washte Pawne" QuestId="885" GiverName="Gann Stonespire" GiverId="3341" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3238" MobName="Stormhide" KillCount="1" />
+    <Objective QuestName="Chen&apos;s Empty Keg" QuestId="822" Type="CollectItem" ItemId="4898" ItemName="Lightning Gland" CollectCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3249" MobName="Greater Thunderhawk" KillCount="1" />
+    <Objective QuestName="Chen&apos;s Empty Keg" QuestId="822" Type="CollectItem" ItemId="4897" ItemName="Thunderhawk Saliva Gland" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3392" MobName="Prospector Khazgorm" KillCount="1" />
+    <Objective QuestName="Gann&apos;s Reclamation" QuestId="843" Type="CollectItem" ItemId="5006" ItemName="Khazgorm&apos;s Journal" CollectCount="1" />
+    <Objective QuestName="Gann&apos;s Reclamation" QuestId="843" Type="KillMob" MobId="3374" MobName="Bael&apos;dun Excavator" KillCount="15" />
+    <Objective QuestName="Gann&apos;s Reclamation" QuestId="843" Type="KillMob" MobId="3375" MobName="Bael&apos;dun Foreman" KillCount="5" />
+    <TurnIn QuestName="Gann&apos;s Reclamation" QuestId="843" TurnInName="Gann Stonespire" TurnInId="3341" />
+    <PickUp QuestName="Revenge of Gann" QuestId="846" GiverName="Gann Stonespire" GiverId="3341" />
+    <TurnIn QuestName="Weapons of Choice" QuestId="893" TurnInName="Tatternack Steelforge" TurnInId="3433" />
+    <TurnIn QuestName="Owatanka" QuestId="884" TurnInName="Jorn Skyseer" TurnInId="3387" />
+    <TurnIn QuestName="Washte Pawne" QuestId="885" TurnInName="Jorn Skyseer" TurnInId="3387" />
+    <TurnIn QuestName="Betrayal from Within" QuestId="879" TurnInName="Mangletooth" TurnInId="3430" />
+    <PickUp QuestName="Betrayal from Within" QuestId="906" GiverName="Mangletooth" GiverId="3430" />
+    <TurnIn QuestName="Betrayal from Within" QuestId="906" TurnInName="Thork" TurnInId="3429" />
+    <TurnIn QuestName="Egg Hunt" QuestId="868" TurnInName="Korran" TurnInId="3428" />
+    <TurnIn QuestName="Chen&apos;s Empty Keg" QuestId="822" TurnInName="Brewmaster Drohn" TurnInId="3292" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Barrens (21-23) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Stonetalon_Mountains_(23-24)" />
+  </QuestOrder>
+</HBProfile>

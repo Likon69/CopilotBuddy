@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Swamp of Sorrows (39-40)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>41</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="1389" Name="Draenethyst Crystals">
+    <Objective Type="CollectItem" ItemId="6071" CollectCount="6">
+      <CollectFrom>
+        <GameObject Name="Draenethyst Crystals" Id="22550" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-10080.8" Y="-3486.49" Z="23.7" />
+        <Hotspot X="-10063.3" Y="-3501.32" Z="23.07" />
+        <Hotspot X="-10002.2" Y="-3539.66" Z="22.92" />
+        <Hotspot X="-9981.25" Y="-3652.04" Z="21.81" />
+        <Hotspot X="-9970.3" Y="-3712.3" Z="22.85" />
+        <Hotspot X="-9968.0" Y="-3708.24" Z="22.18" />
+        <Hotspot X="-9964.19" Y="-3646.9" Z="22.15" />
+        <Hotspot X="-9960.04" Y="-3603.0" Z="22.25" />
+        <Hotspot X="-9931.97" Y="-3722.25" Z="21.68" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Swamp of Sorrows (39-40)" LogColor="Green" />
+    <PickUp QuestName="Nothing But The Truth" QuestId="1372" GiverName="Deathstalker Zraedus" GiverId="5418" />
+    <TurnIn QuestName="Nothing But The Truth" QuestId="1372" TurnInName="Apothecary Faustin" TurnInId="5414" />
+    <Objective QuestName="Dream Dust in the Swamp" QuestId="1116" Type="CollectItem" ItemId="5803" ItemName="Speck of Dream Dust" CollectCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="5477" MobName="Noboru the Cudgel" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="6196" ItemName="Noboru&apos;s Cudgel" CollectCount="1" />
+    <PickUp QuestName="Noboru the Cudgel" QuestId="1392" GiverName="Apothecary Faustin" GiverId="5414" />
+    <TurnIn QuestName="Noboru the Cudgel" QuestId="1392" TurnInName="Magtoor" TurnInId="1776" />
+    <PickUp QuestName="Draenethyst Crystals" QuestId="1389" GiverName="Magtoor" GiverId="1776" />
+    <PickUp QuestName="Lack of Surplus" QuestId="698" GiverName="Dar" GiverId="5591" />
+    <PickUp QuestName="Little Morsels" QuestId="9440" GiverName="Cersei Dusksinger" GiverId="17109" />
+    <PickUp QuestName="Pool of Tears" QuestId="1424" GiverName="Fel&apos;zerul" GiverId="1443" />
+    <PickUp QuestName="Neeka Bloodscar" QuestId="1418" GiverName="Helgrum the Swift" GiverId="1442" />
+    <Objective QuestName="Pool of Tears" QuestId="1424" Type="CollectItem" ItemId="6175" ItemName="Atal&apos;ai Artifact" CollectCount="10" />
+    <Objective QuestName="Lack of Surplus" QuestId="698" Type="CollectItem" ItemId="6169" ItemName="Unprepared Sawtooth Flank" CollectCount="8" />
+    <TurnIn QuestName="Lack of Surplus" QuestId="698" TurnInName="Tok&apos;Kar" TurnInId="5592" />
+    <Objective QuestName="Draenethyst Crystals" QuestId="1389" Type="CollectItem" ItemId="6071" ItemName="Draenethyst Crystal" CollectCount="6" />
+    <TurnIn QuestName="Draenethyst Crystals" QuestId="1389" TurnInName="Magtoor" TurnInId="1776" />
+    <TurnIn QuestName="Little Morsels" QuestId="9440" TurnInName="Cersei Dusksinger" TurnInId="17109" />
+    <TurnIn QuestName="Pool of Tears" QuestId="1424" TurnInName="Fel&apos;zerul" TurnInId="1443" />
+    <PickUp QuestName="The Atal&apos;ai Exile" QuestId="1429" GiverName="Fel&apos;zerul" GiverId="1443" />
+    <TurnIn QuestName="Parts of the Swarm" QuestId="1184" TurnInName="Belgrom Rockmaul" TurnInId="4485" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Swamp of Sorrows (39-40) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Badlands_(41-42)" />
+  </QuestOrder>
+</HBProfile>

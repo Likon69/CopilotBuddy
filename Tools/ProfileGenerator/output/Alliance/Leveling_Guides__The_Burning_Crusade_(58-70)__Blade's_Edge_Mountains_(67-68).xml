@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>68</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="10510" Name="Into the Draenethyst Mine">
+    <Objective Type="CollectItem" ItemId="30315" CollectCount="5">
+      <CollectFrom>
+        <GameObject Name="Draenethyst Mine Crystal" Id="184689" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1310.23" Y="6705.16" Z="-18.41" />
+        <Hotspot X="1319.47" Y="6672.38" Z="-19.12" />
+        <Hotspot X="1343.69" Y="6540.98" Z="6.09" />
+        <Hotspot X="1351.09" Y="6585.19" Z="-7.48" />
+        <Hotspot X="1361.43" Y="6612.56" Z="-12.29" />
+        <Hotspot X="1368.66" Y="6687.15" Z="-21.06" />
+        <Hotspot X="1388.25" Y="6547.35" Z="11.7" />
+        <Hotspot X="1392.39" Y="6637.55" Z="-15.64" />
+        <Hotspot X="1395.99" Y="6693.23" Z="-18.15" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10511" Name="Strange Brew">
+    <Objective Type="CollectItem" ItemId="29443" CollectCount="11">
+      <CollectFrom>
+        <GameObject Name="Bloodmaul Brew Keg" Id="184504" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1495.65" Y="6378.57" Z="34.98" />
+        <Hotspot X="1526.51" Y="6298.11" Z="3.65" />
+        <Hotspot X="1528.92" Y="6388.73" Z="0.9" />
+        <Hotspot X="1531.63" Y="6331.71" Z="3.27" />
+        <Hotspot X="1572.5" Y="6298.31" Z="3.74" />
+        <Hotspot X="1578.73" Y="6364.11" Z="3.53" />
+        <Hotspot X="1586.15" Y="6258.03" Z="4.16" />
+        <Hotspot X="1599.07" Y="6267.37" Z="26.76" />
+        <Hotspot X="1653.22" Y="6288.16" Z="3.63" />
+        <Hotspot X="1699.15" Y="6252.69" Z="2.1" />
+        <Hotspot X="1709.99" Y="6313.69" Z="33.36" />
+        <Hotspot X="1959.06" Y="6476.45" Z="2.08" />
+        <Hotspot X="2244.39" Y="6323.18" Z="2.09" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68)" LogColor="Green" />
+    <PickUp QuestName="No Time for Curiosity" QuestId="9794" GiverName="Timothy Daniels" GiverId="18019" />
+    <PickUp QuestName="Killing the Crawlers" QuestId="10927" GiverName="Sentinel Moonwhisper" GiverId="22488" />
+    <Objective QuestName="Killing the Crawlers" QuestId="10927" Type="KillMob" MobId="22044" MobName="Cavern Crawler" KillCount="6" />
+    <TurnIn QuestName="No Time for Curiosity" QuestId="9794" TurnInName="Kialon Nightblade" TurnInId="18098" />
+    <PickUp QuestName="The Den Mother" QuestId="10690" GiverName="Kialon Nightblade" GiverId="18098" />
+    <PickUp QuestName="The Encroaching Wilderness" QuestId="10455" GiverName="Rina Moonspring" GiverId="21066" />
+    <TurnIn QuestName="Killing the Crawlers" QuestId="10927" TurnInName="Commander Skyshadow" TurnInId="21158" />
+    <PickUp QuestName="The Bloodmaul Ogres" QuestId="10502" GiverName="Commander Skyshadow" GiverId="21158" />
+    <PickUp QuestName="Malaise" QuestId="10555" GiverName="Daranelle" GiverId="21469" />
+    <PickUp QuestName="Into the Draenethyst Mine" QuestId="10510" GiverName="Bronwyn Stouthammer" GiverId="21197" />
+    <PickUp QuestName="Strange Brew" QuestId="10511" GiverName="Borgrim Stouthammer" GiverId="21151" />
+    <Objective QuestName="The Encroaching Wilderness" QuestId="10455" Type="KillMob" MobId="21022" MobName="Grovestalker Lynx" KillCount="12" />
+    <Objective QuestName="Malaise" QuestId="10555" Type="CollectItem" ItemId="30529" ItemName="Plucked Lashh&apos;an Feather" CollectCount="18" />
+    <TurnIn QuestName="Malaise" QuestId="10555" TurnInName="Amerun Leafshade" TurnInId="18937" />
+    <PickUp QuestName="Scratches" QuestId="10556" GiverName="Amerun Leafshade" GiverId="18937" />
+    <TurnIn QuestName="Scratches" QuestId="10556" TurnInName="Daranelle" TurnInId="21469" />
+    <TurnIn QuestName="The Encroaching Wilderness" QuestId="10455" TurnInName="Rina Moonspring" TurnInId="21066" />
+    <PickUp QuestName="Marauding Wolves" QuestId="10456" GiverName="Rina Moonspring" GiverId="21066" />
+    <Objective QuestName="Into the Draenethyst Mine" QuestId="10510" Type="CollectItem" ItemId="30315" ItemName="Draenethyst Mine Crystal" CollectCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="19957" MobName="Bloodmaul Brewmaster" KillCount="1" />
+    <Objective QuestName="Strange Brew" QuestId="10511" Type="CollectItem" ItemId="29443" ItemName="Bloodmaul Brutebane Brew" CollectCount="11" />
+    <TurnIn QuestName="Into the Draenethyst Mine" QuestId="10510" TurnInName="Bronwyn Stouthammer" TurnInId="21197" />
+    <TurnIn QuestName="Strange Brew" QuestId="10511" TurnInName="Borgrim Stouthammer" TurnInId="21151" />
+    <PickUp QuestName="Getting the Bladespire Tanked" QuestId="10512" GiverName="Borgrim Stouthammer" GiverId="21151" />
+    <TurnIn QuestName="The Bloodmaul Ogres" QuestId="10502" TurnInName="Commander Skyshadow" TurnInId="21158" />
+    <PickUp QuestName="The Bladespire Ogres" QuestId="10504" GiverName="Commander Skyshadow" GiverId="21158" />
+    <Objective QuestName="The Den Mother" QuestId="10690" Type="KillMob" MobId="21956" MobName="Rema" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20748" MobName="Thunderlord Dire Wolf" KillCount="1" />
+    <Objective QuestName="Marauding Wolves" QuestId="10456" Type="CollectItem" ItemId="30184" ItemName="Thunderlord Dire Wolf Tail" CollectCount="4" />
+    <TurnIn QuestName="Marauding Wolves" QuestId="10456" TurnInName="Rina Moonspring" TurnInId="21066" />
+    <PickUp QuestName="Protecting Our Own" QuestId="10457" GiverName="Rina Moonspring" GiverId="21066" />
+    <TurnIn QuestName="The Den Mother" QuestId="10690" TurnInName="Commander Skyshadow" TurnInId="21158" />
+    <TurnIn QuestName="Protecting Our Own" QuestId="10457" TurnInName="Rina Moonspring" TurnInId="21066" />
+    <PickUp QuestName="A Dire Situation" QuestId="10506" GiverName="Rina Moonspring" GiverId="21066" />
+    <PickUp QuestName="The Trappings of a Vindicator" QuestId="10516" GiverName="Vindicator Vuuleen" GiverId="21277" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20731" MobName="Droggam" KillCount="1" />
+    <Objective QuestName="The Trappings of a Vindicator" QuestId="10516" Type="CollectItem" ItemId="30413" ItemName="Vindicator Vuuleen&apos;s Blade" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20726" MobName="Mugdorg" KillCount="1" />
+    <Objective QuestName="The Trappings of a Vindicator" QuestId="10516" Type="CollectItem" ItemId="30415" ItemName="Vindicator Vuuleen&apos;s Shield" CollectCount="1" />
+    <TurnIn QuestName="The Trappings of a Vindicator" QuestId="10516" TurnInName="Vindicator Vuuleen" TurnInId="21277" />
+    <PickUp QuestName="Gorr&apos;Dim, Your Time Has Come..." QuestId="10517" GiverName="Vindicator Vuuleen" GiverId="21277" />
+    <Objective QuestName="Gorr&apos;Dim, Your Time Has Come..." QuestId="10517" Type="KillMob" MobId="20732" MobName="Gorr&apos;dim" KillCount="1" />
+    <TurnIn QuestName="Gorr&apos;Dim, Your Time Has Come..." QuestId="10517" TurnInName="Vindicator Vuuleen" TurnInId="21277" />
+    <PickUp QuestName="Planting the Banner" QuestId="10518" GiverName="Vindicator Vuuleen" GiverId="21277" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21296" MobName="Bladespire Champion" KillCount="1" />
+    <Objective QuestName="Planting the Banner" QuestId="10518" Type="CollectItem" ItemId="30416" ItemName="Bladespire Clan Banner" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20116" MobName="Gurn Grubnosh" KillCount="1" />
+    <Objective QuestName="Planting the Banner" QuestId="10518" Type="CollectItem" ItemId="30417" ItemName="Helm of Gurn Grubnosh" CollectCount="1" />
+    <TurnIn QuestName="A Dire Situation" QuestId="10506" TurnInName="Rina Moonspring" TurnInId="21066" />
+    <TurnIn QuestName="The Bladespire Ogres" QuestId="10504" TurnInName="Commander Skyshadow" TurnInId="21158" />
+    <TurnIn QuestName="Planting the Banner" QuestId="10518" TurnInName="Commander Skyshadow" TurnInId="21158" />
+    <PickUp QuestName="Where Did Those Darn Gnomes Go?" QuestId="10580" GiverName="Commander Skyshadow" GiverId="21158" />
+    <TurnIn QuestName="Getting the Bladespire Tanked" QuestId="10512" TurnInName="Borgrim Stouthammer" TurnInId="21151" />
+    <TurnIn QuestName="Where Did Those Darn Gnomes Go?" QuestId="10580" TurnInName="R-3D0" TurnInId="21690" />
+    <PickUp QuestName="Follow the Breadcrumbs" QuestId="10581" GiverName="R-3D0" GiverId="21690" />
+    <PickUp QuestName="Crystal Clear" QuestId="10608" GiverName="Nickwinkle the Metro-Gnome" GiverId="21755" />
+    <TurnIn QuestName="Follow the Breadcrumbs" QuestId="10581" TurnInName="Toshley" TurnInId="21691" />
+    <PickUp QuestName="Picking Up Some Power Converters" QuestId="10584" GiverName="Toshley" GiverId="21691" />
+    <PickUp QuestName="What Came First, the Drake or the Egg?" QuestId="10609" GiverName="Fizit &quot;Doc&quot; Clocktock" GiverId="21110" />
+    <PickUp QuestName="Test Flight: The Zephyrium Capacitorium" QuestId="10557" GiverName="Tally Zapnabber" GiverId="21460" />
+    <TurnIn QuestName="Test Flight: The Zephyrium Capacitorium" QuestId="10557" TurnInName="Tally Zapnabber" TurnInId="21460" />
+    <PickUp QuestName="Test Flight: The Singing Ridge" QuestId="10710" GiverName="Tally Zapnabber" GiverId="21460" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21729" MobName="Electromental" KillCount="1" />
+    <TurnIn QuestName="Picking Up Some Power Converters" QuestId="10584" TurnInName="Toshley" TurnInId="21691" />
+    <PickUp QuestName="Ride the Lightning" QuestId="10657" GiverName="Toshley" GiverId="21691" />
+    <PickUp QuestName="Ridgespine Menace" QuestId="10620" GiverName="Dizzy Dina" GiverId="21824" />
+    <PickUp QuestName="Cutting Your Teeth" QuestId="10632" GiverName="Razak Ironsides" GiverId="21118" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="30539" ItemName="Tally&apos;s Waiver (Signed)" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20749" MobName="Scalewing Serpent" KillCount="1" />
+    <Objective QuestName="Ride the Lightning" QuestId="10657" Type="CollectItem" ItemId="30849" ItemName="Scalewing Lightning Gland" CollectCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20751" MobName="Daggermaw Lashtail" KillCount="1" />
+    <Objective QuestName="Cutting Your Teeth" QuestId="10632" Type="CollectItem" ItemId="30798" ItemName="Extra Sharp Daggermaw Tooth" CollectCount="5" />
+    <Objective QuestName="Ridgespine Menace" QuestId="10620" Type="KillMob" MobId="20714" MobName="Ridgespine Stalker" KillCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21821" MobName="Proto-Nether Drake" KillCount="1" />
+    <Objective QuestName="What Came First, the Drake or the Egg?" QuestId="10609" Type="CollectItem" ItemId="30743" ItemName="Proto-Nether Drake Essence" CollectCount="3" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21817" MobName="Adolescent Nether Drake" KillCount="1" />
+    <Objective QuestName="What Came First, the Drake or the Egg?" QuestId="10609" Type="CollectItem" ItemId="30782" ItemName="Adolescent Nether Drake Essence" CollectCount="3" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21820" MobName="Mature Nether Drake" KillCount="1" />
+    <Objective QuestName="What Came First, the Drake or the Egg?" QuestId="10609" Type="CollectItem" ItemId="30783" ItemName="Mature Nether Drake Essence" CollectCount="3" />
+    <Objective QuestName="Crystal Clear" QuestId="10608" Type="KillMob" MobId="21189" MobName="Crystal Flayer" KillCount="10" />
+    <TurnIn QuestName="What Came First, the Drake or the Egg?" QuestId="10609" TurnInName="Fizit &quot;Doc&quot; Clocktock" TurnInId="21110" />
+    <TurnIn QuestName="Cutting Your Teeth" QuestId="10632" TurnInName="Razak Ironsides" TurnInId="21118" />
+    <TurnIn QuestName="Test Flight: The Singing Ridge" QuestId="10710" TurnInName="Tally Zapnabber" TurnInId="21460" />
+    <TurnIn QuestName="Ride the Lightning" QuestId="10657" TurnInName="Toshley" TurnInId="21691" />
+    <PickUp QuestName="Trapping the Light Fantastic" QuestId="10674" GiverName="Toshley" GiverId="21691" />
+    <TurnIn QuestName="Ridgespine Menace" QuestId="10620" TurnInName="Dizzy Dina" TurnInId="21824" />
+    <PickUp QuestName="More than a Pound of Flesh" QuestId="10671" GiverName="Dizzy Dina" GiverId="21824" />
+    <TurnIn QuestName="Crystal Clear" QuestId="10608" TurnInName="Nickwinkle the Metro-Gnome" TurnInId="21755" />
+    <PickUp QuestName="Gauging the Resonant Frequency" QuestId="10594" GiverName="Nickwinkle the Metro-Gnome" GiverId="21755" />
+    <PickUp QuestName="Test Flight: Razaan&apos;s Landing" QuestId="10711" GiverName="Tally Zapnabber" GiverId="21460" />
+    <TurnIn QuestName="Gauging the Resonant Frequency" QuestId="10594" TurnInName="Nickwinkle the Metro-Gnome" TurnInId="21755" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="20668" MobName="Fiendling Flesh Beast" KillCount="1" />
+    <Objective QuestName="More than a Pound of Flesh" QuestId="10671" Type="CollectItem" ItemId="30840" ItemName="Ether-Energized Flesh" CollectCount="5" />
+    <TurnIn QuestName="Test Flight: Razaan&apos;s Landing" QuestId="10711" TurnInName="Tally Zapnabber" TurnInId="21460" />
+    <TurnIn QuestName="Trapping the Light Fantastic" QuestId="10674" TurnInName="Toshley" TurnInId="21691" />
+    <PickUp QuestName="Show Them Gnome Mercy!" QuestId="10675" GiverName="Toshley" GiverId="21691" />
+    <TurnIn QuestName="More than a Pound of Flesh" QuestId="10671" TurnInName="Dizzy Dina" TurnInId="21824" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21057" MobName="Nexus-Prince Razaan" KillCount="1" />
+    <Objective QuestName="Show Them Gnome Mercy!" QuestId="10675" Type="CollectItem" ItemId="30890" ItemName="Collection of Souls" CollectCount="1" />
+    <TurnIn QuestName="Show Them Gnome Mercy!" QuestId="10675" TurnInName="Toshley" TurnInId="21691" />
+    <PickUp QuestName="Test Flight: Ruuan Weald" QuestId="10712" GiverName="Tally Zapnabber" GiverId="21460" />
+    <Objective QuestName="Test Flight: Ruuan Weald" QuestId="10712" Type="CollectItem" ItemId="31123" ItemName="Spinning Nether-weather Vane" CollectCount="1" />
+    <PickUp QuestName="A Time for Negotiation..." QuestId="10682" GiverName="Tree Warden Chawn" GiverId="22007" />
+    <PickUp QuestName="Little Embers" QuestId="10770" GiverName="Mosswood the Ancient" GiverId="22053" />
+    <PickUp QuestName="From the Ashes" QuestId="10771" GiverName="Mosswood the Ancient" GiverId="22053" />
+    <PickUp QuestName="Creating the Pendant" QuestId="10567" GiverName="Timeon" GiverId="21782" />
+    <PickUp QuestName="A Date with Dorgok" QuestId="10795" GiverName="Commander Haephus Stonewall" GiverId="22149" />
+    <PickUp QuestName="Crush the Bloodmaul Camp!" QuestId="10796" GiverName="Lieutenant Fairweather" GiverId="22150" />
+    <PickUp QuestName="Culling the Wild" QuestId="10753" GiverName="Faradrella" GiverId="22133" />
+    <TurnIn QuestName="Test Flight: Ruuan Weald" QuestId="10712" TurnInName="O&apos;Mally Zapnabber" TurnInId="22020" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21300" MobName="Fel Corrupter" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="31384" ItemName="Damaged Mask" CollectCount="1" />
+    <PickUp QuestName="Damaged Mask" QuestId="10810" GiverName="O&apos;Mally Zapnabber" GiverId="22020" />
+    <Objective QuestName="Culling the Wild" QuestId="10753" Type="KillMob" MobId="21123" MobName="Felsworn Scalewing" KillCount="4" />
+    <Objective QuestName="Culling the Wild" QuestId="10753" Type="KillMob" MobId="21124" MobName="Felsworn Daggermaw" KillCount="4" />
+    <Objective QuestName="Culling the Wild" QuestId="10753" Type="KillMob" MobId="21300" MobName="Fel Corrupter" KillCount="2" />
+    <Objective QuestName="Little Embers" QuestId="10770" Type="KillMob" MobId="21021" MobName="Scorch Imp" KillCount="8" />
+    <TurnIn QuestName="Damaged Mask" QuestId="10810" TurnInName="O&apos;Mally Zapnabber" TurnInId="22020" />
+    <PickUp QuestName="Mystery Mask" QuestId="10812" GiverName="O&apos;Mally Zapnabber" GiverId="22020" />
+    <TurnIn QuestName="Mystery Mask" QuestId="10812" TurnInName="Wildlord Antelarion" TurnInId="22127" />
+    <PickUp QuestName="Felsworn Gas Mask" QuestId="10819" GiverName="Wildlord Antelarion" GiverId="22127" />
+    <TurnIn QuestName="Little Embers" QuestId="10770" TurnInName="Mosswood the Ancient" TurnInId="22053" />
+    <TurnIn QuestName="From the Ashes" QuestId="10771" TurnInName="Mosswood the Ancient" TurnInId="22053" />
+    <TurnIn QuestName="Culling the Wild" QuestId="10753" TurnInName="Faradrella" TurnInId="22133" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="30704" ItemName="Ruuan&apos;ok Claw" CollectCount="6" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21767" MobName="Harbinger of the Raven" KillCount="1" />
+    <Objective QuestName="Creating the Pendant" QuestId="10567" Type="CollectItem" ItemId="30706" ItemName="Harbinger&apos;s Pendant" CollectCount="1" />
+    <TurnIn QuestName="Creating the Pendant" QuestId="10567" TurnInName="Timeon" TurnInId="21782" />
+    <PickUp QuestName="Whispers of the Raven God" QuestId="10607" GiverName="Timeon" GiverId="21782" />
+    <TurnIn QuestName="A Time for Negotiation..." QuestId="10682" TurnInName="Tree Warden Chawn" TurnInId="22007" />
+    <PickUp QuestName="...and a Time for Action" QuestId="10713" GiverName="Tree Warden Chawn" GiverId="22007" />
+    <PickUp QuestName="Poaching from Poachers" QuestId="10717" GiverName="Samia Inkling" GiverId="21983" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="31120" ItemName="Meeting Note" CollectCount="1" />
+    <PickUp QuestName="Did You Get The Note?" QuestId="10719" GiverName="Samia Inkling" GiverId="21983" />
+    <Objective QuestName="...and a Time for Action" QuestId="10713" Type="KillMob" MobId="21810" MobName="Wyrmcult Hewer" KillCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="21809" MobName="Wyrmcult Poacher" KillCount="1" />
+    <Objective QuestName="Poaching from Poachers" QuestId="10717" Type="CollectItem" ItemId="31119" ItemName="Wyrmcult Net" CollectCount="5" />
+    <TurnIn QuestName="Poaching from Poachers" QuestId="10717" TurnInName="Samia Inkling" TurnInId="21983" />
+    <PickUp QuestName="Whelps of the Wyrmcult" QuestId="10747" GiverName="Samia Inkling" GiverId="21983" />
+    <TurnIn QuestName="...and a Time for Action" QuestId="10713" TurnInName="Tree Warden Chawn" TurnInId="22007" />
+    <TurnIn QuestName="Did You Get The Note?" QuestId="10719" TurnInName="Tree Warden Chawn" TurnInId="22007" />
+    <PickUp QuestName="Wyrmskull Watcher" QuestId="10894" GiverName="Tree Warden Chawn" GiverId="22007" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="31366" ItemName="Felsworn Gas Mask" CollectCount="1" />
+    <TurnIn QuestName="Felsworn Gas Mask" QuestId="10819" TurnInName="Wildlord Antelarion" TurnInId="22127" />
+    <PickUp QuestName="Deceive thy Enemy" QuestId="10820" GiverName="Wildlord Antelarion" GiverId="22127" />
+    <Objective QuestName="Deceive thy Enemy" QuestId="10820" Type="KillMob" MobId="19961" MobName="Doomforge Attendant" KillCount="4" />
+    <Objective QuestName="Deceive thy Enemy" QuestId="10820" Type="KillMob" MobId="19960" MobName="Doomforge Engineer" KillCount="4" />
+    <TurnIn QuestName="Deceive thy Enemy" QuestId="10820" TurnInName="Wildlord Antelarion" TurnInId="22127" />
+    <Objective QuestName="A Date with Dorgok" QuestId="10795" Type="KillMob" MobId="20753" MobName="Dorgok" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="31363" ItemName="Gorgrom&apos;s Favor" CollectCount="1" />
+    <PickUp QuestName="Favor of the Gronn" QuestId="10797" GiverName="Wildlord Antelarion" GiverId="22127" />
+    <Objective QuestName="Crush the Bloodmaul Camp!" QuestId="10796" Type="KillMob" MobId="19993" MobName="Bloodmaul Mauler" KillCount="10" />
+    <Objective QuestName="Crush the Bloodmaul Camp!" QuestId="10796" Type="KillMob" MobId="19994" MobName="Bloodmaul Warlock" KillCount="5" />
+    <TurnIn QuestName="Crush the Bloodmaul Camp!" QuestId="10796" TurnInName="Lieutenant Fairweather" TurnInId="22150" />
+    <TurnIn QuestName="A Date with Dorgok" QuestId="10795" TurnInName="Commander Haephus Stonewall" TurnInId="22149" />
+    <TurnIn QuestName="Favor of the Gronn" QuestId="10797" TurnInName="Commander Haephus Stonewall" TurnInId="22149" />
+    <PickUp QuestName="Pay the Baron a Visit" QuestId="10798" GiverName="Commander Haephus Stonewall" GiverId="22149" />
+    <TurnIn QuestName="Pay the Baron a Visit" QuestId="10798" TurnInName="Baron Sablemane" TurnInId="22103" />
+    <PickUp QuestName="Into the Churning Gulch" QuestId="10799" GiverName="Baron Sablemane" GiverId="22103" />
+    <Objective QuestName="Into the Churning Gulch" QuestId="10799" Type="CollectItem" ItemId="31132" ItemName="Crust Burster Venom Gland" CollectCount="7" />
+    <TurnIn QuestName="Into the Churning Gulch" QuestId="10799" TurnInName="Baron Sablemane" TurnInId="22103" />
+    <PickUp QuestName="Goodnight, Gronn" QuestId="10800" GiverName="Baron Sablemane" GiverId="22103" />
+    <Objective QuestName="Goodnight, Gronn" QuestId="10800" Type="CollectItem" ItemId="31349" ItemName="Grulloc&apos;s Sack" CollectCount="1" />
+    <TurnIn QuestName="Goodnight, Gronn" QuestId="10800" TurnInName="Baron Sablemane" TurnInId="22103" />
+    <PickUp QuestName="It&apos;s a Trap!" QuestId="10801" GiverName="Baron Sablemane" GiverId="22103" />
+    <TurnIn QuestName="It&apos;s a Trap!" QuestId="10801" TurnInName="Commander Haephus Stonewall" TurnInId="22149" />
+    <PickUp QuestName="Gorgrom the Dragon-Eater" QuestId="10802" GiverName="Commander Haephus Stonewall" GiverId="22149" />
+    <PickUp QuestName="Slaughter at Boulder&apos;mok" QuestId="10803" GiverName="Lieutenant Fairweather" GiverId="22150" />
+    <TurnIn QuestName="Wyrmskull Watcher" QuestId="10894" TurnInName="Watcher Moonshade" TurnInId="22386" />
+    <PickUp QuestName="Longtail is the Lynchpin" QuestId="10893" GiverName="Watcher Moonshade" GiverId="22386" />
+    <Objective QuestName="Longtail is the Lynchpin" QuestId="10893" Type="KillMob" MobId="22396" MobName="Draaca Longtail" KillCount="1" />
+    <TurnIn QuestName="Longtail is the Lynchpin" QuestId="10893" TurnInName="Watcher Moonshade" TurnInId="22386" />
+    <PickUp QuestName="Meeting at the Blackwing Coven" QuestId="10722" GiverName="Watcher Moonshade" GiverId="22386" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="31489" ItemName="Orb of the Grishna" CollectCount="1" />
+    <PickUp QuestName="The Truth Unorbed" QuestId="10825" GiverName="Watcher Moonshade" GiverId="22386" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="31754" ItemName="Grisly Totem" CollectCount="3" />
+    <Objective QuestName="Slaughter at Boulder&apos;mok" QuestId="10803" Type="KillMob" MobId="21046" MobName="Boulder&apos;mok Brute" KillCount="5" />
+    <Objective QuestName="Slaughter at Boulder&apos;mok" QuestId="10803" Type="KillMob" MobId="21047" MobName="Boulder&apos;mok Shaman" KillCount="3" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="31121" ItemName="Costume Scrbaps" CollectCount="5" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="31122" ItemName="Overseer Disguise" CollectCount="1" />
+    <TurnIn QuestName="Slaughter at Boulder&apos;mok" QuestId="10803" TurnInName="Lieutenant Fairweather" TurnInId="22150" />
+    <TurnIn QuestName="Gorgrom the Dragon-Eater" QuestId="10802" TurnInName="Commander Haephus Stonewall" TurnInId="22149" />
+    <TurnIn QuestName="Whispers of the Raven God" QuestId="10607" TurnInName="Timeon" TurnInId="21782" />
+    <TurnIn QuestName="Whelps of the Wyrmcult" QuestId="10747" TurnInName="Samia Inkling" TurnInId="21983" />
+    <TurnIn QuestName="Meeting at the Blackwing Coven" QuestId="10722" TurnInName="Tree Warden Chawn" TurnInId="22007" />
+    <TurnIn QuestName="The Truth Unorbed" QuestId="10825" TurnInName="Tree Warden Chawn" TurnInId="22007" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\The Burning Crusade (58-70)\\Blade&apos;s Edge Mountains (67-68) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__The_Burning_Crusade_(58-70)__Netherstorm_(68-70)" />
+  </QuestOrder>
+</HBProfile>

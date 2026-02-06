@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Class Quests\\Paladin Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="9692" Name="The Path of the Adept">
+    <Objective Type="CollectItem" ItemId="24224" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Crate of Ingots" Id="182011" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-207.4" Y="2245.31" Z="79.77" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Paladin Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="The First Trial" QuestId="9678" GiverName="Knight-Lord Bloodvalor" GiverId="17717" />
+    </If>
+    <Objective QuestName="The First Trial" QuestId="9678" Type="KillMob" MobId="17716" MobName="Sangrias Stillblade" KillCount="1" />
+    <TurnIn QuestName="The First Trial" QuestId="9678" TurnInName="Knight-Lord Bloodvalor" TurnInId="17717" />
+    <PickUp QuestName="A Study in Power" QuestId="9681" GiverName="Knight-Lord Bloodvalor" GiverId="17717" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="A Study in Power" QuestId="64319" GiverName="Knight-Lord Bloodvalor" GiverId="17717" />
+    </If>
+    <TurnIn QuestName="A Study in Power" QuestId="9681" TurnInName="Magister Astalor Bloodsworn" TurnInId="17718" />
+    <TurnIn QuestName="A Study in Power" QuestId="64319" TurnInName="Magister Astalor Bloodsworn" TurnInId="17718" />
+    <PickUp QuestName="Claiming the Light" QuestId="9684" GiverName="Magister Astalor Bloodsworn" GiverId="17718" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="Claiming the Light" QuestId="63866" GiverName="Magister Astalor Bloodsworn" GiverId="17718" />
+    </If>
+    <Objective QuestName="Claiming the Light" QuestId="9684" Type="CollectItem" ItemId="24156" ItemName="Filled Shimmering Vessel" CollectCount="1" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.BloodElf)">
+      <Objective QuestName="Claiming the Light" QuestId="63866" Type="CollectItem" ItemId="24156" ItemName="Filled Shimmering Vessel" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Claiming the Light" QuestId="9684" TurnInName="Knight-Lord Bloodvalor" TurnInId="17717" />
+    <TurnIn QuestName="Claiming the Light" QuestId="63866" TurnInName="Knight-Lord Bloodvalor" TurnInId="17717" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="Redeeming the Dead" QuestId="9685" GiverName="Knight-Lord Bloodvalor" GiverId="17717" />
+      <TurnIn QuestName="Redeeming the Dead" QuestId="9685" TurnInName="Knight-Lord Bloodvalor" TurnInId="17717" />
+      <PickUp QuestName="The Second Trial" QuestId="9690" GiverName="Knight-Lord Bloodvalor" GiverId="17717" />
+    </If>
+    <TurnIn QuestName="The Second Trial" QuestId="9690" TurnInName="Master Kelerun Bloodmourn" TurnInId="17807" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="The Second Trial" QuestId="9686" GiverName="Master Kelerun Bloodmourn" GiverId="17807" />
+    </If>
+    <TurnIn QuestName="The Second Trial" QuestId="9686" TurnInName="Master Kelerun Bloodmourn" TurnInId="17807" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="Return to Silvermoon" QuestId="9691" GiverName="Master Kelerun Bloodmourn" GiverId="17807" />
+    </If>
+    <TurnIn QuestName="Return to Silvermoon" QuestId="9691" TurnInName="Knight-Lord Bloodvalor" TurnInId="17717" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="The Path of the Adept" QuestId="9692" GiverName="Knight-Lord Bloodvalor" GiverId="17717" />
+      <Objective QuestName="The Path of the Adept" QuestId="9692" Type="CollectItem" ItemId="24226" ItemName="Blood Knight Insignia" CollectCount="1" />
+      <Objective QuestName="The Path of the Adept" QuestId="9692" Type="CollectItem" ItemId="24224" ItemName="Crate of Bloodforged Ingots" CollectCount="1" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17830" MobName="Zelemar the Wrathful" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.BloodElf)">
+      <Objective QuestName="The Path of the Adept" QuestId="9692" Type="CollectItem" ItemId="24225" ItemName="Blood of the Wrathful" CollectCount="1" />
+      <Objective QuestName="The Path of the Adept" QuestId="9692" Type="CollectItem" ItemId="6995" ItemName="Corrupted Kor Gem" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="The Path of the Adept" QuestId="9692" TurnInName="Knight-Lord Bloodvalor" TurnInId="17717" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="Forging the Weapon" QuestId="9707" GiverName="Knight-Lord Bloodvalor" GiverId="17717" />
+    </If>
+    <TurnIn QuestName="Forging the Weapon" QuestId="9707" TurnInName="Bemarrin" TurnInId="16669" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.BloodElf)">
+      <PickUp QuestName="The Thalassian Warhorse" QuestId="9712" GiverName="Knight-Lord Bloodvalor" GiverId="17717" />
+    </If>
+    <PickUp QuestName="To The Bulwark" QuestId="9601" GiverName="Champion Bachi" GiverId="16681" />
+    <TurnIn QuestName="To The Bulwark" QuestId="9601" TurnInName="Mehlar Dawnblade" TurnInId="17099" />
+    <PickUp QuestName="Prove Your Hatred" QuestId="10590" GiverName="Mehlar Dawnblade" GiverId="17099" />
+    <PickUp QuestName="Argent Dawn Commission" QuestId="5405" GiverName="Argent Officer Garush" GiverId="10839" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12846" ItemName="Argent Dawn Commission" CollectCount="1" />
+    <TurnIn QuestName="Argent Dawn Commission" QuestId="5405" TurnInName="Argent Officer Garush" TurnInId="10839" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12846" ItemName="Argent Dawn Commission" CollectCount="1" />
+    <Objective QuestName="Prove Your Hatred" QuestId="10590" Type="CollectItem" ItemId="12840" ItemName="Minion&apos;s Scourgestone" CollectCount="20" />
+    <TurnIn QuestName="Prove Your Hatred" QuestId="10590" TurnInName="Mehlar Dawnblade" TurnInId="17099" />
+    <PickUp QuestName="Wisdom of the Banshee Queen" QuestId="10592" GiverName="Mehlar Dawnblade" GiverId="17099" />
+    <TurnIn QuestName="Wisdom of the Banshee Queen" QuestId="10592" TurnInName="Lady Sylvanas Windrunner" TurnInId="10181" />
+    <PickUp QuestName="Ancient Evil" QuestId="10593" GiverName="Lady Sylvanas Windrunner" GiverId="10181" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="8580" MobName="Atal&apos;alarion" KillCount="1" />
+    <Objective QuestName="Ancient Evil" QuestId="10593" Type="CollectItem" ItemId="22444" ItemName="Putrid Vine" CollectCount="1" />
+    <TurnIn QuestName="Ancient Evil" QuestId="10593" TurnInName="Mehlar Dawnblade" TurnInId="17099" />
+    <PickUp QuestName="A Summons from Lord Solanar" QuestId="9721" GiverName="Knight-Lord Bloodvalor" GiverId="17717" />
+    <TurnIn QuestName="A Summons from Lord Solanar" QuestId="9721" TurnInName="Lord Solanar Bloodwrath" TurnInId="25223" />
+    <PickUp QuestName="The Master&apos;s Path" QuestId="9722" GiverName="Lord Solanar Bloodwrath" GiverId="25223" />
+    <TurnIn QuestName="The Master&apos;s Path" QuestId="9722" TurnInName="Lord Solanar Bloodwrath" TurnInId="25223" />
+    <PickUp QuestName="A Gesture of Commitment" QuestId="9723" GiverName="Lord Solanar Bloodwrath" GiverId="25223" />
+    <Objective QuestName="A Gesture of Commitment" QuestId="9723" Type="CollectItem" ItemId="12360" ItemName="Arcanite Bar" CollectCount="6" />
+    <Objective QuestName="A Gesture of Commitment" QuestId="9723" Type="CollectItem" ItemId="8838" ItemName="Sungrass" CollectCount="10" />
+    <Objective QuestName="A Gesture of Commitment" QuestId="9723" Type="CollectItem" ItemId="20520" ItemName="Dark Rune" CollectCount="5" />
+    <TurnIn QuestName="A Gesture of Commitment" QuestId="9723" TurnInName="Lord Solanar Bloodwrath" TurnInId="25223" />
+    <PickUp QuestName="A Demonstration of Loyalty" QuestId="9725" GiverName="Lord Solanar Bloodwrath" GiverId="25223" />
+    <Objective QuestName="A Demonstration of Loyalty" QuestId="9725" Type="KillMob" MobId="17878" MobName="Scourge Siege Engineer" KillCount="15" />
+    <TurnIn QuestName="A Demonstration of Loyalty" QuestId="9725" TurnInName="Lord Solanar Bloodwrath" TurnInId="25223" />
+    <PickUp QuestName="True Masters of the Light" QuestId="9735" GiverName="Lord Solanar Bloodwrath" GiverId="25223" />
+    <Objective QuestName="True Masters of the Light" QuestId="9735" Type="CollectItem" ItemId="24284" ItemName="Tyr&apos;s Hand Holy Water" CollectCount="1" />
+    <TurnIn QuestName="True Masters of the Light" QuestId="9735" TurnInName="Lord Solanar Bloodwrath" TurnInId="25223" />
+    <PickUp QuestName="True Masters of the Light" QuestId="9736" GiverName="Lord Solanar Bloodwrath" GiverId="25223" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10620" ItemName="Thorium Ore" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12800" ItemName="Azerothian Diamond" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="18335" ItemName="Pristine Black Diamond" CollectCount="1" />
+    <TurnIn QuestName="True Masters of the Light" QuestId="9736" TurnInName="Lord Solanar Bloodwrath" TurnInId="25223" />
+    <PickUp QuestName="True Masters of the Light" QuestId="9737" GiverName="Lord Solanar Bloodwrath" GiverId="25223" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="10917" MobName="Aurius" KillCount="1" />
+    <TurnIn QuestName="True Masters of the Light" QuestId="9737" TurnInName="Lord Solanar Bloodwrath" TurnInId="25223" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Paladin Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

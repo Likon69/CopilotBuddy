@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Feralas (45-46)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>46</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Feralas (45-46)" LogColor="Green" />
+    <PickUp QuestName="A New Cloak&apos;s Sheen" QuestId="2973" GiverName="Krueg Skullsplitter" GiverId="4544" />
+    <PickUp QuestName="The Ogres of Feralas" QuestId="2975" GiverName="Rok Orhan" GiverId="7777" />
+    <PickUp QuestName="Gordunni Cobalt" QuestId="2987" GiverName="Orwin Gizzmick" GiverId="8021" />
+    <PickUp QuestName="War on the Woodpaw" QuestId="2862" GiverName="Hadoken Swiftstrider" GiverId="7875" />
+    <PickUp QuestName="The Mark of Quality" QuestId="2822" GiverName="Jangdor Swiftstrider" GiverId="7854" />
+    <PickUp QuestName="A Strange Request" QuestId="3121" GiverName="Witch Doctor Uzer&apos;i" GiverId="8115" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="9370" ItemName="Gordunni Scroll" CollectCount="1" />
+    <PickUp QuestName="The Gordunni Scroll" QuestId="2978" GiverName="Innkeeper Greul" GiverId="7737" />
+    <Objective QuestName="Gordunni Cobalt" QuestId="2987" Type="CollectItem" ItemId="9463" ItemName="Gordunni Cobalt" CollectCount="12" />
+    <Objective QuestName="The Ogres of Feralas" QuestId="2975" Type="KillMob" MobId="5229" MobName="Gordunni Ogre" KillCount="10" />
+    <Objective QuestName="The Ogres of Feralas" QuestId="2975" Type="KillMob" MobId="5237" MobName="Gordunni Ogre Mage" KillCount="10" />
+    <Objective QuestName="The Ogres of Feralas" QuestId="2975" Type="KillMob" MobId="5232" MobName="Gordunni Brute" KillCount="5" />
+    <Objective QuestName="War on the Woodpaw" QuestId="2862" Type="CollectItem" ItemId="9237" ItemName="Woodpaw Gnoll Mane" CollectCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="5278" MobName="Sprite Darter" KillCount="1" />
+    <Objective QuestName="A New Cloak&apos;s Sheen" QuestId="2973" Type="CollectItem" ItemId="9369" ItemName="Iridescent Sprite Darter Wing" CollectCount="10" />
+    <TurnIn QuestName="War on the Woodpaw" QuestId="2862" TurnInName="Hadoken Swiftstrider" TurnInId="7875" />
+    <PickUp QuestName="Alpha Strike" QuestId="2863" GiverName="Hadoken Swiftstrider" GiverId="7875" />
+    <TurnIn QuestName="Gordunni Cobalt" QuestId="2987" TurnInName="Orwin Gizzmick" TurnInId="8021" />
+    <TurnIn QuestName="A New Cloak&apos;s Sheen" QuestId="2973" TurnInName="Krueg Skullsplitter" TurnInId="4544" />
+    <PickUp QuestName="A Grim Discovery" QuestId="2974" GiverName="Krueg Skullsplitter" GiverId="4544" />
+    <TurnIn QuestName="The Ogres of Feralas" QuestId="2975" TurnInName="Rok Orhan" TurnInId="7777" />
+    <PickUp QuestName="The Ogres of Feralas" QuestId="2980" GiverName="Rok Orhan" GiverId="7777" />
+    <TurnIn QuestName="The Gordunni Scroll" QuestId="2978" TurnInName="Rok Orhan" TurnInId="7777" />
+    <PickUp QuestName="Dark Ceremony" QuestId="2979" GiverName="Rok Orhan" GiverId="7777" />
+    <Objective QuestName="Alpha Strike" QuestId="2863" Type="KillMob" MobId="5258" MobName="Woodpaw Alpha" KillCount="5" />
+    <TurnIn QuestName="Alpha Strike" QuestId="2863" TurnInName="Hadoken Swiftstrider" TurnInId="7875" />
+    <PickUp QuestName="Woodpaw Investigation" QuestId="2902" GiverName="Hadoken Swiftstrider" GiverId="7875" />
+    <TurnIn QuestName="Woodpaw Investigation" QuestId="2902" TurnInName="Hadoken Swiftstrider" TurnInId="7875" />
+    <PickUp QuestName="The Battle Plans" QuestId="2903" GiverName="Hadoken Swiftstrider" GiverId="7875" />
+    <Objective QuestName="A Grim Discovery" QuestId="2974" Type="CollectItem" ItemId="9460" ItemName="Grimtotem Horn" CollectCount="20" />
+    <TurnIn QuestName="The Battle Plans" QuestId="2903" TurnInName="Hadoken Swiftstrider" TurnInId="7875" />
+    <PickUp QuestName="Zukk&apos;ash Infestation" QuestId="7730" GiverName="Hadoken Swiftstrider" GiverId="7875" />
+    <PickUp QuestName="Stinglasher" QuestId="7731" GiverName="Hadoken Swiftstrider" GiverId="7875" />
+    <TurnIn QuestName="A Grim Discovery" QuestId="2974" TurnInName="Krueg Skullsplitter" TurnInId="4544" />
+    <PickUp QuestName="A Grim Discovery" QuestId="2976" GiverName="Krueg Skullsplitter" GiverId="4544" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="14661" MobName="Stinglasher" KillCount="1" />
+    <Objective QuestName="Stinglasher" QuestId="7731" Type="CollectItem" ItemId="18962" ItemName="Stinglasher&apos;s Glands" CollectCount="1" />
+    <Objective QuestName="Zukk&apos;ash Infestation" QuestId="7730" Type="CollectItem" ItemId="18961" ItemName="Zukk&apos;ash Carapace" CollectCount="20" />
+    <Objective QuestName="The Ogres of Feralas" QuestId="2980" Type="KillMob" MobId="5234" MobName="Gordunni Mauler" KillCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="5239" MobName="Gordunni Mage-Lord" KillCount="1" />
+    <Objective QuestName="Dark Ceremony" QuestId="2979" Type="CollectItem" ItemId="9371" ItemName="Gordunni Orb" CollectCount="1" />
+    <Objective QuestName="The Ogres of Feralas" QuestId="2980" Type="KillMob" MobId="5236" MobName="Gordunni Shaman" KillCount="10" />
+    <Objective QuestName="The Ogres of Feralas" QuestId="2980" Type="KillMob" MobId="5240" MobName="Gordunni Warlock" KillCount="10" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="8564" ItemName="Hippogryph Egg" CollectCount="1" />
+    <Objective QuestName="The Mark of Quality" QuestId="2822" Type="CollectItem" ItemId="8973" ItemName="Thick Yeti Hide" CollectCount="10" />
+    <TurnIn QuestName="The Mark of Quality" QuestId="2822" TurnInName="Jangdor Swiftstrider" TurnInId="7854" />
+    <TurnIn QuestName="Zukk&apos;ash Infestation" QuestId="7730" TurnInName="Hadoken Swiftstrider" TurnInId="7875" />
+    <TurnIn QuestName="Stinglasher" QuestId="7731" TurnInName="Hadoken Swiftstrider" TurnInId="7875" />
+    <PickUp QuestName="Zukk&apos;ash Report" QuestId="7732" GiverName="Hadoken Swiftstrider" GiverId="7875" />
+    <TurnIn QuestName="The Ogres of Feralas" QuestId="2980" TurnInName="Rok Orhan" TurnInId="7777" />
+    <TurnIn QuestName="Dark Ceremony" QuestId="2979" TurnInName="Rok Orhan" TurnInId="7777" />
+    <PickUp QuestName="The Gordunni Orb" QuestId="3002" GiverName="Rok Orhan" GiverId="7777" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5942" ItemName="Jeweled Pendant" CollectCount="1" />
+    <TurnIn QuestName="Zukk&apos;ash Report" QuestId="7732" TurnInName="Zilzibin Drumlore" TurnInId="7010" />
+    <PickUp QuestName="Ripple Recovery" QuestId="649" GiverName="Dran Droffers" GiverId="6986" />
+    <TurnIn QuestName="Ripple Recovery" QuestId="649" TurnInName="Malton Droffers" TurnInId="6987" />
+    <PickUp QuestName="Ripple Recovery" QuestId="650" GiverName="Malton Droffers" GiverId="6987" />
+    <TurnIn QuestName="A Grim Discovery" QuestId="2976" TurnInName="Belgrom Rockmaul" TurnInId="4485" />
+    <TurnIn QuestName="A Strange Request" QuestId="3121" TurnInName="Neeru Fireblade" TurnInId="3216" />
+    <PickUp QuestName="Return to Witch Doctor Uzer&apos;i" QuestId="3122" GiverName="Neeru Fireblade" GiverId="3216" />
+    <TurnIn QuestName="Report to Zor" QuestId="1262" TurnInName="Zor Lonetree" TurnInId="4047" />
+    <PickUp QuestName="Service to the Horde" QuestId="7541" GiverName="Zor Lonetree" GiverId="4047" />
+    <TurnIn QuestName="The Gordunni Orb" QuestId="3002" TurnInName="Uthel&apos;nay" TurnInId="7311" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Feralas (45-46) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Azshara_(46-47)" />
+  </QuestOrder>
+</HBProfile>

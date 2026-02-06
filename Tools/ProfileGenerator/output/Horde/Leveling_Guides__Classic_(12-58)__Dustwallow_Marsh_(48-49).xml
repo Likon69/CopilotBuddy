@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Dustwallow Marsh (48-49)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>49</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="4450" Name="Ledger from Tanaris">
+    <Objective Type="CollectItem" ItemId="11724" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Damaged Crate" Id="174728" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-3990.0" Y="-3814.18" Z="34.45" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Dustwallow Marsh (48-49)" LogColor="Green" />
+    <PickUp QuestName="The Brood of Onyxia" QuestId="1172" GiverName="Draz&apos;Zilb" GiverId="4501" />
+    <TurnIn QuestName="Cortello&apos;s Riddle" QuestId="625" TurnInName="Draz&apos;Zilb" TurnInId="4501" />
+    <PickUp QuestName="Cortello&apos;s Riddle" QuestId="626" GiverName="Draz&apos;Zilb" GiverId="4501" />
+    <Objective QuestName="Ledger from Tanaris" QuestId="4450" Type="CollectItem" ItemId="11724" ItemName="Overdue Package" CollectCount="1" />
+    <TurnIn QuestName="The Brood of Onyxia" QuestId="1172" TurnInName="Draz&apos;Zilb" TurnInId="4501" />
+    <PickUp QuestName="Challenge Overlord Mok&apos;Morokk" QuestId="1173" GiverName="Overlord Mok&apos;Morokk" GiverId="4500" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="4500" MobName="Overlord Mok&apos;Morokk" KillCount="1" />
+    <TurnIn QuestName="Challenge Overlord Mok&apos;Morokk" QuestId="1173" TurnInName="Draz&apos;Zilb" TurnInId="4501" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Dustwallow Marsh (48-49) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Feralas_(49-49)" />
+  </QuestOrder>
+</HBProfile>

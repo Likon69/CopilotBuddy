@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Ashenvale (22-24)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>24</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="1034" Name="The Ruins of Stardust">
+    <Objective Type="CollectItem" ItemId="5494" CollectCount="5">
+      <CollectFrom>
+        <GameObject Name="Stardust Covered Bush" Id="19016" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2034.09" Y="-227.39" Z="96.37" />
+        <Hotspot X="2036.25" Y="-209.53" Z="98.66" />
+        <Hotspot X="2042.3" Y="-192.18" Z="97.07" />
+        <Hotspot X="2045.81" Y="-197.15" Z="97.35" />
+        <Hotspot X="2060.09" Y="-221.89" Z="97.06" />
+        <Hotspot X="2072.58" Y="-270.35" Z="94.02" />
+        <Hotspot X="2073.01" Y="-232.02" Z="97.13" />
+        <Hotspot X="2089.97" Y="-218.55" Z="97.06" />
+        <Hotspot X="2100.94" Y="-178.59" Z="96.82" />
+        <Hotspot X="2113.95" Y="-257.08" Z="97.49" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1007" Name="The Ancient Statuette">
+    <Objective Type="CollectItem" ItemId="5424" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Ancient Statuette" Id="17783" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3879.52" Y="880.97" Z="0.69" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Ashenvale (22-24)" LogColor="Green" />
+    <TurnIn QuestName="The Tower of Althalaxx" QuestId="967" TurnInName="Delgren the Purifier" TurnInId="3663" />
+    <PickUp QuestName="The Tower of Althalaxx" QuestId="970" GiverName="Delgren the Purifier" GiverId="3663" />
+    <PickUp QuestName="Bathran&apos;s Hair" QuestId="1010" GiverName="Orendil Broadleaf" GiverId="3847" />
+    <Objective QuestName="The Tower of Althalaxx" QuestId="970" Type="CollectItem" ItemId="5366" ItemName="Glowing Soul Gem" CollectCount="1" />
+    <Objective QuestName="Bathran&apos;s Hair" QuestId="1010" Type="CollectItem" ItemId="5437" ItemName="Bathran&apos;s Hair" CollectCount="5" />
+    <TurnIn QuestName="Bathran&apos;s Hair" QuestId="1010" TurnInName="Orendil Broadleaf" TurnInId="3847" />
+    <PickUp QuestName="Orendil&apos;s Cure" QuestId="1020" GiverName="Orendil Broadleaf" GiverId="3847" />
+    <TurnIn QuestName="The Tower of Althalaxx" QuestId="970" TurnInName="Delgren the Purifier" TurnInId="3663" />
+    <PickUp QuestName="The Tower of Althalaxx" QuestId="973" GiverName="Delgren the Purifier" GiverId="3663" />
+    <TurnIn QuestName="Therylune&apos;s Escape" QuestId="945" TurnInName="Therysil" TurnInId="3585" />
+    <PickUp QuestName="The Zoram Strand" QuestId="1008" GiverName="Shindrell Swiftfire" GiverId="3845" />
+    <TurnIn QuestName="Onward to Ashenvale" QuestId="10752" TurnInName="Raene Wolfrunner" TurnInId="3691" />
+    <PickUp QuestName="Raene&apos;s Cleansing" QuestId="991" GiverName="Raene Wolfrunner" GiverId="3691" />
+    <PickUp QuestName="Culling the Threat" QuestId="1054" GiverName="Raene Wolfrunner" GiverId="3691" />
+    <TurnIn QuestName="Orendil&apos;s Cure" QuestId="1020" TurnInName="Pelturas Whitemoon" TurnInId="3894" />
+    <PickUp QuestName="Elune&apos;s Tear" QuestId="1033" GiverName="Pelturas Whitemoon" GiverId="3894" />
+    <Objective QuestName="Elune&apos;s Tear" QuestId="1033" Type="CollectItem" ItemId="5493" ItemName="Elune&apos;s Tear" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3987" MobName="Dal Bloodclaw" KillCount="1" />
+    <Objective QuestName="Culling the Threat" QuestId="1054" Type="CollectItem" ItemId="5544" ItemName="Dal Bloodclaw&apos;s Skull" CollectCount="1" />
+    <TurnIn QuestName="Culling the Threat" QuestId="1054" TurnInName="Raene Wolfrunner" TurnInId="3691" />
+    <TurnIn QuestName="Elune&apos;s Tear" QuestId="1033" TurnInName="Pelturas Whitemoon" TurnInId="3894" />
+    <PickUp QuestName="The Ruins of Stardust" QuestId="1034" GiverName="Pelturas Whitemoon" GiverId="3894" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Call of Water" QuestId="9504" Type="CollectItem" ItemId="23750" ItemName="Filled Bota Bag" CollectCount="1" />
+    </If>
+    <Objective QuestName="The Ruins of Stardust" QuestId="1034" Type="CollectItem" ItemId="5494" ItemName="Handful of Stardust" CollectCount="5" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3664" MobName="Ilkrud Magthrull" KillCount="1" />
+    <Objective QuestName="The Tower of Althalaxx" QuestId="973" Type="CollectItem" ItemId="5533" ItemName="Ilkrud Magthrull&apos;s Tome" CollectCount="1" />
+    <TurnIn QuestName="The Tower of Althalaxx" QuestId="973" TurnInName="Delgren the Purifier" TurnInId="3663" />
+    <TurnIn QuestName="Raene&apos;s Cleansing" QuestId="991" TurnInName="Delgren the Purifier" TurnInId="3663" />
+    <PickUp QuestName="Raene&apos;s Cleansing" QuestId="1023" GiverName="Delgren the Purifier" GiverId="3663" />
+    <Objective QuestName="Raene&apos;s Cleansing" QuestId="1023" Type="CollectItem" ItemId="5463" ItemName="Glowing Gem" CollectCount="1" />
+    <PickUp QuestName="The Ancient Statuette" QuestId="1007" GiverName="Talen" GiverId="3846" />
+    <Objective QuestName="The Ancient Statuette" QuestId="1007" Type="CollectItem" ItemId="5424" ItemName="Ancient Statuette" CollectCount="1" />
+    <TurnIn QuestName="The Ancient Statuette" QuestId="1007" TurnInName="Talen" TurnInId="3846" />
+    <PickUp QuestName="Ruuzel" QuestId="1009" GiverName="Talen" GiverId="3846" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3943" MobName="Ruuzel" KillCount="1" />
+    <Objective QuestName="Ruuzel" QuestId="1009" Type="CollectItem" ItemId="5445" ItemName="Ring of Zoram" CollectCount="1" />
+    <TurnIn QuestName="Ruuzel" QuestId="1009" TurnInName="Talen" TurnInId="3846" />
+    <Objective QuestName="The Zoram Strand" QuestId="1008" Type="CollectItem" ItemId="5490" ItemName="Wrathtail Head" CollectCount="20" />
+    <TurnIn QuestName="Raene&apos;s Cleansing" QuestId="1023" TurnInName="Raene Wolfrunner" TurnInId="3691" />
+    <TurnIn QuestName="The Ruins of Stardust" QuestId="1034" TurnInName="Pelturas Whitemoon" TurnInId="3894" />
+    <TurnIn QuestName="The Zoram Strand" QuestId="1008" TurnInName="Shindrell Swiftfire" TurnInId="3845" />
+    <TurnIn QuestName="WANTED: Murkdeep!" QuestId="4740" TurnInName="Sentinel Glynda Nal&apos;Shea" TurnInId="2930" />
+    <TurnIn QuestName="The Absent Minded Prospector" QuestId="731" TurnInName="Archaeologist Hollee" TurnInId="2913" />
+    <PickUp QuestName="The Absent Minded Prospector" QuestId="741" GiverName="Archaeologist Hollee" GiverId="2913" />
+    <TurnIn QuestName="Escape Through Force" QuestId="994" TurnInName="Terenthis" TurnInId="3693" />
+    <TurnIn QuestName="The Absent Minded Prospector" QuestId="741" TurnInName="Chief Archaeologist Greywhisker" TurnInId="2912" />
+    <PickUp QuestName="The Absent Minded Prospector" QuestId="942" GiverName="Chief Archaeologist Greywhisker" GiverId="2912" />
+    <TurnIn QuestName="Call of Water" QuestId="9504" TurnInName="Aqueous" TurnInId="17275" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Call of Water" QuestId="9508" GiverName="Aqueous" GiverId="17275" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="17359" MobName="Tel&apos;athion the Impure" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Call of Water" QuestId="9508" Type="CollectItem" ItemId="23997" ItemName="Head of Tel&apos;athion" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Call of Water" QuestId="9508" TurnInName="Aqueous" TurnInId="17275" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Call of Water" QuestId="9509" GiverName="Aqueous" GiverId="17275" />
+      <TurnIn QuestName="Call of Water" QuestId="9509" TurnInName="Farseer Nobundo" TurnInId="17204" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Ashenvale (22-24) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Wetlands_(24-25)" />
+  </QuestOrder>
+</HBProfile>

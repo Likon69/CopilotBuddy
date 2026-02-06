@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\The Barrens (16-20)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>20</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="3281" Name="Stolen Silver">
+    <Objective Type="CollectItem" ItemId="5061" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Stolen Silver" Id="147557" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-2027.09" Y="-3258.0" Z="92.09" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Barrens (16-20)" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <PickUp QuestName="A Lesson to Learn" QuestId="26" GiverName="Turak Runetotem" GiverId="3033" />
+    </If>
+    <TurnIn QuestName="A Lesson to Learn" QuestId="26" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <PickUp QuestName="Trial of the Lake" QuestId="28" GiverName="Dendrite Starblaze" GiverId="11802" />
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="15877" ItemName="Shrine Bauble" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Trial of the Lake" QuestId="28" TurnInName="Tajarri" TurnInId="11799" />
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <PickUp QuestName="Trial of the Sea Lion" QuestId="30" GiverName="Tajarri" GiverId="11799" />
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="15882" ItemName="Half Pendant of Aquatic Endurance" CollectCount="1" />
+      <Objective QuestName="Unknown" Type="CollectItem" ItemId="15883" ItemName="Half Pendant of Aquatic Agility" CollectCount="1" />
+      <Objective QuestName="Trial of the Sea Lion" QuestId="30" Type="CollectItem" ItemId="15885" ItemName="Pendant of the Sea Lion" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Trial of the Sea Lion" QuestId="30" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <PickUp QuestName="Aquatic Form" QuestId="31" GiverName="Dendrite Starblaze" GiverId="11802" />
+      <TurnIn QuestName="Aquatic Form" QuestId="31" TurnInName="Turak Runetotem" TurnInId="3033" />
+    </If>
+    <TurnIn QuestName="Fungal Spores" QuestId="848" TurnInName="Apothecary Helbrim" TurnInId="3390" />
+    <TurnIn QuestName="Harpy Raiders" QuestId="867" TurnInName="Darsok Swiftdagger" TurnInId="3449" />
+    <PickUp QuestName="Harpy Lieutenants" QuestId="875" GiverName="Darsok Swiftdagger" GiverId="3449" />
+    <TurnIn QuestName="Prowlers of the Barrens" QuestId="903" TurnInName="Sergra Darkthorn" TurnInId="3338" />
+    <PickUp QuestName="Echeyakee" QuestId="881" GiverName="Sergra Darkthorn" GiverId="3338" />
+    <TurnIn QuestName="The Forgotten Pools" QuestId="870" TurnInName="Tonga Runetotem" TurnInId="3448" />
+    <PickUp QuestName="The Stagnant Oasis" QuestId="877" GiverName="Tonga Runetotem" GiverId="3448" />
+    <Objective QuestName="Raptor Thieves" QuestId="869" Type="CollectItem" ItemId="5062" ItemName="Raptor Head" CollectCount="12" />
+    <TurnIn QuestName="Raptor Thieves" QuestId="869" TurnInName="Gazrog" TurnInId="3464" />
+    <PickUp QuestName="Stolen Silver" QuestId="3281" GiverName="Gazrog" GiverId="3464" />
+    <PickUp QuestName="Apothecary Zamah" QuestId="853" GiverName="Apothecary Helbrim" GiverId="3390" />
+    <PickUp QuestName="Tribes at War" QuestId="878" GiverName="Mangletooth" GiverId="3430" />
+    <TurnIn QuestName="Apothecary Zamah" QuestId="853" TurnInName="Apothecary Zamah" TurnInId="3419" />
+    <TurnIn QuestName="Lost in Battle" QuestId="4921" TurnInName="Mankrik" TurnInId="3432" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3475" MobName="Echeyakee" KillCount="1" />
+    <Objective QuestName="Echeyakee" QuestId="881" Type="CollectItem" ItemId="5100" ItemName="Echeyakee&apos;s Hide" CollectCount="1" />
+    <TurnIn QuestName="Samophlange" QuestId="894" TurnInName="Mankrik" TurnInId="3432" />
+    <PickUp QuestName="Samophlange" QuestId="900" GiverName="Mankrik" GiverId="3432" />
+    <TurnIn QuestName="Samophlange" QuestId="900" TurnInName="Mankrik" TurnInId="3432" />
+    <PickUp QuestName="Samophlange" QuestId="901" GiverName="Mankrik" GiverId="3432" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3471" MobName="Tinkerer Sniggles" KillCount="1" />
+    <Objective QuestName="Samophlange" QuestId="901" Type="CollectItem" ItemId="5089" ItemName="Console Key" CollectCount="1" />
+    <TurnIn QuestName="Samophlange" QuestId="901" TurnInName="Mankrik" TurnInId="3432" />
+    <PickUp QuestName="Samophlange" QuestId="902" GiverName="Mankrik" GiverId="3432" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3278" MobName="Witchwing Slayer" KillCount="1" />
+    <Objective QuestName="Harpy Lieutenants" QuestId="875" Type="CollectItem" ItemId="5065" ItemName="Harpy Lieutenant Ring" CollectCount="6" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3256" MobName="Sunscale Scytheclaw" KillCount="1" />
+    <Objective QuestName="Raptor Horns" QuestId="865" Type="CollectItem" ItemId="5055" ItemName="Intact Raptor Horn" CollectCount="5" />
+    <PickUp QuestName="Ignition" QuestId="858" GiverName="Wizzlecrank&apos;s Shredder" GiverId="3439" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3445" MobName="Supervisor Lugwizzle" KillCount="1" />
+    <Objective QuestName="Ignition" QuestId="858" Type="CollectItem" ItemId="5050" ItemName="Ignition Key" CollectCount="1" />
+    <TurnIn QuestName="Ignition" QuestId="858" TurnInName="Wizzlecrank&apos;s Shredder" TurnInId="3439" />
+    <PickUp QuestName="The Escape" QuestId="863" GiverName="Wizzlecrank&apos;s Shredder" GiverId="3439" />
+    <Objective QuestName="Miner&apos;s Fortune" QuestId="896" Type="CollectItem" ItemId="5097" ItemName="Cats Eye Emerald" CollectCount="1" />
+    <PickUp QuestName="Report to Kadrak" QuestId="6541" GiverName="Thork" GiverId="3429" />
+    <TurnIn QuestName="Harpy Lieutenants" QuestId="875" TurnInName="Darsok Swiftdagger" TurnInId="3449" />
+    <PickUp QuestName="Serena Bloodfeather" QuestId="876" GiverName="Darsok Swiftdagger" GiverId="3449" />
+    <TurnIn QuestName="Echeyakee" QuestId="881" TurnInName="Sergra Darkthorn" TurnInId="3338" />
+    <PickUp QuestName="The Angry Scytheclaws" QuestId="905" GiverName="Sergra Darkthorn" GiverId="3338" />
+    <TurnIn QuestName="Stolen Booty" QuestId="888" TurnInName="Gazlowe" TurnInId="3391" />
+    <TurnIn QuestName="Samophlange" QuestId="902" TurnInName="Sputtervalve" TurnInId="3442" />
+    <TurnIn QuestName="The Escape" QuestId="863" TurnInName="Sputtervalve" TurnInId="3442" />
+    <PickUp QuestName="Ziz Fizziks" QuestId="1483" GiverName="Sputtervalve" GiverId="3442" />
+    <PickUp QuestName="Wenikee Boltbucket" QuestId="3921" GiverName="Sputtervalve" GiverId="3442" />
+    <TurnIn QuestName="Miner&apos;s Fortune" QuestId="896" TurnInName="Wharfmaster Dizzywig" TurnInId="3453" />
+    <TurnIn QuestName="Raptor Horns" QuestId="865" TurnInName="Mebok Mizzyrix" TurnInId="3446" />
+    <PickUp QuestName="Deepmoss Spider Eggs" QuestId="1069" GiverName="Mebok Mizzyrix" GiverId="3446" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3395" MobName="Verog the Dervish" KillCount="1" />
+    <Objective QuestName="Verog the Dervish" QuestId="851" Type="CollectItem" ItemId="5023" ItemName="Verog&apos;s Head" CollectCount="1" />
+    <TurnIn QuestName="The Stagnant Oasis" QuestId="877" TurnInName="Tonga Runetotem" TurnInId="3448" />
+    <PickUp QuestName="Altered Beings" QuestId="880" GiverName="Tonga Runetotem" GiverId="3448" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3461" MobName="Oasis Snapjaw" KillCount="1" />
+    <Objective QuestName="Altered Beings" QuestId="880" Type="CollectItem" ItemId="5098" ItemName="Altered Snapjaw Shell" CollectCount="8" />
+    <TurnIn QuestName="Altered Beings" QuestId="880" TurnInName="Tonga Runetotem" TurnInId="3448" />
+    <TurnIn QuestName="Verog the Dervish" QuestId="851" TurnInName="Regthar Deathgate" TurnInId="3389" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3452" MobName="Serena Bloodfeather" KillCount="1" />
+    <Objective QuestName="Serena Bloodfeather" QuestId="876" Type="CollectItem" ItemId="5067" ItemName="Serena&apos;s Head" CollectCount="1" />
+    <TurnIn QuestName="Wenikee Boltbucket" QuestId="3921" TurnInName="Wenikee Boltbucket" TurnInId="9316" />
+    <TurnIn QuestName="Report to Kadrak" QuestId="6541" TurnInName="Kadrak" TurnInId="8582" />
+    <TurnIn QuestName="Serena Bloodfeather" QuestId="876" TurnInName="Darsok Swiftdagger" TurnInId="3449" />
+    <PickUp QuestName="Letter to Jin&apos;Zil" QuestId="1060" GiverName="Darsok Swiftdagger" GiverId="3449" />
+    <PickUp QuestName="Egg Hunt" QuestId="868" GiverName="Korran" GiverId="3428" />
+    <Objective QuestName="Stolen Silver" QuestId="3281" Type="CollectItem" ItemId="5061" ItemName="Stolen Silver" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5165" ItemName="Sunscale Feather" CollectCount="3" />
+    <Objective QuestName="The Guns of Northwatch" QuestId="891" Type="KillMob" MobId="3393" MobName="Captain Fairmount" KillCount="1" />
+    <Objective QuestName="The Guns of Northwatch" QuestId="891" Type="KillMob" MobId="3454" MobName="Cannoneer Smythe" KillCount="1" />
+    <Objective QuestName="The Guns of Northwatch" QuestId="891" Type="KillMob" MobId="3455" MobName="Cannoneer Whessan" KillCount="1" />
+    <Objective QuestName="The Guns of Northwatch" QuestId="891" Type="CollectItem" ItemId="5078" ItemName="Theramore Medal" CollectCount="10" />
+    <TurnIn QuestName="Stolen Silver" QuestId="3281" TurnInName="Gazrog" TurnInId="3464" />
+    <TurnIn QuestName="The Angry Scytheclaws" QuestId="905" TurnInName="Sergra Darkthorn" TurnInId="3338" />
+    <PickUp QuestName="Jorn Skyseer" QuestId="3261" GiverName="Sergra Darkthorn" GiverId="3338" />
+    <PickUp QuestName="Hamuul Runetotem" QuestId="1489" GiverName="Tonga Runetotem" GiverId="3448" />
+    <TurnIn QuestName="Jorn Skyseer" QuestId="3261" TurnInName="Jorn Skyseer" TurnInId="3387" />
+    <PickUp QuestName="Ishamuhale" QuestId="882" GiverName="Jorn Skyseer" GiverId="3387" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3240" MobName="Stormsnout" KillCount="1" />
+    <Objective QuestName="Chen&apos;s Empty Keg" QuestId="821" Type="CollectItem" ItemId="4895" ItemName="Thunder Lizard Horn" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3474" MobName="Lakota&apos;mani" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5099" ItemName="Hoof of Lakota&apos;mani" CollectCount="1" />
+    <PickUp QuestName="Lakota&apos;mani" QuestId="883" GiverName="Jorn Skyseer" GiverId="3387" />
+    <TurnIn QuestName="Lakota&apos;mani" QuestId="883" TurnInName="Jorn Skyseer" TurnInId="3387" />
+    <TurnIn QuestName="Chen&apos;s Empty Keg" QuestId="821" TurnInName="Brewmaster Drohn" TurnInId="3292" />
+    <PickUp QuestName="Chen&apos;s Empty Keg" QuestId="822" GiverName="Brewmaster Drohn" GiverId="3292" />
+    <TurnIn QuestName="The Guns of Northwatch" QuestId="891" TurnInName="Captain Thalo&apos;thas Brightsun" TurnInId="3339" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3426" MobName="Zhevra Charger" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="10338" ItemName="Fresh Zhevra Carcass" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3257" MobName="Ishamuhale" KillCount="1" />
+    <Objective QuestName="Ishamuhale" QuestId="882" Type="CollectItem" ItemId="5101" ItemName="Ishamuhale&apos;s Fang" CollectCount="1" />
+    <TurnIn QuestName="Ishamuhale" QuestId="882" TurnInName="Jorn Skyseer" TurnInId="3387" />
+    <PickUp QuestName="Enraged Thunder Lizards" QuestId="907" GiverName="Jorn Skyseer" GiverId="3387" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3240" MobName="Stormsnout" KillCount="1" />
+    <Objective QuestName="Enraged Thunder Lizards" QuestId="907" Type="CollectItem" ItemId="5143" ItemName="Thunder Lizard Blood" CollectCount="3" />
+    <Objective QuestName="Consumed by Hatred" QuestId="899" Type="CollectItem" ItemId="5085" ItemName="Bristleback Quilboar Tusk" CollectCount="60" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5075" ItemName="Blood Shard" CollectCount="1" />
+    <Objective QuestName="Tribes at War" QuestId="878" Type="KillMob" MobId="3260" MobName="Bristleback Water Seeker" KillCount="6" />
+    <Objective QuestName="Tribes at War" QuestId="878" Type="KillMob" MobId="3261" MobName="Bristleback Thornweaver" KillCount="12" />
+    <Objective QuestName="Tribes at War" QuestId="878" Type="KillMob" MobId="3263" MobName="Bristleback Geomancer" KillCount="12" />
+    <TurnIn QuestName="Enraged Thunder Lizards" QuestId="907" TurnInName="Jorn Skyseer" TurnInId="3387" />
+    <PickUp QuestName="Cry of the Thunderhawk" QuestId="913" GiverName="Jorn Skyseer" GiverId="3387" />
+    <PickUp QuestName="Melor Sends Word" QuestId="1130" GiverName="Jorn Skyseer" GiverId="3387" />
+    <PickUp QuestName="The Ashenvale Hunt" QuestId="6382" GiverName="Jorn Skyseer" GiverId="3387" />
+    <TurnIn QuestName="Tribes at War" QuestId="878" TurnInName="Mangletooth" TurnInId="3430" />
+    <PickUp QuestName="Blood Shards of Agamaggan" QuestId="5052" GiverName="Mangletooth" GiverId="3430" />
+    <TurnIn QuestName="Blood Shards of Agamaggan" QuestId="5052" TurnInName="Mangletooth" TurnInId="3430" />
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Troll)">
+      <PickUp QuestName="Shadowguard" QuestId="5680" GiverName="Zayus" GiverId="5994" />
+      <TurnIn QuestName="Shadowguard" QuestId="5680" TurnInName="Ur&apos;kyo" TurnInId="6018" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Devouring Plague" QuestId="5644" GiverName="Father Lankester" GiverId="4607" />
+      <TurnIn QuestName="Devouring Plague" QuestId="5644" TurnInName="Aelthalyste" TurnInId="4606" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="Devourer of Souls" QuestId="1507" GiverName="Gan&apos;rul Bloodeye" GiverId="5875" />
+    </If>
+    <TurnIn QuestName="Devourer of Souls" QuestId="1507" TurnInName="Cazul" TurnInId="5909" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="Blind Cazul" QuestId="1508" GiverName="Cazul" GiverId="5909" />
+    </If>
+    <TurnIn QuestName="Blind Cazul" QuestId="1508" TurnInName="Zankaja" TurnInId="5910" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="News of Dogran" QuestId="1509" GiverName="Zankaja" GiverId="5910" />
+    </If>
+    <TurnIn QuestName="News of Dogran" QuestId="1509" TurnInName="Gazrog" TurnInId="3464" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="News of Dogran" QuestId="1510" GiverName="Gazrog" GiverId="3464" />
+    </If>
+    <TurnIn QuestName="News of Dogran" QuestId="1510" TurnInName="Ken&apos;zigla" TurnInId="4197" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="Ken&apos;zigla&apos;s Draught" QuestId="1511" GiverName="Ken&apos;zigla" GiverId="4197" />
+    </If>
+    <TurnIn QuestName="Ken&apos;zigla&apos;s Draught" QuestId="1511" TurnInName="Grunt Logmar" TurnInId="5911" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="Dogran&apos;s Captivity" QuestId="1515" GiverName="Grunt Logmar" GiverId="5911" />
+    </If>
+    <TurnIn QuestName="Dogran&apos;s Captivity" QuestId="1515" TurnInName="Grunt Dogran" TurnInId="5908" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="Love&apos;s Gift" QuestId="1512" GiverName="Grunt Dogran" GiverId="5908" />
+    </If>
+    <TurnIn QuestName="Love&apos;s Gift" QuestId="1512" TurnInName="Gan&apos;rul Bloodeye" TurnInId="5875" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <PickUp QuestName="The Binding" QuestId="1513" GiverName="Gan&apos;rul Bloodeye" GiverId="5875" />
+      <Objective QuestName="The Binding" QuestId="1513" Type="KillMob" MobId="5677" MobName="Summoned Succubus" KillCount="1" />
+      <TurnIn QuestName="The Binding" QuestId="1513" TurnInName="Gan&apos;rul Bloodeye" TurnInId="5875" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3247" MobName="Thunderhawk Hatchling" KillCount="1" />
+    <Objective QuestName="Cry of the Thunderhawk" QuestId="913" Type="CollectItem" ItemId="5164" ItemName="Thunderhawk Wings" CollectCount="1" />
+    <TurnIn QuestName="Cry of the Thunderhawk" QuestId="913" TurnInName="Jorn Skyseer" TurnInId="3387" />
+    <TurnIn QuestName="Consumed by Hatred" QuestId="899" TurnInName="Mankrik" TurnInId="3432" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="3234" MobName="Lost Barrens Kodo" KillCount="1" />
+    <Objective QuestName="Chen&apos;s Empty Keg" QuestId="822" Type="CollectItem" ItemId="4896" ItemName="Kodo Liver" CollectCount="1" />
+    <TurnIn QuestName="Melor Sends Word" QuestId="1130" TurnInName="Melor Stonehoof" TurnInId="3441" />
+    <PickUp QuestName="Steelsnap" QuestId="1131" GiverName="Melor Stonehoof" GiverId="3441" />
+    <TurnIn QuestName="Hamuul Runetotem" QuestId="1489" TurnInName="Arch Druid Hamuul Runetotem" TurnInId="5769" />
+    <PickUp QuestName="Nara Wildmane" QuestId="1490" GiverName="Arch Druid Hamuul Runetotem" GiverId="5769" />
+    <TurnIn QuestName="Nara Wildmane" QuestId="1490" TurnInName="Nara Wildmane" TurnInId="5770" />
+    <PickUp QuestName="The Sacred Flame" QuestId="1195" GiverName="Zangen Stonehoof" GiverId="4721" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\The Barrens (16-20) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Stonetalon_Mountains_(20-21)" />
+  </QuestOrder>
+</HBProfile>

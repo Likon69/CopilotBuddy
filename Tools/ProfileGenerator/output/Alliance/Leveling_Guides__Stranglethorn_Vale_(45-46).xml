@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Stranglethorn Vale (45-46)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>46</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="604" Name="The Bloodsail Buccaneers">
+    <Objective Type="CollectItem" ItemId="3920" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Bloodsail Charts" Id="2086" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-14686.3" Y="488.54" Z="4.29" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="3921" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Bloodsail Orders" Id="2087" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-14705.2" Y="450.42" Z="0.16" />
+        <Hotspot X="-14685.4" Y="486.47" Z="4.18" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (45-46)" LogColor="Green" />
+    <PickUp QuestName="Voodoo Dues" QuestId="609" GiverName="&quot;Sea Wolf&quot; MacKinley" GiverId="2501" />
+    <PickUp QuestName="Whiskey Slim&apos;s Lost Grog" QuestId="580" GiverName="Whiskey Slim" GiverId="2491" />
+    <TurnIn QuestName="Back to Booty Bay" QuestId="1118" TurnInName="Crank Fizzlebub" TurnInId="2498" />
+    <PickUp QuestName="Zanzil&apos;s Secret" QuestId="621" GiverName="Crank Fizzlebub" GiverId="2498" />
+    <PickUp QuestName="Up to Snuff" QuestId="587" GiverName="Deeg" GiverId="2488" />
+    <PickUp QuestName="The Bloodsail Buccaneers" QuestId="604" GiverName="Fleet Master Seahorn" GiverId="2487" />
+    <PickUp QuestName="Akiris by the Bundle" QuestId="617" GiverName="Privateer Bloads" GiverId="2494" />
+    <PickUp QuestName="Keep An Eye Out" QuestId="576" GiverName="Dizzy One-Eye" GiverId="2493" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="604" Type="CollectItem" ItemId="3920" ItemName="Bloodsail Charts" CollectCount="1" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="604" Type="CollectItem" ItemId="3921" ItemName="Bloodsail Orders" CollectCount="1" />
+    <Objective QuestName="Up to Snuff" QuestId="587" Type="CollectItem" ItemId="3910" ItemName="Snuff" CollectCount="15" />
+    <Objective QuestName="Keep An Eye Out" QuestId="576" Type="CollectItem" ItemId="3897" ItemName="Dizzy&apos;s Eye" CollectCount="1" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="604" Type="KillMob" MobId="1563" MobName="Bloodsail Swashbuckler" KillCount="10" />
+    <TurnIn QuestName="Keep An Eye Out" QuestId="576" TurnInName="Dizzy One-Eye" TurnInId="2493" />
+    <TurnIn QuestName="Up to Snuff" QuestId="587" TurnInName="Deeg" TurnInId="2488" />
+    <TurnIn QuestName="The Bloodsail Buccaneers" QuestId="604" TurnInName="Fleet Master Seahorn" TurnInId="2487" />
+    <PickUp QuestName="The Bloodsail Buccaneers" QuestId="608" GiverName="Fleet Master Seahorn" GiverId="2487" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="4098" ItemName="Carefully Folded Note" CollectCount="1" />
+    <PickUp QuestName="Message in a Bottle" QuestId="594" GiverName="Fleet Master Seahorn" GiverId="2487" />
+    <TurnIn QuestName="Message in a Bottle" QuestId="594" TurnInName="Princess Poobah" TurnInId="2634" />
+    <PickUp QuestName="Message in a Bottle" QuestId="630" GiverName="Princess Poobah" GiverId="2634" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1559" MobName="King Mukla" KillCount="1" />
+    <Objective QuestName="Message in a Bottle" QuestId="630" Type="CollectItem" ItemId="4103" ItemName="Shackle Key" CollectCount="1" />
+    <TurnIn QuestName="Message in a Bottle" QuestId="630" TurnInName="Princess Poobah" TurnInId="2634" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="608" Type="KillMob" MobId="2550" MobName="Captain Stillwater" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="4056" ItemName="Cortello&apos;s Riddle" CollectCount="1" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="608" Type="KillMob" MobId="2546" MobName="Fleet Master Firallon" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="4056" ItemName="Cortello&apos;s Riddle" CollectCount="1" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="608" Type="KillMob" MobId="2548" MobName="Captain Keelhaul" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="4056" ItemName="Cortello&apos;s Riddle" CollectCount="1" />
+    <PickUp QuestName="Cortello&apos;s Riddle" QuestId="624" GiverName="Princess Poobah" GiverId="2634" />
+    <TurnIn QuestName="The Bloodsail Buccaneers" QuestId="608" TurnInName="Fleet Master Seahorn" TurnInId="2487" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="1907" MobName="Naga Explorer" KillCount="1" />
+    <Objective QuestName="Akiris by the Bundle" QuestId="617" Type="CollectItem" ItemId="4029" ItemName="Akiris Reed" CollectCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2536" MobName="Jon-Jon the Crow" KillCount="1" />
+    <Objective QuestName="Voodoo Dues" QuestId="609" Type="CollectItem" ItemId="3925" ItemName="Jon-Jon&apos;s Golden Spyglass" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2535" MobName="Maury &quot;Club Foot&quot; Wilkins" KillCount="1" />
+    <Objective QuestName="Voodoo Dues" QuestId="609" Type="CollectItem" ItemId="3924" ItemName="Maury&apos;s Clubbed Foot" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="2537" MobName="Chucky &quot;Ten Thumbs&quot;" KillCount="1" />
+    <Objective QuestName="Voodoo Dues" QuestId="609" Type="CollectItem" ItemId="3926" ItemName="Chucky&apos;s Huge Ring" CollectCount="1" />
+    <Objective QuestName="Zanzil&apos;s Secret" QuestId="621" Type="CollectItem" ItemId="4016" ItemName="Zanzil&apos;s Mixture" CollectCount="12" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="730" MobName="Tethis" KillCount="1" />
+    <Objective QuestName="Raptor Mastery" QuestId="197" Type="CollectItem" ItemId="3877" ItemName="Talon of Tethis" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="728" MobName="Bhag&apos;thera" KillCount="1" />
+    <Objective QuestName="Panther Mastery" QuestId="193" Type="CollectItem" ItemId="3876" ItemName="Fang of Bhag&apos;thera" CollectCount="1" />
+    <TurnIn QuestName="Raptor Mastery" QuestId="197" TurnInName="Hemet Nesingwary" TurnInId="715" />
+    <TurnIn QuestName="Panther Mastery" QuestId="193" TurnInName="Sir S. J. Erlgadin" TurnInId="718" />
+    <TurnIn QuestName="Zanzil&apos;s Secret" QuestId="621" TurnInName="Crank Fizzlebub" TurnInId="2498" />
+    <TurnIn QuestName="Akiris by the Bundle" QuestId="617" TurnInName="Privateer Bloads" TurnInId="2494" />
+    <PickUp QuestName="Akiris by the Bundle" QuestId="623" GiverName="Privateer Bloads" GiverId="2494" />
+    <TurnIn QuestName="Voodoo Dues" QuestId="609" TurnInName="&quot;Sea Wolf&quot; MacKinley" TurnInId="2501" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Stranglethorn Vale (45-46) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Swamp_of_Sorrows_(46-46)" />
+  </QuestOrder>
+</HBProfile>

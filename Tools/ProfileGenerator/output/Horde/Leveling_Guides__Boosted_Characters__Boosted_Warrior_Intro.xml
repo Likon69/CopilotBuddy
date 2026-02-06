@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Boosted Characters\\Boosted Warrior Intro</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Boosted Characters\\Boosted Warrior Intro" LogColor="Green" />
+    <PickUp QuestName="A New Beginning" QuestId="64046" />
+    <TurnIn QuestName="A New Beginning" QuestId="64046" TurnInName="Grezz Ragefist" TurnInId="3353" />
+    <PickUp QuestName="Tools for Survival" QuestId="64048" GiverName="Grezz Ragefist" GiverId="3353" />
+    <TurnIn QuestName="Tools for Survival" QuestId="64048" TurnInName="Grezz Ragefist" TurnInId="3353" />
+    <PickUp QuestName="Combat Training" QuestId="64050" GiverName="Grezz Ragefist" GiverId="3353" />
+    <TurnIn QuestName="Combat Training" QuestId="64050" TurnInName="Grezz Ragefist" TurnInId="3353" />
+    <PickUp QuestName="Talented" QuestId="64052" GiverName="Grezz Ragefist" GiverId="3353" />
+    <TurnIn QuestName="Talented" QuestId="64052" TurnInName="Grezz Ragefist" TurnInId="3353" />
+    <PickUp QuestName="The Dark Portal" QuestId="64063" GiverName="Grezz Ragefist" GiverId="3353" />
+    <TurnIn QuestName="The Dark Portal" QuestId="64063" TurnInName="Warlord Dar&apos;toon" TurnInId="19254" />
+    <PickUp QuestName="Through the Dark Portal" QuestId="9407" GiverName="Warlord Dar&apos;toon" GiverId="19254" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Boosted Characters\\Boosted Warrior Intro Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

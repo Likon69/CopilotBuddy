@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Dustwallow Marsh (33-33)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Dustwallow Marsh (33-33)" LogColor="Green" />
+    <PickUp QuestName="Traitors Among Us" QuestId="11126" GiverName="Calia Hastings" GiverId="23566" />
+    <TurnIn QuestName="Traitors Among Us" QuestId="11126" TurnInName="Calia Hastings" TurnInId="23566" />
+    <TurnIn QuestName="James Hyal" QuestId="1302" TurnInName="Clerk Lendry" TurnInId="5083" />
+    <PickUp QuestName="Inspecting the Ruins" QuestId="11123" GiverName="Captain Garran Vimes" GiverId="4944" />
+    <TurnIn QuestName="The Missing Diplomat" QuestId="1264" TurnInName="Commander Samaul" TurnInId="4964" />
+    <PickUp QuestName="The Missing Diplomat" QuestId="1265" GiverName="Commander Samaul" GiverId="4964" />
+    <PickUp QuestName="The Orc Report" QuestId="1219" GiverName="Commander Samaul" GiverId="4964" />
+    <PickUp QuestName="Hungry!" QuestId="1177" GiverName="Mudcrush Durtfeet" GiverId="4503" />
+    <TurnIn QuestName="Inspecting the Ruins" QuestId="11123" TurnInName="Inspector Tarem" TurnInId="23567" />
+    <PickUp QuestName="Suspicious Hoofprints" QuestId="1284" GiverName="Inspector Tarem" GiverId="23567" />
+    <PickUp QuestName="Lieutenant Paval Reethe" QuestId="1252" GiverName="Inspector Tarem" GiverId="23567" />
+    <PickUp QuestName="The Black Shield" QuestId="1253" GiverName="Inspector Tarem" GiverId="23567" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Dustwallow Marsh (33-33) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Thousand_Needles_(33-34)" />
+  </QuestOrder>
+</HBProfile>

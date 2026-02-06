@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Burning Steppes (54-54)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Burning Steppes (54-54)" LogColor="Green" />
+    <PickUp QuestName="The Rise of the Machines" QuestId="4061" GiverName="Hierophant Theodora Mulvadania" GiverId="9079" />
+    <PickUp QuestName="Dreadmaul Rock" QuestId="3821" GiverName="Thal&apos;trak Proudtusk" GiverId="9082" />
+    <PickUp QuestName="Broodling Essence" QuestId="4726" GiverName="Tinkee Steamboil" GiverId="10267" />
+    <PickUp QuestName="Tablet of the Seven" QuestId="4296" GiverName="Maxwort Uberglint" GiverId="9536" />
+    <TurnIn QuestName="Yuka Screwspigot" QuestId="4324" TurnInName="Yuka Screwspigot" TurnInId="9544" />
+    <Objective QuestName="Broodling Essence" QuestId="4726" Type="CollectItem" ItemId="12283" ItemName="Broodling Essence" CollectCount="8" />
+    <PickUp QuestName="A Taste of Flame" QuestId="4022" GiverName="Cyrus Therepentous" GiverId="9459" />
+    <TurnIn QuestName="A Taste of Flame" QuestId="4022" TurnInName="Cyrus Therepentous" TurnInId="9459" />
+    <TurnIn QuestName="Dreadmaul Rock" QuestId="3821" TurnInName="Sha&apos;ni Proudtusk" TurnInId="9136" />
+    <PickUp QuestName="Krom&apos;Grul" QuestId="3822" GiverName="Sha&apos;ni Proudtusk" GiverId="9136" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="8977" MobName="Krom&apos;Grul" KillCount="1" />
+    <Objective QuestName="Krom&apos;Grul" QuestId="3822" Type="CollectItem" ItemId="11058" ItemName="Sha&apos;ni&apos;s Nose-Ring" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="8977" MobName="Krom&apos;Grul" KillCount="1" />
+    <Objective QuestName="Krom&apos;Grul" QuestId="3822" Type="CollectItem" ItemId="11058" ItemName="Sha&apos;ni&apos;s Nose-Ring" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="8977" MobName="Krom&apos;Grul" KillCount="1" />
+    <Objective QuestName="Krom&apos;Grul" QuestId="3822" Type="CollectItem" ItemId="11058" ItemName="Sha&apos;ni&apos;s Nose-Ring" CollectCount="1" />
+    <Objective QuestName="Tablet of the Seven" QuestId="4296" Type="CollectItem" ItemId="11470" ItemName="Tablet Transcript" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7039" MobName="War Reaver" KillCount="1" />
+    <Objective QuestName="The Rise of the Machines" QuestId="4061" Type="CollectItem" ItemId="11266" ItemName="Fractured Elemental Shard" CollectCount="10" />
+    <TurnIn QuestName="Broodling Essence" QuestId="4726" TurnInName="Tinkee Steamboil" TurnInId="10267" />
+    <PickUp QuestName="Felnok Steelspring" QuestId="4808" GiverName="Tinkee Steamboil" GiverId="10267" />
+    <TurnIn QuestName="Tablet of the Seven" QuestId="4296" TurnInName="Maxwort Uberglint" TurnInId="9536" />
+    <TurnIn QuestName="The Rise of the Machines" QuestId="4061" TurnInName="Hierophant Theodora Mulvadania" TurnInId="9079" />
+    <PickUp QuestName="The Rise of the Machines" QuestId="4062" GiverName="Hierophant Theodora Mulvadania" GiverId="9079" />
+    <TurnIn QuestName="Krom&apos;Grul" QuestId="3822" TurnInName="Thal&apos;trak Proudtusk" TurnInId="9082" />
+    <TurnIn QuestName="The Rise of the Machines" QuestId="4062" TurnInName="Lotwil Veriatus" TurnInId="2921" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Burning Steppes (54-54) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Azshara_(54-55)" />
+  </QuestOrder>
+</HBProfile>

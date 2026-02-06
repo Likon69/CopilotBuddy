@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Ashenvale (25-26)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>26</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="6462" Name="Troll Charm">
+    <Objective Type="CollectItem" ItemId="16602" CollectCount="8">
+      <CollectFrom>
+        <GameObject Name="Troll Chest" Id="178144" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3300.53" Y="-702.68" Z="161.36" />
+        <Hotspot X="3314.06" Y="-675.87" Z="163.48" />
+        <Hotspot X="3336.63" Y="-693.94" Z="162.41" />
+        <Hotspot X="3347.51" Y="-706.09" Z="167.38" />
+        <Hotspot X="3349.02" Y="-633.11" Z="178.18" />
+        <Hotspot X="3359.01" Y="-684.06" Z="161.11" />
+        <Hotspot X="3359.49" Y="-599.62" Z="181.77" />
+        <Hotspot X="3379.73" Y="-656.31" Z="162.86" />
+        <Hotspot X="3395.35" Y="-629.42" Z="179.28" />
+        <Hotspot X="3401.35" Y="-604.59" Z="182.97" />
+        <Hotspot X="3406.52" Y="-588.55" Z="188.18" />
+        <Hotspot X="3411.87" Y="-650.55" Z="175.71" />
+        <Hotspot X="3432.4" Y="-636.02" Z="166.99" />
+        <Hotspot X="3458.19" Y="-661.23" Z="178.35" />
+        <Hotspot X="3481.71" Y="-617.88" Z="183.44" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Ashenvale (25-26)" LogColor="Green" />
+    <PickUp QuestName="Vorsha the Lasher" QuestId="6641" GiverName="Muglash" GiverId="12717" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="12940" MobName="Vorsha the Lasher" KillCount="1" />
+    <TurnIn QuestName="Vorsha the Lasher" QuestId="6641" TurnInName="Warsong Runner" TurnInId="12863" />
+    <PickUp QuestName="Stonetalon Standstill" QuestId="25" GiverName="Mastok Wrilehiss" GiverId="12737" />
+    <PickUp QuestName="Ashenvale Outrunners" QuestId="6503" GiverName="Kuray&apos;bin" GiverId="12867" />
+    <Objective QuestName="Ashenvale Outrunners" QuestId="6503" Type="KillMob" MobId="12856" MobName="Ashenvale Outrunner" KillCount="9" />
+    <PickUp QuestName="Torek&apos;s Assault" QuestId="6544" GiverName="Torek" GiverId="12858" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="12860" MobName="Duriel Moonfire" KillCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="12759" MobName="Tideress" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="16408" ItemName="Befouled Water Globe" CollectCount="1" />
+    <PickUp QuestName="The Befouled Element" QuestId="1918" GiverName="Torek" GiverId="12858" />
+    <Objective QuestName="Stonetalon Standstill" QuestId="25" Type="KillMob" MobId="3917" MobName="Befouled Water Elemental" KillCount="12" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="12678" MobName="Ursangous" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="16303" ItemName="Ursangous&apos;s Paw" CollectCount="1" />
+    <PickUp QuestName="Ursangous&apos;s Paw" QuestId="23" GiverName="Torek" GiverId="12858" />
+    <TurnIn QuestName="Stonetalon Standstill" QuestId="25" TurnInName="Mastok Wrilehiss" TurnInId="12737" />
+    <TurnIn QuestName="The Befouled Element" QuestId="1918" TurnInName="Mastok Wrilehiss" TurnInId="12737" />
+    <PickUp QuestName="Je&apos;neu of the Earthen Ring" QuestId="824" GiverName="Mastok Wrilehiss" GiverId="12737" />
+    <PickUp QuestName="Satyr Horns" QuestId="6441" GiverName="Pixel" GiverId="12724" />
+    <TurnIn QuestName="Ursangous&apos;s Paw" QuestId="23" TurnInName="Senani Thunderheart" TurnInId="12696" />
+    <TurnIn QuestName="Torek&apos;s Assault" QuestId="6544" TurnInName="Ertog Ragetusk" TurnInId="12877" />
+    <TurnIn QuestName="Ashenvale Outrunners" QuestId="6503" TurnInName="Kuray&apos;bin" TurnInId="12867" />
+    <Objective QuestName="Satyr Horns" QuestId="6441" Type="CollectItem" ItemId="5481" ItemName="Satyr Horns" CollectCount="16" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="4054" MobName="Laughing Sister" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="5867" ItemName="Etched Phial" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="12677" MobName="Shadumbra" KillCount="1" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="16304" ItemName="Shadumbra&apos;s Head" CollectCount="1" />
+    <PickUp QuestName="Shadumbra&apos;s Head" QuestId="24" GiverName="Kuray&apos;bin" GiverId="12867" />
+    <Objective QuestName="The Sacred Flame" QuestId="1195" Type="CollectItem" ItemId="5868" ItemName="Filled Etched Phial" CollectCount="1" />
+    <TurnIn QuestName="Shadumbra&apos;s Head" QuestId="24" TurnInName="Senani Thunderheart" TurnInId="12696" />
+    <TurnIn QuestName="Satyr Horns" QuestId="6441" TurnInName="Pixel" TurnInId="12724" />
+    <TurnIn QuestName="Je&apos;neu of the Earthen Ring" QuestId="824" TurnInName="Je&apos;neu Sancrea" TurnInId="12736" />
+    <PickUp QuestName="Between a Rock and a Thistlefur" QuestId="216" GiverName="Karang Amakkar" GiverId="12757" />
+    <PickUp QuestName="Troll Charm" QuestId="6462" GiverName="Mitsuwa" GiverId="12721" />
+    <Objective QuestName="Between a Rock and a Thistlefur" QuestId="216" Type="KillMob" MobId="3925" MobName="Thistlefur Avenger" KillCount="8" />
+    <Objective QuestName="Between a Rock and a Thistlefur" QuestId="216" Type="KillMob" MobId="3924" MobName="Thistlefur Shaman" KillCount="8" />
+    <Objective QuestName="Troll Charm" QuestId="6462" Type="CollectItem" ItemId="16602" ItemName="Troll Charm" CollectCount="8" />
+    <PickUp QuestName="Freedom to Ruul" QuestId="6482" GiverName="Ruul Snowhoof" GiverId="12818" />
+    <TurnIn QuestName="Freedom to Ruul" QuestId="6482" TurnInName="Yama Snowhoof" TurnInId="12837" />
+    <TurnIn QuestName="Between a Rock and a Thistlefur" QuestId="216" TurnInName="Karang Amakkar" TurnInId="12757" />
+    <TurnIn QuestName="Troll Charm" QuestId="6462" TurnInName="Mitsuwa" TurnInId="12721" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="The Shattered Salute" QuestId="2460" GiverName="Shenthul" GiverId="3401" />
+    </If>
+    <TurnIn QuestName="The Shattered Salute" QuestId="2460" TurnInName="Shenthul" TurnInId="3401" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="Deep Cover" QuestId="2458" GiverName="Shenthul" GiverId="3401" />
+    </If>
+    <TurnIn QuestName="Deep Cover" QuestId="2458" TurnInName="Taskmaster Fizzule" TurnInId="7233" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="Mission: Possible But Not Probable" QuestId="2478" GiverName="Taskmaster Fizzule" GiverId="7233" />
+    </If>
+    <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="CollectItem" ItemId="8072" ItemName="Silixiz&apos;s Tower Key" CollectCount="1" />
+    <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="KillMob" MobId="7310" MobName="Mutated Venture Co. Drone" KillCount="2" />
+    <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="KillMob" MobId="7308" MobName="Venture Co. Patroller" KillCount="2" />
+    <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="KillMob" MobId="7307" MobName="Venture Co. Lookout" KillCount="2" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7288" MobName="Grand Foreman Puzik Gallywix" KillCount="1" />
+    <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="CollectItem" ItemId="8073" ItemName="Cache of Zanzil&apos;s Altered Mixture" CollectCount="1" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="CollectItem" ItemId="8074" ItemName="Gallywix&apos;s Head" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Mission: Possible But Not Probable" QuestId="2478" TurnInName="Shenthul" TurnInId="3401" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="Hinott&apos;s Assistance" QuestId="2479" GiverName="Shenthul" GiverId="3401" />
+    </If>
+    <TurnIn QuestName="Hinott&apos;s Assistance" QuestId="2479" TurnInName="Serge Hinott" TurnInId="2391" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="Hinott&apos;s Assistance" QuestId="2480" GiverName="Serge Hinott" GiverId="2391" />
+      <TurnIn QuestName="Hinott&apos;s Assistance" QuestId="2480" TurnInName="Serge Hinott" TurnInId="2391" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Ashenvale (25-26) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Stonetalon_Mountains_(26-27)" />
+  </QuestOrder>
+</HBProfile>

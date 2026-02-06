@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Class Quests\\Paladin Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <!-- Quest Overrides -->
+  <Quest Id="7642" Name="Collection of Goods">
+    <Objective Type="CollectItem" ItemId="13180" CollectCount="5">
+      <CollectFrom>
+        <GameObject Name="Supply Crate" Id="176224" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3486.79" Y="-3331.54" Z="131.38" />
+        <Hotspot X="3508.78" Y="-3372.3" Z="135.38" />
+        <Hotspot X="3584.93" Y="-3482.1" Z="135.12" />
+        <Hotspot X="3636.53" Y="-3347.54" Z="125.59" />
+        <Hotspot X="3666.63" Y="-3182.46" Z="126.25" />
+        <Hotspot X="3738.43" Y="-3477.54" Z="131.39" />
+        <Hotspot X="3877.03" Y="-3663.46" Z="143.9" />
+        <Hotspot X="3888.71" Y="-3699.08" Z="143.85" />
+        <Hotspot X="3892.38" Y="-3563.78" Z="138.1" />
+        <Hotspot X="3961.73" Y="-3539.9" Z="127.74" />
+        <Hotspot X="3973.62" Y="-3619.9" Z="130.0" />
+        <Hotspot X="4104.72" Y="-3435.93" Z="117.8" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Paladin Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <PickUp QuestName="Tome of Divinity" QuestId="2998" GiverName="Brother Wilhelm" GiverId="927" />
+    </If>
+    <TurnIn QuestName="Tome of Divinity" QuestId="2998" TurnInName="Duthorian Rall" TurnInId="6171" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1641" GiverName="Duthorian Rall" GiverId="6171" />
+      <TurnIn QuestName="The Tome of Divinity" QuestId="1641" TurnInName="Duthorian Rall" TurnInId="6171" />
+      <PickUp QuestName="The Tome of Divinity" QuestId="1642" GiverName="Duthorian Rall" GiverId="6171" />
+    </If>
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1642" TurnInName="Duthorian Rall" TurnInId="6171" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1643" GiverName="Duthorian Rall" GiverId="6171" />
+    </If>
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1643" TurnInName="Stephanie Turner" TurnInId="6174" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1644" GiverName="Stephanie Turner" GiverId="6174" />
+      <Objective QuestName="The Tome of Divinity" QuestId="1644" Type="CollectItem" ItemId="2589" ItemName="Linen Cloth" CollectCount="10" />
+    </If>
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1644" TurnInName="Stephanie Turner" TurnInId="6174" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1780" GiverName="Stephanie Turner" GiverId="6174" />
+    </If>
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1780" TurnInName="Duthorian Rall" TurnInId="6171" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1781" GiverName="Duthorian Rall" GiverId="6171" />
+    </If>
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1781" TurnInName="Gazin Tenorm" TurnInId="6173" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1786" GiverName="Gazin Tenorm" GiverId="6173" />
+    </If>
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1786" TurnInName="Henze Faulk" TurnInId="6172" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1787" GiverName="Henze Faulk" GiverId="6172" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="474" MobName="Defias Rogue Wizard" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <Objective QuestName="The Tome of Divinity" QuestId="1787" Type="CollectItem" ItemId="6846" ItemName="Defias Script" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1787" TurnInName="Gazin Tenorm" TurnInId="6173" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1788" GiverName="Gazin Tenorm" GiverId="6173" />
+      <TurnIn QuestName="The Tome of Divinity" QuestId="1788" TurnInName="Duthorian Rall" TurnInId="6171" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Dwarf)">
+      <PickUp QuestName="Tome of Divinity" QuestId="2997" GiverName="Brandur Ironhammer" GiverId="5149" />
+    </If>
+    <TurnIn QuestName="Tome of Divinity" QuestId="2997" TurnInName="Tiza Battleforge" TurnInId="6179" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Dwarf)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1645" GiverName="Tiza Battleforge" GiverId="6179" />
+      <PickUp QuestName="The Tome of Divinity" QuestId="1646" GiverName="Tiza Battleforge" GiverId="6179" />
+    </If>
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1646" TurnInName="Tiza Battleforge" TurnInId="6179" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Dwarf)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1647" GiverName="Tiza Battleforge" GiverId="6179" />
+    </If>
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1647" TurnInName="John Turner" TurnInId="6175" />
+    <PickUp QuestName="The Tome of Divinity" QuestId="1648" GiverName="John Turner" GiverId="6175" />
+    <Objective QuestName="The Tome of Divinity" QuestId="1648" Type="CollectItem" ItemId="2589" ItemName="Linen Cloth" CollectCount="10" />
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1648" TurnInName="John Turner" TurnInId="6175" />
+    <PickUp QuestName="The Tome of Divinity" QuestId="1778" GiverName="John Turner" GiverId="6175" />
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1778" TurnInName="Tiza Battleforge" TurnInId="6179" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Dwarf)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1779" GiverName="Tiza Battleforge" GiverId="6179" />
+    </If>
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1779" TurnInName="Muiredon Battleforge" TurnInId="6178" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Dwarf)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1783" GiverName="Muiredon Battleforge" GiverId="6178" />
+    </If>
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1783" TurnInName="Narm Faulk" TurnInId="6177" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Dwarf)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1784" GiverName="Narm Faulk" GiverId="6177" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="6123" MobName="Dark Iron Spy" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Dwarf)">
+      <Objective QuestName="The Tome of Divinity" QuestId="1784" Type="CollectItem" ItemId="6847" ItemName="Dark Iron Script" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="The Tome of Divinity" QuestId="1784" TurnInName="Muiredon Battleforge" TurnInId="6178" />
+    <If Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; (Me.Race == WoWRace.Dwarf)">
+      <PickUp QuestName="The Tome of Divinity" QuestId="1785" GiverName="Muiredon Battleforge" GiverId="6178" />
+      <TurnIn QuestName="The Tome of Divinity" QuestId="1785" TurnInName="Tiza Battleforge" TurnInId="6179" />
+    </If>
+    <PickUp QuestName="The Tome of Valor" QuestId="1794" GiverName="Duthorian Rall" GiverId="6171" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Tome of Valor" QuestId="1793" GiverName="Duthorian Rall" GiverId="6171" />
+      <PickUp QuestName="The Tome of Valor" QuestId="1649" GiverName="Duthorian Rall" GiverId="6171" />
+    </If>
+    <TurnIn QuestName="The Tome of Valor" QuestId="1649" TurnInName="Duthorian Rall" TurnInId="6171" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Tome of Valor" QuestId="1650" GiverName="Duthorian Rall" GiverId="6171" />
+    </If>
+    <TurnIn QuestName="The Tome of Valor" QuestId="1650" TurnInName="Daphne Stilwell" TurnInId="6182" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Tome of Valor" QuestId="1651" GiverName="Daphne Stilwell" GiverId="6182" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="6180" MobName="Defias Raider" KillCount="1" />
+    <TurnIn QuestName="The Tome of Valor" QuestId="1651" TurnInName="Daphne Stilwell" TurnInId="6182" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Tome of Valor" QuestId="1652" GiverName="Daphne Stilwell" GiverId="6182" />
+    </If>
+    <TurnIn QuestName="The Tome of Valor" QuestId="1652" TurnInName="Duthorian Rall" TurnInId="6171" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Test of Righteousness" QuestId="1653" GiverName="Duthorian Rall" GiverId="6171" />
+    </If>
+    <TurnIn QuestName="The Test of Righteousness" QuestId="1653" TurnInName="Jordan Stilwell" TurnInId="6181" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Test of Righteousness" QuestId="1654" GiverName="Jordan Stilwell" GiverId="6181" />
+      <Objective QuestName="The Test of Righteousness" QuestId="1654" Type="CollectItem" ItemId="6994" ItemName="Whitestone Oak Lumber" CollectCount="1" />
+      <Objective QuestName="The Test of Righteousness" QuestId="1654" Type="CollectItem" ItemId="6895" ItemName="Jordan&apos;s Smithing Hammer" CollectCount="1" />
+      <PickUp QuestName="Bailor&apos;s Ore Shipment" QuestId="1655" GiverName="Bailor Stonehand" GiverId="6241" />
+      <Objective QuestName="Bailor&apos;s Ore Shipment" QuestId="1655" Type="CollectItem" ItemId="6992" ItemName="Jordan&apos;s Ore Shipment" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Bailor&apos;s Ore Shipment" QuestId="1655" TurnInName="Bailor Stonehand" TurnInId="6241" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="The Test of Righteousness" QuestId="1654" Type="CollectItem" ItemId="6992" ItemName="Jordan&apos;s Ore Shipment" CollectCount="1" />
+      <PickUp QuestName="Seeking the Kor Gem" QuestId="1442" GiverName="Thundris Windweaver" GiverId="3649" />
+      <Objective QuestName="Seeking the Kor Gem" QuestId="1442" Type="CollectItem" ItemId="6995" ItemName="Corrupted Kor Gem" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="The Test of Righteousness" QuestId="1654" Type="CollectItem" ItemId="7083" ItemName="Purified Kor Gem" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="The Test of Righteousness" QuestId="1654" TurnInName="Jordan Stilwell" TurnInId="6181" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Test of Righteousness" QuestId="1806" GiverName="Jordan Stilwell" GiverId="6181" />
+      <TurnIn QuestName="The Test of Righteousness" QuestId="1806" TurnInName="Jordan Stilwell" TurnInId="6181" />
+    </If>
+    <PickUp QuestName="The Tome of Nobility" QuestId="1661" GiverName="Duthorian Rall" GiverId="6171" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <TurnIn QuestName="The Tome of Nobility" QuestId="1661" TurnInName="Duthorian Rall" TurnInId="6171" />
+      <PickUp QuestName="Chillwind Point" QuestId="8415" GiverName="Lord Grayson Shadowbreaker" GiverId="928" />
+    </If>
+    <TurnIn QuestName="Chillwind Point" QuestId="8415" TurnInName="Lord Grayson Shadowbreaker" TurnInId="928" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="Dispelling Evil" QuestId="8414" GiverName="Lord Grayson Shadowbreaker" GiverId="928" />
+    </If>
+    <Objective QuestName="Dispelling Evil" QuestId="8414" Type="CollectItem" ItemId="12840" ItemName="Minion&apos;s Scourgestone" CollectCount="20" />
+    <TurnIn QuestName="Dispelling Evil" QuestId="8414" TurnInName="High Priest Thel&apos;danis" TurnInId="1854" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="Inert Scourgestones" QuestId="8416" GiverName="High Priest Thel&apos;danis" GiverId="1854" />
+    </If>
+    <TurnIn QuestName="Inert Scourgestones" QuestId="8416" TurnInName="Commander Ashlam Valorfist" TurnInId="10838" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="Forging the Mightstone" QuestId="8418" GiverName="Commander Ashlam Valorfist" GiverId="10838" />
+    </If>
+    <Objective QuestName="Forging the Mightstone" QuestId="8418" Type="CollectItem" ItemId="20606" ItemName="Amber Voodoo Feather" CollectCount="2" />
+    <Objective QuestName="Forging the Mightstone" QuestId="8418" Type="CollectItem" ItemId="20607" ItemName="Blue Voodoo Feather" CollectCount="2" />
+    <Objective QuestName="Forging the Mightstone" QuestId="8418" Type="CollectItem" ItemId="20608" ItemName="Green Voodoo Feather" CollectCount="2" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <TurnIn QuestName="Forging the Mightstone" QuestId="8418" TurnInName="Commander Ashlam Valorfist" TurnInId="10838" />
+      <PickUp QuestName="Lord Grayson Shadowbreaker" QuestId="7638" GiverName="Duthorian Rall" GiverId="6171" />
+    </If>
+    <TurnIn QuestName="Lord Grayson Shadowbreaker" QuestId="7638" TurnInName="Lord Grayson Shadowbreaker" TurnInId="928" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="Emphasis on Sacrifice" QuestId="7637" GiverName="Lord Grayson Shadowbreaker" GiverId="928" />
+    </If>
+    <TurnIn QuestName="Emphasis on Sacrifice" QuestId="7637" TurnInName="High Priest Rohan" TurnInId="11406" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="To Show Due Judgment" QuestId="7639" GiverName="High Priest Rohan" GiverId="11406" />
+    </If>
+    <TurnIn QuestName="To Show Due Judgment" QuestId="7639" TurnInName="Lord Grayson Shadowbreaker" TurnInId="928" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="Exorcising Terrordale" QuestId="7640" GiverName="Lord Grayson Shadowbreaker" GiverId="928" />
+    </If>
+    <Objective QuestName="Exorcising Terrordale" QuestId="7640" Type="KillMob" MobId="14564" MobName="Terrordale Spirit" KillCount="25" />
+    <TurnIn QuestName="xorcising Terrordale" QuestId="7640" TurnInName="Lord Grayson Shadowbreaker" TurnInId="928" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Work of Grimand Elmore" QuestId="7641" GiverName="Lord Grayson Shadowbreaker" GiverId="928" />
+    </If>
+    <TurnIn QuestName="The Work of Grimand Elmore" QuestId="7641" TurnInName="Grimand Elmore" TurnInId="1416" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="Collection of Goods" QuestId="7642" GiverName="Grimand Elmore" GiverId="1416" />
+    </If>
+    <Objective QuestName="Collection of Goods" QuestId="7642" Type="CollectItem" ItemId="8836" ItemName="Arthas" CollectCount="10" />
+    <Objective QuestName="Collection of Goods" QuestId="7642" Type="CollectItem" ItemId="14047" ItemName="Runecloth" CollectCount="40" />
+    <Objective QuestName="Collection of Goods" QuestId="7642" Type="CollectItem" ItemId="12360" ItemName="Arcanite Bar" CollectCount="6" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Collection of Goods" QuestId="7642" Type="CollectItem" ItemId="13180" ItemName="Stratholme Holy Water" CollectCount="5" />
+      <TurnIn QuestName="Collection of Goods" QuestId="7642" TurnInName="Grimand Elmore" TurnInId="1416" />
+      <PickUp QuestName="Grimand&apos;s Finest Work" QuestId="7648" GiverName="Grimand Elmore" GiverId="1416" />
+    </If>
+    <TurnIn QuestName="Grimand&apos;s Finest Work" QuestId="7648" TurnInName="Lord Grayson Shadowbreaker" TurnInId="928" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="Ancient Equine Spirit" QuestId="7643" GiverName="Lord Grayson Shadowbreaker" GiverId="928" />
+      <PickUp QuestName="Manna-Enriched Horse Feed" QuestId="7645" GiverName="Merideth Carlson" GiverId="2357" />
+      <TurnIn QuestName="Manna-Enriched Horse Feed" QuestId="7645" TurnInName="Merideth Carlson" TurnInId="2357" />
+      <Objective QuestName="Ancient Equine Spirit" QuestId="7643" Type="CollectItem" ItemId="18775" ItemName="Manna-Enriched Horse Feed" CollectCount="1" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="11489" MobName="Tendris Warpwood" KillCount="1" />
+    <TurnIn QuestName="Ancient Equine Spirit" QuestId="7643" TurnInName="Ancient Equine Spirit" TurnInId="14566" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="Blessed Arcanite Barding" QuestId="7644" GiverName="Ancient Equine Spirit" GiverId="14566" />
+    </If>
+    <TurnIn QuestName="Blessed Arcanite Barding" QuestId="7644" TurnInName="Lord Grayson Shadowbreaker" TurnInId="928" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="The Divination Scryer" QuestId="7646" GiverName="Lord Grayson Shadowbreaker" GiverId="928" />
+    </If>
+    <Objective QuestName="The Divination Scryer" QuestId="7646" Type="CollectItem" ItemId="12800" ItemName="Azerothian Diamond" CollectCount="1" />
+    <Objective QuestName="The Divination Scryer" QuestId="7646" Type="CollectItem" ItemId="18335" ItemName="Pristine Black Diamond" CollectCount="1" />
+    <TurnIn QuestName="The Divination Scryer" QuestId="7646" TurnInName="Lord Grayson Shadowbreaker" TurnInId="928" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <PickUp QuestName="Judgment and Redemption" QuestId="7647" GiverName="Lord Grayson Shadowbreaker" GiverId="928" />
+    </If>
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="18746" ItemName="Divination Scryer" CollectCount="1" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Judgment and Redemption" QuestId="7647" Type="CollectItem" ItemId="18792" ItemName="Blessed Arcanite Barding" CollectCount="1" />
+    </If>
+    <Objective QuestName="Unknown" Type="KillMob" MobId="14516" MobName="Death Knight Darkreaver" KillCount="1" />
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Judgment and Redemption" QuestId="7647" Type="CollectItem" ItemId="18749" ItemName="Charger&apos;s Lost Soul" CollectCount="1" />
+      <TurnIn QuestName="Judgment and Redemption" QuestId="7647" TurnInName="Darkreaver&apos;s Fallen Charger" TurnInId="14568" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Class Quests\\Paladin Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

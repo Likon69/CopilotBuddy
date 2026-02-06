@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (30-31)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>31</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (30-31)" LogColor="Green" />
+    <PickUp QuestName="Welcome to the Jungle" QuestId="583" GiverName="Barnil Stonepot" GiverId="716" />
+    <TurnIn QuestName="Welcome to the Jungle" QuestId="583" TurnInName="Hemet Nesingwary" TurnInId="715" />
+    <PickUp QuestName="Raptor Mastery" QuestId="194" GiverName="Hemet Nesingwary" GiverId="715" />
+    <PickUp QuestName="Tiger Mastery" QuestId="185" GiverName="Ajeck Rouack" GiverId="717" />
+    <PickUp QuestName="Panther Mastery" QuestId="190" GiverName="Sir S. J. Erlgadin" GiverId="718" />
+    <Objective QuestName="Tiger Mastery" QuestId="185" Type="KillMob" MobId="681" MobName="Young Stranglethorn Tiger" KillCount="10" />
+    <TurnIn QuestName="Tiger Mastery" QuestId="185" TurnInName="Ajeck Rouack" TurnInId="717" />
+    <PickUp QuestName="Tiger Mastery" QuestId="186" GiverName="Ajeck Rouack" GiverId="717" />
+    <Objective QuestName="Panther Mastery" QuestId="190" Type="KillMob" MobId="683" MobName="Young Panther" KillCount="10" />
+    <Objective QuestName="Tiger Mastery" QuestId="186" Type="KillMob" MobId="682" MobName="Stranglethorn Tiger" KillCount="10" />
+    <TurnIn QuestName="Tiger Mastery" QuestId="186" TurnInName="Ajeck Rouack" TurnInId="717" />
+    <PickUp QuestName="Tiger Mastery" QuestId="187" GiverName="Ajeck Rouack" GiverId="717" />
+    <TurnIn QuestName="Panther Mastery" QuestId="190" TurnInName="Sir S. J. Erlgadin" TurnInId="718" />
+    <PickUp QuestName="Panther Mastery" QuestId="191" GiverName="Sir S. J. Erlgadin" GiverId="718" />
+    <Objective QuestName="Panther Mastery" QuestId="191" Type="KillMob" MobId="736" MobName="Panther" KillCount="10" />
+    <Objective QuestName="Raptor Mastery" QuestId="194" Type="KillMob" MobId="685" MobName="Stranglethorn Raptor" KillCount="10" />
+    <TurnIn QuestName="Panther Mastery" QuestId="191" TurnInName="Sir S. J. Erlgadin" TurnInId="718" />
+    <TurnIn QuestName="Raptor Mastery" QuestId="194" TurnInName="Hemet Nesingwary" TurnInId="715" />
+    <PickUp QuestName="Raptor Mastery" QuestId="195" GiverName="Hemet Nesingwary" GiverId="715" />
+    <PickUp QuestName="The Green Hills of Stranglethorn" QuestId="338" GiverName="Barnil Stonepot" GiverId="716" />
+    <PickUp QuestName="Chapter I" QuestId="339" GiverName="Barnil Stonepot" GiverId="716" />
+    <TurnIn QuestName="Chapter I" QuestId="339" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <PickUp QuestName="Chapter II" QuestId="340" GiverName="Barnil Stonepot" GiverId="716" />
+    <TurnIn QuestName="Chapter II" QuestId="340" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <PickUp QuestName="Chapter III" QuestId="341" GiverName="Barnil Stonepot" GiverId="716" />
+    <TurnIn QuestName="Chapter III" QuestId="341" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <PickUp QuestName="Chapter IV" QuestId="342" GiverName="Barnil Stonepot" GiverId="716" />
+    <TurnIn QuestName="Chapter IV" QuestId="342" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <TurnIn QuestName="The Green Hills of Stranglethorn" QuestId="338" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Stranglethorn Vale (30-31) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Classic_(12-58)__Thousand_Needles_(31-32)" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Classic (12-58)\\Winterspring (59-60)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Winterspring (59-60)" LogColor="Green" />
+    <TurnIn QuestName="Toxic Horrors" QuestId="5086" TurnInName="Donova Snowden" TurnInId="9298" />
+    <PickUp QuestName="Winterfall Runners" QuestId="5087" GiverName="Donova Snowden" GiverId="9298" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="10916" MobName="Winterfall Runner" KillCount="1" />
+    <Objective QuestName="Winterfall Runners" QuestId="5087" Type="CollectItem" ItemId="12829" ItemName="Winterfall Crate" CollectCount="1" />
+    <TurnIn QuestName="Winterfall Runners" QuestId="5087" TurnInName="Donova Snowden" TurnInId="9298" />
+    <PickUp QuestName="High Chief Winterfall" QuestId="5121" GiverName="Donova Snowden" GiverId="9298" />
+    <TurnIn QuestName="Are We There, Yeti?" QuestId="5163" TurnInName="Umi Rumplesnicker" TurnInId="10305" />
+    <PickUp QuestName="A Yeti of Your Own" QuestId="8798" GiverName="Umi Rumplesnicker" GiverId="10305" />
+    <TurnIn QuestName="A Yeti of Your Own" QuestId="8798" TurnInName="Umi Rumplesnicker" TurnInId="10305" />
+    <PickUp QuestName="Chillwind Horns" QuestId="4809" GiverName="Felnok Steelspring" GiverId="10468" />
+    <Objective QuestName="High Chief Winterfall" QuestId="5121" Type="KillMob" MobId="10738" MobName="High Chief Winterfall" KillCount="1" />
+    <Objective QuestName="Wild Guardians" QuestId="4741" Type="KillMob" MobId="7453" MobName="Moontouched Owlbeast" KillCount="13" />
+    <TurnIn QuestName="Wild Guardians" QuestId="4741" TurnInName="Trull Failbane" TurnInId="10306" />
+    <PickUp QuestName="Wild Guardians" QuestId="4721" GiverName="Trull Failbane" GiverId="10306" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="7448" MobName="Chillwind Chimaera" KillCount="1" />
+    <Objective QuestName="Chillwind Horns" QuestId="4809" Type="CollectItem" ItemId="12444" ItemName="Uncracked Chillwind Horn" CollectCount="8" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="12558" ItemName="Blue-feathered Necklace" CollectCount="1" />
+    <PickUp QuestName="Guarding Secrets" QuestId="4882" GiverName="Innkeeper Vizzie" GiverId="11118" />
+    <Objective QuestName="Wild Guardians" QuestId="4721" Type="KillMob" MobId="7454" MobName="Berserk Owlbeast" KillCount="10" />
+    <TurnIn QuestName="Chillwind Horns" QuestId="4809" TurnInName="Felnok Steelspring" TurnInId="10468" />
+    <PickUp QuestName="Return to Tinkee" QuestId="4810" GiverName="Felnok Steelspring" GiverId="10468" />
+    <TurnIn QuestName="High Chief Winterfall" QuestId="5121" TurnInName="Donova Snowden" TurnInId="9298" />
+    <TurnIn QuestName="Wild Guardians" QuestId="4721" TurnInName="Trull Failbane" TurnInId="10306" />
+    <TurnIn QuestName="Guarding Secrets" QuestId="4882" TurnInName="Trull Failbane" TurnInId="10306" />
+    <PickUp QuestName="Guarding Secrets" QuestId="4883" GiverName="Trull Failbane" GiverId="10306" />
+    <TurnIn QuestName="Guarding Secrets" QuestId="4883" TurnInName="Nara Wildmane" TurnInId="5770" />
+    <TurnIn QuestName="Return to Tinkee" QuestId="4810" TurnInName="Tinkee Steamboil" TurnInId="10267" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Classic (12-58)\\Winterspring (59-60) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__The_Burning_Crusade_(58-70)__Hellfire_Peninsula_(58-62)" />
+  </QuestOrder>
+</HBProfile>

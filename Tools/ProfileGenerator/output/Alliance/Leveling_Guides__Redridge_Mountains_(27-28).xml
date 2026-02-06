@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile>
+  <Name>Leveling Guides\\Redridge Mountains (27-28)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>28</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\\Redridge Mountains (27-28)" LogColor="Green" />
+    <PickUp QuestName="Blackrock Bounty" QuestId="128" GiverName="Guard Howe" GiverId="903" />
+    <PickUp QuestName="Tharil&apos;zun" QuestId="19" GiverName="Marshal Marris" GiverId="382" />
+    <PickUp QuestName="Shadow Magic" QuestId="115" GiverName="Marshal Marris" GiverId="382" />
+    <PickUp QuestName="Solomon&apos;s Law" QuestId="91" GiverName="Bailiff Conacher" GiverId="900" />
+    <PickUp QuestName="Wanted: Lieutenant Fangore" QuestId="180" GiverName="Bailiff Conacher" GiverId="900" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="703" MobName="Lieutenant Fangore" KillCount="1" />
+    <Objective QuestName="Wanted: Lieutenant Fangore" QuestId="180" Type="CollectItem" ItemId="3632" ItemName="Fangore&apos;s Paw" CollectCount="1" />
+    <TurnIn QuestName="A Watchful Eye" QuestId="94" TurnInName="Bailiff Conacher" TurnInId="900" />
+    <PickUp QuestName="Looking Further" QuestId="248" GiverName="Bailiff Conacher" GiverId="900" />
+    <Objective QuestName="Solomon&apos;s Law" QuestId="91" Type="CollectItem" ItemId="1075" ItemName="Shadowhide Pendant" CollectCount="10" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="486" MobName="Tharil&apos;zun" KillCount="1" />
+    <Objective QuestName="Tharil&apos;zun" QuestId="19" Type="CollectItem" ItemId="1260" ItemName="Tharil&apos;zun&apos;s Head" CollectCount="1" />
+    <Objective QuestName="Unknown" Type="KillMob" MobId="436" MobName="Blackrock Shadowcaster" KillCount="1" />
+    <Objective QuestName="Shadow Magic" QuestId="115" Type="CollectItem" ItemId="1261" ItemName="Midnight Orb" CollectCount="3" />
+    <TurnIn QuestName="Looking Further" QuestId="248" TurnInName="Bailiff Conacher" TurnInId="900" />
+    <Objective QuestName="Blackrock Bounty" QuestId="128" Type="KillMob" MobId="435" MobName="Blackrock Champion" KillCount="15" />
+    <PickUp QuestName="Missing In Action" QuestId="219" GiverName="Corporal Keeshan" GiverId="349" />
+    <TurnIn QuestName="Tharil&apos;zun" QuestId="19" TurnInName="Marshal Marris" TurnInId="382" />
+    <TurnIn QuestName="Shadow Magic" QuestId="115" TurnInName="Marshal Marris" TurnInId="382" />
+    <TurnIn QuestName="Missing In Action" QuestId="219" TurnInName="Marshal Marris" TurnInId="382" />
+    <TurnIn QuestName="Solomon&apos;s Law" QuestId="91" TurnInName="Bailiff Conacher" TurnInId="900" />
+    <TurnIn QuestName="Wanted: Lieutenant Fangore" QuestId="180" TurnInName="Magistrate Solomon" TurnInId="344" />
+    <TurnIn QuestName="Blackrock Bounty" QuestId="128" TurnInName="Guard Howe" TurnInId="903" />
+    <PickUp QuestName="Tinkmaster Overspark" QuestId="2923" GiverName="Brother Sarno" GiverId="7917" />
+    <TurnIn QuestName="Seeking Wisdom" QuestId="269" TurnInName="Bishop Farthing" TurnInId="1212" />
+    <PickUp QuestName="The Doomed Fleet" QuestId="270" GiverName="Bishop Farthing" GiverId="1212" />
+    <TurnIn QuestName="Tinkmaster Overspark" QuestId="2923" TurnInName="Tinkmaster Overspark" TurnInId="7944" />
+    <CustomBehavior File="Message" Text="Leveling Guides\\Redridge Mountains (27-28) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Leveling_Guides__Wetlands_(28-30)" />
+  </QuestOrder>
+</HBProfile>
