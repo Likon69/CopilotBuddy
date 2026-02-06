@@ -89,6 +89,7 @@ namespace Styx.Logic.Profiles
 
         /// <summary>
         /// Gets the closest vendor of a specific type.
+        /// For Sell type, also accepts Repair and Ammo vendors (they can all buy items).
         /// </summary>
         public Vendor GetClosestVendor(Vendor.VendorType type)
         {
@@ -99,13 +100,21 @@ namespace Styx.Logic.Profiles
                 // Use forced vendors if available
                 if (ForcedVendors != null && ForcedVendors.Count > 0)
                 {
-                    source = ForcedVendors.Where(v => type == Vendor.VendorType.Unknown || v.Type == type).ToList();
+                    source = ForcedVendors.Where(v => MatchesVendorType(v, type)).ToList();
                 }
                 else
                 {
                     if (type != Vendor.VendorType.Unknown)
                     {
-                        if (Vendors != null)
+                        // For Sell type, also accept Repair and Ammo vendors (like HB 6.2.3)
+                        if (type == Vendor.VendorType.Sell)
+                        {
+                            source = AllVendors?.Where(v => 
+                                v.Type == Vendor.VendorType.Sell || 
+                                v.Type == Vendor.VendorType.Repair ||
+                                v.Type == Vendor.VendorType.Ammo).ToList();
+                        }
+                        else if (Vendors != null)
                         {
                             source = Vendors.Contains(type) ? Vendors[type].ToList() : null;
                         }
@@ -118,22 +127,34 @@ namespace Styx.Logic.Profiles
 
                 if (source == null || source.Count == 0)
                 {
-                    // Try to find vendor from database
-                    try
+                    // Only fall back to Data.bin if FindVendorsAutomatically is enabled
+                    // AND the profile has no vendors defined at all
+                    if (Styx.Helpers.CharacterSettings.Instance.FindVendorsAutomatically && 
+                        (AllVendors == null || AllVendors.Count == 0))
                     {
-                        NpcResult nearestNpc = NpcQueries.GetNearestNpc(
-                            StyxWoW.Me.FactionTemplate.Faction,
-                            StyxWoW.Me.MapId,
-                            StyxWoW.Me.Location,
-                            type.AsNpcFlag());
-                        if (nearestNpc != null)
+                        try
                         {
-                            return new Vendor(nearestNpc.Entry, nearestNpc.Name, type, nearestNpc.Location);
+                            NpcResult nearestNpc = NpcQueries.GetNearestNpc(
+                                StyxWoW.Me.FactionTemplate.Faction,
+                                StyxWoW.Me.MapId,
+                                StyxWoW.Me.Location,
+                                type.AsNpcFlag());
+                            if (nearestNpc != null)
+                            {
+                                Logging.WriteDebug("[VendorManager] Using Data.bin fallback: {0} Entry={1}", 
+                                    nearestNpc.Name, nearestNpc.Entry);
+                                return new Vendor(nearestNpc.Entry, nearestNpc.Name, type, nearestNpc.Location);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Logging.Write(ex.ToString());
                         }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        Logging.Write(ex.ToString());
+                        Logging.WriteDebug("[VendorManager] No vendor found for type {0}. Profile has {1} vendors. FindVendorsAutomatically={2}", 
+                            type, AllVendors?.Count ?? 0, Styx.Helpers.CharacterSettings.Instance.FindVendorsAutomatically);
                     }
                     return null;
                 }
@@ -143,17 +164,23 @@ namespace Styx.Logic.Profiles
 
                 if (type == Vendor.VendorType.Train)
                 {
-                    return source
+                    var vendor = source
                         .Where(v => v.TrainClass == playerClass)
                         .OrderBy(v => location.Distance(v.Location))
                         .FirstOrDefault();
+                    if (vendor != null)
+                        Logging.WriteDebug("[VendorManager] Found trainer from profile: {0} Entry={1}", vendor.Name, vendor.Entry);
+                    return vendor;
                 }
                 else
                 {
-                    return source
+                    var vendor = source
                         .Where(v => !Blacklist.Contains(v))
                         .OrderBy(v => location.Distance(v.Location))
                         .FirstOrDefault();
+                    if (vendor != null)
+                        Logging.WriteDebug("[VendorManager] Found vendor from profile: {0} Entry={1} Type={2}", vendor.Name, vendor.Entry, vendor.Type);
+                    return vendor;
                 }
             }
             catch (Exception ex)
@@ -169,6 +196,26 @@ namespace Styx.Logic.Profiles
         private void RemoveBlacklisted()
         {
             _filteredVendors?.RemoveAll(v => Blacklist.Contains(v));
+        }
+
+        /// <summary>
+        /// Checks if a vendor matches the requested type.
+        /// For Sell type, also matches Repair and Ammo vendors.
+        /// </summary>
+        private static bool MatchesVendorType(Vendor vendor, Vendor.VendorType type)
+        {
+            if (type == Vendor.VendorType.Unknown)
+                return true;
+            
+            // For Sell type, also accept Repair and Ammo vendors
+            if (type == Vendor.VendorType.Sell)
+            {
+                return vendor.Type == Vendor.VendorType.Sell || 
+                       vendor.Type == Vendor.VendorType.Repair ||
+                       vendor.Type == Vendor.VendorType.Ammo;
+            }
+            
+            return vendor.Type == type;
         }
     }
 }
