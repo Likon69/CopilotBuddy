@@ -1,0 +1,95 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Azshara (50-50)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="3517" Name="Stealing Knowledge">
+    <Objective Type="CollectItem" ItemId="10540" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Tablet of Markri" Id="148514" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3171.25" Y="-5305.14" Z="89.98" />
+        <Hotspot X="3430.78" Y="-5087.17" Z="83.0" />
+        <Hotspot X="3461.29" Y="-5034.15" Z="88.89" />
+        <Hotspot X="3727.26" Y="-5200.04" Z="86.35" />
+        <Hotspot X="3790.29" Y="-5297.37" Z="85.65" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Azshara (50-50)" LogColor="Green" />
+    <If Condition="((!HasQuest(3517)) &amp;&amp; (!IsQuestCompleted(3517)))">
+      <PickUp QuestName="Stealing Knowledge" QuestId="3517" GiverName="Jediga" GiverId="8587" />
+    </If>
+    <Objective QuestName="Stealing Knowledge" QuestId="3517" Type="CollectItem" ItemId="10540" CollectCount="1" />
+    <Objective QuestName="Stealing Knowledge" QuestId="3517" Type="CollectItem" ItemId="10538" CollectCount="1" />
+    <Objective QuestName="Stealing Knowledge" QuestId="3517" Type="CollectItem" ItemId="10539" CollectCount="1" />
+    <Objective QuestName="Stealing Knowledge" QuestId="3517" Type="CollectItem" ItemId="10541" CollectCount="1" />
+    <While Condition="((HasQuest(3568)) &amp;&amp; (!IsQuestCompleted(3568)))">
+      <CustomBehavior File="UseItemOn" QuestId="3568" MobId="0" ItemId="10695" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Stealing Knowledge" QuestId="3517" TurnInName="Jediga" TurnInId="8587" />
+    <If Condition="((!HasQuest(3518)) &amp;&amp; (!IsQuestCompleted(3518)))">
+      <PickUp QuestName="Delivery to Magatha" QuestId="3518" GiverName="Jediga" GiverId="8587" />
+    </If>
+    <If Condition="((!HasQuest(3541)) &amp;&amp; (!IsQuestCompleted(3541)))">
+      <PickUp QuestName="Delivery to Jes'rimon" QuestId="3541" GiverName="Jediga" GiverId="8587" />
+    </If>
+    <If Condition="((!HasQuest(3542)) &amp;&amp; (!IsQuestCompleted(3542)))">
+      <PickUp QuestName="Delivery to Andron Gant" QuestId="3542" GiverName="Jediga" GiverId="8587" />
+    </If>
+    <If Condition="((!HasQuest(3561)) &amp;&amp; (!IsQuestCompleted(3561)))">
+      <PickUp QuestName="Delivery to Archmage Xylem" QuestId="3561" GiverName="Jediga" GiverId="8587" />
+    </If>
+    <TurnIn QuestName="Delivery to Archmage Xylem" QuestId="3561" TurnInName="Archmage Xylem" TurnInId="8379" />
+    <If Condition="((!HasQuest(3565)) &amp;&amp; (!IsQuestCompleted(3565)))">
+      <PickUp QuestName="Xylem's Payment to Jediga" QuestId="3565" GiverName="Archmage Xylem" GiverId="8379" />
+    </If>
+    <TurnIn QuestName="Xylem's Payment to Jediga" QuestId="3565" TurnInName="Jediga" TurnInId="8587" />
+    <TurnIn QuestName="Delivery to Magatha" QuestId="3518" TurnInName="Magatha Grimtotem" TurnInId="4046" />
+    <If Condition="((!HasQuest(3562)) &amp;&amp; (!IsQuestCompleted(3562)))">
+      <PickUp QuestName="Magatha's Payment to Jediga" QuestId="3562" GiverName="Magatha Grimtotem" GiverId="4046" />
+    </If>
+    <TurnIn QuestName="Rise of the Silithid" QuestId="32" TurnInName="Zilzibin Drumlore" TurnInId="7010" />
+    <PickUp QuestName="March of the Silithid" QuestId="4494" GiverName="Zilzibin Drumlore" GiverId="7010" />
+    <TurnIn QuestName="Delivery to Jes'rimon" QuestId="3541" TurnInName="Jes'rimon" TurnInId="8659" />
+    <If Condition="((!HasQuest(3563)) &amp;&amp; (!IsQuestCompleted(3563)))">
+      <PickUp QuestName="Jes'rimon's Payment to Jediga" QuestId="3563" GiverName="Jes'rimon" GiverId="8659" />
+    </If>
+    <PickUp QuestName="Bone-Bladed Weapons" QuestId="4300" GiverName="Jes'rimon" GiverId="8659" />
+    <CustomBehavior File="SetHearthstone" MobId="6929" AreaId="1637" X="1633.99" Y="-4439.37" Z="15.7436" /> <!-- Set hearth: Orgrimmar -->
+    <TurnIn QuestName="Delivery to Andron Gant" QuestId="3542" TurnInName="Andron Gant" TurnInId="6522" />
+    <If Condition="((!HasQuest(3564)) &amp;&amp; (!IsQuestCompleted(3564)))">
+      <PickUp QuestName="Andron's Payment to Jediga" QuestId="3564" GiverName="Andron Gant" GiverId="6522" />
+    </If>
+    <TurnIn QuestName="Seeping Corruption" QuestId="3568" TurnInName="Chemist Cuely" TurnInId="8390" />
+    <If Condition="((!HasQuest(3569)) &amp;&amp; (!IsQuestCompleted(3569)))">
+      <PickUp QuestName="Seeping Corruption" QuestId="3569" GiverName="Chemist Cuely" GiverId="8390" />
+    </If>
+    <TurnIn QuestName="Seeping Corruption" QuestId="3569" TurnInName="Thersa Windsong" TurnInId="8393" />
+    <If Condition="((!HasQuest(3570)) &amp;&amp; (!IsQuestCompleted(3570)))">
+      <PickUp QuestName="Seeping Corruption" QuestId="3570" GiverName="Chemist Cuely" GiverId="8390" />
+    </If>
+    <PickUp QuestName="Vivian Lagrave" QuestId="4133" GiverName="Apothecary Zinge" GiverId="5204" />
+    <If Condition="((!HasQuest(4293)) &amp;&amp; (!IsQuestCompleted(4293)))">
+      <PickUp QuestName="A Sample of Slime..." QuestId="4293" GiverName="Chemist Fuely" GiverId="10136" />
+    </If>
+    <If Condition="((!HasQuest(4294)) &amp;&amp; (!IsQuestCompleted(4294)))">
+      <PickUp QuestName="... and a Batch of Ooze" QuestId="4294" GiverName="Chemist Fuely" GiverId="10136" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Azshara (50-50) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_The_Hinterlands_(50-51)" />
+  </QuestOrder>
+</HBProfile>

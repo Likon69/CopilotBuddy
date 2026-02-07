@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Stranglethorn Vale (37-38)</Name>
+  <Name>Alliance\Stranglethorn Vale (37-38)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>38</MaxLevel>
@@ -8,8 +7,94 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
-  <Quest Id="207" Name="Kurzen&apos;s Mystery">
+  <Quest Id="1712" Name="Cyclonian">
+    <Objective Type="KillMob" MobId="940" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11484.9" Y="-786.402" Z="51.3356" />
+        <Hotspot X="-11648.5" Y="-746.885" Z="32.666" />
+        <Hotspot X="-11651.7" Y="-666.166" Z="30.3258" />
+        <Hotspot X="-11636.0" Y="-660.454" Z="30.1503" />
+        <Hotspot X="-11639.1" Y="-661.675" Z="29.9003" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="574" Name="Special Forces">
+    <Objective Type="KillMob" MobId="941" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-11503.4" Y="-741.701" Z="29.8792" />
+        <Hotspot X="-11453.4" Y="-739.274" Z="29.0699" />
+        <Hotspot X="-11464.7" Y="-735.87" Z="31.3389" />
+        <Hotspot X="-11478.9" Y="-774.739" Z="31.7754" />
+        <Hotspot X="-11525.8" Y="-849.023" Z="28.8221" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="938" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11513.5" Y="-697.291" Z="35.4867" />
+        <Hotspot X="-11513.1" Y="-714.074" Z="33.7644" />
+        <Hotspot X="-11484.9" Y="-736.486" Z="34.3351" />
+        <Hotspot X="-11499.8" Y="-731.151" Z="31.8437" />
+        <Hotspot X="-11505.0" Y="-710.347" Z="34.2602" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="192" Name="Panther Mastery">
+    <Objective Type="KillMob" MobId="684" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-12979.5" Y="-304.001" Z="13.7637" />
+        <Hotspot X="-12643.6" Y="-225.073" Z="39.1751" />
+        <Hotspot X="-12312.9" Y="-748.511" Z="13.3077" />
+        <Hotspot X="-12347.8" Y="-710.986" Z="17.0866" />
+        <Hotspot X="-12776.8" Y="-113.877" Z="4.3492" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="577" Name="Some Assembly Required">
+    <Objective Type="KillMob" MobId="1152" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11821.5" Y="-416.118" Z="11.6578" />
+        <Hotspot X="-11845.6" Y="-455.045" Z="12.5643" />
+        <Hotspot X="-11877.8" Y="-488.848" Z="13.1664" />
+        <Hotspot X="-12436.0" Y="-244.614" Z="15.9766" />
+        <Hotspot X="-12390.4" Y="-296.731" Z="7.5021" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="195" Name="Raptor Mastery">
+    <Objective Type="KillMob" MobId="686" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-12213.3" Y="89.2849" Z="23.0177" />
+        <Hotspot X="-12252.4" Y="53.6517" Z="19.2489" />
+        <Hotspot X="-12184.9" Y="117.131" Z="14.3079" />
+        <Hotspot X="-12180.8" Y="174.726" Z="17.3447" />
+        <Hotspot X="-12214.7" Y="153.484" Z="16.3564" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="187" Name="Tiger Mastery">
+    <Objective Type="KillMob" MobId="1085" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11852.9" Y="182.856" Z="16.2022" />
+        <Hotspot X="-11875.9" Y="224.407" Z="15.9899" />
+        <Hotspot X="-12025.4" Y="209.851" Z="15.047" />
+        <Hotspot X="-11978.1" Y="120.834" Z="11.4165" />
+        <Hotspot X="-11976.5" Y="173.143" Z="15.6137" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="188" Name="Tiger Mastery">
+    <Objective Type="KillMob" MobId="729" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11908.5" Y="165.374" Z="41.4222" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="207" Name="Kurzen's Mystery">
     <Objective Type="CollectItem" ItemId="2005" CollectCount="1">
       <CollectFrom>
         <GameObject Name="Moon Over the Vale" Id="57" />
@@ -43,20 +128,31 @@
       </Hotspots>
     </Objective>
   </Quest>
+  <Quest Id="601" Name="Water Elementals">
+    <Objective Type="KillMob" MobId="691" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-12138.8" Y="944.342" Z="3.3254" />
+        <Hotspot X="-12117.8" Y="981.056" Z="6.5678" />
+        <Hotspot X="-12087.9" Y="948.292" Z="5.6026" />
+        <Hotspot X="-12086.5" Y="925.098" Z="4.775" />
+        <Hotspot X="-12110.3" Y="879.462" Z="7.078" />
+      </Hotspots>
+    </Objective>
+  </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (37-38)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Stranglethorn Vale (37-38)" LogColor="Green" />
     <If Condition="((!HasQuest(577)) &amp;&amp; (!IsQuestCompleted(577)))">
       <PickUp QuestName="Some Assembly Required" QuestId="577" GiverName="Drizzlik" GiverId="2495" />
     </If>
-    <CustomBehavior File="SetHearthstone" MobId="7733" AreaId="440" X="27.04" Y="77.31" Z="0" /> <!-- Set hearth: Booty Bay -->
+    <CustomBehavior File="SetHearthstone" MobId="7733" AreaId="440" X="-7158.96" Y="-3841.61" Z="8.8481" /> <!-- Set hearth: Booty Bay -->
     <TurnIn QuestName="The Rumormonger" QuestId="1115" TurnInName="Krazek" TurnInId="773" />
     <PickUp QuestName="Bloodscalp Ears" QuestId="189" GiverName="Kebok" GiverId="737" />
     <If Condition="((!HasQuest(601)) &amp;&amp; (!IsQuestCompleted(601)))">
       <PickUp QuestName="Water Elementals" QuestId="601" GiverName="Baron Revilgaz" GiverId="2496" />
     </If>
     <If Condition="((!HasQuest(207)) &amp;&amp; (!IsQuestCompleted(207)))">
-      <PickUp QuestName="Kurzen&apos;s Mystery" QuestId="207" GiverName="Brother Nimetz" GiverId="739" />
+      <PickUp QuestName="Kurzen's Mystery" QuestId="207" GiverName="Brother Nimetz" GiverId="739" />
     </If>
     <If Condition="((!HasQuest(574)) &amp;&amp; (!IsQuestCompleted(574)))">
       <PickUp QuestName="Special Forces" QuestId="574" GiverName="Sergeant Yohwa" GiverId="733" />
@@ -68,20 +164,22 @@
     <If Condition="((!HasQuest(328)) &amp;&amp; (!IsQuestCompleted(328)))">
       <PickUp QuestName="The Hidden Key" QuestId="328" GiverName="Lieutenant Doren" GiverId="469" />
     </If>
-    <Objective QuestName="Cyclonian" QuestId="1712" Type="KillMob" MobId="940" MobName="Kurzen Medicine Man" KillCount="1" />
-    <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="3357" ItemName="Liferoot" CollectCount="8" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="KillMob" MobId="940" KillCount="1" />
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="3357" CollectCount="8" />
+    </If>
     <TurnIn QuestName="The Hidden Key" QuestId="328" TurnInName="Object_288" TurnInType="Object" TurnInId="288" />
     <If Condition="((!HasQuest(329)) &amp;&amp; (!IsQuestCompleted(329)))">
       <PickUp QuestName="The Spy Revealed!" QuestId="329" GiverName="Lieutenant Doren" GiverId="469" />
     </If>
-    <Objective QuestName="Caught!" QuestId="4449" Type="CollectItem" ItemId="4306" ItemName="Silk Cloth" CollectCount="15" />
-    <Objective QuestName="Special Forces" QuestId="574" Type="KillMob" MobId="941" MobName="Kurzen Headshrinker" KillCount="6" />
-    <Objective QuestName="Special Forces" QuestId="574" Type="KillMob" MobId="938" MobName="Kurzen Commando" KillCount="10" />
-    <Objective QuestName="Panther Mastery" QuestId="192" Type="KillMob" MobId="684" MobName="Shadowmaw Panther" KillCount="10" />
-    <Objective QuestName="Some Assembly Required" QuestId="577" Type="KillMob" MobId="1152" MobName="Snapjaw Crocolisk" KillCount="1" />
-    <Objective QuestName="Some Assembly Required" QuestId="577" Type="CollectItem" ItemId="4104" ItemName="Snapjaw Crocolisk Skin" CollectCount="5" />
-    <Objective QuestName="Raptor Mastery" QuestId="195" Type="KillMob" MobId="686" MobName="Lashtail Raptor" KillCount="10" />
-    <Objective QuestName="Tiger Mastery" QuestId="187" Type="KillMob" MobId="1085" MobName="Elder Stranglethorn Tiger" KillCount="10" />
+    <Objective QuestName="Caught!" QuestId="4449" Type="CollectItem" ItemId="4306" CollectCount="15" />
+    <Objective QuestName="Special Forces" QuestId="574" Type="KillMob" MobId="941" KillCount="6" />
+    <Objective QuestName="Special Forces" QuestId="574" Type="KillMob" MobId="938" KillCount="10" />
+    <Objective QuestName="Panther Mastery" QuestId="192" Type="KillMob" MobId="684" KillCount="10" />
+    <Objective QuestName="Some Assembly Required" QuestId="577" Type="KillMob" MobId="1152" KillCount="1" />
+    <Objective QuestName="Some Assembly Required" QuestId="577" Type="CollectItem" ItemId="4104" CollectCount="5" />
+    <Objective QuestName="Raptor Mastery" QuestId="195" Type="KillMob" MobId="686" KillCount="10" />
+    <Objective QuestName="Tiger Mastery" QuestId="187" Type="KillMob" MobId="1085" KillCount="10" />
     <TurnIn QuestName="Raptor Mastery" QuestId="195" TurnInName="Hemet Nesingwary" TurnInId="715" />
     <If Condition="((!HasQuest(196)) &amp;&amp; (!IsQuestCompleted(196)))">
       <PickUp QuestName="Raptor Mastery" QuestId="196" GiverName="Hemet Nesingwary" GiverId="715" />
@@ -91,17 +189,17 @@
       <PickUp QuestName="Tiger Mastery" QuestId="188" GiverName="Ajeck Rouack" GiverId="717" />
     </If>
     <TurnIn QuestName="Panther Mastery" QuestId="192" TurnInName="Sir S. J. Erlgadin" TurnInId="718" />
-    <Objective QuestName="Tiger Mastery" QuestId="188" Type="KillMob" MobId="729" MobName="Sin&apos;Dall" KillCount="1" />
-    <Objective QuestName="Tiger Mastery" QuestId="188" Type="CollectItem" ItemId="3879" ItemName="Paw of Sin&apos;Dall" CollectCount="1" />
-    <Objective QuestName="Kurzen&apos;s Mystery" QuestId="207" Type="CollectItem" ItemId="2005" ItemName="The First Troll Legend" CollectCount="1" />
-    <Objective QuestName="Kurzen&apos;s Mystery" QuestId="207" Type="CollectItem" ItemId="2006" ItemName="The Second Troll Legend" CollectCount="1" />
-    <Objective QuestName="Water Elementals" QuestId="601" Type="KillMob" MobId="691" MobName="Lesser Water Elemental" KillCount="1" />
-    <Objective QuestName="Water Elementals" QuestId="601" Type="CollectItem" ItemId="3923" ItemName="Water Elemental Bracers" CollectCount="6" />
-    <Objective QuestName="Kurzen&apos;s Mystery" QuestId="207" Type="CollectItem" ItemId="2008" ItemName="The Fourth Troll Legend" CollectCount="1" />
-    <Objective QuestName="Kurzen&apos;s Mystery" QuestId="207" Type="CollectItem" ItemId="2007" ItemName="The Third Troll Legend" CollectCount="1" />
-    <Objective QuestName="Bloodscalp Ears" QuestId="189" Type="CollectItem" ItemId="1519" ItemName="Bloodscalp Ear" CollectCount="15" />
+    <Objective QuestName="Tiger Mastery" QuestId="188" Type="KillMob" MobId="729" KillCount="1" />
+    <Objective QuestName="Tiger Mastery" QuestId="188" Type="CollectItem" ItemId="3879" CollectCount="1" />
+    <Objective QuestName="Kurzen's Mystery" QuestId="207" Type="CollectItem" ItemId="2005" CollectCount="1" />
+    <Objective QuestName="Kurzen's Mystery" QuestId="207" Type="CollectItem" ItemId="2006" CollectCount="1" />
+    <Objective QuestName="Water Elementals" QuestId="601" Type="KillMob" MobId="691" KillCount="1" />
+    <Objective QuestName="Water Elementals" QuestId="601" Type="CollectItem" ItemId="3923" CollectCount="6" />
+    <Objective QuestName="Kurzen's Mystery" QuestId="207" Type="CollectItem" ItemId="2008" CollectCount="1" />
+    <Objective QuestName="Kurzen's Mystery" QuestId="207" Type="CollectItem" ItemId="2007" CollectCount="1" />
+    <Objective QuestName="Bloodscalp Ears" QuestId="189" Type="CollectItem" ItemId="1519" CollectCount="15" />
     <If Condition="(Me.Class == WoWClass.Warrior)">
-      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="3901" ItemName="Bloodscalp Tusk" CollectCount="9" />
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="3901" CollectCount="9" />
     </If>
     <TurnIn QuestName="Tiger Mastery" QuestId="188" TurnInName="Ajeck Rouack" TurnInId="717" />
     <If Condition="((!HasQuest(1116)) &amp;&amp; (!IsQuestCompleted(1116)))">
@@ -113,7 +211,7 @@
       <PickUp QuestName="Magical Analysis" QuestId="602" GiverName="Baron Revilgaz" GiverId="2496" />
     </If>
     <TurnIn QuestName="Some Assembly Required" QuestId="577" TurnInName="Drizzlik" TurnInId="2495" />
-    <TurnIn QuestName="Kurzen&apos;s Mystery" QuestId="207" TurnInName="Brother Nimetz" TurnInId="739" />
+    <TurnIn QuestName="Kurzen's Mystery" QuestId="207" TurnInName="Brother Nimetz" TurnInId="739" />
     <TurnIn QuestName="Special Forces" QuestId="574" TurnInName="Lieutenant Doren" TurnInId="469" />
     <TurnIn QuestName="The Spy Revealed!" QuestId="329" TurnInName="Lieutenant Doren" TurnInId="469" />
     <If Condition="((!HasQuest(330)) &amp;&amp; (!IsQuestCompleted(330)))">
@@ -124,7 +222,7 @@
       <PickUp QuestName="Report to Doren" QuestId="331" GiverName="Corporal Sethman" GiverId="1422" />
     </If>
     <TurnIn QuestName="Report to Doren" QuestId="331" TurnInName="Lieutenant Doren" TurnInId="469" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (37-38) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Stranglethorn Vale (37-38) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Swamp_of_Sorrows_(38-39)" />
   </QuestOrder>
 </HBProfile>

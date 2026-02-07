@@ -1,0 +1,783 @@
+<HBProfile>
+  <Name>Horde\Starter Guides (1-12)\Tirisfal Glades (1-12) [Undead Starter]</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>12</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="364" Name="The Mindless Ones">
+    <Objective Type="KillMob" MobId="1501" KillCount="8">
+      <Hotspots>
+        <Hotspot X="1946.66" Y="1470.27" Z="76.7557" />
+        <Hotspot X="1969.0" Y="1611.12" Z="88.1992" />
+        <Hotspot X="1945.65" Y="1455.6" Z="73.3928" />
+        <Hotspot X="1886.93" Y="1455.56" Z="78.448" />
+        <Hotspot X="1905.06" Y="1462.11" Z="82.1722" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1502" KillCount="8">
+      <Hotspots>
+        <Hotspot X="1853.81" Y="1487.77" Z="91.1091" />
+        <Hotspot X="1976.31" Y="1515.04" Z="86.8198" />
+        <Hotspot X="1965.1" Y="1598.7" Z="88.1981" />
+        <Hotspot X="1952.19" Y="1608.97" Z="83.4339" />
+        <Hotspot X="1973.7" Y="1597.14" Z="82.3567" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1470" Name="Piercing the Veil">
+    <Objective Type="KillMob" MobId="1890" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1898.19" Y="1467.73" Z="83.6047" />
+        <Hotspot X="1889.25" Y="1488.25" Z="88.0136" />
+        <Hotspot X="1877.55" Y="1480.87" Z="85.4797" />
+        <Hotspot X="2052.56" Y="1577.75" Z="73.5502" />
+        <Hotspot X="1939.61" Y="1542.91" Z="90.165" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="3901" Name="Rattling the Rattlecages">
+    <Objective Type="KillMob" MobId="1890" KillCount="12">
+      <Hotspots>
+        <Hotspot X="1898.19" Y="1467.73" Z="83.6047" />
+        <Hotspot X="1889.25" Y="1488.25" Z="88.0136" />
+        <Hotspot X="1877.55" Y="1480.87" Z="85.4797" />
+        <Hotspot X="2052.56" Y="1577.75" Z="73.5502" />
+        <Hotspot X="1939.61" Y="1542.91" Z="90.165" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="376" Name="The Damned">
+    <Objective Type="KillMob" MobId="1508" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1808.2" Y="1541.72" Z="97.2886" />
+        <Hotspot X="1770.32" Y="1517.16" Z="111.011" />
+        <Hotspot X="2162.2" Y="1630.77" Z="85.8424" />
+        <Hotspot X="1814.55" Y="1485.2" Z="90.6575" />
+        <Hotspot X="1909.98" Y="1670.88" Z="82.4885" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1512" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1744.75" Y="1569.49" Z="115.228" />
+        <Hotspot X="1707.87" Y="1483.11" Z="146.563" />
+        <Hotspot X="1751.15" Y="1421.9" Z="113.95" />
+        <Hotspot X="1685.72" Y="1420.38" Z="135.348" />
+        <Hotspot X="1952.75" Y="1751.16" Z="114.005" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="3902" Name="Scavenging Deathknell">
+    <Objective Type="CollectItem" ItemId="11127" CollectCount="6">
+      <CollectFrom>
+        <GameObject Name="Equipment Boxes" Id="164662" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1848.6" Y="1516.77" Z="88.08" />
+        <Hotspot X="1858.63" Y="1535.83" Z="88.59" />
+        <Hotspot X="1867.64" Y="1541.64" Z="88.32" />
+        <Hotspot X="1891.29" Y="1548.12" Z="88.08" />
+        <Hotspot X="1891.99" Y="1506.2" Z="88.08" />
+        <Hotspot X="1898.85" Y="1570.28" Z="89.07" />
+        <Hotspot X="1899.36" Y="1562.73" Z="88.08" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="380" Name="Night Web's Hollow">
+    <Objective Type="KillMob" MobId="1504" KillCount="10">
+      <Hotspots>
+        <Hotspot X="2121.06" Y="1779.07" Z="93.371" />
+        <Hotspot X="2136.25" Y="1651.92" Z="78.8605" />
+        <Hotspot X="2107.5" Y="1753.77" Z="78.5072" />
+        <Hotspot X="2175.56" Y="1773.06" Z="106.256" />
+        <Hotspot X="2117.58" Y="1758.96" Z="85.0072" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1505" KillCount="8">
+      <Hotspots>
+        <Hotspot X="2011.61" Y="1950.18" Z="102.784" />
+        <Hotspot X="2031.67" Y="1982.41" Z="99.4994" />
+        <Hotspot X="2062.19" Y="1975.57" Z="100.636" />
+        <Hotspot X="2081.13" Y="1968.83" Z="101.196" />
+        <Hotspot X="2038.75" Y="1927.25" Z="107.053" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="6395" Name="Marla's Last Wish">
+    <Objective Type="KillMob" MobId="1919" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1982.9" Y="1376.01" Z="63.0515" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="382" Name="The Red Messenger">
+    <Objective Type="KillMob" MobId="1667" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1772.91" Y="1381.26" Z="91.0356" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="5481" Name="Gordo's Task">
+    <Objective Type="CollectItem" ItemId="12737" CollectCount="3">
+      <CollectFrom>
+        <GameObject Name="Gloom Weed" Id="175566" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1925.26" Y="781.16" Z="41.45" />
+        <Hotspot X="1966.64" Y="861.51" Z="34.45" />
+        <Hotspot X="1989.05" Y="908.59" Z="37.08" />
+        <Hotspot X="1992.88" Y="687.91" Z="44.49" />
+        <Hotspot X="1994.96" Y="851.79" Z="38.29" />
+        <Hotspot X="2006.88" Y="954.24" Z="34.78" />
+        <Hotspot X="2007.4" Y="758.06" Z="37.67" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="367" Name="A New Plague">
+    <Objective Type="KillMob" MobId="1547" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2624.53" Y="1287.23" Z="49.479" />
+        <Hotspot X="2546.37" Y="1195.78" Z="67.5728" />
+        <Hotspot X="2342.73" Y="1165.76" Z="35.577" />
+        <Hotspot X="2250.88" Y="1194.67" Z="34.3002" />
+        <Hotspot X="2411.07" Y="774.032" Z="42.7019" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="590" Name="A Rogue's Deal">
+    <Objective Type="KillMob" MobId="6784" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2126.65" Y="1305.98" Z="53.9885" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="365" Name="Fields of Grief">
+    <Objective Type="CollectItem" ItemId="2846" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Tirisfal Pumpkin" Id="375" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2259.64" Y="1430.03" Z="33.45" />
+        <Hotspot X="2263.35" Y="1480.02" Z="33.45" />
+        <Hotspot X="2265.59" Y="1354.08" Z="33.33" />
+        <Hotspot X="2268.72" Y="1403.56" Z="33.33" />
+        <Hotspot X="2276.21" Y="1362.27" Z="33.33" />
+        <Hotspot X="2279.18" Y="1450.29" Z="33.43" />
+        <Hotspot X="2284.49" Y="1470.76" Z="33.43" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="427" Name="At War With The Scarlet Crusade">
+    <Objective Type="KillMob" MobId="1535" KillCount="10">
+      <Hotspots>
+        <Hotspot X="2298.38" Y="1595.04" Z="39.7552" />
+        <Hotspot X="2434.53" Y="1638.51" Z="35.0626" />
+        <Hotspot X="2357.33" Y="1660.23" Z="34.544" />
+        <Hotspot X="2473.13" Y="1514.15" Z="33.913" />
+        <Hotspot X="2403.3" Y="1648.76" Z="32.0077" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="375" Name="The Chill of Death">
+    <Objective Type="KillMob" MobId="1553" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2107.86" Y="1148.63" Z="34.0916" />
+        <Hotspot X="2622.98" Y="1145.87" Z="83.5926" />
+        <Hotspot X="2348.89" Y="1018.03" Z="51.2574" />
+        <Hotspot X="2375.14" Y="774.735" Z="38.5911" />
+        <Hotspot X="2233.52" Y="56.4329" Z="34.7082" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="362" Name="The Haunted Mills">
+    <Objective Type="KillMob" MobId="1657" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2609.08" Y="894.035" Z="107.834" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="354" Name="Deaths in the Family">
+    <Objective Type="KillMob" MobId="1655" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2742.71" Y="785.519" Z="119.133" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1654" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2954.67" Y="921.348" Z="114.453" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1656" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2824.05" Y="1044.97" Z="111.324" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="426" Name="The Mills Overrun">
+    <Objective Type="KillMob" MobId="1522" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2824.46" Y="1117.89" Z="85.417" />
+        <Hotspot X="2957.32" Y="876.261" Z="108.849" />
+        <Hotspot X="2811.55" Y="869.971" Z="111.951" />
+        <Hotspot X="2813.15" Y="728.139" Z="139.449" />
+        <Hotspot X="2857.0" Y="1075.72" Z="117.989" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="358" Name="Graverobbers">
+    <Objective Type="KillMob" MobId="1941" KillCount="8">
+      <Hotspots>
+        <Hotspot X="2449.13" Y="480.421" Z="44.652" />
+        <Hotspot X="2515.76" Y="538.398" Z="34.5602" />
+        <Hotspot X="2482.21" Y="465.683" Z="41.2163" />
+        <Hotspot X="2574.9" Y="425.176" Z="30.487" />
+        <Hotspot X="2560.54" Y="553.2" Z="14.5145" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="5482" Name="Doom Weed">
+    <Objective Type="CollectItem" ItemId="13702" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Doom Weed" Id="176753" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2532.5" Y="475.66" Z="27.44" />
+        <Hotspot X="2544.31" Y="399.63" Z="33.13" />
+        <Hotspot X="2550.12" Y="535.84" Z="15.78" />
+        <Hotspot X="2556.72" Y="555.67" Z="14.51" />
+        <Hotspot X="2567.35" Y="447.13" Z="29.12" />
+        <Hotspot X="2572.14" Y="476.88" Z="26.67" />
+        <Hotspot X="2592.68" Y="385.18" Z="34.84" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="398" Name="Wanted: Maggot Eye">
+    <Objective Type="KillMob" MobId="1675" KillCount="5">
+      <Hotspots>
+        <Hotspot X="2778.04" Y="413.688" Z="19.9735" />
+        <Hotspot X="2750.22" Y="325.737" Z="29.3423" />
+        <Hotspot X="2822.06" Y="487.284" Z="30.9346" />
+        <Hotspot X="2887.28" Y="419.892" Z="23.4468" />
+        <Hotspot X="2858.26" Y="416.594" Z="20.8228" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1753" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2910.7" Y="382.547" Z="31.4823" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="370" Name="At War With The Scarlet Crusade">
+    <Objective Type="KillMob" MobId="1662" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1795.12" Y="722.655" Z="48.9865" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1537" KillCount="3">
+      <Hotspots>
+        <Hotspot X="2554.68" Y="-952.893" Z="74.2141" />
+        <Hotspot X="2544.87" Y="-918.002" Z="56.2483" />
+        <Hotspot X="2534.89" Y="-903.189" Z="56.889" />
+        <Hotspot X="2529.11" Y="-918.49" Z="56.4659" />
+        <Hotspot X="2560.15" Y="-902.125" Z="55.6462" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1536" KillCount="3">
+      <Hotspots>
+        <Hotspot X="1874.17" Y="1079.71" Z="25.4531" />
+        <Hotspot X="1850.2" Y="882.255" Z="28.0977" />
+        <Hotspot X="1826.04" Y="825.973" Z="26.0906" />
+        <Hotspot X="1879.72" Y="1024.23" Z="28.5879" />
+        <Hotspot X="1908.12" Y="923.946" Z="29.7386" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="356" Name="Rear Guard Patrol">
+    <Objective Type="KillMob" MobId="1529" KillCount="8">
+      <Hotspots>
+        <Hotspot X="2046.02" Y="-483.616" Z="40.8892" />
+        <Hotspot X="2042.24" Y="-423.988" Z="35.5727" />
+        <Hotspot X="2043.45" Y="-382.295" Z="35.5497" />
+        <Hotspot X="2026.6" Y="-434.382" Z="35.275" />
+        <Hotspot X="1946.39" Y="-439.002" Z="35.525" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1532" KillCount="8">
+      <Hotspots>
+        <Hotspot X="2015.62" Y="-425.206" Z="35.3274" />
+        <Hotspot X="2007.81" Y="-422.719" Z="35.4582" />
+        <Hotspot X="2048.61" Y="-512.023" Z="43.3537" />
+        <Hotspot X="2070.6" Y="-462.606" Z="39.4806" />
+        <Hotspot X="2068.19" Y="-423.546" Z="39.014" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="371" Name="At War With The Scarlet Crusade">
+    <Objective Type="KillMob" MobId="1664" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2146.47" Y="-528.42" Z="81.7803" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1538" KillCount="5">
+      <Hotspots>
+        <Hotspot X="2563.66" Y="-895.477" Z="55.6279" />
+        <Hotspot X="2540.38" Y="-886.911" Z="55.5066" />
+        <Hotspot X="2517.75" Y="-898.981" Z="56.1185" />
+        <Hotspot X="2528.36" Y="-904.647" Z="57.0912" />
+        <Hotspot X="2237.77" Y="-653.93" Z="78.261" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="369" Name="A New Plague">
+    <Objective Type="KillMob" MobId="1555" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2254.7" Y="-851.399" Z="74.9942" />
+        <Hotspot X="2258.81" Y="-747.746" Z="66.9329" />
+        <Hotspot X="2215.33" Y="-921.249" Z="75.9841" />
+        <Hotspot X="2294.67" Y="-911.819" Z="74.7889" />
+        <Hotspot X="2254.68" Y="-1011.59" Z="78.3674" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="372" Name="At War With The Scarlet Crusade">
+    <Objective Type="KillMob" MobId="1665" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3079.98" Y="-560.104" Z="126.807" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1660" KillCount="2">
+      <Hotspots>
+        <Hotspot X="3080.8" Y="-556.315" Z="126.807" />
+        <Hotspot X="3076.84" Y="-557.445" Z="126.803" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Starter Guides (1-12)\Tirisfal Glades (1-12) [Undead Starter]" LogColor="Green" />
+    <PickUp QuestName="Rude Awakening" QuestId="363" GiverName="Undertaker Mordo" GiverId="1568" />
+    <TurnIn QuestName="Rude Awakening" QuestId="363" TurnInName="Shadow Priest Sarvis" TurnInId="1569" />
+    <If Condition="((!HasQuest(364)) &amp;&amp; (!IsQuestCompleted(364)))">
+      <PickUp QuestName="The Mindless Ones" QuestId="364" GiverName="Shadow Priest Sarvis" GiverId="1569" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Piercing the Veil" QuestId="1470" GiverName="Venya Marthand" GiverId="5667" />
+    </If>
+    <Objective QuestName="The Mindless Ones" QuestId="364" Type="KillMob" MobId="1501" KillCount="8" />
+    <Objective QuestName="The Mindless Ones" QuestId="364" Type="KillMob" MobId="1502" KillCount="8" />
+    <If Condition="Me.Level &lt; 2">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 2 - Wretched Zombie</Name>
+          <Factions>7</Factions>
+          <TargetMinLevel>1</TargetMinLevel>
+          <TargetMaxLevel>2</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="1853.81" Y="1487.77" Z="91.11" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="2" /> <!--  (grind Wretched Zombie) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <Objective QuestName="Piercing the Veil" QuestId="1470" Type="KillMob" MobId="1890" KillCount="1" />
+      <Objective QuestName="Piercing the Veil" QuestId="1470" Type="CollectItem" ItemId="6281" CollectCount="3" />
+    </If>
+    <TurnIn QuestName="The Mindless Ones" QuestId="364" TurnInName="Shadow Priest Sarvis" TurnInId="1569" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <If Condition="((!HasQuest(3095)) &amp;&amp; (!IsQuestCompleted(3095)))">
+        <PickUp QuestName="Simple Scroll" QuestId="3095" GiverName="Shadow Priest Sarvis" GiverId="1569" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <If Condition="((!HasQuest(3099)) &amp;&amp; (!IsQuestCompleted(3099)))">
+        <PickUp QuestName="Tainted Scroll" QuestId="3099" GiverName="Shadow Priest Sarvis" GiverId="1569" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Encrypted Scroll" QuestId="3096" GiverName="Shadow Priest Sarvis" GiverId="1569" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <If Condition="((!HasQuest(3097)) &amp;&amp; (!IsQuestCompleted(3097)))">
+        <PickUp QuestName="Hallowed Scroll" QuestId="3097" GiverName="Shadow Priest Sarvis" GiverId="1569" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <If Condition="((!HasQuest(3098)) &amp;&amp; (!IsQuestCompleted(3098)))">
+        <PickUp QuestName="Glyphic Scroll" QuestId="3098" GiverName="Shadow Priest Sarvis" GiverId="1569" />
+      </If>
+    </If>
+    <If Condition="((!HasQuest(3901)) &amp;&amp; (!IsQuestCompleted(3901)))">
+      <PickUp QuestName="Rattling the Rattlecages" QuestId="3901" GiverName="Shadow Priest Sarvis" GiverId="1569" />
+    </If>
+    <PickUp QuestName="The Damned" QuestId="376" GiverName="Novice Elreth" GiverId="1661" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <TurnIn QuestName="Simple Scroll" QuestId="3095" TurnInName="Dannal Stern" TurnInId="2119" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <TurnIn QuestName="Tainted Scroll" QuestId="3099" TurnInName="Maximillion" TurnInId="2126" />
+      <TurnIn QuestName="Piercing the Veil" QuestId="1470" TurnInName="Venya Marthand" TurnInId="5667" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <TurnIn QuestName="Encrypted Scroll" QuestId="3096" TurnInName="David Trias" TurnInId="2122" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <TurnIn QuestName="Hallowed Scroll" QuestId="3097" TurnInName="Dark Cleric Duesten" TurnInId="2123" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <TurnIn QuestName="Glyphic Scroll" QuestId="3098" TurnInName="Isabella" TurnInId="2124" />
+    </If>
+    <Objective QuestName="Rattling the Rattlecages" QuestId="3901" Type="KillMob" MobId="1890" KillCount="12" />
+    <If Condition="Me.Level &lt; 3">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 3 - Rattlecage Skeleton</Name>
+          <Factions>7</Factions>
+          <TargetMinLevel>2</TargetMinLevel>
+          <TargetMaxLevel>3</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="1898.19" Y="1467.73" Z="83.60" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="3" /> <!--  (grind Rattlecage Skeleton) -->
+    </If>
+    <Objective QuestName="The Damned" QuestId="376" Type="KillMob" MobId="1508" KillCount="1" />
+    <Objective QuestName="The Damned" QuestId="376" Type="CollectItem" ItemId="3265" CollectCount="6" />
+    <Objective QuestName="The Damned" QuestId="376" Type="KillMob" MobId="1512" KillCount="1" />
+    <Objective QuestName="The Damned" QuestId="376" Type="CollectItem" ItemId="3264" CollectCount="6" />
+    <If Condition="Me.Level &lt; 4">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 4 - Duskbat</Name>
+          <Factions>7</Factions>
+          <TargetMinLevel>1</TargetMinLevel>
+          <TargetMaxLevel>2</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="1744.75" Y="1569.49" Z="115.23" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="4" /> <!--  (grind Duskbat) -->
+    </If>
+    <TurnIn QuestName="The Damned" QuestId="376" TurnInName="Novice Elreth" TurnInId="1661" />
+    <If Condition="((!HasQuest(6395)) &amp;&amp; (!IsQuestCompleted(6395)))">
+      <PickUp QuestName="Marla's Last Wish" QuestId="6395" GiverName="Novice Elreth" GiverId="1661" />
+    </If>
+    <TurnIn QuestName="Rattling the Rattlecages" QuestId="3901" TurnInName="Shadow Priest Sarvis" TurnInId="1569" />
+    <If Condition="((!HasQuest(380)) &amp;&amp; (!IsQuestCompleted(380)))">
+      <PickUp QuestName="Night Web's Hollow" QuestId="380" GiverName="Executor Arren" GiverId="1570" />
+    </If>
+    <If Condition="((!HasQuest(3902)) &amp;&amp; (!IsQuestCompleted(3902)))">
+      <PickUp QuestName="Scavenging Deathknell" QuestId="3902" GiverName="Deathguard Saltain" GiverId="1740" />
+    </If>
+    <Objective QuestName="Scavenging Deathknell" QuestId="3902" Type="CollectItem" ItemId="11127" CollectCount="6" />
+    <TurnIn QuestName="Scavenging Deathknell" QuestId="3902" TurnInName="Deathguard Saltain" TurnInId="1740" />
+    <Objective QuestName="Night Web's Hollow" QuestId="380" Type="KillMob" MobId="1504" KillCount="10" />
+    <Objective QuestName="Night Web's Hollow" QuestId="380" Type="KillMob" MobId="1505" KillCount="8" />
+    <If Condition="Me.Level &lt; 5">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 5 - Night Web Spider</Name>
+          <TargetMinLevel>3</TargetMinLevel>
+          <TargetMaxLevel>4</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="2011.61" Y="1950.18" Z="102.78" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="5" /> <!--  (grind Night Web Spider) -->
+    </If>
+    <Objective QuestName="Marla's Last Wish" QuestId="6395" Type="KillMob" MobId="1919" KillCount="1" />
+    <Objective QuestName="Marla's Last Wish" QuestId="6395" Type="CollectItem" ItemId="16333" CollectCount="1" />
+    <TurnIn QuestName="Night Web's Hollow" QuestId="380" TurnInName="Executor Arren" TurnInId="1570" />
+    <If Condition="((!HasQuest(381)) &amp;&amp; (!IsQuestCompleted(381)))">
+      <PickUp QuestName="The Scarlet Crusade" QuestId="381" GiverName="Executor Arren" GiverId="1570" />
+    </If>
+    <TurnIn QuestName="Marla's Last Wish" QuestId="6395" TurnInName="Novice Elreth" TurnInId="1661" />
+    <Objective QuestName="The Scarlet Crusade" QuestId="381" Type="CollectItem" ItemId="3266" CollectCount="12" />
+    <TurnIn QuestName="The Scarlet Crusade" QuestId="381" TurnInName="Executor Arren" TurnInId="1570" />
+    <If Condition="((!HasQuest(382)) &amp;&amp; (!IsQuestCompleted(382)))">
+      <PickUp QuestName="The Red Messenger" QuestId="382" GiverName="Executor Arren" GiverId="1570" />
+    </If>
+    <Objective QuestName="The Red Messenger" QuestId="382" Type="KillMob" MobId="1667" KillCount="1" />
+    <Objective QuestName="The Red Messenger" QuestId="382" Type="CollectItem" ItemId="2885" CollectCount="1" />
+    <If Condition="Me.Level &lt; 6">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 6 - Meven Korgal</Name>
+          <TargetMinLevel>5</TargetMinLevel>
+          <TargetMaxLevel>5</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="1772.91" Y="1381.26" Z="91.04" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="6" /> <!--  (grind Meven Korgal) -->
+    </If>
+    <TurnIn QuestName="The Red Messenger" QuestId="382" TurnInName="Executor Arren" TurnInId="1570" />
+    <If Condition="((!HasQuest(383)) &amp;&amp; (!IsQuestCompleted(383)))">
+      <PickUp QuestName="Vital Intelligence" QuestId="383" GiverName="Executor Arren" GiverId="1570" />
+    </If>
+    <PickUp QuestName="A Rogue's Deal" QuestId="8" GiverName="Calvin Montague" GiverId="6784" />
+    <PickUp QuestName="Fields of Grief" QuestId="365" GiverName="Deathguard Simmer" GiverId="1519" />
+    <PickUp QuestName="Gordo's Task" QuestId="5481" GiverName="Gordo" GiverId="10666" />
+    <Objective QuestName="Gordo's Task" QuestId="5481" Type="CollectItem" ItemId="12737" CollectCount="3" />
+    <PickUp QuestName="A Putrid Task" QuestId="404" GiverName="Deathguard Dillinger" GiverId="1496" />
+    <TurnIn QuestName="Gordo's Task" QuestId="5481" TurnInName="Junior Apothecary Holland" TurnInId="10665" />
+    <If Condition="((!HasQuest(5482)) &amp;&amp; (!IsQuestCompleted(5482)))">
+      <PickUp QuestName="Doom Weed" QuestId="5482" GiverName="Junior Apothecary Holland" GiverId="10665" />
+    </If>
+    <PickUp QuestName="A New Plague" QuestId="367" GiverName="Apothecary Johaan" GiverId="1518" />
+    <TurnIn QuestName="Vital Intelligence" QuestId="383" TurnInName="Executor Zygand" TurnInId="1515" />
+    <If Condition="((!HasQuest(427)) &amp;&amp; (!IsQuestCompleted(427)))">
+      <PickUp QuestName="At War With The Scarlet Crusade" QuestId="427" GiverName="Executor Zygand" GiverId="1515" />
+    </If>
+    <PickUp QuestName="Wanted: Maggot Eye" QuestId="398" GiverName="Executor Zygand" GiverId="1515" />
+    <PickUp QuestName="Graverobbers" QuestId="358" GiverName="Magistrate Sevren" GiverId="1499" />
+    <TurnIn QuestName="A Rogue's Deal" QuestId="8" TurnInName="Innkeeper Renee" TurnInId="5688" />
+    <CustomBehavior File="SetHearthstone" MobId="5688" AreaId="85" X="2269.51" Y="244.944" Z="34.3402" /> <!-- Set hearth: Gallows' End Tavern -->
+    <Objective QuestName="A New Plague" QuestId="367" Type="KillMob" MobId="1547" KillCount="1" />
+    <Objective QuestName="A New Plague" QuestId="367" Type="CollectItem" ItemId="2858" CollectCount="5" />
+    <If Condition="Me.Level &lt; 7">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 7 - Decrepit Darkhound</Name>
+          <TargetMinLevel>5</TargetMinLevel>
+          <TargetMaxLevel>6</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="2624.53" Y="1287.23" Z="49.48" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="7" /> <!--  (grind Decrepit Darkhound) -->
+    </If>
+    <TurnIn QuestName="A New Plague" QuestId="367" TurnInName="Apothecary Johaan" TurnInId="1518" />
+    <If Condition="((!HasQuest(368)) &amp;&amp; (!IsQuestCompleted(368)))">
+      <PickUp QuestName="A New Plague" QuestId="368" GiverName="Apothecary Johaan" GiverId="1518" />
+    </If>
+    <Objective QuestName="A Putrid Task" QuestId="404" Type="CollectItem" ItemId="2855" CollectCount="7" />
+    <TurnIn QuestName="A Putrid Task" QuestId="404" TurnInName="Deathguard Dillinger" TurnInId="1496" />
+    <If Condition="((!HasQuest(426)) &amp;&amp; (!IsQuestCompleted(426)))">
+      <PickUp QuestName="The Mills Overrun" QuestId="426" GiverName="Deathguard Dillinger" GiverId="1496" />
+    </If>
+    <If Condition="((!HasQuest(354)) &amp;&amp; (!IsQuestCompleted(354)))">
+      <PickUp QuestName="Deaths in the Family" QuestId="354" GiverName="Coleman Farthing" GiverId="1500" />
+    </If>
+    <PickUp QuestName="The Haunted Mills" QuestId="362" GiverName="Coleman Farthing" GiverId="1500" />
+    <PickUp QuestName="The Chill of Death" QuestId="375" GiverName="Gretchen Dedmar" GiverId="1521" />
+    <If Condition="Me.Level &lt; 8">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 8 - Decrepit Darkhound</Name>
+          <TargetMinLevel>5</TargetMinLevel>
+          <TargetMaxLevel>6</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="2624.53" Y="1287.23" Z="49.48" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="8" /> <!--  (grind Decrepit Darkhound) -->
+    </If>
+    <If Condition="((!HasQuest(590)) &amp;&amp; (!IsQuestCompleted(590)))">
+      <PickUp QuestName="A Rogue's Deal" QuestId="590" GiverName="Calvin Montague" GiverId="6784" />
+    </If>
+    <Objective QuestName="A Rogue's Deal" QuestId="590" Type="KillMob" MobId="6784" KillCount="1" />
+    <TurnIn QuestName="A Rogue's Deal" QuestId="590" TurnInName="Calvin Montague" TurnInId="6784" />
+    <Objective QuestName="Fields of Grief" QuestId="365" Type="CollectItem" ItemId="2846" CollectCount="10" />
+    <Objective QuestName="At War With The Scarlet Crusade" QuestId="427" Type="KillMob" MobId="1535" KillCount="10" />
+    <Objective QuestName="The Chill of Death" QuestId="375" Type="KillMob" MobId="1553" KillCount="1" />
+    <Objective QuestName="The Chill of Death" QuestId="375" Type="CollectItem" ItemId="2876" CollectCount="5" />
+    <Objective QuestName="The Haunted Mills" QuestId="362" Type="KillMob" MobId="1657" KillCount="1" />
+    <Objective QuestName="The Haunted Mills" QuestId="362" Type="CollectItem" ItemId="2831" CollectCount="1" />
+    <Objective QuestName="Deaths in the Family" QuestId="354" Type="KillMob" MobId="1655" KillCount="1" />
+    <Objective QuestName="Deaths in the Family" QuestId="354" Type="CollectItem" ItemId="2828" CollectCount="1" />
+    <Objective QuestName="Deaths in the Family" QuestId="354" Type="KillMob" MobId="1654" KillCount="1" />
+    <Objective QuestName="Deaths in the Family" QuestId="354" Type="CollectItem" ItemId="2829" CollectCount="1" />
+    <Objective QuestName="Deaths in the Family" QuestId="354" Type="KillMob" MobId="1656" KillCount="1" />
+    <Objective QuestName="Deaths in the Family" QuestId="354" Type="CollectItem" ItemId="2830" CollectCount="1" />
+    <Objective QuestName="The Mills Overrun" QuestId="426" Type="CollectItem" ItemId="3162" CollectCount="5" />
+    <Objective QuestName="The Mills Overrun" QuestId="426" Type="KillMob" MobId="1522" KillCount="1" />
+    <Objective QuestName="The Mills Overrun" QuestId="426" Type="CollectItem" ItemId="3163" CollectCount="3" />
+    <Objective QuestName="A Letter Undelivered" QuestId="361" Type="CollectItem" ItemId="2839" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="2839" MobId="0" NumOfTimes="1" CollectionDistance="100" />
+    <PickUp QuestName="A Letter Undelivered" QuestId="361" GiverName="Calvin Montague" GiverId="6784" />
+    <If Condition="Me.Level &lt; 9">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 9 - Darkeye Bonecaster</Name>
+          <TargetMinLevel>7</TargetMinLevel>
+          <TargetMaxLevel>8</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="2824.46" Y="1117.89" Z="85.42" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="9" /> <!--  (grind Darkeye Bonecaster) -->
+    </If>
+    <TurnIn QuestName="Deaths in the Family" QuestId="354" TurnInName="Coleman Farthing" TurnInId="1500" />
+    <TurnIn QuestName="The Haunted Mills" QuestId="362" TurnInName="Coleman Farthing" TurnInId="1500" />
+    <If Condition="((!HasQuest(355)) &amp;&amp; (!IsQuestCompleted(355)))">
+      <PickUp QuestName="Speak with Sevren" QuestId="355" GiverName="Coleman Farthing" GiverId="1500" />
+    </If>
+    <TurnIn QuestName="A Letter Undelivered" QuestId="361" TurnInName="Yvette Farthing" TurnInId="1560" />
+    <TurnIn QuestName="The Chill of Death" QuestId="375" TurnInName="Gretchen Dedmar" TurnInId="1521" />
+    <TurnIn QuestName="Speak with Sevren" QuestId="355" TurnInName="Magistrate Sevren" TurnInId="1499" />
+    <TurnIn QuestName="At War With The Scarlet Crusade" QuestId="427" TurnInName="Executor Zygand" TurnInId="1515" />
+    <If Condition="((!HasQuest(370)) &amp;&amp; (!IsQuestCompleted(370)))">
+      <PickUp QuestName="At War With The Scarlet Crusade" QuestId="370" GiverName="Executor Zygand" GiverId="1515" />
+    </If>
+    <If Condition="((!HasQuest(374)) &amp;&amp; (!IsQuestCompleted(374)))">
+      <PickUp QuestName="Proof of Demise" QuestId="374" GiverName="Deathguard Burgess" GiverId="1652" />
+    </If>
+    <TurnIn QuestName="Fields of Grief" QuestId="365" TurnInName="Apothecary Johaan" TurnInId="1518" />
+    <If Condition="((!HasQuest(407)) &amp;&amp; (!IsQuestCompleted(407)))">
+      <PickUp QuestName="Fields of Grief" QuestId="407" GiverName="Apothecary Johaan" GiverId="1518" />
+    </If>
+    <TurnIn QuestName="The Mills Overrun" QuestId="426" TurnInName="Deathguard Dillinger" TurnInId="1496" />
+    <If Condition="Me.Level &lt; 10">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 10 - Darkeye Bonecaster</Name>
+          <TargetMinLevel>7</TargetMinLevel>
+          <TargetMaxLevel>8</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="2824.46" Y="1117.89" Z="85.42" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="10" /> <!--  (grind Darkeye Bonecaster) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Touch of Weakness" QuestId="5658" GiverName="Aelthalyste" GiverId="4606" />
+      <!-- Quest 5658 may auto-complete (no turn-in found) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <If Condition="((!HasQuest(1478)) &amp;&amp; (!IsQuestCompleted(1478)))">
+        <PickUp QuestName="Halgar's Summons" QuestId="1478" GiverName="Ageron Kargal" GiverId="5724" />
+      </If>
+    </If>
+    <TurnIn QuestName="Halgar's Summons" QuestId="1478" TurnInName="Carendin Halgar" TurnInId="5675" />
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <If Condition="((!HasQuest(1473)) &amp;&amp; (!IsQuestCompleted(1473)))">
+        <PickUp QuestName="Creature of the Void" QuestId="1473" GiverName="Carendin Halgar" GiverId="5675" />
+      </If>
+      <Objective QuestName="Creature of the Void" QuestId="1473" Type="CollectItem" ItemId="6285" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Creature of the Void" QuestId="1473" TurnInName="Carendin Halgar" TurnInId="5675" />
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <If Condition="((!HasQuest(1471)) &amp;&amp; (!IsQuestCompleted(1471)))">
+        <PickUp QuestName="The Binding" QuestId="1471" GiverName="Carendin Halgar" GiverId="5675" />
+      </If>
+      <While Condition="((HasQuest(1471)) &amp;&amp; (!IsQuestCompleted(1471)))">
+        <CustomBehavior File="UseItemOn" QuestId="1471" MobId="5676" ItemId="6284" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="The Binding" QuestId="1471" Type="KillMob" MobId="5676" KillCount="1" />
+      <TurnIn QuestName="The Binding" QuestId="1471" TurnInName="Carendin Halgar" TurnInId="5675" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <If Condition="((!HasQuest(1818)) &amp;&amp; (!IsQuestCompleted(1818)))">
+        <PickUp QuestName="Speak with Dillinger" QuestId="1818" GiverName="Austil de Mon" GiverId="2131" />
+      </If>
+      <TurnIn QuestName="Speak with Dillinger" QuestId="1818" TurnInName="Deathguard Dillinger" TurnInId="1496" />
+      <If Condition="((!HasQuest(1819)) &amp;&amp; (!IsQuestCompleted(1819)))">
+        <PickUp QuestName="Ulag the Cleaver" QuestId="1819" GiverName="Deathguard Dillinger" GiverId="1496" />
+      </If>
+      <Objective QuestName="Ulag the Cleaver" QuestId="1819" Type="KillMob" MobId="6390" KillCount="1" />
+      <TurnIn QuestName="Ulag the Cleaver" QuestId="1819" TurnInName="Deathguard Dillinger" TurnInId="1496" />
+      <If Condition="((!HasQuest(1820)) &amp;&amp; (!IsQuestCompleted(1820)))">
+        <PickUp QuestName="Speak with Coleman" QuestId="1820" GiverName="Deathguard Dillinger" GiverId="1496" />
+      </If>
+      <TurnIn QuestName="Speak with Coleman" QuestId="1820" TurnInName="Coleman Farthing" TurnInId="1500" />
+    </If>
+    <TurnIn QuestName="Fields of Grief" QuestId="407" TurnInName="Captured Scarlet Zealot" TurnInId="1931" />
+    <Objective QuestName="Graverobbers" QuestId="358" Type="KillMob" MobId="1941" KillCount="8" />
+    <Objective QuestName="Doom Weed" QuestId="5482" Type="CollectItem" ItemId="13702" CollectCount="10" />
+    <Objective QuestName="Speak with Coleman" QuestId="1820" Type="CollectItem" ItemId="2834" CollectCount="8" />
+    <Objective QuestName="Wanted: Maggot Eye" QuestId="398" Type="KillMob" MobId="1675" KillCount="5" />
+    <Objective QuestName="Wanted: Maggot Eye" QuestId="398" Type="KillMob" MobId="1753" KillCount="1" />
+    <Objective QuestName="Wanted: Maggot Eye" QuestId="398" Type="CollectItem" ItemId="3635" CollectCount="1" />
+    <Objective QuestName="A New Plague" QuestId="368" Type="CollectItem" ItemId="2859" CollectCount="5" />
+    <TurnIn QuestName="Wanted: Maggot Eye" QuestId="398" TurnInName="Executor Zygand" TurnInId="1515" />
+    <TurnIn QuestName="Graverobbers" QuestId="358" TurnInName="Magistrate Sevren" TurnInId="1499" />
+    <If Condition="((!HasQuest(359)) &amp;&amp; (!IsQuestCompleted(359)))">
+      <PickUp QuestName="Forsaken Duties" QuestId="359" GiverName="Magistrate Sevren" GiverId="1499" />
+    </If>
+    <TurnIn QuestName="A New Plague" QuestId="368" TurnInName="Apothecary Johaan" TurnInId="1518" />
+    <If Condition="((!HasQuest(369)) &amp;&amp; (!IsQuestCompleted(369)))">
+      <PickUp QuestName="A New Plague" QuestId="369" GiverName="Apothecary Johaan" GiverId="1518" />
+    </If>
+    <TurnIn QuestName="Doom Weed" QuestId="5482" TurnInName="Junior Apothecary Holland" TurnInId="10665" />
+    <If Condition="Me.Level &lt; 11">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 11 - Maggot Eye</Name>
+          <TargetMinLevel>10</TargetMinLevel>
+          <TargetMaxLevel>10</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="2910.70" Y="382.55" Z="31.48" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="11" /> <!--  (grind Maggot Eye) -->
+    </If>
+    <Objective QuestName="At War With The Scarlet Crusade" QuestId="370" Type="KillMob" MobId="1662" KillCount="1" />
+    <Objective QuestName="Proof of Demise" QuestId="374" Type="CollectItem" ItemId="2875" CollectCount="10" />
+    <Objective QuestName="At War With The Scarlet Crusade" QuestId="370" Type="KillMob" MobId="1537" KillCount="3" />
+    <Objective QuestName="At War With The Scarlet Crusade" QuestId="370" Type="KillMob" MobId="1536" KillCount="3" />
+    <TurnIn QuestName="Proof of Demise" QuestId="374" TurnInName="Deathguard Burgess" TurnInId="1652" />
+    <TurnIn QuestName="At War With The Scarlet Crusade" QuestId="370" TurnInName="Executor Zygand" TurnInId="1515" />
+    <If Condition="((!HasQuest(371)) &amp;&amp; (!IsQuestCompleted(371)))">
+      <PickUp QuestName="At War With The Scarlet Crusade" QuestId="371" GiverName="Executor Zygand" GiverId="1515" />
+    </If>
+    <TurnIn QuestName="Forsaken Duties" QuestId="359" TurnInName="Deathguard Linnea" TurnInId="1495" />
+    <If Condition="((!HasQuest(360)) &amp;&amp; (!IsQuestCompleted(360)))">
+      <PickUp QuestName="Return to the Magistrate" QuestId="360" GiverName="Deathguard Linnea" GiverId="1495" />
+    </If>
+    <PickUp QuestName="Rear Guard Patrol" QuestId="356" GiverName="Deathguard Linnea" GiverId="1495" />
+    <Objective QuestName="Rear Guard Patrol" QuestId="356" Type="KillMob" MobId="1529" KillCount="8" />
+    <Objective QuestName="Rear Guard Patrol" QuestId="356" Type="KillMob" MobId="1532" KillCount="8" />
+    <Objective QuestName="At War With The Scarlet Crusade" QuestId="371" Type="KillMob" MobId="1664" KillCount="1" />
+    <Objective QuestName="At War With The Scarlet Crusade" QuestId="371" Type="KillMob" MobId="1538" KillCount="5" />
+    <Objective QuestName="A New Plague" QuestId="369" Type="KillMob" MobId="1555" KillCount="1" />
+    <Objective QuestName="A New Plague" QuestId="369" Type="CollectItem" ItemId="2872" CollectCount="4" />
+    <If Condition="Me.Level &lt; 12">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 12 - Vicious Night Web Spider</Name>
+          <TargetMinLevel>9</TargetMinLevel>
+          <TargetMaxLevel>10</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="2254.70" Y="-851.40" Z="74.99" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="12" /> <!--  (grind Vicious Night Web Spider) -->
+    </If>
+    <TurnIn QuestName="Return to the Magistrate" QuestId="360" TurnInName="Magistrate Sevren" TurnInId="1499" />
+    <TurnIn QuestName="At War With The Scarlet Crusade" QuestId="371" TurnInName="Executor Zygand" TurnInId="1515" />
+    <If Condition="((!HasQuest(372)) &amp;&amp; (!IsQuestCompleted(372)))">
+      <PickUp QuestName="At War With The Scarlet Crusade" QuestId="372" GiverName="Executor Zygand" GiverId="1515" />
+    </If>
+    <TurnIn QuestName="A New Plague" QuestId="369" TurnInName="Apothecary Johaan" TurnInId="1518" />
+    <If Condition="((!HasQuest(492)) &amp;&amp; (!IsQuestCompleted(492)))">
+      <PickUp QuestName="A New Plague" QuestId="492" GiverName="Apothecary Johaan" GiverId="1518" />
+    </If>
+    <TurnIn QuestName="A New Plague" QuestId="492" TurnInName="Captured Mountaineer" TurnInId="2211" />
+    <TurnIn QuestName="Rear Guard Patrol" QuestId="356" TurnInName="Deathguard Linnea" TurnInId="1495" />
+    <Objective QuestName="At War With The Scarlet Crusade" QuestId="372" Type="KillMob" MobId="1665" KillCount="1" />
+    <Objective QuestName="At War With The Scarlet Crusade" QuestId="372" Type="KillMob" MobId="1660" KillCount="2" />
+    <TurnIn QuestName="At War With The Scarlet Crusade" QuestId="372" TurnInName="Executor Zygand" TurnInId="1515" />
+    <PickUp QuestName="Conscript of the Horde" QuestId="840" GiverName="Takrin Pathseeker" GiverId="3336" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Starter Guides (1-12)\Tirisfal Glades (1-12) [Undead Starter] Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_The_Barrens_(12-15)" />
+  </QuestOrder>
+</HBProfile>

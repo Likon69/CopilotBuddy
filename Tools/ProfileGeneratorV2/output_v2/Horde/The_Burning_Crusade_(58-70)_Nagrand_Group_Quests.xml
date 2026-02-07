@@ -1,0 +1,552 @@
+<HBProfile>
+  <Name>Horde\The Burning Crusade (58-70)\Nagrand Group Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>67</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="10109" Name="I Must Have Them!">
+    <Objective Type="KillMob" MobId="17158" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1759.75" Y="6370.54" Z="40.3975" />
+        <Hotspot X="-1591.18" Y="6270.28" Z="61.6115" />
+        <Hotspot X="-1474.52" Y="6404.28" Z="28.8356" />
+        <Hotspot X="-1614.38" Y="6447.17" Z="26.3975" />
+        <Hotspot X="-1652.48" Y="6581.86" Z="5.8786" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9819" Name="The Tortured Earth">
+    <Objective Type="KillMob" MobId="17156" KillCount="15">
+      <Hotspots>
+        <Hotspot X="-2047.92" Y="6351.75" Z="44.761" />
+        <Hotspot X="-1633.24" Y="6243.69" Z="72.2056" />
+        <Hotspot X="-1588.29" Y="6332.51" Z="32.4972" />
+        <Hotspot X="-1556.58" Y="6255.0" Z="70.038" />
+        <Hotspot X="-1522.02" Y="6339.84" Z="62.8465" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9821" Name="Eating Damnation">
+    <Objective Type="KillMob" MobId="18062" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2894.57" Y="6692.24" Z="19.1615" />
+        <Hotspot X="-2483.04" Y="7477.92" Z="-7.7037" />
+        <Hotspot X="-2848.0" Y="7617.72" Z="1.372" />
+        <Hotspot X="-2982.98" Y="7228.68" Z="22.8879" />
+        <Hotspot X="-2838.6" Y="7719.7" Z="6.2515" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9849" Name="Shattering the Veil">
+    <Objective Type="KillMob" MobId="17157" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2893.51" Y="6806.41" Z="-40.3916" />
+        <Hotspot X="-2919.29" Y="6829.33" Z="-44.3609" />
+        <Hotspot X="-2895.61" Y="6844.59" Z="-34.6519" />
+        <Hotspot X="-2929.32" Y="6869.18" Z="-40.7861" />
+        <Hotspot X="-2966.85" Y="6832.03" Z="-69.1553" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18181" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-2654.18" Y="7611.46" Z="4.2125" />
+        <Hotspot X="-2702.38" Y="7616.4" Z="12.9681" />
+        <Hotspot X="-2704.8" Y="7619.85" Z="12.4231" />
+        <Hotspot X="-2681.97" Y="7624.61" Z="5.4613" />
+        <Hotspot X="-2673.93" Y="7625.38" Z="4.7423" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9857" Name="Talbuk Mastery">
+    <Objective Type="KillMob" MobId="17130" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-1379.51" Y="6271.72" Z="50.393" />
+        <Hotspot X="-1354.34" Y="6271.49" Z="51.2049" />
+        <Hotspot X="-2131.51" Y="6197.62" Z="83.0864" />
+        <Hotspot X="-1753.06" Y="6384.03" Z="40.832" />
+        <Hotspot X="-1746.51" Y="6283.38" Z="54.611" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9789" Name="Clefthoof Mastery">
+    <Objective Type="KillMob" MobId="18205" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-1711.7" Y="6344.2" Z="48.635" />
+        <Hotspot X="-1675.69" Y="6376.07" Z="42.8747" />
+        <Hotspot X="-1660.84" Y="6400.35" Z="36.2952" />
+        <Hotspot X="-1616.9" Y="6388.74" Z="31.7569" />
+        <Hotspot X="-1507.1" Y="6277.32" Z="48.3513" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9854" Name="Windroc Mastery">
+    <Objective Type="KillMob" MobId="17128" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-1288.61" Y="6230.03" Z="54.4388" />
+        <Hotspot X="-2117.73" Y="6298.0" Z="55.0003" />
+        <Hotspot X="-1747.15" Y="6317.02" Z="49.1154" />
+        <Hotspot X="-1742.02" Y="6349.35" Z="43.8957" />
+        <Hotspot X="-1439.16" Y="6288.67" Z="46.6046" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9858" Name="Talbuk Mastery">
+    <Objective Type="KillMob" MobId="17131" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-2350.92" Y="6373.81" Z="27.7503" />
+        <Hotspot X="-2336.12" Y="6368.29" Z="27.5113" />
+        <Hotspot X="-2546.89" Y="6973.86" Z="-0.0001" />
+        <Hotspot X="-2490.74" Y="6968.52" Z="-1.4052" />
+        <Hotspot X="-2541.01" Y="7006.3" Z="-2.6873" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9850" Name="Clefthoof Mastery">
+    <Objective Type="KillMob" MobId="17132" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-2571.16" Y="6998.35" Z="-1.9864" />
+        <Hotspot X="-2717.02" Y="7021.65" Z="-7.0735" />
+        <Hotspot X="-2745.27" Y="6987.17" Z="-6.959" />
+        <Hotspot X="-2684.65" Y="7084.27" Z="-7.4301" />
+        <Hotspot X="-2881.39" Y="7019.21" Z="-30.7204" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9855" Name="Windroc Mastery">
+    <Objective Type="KillMob" MobId="18220" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-2328.67" Y="7622.37" Z="-4.8367" />
+        <Hotspot X="-2013.34" Y="7926.42" Z="-26.5985" />
+        <Hotspot X="-2075.58" Y="7851.36" Z="-22.1876" />
+        <Hotspot X="-2041.57" Y="7872.64" Z="-31.8523" />
+        <Hotspot X="-1971.56" Y="7892.31" Z="-30.1807" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9856" Name="Windroc Mastery">
+    <Objective Type="KillMob" MobId="18257" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-696.603" Y="8469.75" Z="39.2338" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9859" Name="Talbuk Mastery">
+    <Objective Type="KillMob" MobId="18258" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1370.18" Y="8703.16" Z="27.6684" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9851" Name="Clefthoof Mastery">
+    <Objective Type="KillMob" MobId="18259" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2226.26" Y="8008.52" Z="-27.0867" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9852" Name="The Ultimate Bloodsport">
+    <Objective Type="KillMob" MobId="18290" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2358.45" Y="7851.33" Z="-4.443" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10252" Name="Vision of the Dead">
+    <Objective Type="KillMob" MobId="17133" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2876.31" Y="8042.55" Z="-26.192" />
+        <Hotspot X="-2910.91" Y="8016.22" Z="-19.8124" />
+        <Hotspot X="-2952.39" Y="8188.09" Z="-32.3304" />
+        <Hotspot X="-2275.55" Y="8536.59" Z="-22.7788" />
+        <Hotspot X="-2411.95" Y="8613.67" Z="-26.243" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="19201" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1190.29" Y="8772.66" Z="44.0318" />
+        <Hotspot X="-984.868" Y="8734.93" Z="132.894" />
+        <Hotspot X="-1800.63" Y="8785.26" Z="31.3662" />
+        <Hotspot X="-1882.31" Y="8993.66" Z="38.3989" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="17129" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1057.38" Y="8242.69" Z="18.1341" />
+        <Hotspot X="-1016.36" Y="8301.35" Z="14.8882" />
+        <Hotspot X="-787.583" Y="8458.14" Z="37.8376" />
+        <Hotspot X="-682.289" Y="8311.17" Z="46.4987" />
+        <Hotspot X="-783.511" Y="8495.77" Z="40.8747" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9945" Name="War on the Warmaul">
+    <Objective Type="KillMob" MobId="18065" KillCount="15">
+      <Hotspots>
+        <Hotspot X="-642.164" Y="8709.67" Z="189.527" />
+        <Hotspot X="-753.135" Y="8754.52" Z="183.09" />
+        <Hotspot X="-674.225" Y="8822.47" Z="198.368" />
+        <Hotspot X="-595.196" Y="8825.78" Z="205.696" />
+        <Hotspot X="-576.035" Y="8859.15" Z="210.552" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18037" KillCount="15">
+      <Hotspots>
+        <Hotspot X="-711.318" Y="8667.93" Z="158.378" />
+        <Hotspot X="-673.705" Y="8747.14" Z="184.569" />
+        <Hotspot X="-643.093" Y="8792.74" Z="202.253" />
+        <Hotspot X="-639.086" Y="8797.5" Z="202.376" />
+        <Hotspot X="-754.95" Y="8810.77" Z="183.505" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9946" Name="Cho'war the Pillager">
+    <Objective Type="KillMob" MobId="18423" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-471.73" Y="8857.5" Z="239.455" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9977" Name="The Ring of Blood: The Final Challenge">
+    <Objective Type="KillMob" MobId="18069" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-714.823" Y="7931.65" Z="58.8672" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9937" Name="Wanted: Durn the Hungerer">
+    <Objective Type="KillMob" MobId="18411" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2228.97" Y="8474.81" Z="-21.4259" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9999" Name="Buying Time">
+    <Objective Type="KillMob" MobId="17152" KillCount="2">
+      <Hotspots>
+        <Hotspot X="-1265.72" Y="8865.55" Z="53.0176" />
+        <Hotspot X="-1367.21" Y="8907.32" Z="51.6001" />
+        <Hotspot X="-1499.24" Y="9104.6" Z="88.6032" />
+        <Hotspot X="-1538.6" Y="9113.84" Z="87.4405" />
+        <Hotspot X="-1789.7" Y="9167.62" Z="73.4894" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="16945" KillCount="3">
+      <Hotspots>
+        <Hotspot X="-1218.83" Y="8942.5" Z="55.4846" />
+        <Hotspot X="-1253.15" Y="8966.12" Z="56.2953" />
+        <Hotspot X="-1337.49" Y="8950.3" Z="59.4901" />
+        <Hotspot X="-1330.91" Y="8979.0" Z="58.3012" />
+        <Hotspot X="-1364.17" Y="9007.1" Z="54.6472" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="17151" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-1338.52" Y="8900.13" Z="53.2665" />
+        <Hotspot X="-1286.56" Y="8954.76" Z="58.6134" />
+        <Hotspot X="-1273.71" Y="8943.92" Z="58.1989" />
+        <Hotspot X="-1271.87" Y="8955.33" Z="57.2264" />
+        <Hotspot X="-1227.33" Y="8904.49" Z="58.7728" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10001" Name="The Master Planner">
+    <Objective Type="KillMob" MobId="18567" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1234.32" Y="8991.61" Z="55.9549" />
+        <Hotspot X="-1812.27" Y="9327.11" Z="66.0274" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10004" Name="Patience and Understanding">
+    <Objective Type="KillMob" MobId="18584" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1777.43" Y="5126.05" Z="-35.7793" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10009" Name="Crackin' Some Skulls">
+    <Objective Type="KillMob" MobId="18585" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1747.92" Y="5157.36" Z="-37.1216" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18586" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1120.84" Y="5409.3" Z="22.3175" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18588" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3077.3" Y="5611.32" Z="-7.2129" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10011" Name="Forge Camp: Annihilated">
+    <Objective Type="KillMob" MobId="18535" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1287.83" Y="8915.32" Z="60.9594" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18536" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1840.42" Y="9212.31" Z="73.4196" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\The Burning Crusade (58-70)\Nagrand Group Quests" LogColor="Green" />
+    <If Condition="Me.Level &lt; 64">
+      <GrindTo Level="64" />
+    </If>
+    <PickUp QuestName="I Must Have Them!" QuestId="10109" GiverName="Wazat" GiverId="19035" />
+    <Objective QuestName="I Must Have Them!" QuestId="10109" Type="KillMob" MobId="17158" KillCount="1" />
+    <Objective QuestName="I Must Have Them!" QuestId="10109" Type="CollectItem" ItemId="27807" CollectCount="3" />
+    <TurnIn QuestName="I Must Have Them!" QuestId="10109" TurnInName="Wazat" TurnInId="19035" />
+    <If Condition="((!HasQuest(10111)) &amp;&amp; (!IsQuestCompleted(10111)))">
+      <PickUp QuestName="Bring Me The Egg!" QuestId="10111" GiverName="Wazat" GiverId="19035" />
+    </If>
+    <Objective QuestName="Bring Me The Egg!" QuestId="10111" Type="KillMob" MobId="19055" KillCount="1" />
+    <Objective QuestName="Bring Me The Egg!" QuestId="10111" Type="CollectItem" ItemId="27841" CollectCount="1" />
+    <TurnIn QuestName="Bring Me The Egg!" QuestId="10111" TurnInName="Wazat" TurnInId="19035" />
+    <PickUp QuestName="The Underneath" QuestId="9818" GiverName="Elementalist Untrag" GiverId="18071" />
+    <TurnIn QuestName="The Underneath" QuestId="9818" TurnInName="Gordawg" TurnInId="18099" />
+    <If Condition="((!HasQuest(9819)) &amp;&amp; (!IsQuestCompleted(9819)))">
+      <PickUp QuestName="The Tortured Earth" QuestId="9819" GiverName="Gordawg" GiverId="18099" />
+    </If>
+    <Objective QuestName="The Tortured Earth" QuestId="9819" Type="KillMob" MobId="17156" KillCount="15" />
+    <TurnIn QuestName="The Tortured Earth" QuestId="9819" TurnInName="Gordawg" TurnInId="18099" />
+    <If Condition="((!HasQuest(9821)) &amp;&amp; (!IsQuestCompleted(9821)))">
+      <PickUp QuestName="Eating Damnation" QuestId="9821" GiverName="Gordawg" GiverId="18099" />
+    </If>
+    <Objective QuestName="Eating Damnation" QuestId="9821" Type="KillMob" MobId="18062" KillCount="1" />
+    <Objective QuestName="Eating Damnation" QuestId="9821" Type="CollectItem" ItemId="24473" CollectCount="15" />
+    <TurnIn QuestName="Eating Damnation" QuestId="9821" TurnInName="Gordawg" TurnInId="18099" />
+    <If Condition="((!HasQuest(9849)) &amp;&amp; (!IsQuestCompleted(9849)))">
+      <PickUp QuestName="Shattering the Veil" QuestId="9849" GiverName="Gordawg" GiverId="18099" />
+    </If>
+    <Objective QuestName="Shattering the Veil" QuestId="9849" Type="KillMob" MobId="17157" KillCount="1" />
+    <While Condition="((HasQuest(9849)) &amp;&amp; (!IsQuestCompleted(9849)))">
+      <RunTo X="-2654.18" Y="7611.46" Z="4.2125" />
+      <CustomBehavior File="UseItemOn" QuestId="9849" MobId="18181" ItemId="24501" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-2654.18" Y="7611.46" Z="4.2125" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Shattering the Veil" QuestId="9849" Type="KillMob" MobId="18181" KillCount="30" />
+    <TurnIn QuestName="Shattering the Veil" QuestId="9849" TurnInName="Gordawg" TurnInId="18099" />
+    <If Condition="((!HasQuest(9853)) &amp;&amp; (!IsQuestCompleted(9853)))">
+      <PickUp QuestName="Gurok the Usurper" QuestId="9853" GiverName="Gordawg" GiverId="18099" />
+    </If>
+    <Objective QuestName="Gurok the Usurper" QuestId="9853" Type="CollectItem" ItemId="24502" CollectCount="7" />
+    <While Condition="((HasQuest(9853)) &amp;&amp; (!IsQuestCompleted(9853)))">
+      <CustomBehavior File="UseItemOn" QuestId="9853" MobId="0" ItemId="24502" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Gurok the Usurper" QuestId="9853" Type="KillMob" MobId="18182" KillCount="1" />
+    <Objective QuestName="Gurok the Usurper" QuestId="9853" Type="CollectItem" ItemId="24503" CollectCount="1" />
+    <TurnIn QuestName="Gurok the Usurper" QuestId="9853" TurnInName="Gordawg" TurnInId="18099" />
+    <PickUp QuestName="Windroc Mastery" QuestId="9854" GiverName="Shado 'Fitz' Farstrider" GiverId="18200" />
+    <PickUp QuestName="Clefthoof Mastery" QuestId="9789" GiverName="Hemet Nesingwary" GiverId="18180" />
+    <Objective QuestName="Talbuk Mastery" QuestId="9857" Type="KillMob" MobId="17130" KillCount="30" />
+    <Objective QuestName="Clefthoof Mastery" QuestId="9789" Type="KillMob" MobId="18205" KillCount="30" />
+    <Objective QuestName="Windroc Mastery" QuestId="9854" Type="KillMob" MobId="17128" KillCount="30" />
+    <TurnIn QuestName="Windroc Mastery" QuestId="9854" TurnInName="Shado 'Fitz' Farstrider" TurnInId="18200" />
+    <If Condition="((!HasQuest(9855)) &amp;&amp; (!IsQuestCompleted(9855)))">
+      <PickUp QuestName="Windroc Mastery" QuestId="9855" GiverName="Shado 'Fitz' Farstrider" GiverId="18200" />
+    </If>
+    <TurnIn QuestName="Clefthoof Mastery" QuestId="9789" TurnInName="Hemet Nesingwary" TurnInId="18180" />
+    <If Condition="((!HasQuest(9850)) &amp;&amp; (!IsQuestCompleted(9850)))">
+      <PickUp QuestName="Clefthoof Mastery" QuestId="9850" GiverName="Hemet Nesingwary" GiverId="18180" />
+    </If>
+    <TurnIn QuestName="Talbuk Mastery" QuestId="9857" TurnInName="Harold Lane" TurnInId="18218" />
+    <If Condition="((!HasQuest(9858)) &amp;&amp; (!IsQuestCompleted(9858)))">
+      <PickUp QuestName="Talbuk Mastery" QuestId="9858" GiverName="Harold Lane" GiverId="18218" />
+    </If>
+    <Objective QuestName="Talbuk Mastery" QuestId="9858" Type="KillMob" MobId="17131" KillCount="30" />
+    <Objective QuestName="Clefthoof Mastery" QuestId="9850" Type="KillMob" MobId="17132" KillCount="30" />
+    <Objective QuestName="Windroc Mastery" QuestId="9855" Type="KillMob" MobId="18220" KillCount="30" />
+    <TurnIn QuestName="Talbuk Mastery" QuestId="9858" TurnInName="Harold Lane" TurnInId="18218" />
+    <If Condition="((!HasQuest(9859)) &amp;&amp; (!IsQuestCompleted(9859)))">
+      <PickUp QuestName="Talbuk Mastery" QuestId="9859" GiverName="Harold Lane" GiverId="18218" />
+    </If>
+    <TurnIn QuestName="Clefthoof Mastery" QuestId="9850" TurnInName="Hemet Nesingwary" TurnInId="18180" />
+    <If Condition="((!HasQuest(9851)) &amp;&amp; (!IsQuestCompleted(9851)))">
+      <PickUp QuestName="Clefthoof Mastery" QuestId="9851" GiverName="Hemet Nesingwary" GiverId="18180" />
+    </If>
+    <TurnIn QuestName="Windroc Mastery" QuestId="9855" TurnInName="Shado 'Fitz' Farstrider" TurnInId="18200" />
+    <If Condition="((!HasQuest(9856)) &amp;&amp; (!IsQuestCompleted(9856)))">
+      <PickUp QuestName="Windroc Mastery" QuestId="9856" GiverName="Shado 'Fitz' Farstrider" GiverId="18200" />
+    </If>
+    <Objective QuestName="Windroc Mastery" QuestId="9856" Type="KillMob" MobId="18257" KillCount="1" />
+    <Objective QuestName="Windroc Mastery" QuestId="9856" Type="CollectItem" ItemId="24513" CollectCount="1" />
+    <Objective QuestName="Talbuk Mastery" QuestId="9859" Type="KillMob" MobId="18258" KillCount="1" />
+    <Objective QuestName="Talbuk Mastery" QuestId="9859" Type="CollectItem" ItemId="24523" CollectCount="1" />
+    <Objective QuestName="Clefthoof Mastery" QuestId="9851" Type="KillMob" MobId="18259" KillCount="1" />
+    <Objective QuestName="Clefthoof Mastery" QuestId="9851" Type="CollectItem" ItemId="24496" CollectCount="1" />
+    <TurnIn QuestName="Talbuk Mastery" QuestId="9859" TurnInName="Harold Lane" TurnInId="18218" />
+    <TurnIn QuestName="Windroc Mastery" QuestId="9856" TurnInName="Shado 'Fitz' Farstrider" TurnInId="18200" />
+    <TurnIn QuestName="Clefthoof Mastery" QuestId="9851" TurnInName="Hemet Nesingwary" TurnInId="18180" />
+    <If Condition="((!HasQuest(9852)) &amp;&amp; (!IsQuestCompleted(9852)))">
+      <PickUp QuestName="The Ultimate Bloodsport" QuestId="9852" GiverName="Hemet Nesingwary" GiverId="18180" />
+    </If>
+    <Objective QuestName="The Ultimate Bloodsport" QuestId="9852" Type="KillMob" MobId="18290" KillCount="1" />
+    <Objective QuestName="The Ultimate Bloodsport" QuestId="9852" Type="CollectItem" ItemId="24505" CollectCount="1" />
+    <PickUp QuestName="I See Dead Draenei" QuestId="10227" GiverName="Ha'lei" GiverId="19697" />
+    <TurnIn QuestName="I See Dead Draenei" QuestId="10227" TurnInName="Ramdor the Mad" TurnInId="19417" />
+    <If Condition="((!HasQuest(10228)) &amp;&amp; (!IsQuestCompleted(10228)))">
+      <PickUp QuestName="Ezekiel" QuestId="10228" GiverName="Ramdor the Mad" GiverId="19417" />
+    </If>
+    <TurnIn QuestName="Ezekiel" QuestId="10228" TurnInName="Ezekiel" TurnInId="19715" />
+    <If Condition="((!HasQuest(10231)) &amp;&amp; (!IsQuestCompleted(10231)))">
+      <PickUp QuestName="What Book? I Don't See Any Book." QuestId="10231" GiverName="Ezekiel" GiverId="19715" />
+    </If>
+    <TurnIn QuestName="What Book? I Don't See Any Book." QuestId="10231" TurnInName="&quot;Dirty&quot; Larry" TurnInId="19720" />
+    <If Condition="((!HasQuest(10251)) &amp;&amp; (!IsQuestCompleted(10251)))">
+      <PickUp QuestName="The Master's Grand Design?" QuestId="10251" GiverName="&quot;Dirty&quot; Larry" GiverId="19720" />
+    </If>
+    <TurnIn QuestName="The Master's Grand Design?" QuestId="10251" TurnInName="Nitrin the Learned" TurnInId="19844" />
+    <If Condition="((!HasQuest(10252)) &amp;&amp; (!IsQuestCompleted(10252)))">
+      <PickUp QuestName="Vision of the Dead" QuestId="10252" GiverName="Nitrin the Learned" GiverId="19844" />
+    </If>
+    <Objective QuestName="Vision of the Dead" QuestId="10252" Type="KillMob" MobId="17133" KillCount="1" />
+    <Objective QuestName="Vision of the Dead" QuestId="10252" Type="CollectItem" ItemId="28668" CollectCount="1" />
+    <Objective QuestName="Vision of the Dead" QuestId="10252" Type="KillMob" MobId="19201" KillCount="1" />
+    <Objective QuestName="Vision of the Dead" QuestId="10252" Type="CollectItem" ItemId="28665" CollectCount="1" />
+    <Objective QuestName="Vision of the Dead" QuestId="10252" Type="KillMob" MobId="17129" KillCount="1" />
+    <Objective QuestName="Vision of the Dead" QuestId="10252" Type="CollectItem" ItemId="28667" CollectCount="1" />
+    <TurnIn QuestName="Vision of the Dead" QuestId="10252" TurnInName="Nitrin the Learned" TurnInId="19844" />
+    <If Condition="Me.Level &lt; 65">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 65 - Greater Windroc</Name>
+          <TargetMinLevel>66</TargetMinLevel>
+          <TargetMaxLevel>67</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="-1057.38" Y="8242.69" Z="18.13" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="65" /> <!--  (grind Greater Windroc) -->
+    </If>
+    <PickUp QuestName="Missing Mag'hari Procession" QuestId="9944" GiverName="Matron Drakia" GiverId="18302" />
+    <TurnIn QuestName="Missing Mag'hari Procession" QuestId="9944" TurnInName="Elder Yorley" TurnInId="18414" />
+    <If Condition="((!HasQuest(9945)) &amp;&amp; (!IsQuestCompleted(9945)))">
+      <PickUp QuestName="War on the Warmaul" QuestId="9945" GiverName="Elder Yorley" GiverId="18414" />
+    </If>
+    <Objective QuestName="War on the Warmaul" QuestId="9945" Type="KillMob" MobId="18065" KillCount="15" />
+    <Objective QuestName="War on the Warmaul" QuestId="9945" Type="KillMob" MobId="18037" KillCount="15" />
+    <TurnIn QuestName="War on the Warmaul" QuestId="9945" TurnInName="Elder Yorley" TurnInId="18414" />
+    <If Condition="((!HasQuest(9946)) &amp;&amp; (!IsQuestCompleted(9946)))">
+      <PickUp QuestName="Cho'war the Pillager" QuestId="9946" GiverName="Elder Yorley" GiverId="18414" />
+    </If>
+    <Objective QuestName="Cho'war the Pillager" QuestId="9946" Type="KillMob" MobId="18423" KillCount="1" />
+    <Objective QuestName="Cho'war the Pillager" QuestId="9946" Type="CollectItem" ItemId="25590" CollectCount="1" />
+    <TurnIn QuestName="Cho'war the Pillager" QuestId="9946" TurnInName="Elder Yorley" TurnInId="18414" />
+    <PickUp QuestName="The Ring of Blood: Brokentoe" QuestId="9962" GiverName="Gurgthock" GiverId="18471" />
+    <Objective QuestName="The Ring of Blood: Brokentoe" QuestId="9962" Type="KillMob" MobId="18398" KillCount="1" />
+    <TurnIn QuestName="The Ring of Blood: Brokentoe" QuestId="9962" TurnInName="Wodin the Troll-Servant" TurnInId="22893" />
+    <If Condition="((!HasQuest(9967)) &amp;&amp; (!IsQuestCompleted(9967)))">
+      <PickUp QuestName="The Ring of Blood: The Blue Brothers" QuestId="9967" GiverName="Gurgthock" GiverId="18471" />
+    </If>
+    <Objective QuestName="The Ring of Blood: The Blue Brothers" QuestId="9967" Type="KillMob" MobId="18399" KillCount="1" />
+    <TurnIn QuestName="The Ring of Blood: The Blue Brothers" QuestId="9967" TurnInName="Wodin the Troll-Servant" TurnInId="22893" />
+    <If Condition="((!HasQuest(9970)) &amp;&amp; (!IsQuestCompleted(9970)))">
+      <PickUp QuestName="The Ring of Blood: Rokdar the Sundered Lord" QuestId="9970" GiverName="Gurgthock" GiverId="18471" />
+    </If>
+    <Objective QuestName="The Ring of Blood: Rokdar the Sundered Lord" QuestId="9970" Type="KillMob" MobId="18400" KillCount="1" />
+    <TurnIn QuestName="The Ring of Blood: Rokdar the Sundered Lord" QuestId="9970" TurnInName="Wodin the Troll-Servant" TurnInId="22893" />
+    <If Condition="((!HasQuest(9972)) &amp;&amp; (!IsQuestCompleted(9972)))">
+      <PickUp QuestName="The Ring of Blood: Skra'gath" QuestId="9972" GiverName="Gurgthock" GiverId="18471" />
+    </If>
+    <Objective QuestName="The Ring of Blood: Skra'gath" QuestId="9972" Type="KillMob" MobId="18401" KillCount="1" />
+    <TurnIn QuestName="The Ring of Blood: Skra'gath" QuestId="9972" TurnInName="Wodin the Troll-Servant" TurnInId="22893" />
+    <If Condition="((!HasQuest(9977)) &amp;&amp; (!IsQuestCompleted(9977)))">
+      <PickUp QuestName="The Ring of Blood: The Final Challenge" QuestId="9977" GiverName="Gurgthock" GiverId="18471" />
+    </If>
+    <Objective QuestName="The Ring of Blood: The Final Challenge" QuestId="9977" Type="KillMob" MobId="18069" KillCount="1" />
+    <TurnIn QuestName="The Ring of Blood: The Final Challenge" QuestId="9977" TurnInName="Wodin the Troll-Servant" TurnInId="22893" />
+    <If Condition="Me.Level &lt; 66">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 66 - Mogar</Name>
+          <Factions>35</Factions>
+          <TargetMinLevel>67</TargetMinLevel>
+          <TargetMaxLevel>67</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="-714.82" Y="7931.65" Z="58.87" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="66" /> <!--  (grind Mogar) -->
+    </If>
+    <If Condition="((!HasQuest(9937)) &amp;&amp; (!IsQuestCompleted(9937)))">
+      <PickUp QuestName="Wanted: Durn the Hungerer" QuestId="9937" GiverName="Warden Bullrok" GiverId="18407" />
+    </If>
+    <Objective QuestName="Wanted: Durn the Hungerer" QuestId="9937" Type="KillMob" MobId="18411" KillCount="1" />
+    <TurnIn QuestName="Wanted: Durn the Hungerer" QuestId="9937" TurnInName="Warden Bullrok" TurnInId="18407" />
+    <PickUp QuestName="He Called Himself Altruis..." QuestId="9983" GiverName="Matron Celestine" GiverId="18301" />
+    <TurnIn QuestName="He Called Himself Altruis..." QuestId="9983" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <If Condition="((!HasQuest(9991)) &amp;&amp; (!IsQuestCompleted(9991)))">
+      <PickUp QuestName="Survey the Land" QuestId="9991" GiverName="Altruis the Sufferer" GiverId="18417" />
+    </If>
+    <TurnIn QuestName="Survey the Land" QuestId="9991" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <If Condition="((!HasQuest(9999)) &amp;&amp; (!IsQuestCompleted(9999)))">
+      <PickUp QuestName="Buying Time" QuestId="9999" GiverName="Altruis the Sufferer" GiverId="18417" />
+    </If>
+    <Objective QuestName="Buying Time" QuestId="9999" Type="KillMob" MobId="17152" KillCount="2" />
+    <Objective QuestName="Buying Time" QuestId="9999" Type="KillMob" MobId="16945" KillCount="3" />
+    <Objective QuestName="Buying Time" QuestId="9999" Type="KillMob" MobId="17151" KillCount="8" />
+    <TurnIn QuestName="Buying Time" QuestId="9999" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <If Condition="((!HasQuest(10001)) &amp;&amp; (!IsQuestCompleted(10001)))">
+      <PickUp QuestName="The Master Planner" QuestId="10001" GiverName="Altruis the Sufferer" GiverId="18417" />
+    </If>
+    <Objective QuestName="The Master Planner" QuestId="10001" Type="KillMob" MobId="18567" KillCount="1" />
+    <Objective QuestName="The Master Planner" QuestId="10001" Type="CollectItem" ItemId="25751" CollectCount="1" />
+    <TurnIn QuestName="The Master Planner" QuestId="10001" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <If Condition="((!HasQuest(10004)) &amp;&amp; (!IsQuestCompleted(10004)))">
+      <PickUp QuestName="Patience and Understanding" QuestId="10004" GiverName="Altruis the Sufferer" GiverId="18417" />
+    </If>
+    <Objective QuestName="Patience and Understanding" QuestId="10004" Type="KillMob" MobId="18584" KillCount="1" />
+    <TurnIn QuestName="Patience and Understanding" QuestId="10004" TurnInName="Sal'salabim" TurnInId="18584" />
+    <If Condition="((!HasQuest(10009)) &amp;&amp; (!IsQuestCompleted(10009)))">
+      <PickUp QuestName="Crackin' Some Skulls" QuestId="10009" GiverName="Sal'salabim" GiverId="18584" />
+    </If>
+    <Objective QuestName="Crackin' Some Skulls" QuestId="10009" Type="KillMob" MobId="18585" KillCount="1" />
+    <Objective QuestName="Crackin' Some Skulls" QuestId="10009" Type="CollectItem" ItemId="25767" CollectCount="1" />
+    <Objective QuestName="Crackin' Some Skulls" QuestId="10009" Type="KillMob" MobId="18586" KillCount="1" />
+    <Objective QuestName="Crackin' Some Skulls" QuestId="10009" Type="CollectItem" ItemId="25768" CollectCount="1" />
+    <Objective QuestName="Crackin' Some Skulls" QuestId="10009" Type="KillMob" MobId="18588" KillCount="1" />
+    <Objective QuestName="Crackin' Some Skulls" QuestId="10009" Type="CollectItem" ItemId="25769" CollectCount="1" />
+    <TurnIn QuestName="Crackin' Some Skulls" QuestId="10009" TurnInName="Sal'salabim" TurnInId="18584" />
+    <If Condition="((!HasQuest(10010)) &amp;&amp; (!IsQuestCompleted(10010)))">
+      <PickUp QuestName="It's Just That Easy?" QuestId="10010" GiverName="Sal'salabim" GiverId="18584" />
+    </If>
+    <TurnIn QuestName="It's Just That Easy?" QuestId="10010" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <If Condition="((!HasQuest(10011)) &amp;&amp; (!IsQuestCompleted(10011)))">
+      <PickUp QuestName="Forge Camp: Annihilated" QuestId="10011" GiverName="Altruis the Sufferer" GiverId="18417" />
+    </If>
+    <Objective QuestName="Forge Camp: Annihilated" QuestId="10011" Type="KillMob" MobId="18535" KillCount="1" />
+    <Objective QuestName="Forge Camp: Annihilated" QuestId="10011" Type="CollectItem" ItemId="25770" CollectCount="1" />
+    <While Condition="((HasQuest(10011)) &amp;&amp; (!IsQuestCompleted(10011)))">
+      <RunTo X="-1283.74" Y="8909.32" Z="60.9449" />
+      <CustomBehavior File="UseItemOn" QuestId="10011" MobId="19067" ItemId="25770" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-1283.74" Y="8909.32" Z="60.9449" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Forge Camp: Annihilated" QuestId="10011" Type="KillMob" MobId="18536" KillCount="1" />
+    <Objective QuestName="Forge Camp: Annihilated" QuestId="10011" Type="CollectItem" ItemId="25771" CollectCount="1" />
+    <While Condition="((HasQuest(10011)) &amp;&amp; (!IsQuestCompleted(10011)))">
+      <RunTo X="-1283.74" Y="8909.32" Z="60.9449" />
+      <CustomBehavior File="UseItemOn" QuestId="10011" MobId="19067" ItemId="25771" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-1283.74" Y="8909.32" Z="60.9449" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Forge Camp: Annihilated" QuestId="10011" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\The Burning Crusade (58-70)\Nagrand Group Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

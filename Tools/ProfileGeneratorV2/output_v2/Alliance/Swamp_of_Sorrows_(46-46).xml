@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Swamp of Sorrows (46-46)</Name>
+  <Name>Alliance\Swamp of Sorrows (46-46)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -8,28 +7,32 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Swamp of Sorrows (46-46)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Swamp of Sorrows (46-46)" LogColor="Green" />
     <TurnIn QuestName="Vital Supplies" QuestId="1477" TurnInName="Watchmaster Sorigal" TurnInId="5464" />
-    <TurnIn QuestName="Cortello&apos;s Riddle" QuestId="624" TurnInName="Object_2553" TurnInType="Object" TurnInId="2553" />
+    <TurnIn QuestName="Cortello's Riddle" QuestId="624" TurnInName="Object_2553" TurnInType="Object" TurnInId="2553" />
     <If Condition="((!HasQuest(625)) &amp;&amp; (!IsQuestCompleted(625)))">
-      <PickUp QuestName="Cortello&apos;s Riddle" QuestId="625" GiverName="Watchmaster Sorigal" GiverId="5464" />
+      <PickUp QuestName="Cortello's Riddle" QuestId="625" GiverName="Watchmaster Sorigal" GiverId="5464" />
     </If>
-    <Objective QuestName="Mazen&apos;s Behest" QuestId="1364" Type="CollectItem" ItemId="6065" ItemName="Khadgar&apos;s Essays on Dimensional Convergence" CollectCount="1" />
-    <TurnIn QuestName="Mazen&apos;s Behest" QuestId="1364" TurnInName="Watcher Mahar Ba" TurnInId="5385" />
+    <Objective QuestName="Mazen's Behest" QuestId="1364" Type="CollectItem" ItemId="6065" CollectCount="1" />
+    <TurnIn QuestName="Mazen's Behest" QuestId="1364" TurnInName="Watcher Mahar Ba" TurnInId="5385" />
     <If Condition="((!HasQuest(1395)) &amp;&amp; (!IsQuestCompleted(1395)))">
       <PickUp QuestName="Supplies for Nethergarde" QuestId="1395" GiverName="Watchmaster Sorigal" GiverId="5464" />
     </If>
     <TurnIn QuestName="Supplies for Nethergarde" QuestId="1395" TurnInName="Quartermaster Lungertz" TurnInId="5393" />
     <If Condition="((!HasQuest(1119)) &amp;&amp; (!IsQuestCompleted(1119)))">
-      <PickUp QuestName="Zanzil&apos;s Mixture and a Fool&apos;s Stout" QuestId="1119" GiverName="Crank Fizzlebub" GiverId="2498" />
+      <PickUp QuestName="Zanzil's Mixture and a Fool's Stout" QuestId="1119" GiverName="Crank Fizzlebub" GiverId="2498" />
     </If>
     <TurnIn QuestName="Akiris by the Bundle" QuestId="623" TurnInName="Privateer Groy" TurnInId="2616" />
-    <TurnIn QuestName="Cortello&apos;s Riddle" QuestId="625" TurnInName="Object_2555" TurnInType="Object" TurnInId="2555" />
+    <TurnIn QuestName="Cortello's Riddle" QuestId="625" TurnInName="Object_2555" TurnInType="Object" TurnInId="2555" />
     <If Condition="((!HasQuest(626)) &amp;&amp; (!IsQuestCompleted(626)))">
-      <PickUp QuestName="Cortello&apos;s Riddle" QuestId="626" GiverName="Jensen Farran" GiverId="4892" />
+      <PickUp QuestName="Cortello's Riddle" QuestId="626" GiverName="Jensen Farran" GiverId="4892" />
     </If>
-    <TurnIn QuestName="Zanzil&apos;s Mixture and a Fool&apos;s Stout" QuestId="1119" TurnInName="Kravel Koalbeard" TurnInId="4452" />
+    <TurnIn QuestName="Zanzil's Mixture and a Fool's Stout" QuestId="1119" TurnInName="Kravel Koalbeard" TurnInId="4452" />
     <If Condition="((!HasQuest(1120)) &amp;&amp; (!IsQuestCompleted(1120)))">
       <PickUp QuestName="Get the Gnomes Drunk" QuestId="1120" GiverName="Kravel Koalbeard" GiverId="4452" />
     </If>
@@ -37,7 +40,7 @@
     <If Condition="((!HasQuest(1122)) &amp;&amp; (!IsQuestCompleted(1122)))">
       <PickUp QuestName="Report Back to Fizzlebub" QuestId="1122" GiverName="Kravel Koalbeard" GiverId="4452" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Swamp of Sorrows (46-46) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Swamp of Sorrows (46-46) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Feralas_(46-47)" />
   </QuestOrder>
 </HBProfile>

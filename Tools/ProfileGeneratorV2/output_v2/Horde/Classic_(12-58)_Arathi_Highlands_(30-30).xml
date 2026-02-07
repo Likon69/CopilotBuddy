@@ -1,0 +1,65 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Arathi Highlands (30-30)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="672" Name="Raising Spirits">
+    <Objective Type="KillMob" MobId="2559" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1121.31" Y="-3333.73" Z="46.0919" />
+        <Hotspot X="-982.226" Y="-1718.53" Z="40.2659" />
+        <Hotspot X="-1016.76" Y="-1764.54" Z="47.8095" />
+        <Hotspot X="-1286.13" Y="-2883.84" Z="49.3905" />
+        <Hotspot X="-1312.48" Y="-2851.17" Z="52.8456" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Arathi Highlands (30-30)" LogColor="Green" />
+    <PickUp QuestName="Hammerfall" QuestId="655" GiverName="Gor'mul" GiverId="2792" />
+    <TurnIn QuestName="Hammerfall" QuestId="655" TurnInName="Tor'gan" TurnInId="2706" />
+    <If Condition="((!HasQuest(672)) &amp;&amp; (!IsQuestCompleted(672)))">
+      <PickUp QuestName="Raising Spirits" QuestId="672" GiverName="Tor'gan" GiverId="2706" />
+    </If>
+    <Objective QuestName="Raising Spirits" QuestId="672" Type="KillMob" MobId="2559" KillCount="1" />
+    <Objective QuestName="Raising Spirits" QuestId="672" Type="CollectItem" ItemId="4512" CollectCount="10" />
+    <TurnIn QuestName="Raising Spirits" QuestId="672" TurnInName="Tor'gan" TurnInId="2706" />
+    <If Condition="((!HasQuest(674)) &amp;&amp; (!IsQuestCompleted(674)))">
+      <PickUp QuestName="Raising Spirits" QuestId="674" GiverName="Tor'gan" GiverId="2706" />
+    </If>
+    <TurnIn QuestName="Raising Spirits" QuestId="674" TurnInName="Gor'mul" TurnInId="2792" />
+    <If Condition="((!HasQuest(675)) &amp;&amp; (!IsQuestCompleted(675)))">
+      <PickUp QuestName="Raising Spirits" QuestId="675" GiverName="Gor'mul" GiverId="2792" />
+    </If>
+    <TurnIn QuestName="Raising Spirits" QuestId="675" TurnInName="Tor'gan" TurnInId="2706" />
+    <CustomBehavior File="SetHearthstone" MobId="6929" AreaId="1637" X="1633.99" Y="-4439.37" Z="15.7436" /> <!-- Set hearth: Orgrimmar -->
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="The Islander" QuestId="1718" GiverName="Sorek" GiverId="3354" />
+      <TurnIn QuestName="The Islander" QuestId="1718" TurnInName="Klannoc Macleod" TurnInId="6236" />
+      <If Condition="((!HasQuest(1719)) &amp;&amp; (!IsQuestCompleted(1719)))">
+        <PickUp QuestName="The Affray" QuestId="1719" GiverName="Klannoc Macleod" GiverId="6236" />
+      </If>
+      <Objective QuestName="The Affray" QuestId="1719" Type="KillMob" MobId="6240" KillCount="1" />
+      <Objective QuestName="The Affray" QuestId="1719" Type="KillMob" MobId="6238" KillCount="1" />
+      <TurnIn QuestName="The Affray" QuestId="1719" TurnInName="Klannoc Macleod" TurnInId="6236" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(1531)) &amp;&amp; (!IsQuestCompleted(1531)))">
+        <PickUp QuestName="Call of Air" QuestId="1531" GiverName="Searn Firewarder" GiverId="5892" />
+      </If>
+      <TurnIn QuestName="Call of Air" QuestId="1531" TurnInName="Prate Cloudseer" TurnInId="5905" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Arathi Highlands (30-30) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Stranglethorn_Vale_(30-31)" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,93 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Azshara (46-47)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>47</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="5535" Name="Spiritual Unrest">
+    <Objective Type="KillMob" MobId="6116" KillCount="6">
+      <Hotspots>
+        <Hotspot X="2995.09" Y="-4117.54" Z="100.019" />
+        <Hotspot X="2950.91" Y="-4152.91" Z="100.174" />
+        <Hotspot X="2882.41" Y="-4116.16" Z="95.7186" />
+        <Hotspot X="2857.27" Y="-4022.44" Z="139.656" />
+        <Hotspot X="3051.2" Y="-4181.58" Z="97.516" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="6117" KillCount="6">
+      <Hotspots>
+        <Hotspot X="2867.18" Y="-3960.38" Z="102.039" />
+        <Hotspot X="2886.11" Y="-4016.66" Z="137.06" />
+        <Hotspot X="2948.44" Y="-4122.4" Z="104.186" />
+        <Hotspot X="3051.62" Y="-4113.75" Z="101.499" />
+        <Hotspot X="3023.85" Y="-4153.2" Z="102.921" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="5536" Name="A Land Filled with Hatred">
+    <Objective Type="KillMob" MobId="6125" KillCount="6">
+      <Hotspots>
+        <Hotspot X="3188.1" Y="-4311.78" Z="104.515" />
+        <Hotspot X="3282.01" Y="-4285.86" Z="126.09" />
+        <Hotspot X="3252.23" Y="-4341.69" Z="131.014" />
+        <Hotspot X="3239.86" Y="-4279.33" Z="127.017" />
+        <Hotspot X="3222.77" Y="-4251.91" Z="103.778" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="6126" KillCount="2">
+      <Hotspots>
+        <Hotspot X="3251.6" Y="-4258.48" Z="116.472" />
+        <Hotspot X="3317.23" Y="-4336.92" Z="131.277" />
+        <Hotspot X="3183.02" Y="-4275.75" Z="100.424" />
+        <Hotspot X="3237.43" Y="-4305.15" Z="131.005" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="6127" KillCount="2">
+      <Hotspots>
+        <Hotspot X="3272.26" Y="-4318.78" Z="132.295" />
+        <Hotspot X="3282.71" Y="-4252.87" Z="116.934" />
+        <Hotspot X="3176.16" Y="-4245.36" Z="98.2849" />
+        <Hotspot X="3293.53" Y="-4299.55" Z="131.105" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Azshara (46-47)" LogColor="Green" />
+    <PickUp QuestName="Spiritual Unrest" QuestId="5535" GiverName="Loh'atu" GiverId="11548" />
+    <If Condition="((!HasQuest(5536)) &amp;&amp; (!IsQuestCompleted(5536)))">
+      <PickUp QuestName="A Land Filled with Hatred" QuestId="5536" GiverName="Loh'atu" GiverId="11548" />
+    </If>
+    <Objective QuestName="Spiritual Unrest" QuestId="5535" Type="KillMob" MobId="6116" KillCount="6" />
+    <Objective QuestName="Spiritual Unrest" QuestId="5535" Type="KillMob" MobId="6117" KillCount="6" />
+    <Objective QuestName="A Land Filled with Hatred" QuestId="5536" Type="KillMob" MobId="6125" KillCount="6" />
+    <Objective QuestName="A Land Filled with Hatred" QuestId="5536" Type="KillMob" MobId="6126" KillCount="2" />
+    <Objective QuestName="A Land Filled with Hatred" QuestId="5536" Type="KillMob" MobId="6127" KillCount="2" />
+    <TurnIn QuestName="Spiritual Unrest" QuestId="5535" TurnInName="Loh'atu" TurnInId="11548" />
+    <TurnIn QuestName="A Land Filled with Hatred" QuestId="5536" TurnInName="Loh'atu" TurnInId="11548" />
+    <If Condition="((!HasQuest(3568)) &amp;&amp; (!IsQuestCompleted(3568)))">
+      <PickUp QuestName="Seeping Corruption" QuestId="3568" GiverName="Chemist Cuely" GiverId="8390" />
+    </If>
+    <PickUp QuestName="Errand for Apothecary Zinge" QuestId="232" GiverName="Apothecary Zinge" GiverId="5204" />
+    <TurnIn QuestName="Errand for Apothecary Zinge" QuestId="232" TurnInName="Alessandro Luca" TurnInId="7683" />
+    <If Condition="((!HasQuest(238)) &amp;&amp; (!IsQuestCompleted(238)))">
+      <PickUp QuestName="Errand for Apothecary Zinge" QuestId="238" GiverName="Alessandro Luca" GiverId="7683" />
+    </If>
+    <TurnIn QuestName="Errand for Apothecary Zinge" QuestId="238" TurnInName="Apothecary Zinge" TurnInId="5204" />
+    <If Condition="((!HasQuest(243)) &amp;&amp; (!IsQuestCompleted(243)))">
+      <PickUp QuestName="Into the Field" QuestId="243" GiverName="Apothecary Zinge" GiverId="5204" />
+    </If>
+    <Objective QuestName="Back to Booty Bay" QuestId="1118" Type="CollectItem" ItemId="5826" CollectCount="1" />
+    <Objective QuestName="Deliver to MacKinley" QuestId="2874" Type="CollectItem" ItemId="9245" CollectCount="1" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Azshara (46-47) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Stranglethorn_Vale_(47-47)" />
+  </QuestOrder>
+</HBProfile>

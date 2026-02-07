@@ -1,0 +1,27 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\The Barrens (24-25)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\The Barrens (24-25)" LogColor="Green" />
+    <Objective QuestName="Revenge of Gann" QuestId="846" Type="CollectItem" ItemId="5017" CollectCount="6" />
+    <Objective QuestName="Revenge of Gann" QuestId="846" Type="CollectItem" ItemId="5018" CollectCount="6" />
+    <Objective QuestName="Revenge of Gann" QuestId="846" Type="CollectItem" ItemId="5019" CollectCount="6" />
+    <TurnIn QuestName="Revenge of Gann" QuestId="846" TurnInName="Gann Stonespire" TurnInId="3341" />
+    <If Condition="((!HasQuest(849)) &amp;&amp; (!IsQuestCompleted(849)))">
+      <PickUp QuestName="Revenge of Gann" QuestId="849" GiverName="Gann Stonespire" GiverId="3341" />
+    </If>
+    <TurnIn QuestName="Revenge of Gann" QuestId="849" TurnInName="Gann Stonespire" TurnInId="3341" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\The Barrens (24-25) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Thousand_Needles_(24-25)" />
+  </QuestOrder>
+</HBProfile>

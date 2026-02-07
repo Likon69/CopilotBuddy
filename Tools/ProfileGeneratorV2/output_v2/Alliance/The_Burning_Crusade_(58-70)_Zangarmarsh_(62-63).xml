@@ -1,0 +1,758 @@
+<HBProfile>
+  <Name>Alliance\The Burning Crusade (58-70)\Zangarmarsh (62-63)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>63</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="9777" Name="Fulgor Spores">
+    <Objective Type="CollectItem" ItemId="24383" CollectCount="6">
+      <CollectFrom>
+        <GameObject Name="Fulgor Spore" Id="182116" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-171.18" Y="6178.07" Z="18.01" />
+        <Hotspot X="-46.87" Y="6341.98" Z="18.02" />
+        <Hotspot X="52.56" Y="6378.69" Z="18.43" />
+        <Hotspot X="58.03" Y="6383.01" Z="18.06" />
+        <Hotspot X="101.44" Y="6092.91" Z="17.37" />
+        <Hotspot X="101.44" Y="6092.91" Z="17.37" />
+        <Hotspot X="106.25" Y="6025.12" Z="17.65" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9791" Name="Menacing Marshfangs">
+    <Objective Type="KillMob" MobId="18130" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-985.899" Y="5148.56" Z="22.9501" />
+        <Hotspot X="-891.975" Y="5174.88" Z="21.0435" />
+        <Hotspot X="-881.937" Y="5114.7" Z="17.9327" />
+        <Hotspot X="-122.416" Y="5443.78" Z="22.6599" />
+        <Hotspot X="-541.222" Y="5513.8" Z="21.9002" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18124" KillCount="1">
+      <Hotspots>
+        <Hotspot X="446.623" Y="5231.33" Z="11.5678" />
+        <Hotspot X="449.046" Y="5283.9" Z="-0.5964" />
+        <Hotspot X="483.446" Y="5288.27" Z="-2.2416" />
+        <Hotspot X="435.946" Y="5331.29" Z="-1.0759" />
+        <Hotspot X="360.964" Y="5356.56" Z="20.0851" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9901" Name="Unfinished Business">
+    <Objective Type="KillMob" MobId="18280" KillCount="1">
+      <Hotspots>
+        <Hotspot X="394.668" Y="5612.95" Z="18.4973" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9782" Name="The Dead Mire">
+    <Objective Type="CollectItem" ItemId="24400" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Dead Mire Soil" Id="182119" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="451.52" Y="5415.84" Z="7.19" />
+        <Hotspot X="478.81" Y="5419.97" Z="2.14" />
+        <Hotspot X="483.69" Y="5260.94" Z="-0.47" />
+        <Hotspot X="499.46" Y="5257.8" Z="-2.46" />
+        <Hotspot X="525.37" Y="5456.01" Z="-0.68" />
+        <Hotspot X="631.98" Y="5390.83" Z="-24.45" />
+        <Hotspot X="653.6" Y="5237.85" Z="-4.38" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10355" Name="Withered Flesh">
+    <Objective Type="KillMob" MobId="20324" KillCount="1">
+      <Hotspots>
+        <Hotspot X="450.724" Y="5183.54" Z="22.5158" />
+        <Hotspot X="499.445" Y="5279.21" Z="-5.391" />
+        <Hotspot X="352.39" Y="5329.92" Z="22.0735" />
+        <Hotspot X="485.087" Y="5319.53" Z="-6.6094" />
+        <Hotspot X="387.079" Y="5426.63" Z="22.4905" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="19402" KillCount="1">
+      <Hotspots>
+        <Hotspot X="482.536" Y="5181.14" Z="16.1105" />
+        <Hotspot X="453.72" Y="5255.63" Z="3.4073" />
+        <Hotspot X="346.09" Y="5285.75" Z="21.1194" />
+        <Hotspot X="420.568" Y="5315.05" Z="0.571" />
+        <Hotspot X="401.715" Y="5463.36" Z="22.2281" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9743" Name="Natural Enemies">
+    <Objective Type="KillMob" MobId="19402" KillCount="1">
+      <Hotspots>
+        <Hotspot X="482.536" Y="5181.14" Z="16.1105" />
+        <Hotspot X="453.72" Y="5255.63" Z="3.4073" />
+        <Hotspot X="346.09" Y="5285.75" Z="21.1194" />
+        <Hotspot X="420.568" Y="5315.05" Z="0.571" />
+        <Hotspot X="401.715" Y="5463.36" Z="22.2281" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9783" Name="An Unnatural Drought">
+    <Objective Type="KillMob" MobId="18124" KillCount="12">
+      <Hotspots>
+        <Hotspot X="446.623" Y="5231.33" Z="11.5678" />
+        <Hotspot X="449.046" Y="5283.9" Z="-0.5964" />
+        <Hotspot X="483.446" Y="5288.27" Z="-2.2416" />
+        <Hotspot X="435.946" Y="5331.29" Z="-1.0759" />
+        <Hotspot X="360.964" Y="5356.56" Z="20.0851" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9780" Name="Umbrafen Eel Filets">
+    <Objective Type="KillMob" MobId="18138" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-350.774" Y="5585.06" Z="5.2149" />
+        <Hotspot X="-829.622" Y="5859.4" Z="11.7228" />
+        <Hotspot X="-734.194" Y="5851.73" Z="-1.7757" />
+        <Hotspot X="-717.857" Y="5844.48" Z="-1.6265" />
+        <Hotspot X="-667.121" Y="5850.16" Z="1.2208" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9781" Name="Too Many Mouths to Feed">
+    <Objective Type="KillMob" MobId="18213" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-293.237" Y="5563.26" Z="16.027" />
+        <Hotspot X="-252.419" Y="5609.71" Z="8.4008" />
+        <Hotspot X="-353.891" Y="5556.5" Z="13.6287" />
+        <Hotspot X="-422.59" Y="5557.76" Z="17.0846" />
+        <Hotspot X="-865.159" Y="5845.99" Z="17.0545" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9895" Name="The Dying Balance">
+    <Objective Type="KillMob" MobId="18281" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-566.173" Y="5350.9" Z="17.5357" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9747" Name="The Umbrafen Tribe">
+    <Objective Type="KillMob" MobId="18080" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1112.68" Y="5187.46" Z="57.2815" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18077" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-1052.26" Y="5276.69" Z="29.1346" />
+        <Hotspot X="-1065.47" Y="5260.65" Z="22.5345" />
+        <Hotspot X="-1012.75" Y="5267.67" Z="29.9808" />
+        <Hotspot X="-1109.45" Y="5194.91" Z="31.9359" />
+        <Hotspot X="-1044.15" Y="5171.61" Z="17.5304" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18079" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-1076.02" Y="5237.88" Z="23.6383" />
+        <Hotspot X="-1037.51" Y="5256.37" Z="22.5447" />
+        <Hotspot X="-1027.66" Y="5219.35" Z="22.8771" />
+        <Hotspot X="-970.059" Y="5227.44" Z="18.5656" />
+        <Hotspot X="-961.762" Y="5237.52" Z="18.5406" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="20115" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-1079.99" Y="5237.51" Z="23.5102" />
+        <Hotspot X="-1095.84" Y="5210.25" Z="57.1982" />
+        <Hotspot X="-1094.93" Y="5199.11" Z="32.0187" />
+        <Hotspot X="-1094.86" Y="5205.34" Z="44.3929" />
+        <Hotspot X="-803.452" Y="5182.63" Z="17.8337" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9894" Name="Safeguarding the Watchers">
+    <Objective Type="KillMob" MobId="18282" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1211.8" Y="5843.24" Z="5.5916" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10096" Name="Saving the Sporeloks">
+    <Objective Type="KillMob" MobId="18136" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-1103.34" Y="5593.21" Z="57.3115" />
+        <Hotspot X="-1106.63" Y="5743.61" Z="67.6155" />
+        <Hotspot X="-1086.66" Y="5756.33" Z="58.0633" />
+        <Hotspot X="-1158.75" Y="5736.32" Z="56.0117" />
+        <Hotspot X="-1231.52" Y="5754.25" Z="68.364" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18137" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-1092.24" Y="5625.33" Z="57.329" />
+        <Hotspot X="-1114.52" Y="5654.46" Z="59.617" />
+        <Hotspot X="-1146.57" Y="5624.12" Z="59.0217" />
+        <Hotspot X="-1155.84" Y="5580.14" Z="58.2032" />
+        <Hotspot X="-1199.38" Y="5727.95" Z="50.3017" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9790" Name="Diaphanous Wings">
+    <Objective Type="KillMob" MobId="18132" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1051.94" Y="5487.25" Z="22.123" />
+        <Hotspot X="-613.256" Y="5316.39" Z="22.3878" />
+        <Hotspot X="-487.962" Y="5320.6" Z="22.3472" />
+        <Hotspot X="-458.056" Y="5393.09" Z="21.3669" />
+        <Hotspot X="-519.0" Y="5410.08" Z="22.1691" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9835" Name="Ango'rosh Encroachment">
+    <Objective Type="KillMob" MobId="18118" KillCount="5">
+      <Hotspots>
+        <Hotspot X="605.008" Y="7910.22" Z="24.0243" />
+        <Hotspot X="635.365" Y="7891.39" Z="22.6852" />
+        <Hotspot X="685.028" Y="7827.3" Z="22.1949" />
+        <Hotspot X="770.132" Y="7774.85" Z="22.6732" />
+        <Hotspot X="644.854" Y="7864.84" Z="22.3112" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18117" KillCount="10">
+      <Hotspots>
+        <Hotspot X="992.036" Y="7521.36" Z="22.8163" />
+        <Hotspot X="585.399" Y="7853.1" Z="22.2222" />
+        <Hotspot X="624.406" Y="7857.07" Z="22.4752" />
+        <Hotspot X="577.584" Y="7887.58" Z="23.0058" />
+        <Hotspot X="674.754" Y="7722.04" Z="19.6303" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9848" Name="Secrets of the Daggerfen">
+    <Objective Type="CollectItem" ItemId="24500" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Daggerfen Poison Vial" Id="182185" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1098.58" Y="8199.51" Z="23.5" />
+        <Hotspot X="1169.64" Y="8147.61" Z="19.49" />
+        <Hotspot X="1171.55" Y="8291.9" Z="20.2" />
+        <Hotspot X="1172.42" Y="8280.36" Z="18.61" />
+        <Hotspot X="1202.49" Y="8134.14" Z="20.45" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="24499" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Daggerfen Poison Manual" Id="182184" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1030.49" Y="8248.48" Z="57.64" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10116" Name="Wanted: Chieftain Mummaki">
+    <Objective Type="KillMob" MobId="19174" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1038.9" Y="8279.63" Z="57.7364" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10115" Name="Daggerfen Deviance">
+    <Objective Type="KillMob" MobId="18116" KillCount="3">
+      <Hotspots>
+        <Hotspot X="1155.19" Y="8017.35" Z="18.077" />
+        <Hotspot X="1214.61" Y="8135.3" Z="23.8861" />
+        <Hotspot X="1215.59" Y="8164.67" Z="24.2244" />
+        <Hotspot X="1182.41" Y="8154.07" Z="18.1759" />
+        <Hotspot X="1177.08" Y="8143.75" Z="18.3696" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18115" KillCount="15">
+      <Hotspots>
+        <Hotspot X="1167.74" Y="8068.64" Z="17.7165" />
+        <Hotspot X="1195.73" Y="8037.8" Z="19.094" />
+        <Hotspot X="1157.95" Y="8106.13" Z="20.4654" />
+        <Hotspot X="1216.3" Y="8112.82" Z="17.6484" />
+        <Hotspot X="1253.35" Y="8146.55" Z="19.1209" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9834" Name="Natural Armor">
+    <Objective Type="KillMob" MobId="18214" KillCount="1">
+      <Hotspots>
+        <Hotspot X="541.975" Y="6784.61" Z="-31.6263" />
+        <Hotspot X="514.357" Y="6816.59" Z="-31.439" />
+        <Hotspot X="584.933" Y="6819.26" Z="-27.2836" />
+        <Hotspot X="713.459" Y="6887.33" Z="-5.5362" />
+        <Hotspot X="679.289" Y="6851.66" Z="-15.8386" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9896" Name="Blacksting's Bane">
+    <Objective Type="KillMob" MobId="18283" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-77.9395" Y="6973.97" Z="17.7574" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9806" Name="Fertile Spores">
+    <Objective Type="KillMob" MobId="18285" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-59.965" Y="7825.6" Z="23.7213" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9833" Name="Lines of Communication">
+    <Objective Type="KillMob" MobId="18131" KillCount="12">
+      <Hotspots>
+        <Hotspot X="-187.759" Y="7522.99" Z="23.9197" />
+        <Hotspot X="-52.2322" Y="7518.88" Z="22.1142" />
+        <Hotspot X="39.9471" Y="7621.99" Z="23.5797" />
+        <Hotspot X="-18.0336" Y="7684.94" Z="22.2066" />
+        <Hotspot X="-153.768" Y="7620.16" Z="22.3146" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9739" Name="The Sporelings' Plight">
+    <Objective Type="CollectItem" ItemId="24290" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Mature Spore Sac" Id="182069" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-205.96" Y="8862.0" Z="20.3" />
+        <Hotspot X="-193.18" Y="8728.99" Z="20.42" />
+        <Hotspot X="-185.22" Y="8915.33" Z="23.56" />
+        <Hotspot X="-178.39" Y="8911.9" Z="21.97" />
+        <Hotspot X="-157.05" Y="8918.29" Z="19.89" />
+        <Hotspot X="-143.49" Y="8961.6" Z="19.55" />
+        <Hotspot X="-110.9" Y="8841.58" Z="19.49" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="50131" Name="Unknown">
+    <Objective Type="CollectItem" ItemId="24290" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Mature Spore Sac" Id="182069" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-205.96" Y="8862.0" Z="20.3" />
+        <Hotspot X="-193.18" Y="8728.99" Z="20.42" />
+        <Hotspot X="-185.22" Y="8915.33" Z="23.56" />
+        <Hotspot X="-178.39" Y="8911.9" Z="21.97" />
+        <Hotspot X="-157.05" Y="8918.29" Z="19.89" />
+        <Hotspot X="-143.49" Y="8961.6" Z="19.55" />
+        <Hotspot X="-110.9" Y="8841.58" Z="19.49" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9702" Name="A Question of Gluttony">
+    <Objective Type="CollectItem" ItemId="24233" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Discarded Nutriment" Id="182031" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-325.57" Y="7910.28" Z="19.9" />
+        <Hotspot X="-292.59" Y="8100.75" Z="19.33" />
+        <Hotspot X="-287.8" Y="7956.72" Z="21.74" />
+        <Hotspot X="-254.29" Y="7792.12" Z="19.41" />
+        <Hotspot X="-253.63" Y="7844.44" Z="19.4" />
+        <Hotspot X="-251.33" Y="7922.38" Z="18.13" />
+        <Hotspot X="-240.6" Y="8120.49" Z="19.25" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9902" Name="The Terror of Marshlight Lake">
+    <Objective Type="KillMob" MobId="20477" KillCount="1">
+      <Hotspots>
+        <Hotspot X="400.72" Y="8353.38" Z="22.6682" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9830" Name="Stinger Venom">
+    <Objective Type="KillMob" MobId="18133" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-444.971" Y="8319.95" Z="15.3407" />
+        <Hotspot X="-415.841" Y="8270.38" Z="22.4821" />
+        <Hotspot X="-419.904" Y="8212.65" Z="20.5768" />
+        <Hotspot X="1087.78" Y="7592.01" Z="22.0657" />
+        <Hotspot X="1083.16" Y="7856.98" Z="22.4357" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9808" Name="Glowcap Mushrooms">
+    <Objective Type="CollectItem" ItemId="24245" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Glowcap" Id="182053" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-311.91" Y="7982.55" Z="20.5" />
+        <Hotspot X="-214.53" Y="8424.86" Z="23.08" />
+        <Hotspot X="-194.46" Y="7662.86" Z="19.8" />
+        <Hotspot X="-190.11" Y="8363.46" Z="22.56" />
+        <Hotspot X="-177.22" Y="7613.65" Z="23.81" />
+        <Hotspot X="-59.59" Y="8307.31" Z="21.91" />
+        <Hotspot X="24.39" Y="8245.14" Z="23.92" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9905" Name="Maktu's Revenge">
+    <Objective Type="KillMob" MobId="18286" KillCount="1">
+      <Hotspots>
+        <Hotspot X="546.99" Y="7351.98" Z="6.0346" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9787" Name="Idols of the Feralfen">
+    <Objective Type="CollectItem" ItemId="24422" CollectCount="6">
+      <CollectFrom>
+        <GameObject Name="Feralfen Idol" Id="182139" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-361.88" Y="7242.5" Z="52.66" />
+        <Hotspot X="-354.9" Y="7264.76" Z="50.65" />
+        <Hotspot X="-354.54" Y="7244.25" Z="50.11" />
+        <Hotspot X="-310.05" Y="7228.0" Z="30.56" />
+        <Hotspot X="-293.07" Y="7218.43" Z="24.57" />
+        <Hotspot X="-235.07" Y="7040.57" Z="18.72" />
+        <Hotspot X="-233.86" Y="7032.65" Z="18.47" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9839" Name="Overlord Gorefist">
+    <Objective Type="KillMob" MobId="18160" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1674.28" Y="8550.4" Z="2.6903" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18120" KillCount="10">
+      <Hotspots>
+        <Hotspot X="1394.52" Y="8623.38" Z="9.4831" />
+        <Hotspot X="1484.3" Y="8625.4" Z="-22.3558" />
+        <Hotspot X="1483.27" Y="8607.94" Z="-21.2415" />
+        <Hotspot X="1657.62" Y="8629.99" Z="12.3098" />
+        <Hotspot X="1666.78" Y="8584.28" Z="5.4422" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9801" Name="Gathering the Reagents">
+    <Objective Type="KillMob" MobId="18134" KillCount="1">
+      <Hotspots>
+        <Hotspot X="223.561" Y="6374.22" Z="17.4991" />
+        <Hotspot X="-843.694" Y="5124.9" Z="17.9327" />
+        <Hotspot X="-740.322" Y="5196.95" Z="17.8831" />
+        <Hotspot X="-577.968" Y="5352.12" Z="17.6846" />
+        <Hotspot X="-403.375" Y="5415.42" Z="17.8643" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\The Burning Crusade (58-70)\Zangarmarsh (62-63)" LogColor="Green" />
+    <If Condition="((!HasQuest(9747)) &amp;&amp; (!IsQuestCompleted(9747)))">
+      <PickUp QuestName="The Umbrafen Tribe" QuestId="9747" GiverName="Ikeyen" GiverId="17956" />
+    </If>
+    <If Condition="((!HasQuest(9802)) &amp;&amp; (!IsQuestCompleted(9802)))">
+      <PickUp QuestName="Plants of Zangarmarsh" QuestId="9802" GiverName="Lauranna Thar'well" GiverId="17909" />
+    </If>
+    <PickUp QuestName="The Dying Balance" QuestId="9895" GiverName="Lethyn Moonfire" GiverId="17834" />
+    <CustomBehavior File="SetHearthstone" MobId="18907" AreaId="3521" X="-174.478" Y="5529.21" Z="29.4909" /> <!-- Set hearth: Cenarion Refuge -->
+    <TurnIn QuestName="The Cenarion Expedition" QuestId="9912" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+    <PickUp QuestName="Disturbance at Umbrafen Lake" QuestId="9716" GiverName="Ysiel Windsinger" GiverId="17841" />
+    <PickUp QuestName="Warden Hamoot" QuestId="9778" GiverName="Ysiel Windsinger" GiverId="17841" />
+    <TurnIn QuestName="Warden Hamoot" QuestId="9778" TurnInName="Warden Hamoot" TurnInId="17858" />
+    <If Condition="((!HasQuest(9728)) &amp;&amp; (!IsQuestCompleted(9728)))">
+      <PickUp QuestName="A Warm Welcome" QuestId="9728" GiverName="Warden Hamoot" GiverId="17858" />
+    </If>
+    <PickUp QuestName="The Dead Mire" QuestId="9782" GiverName="Vindicator Idaar" GiverId="18004" />
+    <PickUp QuestName="The Boha'mu Ruins" QuestId="9786" GiverName="Anchorite Ahuurn" GiverId="18003" />
+    <PickUp QuestName="Unfinished Business" QuestId="9901" GiverName="Prospector Conall" GiverId="18295" />
+    <PickUp QuestName="Fulgor Spores" QuestId="9777" GiverName="Ruam" GiverId="18007" />
+    <PickUp QuestName="Too Many Mouths to Feed" QuestId="9781" GiverName="Haalrun" GiverId="18005" />
+    <PickUp QuestName="Menacing Marshfangs" QuestId="9791" GiverName="Noraani" GiverId="18006" />
+    <Objective QuestName="Fulgor Spores" QuestId="9777" Type="CollectItem" ItemId="24383" CollectCount="6" />
+    <Objective QuestName="Menacing Marshfangs" QuestId="9791" Type="KillMob" MobId="18130" KillCount="10" />
+    <Objective QuestName="Unfinished Business" QuestId="9901" Type="KillMob" MobId="18280" KillCount="1" />
+    <Objective QuestName="The Dead Mire" QuestId="9782" Type="CollectItem" ItemId="24400" CollectCount="1" />
+    <Objective QuestName="Menacing Marshfangs" QuestId="9791" Type="KillMob" MobId="18124" KillCount="1" />
+    <Objective QuestName="Menacing Marshfangs" QuestId="9791" Type="CollectItem" ItemId="24483" CollectCount="1" />
+    <While Condition="((HasQuest(9791)) &amp;&amp; (!IsQuestCompleted(9791)))">
+      <RunTo X="-985.899" Y="5148.56" Z="22.9501" />
+      <CustomBehavior File="UseItemOn" QuestId="9791" MobId="18130" ItemId="24483" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-985.899" Y="5148.56" Z="22.9501" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Withered Basidium" QuestId="9827" GiverName="Noraani" GiverId="18006" />
+    <TurnIn QuestName="The Dead Mire" QuestId="9782" TurnInName="Vindicator Idaar" TurnInId="18004" />
+    <If Condition="((!HasQuest(9783)) &amp;&amp; (!IsQuestCompleted(9783)))">
+      <PickUp QuestName="An Unnatural Drought" QuestId="9783" GiverName="Vindicator Idaar" GiverId="18004" />
+    </If>
+    <TurnIn QuestName="Unfinished Business" QuestId="9901" TurnInName="Prospector Conall" TurnInId="18295" />
+    <If Condition="((!HasQuest(9896)) &amp;&amp; (!IsQuestCompleted(9896)))">
+      <PickUp QuestName="Blacksting's Bane" QuestId="9896" GiverName="Prospector Conall" GiverId="18295" />
+    </If>
+    <TurnIn QuestName="Fulgor Spores" QuestId="9777" TurnInName="Ruam" TurnInId="18007" />
+    <TurnIn QuestName="Withered Basidium" QuestId="9827" TurnInName="Ruam" TurnInId="18007" />
+    <If Condition="((!HasQuest(10355)) &amp;&amp; (!IsQuestCompleted(10355)))">
+      <PickUp QuestName="Withered Flesh" QuestId="10355" GiverName="Ruam" GiverId="18007" />
+    </If>
+    <TurnIn QuestName="Menacing Marshfangs" QuestId="9791" TurnInName="Noraani" TurnInId="18006" />
+    <If Condition="((!HasQuest(9780)) &amp;&amp; (!IsQuestCompleted(9780)))">
+      <PickUp QuestName="Umbrafen Eel Filets" QuestId="9780" GiverName="Noraani" GiverId="18006" />
+    </If>
+    <Objective QuestName="Withered Flesh" QuestId="10355" Type="KillMob" MobId="20324" KillCount="1" />
+    <Objective QuestName="Withered Flesh" QuestId="10355" Type="CollectItem" ItemId="29480" CollectCount="5" />
+    <Objective QuestName="Withered Flesh" QuestId="10355" Type="KillMob" MobId="19402" KillCount="1" />
+    <Objective QuestName="Withered Flesh" QuestId="10355" Type="CollectItem" ItemId="29481" CollectCount="5" />
+    <Objective QuestName="Natural Enemies" QuestId="9743" Type="KillMob" MobId="19402" KillCount="1" />
+    <Objective QuestName="Natural Enemies" QuestId="9743" Type="CollectItem" ItemId="24291" CollectCount="6" />
+    <Objective QuestName="An Unnatural Drought" QuestId="9783" Type="KillMob" MobId="18124" KillCount="12" />
+    <TurnIn QuestName="An Unnatural Drought" QuestId="9783" TurnInName="Vindicator Idaar" TurnInId="18004" />
+    <TurnIn QuestName="Withered Flesh" QuestId="10355" TurnInName="Ruam" TurnInId="18007" />
+    <While Condition="((HasQuest(9781)) &amp;&amp; (!IsQuestCompleted(9781)))">
+      <RunTo X="-293.237" Y="5563.26" Z="16.027" />
+      <CustomBehavior File="UseItemOn" QuestId="9781" MobId="18213" ItemId="25539" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-293.237" Y="5563.26" Z="16.027" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Umbrafen Eel Filets" QuestId="9780" Type="KillMob" MobId="18138" KillCount="1" />
+    <Objective QuestName="Umbrafen Eel Filets" QuestId="9780" Type="CollectItem" ItemId="24374" CollectCount="8" />
+    <Objective QuestName="Too Many Mouths to Feed" QuestId="9781" Type="KillMob" MobId="18213" KillCount="10" />
+    <Objective QuestName="Plants of Zangarmarsh" QuestId="9802" Type="CollectItem" ItemId="24401" CollectCount="10" />
+    <Objective QuestName="A Warm Welcome" QuestId="9728" Type="CollectItem" ItemId="24280" CollectCount="30" />
+    <Objective QuestName="The Dying Balance" QuestId="9895" Type="KillMob" MobId="18281" KillCount="1" />
+    <Objective QuestName="The Umbrafen Tribe" QuestId="9747" Type="KillMob" MobId="18080" KillCount="1" />
+    <Objective QuestName="The Umbrafen Tribe" QuestId="9747" Type="KillMob" MobId="18077" KillCount="6" />
+    <Objective QuestName="The Umbrafen Tribe" QuestId="9747" Type="KillMob" MobId="18079" KillCount="8" />
+    <Objective QuestName="The Umbrafen Tribe" QuestId="9747" Type="KillMob" MobId="20115" KillCount="6" />
+    <PickUp QuestName="Escape from Umbrafen" QuestId="9752" GiverName="Kayra Longmane" GiverId="17969" />
+    <TurnIn QuestName="The Umbrafen Tribe" QuestId="9747" TurnInName="Ikeyen" TurnInId="17956" />
+    <If Condition="((!HasQuest(9788)) &amp;&amp; (!IsQuestCompleted(9788)))">
+      <PickUp QuestName="A Damp, Dark Place" QuestId="9788" GiverName="Ikeyen" GiverId="17956" />
+    </If>
+    <TurnIn QuestName="Plants of Zangarmarsh" QuestId="9802" TurnInName="Lauranna Thar'well" TurnInId="17909" />
+    <If Condition="((!HasQuest(10096)) &amp;&amp; (!IsQuestCompleted(10096)))">
+      <PickUp QuestName="Saving the Sporeloks" QuestId="10096" GiverName="Lauranna Thar'well" GiverId="17909" />
+    </If>
+    <If Condition="((!HasQuest(9894)) &amp;&amp; (!IsQuestCompleted(9894)))">
+      <PickUp QuestName="Safeguarding the Watchers" QuestId="9894" GiverName="Windcaller Blackhoof" GiverId="18070" />
+    </If>
+    <TurnIn QuestName="A Warm Welcome" QuestId="9728" TurnInName="Warden Hamoot" TurnInId="17858" />
+    <TurnIn QuestName="The Dying Balance" QuestId="9895" TurnInName="Lethyn Moonfire" TurnInId="17834" />
+    <PickUp QuestName="Watcher Leesa'oh" QuestId="9697" GiverName="Lethyn Moonfire" GiverId="17834" />
+    <If Condition="((!HasQuest(9957)) &amp;&amp; (!IsQuestCompleted(9957)))">
+      <PickUp QuestName="What's Wrong at Cenarion Thicket?" QuestId="9957" GiverName="Lethyn Moonfire" GiverId="17834" />
+    </If>
+    <TurnIn QuestName="Disturbance at Umbrafen Lake" QuestId="9716" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+    <If Condition="((!HasQuest(9718)) &amp;&amp; (!IsQuestCompleted(9718)))">
+      <PickUp QuestName="As the Crow Flies" QuestId="9718" GiverName="Ysiel Windsinger" GiverId="17841" />
+    </If>
+    <TurnIn QuestName="Escape from Umbrafen" QuestId="9752" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+    <While Condition="((HasQuest(9718)) &amp;&amp; (!IsQuestCompleted(9718)))">
+      <CustomBehavior File="UseItemOn" QuestId="9718" MobId="0" ItemId="25465" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="As the Crow Flies" QuestId="9718" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+    <If Condition="((!HasQuest(9720)) &amp;&amp; (!IsQuestCompleted(9720)))">
+      <PickUp QuestName="Balance Must Be Preserved" QuestId="9720" GiverName="Ysiel Windsinger" GiverId="17841" />
+    </If>
+    <Objective QuestName="A Damp, Dark Place" QuestId="9788" Type="CollectItem" ItemId="24411" CollectCount="1" />
+    <Objective QuestName="Safeguarding the Watchers" QuestId="9894" Type="KillMob" MobId="18282" KillCount="1" />
+    <Objective QuestName="Saving the Sporeloks" QuestId="10096" Type="KillMob" MobId="18136" KillCount="10" />
+    <Objective QuestName="Saving the Sporeloks" QuestId="10096" Type="KillMob" MobId="18137" KillCount="10" />
+    <While Condition="((HasQuest(9720)) &amp;&amp; (!IsQuestCompleted(9720)))">
+      <RunTo X="-755.97" Y="5925.65" Z="19.0132" />
+      <CustomBehavior File="UseItemOn" QuestId="9720" MobId="17998" ItemId="24355" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-755.97" Y="5925.65" Z="19.0132" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(9720)) &amp;&amp; (!IsQuestCompleted(9720)))">
+      <RunTo X="-755.97" Y="5925.65" Z="19.0132" />
+      <CustomBehavior File="UseItemOn" QuestId="9720" MobId="17998" ItemId="24355" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-755.97" Y="5925.65" Z="19.0132" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="The Orebor Harborage" QuestId="9776" GiverName="Anchorite Ahuurn" GiverId="18003" />
+    <TurnIn QuestName="Too Many Mouths to Feed" QuestId="9781" TurnInName="Haalrun" TurnInId="18005" />
+    <If Condition="((!HasQuest(9790)) &amp;&amp; (!IsQuestCompleted(9790)))">
+      <PickUp QuestName="Diaphanous Wings" QuestId="9790" GiverName="Haalrun" GiverId="18005" />
+    </If>
+    <TurnIn QuestName="Umbrafen Eel Filets" QuestId="9780" TurnInName="Noraani" TurnInId="18006" />
+    <While Condition="((HasQuest(9720)) &amp;&amp; (!IsQuestCompleted(9720)))">
+      <RunTo X="-755.97" Y="5925.65" Z="19.0132" />
+      <CustomBehavior File="UseItemOn" QuestId="9720" MobId="17998" ItemId="24355" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-755.97" Y="5925.65" Z="19.0132" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Diaphanous Wings" QuestId="9790" Type="CollectItem" ItemId="24330" CollectCount="1" />
+    <While Condition="((HasQuest(9790)) &amp;&amp; (!IsQuestCompleted(9790)))">
+      <CustomBehavior File="UseItemOn" QuestId="9790" MobId="0" ItemId="24330" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Drain Schematics" QuestId="9731" GiverName="Noraani" GiverId="18006" />
+    <PickUp QuestName="Secrets of the Daggerfen" QuestId="9848" GiverName="Timothy Daniels" GiverId="18019" />
+    <PickUp QuestName="Wanted: Chieftain Mummaki" QuestId="10116" GiverName="Timothy Daniels" GiverId="18019" />
+    <TurnIn QuestName="The Orebor Harborage" QuestId="9776" TurnInName="Ikuti" TurnInId="18008" />
+    <PickUp QuestName="Ango'rosh Encroachment" QuestId="9835" GiverName="Ikuti" GiverId="18008" />
+    <PickUp QuestName="Daggerfen Deviance" QuestId="10115" GiverName="Ikuti" GiverId="18008" />
+    <Objective QuestName="Ango'rosh Encroachment" QuestId="9835" Type="KillMob" MobId="18118" KillCount="5" />
+    <Objective QuestName="Ango'rosh Encroachment" QuestId="9835" Type="KillMob" MobId="18117" KillCount="10" />
+    <Objective QuestName="Secrets of the Daggerfen" QuestId="9848" Type="CollectItem" ItemId="24500" CollectCount="1" />
+    <Objective QuestName="Secrets of the Daggerfen" QuestId="9848" Type="CollectItem" ItemId="24499" CollectCount="1" />
+    <Objective QuestName="Wanted: Chieftain Mummaki" QuestId="10116" Type="KillMob" MobId="19174" KillCount="1" />
+    <Objective QuestName="Wanted: Chieftain Mummaki" QuestId="10116" Type="CollectItem" ItemId="27943" CollectCount="1" />
+    <Objective QuestName="Daggerfen Deviance" QuestId="10115" Type="KillMob" MobId="18116" KillCount="3" />
+    <Objective QuestName="Daggerfen Deviance" QuestId="10115" Type="KillMob" MobId="18115" KillCount="15" />
+    <While Condition="((HasQuest(9720)) &amp;&amp; (!IsQuestCompleted(9720)))">
+      <RunTo X="-755.97" Y="5925.65" Z="19.0132" />
+      <CustomBehavior File="UseItemOn" QuestId="9720" MobId="17998" ItemId="24355" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-755.97" Y="5925.65" Z="19.0132" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Secrets of the Daggerfen" QuestId="9848" TurnInName="Timothy Daniels" TurnInId="18019" />
+    <TurnIn QuestName="Ango'rosh Encroachment" QuestId="9835" TurnInName="Ikuti" TurnInId="18008" />
+    <If Condition="((!HasQuest(9839)) &amp;&amp; (!IsQuestCompleted(9839)))">
+      <PickUp QuestName="Overlord Gorefist" QuestId="9839" GiverName="Ikuti" GiverId="18008" />
+    </If>
+    <TurnIn QuestName="Wanted: Chieftain Mummaki" QuestId="10116" TurnInName="Ikuti" TurnInId="18008" />
+    <TurnIn QuestName="Daggerfen Deviance" QuestId="10115" TurnInName="Ikuti" TurnInId="18008" />
+    <PickUp QuestName="Natural Armor" QuestId="9834" GiverName="Maktu" GiverId="18010" />
+    <PickUp QuestName="Stinger Venom" QuestId="9830" GiverName="Puluu" GiverId="18009" />
+    <PickUp QuestName="Lines of Communication" QuestId="9833" GiverName="Puluu" GiverId="18009" />
+    <PickUp QuestName="The Terror of Marshlight Lake" QuestId="9902" GiverName="Puluu" GiverId="18009" />
+    <Objective QuestName="Diaphanous Wings" QuestId="9790" Type="KillMob" MobId="18132" KillCount="1" />
+    <Objective QuestName="Diaphanous Wings" QuestId="9790" Type="CollectItem" ItemId="24372" CollectCount="8" />
+    <TurnIn QuestName="Saving the Sporeloks" QuestId="10096" TurnInName="Lauranna Thar'well" TurnInId="17909" />
+    <TurnIn QuestName="A Damp, Dark Place" QuestId="9788" TurnInName="Ikeyen" TurnInId="17956" />
+    <TurnIn QuestName="Safeguarding the Watchers" QuestId="9894" TurnInName="Windcaller Blackhoof" TurnInId="18070" />
+    <If Condition="((!HasQuest(9785)) &amp;&amp; (!IsQuestCompleted(9785)))">
+      <PickUp QuestName="Blessings of the Ancients" QuestId="9785" GiverName="Windcaller Blackhoof" GiverId="18070" />
+    </If>
+    <TurnIn QuestName="Blessings of the Ancients" QuestId="9785" TurnInName="Windcaller Blackhoof" TurnInId="18070" />
+    <TurnIn QuestName="Balance Must Be Preserved" QuestId="9720" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+    <TurnIn QuestName="Drain Schematics" QuestId="9731" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+    <If Condition="((!HasQuest(9724)) &amp;&amp; (!IsQuestCompleted(9724)))">
+      <PickUp QuestName="Warning the Cenarion Circle" QuestId="9724" GiverName="Ysiel Windsinger" GiverId="17841" />
+    </If>
+    <TurnIn QuestName="Warning the Cenarion Circle" QuestId="9724" TurnInName="Amythiel Mistwalker" TurnInId="16885" />
+    <If Condition="((!HasQuest(9732)) &amp;&amp; (!IsQuestCompleted(9732)))">
+      <PickUp QuestName="Return to the Marsh" QuestId="9732" GiverName="Amythiel Mistwalker" GiverId="16885" />
+    </If>
+    <TurnIn QuestName="Return to the Marsh" QuestId="9732" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+    <TurnIn QuestName="Diaphanous Wings" QuestId="9790" TurnInName="Haalrun" TurnInId="18005" />
+    <While Condition="((HasQuest(9834)) &amp;&amp; (!IsQuestCompleted(9834)))">
+      <CustomBehavior File="UseItemOn" QuestId="9834" MobId="0" ItemId="25539" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Natural Armor" QuestId="9834" Type="KillMob" MobId="18214" KillCount="1" />
+    <Objective QuestName="Natural Armor" QuestId="9834" Type="CollectItem" ItemId="24486" CollectCount="8" />
+    <Objective QuestName="Blacksting's Bane" QuestId="9896" Type="KillMob" MobId="18283" KillCount="1" />
+    <Objective QuestName="Blacksting's Bane" QuestId="9896" Type="CollectItem" ItemId="25448" CollectCount="1" />
+    <Objective QuestName="Fertile Spores" QuestId="9806" Type="KillMob" MobId="18285" KillCount="1" />
+    <Objective QuestName="Return to the Marsh" QuestId="9732" Type="CollectItem" ItemId="25459" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="25459" MobId="0" NumOfTimes="1" CollectionDistance="100" />
+    <PickUp QuestName="The Count of the Marshes" QuestId="9911" GiverName="Haalrun" GiverId="18005" />
+    <Objective QuestName="Lines of Communication" QuestId="9833" Type="KillMob" MobId="18131" KillCount="12" />
+    <Objective QuestName="Fertile Spores" QuestId="9806" Type="CollectItem" ItemId="24449" CollectCount="6" />
+    <TurnIn QuestName="The Count of the Marshes" QuestId="9911" TurnInName="Watcher Leesa'oh" TurnInId="17831" />
+    <TurnIn QuestName="Watcher Leesa'oh" QuestId="9697" TurnInName="Watcher Leesa'oh" TurnInId="17831" />
+    <If Condition="((!HasQuest(9701)) &amp;&amp; (!IsQuestCompleted(9701)))">
+      <PickUp QuestName="Observing the Sporelings" QuestId="9701" GiverName="Watcher Leesa'oh" GiverId="17831" />
+    </If>
+    <If Condition="((!HasQuest(9739)) &amp;&amp; (!IsQuestCompleted(9739)))">
+      <PickUp QuestName="The Sporelings' Plight" QuestId="9739" GiverName="Fahssn" GiverId="17923" />
+    </If>
+    <If Condition="((!HasQuest(9743)) &amp;&amp; (!IsQuestCompleted(9743)))">
+      <PickUp QuestName="Natural Enemies" QuestId="9743" GiverName="Fahssn" GiverId="17923" />
+    </If>
+    <TurnIn QuestName="Natural Enemies" QuestId="9743" TurnInName="Fahssn" TurnInId="17923" />
+    <Objective QuestName="The Sporelings' Plight" QuestId="9739" Type="CollectItem" ItemId="24290" CollectCount="10" />
+    <TurnIn QuestName="The Sporelings' Plight" QuestId="9739" TurnInName="Fahssn" TurnInId="17923" />
+    <Objective QuestName="Unknown" QuestId="50131" Type="CollectItem" ItemId="24290" CollectCount="10" />
+    <Objective QuestName="Unknown" QuestId="50131" Type="CollectItem" ItemId="24291" CollectCount="6" />
+    <If Condition="Me.Level &lt; 63">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 63 - Marshfang Slicer</Name>
+          <TargetMinLevel>62</TargetMinLevel>
+          <TargetMaxLevel>63</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="-187.76" Y="7522.99" Z="23.92" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="63" /> <!--  (grind Marshfang Slicer) -->
+    </If>
+    <If Condition="((!HasQuest(9919)) &amp;&amp; (!IsQuestCompleted(9919)))">
+      <PickUp QuestName="Sporeggar" QuestId="9919" GiverName="Fahssn" GiverId="17923" />
+    </If>
+    <TurnIn QuestName="Observing the Sporelings" QuestId="9701" TurnInName="Watcher Leesa'oh" TurnInId="17831" />
+    <If Condition="((!HasQuest(9702)) &amp;&amp; (!IsQuestCompleted(9702)))">
+      <PickUp QuestName="A Question of Gluttony" QuestId="9702" GiverName="Watcher Leesa'oh" GiverId="17831" />
+    </If>
+    <Objective QuestName="A Question of Gluttony" QuestId="9702" Type="CollectItem" ItemId="24233" CollectCount="10" />
+    <TurnIn QuestName="A Question of Gluttony" QuestId="9702" TurnInName="Watcher Leesa'oh" TurnInId="17831" />
+    <If Condition="((!HasQuest(9708)) &amp;&amp; (!IsQuestCompleted(9708)))">
+      <PickUp QuestName="Familiar Fungi" QuestId="9708" GiverName="Watcher Leesa'oh" GiverId="17831" />
+    </If>
+    <TurnIn QuestName="Sporeggar" QuestId="9919" TurnInName="Msshi'fn" TurnInId="17924" />
+    <If Condition="((!HasQuest(9808)) &amp;&amp; (!IsQuestCompleted(9808)))">
+      <PickUp QuestName="Glowcap Mushrooms" QuestId="9808" GiverName="Msshi'fn" GiverId="17924" />
+    </If>
+    <If Condition="((!HasQuest(9806)) &amp;&amp; (!IsQuestCompleted(9806)))">
+      <PickUp QuestName="Fertile Spores" QuestId="9806" GiverName="Gshaff" GiverId="17925" />
+    </If>
+    <TurnIn QuestName="Fertile Spores" QuestId="9806" TurnInName="Gshaff" TurnInId="17925" />
+    <Objective QuestName="The Terror of Marshlight Lake" QuestId="9902" Type="KillMob" MobId="20477" KillCount="1" />
+    <Objective QuestName="Stinger Venom" QuestId="9830" Type="KillMob" MobId="18133" KillCount="1" />
+    <Objective QuestName="Stinger Venom" QuestId="9830" Type="CollectItem" ItemId="24485" CollectCount="6" />
+    <Objective QuestName="Familiar Fungi" QuestId="9708" Type="CollectItem" ItemId="24238" CollectCount="15" />
+    <Objective QuestName="Glowcap Mushrooms" QuestId="9808" Type="CollectItem" ItemId="24245" CollectCount="10" />
+    <TurnIn QuestName="Stinger Venom" QuestId="9830" TurnInName="Puluu" TurnInId="18009" />
+    <TurnIn QuestName="Lines of Communication" QuestId="9833" TurnInName="Puluu" TurnInId="18009" />
+    <TurnIn QuestName="The Terror of Marshlight Lake" QuestId="9902" TurnInName="Puluu" TurnInId="18009" />
+    <TurnIn QuestName="Natural Armor" QuestId="9834" TurnInName="Maktu" TurnInId="18010" />
+    <If Condition="((!HasQuest(9905)) &amp;&amp; (!IsQuestCompleted(9905)))">
+      <PickUp QuestName="Maktu's Revenge" QuestId="9905" GiverName="Maktu" GiverId="18010" />
+    </If>
+    <TurnIn QuestName="The Boha'mu Ruins" QuestId="9786" TurnInName="Anchorite Ahuurn" TurnInId="18003" />
+    <If Condition="((!HasQuest(9787)) &amp;&amp; (!IsQuestCompleted(9787)))">
+      <PickUp QuestName="Idols of the Feralfen" QuestId="9787" GiverName="Anchorite Ahuurn" GiverId="18003" />
+    </If>
+    <TurnIn QuestName="Blacksting's Bane" QuestId="9896" TurnInName="Prospector Conall" TurnInId="18295" />
+    <CustomBehavior File="SetHearthstone" MobId="18906" AreaId="3483" X="229.118" Y="4333.73" Z="119.083" /> <!-- Set hearth: Orebor Harborage -->
+    <Objective QuestName="Maktu's Revenge" QuestId="9905" Type="KillMob" MobId="18286" KillCount="1" />
+    <Objective QuestName="Idols of the Feralfen" QuestId="9787" Type="CollectItem" ItemId="24422" CollectCount="6" />
+    <TurnIn QuestName="Familiar Fungi" QuestId="9708" TurnInName="Watcher Leesa'oh" TurnInId="17831" />
+    <If Condition="((!HasQuest(9709)) &amp;&amp; (!IsQuestCompleted(9709)))">
+      <PickUp QuestName="Stealing Back the Mushrooms" QuestId="9709" GiverName="Watcher Leesa'oh" GiverId="17831" />
+    </If>
+    <TurnIn QuestName="Glowcap Mushrooms" QuestId="9808" TurnInName="Msshi'fn" TurnInId="17924" />
+    <Objective QuestName="Overlord Gorefist" QuestId="9839" Type="KillMob" MobId="18160" KillCount="1" />
+    <Objective QuestName="Stealing Back the Mushrooms" QuestId="9709" Type="CollectItem" ItemId="24240" CollectCount="10" />
+    <Objective QuestName="Overlord Gorefist" QuestId="9839" Type="KillMob" MobId="18120" KillCount="10" />
+    <TurnIn QuestName="Overlord Gorefist" QuestId="9839" TurnInName="Ikuti" TurnInId="18008" />
+    <TurnIn QuestName="Maktu's Revenge" QuestId="9905" TurnInName="Maktu" TurnInId="18010" />
+    <TurnIn QuestName="Idols of the Feralfen" QuestId="9787" TurnInName="Anchorite Ahuurn" TurnInId="18003" />
+    <If Condition="((!HasQuest(9801)) &amp;&amp; (!IsQuestCompleted(9801)))">
+      <PickUp QuestName="Gathering the Reagents" QuestId="9801" GiverName="Anchorite Ahuurn" GiverId="18003" />
+    </If>
+    <Objective QuestName="Gathering the Reagents" QuestId="9801" Type="CollectItem" ItemId="24426" CollectCount="4" />
+    <Objective QuestName="Gathering the Reagents" QuestId="9801" Type="KillMob" MobId="18134" KillCount="1" />
+    <Objective QuestName="Gathering the Reagents" QuestId="9801" Type="CollectItem" ItemId="24427" CollectCount="4" />
+    <TurnIn QuestName="Stealing Back the Mushrooms" QuestId="9709" TurnInName="Watcher Leesa'oh" TurnInId="17831" />
+    <TurnIn QuestName="Gathering the Reagents" QuestId="9801" TurnInName="Anchorite Ahuurn" TurnInId="18003" />
+    <If Condition="((!HasQuest(9803)) &amp;&amp; (!IsQuestCompleted(9803)))">
+      <PickUp QuestName="Messenger to the Feralfen" QuestId="9803" GiverName="Anchorite Ahuurn" GiverId="18003" />
+    </If>
+    <While Condition="((HasQuest(9803)) &amp;&amp; (!IsQuestCompleted(9803)))">
+      <CustomBehavior File="UseItemOn" QuestId="9803" MobId="0" ItemId="24428" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Messenger to the Feralfen" QuestId="9803" TurnInName="Anchorite Ahuurn" TurnInId="18003" />
+    <If Condition="((!HasQuest(9793)) &amp;&amp; (!IsQuestCompleted(9793)))">
+      <PickUp QuestName="The Fate of Tuurem" QuestId="9793" GiverName="Vindicator Idaar" GiverId="18004" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\The Burning Crusade (58-70)\Zangarmarsh (62-63) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="The_Burning_Crusade_(58-70)_Terokkar_Forest_(63-65)" />
+  </QuestOrder>
+</HBProfile>

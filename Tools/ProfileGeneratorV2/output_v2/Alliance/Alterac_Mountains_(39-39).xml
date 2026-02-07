@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Alterac Mountains (39-39)</Name>
+  <Name>Alliance\Alterac Mountains (39-39)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -8,7 +7,27 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
+  <Quest Id="537" Name="Dark Council">
+    <Objective Type="KillMob" MobId="2320" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1232.85" Y="-314.9" Z="44.1864" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2318" KillCount="4">
+      <Hotspots>
+        <Hotspot X="742.466" Y="-962.231" Z="166.228" />
+        <Hotspot X="684.328" Y="-998.427" Z="170.36" />
+        <Hotspot X="644.461" Y="-931.561" Z="166.408" />
+        <Hotspot X="678.995" Y="-903.938" Z="157.779" />
+        <Hotspot X="637.477" Y="-824.794" Z="159.937" />
+      </Hotspots>
+    </Objective>
+  </Quest>
   <Quest Id="551" Name="The Ensorcelled Parchment">
     <Objective Type="CollectItem" ItemId="3706" CollectCount="1">
       <CollectFrom>
@@ -21,8 +40,8 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Alterac Mountains (39-39)" LogColor="Green" />
-    <CustomBehavior File="SetHearthstone" MobId="2352" AreaId="267" X="51.17" Y="58.93" Z="0" /> <!-- Set hearth: Southshore -->
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Alterac Mountains (39-39)" LogColor="Green" />
+    <CustomBehavior File="SetHearthstone" MobId="2352" AreaId="267" X="-857.096" Y="-570.751" Z="11.0649" /> <!-- Set hearth: Southshore -->
     <PickUp QuestName="Crushridge Bounty" QuestId="500" GiverName="Marshal Redpath" GiverId="2263" />
     <TurnIn QuestName="Further Mysteries" QuestId="525" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
     <If Condition="((!HasQuest(537)) &amp;&amp; (!IsQuestCompleted(537)))">
@@ -33,40 +52,34 @@
     </If>
     <TurnIn QuestName="Magical Analysis" QuestId="602" TurnInName="Archmage Ansirem Runeweaver" TurnInId="2543" />
     <If Condition="((!HasQuest(603)) &amp;&amp; (!IsQuestCompleted(603)))">
-      <PickUp QuestName="Ansirem&apos;s Key" QuestId="603" GiverName="Archmage Ansirem Runeweaver" GiverId="2543" />
+      <PickUp QuestName="Ansirem's Key" QuestId="603" GiverName="Archmage Ansirem Runeweaver" GiverId="2543" />
     </If>
-    <Objective QuestName="Dark Council" QuestId="537" Type="KillMob" MobId="2320" MobName="Nagaz" KillCount="1" />
-    <Objective QuestName="Dark Council" QuestId="537" Type="CollectItem" ItemId="3672" ItemName="Head of Nagaz" CollectCount="1" />
-    <Objective QuestName="The Ensorcelled Parchment" QuestId="551" Type="CollectItem" ItemId="3706" ItemName="Ensorcelled Parchment" CollectCount="1" />
+    <Objective QuestName="Dark Council" QuestId="537" Type="KillMob" MobId="2320" KillCount="1" />
+    <Objective QuestName="Dark Council" QuestId="537" Type="CollectItem" ItemId="3672" CollectCount="1" />
+    <Objective QuestName="The Ensorcelled Parchment" QuestId="551" Type="CollectItem" ItemId="3706" CollectCount="1" />
     <While Condition="((HasQuest(603)) &amp;&amp; (!IsQuestCompleted(603)))">
-      <RunTo X="39.18" Y="14.66" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="603" ItemId="3706" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="603" MobId="0" ItemId="3706" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="The Ensorcelled Parchment" QuestId="551" GiverName="Archmage Ansirem Runeweaver" GiverId="2543" />
-    <Objective QuestName="Dark Council" QuestId="537" Type="KillMob" MobId="2318" MobName="Argus Shadow Mage" KillCount="4" />
-    <Objective QuestName="Noble Deaths" QuestId="512" Type="CollectItem" ItemId="3505" ItemName="Alterac Signet Ring" CollectCount="7" />
-    <Objective QuestName="Crushridge Bounty" QuestId="500" Type="CollectItem" ItemId="2843" ItemName="Dirty Knucklebones" CollectCount="9" />
-    <While Condition="((HasQuest(1713)) &amp;&amp; (!IsQuestCompleted(1713)))">
-      <RunTo X="52.61" Y="53.78" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="1713" ItemId="6052" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
-      <CustomBehavior File="WaitTimer" WaitTime="3000" />
-    </While>
+    <Objective QuestName="Dark Council" QuestId="537" Type="KillMob" MobId="2318" KillCount="4" />
+    <Objective QuestName="Noble Deaths" QuestId="512" Type="CollectItem" ItemId="3505" CollectCount="7" />
+    <Objective QuestName="Crushridge Bounty" QuestId="500" Type="CollectItem" ItemId="2843" CollectCount="9" />
     <If Condition="(Me.Class == WoWClass.Warrior)">
-      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="6851" ItemName="Essence of the Exile" CollectCount="1" />
-    </If>
-    <TurnIn QuestName="Cyclonian" QuestId="1712" TurnInName="Bath&apos;rah the Windwatcher" TurnInId="6176" />
-    <If Condition="((!HasQuest(1713)) &amp;&amp; (!IsQuestCompleted(1713)))">
-      <PickUp QuestName="The Summoning" QuestId="1713" GiverName="Bath&apos;rah the Windwatcher" GiverId="6176" />
-    </If>
-    <Objective QuestName="The Summoning" QuestId="1713" Type="KillMob" MobId="6239" MobName="Cyclonian" KillCount="1" />
-    <If Condition="(Me.Class == WoWClass.Warrior)">
-      <Objective QuestName="The Summoning" QuestId="1713" Type="CollectItem" ItemId="6894" ItemName="Whirlwind Heart" CollectCount="1" />
-    </If>
-    <TurnIn QuestName="The Summoning" QuestId="1713" TurnInName="Bath&apos;rah the Windwatcher" TurnInId="6176" />
-    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <While Condition="((HasQuest(1713)) &amp;&amp; (!IsQuestCompleted(1713)))">
+        <CustomBehavior File="UseItemOn" QuestId="1713" MobId="0" ItemId="6052" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="6851" CollectCount="1" />
+      <TurnIn QuestName="Cyclonian" QuestId="1712" TurnInName="Bath'rah the Windwatcher" TurnInId="6176" />
+      <If Condition="((!HasQuest(1713)) &amp;&amp; (!IsQuestCompleted(1713)))">
+        <PickUp QuestName="The Summoning" QuestId="1713" GiverName="Bath'rah the Windwatcher" GiverId="6176" />
+      </If>
+      <Objective QuestName="The Summoning" QuestId="1713" Type="KillMob" MobId="6239" KillCount="1" />
+      <Objective QuestName="The Summoning" QuestId="1713" Type="CollectItem" ItemId="6894" CollectCount="1" />
+      <TurnIn QuestName="The Summoning" QuestId="1713" TurnInName="Bath'rah the Windwatcher" TurnInId="6176" />
       <If Condition="((!HasQuest(1792)) &amp;&amp; (!IsQuestCompleted(1792)))">
-        <PickUp QuestName="Whirlwind Weapon" QuestId="1792" GiverName="Bath&apos;rah the Windwatcher" GiverId="6176" />
+        <PickUp QuestName="Whirlwind Weapon" QuestId="1792" GiverName="Bath'rah the Windwatcher" GiverId="6176" />
       </If>
     </If>
     <TurnIn QuestName="To The Hinterlands" QuestId="1449" TurnInName="Falstad Wildhammer" TurnInId="5635" />
@@ -79,16 +92,16 @@
     </If>
     <TurnIn QuestName="Rhapsody Shindigger" QuestId="1451" TurnInName="Rhapsody Shindigger" TurnInId="5634" />
     <If Condition="((!HasQuest(1452)) &amp;&amp; (!IsQuestCompleted(1452)))">
-      <PickUp QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" GiverName="Rhapsody Shindigger" GiverId="5634" />
+      <PickUp QuestName="Rhapsody's Kalimdor Kocktail" QuestId="1452" GiverName="Rhapsody Shindigger" GiverId="5634" />
     </If>
     <TurnIn QuestName="Crushridge Bounty" QuestId="500" TurnInName="Marshal Redpath" TurnInId="2263" />
     <TurnIn QuestName="Dark Council" QuestId="537" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
     <TurnIn QuestName="Noble Deaths" QuestId="512" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
     <TurnIn QuestName="The Ensorcelled Parchment" QuestId="551" TurnInName="Loremaster Dibbs" TurnInId="2277" />
     <If Condition="((!HasQuest(554)) &amp;&amp; (!IsQuestCompleted(554)))">
-      <PickUp QuestName="Stormpike&apos;s Deciphering" QuestId="554" GiverName="Loremaster Dibbs" GiverId="2277" />
+      <PickUp QuestName="Stormpike's Deciphering" QuestId="554" GiverName="Loremaster Dibbs" GiverId="2277" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Alterac Mountains (39-39) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Alterac Mountains (39-39) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Arathi_Highlands_(39-41)" />
   </QuestOrder>
 </HBProfile>

@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Swamp of Sorrows (38-39)</Name>
+  <Name>Alliance\Swamp of Sorrows (38-39)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>39</MaxLevel>
@@ -8,7 +7,47 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
+  <Quest Id="1392" Name="Noboru the Cudgel">
+    <Objective Type="KillMob" MobId="5477" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-10214.7" Y="-3303.35" Z="23.1034" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1396" Name="Encroaching Wildlife">
+    <Objective Type="KillMob" MobId="1084" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-10216.3" Y="-2921.17" Z="17.7429" />
+        <Hotspot X="-10184.5" Y="-3042.27" Z="17.4803" />
+        <Hotspot X="-10177.5" Y="-2895.34" Z="18.3741" />
+        <Hotspot X="-10137.6" Y="-2936.04" Z="17.7491" />
+        <Hotspot X="-10215.7" Y="-2973.4" Z="18.9678" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="858" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-10378.5" Y="-2818.65" Z="23.4522" />
+        <Hotspot X="-10137.3" Y="-3318.67" Z="22.5177" />
+        <Hotspot X="-10284.1" Y="-2857.58" Z="26.6775" />
+        <Hotspot X="-10092.8" Y="-3061.25" Z="23.2538" />
+        <Hotspot X="-10064.9" Y="-3214.81" Z="22.9256" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="767" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-10196.1" Y="-3082.58" Z="23.0202" />
+        <Hotspot X="-10325.4" Y="-2557.57" Z="25.113" />
+        <Hotspot X="-10164.3" Y="-2988.84" Z="23.1682" />
+        <Hotspot X="-10287.9" Y="-2880.2" Z="26.9498" />
+        <Hotspot X="-10230.6" Y="-3069.05" Z="22.0528" />
+      </Hotspots>
+    </Objective>
+  </Quest>
   <Quest Id="1389" Name="Draenethyst Crystals">
     <Objective Type="CollectItem" ItemId="6071" CollectCount="6">
       <CollectFrom>
@@ -22,52 +61,79 @@
         <Hotspot X="-9970.3" Y="-3712.3" Z="22.85" />
         <Hotspot X="-9968.0" Y="-3708.24" Z="22.18" />
         <Hotspot X="-9964.19" Y="-3646.9" Z="22.15" />
-        <Hotspot X="-9960.04" Y="-3603.0" Z="22.25" />
-        <Hotspot X="-9931.97" Y="-3722.25" Z="21.68" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1714" Name="Essence of the Exile">
+    <Objective Type="KillMob" MobId="2761" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-806.399" Y="-3314.1" Z="79.3342" />
+        <Hotspot X="-848.462" Y="-3207.26" Z="82.2388" />
+        <Hotspot X="-850.903" Y="-3262.96" Z="78.2393" />
+        <Hotspot X="-835.016" Y="-3270.11" Z="79.1955" />
+        <Hotspot X="-849.749" Y="-3281.32" Z="77.8205" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2762" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1413.11" Y="-2684.88" Z="51.4271" />
+        <Hotspot X="-1352.93" Y="-2780.61" Z="52.8388" />
+        <Hotspot X="-1278.76" Y="-2744.07" Z="52.9249" />
+        <Hotspot X="-1329.93" Y="-2706.24" Z="60.0018" />
+        <Hotspot X="-1353.3" Y="-2680.84" Z="69.1467" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2760" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-865.859" Y="-1744.28" Z="45.5624" />
+        <Hotspot X="-898.133" Y="-1766.28" Z="45.0305" />
+        <Hotspot X="-919.272" Y="-1751.73" Z="47.802" />
+        <Hotspot X="-868.848" Y="-1795.75" Z="41.221" />
+        <Hotspot X="-848.952" Y="-1789.83" Z="40.3907" />
       </Hotspots>
     </Objective>
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Swamp of Sorrows (38-39)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Swamp of Sorrows (38-39)" LogColor="Green" />
     <PickUp QuestName="In Search of The Temple" QuestId="1448" GiverName="Brohann Caskbelly" GiverId="5384" />
     <PickUp QuestName="Morgan Stern" QuestId="1260" GiverName="Angus Stern" GiverId="1141" />
-    <Objective QuestName="Dream Dust in the Swamp" QuestId="1116" Type="CollectItem" ItemId="5803" ItemName="Speck of Dream Dust" CollectCount="10" />
+    <Objective QuestName="Dream Dust in the Swamp" QuestId="1116" Type="CollectItem" ItemId="5803" CollectCount="10" />
     <If Condition="((!HasQuest(1396)) &amp;&amp; (!IsQuestCompleted(1396)))">
       <PickUp QuestName="Encroaching Wildlife" QuestId="1396" GiverName="Watcher Biggs" GiverId="5476" />
     </If>
-    <Objective QuestName="Noboru the Cudgel" QuestId="1392" Type="KillMob" MobId="5477" MobName="Noboru the Cudgel" KillCount="1" />
-    <Objective QuestName="Noboru the Cudgel" QuestId="1392" Type="CollectItem" ItemId="6196" ItemName="Noboru&apos;s Cudgel" CollectCount="1" />
+    <Objective QuestName="Noboru the Cudgel" QuestId="1392" Type="KillMob" MobId="5477" KillCount="1" />
+    <Objective QuestName="Noboru the Cudgel" QuestId="1392" Type="CollectItem" ItemId="6196" CollectCount="1" />
     <While Condition="((HasQuest(1396)) &amp;&amp; (!IsQuestCompleted(1396)))">
-      <RunTo X="26.74" Y="59.83" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="1396" ItemId="6196" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-10216.3" Y="-2921.17" Z="17.7429" />
+      <CustomBehavior File="UseItemOn" QuestId="1396" MobId="1084" ItemId="6196" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-10216.3" Y="-2921.17" Z="17.7429" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="Noboru the Cudgel" QuestId="1392" GiverName="Watcher Biggs" GiverId="5476" />
     <TurnIn QuestName="Noboru the Cudgel" QuestId="1392" TurnInName="Magtoor" TurnInId="1776" />
     <PickUp QuestName="Draenethyst Crystals" QuestId="1389" GiverName="Magtoor" GiverId="1776" />
-    <Objective QuestName="Encroaching Wildlife" QuestId="1396" Type="KillMob" MobId="1084" MobName="Young Sawtooth Crocolisk" KillCount="8" />
-    <Objective QuestName="Encroaching Wildlife" QuestId="1396" Type="KillMob" MobId="858" MobName="Sorrow Spinner" KillCount="10" />
-    <Objective QuestName="Encroaching Wildlife" QuestId="1396" Type="KillMob" MobId="767" MobName="Swamp Jaguar" KillCount="10" />
-    <Objective QuestName="Dream Dust in the Swamp" QuestId="1116" Type="CollectItem" ItemId="5803" ItemName="Speck of Dream Dust" CollectCount="10" />
+    <Objective QuestName="Encroaching Wildlife" QuestId="1396" Type="KillMob" MobId="1084" KillCount="8" />
+    <Objective QuestName="Encroaching Wildlife" QuestId="1396" Type="KillMob" MobId="858" KillCount="10" />
+    <Objective QuestName="Encroaching Wildlife" QuestId="1396" Type="KillMob" MobId="767" KillCount="10" />
+    <Objective QuestName="Dream Dust in the Swamp" QuestId="1116" Type="CollectItem" ItemId="5803" CollectCount="10" />
     <TurnIn QuestName="Encroaching Wildlife" QuestId="1396" TurnInName="Watcher Biggs" TurnInId="5476" />
     <If Condition="((!HasQuest(1421)) &amp;&amp; (!IsQuestCompleted(1421)))">
       <PickUp QuestName="The Lost Caravan" QuestId="1421" GiverName="Watcher Biggs" GiverId="5476" />
     </If>
-    <Objective QuestName="The Lost Caravan" QuestId="1421" Type="CollectItem" ItemId="6170" ItemName="Wizards&apos; Reagents" CollectCount="1" />
-    <PickUp QuestName="Galen&apos;s Escape" QuestId="1393" GiverName="Galen Goodward" GiverId="5391" />
-    <Objective QuestName="Draenethyst Crystals" QuestId="1389" Type="CollectItem" ItemId="6071" ItemName="Draenethyst Crystal" CollectCount="6" />
-    <TurnIn QuestName="Galen&apos;s Escape" QuestId="1393" TurnInName="Object_32569" TurnInType="Object" TurnInId="32569" />
+    <Objective QuestName="The Lost Caravan" QuestId="1421" Type="CollectItem" ItemId="6170" CollectCount="1" />
+    <PickUp QuestName="Galen's Escape" QuestId="1393" GiverName="Galen Goodward" GiverId="5391" />
+    <Objective QuestName="Draenethyst Crystals" QuestId="1389" Type="CollectItem" ItemId="6071" CollectCount="6" />
+    <TurnIn QuestName="Galen's Escape" QuestId="1393" TurnInName="Object_32569" TurnInType="Object" TurnInId="32569" />
     <TurnIn QuestName="Draenethyst Crystals" QuestId="1389" TurnInName="Magtoor" TurnInId="1776" />
     <TurnIn QuestName="The Lost Caravan" QuestId="1421" TurnInName="Watcher Biggs" TurnInId="5476" />
     <TurnIn QuestName="Dream Dust in the Swamp" QuestId="1116" TurnInName="Krazek" TurnInId="773" />
     <If Condition="((!HasQuest(1117)) &amp;&amp; (!IsQuestCompleted(1117)))">
       <PickUp QuestName="Rumors for Kravel" QuestId="1117" GiverName="Krazek" GiverId="773" />
     </If>
-    <Objective QuestName="The Karnitol Shipwreck" QuestId="1457" Type="CollectItem" ItemId="6245" ItemName="Karnitol&apos;s Satchel" CollectCount="1" />
-    <Objective QuestName="Magical Analysis" QuestId="602" Type="CollectItem" ItemId="3960" ItemName="Bag of Water Elemental Bracers" CollectCount="1" />
+    <Objective QuestName="The Karnitol Shipwreck" QuestId="1457" Type="CollectItem" ItemId="6245" CollectCount="1" />
+    <Objective QuestName="Magical Analysis" QuestId="602" Type="CollectItem" ItemId="3960" CollectCount="1" />
     <If Condition="!((Me.Class == WoWClass.Druid))">
-      <Objective QuestName="Sunken Treasure" QuestId="668" Type="CollectItem" ItemId="5996" ItemName="Elixir of Water Breathing" CollectCount="2" />
+      <Objective QuestName="Sunken Treasure" QuestId="668" Type="CollectItem" ItemId="5996" CollectCount="2" />
     </If>
     <TurnIn QuestName="In Search of The Temple" QuestId="1448" TurnInName="Brohann Caskbelly" TurnInId="5384" />
     <If Condition="((!HasQuest(1449)) &amp;&amp; (!IsQuestCompleted(1449)))">
@@ -77,23 +143,19 @@
     <If Condition="((!HasQuest(525)) &amp;&amp; (!IsQuestCompleted(525)))">
       <PickUp QuestName="Further Mysteries" QuestId="525" GiverName="Prospector Stormpike" GiverId="1356" />
     </If>
-    <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4480" ItemName="Thundering Charm" CollectCount="8" />
-    <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4479" ItemName="Burning Charm" CollectCount="8" />
-    <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4481" ItemName="Cresting Charm" CollectCount="8" />
-    <Objective QuestName="The Summoning" QuestId="1713" Type="CollectItem" ItemId="6052" ItemName="Nature Protection Potion" CollectCount="2" />
-    <Objective QuestName="Essence of the Exile" QuestId="1714" Type="KillMob" MobId="2761" MobName="Cresting Exile" KillCount="1" />
     <If Condition="(Me.Class == WoWClass.Warrior)">
-      <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4481" ItemName="Cresting Charm" CollectCount="8" />
+      <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4480" CollectCount="8" />
+      <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4479" CollectCount="8" />
+      <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4481" CollectCount="8" />
+      <Objective QuestName="The Summoning" QuestId="1713" Type="CollectItem" ItemId="6052" CollectCount="2" />
+      <Objective QuestName="Essence of the Exile" QuestId="1714" Type="KillMob" MobId="2761" KillCount="1" />
+      <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4481" CollectCount="8" />
+      <Objective QuestName="Essence of the Exile" QuestId="1714" Type="KillMob" MobId="2762" KillCount="1" />
+      <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4480" CollectCount="8" />
+      <Objective QuestName="Essence of the Exile" QuestId="1714" Type="KillMob" MobId="2760" KillCount="1" />
+      <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4479" CollectCount="8" />
     </If>
-    <Objective QuestName="Essence of the Exile" QuestId="1714" Type="KillMob" MobId="2762" MobName="Thundering Exile" KillCount="1" />
-    <If Condition="(Me.Class == WoWClass.Warrior)">
-      <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4480" ItemName="Thundering Charm" CollectCount="8" />
-    </If>
-    <Objective QuestName="Essence of the Exile" QuestId="1714" Type="KillMob" MobId="2760" MobName="Burning Exile" KillCount="1" />
-    <If Condition="(Me.Class == WoWClass.Warrior)">
-      <Objective QuestName="Essence of the Exile" QuestId="1714" Type="CollectItem" ItemId="4479" ItemName="Burning Charm" CollectCount="8" />
-    </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Swamp of Sorrows (38-39) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Swamp of Sorrows (38-39) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Alterac_Mountains_(39-39)" />
   </QuestOrder>
 </HBProfile>

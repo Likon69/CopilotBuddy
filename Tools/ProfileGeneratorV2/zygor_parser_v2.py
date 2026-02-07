@@ -70,6 +70,10 @@ class QuestStep:
     grind_faction_id: Optional[int] = None
     grind_min_level: Optional[int] = None
     grind_max_level: Optional[int] = None
+    # HasAuraId for UseItemOn (from Zygor step hints)
+    has_aura_id: Optional[int] = None
+    # Whether coordinates are world coords (True) or percentage (False)
+    coords_are_world: bool = False
 
 @dataclass
 class QuestInfo:
@@ -161,10 +165,10 @@ PATTERN_DING = re.compile(r'\|ding\s+(\d+)')
 PATTERN_USE_HEARTH = re.compile(r'use\s+(?:the\s+)?Hearthstone##6948', re.IGNORECASE)
 PATTERN_HEARTH_TO = re.compile(r'Hearth\s+to\s+(.+?)(?:\s*\||$)', re.IGNORECASE)
 
-RACE_KEYWORDS = ['Orc', 'Troll', 'Tauren', 'Undead', 'Scourge', 'BloodElf', 'Goblin',
-                 'Human', 'Dwarf', 'NightElf', 'Gnome', 'Draenei', 'Worgen']
+RACE_KEYWORDS = ['Orc', 'Troll', 'Tauren', 'Undead', 'Scourge', 'Blood Elf', 'BloodElf', 'Goblin',
+                 'Human', 'Dwarf', 'Night Elf', 'NightElf', 'Gnome', 'Draenei', 'Worgen']
 CLASS_KEYWORDS = ['Warrior', 'Paladin', 'Hunter', 'Rogue', 'Priest', 
-                  'Shaman', 'Mage', 'Warlock', 'Druid', 'DeathKnight']
+                  'Shaman', 'Mage', 'Warlock', 'Druid', 'Death Knight', 'DeathKnight']
 
 # ============================================================================
 # Parser Class
@@ -183,9 +187,14 @@ class ZygorParser:
         self.gameobject_spawns: Dict[int, List[Dict]] = {}
         self.gameobject_names: Dict[int, str] = {}
         
+        # Creature world coordinates from SPP database
+        self.creature_spawns: Dict[int, List[Dict]] = {}  # npc_id -> [{map, x, y, z}]
+        self.creature_names: Dict[int, str] = {}  # npc_id -> name
+        
         # Innkeeper mapping: inn_name -> {npc_id, zone_id}
         self.innkeeper_mapping: Dict[str, Dict] = {}
         self._load_innkeeper_mapping()
+        self._load_creature_spawns()
         
         if questie_db_path:
             self._load_questie_db(questie_db_path)
@@ -220,6 +229,39 @@ class ZygorParser:
                 print(f"  Loaded {len(self.innkeeper_mapping)} innkeeper mappings")
             except Exception as e:
                 print(f"  Warning: Could not load innkeeper mapping: {e}")
+    
+    def _load_creature_spawns(self):
+        """Load creature world coordinates from creature_spawns.json (exported from SPP database)"""
+        spawns_file = Path(__file__).parent / "creature_spawns.json"
+        if not spawns_file.exists():
+            print("  Warning: creature_spawns.json not found - coordinates will be percentage-based")
+            print("  Run creature_exporter.py to generate it from the SPP database")
+            return
+        
+        try:
+            with open(spawns_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            creatures = data.get('creatures', {})
+            for npc_id_str, info in creatures.items():
+                npc_id = int(npc_id_str)
+                self.creature_names[npc_id] = info.get('name', '')
+                self.creature_spawns[npc_id] = info.get('spawns', [])
+            
+            print(f"  Loaded {len(self.creature_spawns)} creature world coordinates")
+        except Exception as e:
+            print(f"  Warning: Could not load creature_spawns.json: {e}")
+    
+    def get_creature_world_pos(self, npc_id: int) -> Optional[Dict]:
+        """Get world coordinates for an NPC/creature from DB export.
+        Returns first spawn: {map, x, y, z} or None."""
+        if npc_id in self.creature_spawns and self.creature_spawns[npc_id]:
+            return self.creature_spawns[npc_id][0]
+        return None
+    
+    def get_creature_all_spawns(self, npc_id: int) -> List[Dict]:
+        """Get all world coordinate spawns for an NPC/creature."""
+        return self.creature_spawns.get(npc_id, [])
     
     def get_innkeeper_info(self, inn_name: str) -> Optional[Dict]:
         """Get innkeeper NPC ID and zone ID for an inn name"""
@@ -511,8 +553,10 @@ class ZygorParser:
         
         guide_name = name_match.group(1)
         # Clean up name - remove "Leveling Guides\\" prefix to shorten filenames
-        if guide_name.startswith("Leveling Guides\\"):
-            guide_name = guide_name[16:]  # len("Leveling Guides\\") = 16
+        # In the Lua source, "\\" is two literal backslash chars; strip them all
+        guide_name = re.sub(r'^Leveling Guides\\+', '', guide_name)
+        # Normalize double backslashes from Lua escaped source to single backslash
+        guide_name = guide_name.replace('\\\\', '\\')
         guide = Guide(name=guide_name)
         
         if 'Horde' in guide_name:
@@ -530,7 +574,11 @@ class ZygorParser:
         
         next_match = re.search(r'next="([^"]+)"', block)
         if next_match:
-            guide.next_guide = next_match.group(1)
+            next_val = next_match.group(1)
+            # Strip "Leveling Guides\\" prefix from next guide reference too
+            next_val = re.sub(r'^Leveling Guides\\+', '', next_val)
+            next_val = next_val.replace('\\\\', '\\')
+            guide.next_guide = next_val
         
         active_quests: Dict[int, str] = {}
         last_pickup_quest_id: Optional[int] = None  # Track most recent PickUp for fallback inference
@@ -936,14 +984,15 @@ class ZygorParser:
                         quest_id = next(iter(active_quests.keys()))
                     
                     count = 1
-                    if quest_id:
+                    # Priority: Zygor explicit count > Questie DB count > default 1
+                    # Zygor's count comes from the guide author and matches the specific
+                    # quest variant (e.g., quest 792 = 12 kills vs quest 1485 = 8 kills)
+                    if zygor_count:
+                        count = zygor_count
+                    elif quest_id:
                         questie_count = self.get_kill_count_from_questie(quest_id, mob_name)
                         if questie_count:
                             count = questie_count
-                        elif zygor_count:
-                            count = zygor_count
-                    elif zygor_count:
-                        count = zygor_count
                     
                     quest_name = None
                     if quest_id:
@@ -1091,22 +1140,96 @@ class ZygorParser:
         return guide
     
     def enrich_with_questie(self, guide: Guide):
-        """Enrich guide data with Questie database information"""
+        """Enrich guide data with Questie database and creature world coordinates.
+        
+        Priority for coordinates:
+        1. creature_spawns.json (world coords from SPP database) - most accurate
+        2. Questie NPC DB (percentage coords) - fallback only for names
+        """
         for step in guide.steps:
-            if step.npc_id and step.npc_id in self.questie_npcs:
-                npc_data = self.questie_npcs[step.npc_id]
-                if not step.hotspots:
-                    step.hotspots.append(Hotspot(x=npc_data['x'], y=npc_data['y']))
+            # --- Enrich NPC data (PickUp/TurnIn/InteractWith) ---
+            if step.npc_id:
+                # World coordinates from creature_spawns.json
+                world_pos = self.get_creature_world_pos(step.npc_id)
+                if world_pos:
+                    step.hotspots = [Hotspot(x=world_pos['x'], y=world_pos['y'], z=world_pos['z'])]
+                    step.coords_are_world = True
+                elif step.npc_id in self.questie_npcs and not step.hotspots:
+                    npc_data = self.questie_npcs[step.npc_id]
+                    step.hotspots = [Hotspot(x=npc_data['x'], y=npc_data['y'])]
+                
+                # Name from creature_spawns or Questie
                 if not step.npc_name:
-                    step.npc_name = npc_data['name']
+                    if step.npc_id in self.creature_names:
+                        step.npc_name = self.creature_names[step.npc_id]
+                    elif step.npc_id in self.questie_npcs:
+                        step.npc_name = self.questie_npcs[step.npc_id]['name']
             
-            if step.mob_id and step.mob_id in self.questie_npcs:
-                mob_data = self.questie_npcs[step.mob_id]
-                if not step.hotspots:
-                    step.hotspots.append(Hotspot(x=mob_data['x'], y=mob_data['y']))
+            # --- Enrich mob data (Objective KillMob) ---
+            if step.mob_id:
+                world_pos = self.get_creature_world_pos(step.mob_id)
+                if world_pos:
+                    step.hotspots = [Hotspot(x=world_pos['x'], y=world_pos['y'], z=world_pos['z'])]
+                    step.coords_are_world = True
+                    # For mobs, add multiple spawn locations as hotspots
+                    all_spawns = self.get_creature_all_spawns(step.mob_id)
+                    if len(all_spawns) > 1:
+                        step.hotspots = [
+                            Hotspot(x=s['x'], y=s['y'], z=s['z'])
+                            for s in all_spawns[:5]  # Up to 5 spawn points
+                        ]
+                elif step.mob_id in self.questie_npcs and not step.hotspots:
+                    mob_data = self.questie_npcs[step.mob_id]
+                    step.hotspots = [Hotspot(x=mob_data['x'], y=mob_data['y'])]
+                
                 if not step.mob_name:
-                    step.mob_name = mob_data['name']
+                    if step.mob_id in self.creature_names:
+                        step.mob_name = self.creature_names[step.mob_id]
+                    elif step.mob_id in self.questie_npcs:
+                        step.mob_name = self.questie_npcs[step.mob_id]['name']
             
+            # --- Enrich UseItem target mob ---
+            if step.target_mob_id:
+                world_pos = self.get_creature_world_pos(step.target_mob_id)
+                if world_pos:
+                    if not step.hotspots or not step.coords_are_world:
+                        step.hotspots = [Hotspot(x=world_pos['x'], y=world_pos['y'], z=world_pos['z'])]
+                        step.coords_are_world = True
+                    # Get all spawns for the target mob
+                    all_spawns = self.get_creature_all_spawns(step.target_mob_id)
+                    if len(all_spawns) > 1 and not step.coords_are_world:
+                        step.hotspots = [
+                            Hotspot(x=s['x'], y=s['y'], z=s['z'])
+                            for s in all_spawns[:5]
+                        ]
+                        step.coords_are_world = True
+            
+            # --- Infer UseItem target mob from quest objectives ---
+            # When Zygor says "use Item##ID" without "|use Target##ID", look up the
+            # quest's mob objectives from Questie to find the target mob
+            if step.step_type == "UseItem" and not step.target_mob_id and step.quest_id:
+                if step.quest_id in self.questie_quests:
+                    quest_info = self.questie_quests[step.quest_id]
+                    if quest_info.mob_objectives:
+                        step.target_mob_id = quest_info.mob_objectives[0]
+                        if step.target_mob_id in self.creature_names:
+                            step.target_mob_name = self.creature_names[step.target_mob_id]
+                        elif step.target_mob_id in self.questie_npcs:
+                            step.target_mob_name = self.questie_npcs[step.target_mob_id].get('name', '')
+                        # Get world coordinates for the target mob
+                        world_pos = self.get_creature_world_pos(step.target_mob_id)
+                        if world_pos:
+                            step.hotspots = [Hotspot(x=world_pos['x'], y=world_pos['y'], z=world_pos['z'])]
+                            step.coords_are_world = True
+                            # Get multiple spawns for better coverage
+                            all_spawns = self.get_creature_all_spawns(step.target_mob_id)
+                            if len(all_spawns) > 1:
+                                step.hotspots = [
+                                    Hotspot(x=s['x'], y=s['y'], z=s['z'])
+                                    for s in all_spawns[:5]
+                                ]
+            
+            # --- Enrich quest data ---
             if step.quest_id and step.quest_id in self.questie_quests:
                 quest_info = self.questie_quests[step.quest_id]
                 if not step.quest_name:
@@ -1115,33 +1238,59 @@ class ZygorParser:
                 if step.step_type == "PickUp" and not step.npc_id:
                     if quest_info.giver_npc_id:
                         step.npc_id = quest_info.giver_npc_id
-                        if step.npc_id in self.questie_npcs:
+                        # Get world coords for the quest giver
+                        world_pos = self.get_creature_world_pos(step.npc_id)
+                        if world_pos:
+                            step.hotspots = [Hotspot(x=world_pos['x'], y=world_pos['y'], z=world_pos['z'])]
+                            step.coords_are_world = True
+                        if step.npc_id in self.creature_names:
+                            step.npc_name = self.creature_names[step.npc_id]
+                        elif step.npc_id in self.questie_npcs:
                             step.npc_name = self.questie_npcs[step.npc_id]['name']
                 
                 if step.step_type == "TurnIn" and not step.npc_id:
                     if quest_info.turnin_npc_id:
                         step.npc_id = quest_info.turnin_npc_id
-                        if step.npc_id in self.questie_npcs:
+                        world_pos = self.get_creature_world_pos(step.npc_id)
+                        if world_pos:
+                            step.hotspots = [Hotspot(x=world_pos['x'], y=world_pos['y'], z=world_pos['z'])]
+                            step.coords_are_world = True
+                        if step.npc_id in self.creature_names:
+                            step.npc_name = self.creature_names[step.npc_id]
+                        elif step.npc_id in self.questie_npcs:
                             step.npc_name = self.questie_npcs[step.npc_id]['name']
             
             if step.item_id and step.item_id in self.questie_items:
                 if not step.item_name:
                     step.item_name = self.questie_items[step.item_id]
             
-            # Enrich LevelRequirement with grind mob data
+            # --- Enrich SetHearthstone with innkeeper world coords ---
+            if step.step_type == "SetHearthstone" and step.hearthstone_npc_id:
+                world_pos = self.get_creature_world_pos(step.hearthstone_npc_id)
+                if world_pos:
+                    step.hotspots = [Hotspot(x=world_pos['x'], y=world_pos['y'], z=world_pos['z'])]
+                    step.coords_are_world = True
+            
+            # --- Enrich LevelRequirement with grind mob world data ---
             if step.step_type == "LevelRequirement" and step.grind_mob_id:
+                world_pos = self.get_creature_world_pos(step.grind_mob_id)
+                if world_pos:
+                    step.hotspots = [Hotspot(x=world_pos['x'], y=world_pos['y'], z=world_pos['z'])]
+                    step.coords_are_world = True
+                elif step.grind_mob_id in self.questie_npcs and not step.hotspots:
+                    mob_data = self.questie_npcs[step.grind_mob_id]
+                    step.hotspots = [Hotspot(x=mob_data['x'], y=mob_data['y'])]
+                
+                # Get mob metadata from Questie or creature_spawns
+                if not step.grind_mob_name:
+                    if step.grind_mob_id in self.creature_names:
+                        step.grind_mob_name = self.creature_names[step.grind_mob_id]
+                    elif step.grind_mob_id in self.questie_npcs:
+                        step.grind_mob_name = self.questie_npcs[step.grind_mob_id].get('name', '')
                 if step.grind_mob_id in self.questie_npcs:
                     mob_data = self.questie_npcs[step.grind_mob_id]
-                    # Add mob spawn location as hotspot for grinding
-                    if not step.hotspots:
-                        step.hotspots.append(Hotspot(x=mob_data['x'], y=mob_data['y']))
-                    # Get mob name if not set
-                    if not step.grind_mob_name:
-                        step.grind_mob_name = mob_data.get('name', '')
-                    # Get faction ID for HB to know what to attack
                     if not step.grind_faction_id:
                         step.grind_faction_id = mob_data.get('faction_id', 0)
-                    # Get mob level range for targeting
                     if not step.grind_min_level:
                         step.grind_min_level = mob_data.get('min_level', 1)
                     if not step.grind_max_level:
@@ -1193,16 +1342,16 @@ class ZygorParser:
 
 RACE_TO_WOWRACE = {
     'Orc': 'Orc', 'Troll': 'Troll', 'Tauren': 'Tauren', 'Undead': 'Undead',
-    'Scourge': 'Undead', 'BloodElf': 'BloodElf', 'Goblin': 'Goblin',
-    'Human': 'Human', 'Dwarf': 'Dwarf', 'NightElf': 'NightElf', 'Gnome': 'Gnome',
-    'Draenei': 'Draenei', 'Worgen': 'Worgen',
+    'Scourge': 'Undead', 'Blood Elf': 'BloodElf', 'BloodElf': 'BloodElf', 'Goblin': 'Goblin',
+    'Human': 'Human', 'Dwarf': 'Dwarf', 'Night Elf': 'NightElf', 'NightElf': 'NightElf',
+    'Gnome': 'Gnome', 'Draenei': 'Draenei', 'Worgen': 'Worgen',
 }
 
 CLASS_TO_WOWCLASS = {
     'Warrior': 'Warrior', 'Paladin': 'Paladin', 'Hunter': 'Hunter',
     'Rogue': 'Rogue', 'Priest': 'Priest', 'Shaman': 'Shaman',
     'Mage': 'Mage', 'Warlock': 'Warlock', 'Druid': 'Druid',
-    'DeathKnight': 'DeathKnight',
+    'Death Knight': 'DeathKnight', 'DeathKnight': 'DeathKnight',
 }
 
 
@@ -1215,12 +1364,13 @@ class ProfileGeneratorV2:
     def _escape_xml(self, text: str) -> str:
         if not text:
             return ""
+        # Only escape chars that MUST be escaped in XML attribute values
+        # Apostrophes are valid inside double-quoted attributes (all references use raw ')
         return (text
             .replace('&', '&amp;')
             .replace('<', '&lt;')
             .replace('>', '&gt;')
-            .replace('"', '&quot;')
-            .replace("'", '&apos;'))
+            .replace('"', '&quot;'))
     
     def _get_object_name(self, object_id: int) -> Optional[str]:
         """Get GameObject name from gameobject_spawns.json"""
@@ -1266,8 +1416,7 @@ class ProfileGeneratorV2:
         display_name = f"{guide.faction}\\{guide.name}"
         
         xml_lines = [
-            '<?xml version="1.0" encoding="utf-8"?>',
-            '<HBProfile>',
+            '<HBProfile>',  # No XML header — matches all reference profiles
             f'  <Name>{self._escape_xml(display_name)}</Name>',
             '',
             f'  <MinLevel>{guide.min_level}</MinLevel>',
@@ -1275,6 +1424,11 @@ class ProfileGeneratorV2:
             '',
             '  <MinDurability>0.2</MinDurability>',
             '  <MinFreeBagSlots>2</MinFreeBagSlots>',
+            '',
+            # Standard HB profile sections (all references include these, before Quest overrides)
+            '  <AvoidMobs />',
+            '  <Blackspots />',
+            '  <Mailboxes />',
             '',
         ]
         
@@ -1435,10 +1589,8 @@ class ProfileGeneratorV2:
                 attrs.extend([
                     'Type="KillMob"',
                     f'MobId="{step.mob_id}"',
+                    f'KillCount="{step.kill_count}"',
                 ])
-                if step.mob_name:
-                    attrs.append(f'MobName="{self._escape_xml(step.mob_name)}"')
-                attrs.append(f'KillCount="{step.kill_count}"')
                 lines.append(f'{indent}<Objective {" ".join(attrs)} />')
         
         elif step.step_type == "CollectItem":
@@ -1451,10 +1603,8 @@ class ProfileGeneratorV2:
                 attrs.extend([
                     'Type="CollectItem"',
                     f'ItemId="{step.item_id}"',
+                    f'CollectCount="{step.collect_count}"',
                 ])
-                if step.item_name:
-                    attrs.append(f'ItemName="{self._escape_xml(step.item_name)}"')
-                attrs.append(f'CollectCount="{step.collect_count}"')
                 lines.append(f'{indent}<Objective {" ".join(attrs)} />')
         
         # ===== USEITEM - ALWAYS WRAP IN WHILE =====
@@ -1464,32 +1614,44 @@ class ProfileGeneratorV2:
                 
                 lines.append(f'{indent}<While Condition="{condition}">')
                 
-                # Add RunTo if we have coordinates
-                if step.hotspots:
+                # Add RunTo with world coordinates if available
+                if step.hotspots and step.coords_are_world:
                     hs = step.hotspots[0]
-                    lines.append(f'{indent}  <RunTo X="{hs.x}" Y="{hs.y}" Z="0" />')
+                    lines.append(f'{indent}  <RunTo X="{hs.x}" Y="{hs.y}" Z="{hs.z}" />')
                 
-                # UseItemOn behavior
+                # UseItemOn behavior - full HB API parameters
                 attrs = ['File="UseItemOn"']
                 attrs.append(f'QuestId="{step.quest_id}"')
-                attrs.append(f'ItemId="{step.use_item_id}"')
                 mob_id = step.target_mob_id or 0
                 attrs.append(f'MobId="{mob_id}"')
-                attrs.append('NumOfTimes="1"')
-                attrs.append('CollectionDistance="30"')
-                attrs.append('WaitTime="1500"')
+                attrs.append(f'ItemId="{step.use_item_id}"')
+                # NumOfTimes=100 when targeting mobs (repeat until quest done)
+                num_times = 100 if mob_id else step.num_of_times
+                attrs.append(f'NumOfTimes="{num_times}"')
+                # HasAuraId: if known, include it (prevents using item on wrong targets)
+                if step.has_aura_id:
+                    attrs.append(f'HasAuraId="{step.has_aura_id}"')
+                attrs.append('Range="5"')
+                attrs.append('CollectionDistance="1000"')
+                # Add position from first hotspot (world coords)
+                if step.hotspots and step.coords_are_world:
+                    hs = step.hotspots[0]
+                    attrs.append(f'X="{hs.x}"')
+                    attrs.append(f'Y="{hs.y}"')
+                    attrs.append(f'Z="{hs.z}"')
                 
                 lines.append(f'{indent}  <CustomBehavior {" ".join(attrs)} />')
                 lines.append(f'{indent}  <CustomBehavior File="WaitTimer" WaitTime="3000" />')
                 lines.append(f'{indent}</While>')
             
             elif step.use_item_id:
-                # UseItem without quest (rare case) - still wrap but simpler
+                # UseItem without quest (rare case)
                 attrs = ['File="UseItemOn"']
                 attrs.append(f'ItemId="{step.use_item_id}"')
                 mob_id = step.target_mob_id or 0
                 attrs.append(f'MobId="{mob_id}"')
                 attrs.append('NumOfTimes="1"')
+                attrs.append('CollectionDistance="100"')
                 lines.append(f'{indent}<CustomBehavior {" ".join(attrs)} />')
         
         # ===== INTERACTWITH - ALWAYS WRAP IN IF OR WHILE =====
@@ -1504,6 +1666,11 @@ class ProfileGeneratorV2:
                 
                 lines.append(f'{indent}<{wrapper} Condition="{condition}">')
                 
+                # Add RunTo with world coordinates if available
+                if step.hotspots and step.coords_are_world:
+                    hs = step.hotspots[0]
+                    lines.append(f'{indent}  <RunTo X="{hs.x}" Y="{hs.y}" Z="{hs.z}" />')
+                
                 # InteractWith behavior
                 attrs = ['File="InteractWith"']
                 attrs.append(f'QuestId="{step.quest_id}"')
@@ -1517,8 +1684,15 @@ class ProfileGeneratorV2:
                 if step.gossip_options:
                     attrs.append(f'GossipOptions="{step.gossip_options}"')
                 
-                attrs.append('CollectionDistance="100"')
+                attrs.append('CollectionDistance="1000"')
                 attrs.append('WaitTime="3000"')
+                
+                # Add position from first hotspot (world coords)
+                if step.hotspots and step.coords_are_world:
+                    hs = step.hotspots[0]
+                    attrs.append(f'X="{hs.x}"')
+                    attrs.append(f'Y="{hs.y}"')
+                    attrs.append(f'Z="{hs.z}"')
                 
                 lines.append(f'{indent}  <CustomBehavior {" ".join(attrs)} />')
                 lines.append(f'{indent}  <CustomBehavior File="WaitTimer" WaitTime="2000" />')
@@ -1531,6 +1705,12 @@ class ProfileGeneratorV2:
                 attrs.append('NumOfTimes="1"')
                 if step.gossip_options:
                     attrs.append(f'GossipOptions="{step.gossip_options}"')
+                # Add position from hotspot if world coords available
+                if step.hotspots and step.coords_are_world:
+                    hs = step.hotspots[0]
+                    attrs.append(f'X="{hs.x}"')
+                    attrs.append(f'Y="{hs.y}"')
+                    attrs.append(f'Z="{hs.z}"')
                 lines.append(f'{indent}<CustomBehavior {" ".join(attrs)} />')
         
         # ===== SETHEARTHSTONE - Set home inn =====
@@ -1545,9 +1725,10 @@ class ProfileGeneratorV2:
                     attrs.append(f'AreaId="{step.hearthstone_zone_id}"')
                 if step.hotspots:
                     hs = step.hotspots[0]
+                    z = hs.z if hs.z else 0
                     attrs.append(f'X="{hs.x}"')
                     attrs.append(f'Y="{hs.y}"')
-                    attrs.append(f'Z="0"')
+                    attrs.append(f'Z="{z}"')
                 lines.append(f'{indent}<CustomBehavior {" ".join(attrs)} /> <!-- Set hearth: {self._escape_xml(inn_name)} -->')
             else:
                 # Comment only - manual review needed
@@ -1605,10 +1786,50 @@ class ProfileGeneratorV2:
         return lines
     
     def _generate_quest_overrides(self, steps: List[QuestStep]) -> List[str]:
-        """Generate Quest override sections for CollectItem objectives with hotspots"""
+        """Generate Quest override sections for KillMob and CollectItem objectives with hotspots.
+        
+        HB uses <Quest> overrides at the top of the profile to define WHERE to complete objectives.
+        The <Objective> elements inside <QuestOrder> reference these by QuestId.
+        """
         quest_overrides: Dict[int, Dict] = {}
         
         for step in steps:
+            # --- KillMob objectives with world coordinate hotspots ---
+            if step.step_type == "Objective" and step.quest_id and step.mob_id and step.hotspots:
+                if step.quest_id not in quest_overrides:
+                    quest_overrides[step.quest_id] = {
+                        'name': step.quest_name or "Unknown",
+                        'objectives': []
+                    }
+                
+                # Check if this mob is already added for this quest
+                existing = None
+                for obj in quest_overrides[step.quest_id]['objectives']:
+                    if obj.get('mob_id') == step.mob_id:
+                        existing = obj
+                        break
+                
+                if existing:
+                    continue
+                
+                hotspots = []
+                if step.coords_are_world:
+                    for hs in step.hotspots[:5]:  # Max 5 spawn points for mobs (matches references)
+                        hotspots.append({
+                            'x': round(hs.x, 4),
+                            'y': round(hs.y, 4),
+                            'z': round(hs.z, 4)
+                        })
+                
+                if hotspots:
+                    quest_overrides[step.quest_id]['objectives'].append({
+                        'type': 'KillMob',
+                        'mob_id': step.mob_id,
+                        'kill_count': step.kill_count or 1,
+                        'hotspots': hotspots
+                    })
+            
+            # --- CollectItem objectives with game object hotspots ---
             if step.step_type == "CollectItem" and step.quest_id and step.item_id:
                 if step.quest_id not in quest_overrides:
                     quest_overrides[step.quest_id] = {
@@ -1618,7 +1839,7 @@ class ProfileGeneratorV2:
                 
                 existing = None
                 for obj in quest_overrides[step.quest_id]['objectives']:
-                    if obj['item_id'] == step.item_id:
+                    if obj.get('item_id') == step.item_id:
                         existing = obj
                         break
                 
@@ -1639,7 +1860,8 @@ class ProfileGeneratorV2:
                     spawns = self.parser.gameobject_spawns[game_object_id]
                     sorted_spawns = sorted(spawns, key=lambda s: (s['x'], s['y']))
                     
-                    for spawn in sorted_spawns[:25]:
+                    # Limit to 7 hotspots max (reference profiles use 5-13)
+                    for spawn in sorted_spawns[:7]:
                         hotspots.append({
                             'x': round(spawn['x'], 2),
                             'y': round(spawn['y'], 2),
@@ -1650,8 +1872,8 @@ class ProfileGeneratorV2:
                     continue
                 
                 quest_overrides[step.quest_id]['objectives'].append({
+                    'type': 'CollectItem',
                     'item_id': step.item_id,
-                    'item_name': step.item_name,
                     'count': step.collect_count or 1,
                     'game_object_id': game_object_id,
                     'game_object_name': game_object_name or (self.parser.gameobject_names.get(game_object_id, "Unknown") if self.parser else "Unknown"),
@@ -1665,16 +1887,24 @@ class ProfileGeneratorV2:
             
             xml_lines.append(f'  <Quest Id="{quest_id}" Name="{self._escape_xml(quest_data["name"])}">')
             for obj in quest_data['objectives']:
-                xml_lines.append(f'    <Objective Type="CollectItem" ItemId="{obj["item_id"]}" CollectCount="{obj["count"]}">')
-                if obj['game_object_id']:
-                    xml_lines.append(f'      <CollectFrom>')
-                    xml_lines.append(f'        <GameObject Name="{self._escape_xml(obj["game_object_name"])}" Id="{obj["game_object_id"]}" />')
-                    xml_lines.append(f'      </CollectFrom>')
-                xml_lines.append(f'      <Hotspots>')
-                for hs in obj['hotspots']:
-                    xml_lines.append(f'        <Hotspot X="{hs["x"]}" Y="{hs["y"]}" Z="{hs["z"]}" />')
-                xml_lines.append(f'      </Hotspots>')
-                xml_lines.append(f'    </Objective>')
+                if obj['type'] == 'KillMob':
+                    xml_lines.append(f'    <Objective Type="KillMob" MobId="{obj["mob_id"]}" KillCount="{obj["kill_count"]}">')
+                    xml_lines.append(f'      <Hotspots>')
+                    for hs in obj['hotspots']:
+                        xml_lines.append(f'        <Hotspot X="{hs["x"]}" Y="{hs["y"]}" Z="{hs["z"]}" />')
+                    xml_lines.append(f'      </Hotspots>')
+                    xml_lines.append(f'    </Objective>')
+                elif obj['type'] == 'CollectItem':
+                    xml_lines.append(f'    <Objective Type="CollectItem" ItemId="{obj["item_id"]}" CollectCount="{obj["count"]}">')
+                    if obj.get('game_object_id'):
+                        xml_lines.append(f'      <CollectFrom>')
+                        xml_lines.append(f'        <GameObject Name="{self._escape_xml(obj["game_object_name"])}" Id="{obj["game_object_id"]}" />')
+                        xml_lines.append(f'      </CollectFrom>')
+                    xml_lines.append(f'      <Hotspots>')
+                    for hs in obj['hotspots']:
+                        xml_lines.append(f'        <Hotspot X="{hs["x"]}" Y="{hs["y"]}" Z="{hs["z"]}" />')
+                    xml_lines.append(f'      </Hotspots>')
+                    xml_lines.append(f'    </Objective>')
             xml_lines.append(f'  </Quest>')
         
         return xml_lines
@@ -1692,6 +1922,7 @@ def main():
     parser.add_argument('-o', '--output', help='Output directory for XML profiles', default='.')
     parser.add_argument('-q', '--questie', help='Path to Questie-335 addon folder')
     parser.add_argument('-r', '--race', help='Filter by race (e.g., Orc, Troll)')
+    parser.add_argument('-f', '--faction', help='Force faction (Horde or Alliance)', choices=['Horde', 'Alliance'])
     parser.add_argument('--list', action='store_true', help='List guides in file without converting')
     
     args = parser.parse_args()
@@ -1709,6 +1940,11 @@ def main():
     
     # Parse guides
     guides = zygor_parser.parse_guide(content)
+    
+    # Override faction from CLI if provided (Zygor guide names don't include Horde/Alliance)
+    if args.faction:
+        for guide in guides:
+            guide.faction = args.faction
     
     if args.list:
         print(f"Found {len(guides)} guides:")

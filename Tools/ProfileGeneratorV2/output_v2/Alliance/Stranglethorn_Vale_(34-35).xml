@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Stranglethorn Vale (34-35)</Name>
+  <Name>Alliance\Stranglethorn Vale (34-35)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>35</MaxLevel>
@@ -8,7 +7,66 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
+  <Quest Id="191" Name="Panther Mastery">
+    <Objective Type="KillMob" MobId="736" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11747.0" Y="341.463" Z="40.5989" />
+        <Hotspot X="-11692.0" Y="409.343" Z="44.5187" />
+        <Hotspot X="-11554.5" Y="344.974" Z="44.5138" />
+        <Hotspot X="-11622.6" Y="276.726" Z="42.7238" />
+        <Hotspot X="-11789.9" Y="383.486" Z="43.5087" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="186" Name="Tiger Mastery">
+    <Objective Type="KillMob" MobId="682" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11787.1" Y="-680.766" Z="40.5718" />
+        <Hotspot X="-11750.9" Y="-587.018" Z="36.6516" />
+        <Hotspot X="-11817.3" Y="-786.911" Z="35.0214" />
+        <Hotspot X="-11853.2" Y="-750.76" Z="38.195" />
+        <Hotspot X="-11820.5" Y="-719.82" Z="40.0043" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="194" Name="Raptor Mastery">
+    <Objective Type="KillMob" MobId="685" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11777.8" Y="447.701" Z="48.8132" />
+        <Hotspot X="-11920.4" Y="462.843" Z="43.1403" />
+        <Hotspot X="-11826.2" Y="473.326" Z="47.7552" />
+        <Hotspot X="-11850.5" Y="526.607" Z="46.1151" />
+        <Hotspot X="-11841.5" Y="579.888" Z="42.3934" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="605" Name="Singing Blue Shards">
+    <Objective Type="KillMob" MobId="689" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11550.0" Y="-885.743" Z="68.8292" />
+        <Hotspot X="-11938.4" Y="545.611" Z="31.9846" />
+        <Hotspot X="-11955.1" Y="480.523" Z="24.0685" />
+        <Hotspot X="-11921.0" Y="618.742" Z="23.4413" />
+        <Hotspot X="-11951.3" Y="475.156" Z="24.6139" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="575" Name="Supply and Demand">
+    <Objective Type="KillMob" MobId="1150" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11517.5" Y="-57.5501" Z="12.8883" />
+        <Hotspot X="-11752.4" Y="-396.244" Z="16.9198" />
+        <Hotspot X="-11548.3" Y="149.196" Z="13.3478" />
+        <Hotspot X="-11613.7" Y="14.4775" Z="14.6154" />
+        <Hotspot X="-11578.2" Y="48.9084" Z="16.1874" />
+      </Hotspots>
+    </Objective>
+  </Quest>
   <Quest Id="204" Name="Bad Medicine">
     <Objective Type="CollectItem" ItemId="2634" CollectCount="1">
       <CollectFrom>
@@ -18,8 +76,33 @@
         <Hotspot X="-11574.4" Y="-593.41" Z="27.93" />
       </Hotspots>
     </Objective>
+    <Objective Type="KillMob" MobId="940" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11484.9" Y="-786.402" Z="51.3356" />
+        <Hotspot X="-11648.5" Y="-746.885" Z="32.666" />
+        <Hotspot X="-11651.7" Y="-666.166" Z="30.3258" />
+        <Hotspot X="-11636.0" Y="-660.454" Z="30.1503" />
+        <Hotspot X="-11639.1" Y="-661.675" Z="29.9003" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="203" Name="The Second Rebellion">
+    <Objective Type="KillMob" MobId="937" KillCount="15">
+      <Hotspots>
+        <Hotspot X="-11681.4" Y="-712.248" Z="42.4725" />
+        <Hotspot X="-11648.4" Y="-719.028" Z="33.1811" />
+        <Hotspot X="-11613.1" Y="-777.116" Z="41.3618" />
+        <Hotspot X="-11648.1" Y="-669.891" Z="30.3135" />
+        <Hotspot X="-11636.8" Y="-629.572" Z="31.4774" />
+      </Hotspots>
+    </Objective>
   </Quest>
   <Quest Id="1182" Name="Goblin Sponsorship">
+    <Objective Type="KillMob" MobId="4723" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11949.5" Y="-500.392" Z="30.7014" />
+      </Hotspots>
+    </Objective>
     <Objective Type="CollectItem" ItemId="5852" CollectCount="1">
       <CollectFrom>
         <GameObject Name="Cozzle" Id="20691" />
@@ -29,7 +112,18 @@
       </Hotspots>
     </Objective>
   </Quest>
-  <Quest Id="689" Name="A King&apos;s Tribute">
+  <Quest Id="213" Name="Hostile Takeover">
+    <Objective Type="KillMob" MobId="1096" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11863.2" Y="-638.984" Z="14.7718" />
+        <Hotspot X="-11910.8" Y="-584.254" Z="17.0121" />
+        <Hotspot X="-11867.1" Y="-635.283" Z="15.5122" />
+        <Hotspot X="-11916.7" Y="-616.969" Z="16.4366" />
+        <Hotspot X="-12003.1" Y="-707.455" Z="14.4309" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="689" Name="A King's Tribute">
     <Objective Type="CollectItem" ItemId="4521" CollectCount="5">
       <CollectFrom>
         <GameObject Name="Alterac Granite" Id="2714" />
@@ -46,12 +140,12 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (34-35)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Stranglethorn Vale (34-35)" LogColor="Green" />
     <TurnIn QuestName="Goblin Sponsorship" QuestId="1180" TurnInName="Wharfmaster Lozgil" TurnInId="4631" />
     <If Condition="((!HasQuest(1181)) &amp;&amp; (!IsQuestCompleted(1181)))">
       <PickUp QuestName="Goblin Sponsorship" QuestId="1181" GiverName="Wharfmaster Lozgil" GiverId="4631" />
     </If>
-    <CustomBehavior File="SetHearthstone" MobId="7733" AreaId="440" X="27.04" Y="77.31" Z="0" /> <!-- Set hearth: Booty Bay -->
+    <CustomBehavior File="SetHearthstone" MobId="7733" AreaId="440" X="-7158.96" Y="-3841.61" Z="8.8481" /> <!-- Set hearth: Booty Bay -->
     <PickUp QuestName="Singing Blue Shards" QuestId="605" GiverName="Crank Fizzlebub" GiverId="2498" />
     <PickUp QuestName="Investigate the Camp" QuestId="201" GiverName="Krazek" GiverId="773" />
     <PickUp QuestName="Supplies to Private Thorsen" QuestId="198" GiverName="Krazek" GiverId="773" />
@@ -73,7 +167,7 @@
     <If Condition="((!HasQuest(204)) &amp;&amp; (!IsQuestCompleted(204)))">
       <PickUp QuestName="Bad Medicine" QuestId="204" GiverName="Sergeant Yohwa" GiverId="733" />
     </If>
-    <PickUp QuestName="Krazek&apos;s Cookery" QuestId="210" GiverName="Corporal Kaleb" GiverId="770" />
+    <PickUp QuestName="Krazek's Cookery" QuestId="210" GiverName="Corporal Kaleb" GiverId="770" />
     <TurnIn QuestName="Hemet Nesingwary" QuestId="5762" TurnInName="Hemet Nesingwary" TurnInId="715" />
     <If Condition="((!HasQuest(194)) &amp;&amp; (!IsQuestCompleted(194)))">
       <PickUp QuestName="Raptor Mastery" QuestId="194" GiverName="Hemet Nesingwary" GiverId="715" />
@@ -84,11 +178,11 @@
     <If Condition="((!HasQuest(191)) &amp;&amp; (!IsQuestCompleted(191)))">
       <PickUp QuestName="Panther Mastery" QuestId="191" GiverName="Sir S. J. Erlgadin" GiverId="718" />
     </If>
-    <Objective QuestName="Panther Mastery" QuestId="191" Type="KillMob" MobId="736" MobName="Panther" KillCount="10" />
-    <Objective QuestName="Tiger Mastery" QuestId="186" Type="KillMob" MobId="682" MobName="Stranglethorn Tiger" KillCount="10" />
-    <Objective QuestName="Raptor Mastery" QuestId="194" Type="KillMob" MobId="685" MobName="Stranglethorn Raptor" KillCount="10" />
-    <Objective QuestName="Singing Blue Shards" QuestId="605" Type="KillMob" MobId="689" MobName="Crystal Spine Basilisk" KillCount="1" />
-    <Objective QuestName="Singing Blue Shards" QuestId="605" Type="CollectItem" ItemId="3918" ItemName="Singing Crystal Shard" CollectCount="10" />
+    <Objective QuestName="Panther Mastery" QuestId="191" Type="KillMob" MobId="736" KillCount="10" />
+    <Objective QuestName="Tiger Mastery" QuestId="186" Type="KillMob" MobId="682" KillCount="10" />
+    <Objective QuestName="Raptor Mastery" QuestId="194" Type="KillMob" MobId="685" KillCount="10" />
+    <Objective QuestName="Singing Blue Shards" QuestId="605" Type="KillMob" MobId="689" KillCount="1" />
+    <Objective QuestName="Singing Blue Shards" QuestId="605" Type="CollectItem" ItemId="3918" CollectCount="10" />
     <TurnIn QuestName="Raptor Mastery" QuestId="194" TurnInName="Hemet Nesingwary" TurnInId="715" />
     <If Condition="((!HasQuest(195)) &amp;&amp; (!IsQuestCompleted(195)))">
       <PickUp QuestName="Raptor Mastery" QuestId="195" GiverName="Hemet Nesingwary" GiverId="715" />
@@ -101,50 +195,50 @@
     <If Condition="((!HasQuest(192)) &amp;&amp; (!IsQuestCompleted(192)))">
       <PickUp QuestName="Panther Mastery" QuestId="192" GiverName="Sir S. J. Erlgadin" GiverId="718" />
     </If>
-    <Objective QuestName="Supply and Demand" QuestId="575" Type="KillMob" MobId="1150" MobName="River Crocolisk" KillCount="1" />
-    <Objective QuestName="Supply and Demand" QuestId="575" Type="CollectItem" ItemId="4053" ItemName="Large River Crocolisk Skin" CollectCount="2" />
-    <Objective QuestName="Bad Medicine" QuestId="204" Type="CollectItem" ItemId="2634" ItemName="Venom Fern Extract" CollectCount="1" />
-    <Objective QuestName="Bad Medicine" QuestId="204" Type="KillMob" MobId="940" MobName="Kurzen Medicine Man" KillCount="1" />
-    <Objective QuestName="Bad Medicine" QuestId="204" Type="CollectItem" ItemId="2633" ItemName="Jungle Remedy" CollectCount="7" />
-    <Objective QuestName="The Second Rebellion" QuestId="203" Type="KillMob" MobId="937" MobName="Kurzen Jungle Fighter" KillCount="15" />
-    <Objective QuestName="Goblin Sponsorship" QuestId="1182" Type="KillMob" MobId="4723" MobName="Foreman Cozzle" KillCount="1" />
-    <Objective QuestName="Goblin Sponsorship" QuestId="1182" Type="CollectItem" ItemId="5851" ItemName="Cozzle&apos;s Key" CollectCount="1" />
-    <Objective QuestName="Goblin Sponsorship" QuestId="1182" Type="CollectItem" ItemId="5852" ItemName="Fuel Regulator Blueprints" CollectCount="1" />
-    <Objective QuestName="Hostile Takeover" QuestId="213" Type="KillMob" MobId="1096" MobName="Venture Co. Geologist" KillCount="1" />
-    <Objective QuestName="Hostile Takeover" QuestId="213" Type="CollectItem" ItemId="4106" ItemName="Tumbled Crystal" CollectCount="8" />
+    <Objective QuestName="Supply and Demand" QuestId="575" Type="KillMob" MobId="1150" KillCount="1" />
+    <Objective QuestName="Supply and Demand" QuestId="575" Type="CollectItem" ItemId="4053" CollectCount="2" />
+    <Objective QuestName="Bad Medicine" QuestId="204" Type="CollectItem" ItemId="2634" CollectCount="1" />
+    <Objective QuestName="Bad Medicine" QuestId="204" Type="KillMob" MobId="940" KillCount="1" />
+    <Objective QuestName="Bad Medicine" QuestId="204" Type="CollectItem" ItemId="2633" CollectCount="7" />
+    <Objective QuestName="The Second Rebellion" QuestId="203" Type="KillMob" MobId="937" KillCount="15" />
+    <Objective QuestName="Goblin Sponsorship" QuestId="1182" Type="KillMob" MobId="4723" KillCount="1" />
+    <Objective QuestName="Goblin Sponsorship" QuestId="1182" Type="CollectItem" ItemId="5851" CollectCount="1" />
+    <Objective QuestName="Goblin Sponsorship" QuestId="1182" Type="CollectItem" ItemId="5852" CollectCount="1" />
+    <Objective QuestName="Hostile Takeover" QuestId="213" Type="KillMob" MobId="1096" KillCount="1" />
+    <Objective QuestName="Hostile Takeover" QuestId="213" Type="CollectItem" ItemId="4106" CollectCount="8" />
     <TurnIn QuestName="Singing Blue Shards" QuestId="605" TurnInName="Crank Fizzlebub" TurnInId="2498" />
     <TurnIn QuestName="Investigate the Camp" QuestId="201" TurnInName="Krazek" TurnInId="773" />
-    <TurnIn QuestName="Krazek&apos;s Cookery" QuestId="210" TurnInName="Krazek" TurnInId="773" />
+    <TurnIn QuestName="Krazek's Cookery" QuestId="210" TurnInName="Krazek" TurnInId="773" />
     <TurnIn QuestName="Hostile Takeover" QuestId="213" TurnInName="Kebok" TurnInId="737" />
     <TurnIn QuestName="Goblin Sponsorship" QuestId="1182" TurnInName="Baron Revilgaz" TurnInId="2496" />
     <If Condition="((!HasQuest(1183)) &amp;&amp; (!IsQuestCompleted(1183)))">
       <PickUp QuestName="Goblin Sponsorship" QuestId="1183" GiverName="Baron Revilgaz" GiverId="2496" />
     </If>
     <TurnIn QuestName="The Stone of the Tides" QuestId="578" TurnInName="Baron Revilgaz" TurnInId="2496" />
-    <Objective QuestName="A King&apos;s Tribute" QuestId="689" Type="CollectItem" ItemId="4521" ItemName="Alterac Granite" CollectCount="5" />
-    <Objective QuestName="Letter to Stormpike" QuestId="514" Type="CollectItem" ItemId="3521" ItemName="Cleverly Encrypted Letter" CollectCount="1" />
-    <Objective QuestName="Reassignment" QuestId="563" Type="CollectItem" ItemId="3721" ItemName="Farren&apos;s Report" CollectCount="1" />
+    <Objective QuestName="A King's Tribute" QuestId="689" Type="CollectItem" ItemId="4521" CollectCount="5" />
+    <Objective QuestName="Letter to Stormpike" QuestId="514" Type="CollectItem" ItemId="3521" CollectCount="1" />
+    <Objective QuestName="Reassignment" QuestId="563" Type="CollectItem" ItemId="3721" CollectCount="1" />
     <TurnIn QuestName="Supply and Demand" QuestId="575" TurnInName="Drizzlik" TurnInId="2495" />
     <TurnIn QuestName="The Second Rebellion" QuestId="203" TurnInName="Sergeant Yohwa" TurnInId="733" />
     <TurnIn QuestName="Bad Medicine" QuestId="204" TurnInName="Sergeant Yohwa" TurnInId="733" />
     <If Condition="(Me.Class == WoWClass.Warrior)">
-      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="3357" ItemName="Liferoot" CollectCount="8" />
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="3357" CollectCount="8" />
     </If>
     <TurnIn QuestName="Reassignment" QuestId="563" TurnInName="Major Samuelson" TurnInId="2439" />
-    <TurnIn QuestName="A King&apos;s Tribute" QuestId="689" TurnInName="Grand Mason Marblesten" TurnInId="2790" />
+    <TurnIn QuestName="A King's Tribute" QuestId="689" TurnInName="Grand Mason Marblesten" TurnInId="2790" />
     <If Condition="((!HasQuest(700)) &amp;&amp; (!IsQuestCompleted(700)))">
-      <PickUp QuestName="A King&apos;s Tribute" QuestId="700" GiverName="Grand Mason Marblesten" GiverId="2790" />
+      <PickUp QuestName="A King's Tribute" QuestId="700" GiverName="Grand Mason Marblesten" GiverId="2790" />
     </If>
-    <TurnIn QuestName="A King&apos;s Tribute" QuestId="700" TurnInName="King Magni Bronzebeard" TurnInId="2784" />
-    <PickUp QuestName="Reclaimers&apos; Business in Desolace" QuestId="1453" GiverName="Roetten Stonehammer" GiverId="5637" />
+    <TurnIn QuestName="A King's Tribute" QuestId="700" TurnInName="King Magni Bronzebeard" TurnInId="2784" />
+    <PickUp QuestName="Reclaimers' Business in Desolace" QuestId="1453" GiverName="Roetten Stonehammer" GiverId="5637" />
     <TurnIn QuestName="Letter to Stormpike" QuestId="514" TurnInName="Prospector Stormpike" TurnInId="1356" />
-    <TurnIn QuestName="The Windwatcher" QuestId="1791" TurnInName="Bath&apos;rah the Windwatcher" TurnInId="6176" />
     <If Condition="(Me.Class == WoWClass.Warrior)">
+      <TurnIn QuestName="The Windwatcher" QuestId="1791" TurnInName="Bath'rah the Windwatcher" TurnInId="6176" />
       <If Condition="((!HasQuest(1712)) &amp;&amp; (!IsQuestCompleted(1712)))">
-        <PickUp QuestName="Cyclonian" QuestId="1712" GiverName="Bath&apos;rah the Windwatcher" GiverId="6176" />
+        <PickUp QuestName="Cyclonian" QuestId="1712" GiverName="Bath'rah the Windwatcher" GiverId="6176" />
       </If>
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (34-35) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Stranglethorn Vale (34-35) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Desolace_(35-37)" />
   </QuestOrder>
 </HBProfile>

@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Dustwallow Marsh (44-45)</Name>
+  <Name>Alliance\Dustwallow Marsh (44-45)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>45</MaxLevel>
 
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
 
   <!-- Quest Overrides -->
   <Quest Id="11160" Name="Banner of the Stonemaul">
@@ -19,9 +22,16 @@
       </Hotspots>
     </Objective>
   </Quest>
+  <Quest Id="11150" Name="Raze Direhorn Post!">
+    <Objective Type="KillMob" MobId="23881" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3663.91" Y="-3453.97" Z="37.2993" />
+      </Hotspots>
+    </Objective>
+  </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Dustwallow Marsh (44-45)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Dustwallow Marsh (44-45)" LogColor="Green" />
     <If Condition="((!HasQuest(11160)) &amp;&amp; (!IsQuestCompleted(11160)))">
       <PickUp QuestName="Banner of the Stonemaul" QuestId="11160" GiverName="Brogg" GiverId="23579" />
     </If>
@@ -29,46 +39,45 @@
       <PickUp QuestName="The Essence of Enmity" QuestId="11161" GiverName="Brogg" GiverId="23579" />
     </If>
     <PickUp QuestName="Catch a Dragon by the Tail" QuestId="11217" GiverName="Gizzix Grimegurgle" GiverId="23570" />
-    <Objective QuestName="Banner of the Stonemaul" QuestId="11160" Type="CollectItem" ItemId="33086" ItemName="Stonemaul Banner" CollectCount="1" />
+    <Objective QuestName="Banner of the Stonemaul" QuestId="11160" Type="CollectItem" ItemId="33086" CollectCount="1" />
     <While Condition="((HasQuest(11161)) &amp;&amp; (!IsQuestCompleted(11161)))">
-      <RunTo X="38.12" Y="69.43" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="11161" ItemId="33088" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="11161" MobId="0" ItemId="33088" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="The Essence of Enmity" QuestId="11161" Type="CollectItem" ItemId="33087" ItemName="Black Dragonkin Essence" CollectCount="10" />
+    <Objective QuestName="The Essence of Enmity" QuestId="11161" Type="CollectItem" ItemId="33087" CollectCount="10" />
     <TurnIn QuestName="Banner of the Stonemaul" QuestId="11160" TurnInName="Brogg" TurnInId="23579" />
     <TurnIn QuestName="The Essence of Enmity" QuestId="11161" TurnInName="Brogg" TurnInId="23579" />
     <PickUp QuestName="Spirits of Stonemaul Hold" QuestId="11159" GiverName="Brogg" GiverId="23579" />
-    <Objective QuestName="Spirits of Stonemaul Hold" QuestId="11159" Type="KillMob" MobId="23786" MobName="Stonemaul Spirit" KillCount="1" />
+    <Objective QuestName="Spirits of Stonemaul Hold" QuestId="11159" Type="KillMob" MobId="23786" KillCount="1" />
     <PickUp QuestName="Direhorn Raiders" QuestId="11156" GiverName="Apprentice Morlann" GiverId="23600" />
-    <TurnIn QuestName="Tabetha&apos;s Assistance" QuestId="11149" TurnInName="Tabetha" TurnInId="6546" />
+    <TurnIn QuestName="Tabetha's Assistance" QuestId="11149" TurnInName="Tabetha" TurnInId="6546" />
     <If Condition="((!HasQuest(11150)) &amp;&amp; (!IsQuestCompleted(11150)))">
       <PickUp QuestName="Raze Direhorn Post!" QuestId="11150" GiverName="Tabetha" GiverId="6546" />
     </If>
     <While Condition="((HasQuest(11150)) &amp;&amp; (!IsQuestCompleted(11150)))">
-      <RunTo X="46.05" Y="57.09" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="11150" ItemId="33072" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-3640.92" Y="-3421.74" Z="37.4134" />
+      <CustomBehavior File="UseItemOn" QuestId="11150" MobId="23751" ItemId="33072" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-3640.92" Y="-3421.74" Z="37.4134" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="Raze Direhorn Post!" QuestId="11150" Type="KillMob" MobId="23881" MobName="Apothecary Cylla" KillCount="1" />
-    <Objective QuestName="Raze Direhorn Post!" QuestId="11150" Type="CollectItem" ItemId="33114" ItemName="Sealed Letter" CollectCount="1" />
+    <Objective QuestName="Raze Direhorn Post!" QuestId="11150" Type="KillMob" MobId="23881" KillCount="1" />
+    <Objective QuestName="Raze Direhorn Post!" QuestId="11150" Type="CollectItem" ItemId="33114" CollectCount="1" />
     <While Condition="((HasQuest(11150)) &amp;&amp; (!IsQuestCompleted(11150)))">
-      <RunTo X="47.4" Y="47.54" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="11150" ItemId="33114" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-3640.92" Y="-3421.74" Z="37.4134" />
+      <CustomBehavior File="UseItemOn" QuestId="11150" MobId="23751" ItemId="33114" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-3640.92" Y="-3421.74" Z="37.4134" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="The Apothecary&apos;s Letter" QuestId="11185" GiverName="Tabetha" GiverId="6546" />
+    <PickUp QuestName="The Apothecary's Letter" QuestId="11185" GiverName="Tabetha" GiverId="6546" />
     <While Condition="((HasQuest(11150)) &amp;&amp; (!IsQuestCompleted(11150)))">
-      <RunTo X="47.22" Y="46.59" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="11150" ItemId="33072" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-3640.92" Y="-3421.74" Z="37.4134" />
+      <CustomBehavior File="UseItemOn" QuestId="11150" MobId="23751" ItemId="33072" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-3640.92" Y="-3421.74" Z="37.4134" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <While Condition="((HasQuest(11150)) &amp;&amp; (!IsQuestCompleted(11150)))">
-      <RunTo X="47.22" Y="46.59" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="11150" ItemId="33072" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-3640.92" Y="-3421.74" Z="37.4134" />
+      <CustomBehavior File="UseItemOn" QuestId="11150" MobId="23751" ItemId="33072" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-3640.92" Y="-3421.74" Z="37.4134" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <TurnIn QuestName="The Apothecary&apos;s Letter" QuestId="11185" TurnInName="Andello Porter" TurnInId="23942" />
+    <TurnIn QuestName="The Apothecary's Letter" QuestId="11185" TurnInName="Andello Porter" TurnInId="23942" />
     <TurnIn QuestName="Direhorn Raiders" QuestId="11156" TurnInName="Apprentice Morlann" TurnInId="23600" />
     <TurnIn QuestName="Raze Direhorn Post!" QuestId="11150" TurnInName="Tabetha" TurnInId="6546" />
     <If Condition="((!HasQuest(11151)) &amp;&amp; (!IsQuestCompleted(11151)))">
@@ -81,12 +90,11 @@
       <PickUp QuestName="Challenge to the Black Flight" QuestId="11162" GiverName="Brogg" GiverId="23579" />
     </If>
     <While Condition="((HasQuest(11162)) &amp;&amp; (!IsQuestCompleted(11162)))">
-      <RunTo X="42.59" Y="73.44" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="11162" ItemId="33095" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="11162" MobId="23789" ItemId="33095" NumOfTimes="100" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="Challenge to the Black Flight" QuestId="11162" Type="KillMob" MobId="23789" MobName="Smolderwing" KillCount="1" />
-    <Objective QuestName="Catch a Dragon by the Tail" QuestId="11217" Type="CollectItem" ItemId="33175" ItemName="Wyrmtail" CollectCount="8" />
+    <Objective QuestName="Challenge to the Black Flight" QuestId="11162" Type="KillMob" MobId="23789" KillCount="1" />
+    <Objective QuestName="Catch a Dragon by the Tail" QuestId="11217" Type="CollectItem" ItemId="33175" CollectCount="8" />
     <TurnIn QuestName="Challenge to the Black Flight" QuestId="11162" TurnInName="Brogg" TurnInId="23579" />
     <TurnIn QuestName="Catch a Dragon by the Tail" QuestId="11217" TurnInName="Gizzix Grimegurgle" TurnInId="23570" />
     <TurnIn QuestName="Justice for the Hyals" QuestId="11151" TurnInName="Captain Garran Vimes" TurnInId="4944" />
@@ -94,12 +102,11 @@
       <PickUp QuestName="Peace at Last" QuestId="11152" GiverName="Captain Garran Vimes" GiverId="4944" />
     </If>
     <While Condition="((HasQuest(11152)) &amp;&amp; (!IsQuestCompleted(11152)))">
-      <RunTo X="64.66" Y="46.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="11152" ItemId="33082" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="11152" MobId="23768" ItemId="33082" NumOfTimes="100" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <TurnIn QuestName="Peace at Last" QuestId="11152" TurnInName="Captain Garran Vimes" TurnInId="4944" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Dustwallow Marsh (44-45) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Dustwallow Marsh (44-45) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Stranglethorn_Vale_(45-46)" />
   </QuestOrder>
 </HBProfile>

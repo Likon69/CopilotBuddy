@@ -1,0 +1,153 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Hillsbrad Foothills (29-30)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>30</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="509" Name="Elixir of Agony">
+    <Objective Type="CollectItem" ItemId="3502" CollectCount="6">
+      <CollectFrom>
+        <GameObject Name="Mudsnout Blossom" Id="1723" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-933.91" Y="-1017.14" Z="30.35" />
+        <Hotspot X="-925.71" Y="-944.54" Z="31.27" />
+        <Hotspot X="-923.69" Y="-999.01" Z="30.35" />
+        <Hotspot X="-916.1" Y="-974.29" Z="30.35" />
+        <Hotspot X="-904.67" Y="-973.27" Z="30.35" />
+        <Hotspot X="-897.24" Y="-961.19" Z="30.35" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="501" Name="Elixir of Pain">
+    <Objective Type="KillMob" MobId="2385" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1049.88" Y="-968.222" Z="48.8569" />
+        <Hotspot X="-785.94" Y="-806.041" Z="17.2611" />
+        <Hotspot X="-686.351" Y="-884.803" Z="25.968" />
+        <Hotspot X="-1050.34" Y="-1184.69" Z="50.7841" />
+        <Hotspot X="-1026.26" Y="-889.802" Z="36.7849" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="567" Name="Dangerous!">
+    <Objective Type="KillMob" MobId="2451" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-593.469" Y="-81.4747" Z="46.087" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2448" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-504.812" Y="122.342" Z="59.1425" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2449" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-448.933" Y="22.6889" Z="53.7768" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2450" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-850.691" Y="70.7417" Z="3.0855" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="527" Name="Battle of Hillsbrad">
+    <Objective Type="KillMob" MobId="2403" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-441.325" Y="-108.685" Z="55.0466" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="232" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-341.604" Y="3.6031" Z="60.3681" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2266" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-436.847" Y="47.2514" Z="54.2811" />
+        <Hotspot X="-399.687" Y="116.774" Z="54.1285" />
+        <Hotspot X="-431.758" Y="96.8059" Z="54.5566" />
+        <Hotspot X="-423.228" Y="61.7868" Z="54.618" />
+        <Hotspot X="-423.953" Y="51.5544" Z="54.3128" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2360" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-387.818" Y="93.6254" Z="54.7427" />
+        <Hotspot X="-412.399" Y="100.56" Z="54.4173" />
+        <Hotspot X="-443.756" Y="62.1851" Z="54.0847" />
+        <Hotspot X="-403.955" Y="91.7775" Z="54.5954" />
+        <Hotspot X="-396.04" Y="111.247" Z="54.2029" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Hillsbrad Foothills (29-30)" LogColor="Green" />
+    <If Condition="!((Me.Class == WoWClass.Shaman))">
+      <PickUp QuestName="Journey to Hillsbrad Foothills" QuestId="493" GiverName="Apothecary Renferrel" GiverId="1937" />
+      <PickUp QuestName="Time To Strike" QuestId="494" GiverName="Deathstalker Lesh" GiverId="2214" />
+    </If>
+    <TurnIn QuestName="Journey to Hillsbrad Foothills" QuestId="493" TurnInName="Apothecary Lydon" TurnInId="2216" />
+    <PickUp QuestName="Elixir of Pain" QuestId="501" GiverName="Apothecary Lydon" GiverId="2216" />
+    <PickUp QuestName="Elixir of Agony" QuestId="509" GiverName="Apothecary Lydon" GiverId="2216" />
+    <TurnIn QuestName="Time To Strike" QuestId="494" TurnInName="High Executor Darthalia" TurnInId="2215" />
+    <If Condition="((!HasQuest(527)) &amp;&amp; (!IsQuestCompleted(527)))">
+      <PickUp QuestName="Battle of Hillsbrad" QuestId="527" GiverName="High Executor Darthalia" GiverId="2215" />
+    </If>
+    <If Condition="((!HasQuest(567)) &amp;&amp; (!IsQuestCompleted(567)))">
+      <PickUp QuestName="Dangerous!" QuestId="567" GiverName="High Executor Darthalia" GiverId="2215" />
+    </If>
+    <CustomBehavior File="SetHearthstone" MobId="2388" AreaId="267" X="-5.9687" Y="-942.282" Z="57.1621" /> <!-- Set hearth: Tarren Mill -->
+    <PickUp QuestName="Helcular's Revenge" QuestId="552" GiverName="Novice Thaivand" GiverId="2429" />
+    <Objective QuestName="Elixir of Agony" QuestId="509" Type="CollectItem" ItemId="3502" CollectCount="6" />
+    <Objective QuestName="Elixir of Pain" QuestId="501" Type="KillMob" MobId="2385" KillCount="1" />
+    <Objective QuestName="Elixir of Pain" QuestId="501" Type="CollectItem" ItemId="3496" CollectCount="10" />
+    <TurnIn QuestName="Elixir of Pain" QuestId="501" TurnInName="Apothecary Lydon" TurnInId="2216" />
+    <If Condition="((!HasQuest(502)) &amp;&amp; (!IsQuestCompleted(502)))">
+      <PickUp QuestName="Elixir of Pain" QuestId="502" GiverName="Apothecary Lydon" GiverId="2216" />
+    </If>
+    <TurnIn QuestName="Elixir of Agony" QuestId="509" TurnInName="Apothecary Lydon" TurnInId="2216" />
+    <Objective QuestName="Helcular's Revenge" QuestId="552" Type="CollectItem" ItemId="3708" CollectCount="1" />
+    <TurnIn QuestName="Helcular's Revenge" QuestId="552" TurnInName="Novice Thaivand" TurnInId="2429" />
+    <If Condition="((!HasQuest(553)) &amp;&amp; (!IsQuestCompleted(553)))">
+      <PickUp QuestName="Helcular's Revenge" QuestId="553" GiverName="Novice Thaivand" GiverId="2429" />
+    </If>
+    <If Condition="Me.Level &lt; 30">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 30 - Feral Mountain Lion</Name>
+          <TargetMinLevel>27</TargetMinLevel>
+          <TargetMaxLevel>28</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="-1049.88" Y="-968.22" Z="48.86" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="30" /> <!--  (grind Feral Mountain Lion) -->
+    </If>
+    <Objective QuestName="Dangerous!" QuestId="567" Type="KillMob" MobId="2451" KillCount="1" />
+    <Objective QuestName="Battle of Hillsbrad" QuestId="527" Type="KillMob" MobId="2403" KillCount="1" />
+    <TurnIn QuestName="Elixir of Pain" QuestId="502" TurnInName="Stanley" TurnInId="2274" />
+    <Objective QuestName="Battle of Hillsbrad" QuestId="527" Type="KillMob" MobId="232" KillCount="1" />
+    <Objective QuestName="Dangerous!" QuestId="567" Type="KillMob" MobId="2448" KillCount="1" />
+    <Objective QuestName="Dangerous!" QuestId="567" Type="KillMob" MobId="2449" KillCount="1" />
+    <Objective QuestName="Battle of Hillsbrad" QuestId="527" Type="KillMob" MobId="2266" KillCount="6" />
+    <Objective QuestName="Battle of Hillsbrad" QuestId="527" Type="KillMob" MobId="2360" KillCount="6" />
+    <Objective QuestName="Dangerous!" QuestId="567" Type="KillMob" MobId="2450" KillCount="1" />
+    <TurnIn QuestName="Battle of Hillsbrad" QuestId="527" TurnInName="High Executor Darthalia" TurnInId="2215" />
+    <TurnIn QuestName="Dangerous!" QuestId="567" TurnInName="High Executor Darthalia" TurnInId="2215" />
+    <PickUp QuestName="Regthar Deathgate" QuestId="1361" GiverName="Krusk" GiverId="2229" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Hillsbrad Foothills (29-30) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Arathi_Highlands_(30-30)" />
+  </QuestOrder>
+</HBProfile>

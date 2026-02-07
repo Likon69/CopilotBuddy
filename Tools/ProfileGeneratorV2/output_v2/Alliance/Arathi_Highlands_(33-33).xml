@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Arathi Highlands (33-33)</Name>
+  <Name>Alliance\Arathi Highlands (33-33)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -8,18 +7,44 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="681" Name="Northfold Manor">
+    <Objective Type="KillMob" MobId="2589" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-755.565" Y="-2031.31" Z="34.0643" />
+        <Hotspot X="-775.245" Y="-2035.73" Z="34.1738" />
+        <Hotspot X="-854.12" Y="-2002.11" Z="34.7652" />
+        <Hotspot X="-835.366" Y="-2076.21" Z="34.3338" />
+        <Hotspot X="-803.064" Y="-1981.05" Z="34.0347" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2586" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-769.643" Y="-2087.32" Z="34.3055" />
+        <Hotspot X="-781.302" Y="-2116.04" Z="38.1838" />
+        <Hotspot X="-893.874" Y="-2114.54" Z="45.949" />
+        <Hotspot X="-923.797" Y="-2087.77" Z="48.1807" />
+        <Hotspot X="-910.356" Y="-2052.62" Z="49.6462" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Arathi Highlands (33-33)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Arathi Highlands (33-33)" LogColor="Green" />
     <PickUp QuestName="Northfold Manor" QuestId="681" GiverName="Captain Nials" GiverId="2700" />
-    <TurnIn QuestName="Malin&apos;s Request" QuestId="690" TurnInName="Skuerto" TurnInId="2789" />
+    <TurnIn QuestName="Malin's Request" QuestId="690" TurnInName="Skuerto" TurnInId="2789" />
     <TurnIn QuestName="Hints of a New Plague?" QuestId="659" TurnInName="Quae" TurnInId="2712" />
     <If Condition="((!HasQuest(658)) &amp;&amp; (!IsQuestCompleted(658)))">
       <PickUp QuestName="Hints of a New Plague?" QuestId="658" GiverName="Quae" GiverId="2712" />
     </If>
-    <Objective QuestName="Northfold Manor" QuestId="681" Type="KillMob" MobId="2589" MobName="Syndicate Mercenary" KillCount="6" />
-    <Objective QuestName="Northfold Manor" QuestId="681" Type="KillMob" MobId="2586" MobName="Syndicate Highwayman" KillCount="10" />
+    <Objective QuestName="Northfold Manor" QuestId="681" Type="KillMob" MobId="2589" KillCount="6" />
+    <Objective QuestName="Northfold Manor" QuestId="681" Type="KillMob" MobId="2586" KillCount="10" />
     <TurnIn QuestName="Northfold Manor" QuestId="681" TurnInName="Captain Nials" TurnInId="2700" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Arathi Highlands (33-33) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Arathi Highlands (33-33) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Dustwallow_Marsh_(33-33)" />
   </QuestOrder>
 </HBProfile>

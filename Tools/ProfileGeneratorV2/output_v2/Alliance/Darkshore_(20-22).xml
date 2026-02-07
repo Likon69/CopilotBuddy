@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Darkshore (20-22)</Name>
+  <Name>Alliance\Darkshore (20-22)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>22</MaxLevel>
 
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
 
   <!-- Quest Overrides -->
   <Quest Id="29" Name="Trial of the Lake">
@@ -48,6 +51,46 @@
       </Hotspots>
     </Objective>
   </Quest>
+  <Quest Id="1138" Name="Fruit of the Sea">
+    <Objective Type="KillMob" MobId="2235" KillCount="1">
+      <Hotspots>
+        <Hotspot X="5177.08" Y="656.25" Z="-3.081" />
+        <Hotspot X="7458.92" Y="-30.3249" Z="-2.337" />
+        <Hotspot X="7381.41" Y="10.0535" Z="2.2742" />
+        <Hotspot X="7349.97" Y="-377.051" Z="-0.3812" />
+        <Hotspot X="7429.99" Y="-219.886" Z="0.6451" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2098" Name="Gyromast's Retrieval">
+    <Objective Type="KillMob" MobId="2323" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4786.87" Y="444.263" Z="31.5129" />
+        <Hotspot X="4743.63" Y="103.188" Z="55.5208" />
+        <Hotspot X="4335.8" Y="561.656" Z="58.42" />
+        <Hotspot X="4488.64" Y="663.661" Z="27.4444" />
+        <Hotspot X="4333.76" Y="548.018" Z="58.17" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2078" Name="Gyromast's Revenge">
+    <Objective Type="KillMob" MobId="6669" KillCount="1">
+      <Hotspots>
+        <Hotspot X="7534.7" Y="-713.642" Z="3.3629" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="966" Name="The Tower of Althalaxx">
+    <Objective Type="KillMob" MobId="2336" KillCount="1">
+      <Hotspots>
+        <Hotspot X="7190.87" Y="-711.852" Z="58.0363" />
+        <Hotspot X="7208.51" Y="-759.146" Z="58.0945" />
+        <Hotspot X="7201.81" Y="-709.983" Z="57.9314" />
+        <Hotspot X="7141.2" Y="-796.39" Z="66.7608" />
+        <Hotspot X="7223.87" Y="-735.52" Z="54.8445" />
+      </Hotspots>
+    </Objective>
+  </Quest>
   <Quest Id="947" Name="Cave Mushrooms">
     <Objective Type="CollectItem" ItemId="5270" CollectCount="1">
       <CollectFrom>
@@ -74,14 +117,6 @@
         <Hotspot X="6792.66" Y="-694.19" Z="73.22" />
         <Hotspot X="6796.66" Y="-769.3" Z="69.66" />
         <Hotspot X="6818.76" Y="-666.78" Z="86.85" />
-        <Hotspot X="6822.92" Y="-753.83" Z="58.99" />
-        <Hotspot X="6822.92" Y="-669.14" Z="64.35" />
-        <Hotspot X="6826.27" Y="-709.84" Z="80.97" />
-        <Hotspot X="6829.69" Y="-766.54" Z="67.83" />
-        <Hotspot X="6831.38" Y="-695.99" Z="64.19" />
-        <Hotspot X="6848.88" Y="-679.09" Z="83.34" />
-        <Hotspot X="6857.62" Y="-795.15" Z="62.67" />
-        <Hotspot X="6877.56" Y="-663.55" Z="84.19" />
       </Hotspots>
     </Objective>
   </Quest>
@@ -92,6 +127,13 @@
       </CollectFrom>
       <Hotspots>
         <Hotspot X="7838.95" Y="-259.25" Z="-26.48" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2139" Name="Tharnariun's Hope">
+    <Objective Type="KillMob" MobId="6788" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6662.71" Y="-430.466" Z="75.2149" />
       </Hotspots>
     </Objective>
   </Quest>
@@ -108,47 +150,29 @@
         <Hotspot X="6046.65" Y="152.96" Z="21.51" />
         <Hotspot X="6126.37" Y="71.03" Z="25.32" />
         <Hotspot X="6128.16" Y="60.84" Z="27.12" />
-        <Hotspot X="6133.3" Y="88.19" Z="23.85" />
-        <Hotspot X="6136.07" Y="-51.12" Z="36.29" />
-        <Hotspot X="6140.04" Y="72.5" Z="24.79" />
-        <Hotspot X="6142.73" Y="-67.49" Z="36.15" />
-        <Hotspot X="6186.37" Y="106.66" Z="31.1" />
-        <Hotspot X="6189.27" Y="91.93" Z="31.62" />
-        <Hotspot X="6201.33" Y="96.5" Z="31.14" />
-        <Hotspot X="6324.93" Y="100.74" Z="21.87" />
-        <Hotspot X="6328.28" Y="-116.31" Z="26.01" />
-        <Hotspot X="6334.71" Y="111.11" Z="21.76" />
-        <Hotspot X="6335.26" Y="93.94" Z="21.72" />
-        <Hotspot X="6338.85" Y="-94.4" Z="27.05" />
-        <Hotspot X="6339.93" Y="-120.8" Z="25.74" />
       </Hotspots>
     </Objective>
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Darkshore (20-22)" LogColor="Green" />
-    <PickUp QuestName="A Lesson to Learn" QuestId="26" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Darkshore (20-22)" LogColor="Green" />
     <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="A Lesson to Learn" QuestId="26" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
       <PickUp QuestName="Lessons Anew" QuestId="6121" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
-    </If>
-    <TurnIn QuestName="A Lesson to Learn" QuestId="26" TurnInName="Dendrite Starblaze" TurnInId="11802" />
-    <If Condition="((!HasQuest(29)) &amp;&amp; (!IsQuestCompleted(29)))">
-      <PickUp QuestName="Trial of the Lake" QuestId="29" GiverName="Dendrite Starblaze" GiverId="11802" />
-    </If>
-    <TurnIn QuestName="Lessons Anew" QuestId="6121" TurnInName="Dendrite Starblaze" TurnInId="11802" />
-    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="A Lesson to Learn" QuestId="26" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+      <If Condition="((!HasQuest(29)) &amp;&amp; (!IsQuestCompleted(29)))">
+        <PickUp QuestName="Trial of the Lake" QuestId="29" GiverName="Dendrite Starblaze" GiverId="11802" />
+      </If>
+      <TurnIn QuestName="Lessons Anew" QuestId="6121" TurnInName="Dendrite Starblaze" TurnInId="11802" />
       <If Condition="((!HasQuest(6122)) &amp;&amp; (!IsQuestCompleted(6122)))">
         <PickUp QuestName="The Principal Source" QuestId="6122" GiverName="Dendrite Starblaze" GiverId="11802" />
       </If>
-      <Objective QuestName="Trial of the Lake" QuestId="29" Type="CollectItem" ItemId="15877" ItemName="Shrine Bauble" CollectCount="1" />
-    </If>
-    <While Condition="((HasQuest(29)) &amp;&amp; (!IsQuestCompleted(29)))">
-      <RunTo X="54.33" Y="55.65" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="29" ItemId="15877" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
-      <CustomBehavior File="WaitTimer" WaitTime="3000" />
-    </While>
-    <TurnIn QuestName="Trial of the Lake" QuestId="29" TurnInName="Tajarri" TurnInId="11799" />
-    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <Objective QuestName="Trial of the Lake" QuestId="29" Type="CollectItem" ItemId="15877" CollectCount="1" />
+      <While Condition="((HasQuest(29)) &amp;&amp; (!IsQuestCompleted(29)))">
+        <CustomBehavior File="UseItemOn" QuestId="29" MobId="0" ItemId="15877" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Trial of the Lake" QuestId="29" TurnInName="Tajarri" TurnInId="11799" />
       <If Condition="((!HasQuest(272)) &amp;&amp; (!IsQuestCompleted(272)))">
         <PickUp QuestName="Trial of the Sea Lion" QuestId="272" GiverName="Tajarri" GiverId="11799" />
       </If>
@@ -166,78 +190,75 @@
       <PickUp QuestName="Onward to Ashenvale" QuestId="10752" GiverName="Thundris Windweaver" GiverId="3649" />
     </If>
     <While Condition="((HasQuest(4763)) &amp;&amp; (!IsQuestCompleted(4763)))">
-      <RunTo X="37.4" Y="40.13" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="4763" ItemId="12346" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="4763" MobId="0" ItemId="12346" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="The Blackwood Corrupted" QuestId="4763" Type="CollectItem" ItemId="12347" ItemName="Filled Cleansing Bowl" CollectCount="1" />
+    <Objective QuestName="The Blackwood Corrupted" QuestId="4763" Type="CollectItem" ItemId="12347" CollectCount="1" />
     <If Condition="((!HasQuest(2139)) &amp;&amp; (!IsQuestCompleted(2139)))">
-      <PickUp QuestName="Tharnariun&apos;s Hope" QuestId="2139" GiverName="Tharnariun Treetender" GiverId="3701" />
+      <PickUp QuestName="Tharnariun's Hope" QuestId="2139" GiverName="Tharnariun Treetender" GiverId="3701" />
     </If>
     <If Condition="((!HasQuest(986)) &amp;&amp; (!IsQuestCompleted(986)))">
       <PickUp QuestName="A Lost Master" QuestId="986" GiverName="Terenthis" GiverId="3693" />
     </If>
     <PickUp QuestName="The Tower of Althalaxx" QuestId="965" GiverName="Sentinel Elissa Starbreeze" GiverId="3657" />
-    <Objective QuestName="Deep Ocean, Vast Sea" QuestId="982" Type="CollectItem" ItemId="12191" ItemName="Silver Dawning&apos;s Lockbox" CollectCount="1" />
-    <Objective QuestName="Deep Ocean, Vast Sea" QuestId="982" Type="CollectItem" ItemId="12192" ItemName="Mist Veil&apos;s Lockbox" CollectCount="1" />
+    <Objective QuestName="Deep Ocean, Vast Sea" QuestId="982" Type="CollectItem" ItemId="12191" CollectCount="1" />
+    <Objective QuestName="Deep Ocean, Vast Sea" QuestId="982" Type="CollectItem" ItemId="12192" CollectCount="1" />
     <If Condition="((!HasQuest(4725)) &amp;&amp; (!IsQuestCompleted(4725)))">
       <PickUp QuestName="Beached Sea Turtle" QuestId="4725" GiverName="Sentinel Elissa Starbreeze" GiverId="3657" />
     </If>
-    <Objective QuestName="Fruit of the Sea" QuestId="1138" Type="KillMob" MobId="2235" MobName="Reef Crawler" KillCount="1" />
-    <Objective QuestName="Fruit of the Sea" QuestId="1138" Type="CollectItem" ItemId="12237" ItemName="Fine Crab Chunks" CollectCount="6" />
+    <Objective QuestName="Fruit of the Sea" QuestId="1138" Type="KillMob" MobId="2235" KillCount="1" />
+    <Objective QuestName="Fruit of the Sea" QuestId="1138" Type="CollectItem" ItemId="12237" CollectCount="6" />
     <If Condition="((!HasQuest(4727)) &amp;&amp; (!IsQuestCompleted(4727)))">
       <PickUp QuestName="Beached Sea Turtle" QuestId="4727" GiverName="Sentinel Elissa Starbreeze" GiverId="3657" />
     </If>
     <If Condition="((!HasQuest(2098)) &amp;&amp; (!IsQuestCompleted(2098)))">
-      <PickUp QuestName="Gyromast&apos;s Retrieval" QuestId="2098" GiverName="Gelkak Gyromast" GiverId="6667" />
+      <PickUp QuestName="Gyromast's Retrieval" QuestId="2098" GiverName="Gelkak Gyromast" GiverId="6667" />
     </If>
-    <Objective QuestName="Gyromast&apos;s Retrieval" QuestId="2098" Type="CollectItem" ItemId="7500" ItemName="Bottom of Gelkak&apos;s Key" CollectCount="1" />
-    <Objective QuestName="Gyromast&apos;s Retrieval" QuestId="2098" Type="CollectItem" ItemId="7499" ItemName="Middle of Gelkak&apos;s Key" CollectCount="1" />
-    <Objective QuestName="Gyromast&apos;s Retrieval" QuestId="2098" Type="KillMob" MobId="2323" MobName="Giant Foreststrider" KillCount="1" />
-    <Objective QuestName="Gyromast&apos;s Retrieval" QuestId="2098" Type="CollectItem" ItemId="7498" ItemName="Top of Gelkak&apos;s Key" CollectCount="1" />
-    <Objective QuestName="A Lost Master" QuestId="986" Type="CollectItem" ItemId="5386" ItemName="Fine Moonstalker Pelt" CollectCount="5" />
-    <TurnIn QuestName="Gyromast&apos;s Retrieval" QuestId="2098" TurnInName="Gelkak Gyromast" TurnInId="6667" />
+    <Objective QuestName="Gyromast's Retrieval" QuestId="2098" Type="CollectItem" ItemId="7500" CollectCount="1" />
+    <Objective QuestName="Gyromast's Retrieval" QuestId="2098" Type="CollectItem" ItemId="7499" CollectCount="1" />
+    <Objective QuestName="Gyromast's Retrieval" QuestId="2098" Type="KillMob" MobId="2323" KillCount="1" />
+    <Objective QuestName="Gyromast's Retrieval" QuestId="2098" Type="CollectItem" ItemId="7498" CollectCount="1" />
+    <Objective QuestName="A Lost Master" QuestId="986" Type="CollectItem" ItemId="5386" CollectCount="5" />
+    <TurnIn QuestName="Gyromast's Retrieval" QuestId="2098" TurnInName="Gelkak Gyromast" TurnInId="6667" />
     <If Condition="((!HasQuest(2078)) &amp;&amp; (!IsQuestCompleted(2078)))">
-      <PickUp QuestName="Gyromast&apos;s Revenge" QuestId="2078" GiverName="Gelkak Gyromast" GiverId="6667" />
+      <PickUp QuestName="Gyromast's Revenge" QuestId="2078" GiverName="Gelkak Gyromast" GiverId="6667" />
     </If>
-    <Objective QuestName="Gyromast&apos;s Revenge" QuestId="2078" Type="KillMob" MobId="6669" MobName="The Threshwackonator 4100" KillCount="1" />
-    <TurnIn QuestName="Gyromast&apos;s Revenge" QuestId="2078" TurnInName="Gelkak Gyromast" TurnInId="6667" />
+    <Objective QuestName="Gyromast's Revenge" QuestId="2078" Type="KillMob" MobId="6669" KillCount="1" />
+    <TurnIn QuestName="Gyromast's Revenge" QuestId="2078" TurnInName="Gelkak Gyromast" TurnInId="6667" />
     <TurnIn QuestName="The Tower of Althalaxx" QuestId="965" TurnInName="Balthule Shadowstrike" TurnInId="3661" />
     <If Condition="((!HasQuest(966)) &amp;&amp; (!IsQuestCompleted(966)))">
       <PickUp QuestName="The Tower of Althalaxx" QuestId="966" GiverName="Balthule Shadowstrike" GiverId="3661" />
     </If>
-    <Objective QuestName="The Tower of Althalaxx" QuestId="966" Type="KillMob" MobId="2336" MobName="Dark Strand Fanatic" KillCount="1" />
-    <Objective QuestName="The Tower of Althalaxx" QuestId="966" Type="CollectItem" ItemId="5348" ItemName="Worn Parchment" CollectCount="4" />
+    <Objective QuestName="The Tower of Althalaxx" QuestId="966" Type="KillMob" MobId="2336" KillCount="1" />
+    <Objective QuestName="The Tower of Althalaxx" QuestId="966" Type="CollectItem" ItemId="5348" CollectCount="4" />
     <TurnIn QuestName="The Tower of Althalaxx" QuestId="966" TurnInName="Balthule Shadowstrike" TurnInId="3661" />
     <If Condition="((!HasQuest(967)) &amp;&amp; (!IsQuestCompleted(967)))">
       <PickUp QuestName="The Tower of Althalaxx" QuestId="967" GiverName="Balthule Shadowstrike" GiverId="3661" />
     </If>
-    <Objective QuestName="Cave Mushrooms" QuestId="947" Type="CollectItem" ItemId="5270" ItemName="Death Cap" CollectCount="1" />
-    <Objective QuestName="Cave Mushrooms" QuestId="947" Type="CollectItem" ItemId="5271" ItemName="Scaber Stalk" CollectCount="5" />
-    <While Condition="((HasQuest(6122)) &amp;&amp; (!IsQuestCompleted(6122)))">
-      <RunTo X="55.22" Y="33.92" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="6122" ItemId="15844" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
-      <CustomBehavior File="WaitTimer" WaitTime="3000" />
-    </While>
+    <Objective QuestName="Cave Mushrooms" QuestId="947" Type="CollectItem" ItemId="5270" CollectCount="1" />
+    <Objective QuestName="Cave Mushrooms" QuestId="947" Type="CollectItem" ItemId="5271" CollectCount="5" />
     <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
-      <Objective QuestName="The Principal Source" QuestId="6122" Type="CollectItem" ItemId="15845" ItemName="Filled Cliffspring Falls Sampler" CollectCount="1" />
-      <Objective QuestName="Trial of the Sea Lion" QuestId="272" Type="CollectItem" ItemId="15883" ItemName="Half Pendant of Aquatic Agility" CollectCount="1" />
+      <While Condition="((HasQuest(6122)) &amp;&amp; (!IsQuestCompleted(6122)))">
+        <CustomBehavior File="UseItemOn" QuestId="6122" MobId="0" ItemId="15844" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="The Principal Source" QuestId="6122" Type="CollectItem" ItemId="15845" CollectCount="1" />
+      <Objective QuestName="Trial of the Sea Lion" QuestId="272" Type="CollectItem" ItemId="15883" CollectCount="1" />
     </If>
-    <Objective QuestName="The Blackwood Corrupted" QuestId="4763" Type="CollectItem" ItemId="12341" ItemName="Blackwood Fruit Sample" CollectCount="1" />
-    <Objective QuestName="Tharnariun&apos;s Hope" QuestId="2139" Type="KillMob" MobId="6788" MobName="Den Mother" KillCount="1" />
-    <Objective QuestName="The Blackwood Corrupted" QuestId="4763" Type="CollectItem" ItemId="12342" ItemName="Blackwood Grain Sample" CollectCount="1" />
-    <Objective QuestName="The Blackwood Corrupted" QuestId="4763" Type="CollectItem" ItemId="12343" ItemName="Blackwood Nut Sample" CollectCount="1" />
+    <Objective QuestName="The Blackwood Corrupted" QuestId="4763" Type="CollectItem" ItemId="12341" CollectCount="1" />
+    <Objective QuestName="Tharnariun's Hope" QuestId="2139" Type="KillMob" MobId="6788" KillCount="1" />
+    <Objective QuestName="The Blackwood Corrupted" QuestId="4763" Type="CollectItem" ItemId="12342" CollectCount="1" />
+    <Objective QuestName="The Blackwood Corrupted" QuestId="4763" Type="CollectItem" ItemId="12343" CollectCount="1" />
     <While Condition="((HasQuest(4763)) &amp;&amp; (!IsQuestCompleted(4763)))">
-      <RunTo X="51.83" Y="33.56" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="4763" ItemId="12347" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="4763" MobId="0" ItemId="12347" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="The Blackwood Corrupted" QuestId="4763" Type="KillMob" MobId="10373" MobName="Xabraxxis" KillCount="1" />
-    <Objective QuestName="The Blackwood Corrupted" QuestId="4763" Type="CollectItem" ItemId="12355" ItemName="Talisman of Corruption" CollectCount="1" />
+    <Objective QuestName="The Blackwood Corrupted" QuestId="4763" Type="KillMob" MobId="10373" KillCount="1" />
+    <Objective QuestName="The Blackwood Corrupted" QuestId="4763" Type="CollectItem" ItemId="12355" CollectCount="1" />
     <TurnIn QuestName="Deep Ocean, Vast Sea" QuestId="982" TurnInName="Gorbold Steelhand" TurnInId="6301" />
     <TurnIn QuestName="The Blackwood Corrupted" QuestId="4763" TurnInName="Thundris Windweaver" TurnInId="3649" />
-    <TurnIn QuestName="The Principal Source" QuestId="6122" TurnInName="Alanndarian Nightsong" TurnInId="3702" />
     <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="The Principal Source" QuestId="6122" TurnInName="Alanndarian Nightsong" TurnInId="3702" />
       <If Condition="((!HasQuest(6123)) &amp;&amp; (!IsQuestCompleted(6123)))">
         <PickUp QuestName="Gathering the Cure" QuestId="6123" GiverName="Alanndarian Nightsong" GiverId="3702" />
       </If>
@@ -246,28 +267,25 @@
     <If Condition="((!HasQuest(948)) &amp;&amp; (!IsQuestCompleted(948)))">
       <PickUp QuestName="Onu" QuestId="948" GiverName="Barithras Moonshade" GiverId="3583" />
     </If>
-    <TurnIn QuestName="Beached Sea Turtle" QuestId="4727" TurnInName="Gwennyth Bly&apos;Leggonde" TurnInId="10219" />
-    <TurnIn QuestName="Beached Sea Turtle" QuestId="4725" TurnInName="Gwennyth Bly&apos;Leggonde" TurnInId="10219" />
+    <TurnIn QuestName="Beached Sea Turtle" QuestId="4727" TurnInName="Gwennyth Bly'Leggonde" TurnInId="10219" />
+    <TurnIn QuestName="Beached Sea Turtle" QuestId="4725" TurnInName="Gwennyth Bly'Leggonde" TurnInId="10219" />
     <TurnIn QuestName="Fruit of the Sea" QuestId="1138" TurnInName="Gubber Blump" TurnInId="10216" />
-    <TurnIn QuestName="Tharnariun&apos;s Hope" QuestId="2139" TurnInName="Tharnariun Treetender" TurnInId="3701" />
+    <TurnIn QuestName="Tharnariun's Hope" QuestId="2139" TurnInName="Tharnariun Treetender" TurnInId="3701" />
     <TurnIn QuestName="A Lost Master" QuestId="986" TurnInName="Terenthis" TurnInId="3693" />
     <If Condition="((!HasQuest(993)) &amp;&amp; (!IsQuestCompleted(993)))">
       <PickUp QuestName="A Lost Master" QuestId="993" GiverName="Terenthis" GiverId="3693" />
     </If>
-    <Objective QuestName="Gathering the Cure" QuestId="6123" Type="CollectItem" ItemId="15851" ItemName="Lunar Fungus" CollectCount="12" />
-    <TurnIn QuestName="Gathering the Cure" QuestId="6123" TurnInName="Alanndarian Nightsong" TurnInId="3702" />
     <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <Objective QuestName="Gathering the Cure" QuestId="6123" Type="CollectItem" ItemId="15851" CollectCount="12" />
+      <TurnIn QuestName="Gathering the Cure" QuestId="6123" TurnInName="Alanndarian Nightsong" TurnInId="3702" />
       <If Condition="((!HasQuest(6124)) &amp;&amp; (!IsQuestCompleted(6124)))">
         <PickUp QuestName="Curing the Sick" QuestId="6124" GiverName="Alanndarian Nightsong" GiverId="3702" />
       </If>
-    </If>
-    <While Condition="((HasQuest(6124)) &amp;&amp; (!IsQuestCompleted(6124)))">
-      <RunTo X="37.69" Y="40.66" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="6124" ItemId="15826" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
-      <CustomBehavior File="WaitTimer" WaitTime="3000" />
-    </While>
-    <TurnIn QuestName="Curing the Sick" QuestId="6124" TurnInName="Dendrite Starblaze" TurnInId="11802" />
-    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <While Condition="((HasQuest(6124)) &amp;&amp; (!IsQuestCompleted(6124)))">
+        <CustomBehavior File="UseItemOn" QuestId="6124" MobId="12299" ItemId="15826" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Curing the Sick" QuestId="6124" TurnInName="Dendrite Starblaze" TurnInId="11802" />
       <If Condition="((!HasQuest(6125)) &amp;&amp; (!IsQuestCompleted(6125)))">
         <PickUp QuestName="Power over Poison" QuestId="6125" GiverName="Dendrite Starblaze" GiverId="11802" />
       </If>
@@ -275,19 +293,18 @@
     </If>
     <TurnIn QuestName="Onu" QuestId="948" TurnInName="Onu" TurnInId="3616" />
     <If Condition="((!HasQuest(944)) &amp;&amp; (!IsQuestCompleted(944)))">
-      <PickUp QuestName="The Master&apos;s Glaive" QuestId="944" GiverName="Onu" GiverId="3616" />
+      <PickUp QuestName="The Master's Glaive" QuestId="944" GiverName="Onu" GiverId="3616" />
     </If>
-    <Objective QuestName="WANTED: Murkdeep!" QuestId="4740" Type="KillMob" MobId="10323" MobName="Murkdeep" KillCount="1" />
+    <Objective QuestName="WANTED: Murkdeep!" QuestId="4740" Type="KillMob" MobId="10323" KillCount="1" />
     <TurnIn QuestName="The Absent Minded Prospector" QuestId="729" TurnInName="Prospector Remtravel" TurnInId="2917" />
     <If Condition="((!HasQuest(731)) &amp;&amp; (!IsQuestCompleted(731)))">
       <PickUp QuestName="The Absent Minded Prospector" QuestId="731" GiverName="Prospector Remtravel" GiverId="2917" />
     </If>
     <While Condition="((HasQuest(731)) &amp;&amp; (!IsQuestCompleted(731)))">
-      <RunTo X="38.57" Y="86.3" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="731" ItemId="5251" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="731" MobId="0" ItemId="5251" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <TurnIn QuestName="The Master&apos;s Glaive" QuestId="944" TurnInName="Object_10076" TurnInType="Object" TurnInId="10076" />
+    <TurnIn QuestName="The Master's Glaive" QuestId="944" TurnInName="Object_10076" TurnInType="Object" TurnInId="10076" />
     <If Condition="((!HasQuest(949)) &amp;&amp; (!IsQuestCompleted(949)))">
       <PickUp QuestName="The Twilight Camp" QuestId="949" GiverName="Prospector Remtravel" GiverId="2917" />
     </If>
@@ -295,13 +312,13 @@
     <If Condition="((!HasQuest(950)) &amp;&amp; (!IsQuestCompleted(950)))">
       <PickUp QuestName="Return to Onu" QuestId="950" GiverName="Prospector Remtravel" GiverId="2917" />
     </If>
-    <PickUp QuestName="Therylune&apos;s Escape" QuestId="945" GiverName="Therylune" GiverId="3584" />
+    <PickUp QuestName="Therylune's Escape" QuestId="945" GiverName="Therylune" GiverId="3584" />
     <TurnIn QuestName="Return to Onu" QuestId="950" TurnInName="Onu" TurnInId="3616" />
     <TurnIn QuestName="A Lost Master" QuestId="993" TurnInName="Volcor" TurnInId="3692" />
     <If Condition="((!HasQuest(994)) &amp;&amp; (!IsQuestCompleted(994)))">
       <PickUp QuestName="Escape Through Force" QuestId="994" GiverName="Volcor" GiverId="3692" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Darkshore (20-22) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Darkshore (20-22) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Ashenvale_(22-24)" />
   </QuestOrder>
 </HBProfile>

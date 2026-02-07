@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Feralas (46-47)</Name>
+  <Name>Alliance\Feralas (46-47)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>47</MaxLevel>
@@ -8,7 +7,18 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
+  <Quest Id="2870" Name="Against Lord Shalzaru">
+    <Objective Type="KillMob" MobId="8136" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-5631.35" Y="3461.0" Z="2.605" />
+      </Hotspots>
+    </Objective>
+  </Quest>
   <Quest Id="2741" Name="The Super Egg-O-Matic">
     <Objective Type="CollectItem" ItemId="8564" CollectCount="1">
       <CollectFrom>
@@ -22,18 +32,94 @@
         <Hotspot X="-5893.02" Y="1377.45" Z="122.54" />
         <Hotspot X="-5889.6" Y="1556.15" Z="112.75" />
         <Hotspot X="-5882.92" Y="1504.3" Z="120.24" />
-        <Hotspot X="-5866.16" Y="1367.64" Z="109.71" />
-        <Hotspot X="-5812.36" Y="1712.59" Z="102.25" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2982" Name="The High Wilderness">
+    <Objective Type="KillMob" MobId="5236" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-5739.76" Y="1222.35" Z="66.3547" />
+        <Hotspot X="-5543.93" Y="993.696" Z="16.5127" />
+        <Hotspot X="-5754.1" Y="1123.4" Z="68.6717" />
+        <Hotspot X="-5567.08" Y="1098.5" Z="17.7634" />
+        <Hotspot X="-5554.51" Y="1017.75" Z="14.1975" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5240" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-5715.53" Y="1178.7" Z="66.6073" />
+        <Hotspot X="-5596.2" Y="1325.79" Z="29.5073" />
+        <Hotspot X="-5006.37" Y="1309.33" Z="94.4347" />
+        <Hotspot X="-5769.19" Y="1404.14" Z="54.2198" />
+        <Hotspot X="-4922.92" Y="1218.75" Z="62.771" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5232" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-3531.52" Y="224.624" Z="149.388" />
+        <Hotspot X="-3586.61" Y="215.162" Z="140.098" />
+        <Hotspot X="-3586.44" Y="199.911" Z="136.561" />
+        <Hotspot X="-4890.78" Y="1243.28" Z="77.4524" />
+        <Hotspot X="-4913.71" Y="1175.46" Z="58.8896" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1452" Name="Rhapsody's Kalimdor Kocktail">
+    <Objective Type="KillMob" MobId="5268" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-4189.08" Y="-784.331" Z="-40.3838" />
+        <Hotspot X="-4259.31" Y="98.7355" Z="56.2615" />
+        <Hotspot X="-4388.88" Y="-113.938" Z="58.3584" />
+        <Hotspot X="-4082.12" Y="-44.5403" Z="66.6647" />
+        <Hotspot X="-4046.63" Y="553.437" Z="88.2486" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5260" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-5350.38" Y="1151.18" Z="62.1598" />
+        <Hotspot X="-5331.63" Y="1151.2" Z="63.7456" />
+        <Hotspot X="-5151.74" Y="1514.26" Z="47.2643" />
+        <Hotspot X="-4746.96" Y="247.709" Z="35.2989" />
+        <Hotspot X="-5159.92" Y="1427.67" Z="47.2462" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2970" Name="Doling Justice">
+    <Objective Type="KillMob" MobId="7727" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-4579.8" Y="859.037" Z="62.5833" />
+        <Hotspot X="-4559.06" Y="657.949" Z="57.7953" />
+        <Hotspot X="-4503.51" Y="709.421" Z="68.8389" />
+        <Hotspot X="-4492.88" Y="785.292" Z="65.7131" />
+        <Hotspot X="-4515.39" Y="811.049" Z="63.0038" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7725" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-4162.52" Y="778.928" Z="148.408" />
+        <Hotspot X="-4538.72" Y="672.333" Z="60.2229" />
+        <Hotspot X="-4553.5" Y="779.687" Z="47.8547" />
+        <Hotspot X="-4600.34" Y="822.483" Z="47.3132" />
+        <Hotspot X="-4514.15" Y="723.69" Z="62.5522" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7726" KillCount="12">
+      <Hotspots>
+        <Hotspot X="-4227.26" Y="648.075" Z="70.6681" />
+        <Hotspot X="-4562.84" Y="860.832" Z="60.8183" />
+        <Hotspot X="-4545.76" Y="657.794" Z="58.7566" />
+        <Hotspot X="-4581.77" Y="828.687" Z="48.8691" />
+        <Hotspot X="-4529.06" Y="792.544" Z="59.7115" />
       </Hotspots>
     </Objective>
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Feralas (46-47)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Feralas (46-47)" LogColor="Green" />
     <PickUp QuestName="Handle With Care" QuestId="3022" GiverName="Curgle Cranklehop" GiverId="7763" />
-    <Objective QuestName="Screecher Spirits" QuestId="3520" Type="CollectItem" ItemId="10699" ItemName="Yeh&apos;kinya&apos;s Bramble" CollectCount="1" />
+    <Objective QuestName="Screecher Spirits" QuestId="3520" Type="CollectItem" ItemId="10699" CollectCount="1" />
     <PickUp QuestName="The Mark of Quality" QuestId="2821" GiverName="Pratt McGrubben" GiverId="7852" />
-    <CustomBehavior File="SetHearthstone" MobId="7736" AreaId="357" X="30.97" Y="43.49" Z="0" /> <!-- Set hearth: Feathermoon Stronghold -->
+    <CustomBehavior File="SetHearthstone" MobId="7736" AreaId="357" X="-4381.59" Y="3289.45" Z="13.6266" /> <!-- Set hearth: Feathermoon Stronghold -->
     <PickUp QuestName="The Missing Courier" QuestId="4124" GiverName="Latronicus Moonspear" GiverId="7877" />
     <PickUp QuestName="The Ruins of Solarsal" QuestId="2866" GiverName="Shandris Feathermoon" GiverId="3936" />
     <PickUp QuestName="In Search of Knowledge" QuestId="2939" GiverName="Troyas Moonbreeze" GiverId="7764" />
@@ -56,17 +142,16 @@
     <If Condition="((!HasQuest(2869)) &amp;&amp; (!IsQuestCompleted(2869)))">
       <PickUp QuestName="Against the Hatecrest" QuestId="2869" GiverName="Latronicus Moonspear" GiverId="7877" />
     </If>
-    <Objective QuestName="Against the Hatecrest" QuestId="2869" Type="CollectItem" ItemId="9247" ItemName="Hatecrest Naga Scale" CollectCount="10" />
+    <Objective QuestName="Against the Hatecrest" QuestId="2869" Type="CollectItem" ItemId="9247" CollectCount="10" />
     <TurnIn QuestName="Against the Hatecrest" QuestId="2869" TurnInName="Latronicus Moonspear" TurnInId="7877" />
     <If Condition="((!HasQuest(2870)) &amp;&amp; (!IsQuestCompleted(2870)))">
       <PickUp QuestName="Against Lord Shalzaru" QuestId="2870" GiverName="Latronicus Moonspear" GiverId="7877" />
     </If>
-    <Objective QuestName="Against Lord Shalzaru" QuestId="2870" Type="KillMob" MobId="8136" MobName="Lord Shalzaru" KillCount="1" />
-    <Objective QuestName="Against Lord Shalzaru" QuestId="2870" Type="CollectItem" ItemId="9248" ItemName="Mysterious Relic" CollectCount="1" />
-    <Objective QuestName="Against Lord Shalzaru" QuestId="2870" Type="CollectItem" ItemId="8705" ItemName="OOX-22/FE Distress Beacon" CollectCount="1" />
+    <Objective QuestName="Against Lord Shalzaru" QuestId="2870" Type="KillMob" MobId="8136" KillCount="1" />
+    <Objective QuestName="Against Lord Shalzaru" QuestId="2870" Type="CollectItem" ItemId="9248" CollectCount="1" />
+    <Objective QuestName="Against Lord Shalzaru" QuestId="2870" Type="CollectItem" ItemId="8705" CollectCount="1" />
     <While Condition="((HasQuest(2870)) &amp;&amp; (!IsQuestCompleted(2870)))">
-      <RunTo X="28.49" Y="70.45" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="2870" ItemId="8705" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="2870" MobId="0" ItemId="8705" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="Find OOX-22/FE!" QuestId="2766" GiverName="Faralorn" GiverId="7942" />
@@ -92,54 +177,52 @@
       <PickUp QuestName="The Woodpaw Gnolls" QuestId="4131" GiverName="Ginro Hearthkindle" GiverId="7880" />
     </If>
     <While Condition="((HasQuest(3520)) &amp;&amp; (!IsQuestCompleted(3520)))">
-      <RunTo X="31.03" Y="39.92" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="3520" ItemId="10699" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="3520" MobId="8612" ItemId="10699" NumOfTimes="100" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <TurnIn QuestName="Find OOX-22/FE!" QuestId="2766" TurnInName="Homing Robot OOX-22/FE" TurnInId="7807" />
-    <Objective QuestName="The Mark of Quality" QuestId="2821" Type="CollectItem" ItemId="8973" ItemName="Thick Yeti Hide" CollectCount="10" />
-    <Objective QuestName="The Super Egg-O-Matic" QuestId="2741" Type="CollectItem" ItemId="8564" ItemName="Hippogryph Egg" CollectCount="1" />
-    <Objective QuestName="The High Wilderness" QuestId="2982" Type="KillMob" MobId="5236" MobName="Gordunni Shaman" KillCount="8" />
-    <Objective QuestName="The High Wilderness" QuestId="2982" Type="KillMob" MobId="5240" MobName="Gordunni Warlock" KillCount="8" />
-    <Objective QuestName="The High Wilderness" QuestId="2982" Type="KillMob" MobId="5232" MobName="Gordunni Brute" KillCount="8" />
-    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="KillMob" MobId="5268" MobName="Ironfur Bear" KillCount="1" />
-    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6258" ItemName="Ironfur Liver" CollectCount="3" />
-    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="KillMob" MobId="5260" MobName="Groddoc Ape" KillCount="1" />
-    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6259" ItemName="Groddoc Liver" CollectCount="3" />
+    <Objective QuestName="The Mark of Quality" QuestId="2821" Type="CollectItem" ItemId="8973" CollectCount="10" />
+    <Objective QuestName="The Super Egg-O-Matic" QuestId="2741" Type="CollectItem" ItemId="8564" CollectCount="1" />
+    <Objective QuestName="The High Wilderness" QuestId="2982" Type="KillMob" MobId="5236" KillCount="8" />
+    <Objective QuestName="The High Wilderness" QuestId="2982" Type="KillMob" MobId="5240" KillCount="8" />
+    <Objective QuestName="The High Wilderness" QuestId="2982" Type="KillMob" MobId="5232" KillCount="8" />
+    <Objective QuestName="Rhapsody's Kalimdor Kocktail" QuestId="1452" Type="KillMob" MobId="5268" KillCount="1" />
+    <Objective QuestName="Rhapsody's Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6258" CollectCount="3" />
+    <Objective QuestName="Rhapsody's Kalimdor Kocktail" QuestId="1452" Type="KillMob" MobId="5260" KillCount="1" />
+    <Objective QuestName="Rhapsody's Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6259" CollectCount="3" />
     <PickUp QuestName="Freedom for All Creatures" QuestId="2969" GiverName="Kindal Moonweaver" GiverId="7956" />
     <TurnIn QuestName="Freedom for All Creatures" QuestId="2969" TurnInName="Kindal Moonweaver" TurnInId="7956" />
     <If Condition="((!HasQuest(2970)) &amp;&amp; (!IsQuestCompleted(2970)))">
-      <PickUp QuestName="Doling Justice" QuestId="2970" GiverName="Jer&apos;kai Moonweaver" GiverId="7957" />
+      <PickUp QuestName="Doling Justice" QuestId="2970" GiverName="Jer'kai Moonweaver" GiverId="7957" />
     </If>
-    <Objective QuestName="Doling Justice" QuestId="2970" Type="KillMob" MobId="7727" MobName="Grimtotem Shaman" KillCount="6" />
-    <Objective QuestName="Doling Justice" QuestId="2970" Type="KillMob" MobId="7725" MobName="Grimtotem Raider" KillCount="10" />
-    <Objective QuestName="Doling Justice" QuestId="2970" Type="KillMob" MobId="7726" MobName="Grimtotem Naturalist" KillCount="12" />
-    <TurnIn QuestName="Doling Justice" QuestId="2970" TurnInName="Jer&apos;kai Moonweaver" TurnInId="7957" />
+    <Objective QuestName="Doling Justice" QuestId="2970" Type="KillMob" MobId="7727" KillCount="6" />
+    <Objective QuestName="Doling Justice" QuestId="2970" Type="KillMob" MobId="7725" KillCount="10" />
+    <Objective QuestName="Doling Justice" QuestId="2970" Type="KillMob" MobId="7726" KillCount="12" />
+    <TurnIn QuestName="Doling Justice" QuestId="2970" TurnInName="Jer'kai Moonweaver" TurnInId="7957" />
     <If Condition="((!HasQuest(2972)) &amp;&amp; (!IsQuestCompleted(2972)))">
-      <PickUp QuestName="Doling Justice" QuestId="2972" GiverName="Jer&apos;kai Moonweaver" GiverId="7957" />
+      <PickUp QuestName="Doling Justice" QuestId="2972" GiverName="Jer'kai Moonweaver" GiverId="7957" />
     </If>
     <TurnIn QuestName="The Woodpaw Gnolls" QuestId="4131" TurnInName="Object_164953" TurnInType="Object" TurnInId="164953" />
     <If Condition="((!HasQuest(4135)) &amp;&amp; (!IsQuestCompleted(4135)))">
-      <PickUp QuestName="The Writhing Deep" QuestId="4135" GiverName="Jer&apos;kai Moonweaver" GiverId="7957" />
+      <PickUp QuestName="The Writhing Deep" QuestId="4135" GiverName="Jer'kai Moonweaver" GiverId="7957" />
     </If>
     <While Condition="((HasQuest(4135)) &amp;&amp; (!IsQuestCompleted(4135)))">
-      <RunTo X="73.31" Y="56.31" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="4135" ItemId="11463" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="4135" MobId="0" ItemId="11463" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Thalanaar Delivery" QuestId="4281" GiverName="Jer&apos;kai Moonweaver" GiverId="7957" />
+    <PickUp QuestName="Thalanaar Delivery" QuestId="4281" GiverName="Jer'kai Moonweaver" GiverId="7957" />
     <TurnIn QuestName="The Writhing Deep" QuestId="4135" TurnInName="Object_164954" TurnInType="Object" TurnInId="164954" />
     <If Condition="((!HasQuest(4265)) &amp;&amp; (!IsQuestCompleted(4265)))">
-      <PickUp QuestName="Freed from the Hive" QuestId="4265" GiverName="Jer&apos;kai Moonweaver" GiverId="7957" />
+      <PickUp QuestName="Freed from the Hive" QuestId="4265" GiverName="Jer'kai Moonweaver" GiverId="7957" />
     </If>
     <TurnIn QuestName="The Mark of Quality" QuestId="2821" TurnInName="Pratt McGrubben" TurnInId="7852" />
     <TurnIn QuestName="The High Wilderness" QuestId="2982" TurnInName="Angelas Moonbreeze" TurnInId="7900" />
     <PickUp QuestName="The Sunken Temple" QuestId="3445" GiverName="Angelas Moonbreeze" GiverId="7900" />
     <TurnIn QuestName="Freed from the Hive" QuestId="4265" TurnInName="Ginro Hearthkindle" TurnInId="7880" />
     <If Condition="((!HasQuest(4266)) &amp;&amp; (!IsQuestCompleted(4266)))">
-      <PickUp QuestName="A Hero&apos;s Welcome" QuestId="4266" GiverName="Ginro Hearthkindle" GiverId="7880" />
+      <PickUp QuestName="A Hero's Welcome" QuestId="4266" GiverName="Ginro Hearthkindle" GiverId="7880" />
     </If>
-    <TurnIn QuestName="A Hero&apos;s Welcome" QuestId="4266" TurnInName="Shandris Feathermoon" TurnInId="3936" />
+    <TurnIn QuestName="A Hero's Welcome" QuestId="4266" TurnInName="Shandris Feathermoon" TurnInId="3936" />
     <If Condition="((!HasQuest(4267)) &amp;&amp; (!IsQuestCompleted(4267)))">
       <PickUp QuestName="Rise of the Silithid" QuestId="4267" GiverName="Shandris Feathermoon" GiverId="3936" />
     </If>
@@ -156,7 +239,7 @@
     <TurnIn QuestName="Rise of the Silithid" QuestId="4267" TurnInName="Gracina Spiritmight" TurnInId="7740" />
     <TurnIn QuestName="Doling Justice" QuestId="2972" TurnInName="Tyrande Whisperwind" TurnInId="7999" />
     <TurnIn QuestName="Thalanaar Delivery" QuestId="4281" TurnInName="Falfindel Waywarder" TurnInId="4048" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Feralas (46-47) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Feralas (46-47) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Tanaris_(47-49)" />
   </QuestOrder>
 </HBProfile>

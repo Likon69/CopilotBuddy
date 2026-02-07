@@ -1,0 +1,207 @@
+<HBProfile>
+  <Name>Alliance\Class Quests\Warrior Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="1678" Name="Vejrek">
+    <Objective Type="KillMob" MobId="6113" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-5780.0" Y="431.391" Z="426.595" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1683" Name="Vorlus Vilehoof">
+    <Objective Type="KillMob" MobId="6128" KillCount="1">
+      <Hotspots>
+        <Hotspot X="9672.7" Y="1408.81" Z="1402.76" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1712" Name="Cyclonian">
+    <Objective Type="KillMob" MobId="2760" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-865.859" Y="-1744.28" Z="45.5624" />
+        <Hotspot X="-898.133" Y="-1766.28" Z="45.0305" />
+        <Hotspot X="-919.272" Y="-1751.73" Z="47.802" />
+        <Hotspot X="-868.848" Y="-1795.75" Z="41.221" />
+        <Hotspot X="-848.952" Y="-1789.83" Z="40.3907" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2762" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1413.11" Y="-2684.88" Z="51.4271" />
+        <Hotspot X="-1352.93" Y="-2780.61" Z="52.8388" />
+        <Hotspot X="-1278.76" Y="-2744.07" Z="52.9249" />
+        <Hotspot X="-1329.93" Y="-2706.24" Z="60.0018" />
+        <Hotspot X="-1353.3" Y="-2680.84" Z="69.1467" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2761" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-806.399" Y="-3314.1" Z="79.3342" />
+        <Hotspot X="-848.462" Y="-3207.26" Z="82.2388" />
+        <Hotspot X="-850.903" Y="-3262.96" Z="78.2393" />
+        <Hotspot X="-835.016" Y="-3270.11" Z="79.1955" />
+        <Hotspot X="-849.749" Y="-3281.32" Z="77.8205" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8423" Name="Warrior Kinship">
+    <Objective Type="KillMob" MobId="5993" KillCount="7">
+      <Hotspots>
+        <Hotspot X="-11578.6" Y="-3214.74" Z="6.1155" />
+        <Hotspot X="-11585.9" Y="-3284.63" Z="9.7478" />
+        <Hotspot X="-11693.6" Y="-3036.73" Z="18.2434" />
+        <Hotspot X="-11799.3" Y="-2925.06" Z="12.5663" />
+        <Hotspot X="-11755.7" Y="-2983.82" Z="11.8835" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8424" Name="War on the Shadowsworn">
+    <Objective Type="KillMob" MobId="6006" KillCount="20">
+      <Hotspots>
+        <Hotspot X="-11353.8" Y="-3388.22" Z="7.5927" />
+        <Hotspot X="-11277.3" Y="-3375.53" Z="6.0998" />
+        <Hotspot X="-11219.5" Y="-3491.96" Z="8.2947" />
+        <Hotspot X="-11624.2" Y="-3390.11" Z="9.356" />
+        <Hotspot X="-11476.2" Y="-3348.33" Z="7.3894" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="6004" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11507.1" Y="-3312.37" Z="8.4272" />
+        <Hotspot X="-11343.5" Y="-3412.51" Z="7.8553" />
+        <Hotspot X="-11320.9" Y="-3394.71" Z="7.5927" />
+        <Hotspot X="-11337.5" Y="-3454.17" Z="18.2737" />
+        <Hotspot X="-11489.2" Y="-3351.57" Z="7.3894" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="6005" KillCount="20">
+      <Hotspots>
+        <Hotspot X="-11588.4" Y="-3354.33" Z="8.8009" />
+        <Hotspot X="-11239.5" Y="-3377.5" Z="9.3385" />
+        <Hotspot X="-11311.5" Y="-3423.99" Z="8.4677" />
+        <Hotspot X="-11649.1" Y="-3348.88" Z="8.5601" />
+        <Hotspot X="-11243.4" Y="-3449.49" Z="8.281" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Class Quests\Warrior Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <If Condition="((!HasQuest(1638)) &amp;&amp; (!IsQuestCompleted(1638)))">
+        <PickUp QuestName="A Warrior's Training" QuestId="1638" GiverName="Lyria Du Lac" GiverId="913" />
+      </If>
+      <TurnIn QuestName="A Warrior's Training" QuestId="1638" TurnInName="Harry Burlguard" TurnInId="6089" />
+      <If Condition="((!HasQuest(1639)) &amp;&amp; (!IsQuestCompleted(1639)))">
+        <PickUp QuestName="Bartleby the Drunk" QuestId="1639" GiverName="Harry Burlguard" GiverId="6089" />
+      </If>
+      <TurnIn QuestName="Bartleby the Drunk" QuestId="1639" TurnInName="Bartleby" TurnInId="6090" />
+      <If Condition="((!HasQuest(1640)) &amp;&amp; (!IsQuestCompleted(1640)))">
+        <PickUp QuestName="Beat Bartleby" QuestId="1640" GiverName="Bartleby" GiverId="6090" />
+      </If>
+      <TurnIn QuestName="Beat Bartleby" QuestId="1640" TurnInName="Bartleby" TurnInId="6090" />
+      <If Condition="((!HasQuest(1665)) &amp;&amp; (!IsQuestCompleted(1665)))">
+        <PickUp QuestName="Bartleby's Mug" QuestId="1665" GiverName="Bartleby" GiverId="6090" />
+      </If>
+      <TurnIn QuestName="Bartleby's Mug" QuestId="1665" TurnInName="Harry Burlguard" TurnInId="6089" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.Gnome)">
+      <If Condition="((!HasQuest(1679)) &amp;&amp; (!IsQuestCompleted(1679)))">
+        <PickUp QuestName="Muren Stormpike" QuestId="1679" GiverName="Granis Swiftaxe" GiverId="1229" />
+      </If>
+      <TurnIn QuestName="Muren Stormpike" QuestId="1679" TurnInName="Muren Stormpike" TurnInId="6114" />
+      <If Condition="((!HasQuest(1678)) &amp;&amp; (!IsQuestCompleted(1678)))">
+        <PickUp QuestName="Vejrek" QuestId="1678" GiverName="Muren Stormpike" GiverId="6114" />
+      </If>
+      <Objective QuestName="Vejrek" QuestId="1678" Type="KillMob" MobId="6113" KillCount="1" />
+      <Objective QuestName="Vejrek" QuestId="1678" Type="CollectItem" ItemId="6799" CollectCount="1" />
+      <TurnIn QuestName="Vejrek" QuestId="1678" TurnInName="Muren Stormpike" TurnInId="6114" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <If Condition="((!HasQuest(1684)) &amp;&amp; (!IsQuestCompleted(1684)))">
+        <PickUp QuestName="Elanaria" QuestId="1684" GiverName="Kyra Windblade" GiverId="3598" />
+      </If>
+      <TurnIn QuestName="Elanaria" QuestId="1684" TurnInName="Elanaria" TurnInId="4088" />
+      <If Condition="((!HasQuest(1683)) &amp;&amp; (!IsQuestCompleted(1683)))">
+        <PickUp QuestName="Vorlus Vilehoof" QuestId="1683" GiverName="Elanaria" GiverId="4088" />
+      </If>
+      <Objective QuestName="Vorlus Vilehoof" QuestId="1683" Type="KillMob" MobId="6128" KillCount="1" />
+      <Objective QuestName="Vorlus Vilehoof" QuestId="1683" Type="CollectItem" ItemId="6805" CollectCount="1" />
+      <TurnIn QuestName="Vorlus Vilehoof" QuestId="1683" TurnInName="Elanaria" TurnInId="4088" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <PickUp QuestName="The Islander" QuestId="1718" GiverName="Wu Shen" GiverId="5479" />
+      <TurnIn QuestName="The Islander" QuestId="1718" TurnInName="Klannoc Macleod" TurnInId="6236" />
+      <If Condition="((!HasQuest(1719)) &amp;&amp; (!IsQuestCompleted(1719)))">
+        <PickUp QuestName="The Affray" QuestId="1719" GiverName="Klannoc Macleod" GiverId="6236" />
+      </If>
+      <Objective QuestName="The Affray" QuestId="1719" Type="KillMob" MobId="6240" KillCount="1" />
+      <Objective QuestName="The Affray" QuestId="1719" Type="KillMob" MobId="6238" KillCount="1" />
+      <TurnIn QuestName="The Affray" QuestId="1719" TurnInName="Klannoc Macleod" TurnInId="6236" />
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="3357" CollectCount="8" />
+      <If Condition="((!HasQuest(1791)) &amp;&amp; (!IsQuestCompleted(1791)))">
+        <PickUp QuestName="The Windwatcher" QuestId="1791" GiverName="Klannoc Macleod" GiverId="6236" />
+      </If>
+      <TurnIn QuestName="The Windwatcher" QuestId="1791" TurnInName="Bath'rah the Windwatcher" TurnInId="6176" />
+      <If Condition="((!HasQuest(1712)) &amp;&amp; (!IsQuestCompleted(1712)))">
+        <PickUp QuestName="Cyclonian" QuestId="1712" GiverName="Bath'rah the Windwatcher" GiverId="6176" />
+      </If>
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="KillMob" MobId="2760" KillCount="1" />
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="4479" CollectCount="8" />
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="KillMob" MobId="2762" KillCount="1" />
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="4480" CollectCount="8" />
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="KillMob" MobId="2761" KillCount="1" />
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="4481" CollectCount="8" />
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="3901" CollectCount="30" />
+      <If Condition="((!HasQuest(1714)) &amp;&amp; (!IsQuestCompleted(1714)))">
+        <PickUp QuestName="Essence of the Exile" QuestId="1714" GiverName="Bath'rah the Windwatcher" GiverId="6176" />
+      </If>
+      <Objective QuestName="Cyclonian" QuestId="1712" Type="CollectItem" ItemId="6851" CollectCount="1" />
+      <TurnIn QuestName="Cyclonian" QuestId="1712" TurnInName="Bath'rah the Windwatcher" TurnInId="6176" />
+      <If Condition="((!HasQuest(1713)) &amp;&amp; (!IsQuestCompleted(1713)))">
+        <PickUp QuestName="The Summoning" QuestId="1713" GiverName="Bath'rah the Windwatcher" GiverId="6176" />
+      </If>
+      <Objective QuestName="The Summoning" QuestId="1713" Type="KillMob" MobId="6239" KillCount="1" />
+      <Objective QuestName="The Summoning" QuestId="1713" Type="CollectItem" ItemId="6894" CollectCount="1" />
+      <TurnIn QuestName="The Summoning" QuestId="1713" TurnInName="Bath'rah the Windwatcher" TurnInId="6176" />
+      <If Condition="((!HasQuest(1792)) &amp;&amp; (!IsQuestCompleted(1792)))">
+        <PickUp QuestName="Whirlwind Weapon" QuestId="1792" GiverName="Bath'rah the Windwatcher" GiverId="6176" />
+      </If>
+      <PickUp QuestName="A Troubled Spirit" QuestId="8417" GiverName="Wu Shen" GiverId="5479" />
+      <TurnIn QuestName="A Troubled Spirit" QuestId="8417" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
+      <If Condition="((!HasQuest(8423)) &amp;&amp; (!IsQuestCompleted(8423)))">
+        <PickUp QuestName="Warrior Kinship" QuestId="8423" GiverName="Fallen Hero of the Horde" GiverId="7572" />
+      </If>
+    </If>
+    <Objective QuestName="Warrior Kinship" QuestId="8423" Type="KillMob" MobId="5993" KillCount="7" />
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <TurnIn QuestName="Warrior Kinship" QuestId="8423" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
+      <If Condition="((!HasQuest(8424)) &amp;&amp; (!IsQuestCompleted(8424)))">
+        <PickUp QuestName="War on the Shadowsworn" QuestId="8424" GiverName="Fallen Hero of the Horde" GiverId="7572" />
+      </If>
+      <Objective QuestName="War on the Shadowsworn" QuestId="8424" Type="KillMob" MobId="6006" KillCount="20" />
+      <Objective QuestName="War on the Shadowsworn" QuestId="8424" Type="KillMob" MobId="6004" KillCount="10" />
+      <Objective QuestName="War on the Shadowsworn" QuestId="8424" Type="KillMob" MobId="6005" KillCount="20" />
+      <TurnIn QuestName="War on the Shadowsworn" QuestId="8424" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
+      <If Condition="((!HasQuest(8425)) &amp;&amp; (!IsQuestCompleted(8425)))">
+        <PickUp QuestName="Voodoo Feathers" QuestId="8425" GiverName="Fallen Hero of the Horde" GiverId="7572" />
+      </If>
+      <Objective QuestName="Voodoo Feathers" QuestId="8425" Type="CollectItem" ItemId="20606" CollectCount="2" />
+      <Objective QuestName="Voodoo Feathers" QuestId="8425" Type="CollectItem" ItemId="20607" CollectCount="2" />
+      <Objective QuestName="Voodoo Feathers" QuestId="8425" Type="CollectItem" ItemId="20608" CollectCount="2" />
+      <TurnIn QuestName="Voodoo Feathers" QuestId="8425" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Class Quests\Warrior Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

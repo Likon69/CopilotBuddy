@@ -1,0 +1,275 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Western Plaguelands (56-58)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>58</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="5096" Name="Scarlet Diversions">
+    <Objective Type="CollectItem" ItemId="12814" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Box of Incendiaries" Id="176092" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1756.07" Y="-724.74" Z="60.13" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="5059" Name="Locked Away">
+    <Objective Type="KillMob" MobId="10816" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1952.71" Y="-1641.09" Z="62.5544" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4984" Name="The Wildlife Suffers Too">
+    <Objective Type="KillMob" MobId="1817" KillCount="8">
+      <Hotspots>
+        <Hotspot X="1347.15" Y="-1842.09" Z="69.1583" />
+        <Hotspot X="2211.85" Y="-1516.09" Z="73.8812" />
+        <Hotspot X="1845.01" Y="-1782.22" Z="60.6733" />
+        <Hotspot X="1785.49" Y="-1452.08" Z="62.3533" />
+        <Hotspot X="2011.65" Y="-1648.5" Z="61.6532" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4985" Name="The Wildlife Suffers Too">
+    <Objective Type="KillMob" MobId="1816" KillCount="8">
+      <Hotspots>
+        <Hotspot X="2045.22" Y="-2488.06" Z="62.902" />
+        <Hotspot X="1996.97" Y="-2432.29" Z="60.6732" />
+        <Hotspot X="1544.69" Y="-1982.64" Z="62.3916" />
+        <Hotspot X="1829.69" Y="-2409.41" Z="59.2156" />
+        <Hotspot X="1977.3" Y="-2512.08" Z="60.1856" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="6004" Name="Unfinished Business">
+    <Objective Type="KillMob" MobId="10605" KillCount="2">
+      <Hotspots>
+        <Hotspot X="1893.33" Y="-1326.18" Z="59.8258" />
+        <Hotspot X="1871.43" Y="-1314.84" Z="60.0947" />
+        <Hotspot X="1763.01" Y="-1246.06" Z="60.3214" />
+        <Hotspot X="1878.15" Y="-1337.87" Z="60.1733" />
+        <Hotspot X="1896.56" Y="-1616.52" Z="60.5759" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1831" KillCount="2">
+      <Hotspots>
+        <Hotspot X="1863.54" Y="-1346.68" Z="60.5846" />
+        <Hotspot X="1858.34" Y="-1334.8" Z="61.3346" />
+        <Hotspot X="1762.2" Y="-1244.8" Z="60.2191" />
+        <Hotspot X="1893.67" Y="-1618.53" Z="60.6432" />
+        <Hotspot X="1870.9" Y="-1333.11" Z="60.1979" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1826" KillCount="2">
+      <Hotspots>
+        <Hotspot X="2344.72" Y="-2058.66" Z="164.659" />
+        <Hotspot X="2206.17" Y="-1789.29" Z="63.9466" />
+        <Hotspot X="2315.94" Y="-1854.88" Z="92.1702" />
+        <Hotspot X="2213.95" Y="-1777.66" Z="63.3216" />
+        <Hotspot X="2289.82" Y="-1852.5" Z="88.243" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1833" KillCount="2">
+      <Hotspots>
+        <Hotspot X="2189.58" Y="-1751.7" Z="59.5013" />
+        <Hotspot X="2293.58" Y="-1873.52" Z="87.9875" />
+        <Hotspot X="2415.34" Y="-1716.52" Z="108.241" />
+        <Hotspot X="2379.45" Y="-1551.25" Z="108.307" />
+        <Hotspot X="2378.74" Y="-1680.58" Z="105.243" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="6023" Name="Unfinished Business">
+    <Objective Type="KillMob" MobId="11613" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2331.89" Y="-2070.1" Z="168.541" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="11611" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2689.51" Y="-1954.99" Z="107.239" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9443" Name="The So-Called Mark of the Lightbringer">
+    <Objective Type="CollectItem" ItemId="23661" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Holy Coffer" Id="181629" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2692.74" Y="-1956.57" Z="107.24" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Western Plaguelands (56-58)" LogColor="Green" />
+    <CustomBehavior File="SetHearthstone" MobId="6741" AreaId="1497" X="1635.4" Y="223.331" Z="-43.0198" /> <!-- Set hearth: Undercity -->
+    <Objective QuestName="The Everlook Report" QuestId="6029" Type="CollectItem" ItemId="15788" CollectCount="1" />
+    <Objective QuestName="Duke Nicholas Zverenhoff" QuestId="6030" Type="CollectItem" ItemId="15790" CollectCount="1" />
+    <Objective QuestName="A Sample of Slime..." QuestId="4293" Type="CollectItem" ItemId="12230" CollectCount="20" />
+    <Objective QuestName="... and a Batch of Ooze" QuestId="4294" Type="CollectItem" ItemId="12235" CollectCount="20" />
+    <If Condition="((!HasQuest(5094)) &amp;&amp; (!IsQuestCompleted(5094)))">
+      <PickUp QuestName="A Call to Arms: The Plaguelands!" QuestId="5094" GiverName="Harbinger Balthazad" GiverId="10879" />
+    </If>
+    <Objective QuestName="A Sample of Slime..." QuestId="4293" Type="CollectItem" ItemId="15103" CollectCount="1" />
+    <While Condition="((HasQuest(4293)) &amp;&amp; (!IsQuestCompleted(4293)))">
+      <CustomBehavior File="UseItemOn" QuestId="4293" MobId="0" ItemId="15103" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="A Sample of Slime..." QuestId="4293" Type="CollectItem" ItemId="12234" CollectCount="5" />
+    <Objective QuestName="... and a Batch of Ooze" QuestId="4294" Type="CollectItem" ItemId="15102" CollectCount="1" />
+    <While Condition="((HasQuest(4294)) &amp;&amp; (!IsQuestCompleted(4294)))">
+      <CustomBehavior File="UseItemOn" QuestId="4294" MobId="0" ItemId="15102" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="... and a Batch of Ooze" QuestId="4294" Type="CollectItem" ItemId="12236" CollectCount="5" />
+    <TurnIn QuestName="A Sample of Slime..." QuestId="4293" TurnInName="Chemist Fuely" TurnInId="10136" />
+    <TurnIn QuestName="... and a Batch of Ooze" QuestId="4294" TurnInName="Chemist Fuely" TurnInId="10136" />
+    <TurnIn QuestName="A Call to Arms: The Plaguelands!" QuestId="5094" TurnInName="High Executor Derrington" TurnInId="10837" />
+    <If Condition="((!HasQuest(5096)) &amp;&amp; (!IsQuestCompleted(5096)))">
+      <PickUp QuestName="Scarlet Diversions" QuestId="5096" GiverName="High Executor Derrington" GiverId="10837" />
+    </If>
+    <Objective QuestName="Scarlet Diversions" QuestId="5096" Type="CollectItem" ItemId="12814" CollectCount="1" />
+    <TurnIn QuestName="The Everlook Report" QuestId="6029" TurnInName="Argent Officer Garush" TurnInId="10839" />
+    <PickUp QuestName="Argent Dawn Commission" QuestId="5503" GiverName="Argent Officer Garush" GiverId="10839" />
+    <PickUp QuestName="Better Late Than Never" QuestId="5021" GiverName="Janice Felstone" GiverId="10778" />
+    <TurnIn QuestName="Better Late Than Never" QuestId="5021" TurnInName="Object_175894" TurnInType="Object" TurnInId="175894" />
+    <If Condition="((!HasQuest(5023)) &amp;&amp; (!IsQuestCompleted(5023)))">
+      <PickUp QuestName="Better Late Than Never" QuestId="5023" GiverName="Janice Felstone" GiverId="10778" />
+    </If>
+    <While Condition="((HasQuest(5096)) &amp;&amp; (!IsQuestCompleted(5096)))">
+      <CustomBehavior File="UseItemOn" QuestId="5096" MobId="0" ItemId="12807" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Scarlet Diversions" QuestId="5096" TurnInName="High Executor Derrington" TurnInId="10837" />
+    <If Condition="((!HasQuest(5228)) &amp;&amp; (!IsQuestCompleted(5228)))">
+      <PickUp QuestName="The Scourge Cauldrons" QuestId="5228" GiverName="High Executor Derrington" GiverId="10837" />
+    </If>
+    <If Condition="((!HasQuest(5098)) &amp;&amp; (!IsQuestCompleted(5098)))">
+      <PickUp QuestName="All Along the Watchtowers" QuestId="5098" GiverName="High Executor Derrington" GiverId="10837" />
+    </If>
+    <TurnIn QuestName="The Scourge Cauldrons" QuestId="5228" TurnInName="Shadow Priestess Vandis" TurnInId="11055" />
+    <If Condition="((!HasQuest(5229)) &amp;&amp; (!IsQuestCompleted(5229)))">
+      <PickUp QuestName="Target: Felstone Field" QuestId="5229" GiverName="Shadow Priestess Vandis" GiverId="11055" />
+    </If>
+    <Objective QuestName="Target: Felstone Field" QuestId="5229" Type="KillMob" MobId="11075" KillCount="1" />
+    <Objective QuestName="Target: Felstone Field" QuestId="5229" Type="CollectItem" ItemId="13194" CollectCount="1" />
+    <TurnIn QuestName="Target: Felstone Field" QuestId="5229" TurnInName="Object_176361" TurnInType="Object" TurnInId="176361" />
+    <If Condition="((!HasQuest(5230)) &amp;&amp; (!IsQuestCompleted(5230)))">
+      <PickUp QuestName="Return to the Bulwark" QuestId="5230" GiverName="Shadow Priestess Vandis" GiverId="11055" />
+    </If>
+    <TurnIn QuestName="Return to the Bulwark" QuestId="5230" TurnInName="Shadow Priestess Vandis" TurnInId="11055" />
+    <If Condition="((!HasQuest(5231)) &amp;&amp; (!IsQuestCompleted(5231)))">
+      <PickUp QuestName="Target: Dalson's Tears" QuestId="5231" GiverName="Shadow Priestess Vandis" GiverId="11055" />
+    </If>
+    <While Condition="((HasQuest(5098)) &amp;&amp; (!IsQuestCompleted(5098)))">
+      <RunTo X="1314.08" Y="-1305.33" Z="63.7871" />
+      <CustomBehavior File="UseItemOn" QuestId="5098" MobId="10902" ItemId="12815" NumOfTimes="100" Range="5" CollectionDistance="1000" X="1314.08" Y="-1305.33" Z="63.7871" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(5098)) &amp;&amp; (!IsQuestCompleted(5098)))">
+      <RunTo X="1314.08" Y="-1305.33" Z="63.7871" />
+      <CustomBehavior File="UseItemOn" QuestId="5098" MobId="10902" ItemId="12815" NumOfTimes="100" Range="5" CollectionDistance="1000" X="1314.08" Y="-1305.33" Z="63.7871" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(5098)) &amp;&amp; (!IsQuestCompleted(5098)))">
+      <RunTo X="1314.08" Y="-1305.33" Z="63.7871" />
+      <CustomBehavior File="UseItemOn" QuestId="5098" MobId="10902" ItemId="12815" NumOfTimes="100" Range="5" CollectionDistance="1000" X="1314.08" Y="-1305.33" Z="63.7871" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(5098)) &amp;&amp; (!IsQuestCompleted(5098)))">
+      <RunTo X="1314.08" Y="-1305.33" Z="63.7871" />
+      <CustomBehavior File="UseItemOn" QuestId="5098" MobId="10902" ItemId="12815" NumOfTimes="100" Range="5" CollectionDistance="1000" X="1314.08" Y="-1305.33" Z="63.7871" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Target: Dalson's Tears" QuestId="5231" Type="KillMob" MobId="11077" KillCount="1" />
+    <Objective QuestName="Target: Dalson's Tears" QuestId="5231" Type="CollectItem" ItemId="13195" CollectCount="1" />
+    <TurnIn QuestName="Target: Dalson's Tears" QuestId="5231" TurnInName="Object_177289" TurnInType="Object" TurnInId="177289" />
+    <If Condition="((!HasQuest(5232)) &amp;&amp; (!IsQuestCompleted(5232)))">
+      <PickUp QuestName="Return to the Bulwark" QuestId="5232" GiverName="Shadow Priestess Vandis" GiverId="11055" />
+    </If>
+    <PickUp QuestName="Mrs. Dalson's Diary" QuestId="5058" GiverName="Shadow Priestess Vandis" GiverId="11055" />
+    <Objective QuestName="Locked Away" QuestId="5059" Type="KillMob" MobId="10816" KillCount="1" />
+    <While Condition="((HasQuest(5059)) &amp;&amp; (!IsQuestCompleted(5059)))">
+      <CustomBehavior File="UseItemOn" QuestId="5059" MobId="0" ItemId="12738" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Locked Away" QuestId="5059" Type="CollectItem" ItemId="12738" CollectCount="1" />
+    <PickUp QuestName="Locked Away" QuestId="5059" GiverName="Shadow Priestess Vandis" GiverId="11055" />
+    <Objective QuestName="Locked Away" QuestId="5059" Type="KillMob" MobId="10836" KillCount="1" />
+    <Objective QuestName="Locked Away" QuestId="5059" Type="CollectItem" ItemId="12739" CollectCount="1" />
+    <PickUp QuestName="Locked Away" QuestId="5060" GiverName="Shadow Priestess Vandis" GiverId="11055" />
+    <TurnIn QuestName="Return to the Bulwark" QuestId="5232" TurnInName="Shadow Priestess Vandis" TurnInId="11055" />
+    <If Condition="((!HasQuest(5233)) &amp;&amp; (!IsQuestCompleted(5233)))">
+      <PickUp QuestName="Target: Writhing Haunt" QuestId="5233" GiverName="Shadow Priestess Vandis" GiverId="11055" />
+    </If>
+    <TurnIn QuestName="All Along the Watchtowers" QuestId="5098" TurnInName="High Executor Derrington" TurnInId="10837" />
+    <PickUp QuestName="The Wildlife Suffers Too" QuestId="4984" GiverName="Mulgris Deepriver" GiverId="10739" />
+    <Objective QuestName="Target: Writhing Haunt" QuestId="5233" Type="KillMob" MobId="11076" KillCount="1" />
+    <Objective QuestName="Target: Writhing Haunt" QuestId="5233" Type="CollectItem" ItemId="13197" CollectCount="1" />
+    <TurnIn QuestName="Target: Writhing Haunt" QuestId="5233" TurnInName="Object_176393" TurnInType="Object" TurnInId="176393" />
+    <If Condition="((!HasQuest(5234)) &amp;&amp; (!IsQuestCompleted(5234)))">
+      <PickUp QuestName="Return to the Bulwark" QuestId="5234" GiverName="Mulgris Deepriver" GiverId="10739" />
+    </If>
+    <Objective QuestName="The Wildlife Suffers Too" QuestId="4984" Type="KillMob" MobId="1817" KillCount="8" />
+    <TurnIn QuestName="Return to the Bulwark" QuestId="5234" TurnInName="Shadow Priestess Vandis" TurnInId="11055" />
+    <If Condition="((!HasQuest(5235)) &amp;&amp; (!IsQuestCompleted(5235)))">
+      <PickUp QuestName="Target: Gahrron's Withering" QuestId="5235" GiverName="Shadow Priestess Vandis" GiverId="11055" />
+    </If>
+    <TurnIn QuestName="The Wildlife Suffers Too" QuestId="4984" TurnInName="Mulgris Deepriver" TurnInId="10739" />
+    <If Condition="((!HasQuest(4985)) &amp;&amp; (!IsQuestCompleted(4985)))">
+      <PickUp QuestName="The Wildlife Suffers Too" QuestId="4985" GiverName="Mulgris Deepriver" GiverId="10739" />
+    </If>
+    <Objective QuestName="The Wildlife Suffers Too" QuestId="4985" Type="KillMob" MobId="1816" KillCount="8" />
+    <TurnIn QuestName="The Wildlife Suffers Too" QuestId="4985" TurnInName="Mulgris Deepriver" TurnInId="10739" />
+    <Objective QuestName="Target: Gahrron's Withering" QuestId="5235" Type="KillMob" MobId="11078" KillCount="1" />
+    <Objective QuestName="Target: Gahrron's Withering" QuestId="5235" Type="CollectItem" ItemId="13196" CollectCount="1" />
+    <TurnIn QuestName="Target: Gahrron's Withering" QuestId="5235" TurnInName="Object_176392" TurnInType="Object" TurnInId="176392" />
+    <If Condition="((!HasQuest(5236)) &amp;&amp; (!IsQuestCompleted(5236)))">
+      <PickUp QuestName="Return to the Bulwark" QuestId="5236" GiverName="Mulgris Deepriver" GiverId="10739" />
+    </If>
+    <TurnIn QuestName="Return to the Bulwark" QuestId="5236" TurnInName="Shadow Priestess Vandis" TurnInId="11055" />
+    <If Condition="((!HasQuest(5238)) &amp;&amp; (!IsQuestCompleted(5238)))">
+      <PickUp QuestName="Mission Accomplished!" QuestId="5238" GiverName="High Executor Derrington" GiverId="10837" />
+    </If>
+    <PickUp QuestName="The So-Called Mark of the Lightbringer" QuestId="9443" GiverName="Mehlar Dawnblade" GiverId="17099" />
+    <If Condition="((!HasQuest(6004)) &amp;&amp; (!IsQuestCompleted(6004)))">
+      <PickUp QuestName="Unfinished Business" QuestId="6004" GiverName="Kirsta Deepshadow" GiverId="11610" />
+    </If>
+    <Objective QuestName="Unfinished Business" QuestId="6004" Type="KillMob" MobId="10605" KillCount="2" />
+    <Objective QuestName="Unfinished Business" QuestId="6004" Type="KillMob" MobId="1831" KillCount="2" />
+    <Objective QuestName="Unfinished Business" QuestId="6004" Type="KillMob" MobId="1826" KillCount="2" />
+    <Objective QuestName="Unfinished Business" QuestId="6004" Type="KillMob" MobId="1833" KillCount="2" />
+    <TurnIn QuestName="Unfinished Business" QuestId="6004" TurnInName="Kirsta Deepshadow" TurnInId="11610" />
+    <If Condition="((!HasQuest(6023)) &amp;&amp; (!IsQuestCompleted(6023)))">
+      <PickUp QuestName="Unfinished Business" QuestId="6023" GiverName="Kirsta Deepshadow" GiverId="11610" />
+    </If>
+    <Objective QuestName="Unfinished Business" QuestId="6023" Type="KillMob" MobId="11613" KillCount="1" />
+    <Objective QuestName="Unfinished Business" QuestId="6023" Type="KillMob" MobId="11611" KillCount="1" />
+    <Objective QuestName="The So-Called Mark of the Lightbringer" QuestId="9443" Type="CollectItem" ItemId="23661" CollectCount="1" />
+    <TurnIn QuestName="Unfinished Business" QuestId="6023" TurnInName="Kirsta Deepshadow" TurnInId="11610" />
+    <If Condition="((!HasQuest(6025)) &amp;&amp; (!IsQuestCompleted(6025)))">
+      <PickUp QuestName="Unfinished Business" QuestId="6025" GiverName="Kirsta Deepshadow" GiverId="11610" />
+    </If>
+    <TurnIn QuestName="Unfinished Business" QuestId="6025" TurnInName="Kirsta Deepshadow" TurnInId="11610" />
+    <TurnIn QuestName="Better Late Than Never" QuestId="5023" TurnInName="Royal Overseer Bauhaus" TurnInId="10781" />
+    <If Condition="((!HasQuest(5049)) &amp;&amp; (!IsQuestCompleted(5049)))">
+      <PickUp QuestName="The Jeremiah Blues" QuestId="5049" GiverName="Royal Overseer Bauhaus" GiverId="10781" />
+    </If>
+    <TurnIn QuestName="The Jeremiah Blues" QuestId="5049" TurnInName="Jeremiah Payson" TurnInId="8403" />
+    <TurnIn QuestName="The So-Called Mark of the Lightbringer" QuestId="9443" TurnInName="Mehlar Dawnblade" TurnInId="17099" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Western Plaguelands (56-58) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="The_Burning_Crusade_(58-70)_Hellfire_Peninsula_(58-62)" />
+  </QuestOrder>
+</HBProfile>

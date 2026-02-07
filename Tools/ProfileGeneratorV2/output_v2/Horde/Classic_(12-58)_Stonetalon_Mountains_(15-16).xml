@@ -1,0 +1,86 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Stonetalon Mountains (15-16)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>16</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="6548" Name="Avenge My Village">
+    <Objective Type="KillMob" MobId="11910" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-36.5416" Y="-475.936" Z="-43.2897" />
+        <Hotspot X="-35.024" Y="-571.405" Z="-42.5974" />
+        <Hotspot X="-6.8834" Y="-703.117" Z="-19.0054" />
+        <Hotspot X="72.8767" Y="-735.993" Z="-20.6697" />
+        <Hotspot X="58.5667" Y="-730.387" Z="-20.7827" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="11911" KillCount="6">
+      <Hotspots>
+        <Hotspot X="32.7501" Y="-641.267" Z="-27.6324" />
+        <Hotspot X="15.7395" Y="-687.727" Z="-19.0144" />
+        <Hotspot X="5.3201" Y="-697.773" Z="-19.0471" />
+        <Hotspot X="1.7731" Y="-685.153" Z="-19.0681" />
+        <Hotspot X="-170.819" Y="-664.651" Z="1.2579" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="6629" Name="Kill Grundig Darkcloud">
+    <Objective Type="KillMob" MobId="11858" KillCount="1">
+      <Hotspots>
+        <Hotspot X="112.524" Y="-350.556" Z="4.4975" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="11912" KillCount="6">
+      <Hotspots>
+        <Hotspot X="90.6986" Y="-261.466" Z="5.2181" />
+        <Hotspot X="106.818" Y="-329.647" Z="3.2026" />
+        <Hotspot X="106.611" Y="-254.895" Z="6.0218" />
+        <Hotspot X="114.141" Y="-272.448" Z="5.2943" />
+        <Hotspot X="101.952" Y="-241.196" Z="6.6468" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stonetalon Mountains (15-16)" LogColor="Green" />
+    <PickUp QuestName="Goblin Invaders" QuestId="1062" GiverName="Seereth Stonebreak" GiverId="4049" />
+    <PickUp QuestName="Avenge My Village" QuestId="6548" GiverName="Makaba Flathoof" GiverId="11857" />
+    <Objective QuestName="Avenge My Village" QuestId="6548" Type="KillMob" MobId="11910" KillCount="8" />
+    <Objective QuestName="Avenge My Village" QuestId="6548" Type="KillMob" MobId="11911" KillCount="6" />
+    <TurnIn QuestName="Avenge My Village" QuestId="6548" TurnInName="Makaba Flathoof" TurnInId="11857" />
+    <If Condition="((!HasQuest(6629)) &amp;&amp; (!IsQuestCompleted(6629)))">
+      <PickUp QuestName="Kill Grundig Darkcloud" QuestId="6629" GiverName="Makaba Flathoof" GiverId="11857" />
+    </If>
+    <Objective QuestName="Kill Grundig Darkcloud" QuestId="6629" Type="KillMob" MobId="11858" KillCount="1" />
+    <Objective QuestName="Kill Grundig Darkcloud" QuestId="6629" Type="KillMob" MobId="11912" KillCount="6" />
+    <If Condition="Me.Level &lt; 16">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 16 - Grimtotem Brute</Name>
+          <TargetMinLevel>15</TargetMinLevel>
+          <TargetMaxLevel>16</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="90.70" Y="-261.47" Z="5.22" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="16" /> <!--  (grind Grimtotem Brute) -->
+    </If>
+    <PickUp QuestName="Protect Kaya" QuestId="6523" GiverName="Kaya Flathoof" GiverId="11856" />
+    <TurnIn QuestName="Kill Grundig Darkcloud" QuestId="6629" TurnInName="Makaba Flathoof" TurnInId="11857" />
+    <TurnIn QuestName="Protect Kaya" QuestId="6523" TurnInName="Makaba Flathoof" TurnInId="11857" />
+    <If Condition="((!HasQuest(6401)) &amp;&amp; (!IsQuestCompleted(6401)))">
+      <PickUp QuestName="Kaya's Alive" QuestId="6401" GiverName="Makaba Flathoof" GiverId="11857" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stonetalon Mountains (15-16) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_The_Barrens_(16-20)" />
+  </QuestOrder>
+</HBProfile>

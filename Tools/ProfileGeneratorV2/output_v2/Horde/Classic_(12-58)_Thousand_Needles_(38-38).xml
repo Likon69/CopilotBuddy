@@ -1,0 +1,93 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Thousand Needles (38-38)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="1147" Name="The Swarm Grows">
+    <Objective Type="KillMob" MobId="4130" KillCount="5">
+      <Hotspots>
+        <Hotspot X="-6410.85" Y="-3589.94" Z="-58.6249" />
+        <Hotspot X="-6386.16" Y="-3509.23" Z="-58.6995" />
+        <Hotspot X="-6353.74" Y="-3414.08" Z="-57.2315" />
+        <Hotspot X="-6416.29" Y="-3413.19" Z="-57.9999" />
+        <Hotspot X="-6489.54" Y="-3590.52" Z="-58.6249" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4133" KillCount="5">
+      <Hotspots>
+        <Hotspot X="-6356.04" Y="-3490.95" Z="-58.6082" />
+        <Hotspot X="-6386.35" Y="-3548.03" Z="-58.625" />
+        <Hotspot X="-6385.76" Y="-3383.98" Z="-57.6744" />
+        <Hotspot X="-6488.73" Y="-3428.48" Z="-69.9865" />
+        <Hotspot X="-6482.47" Y="-3455.7" Z="-58.7846" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4131" KillCount="5">
+      <Hotspots>
+        <Hotspot X="-6494.24" Y="-3378.72" Z="-85.3411" />
+        <Hotspot X="-6496.03" Y="-3325.49" Z="-95.8035" />
+        <Hotspot X="-6488.36" Y="-3323.74" Z="-94.8076" />
+        <Hotspot X="-6485.84" Y="-3254.02" Z="-113.549" />
+        <Hotspot X="-6462.86" Y="-3297.58" Z="-104.92" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Thousand Needles (38-38)" LogColor="Green" />
+    <TurnIn QuestName="Alliance Relations" QuestId="1436" TurnInName="Keldran" TurnInId="5640" />
+    <TurnIn QuestName="Frostmaw" QuestId="1136" TurnInName="Melor Stonehoof" TurnInId="3441" />
+    <PickUp QuestName="Deadmire" QuestId="1205" GiverName="Melor Stonehoof" GiverId="3441" />
+    <TurnIn QuestName="The Swarm Grows" QuestId="1146" TurnInName="Moktar Krin" TurnInId="4483" />
+    <If Condition="((!HasQuest(1147)) &amp;&amp; (!IsQuestCompleted(1147)))">
+      <PickUp QuestName="The Swarm Grows" QuestId="1147" GiverName="Moktar Krin" GiverId="4483" />
+    </If>
+    <TurnIn QuestName="Parts for Kravel" QuestId="1112" TurnInName="Kravel Koalbeard" TurnInId="4452" />
+    <If Condition="((!HasQuest(1114)) &amp;&amp; (!IsQuestCompleted(1114)))">
+      <PickUp QuestName="Delivery to the Gnomes" QuestId="1114" GiverName="Kravel Koalbeard" GiverId="4452" />
+    </If>
+    <TurnIn QuestName="Delivery to the Gnomes" QuestId="1114" TurnInName="Fizzle Brassbolts" TurnInId="4454" />
+    <PickUp QuestName="Martek the Exiled" QuestId="1106" GiverName="Fizzle Brassbolts" GiverId="4454" />
+    <If Condition="((!HasQuest(1115)) &amp;&amp; (!IsQuestCompleted(1115)))">
+      <PickUp QuestName="The Rumormonger" QuestId="1115" GiverName="Kravel Koalbeard" GiverId="4452" />
+    </If>
+    <TurnIn QuestName="Goblin Sponsorship" QuestId="1183" TurnInName="Pozzik" TurnInId="4630" />
+    <If Condition="((!HasQuest(1186)) &amp;&amp; (!IsQuestCompleted(1186)))">
+      <PickUp QuestName="The Eighteenth Pilot" QuestId="1186" GiverName="Pozzik" GiverId="4630" />
+    </If>
+    <TurnIn QuestName="The Eighteenth Pilot" QuestId="1186" TurnInName="Razzeric" TurnInId="4706" />
+    <If Condition="((!HasQuest(1187)) &amp;&amp; (!IsQuestCompleted(1187)))">
+      <PickUp QuestName="Razzeric's Tweaking" QuestId="1187" GiverName="Razzeric" GiverId="4706" />
+    </If>
+    <Objective QuestName="The Swarm Grows" QuestId="1147" Type="KillMob" MobId="4130" KillCount="5" />
+    <Objective QuestName="The Swarm Grows" QuestId="1147" Type="KillMob" MobId="4133" KillCount="5" />
+    <Objective QuestName="The Swarm Grows" QuestId="1147" Type="KillMob" MobId="4131" KillCount="5" />
+    <Objective QuestName="Razzeric's Tweaking" QuestId="1187" Type="CollectItem" ItemId="5877" CollectCount="1" />
+    <While Condition="((HasQuest(1187)) &amp;&amp; (!IsQuestCompleted(1187)))">
+      <CustomBehavior File="UseItemOn" QuestId="1187" MobId="0" ItemId="5877" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <If Condition="((!HasQuest(1148)) &amp;&amp; (!IsQuestCompleted(1148)))">
+      <PickUp QuestName="Parts of the Swarm" QuestId="1148" GiverName="Razzeric" GiverId="4706" />
+    </If>
+    <Objective QuestName="Parts of the Swarm" QuestId="1148" Type="CollectItem" ItemId="5855" CollectCount="1" />
+    <Objective QuestName="Parts of the Swarm" QuestId="1148" Type="CollectItem" ItemId="5854" CollectCount="5" />
+    <Objective QuestName="Parts of the Swarm" QuestId="1148" Type="CollectItem" ItemId="5853" CollectCount="3" />
+    <TurnIn QuestName="The Swarm Grows" QuestId="1147" TurnInName="Moktar Krin" TurnInId="4483" />
+    <TurnIn QuestName="Parts of the Swarm" QuestId="1148" TurnInName="Korran" TurnInId="3428" />
+    <If Condition="((!HasQuest(1184)) &amp;&amp; (!IsQuestCompleted(1184)))">
+      <PickUp QuestName="Parts of the Swarm" QuestId="1184" GiverName="Korran" GiverId="3428" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Thousand Needles (38-38) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Dustwallow_Marsh_(38-39)" />
+  </QuestOrder>
+</HBProfile>

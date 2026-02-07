@@ -1,0 +1,69 @@
+<HBProfile>
+  <Name>Alliance\Boosted Characters\Boosted Hunter Intro</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Boosted Characters\Boosted Hunter Intro" LogColor="Green" />
+    <PickUp QuestName="A New Beginning" QuestId="64028" />
+    <TurnIn QuestName="A New Beginning" QuestId="64028" TurnInName="Einris Brightspear" TurnInId="5515" />
+    <PickUp QuestName="Tools for Survival" QuestId="64031" GiverName="Einris Brightspear" GiverId="5515" />
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Seek Huntress Kella Nightbow" QuestId="9757" GiverName="Einris Brightspear" GiverId="5515" />
+    </If>
+    <While Condition="((HasQuest(64031)) &amp;&amp; (!IsQuestCompleted(64031)))">
+      <CustomBehavior File="UseItemOn" QuestId="64031" MobId="0" ItemId="185964" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Tools for Survival" QuestId="64031" TurnInName="Einris Brightspear" TurnInId="5515" />
+    <PickUp QuestName="Combat Training" QuestId="64034" GiverName="Einris Brightspear" GiverId="5515" />
+    <TurnIn QuestName="Combat Training" QuestId="64034" TurnInName="Einris Brightspear" TurnInId="5515" />
+    <PickUp QuestName="Talented" QuestId="64035" GiverName="Einris Brightspear" GiverId="5515" />
+    <TurnIn QuestName="Talented" QuestId="64035" TurnInName="Einris Brightspear" TurnInId="5515" />
+    <PickUp QuestName="The Dark Portal" QuestId="64038" GiverName="Einris Brightspear" GiverId="5515" />
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <TurnIn QuestName="Seek Huntress Kella Nightbow" QuestId="9757" TurnInName="Huntress Kella Nightbow" TurnInId="17614" />
+      <PickUp QuestName="Taming the Beast" QuestId="9591" GiverName="Huntress Kella Nightbow" GiverId="17614" />
+      <While Condition="((HasQuest(9591)) &amp;&amp; (!IsQuestCompleted(9591)))">
+        <CustomBehavior File="UseItemOn" QuestId="9591" MobId="0" ItemId="23896" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Taming the Beast" QuestId="9591" TurnInName="Huntress Kella Nightbow" TurnInId="17614" />
+      <If Condition="((!HasQuest(9592)) &amp;&amp; (!IsQuestCompleted(9592)))">
+        <PickUp QuestName="Taming the Beast" QuestId="9592" GiverName="Huntress Kella Nightbow" GiverId="17614" />
+      </If>
+    </If>
+    <While Condition="((HasQuest(9592)) &amp;&amp; (!IsQuestCompleted(9592)))">
+      <CustomBehavior File="UseItemOn" QuestId="9592" MobId="0" ItemId="23897" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Taming the Beast" QuestId="9592" TurnInName="Huntress Kella Nightbow" TurnInId="17614" />
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <If Condition="((!HasQuest(9593)) &amp;&amp; (!IsQuestCompleted(9593)))">
+        <PickUp QuestName="Taming the Beast" QuestId="9593" GiverName="Huntress Kella Nightbow" GiverId="17614" />
+      </If>
+    </If>
+    <While Condition="((HasQuest(9593)) &amp;&amp; (!IsQuestCompleted(9593)))">
+      <CustomBehavior File="UseItemOn" QuestId="9593" MobId="0" ItemId="23898" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Taming the Beast" QuestId="9593" TurnInName="Huntress Kella Nightbow" TurnInId="17614" />
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <If Condition="((!HasQuest(9675)) &amp;&amp; (!IsQuestCompleted(9675)))">
+        <PickUp QuestName="Beast Training" QuestId="9675" GiverName="Huntress Kella Nightbow" GiverId="17614" />
+      </If>
+      <TurnIn QuestName="Beast Training" QuestId="9675" TurnInName="Ganaar" TurnInId="16712" />
+    </If>
+    <TurnIn QuestName="The Dark Portal" QuestId="64038" TurnInName="Watch Commander Relthorn Netherwane" TurnInId="16841" />
+    <PickUp QuestName="Through the Dark Portal" QuestId="10119" GiverName="Watch Commander Relthorn Netherwane" GiverId="16841" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Boosted Characters\Boosted Hunter Intro Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Horde\\Cenarion Field Duty Logistics Assignments</Name>
+  <Name>Horde\Cenarion Field Duty Logistics Assignments</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -8,143 +7,159 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="8804" Name="Desert Survival Kits">
+    <Objective Type="KillMob" MobId="7132" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6115.07" Y="-1181.11" Z="372.293" />
+        <Hotspot X="6248.27" Y="-1202.01" Z="371.053" />
+        <Hotspot X="6188.19" Y="-1170.89" Z="370.52" />
+        <Hotspot X="6200.25" Y="-1137.86" Z="366.636" />
+        <Hotspot X="6220.18" Y="-1123.06" Z="370.549" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8808" Name="Uniform Supplies">
+    <Objective Type="KillMob" MobId="1824" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1985.22" Y="-2473.04" Z="62.2665" />
+        <Hotspot X="2035.89" Y="-2305.16" Z="65.9569" />
+        <Hotspot X="1913.23" Y="-1947.4" Z="78.9758" />
+        <Hotspot X="1903.5" Y="-2199.84" Z="64.145" />
+        <Hotspot X="1917.45" Y="-1878.1" Z="77.2776" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Cenarion Field Duty Logistics Assignments" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Cenarion Field Duty Logistics Assignments" LogColor="Green" />
     <If Condition="((!HasQuest(8731)) &amp;&amp; (!IsQuestCompleted(8731)))">
       <PickUp QuestName="Field Duty" QuestId="8731" GiverName="Windcaller Kaldon" GiverId="15540" />
     </If>
     <While Condition="((HasQuest(8507)) &amp;&amp; (!IsQuestCompleted(8507)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8507" ItemId="21143" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8507" MobId="0" ItemId="21143" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="Field Duty" QuestId="8507" Type="CollectItem" ItemId="23024" ItemName="Prepared Field Duty Papers" CollectCount="1" />
+    <Objective QuestName="Field Duty" QuestId="8507" Type="CollectItem" ItemId="23024" CollectCount="1" />
     <PickUp QuestName="Field Duty Papers" QuestId="8732" GiverName="Krug Skullsplit" GiverId="15612" />
-    <Objective QuestName="Field Duty" QuestId="8507" Type="CollectItem" ItemId="20810" ItemName="Signed Field Duty Papers" CollectCount="1" />
+    <Objective QuestName="Field Duty" QuestId="8507" Type="CollectItem" ItemId="20810" CollectCount="1" />
     <TurnIn QuestName="Field Duty" QuestId="8507" TurnInName="Windcaller Kaldon" TurnInId="15540" />
     <While Condition="((HasQuest(8732)) &amp;&amp; (!IsQuestCompleted(8732)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8732" ItemId="21266" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8732" MobId="0" ItemId="21266" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <While Condition="((HasQuest(8732)) &amp;&amp; (!IsQuestCompleted(8732)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8732" ItemId="21258" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8732" MobId="0" ItemId="21258" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <If Condition="((!HasQuest(8785)) &amp;&amp; (!IsQuestCompleted(8785)))">
       <PickUp QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" GiverName="Windcaller Kaldon" GiverId="15540" />
     </If>
     <While Condition="((HasQuest(8785)) &amp;&amp; (!IsQuestCompleted(8785)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8785" ItemId="21382" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8785" MobId="0" ItemId="21382" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <If Condition="((!HasQuest(8807)) &amp;&amp; (!IsQuestCompleted(8807)))">
       <PickUp QuestName="Scrying Materials" QuestId="8807" GiverName="Windcaller Kaldon" GiverId="15540" />
     </If>
     <While Condition="((HasQuest(8807)) &amp;&amp; (!IsQuestCompleted(8807)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8807" ItemId="21261" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8807" MobId="0" ItemId="21261" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="Arms for the Field" QuestId="8786" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8786)) &amp;&amp; (!IsQuestCompleted(8786)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8786" ItemId="21264" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8786" MobId="0" ItemId="21264" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="Armor Kits for the Field" QuestId="8787" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8787)) &amp;&amp; (!IsQuestCompleted(8787)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8787" ItemId="21385" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8787" MobId="0" ItemId="21385" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <If Condition="((!HasQuest(8810)) &amp;&amp; (!IsQuestCompleted(8810)))">
       <PickUp QuestName="Bandages for the Field" QuestId="8810" GiverName="Windcaller Kaldon" GiverId="15540" />
     </If>
-    <Objective QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" Type="CollectItem" ItemId="8956" ItemName="Oil of Immolation" CollectCount="8" />
-    <Objective QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" Type="CollectItem" ItemId="8152" ItemName="Flask of Big Mojo" CollectCount="6" />
-    <Objective QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" Type="CollectItem" ItemId="15992" ItemName="Powerful Mojo" CollectCount="6" />
-    <Objective QuestName="Scrying Materials" QuestId="8807" Type="CollectItem" ItemId="14344" ItemName="Large Brilliant Shard" CollectCount="1" />
-    <Objective QuestName="Scrying Materials" QuestId="8807" Type="CollectItem" ItemId="11178" ItemName="Large Radiant Shard" CollectCount="1" />
-    <Objective QuestName="Scrying Materials" QuestId="8807" Type="CollectItem" ItemId="12364" ItemName="Huge Emerald" CollectCount="1" />
-    <Objective QuestName="Arms for the Field" QuestId="8786" Type="CollectItem" ItemId="3855" ItemName="Massive Iron Axe" CollectCount="2" />
-    <Objective QuestName="Armor Kits for the Field" QuestId="8787" Type="CollectItem" ItemId="15564" ItemName="Rugged Armor Kit" CollectCount="8" />
-    <Objective QuestName="Armor Kits for the Field" QuestId="8787" Type="CollectItem" ItemId="4265" ItemName="Heavy Armor Kit" CollectCount="8" />
-    <Objective QuestName="Bandages for the Field" QuestId="8810" Type="CollectItem" ItemId="14530" ItemName="Heavy Runecloth Bandage" CollectCount="30" />
-    <Objective QuestName="Bandages for the Field" QuestId="8810" Type="CollectItem" ItemId="8545" ItemName="Heavy Mageweave Bandage" CollectCount="30" />
-    <Objective QuestName="Bandages for the Field" QuestId="8810" Type="CollectItem" ItemId="6451" ItemName="Heavy Silk Bandage" CollectCount="30" />
+    <Objective QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" Type="CollectItem" ItemId="8956" CollectCount="8" />
+    <Objective QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" Type="CollectItem" ItemId="8152" CollectCount="6" />
+    <Objective QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" Type="CollectItem" ItemId="15992" CollectCount="6" />
+    <Objective QuestName="Scrying Materials" QuestId="8807" Type="CollectItem" ItemId="14344" CollectCount="1" />
+    <Objective QuestName="Scrying Materials" QuestId="8807" Type="CollectItem" ItemId="11178" CollectCount="1" />
+    <Objective QuestName="Scrying Materials" QuestId="8807" Type="CollectItem" ItemId="12364" CollectCount="1" />
+    <Objective QuestName="Arms for the Field" QuestId="8786" Type="CollectItem" ItemId="3855" CollectCount="2" />
+    <Objective QuestName="Armor Kits for the Field" QuestId="8787" Type="CollectItem" ItemId="15564" CollectCount="8" />
+    <Objective QuestName="Armor Kits for the Field" QuestId="8787" Type="CollectItem" ItemId="4265" CollectCount="8" />
+    <Objective QuestName="Bandages for the Field" QuestId="8810" Type="CollectItem" ItemId="14530" CollectCount="30" />
+    <Objective QuestName="Bandages for the Field" QuestId="8810" Type="CollectItem" ItemId="8545" CollectCount="30" />
+    <Objective QuestName="Bandages for the Field" QuestId="8810" Type="CollectItem" ItemId="6451" CollectCount="30" />
     <TurnIn QuestName="Scrying Materials" QuestId="8807" TurnInName="Geologist Larksbane" TurnInId="15183" />
     <TurnIn QuestName="Bandages for the Field" QuestId="8810" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
     <TurnIn QuestName="The Orgrimmar Legion Needs Mojo!" QuestId="8785" TurnInName="Shadow Priestess Shai" TurnInId="15615" />
     <TurnIn QuestName="Arms for the Field" QuestId="8786" TurnInName="Merok Longstride" TurnInId="15613" />
     <TurnIn QuestName="Armor Kits for the Field" QuestId="8787" TurnInName="Merok Longstride" TurnInId="15613" />
-    <CustomBehavior File="UseItemOn" ItemId="21386" MobId="0" NumOfTimes="1" />
-    <CustomBehavior File="UseItemOn" ItemId="21378" MobId="0" NumOfTimes="1" />
+    <CustomBehavior File="UseItemOn" ItemId="21386" MobId="0" NumOfTimes="1" CollectionDistance="100" />
+    <CustomBehavior File="UseItemOn" ItemId="21378" MobId="0" NumOfTimes="1" CollectionDistance="100" />
     <If Condition="((!HasQuest(8804)) &amp;&amp; (!IsQuestCompleted(8804)))">
       <PickUp QuestName="Desert Survival Kits" QuestId="8804" GiverName="Merok Longstride" GiverId="15613" />
     </If>
     <While Condition="((HasQuest(8804)) &amp;&amp; (!IsQuestCompleted(8804)))">
-      <RunTo X="51.85" Y="67.96" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8804" ItemId="21379" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8804" MobId="0" ItemId="21379" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="Boots for the Guard" QuestId="8805" GiverName="Merok Longstride" GiverId="15613" />
     <While Condition="((HasQuest(8805)) &amp;&amp; (!IsQuestCompleted(8805)))">
-      <RunTo X="51.85" Y="67.96" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8805" ItemId="21380" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8805" MobId="0" ItemId="21380" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <If Condition="((!HasQuest(8806)) &amp;&amp; (!IsQuestCompleted(8806)))">
       <PickUp QuestName="Grinding Stones for the Guard" QuestId="8806" GiverName="Merok Longstride" GiverId="15613" />
     </If>
     <While Condition="((HasQuest(8806)) &amp;&amp; (!IsQuestCompleted(8806)))">
-      <RunTo X="51.85" Y="67.96" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8806" ItemId="21384" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8806" MobId="0" ItemId="21384" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <If Condition="((!HasQuest(8808)) &amp;&amp; (!IsQuestCompleted(8808)))">
       <PickUp QuestName="Uniform Supplies" QuestId="8808" GiverName="Merok Longstride" GiverId="15613" />
     </If>
     <While Condition="((HasQuest(8808)) &amp;&amp; (!IsQuestCompleted(8808)))">
-      <RunTo X="51.85" Y="67.96" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8808" ItemId="21381" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8808" MobId="0" ItemId="21381" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="Extraordinary Materials" QuestId="8809" GiverName="Merok Longstride" GiverId="15613" />
     <While Condition="((HasQuest(8809)) &amp;&amp; (!IsQuestCompleted(8809)))">
-      <RunTo X="51.85" Y="67.96" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8809" ItemId="21514" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8809" MobId="0" ItemId="21514" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <If Condition="((!HasQuest(8829)) &amp;&amp; (!IsQuestCompleted(8829)))">
       <PickUp QuestName="The Ultimate Deception" QuestId="8829" GiverName="Merok Longstride" GiverId="15613" />
     </If>
-    <Objective QuestName="Boots for the Guard" QuestId="8805" Type="CollectItem" ItemId="7936" ItemName="Ornate Mithril Boots" CollectCount="3" />
-    <Objective QuestName="Desert Survival Kits" QuestId="8804" Type="KillMob" MobId="7132" MobName="Toxic Horror" KillCount="1" />
-    <Objective QuestName="Desert Survival Kits" QuestId="8804" Type="CollectItem" ItemId="7079" ItemName="Globe of Water" CollectCount="4" />
-    <Objective QuestName="Desert Survival Kits" QuestId="8804" Type="CollectItem" ItemId="19440" ItemName="Powerful Anti-Venom" CollectCount="4" />
-    <Objective QuestName="Desert Survival Kits" QuestId="8804" Type="CollectItem" ItemId="20452" ItemName="Smoked Desert Dumplings" CollectCount="4" />
-    <Objective QuestName="Grinding Stones for the Guard" QuestId="8806" Type="CollectItem" ItemId="12644" ItemName="Dense Grinding Stone" CollectCount="10" />
-    <Objective QuestName="Grinding Stones for the Guard" QuestId="8806" Type="CollectItem" ItemId="7966" ItemName="Solid Grinding Stone" CollectCount="10" />
-    <Objective QuestName="Grinding Stones for the Guard" QuestId="8806" Type="CollectItem" ItemId="3486" ItemName="Heavy Grinding Stone" CollectCount="10" />
-    <Objective QuestName="Uniform Supplies" QuestId="8808" Type="CollectItem" ItemId="14342" ItemName="Mooncloth" CollectCount="1" />
-    <Objective QuestName="Uniform Supplies" QuestId="8808" Type="CollectItem" ItemId="14048" ItemName="Bolt of Runecloth" CollectCount="2" />
-    <Objective QuestName="Uniform Supplies" QuestId="8808" Type="KillMob" MobId="1824" MobName="Plague Lurker" KillCount="1" />
-    <Objective QuestName="Uniform Supplies" QuestId="8808" Type="CollectItem" ItemId="14227" ItemName="Ironweb Spider Silk" CollectCount="1" />
-    <Objective QuestName="Extraordinary Materials" QuestId="8809" Type="CollectItem" ItemId="12655" ItemName="Enchanted Thorium Bar" CollectCount="10" />
-    <Objective QuestName="Extraordinary Materials" QuestId="8809" Type="CollectItem" ItemId="12810" ItemName="Solid Grinding Stone" CollectCount="10" />
-    <Objective QuestName="The Ultimate Deception" QuestId="8829" Type="CollectItem" ItemId="12753" ItemName="Skin of Shadow" CollectCount="1" />
-    <Objective QuestName="The Ultimate Deception" QuestId="8829" Type="CollectItem" ItemId="12735" ItemName="Frayed Abomination Stitching" CollectCount="3" />
-    <Objective QuestName="The Ultimate Deception" QuestId="8829" Type="CollectItem" ItemId="20407" ItemName="Twilight Cultist Robe" CollectCount="1" />
+    <Objective QuestName="Boots for the Guard" QuestId="8805" Type="CollectItem" ItemId="7936" CollectCount="3" />
+    <Objective QuestName="Desert Survival Kits" QuestId="8804" Type="KillMob" MobId="7132" KillCount="1" />
+    <Objective QuestName="Desert Survival Kits" QuestId="8804" Type="CollectItem" ItemId="7079" CollectCount="4" />
+    <Objective QuestName="Desert Survival Kits" QuestId="8804" Type="CollectItem" ItemId="19440" CollectCount="4" />
+    <Objective QuestName="Desert Survival Kits" QuestId="8804" Type="CollectItem" ItemId="20452" CollectCount="4" />
+    <Objective QuestName="Grinding Stones for the Guard" QuestId="8806" Type="CollectItem" ItemId="12644" CollectCount="10" />
+    <Objective QuestName="Grinding Stones for the Guard" QuestId="8806" Type="CollectItem" ItemId="7966" CollectCount="10" />
+    <Objective QuestName="Grinding Stones for the Guard" QuestId="8806" Type="CollectItem" ItemId="3486" CollectCount="10" />
+    <Objective QuestName="Uniform Supplies" QuestId="8808" Type="CollectItem" ItemId="14342" CollectCount="1" />
+    <Objective QuestName="Uniform Supplies" QuestId="8808" Type="CollectItem" ItemId="14048" CollectCount="2" />
+    <Objective QuestName="Uniform Supplies" QuestId="8808" Type="KillMob" MobId="1824" KillCount="1" />
+    <Objective QuestName="Uniform Supplies" QuestId="8808" Type="CollectItem" ItemId="14227" CollectCount="1" />
+    <Objective QuestName="Extraordinary Materials" QuestId="8809" Type="CollectItem" ItemId="12655" CollectCount="10" />
+    <Objective QuestName="Extraordinary Materials" QuestId="8809" Type="CollectItem" ItemId="12810" CollectCount="10" />
+    <Objective QuestName="The Ultimate Deception" QuestId="8829" Type="CollectItem" ItemId="12753" CollectCount="1" />
+    <Objective QuestName="The Ultimate Deception" QuestId="8829" Type="CollectItem" ItemId="12735" CollectCount="3" />
+    <Objective QuestName="The Ultimate Deception" QuestId="8829" Type="CollectItem" ItemId="20407" CollectCount="1" />
     <TurnIn QuestName="Desert Survival Kits" QuestId="8804" TurnInName="Calandrath" TurnInId="15174" />
     <TurnIn QuestName="Grinding Stones for the Guard" QuestId="8806" TurnInName="Vish Kozus" TurnInId="15182" />
     <TurnIn QuestName="Boots for the Guard" QuestId="8805" TurnInName="Vish Kozus" TurnInId="15182" />
     <TurnIn QuestName="Uniform Supplies" QuestId="8808" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
     <TurnIn QuestName="Extraordinary Materials" QuestId="8809" TurnInName="Vargus" TurnInId="15176" />
     <TurnIn QuestName="The Ultimate Deception" QuestId="8829" TurnInName="Aurel Goldleaf" TurnInId="15282" />
-    <Objective QuestName="Unknown" Type="CollectItem" ItemId="21266" ItemName="Logistics Assignment" CollectCount="1" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Cenarion Field Duty Logistics Assignments Complete" LogColor="Orange" />
+    <Objective QuestName="Unknown" Type="CollectItem" ItemId="21266" CollectCount="1" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Cenarion Field Duty Logistics Assignments Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

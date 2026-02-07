@@ -1,0 +1,231 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Dustwallow Marsh (38-39)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>39</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="1201" Name="Theramore Spies">
+    <Objective Type="KillMob" MobId="4834" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3202.16" Y="-3105.27" Z="34.8529" />
+        <Hotspot X="-2988.49" Y="-3287.01" Z="37.2147" />
+        <Hotspot X="-2964.91" Y="-3165.92" Z="33.9627" />
+        <Hotspot X="-2915.69" Y="-3161.55" Z="33.5764" />
+        <Hotspot X="-2944.23" Y="-3186.25" Z="37.0709" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1218" Name="Marsh Frog Legs">
+    <Objective Type="KillMob" MobId="23979" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2957.55" Y="-3828.82" Z="37.5224" />
+        <Hotspot X="-2986.96" Y="-4004.18" Z="37.4665" />
+        <Hotspot X="-3045.76" Y="-3996.14" Z="37.8974" />
+        <Hotspot X="-3071.41" Y="-3981.57" Z="39.0792" />
+        <Hotspot X="-3036.98" Y="-3922.27" Z="37.4266" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9437" Name="Twilight of the Dawn Runner">
+    <Objective Type="CollectItem" ItemId="23657" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Warped Crates" Id="181626" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-2894.05" Y="-3421.95" Z="74.45" />
+        <Hotspot X="-2882.41" Y="-3422.0" Z="74.45" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1203" Name="Jarl Needs a Blade">
+    <Objective Type="KillMob" MobId="23841" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2724.06" Y="-4008.5" Z="30.1463" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1205" Name="Deadmire">
+    <Objective Type="KillMob" MobId="4841" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3949.69" Y="-3471.04" Z="29.1544" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11172" Name="The Zeppelin Crash">
+    <Objective Type="KillMob" MobId="23881" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3663.91" Y="-3453.97" Z="37.2993" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1187" Name="Razzeric's Tweaking">
+    <Objective Type="CollectItem" ItemId="5862" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Gizmorium Shipping Crate" Id="20727" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4010.62" Y="-3813.58" Z="37.34" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11207" Name="Secure the Cargo!">
+    <Objective Type="CollectItem" ItemId="33163" CollectCount="8">
+      <CollectFrom>
+        <GameObject Name="Zeppelin Cargo" Id="186450" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4184.71" Y="-3701.5" Z="52.4" />
+        <Hotspot X="-4151.63" Y="-3588.12" Z="41.55" />
+        <Hotspot X="-4126.17" Y="-3725.11" Z="37.9" />
+        <Hotspot X="-4125.91" Y="-3536.05" Z="34.06" />
+        <Hotspot X="-4104.36" Y="-3687.28" Z="45.0" />
+        <Hotspot X="-4099.83" Y="-3656.84" Z="44.32" />
+        <Hotspot X="-4097.73" Y="-3509.59" Z="37.92" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Dustwallow Marsh (38-39)" LogColor="Green" />
+    <PickUp QuestName="Theramore Spies" QuestId="1201" GiverName="Nazeer Bloodpike" GiverId="4791" />
+    <PickUp QuestName="Check Up on Tabetha" QuestId="11213" GiverName="Nazeer Bloodpike" GiverId="4791" />
+    <If Condition="((!HasQuest(1322)) &amp;&amp; (!IsQuestCompleted(1322)))">
+      <PickUp QuestName="The Black Shield" QuestId="1322" GiverName="Do'gol" GiverId="5087" />
+    </If>
+    <PickUp QuestName="The Hermit of Witch Hill" QuestId="11225" GiverName="Draz'Zilb" GiverId="4501" />
+    <CustomBehavior File="SetHearthstone" MobId="11116" AreaId="400" X="-5477.85" Y="-2460.43" Z="89.3671" /> <!-- Set hearth: Brackenwall Village -->
+    <PickUp QuestName="Hungry!" QuestId="1177" GiverName="Mudcrush Durtfeet" GiverId="4503" />
+    <Objective QuestName="Theramore Spies" QuestId="1201" Type="KillMob" MobId="4834" KillCount="1" />
+    <Objective QuestName="Theramore Spies" QuestId="1201" Type="KillMob" MobId="4834" KillCount="1" />
+    <Objective QuestName="Theramore Spies" QuestId="1201" Type="KillMob" MobId="4834" KillCount="1" />
+    <Objective QuestName="Theramore Spies" QuestId="1201" Type="KillMob" MobId="4834" KillCount="1" />
+    <Objective QuestName="Theramore Spies" QuestId="1201" Type="KillMob" MobId="4834" KillCount="1" />
+    <Objective QuestName="Theramore Spies" QuestId="1201" Type="KillMob" MobId="4834" KillCount="1" />
+    <Objective QuestName="Theramore Spies" QuestId="1201" Type="KillMob" MobId="4834" KillCount="1" />
+    <Objective QuestName="Theramore Spies" QuestId="1201" Type="KillMob" MobId="4834" KillCount="1" />
+    <Objective QuestName="Theramore Spies" QuestId="1201" Type="KillMob" MobId="4834" KillCount="1" />
+    <TurnIn QuestName="The Hermit of Swamplight Manor" QuestId="11225" TurnInName="&quot;Swamp Eye&quot; Jarl" TurnInId="4792" />
+    <PickUp QuestName="Marsh Frog Legs" QuestId="1218" GiverName="&quot;Swamp Eye&quot; Jarl" GiverId="4792" />
+    <PickUp QuestName="What's Haunting Witch Hill?" QuestId="11180" GiverName="Mordant Grimsby" GiverId="23843" />
+    <PickUp QuestName="The Lost Report" QuestId="1238" GiverName="Mordant Grimsby" GiverId="23843" />
+    <Objective QuestName="Marsh Frog Legs" QuestId="1218" Type="KillMob" MobId="23979" KillCount="1" />
+    <Objective QuestName="Marsh Frog Legs" QuestId="1218" Type="CollectItem" ItemId="33202" CollectCount="10" />
+    <TurnIn QuestName="Marsh Frog Legs" QuestId="1218" TurnInName="&quot;Swamp Eye&quot; Jarl" TurnInId="4792" />
+    <If Condition="((!HasQuest(1206)) &amp;&amp; (!IsQuestCompleted(1206)))">
+      <PickUp QuestName="Jarl Needs Eyes" QuestId="1206" GiverName="&quot;Swamp Eye&quot; Jarl" GiverId="4792" />
+    </If>
+    <TurnIn QuestName="What's Haunting Witch Hill?" QuestId="11180" TurnInName="Mordant Grimsby" TurnInId="23843" />
+    <If Condition="((!HasQuest(11181)) &amp;&amp; (!IsQuestCompleted(11181)))">
+      <PickUp QuestName="The Witch's Bane" QuestId="11181" GiverName="Mordant Grimsby" GiverId="23843" />
+    </If>
+    <If Condition="((HasQuest(11181)) &amp;&amp; (!IsQuestCompleted(11181)))">
+      <CustomBehavior File="InteractWith" QuestId="11181" MobId="186423" NumOfTimes="1" CollectionDistance="1000" WaitTime="3000" />
+      <CustomBehavior File="WaitTimer" WaitTime="2000" />
+    </If>
+    <Objective QuestName="The Witch's Bane" QuestId="11181" Type="CollectItem" ItemId="33112" CollectCount="9" />
+    <TurnIn QuestName="The Witch's Bane" QuestId="11181" TurnInName="Mordant Grimsby" TurnInId="23843" />
+    <If Condition="((!HasQuest(11183)) &amp;&amp; (!IsQuestCompleted(11183)))">
+      <PickUp QuestName="Cleansing Witch Hill" QuestId="11183" GiverName="Mordant Grimsby" GiverId="23843" />
+    </If>
+    <While Condition="((HasQuest(11183)) &amp;&amp; (!IsQuestCompleted(11183)))">
+      <CustomBehavior File="UseItemOn" QuestId="11183" MobId="23864" ItemId="33113" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Cleansing Witch Hill" QuestId="11183" Type="KillMob" MobId="23864" KillCount="1" />
+    <TurnIn QuestName="Cleansing Witch Hill" QuestId="11183" TurnInName="Mordant Grimsby" TurnInId="23843" />
+    <PickUp QuestName="Stinky's Escape" QuestId="1270" GiverName="&quot;Stinky&quot; Ignatz" GiverId="4880" />
+    <Objective QuestName="The Black Shield" QuestId="1322" Type="CollectItem" ItemId="5959" CollectCount="5" />
+    <Objective QuestName="Jarl Needs Eyes" QuestId="1206" Type="CollectItem" ItemId="5884" CollectCount="20" />
+    <TurnIn QuestName="Theramore Spies" QuestId="1201" TurnInName="Nazeer Bloodpike" TurnInId="4791" />
+    <If Condition="((!HasQuest(1202)) &amp;&amp; (!IsQuestCompleted(1202)))">
+      <PickUp QuestName="The Theramore Docks" QuestId="1202" GiverName="Nazeer Bloodpike" GiverId="4791" />
+    </If>
+    <TurnIn QuestName="The Lost Report" QuestId="1238" TurnInName="Nazeer Bloodpike" TurnInId="4791" />
+    <TurnIn QuestName="The Black Shield" QuestId="1322" TurnInName="Do'gol" TurnInId="5087" />
+    <If Condition="((!HasQuest(1323)) &amp;&amp; (!IsQuestCompleted(1323)))">
+      <PickUp QuestName="The Black Shield" QuestId="1323" GiverName="Do'gol" GiverId="5087" />
+    </If>
+    <TurnIn QuestName="The Black Shield" QuestId="1323" TurnInName="Krog" TurnInId="4926" />
+    <PickUp QuestName="Twilight of the Dawn Runner" QuestId="9437" GiverName="Balandar Brightstar" GiverId="17095" />
+    <If Condition="Me.Level &lt; 39">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 39 - Zelfrax</Name>
+          <Hotspots>
+            <Hotspot X="42.26" Y="23.51" Z="0.00" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="39" /> <!--  (grind Zelfrax) -->
+    </If>
+    <Objective QuestName="Twilight of the Dawn Runner" QuestId="9437" Type="CollectItem" ItemId="23657" CollectCount="1" />
+    <TurnIn QuestName="Jarl Needs Eyes" QuestId="1206" TurnInName="&quot;Swamp Eye&quot; Jarl" TurnInId="4792" />
+    <If Condition="((!HasQuest(1203)) &amp;&amp; (!IsQuestCompleted(1203)))">
+      <PickUp QuestName="Jarl Needs a Blade" QuestId="1203" GiverName="&quot;Swamp Eye&quot; Jarl" GiverId="4792" />
+    </If>
+    <If Condition="((!HasQuest(1239)) &amp;&amp; (!IsQuestCompleted(1239)))">
+      <PickUp QuestName="The Severed Head" QuestId="1239" GiverName="&quot;Swamp Eye&quot; Jarl" GiverId="4792" />
+    </If>
+    <Objective QuestName="Jarl Needs a Blade" QuestId="1203" Type="KillMob" MobId="23841" KillCount="1" />
+    <Objective QuestName="Jarl Needs a Blade" QuestId="1203" Type="CollectItem" ItemId="33110" CollectCount="1" />
+    <Objective QuestName="Hungry!" QuestId="1177" Type="CollectItem" ItemId="5847" CollectCount="8" />
+    <TurnIn QuestName="Jarl Needs a Blade" QuestId="1203" TurnInName="&quot;Swamp Eye&quot; Jarl" TurnInId="4792" />
+    <Objective QuestName="The Theramore Docks" QuestId="1202" Type="CollectItem" ItemId="5882" CollectCount="1" />
+    <TurnIn QuestName="Twilight of the Dawn Runner" QuestId="9437" TurnInName="Balandar Brightstar" TurnInId="17095" />
+    <TurnIn QuestName="The Theramore Docks" QuestId="1202" TurnInName="Nazeer Bloodpike" TurnInId="4791" />
+    <TurnIn QuestName="The Severed Head" QuestId="1239" TurnInName="Nazeer Bloodpike" TurnInId="4791" />
+    <If Condition="((!HasQuest(1240)) &amp;&amp; (!IsQuestCompleted(1240)))">
+      <PickUp QuestName="The Troll Witchdoctor" QuestId="1240" GiverName="Nazeer Bloodpike" GiverId="4791" />
+    </If>
+    <PickUp QuestName="Help Mudsprocket" QuestId="11215" GiverName="Nazeer Bloodpike" GiverId="4791" />
+    <TurnIn QuestName="Hungry!" QuestId="1177" TurnInName="Mudcrush Durtfeet" TurnInId="4503" />
+    <TurnIn QuestName="Check Up on Tabetha" QuestId="11213" TurnInName="Tabetha" TurnInId="6546" />
+    <PickUp QuestName="The Reagent Thief" QuestId="11173" GiverName="Apprentice Garion" GiverId="23601" />
+    <PickUp QuestName="Direhorn Raiders" QuestId="11156" GiverName="Apprentice Morlann" GiverId="23600" />
+    <PickUp QuestName="The Zeppelin Crash" QuestId="11172" GiverName="Apprentice Morlann" GiverId="23600" />
+    <Objective QuestName="Deadmire" QuestId="1205" Type="KillMob" MobId="4841" KillCount="1" />
+    <Objective QuestName="Deadmire" QuestId="1205" Type="CollectItem" ItemId="5945" CollectCount="1" />
+    <Objective QuestName="The Reagent Thief" QuestId="11173" Type="CollectItem" ItemId="33103" CollectCount="6" />
+    <Objective QuestName="The Zeppelin Crash" QuestId="11172" Type="KillMob" MobId="23881" KillCount="1" />
+    <Objective QuestName="The Zeppelin Crash" QuestId="11172" Type="CollectItem" ItemId="33115" CollectCount="1" />
+    <While Condition="((HasQuest(11172)) &amp;&amp; (!IsQuestCompleted(11172)))">
+      <CustomBehavior File="UseItemOn" QuestId="11172" MobId="0" ItemId="33115" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Signs of Treachery?" QuestId="11186" GiverName="Apprentice Morlann" GiverId="23600" />
+    <TurnIn QuestName="The Zeppelin Crash" QuestId="11172" TurnInName="Moxie Steelgrille" TurnInId="23797" />
+    <If Condition="((!HasQuest(11174)) &amp;&amp; (!IsQuestCompleted(11174)))">
+      <PickUp QuestName="Corrosion Prevention" QuestId="11174" GiverName="Moxie Steelgrille" GiverId="23797" />
+    </If>
+    <PickUp QuestName="Secure the Cargo!" QuestId="11207" GiverName="Moxie Steelgrille" GiverId="23797" />
+    <Objective QuestName="Razzeric's Tweaking" QuestId="1187" Type="CollectItem" ItemId="5862" CollectCount="1" />
+    <While Condition="((HasQuest(11174)) &amp;&amp; (!IsQuestCompleted(11174)))">
+      <RunTo X="-4025.4" Y="-3787.59" Z="42.2447" />
+      <CustomBehavior File="UseItemOn" QuestId="11174" MobId="23797" ItemId="33108" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-4025.4" Y="-3787.59" Z="42.2447" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Secure the Cargo!" QuestId="11207" Type="CollectItem" ItemId="33163" CollectCount="8" />
+    <TurnIn QuestName="Corrosion Prevention" QuestId="11174" TurnInName="Moxie Steelgrille" TurnInId="23797" />
+    <TurnIn QuestName="Secure the Cargo!" QuestId="11207" TurnInName="Moxie Steelgrille" TurnInId="23797" />
+    <If Condition="((!HasQuest(11208)) &amp;&amp; (!IsQuestCompleted(11208)))">
+      <PickUp QuestName="Delivery for Drazzit" QuestId="11208" GiverName="Moxie Steelgrille" GiverId="23797" />
+    </If>
+    <TurnIn QuestName="Direhorn Raiders" QuestId="11156" TurnInName="Apprentice Morlann" TurnInId="23600" />
+    <TurnIn QuestName="The Reagent Thief" QuestId="11173" TurnInName="Apprentice Garion" TurnInId="23601" />
+    <TurnIn QuestName="Delivery for Drazzit" QuestId="11208" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+    <TurnIn QuestName="Help Mudsprocket" QuestId="11215" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+    <TurnIn QuestName="Signs of Treachery?" QuestId="11186" TurnInName="Nazeer Bloodpike" TurnInId="4791" />
+    <TurnIn QuestName="Deadmire" QuestId="1205" TurnInName="Melor Stonehoof" TurnInId="3441" />
+    <TurnIn QuestName="Stinky's Escape" QuestId="1270" TurnInName="Mebok Mizzyrix" TurnInId="3446" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Dustwallow Marsh (38-39) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Stranglethorn_Vale_(39-39)" />
+  </QuestOrder>
+</HBProfile>

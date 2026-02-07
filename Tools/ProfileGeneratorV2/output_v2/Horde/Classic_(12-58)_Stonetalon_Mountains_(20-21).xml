@@ -1,0 +1,129 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Stonetalon Mountains (20-21)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>21</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="6284" Name="Arachnophobia">
+    <Objective Type="KillMob" MobId="11921" KillCount="1">
+      <Hotspots>
+        <Hotspot X="511.902" Y="708.578" Z="80.1161" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1069" Name="Deepmoss Spider Eggs">
+    <Objective Type="CollectItem" ItemId="5570" CollectCount="15">
+      <CollectFrom>
+        <GameObject Name="Deepmoss Eggs" Id="19541" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="456.92" Y="677.47" Z="78.43" />
+        <Hotspot X="501.52" Y="685.82" Z="79.41" />
+        <Hotspot X="524.56" Y="580.35" Z="90.99" />
+        <Hotspot X="543.95" Y="595.89" Z="74.17" />
+        <Hotspot X="544.57" Y="667.32" Z="78.87" />
+        <Hotspot X="602.86" Y="660.72" Z="79.69" />
+        <Hotspot X="862.68" Y="209.65" Z="27.71" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="6461" Name="Blood Feeders">
+    <Objective Type="KillMob" MobId="4007" KillCount="7">
+      <Hotspots>
+        <Hotspot X="911.543" Y="315.748" Z="22.0793" />
+        <Hotspot X="926.128" Y="683.096" Z="103.166" />
+        <Hotspot X="951.985" Y="182.553" Z="22.2969" />
+        <Hotspot X="932.51" Y="79.0298" Z="27.3162" />
+        <Hotspot X="917.699" Y="162.945" Z="26.5788" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4005" KillCount="10">
+      <Hotspots>
+        <Hotspot X="30.7453" Y="-112.831" Z="20.6806" />
+        <Hotspot X="59.7743" Y="-41.8298" Z="24.5964" />
+        <Hotspot X="470.634" Y="309.926" Z="50.4788" />
+        <Hotspot X="427.009" Y="289.262" Z="50.9211" />
+        <Hotspot X="374.306" Y="356.44" Z="44.658" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1093" Name="Super Reaper 6000">
+    <Objective Type="KillMob" MobId="3988" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1071.44" Y="-331.959" Z="-9.237" />
+        <Hotspot X="1311.41" Y="-308.578" Z="7.5441" />
+        <Hotspot X="1427.58" Y="1.4056" Z="24.9343" />
+        <Hotspot X="1434.64" Y="-28.5739" Z="27.0166" />
+        <Hotspot X="1435.22" Y="1.7321" Z="38.5955" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1062" Name="Goblin Invaders">
+    <Objective Type="KillMob" MobId="3989" KillCount="15">
+      <Hotspots>
+        <Hotspot X="1349.5" Y="80.6684" Z="11.8869" />
+        <Hotspot X="1115.52" Y="119.316" Z="0.0343" />
+        <Hotspot X="1117.85" Y="147.465" Z="1.7217" />
+        <Hotspot X="1146.53" Y="139.357" Z="-2.1084" />
+        <Hotspot X="1045.58" Y="112.173" Z="15.9995" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stonetalon Mountains (20-21)" LogColor="Green" />
+    <TurnIn QuestName="Letter to Jin'Zil" QuestId="1060" TurnInName="Witch Doctor Jin'Zil" TurnInId="3995" />
+    <If Condition="((!HasQuest(1058)) &amp;&amp; (!IsQuestCompleted(1058)))">
+      <PickUp QuestName="Jin'Zil's Forest Magic" QuestId="1058" GiverName="Witch Doctor Jin'Zil" GiverId="3995" />
+    </If>
+    <PickUp QuestName="Blood Feeders" QuestId="6461" GiverName="Xen'Zilla" GiverId="12816" />
+    <PickUp QuestName="Arachnophobia" QuestId="6284" GiverName="Xen'Zilla" GiverId="12816" />
+    <Objective QuestName="Arachnophobia" QuestId="6284" Type="KillMob" MobId="11921" KillCount="1" />
+    <Objective QuestName="Arachnophobia" QuestId="6284" Type="CollectItem" ItemId="16192" CollectCount="1" />
+    <Objective QuestName="Deepmoss Spider Eggs" QuestId="1069" Type="CollectItem" ItemId="5570" CollectCount="15" />
+    <Objective QuestName="Blood Feeders" QuestId="6461" Type="KillMob" MobId="4007" KillCount="7" />
+    <Objective QuestName="Blood Feeders" QuestId="6461" Type="KillMob" MobId="4005" KillCount="10" />
+    <TurnIn QuestName="Ziz Fizziks" QuestId="1483" TurnInName="Ziz Fizziks" TurnInId="4201" />
+    <PickUp QuestName="Super Reaper 6000" QuestId="1093" GiverName="Ziz Fizziks" GiverId="4201" />
+    <Objective QuestName="Super Reaper 6000" QuestId="1093" Type="KillMob" MobId="3988" KillCount="1" />
+    <Objective QuestName="Super Reaper 6000" QuestId="1093" Type="CollectItem" ItemId="5734" CollectCount="1" />
+    <Objective QuestName="Goblin Invaders" QuestId="1062" Type="KillMob" MobId="3989" KillCount="15" />
+    <If Condition="Me.Level &lt; 21">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 21 - Venture Co. Logger</Name>
+          <TargetMinLevel>18</TargetMinLevel>
+          <TargetMaxLevel>19</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="1349.50" Y="80.67" Z="11.89" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="21" /> <!--  (grind Venture Co. Logger) -->
+    </If>
+    <TurnIn QuestName="Super Reaper 6000" QuestId="1093" TurnInName="Ziz Fizziks" TurnInId="4201" />
+    <If Condition="((!HasQuest(1094)) &amp;&amp; (!IsQuestCompleted(1094)))">
+      <PickUp QuestName="Further Instructions" QuestId="1094" GiverName="Ziz Fizziks" GiverId="4201" />
+    </If>
+    <TurnIn QuestName="Kaya's Alive" QuestId="6401" TurnInName="Tammra Windfield" TurnInId="11864" />
+    <TurnIn QuestName="Arachnophobia" QuestId="6284" TurnInName="Maggran Earthbinder" TurnInId="11860" />
+    <PickUp QuestName="Boulderslide Ravine" QuestId="6421" GiverName="Mor'rogal" GiverId="11861" />
+    <PickUp QuestName="Trouble in the Deeps" QuestId="6562" GiverName="Tsunaman" GiverId="11862" />
+    <Objective QuestName="Boulderslide Ravine" QuestId="6421" Type="CollectItem" ItemId="16581" CollectCount="10" />
+    <TurnIn QuestName="Blood Feeders" QuestId="6461" TurnInName="Xen'Zilla" TurnInId="12816" />
+    <TurnIn QuestName="Goblin Invaders" QuestId="1062" TurnInName="Seereth Stonebreak" TurnInId="4049" />
+    <If Condition="((!HasQuest(1068)) &amp;&amp; (!IsQuestCompleted(1068)))">
+      <PickUp QuestName="Shredding Machines" QuestId="1068" GiverName="Seereth Stonebreak" GiverId="4049" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stonetalon Mountains (20-21) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Ashenvale_(21-21)" />
+  </QuestOrder>
+</HBProfile>

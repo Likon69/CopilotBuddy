@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Redridge Mountains (25-25)</Name>
+  <Name>Alliance\Redridge Mountains (25-25)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>25</MaxLevel>
@@ -8,8 +7,19 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
-  <Quest Id="2282" Name="Alther&apos;s Mill">
+  <Quest Id="34" Name="An Unwelcome Guest">
+    <Objective Type="KillMob" MobId="345" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-9286.79" Y="-1926.36" Z="72.0246" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2282" Name="Alther's Mill">
     <Objective Type="CollectItem" ItemId="7871" CollectCount="1">
       <CollectFrom>
         <GameObject Name="Lucius" Id="121264" />
@@ -21,7 +31,7 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Redridge Mountains (25-25)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Redridge Mountains (25-25)" LogColor="Green" />
     <PickUp QuestName="A Watchful Eye" QuestId="94" GiverName="Theocritus" GiverId="313" />
     <PickUp QuestName="Encroaching Gnolls" QuestId="244" GiverName="Guard Parker" GiverId="464" />
     <TurnIn QuestName="Encroaching Gnolls" QuestId="244" TurnInName="Deputy Feldon" TurnInId="1070" />
@@ -29,52 +39,46 @@
     <PickUp QuestName="Selling Fish" QuestId="127" GiverName="Dockmaster Baren" GiverId="381" />
     <PickUp QuestName="Murloc Poachers" QuestId="150" GiverName="Dockmaster Baren" GiverId="381" />
     <PickUp QuestName="An Unwelcome Guest" QuestId="34" GiverName="Martie Jainrose" GiverId="342" />
-    <Objective QuestName="An Unwelcome Guest" QuestId="34" Type="KillMob" MobId="345" MobName="Bellygrub" KillCount="1" />
-    <Objective QuestName="An Unwelcome Guest" QuestId="34" Type="CollectItem" ItemId="3631" ItemName="Bellygrub&apos;s Tusk" CollectCount="1" />
+    <Objective QuestName="An Unwelcome Guest" QuestId="34" Type="KillMob" MobId="345" KillCount="1" />
+    <Objective QuestName="An Unwelcome Guest" QuestId="34" Type="CollectItem" ItemId="3631" CollectCount="1" />
     <TurnIn QuestName="An Unwelcome Guest" QuestId="34" TurnInName="Martie Jainrose" TurnInId="342" />
-    <TurnIn QuestName="Redridge Rendezvous" QuestId="2281" TurnInName="Lucius" TurnInId="6966" />
     <If Condition="(Me.Class == WoWClass.Rogue)">
+      <TurnIn QuestName="Redridge Rendezvous" QuestId="2281" TurnInName="Lucius" TurnInId="6966" />
       <If Condition="((!HasQuest(2282)) &amp;&amp; (!IsQuestCompleted(2282)))">
-        <PickUp QuestName="Alther&apos;s Mill" QuestId="2282" GiverName="Lucius" GiverId="6966" />
+        <PickUp QuestName="Alther's Mill" QuestId="2282" GiverName="Lucius" GiverId="6966" />
       </If>
-      <Objective QuestName="Alther&apos;s Mill" QuestId="2282" Type="CollectItem" ItemId="7871" ItemName="Token of Thievery" CollectCount="1" />
+      <Objective QuestName="Alther's Mill" QuestId="2282" Type="CollectItem" ItemId="7871" CollectCount="1" />
     </If>
-    <Objective QuestName="Blackrock Menace" QuestId="20" Type="CollectItem" ItemId="3014" ItemName="Battleworn Axe" CollectCount="10" />
-    <Objective QuestName="Selling Fish" QuestId="127" Type="CollectItem" ItemId="1467" ItemName="Spotted Sunfish" CollectCount="10" />
-    <Objective QuestName="Murloc Poachers" QuestId="150" Type="CollectItem" ItemId="1468" ItemName="Murloc Fin" CollectCount="8" />
+    <Objective QuestName="Blackrock Menace" QuestId="20" Type="CollectItem" ItemId="3014" CollectCount="10" />
+    <Objective QuestName="Selling Fish" QuestId="127" Type="CollectItem" ItemId="1467" CollectCount="10" />
+    <Objective QuestName="Murloc Poachers" QuestId="150" Type="CollectItem" ItemId="1468" CollectCount="8" />
     <TurnIn QuestName="Blackrock Menace" QuestId="20" TurnInName="Marshal Marris" TurnInId="382" />
     <If Condition="(Me.Class == WoWClass.Rogue)">
-      <TurnIn QuestName="Alther&apos;s Mill" QuestId="2282" TurnInName="Lucius" TurnInId="6966" />
+      <TurnIn QuestName="Alther's Mill" QuestId="2282" TurnInName="Lucius" TurnInId="6966" />
     </If>
     <TurnIn QuestName="Selling Fish" QuestId="127" TurnInName="Dockmaster Baren" TurnInId="381" />
     <TurnIn QuestName="Murloc Poachers" QuestId="150" TurnInName="Dockmaster Baren" TurnInId="381" />
     <If Condition="(Me.Class == WoWClass.Rogue)">
       <PickUp QuestName="Mathias and the Defias" QuestId="2360" GiverName="Master Mathias Shaw" GiverId="332" />
-    </If>
-    <TurnIn QuestName="Mathias and the Defias" QuestId="2360" TurnInName="Agent Kearnen" TurnInId="7024" />
-    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <TurnIn QuestName="Mathias and the Defias" QuestId="2360" TurnInName="Agent Kearnen" TurnInId="7024" />
       <If Condition="((!HasQuest(2359)) &amp;&amp; (!IsQuestCompleted(2359)))">
-        <PickUp QuestName="Klaven&apos;s Tower" QuestId="2359" GiverName="Agent Kearnen" GiverId="7024" />
+        <PickUp QuestName="Klaven's Tower" QuestId="2359" GiverName="Agent Kearnen" GiverId="7024" />
       </If>
+      <Objective QuestName="Klaven's Tower" QuestId="2359" Type="CollectItem" ItemId="7923" CollectCount="1" />
+      <Objective QuestName="Klaven's Tower" QuestId="2359" Type="CollectItem" ItemId="7908" CollectCount="1" />
     </If>
-    <Objective QuestName="Klaven&apos;s Tower" QuestId="2359" Type="CollectItem" ItemId="7923" ItemName="Defias Tower Key" CollectCount="1" />
-    <If Condition="(Me.Class == WoWClass.Rogue)">
-      <Objective QuestName="Klaven&apos;s Tower" QuestId="2359" Type="CollectItem" ItemId="7908" ItemName="Klaven Mortwake&apos;s Journal" CollectCount="1" />
-    </If>
-    <TurnIn QuestName="Klaven&apos;s Tower" QuestId="2359" TurnInName="Master Mathias Shaw" TurnInId="332" />
+    <TurnIn QuestName="Klaven's Tower" QuestId="2359" TurnInName="Master Mathias Shaw" TurnInId="332" />
     <If Condition="(Me.Class == WoWClass.Rogue)">
       <If Condition="((!HasQuest(2607)) &amp;&amp; (!IsQuestCompleted(2607)))">
         <PickUp QuestName="The Touch of Zanzil" QuestId="2607" GiverName="Master Mathias Shaw" GiverId="332" />
       </If>
-    </If>
-    <TurnIn QuestName="The Touch of Zanzil" QuestId="2607" TurnInName="Doc Mixilpixil" TurnInId="7207" />
-    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <TurnIn QuestName="The Touch of Zanzil" QuestId="2607" TurnInName="Doc Mixilpixil" TurnInId="7207" />
       <If Condition="((!HasQuest(2608)) &amp;&amp; (!IsQuestCompleted(2608)))">
         <PickUp QuestName="The Touch of Zanzil" QuestId="2608" GiverName="Doc Mixilpixil" GiverId="7207" />
       </If>
       <TurnIn QuestName="The Touch of Zanzil" QuestId="2608" TurnInName="Doc Mixilpixil" TurnInId="7207" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Redridge Mountains (25-25) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Redridge Mountains (25-25) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Duskwood_(25-27)" />
   </QuestOrder>
 </HBProfile>

@@ -1,0 +1,101 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Feralas (49-49)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="3063" Name="Vengeance on the Northspring">
+    <Objective Type="KillMob" MobId="5362" KillCount="4">
+      <Hotspots>
+        <Hotspot X="-3105.17" Y="2813.53" Z="80.3285" />
+        <Hotspot X="-2874.77" Y="2652.08" Z="73.0903" />
+        <Hotspot X="-3083.46" Y="2654.63" Z="53.8049" />
+        <Hotspot X="-3031.27" Y="2660.33" Z="57.7634" />
+        <Hotspot X="-3090.12" Y="2781.57" Z="70.9312" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5363" KillCount="4">
+      <Hotspots>
+        <Hotspot X="-3090.33" Y="2839.76" Z="89.4119" />
+        <Hotspot X="-3113.84" Y="2761.32" Z="72.1997" />
+        <Hotspot X="-2926.16" Y="2788.34" Z="80.3063" />
+        <Hotspot X="-2849.43" Y="2680.05" Z="72.8693" />
+        <Hotspot X="-2947.04" Y="2517.57" Z="36.3828" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5364" KillCount="4">
+      <Hotspots>
+        <Hotspot X="-3049.38" Y="2784.74" Z="64.5796" />
+        <Hotspot X="-3044.58" Y="2740.72" Z="59.6628" />
+        <Hotspot X="-3104.52" Y="2805.94" Z="79.3285" />
+        <Hotspot X="-2926.64" Y="2815.13" Z="73.5344" />
+        <Hotspot X="-2836.57" Y="2699.75" Z="72.3785" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5366" KillCount="4">
+      <Hotspots>
+        <Hotspot X="-3012.9" Y="2784.02" Z="53.6183" />
+        <Hotspot X="-3038.06" Y="2669.45" Z="56.3983" />
+        <Hotspot X="-3083.73" Y="2717.74" Z="59.204" />
+        <Hotspot X="-3029.46" Y="2762.08" Z="55.2349" />
+        <Hotspot X="-2971.34" Y="2721.16" Z="52.4896" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Feralas (49-49)" LogColor="Green" />
+    <TurnIn QuestName="Return to Witch Doctor Uzer'i" QuestId="3122" TurnInName="Witch Doctor Uzer'i" TurnInId="8115" />
+    <PickUp QuestName="The Sunken Temple" QuestId="3380" GiverName="Witch Doctor Uzer'i" GiverId="8115" />
+    <If Condition="((!HasQuest(7734)) &amp;&amp; (!IsQuestCompleted(7734)))">
+      <PickUp QuestName="Improved Quality" QuestId="7734" GiverName="Jangdor Swiftstrider" GiverId="7854" />
+    </If>
+    <If Condition="((!HasQuest(3062)) &amp;&amp; (!IsQuestCompleted(3062)))">
+      <PickUp QuestName="Dark Heart" QuestId="3062" GiverName="Talo Thornhoof" GiverId="7776" />
+    </If>
+    <If Condition="((!HasQuest(3063)) &amp;&amp; (!IsQuestCompleted(3063)))">
+      <PickUp QuestName="Vengeance on the Northspring" QuestId="3063" GiverName="Talo Thornhoof" GiverId="7776" />
+    </If>
+    <PickUp QuestName="The Strength of Corruption" QuestId="4120" GiverName="Talo Thornhoof" GiverId="7776" />
+    <CustomBehavior File="SetHearthstone" MobId="7737" AreaId="357" X="-4460.1" Y="242.722" Z="39.1908" /> <!-- Set hearth: Camp Mojache -->
+    <PickUp QuestName="Zapped Giants" QuestId="7003" GiverName="Zorbin Fandazzle" GiverId="14637" />
+    <PickUp QuestName="Fuel for the Zapping" QuestId="7721" GiverName="Zorbin Fandazzle" GiverId="14637" />
+    <While Condition="((HasQuest(7003)) &amp;&amp; (!IsQuestCompleted(7003)))">
+      <CustomBehavior File="UseItemOn" QuestId="7003" MobId="0" ItemId="18904" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Zapped Giants" QuestId="7003" Type="KillMob" MobId="14638" KillCount="1" />
+    <Objective QuestName="Zapped Giants" QuestId="7003" Type="CollectItem" ItemId="18956" CollectCount="15" />
+    <Objective QuestName="Fuel for the Zapping" QuestId="7721" Type="CollectItem" ItemId="18958" CollectCount="10" />
+    <TurnIn QuestName="Zapped Giants" QuestId="7003" TurnInName="Zorbin Fandazzle" TurnInId="14637" />
+    <TurnIn QuestName="Fuel for the Zapping" QuestId="7721" TurnInName="Zorbin Fandazzle" TurnInId="14637" />
+    <Objective QuestName="Improved Quality" QuestId="7734" Type="CollectItem" ItemId="18947" CollectCount="10" />
+    <CustomBehavior File="UseItemOn" ItemId="18972" MobId="0" NumOfTimes="1" CollectionDistance="100" />
+    <PickUp QuestName="Perfect Yeti Hide" QuestId="7738" GiverName="Zorbin Fandazzle" GiverId="14637" />
+    <Objective QuestName="Dark Heart" QuestId="3062" Type="CollectItem" ItemId="9530" CollectCount="1" />
+    <While Condition="((HasQuest(3062)) &amp;&amp; (!IsQuestCompleted(3062)))">
+      <CustomBehavior File="UseItemOn" QuestId="3062" MobId="0" ItemId="9530" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Dark Heart" QuestId="3062" Type="KillMob" MobId="8075" KillCount="1" />
+    <Objective QuestName="Dark Heart" QuestId="3062" Type="CollectItem" ItemId="9528" CollectCount="1" />
+    <Objective QuestName="Vengeance on the Northspring" QuestId="3063" Type="KillMob" MobId="5362" KillCount="4" />
+    <Objective QuestName="Vengeance on the Northspring" QuestId="3063" Type="KillMob" MobId="5363" KillCount="4" />
+    <Objective QuestName="Vengeance on the Northspring" QuestId="3063" Type="KillMob" MobId="5364" KillCount="4" />
+    <Objective QuestName="Vengeance on the Northspring" QuestId="3063" Type="KillMob" MobId="5366" KillCount="4" />
+    <TurnIn QuestName="Improved Quality" QuestId="7734" TurnInName="Jangdor Swiftstrider" TurnInId="7854" />
+    <TurnIn QuestName="Perfect Yeti Hide" QuestId="7738" TurnInName="Jangdor Swiftstrider" TurnInId="7854" />
+    <TurnIn QuestName="Dark Heart" QuestId="3062" TurnInName="Talo Thornhoof" TurnInId="7776" />
+    <TurnIn QuestName="Vengeance on the Northspring" QuestId="3063" TurnInName="Talo Thornhoof" TurnInId="7776" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Feralas (49-49) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Tanaris_(49-50)" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,147 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Stranglethorn Vale (39-39)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>40</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="572" Name="Mok'thardin's Enchantment">
+    <Objective Type="KillMob" MobId="687" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-12835.2" Y="134.366" Z="17.995" />
+        <Hotspot X="-13359.8" Y="743.462" Z="4.1367" />
+        <Hotspot X="-13280.5" Y="682.581" Z="3.2884" />
+        <Hotspot X="-13282.4" Y="753.035" Z="2.9505" />
+        <Hotspot X="-13318.5" Y="521.245" Z="4.4735" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="196" Name="Raptor Mastery">
+    <Objective Type="KillMob" MobId="687" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-12835.2" Y="134.366" Z="17.995" />
+        <Hotspot X="-13359.8" Y="743.462" Z="4.1367" />
+        <Hotspot X="-13280.5" Y="682.581" Z="3.2884" />
+        <Hotspot X="-13282.4" Y="753.035" Z="2.9505" />
+        <Hotspot X="-13318.5" Y="521.245" Z="4.4735" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="193" Name="Panther Mastery">
+    <Objective Type="KillMob" MobId="728" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-12191.0" Y="-944.651" Z="32.9082" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="571" Name="Mok'thardin's Enchantment">
+    <Objective Type="KillMob" MobId="1557" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-13684.4" Y="150.006" Z="20.536" />
+        <Hotspot X="-13713.7" Y="178.499" Z="18.7668" />
+        <Hotspot X="-13953.2" Y="84.4285" Z="16.0215" />
+        <Hotspot X="-13914.3" Y="50.4349" Z="15.7874" />
+        <Hotspot X="-13953.3" Y="140.875" Z="13.7878" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="606" Name="Scaring Shaky">
+    <Objective Type="KillMob" MobId="1557" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-13684.4" Y="150.006" Z="20.536" />
+        <Hotspot X="-13713.7" Y="178.499" Z="18.7668" />
+        <Hotspot X="-13953.2" Y="84.4285" Z="16.0215" />
+        <Hotspot X="-13914.3" Y="50.4349" Z="15.7874" />
+        <Hotspot X="-13953.3" Y="140.875" Z="13.7878" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stranglethorn Vale (39-39)" LogColor="Green" />
+    <PickUp QuestName="The Bloodsail Buccaneers" QuestId="595" GiverName="First Mate Crazz" GiverId="2490" />
+    <PickUp QuestName="Scaring Shaky" QuestId="606" GiverName="&quot;Sea Wolf&quot; MacKinley" GiverId="2501" />
+    <CustomBehavior File="SetHearthstone" MobId="7733" AreaId="440" X="-7158.96" Y="-3841.61" Z="8.8481" /> <!-- Set hearth: Booty Bay -->
+    <TurnIn QuestName="The Rumormonger" QuestId="1115" TurnInName="Krazek" TurnInId="773" />
+    <If Condition="((!HasQuest(1116)) &amp;&amp; (!IsQuestCompleted(1116)))">
+      <PickUp QuestName="Dream Dust in the Swamp" QuestId="1116" GiverName="Krazek" GiverId="773" />
+    </If>
+    <If Condition="((!HasQuest(572)) &amp;&amp; (!IsQuestCompleted(572)))">
+      <PickUp QuestName="Mok'thardin's Enchantment" QuestId="572" GiverName="Far Seer Mok'thardin" GiverId="2465" />
+    </If>
+    <TurnIn QuestName="The Troll Witchdoctor" QuestId="1240" TurnInName="Kin'weelay" TurnInId="2519" />
+    <PickUp QuestName="The Vile Reef" QuestId="629" GiverName="Kin'weelay" GiverId="2519" />
+    <If Condition="((!HasQuest(1261)) &amp;&amp; (!IsQuestCompleted(1261)))">
+      <PickUp QuestName="Marg Speaks" QuestId="1261" GiverName="Kin'weelay" GiverId="2519" />
+    </If>
+    <Objective QuestName="Mok'thardin's Enchantment" QuestId="572" Type="KillMob" MobId="687" KillCount="1" />
+    <Objective QuestName="Mok'thardin's Enchantment" QuestId="572" Type="CollectItem" ItemId="3863" CollectCount="10" />
+    <Objective QuestName="Raptor Mastery" QuestId="196" Type="KillMob" MobId="687" KillCount="10" />
+    <TurnIn QuestName="Mok'thardin's Enchantment" QuestId="572" TurnInName="Far Seer Mok'thardin" TurnInId="2465" />
+    <If Condition="((!HasQuest(571)) &amp;&amp; (!IsQuestCompleted(571)))">
+      <PickUp QuestName="Mok'thardin's Enchantment" QuestId="571" GiverName="Far Seer Mok'thardin" GiverId="2465" />
+    </If>
+    <Objective QuestName="Panther Mastery" QuestId="193" Type="KillMob" MobId="728" KillCount="1" />
+    <Objective QuestName="Panther Mastery" QuestId="193" Type="CollectItem" ItemId="3876" CollectCount="1" />
+    <TurnIn QuestName="Raptor Mastery" QuestId="196" TurnInName="Hemet Nesingwary" TurnInId="715" />
+    <If Condition="((!HasQuest(197)) &amp;&amp; (!IsQuestCompleted(197)))">
+      <PickUp QuestName="Raptor Mastery" QuestId="197" GiverName="Hemet Nesingwary" GiverId="715" />
+    </If>
+    <TurnIn QuestName="Panther Mastery" QuestId="193" TurnInName="Sir S. J. Erlgadin" TurnInId="718" />
+    <If Condition="((!HasQuest(338)) &amp;&amp; (!IsQuestCompleted(338)))">
+      <PickUp QuestName="The Green Hills of Stranglethorn" QuestId="338" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <If Condition="((!HasQuest(339)) &amp;&amp; (!IsQuestCompleted(339)))">
+      <PickUp QuestName="Chapter I" QuestId="339" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <TurnIn QuestName="Chapter I" QuestId="339" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <If Condition="((!HasQuest(340)) &amp;&amp; (!IsQuestCompleted(340)))">
+      <PickUp QuestName="Chapter II" QuestId="340" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <TurnIn QuestName="Chapter II" QuestId="340" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <If Condition="((!HasQuest(341)) &amp;&amp; (!IsQuestCompleted(341)))">
+      <PickUp QuestName="Chapter III" QuestId="341" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <TurnIn QuestName="Chapter III" QuestId="341" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <If Condition="((!HasQuest(342)) &amp;&amp; (!IsQuestCompleted(342)))">
+      <PickUp QuestName="Chapter IV" QuestId="342" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <TurnIn QuestName="Chapter IV" QuestId="342" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <TurnIn QuestName="The Green Hills of Stranglethorn" QuestId="338" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <TurnIn QuestName="The Bloodsail Buccaneers" QuestId="595" TurnInName="Object_2083" TurnInType="Object" TurnInId="2083" />
+    <If Condition="((!HasQuest(597)) &amp;&amp; (!IsQuestCompleted(597)))">
+      <PickUp QuestName="The Bloodsail Buccaneers" QuestId="597" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <Objective QuestName="Mok'thardin's Enchantment" QuestId="571" Type="KillMob" MobId="1557" KillCount="1" />
+    <Objective QuestName="Mok'thardin's Enchantment" QuestId="571" Type="CollectItem" ItemId="3862" CollectCount="1" />
+    <Objective QuestName="Scaring Shaky" QuestId="606" Type="KillMob" MobId="1557" KillCount="1" />
+    <Objective QuestName="Scaring Shaky" QuestId="606" Type="CollectItem" ItemId="3919" CollectCount="5" />
+    <TurnIn QuestName="Scaring Shaky" QuestId="606" TurnInName="&quot;Shaky&quot; Phillipe" TurnInId="2502" />
+    <If Condition="((!HasQuest(607)) &amp;&amp; (!IsQuestCompleted(607)))">
+      <PickUp QuestName="Return to MacKinley" QuestId="607" GiverName="&quot;Shaky&quot; Phillipe" GiverId="2502" />
+    </If>
+    <TurnIn QuestName="The Bloodsail Buccaneers" QuestId="597" TurnInName="First Mate Crazz" TurnInId="2490" />
+    <If Condition="((!HasQuest(599)) &amp;&amp; (!IsQuestCompleted(599)))">
+      <PickUp QuestName="The Bloodsail Buccaneers" QuestId="599" GiverName="First Mate Crazz" GiverId="2490" />
+    </If>
+    <If Condition="!((Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.Undead))">
+      <Objective QuestName="Pool of Tears" QuestId="1424" Type="CollectItem" ItemId="5996" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Return to MacKinley" QuestId="607" TurnInName="&quot;Sea Wolf&quot; MacKinley" TurnInId="2501" />
+    <TurnIn QuestName="The Bloodsail Buccaneers" QuestId="599" TurnInName="Fleet Master Seahorn" TurnInId="2487" />
+    <TurnIn QuestName="Mok'thardin's Enchantment" QuestId="571" TurnInName="Far Seer Mok'thardin" TurnInId="2465" />
+    <If Condition="((!HasQuest(573)) &amp;&amp; (!IsQuestCompleted(573)))">
+      <PickUp QuestName="Mok'thardin's Enchantment" QuestId="573" GiverName="Far Seer Mok'thardin" GiverId="2465" />
+    </If>
+    <CustomBehavior File="SetHearthstone" MobId="12196" AreaId="331" X="2341.86" Y="-2566.99" Z="102.857" /> <!-- Set hearth: Grom'gol Base Camp -->
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stranglethorn Vale (39-39) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Swamp_of_Sorrows_(39-40)" />
+  </QuestOrder>
+</HBProfile>

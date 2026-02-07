@@ -1,0 +1,138 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Dustwallow Marsh (43-44)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>44</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="11184" Name="WANTED: Goreclaw the Ravenous">
+    <Objective Type="KillMob" MobId="23873" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-4331.29" Y="-2664.14" Z="33.379" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11160" Name="Banner of the Stonemaul">
+    <Objective Type="CollectItem" ItemId="33086" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Stonemaul Clan Banner" Id="186329" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4464.58" Y="-2975.96" Z="30.32" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1168" Name="Army of the Black Dragon">
+    <Objective Type="KillMob" MobId="4328" KillCount="5">
+      <Hotspots>
+        <Hotspot X="-4660.75" Y="-3940.17" Z="41.5275" />
+        <Hotspot X="-4579.33" Y="-3808.66" Z="39.8213" />
+        <Hotspot X="-4953.68" Y="-3849.24" Z="43.1393" />
+        <Hotspot X="-4555.05" Y="-3803.32" Z="31.4525" />
+        <Hotspot X="-4587.14" Y="-3774.38" Z="38.2761" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4331" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-4505.11" Y="-3960.96" Z="32.0703" />
+        <Hotspot X="-4477.27" Y="-3294.37" Z="37.6475" />
+        <Hotspot X="-4910.23" Y="-3343.77" Z="36.8571" />
+        <Hotspot X="-4377.23" Y="-3368.13" Z="40.5809" />
+        <Hotspot X="-4754.81" Y="-3438.53" Z="39.8953" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4329" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-4318.91" Y="-3351.63" Z="40.8784" />
+        <Hotspot X="-4507.84" Y="-3966.77" Z="34.4568" />
+        <Hotspot X="-4483.9" Y="-3299.28" Z="37.3772" />
+        <Hotspot X="-4388.23" Y="-3317.16" Z="41.6284" />
+        <Hotspot X="-4906.34" Y="-3335.59" Z="38.1851" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Dustwallow Marsh (43-44)" LogColor="Green" />
+    <If Condition="((!HasQuest(1166)) &amp;&amp; (!IsQuestCompleted(1166)))">
+      <PickUp QuestName="Overlord Mok'Morokk's Concern" QuestId="1166" GiverName="Overlord Mok'Morokk" GiverId="4500" />
+    </If>
+    <PickUp QuestName="Identifying the Brood" QuestId="1169" GiverName="Draz'Zilb" GiverId="4501" />
+    <If Condition="((!HasQuest(1168)) &amp;&amp; (!IsQuestCompleted(1168)))">
+      <PickUp QuestName="Army of the Black Dragon" QuestId="1168" GiverName="Tharg" GiverId="4502" />
+    </If>
+    <If Condition="((!HasQuest(1273)) &amp;&amp; (!IsQuestCompleted(1273)))">
+      <PickUp QuestName="Questioning Reethe" QuestId="1273" GiverName="Ogron" GiverId="4983" />
+    </If>
+    <TurnIn QuestName="Questioning Reethe" QuestId="1273" TurnInName="Krog" TurnInId="4926" />
+    <PickUp QuestName="WANTED: Goreclaw the Ravenous" QuestId="11184" GiverName="Krog" GiverId="4926" />
+    <PickUp QuestName="Bloodfen Feathers" QuestId="11158" GiverName="Brogg" GiverId="23579" />
+    <PickUp QuestName="Catch a Dragon by the Tail" QuestId="11217" GiverName="Gizzix Grimegurgle" GiverId="23570" />
+    <Objective QuestName="WANTED: Goreclaw the Ravenous" QuestId="11184" Type="KillMob" MobId="23873" KillCount="1" />
+    <Objective QuestName="Bloodfen Feathers" QuestId="11158" Type="CollectItem" ItemId="33085" CollectCount="5" />
+    <TurnIn QuestName="WANTED: Goreclaw the Ravenous" QuestId="11184" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+    <TurnIn QuestName="Bloodfen Feathers" QuestId="11158" TurnInName="Brogg" TurnInId="23579" />
+    <If Condition="((!HasQuest(11160)) &amp;&amp; (!IsQuestCompleted(11160)))">
+      <PickUp QuestName="Banner of the Stonemaul" QuestId="11160" GiverName="Brogg" GiverId="23579" />
+    </If>
+    <If Condition="((!HasQuest(11161)) &amp;&amp; (!IsQuestCompleted(11161)))">
+      <PickUp QuestName="The Essence of Enmity" QuestId="11161" GiverName="Brogg" GiverId="23579" />
+    </If>
+    <Objective QuestName="Catch a Dragon by the Tail" QuestId="11217" Type="CollectItem" ItemId="33175" CollectCount="8" />
+    <Objective QuestName="Identifying the Brood" QuestId="1169" Type="CollectItem" ItemId="5840" CollectCount="7" />
+    <Objective QuestName="Identifying the Brood" QuestId="1169" Type="CollectItem" ItemId="5841" CollectCount="7" />
+    <TurnIn QuestName="Catch a Dragon by the Tail" QuestId="11217" TurnInName="Gizzix Grimegurgle" TurnInId="23570" />
+    <CustomBehavior File="SetHearthstone" MobId="23995" AreaId="15" X="-4629.94" Y="-3176.12" Z="41.2235" /> <!-- Set hearth: Mudsprocket -->
+    <Objective QuestName="Overlord Mok'Morokk's Concern" QuestId="1166" Type="CollectItem" ItemId="5834" CollectCount="1" />
+    <Objective QuestName="Overlord Mok'Morokk's Concern" QuestId="1166" Type="CollectItem" ItemId="5835" CollectCount="1" />
+    <Objective QuestName="Banner of the Stonemaul" QuestId="11160" Type="CollectItem" ItemId="33086" CollectCount="1" />
+    <Objective QuestName="Overlord Mok'Morokk's Concern" QuestId="1166" Type="CollectItem" ItemId="5836" CollectCount="1" />
+    <Objective QuestName="Army of the Black Dragon" QuestId="1168" Type="KillMob" MobId="4328" KillCount="5" />
+    <While Condition="((HasQuest(11161)) &amp;&amp; (!IsQuestCompleted(11161)))">
+      <CustomBehavior File="UseItemOn" QuestId="11161" MobId="0" ItemId="33088" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Essence of Enmity" QuestId="11161" Type="CollectItem" ItemId="33087" CollectCount="10" />
+    <TurnIn QuestName="Banner of the Stonemaul" QuestId="11160" TurnInName="Brogg" TurnInId="23579" />
+    <TurnIn QuestName="The Essence of Enmity" QuestId="11161" TurnInName="Brogg" TurnInId="23579" />
+    <PickUp QuestName="Spirits of Stonemaul Hold" QuestId="11159" GiverName="Brogg" GiverId="23579" />
+    <Objective QuestName="Spirits of Stonemaul Hold" QuestId="11159" Type="KillMob" MobId="23786" KillCount="1" />
+    <Objective QuestName="Army of the Black Dragon" QuestId="1168" Type="KillMob" MobId="4331" KillCount="10" />
+    <Objective QuestName="Army of the Black Dragon" QuestId="1168" Type="KillMob" MobId="4329" KillCount="10" />
+    <Objective QuestName="Marg Speaks" QuestId="1261" Type="CollectItem" ItemId="5942" CollectCount="1" />
+    <TurnIn QuestName="Spirits of Stonemaul Hold" QuestId="11159" TurnInName="Brogg" TurnInId="23579" />
+    <If Condition="((!HasQuest(11162)) &amp;&amp; (!IsQuestCompleted(11162)))">
+      <PickUp QuestName="Challenge to the Black Flight" QuestId="11162" GiverName="Brogg" GiverId="23579" />
+    </If>
+    <While Condition="((HasQuest(11162)) &amp;&amp; (!IsQuestCompleted(11162)))">
+      <CustomBehavior File="UseItemOn" QuestId="11162" MobId="23789" ItemId="33095" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Challenge to the Black Flight" QuestId="11162" Type="KillMob" MobId="23789" KillCount="1" />
+    <TurnIn QuestName="Challenge to the Black Flight" QuestId="11162" TurnInName="Brogg" TurnInId="23579" />
+    <TurnIn QuestName="Marg Speaks" QuestId="1261" TurnInName="Nazeer Bloodpike" TurnInId="4791" />
+    <If Condition="((!HasQuest(1262)) &amp;&amp; (!IsQuestCompleted(1262)))">
+      <PickUp QuestName="Report to Zor" QuestId="1262" GiverName="Nazeer Bloodpike" GiverId="4791" />
+    </If>
+    <TurnIn QuestName="Overlord Mok'Morokk's Concern" QuestId="1166" TurnInName="Overlord Mok'Morokk" TurnInId="4500" />
+    <TurnIn QuestName="Identifying the Brood" QuestId="1169" TurnInName="Draz'Zilb" TurnInId="4501" />
+    <If Condition="((!HasQuest(1170)) &amp;&amp; (!IsQuestCompleted(1170)))">
+      <PickUp QuestName="The Brood of Onyxia" QuestId="1170" GiverName="Draz'Zilb" GiverId="4501" />
+    </If>
+    <TurnIn QuestName="Army of the Black Dragon" QuestId="1168" TurnInName="Tharg" TurnInId="4502" />
+    <TurnIn QuestName="The Brood of Onyxia" QuestId="1170" TurnInName="Overlord Mok'Morokk" TurnInId="4500" />
+    <If Condition="((!HasQuest(1171)) &amp;&amp; (!IsQuestCompleted(1171)))">
+      <PickUp QuestName="The Brood of Onyxia" QuestId="1171" GiverName="Overlord Mok'Morokk" GiverId="4500" />
+    </If>
+    <TurnIn QuestName="The Brood of Onyxia" QuestId="1171" TurnInName="Draz'Zilb" TurnInId="4501" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Dustwallow Marsh (43-44) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Tanaris_(44-45)" />
+  </QuestOrder>
+</HBProfile>

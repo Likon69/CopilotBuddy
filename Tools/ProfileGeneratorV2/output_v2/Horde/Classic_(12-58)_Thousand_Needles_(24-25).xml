@@ -1,0 +1,78 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Thousand Needles (24-25)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>25</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="4841" Name="Pacify the Centaur">
+    <Objective Type="KillMob" MobId="4094" KillCount="12">
+      <Hotspots>
+        <Hotspot X="-5153.6" Y="-2350.5" Z="-43.1282" />
+        <Hotspot X="-5224.01" Y="-2453.87" Z="-47.2694" />
+        <Hotspot X="-5251.34" Y="-2438.9" Z="-40.8989" />
+        <Hotspot X="-5195.38" Y="-2512.04" Z="-49.3071" />
+        <Hotspot X="-5148.56" Y="-2454.34" Z="-52.4613" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4093" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-5077.25" Y="-2188.16" Z="-54.6404" />
+        <Hotspot X="-5083.17" Y="-2147.17" Z="-45.5779" />
+        <Hotspot X="-5159.4" Y="-2373.53" Z="-42.2905" />
+        <Hotspot X="-5160.67" Y="-2415.56" Z="-49.7905" />
+        <Hotspot X="-5245.87" Y="-2569.35" Z="-39.5497" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4096" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-5114.85" Y="-2318.79" Z="-55.2596" />
+        <Hotspot X="-5166.09" Y="-2411.54" Z="-49.2905" />
+        <Hotspot X="-5181.13" Y="-2389.29" Z="-40.0531" />
+        <Hotspot X="-5198.83" Y="-2419.43" Z="-37.9097" />
+        <Hotspot X="-5147.26" Y="-2385.28" Z="-51.0164" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Thousand Needles (24-25)" LogColor="Green" />
+    <TurnIn QuestName="Calling in the Reserves" QuestId="5881" TurnInName="Grish Longrunner" TurnInId="12576" />
+    <PickUp QuestName="Message to Freewind Post" QuestId="4542" GiverName="Brave Moonhorn" GiverId="10079" />
+    <PickUp QuestName="Alien Egg" QuestId="4821" GiverName="Hagar Lightninghoof" GiverId="10539" />
+    <TurnIn QuestName="Message to Freewind Post" QuestId="4542" TurnInName="Cliffwatcher Longhorn" TurnInId="10537" />
+    <If Condition="((!HasQuest(4841)) &amp;&amp; (!IsQuestCompleted(4841)))">
+      <PickUp QuestName="Pacify the Centaur" QuestId="4841" GiverName="Cliffwatcher Longhorn" GiverId="10537" />
+    </If>
+    <Objective QuestName="Pacify the Centaur" QuestId="4841" Type="KillMob" MobId="4094" KillCount="12" />
+    <Objective QuestName="Pacify the Centaur" QuestId="4841" Type="KillMob" MobId="4093" KillCount="10" />
+    <If Condition="Me.Level &lt; 25">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 25 - Galak Wrangler</Name>
+          <TargetMinLevel>25</TargetMinLevel>
+          <TargetMaxLevel>26</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="-5077.25" Y="-2188.16" Z="-54.64" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="25" /> <!--  (grind Galak Wrangler) -->
+    </If>
+    <Objective QuestName="Pacify the Centaur" QuestId="4841" Type="KillMob" MobId="4096" KillCount="6" />
+    <TurnIn QuestName="Pacify the Centaur" QuestId="4841" TurnInName="Cliffwatcher Longhorn" TurnInId="10537" />
+    <If Condition="((!HasQuest(5064)) &amp;&amp; (!IsQuestCompleted(5064)))">
+      <PickUp QuestName="Grimtotem Spying" QuestId="5064" GiverName="Cliffwatcher Longhorn" GiverId="10537" />
+    </If>
+    <PickUp QuestName="Wind Rider" QuestId="4767" GiverName="Elu" GiverId="10377" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Thousand Needles (24-25) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Ashenvale_(25-26)" />
+  </QuestOrder>
+</HBProfile>

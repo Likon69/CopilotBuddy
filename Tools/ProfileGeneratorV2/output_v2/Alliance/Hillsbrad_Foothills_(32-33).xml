@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Hillsbrad Foothills (32-33)</Name>
+  <Name>Alliance\Hillsbrad Foothills (32-33)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>33</MaxLevel>
@@ -8,7 +7,51 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
+  <Quest Id="536" Name="Down the Coast">
+    <Objective Type="KillMob" MobId="2377" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-964.586" Y="-406.248" Z="4.7909" />
+        <Hotspot X="-1082.52" Y="-245.835" Z="0.8899" />
+        <Hotspot X="-980.239" Y="-450.284" Z="1.2434" />
+        <Hotspot X="-1090.37" Y="-234.871" Z="-0.4244" />
+        <Hotspot X="-1062.69" Y="-373.605" Z="-2.7162" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2376" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-944.85" Y="-413.224" Z="11.4154" />
+        <Hotspot X="-1076.62" Y="-235.223" Z="1.8899" />
+        <Hotspot X="-1067.96" Y="-241.636" Z="2.964" />
+        <Hotspot X="-1076.52" Y="-300.709" Z="0.6329" />
+        <Hotspot X="-1047.81" Y="-352.209" Z="0.5849" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="562" Name="Stormwind Ho!">
+    <Objective Type="KillMob" MobId="2369" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-1141.93" Y="-721.775" Z="-8.4621" />
+        <Hotspot X="-1254.53" Y="-818.144" Z="-5.9899" />
+        <Hotspot X="-953.952" Y="-651.821" Z="0.6138" />
+        <Hotspot X="-1020.63" Y="-721.132" Z="-3.0829" />
+        <Hotspot X="-1024.07" Y="-651.842" Z="-2.6821" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2371" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-1173.67" Y="-754.479" Z="-12.5778" />
+        <Hotspot X="-1345.49" Y="-906.37" Z="-6.1125" />
+        <Hotspot X="-1249.76" Y="-758.425" Z="-44.5542" />
+        <Hotspot X="-970.176" Y="-636.167" Z="1.7295" />
+        <Hotspot X="-1019.41" Y="-808.248" Z="12.5809" />
+      </Hotspots>
+    </Objective>
+  </Quest>
   <Quest Id="9435" Name="Missing Crystals">
     <Objective Type="CollectItem" ItemId="23646" CollectCount="1">
       <CollectFrom>
@@ -19,7 +62,7 @@
       </Hotspots>
     </Objective>
   </Quest>
-  <Quest Id="689" Name="A King&apos;s Tribute">
+  <Quest Id="689" Name="A King's Tribute">
     <Objective Type="CollectItem" ItemId="4521" CollectCount="5">
       <CollectFrom>
         <GameObject Name="Alterac Granite" Id="2714" />
@@ -34,50 +77,101 @@
       </Hotspots>
     </Objective>
   </Quest>
+  <Quest Id="564" Name="Costly Menace">
+    <Objective Type="KillMob" MobId="2406" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-47.9259" Y="-178.853" Z="132.089" />
+        <Hotspot X="-82.1833" Y="-222.665" Z="137.578" />
+        <Hotspot X="-45.731" Y="-116.81" Z="131.969" />
+        <Hotspot X="-214.918" Y="-346.312" Z="158.212" />
+        <Hotspot X="33.9721" Y="-414.58" Z="126.873" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2407" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-80.9055" Y="-331.666" Z="136.471" />
+        <Hotspot X="-181.368" Y="-255.929" Z="151.59" />
+        <Hotspot X="-81.8984" Y="-82.5289" Z="136.901" />
+        <Hotspot X="-223.589" Y="-324.579" Z="160.632" />
+        <Hotspot X="-6.7391" Y="-440.171" Z="116.233" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="505" Name="Syndicate Assassins">
+    <Objective Type="KillMob" MobId="2241" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-49.1389" Y="-581.399" Z="154.051" />
+        <Hotspot X="-7.8294" Y="-569.731" Z="149.45" />
+        <Hotspot X="-21.1649" Y="-520.467" Z="149.661" />
+        <Hotspot X="-28.3127" Y="-540.77" Z="151.48" />
+        <Hotspot X="-28.5016" Y="-561.634" Z="151.48" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2240" KillCount="12">
+      <Hotspots>
+        <Hotspot X="-47.5204" Y="-553.564" Z="151.293" />
+        <Hotspot X="19.9896" Y="-570.185" Z="146.782" />
+        <Hotspot X="-15.6267" Y="-554.289" Z="151.605" />
+        <Hotspot X="-27.8804" Y="-551.943" Z="151.23" />
+        <Hotspot X="265.059" Y="-834.333" Z="144.195" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="555" Name="Soothing Turtle Bisque">
+    <Objective Type="KillMob" MobId="2408" KillCount="1">
+      <Hotspots>
+        <Hotspot X="332.292" Y="-1421.88" Z="35.0" />
+        <Hotspot X="285.907" Y="-1316.24" Z="35.1194" />
+        <Hotspot X="264.946" Y="-1277.44" Z="37.1807" />
+        <Hotspot X="229.941" Y="-1254.32" Z="32.1782" />
+        <Hotspot X="705.295" Y="34.7223" Z="33.9719" />
+      </Hotspots>
+    </Objective>
+  </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Hillsbrad Foothills (32-33)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Hillsbrad Foothills (32-33)" LogColor="Green" />
     <PickUp QuestName="Costly Menace" QuestId="564" GiverName="Darren Malvew" GiverId="2382" />
     <TurnIn QuestName="Southshore" QuestId="538" TurnInName="Loremaster Dibbs" TurnInId="2277" />
     <PickUp QuestName="Missing Crystals" QuestId="9435" GiverName="Huraan" GiverId="17218" />
     <PickUp QuestName="Down the Coast" QuestId="536" GiverName="Lieutenant Farren Orinelle" GiverId="2228" />
     <PickUp QuestName="Soothing Turtle Bisque" QuestId="555" GiverName="Chef Jessen" GiverId="2430" />
-    <Objective QuestName="Down the Coast" QuestId="536" Type="KillMob" MobId="2377" MobName="Torn Fin Tidehunter" KillCount="10" />
-    <Objective QuestName="Down the Coast" QuestId="536" Type="KillMob" MobId="2376" MobName="Torn Fin Oracle" KillCount="10" />
+    <Objective QuestName="Down the Coast" QuestId="536" Type="KillMob" MobId="2377" KillCount="10" />
+    <Objective QuestName="Down the Coast" QuestId="536" Type="KillMob" MobId="2376" KillCount="10" />
     <TurnIn QuestName="Down the Coast" QuestId="536" TurnInName="Lieutenant Farren Orinelle" TurnInId="2228" />
     <If Condition="((!HasQuest(559)) &amp;&amp; (!IsQuestCompleted(559)))">
-      <PickUp QuestName="Farren&apos;s Proof" QuestId="559" GiverName="Lieutenant Farren Orinelle" GiverId="2228" />
+      <PickUp QuestName="Farren's Proof" QuestId="559" GiverName="Lieutenant Farren Orinelle" GiverId="2228" />
     </If>
-    <Objective QuestName="Farren&apos;s Proof" QuestId="559" Type="CollectItem" ItemId="3716" ItemName="Murloc Head" CollectCount="10" />
-    <TurnIn QuestName="Farren&apos;s Proof" QuestId="559" TurnInName="Lieutenant Farren Orinelle" TurnInId="2228" />
+    <Objective QuestName="Farren's Proof" QuestId="559" Type="CollectItem" ItemId="3716" CollectCount="10" />
+    <TurnIn QuestName="Farren's Proof" QuestId="559" TurnInName="Lieutenant Farren Orinelle" TurnInId="2228" />
     <If Condition="((!HasQuest(560)) &amp;&amp; (!IsQuestCompleted(560)))">
-      <PickUp QuestName="Farren&apos;s Proof" QuestId="560" GiverName="Lieutenant Farren Orinelle" GiverId="2228" />
+      <PickUp QuestName="Farren's Proof" QuestId="560" GiverName="Lieutenant Farren Orinelle" GiverId="2228" />
     </If>
-    <TurnIn QuestName="Farren&apos;s Proof" QuestId="560" TurnInName="Marshal Redpath" TurnInId="2263" />
+    <TurnIn QuestName="Farren's Proof" QuestId="560" TurnInName="Marshal Redpath" TurnInId="2263" />
     <If Condition="((!HasQuest(561)) &amp;&amp; (!IsQuestCompleted(561)))">
-      <PickUp QuestName="Farren&apos;s Proof" QuestId="561" GiverName="Marshal Redpath" GiverId="2263" />
+      <PickUp QuestName="Farren's Proof" QuestId="561" GiverName="Marshal Redpath" GiverId="2263" />
     </If>
     <PickUp QuestName="Syndicate Assassins" QuestId="505" GiverName="Magistrate Henry Maleb" GiverId="2276" />
-    <TurnIn QuestName="Farren&apos;s Proof" QuestId="561" TurnInName="Lieutenant Farren Orinelle" TurnInId="2228" />
+    <TurnIn QuestName="Farren's Proof" QuestId="561" TurnInName="Lieutenant Farren Orinelle" TurnInId="2228" />
     <If Condition="((!HasQuest(562)) &amp;&amp; (!IsQuestCompleted(562)))">
       <PickUp QuestName="Stormwind Ho!" QuestId="562" GiverName="Lieutenant Farren Orinelle" GiverId="2228" />
     </If>
-    <Objective QuestName="Stormwind Ho!" QuestId="562" Type="KillMob" MobId="2369" MobName="Daggerspine Shorehunter" KillCount="10" />
-    <Objective QuestName="Stormwind Ho!" QuestId="562" Type="KillMob" MobId="2371" MobName="Daggerspine Siren" KillCount="10" />
+    <Objective QuestName="Stormwind Ho!" QuestId="562" Type="KillMob" MobId="2369" KillCount="10" />
+    <Objective QuestName="Stormwind Ho!" QuestId="562" Type="KillMob" MobId="2371" KillCount="10" />
     <TurnIn QuestName="Stormwind Ho!" QuestId="562" TurnInName="Lieutenant Farren Orinelle" TurnInId="2228" />
     <If Condition="((!HasQuest(563)) &amp;&amp; (!IsQuestCompleted(563)))">
       <PickUp QuestName="Reassignment" QuestId="563" GiverName="Lieutenant Farren Orinelle" GiverId="2228" />
     </If>
-    <Objective QuestName="Missing Crystals" QuestId="9435" Type="CollectItem" ItemId="23646" ItemName="Shipment of Rare Crystals" CollectCount="1" />
-    <Objective QuestName="A King&apos;s Tribute" QuestId="689" Type="CollectItem" ItemId="4521" ItemName="Alterac Granite" CollectCount="5" />
-    <Objective QuestName="Costly Menace" QuestId="564" Type="KillMob" MobId="2406" MobName="Mountain Lion" KillCount="8" />
-    <Objective QuestName="Costly Menace" QuestId="564" Type="KillMob" MobId="2407" MobName="Hulking Mountain Lion" KillCount="10" />
+    <Objective QuestName="Missing Crystals" QuestId="9435" Type="CollectItem" ItemId="23646" CollectCount="1" />
+    <Objective QuestName="A King's Tribute" QuestId="689" Type="CollectItem" ItemId="4521" CollectCount="5" />
+    <Objective QuestName="Costly Menace" QuestId="564" Type="KillMob" MobId="2406" KillCount="8" />
+    <Objective QuestName="Costly Menace" QuestId="564" Type="KillMob" MobId="2407" KillCount="10" />
     <PickUp QuestName="Foreboding Plans" QuestId="510" GiverName="Micha Yance" GiverId="2381" />
     <PickUp QuestName="Encrypted Letter" QuestId="511" GiverName="Micha Yance" GiverId="2381" />
-    <Objective QuestName="Syndicate Assassins" QuestId="505" Type="KillMob" MobId="2241" MobName="Syndicate Thief" KillCount="8" />
-    <Objective QuestName="Syndicate Assassins" QuestId="505" Type="KillMob" MobId="2240" MobName="Syndicate Footpad" KillCount="12" />
-    <Objective QuestName="Soothing Turtle Bisque" QuestId="555" Type="KillMob" MobId="2408" MobName="Snapjaw" KillCount="1" />
-    <Objective QuestName="Soothing Turtle Bisque" QuestId="555" Type="CollectItem" ItemId="3712" ItemName="Turtle Meat" CollectCount="10" />
+    <Objective QuestName="Syndicate Assassins" QuestId="505" Type="KillMob" MobId="2241" KillCount="8" />
+    <Objective QuestName="Syndicate Assassins" QuestId="505" Type="KillMob" MobId="2240" KillCount="12" />
+    <Objective QuestName="Soothing Turtle Bisque" QuestId="555" Type="KillMob" MobId="2408" KillCount="1" />
+    <Objective QuestName="Soothing Turtle Bisque" QuestId="555" Type="CollectItem" ItemId="3712" CollectCount="10" />
     <TurnIn QuestName="Costly Menace" QuestId="564" TurnInName="Darren Malvew" TurnInId="2382" />
     <TurnIn QuestName="Encrypted Letter" QuestId="511" TurnInName="Loremaster Dibbs" TurnInId="2277" />
     <If Condition="((!HasQuest(514)) &amp;&amp; (!IsQuestCompleted(514)))">
@@ -88,7 +182,7 @@
     <PickUp QuestName="Hints of a New Plague?" QuestId="659" GiverName="Phin Odelic" GiverId="2711" />
     <TurnIn QuestName="Syndicate Assassins" QuestId="505" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
     <TurnIn QuestName="Foreboding Plans" QuestId="510" TurnInName="Magistrate Henry Maleb" TurnInId="2276" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Hillsbrad Foothills (32-33) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Hillsbrad Foothills (32-33) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Arathi_Highlands_(33-33)" />
   </QuestOrder>
 </HBProfile>

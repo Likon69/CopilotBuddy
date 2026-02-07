@@ -1,0 +1,98 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Stonetalon Mountains (26-27)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>27</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="6282" Name="Harpies Threaten">
+    <Objective Type="KillMob" MobId="4022" KillCount="7">
+      <Hotspots>
+        <Hotspot X="949.317" Y="1715.29" Z="-14.6905" />
+        <Hotspot X="826.756" Y="1642.2" Z="-28.6399" />
+        <Hotspot X="750.844" Y="1685.66" Z="-31.5314" />
+        <Hotspot X="821.861" Y="1771.99" Z="-15.4093" />
+        <Hotspot X="800.463" Y="1616.58" Z="-31.8395" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4025" KillCount="7">
+      <Hotspots>
+        <Hotspot X="948.891" Y="1679.82" Z="-12.1807" />
+        <Hotspot X="790.729" Y="1742.48" Z="-20.3377" />
+        <Hotspot X="919.809" Y="1741.91" Z="-11.9346" />
+        <Hotspot X="1010.01" Y="1726.79" Z="-9.7772" />
+        <Hotspot X="901.677" Y="1781.91" Z="-7.3472" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4024" KillCount="7">
+      <Hotspots>
+        <Hotspot X="723.161" Y="1477.72" Z="-16.9211" />
+        <Hotspot X="628.924" Y="1542.2" Z="-13.3452" />
+        <Hotspot X="776.019" Y="1425.23" Z="-14.0468" />
+        <Hotspot X="669.888" Y="1439.8" Z="-7.3461" />
+        <Hotspot X="644.378" Y="1439.96" Z="-5.0657" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4023" KillCount="7">
+      <Hotspots>
+        <Hotspot X="612.175" Y="1550.7" Z="-12.9121" />
+        <Hotspot X="714.181" Y="1520.74" Z="-21.2092" />
+        <Hotspot X="749.439" Y="1514.12" Z="-21.2687" />
+        <Hotspot X="701.547" Y="1551.92" Z="-22.4534" />
+        <Hotspot X="665.889" Y="1543.26" Z="-19.9016" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="6283" Name="Bloodfury Bloodline">
+    <Objective Type="KillMob" MobId="12579" KillCount="1">
+      <Hotspots>
+        <Hotspot X="900.679" Y="1743.99" Z="-11.4967" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stonetalon Mountains (26-27)" LogColor="Green" />
+    <Objective QuestName="Elemental War" QuestId="6393" Type="CollectItem" ItemId="16312" CollectCount="10" />
+    <Objective QuestName="Harpies Threaten" QuestId="6282" Type="KillMob" MobId="4022" KillCount="7" />
+    <Objective QuestName="Harpies Threaten" QuestId="6282" Type="KillMob" MobId="4025" KillCount="7" />
+    <Objective QuestName="Harpies Threaten" QuestId="6282" Type="KillMob" MobId="4024" KillCount="7" />
+    <Objective QuestName="Harpies Threaten" QuestId="6282" Type="KillMob" MobId="4023" KillCount="7" />
+    <If Condition="Me.Level &lt; 27">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 27 - Bloodfury Roguefeather</Name>
+          <TargetMinLevel>25</TargetMinLevel>
+          <TargetMaxLevel>26</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="612.17" Y="1550.70" Z="-12.91" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="27" /> <!--  (grind Bloodfury Roguefeather) -->
+    </If>
+    <TurnIn QuestName="Elemental War" QuestId="6393" TurnInName="Tsunaman" TurnInId="11862" />
+    <TurnIn QuestName="Harpies Threaten" QuestId="6282" TurnInName="Maggran Earthbinder" TurnInId="11860" />
+    <If Condition="((!HasQuest(6283)) &amp;&amp; (!IsQuestCompleted(6283)))">
+      <PickUp QuestName="Bloodfury Bloodline" QuestId="6283" GiverName="Maggran Earthbinder" GiverId="11860" />
+    </If>
+    <TurnIn QuestName="New Life" QuestId="6381" TurnInName="Tammra Windfield" TurnInId="11864" />
+    <Objective QuestName="Bloodfury Bloodline" QuestId="6283" Type="KillMob" MobId="12579" KillCount="1" />
+    <Objective QuestName="Bloodfury Bloodline" QuestId="6283" Type="CollectItem" ItemId="16190" CollectCount="1" />
+    <TurnIn QuestName="Bloodfury Bloodline" QuestId="6283" TurnInName="Maggran Earthbinder" TurnInId="11860" />
+    <TurnIn QuestName="The Sacred Flame" QuestId="1195" TurnInName="Zangen Stonehoof" TurnInId="4721" />
+    <If Condition="((!HasQuest(1196)) &amp;&amp; (!IsQuestCompleted(1196)))">
+      <PickUp QuestName="The Sacred Flame" QuestId="1196" GiverName="Zangen Stonehoof" GiverId="4721" />
+    </If>
+    <CustomBehavior File="SetHearthstone" MobId="6746" AreaId="1638" X="-1300.28" Y="38.4858" Z="129.292" /> <!-- Set hearth: Thunder Bluff -->
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stonetalon Mountains (26-27) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Thousand_Needles_(27-29)" />
+  </QuestOrder>
+</HBProfile>

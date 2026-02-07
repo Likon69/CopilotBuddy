@@ -1,0 +1,365 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Un'Goro Crater (52-54)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>54</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="3444" Name="The Stone Circle">
+    <Objective Type="CollectItem" ItemId="10556" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Marvon" Id="149036" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-991.67" Y="-3710.49" Z="4.46" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2641" Name="Sprinkle's Secret Ingredient">
+    <Objective Type="CollectItem" ItemId="8526" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Violet Tragan" Id="141853" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-80.74" Y="-3153.22" Z="103.26" />
+        <Hotspot X="-74.05" Y="-3095.58" Z="105.82" />
+        <Hotspot X="-69.08" Y="-3117.58" Z="100.22" />
+        <Hotspot X="-67.85" Y="-3153.98" Z="97.69" />
+        <Hotspot X="-49.44" Y="-3140.39" Z="100.7" />
+        <Hotspot X="-46.25" Y="-3174.9" Z="100.0" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4290" Name="The Fare of Lar'korwi">
+    <Objective Type="CollectItem" ItemId="11504" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Fresh Threshadon Carcass" Id="166863" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-7365.4" Y="-2009.94" Z="-270.04" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4501" Name="Beware of Pterrordax">
+    <Objective Type="KillMob" MobId="9166" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-7518.89" Y="-1445.49" Z="-271.668" />
+        <Hotspot X="-6148.87" Y="-1588.31" Z="-196.925" />
+        <Hotspot X="-6219.48" Y="-1585.05" Z="-211.635" />
+        <Hotspot X="-6183.17" Y="-1608.99" Z="-194.731" />
+        <Hotspot X="-6273.12" Y="-1573.65" Z="-224.099" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="9167" KillCount="15">
+      <Hotspots>
+        <Hotspot X="-7096.26" Y="-876.231" Z="-272.051" />
+        <Hotspot X="-6920.09" Y="-451.264" Z="-271.972" />
+        <Hotspot X="-7049.35" Y="-654.996" Z="-271.231" />
+        <Hotspot X="-6714.33" Y="-515.126" Z="-271.374" />
+        <Hotspot X="-6750.44" Y="-552.544" Z="-272.097" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4145" Name="Larion and Muigin">
+    <Objective Type="KillMob" MobId="6510" KillCount="5">
+      <Hotspots>
+        <Hotspot X="-6332.16" Y="-1441.35" Z="-267.942" />
+        <Hotspot X="-6325.13" Y="-1391.86" Z="-266.877" />
+        <Hotspot X="-7113.14" Y="-1700.94" Z="-271.111" />
+        <Hotspot X="-6682.91" Y="-1146.89" Z="-268.908" />
+        <Hotspot X="-6817.82" Y="-1346.32" Z="-272.097" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="6511" KillCount="5">
+      <Hotspots>
+        <Hotspot X="-6925.0" Y="-1941.67" Z="-270.661" />
+        <Hotspot X="-6897.2" Y="-2155.92" Z="-269.877" />
+        <Hotspot X="-6749.33" Y="-2086.29" Z="-271.848" />
+        <Hotspot X="-6536.59" Y="-2038.39" Z="-271.915" />
+        <Hotspot X="-6709.83" Y="-1999.2" Z="-270.472" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="6509" KillCount="5">
+      <Hotspots>
+        <Hotspot X="-6919.73" Y="-1785.22" Z="-268.471" />
+        <Hotspot X="-6710.0" Y="-1944.18" Z="-272.097" />
+        <Hotspot X="-6978.49" Y="-1711.92" Z="-271.539" />
+        <Hotspot X="-6493.43" Y="-1998.6" Z="-272.165" />
+        <Hotspot X="-6700.26" Y="-2017.5" Z="-268.479" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="6512" KillCount="5">
+      <Hotspots>
+        <Hotspot X="-6500.11" Y="-925.214" Z="-273.539" />
+        <Hotspot X="-7982.54" Y="-880.99" Z="-268.325" />
+        <Hotspot X="-7303.37" Y="-975.238" Z="-271.773" />
+        <Hotspot X="-7586.58" Y="-687.876" Z="-251.186" />
+        <Hotspot X="-6573.67" Y="-907.77" Z="-272.144" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4289" Name="The Apes of Un'Goro">
+    <Objective Type="KillMob" MobId="6514" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-6352.06" Y="-1903.19" Z="-259.249" />
+        <Hotspot X="-6376.59" Y="-1879.31" Z="-259.375" />
+        <Hotspot X="-6381.47" Y="-1809.51" Z="-265.982" />
+        <Hotspot X="-6451.92" Y="-1783.8" Z="-273.701" />
+        <Hotspot X="-6359.1" Y="-1986.65" Z="-276.222" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="6513" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-6390.52" Y="-1959.96" Z="-259.691" />
+        <Hotspot X="-6379.64" Y="-1701.56" Z="-273.073" />
+        <Hotspot X="-6414.01" Y="-1745.68" Z="-272.593" />
+        <Hotspot X="-6393.32" Y="-1774.87" Z="-270.23" />
+        <Hotspot X="-6412.21" Y="-1808.5" Z="-270.792" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="6516" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-6343.42" Y="-1947.7" Z="-272.417" />
+        <Hotspot X="-6394.0" Y="-1916.77" Z="-262.731" />
+        <Hotspot X="-6379.92" Y="-1866.73" Z="-260.394" />
+        <Hotspot X="-6368.61" Y="-1839.66" Z="-259.881" />
+        <Hotspot X="-6376.58" Y="-1970.12" Z="-257.085" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="3881" Name="Expedition Salvation">
+    <Objective Type="CollectItem" ItemId="11112" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Research Equipment" Id="161521" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-7596.07" Y="-889.45" Z="-271.75" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4301" Name="The Mighty U'cha">
+    <Objective Type="KillMob" MobId="9622" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-6276.53" Y="-1987.97" Z="-261.845" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Un'Goro Crater (52-54)" LogColor="Green" />
+    <Objective QuestName="Chasing A-Me 01" QuestId="4244" Type="CollectItem" ItemId="10561" CollectCount="1" />
+    <Objective QuestName="The Stone Circle" QuestId="3444" Type="CollectItem" ItemId="10556" CollectCount="1" />
+    <Objective QuestName="Sprinkle's Secret Ingredient" QuestId="2641" Type="CollectItem" ItemId="8526" CollectCount="1" />
+    <TurnIn QuestName="Sprinkle's Secret Ingredient" QuestId="2641" TurnInName="Sprinkle" TurnInId="7583" />
+    <If Condition="((!HasQuest(2661)) &amp;&amp; (!IsQuestCompleted(2661)))">
+      <PickUp QuestName="Delivery for Marin" QuestId="2661" GiverName="Sprinkle" GiverId="7583" />
+    </If>
+    <TurnIn QuestName="March of the Silithid" QuestId="4494" TurnInName="Alchemist Pestlezugg" TurnInId="5594" />
+    <PickUp QuestName="Bungle in the Jungle" QuestId="4496" GiverName="Alchemist Pestlezugg" GiverId="5594" />
+    <TurnIn QuestName="Delivery for Marin" QuestId="2661" TurnInName="Marin Noggenfogger" TurnInId="7564" />
+    <If Condition="((!HasQuest(2662)) &amp;&amp; (!IsQuestCompleted(2662)))">
+      <PickUp QuestName="Noggenfogger Elixir" QuestId="2662" GiverName="Marin Noggenfogger" GiverId="7564" />
+    </If>
+    <TurnIn QuestName="Noggenfogger Elixir" QuestId="2662" TurnInName="Marin Noggenfogger" TurnInId="7564" />
+    <TurnIn QuestName="The Stone Circle" QuestId="3444" TurnInName="Marvon Rivetseeker" TurnInId="7771" />
+    <If Condition="((!HasQuest(4289)) &amp;&amp; (!IsQuestCompleted(4289)))">
+      <PickUp QuestName="The Apes of Un'Goro" QuestId="4289" GiverName="Torwa Pathfinder" GiverId="9619" />
+    </If>
+    <PickUp QuestName="The Fare of Lar'korwi" QuestId="4290" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <Objective QuestName="The Fare of Lar'korwi" QuestId="4290" Type="CollectItem" ItemId="11504" CollectCount="1" />
+    <PickUp QuestName="Chasing A-Me 01" QuestId="4243" GiverName="Karna Remtravel" GiverId="9618" />
+    <PickUp QuestName="Shizzle's Flyer" QuestId="4503" GiverName="Shizzle" GiverId="9998" />
+    <PickUp QuestName="Beware of Pterrordax" QuestId="4501" GiverName="Shizzle" GiverId="9998" />
+    <PickUp QuestName="Roll the Bones" QuestId="3882" GiverName="Spark Nilminer" GiverId="9272" />
+    <PickUp QuestName="Alien Ecology" QuestId="3883" GiverName="Hol'anyee Marshal" GiverId="9271" />
+    <TurnIn QuestName="Williden's Journal" QuestId="3884" TurnInName="Williden Marshal" TurnInId="9270" />
+    <PickUp QuestName="Expedition Salvation" QuestId="3881" GiverName="Williden Marshal" GiverId="9270" />
+    <If Condition="((!HasQuest(4145)) &amp;&amp; (!IsQuestCompleted(4145)))">
+      <PickUp QuestName="Larion and Muigin" QuestId="4145" GiverName="Larion" GiverId="9118" />
+    </If>
+    <Objective QuestName="Beware of Pterrordax" QuestId="4501" Type="KillMob" MobId="9166" KillCount="1" />
+    <Objective QuestName="Super Sticky" QuestId="4504" Type="CollectItem" ItemId="11834" CollectCount="12" />
+    <Objective QuestName="Larion and Muigin" QuestId="4145" Type="KillMob" MobId="6510" KillCount="5" />
+    <Objective QuestName="The Apes of Un'Goro" QuestId="4289" Type="KillMob" MobId="6514" KillCount="1" />
+    <Objective QuestName="The Apes of Un'Goro" QuestId="4289" Type="CollectItem" ItemId="11478" CollectCount="2" />
+    <Objective QuestName="The Apes of Un'Goro" QuestId="4289" Type="KillMob" MobId="6513" KillCount="1" />
+    <Objective QuestName="The Apes of Un'Goro" QuestId="4289" Type="CollectItem" ItemId="11479" CollectCount="2" />
+    <Objective QuestName="The Apes of Un'Goro" QuestId="4289" Type="KillMob" MobId="6516" KillCount="1" />
+    <Objective QuestName="The Apes of Un'Goro" QuestId="4289" Type="CollectItem" ItemId="11480" CollectCount="2" />
+    <TurnIn QuestName="Chasing A-Me 01" QuestId="4243" TurnInName="A-Me 01" TurnInId="9623" />
+    <If Condition="((!HasQuest(4244)) &amp;&amp; (!IsQuestCompleted(4244)))">
+      <PickUp QuestName="Chasing A-Me 01" QuestId="4244" GiverName="A-Me 01" GiverId="9623" />
+    </If>
+    <TurnIn QuestName="Chasing A-Me 01" QuestId="4244" TurnInName="A-Me 01" TurnInId="9623" />
+    <If Condition="((!HasQuest(4245)) &amp;&amp; (!IsQuestCompleted(4245)))">
+      <PickUp QuestName="Chasing A-Me 01" QuestId="4245" GiverName="A-Me 01" GiverId="9623" />
+    </If>
+    <TurnIn QuestName="Chasing A-Me 01" QuestId="4245" TurnInName="Karna Remtravel" TurnInId="9618" />
+    <Objective QuestName="Larion and Muigin" QuestId="4145" Type="KillMob" MobId="6511" KillCount="5" />
+    <Objective QuestName="Larion and Muigin" QuestId="4145" Type="KillMob" MobId="6509" KillCount="5" />
+    <Objective QuestName="Expedition Salvation" QuestId="3881" Type="CollectItem" ItemId="11113" CollectCount="1" />
+    <TurnIn QuestName="The Apes of Un'Goro" QuestId="4289" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <TurnIn QuestName="The Fare of Lar'korwi" QuestId="4290" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <If Condition="((!HasQuest(4291)) &amp;&amp; (!IsQuestCompleted(4291)))">
+      <PickUp QuestName="The Scent of Lar'korwi" QuestId="4291" GiverName="Torwa Pathfinder" GiverId="9619" />
+    </If>
+    <If Condition="((!HasQuest(4301)) &amp;&amp; (!IsQuestCompleted(4301)))">
+      <PickUp QuestName="The Mighty U'cha" QuestId="4301" GiverName="Torwa Pathfinder" GiverId="9619" />
+    </If>
+    <Objective QuestName="The Scent of Lar'korwi" QuestId="4291" Type="KillMob" MobId="9683" KillCount="1" />
+    <Objective QuestName="The Scent of Lar'korwi" QuestId="4291" Type="CollectItem" ItemId="11509" CollectCount="2" />
+    <PickUp QuestName="It's a Secret to Everybody" QuestId="3844" GiverName="Torwa Pathfinder" GiverId="9619" />
+    <TurnIn QuestName="It's a Secret to Everybody" QuestId="3844" TurnInName="Object_161504" TurnInType="Object" TurnInId="161504" />
+    <If Condition="((!HasQuest(3845)) &amp;&amp; (!IsQuestCompleted(3845)))">
+      <PickUp QuestName="It's a Secret to Everybody" QuestId="3845" GiverName="Torwa Pathfinder" GiverId="9619" />
+    </If>
+    <Objective QuestName="Bone-Bladed Weapons" QuestId="4300" Type="CollectItem" ItemId="11477" CollectCount="8" />
+    <TurnIn QuestName="The Scent of Lar'korwi" QuestId="4291" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <If Condition="((!HasQuest(4292)) &amp;&amp; (!IsQuestCompleted(4292)))">
+      <PickUp QuestName="The Bait for Lar'korwi" QuestId="4292" GiverName="Torwa Pathfinder" GiverId="9619" />
+    </If>
+    <Objective QuestName="Beware of Pterrordax" QuestId="4501" Type="KillMob" MobId="9166" KillCount="10" />
+    <While Condition="((HasQuest(3883)) &amp;&amp; (!IsQuestCompleted(3883)))">
+      <CustomBehavior File="UseItemOn" QuestId="3883" MobId="0" ItemId="11132" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Alien Ecology" QuestId="3883" Type="CollectItem" ItemId="11131" CollectCount="1" />
+    <Objective QuestName="Bungle in the Jungle" QuestId="4496" Type="CollectItem" ItemId="11837" CollectCount="1" />
+    <Objective QuestName="Expedition Salvation" QuestId="3881" Type="CollectItem" ItemId="11112" CollectCount="1" />
+    <If Condition="((!HasQuest(974)) &amp;&amp; (!IsQuestCompleted(974)))">
+      <PickUp QuestName="Finding the Source" QuestId="974" GiverName="Krakle" GiverId="10302" />
+    </If>
+    <Objective QuestName="Larion and Muigin" QuestId="4145" Type="KillMob" MobId="6512" KillCount="5" />
+    <Objective QuestName="Beware of Pterrordax" QuestId="4501" Type="KillMob" MobId="9167" KillCount="15" />
+    <Objective QuestName="Shizzle's Flyer" QuestId="4503" Type="CollectItem" ItemId="11831" CollectCount="8" />
+    <Objective QuestName="Roll the Bones" QuestId="3882" Type="CollectItem" ItemId="11114" CollectCount="8" />
+    <Objective QuestName="Shizzle's Flyer" QuestId="4503" Type="CollectItem" ItemId="11830" CollectCount="8" />
+    <Objective QuestName="... and a Batch of Ooze" QuestId="4294" Type="CollectItem" ItemId="12235" CollectCount="30" />
+    <Objective QuestName="Un'Goro Soil" QuestId="3761" Type="CollectItem" ItemId="11018" CollectCount="20" />
+    <Objective QuestName="Crystals of Power" QuestId="4284" Type="CollectItem" ItemId="11186" CollectCount="7" />
+    <Objective QuestName="Crystals of Power" QuestId="4284" Type="CollectItem" ItemId="11188" CollectCount="7" />
+    <Objective QuestName="Crystals of Power" QuestId="4284" Type="CollectItem" ItemId="11185" CollectCount="7" />
+    <Objective QuestName="Crystals of Power" QuestId="4284" Type="CollectItem" ItemId="11184" CollectCount="7" />
+    <Objective QuestName="Williden's Journal" QuestId="3884" Type="CollectItem" ItemId="11116" CollectCount="1" />
+    <While Condition="((HasQuest(974)) &amp;&amp; (!IsQuestCompleted(974)))">
+      <RunTo X="-7092.4" Y="-1305.86" Z="-186.075" />
+      <CustomBehavior File="UseItemOn" QuestId="974" MobId="10541" ItemId="11116" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-7092.4" Y="-1305.86" Z="-186.075" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Williden's Journal" QuestId="3884" GiverName="Krakle" GiverId="10302" />
+    <If Condition="Me.Level &lt; 53">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 53 - Frenzied Pterrordax</Name>
+          <TargetMinLevel>52</TargetMinLevel>
+          <TargetMaxLevel>54</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="-7096.26" Y="-876.23" Z="-272.05" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="53" /> <!--  (grind Frenzied Pterrordax) -->
+    </If>
+    <TurnIn QuestName="Shizzle's Flyer" QuestId="4503" TurnInName="Shizzle" TurnInId="9998" />
+    <TurnIn QuestName="Beware of Pterrordax" QuestId="4501" TurnInName="Spraggle Frock" TurnInId="9997" />
+    <PickUp QuestName="Lost!" QuestId="4492" GiverName="Spraggle Frock" GiverId="9997" />
+    <TurnIn QuestName="Roll the Bones" QuestId="3882" TurnInName="Spark Nilminer" TurnInId="9272" />
+    <TurnIn QuestName="Alien Ecology" QuestId="3883" TurnInName="Hol'anyee Marshal" TurnInId="9271" />
+    <TurnIn QuestName="Expedition Salvation" QuestId="3881" TurnInName="Williden Marshal" TurnInId="9270" />
+    <If Condition="((!HasQuest(4284)) &amp;&amp; (!IsQuestCompleted(4284)))">
+      <PickUp QuestName="Crystals of Power" QuestId="4284" GiverName="J.D. Collie" GiverId="9117" />
+    </If>
+    <TurnIn QuestName="Crystals of Power" QuestId="4284" TurnInName="J.D. Collie" TurnInId="9117" />
+    <If Condition="((!HasQuest(4285)) &amp;&amp; (!IsQuestCompleted(4285)))">
+      <PickUp QuestName="The Northern Pylon" QuestId="4285" GiverName="J.D. Collie" GiverId="9117" />
+    </If>
+    <If Condition="((!HasQuest(4287)) &amp;&amp; (!IsQuestCompleted(4287)))">
+      <PickUp QuestName="The Eastern Pylon" QuestId="4287" GiverName="J.D. Collie" GiverId="9117" />
+    </If>
+    <If Condition="((!HasQuest(4288)) &amp;&amp; (!IsQuestCompleted(4288)))">
+      <PickUp QuestName="The Western Pylon" QuestId="4288" GiverName="J.D. Collie" GiverId="9117" />
+    </If>
+    <While Condition="((HasQuest(3845)) &amp;&amp; (!IsQuestCompleted(3845)))">
+      <CustomBehavior File="UseItemOn" QuestId="3845" MobId="0" ItemId="11107" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="It's a Secret to Everybody" QuestId="3845" Type="CollectItem" ItemId="11104" CollectCount="1" />
+    <Objective QuestName="It's a Secret to Everybody" QuestId="3845" Type="CollectItem" ItemId="11105" CollectCount="1" />
+    <Objective QuestName="It's a Secret to Everybody" QuestId="3845" Type="CollectItem" ItemId="11106" CollectCount="1" />
+    <TurnIn QuestName="Larion and Muigin" QuestId="4145" TurnInName="Larion" TurnInId="9118" />
+    <If Condition="((!HasQuest(4147)) &amp;&amp; (!IsQuestCompleted(4147)))">
+      <PickUp QuestName="Marvon's Workshop" QuestId="4147" GiverName="Larion" GiverId="9118" />
+    </If>
+    <TurnIn QuestName="It's a Secret to Everybody" QuestId="3845" TurnInName="Linken" TurnInId="8737" />
+    <If Condition="((!HasQuest(3908)) &amp;&amp; (!IsQuestCompleted(3908)))">
+      <PickUp QuestName="It's a Secret to Everybody" QuestId="3908" GiverName="Linken" GiverId="8737" />
+    </If>
+    <While Condition="((HasQuest(974)) &amp;&amp; (!IsQuestCompleted(974)))">
+      <RunTo X="-7092.4" Y="-1305.86" Z="-186.075" />
+      <CustomBehavior File="UseItemOn" QuestId="974" MobId="10541" ItemId="12472" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-7092.4" Y="-1305.86" Z="-186.075" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Volcanic Activity" QuestId="4502" Type="CollectItem" ItemId="11829" CollectCount="9" />
+    <TurnIn QuestName="Lost!" QuestId="4492" TurnInName="Ringo" TurnInId="9999" />
+    <If Condition="((!HasQuest(4491)) &amp;&amp; (!IsQuestCompleted(4491)))">
+      <PickUp QuestName="A Little Help From My Friends" QuestId="4491" GiverName="Ringo" GiverId="9999" />
+    </If>
+    <While Condition="((HasQuest(4491)) &amp;&amp; (!IsQuestCompleted(4491)))">
+      <CustomBehavior File="UseItemOn" QuestId="4491" MobId="0" ItemId="11804" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="A Little Help From My Friends" QuestId="4491" TurnInName="Spraggle Frock" TurnInId="9997" />
+    <Objective QuestName="The Mighty U'cha" QuestId="4301" Type="KillMob" MobId="9622" KillCount="1" />
+    <Objective QuestName="The Mighty U'cha" QuestId="4301" Type="CollectItem" ItemId="11476" CollectCount="1" />
+    <While Condition="((HasQuest(4292)) &amp;&amp; (!IsQuestCompleted(4292)))">
+      <CustomBehavior File="UseItemOn" QuestId="4292" MobId="0" ItemId="11568" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Bait for Lar'korwi" QuestId="4292" Type="CollectItem" ItemId="11569" CollectCount="1" />
+    <Objective QuestName="The Bait for Lar'korwi" QuestId="4292" Type="CollectItem" ItemId="11570" CollectCount="1" />
+    <While Condition="((HasQuest(4292)) &amp;&amp; (!IsQuestCompleted(4292)))">
+      <CustomBehavior File="UseItemOn" QuestId="4292" MobId="0" ItemId="11569" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(4292)) &amp;&amp; (!IsQuestCompleted(4292)))">
+      <CustomBehavior File="UseItemOn" QuestId="4292" MobId="0" ItemId="11570" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Bait for Lar'korwi" QuestId="4292" Type="KillMob" MobId="9684" KillCount="1" />
+    <Objective QuestName="The Bait for Lar'korwi" QuestId="4292" Type="CollectItem" ItemId="11510" CollectCount="1" />
+    <TurnIn QuestName="The Mighty U'cha" QuestId="4301" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <TurnIn QuestName="The Bait for Lar'korwi" QuestId="4292" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    <TurnIn QuestName="Finding the Source" QuestId="974" TurnInName="Krakle" TurnInId="10302" />
+    <If Condition="((!HasQuest(980)) &amp;&amp; (!IsQuestCompleted(980)))">
+      <PickUp QuestName="The New Springs" QuestId="980" GiverName="Krakle" GiverId="10302" />
+    </If>
+    <TurnIn QuestName="The Northern Pylon" QuestId="4285" TurnInName="J.D. Collie" TurnInId="9117" />
+    <TurnIn QuestName="The Eastern Pylon" QuestId="4287" TurnInName="J.D. Collie" TurnInId="9117" />
+    <TurnIn QuestName="The Western Pylon" QuestId="4288" TurnInName="J.D. Collie" TurnInId="9117" />
+    <If Condition="((!HasQuest(4321)) &amp;&amp; (!IsQuestCompleted(4321)))">
+      <PickUp QuestName="Making Sense of It" QuestId="4321" GiverName="J.D. Collie" GiverId="9117" />
+    </If>
+    <TurnIn QuestName="Making Sense of It" QuestId="4321" TurnInName="J.D. Collie" TurnInId="9117" />
+    <TurnIn QuestName="Super Sticky" QuestId="4504" TurnInName="Tran'rek" TurnInId="7876" />
+    <TurnIn QuestName="Bungle in the Jungle" QuestId="4496" TurnInName="Alchemist Pestlezugg" TurnInId="5594" />
+    <PickUp QuestName="Un'Goro Soil" QuestId="3761" GiverName="Arch Druid Hamuul Runetotem" GiverId="5769" />
+    <TurnIn QuestName="Un'Goro Soil" QuestId="3761" TurnInName="Ghede" TurnInId="9076" />
+    <If Condition="((!HasQuest(3782)) &amp;&amp; (!IsQuestCompleted(3782)))">
+      <PickUp QuestName="Morrowgrain Research" QuestId="3782" GiverName="Arch Druid Hamuul Runetotem" GiverId="5769" />
+    </If>
+    <TurnIn QuestName="Morrowgrain Research" QuestId="3782" TurnInName="Bashana Runetotem" TurnInId="9087" />
+    <TurnIn QuestName="Volcanic Activity" QuestId="4502" TurnInName="Liv Rizzlefix" TurnInId="8496" />
+    <TurnIn QuestName="Marvon's Workshop" QuestId="4147" TurnInName="Liv Rizzlefix" TurnInId="8496" />
+    <Objective QuestName="A Taste of Flame" QuestId="4022" Type="CollectItem" ItemId="10575" CollectCount="1" />
+    <TurnIn QuestName="Vivian Lagrave" QuestId="4133" TurnInName="Shadowmage Vivian Lagrave" TurnInId="9078" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Un'Goro Crater (52-54) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Burning_Steppes_(54-54)" />
+  </QuestOrder>
+</HBProfile>

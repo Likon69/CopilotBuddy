@@ -1,0 +1,174 @@
+<HBProfile>
+  <Name>Alliance\Class Quests\Hunter Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="8153" Name="Courser Antlers">
+    <Objective Type="KillMob" MobId="8761" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4791.18" Y="-6487.9" Z="108.856" />
+        <Hotspot X="4454.07" Y="-5746.29" Z="103.096" />
+        <Hotspot X="4617.65" Y="-6198.21" Z="101.428" />
+        <Hotspot X="4474.64" Y="-5850.01" Z="104.85" />
+        <Hotspot X="4529.8" Y="-6120.75" Z="99.2614" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8232" Name="The Green Drake">
+    <Objective Type="KillMob" MobId="5719" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-667.59" Y="103.111" Z="-90.8313" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="18703" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Cache of the Firelord" Id="179703" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="756.9" Y="-1180.7" Z="-118.6" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="7636" Name="Stave of the Ancients">
+    <Objective Type="KillMob" MobId="14527" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-6980.17" Y="-742.73" Z="-265.75" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="7635" Name="A Proper String">
+    <Objective Type="KillMob" MobId="10184" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-10.6155" Y="-219.357" Z="-87.7344" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Class Quests\Hunter Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Taming the Beast" QuestId="6063" GiverName="Dazalar" GiverId="3601" />
+      <While Condition="((HasQuest(6063)) &amp;&amp; (!IsQuestCompleted(6063)))">
+        <CustomBehavior File="UseItemOn" QuestId="6063" MobId="0" ItemId="15921" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Taming the Beast" QuestId="6063" TurnInName="Dazalar" TurnInId="3601" />
+      <If Condition="((!HasQuest(6101)) &amp;&amp; (!IsQuestCompleted(6101)))">
+        <PickUp QuestName="Taming the Beast" QuestId="6101" GiverName="Dazalar" GiverId="3601" />
+      </If>
+      <While Condition="((HasQuest(6101)) &amp;&amp; (!IsQuestCompleted(6101)))">
+        <CustomBehavior File="UseItemOn" QuestId="6101" MobId="0" ItemId="15922" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Taming the Beast" QuestId="6101" TurnInName="Dazalar" TurnInId="3601" />
+      <If Condition="((!HasQuest(6102)) &amp;&amp; (!IsQuestCompleted(6102)))">
+        <PickUp QuestName="Taming the Beast" QuestId="6102" GiverName="Dazalar" GiverId="3601" />
+      </If>
+    </If>
+    <While Condition="((HasQuest(6102)) &amp;&amp; (!IsQuestCompleted(6102)))">
+      <CustomBehavior File="UseItemOn" QuestId="6102" MobId="0" ItemId="15923" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Taming the Beast" QuestId="6102" TurnInName="Dazalar" TurnInId="3601" />
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <If Condition="((!HasQuest(6103)) &amp;&amp; (!IsQuestCompleted(6103)))">
+        <PickUp QuestName="Training the Beast" QuestId="6103" GiverName="Dazalar" GiverId="3601" />
+      </If>
+      <TurnIn QuestName="Training the Beast" QuestId="6103" TurnInName="Jocaste" TurnInId="4146" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.Dwarf)">
+      <PickUp QuestName="Taming the Beast" QuestId="6064" GiverName="Grif Wildheart" GiverId="1231" />
+      <While Condition="((HasQuest(6064)) &amp;&amp; (!IsQuestCompleted(6064)))">
+        <CustomBehavior File="UseItemOn" QuestId="6064" MobId="0" ItemId="15911" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Taming the Beast" QuestId="6064" TurnInName="Grif Wildheart" TurnInId="1231" />
+      <If Condition="((!HasQuest(6084)) &amp;&amp; (!IsQuestCompleted(6084)))">
+        <PickUp QuestName="Taming the Beast" QuestId="6084" GiverName="Grif Wildheart" GiverId="1231" />
+      </If>
+      <While Condition="((HasQuest(6084)) &amp;&amp; (!IsQuestCompleted(6084)))">
+        <CustomBehavior File="UseItemOn" QuestId="6084" MobId="0" ItemId="15913" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Taming the Beast" QuestId="6084" TurnInName="Grif Wildheart" TurnInId="1231" />
+      <If Condition="((!HasQuest(6085)) &amp;&amp; (!IsQuestCompleted(6085)))">
+        <PickUp QuestName="Taming the Beast" QuestId="6085" GiverName="Grif Wildheart" GiverId="1231" />
+      </If>
+      <While Condition="((HasQuest(6085)) &amp;&amp; (!IsQuestCompleted(6085)))">
+        <CustomBehavior File="UseItemOn" QuestId="6085" MobId="0" ItemId="15908" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Taming the Beast" QuestId="6085" TurnInName="Grif Wildheart" TurnInId="1231" />
+      <If Condition="((!HasQuest(6086)) &amp;&amp; (!IsQuestCompleted(6086)))">
+        <PickUp QuestName="Training the Beast" QuestId="6086" GiverName="Grif Wildheart" GiverId="1231" />
+      </If>
+      <TurnIn QuestName="Training the Beast" QuestId="6086" TurnInName="Belia Thundergranite" TurnInId="10090" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <PickUp QuestName="The Hunter's Charm" QuestId="8151" GiverName="Dorion" GiverId="4205" />
+      <TurnIn QuestName="The Hunter's Charm" QuestId="8151" TurnInName="Ogtinc" TurnInId="8405" />
+      <If Condition="((!HasQuest(8153)) &amp;&amp; (!IsQuestCompleted(8153)))">
+        <PickUp QuestName="Courser Antlers" QuestId="8153" GiverName="Ogtinc" GiverId="8405" />
+      </If>
+      <Objective QuestName="Courser Antlers" QuestId="8153" Type="KillMob" MobId="8761" KillCount="1" />
+      <Objective QuestName="Courser Antlers" QuestId="8153" Type="CollectItem" ItemId="20017" CollectCount="2" />
+      <TurnIn QuestName="Courser Antlers" QuestId="8153" TurnInName="Ogtinc" TurnInId="8405" />
+      <If Condition="((!HasQuest(8231)) &amp;&amp; (!IsQuestCompleted(8231)))">
+        <PickUp QuestName="Wavethrashing" QuestId="8231" GiverName="Ogtinc" GiverId="8405" />
+      </If>
+    </If>
+    <Objective QuestName="Wavethrashing" QuestId="8231" Type="CollectItem" ItemId="20087" CollectCount="6" />
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <TurnIn QuestName="Wavethrashing" QuestId="8231" TurnInName="Ogtinc" TurnInId="8405" />
+      <If Condition="((!HasQuest(8232)) &amp;&amp; (!IsQuestCompleted(8232)))">
+        <PickUp QuestName="The Green Drake" QuestId="8232" GiverName="Ogtinc" GiverId="8405" />
+      </If>
+      <Objective QuestName="The Green Drake" QuestId="8232" Type="KillMob" MobId="5719" KillCount="1" />
+      <Objective QuestName="The Green Drake" QuestId="8232" Type="CollectItem" ItemId="20019" CollectCount="1" />
+      <TurnIn QuestName="The Green Drake" QuestId="8232" TurnInName="Ogtinc" TurnInId="8405" />
+      <Objective QuestName="Stave of the Ancients" QuestId="7636" Type="KillMob" MobId="12018" KillCount="1" />
+      <Objective QuestName="The Green Drake" QuestId="8232" Type="CollectItem" ItemId="18703" CollectCount="1" />
+      <CustomBehavior File="UseItemOn" ItemId="18703" MobId="0" NumOfTimes="1" CollectionDistance="100" />
+      <PickUp QuestName="The Ancient Leaf" QuestId="7632" GiverName="Ogtinc" GiverId="8405" />
+      <TurnIn QuestName="The Ancient Leaf" QuestId="7632" TurnInName="Vartus the Ancient" TurnInId="14524" />
+      <PickUp QuestName="An Introduction" QuestId="7633" GiverName="Vartus the Ancient" GiverId="14524" />
+      <If Condition="((!HasQuest(7636)) &amp;&amp; (!IsQuestCompleted(7636)))">
+        <PickUp QuestName="Stave of the Ancients" QuestId="7636" GiverName="Vartus the Ancient" GiverId="14524" />
+      </If>
+      <If Condition="((!HasQuest(7635)) &amp;&amp; (!IsQuestCompleted(7635)))">
+        <PickUp QuestName="A Proper String" QuestId="7635" GiverName="Stoma the Ancient" GiverId="14525" />
+      </If>
+      <Objective QuestName="Stave of the Ancients" QuestId="7636" Type="KillMob" MobId="14527" KillCount="1" />
+      <Objective QuestName="Stave of the Ancients" QuestId="7636" Type="CollectItem" ItemId="18952" CollectCount="1" />
+      <Objective QuestName="Stave of the Ancients" QuestId="7636" Type="KillMob" MobId="14527" KillCount="1" />
+      <Objective QuestName="Stave of the Ancients" QuestId="7636" Type="CollectItem" ItemId="18952" CollectCount="1" />
+      <Objective QuestName="Stave of the Ancients" QuestId="7636" Type="KillMob" MobId="14534" KillCount="1" />
+      <Objective QuestName="Stave of the Ancients" QuestId="7636" Type="CollectItem" ItemId="18953" CollectCount="1" />
+      <Objective QuestName="Stave of the Ancients" QuestId="7636" Type="KillMob" MobId="14530" KillCount="1" />
+      <Objective QuestName="Stave of the Ancients" QuestId="7636" Type="CollectItem" ItemId="18954" CollectCount="1" />
+      <Objective QuestName="Stave of the Ancients" QuestId="7636" Type="KillMob" MobId="14535" KillCount="1" />
+      <Objective QuestName="Stave of the Ancients" QuestId="7636" Type="CollectItem" ItemId="18955" CollectCount="1" />
+    </If>
+    <Objective QuestName="A Proper String" QuestId="7635" Type="KillMob" MobId="10184" KillCount="1" />
+    <Objective QuestName="A Proper String" QuestId="7635" Type="CollectItem" ItemId="18705" CollectCount="1" />
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <TurnIn QuestName="Stave of the Ancients" QuestId="7636" TurnInName="Vartus the Ancient" TurnInId="14524" />
+      <While Condition="((HasQuest(7635)) &amp;&amp; (!IsQuestCompleted(7635)))">
+        <CustomBehavior File="UseItemOn" QuestId="7635" MobId="0" ItemId="18707" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="A Proper String" QuestId="7635" Type="CollectItem" ItemId="18713" CollectCount="1" />
+      <Objective QuestName="A Proper String" QuestId="7635" Type="CollectItem" ItemId="18715" CollectCount="1" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Class Quests\Hunter Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

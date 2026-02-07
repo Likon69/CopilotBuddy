@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Horde\\Cenarion Field Duty Combat Assignments</Name>
+  <Name>Horde\Cenarion Field Duty Combat Assignments</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -8,136 +7,268 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="8770" Name="Target: Hive'Ashi Defenders">
+    <Objective Type="KillMob" MobId="11722" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-6580.25" Y="794.558" Z="4.6454" />
+        <Hotspot X="-6266.35" Y="1218.94" Z="-16.1716" />
+        <Hotspot X="-6386.79" Y="846.58" Z="1.542" />
+        <Hotspot X="-6340.2" Y="894.384" Z="3.6931" />
+        <Hotspot X="-6593.23" Y="1123.39" Z="0.8567" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8771" Name="Target: Hive'Ashi Sandstalkers">
+    <Objective Type="KillMob" MobId="11723" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-6476.06" Y="1085.83" Z="-2.5638" />
+        <Hotspot X="-6496.94" Y="1188.24" Z="1.7498" />
+        <Hotspot X="-6513.72" Y="783.907" Z="3.9509" />
+        <Hotspot X="-6343.0" Y="1193.96" Z="-20.7406" />
+        <Hotspot X="-6302.99" Y="1149.92" Z="-16.5253" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8502" Name="Target: Hive'Ashi Workers">
+    <Objective Type="KillMob" MobId="11721" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-6310.92" Y="1130.01" Z="-20.5836" />
+        <Hotspot X="-6513.47" Y="827.684" Z="12.9525" />
+        <Hotspot X="-6381.45" Y="1028.98" Z="-50.0282" />
+        <Hotspot X="-6579.08" Y="773.47" Z="-51.83" />
+        <Hotspot X="-6265.18" Y="946.905" Z="-40.1503" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8773" Name="Target: Hive'Zora Reavers">
+    <Objective Type="KillMob" MobId="11728" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-7402.15" Y="1309.72" Z="-86.9086" />
+        <Hotspot X="-7348.12" Y="1693.22" Z="-36.8161" />
+        <Hotspot X="-7450.1" Y="1279.64" Z="-86.6451" />
+        <Hotspot X="-7077.14" Y="1681.3" Z="5.0373" />
+        <Hotspot X="-7267.21" Y="1436.31" Z="-1.8694" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8539" Name="Target: Hive'Zora Hive Sisters">
+    <Objective Type="KillMob" MobId="11729" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-7157.14" Y="1693.8" Z="-7.3739" />
+        <Hotspot X="-7439.62" Y="1613.39" Z="-43.6308" />
+        <Hotspot X="-7571.21" Y="1727.41" Z="-33.9974" />
+        <Hotspot X="-7649.94" Y="1672.51" Z="-33.189" />
+        <Hotspot X="-7522.74" Y="1448.19" Z="4.8607" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8772" Name="Target: Hive'Zora Waywatchers">
+    <Objective Type="KillMob" MobId="11725" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-7087.77" Y="1764.94" Z="-4.6182" />
+        <Hotspot X="-7341.86" Y="1721.19" Z="-92.7696" />
+        <Hotspot X="-7464.9" Y="1314.2" Z="-82.4706" />
+        <Hotspot X="-7132.94" Y="1706.62" Z="0.1026" />
+        <Hotspot X="-7400.24" Y="1741.7" Z="-92.9762" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8687" Name="Target: Hive'Zora Tunnelers">
+    <Objective Type="KillMob" MobId="11726" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-7448.43" Y="1404.37" Z="-90.2715" />
+        <Hotspot X="-7436.79" Y="1246.25" Z="-81.6537" />
+        <Hotspot X="-7510.78" Y="1873.2" Z="-57.7846" />
+        <Hotspot X="-7647.6" Y="1746.76" Z="-32.0721" />
+        <Hotspot X="-7607.04" Y="1753.96" Z="-41.192" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8774" Name="Target: Hive'Regal Ambushers">
+    <Objective Type="KillMob" MobId="11730" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-8120.49" Y="386.97" Z="-68.6953" />
+        <Hotspot X="-8180.74" Y="411.391" Z="-80.3843" />
+        <Hotspot X="-8279.18" Y="357.264" Z="-95.3615" />
+        <Hotspot X="-8230.25" Y="363.893" Z="-88.3284" />
+        <Hotspot X="-8285.05" Y="426.974" Z="-89.7966" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8775" Name="Target: Hive'Regal Spitfires">
+    <Objective Type="KillMob" MobId="11732" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-8269.72" Y="484.756" Z="-76.3614" />
+        <Hotspot X="-8168.13" Y="372.277" Z="-78.7163" />
+        <Hotspot X="-8241.77" Y="446.978" Z="-79.8471" />
+        <Hotspot X="-8295.06" Y="378.225" Z="-94.8111" />
+        <Hotspot X="-7812.12" Y="741.156" Z="-34.6761" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8776" Name="Target: Hive'Regal Slavemakers">
+    <Objective Type="KillMob" MobId="11733" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-8273.11" Y="541.472" Z="-84.9831" />
+        <Hotspot X="-8221.74" Y="340.17" Z="-92.3752" />
+        <Hotspot X="-8287.45" Y="398.209" Z="-92.5784" />
+        <Hotspot X="-8083.94" Y="356.977" Z="-34.9322" />
+        <Hotspot X="-8327.71" Y="369.679" Z="-89.7271" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8777" Name="Target: Hive'Regal Burrowers">
+    <Objective Type="KillMob" MobId="11731" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-8296.38" Y="480.803" Z="-74.695" />
+        <Hotspot X="-8171.47" Y="424.943" Z="-80.5953" />
+        <Hotspot X="-8337.88" Y="702.227" Z="-70.7598" />
+        <Hotspot X="-7615.73" Y="277.439" Z="-34.4007" />
+        <Hotspot X="-7843.74" Y="732.592" Z="-28.0181" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8501" Name="Target: Hive'Ashi Stingers">
+    <Objective Type="KillMob" MobId="11698" KillCount="30">
+      <Hotspots>
+        <Hotspot X="-6663.68" Y="1069.62" Z="3.6813" />
+        <Hotspot X="-7002.27" Y="652.248" Z="6.0294" />
+        <Hotspot X="-7023.67" Y="892.524" Z="8.1038" />
+        <Hotspot X="-7111.02" Y="789.347" Z="12.4607" />
+        <Hotspot X="-6369.73" Y="1018.75" Z="-47.2876" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Cenarion Field Duty Combat Assignments" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Cenarion Field Duty Combat Assignments" LogColor="Green" />
     <If Condition="((!HasQuest(8731)) &amp;&amp; (!IsQuestCompleted(8731)))">
       <PickUp QuestName="Field Duty" QuestId="8731" GiverName="Windcaller Kaldon" GiverId="15540" />
     </If>
     <While Condition="((HasQuest(8507)) &amp;&amp; (!IsQuestCompleted(8507)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8507" ItemId="21143" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8507" MobId="0" ItemId="21143" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="Field Duty" QuestId="8507" Type="CollectItem" ItemId="23024" ItemName="Prepared Field Duty Papers" CollectCount="1" />
+    <Objective QuestName="Field Duty" QuestId="8507" Type="CollectItem" ItemId="23024" CollectCount="1" />
     <PickUp QuestName="Field Duty Papers" QuestId="8732" GiverName="Krug Skullsplit" GiverId="15612" />
-    <Objective QuestName="Field Duty" QuestId="8507" Type="CollectItem" ItemId="20810" ItemName="Signed Field Duty Papers" CollectCount="1" />
+    <Objective QuestName="Field Duty" QuestId="8507" Type="CollectItem" ItemId="20810" CollectCount="1" />
     <TurnIn QuestName="Field Duty" QuestId="8507" TurnInName="Windcaller Kaldon" TurnInId="15540" />
     <While Condition="((HasQuest(8732)) &amp;&amp; (!IsQuestCompleted(8732)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8732" ItemId="20808" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8732" MobId="0" ItemId="20808" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <While Condition="((HasQuest(8732)) &amp;&amp; (!IsQuestCompleted(8732)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8732" ItemId="22650" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8732" MobId="0" ItemId="22650" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <While Condition="((HasQuest(8732)) &amp;&amp; (!IsQuestCompleted(8732)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8732" ItemId="22648" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8732" MobId="0" ItemId="22648" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <While Condition="((HasQuest(8732)) &amp;&amp; (!IsQuestCompleted(8732)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8732" ItemId="22649" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8732" MobId="0" ItemId="22649" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <While Condition="((HasQuest(8732)) &amp;&amp; (!IsQuestCompleted(8732)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8732" ItemId="21749" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8732" MobId="0" ItemId="21749" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Target: Hive&apos;Ashi Defenders" QuestId="8770" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive'Ashi Defenders" QuestId="8770" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8770)) &amp;&amp; (!IsQuestCompleted(8770)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8770" ItemId="21750" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-6580.25" Y="794.558" Z="4.6454" />
+      <CustomBehavior File="UseItemOn" QuestId="8770" MobId="11722" ItemId="21750" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-6580.25" Y="794.558" Z="4.6454" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Target: Hive&apos;Ashi Sandstalkers" QuestId="8771" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive'Ashi Sandstalkers" QuestId="8771" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8771)) &amp;&amp; (!IsQuestCompleted(8771)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8771" ItemId="20942" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-6476.06" Y="1085.83" Z="-2.5638" />
+      <CustomBehavior File="UseItemOn" QuestId="8771" MobId="11723" ItemId="20942" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-6476.06" Y="1085.83" Z="-2.5638" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Target: Hive&apos;Ashi Workers" QuestId="8502" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive'Ashi Workers" QuestId="8502" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8502)) &amp;&amp; (!IsQuestCompleted(8502)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8502" ItemId="21248" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-6310.92" Y="1130.01" Z="-20.5836" />
+      <CustomBehavior File="UseItemOn" QuestId="8502" MobId="11721" ItemId="21248" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-6310.92" Y="1130.01" Z="-20.5836" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Target: Hive&apos;Zora Reavers" QuestId="8773" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive'Zora Reavers" QuestId="8773" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8773)) &amp;&amp; (!IsQuestCompleted(8773)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8773" ItemId="21249" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-7402.15" Y="1309.72" Z="-86.9086" />
+      <CustomBehavior File="UseItemOn" QuestId="8773" MobId="11728" ItemId="21249" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-7402.15" Y="1309.72" Z="-86.9086" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Target: Hive&apos;Zora Hive Sisters" QuestId="8539" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive'Zora Hive Sisters" QuestId="8539" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8539)) &amp;&amp; (!IsQuestCompleted(8539)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8539" ItemId="21250" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-7157.14" Y="1693.8" Z="-7.3739" />
+      <CustomBehavior File="UseItemOn" QuestId="8539" MobId="11729" ItemId="21250" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-7157.14" Y="1693.8" Z="-7.3739" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Target: Hive&apos;Zora Waywatchers" QuestId="8772" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive'Zora Waywatchers" QuestId="8772" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8772)) &amp;&amp; (!IsQuestCompleted(8772)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8772" ItemId="21251" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-7087.77" Y="1764.94" Z="-4.6182" />
+      <CustomBehavior File="UseItemOn" QuestId="8772" MobId="11725" ItemId="21251" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-7087.77" Y="1764.94" Z="-4.6182" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Target: Hive&apos;Zora Tunnelers" QuestId="8687" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive'Zora Tunnelers" QuestId="8687" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8687)) &amp;&amp; (!IsQuestCompleted(8687)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8687" ItemId="21252" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-7448.43" Y="1404.37" Z="-90.2715" />
+      <CustomBehavior File="UseItemOn" QuestId="8687" MobId="11726" ItemId="21252" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-7448.43" Y="1404.37" Z="-90.2715" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Target: Hive&apos;Regal Ambushers" QuestId="8774" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive'Regal Ambushers" QuestId="8774" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8774)) &amp;&amp; (!IsQuestCompleted(8774)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8774" ItemId="21253" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-8120.49" Y="386.97" Z="-68.6953" />
+      <CustomBehavior File="UseItemOn" QuestId="8774" MobId="11730" ItemId="21253" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-8120.49" Y="386.97" Z="-68.6953" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Target: Hive&apos;Regal Spitfires" QuestId="8775" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive'Regal Spitfires" QuestId="8775" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8775)) &amp;&amp; (!IsQuestCompleted(8775)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8775" ItemId="21255" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-8269.72" Y="484.756" Z="-76.3614" />
+      <CustomBehavior File="UseItemOn" QuestId="8775" MobId="11732" ItemId="21255" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-8269.72" Y="484.756" Z="-76.3614" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Target: Hive&apos;Regal Slavemakers" QuestId="8776" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive'Regal Slavemakers" QuestId="8776" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8776)) &amp;&amp; (!IsQuestCompleted(8776)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8776" ItemId="21256" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-8273.11" Y="541.472" Z="-84.9831" />
+      <CustomBehavior File="UseItemOn" QuestId="8776" MobId="11733" ItemId="21256" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-8273.11" Y="541.472" Z="-84.9831" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Target: Hive&apos;Regal Burrowers" QuestId="8777" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <PickUp QuestName="Target: Hive'Regal Burrowers" QuestId="8777" GiverName="Windcaller Kaldon" GiverId="15540" />
     <While Condition="((HasQuest(8777)) &amp;&amp; (!IsQuestCompleted(8777)))">
-      <RunTo X="49.98" Y="36.34" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8777" ItemId="20941" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-8296.38" Y="480.803" Z="-74.695" />
+      <CustomBehavior File="UseItemOn" QuestId="8777" MobId="11731" ItemId="20941" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-8296.38" Y="480.803" Z="-74.695" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Target: Hive&apos;Ashi Stingers" QuestId="8501" GiverName="Windcaller Kaldon" GiverId="15540" />
-    <Objective QuestName="Target: Hive&apos;Ashi Defenders" QuestId="8770" Type="KillMob" MobId="11722" MobName="Hive&apos;Ashi Defender" KillCount="30" />
-    <Objective QuestName="Target: Hive&apos;Ashi Sandstalkers" QuestId="8771" Type="KillMob" MobId="11723" MobName="Hive&apos;Ashi Sandstalker" KillCount="30" />
-    <Objective QuestName="Target: Hive&apos;Ashi Workers" QuestId="8502" Type="KillMob" MobId="11721" MobName="Hive&apos;Ashi Worker" KillCount="30" />
-    <Objective QuestName="Target: Hive&apos;Zora Reavers" QuestId="8773" Type="KillMob" MobId="11728" MobName="Hive&apos;Zora Reaver" KillCount="30" />
-    <Objective QuestName="Target: Hive&apos;Zora Hive Sisters" QuestId="8539" Type="KillMob" MobId="11729" MobName="Hive&apos;Zora Hive Sister" KillCount="30" />
-    <Objective QuestName="Target: Hive&apos;Zora Waywatchers" QuestId="8772" Type="KillMob" MobId="11725" MobName="Hive&apos;Zora Waywatcher" KillCount="30" />
-    <Objective QuestName="Target: Hive&apos;Zora Tunnelers" QuestId="8687" Type="KillMob" MobId="11726" MobName="Hive&apos;Zora Tunneler" KillCount="30" />
-    <Objective QuestName="Target: Hive&apos;Regal Ambushers" QuestId="8774" Type="KillMob" MobId="11730" MobName="Hive&apos;Regal Ambusher" KillCount="30" />
-    <Objective QuestName="Target: Hive&apos;Regal Spitfires" QuestId="8775" Type="KillMob" MobId="11732" MobName="Hive&apos;Regal Spitfire" KillCount="30" />
-    <Objective QuestName="Target: Hive&apos;Regal Slavemakers" QuestId="8776" Type="KillMob" MobId="11733" MobName="Hive&apos;Regal Slavemaker" KillCount="30" />
-    <Objective QuestName="Target: Hive&apos;Regal Burrowers" QuestId="8777" Type="KillMob" MobId="11731" MobName="Hive&apos;Regal Burrower" KillCount="30" />
-    <Objective QuestName="Target: Hive&apos;Ashi Stingers" QuestId="8501" Type="KillMob" MobId="11698" MobName="Hive&apos;Ashi Stinger" KillCount="30" />
-    <TurnIn QuestName="Target: Hive&apos;Ashi Defenders" QuestId="8770" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <TurnIn QuestName="Target: Hive&apos;Ashi Sandstalkers" QuestId="8771" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <TurnIn QuestName="Target: Hive&apos;Ashi Workers" QuestId="8502" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <TurnIn QuestName="Target: Hive&apos;Zora Reavers" QuestId="8773" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <TurnIn QuestName="Target: Hive&apos;Zora Hive Sisters" QuestId="8539" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <TurnIn QuestName="Target: Hive&apos;Zora Waywatchers" QuestId="8772" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <TurnIn QuestName="Target: Hive&apos;Zora Tunnelers" QuestId="8687" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <TurnIn QuestName="Target: Hive&apos;Regal Ambushers" QuestId="8774" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <TurnIn QuestName="Target: Hive&apos;Regal Spitfires" QuestId="8775" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <TurnIn QuestName="Target: Hive&apos;Regal Slavemakers" QuestId="8776" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <TurnIn QuestName="Target: Hive&apos;Regal Burrowers" QuestId="8777" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <TurnIn QuestName="Target: Hive&apos;Ashi Stingers" QuestId="8501" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Cenarion Field Duty Combat Assignments Complete" LogColor="Orange" />
+    <PickUp QuestName="Target: Hive'Ashi Stingers" QuestId="8501" GiverName="Windcaller Kaldon" GiverId="15540" />
+    <Objective QuestName="Target: Hive'Ashi Defenders" QuestId="8770" Type="KillMob" MobId="11722" KillCount="30" />
+    <Objective QuestName="Target: Hive'Ashi Sandstalkers" QuestId="8771" Type="KillMob" MobId="11723" KillCount="30" />
+    <Objective QuestName="Target: Hive'Ashi Workers" QuestId="8502" Type="KillMob" MobId="11721" KillCount="30" />
+    <Objective QuestName="Target: Hive'Zora Reavers" QuestId="8773" Type="KillMob" MobId="11728" KillCount="30" />
+    <Objective QuestName="Target: Hive'Zora Hive Sisters" QuestId="8539" Type="KillMob" MobId="11729" KillCount="30" />
+    <Objective QuestName="Target: Hive'Zora Waywatchers" QuestId="8772" Type="KillMob" MobId="11725" KillCount="30" />
+    <Objective QuestName="Target: Hive'Zora Tunnelers" QuestId="8687" Type="KillMob" MobId="11726" KillCount="30" />
+    <Objective QuestName="Target: Hive'Regal Ambushers" QuestId="8774" Type="KillMob" MobId="11730" KillCount="30" />
+    <Objective QuestName="Target: Hive'Regal Spitfires" QuestId="8775" Type="KillMob" MobId="11732" KillCount="30" />
+    <Objective QuestName="Target: Hive'Regal Slavemakers" QuestId="8776" Type="KillMob" MobId="11733" KillCount="30" />
+    <Objective QuestName="Target: Hive'Regal Burrowers" QuestId="8777" Type="KillMob" MobId="11731" KillCount="30" />
+    <Objective QuestName="Target: Hive'Ashi Stingers" QuestId="8501" Type="KillMob" MobId="11698" KillCount="30" />
+    <TurnIn QuestName="Target: Hive'Ashi Defenders" QuestId="8770" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive'Ashi Sandstalkers" QuestId="8771" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive'Ashi Workers" QuestId="8502" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive'Zora Reavers" QuestId="8773" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive'Zora Hive Sisters" QuestId="8539" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive'Zora Waywatchers" QuestId="8772" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive'Zora Tunnelers" QuestId="8687" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive'Regal Ambushers" QuestId="8774" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive'Regal Spitfires" QuestId="8775" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive'Regal Slavemakers" QuestId="8776" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive'Regal Burrowers" QuestId="8777" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <TurnIn QuestName="Target: Hive'Ashi Stingers" QuestId="8501" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Cenarion Field Duty Combat Assignments Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

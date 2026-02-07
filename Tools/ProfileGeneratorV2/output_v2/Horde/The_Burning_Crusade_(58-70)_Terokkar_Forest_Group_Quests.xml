@@ -1,0 +1,247 @@
+<HBProfile>
+  <Name>Horde\The Burning Crusade (58-70)\Terokkar Forest Group Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="10877" Name="The Dread Relic">
+    <Objective Type="CollectItem" ItemId="31697" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Massive Treasure Chest" Id="185220" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-3750.31" Y="4711.77" Z="-17.32" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10034" Name="Wanted: Bonelashers Dead!">
+    <Objective Type="KillMob" MobId="18470" KillCount="20">
+      <Hotspots>
+        <Hotspot X="-2846.22" Y="4677.97" Z="-12.7621" />
+        <Hotspot X="-2811.77" Y="4694.55" Z="-9.7655" />
+        <Hotspot X="-2856.52" Y="4726.05" Z="17.8204" />
+        <Hotspot X="-2836.72" Y="4709.67" Z="-3.4875" />
+        <Hotspot X="-2776.68" Y="4727.74" Z="-3.614" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10036" Name="Wanted: Torgos!">
+    <Objective Type="KillMob" MobId="21515" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2856.07" Y="4751.79" Z="0.6959" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10930" Name="The Big Bone Worm">
+    <Objective Type="KillMob" MobId="22105" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3787.75" Y="4805.26" Z="-20.4518" />
+        <Hotspot X="-3872.64" Y="4660.06" Z="-43.1789" />
+        <Hotspot X="-3939.21" Y="4659.82" Z="-84.8934" />
+        <Hotspot X="-3831.96" Y="4626.3" Z="-24.0373" />
+        <Hotspot X="-3846.12" Y="4580.41" Z="-21.413" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9999" Name="Buying Time">
+    <Objective Type="KillMob" MobId="17152" KillCount="2">
+      <Hotspots>
+        <Hotspot X="-1265.72" Y="8865.55" Z="53.0176" />
+        <Hotspot X="-1367.21" Y="8907.32" Z="51.6001" />
+        <Hotspot X="-1499.24" Y="9104.6" Z="88.6032" />
+        <Hotspot X="-1538.6" Y="9113.84" Z="87.4405" />
+        <Hotspot X="-1789.7" Y="9167.62" Z="73.4894" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="16945" KillCount="3">
+      <Hotspots>
+        <Hotspot X="-1218.83" Y="8942.5" Z="55.4846" />
+        <Hotspot X="-1253.15" Y="8966.12" Z="56.2953" />
+        <Hotspot X="-1337.49" Y="8950.3" Z="59.4901" />
+        <Hotspot X="-1330.91" Y="8979.0" Z="58.3012" />
+        <Hotspot X="-1364.17" Y="9007.1" Z="54.6472" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="17151" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-1338.52" Y="8900.13" Z="53.2665" />
+        <Hotspot X="-1286.56" Y="8954.76" Z="58.6134" />
+        <Hotspot X="-1273.71" Y="8943.92" Z="58.1989" />
+        <Hotspot X="-1271.87" Y="8955.33" Z="57.2264" />
+        <Hotspot X="-1227.33" Y="8904.49" Z="58.7728" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10001" Name="The Master Planner">
+    <Objective Type="KillMob" MobId="18567" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1234.32" Y="8991.61" Z="55.9549" />
+        <Hotspot X="-1812.27" Y="9327.11" Z="66.0274" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10004" Name="Patience and Understanding">
+    <Objective Type="KillMob" MobId="18584" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1777.43" Y="5126.05" Z="-35.7793" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10009" Name="Crackin' Some Skulls">
+    <Objective Type="KillMob" MobId="18585" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1747.92" Y="5157.36" Z="-37.1216" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18586" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1120.84" Y="5409.3" Z="22.3175" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18588" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3077.3" Y="5611.32" Z="-7.2129" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\The Burning Crusade (58-70)\Terokkar Forest Group Quests" LogColor="Green" />
+    <If Condition="Me.Level &lt; 62">
+      <GrindTo Level="62" />
+    </If>
+    <PickUp QuestName="Escape from Firewing Point!" QuestId="10052" GiverName="Isla Starmane" GiverId="18760" />
+    <TurnIn QuestName="Escape from Firewing Point!" QuestId="10052" TurnInName="Advisor Faila" TurnInId="18712" />
+    <If Condition="Me.Level &lt; 63">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 63</Name>
+          <Hotspots>
+            <Hotspot X="48.80" Y="44.60" Z="0.00" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="63" />
+    </If>
+    <PickUp QuestName="Skywing" QuestId="10898" GiverName="Skywing" GiverId="22424" />
+    <Objective QuestName="Skywing" QuestId="10898" Type="KillMob" MobId="18533" KillCount="1" />
+    <TurnIn QuestName="Skywing" QuestId="10898" TurnInName="Rilak the Redeemed" TurnInId="22292" />
+    <If Condition="((!HasQuest(10842)) &amp;&amp; (!IsQuestCompleted(10842)))">
+      <PickUp QuestName="The Vengeful Harbinger" QuestId="10842" GiverName="High Priest Orgium" GiverId="22278" />
+    </If>
+    <While Condition="((HasQuest(10842)) &amp;&amp; (!IsQuestCompleted(10842)))">
+      <RunTo X="-2981.75" Y="4378.62" Z="-49.227" />
+      <CustomBehavior File="UseItemOn" QuestId="10842" MobId="21636" ItemId="30527" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-2981.75" Y="4378.62" Z="-49.227" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Vengeful Harbinger" QuestId="10842" Type="KillMob" MobId="21638" KillCount="1" />
+    <TurnIn QuestName="The Vengeful Harbinger" QuestId="10842" TurnInName="Draenei Tomb Guardian" TurnInId="22278" />
+    <PickUp QuestName="The Dread Relic" QuestId="10877" GiverName="Oakun" GiverId="22456" />
+    <Objective QuestName="The Dread Relic" QuestId="10877" Type="CollectItem" ItemId="31697" CollectCount="1" />
+    <TurnIn QuestName="The Dread Relic" QuestId="10877" TurnInName="Oakun" TurnInId="22456" />
+    <If Condition="((!HasQuest(10923)) &amp;&amp; (!IsQuestCompleted(10923)))">
+      <PickUp QuestName="Evil Draws Near" QuestId="10923" GiverName="Oakun" GiverId="22456" />
+    </If>
+    <Objective QuestName="Evil Draws Near" QuestId="10923" Type="CollectItem" ItemId="31812" CollectCount="1" />
+    <While Condition="((HasQuest(10923)) &amp;&amp; (!IsQuestCompleted(10923)))">
+      <CustomBehavior File="UseItemOn" QuestId="10923" MobId="22441" ItemId="31811" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Evil Draws Near" QuestId="10923" Type="KillMob" MobId="22441" KillCount="1" />
+    <TurnIn QuestName="Evil Draws Near" QuestId="10923" TurnInName="Oakun" TurnInId="22456" />
+    <PickUp QuestName="Wanted: Bonelashers Dead!" QuestId="10034" GiverName="Oakun" GiverId="22456" />
+    <Objective QuestName="Wanted: Bonelashers Dead!" QuestId="10034" Type="KillMob" MobId="18470" KillCount="20" />
+    <TurnIn QuestName="Wanted: Bonelashers Dead!" QuestId="10034" TurnInName="Mawg Grimshot" TurnInId="18705" />
+    <If Condition="((!HasQuest(10036)) &amp;&amp; (!IsQuestCompleted(10036)))">
+      <PickUp QuestName="Wanted: Torgos!" QuestId="10036" GiverName="Mawg Grimshot" GiverId="18705" />
+    </If>
+    <Objective QuestName="Wanted: Torgos!" QuestId="10036" Type="KillMob" MobId="21515" KillCount="1" />
+    <Objective QuestName="Wanted: Torgos!" QuestId="10036" Type="CollectItem" ItemId="30618" CollectCount="1" />
+    <While Condition="((HasQuest(10036)) &amp;&amp; (!IsQuestCompleted(10036)))">
+      <CustomBehavior File="UseItemOn" QuestId="10036" MobId="0" ItemId="30618" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Wanted: Torgos!" QuestId="10036" Type="KillMob" MobId="18707" KillCount="1" />
+    <Objective QuestName="Wanted: Torgos!" QuestId="10036" Type="CollectItem" ItemId="25852" CollectCount="1" />
+    <TurnIn QuestName="Wanted: Torgos!" QuestId="10036" TurnInName="Mawg Grimshot" TurnInId="18705" />
+    <PickUp QuestName="Digging Through Bones" QuestId="10922" GiverName="Chief Archaeologist Letoll" GiverId="22458" />
+    <Objective QuestName="Digging Through Bones" QuestId="10922" Type="KillMob" MobId="22466" KillCount="1" />
+    <TurnIn QuestName="Digging Through Bones" QuestId="10922" TurnInName="Dwarfowitz" TurnInId="22481" />
+    <If Condition="((!HasQuest(10929)) &amp;&amp; (!IsQuestCompleted(10929)))">
+      <PickUp QuestName="Fumping" QuestId="10929" GiverName="Dwarfowitz" GiverId="22481" />
+    </If>
+    <While Condition="((HasQuest(10929)) &amp;&amp; (!IsQuestCompleted(10929)))">
+      <CustomBehavior File="UseItemOn" QuestId="10929" MobId="0" ItemId="31810" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Fumping" QuestId="10929" Type="KillMob" MobId="22482" KillCount="1" />
+    <TurnIn QuestName="Fumping" QuestId="10929" TurnInName="Dwarfowitz" TurnInId="22481" />
+    <If Condition="((!HasQuest(10930)) &amp;&amp; (!IsQuestCompleted(10930)))">
+      <PickUp QuestName="The Big Bone Worm" QuestId="10930" GiverName="Dwarfowitz" GiverId="22481" />
+    </If>
+    <Objective QuestName="The Big Bone Worm" QuestId="10930" Type="KillMob" MobId="22105" KillCount="1" />
+    <While Condition="((HasQuest(10930)) &amp;&amp; (!IsQuestCompleted(10930)))">
+      <CustomBehavior File="UseItemOn" QuestId="10930" MobId="0" ItemId="31825" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Big Bone Worm" QuestId="10930" Type="CollectItem" ItemId="31826" CollectCount="1" />
+    <TurnIn QuestName="The Big Bone Worm" QuestId="10930" TurnInName="Dwarfowitz" TurnInId="22481" />
+    <If Condition="Me.Level &lt; 66">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 66 - Decrepit Clefthoof</Name>
+          <Factions>15</Factions>
+          <TargetMinLevel>64</TargetMinLevel>
+          <TargetMaxLevel>65</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="-3787.75" Y="4805.26" Z="-20.45" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="66" /> <!--  (grind Decrepit Clefthoof) -->
+    </If>
+    <PickUp QuestName="He Called Himself Altruis..." QuestId="9983" GiverName="Matron Celestine" GiverId="18301" />
+    <TurnIn QuestName="He Called Himself Altruis..." QuestId="9983" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <If Condition="((!HasQuest(9991)) &amp;&amp; (!IsQuestCompleted(9991)))">
+      <PickUp QuestName="Survey the Land" QuestId="9991" GiverName="Altruis the Sufferer" GiverId="18417" />
+    </If>
+    <TurnIn QuestName="Survey the Land" QuestId="9991" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <If Condition="((!HasQuest(9999)) &amp;&amp; (!IsQuestCompleted(9999)))">
+      <PickUp QuestName="Buying Time" QuestId="9999" GiverName="Altruis the Sufferer" GiverId="18417" />
+    </If>
+    <Objective QuestName="Buying Time" QuestId="9999" Type="KillMob" MobId="17152" KillCount="2" />
+    <Objective QuestName="Buying Time" QuestId="9999" Type="KillMob" MobId="16945" KillCount="3" />
+    <Objective QuestName="Buying Time" QuestId="9999" Type="KillMob" MobId="17151" KillCount="8" />
+    <TurnIn QuestName="Buying Time" QuestId="9999" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <If Condition="((!HasQuest(10001)) &amp;&amp; (!IsQuestCompleted(10001)))">
+      <PickUp QuestName="The Master Planner" QuestId="10001" GiverName="Altruis the Sufferer" GiverId="18417" />
+    </If>
+    <Objective QuestName="The Master Planner" QuestId="10001" Type="KillMob" MobId="18567" KillCount="1" />
+    <Objective QuestName="The Master Planner" QuestId="10001" Type="CollectItem" ItemId="25751" CollectCount="1" />
+    <TurnIn QuestName="The Master Planner" QuestId="10001" TurnInName="Altruis the Sufferer" TurnInId="18417" />
+    <If Condition="((!HasQuest(10004)) &amp;&amp; (!IsQuestCompleted(10004)))">
+      <PickUp QuestName="Patience and Understanding" QuestId="10004" GiverName="Altruis the Sufferer" GiverId="18417" />
+    </If>
+    <Objective QuestName="Patience and Understanding" QuestId="10004" Type="KillMob" MobId="18584" KillCount="1" />
+    <TurnIn QuestName="Patience and Understanding" QuestId="10004" TurnInName="Sal'salabim" TurnInId="18584" />
+    <If Condition="((!HasQuest(10009)) &amp;&amp; (!IsQuestCompleted(10009)))">
+      <PickUp QuestName="Crackin' Some Skulls" QuestId="10009" GiverName="Sal'salabim" GiverId="18584" />
+    </If>
+    <Objective QuestName="Crackin' Some Skulls" QuestId="10009" Type="KillMob" MobId="18585" KillCount="1" />
+    <Objective QuestName="Crackin' Some Skulls" QuestId="10009" Type="CollectItem" ItemId="25767" CollectCount="1" />
+    <Objective QuestName="Crackin' Some Skulls" QuestId="10009" Type="KillMob" MobId="18586" KillCount="1" />
+    <Objective QuestName="Crackin' Some Skulls" QuestId="10009" Type="CollectItem" ItemId="25768" CollectCount="1" />
+    <Objective QuestName="Crackin' Some Skulls" QuestId="10009" Type="KillMob" MobId="18588" KillCount="1" />
+    <Objective QuestName="Crackin' Some Skulls" QuestId="10009" Type="CollectItem" ItemId="25769" CollectCount="1" />
+    <TurnIn QuestName="Crackin' Some Skulls" QuestId="10009" TurnInName="Sal'salabim" TurnInId="18584" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\The Burning Crusade (58-70)\Terokkar Forest Group Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

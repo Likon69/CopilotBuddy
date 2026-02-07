@@ -1,0 +1,845 @@
+<HBProfile>
+  <Name>Alliance\The Burning Crusade (58-70)\Netherstorm Group Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="10407" Name="Socrethar's Shadow">
+    <Objective Type="KillMob" MobId="20800" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4473.89" Y="3468.09" Z="176.885" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="20801" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4729.85" Y="3204.72" Z="160.336" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10409" Name="Deathblow to the Legion">
+    <Objective Type="KillMob" MobId="20132" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4946.94" Y="3849.21" Z="211.499" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10299" Name="Shutting Down Manaforge B'naar">
+    <Objective Type="KillMob" MobId="20416" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2828.02" Y="4154.67" Z="162.599" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10321" Name="Shutting Down Manaforge Coruu">
+    <Objective Type="KillMob" MobId="20397" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2426.77" Y="2750.39" Z="133.243" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10322" Name="Shutting Down Manaforge Duro">
+    <Objective Type="KillMob" MobId="20435" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2910.09" Y="2138.74" Z="163.92" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10323" Name="Shutting Down Manaforge Ara">
+    <Objective Type="KillMob" MobId="20685" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3985.48" Y="4021.77" Z="193.37" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10341" Name="Kick Them While They're Down">
+    <Objective Type="KillMob" MobId="20139" KillCount="8">
+      <Hotspots>
+        <Hotspot X="2979.37" Y="2281.19" Z="161.791" />
+        <Hotspot X="2959.12" Y="2275.65" Z="161.793" />
+        <Hotspot X="2991.45" Y="2312.61" Z="161.59" />
+        <Hotspot X="2997.41" Y="2305.0" Z="161.725" />
+        <Hotspot X="3102.14" Y="2182.2" Z="149.285" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="20207" KillCount="6">
+      <Hotspots>
+        <Hotspot X="2974.87" Y="2394.88" Z="154.619" />
+        <Hotspot X="2977.93" Y="2378.21" Z="154.308" />
+        <Hotspot X="2989.73" Y="2360.48" Z="153.884" />
+        <Hotspot X="2997.99" Y="2349.03" Z="156.009" />
+        <Hotspot X="2939.83" Y="2053.94" Z="156.886" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="20140" KillCount="4">
+      <Hotspots>
+        <Hotspot X="2941.07" Y="2267.97" Z="161.794" />
+        <Hotspot X="3024.07" Y="2074.06" Z="162.089" />
+        <Hotspot X="2973.59" Y="2137.65" Z="165.411" />
+        <Hotspot X="2996.06" Y="2162.07" Z="163.285" />
+        <Hotspot X="2974.09" Y="2155.5" Z="163.321" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10508" Name="A Gift for Voren'thal">
+    <Objective Type="KillMob" MobId="20800" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4473.89" Y="3468.09" Z="176.885" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="20801" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4729.85" Y="3204.72" Z="160.336" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10507" Name="Turning Point">
+    <Objective Type="KillMob" MobId="20132" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4946.94" Y="3849.21" Z="211.499" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10189" Name="Manaforge B'naar">
+    <Objective Type="KillMob" MobId="19635" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3024.03" Y="3964.66" Z="156.178" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10193" Name="High Value Targets">
+    <Objective Type="KillMob" MobId="19779" KillCount="8">
+      <Hotspots>
+        <Hotspot X="2999.76" Y="4120.61" Z="155.337" />
+        <Hotspot X="2925.46" Y="4083.41" Z="147.984" />
+        <Hotspot X="2871.12" Y="4054.23" Z="157.272" />
+        <Hotspot X="2897.67" Y="4088.99" Z="155.844" />
+        <Hotspot X="2876.11" Y="4045.08" Z="155.574" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18857" KillCount="2">
+      <Hotspots>
+        <Hotspot X="2843.58" Y="4368.46" Z="140.813" />
+        <Hotspot X="2874.61" Y="4048.84" Z="156.996" />
+        <Hotspot X="2827.2" Y="4023.98" Z="148.308" />
+        <Hotspot X="2780.14" Y="4201.67" Z="178.93" />
+        <Hotspot X="2776.01" Y="4154.54" Z="181.336" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18852" KillCount="6">
+      <Hotspots>
+        <Hotspot X="2829.79" Y="4365.04" Z="138.607" />
+        <Hotspot X="2851.53" Y="4345.92" Z="142.919" />
+        <Hotspot X="2851.59" Y="4343.83" Z="143.47" />
+        <Hotspot X="2852.51" Y="4339.02" Z="145.711" />
+        <Hotspot X="2832.29" Y="4336.32" Z="146.313" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10329" Name="Shutting Down Manaforge B'naar">
+    <Objective Type="KillMob" MobId="20416" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2828.02" Y="4154.67" Z="162.599" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10197" Name="A Convincing Disguise">
+    <Objective Type="KillMob" MobId="20134" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2455.03" Y="2922.62" Z="129.048" />
+        <Hotspot X="2499.35" Y="2848.43" Z="137.735" />
+        <Hotspot X="2434.13" Y="2908.4" Z="130.624" />
+        <Hotspot X="2488.88" Y="2855.45" Z="137.485" />
+        <Hotspot X="2424.98" Y="2868.67" Z="131.451" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="20136" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2416.56" Y="2798.97" Z="134.576" />
+        <Hotspot X="2369.66" Y="2770.94" Z="134.576" />
+        <Hotspot X="2357.52" Y="2474.43" Z="142.11" />
+        <Hotspot X="2357.63" Y="2484.41" Z="141.485" />
+        <Hotspot X="2368.55" Y="2496.17" Z="141.336" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="18850" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2460.09" Y="2849.69" Z="132.915" />
+        <Hotspot X="2448.34" Y="2858.35" Z="132.224" />
+        <Hotspot X="2334.53" Y="2791.84" Z="133.168" />
+        <Hotspot X="2337.3" Y="2797.86" Z="133.168" />
+        <Hotspot X="2346.69" Y="2793.28" Z="133.168" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10330" Name="Shutting Down Manaforge Coruu">
+    <Objective Type="KillMob" MobId="20397" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2426.77" Y="2750.39" Z="133.243" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10338" Name="Shutting Down Manaforge Duro">
+    <Objective Type="KillMob" MobId="20435" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2910.09" Y="2138.74" Z="163.92" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10365" Name="Shutting Down Manaforge Ara">
+    <Objective Type="KillMob" MobId="20685" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3985.48" Y="4021.77" Z="193.37" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10309" Name="It's a Fel Reaver, But with Heart">
+    <Objective Type="KillMob" MobId="20243" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2531.17" Y="4004.98" Z="133.079" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10261" Name="Wanted: Annihilator Servo!">
+    <Objective Type="KillMob" MobId="18856" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2772.55" Y="4345.48" Z="136.255" />
+        <Hotspot X="2999.52" Y="4050.58" Z="149.754" />
+        <Hotspot X="2377.97" Y="2775.12" Z="134.493" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10701" Name="Breaking Down Netherock">
+    <Objective Type="KillMob" MobId="20772" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2522.53" Y="3614.04" Z="130.318" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10256" Name="Finding the Keymaster">
+    <Objective Type="KillMob" MobId="19940" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2863.66" Y="2591.46" Z="108.774" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10265" Name="Consortium Crystal Collection">
+    <Objective Type="KillMob" MobId="20215" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2752.2" Y="3116.26" Z="155.687" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10205" Name="Warp-Raider Nesaad">
+    <Objective Type="KillMob" MobId="19641" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2503.19" Y="3902.48" Z="128.967" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10267" Name="Rightful Repossession">
+    <Objective Type="CollectItem" ItemId="28913" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Box of Surveying Equipment" Id="184031" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2936.24" Y="2161.09" Z="165.33" />
+        <Hotspot X="2948.41" Y="2195.51" Z="165.32" />
+        <Hotspot X="2955.55" Y="2207.19" Z="165.33" />
+        <Hotspot X="2957.57" Y="2133.98" Z="165.31" />
+        <Hotspot X="2958.41" Y="2274.49" Z="161.71" />
+        <Hotspot X="2970.89" Y="2212.05" Z="165.33" />
+        <Hotspot X="2978.06" Y="2274.75" Z="161.71" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10276" Name="Full Triangle">
+    <Objective Type="KillMob" MobId="20138" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4655.96" Y="2500.36" Z="242.26" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10312" Name="The Annals of Kirin'Var">
+    <Objective Type="KillMob" MobId="19543" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2185.22" Y="2115.88" Z="72.4063" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10320" Name="Destroy Naberius!">
+    <Objective Type="KillMob" MobId="20483" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2525.74" Y="1988.62" Z="91.0183" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10234" Name="One Demon's Trash...">
+    <Objective Type="CollectItem" ItemId="28551" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Fel Reaver Part" Id="183935" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3182.91" Y="2771.27" Z="148.42" />
+        <Hotspot X="3193.3" Y="2699.65" Z="141.43" />
+        <Hotspot X="3194.19" Y="2731.35" Z="146.79" />
+        <Hotspot X="3214.93" Y="2731.04" Z="148.52" />
+        <Hotspot X="3225.18" Y="2606.54" Z="136.14" />
+        <Hotspot X="3241.54" Y="2663.03" Z="143.65" />
+        <Hotspot X="3258.32" Y="2778.3" Z="155.9" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10235" Name="Declawing Doomclaw">
+    <Objective Type="KillMob" MobId="19738" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3330.86" Y="2657.39" Z="156.611" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10248" Name="You, Robot!">
+    <Objective Type="KillMob" MobId="19851" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3141.73" Y="3254.34" Z="106.82" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10270" Name="A Not-So-Modest Proposal">
+    <Objective Type="CollectItem" ItemId="28969" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Teleporter Power Pack" Id="184075" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3913.18" Y="2083.83" Z="139.66" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10272" Name="A Promising Start">
+    <Objective Type="CollectItem" ItemId="28971" CollectCount="15">
+      <CollectFrom>
+        <GameObject Name="Nether Dragonkin Egg" Id="184077" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3815.79" Y="1489.44" Z="-132.53" />
+        <Hotspot X="3856.11" Y="1499.71" Z="-132.93" />
+        <Hotspot X="3857.99" Y="1391.57" Z="-140.13" />
+        <Hotspot X="3883.22" Y="1432.46" Z="-131.57" />
+        <Hotspot X="3896.13" Y="1415.18" Z="-129.73" />
+        <Hotspot X="3906.07" Y="1411.49" Z="-128.16" />
+        <Hotspot X="3910.43" Y="1500.12" Z="-119.76" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10273" Name="Troublesome Distractions">
+    <Objective Type="KillMob" MobId="20071" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4279.62" Y="2232.24" Z="124.3" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10293" Name="Hitting the Motherlode">
+    <Objective Type="KillMob" MobId="20202" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4672.65" Y="2833.64" Z="119.721" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10339" Name="The Ethereum">
+    <Objective Type="KillMob" MobId="20727" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4131.08" Y="2301.65" Z="103.122" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="20452" KillCount="5">
+      <Hotspots>
+        <Hotspot X="3968.07" Y="2385.06" Z="112.996" />
+        <Hotspot X="3962.31" Y="2321.68" Z="114.731" />
+        <Hotspot X="4000.0" Y="2375.4" Z="112.905" />
+        <Hotspot X="3995.02" Y="2318.48" Z="114.19" />
+        <Hotspot X="4041.2" Y="2339.96" Z="114.31" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="20453" KillCount="5">
+      <Hotspots>
+        <Hotspot X="4214.64" Y="2303.06" Z="123.612" />
+        <Hotspot X="4237.32" Y="2284.91" Z="131.665" />
+        <Hotspot X="4178.21" Y="2313.83" Z="107.144" />
+        <Hotspot X="4229.19" Y="2294.56" Z="127.112" />
+        <Hotspot X="4176.63" Y="2292.27" Z="107.692" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="20456" KillCount="2">
+      <Hotspots>
+        <Hotspot X="3943.51" Y="2397.13" Z="112.656" />
+        <Hotspot X="4116.25" Y="2279.82" Z="107.194" />
+        <Hotspot X="4110.55" Y="2315.94" Z="104.678" />
+        <Hotspot X="4161.92" Y="2289.6" Z="103.045" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10384" Name="Ethereum Data">
+    <Objective Type="CollectItem" ItemId="29582" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Ethereum Data Cell" Id="184560" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3973.69" Y="2374.2" Z="112.82" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10385" Name="Potential for Brain Damage = High">
+    <Objective Type="KillMob" MobId="20619" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3939.78" Y="2420.69" Z="111.89" />
+        <Hotspot X="3931.31" Y="2344.1" Z="110.68" />
+        <Hotspot X="3906.34" Y="2327.14" Z="110.673" />
+        <Hotspot X="3835.32" Y="2405.59" Z="110.538" />
+        <Hotspot X="3983.1" Y="2387.07" Z="111.623" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10408" Name="Nexus-King Salhadaar">
+    <Objective Type="KillMob" MobId="20454" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3881.92" Y="2494.05" Z="115.753" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10439" Name="Dimensius the All-Devouring">
+    <Objective Type="KillMob" MobId="19554" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3936.81" Y="2003.84" Z="257.529" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\The Burning Crusade (58-70)\Netherstorm Group Quests" LogColor="Green" />
+    <If Condition="Me.Level &lt; 67">
+      <GrindTo Level="67" />
+    </If>
+    <If Condition="((!HasQuest(10407)) &amp;&amp; (!IsQuestCompleted(10407)))">
+      <PickUp QuestName="Socrethar's Shadow" QuestId="10407" GiverName="Anchorite Karja" GiverId="19467" />
+    </If>
+    <Objective QuestName="Socrethar's Shadow" QuestId="10407" Type="KillMob" MobId="20800" KillCount="1" />
+    <Objective QuestName="Socrethar's Shadow" QuestId="10407" Type="CollectItem" ItemId="29624" CollectCount="1" />
+    <Objective QuestName="Socrethar's Shadow" QuestId="10407" Type="KillMob" MobId="20801" KillCount="1" />
+    <Objective QuestName="Socrethar's Shadow" QuestId="10407" Type="CollectItem" ItemId="29625" CollectCount="1" />
+    <TurnIn QuestName="Socrethar's Shadow" QuestId="10407" TurnInName="Anchorite Karja" TurnInId="19467" />
+    <If Condition="((!HasQuest(10410)) &amp;&amp; (!IsQuestCompleted(10410)))">
+      <PickUp QuestName="Ishanah's Help" QuestId="10410" GiverName="Anchorite Karja" GiverId="19467" />
+    </If>
+    <TurnIn QuestName="Ishanaah's Help" QuestId="10410" TurnInName="Ishanah" TurnInId="18538" />
+    <If Condition="((!HasQuest(10409)) &amp;&amp; (!IsQuestCompleted(10409)))">
+      <PickUp QuestName="Deathblow to the Legion" QuestId="10409" GiverName="Ishanah" GiverId="18538" />
+    </If>
+    <While Condition="((HasQuest(10409)) &amp;&amp; (!IsQuestCompleted(10409)))">
+      <CustomBehavior File="UseItemOn" QuestId="10409" MobId="0" ItemId="29796" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Deathblow to the Legion" QuestId="10409" Type="KillMob" MobId="20132" KillCount="1" />
+    <TurnIn QuestName="Deathblow to the Legion" QuestId="10409" TurnInName="Ishanah" TurnInId="18538" />
+    <If Condition="((!HasQuest(10243)) &amp;&amp; (!IsQuestCompleted(10243)))">
+      <PickUp QuestName="Naaru Technology" QuestId="10243" GiverName="Anchorite Karja" GiverId="19467" />
+    </If>
+    <TurnIn QuestName="Naaru Technology" QuestId="10243" TurnInName="Object_183770" TurnInType="Object" TurnInId="183770" />
+    <If Condition="((!HasQuest(10245)) &amp;&amp; (!IsQuestCompleted(10245)))">
+      <PickUp QuestName="B'naar Console Transcription" QuestId="10245" GiverName="Anchorite Karja" GiverId="19467" />
+    </If>
+    <TurnIn QuestName="B'naar Console Transcription" QuestId="10245" TurnInName="Anchorite Karja" TurnInId="19467" />
+    <If Condition="((!HasQuest(10299)) &amp;&amp; (!IsQuestCompleted(10299)))">
+      <PickUp QuestName="Shutting Down Manaforge B'naar" QuestId="10299" GiverName="Anchorite Karja" GiverId="19467" />
+    </If>
+    <Objective QuestName="Shutting Down Manaforge B'naar" QuestId="10299" Type="KillMob" MobId="20416" KillCount="1" />
+    <Objective QuestName="Shutting Down Manaforge B'naar" QuestId="10299" Type="CollectItem" ItemId="29366" CollectCount="1" />
+    <TurnIn QuestName="Shutting Down Manaforge B'naar" QuestId="10299" TurnInName="Anchorite Karja" TurnInId="19467" />
+    <If Condition="((!HasQuest(10321)) &amp;&amp; (!IsQuestCompleted(10321)))">
+      <PickUp QuestName="Shutting Down Manaforge Coruu" QuestId="10321" GiverName="Anchorite Karja" GiverId="19467" />
+    </If>
+    <Objective QuestName="Shutting Down Manaforge Coruu" QuestId="10321" Type="KillMob" MobId="20397" KillCount="1" />
+    <Objective QuestName="Shutting Down Manaforge Coruu" QuestId="10321" Type="CollectItem" ItemId="29396" CollectCount="1" />
+    <TurnIn QuestName="Shutting Down Manaforge Coruu" QuestId="10321" TurnInName="Anchorite Karja" TurnInId="19467" />
+    <If Condition="((!HasQuest(10322)) &amp;&amp; (!IsQuestCompleted(10322)))">
+      <PickUp QuestName="Shutting Down Manaforge Duro" QuestId="10322" GiverName="Anchorite Karja" GiverId="19467" />
+    </If>
+    <Objective QuestName="Shutting Down Manaforge Duro" QuestId="10322" Type="KillMob" MobId="20435" KillCount="1" />
+    <Objective QuestName="Shutting Down Manaforge Duro" QuestId="10322" Type="CollectItem" ItemId="29397" CollectCount="1" />
+    <TurnIn QuestName="Shutting Down Manaforge Duro" QuestId="10322" TurnInName="Anchorite Karja" TurnInId="19467" />
+    <If Condition="((!HasQuest(10323)) &amp;&amp; (!IsQuestCompleted(10323)))">
+      <PickUp QuestName="Shutting Down Manaforge Ara" QuestId="10323" GiverName="Anchorite Karja" GiverId="19467" />
+    </If>
+    <Objective QuestName="Shutting Down Manaforge Ara" QuestId="10323" Type="KillMob" MobId="20685" KillCount="1" />
+    <Objective QuestName="Shutting Down Manaforge Ara" QuestId="10323" Type="CollectItem" ItemId="29411" CollectCount="1" />
+    <TurnIn QuestName="Shutting Down Manaforge Ara" QuestId="10323" TurnInName="Anchorite Karja" TurnInId="19467" />
+    <If Condition="((!HasQuest(10341)) &amp;&amp; (!IsQuestCompleted(10341)))">
+      <PickUp QuestName="Kick Them While They're Down" QuestId="10341" GiverName="Magistrix Larynna" GiverId="19469" />
+    </If>
+    <Objective QuestName="Kick Them While They're Down" QuestId="10341" Type="KillMob" MobId="20139" KillCount="8" />
+    <Objective QuestName="Kick Them While They're Down" QuestId="10341" Type="KillMob" MobId="20207" KillCount="6" />
+    <Objective QuestName="Kick Them While They're Down" QuestId="10341" Type="KillMob" MobId="20140" KillCount="4" />
+    <TurnIn QuestName="Kick Them While They're Down" QuestId="10341" TurnInName="Magistrix Larynna" TurnInId="19469" />
+    <If Condition="((!HasQuest(10202)) &amp;&amp; (!IsQuestCompleted(10202)))">
+      <PickUp QuestName="A Defector" QuestId="10202" GiverName="Magistrix Larynna" GiverId="19469" />
+    </If>
+    <TurnIn QuestName="A Defector" QuestId="10202" TurnInName="Magister Theledorn" TurnInId="20920" />
+    <If Condition="((!HasQuest(10432)) &amp;&amp; (!IsQuestCompleted(10432)))">
+      <PickUp QuestName="Damning Evidence" QuestId="10432" GiverName="Magister Theledorn" GiverId="20920" />
+    </If>
+    <Objective QuestName="Damning Evidence" QuestId="10432" Type="CollectItem" ItemId="29797" CollectCount="8" />
+    <TurnIn QuestName="Damning Evidence" QuestId="10432" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <If Condition="((!HasQuest(10508)) &amp;&amp; (!IsQuestCompleted(10508)))">
+      <PickUp QuestName="A Gift for Voren'thal" QuestId="10508" GiverName="Spymaster Thalodien" GiverId="19468" />
+    </If>
+    <Objective QuestName="A Gift for Voren'thal" QuestId="10508" Type="KillMob" MobId="20800" KillCount="1" />
+    <Objective QuestName="A Gift for Voren'thal" QuestId="10508" Type="CollectItem" ItemId="29624" CollectCount="1" />
+    <Objective QuestName="A Gift for Voren'thal" QuestId="10508" Type="KillMob" MobId="20801" KillCount="1" />
+    <Objective QuestName="A Gift for Voren'thal" QuestId="10508" Type="CollectItem" ItemId="29625" CollectCount="1" />
+    <TurnIn QuestName="A Gift for Voren'thal" QuestId="10508" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <If Condition="((!HasQuest(10509)) &amp;&amp; (!IsQuestCompleted(10509)))">
+      <PickUp QuestName="Bound for Glory" QuestId="10509" GiverName="Spymaster Thalodien" GiverId="19468" />
+    </If>
+    <TurnIn QuestName="Bound for Glory" QuestId="10509" TurnInName="Voren'thal the Seer" TurnInId="18530" />
+    <If Condition="((!HasQuest(10507)) &amp;&amp; (!IsQuestCompleted(10507)))">
+      <PickUp QuestName="Turning Point" QuestId="10507" GiverName="Voren'thal the Seer" GiverId="18530" />
+    </If>
+    <While Condition="((HasQuest(10507)) &amp;&amp; (!IsQuestCompleted(10507)))">
+      <RunTo X="4946.94" Y="3849.21" Z="211.499" />
+      <CustomBehavior File="UseItemOn" QuestId="10507" MobId="20132" ItemId="29796" NumOfTimes="100" Range="5" CollectionDistance="1000" X="4946.94" Y="3849.21" Z="211.499" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Turning Point" QuestId="10507" Type="KillMob" MobId="20132" KillCount="1" />
+    <TurnIn QuestName="Turning Point" QuestId="10507" TurnInName="Voren'thal the Seer" TurnInId="18530" />
+    <If Condition="((!HasQuest(10189)) &amp;&amp; (!IsQuestCompleted(10189)))">
+      <PickUp QuestName="Manaforge B'naar" QuestId="10189" GiverName="Spymaster Thalodien" GiverId="19468" />
+    </If>
+    <Objective QuestName="Manaforge B'naar" QuestId="10189" Type="KillMob" MobId="19635" KillCount="1" />
+    <Objective QuestName="Manaforge B'naar" QuestId="10189" Type="CollectItem" ItemId="28376" CollectCount="1" />
+    <TurnIn QuestName="Manaforge B'naar" QuestId="10189" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <If Condition="((!HasQuest(10193)) &amp;&amp; (!IsQuestCompleted(10193)))">
+      <PickUp QuestName="High Value Targets" QuestId="10193" GiverName="Spymaster Thalodien" GiverId="19468" />
+    </If>
+    <Objective QuestName="High Value Targets" QuestId="10193" Type="KillMob" MobId="19779" KillCount="8" />
+    <Objective QuestName="High Value Targets" QuestId="10193" Type="KillMob" MobId="18857" KillCount="2" />
+    <Objective QuestName="High Value Targets" QuestId="10193" Type="KillMob" MobId="18852" KillCount="6" />
+    <TurnIn QuestName="High Value Targets" QuestId="10193" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <If Condition="((!HasQuest(10329)) &amp;&amp; (!IsQuestCompleted(10329)))">
+      <PickUp QuestName="Shutting Down Manaforge B'naar" QuestId="10329" GiverName="Spymaster Thalodien" GiverId="19468" />
+    </If>
+    <Objective QuestName="Shutting Down Manaforge B'naar" QuestId="10329" Type="KillMob" MobId="20416" KillCount="1" />
+    <Objective QuestName="Shutting Down Manaforge B'naar" QuestId="10329" Type="CollectItem" ItemId="29366" CollectCount="1" />
+    <TurnIn QuestName="Shutting Down Manaforge B'naar" QuestId="10329" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <If Condition="((!HasQuest(10194)) &amp;&amp; (!IsQuestCompleted(10194)))">
+      <PickUp QuestName="Stealth Flight" QuestId="10194" GiverName="Spymaster Thalodien" GiverId="19468" />
+    </If>
+    <TurnIn QuestName="Stealth Flight" QuestId="10194" TurnInName="Veronia" TurnInId="20162" />
+    <If Condition="((!HasQuest(10652)) &amp;&amp; (!IsQuestCompleted(10652)))">
+      <PickUp QuestName="Behind Enemy Lines" QuestId="10652" GiverName="Veronia" GiverId="20162" />
+    </If>
+    <TurnIn QuestName="Behind Enemy Lines" QuestId="10652" TurnInName="Caledis Brightdawn" TurnInId="19840" />
+    <If Condition="((!HasQuest(10197)) &amp;&amp; (!IsQuestCompleted(10197)))">
+      <PickUp QuestName="A Convincing Disguise" QuestId="10197" GiverName="Caledis Brightdawn" GiverId="19840" />
+    </If>
+    <Objective QuestName="A Convincing Disguise" QuestId="10197" Type="KillMob" MobId="20134" KillCount="1" />
+    <Objective QuestName="A Convincing Disguise" QuestId="10197" Type="CollectItem" ItemId="28635" CollectCount="1" />
+    <Objective QuestName="A Convincing Disguise" QuestId="10197" Type="KillMob" MobId="20136" KillCount="1" />
+    <Objective QuestName="A Convincing Disguise" QuestId="10197" Type="CollectItem" ItemId="28636" CollectCount="1" />
+    <Objective QuestName="A Convincing Disguise" QuestId="10197" Type="KillMob" MobId="18850" KillCount="1" />
+    <Objective QuestName="A Convincing Disguise" QuestId="10197" Type="CollectItem" ItemId="28637" CollectCount="1" />
+    <TurnIn QuestName="A Convincing Disguise" QuestId="10197" TurnInName="Caledis Brightdawn" TurnInId="19840" />
+    <If Condition="((!HasQuest(10198)) &amp;&amp; (!IsQuestCompleted(10198)))">
+      <PickUp QuestName="Information Gathering" QuestId="10198" GiverName="Caledis Brightdawn" GiverId="19840" />
+    </If>
+    <While Condition="((HasQuest(10198)) &amp;&amp; (!IsQuestCompleted(10198)))">
+      <CustomBehavior File="UseItemOn" QuestId="10198" MobId="0" ItemId="28607" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Information Gathering" QuestId="10198" TurnInName="Caledis Brightdawn" TurnInId="19840" />
+    <If Condition="((!HasQuest(10330)) &amp;&amp; (!IsQuestCompleted(10330)))">
+      <PickUp QuestName="Shutting Down Manaforge Coruu" QuestId="10330" GiverName="Caledis Brightdawn" GiverId="19840" />
+    </If>
+    <Objective QuestName="Shutting Down Manaforge Coruu" QuestId="10330" Type="KillMob" MobId="20397" KillCount="1" />
+    <Objective QuestName="Shutting Down Manaforge Coruu" QuestId="10330" Type="CollectItem" ItemId="29396" CollectCount="1" />
+    <TurnIn QuestName="Shutting Down Manaforge Coruu" QuestId="10330" TurnInName="Caledis Brightdawn" TurnInId="19840" />
+    <If Condition="((!HasQuest(10200)) &amp;&amp; (!IsQuestCompleted(10200)))">
+      <PickUp QuestName="Return to Thalodien" QuestId="10200" GiverName="Caledis Brightdawn" GiverId="19840" />
+    </If>
+    <TurnIn QuestName="Return to Thalodien" QuestId="10200" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <If Condition="((!HasQuest(10338)) &amp;&amp; (!IsQuestCompleted(10338)))">
+      <PickUp QuestName="Shutting Down Manaforge Duro" QuestId="10338" GiverName="Spymaster Thalodien" GiverId="19468" />
+    </If>
+    <Objective QuestName="Shutting Down Manaforge Duro" QuestId="10338" Type="KillMob" MobId="20435" KillCount="1" />
+    <Objective QuestName="Shutting Down Manaforge Duro" QuestId="10338" Type="CollectItem" ItemId="29397" CollectCount="1" />
+    <TurnIn QuestName="Shutting Down Manaforge Duro" QuestId="10338" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <If Condition="((!HasQuest(10365)) &amp;&amp; (!IsQuestCompleted(10365)))">
+      <PickUp QuestName="Shutting Down Manaforge Ara" QuestId="10365" GiverName="Spymaster Thalodien" GiverId="19468" />
+    </If>
+    <Objective QuestName="Shutting Down Manaforge Ara" QuestId="10365" Type="KillMob" MobId="20685" KillCount="1" />
+    <Objective QuestName="Shutting Down Manaforge Ara" QuestId="10365" Type="CollectItem" ItemId="29411" CollectCount="1" />
+    <TurnIn QuestName="Shutting Down Manaforge Ara" QuestId="10365" TurnInName="Spymaster Thalodien" TurnInId="19468" />
+    <PickUp QuestName="It's a Fel Reaver, But with Heart" QuestId="10309" GiverName="N. D. Meancamp" GiverId="19690" />
+    <Objective QuestName="It's a Fel Reaver, But with Heart" QuestId="10309" Type="KillMob" MobId="20243" KillCount="1" />
+    <Objective QuestName="It's a Fel Reaver, But with Heart" QuestId="10309" Type="CollectItem" ItemId="29260" CollectCount="1" />
+    <TurnIn QuestName="It's a Fel Reaver, But with Heart" QuestId="10309" TurnInName="N. D. Meancamp" TurnInId="19690" />
+    <PickUp QuestName="Wanted: Annihilator Servo!" QuestId="10261" GiverName="N. D. Meancamp" GiverId="19690" />
+    <PickUp QuestName="Breaking Down Netherock" QuestId="10701" GiverName="N. D. Meancamp" GiverId="19690" />
+    <Objective QuestName="Wanted: Annihilator Servo!" QuestId="10261" Type="KillMob" MobId="18856" KillCount="1" />
+    <Objective QuestName="Wanted: Annihilator Servo!" QuestId="10261" Type="CollectItem" ItemId="28787" CollectCount="1" />
+    <Objective QuestName="Breaking Down Netherock" QuestId="10701" Type="KillMob" MobId="20772" KillCount="1" />
+    <TurnIn QuestName="Wanted: Annihilator Servo!" QuestId="10261" TurnInName="Papa Wheeler" TurnInId="19645" />
+    <TurnIn QuestName="Breaking Down Netherock" QuestId="10701" TurnInName="Rocket-Chief Fuselage" TurnInId="19570" />
+    <If Condition="((!HasQuest(10256)) &amp;&amp; (!IsQuestCompleted(10256)))">
+      <PickUp QuestName="Finding the Keymaster" QuestId="10256" GiverName="Archmage Vargoth" GiverId="19481" />
+    </If>
+    <Objective QuestName="Finding the Keymaster" QuestId="10256" Type="KillMob" MobId="19940" KillCount="1" />
+    <Objective QuestName="Finding the Keymaster" QuestId="10256" Type="CollectItem" ItemId="28786" CollectCount="1" />
+    <While Condition="((HasQuest(10256)) &amp;&amp; (!IsQuestCompleted(10256)))">
+      <CustomBehavior File="UseItemOn" QuestId="10256" MobId="19938" ItemId="28786" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Finding the Keymaster" QuestId="10256" TurnInName="Archmage Vargoth" TurnInId="19481" />
+    <If Condition="((!HasQuest(10263)) &amp;&amp; (!IsQuestCompleted(10263)))">
+      <PickUp QuestName="Assisting the Consortium" QuestId="10263" GiverName="Anchorite Karja" GiverId="19467" />
+    </If>
+    <If Condition="((!HasQuest(10264)) &amp;&amp; (!IsQuestCompleted(10264)))">
+      <PickUp QuestName="Assisting the Consortium" QuestId="10264" GiverName="Spymaster Thalodien" GiverId="19468" />
+    </If>
+    <TurnIn QuestName="Assisting the Consortium" QuestId="10263" TurnInName="Nether-Stalker Khay'ji" TurnInId="19880" />
+    <TurnIn QuestName="Assisting the Consortium" QuestId="10264" TurnInName="Nether-Stalker Khay'ji" TurnInId="19880" />
+    <If Condition="((!HasQuest(10265)) &amp;&amp; (!IsQuestCompleted(10265)))">
+      <PickUp QuestName="Consortium Crystal Collection" QuestId="10265" GiverName="Nether-Stalker Khay'ji" GiverId="19880" />
+    </If>
+    <Objective QuestName="Consortium Crystal Collection" QuestId="10265" Type="KillMob" MobId="20215" KillCount="1" />
+    <Objective QuestName="Consortium Crystal Collection" QuestId="10265" Type="CollectItem" ItemId="28829" CollectCount="1" />
+    <TurnIn QuestName="Consortium Crystal Collection" QuestId="10265" TurnInName="Nether-Stalker Khay'ji" TurnInId="19880" />
+    <If Condition="((!HasQuest(10262)) &amp;&amp; (!IsQuestCompleted(10262)))">
+      <PickUp QuestName="A Heap of Ethereals" QuestId="10262" GiverName="Nether-Stalker Khay'ji" GiverId="19880" />
+    </If>
+    <Objective QuestName="A Heap of Ethereals" QuestId="10262" Type="CollectItem" ItemId="29209" CollectCount="10" />
+    <TurnIn QuestName="A Heap of Ethereals" QuestId="10262" TurnInName="Nether-Stalker Khay'ji" TurnInId="19880" />
+    <If Condition="((!HasQuest(10205)) &amp;&amp; (!IsQuestCompleted(10205)))">
+      <PickUp QuestName="Warp-Raider Nesaad" QuestId="10205" GiverName="Nether-Stalker Khay'ji" GiverId="19880" />
+    </If>
+    <Objective QuestName="Warp-Raider Nesaad" QuestId="10205" Type="KillMob" MobId="19641" KillCount="1" />
+    <TurnIn QuestName="Warp-Raider Nesaad" QuestId="10205" TurnInName="Nether-Stalker Khay'ji" TurnInId="19880" />
+    <If Condition="((!HasQuest(10266)) &amp;&amp; (!IsQuestCompleted(10266)))">
+      <PickUp QuestName="Request for Assistance" QuestId="10266" GiverName="Nether-Stalker Khay'ji" GiverId="19880" />
+    </If>
+    <TurnIn QuestName="Request for Assistance" QuestId="10266" TurnInName="Gahruj" TurnInId="20066" />
+    <If Condition="((!HasQuest(10267)) &amp;&amp; (!IsQuestCompleted(10267)))">
+      <PickUp QuestName="Rightful Repossession" QuestId="10267" GiverName="Gahruj" GiverId="20066" />
+    </If>
+    <Objective QuestName="Rightful Repossession" QuestId="10267" Type="CollectItem" ItemId="28913" CollectCount="10" />
+    <TurnIn QuestName="Rightful Repossession" QuestId="10267" TurnInName="Gahruj" TurnInId="20066" />
+    <If Condition="((!HasQuest(10268)) &amp;&amp; (!IsQuestCompleted(10268)))">
+      <PickUp QuestName="An Audience with the Prince" QuestId="10268" GiverName="Gahruj" GiverId="20066" />
+    </If>
+    <TurnIn QuestName="An Audience with the Prince" QuestId="10268" TurnInName="Image of Nexus-Prince Haramad" TurnInId="20084" />
+    <If Condition="((!HasQuest(10269)) &amp;&amp; (!IsQuestCompleted(10269)))">
+      <PickUp QuestName="Triangulation Point One" QuestId="10269" GiverName="Image of Nexus-Prince Haramad" GiverId="20084" />
+    </If>
+    <While Condition="((HasQuest(10269)) &amp;&amp; (!IsQuestCompleted(10269)))">
+      <CustomBehavior File="UseItemOn" QuestId="10269" MobId="0" ItemId="28962" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Triangulation Point One" QuestId="10269" TurnInName="Dealer Hazzin" TurnInId="20092" />
+    <If Condition="((!HasQuest(10275)) &amp;&amp; (!IsQuestCompleted(10275)))">
+      <PickUp QuestName="Triangulation Point Two" QuestId="10275" GiverName="Dealer Hazzin" GiverId="20092" />
+    </If>
+    <While Condition="((HasQuest(10275)) &amp;&amp; (!IsQuestCompleted(10275)))">
+      <CustomBehavior File="UseItemOn" QuestId="10275" MobId="0" ItemId="29018" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Triangulation Point Two" QuestId="10275" TurnInName="Wind Trader Tuluman" TurnInId="20112" />
+    <If Condition="((!HasQuest(10276)) &amp;&amp; (!IsQuestCompleted(10276)))">
+      <PickUp QuestName="Full Triangle" QuestId="10276" GiverName="Wind Trader Tuluman" GiverId="20112" />
+    </If>
+    <Objective QuestName="Full Triangle" QuestId="10276" Type="KillMob" MobId="20138" KillCount="1" />
+    <Objective QuestName="Full Triangle" QuestId="10276" Type="CollectItem" ItemId="29026" CollectCount="1" />
+    <TurnIn QuestName="Full Triangle" QuestId="10276" TurnInName="Image of Nexus-Prince Haramad" TurnInId="20084" />
+    <If Condition="((!HasQuest(10184)) &amp;&amp; (!IsQuestCompleted(10184)))">
+      <PickUp QuestName="Malevolent Remnants" QuestId="10184" GiverName="Custodian Dieworth" GiverId="19488" />
+    </If>
+    <TurnIn QuestName="Malevolent Remnants" QuestId="10184" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <If Condition="((!HasQuest(10312)) &amp;&amp; (!IsQuestCompleted(10312)))">
+      <PickUp QuestName="The Annals of Kirin'Var" QuestId="10312" GiverName="Custodian Dieworth" GiverId="19488" />
+    </If>
+    <Objective QuestName="The Annals of Kirin'Var" QuestId="10312" Type="KillMob" MobId="19543" KillCount="1" />
+    <Objective QuestName="The Annals of Kirin'Var" QuestId="10312" Type="CollectItem" ItemId="29331" CollectCount="1" />
+    <TurnIn QuestName="The Annals of Kirin'Var" QuestId="10312" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <If Condition="((!HasQuest(10316)) &amp;&amp; (!IsQuestCompleted(10316)))">
+      <PickUp QuestName="Searching for Evidence" QuestId="10316" GiverName="Custodian Dieworth" GiverId="19488" />
+    </If>
+    <TurnIn QuestName="Searching for Evidence" QuestId="10316" TurnInName="Object_184300" TurnInType="Object" TurnInId="184300" />
+    <If Condition="((!HasQuest(10314)) &amp;&amp; (!IsQuestCompleted(10314)))">
+      <PickUp QuestName="A Lingering Suspicion" QuestId="10314" GiverName="Custodian Dieworth" GiverId="19488" />
+    </If>
+    <Objective QuestName="A Lingering Suspicion" QuestId="10314" Type="CollectItem" ItemId="29338" CollectCount="10" />
+    <TurnIn QuestName="A Lingering Suspicion" QuestId="10314" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <If Condition="((!HasQuest(10319)) &amp;&amp; (!IsQuestCompleted(10319)))">
+      <PickUp QuestName="Capturing the Phylactery" QuestId="10319" GiverName="Custodian Dieworth" GiverId="19488" />
+    </If>
+    <Objective QuestName="Capturing the Phylactery" QuestId="10319" Type="CollectItem" ItemId="29361" CollectCount="1" />
+    <TurnIn QuestName="Capturing the Phylactery" QuestId="10319" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <If Condition="((!HasQuest(10320)) &amp;&amp; (!IsQuestCompleted(10320)))">
+      <PickUp QuestName="Destroy Naberius!" QuestId="10320" GiverName="Custodian Dieworth" GiverId="19488" />
+    </If>
+    <Objective QuestName="Destroy Naberius!" QuestId="10320" Type="KillMob" MobId="20483" KillCount="1" />
+    <TurnIn QuestName="Destroy Naberius!" QuestId="10320" TurnInName="Custodian Dieworth" TurnInId="19488" />
+    <If Condition="((!HasQuest(10333)) &amp;&amp; (!IsQuestCompleted(10333)))">
+      <PickUp QuestName="Help Mama Wheeler" QuestId="10333" GiverName="Papa Wheeler" GiverId="19645" />
+    </If>
+    <TurnIn QuestName="Help Mama Wheeler" QuestId="10333" TurnInName="Mama Wheeler" TurnInId="19728" />
+    <If Condition="((!HasQuest(10234)) &amp;&amp; (!IsQuestCompleted(10234)))">
+      <PickUp QuestName="One Demon's Trash..." QuestId="10234" GiverName="Mama Wheeler" GiverId="19728" />
+    </If>
+    <Objective QuestName="One Demon's Trash..." QuestId="10234" Type="CollectItem" ItemId="28551" CollectCount="10" />
+    <TurnIn QuestName="One Demon's Trash..." QuestId="10234" TurnInName="Mama Wheeler" TurnInId="19728" />
+    <If Condition="((!HasQuest(10235)) &amp;&amp; (!IsQuestCompleted(10235)))">
+      <PickUp QuestName="Declawing Doomclaw" QuestId="10235" GiverName="Mama Wheeler" GiverId="19728" />
+    </If>
+    <Objective QuestName="Declawing Doomclaw" QuestId="10235" Type="KillMob" MobId="19738" KillCount="1" />
+    <Objective QuestName="Declawing Doomclaw" QuestId="10235" Type="CollectItem" ItemId="28563" CollectCount="1" />
+    <TurnIn QuestName="Declawing Doomclaw" QuestId="10235" TurnInName="Mama Wheeler" TurnInId="19728" />
+    <If Condition="((!HasQuest(10237)) &amp;&amp; (!IsQuestCompleted(10237)))">
+      <PickUp QuestName="Warn Area 52!" QuestId="10237" GiverName="Mama Wheeler" GiverId="19728" />
+    </If>
+    <TurnIn QuestName="Warn Area 52!" QuestId="10237" TurnInName="Rocket-Chief Fuselage" TurnInId="19570" />
+    <If Condition="((!HasQuest(10247)) &amp;&amp; (!IsQuestCompleted(10247)))">
+      <PickUp QuestName="Doctor Vomisa, Ph.T." QuestId="10247" GiverName="Rocket-Chief Fuselage" GiverId="19570" />
+    </If>
+    <TurnIn QuestName="Doctor Vomisa, Ph.T." QuestId="10247" TurnInName="Doctor Vomisa, Ph.T." TurnInId="19832" />
+    <If Condition="((!HasQuest(10248)) &amp;&amp; (!IsQuestCompleted(10248)))">
+      <PickUp QuestName="You, Robot!" QuestId="10248" GiverName="Doctor Vomisa, Ph.T." GiverId="19832" />
+    </If>
+    <While Condition="((HasQuest(10248)) &amp;&amp; (!IsQuestCompleted(10248)))">
+      <RunTo X="3141.73" Y="3254.34" Z="106.82" />
+      <CustomBehavior File="UseItemOn" QuestId="10248" MobId="19851" ItemId="28634" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3141.73" Y="3254.34" Z="106.82" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="You, Robot!" QuestId="10248" Type="KillMob" MobId="19851" KillCount="1" />
+    <TurnIn QuestName="You, Robot!" QuestId="10248" TurnInName="Doctor Vomisa, Ph.T." TurnInId="19832" />
+    <If Condition="Me.Level &lt; 68">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 68 - Negatron</Name>
+          <Hotspots>
+            <Hotspot X="3141.73" Y="3254.34" Z="106.82" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="68" /> <!--  (grind Negatron) -->
+    </If>
+    <PickUp QuestName="A Not-So-Modest Proposal" QuestId="10270" GiverName="Wind Trader Marid" GiverId="20071" />
+    <Objective QuestName="A Not-So-Modest Proposal" QuestId="10270" Type="CollectItem" ItemId="28969" CollectCount="1" />
+    <TurnIn QuestName="A Not-So-Modest Proposal" QuestId="10270" TurnInName="Image of Wind Trader Marid" TurnInId="20518" />
+    <If Condition="((!HasQuest(10271)) &amp;&amp; (!IsQuestCompleted(10271)))">
+      <PickUp QuestName="Getting Down to Business" QuestId="10271" GiverName="Image of Wind Trader Marid" GiverId="20518" />
+    </If>
+    <Objective QuestName="Getting Down to Business" QuestId="10271" Type="CollectItem" ItemId="28970" CollectCount="8" />
+    <TurnIn QuestName="Getting Down to Business" QuestId="10271" TurnInName="Shrouded Figure" TurnInId="20154" />
+    <If Condition="((!HasQuest(10281)) &amp;&amp; (!IsQuestCompleted(10281)))">
+      <PickUp QuestName="Formal Introductions" QuestId="10281" GiverName="Shrouded Figure" GiverId="20154" />
+    </If>
+    <TurnIn QuestName="Formal Introductions" QuestId="10281" TurnInName="Tyri" TurnInId="20110" />
+    <If Condition="((!HasQuest(10272)) &amp;&amp; (!IsQuestCompleted(10272)))">
+      <PickUp QuestName="A Promising Start" QuestId="10272" GiverName="Tyri" GiverId="20110" />
+    </If>
+    <Objective QuestName="A Promising Start" QuestId="10272" Type="CollectItem" ItemId="28971" CollectCount="15" />
+    <TurnIn QuestName="A Promising Start" QuestId="10272" TurnInName="Tyri" TurnInId="20110" />
+    <If Condition="((!HasQuest(10273)) &amp;&amp; (!IsQuestCompleted(10273)))">
+      <PickUp QuestName="Troublesome Distractions" QuestId="10273" GiverName="Tyri" GiverId="20110" />
+    </If>
+    <Objective QuestName="Troublesome Distractions" QuestId="10273" Type="KillMob" MobId="20071" KillCount="1" />
+    <TurnIn QuestName="Troublesome Distractions" QuestId="10273" TurnInName="Tyri" TurnInId="20110" />
+    <If Condition="((!HasQuest(10274)) &amp;&amp; (!IsQuestCompleted(10274)))">
+      <PickUp QuestName="Securing the Celestial Ridge" QuestId="10274" GiverName="Tyri" GiverId="20110" />
+    </If>
+    <While Condition="((HasQuest(10274)) &amp;&amp; (!IsQuestCompleted(10274)))">
+      <CustomBehavior File="UseItemOn" QuestId="10274" MobId="18544" ItemId="29101" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Securing the Celestial Ridge" QuestId="10274" Type="KillMob" MobId="18544" KillCount="1" />
+    <TurnIn QuestName="Securing the Celestial Ridge" QuestId="10274" TurnInName="Tyri" TurnInId="20110" />
+    <PickUp QuestName="In Search of Farahlite" QuestId="10290" GiverName="Zuben Elgenubi" GiverId="20067" />
+    <Objective QuestName="In Search of Farahlite" QuestId="10290" Type="CollectItem" ItemId="29163" CollectCount="4" />
+    <TurnIn QuestName="In Search of Farahlite" QuestId="10290" TurnInName="Zuben Elgenubi" TurnInId="20067" />
+    <If Condition="((!HasQuest(10293)) &amp;&amp; (!IsQuestCompleted(10293)))">
+      <PickUp QuestName="Hitting the Motherlode" QuestId="10293" GiverName="Zuben Elgenubi" GiverId="20067" />
+    </If>
+    <Objective QuestName="Hitting the Motherlode" QuestId="10293" Type="KillMob" MobId="20202" KillCount="1" />
+    <Objective QuestName="Hitting the Motherlode" QuestId="10293" Type="CollectItem" ItemId="29164" CollectCount="1" />
+    <TurnIn QuestName="Hitting the Motherlode" QuestId="10293" TurnInName="Zuben Elgenubi" TurnInId="20067" />
+    <If Condition="((!HasQuest(10339)) &amp;&amp; (!IsQuestCompleted(10339)))">
+      <PickUp QuestName="The Ethereum" QuestId="10339" GiverName="Commander Ameer" GiverId="20448" />
+    </If>
+    <Objective QuestName="The Ethereum" QuestId="10339" Type="KillMob" MobId="20727" KillCount="1" />
+    <Objective QuestName="The Ethereum" QuestId="10339" Type="KillMob" MobId="20452" KillCount="5" />
+    <Objective QuestName="The Ethereum" QuestId="10339" Type="KillMob" MobId="20453" KillCount="5" />
+    <Objective QuestName="The Ethereum" QuestId="10339" Type="KillMob" MobId="20456" KillCount="2" />
+    <TurnIn QuestName="The Ethereum" QuestId="10339" TurnInName="Image of Commander Ameer" TurnInId="20482" />
+    <If Condition="((!HasQuest(10384)) &amp;&amp; (!IsQuestCompleted(10384)))">
+      <PickUp QuestName="Ethereum Data" QuestId="10384" GiverName="Image of Commander Ameer" GiverId="20482" />
+    </If>
+    <Objective QuestName="Ethereum Data" QuestId="10384" Type="CollectItem" ItemId="29582" CollectCount="1" />
+    <TurnIn QuestName="Ethereum Data" QuestId="10384" TurnInName="Image of Commander Ameer" TurnInId="20482" />
+    <If Condition="((!HasQuest(10385)) &amp;&amp; (!IsQuestCompleted(10385)))">
+      <PickUp QuestName="Potential for Brain Damage = High" QuestId="10385" GiverName="Image of Commander Ameer" GiverId="20482" />
+    </If>
+    <Objective QuestName="Potential for Brain Damage = High" QuestId="10385" Type="CollectItem" ItemId="29482" CollectCount="1" />
+    <While Condition="((HasQuest(10385)) &amp;&amp; (!IsQuestCompleted(10385)))">
+      <CustomBehavior File="UseItemOn" QuestId="10385" MobId="0" ItemId="29482" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Potential for Brain Damage = High" QuestId="10385" Type="KillMob" MobId="20619" KillCount="1" />
+    <Objective QuestName="Potential for Brain Damage = High" QuestId="10385" Type="CollectItem" ItemId="29459" CollectCount="15" />
+    <TurnIn QuestName="Potential for Brain Damage = High" QuestId="10385" TurnInName="Image of Commander Ameer" TurnInId="20482" />
+    <If Condition="((!HasQuest(10405)) &amp;&amp; (!IsQuestCompleted(10405)))">
+      <PickUp QuestName="S-A-B-O-T-A-G-E" QuestId="10405" GiverName="Image of Commander Ameer" GiverId="20482" />
+    </If>
+    <Objective QuestName="S-A-B-O-T-A-G-E" QuestId="10405" Type="CollectItem" ItemId="29591" CollectCount="1" />
+    <TurnIn QuestName="S-A-B-O-T-A-G-E" QuestId="10405" TurnInName="Image of Commander Ameer" TurnInId="20482" />
+    <If Condition="((!HasQuest(10406)) &amp;&amp; (!IsQuestCompleted(10406)))">
+      <PickUp QuestName="Delivering the Message" QuestId="10406" GiverName="Image of Commander Ameer" GiverId="20482" />
+    </If>
+    <TurnIn QuestName="Delivering the Message" QuestId="10406" TurnInName="Image of Commander Ameer" TurnInId="20482" />
+    <If Condition="((!HasQuest(10408)) &amp;&amp; (!IsQuestCompleted(10408)))">
+      <PickUp QuestName="Nexus-King Salhadaar" QuestId="10408" GiverName="Image of Commander Ameer" GiverId="20482" />
+    </If>
+    <While Condition="((HasQuest(10408)) &amp;&amp; (!IsQuestCompleted(10408)))">
+      <RunTo X="3881.92" Y="2494.05" Z="115.753" />
+      <CustomBehavior File="UseItemOn" QuestId="10408" MobId="20454" ItemId="29618" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3881.92" Y="2494.05" Z="115.753" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Nexus-King Salhadaar" QuestId="10408" Type="KillMob" MobId="20454" KillCount="1" />
+    <TurnIn QuestName="Nexus-King Salhadaar" QuestId="10408" TurnInName="Image of Commander Ameer" TurnInId="20482" />
+    <PickUp QuestName="Recipe for Destruction" QuestId="10437" GiverName="Professor Dabiri" GiverId="20907" />
+    <Objective QuestName="Recipe for Destruction" QuestId="10437" Type="CollectItem" ItemId="29822" CollectCount="8" />
+    <TurnIn QuestName="Recipe for Destruction" QuestId="10437" TurnInName="Professor Dabiri" TurnInId="20907" />
+    <If Condition="((!HasQuest(10438)) &amp;&amp; (!IsQuestCompleted(10438)))">
+      <PickUp QuestName="On Nethery Wings" QuestId="10438" GiverName="Professor Dabiri" GiverId="20907" />
+    </If>
+    <While Condition="((HasQuest(10438)) &amp;&amp; (!IsQuestCompleted(10438)))">
+      <RunTo X="3936.44" Y="2003.48" Z="365.135" />
+      <CustomBehavior File="UseItemOn" QuestId="10438" MobId="20899" ItemId="29778" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3936.44" Y="2003.48" Z="365.135" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="On Nethery Wings" QuestId="10438" TurnInName="Professor Dabiri" TurnInId="20907" />
+    <If Condition="((!HasQuest(10439)) &amp;&amp; (!IsQuestCompleted(10439)))">
+      <PickUp QuestName="Dimensius the All-Devouring" QuestId="10439" GiverName="Professor Dabiri" GiverId="20907" />
+    </If>
+    <Objective QuestName="Dimensius the All-Devouring" QuestId="10439" Type="KillMob" MobId="19554" KillCount="1" />
+    <TurnIn QuestName="Dimensius the All-Devouring" QuestId="10439" TurnInName="Professor Dabiri" TurnInId="20907" />
+    <If Condition="((!HasQuest(10310)) &amp;&amp; (!IsQuestCompleted(10310)))">
+      <PickUp QuestName="Sabotag the Warp-Gate!" QuestId="10310" GiverName="Drijya" GiverId="20281" />
+    </If>
+    <TurnIn QuestName="Sabotag the Warp-Gate!" QuestId="10310" TurnInName="Gahruj" TurnInId="20066" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\The Burning Crusade (58-70)\Netherstorm Group Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Horde\\Cenarion Battlegear</Name>
+  <Name>Horde\Cenarion Battlegear</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -8,40 +7,44 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Cenarion Battlegear" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Cenarion Battlegear" LogColor="Green" />
     <PickUp QuestName="Cenarion Battlegear" QuestId="8800" GiverName="Windcaller Kaldon" GiverId="15540" />
     <TurnIn QuestName="Cenarion Battlegear" QuestId="8800" TurnInName="Vargus" TurnInId="15176" />
     <If Condition="((!HasQuest(8548)) &amp;&amp; (!IsQuestCompleted(8548)))">
-      <PickUp QuestName="Volunteer&apos;s Battlegear" QuestId="8548" GiverName="Vargus" GiverId="15176" />
+      <PickUp QuestName="Volunteer's Battlegear" QuestId="8548" GiverName="Vargus" GiverId="15176" />
     </If>
-    <Objective QuestName="Volunteer&apos;s Battlegear" QuestId="8548" Type="CollectItem" ItemId="20802" ItemName="Cenarion Combat Badge" CollectCount="5" />
-    <Objective QuestName="Volunteer&apos;s Battlegear" QuestId="8548" Type="CollectItem" ItemId="20800" ItemName="Cenarion Logistics Badge" CollectCount="3" />
-    <Objective QuestName="Volunteer&apos;s Battlegear" QuestId="8548" Type="CollectItem" ItemId="20801" ItemName="Cenarion Tactical Badge" CollectCount="7" />
-    <TurnIn QuestName="Volunteer&apos;s Battlegear" QuestId="8548" TurnInName="Vargus" TurnInId="15176" />
+    <Objective QuestName="Volunteer's Battlegear" QuestId="8548" Type="CollectItem" ItemId="20802" CollectCount="5" />
+    <Objective QuestName="Volunteer's Battlegear" QuestId="8548" Type="CollectItem" ItemId="20800" CollectCount="3" />
+    <Objective QuestName="Volunteer's Battlegear" QuestId="8548" Type="CollectItem" ItemId="20801" CollectCount="7" />
+    <TurnIn QuestName="Volunteer's Battlegear" QuestId="8548" TurnInName="Vargus" TurnInId="15176" />
     <If Condition="((!HasQuest(8572)) &amp;&amp; (!IsQuestCompleted(8572)))">
-      <PickUp QuestName="Veteran&apos;s Battlegear" QuestId="8572" GiverName="Vargus" GiverId="15176" />
+      <PickUp QuestName="Veteran's Battlegear" QuestId="8572" GiverName="Vargus" GiverId="15176" />
     </If>
-    <Objective QuestName="Veteran&apos;s Battlegear" QuestId="8572" Type="CollectItem" ItemId="20802" ItemName="Cenarion Combat Badge" CollectCount="7" />
-    <Objective QuestName="Veteran&apos;s Battlegear" QuestId="8572" Type="CollectItem" ItemId="20800" ItemName="Cenarion Logistics Badge" CollectCount="4" />
-    <Objective QuestName="Veteran&apos;s Battlegear" QuestId="8572" Type="CollectItem" ItemId="20801" ItemName="Cenarion Tactical Badge" CollectCount="4" />
-    <TurnIn QuestName="Veteran&apos;s Battlegear" QuestId="8572" TurnInName="Vargus" TurnInId="15176" />
+    <Objective QuestName="Veteran's Battlegear" QuestId="8572" Type="CollectItem" ItemId="20802" CollectCount="7" />
+    <Objective QuestName="Veteran's Battlegear" QuestId="8572" Type="CollectItem" ItemId="20800" CollectCount="4" />
+    <Objective QuestName="Veteran's Battlegear" QuestId="8572" Type="CollectItem" ItemId="20801" CollectCount="4" />
+    <TurnIn QuestName="Veteran's Battlegear" QuestId="8572" TurnInName="Vargus" TurnInId="15176" />
     <If Condition="((!HasQuest(8573)) &amp;&amp; (!IsQuestCompleted(8573)))">
-      <PickUp QuestName="Champion&apos;s Battlegear" QuestId="8573" GiverName="Vargus" GiverId="15176" />
+      <PickUp QuestName="Champion's Battlegear" QuestId="8573" GiverName="Vargus" GiverId="15176" />
     </If>
-    <Objective QuestName="Champion&apos;s Battlegear" QuestId="8573" Type="CollectItem" ItemId="20802" ItemName="Cenarion Combat Badge" CollectCount="15" />
-    <Objective QuestName="Champion&apos;s Battlegear" QuestId="8573" Type="CollectItem" ItemId="20800" ItemName="Cenarion Logistics Badge" CollectCount="20" />
-    <Objective QuestName="Champion&apos;s Battlegear" QuestId="8573" Type="CollectItem" ItemId="20801" ItemName="Cenarion Tactical Badge" CollectCount="20" />
-    <Objective QuestName="Champion&apos;s Battlegear" QuestId="8573" Type="CollectItem" ItemId="21508" ItemName="Mark of Cenarius" CollectCount="1" />
-    <TurnIn QuestName="Champion&apos;s Battlegear" QuestId="8573" TurnInName="Vargus" TurnInId="15176" />
+    <Objective QuestName="Champion's Battlegear" QuestId="8573" Type="CollectItem" ItemId="20802" CollectCount="15" />
+    <Objective QuestName="Champion's Battlegear" QuestId="8573" Type="CollectItem" ItemId="20800" CollectCount="20" />
+    <Objective QuestName="Champion's Battlegear" QuestId="8573" Type="CollectItem" ItemId="20801" CollectCount="20" />
+    <Objective QuestName="Champion's Battlegear" QuestId="8573" Type="CollectItem" ItemId="21508" CollectCount="1" />
+    <TurnIn QuestName="Champion's Battlegear" QuestId="8573" TurnInName="Vargus" TurnInId="15176" />
     <If Condition="((!HasQuest(8574)) &amp;&amp; (!IsQuestCompleted(8574)))">
-      <PickUp QuestName="Stalwart&apos;s Battlegear" QuestId="8574" GiverName="Vargus" GiverId="15176" />
+      <PickUp QuestName="Stalwart's Battlegear" QuestId="8574" GiverName="Vargus" GiverId="15176" />
     </If>
-    <Objective QuestName="Stalwart&apos;s Battlegear" QuestId="8574" Type="CollectItem" ItemId="20802" ItemName="Cenarion Combat Badge" CollectCount="15" />
-    <Objective QuestName="Stalwart&apos;s Battlegear" QuestId="8574" Type="CollectItem" ItemId="20800" ItemName="Cenarion Logistics Badge" CollectCount="20" />
-    <Objective QuestName="Stalwart&apos;s Battlegear" QuestId="8574" Type="CollectItem" ItemId="20801" ItemName="Cenarion Tactical Badge" CollectCount="17" />
-    <Objective QuestName="Stalwart&apos;s Battlegear" QuestId="8574" Type="CollectItem" ItemId="21515" ItemName="Mark of Remulos" CollectCount="1" />
-    <TurnIn QuestName="Stalwart&apos;s Battlegear" QuestId="8574" TurnInName="Vargus" TurnInId="15176" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Horde\\Cenarion Battlegear Complete" LogColor="Orange" />
+    <Objective QuestName="Stalwart's Battlegear" QuestId="8574" Type="CollectItem" ItemId="20802" CollectCount="15" />
+    <Objective QuestName="Stalwart's Battlegear" QuestId="8574" Type="CollectItem" ItemId="20800" CollectCount="20" />
+    <Objective QuestName="Stalwart's Battlegear" QuestId="8574" Type="CollectItem" ItemId="20801" CollectCount="17" />
+    <Objective QuestName="Stalwart's Battlegear" QuestId="8574" Type="CollectItem" ItemId="21515" CollectCount="1" />
+    <TurnIn QuestName="Stalwart's Battlegear" QuestId="8574" TurnInName="Vargus" TurnInId="15176" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Cenarion Battlegear Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

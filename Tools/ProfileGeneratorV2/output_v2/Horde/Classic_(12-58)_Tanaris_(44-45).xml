@@ -1,0 +1,204 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Tanaris (44-45)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>45</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="1187" Name="Razzeric's Tweaking">
+    <Objective Type="CollectItem" ItemId="5862" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Gizmorium Shipping Crate" Id="20727" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4010.62" Y="-3813.58" Z="37.34" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1690" Name="Wastewander Justice">
+    <Objective Type="KillMob" MobId="5618" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-7444.27" Y="-4606.74" Z="10.6268" />
+        <Hotspot X="-6987.99" Y="-4413.14" Z="9.6483" />
+        <Hotspot X="-7378.89" Y="-4712.7" Z="10.989" />
+        <Hotspot X="-7410.04" Y="-4548.58" Z="10.8202" />
+        <Hotspot X="-7275.84" Y="-4542.53" Z="9.0018" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5616" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-7409.34" Y="-4584.32" Z="8.8443" />
+        <Hotspot X="-7218.59" Y="-4645.01" Z="9.2493" />
+        <Hotspot X="-7319.44" Y="-4618.22" Z="8.8608" />
+        <Hotspot X="-7236.4" Y="-4631.24" Z="9.2985" />
+        <Hotspot X="-7411.57" Y="-4616.26" Z="10.9756" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2781" Name="WANTED: Caliph Scorpidsting">
+    <Objective Type="KillMob" MobId="7847" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-7630.66" Y="-4480.84" Z="9.5255" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2875" Name="WANTED: Andre Firebeard">
+    <Objective Type="KillMob" MobId="7883" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-8043.38" Y="-5281.05" Z="0.6618" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8366" Name="Southsea Shakedown">
+    <Objective Type="KillMob" MobId="7855" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-8045.08" Y="-5190.09" Z="2.6998" />
+        <Hotspot X="-7982.76" Y="-5133.95" Z="6.1215" />
+        <Hotspot X="-8096.44" Y="-5269.38" Z="1.9477" />
+        <Hotspot X="-7951.94" Y="-5216.92" Z="1.6356" />
+        <Hotspot X="-7982.24" Y="-5184.38" Z="2.0422" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7856" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-8051.09" Y="-5148.96" Z="10.6541" />
+        <Hotspot X="-7916.65" Y="-5179.24" Z="3.8879" />
+        <Hotspot X="-8046.68" Y="-5302.34" Z="0.6998" />
+        <Hotspot X="-7963.65" Y="-5471.03" Z="7.5288" />
+        <Hotspot X="-7943.13" Y="-5276.11" Z="0.6043" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7857" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-8069.87" Y="-5353.5" Z="20.5404" />
+        <Hotspot X="-8078.86" Y="-5337.5" Z="7.7922" />
+        <Hotspot X="-8078.53" Y="-5292.72" Z="0.6582" />
+        <Hotspot X="-8049.36" Y="-5277.84" Z="0.6651" />
+        <Hotspot X="-8087.39" Y="-5377.46" Z="19.7015" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7858" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-7976.71" Y="-5413.06" Z="1.1204" />
+        <Hotspot X="-7989.63" Y="-5414.49" Z="1.2038" />
+        <Hotspot X="-8087.94" Y="-5244.56" Z="1.9519" />
+        <Hotspot X="-7957.92" Y="-5445.87" Z="7.4836" />
+        <Hotspot X="-8014.72" Y="-5215.52" Z="2.2353" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1691" Name="More Wastewander Justice">
+    <Objective Type="KillMob" MobId="5615" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-7553.31" Y="-4710.83" Z="10.4689" />
+        <Hotspot X="-7577.27" Y="-4713.79" Z="10.4227" />
+        <Hotspot X="-7596.2" Y="-4585.4" Z="9.1381" />
+        <Hotspot X="-7681.03" Y="-4612.35" Z="9.2023" />
+        <Hotspot X="-7562.11" Y="-4263.42" Z="9.0018" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5623" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-7716.18" Y="-4683.41" Z="8.9552" />
+        <Hotspot X="-7597.54" Y="-4257.24" Z="10.4849" />
+        <Hotspot X="-7618.08" Y="-4718.55" Z="9.1718" />
+        <Hotspot X="-7707.1" Y="-4635.52" Z="9.0018" />
+        <Hotspot X="-7713.8" Y="-4632.02" Z="9.0018" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5617" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-7485.01" Y="-4514.21" Z="10.54" />
+        <Hotspot X="-7744.56" Y="-4617.91" Z="9.4577" />
+        <Hotspot X="-7713.69" Y="-4718.54" Z="9.6341" />
+        <Hotspot X="-7693.51" Y="-4714.76" Z="9.0018" />
+        <Hotspot X="-7584.18" Y="-4251.74" Z="9.3768" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Tanaris (44-45)" LogColor="Green" />
+    <TurnIn QuestName="Tran'rek" QuestId="2864" TurnInName="Tran'rek" TurnInId="7876" />
+    <PickUp QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" GiverName="Tran'rek" GiverId="7876" />
+    <PickUp QuestName="WANTED: Andre Firebeard" QuestId="2875" GiverName="Tran'rek" GiverId="7876" />
+    <CustomBehavior File="SetHearthstone" MobId="6807" AreaId="33" X="-14457.7" Y="495.348" Z="15.2129" /> <!-- Set hearth: Gadgetzan -->
+    <PickUp QuestName="Water Pouch Bounty" QuestId="1707" GiverName="Spigot Operator Luglunket" GiverId="7408" />
+    <PickUp QuestName="Wastewander Justice" QuestId="1690" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
+    <Objective QuestName="Rumors for Kravel" QuestId="1117" Type="CollectItem" ItemId="5804" CollectCount="1" />
+    <Objective QuestName="Razzeric's Tweaking" QuestId="1187" Type="CollectItem" ItemId="5862" CollectCount="1" />
+    <PickUp QuestName="Gadgetzan Water Survey" QuestId="992" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    <TurnIn QuestName="Rumors for Kravel" QuestId="1117" TurnInName="Kravel Koalbeard" TurnInId="4452" />
+    <If Condition="((!HasQuest(1118)) &amp;&amp; (!IsQuestCompleted(1118)))">
+      <PickUp QuestName="Back to Booty Bay" QuestId="1118" GiverName="Kravel Koalbeard" GiverId="4452" />
+    </If>
+    <TurnIn QuestName="News for Fizzle" QuestId="1137" TurnInName="Fizzle Brassbolts" TurnInId="4454" />
+    <TurnIn QuestName="Razzeric's Tweaking" QuestId="1187" TurnInName="Razzeric" TurnInId="4706" />
+    <If Condition="((!HasQuest(1188)) &amp;&amp; (!IsQuestCompleted(1188)))">
+      <PickUp QuestName="Safety First" QuestId="1188" GiverName="Razzeric" GiverId="4706" />
+    </If>
+    <If Condition="((!HasQuest(1190)) &amp;&amp; (!IsQuestCompleted(1190)))">
+      <PickUp QuestName="Keeping Pace" QuestId="1190" GiverName="Pozzik" GiverId="4630" />
+    </If>
+    <TurnIn QuestName="Keeping Pace" QuestId="1190" TurnInName="Object_20805" TurnInType="Object" TurnInId="20805" />
+    <If Condition="((!HasQuest(1194)) &amp;&amp; (!IsQuestCompleted(1194)))">
+      <PickUp QuestName="Rizzle's Schematics" QuestId="1194" GiverName="Zamek" GiverId="4709" />
+    </If>
+    <TurnIn QuestName="Rizzle's Schematics" QuestId="1194" TurnInName="Pozzik" TurnInId="4630" />
+    <TurnIn QuestName="Safety First" QuestId="1188" TurnInName="Shreev" TurnInId="4708" />
+    <Objective QuestName="Water Pouch Bounty" QuestId="1707" Type="CollectItem" ItemId="8483" CollectCount="5" />
+    <Objective QuestName="Wastewander Justice" QuestId="1690" Type="KillMob" MobId="5618" KillCount="10" />
+    <Objective QuestName="Wastewander Justice" QuestId="1690" Type="KillMob" MobId="5616" KillCount="10" />
+    <PickUp QuestName="Pirate Hats Ahoy!" QuestId="8365" GiverName="Haughty Modiste" GiverId="15165" />
+    <PickUp QuestName="Screecher Spirits" QuestId="3520" GiverName="Yeh'kinya" GiverId="8579" />
+    <If Condition="((!HasQuest(8366)) &amp;&amp; (!IsQuestCompleted(8366)))">
+      <PickUp QuestName="Southsea Shakedown" QuestId="8366" GiverName="Security Chief Bilgewhizzle" GiverId="7882" />
+    </If>
+    <TurnIn QuestName="Stoley's Debt" QuestId="2872" TurnInName="Stoley" TurnInId="7881" />
+    <If Condition="((!HasQuest(2873)) &amp;&amp; (!IsQuestCompleted(2873)))">
+      <PickUp QuestName="Stoley's Shipment" QuestId="2873" GiverName="Stoley" GiverId="7881" />
+    </If>
+    <Objective QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" Type="KillMob" MobId="7847" KillCount="1" />
+    <Objective QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" Type="CollectItem" ItemId="8723" CollectCount="1" />
+    <Objective QuestName="Stoley's Shipment" QuestId="2873" Type="CollectItem" ItemId="9244" CollectCount="1" />
+    <Objective QuestName="WANTED: Andre Firebeard" QuestId="2875" Type="KillMob" MobId="7883" KillCount="1" />
+    <Objective QuestName="WANTED: Andre Firebeard" QuestId="2875" Type="CollectItem" ItemId="9246" CollectCount="1" />
+    <Objective QuestName="Pirate Hats Ahoy!" QuestId="8365" Type="CollectItem" ItemId="20519" CollectCount="20" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7855" KillCount="10" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7856" KillCount="10" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7857" KillCount="10" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7858" KillCount="10" />
+    <TurnIn QuestName="Water Pouch Bounty" QuestId="1707" TurnInName="Spigot Operator Luglunket" TurnInId="7408" />
+    <TurnIn QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <TurnIn QuestName="Wastewander Justice" QuestId="1690" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <If Condition="((!HasQuest(1691)) &amp;&amp; (!IsQuestCompleted(1691)))">
+      <PickUp QuestName="More Wastewander Justice" QuestId="1691" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
+    </If>
+    <While Condition="((HasQuest(992)) &amp;&amp; (!IsQuestCompleted(992)))">
+      <CustomBehavior File="UseItemOn" QuestId="992" MobId="0" ItemId="8584" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Gadgetzan Water Survey" QuestId="992" Type="CollectItem" ItemId="8585" CollectCount="1" />
+    <TurnIn QuestName="Gadgetzan Water Survey" QuestId="992" TurnInName="Senior Surveyor Fizzledowser" TurnInId="7724" />
+    <TurnIn QuestName="Pirate Hats Ahoy!" QuestId="8365" TurnInName="Haughty Modiste" TurnInId="15165" />
+    <TurnIn QuestName="WANTED: Andre Firebeard" QuestId="2875" TurnInName="Security Chief Bilgewhizzle" TurnInId="7882" />
+    <TurnIn QuestName="Southsea Shakedown" QuestId="8366" TurnInName="Security Chief Bilgewhizzle" TurnInId="7882" />
+    <TurnIn QuestName="Stoley's Shipment" QuestId="2873" TurnInName="Stoley" TurnInId="7881" />
+    <If Condition="((!HasQuest(2874)) &amp;&amp; (!IsQuestCompleted(2874)))">
+      <PickUp QuestName="Deliver to MacKinley" QuestId="2874" GiverName="Stoley" GiverId="7881" />
+    </If>
+    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5615" KillCount="8" />
+    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5623" KillCount="6" />
+    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5617" KillCount="10" />
+    <TurnIn QuestName="More Wastewander Justice" QuestId="1691" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Tanaris (44-45) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Feralas_(45-46)" />
+  </QuestOrder>
+</HBProfile>

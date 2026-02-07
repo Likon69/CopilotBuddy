@@ -1,0 +1,221 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\The Barrens (21-23)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>23</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="884" Name="Owatanka">
+    <Objective Type="KillMob" MobId="3473" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2509.89" Y="-2377.26" Z="92.4167" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="879" Name="Betrayal from Within">
+    <Objective Type="KillMob" MobId="3436" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3814.72" Y="-1955.13" Z="94.0317" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="3434" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-4001.8" Y="-1816.72" Z="92.5149" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="3435" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3829.2" Y="-1445.56" Z="134.164" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="893" Name="Weapons of Choice">
+    <Objective Type="KillMob" MobId="3458" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3948.73" Y="-1750.06" Z="93.8365" />
+        <Hotspot X="-3894.82" Y="-1638.85" Z="91.7917" />
+        <Hotspot X="-3852.93" Y="-1575.41" Z="94.0757" />
+        <Hotspot X="-3874.58" Y="-1637.57" Z="91.7917" />
+        <Hotspot X="-3811.32" Y="-1554.8" Z="99.0995" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="3459" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3878.83" Y="-1609.59" Z="91.7917" />
+        <Hotspot X="-3843.41" Y="-1612.88" Z="94.6511" />
+        <Hotspot X="-3861.17" Y="-1645.63" Z="92.0417" />
+        <Hotspot X="-3828.55" Y="-1646.49" Z="91.9416" />
+        <Hotspot X="-3844.49" Y="-1513.32" Z="110.776" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="885" Name="Washte Pawne">
+    <Objective Type="KillMob" MobId="3472" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3854.66" Y="-1752.77" Z="93.4167" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="822" Name="Chen's Empty Keg">
+    <Objective Type="KillMob" MobId="3238" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3696.11" Y="-2350.67" Z="93.5732" />
+        <Hotspot X="-3820.99" Y="-2216.32" Z="92.3251" />
+        <Hotspot X="-3949.54" Y="-2153.62" Z="92.1999" />
+        <Hotspot X="-3605.2" Y="-2064.72" Z="93.703" />
+        <Hotspot X="-3734.95" Y="-2084.25" Z="93.5368" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="3249" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3735.83" Y="-2112.26" Z="91.8666" />
+        <Hotspot X="-3872.72" Y="-1983.12" Z="93.6423" />
+        <Hotspot X="-3534.8" Y="-2126.23" Z="94.2199" />
+        <Hotspot X="-3471.02" Y="-2190.11" Z="93.3705" />
+        <Hotspot X="-3413.97" Y="-2150.87" Z="91.7917" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="843" Name="Gann's Reclamation">
+    <Objective Type="KillMob" MobId="3392" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-4212.91" Y="-2274.4" Z="50.3081" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="3374" KillCount="15">
+      <Hotspots>
+        <Hotspot X="-4105.0" Y="-2211.54" Z="53.2454" />
+        <Hotspot X="-4151.9" Y="-2179.89" Z="50.6746" />
+        <Hotspot X="-4146.53" Y="-2160.73" Z="51.4417" />
+        <Hotspot X="-4114.86" Y="-2186.04" Z="50.3966" />
+        <Hotspot X="-4161.41" Y="-2223.22" Z="51.5581" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="3375" KillCount="5">
+      <Hotspots>
+        <Hotspot X="-4164.1" Y="-2184.44" Z="50.8827" />
+        <Hotspot X="-4157.34" Y="-2189.23" Z="50.3081" />
+        <Hotspot X="-4125.4" Y="-2210.24" Z="50.341" />
+        <Hotspot X="-4086.57" Y="-2190.37" Z="50.5521" />
+        <Hotspot X="-4078.73" Y="-2158.83" Z="50.3654" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\The Barrens (21-23)" LogColor="Green" />
+    <TurnIn QuestName="Further Instructions" QuestId="1094" TurnInName="Sputtervalve" TurnInId="3442" />
+    <If Condition="((!HasQuest(1095)) &amp;&amp; (!IsQuestCompleted(1095)))">
+      <PickUp QuestName="Further Instructions" QuestId="1095" GiverName="Sputtervalve" GiverId="3442" />
+    </If>
+    <TurnIn QuestName="Deepmoss Spider Eggs" QuestId="1069" TurnInName="Mebok Mizzyrix" TurnInId="3446" />
+    <TurnIn QuestName="Call of Water" QuestId="1534" TurnInName="Brine" TurnInId="5899" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(220)) &amp;&amp; (!IsQuestCompleted(220)))">
+        <PickUp QuestName="Call of Water" QuestId="220" GiverName="Brine" GiverId="5899" />
+      </If>
+    </If>
+    <TurnIn QuestName="Call of Water" QuestId="220" TurnInName="Islen Waterseer" TurnInId="5901" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(63)) &amp;&amp; (!IsQuestCompleted(63)))">
+        <PickUp QuestName="Call of Water" QuestId="63" GiverName="Islen Waterseer" GiverId="5901" />
+      </If>
+    </If>
+    <While Condition="((HasQuest(63)) &amp;&amp; (!IsQuestCompleted(63)))">
+      <CustomBehavior File="UseItemOn" QuestId="63" MobId="0" ItemId="6637" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Call of Water" QuestId="63" Type="KillMob" MobId="58" KillCount="1" />
+      <Objective QuestName="Call of Water" QuestId="63" Type="CollectItem" ItemId="7812" CollectCount="1" />
+      <TurnIn QuestName="Call of Water" QuestId="63" TurnInName="Object_113791" TurnInType="Object" TurnInId="113791" />
+      <If Condition="((!HasQuest(100)) &amp;&amp; (!IsQuestCompleted(100)))">
+        <PickUp QuestName="Call of Water" QuestId="100" GiverName="Islen Waterseer" GiverId="5901" />
+      </If>
+      <TurnIn QuestName="Call of Water" QuestId="100" TurnInName="Minor Manifestation of Water" TurnInId="5895" />
+      <If Condition="((!HasQuest(96)) &amp;&amp; (!IsQuestCompleted(96)))">
+        <PickUp QuestName="Call of Water" QuestId="96" GiverName="Minor Manifestation of Water" GiverId="5895" />
+      </If>
+      <TurnIn QuestName="Call of Water" QuestId="96" TurnInName="Islen Waterseer" TurnInId="5901" />
+    </If>
+    <If Condition="((!HasQuest(879)) &amp;&amp; (!IsQuestCompleted(879)))">
+      <PickUp QuestName="Betrayal from Within" QuestId="879" GiverName="Mangletooth" GiverId="3430" />
+    </If>
+    <If Condition="((!HasQuest(893)) &amp;&amp; (!IsQuestCompleted(893)))">
+      <PickUp QuestName="Weapons of Choice" QuestId="893" GiverName="Tatternack Steelforge" GiverId="3433" />
+    </If>
+    <CustomBehavior File="SetHearthstone" MobId="7714" AreaId="17" X="-2376.27" Y="-1995.74" Z="96.7881" /> <!-- Set hearth: Camp Taurajo -->
+    <Objective QuestName="Owatanka" QuestId="884" Type="KillMob" MobId="3473" KillCount="1" />
+    <Objective QuestName="Owatanka" QuestId="884" Type="CollectItem" ItemId="5102" CollectCount="1" />
+    <While Condition="((HasQuest(893)) &amp;&amp; (!IsQuestCompleted(893)))">
+      <CustomBehavior File="UseItemOn" QuestId="893" MobId="0" ItemId="5102" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Owatanka" QuestId="884" GiverName="Innkeeper Byula" GiverId="7714" />
+    <If Condition="Me.Level &lt; 22">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 22 - Owatanka</Name>
+          <TargetMinLevel>24</TargetMinLevel>
+          <TargetMaxLevel>24</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="-2509.89" Y="-2377.26" Z="92.42" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="22" /> <!--  (grind Owatanka) -->
+    </If>
+    <Objective QuestName="Egg Hunt" QuestId="868" Type="CollectItem" ItemId="5058" CollectCount="12" />
+    <PickUp QuestName="Gann's Reclamation" QuestId="843" GiverName="Gann Stonespire" GiverId="3341" />
+    <Objective QuestName="Betrayal from Within" QuestId="879" Type="KillMob" MobId="3436" KillCount="1" />
+    <Objective QuestName="Betrayal from Within" QuestId="879" Type="CollectItem" ItemId="5074" CollectCount="1" />
+    <Objective QuestName="Betrayal from Within" QuestId="879" Type="KillMob" MobId="3434" KillCount="1" />
+    <Objective QuestName="Betrayal from Within" QuestId="879" Type="CollectItem" ItemId="5073" CollectCount="1" />
+    <Objective QuestName="Betrayal from Within" QuestId="879" Type="KillMob" MobId="3435" KillCount="1" />
+    <Objective QuestName="Betrayal from Within" QuestId="879" Type="CollectItem" ItemId="5072" CollectCount="1" />
+    <Objective QuestName="Weapons of Choice" QuestId="893" Type="CollectItem" ItemId="5093" CollectCount="1" />
+    <Objective QuestName="Weapons of Choice" QuestId="893" Type="KillMob" MobId="3458" KillCount="1" />
+    <Objective QuestName="Weapons of Choice" QuestId="893" Type="CollectItem" ItemId="5092" CollectCount="1" />
+    <Objective QuestName="Weapons of Choice" QuestId="893" Type="KillMob" MobId="3459" KillCount="1" />
+    <Objective QuestName="Weapons of Choice" QuestId="893" Type="CollectItem" ItemId="5094" CollectCount="1" />
+    <Objective QuestName="Washte Pawne" QuestId="885" Type="KillMob" MobId="3472" KillCount="1" />
+    <Objective QuestName="Washte Pawne" QuestId="885" Type="CollectItem" ItemId="5103" CollectCount="1" />
+    <While Condition="((HasQuest(843)) &amp;&amp; (!IsQuestCompleted(843)))">
+      <RunTo X="-4105.0" Y="-2211.54" Z="53.2454" />
+      <CustomBehavior File="UseItemOn" QuestId="843" MobId="3374" ItemId="5103" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-4105.0" Y="-2211.54" Z="53.2454" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Washte Pawne" QuestId="885" GiverName="Gann Stonespire" GiverId="3341" />
+    <Objective QuestName="Chen's Empty Keg" QuestId="822" Type="KillMob" MobId="3238" KillCount="1" />
+    <Objective QuestName="Chen's Empty Keg" QuestId="822" Type="CollectItem" ItemId="4898" CollectCount="5" />
+    <Objective QuestName="Chen's Empty Keg" QuestId="822" Type="KillMob" MobId="3249" KillCount="1" />
+    <Objective QuestName="Chen's Empty Keg" QuestId="822" Type="CollectItem" ItemId="4897" CollectCount="1" />
+    <Objective QuestName="Gann's Reclamation" QuestId="843" Type="KillMob" MobId="3392" KillCount="1" />
+    <Objective QuestName="Gann's Reclamation" QuestId="843" Type="CollectItem" ItemId="5006" CollectCount="1" />
+    <Objective QuestName="Gann's Reclamation" QuestId="843" Type="KillMob" MobId="3374" KillCount="15" />
+    <Objective QuestName="Gann's Reclamation" QuestId="843" Type="KillMob" MobId="3375" KillCount="5" />
+    <TurnIn QuestName="Gann's Reclamation" QuestId="843" TurnInName="Gann Stonespire" TurnInId="3341" />
+    <If Condition="((!HasQuest(846)) &amp;&amp; (!IsQuestCompleted(846)))">
+      <PickUp QuestName="Revenge of Gann" QuestId="846" GiverName="Gann Stonespire" GiverId="3341" />
+    </If>
+    <TurnIn QuestName="Weapons of Choice" QuestId="893" TurnInName="Tatternack Steelforge" TurnInId="3433" />
+    <TurnIn QuestName="Owatanka" QuestId="884" TurnInName="Jorn Skyseer" TurnInId="3387" />
+    <TurnIn QuestName="Washte Pawne" QuestId="885" TurnInName="Jorn Skyseer" TurnInId="3387" />
+    <TurnIn QuestName="Betrayal from Within" QuestId="879" TurnInName="Mangletooth" TurnInId="3430" />
+    <If Condition="((!HasQuest(906)) &amp;&amp; (!IsQuestCompleted(906)))">
+      <PickUp QuestName="Betrayal from Within" QuestId="906" GiverName="Mangletooth" GiverId="3430" />
+    </If>
+    <TurnIn QuestName="Betrayal from Within" QuestId="906" TurnInName="Thork" TurnInId="3429" />
+    <TurnIn QuestName="Egg Hunt" QuestId="868" TurnInName="Korran" TurnInId="3428" />
+    <TurnIn QuestName="Chen's Empty Keg" QuestId="822" TurnInName="Brewmaster Drohn" TurnInId="3292" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\The Barrens (21-23) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Stonetalon_Mountains_(23-24)" />
+  </QuestOrder>
+</HBProfile>

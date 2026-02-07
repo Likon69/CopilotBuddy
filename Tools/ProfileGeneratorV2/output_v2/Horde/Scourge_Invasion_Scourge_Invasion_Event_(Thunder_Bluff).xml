@@ -1,0 +1,93 @@
+<HBProfile>
+  <Name>Horde\Scourge Invasion\Scourge Invasion Event (Thunder Bluff)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Scourge Invasion\Scourge Invasion Event (Thunder Bluff)" LogColor="Green" />
+    <PickUp QuestName="Investigate the Scourge of Thunder Bluff" QuestId="9264" GiverName="Lieutenant Lisande" GiverId="16490" />
+    <Objective QuestName="Investigate the Scourge of Thunder Bluff" QuestId="9264" Type="CollectItem" ItemId="22892" CollectCount="3" />
+    <TurnIn QuestName="Investigate the Scourge of Thunder Bluff" QuestId="9264" TurnInName="Lieutenant Lisande" TurnInId="16490" />
+    <If Condition="Me.Level &lt; 50">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 50</Name>
+          <Hotspots>
+            <Hotspot X="31.08" Y="71.38" Z="0.00" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="50" />
+    </If>
+    <PickUp QuestName="Light's Hope Chapel" QuestId="9154" GiverName="Argent Scout" GiverId="16255" />
+    <!-- Quest 9154 may auto-complete (no turn-in found) -->
+    <PickUp QuestName="Under the Shadow" QuestId="9153" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <PickUp QuestName="Shadows of Doom" QuestId="9085" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <Objective QuestName="Shadows of Doom" QuestId="9085" Type="KillMob" MobId="16143" KillCount="1" />
+    <Objective QuestName="Under the Shadow" QuestId="9153" Type="CollectItem" ItemId="22484" CollectCount="10" />
+    <Objective QuestName="Shadows of Doom" QuestId="9085" Type="CollectItem" ItemId="22974" CollectCount="1" />
+    <Objective QuestName="Shadows of Doom" QuestId="9085" Type="CollectItem" ItemId="22973" CollectCount="1" />
+    <Objective QuestName="Shadows of Doom" QuestId="9085" Type="CollectItem" ItemId="22975" CollectCount="1" />
+    <Objective QuestName="Shadows of Doom" QuestId="9085" Type="CollectItem" ItemId="22977" CollectCount="1" />
+    <Objective QuestName="Shadows of Doom" QuestId="9085" Type="CollectItem" ItemId="22970" CollectCount="1" />
+    <Objective QuestName="Shadows of Doom" QuestId="9085" Type="CollectItem" ItemId="22972" CollectCount="1" />
+    <TurnIn QuestName="Under the Shadow" QuestId="9153" TurnInName="Commander Thomas Helleran" TurnInId="16361" />
+    <TurnIn QuestName="Shadows of Doom" QuestId="9085" TurnInName="Commander Thomas Helleran" TurnInId="16361" />
+    <CustomBehavior File="UseItemOn" ItemId="22974" MobId="0" NumOfTimes="1" CollectionDistance="100" />
+    <PickUp QuestName="Page from the Front" QuestId="9300" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <While Condition="((HasQuest(9300)) &amp;&amp; (!IsQuestCompleted(9300)))">
+      <CustomBehavior File="UseItemOn" QuestId="9300" MobId="0" ItemId="22973" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Missive from the Front" QuestId="9302" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <While Condition="((HasQuest(9302)) &amp;&amp; (!IsQuestCompleted(9302)))">
+      <CustomBehavior File="UseItemOn" QuestId="9302" MobId="0" ItemId="22975" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Document from the Front" QuestId="9304" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <While Condition="((HasQuest(9304)) &amp;&amp; (!IsQuestCompleted(9304)))">
+      <CustomBehavior File="UseItemOn" QuestId="9304" MobId="0" ItemId="22977" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Letter from the Front" QuestId="9295" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <While Condition="((HasQuest(9295)) &amp;&amp; (!IsQuestCompleted(9295)))">
+      <CustomBehavior File="UseItemOn" QuestId="9295" MobId="0" ItemId="22970" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Envelope from the Front" QuestId="9301" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <While Condition="((HasQuest(9301)) &amp;&amp; (!IsQuestCompleted(9301)))">
+      <CustomBehavior File="UseItemOn" QuestId="9301" MobId="0" ItemId="22972" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Note from the Front" QuestId="9299" GiverName="Commander Thomas Helleran" GiverId="16361" />
+    <TurnIn QuestName="Page from the Front" QuestId="9300" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <TurnIn QuestName="Missive from the Front" QuestId="9302" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <TurnIn QuestName="Document from the Front" QuestId="9304" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <TurnIn QuestName="Letter from the Front" QuestId="9295" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <TurnIn QuestName="Envelope from the Front" QuestId="9301" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <TurnIn QuestName="Note from the Front" QuestId="9299" TurnInName="Keeper of the Rolls" TurnInId="16281" />
+    <If Condition="Me.Level &lt; 70">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 70 - Shadow of Doom</Name>
+          <Hotspots>
+            <Hotspot X="75.16" Y="54.39" Z="0.00" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="70" /> <!--  (grind Shadow of Doom) -->
+    </If>
+    <PickUp QuestName="Chamber of Secrets" QuestId="12616" GiverName="Argent Emissary" GiverId="16285" />
+    <Objective QuestName="Chamber of Secrets" QuestId="12616" Type="KillMob" MobId="28194" KillCount="1" />
+    <TurnIn QuestName="Chamber of Secrets" QuestId="12616" TurnInName="Argent Emissary" TurnInId="16285" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Scourge Invasion\Scourge Invasion Event (Thunder Bluff) Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

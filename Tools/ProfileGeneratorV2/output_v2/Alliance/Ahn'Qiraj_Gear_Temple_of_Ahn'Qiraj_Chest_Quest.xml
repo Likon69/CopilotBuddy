@@ -1,0 +1,192 @@
+<HBProfile>
+  <Name>Alliance\Ahn'Qiraj Gear\Temple of Ahn'Qiraj Chest Quest</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Ahn'Qiraj Gear\Temple of Ahn'Qiraj Chest Quest" LogColor="Green" />
+    <If Condition="Me.Level &lt; 60">
+      <GrindTo Level="60" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <If Condition="((!HasQuest(8666)) &amp;&amp; (!IsQuestCompleted(8666)))">
+        <PickUp QuestName="Genesis Vest" QuestId="8666" GiverName="Vethsera" GiverId="15504" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <If Condition="((!HasQuest(8656)) &amp;&amp; (!IsQuestCompleted(8656)))">
+        <PickUp QuestName="Striker's Hauberk" QuestId="8656" GiverName="Vethsera" GiverId="15504" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <If Condition="((!HasQuest(8633)) &amp;&amp; (!IsQuestCompleted(8633)))">
+        <PickUp QuestName="Enigma Robes" QuestId="8633" GiverName="Vethsera" GiverId="15504" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <If Condition="((!HasQuest(8627)) &amp;&amp; (!IsQuestCompleted(8627)))">
+        <PickUp QuestName="Avenger's Breastplate" QuestId="8627" GiverName="Vethsera" GiverId="15504" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <If Condition="((!HasQuest(8603)) &amp;&amp; (!IsQuestCompleted(8603)))">
+        <PickUp QuestName="Vestments of the Oracle" QuestId="8603" GiverName="Vethsera" GiverId="15504" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <If Condition="((!HasQuest(8638)) &amp;&amp; (!IsQuestCompleted(8638)))">
+        <PickUp QuestName="Deathdealer's Vest" QuestId="8638" GiverName="Vethsera" GiverId="15504" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(8622)) &amp;&amp; (!IsQuestCompleted(8622)))">
+        <PickUp QuestName="Stormcaller's Hauberk" QuestId="8622" GiverName="Vethsera" GiverId="15504" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <If Condition="((!HasQuest(8661)) &amp;&amp; (!IsQuestCompleted(8661)))">
+        <PickUp QuestName="Doomcaller's Robes" QuestId="8661" GiverName="Vethsera" GiverId="15504" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <If Condition="((!HasQuest(8562)) &amp;&amp; (!IsQuestCompleted(8562)))">
+        <PickUp QuestName="Conqueror's Breastplate" QuestId="8562" GiverName="Vethsera" GiverId="15504" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Genesis Vest" QuestId="8666" Type="CollectItem" ItemId="20933" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Striker's Hauberk" QuestId="8656" Type="CollectItem" ItemId="20929" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Enigma Robes" QuestId="8633" Type="CollectItem" ItemId="20933" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Avenger's Breastplate" QuestId="8627" Type="CollectItem" ItemId="20929" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Vestments of the Oracle" QuestId="8603" Type="CollectItem" ItemId="20933" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Deathdealer's Vest" QuestId="8638" Type="CollectItem" ItemId="20929" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Stormcaller's Hauberk" QuestId="8622" Type="CollectItem" ItemId="20929" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Doomcaller's Robes" QuestId="8661" Type="CollectItem" ItemId="20933" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Conqueror's Breastplate" QuestId="8562" Type="CollectItem" ItemId="20929" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Genesis Vest" QuestId="8666" Type="CollectItem" ItemId="20878" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Striker's Hauberk" QuestId="8656" Type="CollectItem" ItemId="20879" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Enigma Robes" QuestId="8633" Type="CollectItem" ItemId="20874" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Avenger's Breastplate" QuestId="8627" Type="CollectItem" ItemId="20877" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Vestments of the Oracle" QuestId="8603" Type="CollectItem" ItemId="20876" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Deathdealer's Vest" QuestId="8638" Type="CollectItem" ItemId="20881" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Stormcaller's Hauberk" QuestId="8622" Type="CollectItem" ItemId="20877" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Doomcaller's Robes" QuestId="8661" Type="CollectItem" ItemId="20875" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Conqueror's Breastplate" QuestId="8562" Type="CollectItem" ItemId="20882" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Genesis Vest" QuestId="8666" Type="CollectItem" ItemId="20861" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Striker's Hauberk" QuestId="8656" Type="CollectItem" ItemId="20859" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Enigma Robes" QuestId="8633" Type="CollectItem" ItemId="20859" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Avenger's Breastplate" QuestId="8627" Type="CollectItem" ItemId="20860" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Vestments of the Oracle" QuestId="8603" Type="CollectItem" ItemId="20858" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Deathdealer's Vest" QuestId="8638" Type="CollectItem" ItemId="20861" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Stormcaller's Hauberk" QuestId="8622" Type="CollectItem" ItemId="20860" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Doomcaller's Robes" QuestId="8661" Type="CollectItem" ItemId="20862" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Conqueror's Breastplate" QuestId="8562" Type="CollectItem" ItemId="20860" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Genesis Vest" QuestId="8666" Type="CollectItem" ItemId="20865" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Striker's Hauberk" QuestId="8656" Type="CollectItem" ItemId="20863" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Enigma Robes" QuestId="8633" Type="CollectItem" ItemId="20863" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Avenger's Breastplate" QuestId="8627" Type="CollectItem" ItemId="20864" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Vestments of the Oracle" QuestId="8603" Type="CollectItem" ItemId="20862" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Deathdealer's Vest" QuestId="8638" Type="CollectItem" ItemId="20865" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Stormcaller's Hauberk" QuestId="8622" Type="CollectItem" ItemId="20864" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Doomcaller's Robes" QuestId="8661" Type="CollectItem" ItemId="20858" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Conqueror's Breastplate" QuestId="8562" Type="CollectItem" ItemId="20864" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Ahn'Qiraj Gear\Temple of Ahn'Qiraj Chest Quest Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

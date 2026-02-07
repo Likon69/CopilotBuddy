@@ -1,0 +1,34 @@
+<HBProfile>
+  <Name>Horde\Class Quests\Priest Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Class Quests\Priest Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Troll)">
+      <PickUp QuestName="Hex of Weakness" QuestId="5652" GiverName="Tai'jin" GiverId="3706" />
+      <!-- Quest 5652 may auto-complete (no turn-in found) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Touch of Weakness" QuestId="5658" GiverName="Aelthalyste" GiverId="4606" />
+      <!-- Quest 5658 may auto-complete (no turn-in found) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Troll)">
+      <PickUp QuestName="Shadowguard" QuestId="5643" GiverName="Miles Welsh" GiverId="3044" />
+      <!-- Quest 5643 may auto-complete (no turn-in found) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Devouring Plague" QuestId="5644" GiverName="Zayus" GiverId="5994" />
+      <!-- Quest 5644 may auto-complete (no turn-in found) -->
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Class Quests\Priest Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

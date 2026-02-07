@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Stranglethorn Vale (31-32)</Name>
+  <Name>Alliance\Stranglethorn Vale (31-32)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>32</MaxLevel>
@@ -8,7 +7,33 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
+  <Quest Id="185" Name="Tiger Mastery">
+    <Objective Type="KillMob" MobId="681" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11764.4" Y="16.7766" Z="22.4266" />
+        <Hotspot X="-11521.7" Y="-358.08" Z="38.049" />
+        <Hotspot X="-11650.8" Y="46.8981" Z="17.8964" />
+        <Hotspot X="-11642.9" Y="78.5515" Z="15.1527" />
+        <Hotspot X="-11591.5" Y="91.882" Z="16.7514" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="190" Name="Panther Mastery">
+    <Objective Type="KillMob" MobId="683" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11748.4" Y="-514.029" Z="18.5639" />
+        <Hotspot X="-11731.0" Y="-482.575" Z="17.1606" />
+        <Hotspot X="-11714.0" Y="-417.881" Z="19.0145" />
+        <Hotspot X="-11721.0" Y="-444.636" Z="18.9891" />
+        <Hotspot X="-11644.6" Y="-373.013" Z="16.2524" />
+      </Hotspots>
+    </Objective>
+  </Quest>
   <Quest Id="335" Name="A Noble Brew">
     <Objective Type="CollectItem" ItemId="2784" CollectCount="1">
       <CollectFrom>
@@ -19,9 +44,23 @@
       </Hotspots>
     </Objective>
   </Quest>
+  <Quest Id="1447" Name="The Missing Diplomat">
+    <Objective Type="KillMob" MobId="4961" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-8681.14" Y="432.794" Z="99.2405" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1249" Name="The Missing Diplomat">
+    <Objective Type="KillMob" MobId="4962" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3808.82" Y="-825.612" Z="10.3019" />
+      </Hotspots>
+    </Objective>
+  </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (31-32)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Stranglethorn Vale (31-32)" LogColor="Green" />
     <PickUp QuestName="Jungle Secrets" QuestId="215" GiverName="Private Thorsen" GiverId="738" />
     <PickUp QuestName="Welcome to the Jungle" QuestId="583" GiverName="Barnil Stonepot" GiverId="716" />
     <TurnIn QuestName="Welcome to the Jungle" QuestId="583" TurnInName="Hemet Nesingwary" TurnInId="715" />
@@ -31,8 +70,8 @@
     <If Condition="((!HasQuest(190)) &amp;&amp; (!IsQuestCompleted(190)))">
       <PickUp QuestName="Panther Mastery" QuestId="190" GiverName="Sir S. J. Erlgadin" GiverId="718" />
     </If>
-    <Objective QuestName="Tiger Mastery" QuestId="185" Type="KillMob" MobId="681" MobName="Young Stranglethorn Tiger" KillCount="10" />
-    <Objective QuestName="Panther Mastery" QuestId="190" Type="KillMob" MobId="683" MobName="Young Panther" KillCount="10" />
+    <Objective QuestName="Tiger Mastery" QuestId="185" Type="KillMob" MobId="681" KillCount="10" />
+    <Objective QuestName="Panther Mastery" QuestId="190" Type="KillMob" MobId="683" KillCount="10" />
     <TurnIn QuestName="Tiger Mastery" QuestId="185" TurnInName="Ajeck Rouack" TurnInId="717" />
     <TurnIn QuestName="Panther Mastery" QuestId="190" TurnInName="Sir S. J. Erlgadin" TurnInId="718" />
     <TurnIn QuestName="Jungle Secrets" QuestId="215" TurnInName="Lieutenant Doren" TurnInId="469" />
@@ -45,9 +84,9 @@
     <If Condition="((!HasQuest(1246)) &amp;&amp; (!IsQuestCompleted(1246)))">
       <PickUp QuestName="The Missing Diplomat" QuestId="1246" GiverName="Elling Trias" GiverId="482" />
     </If>
-    <Objective QuestName="The Brassbolts Brothers" QuestId="1179" Type="CollectItem" ItemId="5849" ItemName="Crate of Crash Helmets" CollectCount="1" />
-    <Objective QuestName="A Noble Brew" QuestId="335" Type="CollectItem" ItemId="2784" ItemName="Musquash Root" CollectCount="1" />
-    <PickUp QuestName="Malin&apos;s Request" QuestId="690" GiverName="Archmage Malin" GiverId="2708" />
+    <Objective QuestName="The Brassbolts Brothers" QuestId="1179" Type="CollectItem" ItemId="5849" CollectCount="1" />
+    <Objective QuestName="A Noble Brew" QuestId="335" Type="CollectItem" ItemId="2784" CollectCount="1" />
+    <PickUp QuestName="Malin's Request" QuestId="690" GiverName="Archmage Malin" GiverId="2708" />
     <PickUp QuestName="James Hyal" QuestId="1301" GiverName="Connor Rivers" GiverId="5081" />
     <TurnIn QuestName="A Noble Brew" QuestId="335" TurnInName="Zardeth of the Black Claw" TurnInId="1435" />
     <If Condition="((!HasQuest(336)) &amp;&amp; (!IsQuestCompleted(336)))">
@@ -57,7 +96,7 @@
     <If Condition="((!HasQuest(1447)) &amp;&amp; (!IsQuestCompleted(1447)))">
       <PickUp QuestName="The Missing Diplomat" QuestId="1447" GiverName="Dashel Stonefist" GiverId="4961" />
     </If>
-    <Objective QuestName="The Missing Diplomat" QuestId="1447" Type="KillMob" MobId="4961" MobName="Dashel Stonefist" KillCount="1" />
+    <Objective QuestName="The Missing Diplomat" QuestId="1447" Type="KillMob" MobId="4961" KillCount="1" />
     <TurnIn QuestName="The Missing Diplomat" QuestId="1447" TurnInName="Dashel Stonefist" TurnInId="4961" />
     <If Condition="((!HasQuest(1247)) &amp;&amp; (!IsQuestCompleted(1247)))">
       <PickUp QuestName="The Missing Diplomat" QuestId="1247" GiverName="Dashel Stonefist" GiverId="4961" />
@@ -82,7 +121,7 @@
     <If Condition="((!HasQuest(1249)) &amp;&amp; (!IsQuestCompleted(1249)))">
       <PickUp QuestName="The Missing Diplomat" QuestId="1249" GiverName="Mikhail" GiverId="4963" />
     </If>
-    <Objective QuestName="The Missing Diplomat" QuestId="1249" Type="KillMob" MobId="4962" MobName="Tapoke &quot;Slim&quot; Jahn" KillCount="1" />
+    <Objective QuestName="The Missing Diplomat" QuestId="1249" Type="KillMob" MobId="4962" KillCount="1" />
     <TurnIn QuestName="The Missing Diplomat" QuestId="1249" TurnInName="Mikhail" TurnInId="4963" />
     <If Condition="((!HasQuest(1250)) &amp;&amp; (!IsQuestCompleted(1250)))">
       <PickUp QuestName="The Missing Diplomat" QuestId="1250" GiverName="Tapoke &quot;Slim&quot; Jahn" GiverId="4962" />
@@ -91,8 +130,8 @@
     <If Condition="((!HasQuest(1264)) &amp;&amp; (!IsQuestCompleted(1264)))">
       <PickUp QuestName="The Missing Diplomat" QuestId="1264" GiverName="Mikhail" GiverId="4963" />
     </If>
-    <CustomBehavior File="SetHearthstone" MobId="23995" AreaId="15" X="10.7" Y="60.95" Z="0" /> <!-- Set hearth: Deepwater Tavern -->
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (31-32) Complete" LogColor="Orange" />
+    <CustomBehavior File="SetHearthstone" MobId="23995" AreaId="15" X="-4629.94" Y="-3176.12" Z="41.2235" /> <!-- Set hearth: Deepwater Tavern -->
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Stranglethorn Vale (31-32) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Hillsbrad_Foothills_(32-33)" />
   </QuestOrder>
 </HBProfile>

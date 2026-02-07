@@ -1,0 +1,40 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Dustwallow Marsh (34-35)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>35</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Dustwallow Marsh (34-35)" LogColor="Green" />
+    <CustomBehavior File="InteractWith" MobId="21015" NumOfTimes="1" />
+    <PickUp QuestName="Suspicious Hoofprints" QuestId="1268" />
+    <PickUp QuestName="Lieutenant Paval Reethe" QuestId="1269" />
+    <PickUp QuestName="The Black Shield" QuestId="1251" />
+    <TurnIn QuestName="Suspicious Hoofprints" QuestId="1268" TurnInName="Krog" TurnInId="4926" />
+    <TurnIn QuestName="Lieutenant Paval Reethe" QuestId="1269" TurnInName="Krog" TurnInId="4926" />
+    <TurnIn QuestName="The Black Shield" QuestId="1251" TurnInName="Krog" TurnInId="4926" />
+    <If Condition="((!HasQuest(1321)) &amp;&amp; (!IsQuestCompleted(1321)))">
+      <PickUp QuestName="The Black Shield" QuestId="1321" GiverName="Krog" GiverId="4926" />
+    </If>
+    <TurnIn QuestName="The Black Shield" QuestId="1321" TurnInName="Do'gol" TurnInId="5087" />
+    <TurnIn QuestName="Goblin Sponsorship" QuestId="1178" TurnInName="Gazlowe" TurnInId="3391" />
+    <If Condition="((!HasQuest(1180)) &amp;&amp; (!IsQuestCompleted(1180)))">
+      <PickUp QuestName="Goblin Sponsorship" QuestId="1180" GiverName="Gazlowe" GiverId="3391" />
+    </If>
+    <Objective QuestName="Wharfmaster Dizzywig" QuestId="1111" Type="CollectItem" ItemId="5799" CollectCount="1" />
+    <Objective QuestName="Hemet Nesingwary Jr." QuestId="5762" Type="CollectItem" ItemId="14542" CollectCount="1" />
+    <TurnIn QuestName="Wharfmaster Dizzywig" QuestId="1111" TurnInName="Wharfmaster Dizzywig" TurnInId="3453" />
+    <If Condition="((!HasQuest(1112)) &amp;&amp; (!IsQuestCompleted(1112)))">
+      <PickUp QuestName="Parts for Kravel" QuestId="1112" GiverName="Wharfmaster Dizzywig" GiverId="3453" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Dustwallow Marsh (34-35) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Stranglethorn_Vale_(35-36)" />
+  </QuestOrder>
+</HBProfile>

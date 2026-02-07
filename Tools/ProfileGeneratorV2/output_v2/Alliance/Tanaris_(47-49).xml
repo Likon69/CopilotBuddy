@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Tanaris (47-49)</Name>
+  <Name>Alliance\Tanaris (47-49)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>49</MaxLevel>
@@ -8,13 +7,156 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="2781" Name="WANTED: Caliph Scorpidsting">
+    <Objective Type="KillMob" MobId="7847" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-7630.66" Y="-4480.84" Z="9.5255" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1691" Name="More Wastewander Justice">
+    <Objective Type="KillMob" MobId="5615" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-7553.31" Y="-4710.83" Z="10.4689" />
+        <Hotspot X="-7577.27" Y="-4713.79" Z="10.4227" />
+        <Hotspot X="-7596.2" Y="-4585.4" Z="9.1381" />
+        <Hotspot X="-7681.03" Y="-4612.35" Z="9.2023" />
+        <Hotspot X="-7562.11" Y="-4263.42" Z="9.0018" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5623" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-7716.18" Y="-4683.41" Z="8.9552" />
+        <Hotspot X="-7597.54" Y="-4257.24" Z="10.4849" />
+        <Hotspot X="-7618.08" Y="-4718.55" Z="9.1718" />
+        <Hotspot X="-7707.1" Y="-4635.52" Z="9.0018" />
+        <Hotspot X="-7713.8" Y="-4632.02" Z="9.0018" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5617" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-7485.01" Y="-4514.21" Z="10.54" />
+        <Hotspot X="-7744.56" Y="-4617.91" Z="9.4577" />
+        <Hotspot X="-7713.69" Y="-4718.54" Z="9.6341" />
+        <Hotspot X="-7693.51" Y="-4714.76" Z="9.0018" />
+        <Hotspot X="-7584.18" Y="-4251.74" Z="9.3768" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2875" Name="WANTED: Andre Firebeard">
+    <Objective Type="KillMob" MobId="7883" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-8043.38" Y="-5281.05" Z="0.6618" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8366" Name="Southsea Shakedown">
+    <Objective Type="KillMob" MobId="7855" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-8045.08" Y="-5190.09" Z="2.6998" />
+        <Hotspot X="-7982.76" Y="-5133.95" Z="6.1215" />
+        <Hotspot X="-8096.44" Y="-5269.38" Z="1.9477" />
+        <Hotspot X="-7951.94" Y="-5216.92" Z="1.6356" />
+        <Hotspot X="-7982.24" Y="-5184.38" Z="2.0422" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7856" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-8051.09" Y="-5148.96" Z="10.6541" />
+        <Hotspot X="-7916.65" Y="-5179.24" Z="3.8879" />
+        <Hotspot X="-8046.68" Y="-5302.34" Z="0.6998" />
+        <Hotspot X="-7963.65" Y="-5471.03" Z="7.5288" />
+        <Hotspot X="-7943.13" Y="-5276.11" Z="0.6043" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7857" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-8069.87" Y="-5353.5" Z="20.5404" />
+        <Hotspot X="-8078.86" Y="-5337.5" Z="7.7922" />
+        <Hotspot X="-8078.53" Y="-5292.72" Z="0.6582" />
+        <Hotspot X="-8049.36" Y="-5277.84" Z="0.6651" />
+        <Hotspot X="-8087.39" Y="-5377.46" Z="19.7015" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7858" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-7976.71" Y="-5413.06" Z="1.1204" />
+        <Hotspot X="-7989.63" Y="-5414.49" Z="1.2038" />
+        <Hotspot X="-8087.94" Y="-5244.56" Z="1.9519" />
+        <Hotspot X="-7957.92" Y="-5445.87" Z="7.4836" />
+        <Hotspot X="-8014.72" Y="-5215.52" Z="2.2353" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="5863" Name="The Dunemaul Compound">
+    <Objective Type="KillMob" MobId="12046" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-8534.26" Y="-3082.25" Z="8.7831" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5474" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-8513.7" Y="-3022.47" Z="9.7518" />
+        <Hotspot X="-8477.67" Y="-3086.27" Z="10.2518" />
+        <Hotspot X="-8481.16" Y="-3072.51" Z="10.5018" />
+        <Hotspot X="-8543.9" Y="-2992.99" Z="10.0018" />
+        <Hotspot X="-8475.4" Y="-2856.09" Z="8.7497" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5472" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-8490.94" Y="-3029.45" Z="9.0018" />
+        <Hotspot X="-8917.38" Y="-3549.92" Z="11.1132" />
+        <Hotspot X="-8484.69" Y="-3053.96" Z="10.5458" />
+        <Hotspot X="-8544.89" Y="-2971.02" Z="9.3768" />
+        <Hotspot X="-8887.55" Y="-3388.78" Z="15.2814" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2605" Name="The Thirsty Goblin">
+    <Objective Type="KillMob" MobId="5481" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-8923.98" Y="-2244.71" Z="9.0017" />
+        <Hotspot X="-8953.94" Y="-2280.2" Z="9.1274" />
+        <Hotspot X="-8846.99" Y="-2312.58" Z="9.0686" />
+        <Hotspot X="-8830.75" Y="-2345.86" Z="18.1518" />
+        <Hotspot X="-8845.31" Y="-2311.82" Z="9.0019" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="3362" Name="Thistleshrub Valley">
+    <Objective Type="KillMob" MobId="5490" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-9097.28" Y="-2155.38" Z="12.3975" />
+        <Hotspot X="-8918.79" Y="-2152.61" Z="10.9722" />
+        <Hotspot X="-8954.01" Y="-2244.2" Z="9.3769" />
+        <Hotspot X="-8929.32" Y="-2264.71" Z="9.0017" />
+        <Hotspot X="-8889.62" Y="-2373.09" Z="13.3753" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5485" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-8884.75" Y="-2181.8" Z="9.3737" />
+        <Hotspot X="-8950.98" Y="-2182.56" Z="8.9615" />
+        <Hotspot X="-8927.21" Y="-2267.43" Z="9.0017" />
+        <Hotspot X="-8947.19" Y="-2309.73" Z="11.2722" />
+        <Hotspot X="-8918.85" Y="-2343.8" Z="10.5468" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Tanaris (47-49)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Tanaris (47-49)" LogColor="Green" />
     <PickUp QuestName="The Thirsty Goblin" QuestId="2605" GiverName="Marin Noggenfogger" GiverId="7564" />
     <If Condition="((!HasQuest(1691)) &amp;&amp; (!IsQuestCompleted(1691)))">
       <PickUp QuestName="More Wastewander Justice" QuestId="1691" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
     </If>
-    <CustomBehavior File="SetHearthstone" MobId="6807" AreaId="33" X="52.51" Y="27.91" Z="0" /> <!-- Set hearth: Gadgetzan -->
+    <CustomBehavior File="SetHearthstone" MobId="6807" AreaId="33" X="-14457.7" Y="495.348" Z="15.2129" /> <!-- Set hearth: Gadgetzan -->
     <If Condition="((!HasQuest(5863)) &amp;&amp; (!IsQuestCompleted(5863)))">
       <PickUp QuestName="The Dunemaul Compound" QuestId="5863" GiverName="Andi Lynn" GiverId="11758" />
     </If>
@@ -25,41 +167,39 @@
     </If>
     <PickUp QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" GiverName="Curgle Cranklehop" GiverId="7763" />
     <PickUp QuestName="WANTED: Andre Firebeard" QuestId="2875" GiverName="Curgle Cranklehop" GiverId="7763" />
-    <PickUp QuestName="Thistleshrub Valley" QuestId="3362" GiverName="Tran&apos;rek" GiverId="7876" />
+    <PickUp QuestName="Thistleshrub Valley" QuestId="3362" GiverName="Tran'rek" GiverId="7876" />
     <If Condition="((!HasQuest(82)) &amp;&amp; (!IsQuestCompleted(82)))">
       <PickUp QuestName="Noxious Lair Investigation" QuestId="82" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
     </If>
     <PickUp QuestName="Pirate Hats Ahoy!" QuestId="8365" GiverName="Haughty Modiste" GiverId="15165" />
-    <TurnIn QuestName="Screecher Spirits" QuestId="3520" TurnInName="Yeh&apos;kinya" TurnInId="8579" />
+    <TurnIn QuestName="Screecher Spirits" QuestId="3520" TurnInName="Yeh'kinya" TurnInId="8579" />
     <If Condition="((!HasQuest(8366)) &amp;&amp; (!IsQuestCompleted(8366)))">
       <PickUp QuestName="Southsea Shakedown" QuestId="8366" GiverName="Security Chief Bilgewhizzle" GiverId="7882" />
     </If>
     <If Condition="((!HasQuest(2873)) &amp;&amp; (!IsQuestCompleted(2873)))">
-      <PickUp QuestName="Stoley&apos;s Shipment" QuestId="2873" GiverName="Stoley" GiverId="7881" />
+      <PickUp QuestName="Stoley's Shipment" QuestId="2873" GiverName="Stoley" GiverId="7881" />
     </If>
-    <Objective QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" Type="KillMob" MobId="7847" MobName="Caliph Scorpidsting" KillCount="1" />
-    <Objective QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" Type="CollectItem" ItemId="8723" ItemName="Caliph Scorpidsting&apos;s Head" CollectCount="1" />
-    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5615" MobName="Wastewander Rogue" KillCount="8" />
-    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5623" MobName="Wastewander Assassin" KillCount="6" />
-    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5617" MobName="Wastewander Shadow Mage" KillCount="10" />
-    <Objective QuestName="Stoley&apos;s Shipment" QuestId="2873" Type="CollectItem" ItemId="9244" ItemName="Stoley&apos;s Shipment" CollectCount="1" />
-    <Objective QuestName="WANTED: Andre Firebeard" QuestId="2875" Type="KillMob" MobId="7883" MobName="Andre Firebeard" KillCount="1" />
-    <Objective QuestName="WANTED: Andre Firebeard" QuestId="2875" Type="CollectItem" ItemId="9246" ItemName="Firebeard&apos;s Head" CollectCount="1" />
-    <Objective QuestName="Pirate Hats Ahoy!" QuestId="8365" Type="CollectItem" ItemId="20519" ItemName="Southsea Pirate Hat" CollectCount="20" />
-    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7855" MobName="Southsea Pirate" KillCount="10" />
-    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7856" MobName="Southsea Freebooter" KillCount="10" />
-    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7857" MobName="Southsea Dock Worker" KillCount="10" />
-    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7858" MobName="Southsea Swashbuckler" KillCount="10" />
-    <Objective QuestName="Ship Schedules" QuestId="2876" Type="CollectItem" ItemId="9276" ItemName="Pirate&apos;s Footlocker" CollectCount="1" />
+    <Objective QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" Type="KillMob" MobId="7847" KillCount="1" />
+    <Objective QuestName="WANTED: Caliph Scorpidsting" QuestId="2781" Type="CollectItem" ItemId="8723" CollectCount="1" />
+    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5615" KillCount="8" />
+    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5623" KillCount="6" />
+    <Objective QuestName="More Wastewander Justice" QuestId="1691" Type="KillMob" MobId="5617" KillCount="10" />
+    <Objective QuestName="Stoley's Shipment" QuestId="2873" Type="CollectItem" ItemId="9244" CollectCount="1" />
+    <Objective QuestName="WANTED: Andre Firebeard" QuestId="2875" Type="KillMob" MobId="7883" KillCount="1" />
+    <Objective QuestName="WANTED: Andre Firebeard" QuestId="2875" Type="CollectItem" ItemId="9246" CollectCount="1" />
+    <Objective QuestName="Pirate Hats Ahoy!" QuestId="8365" Type="CollectItem" ItemId="20519" CollectCount="20" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7855" KillCount="10" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7856" KillCount="10" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7857" KillCount="10" />
+    <Objective QuestName="Southsea Shakedown" QuestId="8366" Type="KillMob" MobId="7858" KillCount="10" />
+    <Objective QuestName="Ship Schedules" QuestId="2876" Type="CollectItem" ItemId="9276" CollectCount="1" />
     <While Condition="((HasQuest(2876)) &amp;&amp; (!IsQuestCompleted(2876)))">
-      <RunTo X="75.19" Y="45.96" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="2876" ItemId="9276" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="2876" MobId="0" ItemId="9276" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="Ship Schedules" QuestId="2876" Type="CollectItem" ItemId="9250" ItemName="Ship Schedule" CollectCount="1" />
+    <Objective QuestName="Ship Schedules" QuestId="2876" Type="CollectItem" ItemId="9250" CollectCount="1" />
     <While Condition="((HasQuest(2873)) &amp;&amp; (!IsQuestCompleted(2873)))">
-      <RunTo X="73.26" Y="46.42" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="2873" ItemId="9250" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="2873" MobId="0" ItemId="9250" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="Ship Schedules" QuestId="2876" GiverName="Stoley" GiverId="7881" />
@@ -70,24 +210,24 @@
       <PickUp QuestName="The Stone Circle" QuestId="3444" GiverName="Marvon Rivetseeker" GiverId="7771" />
     </If>
     <If Condition="((!HasQuest(3161)) &amp;&amp; (!IsQuestCompleted(3161)))">
-      <PickUp QuestName="Gahz&apos;ridian" QuestId="3161" GiverName="Marvon Rivetseeker" GiverId="7771" />
+      <PickUp QuestName="Gahz'ridian" QuestId="3161" GiverName="Marvon Rivetseeker" GiverId="7771" />
     </If>
-    <Objective QuestName="Noxious Lair Investigation" QuestId="82" Type="CollectItem" ItemId="8587" ItemName="Centipaar Insect Parts" CollectCount="5" />
-    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="12046" MobName="Gor&apos;marok the Ravager" KillCount="1" />
-    <Objective QuestName="Gahz&apos;ridian" QuestId="3161" Type="CollectItem" ItemId="8443" ItemName="Gahz&apos;ridian Ornament" CollectCount="30" />
-    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="5474" MobName="Dunemaul Brute" KillCount="10" />
-    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="5472" MobName="Dunemaul Enforcer" KillCount="10" />
-    <Objective QuestName="The Thirsty Goblin" QuestId="2605" Type="KillMob" MobId="5481" MobName="Thistleshrub Dew Collector" KillCount="1" />
-    <Objective QuestName="The Thirsty Goblin" QuestId="2605" Type="CollectItem" ItemId="8428" ItemName="Laden Dew Gland" CollectCount="1" />
-    <Objective QuestName="Thistleshrub Valley" QuestId="3362" Type="KillMob" MobId="5490" MobName="Gnarled Thistleshrub" KillCount="8" />
-    <Objective QuestName="Thistleshrub Valley" QuestId="3362" Type="KillMob" MobId="5485" MobName="Thistleshrub Rootshaper" KillCount="8" />
-    <PickUp QuestName="Tooga&apos;s Quest" QuestId="1560" GiverName="Marvon Rivetseeker" GiverId="7771" />
-    <TurnIn QuestName="Gahz&apos;ridian" QuestId="3161" TurnInName="Marvon Rivetseeker" TurnInId="7771" />
-    <TurnIn QuestName="Tooga&apos;s Quest" QuestId="1560" TurnInName="Torta" TurnInId="6015" />
+    <Objective QuestName="Noxious Lair Investigation" QuestId="82" Type="CollectItem" ItemId="8587" CollectCount="5" />
+    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="12046" KillCount="1" />
+    <Objective QuestName="Gahz'ridian" QuestId="3161" Type="CollectItem" ItemId="8443" CollectCount="30" />
+    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="5474" KillCount="10" />
+    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="5472" KillCount="10" />
+    <Objective QuestName="The Thirsty Goblin" QuestId="2605" Type="KillMob" MobId="5481" KillCount="1" />
+    <Objective QuestName="The Thirsty Goblin" QuestId="2605" Type="CollectItem" ItemId="8428" CollectCount="1" />
+    <Objective QuestName="Thistleshrub Valley" QuestId="3362" Type="KillMob" MobId="5490" KillCount="8" />
+    <Objective QuestName="Thistleshrub Valley" QuestId="3362" Type="KillMob" MobId="5485" KillCount="8" />
+    <PickUp QuestName="Tooga's Quest" QuestId="1560" GiverName="Marvon Rivetseeker" GiverId="7771" />
+    <TurnIn QuestName="Gahz'ridian" QuestId="3161" TurnInName="Marvon Rivetseeker" TurnInId="7771" />
+    <TurnIn QuestName="Tooga's Quest" QuestId="1560" TurnInName="Torta" TurnInId="6015" />
     <TurnIn QuestName="WANTED: Andre Firebeard" QuestId="2875" TurnInName="Security Chief Bilgewhizzle" TurnInId="7882" />
     <TurnIn QuestName="Southsea Shakedown" QuestId="8366" TurnInName="Security Chief Bilgewhizzle" TurnInId="7882" />
     <TurnIn QuestName="Ship Schedules" QuestId="2876" TurnInName="Security Chief Bilgewhizzle" TurnInId="7882" />
-    <TurnIn QuestName="Stoley&apos;s Shipment" QuestId="2873" TurnInName="Stoley" TurnInId="7881" />
+    <TurnIn QuestName="Stoley's Shipment" QuestId="2873" TurnInName="Stoley" TurnInId="7881" />
     <If Condition="((!HasQuest(2874)) &amp;&amp; (!IsQuestCompleted(2874)))">
       <PickUp QuestName="Deliver to MacKinley" QuestId="2874" GiverName="Stoley" GiverId="7881" />
     </If>
@@ -99,22 +239,21 @@
     </If>
     <TurnIn QuestName="In Good Taste" QuestId="2606" TurnInName="Sprinkle" TurnInId="7583" />
     <If Condition="((!HasQuest(2641)) &amp;&amp; (!IsQuestCompleted(2641)))">
-      <PickUp QuestName="Sprinkle&apos;s Secret Ingredient" QuestId="2641" GiverName="Sprinkle" GiverId="7583" />
+      <PickUp QuestName="Sprinkle's Secret Ingredient" QuestId="2641" GiverName="Sprinkle" GiverId="7583" />
     </If>
     <TurnIn QuestName="Noxious Lair Investigation" QuestId="82" TurnInName="Alchemist Pestlezugg" TurnInId="5594" />
     <If Condition="((!HasQuest(10)) &amp;&amp; (!IsQuestCompleted(10)))">
       <PickUp QuestName="The Scrimshank Redemption" QuestId="10" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
     </If>
-    <TurnIn QuestName="Thistleshrub Valley" QuestId="3362" TurnInName="Tran&apos;rek" TurnInId="7876" />
+    <TurnIn QuestName="Thistleshrub Valley" QuestId="3362" TurnInName="Tran'rek" TurnInId="7876" />
     <TurnIn QuestName="The Dunemaul Compound" QuestId="5863" TurnInName="Andi Lynn" TurnInId="11758" />
     <While Condition="((HasQuest(10)) &amp;&amp; (!IsQuestCompleted(10)))">
-      <RunTo X="51.46" Y="28.81" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="10" ItemId="8623" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="10" MobId="0" ItemId="8623" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="Find OOX-17/TN!" QuestId="351" GiverName="Krinkle Goodsteel" GiverId="5411" />
     <TurnIn QuestName="Find OOX-17/TN!" QuestId="351" TurnInName="Homing Robot OOX-17/TN" TurnInId="7784" />
-    <Objective QuestName="The Scrimshank Redemption" QuestId="10" Type="CollectItem" ItemId="8593" ItemName="Scrimshank&apos;s Surveying Gear" CollectCount="1" />
+    <Objective QuestName="The Scrimshank Redemption" QuestId="10" Type="CollectItem" ItemId="8593" CollectCount="1" />
     <TurnIn QuestName="The Scrimshank Redemption" QuestId="10" TurnInName="Senior Surveyor Fizzledowser" TurnInId="7724" />
     <If Condition="((!HasQuest(110)) &amp;&amp; (!IsQuestCompleted(110)))">
       <PickUp QuestName="Insect Part Analysis" QuestId="110" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
@@ -127,7 +266,7 @@
     <If Condition="((!HasQuest(162)) &amp;&amp; (!IsQuestCompleted(162)))">
       <PickUp QuestName="Rise of the Silithid" QuestId="162" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Tanaris (47-49) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Tanaris (47-49) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="The_Hinterlands_(49-50)" />
   </QuestOrder>
 </HBProfile>

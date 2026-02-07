@@ -1,0 +1,81 @@
+<HBProfile>
+  <Name>Alliance\Ahn'Qiraj Gear\Signet Ring of the Bronze Dragonflight</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Ahn'Qiraj Gear\Signet Ring of the Bronze Dragonflight" LogColor="Green" />
+    <If Condition="((!HasQuest(8757)) &amp;&amp; (!IsQuestCompleted(8757)))">
+      <PickUp QuestName="The Path of the Invoker" QuestId="8757" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8747)) &amp;&amp; (!IsQuestCompleted(8747)))">
+      <PickUp QuestName="The Path of the Protector" QuestId="8747" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8752)) &amp;&amp; (!IsQuestCompleted(8752)))">
+      <PickUp QuestName="The Path of the Conqueror" QuestId="8752" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8758)) &amp;&amp; (!IsQuestCompleted(8758)))">
+      <PickUp QuestName="The Path of the Invoker" QuestId="8758" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8748)) &amp;&amp; (!IsQuestCompleted(8748)))">
+      <PickUp QuestName="The Path of the Protector" QuestId="8748" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8753)) &amp;&amp; (!IsQuestCompleted(8753)))">
+      <PickUp QuestName="The Path of the Conqueror" QuestId="8753" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8759)) &amp;&amp; (!IsQuestCompleted(8759)))">
+      <PickUp QuestName="The Path of the Invoker" QuestId="8759" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8749)) &amp;&amp; (!IsQuestCompleted(8749)))">
+      <PickUp QuestName="The Path of the Protector" QuestId="8749" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8754)) &amp;&amp; (!IsQuestCompleted(8754)))">
+      <PickUp QuestName="The Path of the Conqueror" QuestId="8754" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8760)) &amp;&amp; (!IsQuestCompleted(8760)))">
+      <PickUp QuestName="The Path of the Invoker" QuestId="8760" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8750)) &amp;&amp; (!IsQuestCompleted(8750)))">
+      <PickUp QuestName="The Path of the Protector" QuestId="8750" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8755)) &amp;&amp; (!IsQuestCompleted(8755)))">
+      <PickUp QuestName="The Path of the Conqueror" QuestId="8755" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8761)) &amp;&amp; (!IsQuestCompleted(8761)))">
+      <PickUp QuestName="The Grand Invoker" QuestId="8761" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8751)) &amp;&amp; (!IsQuestCompleted(8751)))">
+      <PickUp QuestName="The Protector of Kalimdor" QuestId="8751" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8756)) &amp;&amp; (!IsQuestCompleted(8756)))">
+      <PickUp QuestName="The Qiraji Conqueror" QuestId="8756" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <Objective QuestName="The Changing of Paths - Invoker No More" QuestId="8765" Type="CollectItem" ItemId="20861" CollectCount="15" />
+    <Objective QuestName="The Changing of Paths - Invoker No More" QuestId="8765" Type="CollectItem" ItemId="20862" CollectCount="15" />
+    <Objective QuestName="The Changing of Paths - Invoker No More" QuestId="8765" Type="CollectItem" ItemId="20863" CollectCount="15" />
+    <Objective QuestName="The Changing of Paths - Protector No More" QuestId="8764" Type="CollectItem" ItemId="20858" CollectCount="15" />
+    <Objective QuestName="The Changing of Paths - Protector No More" QuestId="8764" Type="CollectItem" ItemId="20859" CollectCount="15" />
+    <Objective QuestName="The Changing of Paths - Protector No More" QuestId="8764" Type="CollectItem" ItemId="20860" CollectCount="15" />
+    <Objective QuestName="The Changing of Paths - Conqueror No More" QuestId="8766" Type="CollectItem" ItemId="20864" CollectCount="15" />
+    <Objective QuestName="The Changing of Paths - Conqueror No More" QuestId="8766" Type="CollectItem" ItemId="20865" CollectCount="15" />
+    <Objective QuestName="The Changing of Paths - Conqueror No More" QuestId="8766" Type="CollectItem" ItemId="20858" CollectCount="15" />
+    <If Condition="((!HasQuest(8765)) &amp;&amp; (!IsQuestCompleted(8765)))">
+      <PickUp QuestName="The Changing of Paths - Invoker No More" QuestId="8765" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8764)) &amp;&amp; (!IsQuestCompleted(8764)))">
+      <PickUp QuestName="The Changing of Paths - Protector No More" QuestId="8764" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <If Condition="((!HasQuest(8766)) &amp;&amp; (!IsQuestCompleted(8766)))">
+      <PickUp QuestName="The Changing of Paths - Conqueror No More" QuestId="8766" GiverName="Anachronos" GiverId="15192" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Ahn'Qiraj Gear\Signet Ring of the Bronze Dragonflight Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

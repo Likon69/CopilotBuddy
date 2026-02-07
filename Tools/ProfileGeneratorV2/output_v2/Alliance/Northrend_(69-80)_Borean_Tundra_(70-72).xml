@@ -1,0 +1,1329 @@
+<HBProfile>
+  <Name>Alliance\Northrend (69-80)\Borean Tundra (70-72)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>72</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="11797" Name="The Siege">
+    <Objective Type="KillMob" MobId="25227" KillCount="6">
+      <Hotspots>
+        <Hotspot X="2184.28" Y="5664.88" Z="39.312" />
+        <Hotspot X="2146.17" Y="5692.09" Z="41.7502" />
+        <Hotspot X="2427.32" Y="5436.8" Z="21.6471" />
+        <Hotspot X="2210.12" Y="5530.93" Z="6.8398" />
+        <Hotspot X="2091.65" Y="5555.64" Z="7.3668" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11889" Name="Death From Above">
+    <Objective Type="KillMob" MobId="25582" KillCount="6">
+      <Hotspots>
+        <Hotspot X="2179.97" Y="5402.96" Z="46.3564" />
+        <Hotspot X="2204.45" Y="5393.89" Z="39.3119" />
+        <Hotspot X="2172.3" Y="5405.4" Z="42.8605" />
+        <Hotspot X="2191.93" Y="5401.03" Z="39.1387" />
+        <Hotspot X="2205.18" Y="5386.34" Z="34.7683" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11792" Name="Enemies of the Light">
+    <Objective Type="KillMob" MobId="25651" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2583.44" Y="5471.5" Z="36.0173" />
+        <Hotspot X="2573.67" Y="5471.27" Z="35.9218" />
+        <Hotspot X="2583.24" Y="5461.66" Z="35.7887" />
+        <Hotspot X="2573.69" Y="5461.77" Z="35.7214" />
+        <Hotspot X="2456.22" Y="5391.64" Z="26.8861" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11613" Name="Karuk's Oath">
+    <Objective Type="KillMob" MobId="24576" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1904.01" Y="6088.15" Z="-0.6894" />
+        <Hotspot X="1405.62" Y="5972.79" Z="6.1351" />
+        <Hotspot X="1407.45" Y="5973.78" Z="5.9775" />
+        <Hotspot X="1409.29" Y="5973.32" Z="5.5325" />
+        <Hotspot X="1375.37" Y="5810.94" Z="6.0849" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="25522" KillCount="6">
+      <Hotspots>
+        <Hotspot X="1791.1" Y="5964.14" Z="0.2709" />
+        <Hotspot X="1878.93" Y="5953.32" Z="7.2343" />
+        <Hotspot X="1869.09" Y="5953.95" Z="6.382" />
+        <Hotspot X="1779.41" Y="5921.69" Z="0.437" />
+        <Hotspot X="1806.14" Y="5998.53" Z="0.8466" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="25521" KillCount="5">
+      <Hotspots>
+        <Hotspot X="1837.73" Y="6021.03" Z="0.5432" />
+        <Hotspot X="1902.58" Y="5975.92" Z="9.0346" />
+        <Hotspot X="1861.77" Y="5860.9" Z="4.955" />
+        <Hotspot X="1902.27" Y="5803.66" Z="6.0612" />
+        <Hotspot X="1920.53" Y="5770.22" Z="6.3892" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11619" Name="Gamel the Cruel">
+    <Objective Type="KillMob" MobId="26449" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1890.87" Y="5895.02" Z="-5.6318" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11794" Name="The Hunt is On">
+    <Objective Type="KillMob" MobId="25248" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2317.16" Y="5194.13" Z="12.5805" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="25827" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2257.9" Y="5161.69" Z="1.2834" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="25828" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2136.71" Y="5301.04" Z="15.5018" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11908" Name="Reference Material">
+    <Objective Type="CollectItem" ItemId="35481" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Fields, Factories and Workshops" Id="188120" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2656.25" Y="5356.87" Z="34.43" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11903" Name="It's Time for Action">
+    <Objective Type="KillMob" MobId="25650" KillCount="14">
+      <Hotspots>
+        <Hotspot X="2501.44" Y="5311.21" Z="-16.4602" />
+        <Hotspot X="2639.63" Y="5403.45" Z="30.6019" />
+        <Hotspot X="2683.07" Y="5387.97" Z="32.9094" />
+        <Hotspot X="2569.17" Y="5408.27" Z="35.0071" />
+        <Hotspot X="2479.01" Y="5334.13" Z="29.9925" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12035" Name="Repurposed Technology">
+    <Objective Type="KillMob" MobId="25623" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2518.63" Y="5313.9" Z="33.0708" />
+        <Hotspot X="2505.37" Y="5325.62" Z="33.074" />
+        <Hotspot X="2496.8" Y="5316.67" Z="33.0736" />
+        <Hotspot X="2584.49" Y="5222.91" Z="37.4865" />
+        <Hotspot X="2566.27" Y="5240.62" Z="37.4073" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11904" Name="Fruits of Our Labor">
+    <Objective Type="KillMob" MobId="26252" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2849.36" Y="5229.06" Z="12.9326" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11866" Name="Ears of Our Enemies">
+    <Objective Type="KillMob" MobId="25836" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3164.92" Y="5660.46" Z="36.984" />
+        <Hotspot X="3194.74" Y="5660.78" Z="39.8344" />
+        <Hotspot X="3197.2" Y="5656.62" Z="39.2845" />
+        <Hotspot X="3183.2" Y="5577.17" Z="37.3386" />
+        <Hotspot X="3243.35" Y="5530.36" Z="41.8501" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11869" Name="Happy as a Clam">
+    <Objective Type="KillMob" MobId="25836" KillCount="10">
+      <Hotspots>
+        <Hotspot X="3164.92" Y="5660.46" Z="36.984" />
+        <Hotspot X="3194.74" Y="5660.78" Z="39.8344" />
+        <Hotspot X="3197.2" Y="5656.62" Z="39.2845" />
+        <Hotspot X="3183.2" Y="5577.17" Z="37.3386" />
+        <Hotspot X="3243.35" Y="5530.36" Z="41.8501" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11868" Name="The Culler Cometh">
+    <Objective Type="KillMob" MobId="25803" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2730.85" Y="5273.42" Z="71.247" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11871" Name="Not On Our Watch">
+    <Objective Type="KillMob" MobId="25843" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2664.67" Y="5123.93" Z="17.3804" />
+        <Hotspot X="2523.59" Y="5091.77" Z="6.7118" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11872" Name="The Nefarious Clam Master...">
+    <Objective Type="KillMob" MobId="25800" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2342.32" Y="5050.55" Z="-21.0142" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11603" Name="In Wine, Truth">
+    <Objective Type="CollectItem" ItemId="34714" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Wine Crate" Id="188131" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2373.8" Y="5002.74" Z="-37.33" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11587" Name="Prison Break">
+    <Objective Type="KillMob" MobId="25585" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3245.22" Y="6198.9" Z="66.9287" />
+        <Hotspot X="3282.53" Y="6120.28" Z="74.0341" />
+        <Hotspot X="3285.89" Y="6167.57" Z="72.542" />
+        <Hotspot X="3339.82" Y="6158.93" Z="76.5962" />
+        <Hotspot X="3240.09" Y="6137.66" Z="69.3424" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11590" Name="Abduction">
+    <Objective Type="KillMob" MobId="25316" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3355.26" Y="6186.74" Z="78.8879" />
+        <Hotspot X="3462.25" Y="6174.75" Z="71.9935" />
+        <Hotspot X="3425.78" Y="6211.08" Z="75.364" />
+        <Hotspot X="3446.98" Y="6186.61" Z="76.9203" />
+        <Hotspot X="3344.56" Y="6216.61" Z="75.2345" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11671" Name="A Race Against Time">
+    <Objective Type="KillMob" MobId="25584" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3392.85" Y="6161.09" Z="89.1226" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11612" Name="Reclaiming the Quarry">
+    <Objective Type="KillMob" MobId="25353" KillCount="12">
+      <Hotspots>
+        <Hotspot X="3697.09" Y="5631.37" Z="32.7665" />
+        <Hotspot X="3623.69" Y="5724.94" Z="78.913" />
+        <Hotspot X="3737.59" Y="5517.56" Z="40.9715" />
+        <Hotspot X="3580.3" Y="5686.07" Z="67.6547" />
+        <Hotspot X="3735.19" Y="5646.8" Z="41.2604" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11617" Name="Hampering Their Escape">
+    <Objective Type="KillMob" MobId="25449" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3715.68" Y="5533.02" Z="57.619" />
+        <Hotspot X="3595.51" Y="5537.04" Z="47.1724" />
+        <Hotspot X="3562.01" Y="5617.83" Z="45.7883" />
+        <Hotspot X="3743.92" Y="5535.72" Z="38.2831" />
+        <Hotspot X="3674.39" Y="5717.39" Z="65.2844" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11607" Name="The Lost Spirits">
+    <Objective Type="KillMob" MobId="25355" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3727.88" Y="5713.56" Z="60.6592" />
+        <Hotspot X="3772.42" Y="5667.11" Z="54.5405" />
+        <Hotspot X="3696.86" Y="5708.38" Z="64.2743" />
+        <Hotspot X="3505.87" Y="5611.23" Z="63.5391" />
+        <Hotspot X="3556.25" Y="5685.42" Z="66.9498" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11623" Name="A Visit to the Curator">
+    <Objective Type="KillMob" MobId="25448" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3646.87" Y="5676.2" Z="66.243" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11879" Name="Kaw the Mammoth Destroyer">
+    <Objective Type="KillMob" MobId="25802" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3954.9" Y="5478.45" Z="35.7016" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11945" Name="Preparing for the Worst">
+    <Objective Type="CollectItem" ItemId="35711" CollectCount="8">
+      <CollectFrom>
+        <GameObject Name="Kaskala Supplies" Id="188164" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="2850.95" Y="4360.08" Z="2.86" />
+        <Hotspot X="2861.54" Y="4319.45" Z="1.58" />
+        <Hotspot X="2878.02" Y="4869.76" Z="-2.44" />
+        <Hotspot X="2879.1" Y="4905.58" Z="2.54" />
+        <Hotspot X="2890.17" Y="4936.33" Z="1.87" />
+        <Hotspot X="2904.35" Y="4343.52" Z="3.84" />
+        <Hotspot X="2916.97" Y="4348.23" Z="3.43" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11949" Name="Not Without a Fight!">
+    <Objective Type="KillMob" MobId="25760" KillCount="12">
+      <Hotspots>
+        <Hotspot X="3060.0" Y="4836.07" Z="3.9153" />
+        <Hotspot X="2897.68" Y="4942.04" Z="3.5387" />
+        <Hotspot X="3084.78" Y="4855.13" Z="2.818" />
+        <Hotspot X="2838.58" Y="4926.03" Z="3.8545" />
+        <Hotspot X="2836.43" Y="4927.52" Z="4.0549" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11968" Name="The Tides Turn">
+    <Objective Type="KillMob" MobId="26266" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2711.48" Y="4684.87" Z="2.5767" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11944" Name="Surrounded!">
+    <Objective Type="KillMob" MobId="26202" KillCount="7">
+      <Hotspots>
+        <Hotspot X="3359.45" Y="3629.43" Z="21.6673" />
+        <Hotspot X="3458.66" Y="3795.8" Z="29.4246" />
+        <Hotspot X="3416.05" Y="3763.67" Z="25.5552" />
+        <Hotspot X="3238.83" Y="3613.88" Z="29.8238" />
+        <Hotspot X="3281.44" Y="3619.42" Z="21.6303" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11942" Name="Words of Power">
+    <Objective Type="KillMob" MobId="26073" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3788.44" Y="3418.25" Z="86.61" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="25392" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4093.01" Y="3495.03" Z="131.75" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="26076" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4111.34" Y="3735.04" Z="91.8481" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11912" Name="Nuts for Berries">
+    <Objective Type="KillMob" MobId="25719" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3876.68" Y="6542.92" Z="175.354" />
+        <Hotspot X="3820.6" Y="6679.23" Z="152.865" />
+        <Hotspot X="3835.53" Y="6677.67" Z="152.865" />
+        <Hotspot X="3836.24" Y="6692.86" Z="152.865" />
+        <Hotspot X="3772.38" Y="6700.64" Z="150.745" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11943" Name="The Cell">
+    <Objective Type="KillMob" MobId="25712" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3760.33" Y="7179.92" Z="162.365" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="25716" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4113.91" Y="6996.09" Z="165.391" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11910" Name="Secrets of the Ancients">
+    <Objective Type="KillMob" MobId="25709" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3613.73" Y="7243.82" Z="220.589" />
+        <Hotspot X="3517.92" Y="7212.64" Z="236.243" />
+        <Hotspot X="3687.76" Y="7297.27" Z="216.34" />
+        <Hotspot X="3821.72" Y="7226.87" Z="165.794" />
+        <Hotspot X="4170.23" Y="7033.13" Z="168.403" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="25707" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3545.92" Y="7085.94" Z="210.932" />
+        <Hotspot X="4030.21" Y="7160.61" Z="171.708" />
+        <Hotspot X="3737.88" Y="6847.58" Z="155.801" />
+        <Hotspot X="4058.34" Y="6917.48" Z="164.4" />
+        <Hotspot X="3952.03" Y="6567.81" Z="176.627" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11918" Name="Basic Training">
+    <Objective Type="KillMob" MobId="25722" KillCount="10">
+      <Hotspots>
+        <Hotspot X="3911.43" Y="7345.0" Z="183.365" />
+        <Hotspot X="3477.6" Y="7185.25" Z="237.412" />
+        <Hotspot X="3549.93" Y="7255.56" Z="241.209" />
+        <Hotspot X="3583.79" Y="7088.68" Z="210.419" />
+        <Hotspot X="3478.18" Y="7046.3" Z="207.256" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11936" Name="Hatching a Plan">
+    <Objective Type="KillMob" MobId="25728" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3917.06" Y="6817.92" Z="150.507" />
+        <Hotspot X="3579.67" Y="7284.34" Z="235.572" />
+        <Hotspot X="3562.78" Y="7189.18" Z="225.075" />
+        <Hotspot X="3605.41" Y="7314.4" Z="237.426" />
+        <Hotspot X="4021.77" Y="6927.94" Z="165.955" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11951" Name="Bait and Switch">
+    <Objective Type="CollectItem" ItemId="35685" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Crystallized Mana" Id="188140" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3610.09" Y="6946.0" Z="172.09" />
+        <Hotspot X="3650.61" Y="6903.97" Z="161.41" />
+        <Hotspot X="3676.29" Y="6941.89" Z="159.8" />
+        <Hotspot X="3686.3" Y="6901.34" Z="155.62" />
+        <Hotspot X="3750.36" Y="6909.54" Z="163.12" />
+        <Hotspot X="3781.73" Y="7123.95" Z="164.77" />
+        <Hotspot X="3786.69" Y="6875.65" Z="159.6" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11914" Name="Keep the Secret Safe">
+    <Objective Type="KillMob" MobId="25721" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3844.39" Y="6884.54" Z="116.977" />
+        <Hotspot X="3899.66" Y="6885.2" Z="116.977" />
+        <Hotspot X="3947.16" Y="6927.23" Z="116.977" />
+        <Hotspot X="3973.96" Y="6999.29" Z="116.977" />
+        <Hotspot X="3954.74" Y="7044.26" Z="116.977" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11712" Name="Re-Cursive">
+    <Objective Type="KillMob" MobId="25814" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4020.73" Y="5185.62" Z="15.7429" />
+        <Hotspot X="4299.16" Y="5115.04" Z="15.446" />
+        <Hotspot X="4264.12" Y="5032.83" Z="13.3569" />
+        <Hotspot X="4179.21" Y="5127.05" Z="13.8491" />
+        <Hotspot X="4064.1" Y="4955.4" Z="-13.1462" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11693" Name="Oh Great... Plagued Magnataur!">
+    <Objective Type="KillMob" MobId="25615" KillCount="10">
+      <Hotspots>
+        <Hotspot X="3956.78" Y="4133.05" Z="49.5333" />
+        <Hotspot X="3952.9" Y="3970.77" Z="60.0636" />
+        <Hotspot X="3903.5" Y="4084.43" Z="37.495" />
+        <Hotspot X="3878.63" Y="3980.13" Z="40.5702" />
+        <Hotspot X="3787.8" Y="3878.9" Z="39.2818" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11699" Name="I'm Stuck in this Damned Cage... But Not For Long!">
+    <Objective Type="KillMob" MobId="25682" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4385.13" Y="4527.21" Z="111.64" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="25678" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4402.43" Y="4554.56" Z="88.7433" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="25660" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4181.5" Y="4517.45" Z="24.9416" />
+        <Hotspot X="4150.97" Y="4624.47" Z="12.3416" />
+        <Hotspot X="4218.34" Y="4624.2" Z="16.9494" />
+        <Hotspot X="4191.39" Y="4582.4" Z="11.8416" />
+        <Hotspot X="4128.3" Y="4723.48" Z="12.8724" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11571" Name="Learning to Communicate">
+    <Objective Type="KillMob" MobId="25226" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4318.12" Y="6137.72" Z="-129.022" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11563" Name="Grmmurggll Mrllggrl Glrggl!!!">
+    <Objective Type="KillMob" MobId="25203" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4535.11" Y="6373.84" Z="-1.6839" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11564" Name="Succulent Orca Stew">
+    <Objective Type="KillMob" MobId="25204" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4626.55" Y="6189.35" Z="0.0" />
+        <Hotspot X="4246.89" Y="6092.98" Z="-22.2753" />
+        <Hotspot X="4347.03" Y="6183.95" Z="-53.9993" />
+        <Hotspot X="4512.28" Y="6237.6" Z="-5.0682" />
+        <Hotspot X="4310.21" Y="6105.31" Z="-0.8054" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11569" Name="Keymaster Urmgrgl">
+    <Objective Type="KillMob" MobId="25210" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4029.03" Y="6312.86" Z="7.798" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="11566" Name="Surrender... Not!">
+    <Objective Type="KillMob" MobId="25209" KillCount="1">
+      <Hotspots>
+        <Hotspot X="3839.85" Y="6406.78" Z="23.6346" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Northrend (69-80)\Borean Tundra (70-72)" LogColor="Green" />
+    <CustomBehavior File="SetHearthstone" MobId="26669" AreaId="1196" X="232.563" Y="-394.029" Z="104.829" /> <!-- Set hearth: Valiance Keep -->
+    <PickUp QuestName="Enlistment Day" QuestId="11672" GiverName="Recruitment Officer Blythe" GiverId="25307" />
+    <TurnIn QuestName="Enlistment Day" QuestId="11672" TurnInName="General Arlos" TurnInId="25250" />
+    <If Condition="((!HasQuest(11727)) &amp;&amp; (!IsQuestCompleted(11727)))">
+      <PickUp QuestName="A Time for Heroes" QuestId="11727" GiverName="General Arlos" GiverId="25250" />
+    </If>
+    <TurnIn QuestName="A Time for Heroes" QuestId="11727" TurnInName="Sergeant Hammerhill" TurnInId="25816" />
+    <If Condition="((!HasQuest(11797)) &amp;&amp; (!IsQuestCompleted(11797)))">
+      <PickUp QuestName="The Siege" QuestId="11797" GiverName="Sergeant Hammerhill" GiverId="25816" />
+    </If>
+    <If Condition="((!HasQuest(11789)) &amp;&amp; (!IsQuestCompleted(11789)))">
+      <PickUp QuestName="A Soldier in Need" QuestId="11789" GiverName="Medic Hawthorn" GiverId="25825" />
+    </If>
+    <Objective QuestName="The Siege" QuestId="11797" Type="KillMob" MobId="25227" KillCount="6" />
+    <TurnIn QuestName="The Siege" QuestId="11797" TurnInName="Sergeant Hammerhill" TurnInId="25816" />
+    <If Condition="((!HasQuest(11889)) &amp;&amp; (!IsQuestCompleted(11889)))">
+      <PickUp QuestName="Death From Above" QuestId="11889" GiverName="Sergeant Hammerhill" GiverId="25816" />
+    </If>
+    <Objective QuestName="A Soldier in Need" QuestId="11789" Type="CollectItem" ItemId="35119" CollectCount="1" />
+    <PickUp QuestName="Cultists Among Us" QuestId="11920" GiverName="Sergeant Hammerhill" GiverId="25816" />
+    <TurnIn QuestName="Cultists Among Us" QuestId="11920" TurnInName="Captain &quot;Lefty&quot; Lugsail" TurnInId="25298" />
+    <If Condition="((!HasQuest(11791)) &amp;&amp; (!IsQuestCompleted(11791)))">
+      <PickUp QuestName="Notify Arlos" QuestId="11791" GiverName="Admiral Cantlebree" GiverId="25299" />
+    </If>
+    <TurnIn QuestName="Notify Arlos" QuestId="11791" TurnInName="General Arlos" TurnInId="25250" />
+    <If Condition="((!HasQuest(12141)) &amp;&amp; (!IsQuestCompleted(12141)))">
+      <PickUp QuestName="A Diplomatic Mission" QuestId="12141" GiverName="Counselor Talbot" GiverId="25301" />
+    </If>
+    <If Condition="((!HasQuest(11792)) &amp;&amp; (!IsQuestCompleted(11792)))">
+      <PickUp QuestName="Enemies of the Light" QuestId="11792" GiverName="Harbinger Vurenn" GiverId="25285" />
+    </If>
+    <TurnIn QuestName="A Soldier in Need" QuestId="11789" TurnInName="Medic Hawthorn" TurnInId="25825" />
+    <While Condition="((HasQuest(11889)) &amp;&amp; (!IsQuestCompleted(11889)))">
+      <RunTo X="2179.97" Y="5402.96" Z="46.3564" />
+      <CustomBehavior File="UseItemOn" QuestId="11889" MobId="25582" ItemId="35278" NumOfTimes="100" Range="5" CollectionDistance="1000" X="2179.97" Y="5402.96" Z="46.3564" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Death From Above" QuestId="11889" Type="KillMob" MobId="25582" KillCount="6" />
+    <TurnIn QuestName="Death From Above" QuestId="11889" TurnInName="Sergeant Hammerhill" TurnInId="25816" />
+    <If Condition="((!HasQuest(11897)) &amp;&amp; (!IsQuestCompleted(11897)))">
+      <PickUp QuestName="Plug the Sinkholes" QuestId="11897" GiverName="Sergeant Hammerhill" GiverId="25816" />
+    </If>
+    <While Condition="((HasQuest(11897)) &amp;&amp; (!IsQuestCompleted(11897)))">
+      <RunTo X="2154.42" Y="5661.66" Z="28.4774" />
+      <CustomBehavior File="UseItemOn" QuestId="11897" MobId="26249" ItemId="35704" NumOfTimes="100" Range="5" CollectionDistance="1000" X="2154.42" Y="5661.66" Z="28.4774" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Enemies of the Light" QuestId="11792" Type="KillMob" MobId="25651" KillCount="1" />
+    <Objective QuestName="Enemies of the Light" QuestId="11792" Type="CollectItem" ItemId="35122" CollectCount="1" />
+    <While Condition="((HasQuest(11897)) &amp;&amp; (!IsQuestCompleted(11897)))">
+      <RunTo X="2154.42" Y="5661.66" Z="28.4774" />
+      <CustomBehavior File="UseItemOn" QuestId="11897" MobId="26249" ItemId="35704" NumOfTimes="100" Range="5" CollectionDistance="1000" X="2154.42" Y="5661.66" Z="28.4774" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="A Diplomatic Mission" QuestId="12141" TurnInName="Karuk" TurnInId="25435" />
+    <PickUp QuestName="Karuk's Oath" QuestId="11613" GiverName="Karuk" GiverId="25435" />
+    <Objective QuestName="Karuk's Oath" QuestId="11613" Type="KillMob" MobId="24576" KillCount="1" />
+    <PickUp QuestName="Cruelty of the Kvaldir" QuestId="12471" GiverName="Captured Tuskarr Prisoner" GiverId="25636" />
+    <Objective QuestName="Karuk's Oath" QuestId="11613" Type="KillMob" MobId="25522" KillCount="6" />
+    <Objective QuestName="Karuk's Oath" QuestId="11613" Type="KillMob" MobId="25521" KillCount="5" />
+    <TurnIn QuestName="Karuk's Oath" QuestId="11613" TurnInName="Karuk" TurnInId="25435" />
+    <If Condition="((!HasQuest(11619)) &amp;&amp; (!IsQuestCompleted(11619)))">
+      <PickUp QuestName="Gamel the Cruel" QuestId="11619" GiverName="Karuk" GiverId="25435" />
+    </If>
+    <TurnIn QuestName="Cruelty of the Kvaldir" QuestId="12471" TurnInName="Karuk" TurnInId="25435" />
+    <Objective QuestName="Gamel the Cruel" QuestId="11619" Type="KillMob" MobId="26449" KillCount="1" />
+    <TurnIn QuestName="Gamel the Cruel" QuestId="11619" TurnInName="Karuk" TurnInId="25435" />
+    <If Condition="((!HasQuest(11620)) &amp;&amp; (!IsQuestCompleted(11620)))">
+      <PickUp QuestName="A Father's Words" QuestId="11620" GiverName="Karuk" GiverId="25435" />
+    </If>
+    <TurnIn QuestName="A Father's Words" QuestId="11620" TurnInName="Veehja" TurnInId="25450" />
+    <While Condition="((HasQuest(11897)) &amp;&amp; (!IsQuestCompleted(11897)))">
+      <RunTo X="2154.42" Y="5661.66" Z="28.4774" />
+      <CustomBehavior File="UseItemOn" QuestId="11897" MobId="26249" ItemId="6948" NumOfTimes="100" Range="5" CollectionDistance="1000" X="2154.42" Y="5661.66" Z="28.4774" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <!-- Use Hearthstone to Valiance Keep -->
+    <CustomBehavior File="UseItem" ItemId="6948" />
+    <CustomBehavior File="WaitTimer" WaitTime="12000" />
+    <TurnIn QuestName="Enemies of the Light" QuestId="11792" TurnInName="Harbinger Vurenn" TurnInId="25285" />
+    <If Condition="((!HasQuest(11793)) &amp;&amp; (!IsQuestCompleted(11793)))">
+      <PickUp QuestName="Further Investigation" QuestId="11793" GiverName="Harbinger Vurenn" GiverId="25285" />
+    </If>
+    <TurnIn QuestName="Plug the Sinkholes" QuestId="11897" TurnInName="Sergeant Hammerhill" TurnInId="25816" />
+    <If Condition="((!HasQuest(11928)) &amp;&amp; (!IsQuestCompleted(11928)))">
+      <PickUp QuestName="Farshire" QuestId="11928" GiverName="Sergeant Hammerhill" GiverId="25816" />
+    </If>
+    <If Condition="((!HasQuest(11927)) &amp;&amp; (!IsQuestCompleted(11927)))">
+      <PickUp QuestName="Word on the Street" QuestId="11927" GiverName="Mark Hanes" GiverId="26155" />
+    </If>
+    <If Condition="((!HasQuest(11575)) &amp;&amp; (!IsQuestCompleted(11575)))">
+      <PickUp QuestName="Nick of Time" QuestId="11575" GiverName="Midge" GiverId="25249" />
+    </If>
+    <TurnIn QuestName="Word on the Street" QuestId="11927" TurnInName="Leryssa" TurnInId="25251" />
+    <If Condition="((!HasQuest(11599)) &amp;&amp; (!IsQuestCompleted(11599)))">
+      <PickUp QuestName="Thassarian, My Brother" QuestId="11599" GiverName="Leryssa" GiverId="25251" />
+    </If>
+    <TurnIn QuestName="Further Investigation" QuestId="11793" TurnInName="Vindicator Yaala" TurnInId="25826" />
+    <If Condition="((!HasQuest(11794)) &amp;&amp; (!IsQuestCompleted(11794)))">
+      <PickUp QuestName="The Hunt is On" QuestId="11794" GiverName="Vindicator Yaala" GiverId="25826" />
+    </If>
+    <While Condition="((HasQuest(11794)) &amp;&amp; (!IsQuestCompleted(11794)))">
+      <RunTo X="2257.9" Y="5161.69" Z="1.2834" />
+      <CustomBehavior File="UseItemOn" QuestId="11794" MobId="25827" ItemId="35125" NumOfTimes="100" Range="5" CollectionDistance="1000" X="2257.9" Y="5161.69" Z="1.2834" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Hunt is On" QuestId="11794" Type="KillMob" MobId="25248" KillCount="1" />
+    <If Condition="((!HasQuest(11707)) &amp;&amp; (!IsQuestCompleted(11707)))">
+      <PickUp QuestName="Distress Call" QuestId="11707" GiverName="Airman Skyhopper" GiverId="25737" />
+    </If>
+    <While Condition="((HasQuest(11794)) &amp;&amp; (!IsQuestCompleted(11794)))">
+      <RunTo X="2257.9" Y="5161.69" Z="1.2834" />
+      <CustomBehavior File="UseItemOn" QuestId="11794" MobId="25827" ItemId="35125" NumOfTimes="100" Range="5" CollectionDistance="1000" X="2257.9" Y="5161.69" Z="1.2834" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Hunt is On" QuestId="11794" Type="KillMob" MobId="25827" KillCount="1" />
+    <While Condition="((HasQuest(11794)) &amp;&amp; (!IsQuestCompleted(11794)))">
+      <RunTo X="2257.9" Y="5161.69" Z="1.2834" />
+      <CustomBehavior File="UseItemOn" QuestId="11794" MobId="25827" ItemId="35125" NumOfTimes="100" Range="5" CollectionDistance="1000" X="2257.9" Y="5161.69" Z="1.2834" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Hunt is On" QuestId="11794" Type="KillMob" MobId="25828" KillCount="1" />
+    <TurnIn QuestName="The Hunt is On" QuestId="11794" TurnInName="Vindicator Yaala" TurnInId="25826" />
+    <TurnIn QuestName="Farshire" QuestId="11928" TurnInName="Gerald Green" TurnInId="26083" />
+    <If Condition="((!HasQuest(11901)) &amp;&amp; (!IsQuestCompleted(11901)))">
+      <PickUp QuestName="Military? What Military?" QuestId="11901" GiverName="Gerald Green" GiverId="26083" />
+    </If>
+    <TurnIn QuestName="Military? What Military?" QuestId="11901" TurnInName="Object_188085" TurnInType="Object" TurnInId="188085" />
+    <If Condition="((!HasQuest(11902)) &amp;&amp; (!IsQuestCompleted(11902)))">
+      <PickUp QuestName="Pernicious Evidence" QuestId="11902" GiverName="Gerald Green" GiverId="26083" />
+    </If>
+    <TurnIn QuestName="Pernicious Evidence" QuestId="11902" TurnInName="Gerald Green" TurnInId="26083" />
+    <If Condition="((!HasQuest(11903)) &amp;&amp; (!IsQuestCompleted(11903)))">
+      <PickUp QuestName="It's Time for Action" QuestId="11903" GiverName="Gerald Green" GiverId="26083" />
+    </If>
+    <If Condition="((!HasQuest(11913)) &amp;&amp; (!IsQuestCompleted(11913)))">
+      <PickUp QuestName="Take No Chances" QuestId="11913" GiverName="Wendy Darren" GiverId="26085" />
+    </If>
+    <If Condition="((!HasQuest(11908)) &amp;&amp; (!IsQuestCompleted(11908)))">
+      <PickUp QuestName="Reference Material" QuestId="11908" GiverName="Jeremiah Hawning" GiverId="26084" />
+    </If>
+    <Objective QuestName="Reference Material" QuestId="11908" Type="CollectItem" ItemId="35481" CollectCount="1" />
+    <While Condition="((HasQuest(11913)) &amp;&amp; (!IsQuestCompleted(11913)))">
+      <RunTo X="2589.81" Y="5311.01" Z="36.838" />
+      <CustomBehavior File="UseItemOn" QuestId="11913" MobId="26161" ItemId="35491" NumOfTimes="100" Range="5" CollectionDistance="1000" X="2589.81" Y="5311.01" Z="36.838" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="It's Time for Action" QuestId="11903" Type="KillMob" MobId="25650" KillCount="14" />
+    <TurnIn QuestName="Take No Chances" QuestId="11913" TurnInName="Wendy Darren" TurnInId="26085" />
+    <TurnIn QuestName="It's Time for Action" QuestId="11903" TurnInName="Gerald Green" TurnInId="26083" />
+    <If Condition="((!HasQuest(11904)) &amp;&amp; (!IsQuestCompleted(11904)))">
+      <PickUp QuestName="Fruits of Our Labor" QuestId="11904" GiverName="Gerald Green" GiverId="26083" />
+    </If>
+    <TurnIn QuestName="Reference Material" QuestId="11908" TurnInName="Jeremiah Hawning" TurnInId="26084" />
+    <If Condition="((!HasQuest(12035)) &amp;&amp; (!IsQuestCompleted(12035)))">
+      <PickUp QuestName="Repurposed Technology" QuestId="12035" GiverName="Jeremiah Hawning" GiverId="26084" />
+    </If>
+    <Objective QuestName="Repurposed Technology" QuestId="12035" Type="KillMob" MobId="25623" KillCount="1" />
+    <While Condition="((HasQuest(12035)) &amp;&amp; (!IsQuestCompleted(12035)))">
+      <CustomBehavior File="UseItemOn" QuestId="12035" MobId="25993" ItemId="35943" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Thassarian, My Brother" QuestId="11599" TurnInName="Jeremiah Hawning" TurnInId="25385" />
+    <If Condition="((!HasQuest(11600)) &amp;&amp; (!IsQuestCompleted(11600)))">
+      <PickUp QuestName="The Late William Allerton" QuestId="11600" GiverName="Jeremiah Hawning" GiverId="26084" />
+    </If>
+    <Objective QuestName="Fruits of Our Labor" QuestId="11904" Type="KillMob" MobId="26252" KillCount="1" />
+    <Objective QuestName="Fruits of Our Labor" QuestId="11904" Type="CollectItem" ItemId="35705" CollectCount="1" />
+    <TurnIn QuestName="Fruits of Our Labor" QuestId="11904" TurnInName="Gerald Green" TurnInId="26083" />
+    <If Condition="((!HasQuest(11962)) &amp;&amp; (!IsQuestCompleted(11962)))">
+      <PickUp QuestName="One Last Delivery" QuestId="11962" GiverName="Gerald Green" GiverId="26083" />
+    </If>
+    <TurnIn QuestName="Repurposed Technology" QuestId="12035" TurnInName="Jeremiah Hawning" TurnInId="26084" />
+    <TurnIn QuestName="One Last Delivery" QuestId="11962" TurnInName="Hilda Stoneforge" TurnInId="25235" />
+    <If Condition="((!HasQuest(11963)) &amp;&amp; (!IsQuestCompleted(11963)))">
+      <PickUp QuestName="Weapons for Farshire" QuestId="11963" GiverName="Hilda Stoneforge" GiverId="25235" />
+    </If>
+    <TurnIn QuestName="The Late William Allerton" QuestId="11600" TurnInName="Leryssa" TurnInId="25251" />
+    <If Condition="((!HasQuest(11601)) &amp;&amp; (!IsQuestCompleted(11601)))">
+      <PickUp QuestName="Lost and Found" QuestId="11601" GiverName="Leryssa" GiverId="25251" />
+    </If>
+    <TurnIn QuestName="Lost and Found" QuestId="11601" TurnInName="James Deacon" TurnInId="25245" />
+    <If Condition="((!HasQuest(11603)) &amp;&amp; (!IsQuestCompleted(11603)))">
+      <PickUp QuestName="In Wine, Truth" QuestId="11603" GiverName="James Deacon" GiverId="25245" />
+    </If>
+    <TurnIn QuestName="Weapons for Farshire" QuestId="11963" TurnInName="Gerald Green" TurnInId="26083" />
+    <If Condition="((!HasQuest(11965)) &amp;&amp; (!IsQuestCompleted(11965)))">
+      <PickUp QuestName="Call to Arms!" QuestId="11965" GiverName="Gerald Green" GiverId="26083" />
+    </If>
+    <TurnIn QuestName="Call to Arms!" QuestId="11965" TurnInName="Gerald Green" TurnInId="26083" />
+    <PickUp QuestName="A Mission Statement" QuestId="11864" GiverName="Arch Druid Lathorius" GiverId="25809" />
+    <If Condition="((!HasQuest(11866)) &amp;&amp; (!IsQuestCompleted(11866)))">
+      <PickUp QuestName="Ears of Our Enemies" QuestId="11866" GiverName="Arch Druid Lathorius" GiverId="25809" />
+    </If>
+    <If Condition="((!HasQuest(11876)) &amp;&amp; (!IsQuestCompleted(11876)))">
+      <PickUp QuestName="Help Those That Cannot Help Themselves" QuestId="11876" GiverName="Arch Druid Lathorius" GiverId="25809" />
+    </If>
+    <If Condition="((!HasQuest(11869)) &amp;&amp; (!IsQuestCompleted(11869)))">
+      <PickUp QuestName="Happy as a Clam" QuestId="11869" GiverName="Hierophant Cenius" GiverId="25810" />
+    </If>
+    <If Condition="((!HasQuest(11865)) &amp;&amp; (!IsQuestCompleted(11865)))">
+      <PickUp QuestName="Unfit for Death" QuestId="11865" GiverName="Zaza" GiverId="25811" />
+    </If>
+    <While Condition="((HasQuest(11865)) &amp;&amp; (!IsQuestCompleted(11865)))">
+      <CustomBehavior File="UseItemOn" QuestId="11865" MobId="25835" ItemId="35127" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Ears of Our Enemies" QuestId="11866" Type="KillMob" MobId="25836" KillCount="1" />
+    <Objective QuestName="Ears of Our Enemies" QuestId="11866" Type="CollectItem" ItemId="35188" CollectCount="15" />
+    <Objective QuestName="Happy as a Clam" QuestId="11869" Type="KillMob" MobId="25836" KillCount="10" />
+    <TurnIn QuestName="Nick of Time" QuestId="11575" TurnInName="Librarian Donathan" TurnInId="25262" />
+    <If Condition="((!HasQuest(11587)) &amp;&amp; (!IsQuestCompleted(11587)))">
+      <PickUp QuestName="Prison Break" QuestId="11587" GiverName="Librarian Donathan" GiverId="25262" />
+    </If>
+    <If Condition="((!HasQuest(11576)) &amp;&amp; (!IsQuestCompleted(11576)))">
+      <PickUp QuestName="Monitoring the Rift: Cleftcliff Anomaly" QuestId="11576" GiverName="Librarian Garren" GiverId="25291" />
+    </If>
+    <PickUp QuestName="Reclaiming the Quarry" QuestId="11612" GiverName="Etaruk" GiverId="25292" />
+    <PickUp QuestName="The Honored Ancestors" QuestId="11605" GiverName="Etaruk" GiverId="25292" />
+    <While Condition="((HasQuest(11876)) &amp;&amp; (!IsQuestCompleted(11876)))">
+      <RunTo X="3157.15" Y="5430.56" Z="57.0264" />
+      <CustomBehavior File="UseItemOn" QuestId="11876" MobId="25850" ItemId="35228" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3157.15" Y="5430.56" Z="57.0264" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Unfit for Death" QuestId="11865" TurnInName="Zaza" TurnInId="25811" />
+    <If Condition="((!HasQuest(11868)) &amp;&amp; (!IsQuestCompleted(11868)))">
+      <PickUp QuestName="The Culler Cometh" QuestId="11868" GiverName="Zaza" GiverId="25811" />
+    </If>
+    <TurnIn QuestName="Ears of Our Enemies" QuestId="11866" TurnInName="Arch Druid Lathorius" TurnInId="25809" />
+    <TurnIn QuestName="Help Those That Cannot Help Themselves" QuestId="11876" TurnInName="Arch Druid Lathorius" TurnInId="25809" />
+    <TurnIn QuestName="Happy as a Clam" QuestId="11869" TurnInName="Hierophant Cenius" TurnInId="25810" />
+    <If Condition="((!HasQuest(11870)) &amp;&amp; (!IsQuestCompleted(11870)))">
+      <PickUp QuestName="The Abandoned Reach" QuestId="11870" GiverName="Hierophant Cenius" GiverId="25810" />
+    </If>
+    <Objective QuestName="The Culler Cometh" QuestId="11868" Type="KillMob" MobId="25803" KillCount="1" />
+    <TurnIn QuestName="The Abandoned Reach" QuestId="11870" TurnInName="Hierophant Liandra" TurnInId="25838" />
+    <If Condition="((!HasQuest(11871)) &amp;&amp; (!IsQuestCompleted(11871)))">
+      <PickUp QuestName="Not On Our Watch" QuestId="11871" GiverName="Hierophant Liandra" GiverId="25838" />
+    </If>
+    <Objective QuestName="Not On Our Watch" QuestId="11871" Type="KillMob" MobId="25843" KillCount="1" />
+    <Objective QuestName="Not On Our Watch" QuestId="11871" Type="CollectItem" ItemId="35222" CollectCount="12" />
+    <TurnIn QuestName="Not On Our Watch" QuestId="11871" TurnInName="Hierophant Liandra" TurnInId="25838" />
+    <If Condition="((!HasQuest(11872)) &amp;&amp; (!IsQuestCompleted(11872)))">
+      <PickUp QuestName="The Nefarious Clam Master..." QuestId="11872" GiverName="Hierophant Liandra" GiverId="25838" />
+    </If>
+    <Objective QuestName="The Nefarious Clam Master..." QuestId="11872" Type="KillMob" MobId="25800" KillCount="1" />
+    <Objective QuestName="In Wine, Truth" QuestId="11603" Type="CollectItem" ItemId="34714" CollectCount="1" />
+    <TurnIn QuestName="In Wine, Truth" QuestId="11603" TurnInName="Old Man Colburn" TurnInId="25302" />
+    <If Condition="((!HasQuest(11604)) &amp;&amp; (!IsQuestCompleted(11604)))">
+      <PickUp QuestName="A Deserter" QuestId="11604" GiverName="Old Man Colburn" GiverId="25302" />
+    </If>
+    <TurnIn QuestName="A Deserter" QuestId="11604" TurnInName="Private Brau" TurnInId="25395" />
+    <If Condition="((!HasQuest(11932)) &amp;&amp; (!IsQuestCompleted(11932)))">
+      <PickUp QuestName="Cowards and Fools" QuestId="11932" GiverName="Private Brau" GiverId="25395" />
+    </If>
+    <Objective QuestName="Prison Break" QuestId="11587" Type="KillMob" MobId="25585" KillCount="1" />
+    <Objective QuestName="Prison Break" QuestId="11587" Type="CollectItem" ItemId="34688" CollectCount="1" />
+    <While Condition="((HasQuest(11576)) &amp;&amp; (!IsQuestCompleted(11576)))">
+      <RunTo X="3277.52" Y="6594.09" Z="-0.015" />
+      <CustomBehavior File="UseItemOn" QuestId="11576" MobId="25310" ItemId="34669" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3277.52" Y="6594.09" Z="-0.015" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Monitoring the Rift: Cleftcliff Anomaly" QuestId="11576" TurnInName="Librarian Garren" TurnInId="25291" />
+    <If Condition="((!HasQuest(11582)) &amp;&amp; (!IsQuestCompleted(11582)))">
+      <PickUp QuestName="Monitoring the Rift: Sundered Chasm" QuestId="11582" GiverName="Librarian Garren" GiverId="25291" />
+    </If>
+    <TurnIn QuestName="Prison Break" QuestId="11587" TurnInName="Librarian Donathan" TurnInId="25262" />
+    <If Condition="((!HasQuest(11590)) &amp;&amp; (!IsQuestCompleted(11590)))">
+      <PickUp QuestName="Abduction" QuestId="11590" GiverName="Librarian Donathan" GiverId="25262" />
+    </If>
+    <Objective QuestName="Abduction" QuestId="11590" Type="KillMob" MobId="25316" KillCount="1" />
+    <While Condition="((HasQuest(11590)) &amp;&amp; (!IsQuestCompleted(11590)))">
+      <CustomBehavior File="UseItemOn" QuestId="11590" MobId="25474" ItemId="34691" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Abduction" QuestId="11590" TurnInName="Librarian Donathan" TurnInId="25262" />
+    <If Condition="((!HasQuest(11646)) &amp;&amp; (!IsQuestCompleted(11646)))">
+      <PickUp QuestName="The Borean Inquisition" QuestId="11646" GiverName="Librarian Donathan" GiverId="25262" />
+    </If>
+    <TurnIn QuestName="The Borean Inquisition" QuestId="11646" TurnInName="Librarian Normantis" TurnInId="25480" />
+    <If Condition="((!HasQuest(11648)) &amp;&amp; (!IsQuestCompleted(11648)))">
+      <PickUp QuestName="The Art of Persuasion" QuestId="11648" GiverName="Librarian Normantis" GiverId="25480" />
+    </If>
+    <While Condition="((HasQuest(11648)) &amp;&amp; (!IsQuestCompleted(11648)))">
+      <RunTo X="3632.48" Y="5900.61" Z="150.517" />
+      <CustomBehavior File="UseItemOn" QuestId="11648" MobId="25478" ItemId="34811" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3632.48" Y="5900.61" Z="150.517" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="The Art of Persuasion" QuestId="11648" TurnInName="Librarian Normantis" TurnInId="25480" />
+    <If Condition="((!HasQuest(11663)) &amp;&amp; (!IsQuestCompleted(11663)))">
+      <PickUp QuestName="Sharing Intelligence" QuestId="11663" GiverName="Librarian Normantis" GiverId="25480" />
+    </If>
+    <TurnIn QuestName="Sharing Intelligence" QuestId="11663" TurnInName="Librarian Donathan" TurnInId="25262" />
+    <If Condition="((!HasQuest(11671)) &amp;&amp; (!IsQuestCompleted(11671)))">
+      <PickUp QuestName="A Race Against Time" QuestId="11671" GiverName="Librarian Donathan" GiverId="25262" />
+    </If>
+    <While Condition="((HasQuest(11671)) &amp;&amp; (!IsQuestCompleted(11671)))">
+      <CustomBehavior File="UseItemOn" QuestId="11671" MobId="0" ItemId="34897" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="A Race Against Time" QuestId="11671" Type="KillMob" MobId="25584" KillCount="1" />
+    <Objective QuestName="A Race Against Time" QuestId="11671" Type="CollectItem" ItemId="34909" CollectCount="1" />
+    <TurnIn QuestName="A Race Against Time" QuestId="11671" TurnInName="Librarian Donathan" TurnInId="25262" />
+    <If Condition="((!HasQuest(11679)) &amp;&amp; (!IsQuestCompleted(11679)))">
+      <PickUp QuestName="Reforging the Key" QuestId="11679" GiverName="Librarian Donathan" GiverId="25262" />
+    </If>
+    <TurnIn QuestName="Reforging the Key" QuestId="11679" TurnInName="Surristrasz" TurnInId="24795" />
+    <If Condition="((!HasQuest(11680)) &amp;&amp; (!IsQuestCompleted(11680)))">
+      <PickUp QuestName="Taking Wing" QuestId="11680" GiverName="Surristrasz" GiverId="24795" />
+    </If>
+    <TurnIn QuestName="Taking Wing" QuestId="11680" TurnInName="Warmage Anzim" TurnInId="25356" />
+    <If Condition="((!HasQuest(11681)) &amp;&amp; (!IsQuestCompleted(11681)))">
+      <PickUp QuestName="Rescuing Evanor" QuestId="11681" GiverName="Warmage Anzim" GiverId="25356" />
+    </If>
+    <TurnIn QuestName="Rescuing Evanor" QuestId="11681" TurnInName="Archmage Evanor" TurnInId="25785" />
+    <If Condition="((!HasQuest(11682)) &amp;&amp; (!IsQuestCompleted(11682)))">
+      <PickUp QuestName="Dragonspeak" QuestId="11682" GiverName="Archmage Evanor" GiverId="25785" />
+    </If>
+    <TurnIn QuestName="Dragonspeak" QuestId="11682" TurnInName="Surristrasz" TurnInId="24795" />
+    <While Condition="((HasQuest(11582)) &amp;&amp; (!IsQuestCompleted(11582)))">
+      <RunTo X="3797.1" Y="6042.27" Z="-134.122" />
+      <CustomBehavior File="UseItemOn" QuestId="11582" MobId="25308" ItemId="34669" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3797.1" Y="6042.27" Z="-134.122" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Reclaiming the Quarry" QuestId="11612" Type="KillMob" MobId="25353" KillCount="12" />
+    <TurnIn QuestName="The Honored Ancestors" QuestId="11605" TurnInName="Object_187565" TurnInType="Object" TurnInId="187565" />
+    <If Condition="((!HasQuest(11607)) &amp;&amp; (!IsQuestCompleted(11607)))">
+      <PickUp QuestName="The Lost Spirits" QuestId="11607" GiverName="Surristrasz" GiverId="24795" />
+    </If>
+    <TurnIn QuestName="Reclaiming the Quarry" QuestId="11612" TurnInName="Etaruk" TurnInId="25292" />
+    <If Condition="((!HasQuest(11617)) &amp;&amp; (!IsQuestCompleted(11617)))">
+      <PickUp QuestName="Hampering Their Escape" QuestId="11617" GiverName="Etaruk" GiverId="25292" />
+    </If>
+    <Objective QuestName="Hampering Their Escape" QuestId="11617" Type="KillMob" MobId="25449" KillCount="1" />
+    <Objective QuestName="Hampering Their Escape" QuestId="11617" Type="CollectItem" ItemId="34772" CollectCount="3" />
+    <While Condition="((HasQuest(11617)) &amp;&amp; (!IsQuestCompleted(11617)))">
+      <RunTo X="3567.48" Y="5531.07" Z="86.6564" />
+      <CustomBehavior File="UseItemOn" QuestId="11617" MobId="25442" ItemId="34772" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3567.48" Y="5531.07" Z="86.6564" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(11617)) &amp;&amp; (!IsQuestCompleted(11617)))">
+      <RunTo X="3567.48" Y="5531.07" Z="86.6564" />
+      <CustomBehavior File="UseItemOn" QuestId="11617" MobId="25442" ItemId="34772" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3567.48" Y="5531.07" Z="86.6564" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(11617)) &amp;&amp; (!IsQuestCompleted(11617)))">
+      <RunTo X="3567.48" Y="5531.07" Z="86.6564" />
+      <CustomBehavior File="UseItemOn" QuestId="11617" MobId="25442" ItemId="34772" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3567.48" Y="5531.07" Z="86.6564" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Lost Spirits" QuestId="11607" Type="KillMob" MobId="25355" KillCount="1" />
+    <Objective QuestName="The Lost Spirits" QuestId="11607" Type="CollectItem" ItemId="34711" CollectCount="1" />
+    <While Condition="((HasQuest(11607)) &amp;&amp; (!IsQuestCompleted(11607)))">
+      <RunTo X="3599.76" Y="5529.71" Z="27.1876" />
+      <CustomBehavior File="UseItemOn" QuestId="11607" MobId="25321" ItemId="34711" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3599.76" Y="5529.71" Z="27.1876" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Lost Spirits" QuestId="11607" Type="KillMob" MobId="25355" KillCount="1" />
+    <Objective QuestName="The Lost Spirits" QuestId="11607" Type="CollectItem" ItemId="34711" CollectCount="1" />
+    <While Condition="((HasQuest(11607)) &amp;&amp; (!IsQuestCompleted(11607)))">
+      <RunTo X="3599.76" Y="5529.71" Z="27.1876" />
+      <CustomBehavior File="UseItemOn" QuestId="11607" MobId="25321" ItemId="34711" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3599.76" Y="5529.71" Z="27.1876" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="The Lost Spirits" QuestId="11607" TurnInName="Object_187565" TurnInType="Object" TurnInId="187565" />
+    <If Condition="((!HasQuest(11609)) &amp;&amp; (!IsQuestCompleted(11609)))">
+      <PickUp QuestName="Picking Up the Pieces" QuestId="11609" GiverName="Etaruk" GiverId="25292" />
+    </If>
+    <TurnIn QuestName="Hampering Their Escape" QuestId="11617" TurnInName="Etaruk" TurnInId="25292" />
+    <If Condition="((!HasQuest(11623)) &amp;&amp; (!IsQuestCompleted(11623)))">
+      <PickUp QuestName="A Visit to the Curator" QuestId="11623" GiverName="Etaruk" GiverId="25292" />
+    </If>
+    <Objective QuestName="A Visit to the Curator" QuestId="11623" Type="KillMob" MobId="25448" KillCount="1" />
+    <Objective QuestName="Picking Up the Pieces" QuestId="11609" Type="CollectItem" ItemId="34713" CollectCount="6" />
+    <TurnIn QuestName="Picking Up the Pieces" QuestId="11609" TurnInName="Object_187565" TurnInType="Object" TurnInId="187565" />
+    <If Condition="((!HasQuest(11610)) &amp;&amp; (!IsQuestCompleted(11610)))">
+      <PickUp QuestName="Leading the Ancestors Home" QuestId="11610" GiverName="Etaruk" GiverId="25292" />
+    </If>
+    <TurnIn QuestName="A Visit to the Curator" QuestId="11623" TurnInName="Etaruk" TurnInId="25292" />
+    <While Condition="((HasQuest(11610)) &amp;&amp; (!IsQuestCompleted(11610)))">
+      <RunTo X="3643.49" Y="5634.1" Z="35.9507" />
+      <CustomBehavior File="UseItemOn" QuestId="11610" MobId="25397" ItemId="34715" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3643.49" Y="5634.1" Z="35.9507" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(11610)) &amp;&amp; (!IsQuestCompleted(11610)))">
+      <RunTo X="3643.49" Y="5634.1" Z="35.9507" />
+      <CustomBehavior File="UseItemOn" QuestId="11610" MobId="25397" ItemId="34715" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3643.49" Y="5634.1" Z="35.9507" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(11610)) &amp;&amp; (!IsQuestCompleted(11610)))">
+      <RunTo X="3643.49" Y="5634.1" Z="35.9507" />
+      <CustomBehavior File="UseItemOn" QuestId="11610" MobId="25397" ItemId="34715" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3643.49" Y="5634.1" Z="35.9507" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Leading the Ancestors Home" QuestId="11610" TurnInName="Object_187565" TurnInType="Object" TurnInId="187565" />
+    <TurnIn QuestName="The Culler Cometh" QuestId="11868" TurnInName="Zaza" TurnInId="25811" />
+    <If Condition="((!HasQuest(11878)) &amp;&amp; (!IsQuestCompleted(11878)))">
+      <PickUp QuestName="Khu'nok Will Know" QuestId="11878" GiverName="Arch Druid Lathorius" GiverId="25809" />
+    </If>
+    <TurnIn QuestName="The Nefarious Clam Master..." QuestId="11872" TurnInName="Hierophant Cenius" TurnInId="25810" />
+    <TurnIn QuestName="Khu'nok Will Know" QuestId="11878" TurnInName="Khu'nok the Behemoth" TurnInId="25862" />
+    <If Condition="((!HasQuest(11879)) &amp;&amp; (!IsQuestCompleted(11879)))">
+      <PickUp QuestName="Kaw the Mammoth Destroyer" QuestId="11879" GiverName="Khu'nok the Behemoth" GiverId="25862" />
+    </If>
+    <Objective QuestName="Kaw the Mammoth Destroyer" QuestId="11879" Type="KillMob" MobId="25802" KillCount="1" />
+    <Objective QuestName="Kaw the Mammoth Destroyer" QuestId="11879" Type="CollectItem" ItemId="35234" CollectCount="1" />
+    <TurnIn QuestName="Kaw the Mammoth Destroyer" QuestId="11879" TurnInName="Arch Druid Lathorius" TurnInId="25809" />
+    <TurnIn QuestName="Cowards and Fools" QuestId="11932" TurnInName="Ataika" TurnInId="26169" />
+    <If Condition="((!HasQuest(12086)) &amp;&amp; (!IsQuestCompleted(12086)))">
+      <PickUp QuestName="The Son of Karkut" QuestId="12086" GiverName="Ataika" GiverId="26169" />
+    </If>
+    <PickUp QuestName="Not Without a Fight!" QuestId="11949" GiverName="Ataika" GiverId="26169" />
+    <PickUp QuestName="Preparing for the Worst" QuestId="11945" GiverName="Utaik" GiverId="26213" />
+    <Objective QuestName="Preparing for the Worst" QuestId="11945" Type="CollectItem" ItemId="35711" CollectCount="8" />
+    <Objective QuestName="Not Without a Fight!" QuestId="11949" Type="KillMob" MobId="25760" KillCount="12" />
+    <TurnIn QuestName="Not Without a Fight!" QuestId="11949" TurnInName="Ataika" TurnInId="26169" />
+    <If Condition="((!HasQuest(11950)) &amp;&amp; (!IsQuestCompleted(11950)))">
+      <PickUp QuestName="Muahit's Wisdom" QuestId="11950" GiverName="Ataika" GiverId="26169" />
+    </If>
+    <TurnIn QuestName="Preparing for the Worst" QuestId="11945" TurnInName="Utaik" TurnInId="26213" />
+    <TurnIn QuestName="Muahit's Wisdom" QuestId="11950" TurnInName="Elder Muahit" TurnInId="26218" />
+    <If Condition="((!HasQuest(11961)) &amp;&amp; (!IsQuestCompleted(11961)))">
+      <PickUp QuestName="Spirits Watch Over Us" QuestId="11961" GiverName="Elder Muahit" GiverId="26218" />
+    </If>
+    <Objective QuestName="Spirits Watch Over Us" QuestId="11961" Type="CollectItem" ItemId="35701" CollectCount="1" />
+    <TurnIn QuestName="Spirits Watch Over Us" QuestId="11961" TurnInName="Elder Muahit" TurnInId="26218" />
+    <If Condition="((!HasQuest(11968)) &amp;&amp; (!IsQuestCompleted(11968)))">
+      <PickUp QuestName="The Tides Turn" QuestId="11968" GiverName="Elder Muahit" GiverId="26218" />
+    </If>
+    <Objective QuestName="The Tides Turn" QuestId="11968" Type="KillMob" MobId="26266" KillCount="1" />
+    <TurnIn QuestName="The Tides Turn" QuestId="11968" TurnInName="Elder Muahit" TurnInId="26218" />
+    <TurnIn QuestName="The Son of Karkut" QuestId="12086" TurnInName="Corporal Venn" TurnInId="26187" />
+    <If Condition="((!HasQuest(11944)) &amp;&amp; (!IsQuestCompleted(11944)))">
+      <PickUp QuestName="Surrounded!" QuestId="11944" GiverName="Corporal Venn" GiverId="26187" />
+    </If>
+    <PickUp QuestName="The Lost Courier" QuestId="12157" GiverName="Private Casey" GiverId="26186" />
+    <Objective QuestName="Surrounded!" QuestId="11944" Type="KillMob" MobId="26202" KillCount="7" />
+    <TurnIn QuestName="Surrounded!" QuestId="11944" TurnInName="Corporal Venn" TurnInId="26187" />
+    <If Condition="((!HasQuest(12088)) &amp;&amp; (!IsQuestCompleted(12088)))">
+      <PickUp QuestName="Thassarian, the Death Knight" QuestId="12088" GiverName="Corporal Venn" GiverId="26187" />
+    </If>
+    <TurnIn QuestName="Thassarian, the Death Knight" QuestId="12088" TurnInName="Thassarian" TurnInId="26170" />
+    <PickUp QuestName="Finding the Phylactery" QuestId="11956" GiverName="Thassarian" GiverId="26170" />
+    <Objective QuestName="Finding the Phylactery" QuestId="11956" Type="KillMob" MobId="26225" KillCount="1" />
+    <Objective QuestName="Finding the Phylactery" QuestId="11956" Type="CollectItem" ItemId="35687" CollectCount="1" />
+    <TurnIn QuestName="Finding the Phylactery" QuestId="11956" TurnInName="Thassarian" TurnInId="26170" />
+    <If Condition="((!HasQuest(11938)) &amp;&amp; (!IsQuestCompleted(11938)))">
+      <PickUp QuestName="Buying Some Time" QuestId="11938" GiverName="Thassarian" GiverId="26170" />
+    </If>
+    <TurnIn QuestName="Buying Some Time" QuestId="11938" TurnInName="Thassarian" TurnInId="26170" />
+    <If Condition="((!HasQuest(11942)) &amp;&amp; (!IsQuestCompleted(11942)))">
+      <PickUp QuestName="Words of Power" QuestId="11942" GiverName="Thassarian" GiverId="26170" />
+    </If>
+    <Objective QuestName="Words of Power" QuestId="11942" Type="KillMob" MobId="26073" KillCount="1" />
+    <Objective QuestName="Words of Power" QuestId="11942" Type="CollectItem" ItemId="35354" CollectCount="1" />
+    <Objective QuestName="Words of Power" QuestId="11942" Type="KillMob" MobId="25392" KillCount="1" />
+    <Objective QuestName="Words of Power" QuestId="11942" Type="CollectItem" ItemId="35355" CollectCount="1" />
+    <Objective QuestName="Words of Power" QuestId="11942" Type="KillMob" MobId="26076" KillCount="1" />
+    <Objective QuestName="Words of Power" QuestId="11942" Type="CollectItem" ItemId="35353" CollectCount="1" />
+    <TurnIn QuestName="Words of Power" QuestId="11942" TurnInName="Thassarian" TurnInId="26170" />
+    <TurnIn QuestName="The Lost Courier" QuestId="12157" TurnInName="Courier Lanson" TurnInId="27060" />
+    <TurnIn QuestName="Monitoring the Rift: Sundered Chasm" QuestId="11582" TurnInName="Librarian Garren" TurnInId="25291" />
+    <If Condition="((!HasQuest(12728)) &amp;&amp; (!IsQuestCompleted(12728)))">
+      <PickUp QuestName="Monitoring the Rift: Winterfin Cavern" QuestId="12728" GiverName="Librarian Garren" GiverId="25291" />
+    </If>
+    <If Condition="((!HasQuest(11733)) &amp;&amp; (!IsQuestCompleted(11733)))">
+      <PickUp QuestName="Traversing the Rift" QuestId="11733" GiverName="Surristrasz" GiverId="24795" />
+    </If>
+    <TurnIn QuestName="Traversing the Rift" QuestId="11733" TurnInName="Archmage Berinand" TurnInId="25314" />
+    <PickUp QuestName="Reading the Meters" QuestId="11900" GiverName="Archmage Berinand" GiverId="25314" />
+    <PickUp QuestName="Secrets of the Ancients" QuestId="11910" GiverName="Archmage Berinand" GiverId="25314" />
+    <PickUp QuestName="Basic Training" QuestId="11918" GiverName="Raelorasz" GiverId="26117" />
+    <PickUp QuestName="Nuts for Berries" QuestId="11912" GiverName="Librarian Serrah" GiverId="26110" />
+    <Objective QuestName="Nuts for Berries" QuestId="11912" Type="KillMob" MobId="25719" KillCount="1" />
+    <Objective QuestName="Nuts for Berries" QuestId="11912" Type="CollectItem" ItemId="35648" CollectCount="1" />
+    <While Condition="((HasQuest(11912)) &amp;&amp; (!IsQuestCompleted(11912)))">
+      <CustomBehavior File="UseItemOn" QuestId="11912" MobId="0" ItemId="35648" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Puzzling..." QuestId="11941" GiverName="Librarian Serrah" GiverId="26110" />
+    <TurnIn QuestName="Puzzling..." QuestId="11941" TurnInName="Raelorasz" TurnInId="26117" />
+    <If Condition="((!HasQuest(11943)) &amp;&amp; (!IsQuestCompleted(11943)))">
+      <PickUp QuestName="The Cell" QuestId="11943" GiverName="Raelorasz" GiverId="26117" />
+    </If>
+    <Objective QuestName="The Cell" QuestId="11943" Type="KillMob" MobId="25712" KillCount="1" />
+    <Objective QuestName="The Cell" QuestId="11943" Type="CollectItem" ItemId="35669" CollectCount="1" />
+    <Objective QuestName="The Cell" QuestId="11943" Type="KillMob" MobId="25716" KillCount="1" />
+    <Objective QuestName="The Cell" QuestId="11943" Type="CollectItem" ItemId="35668" CollectCount="1" />
+    <Objective QuestName="Nuts for Berries" QuestId="11912" Type="CollectItem" ItemId="35492" CollectCount="10" />
+    <Objective QuestName="Secrets of the Ancients" QuestId="11910" Type="KillMob" MobId="25709" KillCount="1" />
+    <Objective QuestName="Secrets of the Ancients" QuestId="11910" Type="CollectItem" ItemId="35483" CollectCount="3" />
+    <Objective QuestName="Secrets of the Ancients" QuestId="11910" Type="KillMob" MobId="25707" KillCount="1" />
+    <Objective QuestName="Secrets of the Ancients" QuestId="11910" Type="CollectItem" ItemId="35484" CollectCount="3" />
+    <Objective QuestName="Basic Training" QuestId="11918" Type="KillMob" MobId="25722" KillCount="10" />
+    <TurnIn QuestName="Secrets of the Ancients" QuestId="11910" TurnInName="Archmage Berinand" TurnInId="25314" />
+    <TurnIn QuestName="Basic Training" QuestId="11918" TurnInName="Raelorasz" TurnInId="26117" />
+    <If Condition="((!HasQuest(11936)) &amp;&amp; (!IsQuestCompleted(11936)))">
+      <PickUp QuestName="Hatching a Plan" QuestId="11936" GiverName="Raelorasz" GiverId="26117" />
+    </If>
+    <TurnIn QuestName="The Cell" QuestId="11943" TurnInName="Raelorasz" TurnInId="26117" />
+    <TurnIn QuestName="Nuts for Berries" QuestId="11912" TurnInName="Librarian Serrah" TurnInId="26110" />
+    <If Condition="((!HasQuest(11914)) &amp;&amp; (!IsQuestCompleted(11914)))">
+      <PickUp QuestName="Keep the Secret Safe" QuestId="11914" GiverName="Librarian Serrah" GiverId="26110" />
+    </If>
+    <While Condition="((HasQuest(11914)) &amp;&amp; (!IsQuestCompleted(11914)))">
+      <CustomBehavior File="UseItemOn" QuestId="11914" MobId="0" ItemId="35671" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <If Condition="((!HasQuest(11946)) &amp;&amp; (!IsQuestCompleted(11946)))">
+      <PickUp QuestName="Keristrasza" QuestId="11946" GiverName="Keristrasza" GiverId="26206" />
+    </If>
+    <While Condition="((HasQuest(11946)) &amp;&amp; (!IsQuestCompleted(11946)))">
+      <CustomBehavior File="UseItemOn" QuestId="11946" MobId="0" ItemId="35671" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Keristrasza" QuestId="11946" TurnInName="Keristrasza" TurnInId="26206" />
+    <If Condition="((!HasQuest(11951)) &amp;&amp; (!IsQuestCompleted(11951)))">
+      <PickUp QuestName="Bait and Switch" QuestId="11951" GiverName="Keristrasza" GiverId="26206" />
+    </If>
+    <Objective QuestName="Hatching a Plan" QuestId="11936" Type="KillMob" MobId="25728" KillCount="1" />
+    <Objective QuestName="Hatching a Plan" QuestId="11936" Type="CollectItem" ItemId="35586" CollectCount="5" />
+    <Objective QuestName="Bait and Switch" QuestId="11951" Type="CollectItem" ItemId="35685" CollectCount="10" />
+    <Objective QuestName="Keep the Secret Safe" QuestId="11914" Type="KillMob" MobId="25721" KillCount="1" />
+    <Objective QuestName="Keep the Secret Safe" QuestId="11914" Type="CollectItem" ItemId="35493" CollectCount="5" />
+    <While Condition="((HasQuest(11951)) &amp;&amp; (!IsQuestCompleted(11951)))">
+      <CustomBehavior File="UseItemOn" QuestId="11951" MobId="0" ItemId="35671" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Bait and Switch" QuestId="11951" TurnInName="Keristrasza" TurnInId="26206" />
+    <If Condition="((!HasQuest(11957)) &amp;&amp; (!IsQuestCompleted(11957)))">
+      <PickUp QuestName="Saragosa's End" QuestId="11957" GiverName="Keristrasza" GiverId="26237" />
+    </If>
+    <While Condition="((HasQuest(11957)) &amp;&amp; (!IsQuestCompleted(11957)))">
+      <CustomBehavior File="UseItemOn" QuestId="11957" MobId="0" ItemId="35690" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Saragosa's End" QuestId="11957" Type="KillMob" MobId="26232" KillCount="1" />
+    <Objective QuestName="Saragosa's End" QuestId="11957" Type="CollectItem" ItemId="35709" CollectCount="1" />
+    <While Condition="((HasQuest(11957)) &amp;&amp; (!IsQuestCompleted(11957)))">
+      <CustomBehavior File="UseItemOn" QuestId="11957" MobId="0" ItemId="35671" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Saragosa's End" QuestId="11957" TurnInName="Keristrasza" TurnInId="26206" />
+    <If Condition="((!HasQuest(11967)) &amp;&amp; (!IsQuestCompleted(11967)))">
+      <PickUp QuestName="Mustering the Reds" QuestId="11967" GiverName="Keristrasza" GiverId="26237" />
+    </If>
+    <TurnIn QuestName="Hatching a Plan" QuestId="11936" TurnInName="Raelorasz" TurnInId="26117" />
+    <TurnIn QuestName="Mustering the Reds" QuestId="11967" TurnInName="Raelorasz" TurnInId="26117" />
+    <TurnIn QuestName="Keep the Secret Safe" QuestId="11914" TurnInName="Librarian Serrah" TurnInId="26110" />
+    <TurnIn QuestName="Reading the Meters" QuestId="11900" TurnInName="Archmage Berinand" TurnInId="25314" />
+    <TurnIn QuestName="Distress Call" QuestId="11707" TurnInName="Fizzcrank Fullthrottle" TurnInId="25590" />
+    <If Condition="((!HasQuest(11708)) &amp;&amp; (!IsQuestCompleted(11708)))">
+      <PickUp QuestName="The Mechagnomes" QuestId="11708" GiverName="Fizzcrank Fullthrottle" GiverId="25590" />
+    </If>
+    <TurnIn QuestName="The Mechagnomes" QuestId="11708" TurnInName="Jinky Wingnut" TurnInId="25747" />
+    <If Condition="((!HasQuest(11712)) &amp;&amp; (!IsQuestCompleted(11712)))">
+      <PickUp QuestName="Re-Cursive" QuestId="11712" GiverName="Jinky Wingnut" GiverId="25747" />
+    </If>
+    <If Condition="((!HasQuest(11710)) &amp;&amp; (!IsQuestCompleted(11710)))">
+      <PickUp QuestName="What's the Matter with the Transmatter?" QuestId="11710" GiverName="Mordle Cogspinner" GiverId="25702" />
+    </If>
+    <PickUp QuestName="King Mrgl-Mrgl" QuestId="11704" GiverName="Mordle Cogspinner" GiverId="25702" />
+    <If Condition="((!HasQuest(11645)) &amp;&amp; (!IsQuestCompleted(11645)))">
+      <PickUp QuestName="Dirty, Stinkin' Snobolds!" QuestId="11645" GiverName="Crafty Wobblesprocket" GiverId="25477" />
+    </If>
+    <PickUp QuestName="Get Me Outa Here!" QuestId="11673" GiverName="Bonker Togglevolt" GiverId="25589" />
+    <Objective QuestName="Dirty, Stinkin' Snobolds!" QuestId="11645" Type="CollectItem" ItemId="34787" CollectCount="10" />
+    <TurnIn QuestName="Get Me Outa Here!" QuestId="11673" TurnInName="Fizzcrank Fullthrottle" TurnInId="25590" />
+    <TurnIn QuestName="Dirty, Stinkin' Snobolds!" QuestId="11645" TurnInName="Crafty Wobblesprocket" TurnInId="25477" />
+    <Objective QuestName="Re-Cursive" QuestId="11712" Type="KillMob" MobId="25814" KillCount="1" />
+    <While Condition="((HasQuest(11712)) &amp;&amp; (!IsQuestCompleted(11712)))">
+      <CustomBehavior File="UseItemOn" QuestId="11712" MobId="25773" ItemId="34973" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="What's the Matter with the Transmatter?" QuestId="11710" Type="CollectItem" ItemId="34972" CollectCount="15" />
+    <Objective QuestName="Get Me Outa Here!" QuestId="11673" Type="CollectItem" ItemId="34984" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="34984" MobId="0" NumOfTimes="1" CollectionDistance="100" />
+    <PickUp QuestName="The Ultrasonic Screwdriver" QuestId="11729" GiverName="Crafty Wobblesprocket" GiverId="25477" />
+    <TurnIn QuestName="The Ultrasonic Screwdriver" QuestId="11729" TurnInName="Crafty Wobblesprocket" TurnInId="25477" />
+    <If Condition="((!HasQuest(11730)) &amp;&amp; (!IsQuestCompleted(11730)))">
+      <PickUp QuestName="Master and Servant" QuestId="11730" GiverName="Crafty Wobblesprocket" GiverId="25477" />
+    </If>
+    <TurnIn QuestName="What's the Matter with the Transmatter?" QuestId="11710" TurnInName="Mordle Cogspinner" TurnInId="25702" />
+    <If Condition="((!HasQuest(11692)) &amp;&amp; (!IsQuestCompleted(11692)))">
+      <PickUp QuestName="Check in With Bixie" QuestId="11692" GiverName="Mordle Cogspinner" GiverId="25702" />
+    </If>
+    <TurnIn QuestName="Re-Cursive" QuestId="11712" TurnInName="Jinky Wingnut" TurnInId="25747" />
+    <If Condition="((!HasQuest(11788)) &amp;&amp; (!IsQuestCompleted(11788)))">
+      <PickUp QuestName="Lefty Loosey, Righty Tighty" QuestId="11788" GiverName="Jinky Wingnut" GiverId="25747" />
+    </If>
+    <CustomBehavior File="SetHearthstone" MobId="26895" X="57.12" Y="18.72" Z="0" /> <!-- Set hearth: Fizzcrank Airstrip -->
+    <Objective QuestName="Lefty Loosey, Righty Tighty" QuestId="11788" Type="KillMob" MobId="25830" KillCount="1" />
+    <Objective QuestName="Lefty Loosey, Righty Tighty" QuestId="11788" Type="KillMob" MobId="25831" KillCount="1" />
+    <Objective QuestName="Lefty Loosey, Righty Tighty" QuestId="11788" Type="KillMob" MobId="25832" KillCount="1" />
+    <Objective QuestName="Lefty Loosey, Righty Tighty" QuestId="11788" Type="KillMob" MobId="25833" KillCount="1" />
+    <While Condition="((HasQuest(11730)) &amp;&amp; (!IsQuestCompleted(11730)))">
+      <CustomBehavior File="UseItemOn" QuestId="11730" MobId="25815" ItemId="35116" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Check in With Bixie" QuestId="11692" TurnInName="Bixie Wrenchshanker" TurnInId="25705" />
+    <If Condition="((!HasQuest(11693)) &amp;&amp; (!IsQuestCompleted(11693)))">
+      <PickUp QuestName="Oh Great... Plagued Magnataur!" QuestId="11693" GiverName="Bixie Wrenchshanker" GiverId="25705" />
+    </If>
+    <Objective QuestName="Oh Great... Plagued Magnataur!" QuestId="11693" Type="KillMob" MobId="25615" KillCount="10" />
+    <TurnIn QuestName="Oh Great... Plagued Magnataur!" QuestId="11693" TurnInName="Bixie Wrenchshanker" TurnInId="25705" />
+    <If Condition="((!HasQuest(11694)) &amp;&amp; (!IsQuestCompleted(11694)))">
+      <PickUp QuestName="There's Something Going On In Those Caves" QuestId="11694" GiverName="Bixie Wrenchshanker" GiverId="25705" />
+    </If>
+    <While Condition="((HasQuest(11694)) &amp;&amp; (!IsQuestCompleted(11694)))">
+      <RunTo X="4207.15" Y="4057.02" Z="91.6273" />
+      <CustomBehavior File="UseItemOn" QuestId="11694" MobId="25654" ItemId="34915" NumOfTimes="100" Range="5" CollectionDistance="1000" X="4207.15" Y="4057.02" Z="91.6273" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="There's Something Going On In Those Caves" QuestId="11694" TurnInName="Bixie Wrenchshanker" TurnInId="25705" />
+    <If Condition="((!HasQuest(11697)) &amp;&amp; (!IsQuestCompleted(11697)))">
+      <PickUp QuestName="Rats, Tinky Went into the Necropolis!" QuestId="11697" GiverName="Bixie Wrenchshanker" GiverId="25705" />
+    </If>
+    <If Condition="((!HasQuest(11698)) &amp;&amp; (!IsQuestCompleted(11698)))">
+      <PickUp QuestName="Might As Well Wipe Out the Scourge" QuestId="11698" GiverName="Bixie Wrenchshanker" GiverId="25705" />
+    </If>
+    <TurnIn QuestName="Rats, Tinky Went into the Necropolis!" QuestId="11697" TurnInName="Tinky Wickwhistle" TurnInId="25714" />
+    <If Condition="((!HasQuest(11699)) &amp;&amp; (!IsQuestCompleted(11699)))">
+      <PickUp QuestName="I'm Stuck in this Damned Cage... But Not For Long!" QuestId="11699" GiverName="Tinky Wickwhistle" GiverId="25714" />
+    </If>
+    <Objective QuestName="I'm Stuck in this Damned Cage... But Not For Long!" QuestId="11699" Type="KillMob" MobId="25682" KillCount="1" />
+    <Objective QuestName="I'm Stuck in this Damned Cage... But Not For Long!" QuestId="11699" Type="CollectItem" ItemId="34959" CollectCount="1" />
+    <Objective QuestName="I'm Stuck in this Damned Cage... But Not For Long!" QuestId="11699" Type="KillMob" MobId="25678" KillCount="1" />
+    <Objective QuestName="I'm Stuck in this Damned Cage... But Not For Long!" QuestId="11699" Type="CollectItem" ItemId="34958" CollectCount="1" />
+    <Objective QuestName="I'm Stuck in this Damned Cage... But Not For Long!" QuestId="11699" Type="KillMob" MobId="25660" KillCount="1" />
+    <Objective QuestName="I'm Stuck in this Damned Cage... But Not For Long!" QuestId="11699" Type="CollectItem" ItemId="34957" CollectCount="1" />
+    <TurnIn QuestName="I'm Stuck in this Damned Cage... But Not For Long!" QuestId="11699" TurnInName="Tinky Wickwhistle" TurnInId="25714" />
+    <If Condition="((!HasQuest(11700)) &amp;&amp; (!IsQuestCompleted(11700)))">
+      <PickUp QuestName="Let Bixie Know" QuestId="11700" GiverName="Tinky Wickwhistle" GiverId="25714" />
+    </If>
+    <TurnIn QuestName="Let Bixie Know" QuestId="11700" TurnInName="Bixie Wrenchshanker" TurnInId="25705" />
+    <TurnIn QuestName="Might As Well Wipe Out the Scourge" QuestId="11698" TurnInName="Bixie Wrenchshanker" TurnInId="25705" />
+    <If Condition="((!HasQuest(11701)) &amp;&amp; (!IsQuestCompleted(11701)))">
+      <PickUp QuestName="Back to the Airstrip" QuestId="11701" GiverName="Bixie Wrenchshanker" GiverId="25705" />
+    </If>
+    <TurnIn QuestName="Back to the Airstrip" QuestId="11701" TurnInName="Fizzcrank Fullthrottle" TurnInId="25590" />
+    <If Condition="((!HasQuest(11725)) &amp;&amp; (!IsQuestCompleted(11725)))">
+      <PickUp QuestName="Finding Pilot Tailspin" QuestId="11725" GiverName="Fizzcrank Fullthrottle" GiverId="25590" />
+    </If>
+    <TurnIn QuestName="Lefty Loosey, Righty Tighty" QuestId="11788" TurnInName="Jinky Wingnut" TurnInId="25747" />
+    <If Condition="((!HasQuest(11798)) &amp;&amp; (!IsQuestCompleted(11798)))">
+      <PickUp QuestName="The Gearmaster" QuestId="11798" GiverName="Jinky Wingnut" GiverId="25747" />
+    </If>
+    <TurnIn QuestName="Master and Servant" QuestId="11730" TurnInName="Crafty Wobblesprocket" TurnInId="25477" />
+    <TurnIn QuestName="Finding Pilot Tailspin" QuestId="11725" TurnInName="Iggy &quot;Tailspin&quot; Cogtoggle" TurnInId="25807" />
+    <If Condition="((!HasQuest(11726)) &amp;&amp; (!IsQuestCompleted(11726)))">
+      <PickUp QuestName="A Little Bit of Spice" QuestId="11726" GiverName="Iggy &quot;Tailspin&quot; Cogtoggle" GiverId="25807" />
+    </If>
+    <Objective QuestName="A Little Bit of Spice" QuestId="11726" Type="CollectItem" ItemId="34983" CollectCount="4" />
+    <TurnIn QuestName="A Little Bit of Spice" QuestId="11726" TurnInName="Iggy &quot;Tailspin&quot; Cogtoggle" TurnInId="25807" />
+    <If Condition="((!HasQuest(11728)) &amp;&amp; (!IsQuestCompleted(11728)))">
+      <PickUp QuestName="Lupus Pupus" QuestId="11728" GiverName="Iggy &quot;Tailspin&quot; Cogtoggle" GiverId="25807" />
+    </If>
+    <While Condition="((HasQuest(11728)) &amp;&amp; (!IsQuestCompleted(11728)))">
+      <CustomBehavior File="UseItemOn" QuestId="11728" MobId="0" ItemId="35121" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Lupus Pupus" QuestId="11728" Type="CollectItem" ItemId="35123" CollectCount="8" />
+    <TurnIn QuestName="Lupus Pupus" QuestId="11728" TurnInName="Iggy &quot;Tailspin&quot; Cogtoggle" TurnInId="25807" />
+    <If Condition="((!HasQuest(11795)) &amp;&amp; (!IsQuestCompleted(11795)))">
+      <PickUp QuestName="Emergency Protocol: Section 8.2, Paragraph C" QuestId="11795" GiverName="Iggy &quot;Tailspin&quot; Cogtoggle" GiverId="25807" />
+    </If>
+    <Objective QuestName="Emergency Protocol: Section 8.2, Paragraph C" QuestId="11795" Type="CollectItem" ItemId="35126" CollectCount="6" />
+    <TurnIn QuestName="Emergency Protocol: Section 8.2, Paragraph C" QuestId="11795" TurnInName="Iggy &quot;Tailspin&quot; Cogtoggle" TurnInId="25807" />
+    <If Condition="((!HasQuest(11796)) &amp;&amp; (!IsQuestCompleted(11796)))">
+      <PickUp QuestName="Emergency Protocol: Section 8.2, Paragraph D" QuestId="11796" GiverName="Iggy &quot;Tailspin&quot; Cogtoggle" GiverId="25807" />
+    </If>
+    <While Condition="((HasQuest(11796)) &amp;&amp; (!IsQuestCompleted(11796)))">
+      <RunTo X="3515.69" Y="5016.58" Z="-0.5506" />
+      <CustomBehavior File="UseItemOn" QuestId="11796" MobId="25847" ItemId="35224" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3515.69" Y="5016.58" Z="-0.5506" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(11796)) &amp;&amp; (!IsQuestCompleted(11796)))">
+      <RunTo X="3515.69" Y="5016.58" Z="-0.5506" />
+      <CustomBehavior File="UseItemOn" QuestId="11796" MobId="25847" ItemId="35224" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3515.69" Y="5016.58" Z="-0.5506" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(11796)) &amp;&amp; (!IsQuestCompleted(11796)))">
+      <RunTo X="3515.69" Y="5016.58" Z="-0.5506" />
+      <CustomBehavior File="UseItemOn" QuestId="11796" MobId="25847" ItemId="35224" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3515.69" Y="5016.58" Z="-0.5506" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Emergency Protocol: Section 8.2, Paragraph D" QuestId="11796" TurnInName="Iggy &quot;Tailspin&quot; Cogtoggle" TurnInId="25807" />
+    <If Condition="((!HasQuest(11873)) &amp;&amp; (!IsQuestCompleted(11873)))">
+      <PickUp QuestName="Give Fizzcrank the News" QuestId="11873" GiverName="Iggy &quot;Tailspin&quot; Cogtoggle" GiverId="25807" />
+    </If>
+    <TurnIn QuestName="Give Fizzcrank the News" QuestId="11873" TurnInName="Fizzcrank Fullthrottle" TurnInId="25590" />
+    <If Condition="((!HasQuest(11713)) &amp;&amp; (!IsQuestCompleted(11713)))">
+      <PickUp QuestName="Scouting the Sinkholes" QuestId="11713" GiverName="Abner Fizzletorque" GiverId="25780" />
+    </If>
+    <Objective QuestName="The Gearmaster" QuestId="11798" Type="KillMob" MobId="25834" KillCount="1" />
+    <Objective QuestName="The Gearmaster" QuestId="11798" Type="CollectItem" ItemId="35486" CollectCount="1" />
+    <While Condition="((HasQuest(11713)) &amp;&amp; (!IsQuestCompleted(11713)))">
+      <RunTo X="3487.67" Y="4516.64" Z="11.4416" />
+      <CustomBehavior File="UseItemOn" QuestId="11713" MobId="25664" ItemId="34920" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3487.67" Y="4516.64" Z="11.4416" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(11713)) &amp;&amp; (!IsQuestCompleted(11713)))">
+      <RunTo X="3487.67" Y="4516.64" Z="11.4416" />
+      <CustomBehavior File="UseItemOn" QuestId="11713" MobId="25664" ItemId="34920" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3487.67" Y="4516.64" Z="11.4416" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(11713)) &amp;&amp; (!IsQuestCompleted(11713)))">
+      <RunTo X="3487.67" Y="4516.64" Z="11.4416" />
+      <CustomBehavior File="UseItemOn" QuestId="11713" MobId="25664" ItemId="34920" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3487.67" Y="4516.64" Z="11.4416" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="The Gearmaster" QuestId="11798" TurnInName="Fizzcrank Fullthrottle" TurnInId="25590" />
+    <TurnIn QuestName="Scouting the Sinkholes" QuestId="11713" TurnInName="Abner Fizzletorque" TurnInId="25780" />
+    <If Condition="((!HasQuest(11715)) &amp;&amp; (!IsQuestCompleted(11715)))">
+      <PickUp QuestName="Fueling the Project" QuestId="11715" GiverName="Abner Fizzletorque" GiverId="25780" />
+    </If>
+    <While Condition="((HasQuest(11715)) &amp;&amp; (!IsQuestCompleted(11715)))">
+      <RunTo X="3642.05" Y="5075.58" Z="13.0899" />
+      <CustomBehavior File="UseItemOn" QuestId="11715" MobId="25781" ItemId="34975" NumOfTimes="100" Range="5" CollectionDistance="1000" X="3642.05" Y="5075.58" Z="13.0899" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Fueling the Project" QuestId="11715" TurnInName="Abner Fizzletorque" TurnInId="25780" />
+    <If Condition="((!HasQuest(11718)) &amp;&amp; (!IsQuestCompleted(11718)))">
+      <PickUp QuestName="A Bot in Mammoth's Clothing" QuestId="11718" GiverName="Abner Fizzletorque" GiverId="25780" />
+    </If>
+    <Objective QuestName="A Bot in Mammoth's Clothing" QuestId="11718" Type="CollectItem" ItemId="34977" CollectCount="6" />
+    <TurnIn QuestName="A Bot in Mammoth's Clothing" QuestId="11718" TurnInName="Abner Fizzletorque" TurnInId="25780" />
+    <TurnIn QuestName="King Mrgl-Mrgl" QuestId="11704" TurnInName="King Mrgl-Mrgl" TurnInId="25197" />
+    <PickUp QuestName="Learning to Communicate" QuestId="11571" GiverName="King Mrgl-Mrgl" GiverId="25197" />
+    <Objective QuestName="Learning to Communicate" QuestId="11571" Type="KillMob" MobId="25226" KillCount="1" />
+    <While Condition="((HasQuest(11571)) &amp;&amp; (!IsQuestCompleted(11571)))">
+      <CustomBehavior File="UseItemOn" QuestId="11571" MobId="0" ItemId="34598" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Learning to Communicate" QuestId="11571" Type="CollectItem" ItemId="34623" CollectCount="1" />
+    <Objective QuestName="Winterfin Commerce" QuestId="11559" Type="CollectItem" ItemId="34597" CollectCount="5" />
+    <TurnIn QuestName="Learning to Communicate" QuestId="11571" TurnInName="King Mrgl-Mrgl" TurnInId="25197" />
+    <If Condition="((!HasQuest(11559)) &amp;&amp; (!IsQuestCompleted(11559)))">
+      <PickUp QuestName="Winterfin Commerce" QuestId="11559" GiverName="King Mrgl-Mrgl" GiverId="25197" />
+    </If>
+    <TurnIn QuestName="Winterfin Commerce" QuestId="11559" TurnInName="Ahlurglgr" TurnInId="25206" />
+    <If Condition="((!HasQuest(11560)) &amp;&amp; (!IsQuestCompleted(11560)))">
+      <PickUp QuestName="Oh Noes, the Tadpoles!" QuestId="11560" GiverName="King Mrgl-Mrgl" GiverId="25197" />
+    </If>
+    <If Condition="((!HasQuest(11561)) &amp;&amp; (!IsQuestCompleted(11561)))">
+      <PickUp QuestName="Them!" QuestId="11561" GiverName="Brglmurgl" GiverId="25199" />
+    </If>
+    <While Condition="((HasQuest(12728)) &amp;&amp; (!IsQuestCompleted(12728)))">
+      <RunTo X="4133.5" Y="6261.69" Z="28.8527" />
+      <CustomBehavior File="UseItemOn" QuestId="12728" MobId="25309" ItemId="34669" NumOfTimes="100" Range="5" CollectionDistance="1000" X="4133.5" Y="6261.69" Z="28.8527" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Them!" QuestId="11561" TurnInName="Brglmurgl" TurnInId="25199" />
+    <TurnIn QuestName="Oh Noes, the Tadpoles!" QuestId="11560" TurnInName="King Mrgl-Mrgl" TurnInId="25197" />
+    <If Condition="((!HasQuest(11562)) &amp;&amp; (!IsQuestCompleted(11562)))">
+      <PickUp QuestName="I'm Being Blackmailed By My Cleaner" QuestId="11562" GiverName="King Mrgl-Mrgl" GiverId="25197" />
+    </If>
+    <TurnIn QuestName="I'm Being Blackmailed By My Cleaner" QuestId="11562" TurnInName="Mrmrglmr" TurnInId="25205" />
+    <If Condition="((!HasQuest(11563)) &amp;&amp; (!IsQuestCompleted(11563)))">
+      <PickUp QuestName="Grmmurggll Mrllggrl Glrggl!!!" QuestId="11563" GiverName="Mrmrglmr" GiverId="25205" />
+    </If>
+    <If Condition="((!HasQuest(11564)) &amp;&amp; (!IsQuestCompleted(11564)))">
+      <PickUp QuestName="Succulent Orca Stew" QuestId="11564" GiverName="Cleaver Bmurglbrm" GiverId="25211" />
+    </If>
+    <Objective QuestName="Grmmurggll Mrllggrl Glrggl!!!" QuestId="11563" Type="KillMob" MobId="25203" KillCount="1" />
+    <Objective QuestName="Grmmurggll Mrllggrl Glrggl!!!" QuestId="11563" Type="CollectItem" ItemId="34617" CollectCount="1" />
+    <Objective QuestName="Succulent Orca Stew" QuestId="11564" Type="KillMob" MobId="25204" KillCount="1" />
+    <Objective QuestName="Succulent Orca Stew" QuestId="11564" Type="CollectItem" ItemId="34618" CollectCount="7" />
+    <TurnIn QuestName="Grmmurggll Mrllggrl Glrggl!!!" QuestId="11563" TurnInName="Mrmrglmr" TurnInId="25205" />
+    <If Condition="((!HasQuest(11565)) &amp;&amp; (!IsQuestCompleted(11565)))">
+      <PickUp QuestName="The Spare Suit" QuestId="11565" GiverName="Mrmrglmr" GiverId="25205" />
+    </If>
+    <TurnIn QuestName="Succulent Orca Stew" QuestId="11564" TurnInName="Cleaver Bmurglbrm" TurnInId="25211" />
+    <TurnIn QuestName="The Spare Suit" QuestId="11565" TurnInName="King Mrgl-Mrgl" TurnInId="25197" />
+    <If Condition="((!HasQuest(11566)) &amp;&amp; (!IsQuestCompleted(11566)))">
+      <PickUp QuestName="Surrender... Not!" QuestId="11566" GiverName="King Mrgl-Mrgl" GiverId="25197" />
+    </If>
+    <While Condition="((HasQuest(11566)) &amp;&amp; (!IsQuestCompleted(11566)))">
+      <CustomBehavior File="UseItemOn" QuestId="11566" MobId="0" ItemId="34620" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Keymaster Urmgrgl" QuestId="11569" GiverName="Glrglrglr" GiverId="28375" />
+    <Objective QuestName="Keymaster Urmgrgl" QuestId="11569" Type="KillMob" MobId="25210" KillCount="1" />
+    <Objective QuestName="Keymaster Urmgrgl" QuestId="11569" Type="CollectItem" ItemId="34600" CollectCount="1" />
+    <While Condition="((HasQuest(11566)) &amp;&amp; (!IsQuestCompleted(11566)))">
+      <CustomBehavior File="UseItemOn" QuestId="11566" MobId="0" ItemId="34620" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Surrender... Not!" QuestId="11566" Type="KillMob" MobId="25209" KillCount="1" />
+    <Objective QuestName="Surrender... Not!" QuestId="11566" Type="CollectItem" ItemId="34621" CollectCount="1" />
+    <While Condition="((HasQuest(11566)) &amp;&amp; (!IsQuestCompleted(11566)))">
+      <CustomBehavior File="UseItemOn" QuestId="11566" MobId="0" ItemId="34620" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Keymaster Urmgrgl" QuestId="11569" TurnInName="Glrglrglr" TurnInId="28375" />
+    <If Condition="((!HasQuest(11570)) &amp;&amp; (!IsQuestCompleted(11570)))">
+      <PickUp QuestName="Escape from the Winterfin Caverns" QuestId="11570" GiverName="Lurgglbr" GiverId="25208" />
+    </If>
+    <TurnIn QuestName="Surrender... Not!" QuestId="11566" TurnInName="King Mrgl-Mrgl" TurnInId="25197" />
+    <TurnIn QuestName="Escape from the Winterfin Caverns" QuestId="11570" TurnInName="King Mrgl-Mrgl" TurnInId="25197" />
+    <While Condition="((HasQuest(11723)) &amp;&amp; (!IsQuestCompleted(11723)))">
+      <CustomBehavior File="UseItemOn" QuestId="11723" MobId="25629" ItemId="6948" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <!-- Use Hearthstone to Fizzcrank Airstrip -->
+    <CustomBehavior File="UseItem" ItemId="6948" />
+    <CustomBehavior File="WaitTimer" WaitTime="12000" />
+    <TurnIn QuestName="Monitoring the Rift: Winterfin Cavern" QuestId="12728" TurnInName="Librarian Garren" TurnInId="25291" />
+    <If Condition="((!HasQuest(11723)) &amp;&amp; (!IsQuestCompleted(11723)))">
+      <PickUp QuestName="Deploy the Shake-n-Quake!" QuestId="11723" GiverName="Abner Fizzletorque" GiverId="25780" />
+    </If>
+    <While Condition="((HasQuest(11723)) &amp;&amp; (!IsQuestCompleted(11723)))">
+      <CustomBehavior File="UseItemOn" QuestId="11723" MobId="25629" ItemId="34981" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Deploy the Shake-n-Quake!" QuestId="11723" Type="KillMob" MobId="25629" KillCount="1" />
+    <TurnIn QuestName="Deploy the Shake-n-Quake!" QuestId="11723" TurnInName="Abner Fizzletorque" TurnInId="25780" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Northrend (69-80)\Borean Tundra (70-72) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)_Dragonblight_(72-74)" />
+  </QuestOrder>
+</HBProfile>

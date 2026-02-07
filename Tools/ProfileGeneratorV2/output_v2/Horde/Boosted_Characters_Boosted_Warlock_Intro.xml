@@ -1,0 +1,33 @@
+<HBProfile>
+  <Name>Horde\Boosted Characters\Boosted Warlock Intro</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Boosted Characters\Boosted Warlock Intro" LogColor="Green" />
+    <PickUp QuestName="A New Beginning" QuestId="64046" />
+    <TurnIn QuestName="A New Beginning" QuestId="64046" TurnInName="Grol'dar" TurnInId="3324" />
+    <PickUp QuestName="Tools for Survival" QuestId="64048" GiverName="Grol'dar" GiverId="3324" />
+    <While Condition="((HasQuest(64048)) &amp;&amp; (!IsQuestCompleted(64048)))">
+      <CustomBehavior File="UseItemOn" QuestId="64048" MobId="0" ItemId="185964" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Tools for Survival" QuestId="64048" TurnInName="Grol'dar" TurnInId="3324" />
+    <PickUp QuestName="Combat Training" QuestId="64050" GiverName="Grol'dar" GiverId="3324" />
+    <TurnIn QuestName="Combat Training" QuestId="64050" TurnInName="Grol'dar" TurnInId="3324" />
+    <PickUp QuestName="Talented" QuestId="64052" GiverName="Grol'dar" GiverId="3324" />
+    <TurnIn QuestName="Talented" QuestId="64052" TurnInName="Grol'dar" TurnInId="3324" />
+    <PickUp QuestName="The Dark Portal" QuestId="64063" GiverName="Grol'dar" GiverId="3324" />
+    <TurnIn QuestName="The Dark Portal" QuestId="64063" TurnInName="Warlord Dar'toon" TurnInId="19254" />
+    <PickUp QuestName="Through the Dark Portal" QuestId="9407" GiverName="Warlord Dar'toon" GiverId="19254" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Boosted Characters\Boosted Warlock Intro Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

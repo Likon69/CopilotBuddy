@@ -1,0 +1,36 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Azshara (54-55)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>55</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Azshara (54-55)" LogColor="Green" />
+    <If Condition="((!HasQuest(3601)) &amp;&amp; (!IsQuestCompleted(3601)))">
+      <PickUp QuestName="Kim'jael Indeed!" QuestId="3601" GiverName="Kim'jael" GiverId="8420" />
+    </If>
+    <Objective QuestName="Kim'jael Indeed!" QuestId="3601" Type="CollectItem" ItemId="10717" CollectCount="1" />
+    <Objective QuestName="Kim'jael Indeed!" QuestId="3601" Type="CollectItem" ItemId="10715" CollectCount="1" />
+    <Objective QuestName="Kim'jael Indeed!" QuestId="3601" Type="CollectItem" ItemId="10722" CollectCount="1" />
+    <Objective QuestName="Kim'jael Indeed!" QuestId="3601" Type="CollectItem" ItemId="10718" CollectCount="1" />
+    <TurnIn QuestName="Kim'jael Indeed!" QuestId="3601" TurnInName="Kim'jael" TurnInId="8420" />
+    <If Condition="((!HasQuest(5534)) &amp;&amp; (!IsQuestCompleted(5534)))">
+      <PickUp QuestName="Kim'jael's &quot;Missing&quot; Equipment" QuestId="5534" GiverName="Kim'jael" GiverId="8420" />
+    </If>
+    <Objective QuestName="Kim'jael's &quot;Missing&quot; Equipment" QuestId="5534" Type="CollectItem" ItemId="13815" CollectCount="1" />
+    <TurnIn QuestName="Kim'jael's &quot;Missing&quot; Equipment" QuestId="5534" TurnInName="Kim'jael" TurnInId="8420" />
+    <Objective QuestName="It's a Secret to Everybody" QuestId="3908" Type="CollectItem" ItemId="11133" CollectCount="1" />
+    <Objective QuestName="Bone-Bladed Weapons" QuestId="4300" Type="CollectItem" ItemId="11477" CollectCount="8" />
+    <Objective QuestName="Felnok Steelspring" QuestId="4808" Type="CollectItem" ItemId="12438" CollectCount="1" />
+    <TurnIn QuestName="Bone-Bladed Weapons" QuestId="4300" TurnInName="Jes'rimon" TurnInId="8659" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Azshara (54-55) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Felwood_(55-55)" />
+  </QuestOrder>
+</HBProfile>

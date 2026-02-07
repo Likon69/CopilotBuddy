@@ -1,0 +1,298 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Stranglethorn Vale (35-36)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>36</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="605" Name="Singing Blue Shards">
+    <Objective Type="KillMob" MobId="689" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11550.0" Y="-885.743" Z="68.8292" />
+        <Hotspot X="-11938.4" Y="545.611" Z="31.9846" />
+        <Hotspot X="-11955.1" Y="480.523" Z="24.0685" />
+        <Hotspot X="-11921.0" Y="618.742" Z="23.4413" />
+        <Hotspot X="-11951.3" Y="475.156" Z="24.6139" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9436" Name="Bloodscalp Insight">
+    <Objective Type="KillMob" MobId="697" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-12004.6" Y="338.394" Z="1.9176" />
+        <Hotspot X="-11995.5" Y="337.262" Z="1.7988" />
+        <Hotspot X="-11882.3" Y="277.931" Z="12.3391" />
+        <Hotspot X="-11938.3" Y="270.393" Z="13.6539" />
+        <Hotspot X="-12050.5" Y="286.567" Z="4.3814" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="187" Name="Tiger Mastery">
+    <Objective Type="KillMob" MobId="1085" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11852.9" Y="182.856" Z="16.2022" />
+        <Hotspot X="-11875.9" Y="224.407" Z="15.9899" />
+        <Hotspot X="-12025.4" Y="209.851" Z="15.047" />
+        <Hotspot X="-11978.1" Y="120.834" Z="11.4165" />
+        <Hotspot X="-11976.5" Y="173.143" Z="15.6137" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="195" Name="Raptor Mastery">
+    <Objective Type="KillMob" MobId="686" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-12213.3" Y="89.2849" Z="23.0177" />
+        <Hotspot X="-12252.4" Y="53.6517" Z="19.2489" />
+        <Hotspot X="-12184.9" Y="117.131" Z="14.3079" />
+        <Hotspot X="-12180.8" Y="174.726" Z="17.3447" />
+        <Hotspot X="-12214.7" Y="153.484" Z="16.3564" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="568" Name="The Defense of Grom'gol">
+    <Objective Type="KillMob" MobId="686" KillCount="15">
+      <Hotspots>
+        <Hotspot X="-12213.3" Y="89.2849" Z="23.0177" />
+        <Hotspot X="-12252.4" Y="53.6517" Z="19.2489" />
+        <Hotspot X="-12184.9" Y="117.131" Z="14.3079" />
+        <Hotspot X="-12180.8" Y="174.726" Z="17.3447" />
+        <Hotspot X="-12214.7" Y="153.484" Z="16.3564" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="629" Name="The Vile Reef">
+    <Objective Type="CollectItem" ItemId="4094" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Gri" Id="58" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-12148.3" Y="636.77" Z="-70.06" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="582" Name="Headhunting">
+    <Objective Type="KillMob" MobId="671" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11554.8" Y="633.098" Z="62.5965" />
+        <Hotspot X="-11618.6" Y="664.541" Z="54.8951" />
+        <Hotspot X="-11612.2" Y="675.246" Z="54.6317" />
+        <Hotspot X="-11631.4" Y="709.754" Z="41.3573" />
+        <Hotspot X="-11527.9" Y="718.947" Z="59.9292" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="188" Name="Tiger Mastery">
+    <Objective Type="KillMob" MobId="729" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11908.5" Y="165.374" Z="41.4222" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1182" Name="Goblin Sponsorship">
+    <Objective Type="KillMob" MobId="4723" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11949.5" Y="-500.392" Z="30.7014" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="5852" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Cozzle" Id="20691" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-12033.5" Y="-544.27" Z="14.47" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="213" Name="Hostile Takeover">
+    <Objective Type="KillMob" MobId="1096" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11863.2" Y="-638.984" Z="14.7718" />
+        <Hotspot X="-11910.8" Y="-584.254" Z="17.0121" />
+        <Hotspot X="-11867.1" Y="-635.283" Z="15.5122" />
+        <Hotspot X="-11916.7" Y="-616.969" Z="16.4366" />
+        <Hotspot X="-12003.1" Y="-707.455" Z="14.4309" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="570" Name="Mok'thardin's Enchantment">
+    <Objective Type="KillMob" MobId="772" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-12914.2" Y="-280.606" Z="6.3018" />
+        <Hotspot X="-12517.5" Y="-352.893" Z="16.4823" />
+        <Hotspot X="-12650.2" Y="-114.033" Z="16.8294" />
+        <Hotspot X="-12687.1" Y="-243.015" Z="38.3067" />
+        <Hotspot X="-12307.8" Y="-679.962" Z="15.5986" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="684" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-12979.5" Y="-304.001" Z="13.7637" />
+        <Hotspot X="-12643.6" Y="-225.073" Z="39.1751" />
+        <Hotspot X="-12312.9" Y="-748.511" Z="13.3077" />
+        <Hotspot X="-12347.8" Y="-710.986" Z="17.0866" />
+        <Hotspot X="-12776.8" Y="-113.877" Z="4.3492" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="192" Name="Panther Mastery">
+    <Objective Type="KillMob" MobId="684" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-12979.5" Y="-304.001" Z="13.7637" />
+        <Hotspot X="-12643.6" Y="-225.073" Z="39.1751" />
+        <Hotspot X="-12312.9" Y="-748.511" Z="13.3077" />
+        <Hotspot X="-12347.8" Y="-710.986" Z="17.0866" />
+        <Hotspot X="-12776.8" Y="-113.877" Z="4.3492" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="569" Name="The Defense of Grom'gol">
+    <Objective Type="KillMob" MobId="1142" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-12503.0" Y="-150.428" Z="13.1276" />
+        <Hotspot X="-12502.0" Y="-161.412" Z="12.7526" />
+        <Hotspot X="-12482.7" Y="-171.811" Z="13.2883" />
+        <Hotspot X="-12455.2" Y="-197.203" Z="15.2007" />
+        <Hotspot X="-12471.8" Y="-151.293" Z="13.108" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1144" KillCount="5">
+      <Hotspots>
+        <Hotspot X="-12490.2" Y="-144.948" Z="13.233" />
+        <Hotspot X="-12517.0" Y="-84.2288" Z="16.1056" />
+        <Hotspot X="-12489.4" Y="-171.436" Z="12.7854" />
+        <Hotspot X="-12479.4" Y="-151.314" Z="13.858" />
+        <Hotspot X="-12447.1" Y="-214.01" Z="14.9404" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stranglethorn Vale (35-36)" LogColor="Green" />
+    <TurnIn QuestName="Goblin Sponsorship" QuestId="1180" TurnInName="Wharfmaster Lozgil" TurnInId="4631" />
+    <If Condition="((!HasQuest(1181)) &amp;&amp; (!IsQuestCompleted(1181)))">
+      <PickUp QuestName="Goblin Sponsorship" QuestId="1181" GiverName="Wharfmaster Lozgil" GiverId="4631" />
+    </If>
+    <PickUp QuestName="Singing Blue Shards" QuestId="605" GiverName="Crank Fizzlebub" GiverId="2498" />
+    <CustomBehavior File="SetHearthstone" MobId="7733" AreaId="440" X="-7158.96" Y="-3841.61" Z="8.8481" /> <!-- Set hearth: Booty Bay -->
+    <PickUp QuestName="Investigate the Camp" QuestId="201" GiverName="Krazek" GiverId="773" />
+    <PickUp QuestName="Bloodscalp Ears" QuestId="189" GiverName="Kebok" GiverId="737" />
+    <PickUp QuestName="Hostile Takeover" QuestId="213" GiverName="Kebok" GiverId="737" />
+    <TurnIn QuestName="Goblin Sponsorship" QuestId="1181" TurnInName="Baron Revilgaz" TurnInId="2496" />
+    <If Condition="((!HasQuest(1182)) &amp;&amp; (!IsQuestCompleted(1182)))">
+      <PickUp QuestName="Goblin Sponsorship" QuestId="1182" GiverName="Baron Revilgaz" GiverId="2496" />
+    </If>
+    <PickUp QuestName="The Defense of Grom'gol" QuestId="568" GiverName="Commander Aggro'gosh" GiverId="2464" />
+    <PickUp QuestName="Mok'thardin's Enchantment" QuestId="570" GiverName="Far Seer Mok'thardin" GiverId="2465" />
+    <PickUp QuestName="Bloodscalp Insight" QuestId="9436" GiverName="Nemeth Hawkeye" GiverId="17094" />
+    <PickUp QuestName="Hunt for Yenniku" QuestId="581" GiverName="Nimboya" GiverId="2497" />
+    <PickUp QuestName="Bloody Bone Necklaces" QuestId="596" GiverName="Kin'weelay" GiverId="2519" />
+    <PickUp QuestName="The Vile Reef" QuestId="629" GiverName="Kin'weelay" GiverId="2519" />
+    <Objective QuestName="Singing Blue Shards" QuestId="605" Type="KillMob" MobId="689" KillCount="1" />
+    <Objective QuestName="Singing Blue Shards" QuestId="605" Type="CollectItem" ItemId="3918" CollectCount="10" />
+    <Objective QuestName="Bloodscalp Insight" QuestId="9436" Type="KillMob" MobId="697" KillCount="1" />
+    <Objective QuestName="Bloodscalp Insight" QuestId="9436" Type="CollectItem" ItemId="23679" CollectCount="1" />
+    <Objective QuestName="Hunt for Yenniku" QuestId="581" Type="CollectItem" ItemId="3901" CollectCount="9" />
+    <Objective QuestName="Bloodscalp Ears" QuestId="189" Type="CollectItem" ItemId="1519" CollectCount="15" />
+    <Objective QuestName="Bloody Bone Necklaces" QuestId="596" Type="CollectItem" ItemId="3915" CollectCount="25" />
+    <Objective QuestName="Tiger Mastery" QuestId="187" Type="KillMob" MobId="1085" KillCount="10" />
+    <Objective QuestName="Raptor Mastery" QuestId="195" Type="KillMob" MobId="686" KillCount="10" />
+    <Objective QuestName="The Defense of Grom'gol" QuestId="568" Type="KillMob" MobId="686" KillCount="15" />
+    <TurnIn QuestName="The Defense of Grom'gol" QuestId="568" TurnInName="Commander Aggro'gosh" TurnInId="2464" />
+    <If Condition="((!HasQuest(569)) &amp;&amp; (!IsQuestCompleted(569)))">
+      <PickUp QuestName="The Defense of Grom'gol" QuestId="569" GiverName="Commander Aggro'gosh" GiverId="2464" />
+    </If>
+    <TurnIn QuestName="Bloodscalp Insight" QuestId="9436" TurnInName="Nemeth Hawkeye" TurnInId="17094" />
+    <If Condition="((!HasQuest(9457)) &amp;&amp; (!IsQuestCompleted(9457)))">
+      <PickUp QuestName="An Unusual Patron" QuestId="9457" GiverName="Nemeth Hawkeye" GiverId="17094" />
+    </If>
+    <TurnIn QuestName="Hunt for Yenniku" QuestId="581" TurnInName="Nimboya" TurnInId="2497" />
+    <If Condition="((!HasQuest(582)) &amp;&amp; (!IsQuestCompleted(582)))">
+      <PickUp QuestName="Headhunting" QuestId="582" GiverName="Nimboya" GiverId="2497" />
+    </If>
+    <TurnIn QuestName="Bloody Bone Necklaces" QuestId="596" TurnInName="Kin'weelay" TurnInId="2519" />
+    <Objective QuestName="The Vile Reef" QuestId="629" Type="CollectItem" ItemId="4094" CollectCount="1" />
+    <While Condition="((HasQuest(9457)) &amp;&amp; (!IsQuestCompleted(9457)))">
+      <CustomBehavior File="UseItemOn" QuestId="9457" MobId="0" ItemId="23680" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="An Unusual Patron" QuestId="9457" Type="KillMob" MobId="17207" KillCount="1" />
+    <Objective QuestName="An Unusual Patron" QuestId="9457" Type="CollectItem" ItemId="23681" CollectCount="1" />
+    <Objective QuestName="Headhunting" QuestId="582" Type="KillMob" MobId="671" KillCount="1" />
+    <Objective QuestName="Headhunting" QuestId="582" Type="CollectItem" ItemId="1532" CollectCount="20" />
+    <If Condition="((!HasQuest(192)) &amp;&amp; (!IsQuestCompleted(192)))">
+      <PickUp QuestName="Panther Mastery" QuestId="192" GiverName="Sir S. J. Erlgadin" GiverId="718" />
+    </If>
+    <TurnIn QuestName="Tiger Mastery" QuestId="187" TurnInName="Ajeck Rouack" TurnInId="717" />
+    <If Condition="((!HasQuest(188)) &amp;&amp; (!IsQuestCompleted(188)))">
+      <PickUp QuestName="Tiger Mastery" QuestId="188" GiverName="Ajeck Rouack" GiverId="717" />
+    </If>
+    <TurnIn QuestName="Raptor Mastery" QuestId="195" TurnInName="Hemet Nesingwary" TurnInId="715" />
+    <If Condition="((!HasQuest(196)) &amp;&amp; (!IsQuestCompleted(196)))">
+      <PickUp QuestName="Raptor Mastery" QuestId="196" GiverName="Hemet Nesingwary" GiverId="715" />
+    </If>
+    <TurnIn QuestName="Hemet Nesingwary" QuestId="5762" TurnInName="Hemet Nesingwary" TurnInId="715" />
+    <TurnIn QuestName="Hunting in Stranglethorn" QuestId="5763" TurnInName="Hemet Nesingwary" TurnInId="715" />
+    <If Condition="((!HasQuest(338)) &amp;&amp; (!IsQuestCompleted(338)))">
+      <PickUp QuestName="The Green Hills of Stranglethorn" QuestId="338" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <If Condition="((!HasQuest(339)) &amp;&amp; (!IsQuestCompleted(339)))">
+      <PickUp QuestName="Chapter I" QuestId="339" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <TurnIn QuestName="Chapter I" QuestId="339" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <If Condition="((!HasQuest(340)) &amp;&amp; (!IsQuestCompleted(340)))">
+      <PickUp QuestName="Chapter II" QuestId="340" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <TurnIn QuestName="Chapter II" QuestId="340" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <If Condition="((!HasQuest(341)) &amp;&amp; (!IsQuestCompleted(341)))">
+      <PickUp QuestName="Chapter III" QuestId="341" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <TurnIn QuestName="Chapter III" QuestId="341" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <If Condition="((!HasQuest(342)) &amp;&amp; (!IsQuestCompleted(342)))">
+      <PickUp QuestName="Chapter IV" QuestId="342" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <TurnIn QuestName="Chapter IV" QuestId="342" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <TurnIn QuestName="The Green Hills of Stranglethorn" QuestId="338" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <Objective QuestName="Tiger Mastery" QuestId="188" Type="KillMob" MobId="729" KillCount="1" />
+    <Objective QuestName="Tiger Mastery" QuestId="188" Type="CollectItem" ItemId="3879" CollectCount="1" />
+    <TurnIn QuestName="Tiger Mastery" QuestId="188" TurnInName="Ajeck Rouack" TurnInId="717" />
+    <Objective QuestName="Goblin Sponsorship" QuestId="1182" Type="KillMob" MobId="4723" KillCount="1" />
+    <Objective QuestName="Goblin Sponsorship" QuestId="1182" Type="CollectItem" ItemId="5851" CollectCount="1" />
+    <Objective QuestName="Goblin Sponsorship" QuestId="1182" Type="CollectItem" ItemId="5852" CollectCount="1" />
+    <Objective QuestName="Hostile Takeover" QuestId="213" Type="KillMob" MobId="1096" KillCount="1" />
+    <Objective QuestName="Hostile Takeover" QuestId="213" Type="CollectItem" ItemId="4106" CollectCount="8" />
+    <Objective QuestName="Mok'thardin's Enchantment" QuestId="570" Type="KillMob" MobId="772" KillCount="1" />
+    <Objective QuestName="Mok'thardin's Enchantment" QuestId="570" Type="CollectItem" ItemId="3839" CollectCount="1" />
+    <Objective QuestName="Mok'thardin's Enchantment" QuestId="570" Type="KillMob" MobId="684" KillCount="1" />
+    <Objective QuestName="Mok'thardin's Enchantment" QuestId="570" Type="CollectItem" ItemId="3838" CollectCount="8" />
+    <Objective QuestName="Panther Mastery" QuestId="192" Type="KillMob" MobId="684" KillCount="10" />
+    <Objective QuestName="The Defense of Grom'gol" QuestId="569" Type="KillMob" MobId="1142" KillCount="10" />
+    <Objective QuestName="The Defense of Grom'gol" QuestId="569" Type="KillMob" MobId="1144" KillCount="5" />
+    <TurnIn QuestName="Panther Mastery" QuestId="192" TurnInName="Sir S. J. Erlgadin" TurnInId="718" />
+    <If Condition="((!HasQuest(193)) &amp;&amp; (!IsQuestCompleted(193)))">
+      <PickUp QuestName="Panther Mastery" QuestId="193" GiverName="Sir S. J. Erlgadin" GiverId="718" />
+    </If>
+    <TurnIn QuestName="Singing Blue Shards" QuestId="605" TurnInName="Crank Fizzlebub" TurnInId="2498" />
+    <TurnIn QuestName="Bloodscalp Ears" QuestId="189" TurnInName="Kebok" TurnInId="737" />
+    <TurnIn QuestName="Hostile Takeover" QuestId="213" TurnInName="Kebok" TurnInId="737" />
+    <TurnIn QuestName="Investigate the Camp" QuestId="201" TurnInName="Krazek" TurnInId="773" />
+    <TurnIn QuestName="Goblin Sponsorship" QuestId="1182" TurnInName="Baron Revilgaz" TurnInId="2496" />
+    <If Condition="((!HasQuest(1183)) &amp;&amp; (!IsQuestCompleted(1183)))">
+      <PickUp QuestName="Goblin Sponsorship" QuestId="1183" GiverName="Baron Revilgaz" GiverId="2496" />
+    </If>
+    <TurnIn QuestName="The Defense of Grom'gol" QuestId="569" TurnInName="Commander Aggro'gosh" TurnInId="2464" />
+    <TurnIn QuestName="Mok'thardin's Enchantment" QuestId="570" TurnInName="Far Seer Mok'thardin" TurnInId="2465" />
+    <TurnIn QuestName="An Unusual Patron" QuestId="9457" TurnInName="Nemeth Hawkeye" TurnInId="17094" />
+    <TurnIn QuestName="Headhunting" QuestId="582" TurnInName="Nimboya" TurnInId="2497" />
+    <TurnIn QuestName="The Vile Reef" QuestId="629" TurnInName="Kin'weelay" TurnInId="2519" />
+    <PickUp QuestName="Trollbane" QuestId="638" GiverName="Nimboya" GiverId="2497" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stranglethorn Vale (35-36) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Arathi_Highlands_(36-37)" />
+  </QuestOrder>
+</HBProfile>

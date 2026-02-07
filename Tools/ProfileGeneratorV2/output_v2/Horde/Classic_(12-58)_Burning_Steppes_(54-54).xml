@@ -1,0 +1,77 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Burning Steppes (54-54)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="3822" Name="Krom'Grul">
+    <Objective Type="KillMob" MobId="8977" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-7957.11" Y="-2600.06" Z="173.93" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4061" Name="The Rise of the Machines">
+    <Objective Type="KillMob" MobId="7039" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-7764.63" Y="-2241.76" Z="133.567" />
+        <Hotspot X="-7821.13" Y="-2086.77" Z="133.466" />
+        <Hotspot X="-7790.35" Y="-2277.33" Z="136.814" />
+        <Hotspot X="-7820.84" Y="-2072.66" Z="133.466" />
+        <Hotspot X="-7739.3" Y="-2219.71" Z="133.581" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Burning Steppes (54-54)" LogColor="Green" />
+    <PickUp QuestName="The Rise of the Machines" QuestId="4061" GiverName="Hierophant Theodora Mulvadania" GiverId="9079" />
+    <PickUp QuestName="Dreadmaul Rock" QuestId="3821" GiverName="Thal'trak Proudtusk" GiverId="9082" />
+    <PickUp QuestName="Broodling Essence" QuestId="4726" GiverName="Tinkee Steamboil" GiverId="10267" />
+    <PickUp QuestName="Tablet of the Seven" QuestId="4296" GiverName="Maxwort Uberglint" GiverId="9536" />
+    <TurnIn QuestName="Yuka Screwspigot" QuestId="4324" TurnInName="Yuka Screwspigot" TurnInId="9544" />
+    <While Condition="((HasQuest(4726)) &amp;&amp; (!IsQuestCompleted(4726)))">
+      <CustomBehavior File="UseItemOn" QuestId="4726" MobId="0" ItemId="12284" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Broodling Essence" QuestId="4726" Type="CollectItem" ItemId="12283" CollectCount="8" />
+    <If Condition="((!HasQuest(4022)) &amp;&amp; (!IsQuestCompleted(4022)))">
+      <PickUp QuestName="A Taste of Flame" QuestId="4022" GiverName="Cyrus Therepentous" GiverId="9459" />
+    </If>
+    <TurnIn QuestName="A Taste of Flame" QuestId="4022" TurnInName="Cyrus Therepentous" TurnInId="9459" />
+    <TurnIn QuestName="Dreadmaul Rock" QuestId="3821" TurnInName="Sha'ni Proudtusk" TurnInId="9136" />
+    <If Condition="((!HasQuest(3822)) &amp;&amp; (!IsQuestCompleted(3822)))">
+      <PickUp QuestName="Krom'Grul" QuestId="3822" GiverName="Sha'ni Proudtusk" GiverId="9136" />
+    </If>
+    <Objective QuestName="Krom'Grul" QuestId="3822" Type="KillMob" MobId="8977" KillCount="1" />
+    <Objective QuestName="Krom'Grul" QuestId="3822" Type="CollectItem" ItemId="11058" CollectCount="1" />
+    <Objective QuestName="Krom'Grul" QuestId="3822" Type="KillMob" MobId="8977" KillCount="1" />
+    <Objective QuestName="Krom'Grul" QuestId="3822" Type="CollectItem" ItemId="11058" CollectCount="1" />
+    <Objective QuestName="Krom'Grul" QuestId="3822" Type="KillMob" MobId="8977" KillCount="1" />
+    <Objective QuestName="Krom'Grul" QuestId="3822" Type="CollectItem" ItemId="11058" CollectCount="1" />
+    <Objective QuestName="Tablet of the Seven" QuestId="4296" Type="CollectItem" ItemId="11470" CollectCount="1" />
+    <Objective QuestName="The Rise of the Machines" QuestId="4061" Type="KillMob" MobId="7039" KillCount="1" />
+    <Objective QuestName="The Rise of the Machines" QuestId="4061" Type="CollectItem" ItemId="11266" CollectCount="10" />
+    <TurnIn QuestName="Broodling Essence" QuestId="4726" TurnInName="Tinkee Steamboil" TurnInId="10267" />
+    <If Condition="((!HasQuest(4808)) &amp;&amp; (!IsQuestCompleted(4808)))">
+      <PickUp QuestName="Felnok Steelspring" QuestId="4808" GiverName="Tinkee Steamboil" GiverId="10267" />
+    </If>
+    <TurnIn QuestName="Tablet of the Seven" QuestId="4296" TurnInName="Maxwort Uberglint" TurnInId="9536" />
+    <TurnIn QuestName="The Rise of the Machines" QuestId="4061" TurnInName="Hierophant Theodora Mulvadania" TurnInId="9079" />
+    <If Condition="((!HasQuest(4062)) &amp;&amp; (!IsQuestCompleted(4062)))">
+      <PickUp QuestName="The Rise of the Machines" QuestId="4062" GiverName="Hierophant Theodora Mulvadania" GiverId="9079" />
+    </If>
+    <TurnIn QuestName="Krom'Grul" QuestId="3822" TurnInName="Thal'trak Proudtusk" TurnInId="9082" />
+    <TurnIn QuestName="The Rise of the Machines" QuestId="4062" TurnInName="Lotwil Veriatus" TurnInId="2921" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Burning Steppes (54-54) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Azshara_(54-55)" />
+  </QuestOrder>
+</HBProfile>

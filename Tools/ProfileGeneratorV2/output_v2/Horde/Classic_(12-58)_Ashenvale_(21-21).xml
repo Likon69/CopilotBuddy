@@ -1,0 +1,69 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Ashenvale (21-21)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Ashenvale (21-21)" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(1528)) &amp;&amp; (!IsQuestCompleted(1528)))">
+        <PickUp QuestName="Call of Water" QuestId="1528" GiverName="Searn Firewarder" GiverId="5892" />
+      </If>
+      <TurnIn QuestName="Call of Water" QuestId="1528" TurnInName="Islen Waterseer" TurnInId="5901" />
+      <If Condition="((!HasQuest(1530)) &amp;&amp; (!IsQuestCompleted(1530)))">
+        <PickUp QuestName="Call of Water" QuestId="1530" GiverName="Islen Waterseer" GiverId="5901" />
+      </If>
+    </If>
+    <TurnIn QuestName="Call of Water" QuestId="1530" TurnInName="Brine" TurnInId="5899" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(1535)) &amp;&amp; (!IsQuestCompleted(1535)))">
+        <PickUp QuestName="Call of Water" QuestId="1535" GiverName="Brine" GiverId="5899" />
+      </If>
+      <While Condition="((HasQuest(1535)) &amp;&amp; (!IsQuestCompleted(1535)))">
+        <CustomBehavior File="UseItemOn" QuestId="1535" MobId="0" ItemId="7766" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="Call of Water" QuestId="1535" Type="CollectItem" ItemId="7769" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Call of Water" QuestId="1535" TurnInName="Brine" TurnInId="5899" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(1536)) &amp;&amp; (!IsQuestCompleted(1536)))">
+        <PickUp QuestName="Call of Water" QuestId="1536" GiverName="Brine" GiverId="5899" />
+      </If>
+      <While Condition="((HasQuest(1536)) &amp;&amp; (!IsQuestCompleted(1536)))">
+        <CustomBehavior File="UseItemOn" QuestId="1536" MobId="0" ItemId="7768" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="Call of Water" QuestId="1536" Type="CollectItem" ItemId="7771" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Call of Water" QuestId="1536" TurnInName="Brine" TurnInId="5899" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(1534)) &amp;&amp; (!IsQuestCompleted(1534)))">
+        <PickUp QuestName="Call of Water" QuestId="1534" GiverName="Brine" GiverId="5899" />
+      </If>
+    </If>
+    <TurnIn QuestName="The Ashenvale Hunt" QuestId="6382" TurnInName="Senani Thunderheart" TurnInId="12696" />
+    <PickUp QuestName="The Ashenvale Hunt" QuestId="6383" GiverName="Senani Thunderheart" GiverId="12696" />
+    <While Condition="((HasQuest(1534)) &amp;&amp; (!IsQuestCompleted(1534)))">
+      <CustomBehavior File="UseItemOn" QuestId="1534" MobId="0" ItemId="7767" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Call of Water" QuestId="1534" Type="CollectItem" ItemId="7770" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Trouble in the Deeps" QuestId="6562" TurnInName="Je'neu Sancrea" TurnInId="12736" />
+    <PickUp QuestName="Naga at the Zoram Strand" QuestId="6442" GiverName="Marukai" GiverId="12719" />
+    <Objective QuestName="Naga at the Zoram Strand" QuestId="6442" Type="CollectItem" ItemId="5490" CollectCount="20" />
+    <TurnIn QuestName="Naga at the Zoram Strand" QuestId="6442" TurnInName="Marukai" TurnInId="12719" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Ashenvale (21-21) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_The_Barrens_(21-23)" />
+  </QuestOrder>
+</HBProfile>

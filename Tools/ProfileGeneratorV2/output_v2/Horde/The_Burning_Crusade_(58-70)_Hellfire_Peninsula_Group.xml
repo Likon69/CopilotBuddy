@@ -1,0 +1,184 @@
+<HBProfile>
+  <Name>Horde\The Burning Crusade (58-70)\Hellfire Peninsula Group</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="10834" Name="Grillok &quot;Darkeye&quot;">
+    <Objective Type="KillMob" MobId="19457" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-981.151" Y="2096.68" Z="22.692" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10136" Name="Cruel's Intentions">
+    <Objective Type="KillMob" MobId="19191" KillCount="1">
+      <Hotspots>
+        <Hotspot X="394.614" Y="3276.6" Z="74.6257" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9466" Name="Wanted: Blacktalon the Savage">
+    <Objective Type="KillMob" MobId="17057" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-759.98" Y="3816.24" Z="20.0019" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10132" Name="Colossal Menace">
+    <Objective Type="KillMob" MobId="19188" KillCount="5">
+      <Hotspots>
+        <Hotspot X="-114.469" Y="4818.41" Z="39.5818" />
+        <Hotspot X="-63.3096" Y="4868.44" Z="55.968" />
+        <Hotspot X="-32.0013" Y="4804.67" Z="46.9591" />
+        <Hotspot X="-11.9675" Y="4854.78" Z="56.1866" />
+        <Hotspot X="21.6032" Y="4830.08" Z="61.6036" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="10134" Name="Crimson Crystal Clue">
+    <Objective Type="KillMob" MobId="19188" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-114.469" Y="4818.41" Z="39.5818" />
+        <Hotspot X="-63.3096" Y="4868.44" Z="55.968" />
+        <Hotspot X="-32.0013" Y="4804.67" Z="46.9591" />
+        <Hotspot X="-11.9675" Y="4854.78" Z="56.1866" />
+        <Hotspot X="21.6032" Y="4830.08" Z="61.6036" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\The Burning Crusade (58-70)\Hellfire Peninsula Group" LogColor="Green" />
+    <If Condition="Me.Level &lt; 58">
+      <GrindTo Level="58" />
+    </If>
+    <PickUp QuestName="Through the Dark Portal" QuestId="9407" GiverName="Warlord Dar'toon" GiverId="19254" />
+    <TurnIn QuestName="Through the Dark Portal" QuestId="9407" TurnInName="Lieutenant General Orion" TurnInId="19253" />
+    <If Condition="((!HasQuest(10120)) &amp;&amp; (!IsQuestCompleted(10120)))">
+      <PickUp QuestName="Arrival in Outland" QuestId="10120" GiverName="Lieutenant General Orion" GiverId="19253" />
+    </If>
+    <TurnIn QuestName="Arrival in Outland" QuestId="10120" TurnInName="Vlagga Freyfeather" TurnInId="18930" />
+    <If Condition="((!HasQuest(10289)) &amp;&amp; (!IsQuestCompleted(10289)))">
+      <PickUp QuestName="Journey to Thrallmar" QuestId="10289" GiverName="Vlagga Freyfeather" GiverId="18930" />
+    </If>
+    <TurnIn QuestName="Journey to Thrallmar" QuestId="10289" TurnInName="General Krakork" TurnInId="19255" />
+    <PickUp QuestName="Bonechewer Blood" QuestId="10450" GiverName="Vurtok Axebreaker" GiverId="21256" />
+    <Objective QuestName="Bonechewer Blood" QuestId="10450" Type="CollectItem" ItemId="30327" CollectCount="12" />
+    <TurnIn QuestName="Bonechewer Blood" QuestId="10450" TurnInName="Vurtok Axebreaker" TurnInId="21256" />
+    <If Condition="((!HasQuest(10449)) &amp;&amp; (!IsQuestCompleted(10449)))">
+      <PickUp QuestName="Apothecary Zelana" QuestId="10449" GiverName="Vurtok Axebreaker" GiverId="21256" />
+    </If>
+    <TurnIn QuestName="Apothecary Zelana" QuestId="10449" TurnInName="Apothecary Zelana" TurnInId="21257" />
+    <If Condition="((!HasQuest(10242)) &amp;&amp; (!IsQuestCompleted(10242)))">
+      <PickUp QuestName="Spinebreaker Post" QuestId="10242" GiverName="Apothecary Zelana" GiverId="21257" />
+    </If>
+    <TurnIn QuestName="Spinebreaker Post" QuestId="10242" TurnInName="Apothecary Albreck" TurnInId="21279" />
+    <If Condition="((!HasQuest(10538)) &amp;&amp; (!IsQuestCompleted(10538)))">
+      <PickUp QuestName="Boiling Blood" QuestId="10538" GiverName="Apothecary Albreck" GiverId="21279" />
+    </If>
+    <Objective QuestName="Boiling Blood" QuestId="10538" Type="CollectItem" ItemId="30425" CollectCount="12" />
+    <Objective QuestName="Boiling Blood" QuestId="10538" Type="CollectItem" ItemId="30430" CollectCount="12" />
+    <TurnIn QuestName="Boiling Blood" QuestId="10538" TurnInName="Apothecary Albreck" TurnInId="21279" />
+    <If Condition="((!HasQuest(10835)) &amp;&amp; (!IsQuestCompleted(10835)))">
+      <PickUp QuestName="Apothecary Antonivich" QuestId="10835" GiverName="Apothecary Albreck" GiverId="21279" />
+    </If>
+    <TurnIn QuestName="Apothecary Antonivich" QuestId="10835" TurnInName="Apothecary Antonivich" TurnInId="16588" />
+    <If Condition="((!HasQuest(10864)) &amp;&amp; (!IsQuestCompleted(10864)))">
+      <PickUp QuestName="A Burden of Souls" QuestId="10864" GiverName="Apothecary Antonivich" GiverId="16588" />
+    </If>
+    <TurnIn QuestName="A Burden of Souls" QuestId="10864" TurnInName="Apothecary Antonivich" TurnInId="16588" />
+    <If Condition="((!HasQuest(10838)) &amp;&amp; (!IsQuestCompleted(10838)))">
+      <PickUp QuestName="The Demoniac Scryer" QuestId="10838" GiverName="Apothecary Antonivich" GiverId="16588" />
+    </If>
+    <While Condition="((HasQuest(10838)) &amp;&amp; (!IsQuestCompleted(10838)))">
+      <CustomBehavior File="UseItemOn" QuestId="10838" MobId="0" ItemId="31606" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="The Demoniac Scryer" QuestId="10838" TurnInName="Apothecary Antonivich" TurnInId="16588" />
+    <If Condition="((!HasQuest(10813)) &amp;&amp; (!IsQuestCompleted(10813)))">
+      <PickUp QuestName="The Eyes of Grillok" QuestId="10813" GiverName="Zezzak" GiverId="22231" />
+    </If>
+    <While Condition="((HasQuest(10813)) &amp;&amp; (!IsQuestCompleted(10813)))">
+      <RunTo X="-1336.04" Y="2353.65" Z="90.0524" />
+      <CustomBehavior File="UseItemOn" QuestId="10813" MobId="22177" ItemId="31463" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-1336.04" Y="2353.65" Z="90.0524" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="The Eyes of Grillok" QuestId="10813" TurnInName="Zezzak" TurnInId="22231" />
+    <If Condition="((!HasQuest(10834)) &amp;&amp; (!IsQuestCompleted(10834)))">
+      <PickUp QuestName="Grillok &quot;Darkeye&quot;" QuestId="10834" GiverName="Zezzak" GiverId="22231" />
+    </If>
+    <Objective QuestName="Grillok &quot;Darkeye&quot;" QuestId="10834" Type="KillMob" MobId="19457" KillCount="1" />
+    <Objective QuestName="Grillok &quot;Darkeye&quot;" QuestId="10834" Type="CollectItem" ItemId="31529" CollectCount="1" />
+    <TurnIn QuestName="Grillok &quot;Darkeye&quot;" QuestId="10834" TurnInName="Zezzak" TurnInId="22231" />
+    <If Condition="((!HasQuest(10136)) &amp;&amp; (!IsQuestCompleted(10136)))">
+      <PickUp QuestName="Cruel's Intentions" QuestId="10136" GiverName="Nazgrel" GiverId="3230" />
+    </If>
+    <Objective QuestName="Cruel's Intentions" QuestId="10136" Type="KillMob" MobId="19191" KillCount="1" />
+    <TurnIn QuestName="Cruel's Intentions" QuestId="10136" TurnInName="Nazgrel" TurnInId="3230" />
+    <If Condition="Me.Level &lt; 60">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 60 - Arazzius the Cruel</Name>
+          <TargetMinLevel>63</TargetMinLevel>
+          <TargetMaxLevel>63</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="394.61" Y="3276.60" Z="74.63" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="60" /> <!--  (grind Arazzius the Cruel) -->
+    </If>
+    <PickUp QuestName="Wanted: Blacktalon the Savage" QuestId="9466" GiverName="Nazgrel" GiverId="3230" />
+    <Objective QuestName="Wanted: Blacktalon the Savage" QuestId="9466" Type="KillMob" MobId="17057" KillCount="1" />
+    <Objective QuestName="Wanted: Blacktalon the Savage" QuestId="9466" Type="CollectItem" ItemId="23687" CollectCount="1" />
+    <TurnIn QuestName="Wanted: Blacktalon the Savage" QuestId="9466" TurnInName="Ranger Captain Venn'ren" TurnInId="16789" />
+    <If Condition="Me.Level &lt; 61">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 61 - Blacktalon the Savage</Name>
+          <TargetMinLevel>63</TargetMinLevel>
+          <TargetMaxLevel>63</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="-759.98" Y="3816.24" Z="20.00" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="61" /> <!--  (grind Blacktalon the Savage) -->
+    </If>
+    <PickUp QuestName="Colossal Menace" QuestId="10132" GiverName="Tola'thion" GiverId="19293" />
+    <Objective QuestName="Colossal Menace" QuestId="10132" Type="KillMob" MobId="19188" KillCount="5" />
+    <Objective QuestName="Crimson Crystal Clue" QuestId="10134" Type="KillMob" MobId="19188" KillCount="1" />
+    <Objective QuestName="Crimson Crystal Clue" QuestId="10134" Type="CollectItem" ItemId="29476" CollectCount="1" />
+    <While Condition="((HasQuest(10132)) &amp;&amp; (!IsQuestCompleted(10132)))">
+      <RunTo X="-114.469" Y="4818.41" Z="39.5818" />
+      <CustomBehavior File="UseItemOn" QuestId="10132" MobId="19188" ItemId="29476" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-114.469" Y="4818.41" Z="39.5818" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Crimson Cystal Clue" QuestId="10134" GiverName="Tola'thion" GiverId="19293" />
+    <TurnIn QuestName="Colossal Menace" QuestId="10132" TurnInName="Tola'thion" TurnInId="19293" />
+    <TurnIn QuestName="Crimson Cystal Clue" QuestId="10134" TurnInName="Tola'thion" TurnInId="19293" />
+    <If Condition="((!HasQuest(10349)) &amp;&amp; (!IsQuestCompleted(10349)))">
+      <PickUp QuestName="The Earthbinder" QuestId="10349" GiverName="Tola'thion" GiverId="19293" />
+    </If>
+    <TurnIn QuestName="The Earthbinder" QuestId="10349" TurnInName="Earthbinder Galandria Nightbreeze" TurnInId="19294" />
+    <If Condition="((!HasQuest(10351)) &amp;&amp; (!IsQuestCompleted(10351)))">
+      <PickUp QuestName="Natural Rememdies" QuestId="10351" GiverName="Earthbinder Galandria Nightbreeze" GiverId="19294" />
+    </If>
+    <While Condition="((HasQuest(10351)) &amp;&amp; (!IsQuestCompleted(10351)))">
+      <CustomBehavior File="UseItemOn" QuestId="10351" MobId="19305" ItemId="29478" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Natural Rememdies" QuestId="10351" Type="KillMob" MobId="19305" KillCount="1" />
+    <TurnIn QuestName="Natural Rememdies" QuestId="10351" TurnInName="Earthbinder Galandria Nightbreeze" TurnInId="19294" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\The Burning Crusade (58-70)\Hellfire Peninsula Group Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

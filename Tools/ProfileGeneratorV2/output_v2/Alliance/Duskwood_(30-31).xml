@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Duskwood (30-31)</Name>
+  <Name>Alliance\Duskwood (30-31)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>31</MaxLevel>
@@ -8,7 +7,33 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
+  <Quest Id="173" Name="Worgen in the Woods">
+    <Objective Type="KillMob" MobId="533" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-10260.7" Y="-841.453" Z="42.5025" />
+        <Hotspot X="-10653.6" Y="-839.113" Z="61.197" />
+        <Hotspot X="-10388.0" Y="-815.53" Z="47.7868" />
+        <Hotspot X="-10264.2" Y="-714.354" Z="45.2232" />
+        <Hotspot X="-10412.2" Y="-924.673" Z="45.631" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="221" Name="Worgen in the Woods">
+    <Objective Type="KillMob" MobId="205" KillCount="12">
+      <Hotspots>
+        <Hotspot X="-10646.8" Y="-884.137" Z="50.1853" />
+        <Hotspot X="-10467.1" Y="-810.72" Z="51.953" />
+        <Hotspot X="-10432.3" Y="-811.614" Z="50.0888" />
+        <Hotspot X="-10630.5" Y="-874.173" Z="49.2065" />
+        <Hotspot X="-10650.4" Y="-912.464" Z="52.1801" />
+      </Hotspots>
+    </Objective>
+  </Quest>
   <Quest Id="75" Name="The Legend of Stalvan">
     <Objective Type="CollectItem" ItemId="921" CollectCount="1">
       <CollectFrom>
@@ -16,6 +41,17 @@
       </CollectFrom>
       <Hotspots>
         <Hotspot X="-9549.08" Y="-1439.21" Z="62.29" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="58" Name="The Night Watch">
+    <Objective Type="KillMob" MobId="604" KillCount="20">
+      <Hotspots>
+        <Hotspot X="-10332.3" Y="122.914" Z="3.0443" />
+        <Hotspot X="-10322.6" Y="140.166" Z="1.7805" />
+        <Hotspot X="-10334.9" Y="137.397" Z="4.0228" />
+        <Hotspot X="-10341.7" Y="172.724" Z="15.8161" />
+        <Hotspot X="-10359.4" Y="202.731" Z="34.3771" />
       </Hotspots>
     </Objective>
   </Quest>
@@ -29,6 +65,20 @@
       </Hotspots>
     </Objective>
   </Quest>
+  <Quest Id="181" Name="Look To The Stars">
+    <Objective Type="KillMob" MobId="300" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11224.8" Y="-160.547" Z="5.9639" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="98" Name="The Legend of Stalvan">
+    <Objective Type="KillMob" MobId="315" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-10368.0" Y="-1254.99" Z="35.9218" />
+      </Hotspots>
+    </Objective>
+  </Quest>
   <Quest Id="335" Name="A Noble Brew">
     <Objective Type="CollectItem" ItemId="2779" CollectCount="1">
       <CollectFrom>
@@ -39,9 +89,29 @@
       </Hotspots>
     </Objective>
   </Quest>
+  <Quest Id="222" Name="Worgen in the Woods">
+    <Objective Type="KillMob" MobId="920" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-11077.6" Y="-1140.17" Z="42.8358" />
+        <Hotspot X="-11106.5" Y="-1160.67" Z="42.2494" />
+        <Hotspot X="-11133.2" Y="-1167.76" Z="43.0021" />
+        <Hotspot X="-11149.3" Y="-1166.35" Z="43.9705" />
+        <Hotspot X="-11103.3" Y="-1151.91" Z="41.9221" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="206" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-11023.3" Y="-1147.91" Z="38.7108" />
+        <Hotspot X="-11041.6" Y="-1125.62" Z="38.6025" />
+        <Hotspot X="-11025.6" Y="-1137.82" Z="38.7108" />
+        <Hotspot X="-10948.0" Y="-1118.83" Z="38.7397" />
+        <Hotspot X="-10980.1" Y="-1119.2" Z="38.7097" />
+      </Hotspots>
+    </Objective>
+  </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Duskwood (30-31)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Duskwood (30-31)" LogColor="Green" />
     <PickUp QuestName="The Brassbolts Brothers" QuestId="1179" GiverName="Pilot Longbeard" GiverId="2092" />
     <TurnIn QuestName="Blessed Arm" QuestId="322" TurnInName="Grimand Elmore" TurnInId="1416" />
     <If Condition="((!HasQuest(325)) &amp;&amp; (!IsQuestCompleted(325)))">
@@ -61,38 +131,38 @@
     <If Condition="((!HasQuest(1243)) &amp;&amp; (!IsQuestCompleted(1243)))">
       <PickUp QuestName="The Missing Diplomat" QuestId="1243" GiverName="Elling Trias" GiverId="482" />
     </If>
-    <Objective QuestName="The Legend of Stalvan" QuestId="74" Type="CollectItem" ItemId="916" ItemName="A Torn Journal Page" CollectCount="1" />
-    <Objective QuestName="Juice Delivery" QuestId="159" Type="CollectItem" ItemId="1451" ItemName="Bottle of Zombie Juice" CollectCount="1" />
+    <Objective QuestName="The Legend of Stalvan" QuestId="74" Type="CollectItem" ItemId="916" CollectCount="1" />
+    <Objective QuestName="Juice Delivery" QuestId="159" Type="CollectItem" ItemId="1451" CollectCount="1" />
     <If Condition="((!HasQuest(181)) &amp;&amp; (!IsQuestCompleted(181)))">
-      <PickUp QuestName="Look To The Stars" QuestId="181" GiverName="Viktori Prism&apos;Antras" GiverId="276" />
+      <PickUp QuestName="Look To The Stars" QuestId="181" GiverName="Viktori Prism'Antras" GiverId="276" />
     </If>
     <PickUp QuestName="Worgen in the Woods" QuestId="173" GiverName="Calor" GiverId="663" />
     <If Condition="((!HasQuest(58)) &amp;&amp; (!IsQuestCompleted(58)))">
       <PickUp QuestName="The Night Watch" QuestId="58" GiverName="Commander Althea Ebonlocke" GiverId="264" />
     </If>
-    <CustomBehavior File="SetHearthstone" MobId="6790" AreaId="10" X="73.87" Y="44.41" Z="0" /> <!-- Set hearth: Darkshire -->
+    <CustomBehavior File="SetHearthstone" MobId="6790" AreaId="10" X="-10516.0" Y="-1161.21" Z="28.1161" /> <!-- Set hearth: Darkshire -->
     <TurnIn QuestName="The Missing Diplomat" QuestId="1243" TurnInName="Watcher Backus" TurnInId="840" />
     <If Condition="((!HasQuest(1244)) &amp;&amp; (!IsQuestCompleted(1244)))">
       <PickUp QuestName="The Missing Diplomat" QuestId="1244" GiverName="Watcher Backus" GiverId="840" />
     </If>
-    <Objective QuestName="Worgen in the Woods" QuestId="173" Type="KillMob" MobId="533" MobName="Nightbane Shadow Weaver" KillCount="6" />
+    <Objective QuestName="Worgen in the Woods" QuestId="173" Type="KillMob" MobId="533" KillCount="6" />
     <TurnIn QuestName="Worgen in the Woods" QuestId="173" TurnInName="Calor" TurnInId="663" />
     <If Condition="((!HasQuest(221)) &amp;&amp; (!IsQuestCompleted(221)))">
       <PickUp QuestName="Worgen in the Woods" QuestId="221" GiverName="Calor" GiverId="663" />
     </If>
-    <Objective QuestName="An Old History Book" QuestId="337" Type="CollectItem" ItemId="2794" ItemName="An Old History Book" CollectCount="1" />
+    <Objective QuestName="An Old History Book" QuestId="337" Type="CollectItem" ItemId="2794" CollectCount="1" />
     <While Condition="((HasQuest(221)) &amp;&amp; (!IsQuestCompleted(221)))">
-      <RunTo X="61.76" Y="41.04" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="221" ItemId="2794" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-10646.8" Y="-884.137" Z="50.1853" />
+      <CustomBehavior File="UseItemOn" QuestId="221" MobId="205" ItemId="2794" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-10646.8" Y="-884.137" Z="50.1853" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="An Old History Book" QuestId="337" GiverName="Avette Fellwood" GiverId="228" />
-    <Objective QuestName="Worgen in the Woods" QuestId="221" Type="KillMob" MobId="205" MobName="Nightbane Dark Runner" KillCount="12" />
+    <Objective QuestName="Worgen in the Woods" QuestId="221" Type="KillMob" MobId="205" KillCount="12" />
     <TurnIn QuestName="The Legend of Stalvan" QuestId="74" TurnInName="Marshal Haggard" TurnInId="294" />
     <If Condition="((!HasQuest(75)) &amp;&amp; (!IsQuestCompleted(75)))">
       <PickUp QuestName="The Legend of Stalvan" QuestId="75" GiverName="Marshal Haggard" GiverId="294" />
     </If>
-    <Objective QuestName="The Legend of Stalvan" QuestId="75" Type="CollectItem" ItemId="921" ItemName="A Faded Journal Page" CollectCount="1" />
+    <Objective QuestName="The Legend of Stalvan" QuestId="75" Type="CollectItem" ItemId="921" CollectCount="1" />
     <TurnIn QuestName="The Legend of Stalvan" QuestId="75" TurnInName="Marshal Haggard" TurnInId="294" />
     <If Condition="((!HasQuest(78)) &amp;&amp; (!IsQuestCompleted(78)))">
       <PickUp QuestName="The Legend of Stalvan" QuestId="78" GiverName="Marshal Haggard" GiverId="294" />
@@ -101,16 +171,16 @@
     <If Condition="((!HasQuest(133)) &amp;&amp; (!IsQuestCompleted(133)))">
       <PickUp QuestName="Ghoulish Effigy" QuestId="133" GiverName="Abercrombie" GiverId="289" />
     </If>
-    <Objective QuestName="Ghoulish Effigy" QuestId="133" Type="CollectItem" ItemId="884" ItemName="Ghoul Rib" CollectCount="7" />
-    <Objective QuestName="The Night Watch" QuestId="58" Type="KillMob" MobId="604" MobName="Plague Spreader" KillCount="20" />
+    <Objective QuestName="Ghoulish Effigy" QuestId="133" Type="CollectItem" ItemId="884" CollectCount="7" />
+    <Objective QuestName="The Night Watch" QuestId="58" Type="KillMob" MobId="604" KillCount="20" />
     <TurnIn QuestName="Ghoulish Effigy" QuestId="133" TurnInName="Abercrombie" TurnInId="289" />
     <If Condition="((!HasQuest(134)) &amp;&amp; (!IsQuestCompleted(134)))">
       <PickUp QuestName="Ogre Thieves" QuestId="134" GiverName="Abercrombie" GiverId="289" />
     </If>
-    <Objective QuestName="The Missing Diplomat" QuestId="1244" Type="CollectItem" ItemId="5947" ItemName="Defias Docket" CollectCount="1" />
-    <Objective QuestName="Ogre Thieves" QuestId="134" Type="CollectItem" ItemId="1349" ItemName="Abercrombie&apos;s Crate" CollectCount="1" />
-    <Objective QuestName="Look To The Stars" QuestId="181" Type="KillMob" MobId="300" MobName="Zzarc&apos; Vul" KillCount="1" />
-    <Objective QuestName="Look To The Stars" QuestId="181" Type="CollectItem" ItemId="1968" ItemName="Ogre&apos;s Monocle" CollectCount="1" />
+    <Objective QuestName="The Missing Diplomat" QuestId="1244" Type="CollectItem" ItemId="5947" CollectCount="1" />
+    <Objective QuestName="Ogre Thieves" QuestId="134" Type="CollectItem" ItemId="1349" CollectCount="1" />
+    <Objective QuestName="Look To The Stars" QuestId="181" Type="KillMob" MobId="300" KillCount="1" />
+    <Objective QuestName="Look To The Stars" QuestId="181" Type="CollectItem" ItemId="1968" CollectCount="1" />
     <TurnIn QuestName="Ogre Thieves" QuestId="134" TurnInName="Abercrombie" TurnInId="289" />
     <If Condition="((!HasQuest(160)) &amp;&amp; (!IsQuestCompleted(160)))">
       <PickUp QuestName="Note to the Mayor" QuestId="160" GiverName="Abercrombie" GiverId="289" />
@@ -131,15 +201,15 @@
     </If>
     <TurnIn QuestName="Note to the Mayor" QuestId="160" TurnInName="Lord Ello Ebonlocke" TurnInId="263" />
     <If Condition="((!HasQuest(251)) &amp;&amp; (!IsQuestCompleted(251)))">
-      <PickUp QuestName="Translate Abercrombie&apos;s Note" QuestId="251" GiverName="Lord Ello Ebonlocke" GiverId="263" />
+      <PickUp QuestName="Translate Abercrombie's Note" QuestId="251" GiverName="Lord Ello Ebonlocke" GiverId="263" />
     </If>
-    <TurnIn QuestName="Translate Abercrombie&apos;s Note" QuestId="251" TurnInName="Sirra Von&apos;Indi" TurnInId="268" />
+    <TurnIn QuestName="Translate Abercrombie's Note" QuestId="251" TurnInName="Sirra Von'Indi" TurnInId="268" />
     <If Condition="((!HasQuest(401)) &amp;&amp; (!IsQuestCompleted(401)))">
-      <PickUp QuestName="Wait for Sirra to Finish" QuestId="401" GiverName="Sirra Von&apos;Indi" GiverId="268" />
+      <PickUp QuestName="Wait for Sirra to Finish" QuestId="401" GiverName="Sirra Von'Indi" GiverId="268" />
     </If>
-    <TurnIn QuestName="Wait for Sirra to Finish" QuestId="401" TurnInName="Sirra Von&apos;Indi" TurnInId="268" />
+    <TurnIn QuestName="Wait for Sirra to Finish" QuestId="401" TurnInName="Sirra Von'Indi" TurnInId="268" />
     <If Condition="((!HasQuest(252)) &amp;&amp; (!IsQuestCompleted(252)))">
-      <PickUp QuestName="Translation to Ello" QuestId="252" GiverName="Sirra Von&apos;Indi" GiverId="268" />
+      <PickUp QuestName="Translation to Ello" QuestId="252" GiverName="Sirra Von'Indi" GiverId="268" />
     </If>
     <TurnIn QuestName="Translation to Ello" QuestId="252" TurnInName="Lord Ello Ebonlocke" TurnInId="263" />
     <TurnIn QuestName="The Legend of Stalvan" QuestId="97" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
@@ -154,14 +224,14 @@
     <If Condition="((!HasQuest(1245)) &amp;&amp; (!IsQuestCompleted(1245)))">
       <PickUp QuestName="The Missing Diplomat" QuestId="1245" GiverName="Watcher Backus" GiverId="840" />
     </If>
-    <Objective QuestName="The Legend of Stalvan" QuestId="98" Type="KillMob" MobId="315" MobName="Stalvan Mistmantle" KillCount="1" />
-    <Objective QuestName="The Legend of Stalvan" QuestId="98" Type="CollectItem" ItemId="3629" ItemName="Mistmantle Family Ring" CollectCount="1" />
-    <Objective QuestName="A Noble Brew" QuestId="335" Type="CollectItem" ItemId="2779" ItemName="Tear of Tilloa" CollectCount="1" />
+    <Objective QuestName="The Legend of Stalvan" QuestId="98" Type="KillMob" MobId="315" KillCount="1" />
+    <Objective QuestName="The Legend of Stalvan" QuestId="98" Type="CollectItem" ItemId="3629" CollectCount="1" />
+    <Objective QuestName="A Noble Brew" QuestId="335" Type="CollectItem" ItemId="2779" CollectCount="1" />
     <TurnIn QuestName="The Legend of Stalvan" QuestId="98" TurnInName="Madame Eva" TurnInId="265" />
-    <TurnIn QuestName="Look To The Stars" QuestId="181" TurnInName="Viktori Prism&apos;Antras" TurnInId="276" />
-    <Objective QuestName="Worgen in the Woods" QuestId="222" Type="KillMob" MobId="920" MobName="Nightbane Tainted One" KillCount="8" />
-    <Objective QuestName="Worgen in the Woods" QuestId="222" Type="KillMob" MobId="206" MobName="Nightbane Vile Fang" KillCount="8" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Duskwood (30-31) Complete" LogColor="Orange" />
+    <TurnIn QuestName="Look To The Stars" QuestId="181" TurnInName="Viktori Prism'Antras" TurnInId="276" />
+    <Objective QuestName="Worgen in the Woods" QuestId="222" Type="KillMob" MobId="920" KillCount="8" />
+    <Objective QuestName="Worgen in the Woods" QuestId="222" Type="KillMob" MobId="206" KillCount="8" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Duskwood (30-31) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Stranglethorn_Vale_(31-32)" />
   </QuestOrder>
 </HBProfile>

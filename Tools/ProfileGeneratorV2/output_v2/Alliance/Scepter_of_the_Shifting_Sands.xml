@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Scepter of the Shifting Sands</Name>
+  <Name>Alliance\Scepter of the Shifting Sands</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -8,25 +7,73 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="8288" Name="Only One May Rise">
+    <Objective Type="KillMob" MobId="12017" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-7573.97" Y="-1034.39" Z="449.34" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8728" Name="The Good News and The Bad News">
+    <Objective Type="KillMob" MobId="13996" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-7556.37" Y="-1022.06" Z="449.42" />
+        <Hotspot X="-7558.47" Y="-1024.04" Z="449.42" />
+        <Hotspot X="-7557.17" Y="-1025.67" Z="449.42" />
+        <Hotspot X="-7555.43" Y="-1029.32" Z="449.42" />
+        <Hotspot X="-7553.46" Y="-1030.04" Z="449.42" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8585" Name="The Isle of Dread!">
+    <Objective Type="KillMob" MobId="12803" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-5704.74" Y="3379.41" Z="63.0866" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8620" Name="The Only Prescription">
+    <Objective Type="KillMob" MobId="15552" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2632.94" Y="-5062.04" Z="34.5277" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="10184" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-10.6155" Y="-219.357" Z="-87.7344" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="14601" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-7358.19" Y="-994.32" Z="477.35" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Scepter of the Shifting Sands" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Scepter of the Shifting Sands" LogColor="Green" />
     <PickUp QuestName="What Tomorrow Brings" QuestId="8286" GiverName="Baristolth of the Shifting Sands" GiverId="15180" />
     <TurnIn QuestName="What Tomorrow Brings" QuestId="8286" TurnInName="Baristolth of the Shifting Sands" TurnInId="15180" />
     <If Condition="((!HasQuest(8288)) &amp;&amp; (!IsQuestCompleted(8288)))">
       <PickUp QuestName="Only One May Rise" QuestId="8288" GiverName="Baristolth of the Shifting Sands" GiverId="15180" />
     </If>
-    <Objective QuestName="Only One May Rise" QuestId="8288" Type="KillMob" MobId="12017" MobName="Broodlord Lashlayer" KillCount="1" />
-    <Objective QuestName="Only One May Rise" QuestId="8288" Type="CollectItem" ItemId="20383" ItemName="Head of the Broodlord Lashlayer" CollectCount="1" />
+    <Objective QuestName="Only One May Rise" QuestId="8288" Type="KillMob" MobId="12017" KillCount="1" />
+    <Objective QuestName="Only One May Rise" QuestId="8288" Type="CollectItem" ItemId="20383" CollectCount="1" />
     <TurnIn QuestName="Only One May Rise" QuestId="8288" TurnInName="Baristolth of the Shifting Sands" TurnInId="15180" />
     <If Condition="((!HasQuest(8301)) &amp;&amp; (!IsQuestCompleted(8301)))">
       <PickUp QuestName="The Path of the Righteous" QuestId="8301" GiverName="Baristolth of the Shifting Sands" GiverId="15180" />
     </If>
-    <Objective QuestName="The Path of the Righteous" QuestId="8301" Type="CollectItem" ItemId="20384" ItemName="Silithid Carapace Fragment" CollectCount="200" />
+    <Objective QuestName="The Path of the Righteous" QuestId="8301" Type="CollectItem" ItemId="20384" CollectCount="200" />
     <TurnIn QuestName="The Path of the Righteous" QuestId="8301" TurnInName="Baristolth of the Shifting Sands" TurnInId="15180" />
     <If Condition="((!HasQuest(8302)) &amp;&amp; (!IsQuestCompleted(8302)))">
       <PickUp QuestName="The Hand of the Righteous" QuestId="8302" GiverName="Baristolth of the Shifting Sands" GiverId="15180" />
     </If>
-    <Objective QuestName="The Hand of the Righteous" QuestId="8302" Type="CollectItem" ItemId="20384" ItemName="Silithid Carapace Fragment" CollectCount="200" />
+    <Objective QuestName="The Hand of the Righteous" QuestId="8302" Type="CollectItem" ItemId="20384" CollectCount="200" />
     <TurnIn QuestName="The Hand of the Righteous" QuestId="8302" TurnInName="Baristolth of the Shifting Sands" TurnInId="15180" />
     <If Condition="((!HasQuest(8303)) &amp;&amp; (!IsQuestCompleted(8303)))">
       <PickUp QuestName="Anachronos" QuestId="8303" GiverName="Baristolth of the Shifting Sands" GiverId="15180" />
@@ -44,19 +91,19 @@
       <PickUp QuestName="The Charge of the Dragonflights" QuestId="8555" GiverName="Anachronos" GiverId="15192" />
     </If>
     <TurnIn QuestName="The Charge of the Dragonflights" QuestId="8555" TurnInName="Anachronos" TurnInId="15192" />
-    <Objective QuestName="Dirge&apos;s Kickin&apos; Chimaerok Chops" QuestId="8586" Type="CollectItem" ItemId="9061" ItemName="Goblin Rocket Fuel" CollectCount="20" />
-    <Objective QuestName="Dirge&apos;s Kickin&apos; Chimaerok Chops" QuestId="8586" Type="CollectItem" ItemId="8150" ItemName="Deeprock Salt" CollectCount="20" />
-    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12360" ItemName="Arcanite Bar" CollectCount="20" />
-    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="KillMob" MobId="13996" MobName="Blackwing Technician" KillCount="1" />
-    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="18562" ItemName="Elementium Ore" CollectCount="10" />
-    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12800" ItemName="Azerothian Diamond" CollectCount="10" />
-    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12361" ItemName="Blue Sapphire" CollectCount="10" />
-    <Objective QuestName="The Charge of the Dragonflights" QuestId="8555" Type="CollectItem" ItemId="20949" ItemName="Magical Ledger" CollectCount="1" />
-    <CustomBehavior File="UseItemOn" ItemId="20949" MobId="0" NumOfTimes="1" />
+    <Objective QuestName="Dirge's Kickin' Chimaerok Chops" QuestId="8586" Type="CollectItem" ItemId="9061" CollectCount="20" />
+    <Objective QuestName="Dirge's Kickin' Chimaerok Chops" QuestId="8586" Type="CollectItem" ItemId="8150" CollectCount="20" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12360" CollectCount="20" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="KillMob" MobId="13996" KillCount="1" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="18562" CollectCount="10" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12800" CollectCount="10" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12361" CollectCount="10" />
+    <Objective QuestName="The Charge of the Dragonflights" QuestId="8555" Type="CollectItem" ItemId="20949" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="20949" MobId="0" NumOfTimes="1" CollectionDistance="100" />
     <If Condition="((!HasQuest(8575)) &amp;&amp; (!IsQuestCompleted(8575)))">
-      <PickUp QuestName="Azuregos&apos;s Magical Ledger" QuestId="8575" GiverName="Spirit of Azuregos" GiverId="15481" />
+      <PickUp QuestName="Azuregos's Magical Ledger" QuestId="8575" GiverName="Spirit of Azuregos" GiverId="15481" />
     </If>
-    <TurnIn QuestName="Azuregos&apos;s Magical Ledger" QuestId="8575" TurnInName="Narain Soothfancy" TurnInId="11811" />
+    <TurnIn QuestName="Azuregos's Magical Ledger" QuestId="8575" TurnInName="Narain Soothfancy" TurnInId="11811" />
     <If Condition="((!HasQuest(8576)) &amp;&amp; (!IsQuestCompleted(8576)))">
       <PickUp QuestName="Translating the Ledger" QuestId="8576" GiverName="Narain Soothfancy" GiverId="11811" />
     </If>
@@ -87,67 +134,64 @@
       <PickUp QuestName="The Isle of Dread!" QuestId="8585" GiverName="Dirge Quikcleave" GiverId="8125" />
     </If>
     <While Condition="((HasQuest(8606)) &amp;&amp; (!IsQuestCompleted(8606)))">
-      <RunTo X="66.02" Y="72.69" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8606" ItemId="21042" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8606" MobId="15554" ItemId="21042" NumOfTimes="100" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <While Condition="((HasQuest(8606)) &amp;&amp; (!IsQuestCompleted(8606)))">
-      <RunTo X="67.55" Y="72.84" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8606" ItemId="21039" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8606" MobId="15554" ItemId="21039" NumOfTimes="100" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <While Condition="((HasQuest(8606)) &amp;&amp; (!IsQuestCompleted(8606)))">
-      <RunTo X="67.55" Y="72.84" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8606" ItemId="21041" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8606" MobId="15554" ItemId="21041" NumOfTimes="100" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="Decoy!" QuestId="8606" Type="KillMob" MobId="15554" MobName="Number Two" KillCount="1" />
-    <Objective QuestName="The Isle of Dread!" QuestId="8585" Type="KillMob" MobId="12803" MobName="Lord Lakmaeran" KillCount="1" />
-    <Objective QuestName="The Isle of Dread!" QuestId="8585" Type="CollectItem" ItemId="21027" ItemName="Lakmaeran&apos;s Carcass" CollectCount="1" />
-    <Objective QuestName="The Isle of Dread!" QuestId="8585" Type="CollectItem" ItemId="21024" ItemName="Chimaerok Tenderloin" CollectCount="20" />
+    <Objective QuestName="Decoy!" QuestId="8606" Type="KillMob" MobId="15554" KillCount="1" />
+    <Objective QuestName="The Isle of Dread!" QuestId="8585" Type="KillMob" MobId="12803" KillCount="1" />
+    <Objective QuestName="The Isle of Dread!" QuestId="8585" Type="CollectItem" ItemId="21027" CollectCount="1" />
+    <Objective QuestName="The Isle of Dread!" QuestId="8585" Type="CollectItem" ItemId="21024" CollectCount="20" />
     <TurnIn QuestName="The Isle of Dread!" QuestId="8585" TurnInName="Dirge Quikcleave" TurnInId="8125" />
     <If Condition="((!HasQuest(8586)) &amp;&amp; (!IsQuestCompleted(8586)))">
-      <PickUp QuestName="Dirge&apos;s Kickin&apos; Chimaerok Chops" QuestId="8586" GiverName="Dirge Quikcleave" GiverId="8125" />
+      <PickUp QuestName="Dirge's Kickin' Chimaerok Chops" QuestId="8586" GiverName="Dirge Quikcleave" GiverId="8125" />
     </If>
     <TurnIn QuestName="Decoy!" QuestId="8606" TurnInName="Narain Soothfancy" TurnInId="11811" />
     <If Condition="((!HasQuest(8620)) &amp;&amp; (!IsQuestCompleted(8620)))">
       <PickUp QuestName="The Only Prescription" QuestId="8620" GiverName="Narain Soothfancy" GiverId="11811" />
     </If>
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="KillMob" MobId="15552" MobName="Doctor Weavil" KillCount="1" />
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="1" />
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="KillMob" MobId="10184" MobName="Onyxia" KillCount="1" />
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="2" />
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="3" />
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="8" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="KillMob" MobId="15552" KillCount="1" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" CollectCount="1" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="KillMob" MobId="10184" KillCount="1" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" CollectCount="2" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" CollectCount="3" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" CollectCount="8" />
     <TurnIn QuestName="Stewvul, Ex-B.F.F." QuestId="8577" TurnInName="Object_180642" TurnInType="Object" TurnInId="180642" />
     <If Condition="((!HasQuest(8578)) &amp;&amp; (!IsQuestCompleted(8578)))">
       <PickUp QuestName="Scrying Goggles? No Problem!" QuestId="8578" GiverName="Narain Soothfancy" GiverId="11811" />
     </If>
-    <Objective QuestName="Dirge&apos;s Kickin&apos; Chimaerok Chops" QuestId="8586" Type="CollectItem" ItemId="8150" ItemName="Deeprock Salt" CollectCount="20" />
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="KillMob" MobId="14601" MobName="Ebonroc" KillCount="1" />
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="6" />
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="KillMob" MobId="11502" MobName="Ragnaros" KillCount="1" />
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="5" />
-    <Objective QuestName="Scrying Goggles? No Problem!" QuestId="8578" Type="CollectItem" ItemId="20951" ItemName="Narain&apos;s Scrying Goggles" CollectCount="1" />
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="7" />
+    <Objective QuestName="Dirge's Kickin' Chimaerok Chops" QuestId="8586" Type="CollectItem" ItemId="8150" CollectCount="20" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="KillMob" MobId="14601" KillCount="1" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" CollectCount="6" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="KillMob" MobId="11502" KillCount="1" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" CollectCount="5" />
+    <Objective QuestName="Scrying Goggles? No Problem!" QuestId="8578" Type="CollectItem" ItemId="20951" CollectCount="1" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" CollectCount="7" />
     <If Condition="((!HasQuest(8733)) &amp;&amp; (!IsQuestCompleted(8733)))">
       <PickUp QuestName="Eranikus, Tyrant of the Dream" QuestId="8733" GiverName="Malfurion Stormrage" GiverId="15362" />
     </If>
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" ItemName="Draconic for Dummies" CollectCount="4" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21103" CollectCount="4" />
     <TurnIn QuestName="Eranikus, Tyrant of the Dream" QuestId="8733" TurnInName="Forest Wisp" TurnInId="15624" />
     <If Condition="((!HasQuest(8734)) &amp;&amp; (!IsQuestCompleted(8734)))">
       <PickUp QuestName="Tyrande and Remulos" QuestId="8734" GiverName="Forest Wisp" GiverId="15624" />
     </If>
     <TurnIn QuestName="Tyrande and Remulos" QuestId="8734" TurnInName="Keeper Remulos" TurnInId="11832" />
     <If Condition="((!HasQuest(8735)) &amp;&amp; (!IsQuestCompleted(8735)))">
-      <PickUp QuestName="The Nightmare&apos;s Corruption" QuestId="8735" GiverName="Keeper Remulos" GiverId="11832" />
+      <PickUp QuestName="The Nightmare's Corruption" QuestId="8735" GiverName="Keeper Remulos" GiverId="11832" />
     </If>
-    <Objective QuestName="The Nightmare&apos;s Corruption" QuestId="8735" Type="CollectItem" ItemId="21147" ItemName="Fragment of the Nightmare&apos;s Corruption" CollectCount="1" />
-    <Objective QuestName="The Nightmare&apos;s Corruption" QuestId="8735" Type="CollectItem" ItemId="21148" ItemName="Fragment of the Nightmare&apos;s Corruption" CollectCount="1" />
-    <Objective QuestName="The Nightmare&apos;s Corruption" QuestId="8735" Type="KillMob" MobId="15625" MobName="Twilight Corrupter" KillCount="1" />
-    <Objective QuestName="The Nightmare&apos;s Corruption" QuestId="8735" Type="CollectItem" ItemId="21149" ItemName="Fragment of the Nightmare&apos;s Corruption" CollectCount="1" />
-    <Objective QuestName="The Nightmare&apos;s Corruption" QuestId="8735" Type="CollectItem" ItemId="21146" ItemName="Fragment of the Nightmare&apos;s Corruption" CollectCount="1" />
-    <TurnIn QuestName="The Nightmare&apos;s Corruption" QuestId="8735" TurnInName="Keeper Remulos" TurnInId="11832" />
+    <Objective QuestName="The Nightmare's Corruption" QuestId="8735" Type="CollectItem" ItemId="21147" CollectCount="1" />
+    <Objective QuestName="The Nightmare's Corruption" QuestId="8735" Type="CollectItem" ItemId="21148" CollectCount="1" />
+    <Objective QuestName="The Nightmare's Corruption" QuestId="8735" Type="KillMob" MobId="15625" KillCount="1" />
+    <Objective QuestName="The Nightmare's Corruption" QuestId="8735" Type="CollectItem" ItemId="21149" CollectCount="1" />
+    <Objective QuestName="The Nightmare's Corruption" QuestId="8735" Type="CollectItem" ItemId="21146" CollectCount="1" />
+    <TurnIn QuestName="The Nightmare's Corruption" QuestId="8735" TurnInName="Keeper Remulos" TurnInId="11832" />
     <If Condition="((!HasQuest(8736)) &amp;&amp; (!IsQuestCompleted(8736)))">
       <PickUp QuestName="The Nightmare Manifests" QuestId="8736" GiverName="Keeper Remulos" GiverId="11832" />
     </If>
@@ -155,46 +199,44 @@
     <If Condition="((!HasQuest(8741)) &amp;&amp; (!IsQuestCompleted(8741)))">
       <PickUp QuestName="The Champion Returns" QuestId="8741" GiverName="Keeper Remulos" GiverId="11832" />
     </If>
-    <Objective QuestName="Dirge&apos;s Kickin&apos; Chimaerok Chops" QuestId="8586" Type="CollectItem" ItemId="9061" ItemName="Goblin Rocket Fuel" CollectCount="20" />
-    <TurnIn QuestName="Dirge&apos;s Kickin&apos; Chimaerok Chops" QuestId="8586" TurnInName="Dirge Quikcleave" TurnInId="8125" />
+    <Objective QuestName="Dirge's Kickin' Chimaerok Chops" QuestId="8586" Type="CollectItem" ItemId="9061" CollectCount="20" />
+    <TurnIn QuestName="Dirge's Kickin' Chimaerok Chops" QuestId="8586" TurnInName="Dirge Quikcleave" TurnInId="8125" />
     <If Condition="((!HasQuest(8587)) &amp;&amp; (!IsQuestCompleted(8587)))">
       <PickUp QuestName="Return to Narain" QuestId="8587" GiverName="Dirge Quikcleave" GiverId="8125" />
     </If>
     <While Condition="((HasQuest(8620)) &amp;&amp; (!IsQuestCompleted(8620)))">
-      <RunTo X="52.63" Y="28.12" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8620" ItemId="21112" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8620" MobId="0" ItemId="21112" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21111" ItemName="Draconic For Dummies: Volume II" CollectCount="1" />
+    <Objective QuestName="The Only Prescription" QuestId="8620" Type="CollectItem" ItemId="21111" CollectCount="1" />
     <TurnIn QuestName="Scrying Goggles? No Problem!" QuestId="8578" TurnInName="Narain Soothfancy" TurnInId="11811" />
     <TurnIn QuestName="Return to Narain" QuestId="8587" TurnInName="Narain Soothfancy" TurnInId="11811" />
     <TurnIn QuestName="The Only Prescription" QuestId="8620" TurnInName="Narain Soothfancy" TurnInId="11811" />
     <TurnIn QuestName="The Champion Returns" QuestId="8741" TurnInName="Anachronos" TurnInId="15192" />
     <If Condition="((!HasQuest(8730)) &amp;&amp; (!IsQuestCompleted(8730)))">
-      <PickUp QuestName="Nefarius&apos;s Corruption" QuestId="8730" GiverName="Vaelastrasz the Corrupt" GiverId="13020" />
+      <PickUp QuestName="Nefarius's Corruption" QuestId="8730" GiverName="Vaelastrasz the Corrupt" GiverId="13020" />
     </If>
-    <Objective QuestName="Nefarius&apos;s Corruption" QuestId="8730" Type="KillMob" MobId="11583" MobName="Nefarian" KillCount="1" />
-    <Objective QuestName="Nefarius&apos;s Corruption" QuestId="8730" Type="CollectItem" ItemId="21138" ItemName="Red Scepter Shard" CollectCount="1" />
-    <TurnIn QuestName="Nefarius&apos;s Corruption" QuestId="8730" TurnInName="Anachronos" TurnInId="15192" />
+    <Objective QuestName="Nefarius's Corruption" QuestId="8730" Type="KillMob" MobId="11583" KillCount="1" />
+    <Objective QuestName="Nefarius's Corruption" QuestId="8730" Type="CollectItem" ItemId="21138" CollectCount="1" />
+    <TurnIn QuestName="Nefarius's Corruption" QuestId="8730" TurnInName="Anachronos" TurnInId="15192" />
     <If Condition="((!HasQuest(8728)) &amp;&amp; (!IsQuestCompleted(8728)))">
       <PickUp QuestName="The Good News and The Bad News" QuestId="8728" GiverName="Narain Soothfancy" GiverId="11811" />
     </If>
-    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12360" ItemName="Arcanite Bar" CollectCount="20" />
-    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="KillMob" MobId="13996" MobName="Blackwing Technician" KillCount="1" />
-    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="18562" ItemName="Elementium Ore" CollectCount="10" />
-    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12800" ItemName="Azerothian Diamond" CollectCount="10" />
-    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12361" ItemName="Blue Sapphire" CollectCount="10" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12360" CollectCount="20" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="KillMob" MobId="13996" KillCount="1" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="18562" CollectCount="10" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12800" CollectCount="10" />
+    <Objective QuestName="The Good News and The Bad News" QuestId="8728" Type="CollectItem" ItemId="12361" CollectCount="10" />
     <TurnIn QuestName="The Good News and The Bad News" QuestId="8728" TurnInName="Narain Soothfancy" TurnInId="11811" />
     <If Condition="((!HasQuest(8729)) &amp;&amp; (!IsQuestCompleted(8729)))">
       <PickUp QuestName="The Wrath of Neptulon" QuestId="8729" GiverName="Narain Soothfancy" GiverId="11811" />
     </If>
     <While Condition="((HasQuest(8729)) &amp;&amp; (!IsQuestCompleted(8729)))">
-      <RunTo X="65.24" Y="18.58" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8729" ItemId="21136" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8729" MobId="0" ItemId="21136" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="The Wrath of Neptulon" QuestId="8729" Type="KillMob" MobId="15571" MobName="Maws" KillCount="1" />
-    <Objective QuestName="The Wrath of Neptulon" QuestId="8729" Type="CollectItem" ItemId="21137" ItemName="Blue Scepter Shard" CollectCount="1" />
+    <Objective QuestName="The Wrath of Neptulon" QuestId="8729" Type="KillMob" MobId="15571" KillCount="1" />
+    <Objective QuestName="The Wrath of Neptulon" QuestId="8729" Type="CollectItem" ItemId="21137" CollectCount="1" />
     <TurnIn QuestName="The Wrath of Neptulon" QuestId="8729" TurnInName="Anachronos" TurnInId="15192" />
     <If Condition="((!HasQuest(8742)) &amp;&amp; (!IsQuestCompleted(8742)))">
       <PickUp QuestName="The Might of Kalimdor" QuestId="8742" GiverName="Anachronos" GiverId="15192" />
@@ -206,6 +248,6 @@
     <If Condition="((!HasQuest(8745)) &amp;&amp; (!IsQuestCompleted(8745)))">
       <PickUp QuestName="Treasure of the Timeless One" QuestId="8745" GiverName="Jonathan the Revelator" GiverId="15693" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Scepter of the Shifting Sands Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Scepter of the Shifting Sands Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

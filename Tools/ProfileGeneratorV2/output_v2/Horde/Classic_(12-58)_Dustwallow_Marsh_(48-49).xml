@@ -1,0 +1,52 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Dustwallow Marsh (48-49)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>49</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="4450" Name="Ledger from Tanaris">
+    <Objective Type="CollectItem" ItemId="11724" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Damaged Crate" Id="174728" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-3990.0" Y="-3814.18" Z="34.45" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1173" Name="Challenge Overlord Mok'Morokk">
+    <Objective Type="KillMob" MobId="4500" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3132.84" Y="-2880.27" Z="34.7842" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Dustwallow Marsh (48-49)" LogColor="Green" />
+    <If Condition="((!HasQuest(1172)) &amp;&amp; (!IsQuestCompleted(1172)))">
+      <PickUp QuestName="The Brood of Onyxia" QuestId="1172" GiverName="Draz'Zilb" GiverId="4501" />
+    </If>
+    <TurnIn QuestName="Cortello's Riddle" QuestId="625" TurnInName="Object_2555" TurnInType="Object" TurnInId="2555" />
+    <If Condition="((!HasQuest(626)) &amp;&amp; (!IsQuestCompleted(626)))">
+      <PickUp QuestName="Cortello's Riddle" QuestId="626" GiverName="Draz'Zilb" GiverId="4501" />
+    </If>
+    <Objective QuestName="Ledger from Tanaris" QuestId="4450" Type="CollectItem" ItemId="11724" CollectCount="1" />
+    <TurnIn QuestName="The Brood of Onyxia" QuestId="1172" TurnInName="Draz'Zilb" TurnInId="4501" />
+    <If Condition="((!HasQuest(1173)) &amp;&amp; (!IsQuestCompleted(1173)))">
+      <PickUp QuestName="Challenge Overlord Mok'Morokk" QuestId="1173" GiverName="Overlord Mok'Morokk" GiverId="4500" />
+    </If>
+    <Objective QuestName="Challenge Overlord Mok'Morokk" QuestId="1173" Type="KillMob" MobId="4500" KillCount="1" />
+    <TurnIn QuestName="Challenge Overlord Mok'Morokk" QuestId="1173" TurnInName="Draz'Zilb" TurnInId="4501" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Dustwallow Marsh (48-49) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Feralas_(49-49)" />
+  </QuestOrder>
+</HBProfile>

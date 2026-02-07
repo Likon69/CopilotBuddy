@@ -1,0 +1,201 @@
+<HBProfile>
+  <Name>Horde\Ahn'Qiraj Gear\Ruins of Ahn'Qiraj Weapon Quest</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Ahn'Qiraj Gear\Ruins of Ahn'Qiraj Weapon Quest" LogColor="Green" />
+    <If Condition="Me.Level &lt; 60">
+      <GrindTo Level="60" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <If Condition="((!HasQuest(8708)) &amp;&amp; (!IsQuestCompleted(8708)))">
+        <PickUp QuestName="Mace of Unending Life" QuestId="8708" GiverName="Warden Haro" GiverId="15499" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <If Condition="((!HasQuest(8712)) &amp;&amp; (!IsQuestCompleted(8712)))">
+        <PickUp QuestName="Scythe of the Unseen Path" QuestId="8712" GiverName="Warden Haro" GiverId="15499" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <If Condition="((!HasQuest(8707)) &amp;&amp; (!IsQuestCompleted(8707)))">
+        <PickUp QuestName="Blade of Vaulted Secrets" QuestId="8707" GiverName="Warden Haro" GiverId="15499" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <If Condition="((!HasQuest(8711)) &amp;&amp; (!IsQuestCompleted(8711)))">
+        <PickUp QuestName="Blade of Eternal Justice" QuestId="8711" GiverName="Warden Haro" GiverId="15499" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <If Condition="((!HasQuest(8705)) &amp;&amp; (!IsQuestCompleted(8705)))">
+        <PickUp QuestName="Gavel of Infinite Wisdom" QuestId="8705" GiverName="Warden Haro" GiverId="15499" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <If Condition="((!HasQuest(8709)) &amp;&amp; (!IsQuestCompleted(8709)))">
+        <PickUp QuestName="Dagger of Veiled Shadows" QuestId="8709" GiverName="Warden Haro" GiverId="15499" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(8706)) &amp;&amp; (!IsQuestCompleted(8706)))">
+        <PickUp QuestName="Hammer of the Gathering Storm" QuestId="8706" GiverName="Warden Haro" GiverId="15499" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <If Condition="((!HasQuest(8710)) &amp;&amp; (!IsQuestCompleted(8710)))">
+        <PickUp QuestName="Kris of Unspoken Names" QuestId="8710" GiverName="Warden Haro" GiverId="15499" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <If Condition="((!HasQuest(8558)) &amp;&amp; (!IsQuestCompleted(8558)))">
+        <PickUp QuestName="Sickle of Unyielding Strength" QuestId="8558" GiverName="Warden Haro" GiverId="15499" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Mace of Unending Life" QuestId="8708" Type="CollectItem" ItemId="20890" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Scythe of the Unseen Path" QuestId="8712" Type="CollectItem" ItemId="20886" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Blade of Vaulted Secrets" QuestId="8707" Type="CollectItem" ItemId="20890" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Blade of Eternal Justice" QuestId="8711" Type="CollectItem" ItemId="20886" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Gavel of Infinite Wisdom" QuestId="8705" Type="CollectItem" ItemId="20890" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Dagger of Veiled Shadows" QuestId="8709" Type="CollectItem" ItemId="20886" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Hammer of the Gathering Storm" QuestId="8706" Type="CollectItem" ItemId="20886" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Kris of Unspoken Names" QuestId="8710" Type="CollectItem" ItemId="20890" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Sickle of Unyielding Strength" QuestId="8558" Type="CollectItem" ItemId="20886" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Mace of Unending Life" QuestId="8708" Type="CollectItem" ItemId="20870" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Scythe of the Unseen Path" QuestId="8712" Type="CollectItem" ItemId="20866" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Blade of Vaulted Secrets" QuestId="8707" Type="CollectItem" ItemId="20871" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Blade of Eternal Justice" QuestId="8711" Type="CollectItem" ItemId="20869" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Gavel of Infinite Wisdom" QuestId="8705" Type="CollectItem" ItemId="20868" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Dagger of Veiled Shadows" QuestId="8709" Type="CollectItem" ItemId="20872" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Hammer of the Gathering Storm" QuestId="8706" Type="CollectItem" ItemId="20869" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Kris of Unspoken Names" QuestId="8710" Type="CollectItem" ItemId="20867" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Sickle of Unyielding Strength" QuestId="8558" Type="CollectItem" ItemId="20873" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Mace of Unending Life" QuestId="8708" Type="CollectItem" ItemId="20862" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Scythe of the Unseen Path" QuestId="8712" Type="CollectItem" ItemId="20860" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Blade of Vaulted Secrets" QuestId="8707" Type="CollectItem" ItemId="20860" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Blade of Eternal Justice" QuestId="8711" Type="CollectItem" ItemId="20861" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Gavel of Infinite Wisdom" QuestId="8705" Type="CollectItem" ItemId="20861" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Dagger of Veiled Shadows" QuestId="8709" Type="CollectItem" ItemId="20859" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Hammer of the Gathering Storm" QuestId="8706" Type="CollectItem" ItemId="20861" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Kris of Unspoken Names" QuestId="8710" Type="CollectItem" ItemId="20859" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Sickle of Unyielding Strength" QuestId="8558" Type="CollectItem" ItemId="20862" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Mace of Unending Life" QuestId="8708" Type="CollectItem" ItemId="20858" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Scythe of the Unseen Path" QuestId="8712" Type="CollectItem" ItemId="20864" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Blade of Vaulted Secrets" QuestId="8707" Type="CollectItem" ItemId="20864" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Blade of Eternal Justice" QuestId="8711" Type="CollectItem" ItemId="20865" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Gavel of Infinite Wisdom" QuestId="8705" Type="CollectItem" ItemId="20865" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Dagger of Veiled Shadows" QuestId="8709" Type="CollectItem" ItemId="20863" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Hammer of the Gathering Storm" QuestId="8706" Type="CollectItem" ItemId="20865" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Kris of Unspoken Names" QuestId="8710" Type="CollectItem" ItemId="20863" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Sickle of Unyielding Strength" QuestId="8558" Type="CollectItem" ItemId="20858" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <TurnIn QuestName="Mace of Unending Life" QuestId="8708" TurnInName="Warden Haro" TurnInId="15499" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <TurnIn QuestName="Scythe of the Unseen Path" QuestId="8712" TurnInName="Warden Haro" TurnInId="15499" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <TurnIn QuestName="Blade of Vaulted Secrets" QuestId="8707" TurnInName="Warden Haro" TurnInId="15499" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <TurnIn QuestName="Blade of Eternal Justice" QuestId="8711" TurnInName="Warden Haro" TurnInId="15499" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <TurnIn QuestName="Gavel of Infinite Wisdom" QuestId="8705" TurnInName="Warden Haro" TurnInId="15499" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <TurnIn QuestName="Dagger of Veiled Shadows" QuestId="8709" TurnInName="Warden Haro" TurnInId="15499" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <TurnIn QuestName="Hammer of the Gathering Storm" QuestId="8706" TurnInName="Warden Haro" TurnInId="15499" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <TurnIn QuestName="Kris of Unspoken Names" QuestId="8710" TurnInName="Warden Haro" TurnInId="15499" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <TurnIn QuestName="Sickle of Unyielding Strength" QuestId="8558" TurnInName="Warden Haro" TurnInId="15499" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Ahn'Qiraj Gear\Ruins of Ahn'Qiraj Weapon Quest Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

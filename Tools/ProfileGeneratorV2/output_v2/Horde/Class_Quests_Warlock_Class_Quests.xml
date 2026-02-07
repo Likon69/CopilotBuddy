@@ -1,0 +1,374 @@
+<HBProfile>
+  <Name>Horde\Class Quests\Warlock Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="1485" Name="Vile Familiars">
+    <Objective Type="KillMob" MobId="3101" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-252.915" Y="-4381.57" Z="62.5709" />
+        <Hotspot X="-213.201" Y="-4382.11" Z="63.6607" />
+        <Hotspot X="-198.088" Y="-4333.76" Z="68.3462" />
+        <Hotspot X="-211.553" Y="-4351.95" Z="64.4947" />
+        <Hotspot X="-166.438" Y="-4320.16" Z="71.1002" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1470" Name="Piercing the Veil">
+    <Objective Type="KillMob" MobId="1890" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1898.19" Y="1467.73" Z="83.6047" />
+        <Hotspot X="1889.25" Y="1488.25" Z="88.0136" />
+        <Hotspot X="1877.55" Y="1480.87" Z="85.4797" />
+        <Hotspot X="2052.56" Y="1577.75" Z="73.5502" />
+        <Hotspot X="1939.61" Y="1542.91" Z="90.165" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1501" Name="Creature of the Void">
+    <Objective Type="CollectItem" ItemId="6535" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Burning Blade Stash" Id="58595" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1464.4" Y="-4691.85" Z="6.53" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1803" Name="Tome of the Cabal">
+    <Objective Type="CollectItem" ItemId="6931" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Tome of the Cabal" Id="92013" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-1152.77" Y="177.59" Z="0.45" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="6997" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Damaged Chest" Id="92423" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-4925.59" Y="-2344.58" Z="-49.1" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8421" Name="The Wrong Stuff">
+    <Objective Type="KillMob" MobId="7092" KillCount="1">
+      <Hotspots>
+        <Hotspot X="5309.27" Y="-810.188" Z="338.433" />
+        <Hotspot X="5352.43" Y="-784.759" Z="334.135" />
+        <Hotspot X="4984.95" Y="-657.641" Z="292.457" />
+        <Hotspot X="4997.94" Y="-686.841" Z="294.595" />
+        <Hotspot X="5029.49" Y="-642.252" Z="290.953" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="7602" Name="Flawless Fel Essence">
+    <Objective Type="KillMob" MobId="9862" KillCount="1">
+      <Hotspots>
+        <Hotspot X="5375.1" Y="-441.792" Z="273.182" />
+        <Hotspot X="5373.73" Y="-525.695" Z="273.968" />
+        <Hotspot X="5359.28" Y="-433.128" Z="273.072" />
+        <Hotspot X="5182.75" Y="-577.787" Z="287.41" />
+        <Hotspot X="5000.33" Y="-447.795" Z="318.176" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="6011" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11711.7" Y="-3191.47" Z="7.2793" />
+        <Hotspot X="-11696.2" Y="-3118.67" Z="15.0745" />
+        <Hotspot X="-11774.7" Y="-3071.83" Z="7.7012" />
+        <Hotspot X="-11709.8" Y="-3244.42" Z="8.4369" />
+        <Hotspot X="-11800.8" Y="-3321.41" Z="4.0647" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="7603" Name="Kroshius' Infernal Core">
+    <Objective Type="KillMob" MobId="14467" KillCount="1">
+      <Hotspots>
+        <Hotspot X="5800.89" Y="-985.82" Z="409.78" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="7624" Name="Ulathek the Traitor">
+    <Objective Type="KillMob" MobId="14523" KillCount="1">
+      <Hotspots>
+        <Hotspot X="5277.13" Y="-701.938" Z="268.772" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Class Quests\Warlock Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Orc)">
+      <PickUp QuestName="Vile Familiars" QuestId="1485" GiverName="Ruzan" GiverId="5765" />
+      <Objective QuestName="Vile Familiars" QuestId="1485" Type="KillMob" MobId="3101" KillCount="6" />
+      <Objective QuestName="Vile Familiars" QuestId="1485" Type="CollectItem" ItemId="6487" CollectCount="6" />
+      <TurnIn QuestName="Vile Familiars" QuestId="1485" TurnInName="Ruzan" TurnInId="5765" />
+      <If Condition="((!HasQuest(1499)) &amp;&amp; (!IsQuestCompleted(1499)))">
+        <PickUp QuestName="Vile Familiars" QuestId="1499" GiverName="Ruzan" GiverId="5765" />
+      </If>
+      <TurnIn QuestName="Vile Familiars" QuestId="1499" TurnInName="Zureetha Fargaze" TurnInId="3145" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <PickUp QuestName="Piercing the Veil" QuestId="1470" GiverName="Venya Marthand" GiverId="5667" />
+      <Objective QuestName="Piercing the Veil" QuestId="1470" Type="KillMob" MobId="1890" KillCount="1" />
+      <Objective QuestName="Piercing the Veil" QuestId="1470" Type="CollectItem" ItemId="6281" CollectCount="3" />
+      <TurnIn QuestName="Piercing the Veil" QuestId="1470" TurnInName="Venya Marthand" TurnInId="5667" />
+      <If Condition="((!HasQuest(1478)) &amp;&amp; (!IsQuestCompleted(1478)))">
+        <PickUp QuestName="Halgar's Summons" QuestId="1478" GiverName="Ageron Kargal" GiverId="5724" />
+      </If>
+    </If>
+    <TurnIn QuestName="Halgar's Summons" QuestId="1478" TurnInName="Carendin Halgar" TurnInId="5675" />
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <If Condition="((!HasQuest(1473)) &amp;&amp; (!IsQuestCompleted(1473)))">
+        <PickUp QuestName="Creature of the Void" QuestId="1473" GiverName="Carendin Halgar" GiverId="5675" />
+      </If>
+      <Objective QuestName="Creature of the Void" QuestId="1473" Type="CollectItem" ItemId="6285" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Creature of the Void" QuestId="1473" TurnInName="Carendin Halgar" TurnInId="5675" />
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Undead)">
+      <If Condition="((!HasQuest(1471)) &amp;&amp; (!IsQuestCompleted(1471)))">
+        <PickUp QuestName="The Binding" QuestId="1471" GiverName="Carendin Halgar" GiverId="5675" />
+      </If>
+      <While Condition="((HasQuest(1471)) &amp;&amp; (!IsQuestCompleted(1471)))">
+        <CustomBehavior File="UseItemOn" QuestId="1471" MobId="5676" ItemId="6284" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="The Binding" QuestId="1471" Type="KillMob" MobId="5676" KillCount="1" />
+      <TurnIn QuestName="The Binding" QuestId="1471" TurnInName="Carendin Halgar" TurnInId="5675" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Orc)">
+      <If Condition="((!HasQuest(1506)) &amp;&amp; (!IsQuestCompleted(1506)))">
+        <PickUp QuestName="Gan'rul's Summons" QuestId="1506" GiverName="Ophek" GiverId="3294" />
+      </If>
+    </If>
+    <TurnIn QuestName="Gan'rul's Summons" QuestId="1506" TurnInName="Gan'rul Bloodeye" TurnInId="5875" />
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Orc)">
+      <If Condition="((!HasQuest(1501)) &amp;&amp; (!IsQuestCompleted(1501)))">
+        <PickUp QuestName="Creature of the Void" QuestId="1501" GiverName="Gan'rul Bloodeye" GiverId="5875" />
+      </If>
+      <Objective QuestName="Creature of the Void" QuestId="1501" Type="CollectItem" ItemId="6535" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Creature of the Void" QuestId="1501" TurnInName="Gan'rul Bloodeye" TurnInId="5875" />
+    <If Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; (Me.Race == WoWRace.Orc)">
+      <If Condition="((!HasQuest(1504)) &amp;&amp; (!IsQuestCompleted(1504)))">
+        <PickUp QuestName="The Binding" QuestId="1504" GiverName="Gan'rul Bloodeye" GiverId="5875" />
+      </If>
+      <While Condition="((HasQuest(1504)) &amp;&amp; (!IsQuestCompleted(1504)))">
+        <CustomBehavior File="UseItemOn" QuestId="1504" MobId="5676" ItemId="7464" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="The Binding" QuestId="1504" Type="KillMob" MobId="5676" KillCount="1" />
+      <TurnIn QuestName="The Binding" QuestId="1504" TurnInName="Gan'rul Bloodeye" TurnInId="5875" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <If Condition="((!HasQuest(1507)) &amp;&amp; (!IsQuestCompleted(1507)))">
+        <PickUp QuestName="Devourer of Souls" QuestId="1507" GiverName="Gan'rul Bloodeye" GiverId="5875" />
+      </If>
+      <TurnIn QuestName="Devourer of Souls" QuestId="1507" TurnInName="Cazul" TurnInId="5909" />
+      <If Condition="((!HasQuest(1508)) &amp;&amp; (!IsQuestCompleted(1508)))">
+        <PickUp QuestName="Blind Cazul" QuestId="1508" GiverName="Cazul" GiverId="5909" />
+      </If>
+    </If>
+    <TurnIn QuestName="Blind Cazul" QuestId="1508" TurnInName="Zankaja" TurnInId="5910" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <If Condition="((!HasQuest(1509)) &amp;&amp; (!IsQuestCompleted(1509)))">
+        <PickUp QuestName="News of Dogran" QuestId="1509" GiverName="Zankaja" GiverId="5910" />
+      </If>
+      <TurnIn QuestName="News of Dogran" QuestId="1509" TurnInName="Gazrog" TurnInId="3464" />
+      <If Condition="((!HasQuest(1510)) &amp;&amp; (!IsQuestCompleted(1510)))">
+        <PickUp QuestName="News of Dogran" QuestId="1510" GiverName="Gazrog" GiverId="3464" />
+      </If>
+    </If>
+    <TurnIn QuestName="News of Dogran" QuestId="1510" TurnInName="Ken'zigla" TurnInId="4197" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <If Condition="((!HasQuest(1511)) &amp;&amp; (!IsQuestCompleted(1511)))">
+        <PickUp QuestName="Ken'zigla's Draught" QuestId="1511" GiverName="Ken'zigla" GiverId="4197" />
+      </If>
+    </If>
+    <TurnIn QuestName="Ken'zigla's Draught" QuestId="1511" TurnInName="Grunt Logmar" TurnInId="5911" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <If Condition="((!HasQuest(1515)) &amp;&amp; (!IsQuestCompleted(1515)))">
+        <PickUp QuestName="Dogran's Captivity" QuestId="1515" GiverName="Grunt Logmar" GiverId="5911" />
+      </If>
+      <TurnIn QuestName="Dogran's Captivity" QuestId="1515" TurnInName="Grunt Dogran" TurnInId="5908" />
+      <If Condition="((!HasQuest(1512)) &amp;&amp; (!IsQuestCompleted(1512)))">
+        <PickUp QuestName="Love's Gift" QuestId="1512" GiverName="Grunt Dogran" GiverId="5908" />
+      </If>
+      <TurnIn QuestName="Love's Gift" QuestId="1512" TurnInName="Gan'rul Bloodeye" TurnInId="5875" />
+      <If Condition="((!HasQuest(1513)) &amp;&amp; (!IsQuestCompleted(1513)))">
+        <PickUp QuestName="The Binding" QuestId="1513" GiverName="Gan'rul Bloodeye" GiverId="5875" />
+      </If>
+      <While Condition="((HasQuest(1513)) &amp;&amp; (!IsQuestCompleted(1513)))">
+        <CustomBehavior File="UseItemOn" QuestId="1513" MobId="5677" ItemId="6626" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="The Binding" QuestId="1513" Type="KillMob" MobId="5677" KillCount="1" />
+      <TurnIn QuestName="The Binding" QuestId="1513" TurnInName="Gan'rul Bloodeye" TurnInId="5875" />
+      <If Condition="((!HasQuest(2996)) &amp;&amp; (!IsQuestCompleted(2996)))">
+        <PickUp QuestName="Seeking Strahad" QuestId="2996" GiverName="Gan'rul Bloodeye" GiverId="5875" />
+      </If>
+      <TurnIn QuestName="Seeking Strahad" QuestId="2996" TurnInName="Strahad Farsan" TurnInId="6251" />
+      <PickUp QuestName="Tome of the Cabal" QuestId="1801" GiverName="Strahad Farsan" GiverId="6251" />
+      <TurnIn QuestName="Tome of the Cabal" QuestId="1758" TurnInName="Jorah Annison" TurnInId="6294" />
+      <If Condition="((!HasQuest(1803)) &amp;&amp; (!IsQuestCompleted(1803)))">
+        <PickUp QuestName="Tome of the Cabal" QuestId="1803" GiverName="Jorah Annison" GiverId="6293" />
+      </If>
+      <Objective QuestName="Tome of the Cabal" QuestId="1803" Type="CollectItem" ItemId="6931" CollectCount="1" />
+      <Objective QuestName="Tome of the Cabal" QuestId="1803" Type="CollectItem" ItemId="6997" CollectCount="1" />
+      <TurnIn QuestName="Tome of the Cabal" QuestId="1803" TurnInName="Jorah Annison" TurnInId="6293" />
+      <If Condition="((!HasQuest(1805)) &amp;&amp; (!IsQuestCompleted(1805)))">
+        <PickUp QuestName="Tome of the Cabal" QuestId="1805" GiverName="Jorah Annison" GiverId="6293" />
+      </If>
+      <Objective QuestName="Tome of the Cabal" QuestId="1805" Type="CollectItem" ItemId="6930" CollectCount="3" />
+      <TurnIn QuestName="Tome of the Cabal" QuestId="1805" TurnInName="Strahad Farsan" TurnInId="6251" />
+      <While Condition="((HasQuest(1471)) &amp;&amp; (!IsQuestCompleted(1471)))">
+        <CustomBehavior File="UseItemOn" QuestId="1471" MobId="5676" ItemId="6999" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="The Binding" QuestId="1471" Type="KillMob" MobId="6268" KillCount="1" />
+      <PickUp QuestName="Summon Felsteed" QuestId="3631" GiverName="Zevrost" GiverId="3326" />
+      <!-- Quest 3631 may auto-complete (no turn-in found) -->
+      <PickUp QuestName="Summon Felsteed" QuestId="4490" GiverName="Strahad Farsan" GiverId="6251" />
+      <!-- Quest 4490 may auto-complete (no turn-in found) -->
+      <Objective QuestName="Hot and Itchy" QuestId="8420" Type="CollectItem" ItemId="14256" CollectCount="1" />
+      <PickUp QuestName="What Niby Commands" QuestId="7601" GiverName="Niby the Almighty" GiverId="14469" />
+      <TurnIn QuestName="What Niby Commands" QuestId="7601" TurnInName="Impsy" TurnInId="14470" />
+      <If Condition="((!HasQuest(7602)) &amp;&amp; (!IsQuestCompleted(7602)))">
+        <PickUp QuestName="Flawless Fel Essence" QuestId="7602" GiverName="Impsy" GiverId="14470" />
+      </If>
+      <If Condition="((!HasQuest(8420)) &amp;&amp; (!IsQuestCompleted(8420)))">
+        <PickUp QuestName="Hot and Itchy" QuestId="8420" GiverName="Impsy" GiverId="14470" />
+      </If>
+      <If Condition="((!HasQuest(8421)) &amp;&amp; (!IsQuestCompleted(8421)))">
+        <PickUp QuestName="The Wrong Stuff" QuestId="8421" GiverName="Impsy" GiverId="14470" />
+      </If>
+    </If>
+    <TurnIn QuestName="Hot and Itchy" QuestId="8420" TurnInName="Impsy" TurnInId="14470" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="The Wrong Stuff" QuestId="8421" Type="KillMob" MobId="7092" KillCount="1" />
+      <Objective QuestName="The Wrong Stuff" QuestId="8421" Type="CollectItem" ItemId="20614" CollectCount="4" />
+      <Objective QuestName="The Wrong Stuff" QuestId="8421" Type="CollectItem" ItemId="20613" CollectCount="10" />
+      <TurnIn QuestName="The Wrong Stuff" QuestId="8421" TurnInName="Impsy" TurnInId="14470" />
+      <If Condition="((!HasQuest(8422)) &amp;&amp; (!IsQuestCompleted(8422)))">
+        <PickUp QuestName="Trolls of a Feather" QuestId="8422" GiverName="Impsy" GiverId="14470" />
+      </If>
+      <Objective QuestName="Flawless Fel Essence" QuestId="7602" Type="KillMob" MobId="9862" KillCount="1" />
+      <Objective QuestName="Flawless Fel Essence" QuestId="7602" Type="CollectItem" ItemId="18622" CollectCount="1" />
+      <Objective QuestName="Flawless Fel Essence" QuestId="7602" Type="CollectItem" ItemId="18624" CollectCount="1" />
+      <Objective QuestName="Flawless Fel Essence" QuestId="7602" Type="KillMob" MobId="6011" KillCount="1" />
+      <Objective QuestName="Flawless Fel Essence" QuestId="7602" Type="CollectItem" ItemId="18623" CollectCount="1" />
+      <Objective QuestName="Trolls of a Feather" QuestId="8422" Type="CollectItem" ItemId="20606" CollectCount="2" />
+      <Objective QuestName="Trolls of a Feather" QuestId="8422" Type="CollectItem" ItemId="20607" CollectCount="2" />
+      <Objective QuestName="Trolls of a Feather" QuestId="8422" Type="CollectItem" ItemId="20608" CollectCount="2" />
+      <TurnIn QuestName="Flawless Fel Essence" QuestId="7602" TurnInName="Impsy" TurnInId="14470" />
+      <TurnIn QuestName="Trolls of a Feather" QuestId="8422" TurnInName="Impsy" TurnInId="14470" />
+      <If Condition="((!HasQuest(7603)) &amp;&amp; (!IsQuestCompleted(7603)))">
+        <PickUp QuestName="Kroshius' Infernal Core" QuestId="7603" GiverName="Impsy" GiverId="14470" />
+      </If>
+    </If>
+    <While Condition="((HasQuest(7603)) &amp;&amp; (!IsQuestCompleted(7603)))">
+      <CustomBehavior File="UseItemOn" QuestId="7603" MobId="0" ItemId="18626" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Kroshius' Infernal Core" QuestId="7603" Type="KillMob" MobId="14467" KillCount="1" />
+      <Objective QuestName="Kroshius' Infernal Core" QuestId="7603" Type="CollectItem" ItemId="18625" CollectCount="1" />
+      <TurnIn QuestName="Kroshius' Infernal Core" QuestId="7603" TurnInName="Niby the Almighty" TurnInId="14469" />
+      <Objective QuestName="Doomsday Candle" QuestId="7628" Type="CollectItem" ItemId="15416" CollectCount="3" />
+      <Objective QuestName="Bell of Dethmoora" QuestId="7626" Type="CollectItem" ItemId="9264" CollectCount="2" />
+      <Objective QuestName="Wheel of the Black March" QuestId="7627" Type="CollectItem" ItemId="14344" CollectCount="6" />
+      <Objective QuestName="Wheel of the Black March" QuestId="7627" Type="CollectItem" ItemId="11370" CollectCount="25" />
+      <Objective QuestName="Arcanite" QuestId="7630" Type="CollectItem" ItemId="12360" CollectCount="1" />
+      <PickUp QuestName="Mor'zul Bloodbringer" QuestId="7562" GiverName="Kurgul" GiverId="5815" />
+    </If>
+    <TurnIn QuestName="Mor'zul Bloodbringer" QuestId="7562" TurnInName="Mor'zul Bloodbringer" TurnInId="14436" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <If Condition="((!HasQuest(7563)) &amp;&amp; (!IsQuestCompleted(7563)))">
+        <PickUp QuestName="Rage of Blood" QuestId="7563" GiverName="Mor'zul Bloodbringer" GiverId="14436" />
+      </If>
+      <Objective QuestName="Rage of Blood" QuestId="7563" Type="CollectItem" ItemId="18590" CollectCount="30" />
+    </If>
+    <TurnIn QuestName="Rage of Blood" QuestId="7563" TurnInName="Mor'zul Bloodbringer" TurnInId="14436" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <If Condition="((!HasQuest(7564)) &amp;&amp; (!IsQuestCompleted(7564)))">
+        <PickUp QuestName="Wildeyes" QuestId="7564" GiverName="Mor'zul Bloodbringer" GiverId="14436" />
+      </If>
+      <TurnIn QuestName="Wildeyes" QuestId="7564" TurnInName="Gorzeeki Wildeyes" TurnInId="14437" />
+      <If Condition="((!HasQuest(7623)) &amp;&amp; (!IsQuestCompleted(7623)))">
+        <PickUp QuestName="Lord Banehollow" QuestId="7623" GiverName="Gorzeeki Wildeyes" GiverId="14437" />
+      </If>
+      <If Condition="((!HasQuest(7626)) &amp;&amp; (!IsQuestCompleted(7626)))">
+        <PickUp QuestName="Bell of Dethmoora" QuestId="7626" GiverName="Mor'zul Bloodbringer" GiverId="14436" />
+      </If>
+      <If Condition="((!HasQuest(7627)) &amp;&amp; (!IsQuestCompleted(7627)))">
+        <PickUp QuestName="Wheel of the Black March" QuestId="7627" GiverName="Mor'zul Bloodbringer" GiverId="14436" />
+      </If>
+      <If Condition="((!HasQuest(7628)) &amp;&amp; (!IsQuestCompleted(7628)))">
+        <PickUp QuestName="Doomsday Candle" QuestId="7628" GiverName="Mor'zul Bloodbringer" GiverId="14436" />
+      </If>
+      <TurnIn QuestName="Bell of Dethmoora" QuestId="7626" TurnInName="Gorzeeki Wildeyes" TurnInId="14437" />
+      <TurnIn QuestName="Wheel of the Black March" QuestId="7627" TurnInName="Gorzeeki Wildeyes" TurnInId="14437" />
+      <TurnIn QuestName="Doomsday Candle" QuestId="7628" TurnInName="Gorzeeki Wildeyes" TurnInId="14437" />
+      <If Condition="((!HasQuest(7630)) &amp;&amp; (!IsQuestCompleted(7630)))">
+        <PickUp QuestName="Arcanite" QuestId="7630" GiverName="Gorzeeki Wildeyes" GiverId="14437" />
+      </If>
+      <TurnIn QuestName="Arcanite" QuestId="7630" TurnInName="Gorzeeki Wildeyes" TurnInId="14437" />
+      <While Condition="((HasQuest(7623)) &amp;&amp; (!IsQuestCompleted(7623)))">
+        <CustomBehavior File="UseItemOn" QuestId="7623" MobId="0" ItemId="18802" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <CustomBehavior File="UseItemOn" ItemId="18802" MobId="0" NumOfTimes="1" CollectionDistance="100" />
+      <TurnIn QuestName="Lord Banehollow" QuestId="7623" TurnInName="Lord Banehollow" TurnInId="9516" />
+      <If Condition="((!HasQuest(7624)) &amp;&amp; (!IsQuestCompleted(7624)))">
+        <PickUp QuestName="Ulathek the Traitor" QuestId="7624" GiverName="Lord Banehollow" GiverId="9516" />
+      </If>
+      <Objective QuestName="Ulathek the Traitor" QuestId="7624" Type="KillMob" MobId="14523" KillCount="1" />
+      <Objective QuestName="Ulathek the Traitor" QuestId="7624" Type="CollectItem" ItemId="18719" CollectCount="1" />
+      <While Condition="((HasQuest(7624)) &amp;&amp; (!IsQuestCompleted(7624)))">
+        <CustomBehavior File="UseItemOn" QuestId="7624" MobId="0" ItemId="18802" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Ulathek the Traitor" QuestId="7624" TurnInName="Lord Banehollow" TurnInId="9516" />
+      <If Condition="((!HasQuest(7625)) &amp;&amp; (!IsQuestCompleted(7625)))">
+        <PickUp QuestName="Xorothian Stardust" QuestId="7625" GiverName="Lord Banehollow" GiverId="9516" />
+      </If>
+    </If>
+    <TurnIn QuestName="Xorothian Stardust" QuestId="7625" TurnInName="Gorzeeki Wildeyes" TurnInId="14437" />
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <If Condition="((!HasQuest(7629)) &amp;&amp; (!IsQuestCompleted(7629)))">
+        <PickUp QuestName="Imp Delivery" QuestId="7629" GiverName="Gorzeeki Wildeyes" GiverId="14437" />
+      </If>
+      <While Condition="((HasQuest(7629)) &amp;&amp; (!IsQuestCompleted(7629)))">
+        <CustomBehavior File="UseItemOn" QuestId="7629" MobId="14500" ItemId="18688" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Imp Delivery" QuestId="7629" TurnInName="Gorzeeki Wildeyes" TurnInId="14437" />
+      <If Condition="((!HasQuest(7631)) &amp;&amp; (!IsQuestCompleted(7631)))">
+        <PickUp QuestName="Dreadsteed of Xoroth" QuestId="7631" GiverName="Mor'zul Bloodbringer" GiverId="14436" />
+      </If>
+      <While Condition="((HasQuest(7631)) &amp;&amp; (!IsQuestCompleted(7631)))">
+        <CustomBehavior File="UseItemOn" QuestId="7631" MobId="14502" ItemId="18663" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <While Condition="((HasQuest(7631)) &amp;&amp; (!IsQuestCompleted(7631)))">
+        <CustomBehavior File="UseItemOn" QuestId="7631" MobId="14502" ItemId="18670" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="Dreadsteed of Xoroth" QuestId="7631" Type="KillMob" MobId="14502" KillCount="1" />
+      <TurnIn QuestName="Dreadsteed of Xoroth" QuestId="7631" TurnInName="Dreadsteed Spirit" TurnInId="14504" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Class Quests\Warlock Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

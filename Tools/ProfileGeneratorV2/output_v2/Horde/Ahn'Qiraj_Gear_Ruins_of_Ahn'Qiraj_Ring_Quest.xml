@@ -1,0 +1,201 @@
+<HBProfile>
+  <Name>Horde\Ahn'Qiraj Gear\Ruins of Ahn'Qiraj Ring Quest</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Ahn'Qiraj Gear\Ruins of Ahn'Qiraj Ring Quest" LogColor="Green" />
+    <If Condition="Me.Level &lt; 60">
+      <GrindTo Level="60" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <If Condition="((!HasQuest(8700)) &amp;&amp; (!IsQuestCompleted(8700)))">
+        <PickUp QuestName="Band of Unending Life" QuestId="8700" GiverName="Windcaller Yessendra" GiverId="15498" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <If Condition="((!HasQuest(8704)) &amp;&amp; (!IsQuestCompleted(8704)))">
+        <PickUp QuestName="Signet of the Unseen Path" QuestId="8704" GiverName="Windcaller Yessendra" GiverId="15498" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <If Condition="((!HasQuest(8699)) &amp;&amp; (!IsQuestCompleted(8699)))">
+        <PickUp QuestName="Band of Vaulted Secrets" QuestId="8699" GiverName="Windcaller Yessendra" GiverId="15498" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <If Condition="((!HasQuest(8703)) &amp;&amp; (!IsQuestCompleted(8703)))">
+        <PickUp QuestName="Ring of Eternal Justice" QuestId="8703" GiverName="Windcaller Yessendra" GiverId="15498" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <If Condition="((!HasQuest(8697)) &amp;&amp; (!IsQuestCompleted(8697)))">
+        <PickUp QuestName="Ring of Infinite Wisdom" QuestId="8697" GiverName="Windcaller Yessendra" GiverId="15498" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <If Condition="((!HasQuest(8701)) &amp;&amp; (!IsQuestCompleted(8701)))">
+        <PickUp QuestName="Band of Veiled Shadows" QuestId="8701" GiverName="Windcaller Yessendra" GiverId="15498" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(8698)) &amp;&amp; (!IsQuestCompleted(8698)))">
+        <PickUp QuestName="Ring of the Gathering Storm" QuestId="8698" GiverName="Windcaller Yessendra" GiverId="15498" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <If Condition="((!HasQuest(8702)) &amp;&amp; (!IsQuestCompleted(8702)))">
+        <PickUp QuestName="Ring of Unspoken Names" QuestId="8702" GiverName="Windcaller Yessendra" GiverId="15498" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <If Condition="((!HasQuest(8556)) &amp;&amp; (!IsQuestCompleted(8556)))">
+        <PickUp QuestName="Signet of Unyielding Strength" QuestId="8556" GiverName="Windcaller Yessendra" GiverId="15498" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Band of Unending Life" QuestId="8700" Type="CollectItem" ItemId="20884" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Signet of the Unseen Path" QuestId="8704" Type="CollectItem" ItemId="20888" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Band of Vaulted Secrets" QuestId="8699" Type="CollectItem" ItemId="20884" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Ring of Eternal Justice" QuestId="8703" Type="CollectItem" ItemId="20884" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Ring of Infinite Wisdom" QuestId="8697" Type="CollectItem" ItemId="20888" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Band of Veiled Shadows" QuestId="8701" Type="CollectItem" ItemId="20888" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Ring of the Gathering Storm" QuestId="8698" Type="CollectItem" ItemId="20884" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Ring of Unspoken Names" QuestId="8702" Type="CollectItem" ItemId="20888" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Signet of Unyielding Strength" QuestId="8556" Type="CollectItem" ItemId="20884" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Band of Unending Life" QuestId="8700" Type="CollectItem" ItemId="20873" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Signet of the Unseen Path" QuestId="8704" Type="CollectItem" ItemId="20869" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Band of Vaulted Secrets" QuestId="8699" Type="CollectItem" ItemId="20866" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Ring of Eternal Justice" QuestId="8703" Type="CollectItem" ItemId="20872" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Ring of Infinite Wisdom" QuestId="8697" Type="CollectItem" ItemId="20871" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Band of Veiled Shadows" QuestId="8701" Type="CollectItem" ItemId="20867" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Ring of the Gathering Storm" QuestId="8698" Type="CollectItem" ItemId="20872" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Ring of Unspoken Names" QuestId="8702" Type="CollectItem" ItemId="20870" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Signet of Unyielding Strength" QuestId="8556" Type="CollectItem" ItemId="20868" CollectCount="2" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Band of Unending Life" QuestId="8700" Type="CollectItem" ItemId="20861" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Signet of the Unseen Path" QuestId="8704" Type="CollectItem" ItemId="20859" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Band of Vaulted Secrets" QuestId="8699" Type="CollectItem" ItemId="20859" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Ring of Eternal Justice" QuestId="8703" Type="CollectItem" ItemId="20860" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Ring of Infinite Wisdom" QuestId="8697" Type="CollectItem" ItemId="20860" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Band of Veiled Shadows" QuestId="8701" Type="CollectItem" ItemId="20858" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Ring of the Gathering Storm" QuestId="8698" Type="CollectItem" ItemId="20860" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Ring of Unspoken Names" QuestId="8702" Type="CollectItem" ItemId="20858" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Signet of Unyielding Strength" QuestId="8556" Type="CollectItem" ItemId="20861" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Band of Unending Life" QuestId="8700" Type="CollectItem" ItemId="20865" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <Objective QuestName="Signet of the Unseen Path" QuestId="8704" Type="CollectItem" ItemId="20863" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <Objective QuestName="Band of Vaulted Secrets" QuestId="8699" Type="CollectItem" ItemId="20863" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <Objective QuestName="Ring of Eternal Justice" QuestId="8703" Type="CollectItem" ItemId="20864" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <Objective QuestName="Ring of Infinite Wisdom" QuestId="8697" Type="CollectItem" ItemId="20864" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Band of Veiled Shadows" QuestId="8701" Type="CollectItem" ItemId="20862" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <Objective QuestName="Ring of the Gathering Storm" QuestId="8698" Type="CollectItem" ItemId="20861" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Ring of Unspoken Names" QuestId="8702" Type="CollectItem" ItemId="20862" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <Objective QuestName="Signet of Unyielding Strength" QuestId="8556" Type="CollectItem" ItemId="20865" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <TurnIn QuestName="Band of Unending Life" QuestId="8700" TurnInName="Windcaller Yessendra" TurnInId="15498" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter)">
+      <TurnIn QuestName="Signet of the Unseen Path" QuestId="8704" TurnInName="Windcaller Yessendra" TurnInId="15498" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Mage)">
+      <TurnIn QuestName="Band of Vaulted Secrets" QuestId="8699" TurnInName="Windcaller Yessendra" TurnInId="15498" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <TurnIn QuestName="Ring of Eternal Justice" QuestId="8703" TurnInName="Windcaller Yessendra" TurnInId="15498" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <TurnIn QuestName="Ring of Infinite Wisdom" QuestId="8697" TurnInName="Windcaller Yessendra" TurnInId="15498" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <TurnIn QuestName="Band of Veiled Shadows" QuestId="8701" TurnInName="Windcaller Yessendra" TurnInId="15498" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <TurnIn QuestName="Ring of the Gathering Storm" QuestId="8698" TurnInName="Windcaller Yessendra" TurnInId="15498" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <TurnIn QuestName="Ring of Unspoken Names" QuestId="8702" TurnInName="Windcaller Yessendra" TurnInId="15498" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <TurnIn QuestName="Signet of Unyielding Strength" QuestId="8556" TurnInName="Windcaller Yessendra" TurnInId="15498" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Ahn'Qiraj Gear\Ruins of Ahn'Qiraj Ring Quest Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

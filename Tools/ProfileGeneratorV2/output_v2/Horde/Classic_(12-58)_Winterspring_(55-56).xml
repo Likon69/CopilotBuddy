@@ -1,0 +1,154 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Winterspring (55-56)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>56</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="8464" Name="Winterfall Activity">
+    <Objective Type="KillMob" MobId="7438" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6743.74" Y="-4949.02" Z="770.322" />
+        <Hotspot X="6667.84" Y="-5122.11" Z="779.651" />
+        <Hotspot X="6693.75" Y="-5047.92" Z="781.343" />
+        <Hotspot X="6773.63" Y="-4939.62" Z="764.797" />
+        <Hotspot X="6641.84" Y="-5094.33" Z="788.351" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7439" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6649.67" Y="-5109.21" Z="783.095" />
+        <Hotspot X="6865.62" Y="-5101.04" Z="692.819" />
+        <Hotspot X="6731.89" Y="-5134.97" Z="733.104" />
+        <Hotspot X="6785.71" Y="-5161.02" Z="732.786" />
+        <Hotspot X="6718.93" Y="-5252.01" Z="778.708" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7440" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6906.65" Y="-5144.72" Z="695.65" />
+        <Hotspot X="6514.72" Y="-3269.61" Z="574.519" />
+        <Hotspot X="6878.17" Y="-4999.09" Z="694.566" />
+        <Hotspot X="6813.83" Y="-2470.48" Z="557.479" />
+        <Hotspot X="6847.1" Y="-2490.14" Z="561.889" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="5082" Name="Threat of the Winterfall">
+    <Objective Type="KillMob" MobId="7440" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6906.65" Y="-5144.72" Z="695.65" />
+        <Hotspot X="6514.72" Y="-3269.61" Z="574.519" />
+        <Hotspot X="6878.17" Y="-4999.09" Z="694.566" />
+        <Hotspot X="6813.83" Y="-2470.48" Z="557.479" />
+        <Hotspot X="6847.1" Y="-2490.14" Z="561.889" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7441" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6418.35" Y="-3115.4" Z="580.961" />
+        <Hotspot X="6451.47" Y="-3161.82" Z="572.104" />
+        <Hotspot X="6453.58" Y="-3176.64" Z="572.206" />
+        <Hotspot X="6513.78" Y="-3138.88" Z="572.996" />
+        <Hotspot X="6496.59" Y="-3138.79" Z="571.354" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7442" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6413.54" Y="-3295.41" Z="592.913" />
+        <Hotspot X="6447.59" Y="-3328.85" Z="590.462" />
+        <Hotspot X="6496.07" Y="-3338.02" Z="588.009" />
+        <Hotspot X="6882.35" Y="-2513.31" Z="581.347" />
+        <Hotspot X="6875.04" Y="-2548.72" Z="589.002" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4809" Name="Chillwind Horns">
+    <Objective Type="KillMob" MobId="7448" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6034.82" Y="-5179.02" Z="866.623" />
+        <Hotspot X="6082.77" Y="-5156.01" Z="870.203" />
+        <Hotspot X="6012.81" Y="-5143.63" Z="848.952" />
+        <Hotspot X="7100.05" Y="-5158.99" Z="750.515" />
+        <Hotspot X="6303.35" Y="-4819.47" Z="755.203" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4521" Name="Wild Guardians">
+    <Objective Type="KillMob" MobId="7451" KillCount="15">
+      <Hotspots>
+        <Hotspot X="6976.34" Y="-4709.22" Z="716.001" />
+        <Hotspot X="7122.82" Y="-4661.99" Z="638.525" />
+        <Hotspot X="7197.48" Y="-4218.32" Z="708.487" />
+        <Hotspot X="6791.44" Y="-4555.81" Z="727.993" />
+        <Hotspot X="7209.75" Y="-4540.12" Z="600.083" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7450" KillCount="15">
+      <Hotspots>
+        <Hotspot X="6336.91" Y="-3735.25" Z="725.655" />
+        <Hotspot X="6339.7" Y="-3556.75" Z="721.211" />
+        <Hotspot X="6509.06" Y="-3475.4" Z="630.242" />
+        <Hotspot X="6749.81" Y="-4215.74" Z="706.659" />
+        <Hotspot X="6508.49" Y="-3680.8" Z="720.98" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Winterspring (55-56)" LogColor="Green" />
+    <TurnIn QuestName="Speak to Salfa" QuestId="8465" TurnInName="Salfa" TurnInId="11556" />
+    <If Condition="((!HasQuest(8464)) &amp;&amp; (!IsQuestCompleted(8464)))">
+      <PickUp QuestName="Winterfall Activity" QuestId="8464" GiverName="Salfa" GiverId="11556" />
+    </If>
+    <TurnIn QuestName="The New Springs" QuestId="980" TurnInName="Donova Snowden" TurnInId="9298" />
+    <If Condition="((!HasQuest(4842)) &amp;&amp; (!IsQuestCompleted(4842)))">
+      <PickUp QuestName="Strange Sources" QuestId="4842" GiverName="Donova Snowden" GiverId="9298" />
+    </If>
+    <TurnIn QuestName="It's a Secret to Everybody" QuestId="3908" TurnInName="Donova Snowden" TurnInId="9298" />
+    <If Condition="((!HasQuest(5082)) &amp;&amp; (!IsQuestCompleted(5082)))">
+      <PickUp QuestName="Threat of the Winterfall" QuestId="5082" GiverName="Donova Snowden" GiverId="9298" />
+    </If>
+    <PickUp QuestName="Are We There, Yeti?" QuestId="3783" GiverName="Umi Rumplesnicker" GiverId="10305" />
+    <CustomBehavior File="SetHearthstone" MobId="11118" AreaId="618" X="6695.15" Y="-4673.04" Z="721.65" /> <!-- Set hearth: Everlook -->
+    <PickUp QuestName="The Everlook Report" QuestId="6029" GiverName="Gregor Greystone" GiverId="10431" />
+    <TurnIn QuestName="Felnok Steelspring" QuestId="4808" TurnInName="Felnok Steelspring" TurnInId="10468" />
+    <If Condition="((!HasQuest(4809)) &amp;&amp; (!IsQuestCompleted(4809)))">
+      <PickUp QuestName="Chillwind Horns" QuestId="4809" GiverName="Felnok Steelspring" GiverId="10468" />
+    </If>
+    <Objective QuestName="Are We There, Yeti?" QuestId="3783" Type="CollectItem" ItemId="12366" CollectCount="10" />
+    <TurnIn QuestName="Are We There, Yeti?" QuestId="3783" TurnInName="Umi Rumplesnicker" TurnInId="10305" />
+    <If Condition="((!HasQuest(977)) &amp;&amp; (!IsQuestCompleted(977)))">
+      <PickUp QuestName="Are We There, Yeti?" QuestId="977" GiverName="Umi Rumplesnicker" GiverId="10305" />
+    </If>
+    <Objective QuestName="Are We There, Yeti?" QuestId="977" Type="CollectItem" ItemId="12367" CollectCount="2" />
+    <Objective QuestName="Winterfall Activity" QuestId="8464" Type="KillMob" MobId="7438" KillCount="8" />
+    <Objective QuestName="Winterfall Activity" QuestId="8464" Type="KillMob" MobId="7439" KillCount="8" />
+    <Objective QuestName="Threat of the Winterfall" QuestId="5082" Type="KillMob" MobId="7440" KillCount="8" />
+    <Objective QuestName="Winterfall Activity" QuestId="8464" Type="KillMob" MobId="7440" KillCount="8" />
+    <Objective QuestName="Chillwind Horns" QuestId="4809" Type="KillMob" MobId="7448" KillCount="1" />
+    <Objective QuestName="Chillwind Horns" QuestId="4809" Type="CollectItem" ItemId="12444" CollectCount="8" />
+    <TurnIn QuestName="Are We There, Yeti?" QuestId="977" TurnInName="Umi Rumplesnicker" TurnInId="10305" />
+    <TurnIn QuestName="Chillwind Horns" QuestId="4809" TurnInName="Felnok Steelspring" TurnInId="10468" />
+    <Objective QuestName="Wild Guardians" QuestId="4521" Type="KillMob" MobId="7451" KillCount="15" />
+    <Objective QuestName="Wild Guardians" QuestId="4521" Type="KillMob" MobId="7450" KillCount="15" />
+    <Objective QuestName="Threat of the Winterfall" QuestId="5082" Type="KillMob" MobId="7441" KillCount="8" />
+    <Objective QuestName="Threat of the Winterfall" QuestId="5082" Type="KillMob" MobId="7442" KillCount="8" />
+    <Objective QuestName="Winterfall Firewater" QuestId="5083" Type="CollectItem" ItemId="12771" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="12771" MobId="0" NumOfTimes="1" CollectionDistance="100" />
+    <PickUp QuestName="Winterfall Firewater" QuestId="5083" GiverName="Felnok Steelspring" GiverId="10468" />
+    <TurnIn QuestName="Strange Sources" QuestId="4842" TurnInName="Donova Snowden" TurnInId="9298" />
+    <TurnIn QuestName="Threat of the Winterfall" QuestId="5082" TurnInName="Donova Snowden" TurnInId="9298" />
+    <TurnIn QuestName="Winterfall Firewater" QuestId="5083" TurnInName="Donova Snowden" TurnInId="9298" />
+    <TurnIn QuestName="Winterfall Activity" QuestId="8464" TurnInName="Salfa" TurnInId="11556" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Winterspring (55-56) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Felwood_(56-56)" />
+  </QuestOrder>
+</HBProfile>

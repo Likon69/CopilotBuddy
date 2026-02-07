@@ -1,0 +1,617 @@
+<HBProfile>
+  <Name>Alliance\Starter Guides (1-11)\Night Elf Starter (1-11)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>11</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="456" Name="The Balance of Nature">
+    <Objective Type="KillMob" MobId="2031" KillCount="7">
+      <Hotspots>
+        <Hotspot X="10401.0" Y="589.031" Z="1328.56" />
+        <Hotspot X="10457.8" Y="537.143" Z="1340.59" />
+        <Hotspot X="10497.6" Y="684.208" Z="1320.24" />
+        <Hotspot X="10405.0" Y="539.775" Z="1329.64" />
+        <Hotspot X="10340.3" Y="615.089" Z="1331.57" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1984" KillCount="4">
+      <Hotspots>
+        <Hotspot X="10399.3" Y="926.521" Z="1325.89" />
+        <Hotspot X="10408.6" Y="983.569" Z="1325.52" />
+        <Hotspot X="10391.6" Y="872.911" Z="1323.38" />
+        <Hotspot X="10397.0" Y="989.313" Z="1327.54" />
+        <Hotspot X="10357.6" Y="1010.65" Z="1335.62" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="459" Name="The Woodland Protector">
+    <Objective Type="KillMob" MobId="1988" KillCount="1">
+      <Hotspots>
+        <Hotspot X="10302.1" Y="687.717" Z="1332.3" />
+        <Hotspot X="10298.9" Y="967.463" Z="1336.62" />
+        <Hotspot X="10276.7" Y="954.903" Z="1339.5" />
+        <Hotspot X="10254.9" Y="978.265" Z="1342.44" />
+        <Hotspot X="10291.7" Y="956.861" Z="1335.65" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="457" Name="The Balance of Nature">
+    <Objective Type="KillMob" MobId="2032" KillCount="7">
+      <Hotspots>
+        <Hotspot X="10608.2" Y="759.786" Z="1315.78" />
+        <Hotspot X="10514.9" Y="584.449" Z="1339.01" />
+        <Hotspot X="10506.7" Y="639.257" Z="1328.1" />
+        <Hotspot X="10542.1" Y="642.443" Z="1327.19" />
+        <Hotspot X="10507.2" Y="649.605" Z="1325.47" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1985" KillCount="7">
+      <Hotspots>
+        <Hotspot X="10573.3" Y="996.687" Z="1323.3" />
+        <Hotspot X="10545.6" Y="945.498" Z="1315.36" />
+        <Hotspot X="10492.7" Y="988.536" Z="1320.21" />
+        <Hotspot X="10577.5" Y="944.783" Z="1315.81" />
+        <Hotspot X="10529.5" Y="946.572" Z="1315.73" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="916" Name="Webwood Venom">
+    <Objective Type="KillMob" MobId="1986" KillCount="1">
+      <Hotspots>
+        <Hotspot X="10901.5" Y="877.607" Z="1330.02" />
+        <Hotspot X="10948.4" Y="894.388" Z="1337.57" />
+        <Hotspot X="10946.9" Y="868.31" Z="1333.54" />
+        <Hotspot X="10934.6" Y="866.205" Z="1332.33" />
+        <Hotspot X="10906.0" Y="861.33" Z="1328.92" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="3521" Name="Iverron's Antidote">
+    <Objective Type="CollectItem" ItemId="10641" CollectCount="4">
+      <CollectFrom>
+        <GameObject Name="Moonpetal Lily" Id="152095" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="10485.0" Y="895.09" Z="1311.08" />
+        <Hotspot X="10504.7" Y="913.55" Z="1310.8" />
+        <Hotspot X="10510.7" Y="937.24" Z="1315.91" />
+        <Hotspot X="10526.5" Y="859.3" Z="1308.92" />
+        <Hotspot X="10534.3" Y="863.33" Z="1308.24" />
+        <Hotspot X="10535.9" Y="827.38" Z="1310.91" />
+        <Hotspot X="10536.5" Y="922.48" Z="1311.03" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1986" KillCount="1">
+      <Hotspots>
+        <Hotspot X="10901.5" Y="877.607" Z="1330.02" />
+        <Hotspot X="10948.4" Y="894.388" Z="1337.57" />
+        <Hotspot X="10946.9" Y="868.31" Z="1333.54" />
+        <Hotspot X="10934.6" Y="866.205" Z="1332.33" />
+        <Hotspot X="10906.0" Y="861.33" Z="1328.92" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="917" Name="Webwood Egg">
+    <Objective Type="CollectItem" ItemId="5167" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Webwood Eggs" Id="4406" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="10929.4" Y="923.08" Z="1339.99" />
+        <Hotspot X="10931.6" Y="926.53" Z="1340.53" />
+        <Hotspot X="10932.1" Y="917.92" Z="1339.32" />
+        <Hotspot X="10932.4" Y="911.63" Z="1337.94" />
+        <Hotspot X="10933.3" Y="922.3" Z="1340.05" />
+        <Hotspot X="10933.3" Y="929.18" Z="1340.81" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="919" Name="Timberling Sprouts">
+    <Objective Type="CollectItem" ItemId="5169" CollectCount="12">
+      <CollectFrom>
+        <GameObject Name="Timberling Sprout" Id="4608" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="9319.93" Y="1150.49" Z="1254.28" />
+        <Hotspot X="9323.76" Y="1241.87" Z="1253.63" />
+        <Hotspot X="9347.0" Y="1196.95" Z="1247.41" />
+        <Hotspot X="9354.87" Y="1130.44" Z="1253.44" />
+        <Hotspot X="9359.21" Y="827.2" Z="1264.37" />
+        <Hotspot X="9366.38" Y="1270.76" Z="1251.89" />
+        <Hotspot X="9375.99" Y="786.28" Z="1262.29" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="918" Name="Timberling Seeds">
+    <Objective Type="KillMob" MobId="2022" KillCount="1">
+      <Hotspots>
+        <Hotspot X="9382.47" Y="758.676" Z="1262.06" />
+        <Hotspot X="9411.32" Y="724.176" Z="1263.95" />
+        <Hotspot X="9455.64" Y="755.347" Z="1254.25" />
+        <Hotspot X="9380.54" Y="782.67" Z="1260.62" />
+        <Hotspot X="9477.83" Y="681.632" Z="1265.52" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2438" Name="The Emerald Dreamcatcher">
+    <Objective Type="CollectItem" ItemId="8048" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Tallonkai" Id="126158" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="9806.74" Y="351.42" Z="1308.46" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="488" Name="Zenn's Bidding">
+    <Objective Type="KillMob" MobId="1995" KillCount="1">
+      <Hotspots>
+        <Hotspot X="9918.49" Y="1164.47" Z="1307.98" />
+        <Hotspot X="10084.5" Y="517.87" Z="1324.69" />
+        <Hotspot X="9713.66" Y="316.285" Z="1327.44" />
+        <Hotspot X="9816.36" Y="1091.89" Z="1300.36" />
+        <Hotspot X="9986.1" Y="545.511" Z="1311.73" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2042" KillCount="1">
+      <Hotspots>
+        <Hotspot X="10092.1" Y="390.417" Z="1323.74" />
+        <Hotspot X="10094.4" Y="443.66" Z="1323.86" />
+        <Hotspot X="10016.9" Y="474.638" Z="1314.19" />
+        <Hotspot X="10051.5" Y="1282.34" Z="1316.41" />
+        <Hotspot X="9951.93" Y="313.512" Z="1318.31" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1998" KillCount="1">
+      <Hotspots>
+        <Hotspot X="9656.88" Y="350.249" Z="1327.9" />
+        <Hotspot X="9725.78" Y="391.919" Z="1318.19" />
+        <Hotspot X="9783.13" Y="275.199" Z="1325.54" />
+        <Hotspot X="10246.1" Y="1479.45" Z="1332.79" />
+        <Hotspot X="9891.67" Y="275.0" Z="1324.68" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4161" Name="Recipe of the Kaldorei">
+    <Objective Type="KillMob" MobId="1998" KillCount="1">
+      <Hotspots>
+        <Hotspot X="9656.88" Y="350.249" Z="1327.9" />
+        <Hotspot X="9725.78" Y="391.919" Z="1318.19" />
+        <Hotspot X="9783.13" Y="275.199" Z="1325.54" />
+        <Hotspot X="10246.1" Y="1479.45" Z="1332.79" />
+        <Hotspot X="9891.67" Y="275.0" Z="1324.68" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2459" Name="Ferocitas the Dream Eater">
+    <Objective Type="KillMob" MobId="7234" KillCount="1">
+      <Hotspots>
+        <Hotspot X="10018.8" Y="282.413" Z="1323.02" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7235" KillCount="7">
+      <Hotspots>
+        <Hotspot X="10056.3" Y="319.792" Z="1324.65" />
+        <Hotspot X="10060.4" Y="322.225" Z="1324.9" />
+        <Hotspot X="10036.2" Y="264.494" Z="1325.5" />
+        <Hotspot X="9953.66" Y="269.711" Z="1325.99" />
+        <Hotspot X="10025.3" Y="282.875" Z="1323.11" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="489" Name="Seek Redemption!">
+    <Objective Type="CollectItem" ItemId="3418" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Fel Cone" Id="1673" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="9110.05" Y="1701.4" Z="1323.66" />
+        <Hotspot X="9123.82" Y="1499.62" Z="1326.69" />
+        <Hotspot X="9143.59" Y="1357.98" Z="1323.15" />
+        <Hotspot X="9157.02" Y="1388.75" Z="1321.45" />
+        <Hotspot X="9196.3" Y="1237.08" Z="1315.23" />
+        <Hotspot X="9215.11" Y="1379.79" Z="1308.75" />
+        <Hotspot X="9236.33" Y="1168.09" Z="1314.27" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="932" Name="Twisted Hatred">
+    <Objective Type="KillMob" MobId="2038" KillCount="1">
+      <Hotspots>
+        <Hotspot X="10107.1" Y="1206.24" Z="1311.55" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="487" Name="The Road to Darnassus">
+    <Objective Type="KillMob" MobId="2152" KillCount="6">
+      <Hotspots>
+        <Hotspot X="10095.8" Y="1464.53" Z="1275.98" />
+        <Hotspot X="10061.0" Y="1457.02" Z="1277.0" />
+        <Hotspot X="10050.8" Y="1477.49" Z="1279.57" />
+        <Hotspot X="9980.94" Y="1479.4" Z="1294.87" />
+        <Hotspot X="10023.9" Y="1377.58" Z="1281.01" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2518" Name="Tears of the Moon">
+    <Objective Type="KillMob" MobId="7319" KillCount="1">
+      <Hotspots>
+        <Hotspot X="10979.6" Y="1366.13" Z="1328.87" />
+        <Hotspot X="10980.0" Y="1731.3" Z="1303.1" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1683" Name="Vorlus Vilehoof">
+    <Objective Type="KillMob" MobId="6128" KillCount="1">
+      <Hotspots>
+        <Hotspot X="9672.7" Y="1408.81" Z="1402.76" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Starter Guides (1-11)\Night Elf Starter (1-11)" LogColor="Green" />
+    <PickUp QuestName="The Balance of Nature" QuestId="456" GiverName="Conservator Ilthalaine" GiverId="2079" />
+    <Objective QuestName="The Balance of Nature" QuestId="456" Type="KillMob" MobId="2031" KillCount="7" />
+    <Objective QuestName="The Balance of Nature" QuestId="456" Type="KillMob" MobId="1984" KillCount="4" />
+    <PickUp QuestName="A Good Friend" QuestId="4495" GiverName="Dirania Silvershine" GiverId="8583" />
+    <PickUp QuestName="The Woodland Protector" QuestId="458" GiverName="Melithar Staghelm" GiverId="2077" />
+    <TurnIn QuestName="The Balance of Nature" QuestId="456" TurnInName="Conservator Ilthalaine" TurnInId="2079" />
+    <If Condition="((!HasQuest(457)) &amp;&amp; (!IsQuestCompleted(457)))">
+      <PickUp QuestName="The Balance of Nature" QuestId="457" GiverName="Conservator Ilthalaine" GiverId="2079" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <If Condition="((!HasQuest(3116)) &amp;&amp; (!IsQuestCompleted(3116)))">
+        <PickUp QuestName="Simple Sigil" QuestId="3116" GiverName="Conservator Ilthalaine" GiverId="2079" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <If Condition="((!HasQuest(3118)) &amp;&amp; (!IsQuestCompleted(3118)))">
+        <PickUp QuestName="Encrypted Sigil" QuestId="3118" GiverName="Conservator Ilthalaine" GiverId="2079" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <If Condition="((!HasQuest(3119)) &amp;&amp; (!IsQuestCompleted(3119)))">
+        <PickUp QuestName="Hallowed Sigil" QuestId="3119" GiverName="Conservator Ilthalaine" GiverId="2079" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <If Condition="((!HasQuest(3117)) &amp;&amp; (!IsQuestCompleted(3117)))">
+        <PickUp QuestName="Etched Sigil" QuestId="3117" GiverName="Conservator Ilthalaine" GiverId="2079" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <If Condition="((!HasQuest(3120)) &amp;&amp; (!IsQuestCompleted(3120)))">
+        <PickUp QuestName="Verdant Sigil" QuestId="3120" GiverName="Conservator Ilthalaine" GiverId="2079" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="Simple Sigil" QuestId="3116" TurnInName="Alyissia" TurnInId="3593" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Rogue) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="Encrypted Sigil" QuestId="3118" TurnInName="Frahun Shadewhisper" TurnInId="3594" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="Hallowed Sigil" QuestId="3119" TurnInName="Shanda" TurnInId="3595" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="Etched Sigil" QuestId="3117" TurnInName="Ayanna Everstride" TurnInId="3596" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="Verdant Sigil" QuestId="3120" TurnInName="Mardant Strongoak" TurnInId="3597" />
+    </If>
+    <TurnIn QuestName="The Woodland Protector" QuestId="458" TurnInName="Tarindrella" TurnInId="1992" />
+    <If Condition="((!HasQuest(459)) &amp;&amp; (!IsQuestCompleted(459)))">
+      <PickUp QuestName="The Woodland Protector" QuestId="459" GiverName="Tarindrella" GiverId="1992" />
+    </If>
+    <Objective QuestName="The Woodland Protector" QuestId="459" Type="KillMob" MobId="1988" KillCount="1" />
+    <Objective QuestName="The Woodland Protector" QuestId="459" Type="CollectItem" ItemId="3297" CollectCount="8" />
+    <PickUp QuestName="Webwood Venom" QuestId="916" GiverName="Gilshalan Windwalker" GiverId="2082" />
+    <Objective QuestName="The Balance of Nature" QuestId="457" Type="KillMob" MobId="2032" KillCount="7" />
+    <Objective QuestName="The Balance of Nature" QuestId="457" Type="KillMob" MobId="1985" KillCount="7" />
+    <TurnIn QuestName="A Good Friend" QuestId="4495" TurnInName="Iverron" TurnInId="8584" />
+    <If Condition="((!HasQuest(3519)) &amp;&amp; (!IsQuestCompleted(3519)))">
+      <PickUp QuestName="A Friend in Need" QuestId="3519" GiverName="Iverron" GiverId="8584" />
+    </If>
+    <Objective QuestName="Webwood Venom" QuestId="916" Type="KillMob" MobId="1986" KillCount="1" />
+    <Objective QuestName="Webwood Venom" QuestId="916" Type="CollectItem" ItemId="5166" CollectCount="10" />
+    <TurnIn QuestName="Webwood Venom" QuestId="916" TurnInName="Gilshalan Windwalker" TurnInId="2082" />
+    <If Condition="((!HasQuest(917)) &amp;&amp; (!IsQuestCompleted(917)))">
+      <PickUp QuestName="Webwood Egg" QuestId="917" GiverName="Gilshalan Windwalker" GiverId="2082" />
+    </If>
+    <TurnIn QuestName="The Balance of Nature" QuestId="457" TurnInName="Conservator Ilthalaine" TurnInId="2079" />
+    <TurnIn QuestName="The Woodland Protector" QuestId="459" TurnInName="Tarindrella" TurnInId="1992" />
+    <TurnIn QuestName="A Friend in Need" QuestId="3519" TurnInName="Dirania Silvershine" TurnInId="8583" />
+    <If Condition="((!HasQuest(3521)) &amp;&amp; (!IsQuestCompleted(3521)))">
+      <PickUp QuestName="Iverron's Antidote" QuestId="3521" GiverName="Dirania Silvershine" GiverId="8583" />
+    </If>
+    <Objective QuestName="Iverron's Antidote" QuestId="3521" Type="CollectItem" ItemId="10639" CollectCount="7" />
+    <Objective QuestName="Iverron's Antidote" QuestId="3521" Type="CollectItem" ItemId="10641" CollectCount="4" />
+    <Objective QuestName="Webwood Egg" QuestId="917" Type="CollectItem" ItemId="5167" CollectCount="1" />
+    <Objective QuestName="Iverron's Antidote" QuestId="3521" Type="KillMob" MobId="1986" KillCount="1" />
+    <Objective QuestName="Iverron's Antidote" QuestId="3521" Type="CollectItem" ItemId="10640" CollectCount="1" />
+    <TurnIn QuestName="Webwood Egg" QuestId="917" TurnInName="Gilshalan Windwalker" TurnInId="2082" />
+    <If Condition="((!HasQuest(920)) &amp;&amp; (!IsQuestCompleted(920)))">
+      <PickUp QuestName="Tenaron's Summons" QuestId="920" GiverName="Gilshalan Windwalker" GiverId="2082" />
+    </If>
+    <TurnIn QuestName="Tenaron's Summons" QuestId="920" TurnInName="Tenaron Stormgrip" TurnInId="3514" />
+    <If Condition="((!HasQuest(921)) &amp;&amp; (!IsQuestCompleted(921)))">
+      <PickUp QuestName="Crown of the Earth" QuestId="921" GiverName="Tenaron Stormgrip" GiverId="3514" />
+    </If>
+    <TurnIn QuestName="Iverron's Antidote" QuestId="3521" TurnInName="Dirania Silvershine" TurnInId="8583" />
+    <If Condition="((!HasQuest(3522)) &amp;&amp; (!IsQuestCompleted(3522)))">
+      <PickUp QuestName="Iverron's Antidote" QuestId="3522" GiverName="Dirania Silvershine" GiverId="8583" />
+    </If>
+    <While Condition="((HasQuest(921)) &amp;&amp; (!IsQuestCompleted(921)))">
+      <CustomBehavior File="UseItemOn" QuestId="921" MobId="0" ItemId="5185" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Crown of the Earth" QuestId="921" Type="CollectItem" ItemId="5184" CollectCount="1" />
+    <TurnIn QuestName="Iverron's Antidote" QuestId="3522" TurnInName="Iverron" TurnInId="8584" />
+    <TurnIn QuestName="Crown of the Earth" QuestId="921" TurnInName="Tenaron Stormgrip" TurnInId="3514" />
+    <If Condition="((!HasQuest(928)) &amp;&amp; (!IsQuestCompleted(928)))">
+      <PickUp QuestName="Crown of the Earth" QuestId="928" GiverName="Tenaron Stormgrip" GiverId="3514" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <PickUp QuestName="In Favor of Elune" QuestId="5622" GiverName="Shanda" GiverId="3595" />
+    </If>
+    <PickUp QuestName="Dolanaar Delivery" QuestId="2159" GiverName="Porthannius" GiverId="6780" />
+    <If Condition="((!HasQuest(488)) &amp;&amp; (!IsQuestCompleted(488)))">
+      <PickUp QuestName="Zenn's Bidding" QuestId="488" GiverName="Zenn Foulhoof" GiverId="2150" />
+    </If>
+    <PickUp QuestName="Denalan's Earth" QuestId="997" GiverName="Syral Bladeleaf" GiverId="2083" />
+    <PickUp QuestName="A Troubling Breeze" QuestId="475" GiverName="Athridas Bearmantle" GiverId="2078" />
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <TurnIn QuestName="In Favor of Elune" QuestId="5622" TurnInName="Laurna Morninglight" TurnInId="3600" />
+      <If Condition="((!HasQuest(5621)) &amp;&amp; (!IsQuestCompleted(5621)))">
+        <PickUp QuestName="Garments of the Moon" QuestId="5621" GiverName="Laurna Morninglight" GiverId="3600" />
+      </If>
+    </If>
+    <PickUp QuestName="Twisted Hatred" QuestId="932" GiverName="Tallonkai Swiftroot" GiverId="3567" />
+    <PickUp QuestName="The Emerald Dreamcatcher" QuestId="2438" GiverName="Tallonkai Swiftroot" GiverId="3567" />
+    <TurnIn QuestName="Dolanaar Delivery" QuestId="2159" TurnInName="Innkeeper Keldamyr" TurnInId="6736" />
+    <TurnIn QuestName="Crown of the Earth" QuestId="928" TurnInName="Corithras Moonrage" TurnInId="3515" />
+    <If Condition="((!HasQuest(929)) &amp;&amp; (!IsQuestCompleted(929)))">
+      <PickUp QuestName="Crown of the Earth" QuestId="929" GiverName="Corithras Moonrage" GiverId="3515" />
+    </If>
+    <TurnIn QuestName="Denalan's Earth" QuestId="997" TurnInName="Denalan" TurnInId="2080" />
+    <If Condition="((!HasQuest(918)) &amp;&amp; (!IsQuestCompleted(918)))">
+      <PickUp QuestName="Timberling Seeds" QuestId="918" GiverName="Denalan" GiverId="2080" />
+    </If>
+    <PickUp QuestName="Timberling Sprouts" QuestId="919" GiverName="Denalan" GiverId="2080" />
+    <Objective QuestName="Timberling Sprouts" QuestId="919" Type="CollectItem" ItemId="5169" CollectCount="12" />
+    <Objective QuestName="Timberling Seeds" QuestId="918" Type="KillMob" MobId="2022" KillCount="1" />
+    <Objective QuestName="Timberling Seeds" QuestId="918" Type="CollectItem" ItemId="5168" CollectCount="8" />
+    <TurnIn QuestName="Timberling Seeds" QuestId="918" TurnInName="Denalan" TurnInId="2080" />
+    <If Condition="((!HasQuest(922)) &amp;&amp; (!IsQuestCompleted(922)))">
+      <PickUp QuestName="Rellian Greenspyre" QuestId="922" GiverName="Denalan" GiverId="2080" />
+    </If>
+    <TurnIn QuestName="Timberling Sprouts" QuestId="919" TurnInName="Denalan" TurnInId="2080" />
+    <If Condition="(Me.Class == WoWClass.Priest)">
+      <TurnIn QuestName="Garments of the Moon" QuestId="5621" TurnInName="Laurna Morninglight" TurnInId="3600" />
+    </If>
+    <While Condition="((HasQuest(929)) &amp;&amp; (!IsQuestCompleted(929)))">
+      <CustomBehavior File="UseItemOn" QuestId="929" MobId="0" ItemId="5619" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Crown of the Earth" QuestId="929" Type="CollectItem" ItemId="5639" CollectCount="1" />
+    <TurnIn QuestName="A Troubling Breeze" QuestId="475" TurnInName="Gaerolas Talvethren" TurnInId="2107" />
+    <If Condition="((!HasQuest(476)) &amp;&amp; (!IsQuestCompleted(476)))">
+      <PickUp QuestName="Gnarlpine Corruption" QuestId="476" GiverName="Gaerolas Talvethren" GiverId="2107" />
+    </If>
+    <Objective QuestName="The Emerald Dreamcatcher" QuestId="2438" Type="CollectItem" ItemId="8048" CollectCount="1" />
+    <Objective QuestName="Zenn's Bidding" QuestId="488" Type="KillMob" MobId="1995" KillCount="1" />
+    <Objective QuestName="Zenn's Bidding" QuestId="488" Type="CollectItem" ItemId="3411" CollectCount="3" />
+    <Objective QuestName="Zenn's Bidding" QuestId="488" Type="KillMob" MobId="2042" KillCount="1" />
+    <Objective QuestName="Zenn's Bidding" QuestId="488" Type="CollectItem" ItemId="3409" CollectCount="3" />
+    <Objective QuestName="Zenn's Bidding" QuestId="488" Type="KillMob" MobId="1998" KillCount="1" />
+    <Objective QuestName="Zenn's Bidding" QuestId="488" Type="CollectItem" ItemId="3412" CollectCount="3" />
+    <Objective QuestName="Recipe of the Kaldorei" QuestId="4161" Type="KillMob" MobId="1998" KillCount="1" />
+    <Objective QuestName="Recipe of the Kaldorei" QuestId="4161" Type="CollectItem" ItemId="5465" CollectCount="7" />
+    <TurnIn QuestName="Zenn's Bidding" QuestId="488" TurnInName="Zenn Foulhoof" TurnInId="2150" />
+    <If Condition="((!HasQuest(489)) &amp;&amp; (!IsQuestCompleted(489)))">
+      <PickUp QuestName="Seek Redemption!" QuestId="489" GiverName="Syral Bladeleaf" GiverId="2083" />
+    </If>
+    <TurnIn QuestName="Gnarlpine Corruption" QuestId="476" TurnInName="Athridas Bearmantle" TurnInId="2078" />
+    <TurnIn QuestName="The Emerald Dreamcatcher" QuestId="2438" TurnInName="Tallonkai Swiftroot" TurnInId="3567" />
+    <If Condition="((!HasQuest(2459)) &amp;&amp; (!IsQuestCompleted(2459)))">
+      <PickUp QuestName="Ferocitas the Dream Eater" QuestId="2459" GiverName="Tallonkai Swiftroot" GiverId="3567" />
+    </If>
+    <TurnIn QuestName="Crown of the Earth" QuestId="929" TurnInName="Corithras Moonrage" TurnInId="3515" />
+    <If Condition="((!HasQuest(933)) &amp;&amp; (!IsQuestCompleted(933)))">
+      <PickUp QuestName="Crown of the Earth" QuestId="933" GiverName="Corithras Moonrage" GiverId="3515" />
+    </If>
+    <If Condition="((!HasQuest(4161)) &amp;&amp; (!IsQuestCompleted(4161)))">
+      <PickUp QuestName="Recipe of the Kaldorei" QuestId="4161" GiverName="Zarrin" GiverId="6286" />
+    </If>
+    <TurnIn QuestName="Recipe of the Kaldorei" QuestId="4161" TurnInName="Zarrin" TurnInId="6286" />
+    <Objective QuestName="Ferocitas the Dream Eater" QuestId="2459" Type="KillMob" MobId="7234" KillCount="1" />
+    <Objective QuestName="Ferocitas the Dream Eater" QuestId="2459" Type="CollectItem" ItemId="8049" CollectCount="1" />
+    <While Condition="((HasQuest(2459)) &amp;&amp; (!IsQuestCompleted(2459)))">
+      <RunTo X="10056.3" Y="319.792" Z="1324.65" />
+      <CustomBehavior File="UseItemOn" QuestId="2459" MobId="7235" ItemId="8049" NumOfTimes="100" Range="5" CollectionDistance="1000" X="10056.3" Y="319.792" Z="1324.65" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Ferocitas the Dream Eater" QuestId="2459" Type="CollectItem" ItemId="8050" CollectCount="1" />
+    <Objective QuestName="Ferocitas the Dream Eater" QuestId="2459" Type="KillMob" MobId="7235" KillCount="7" />
+    <Objective QuestName="Seek Redemption!" QuestId="489" Type="CollectItem" ItemId="3418" CollectCount="1" />
+    <TurnIn QuestName="Seek Redemption!" QuestId="489" TurnInName="Zenn Foulhoof" TurnInId="2150" />
+    <Objective QuestName="Twisted Hatred" QuestId="932" Type="KillMob" MobId="2038" KillCount="1" />
+    <Objective QuestName="Twisted Hatred" QuestId="932" Type="CollectItem" ItemId="5221" CollectCount="1" />
+    <TurnIn QuestName="Twisted Hatred" QuestId="932" TurnInName="Tallonkai Swiftroot" TurnInId="3567" />
+    <TurnIn QuestName="Ferocitas the Dream Eater" QuestId="2459" TurnInName="Tallonkai Swiftroot" TurnInId="3567" />
+    <PickUp QuestName="The Glowing Fruit" QuestId="930" GiverName="Tallonkai Swiftroot" GiverId="3567" />
+    <While Condition="((HasQuest(933)) &amp;&amp; (!IsQuestCompleted(933)))">
+      <CustomBehavior File="UseItemOn" QuestId="933" MobId="0" ItemId="5621" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Crown of the Earth" QuestId="933" Type="CollectItem" ItemId="5645" CollectCount="1" />
+    <TurnIn QuestName="Crown of the Earth" QuestId="933" TurnInName="Corithras Moonrage" TurnInId="3515" />
+    <If Condition="((!HasQuest(7383)) &amp;&amp; (!IsQuestCompleted(7383)))">
+      <PickUp QuestName="Crown of the Earth" QuestId="7383" GiverName="Corithras Moonrage" GiverId="3515" />
+    </If>
+    <CustomBehavior File="SetHearthstone" MobId="6736" AreaId="141" X="9802.21" Y="982.608" Z="1313.98" /> <!-- Set hearth: Dolanaar -->
+    <PickUp QuestName="The Road to Darnassus" QuestId="487" GiverName="Moon Priestess Amara" GiverId="2151" />
+    <Objective QuestName="The Road to Darnassus" QuestId="487" Type="KillMob" MobId="2152" KillCount="6" />
+    <PickUp QuestName="The Enchanted Glade" QuestId="937" GiverName="Sentinel Arynia Cloudsbreak" GiverId="3519" />
+    <While Condition="((HasQuest(7383)) &amp;&amp; (!IsQuestCompleted(7383)))">
+      <CustomBehavior File="UseItemOn" QuestId="7383" MobId="0" ItemId="18152" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Crown of the Earth" QuestId="7383" Type="CollectItem" ItemId="18151" CollectCount="1" />
+    <PickUp QuestName="The Shimmering Frond" QuestId="931" GiverName="Sentinel Arynia Cloudsbreak" GiverId="3519" />
+    <Objective QuestName="The Enchanted Glade" QuestId="937" Type="CollectItem" ItemId="5204" CollectCount="6" />
+    <PickUp QuestName="Mist" QuestId="938" GiverName="Mist" GiverId="3568" />
+    <TurnIn QuestName="The Enchanted Glade" QuestId="937" TurnInName="Sentinel Arynia Cloudsbreak" TurnInId="3519" />
+    <TurnIn QuestName="Mist" QuestId="938" TurnInName="Sentinel Arynia Cloudsbreak" TurnInId="3519" />
+    <If Condition="((!HasQuest(940)) &amp;&amp; (!IsQuestCompleted(940)))">
+      <PickUp QuestName="Teldrassil" QuestId="940" GiverName="Sentinel Arynia Cloudsbreak" GiverId="3519" />
+    </If>
+    <TurnIn QuestName="Rellian Greenspyre" QuestId="922" TurnInName="Rellian Greenspyre" TurnInId="3517" />
+    <If Condition="((!HasQuest(923)) &amp;&amp; (!IsQuestCompleted(923)))">
+      <PickUp QuestName="Tumors" QuestId="923" GiverName="Rellian Greenspyre" GiverId="3517" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Moonglade" QuestId="5921" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+    </If>
+    <TurnIn QuestName="Teldrassil" QuestId="940" TurnInName="Arch Druid Fandral Staghelm" TurnInId="3516" />
+    <If Condition="((!HasQuest(952)) &amp;&amp; (!IsQuestCompleted(952)))">
+      <PickUp QuestName="Grove of the Ancients" QuestId="952" GiverName="Arch Druid Fandral Staghelm" GiverId="3516" />
+    </If>
+    <PickUp QuestName="The Temple of the Moon" QuestId="2519" GiverName="Sister Aquinne" GiverId="7316" />
+    <TurnIn QuestName="The Temple of the Moon" QuestId="2519" TurnInName="Priestess A'moora" TurnInId="7313" />
+    <If Condition="((!HasQuest(2518)) &amp;&amp; (!IsQuestCompleted(2518)))">
+      <PickUp QuestName="Tears of the Moon" QuestId="2518" GiverName="Priestess A'moora" GiverId="7313" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="Moonglade" QuestId="5921" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+      <If Condition="((!HasQuest(5929)) &amp;&amp; (!IsQuestCompleted(5929)))">
+        <PickUp QuestName="Great Bear Spirit" QuestId="5929" GiverName="Dendrite Starblaze" GiverId="11802" />
+      </If>
+      <TurnIn QuestName="Great Bear Spirit" QuestId="5929" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+      <If Condition="((!HasQuest(5931)) &amp;&amp; (!IsQuestCompleted(5931)))">
+        <PickUp QuestName="Back to Darnassus" QuestId="5931" GiverName="Dendrite Starblaze" GiverId="11802" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <If Condition="((!HasQuest(1684)) &amp;&amp; (!IsQuestCompleted(1684)))">
+        <PickUp QuestName="Elanaria" QuestId="1684" GiverName="Kyra Windblade" GiverId="3598" />
+      </If>
+    </If>
+    <TurnIn QuestName="Crown of the Earth" QuestId="7383" TurnInName="Corithras Moonrage" TurnInId="3515" />
+    <If Condition="((!HasQuest(935)) &amp;&amp; (!IsQuestCompleted(935)))">
+      <PickUp QuestName="Crown of the Earth" QuestId="935" GiverName="Corithras Moonrage" GiverId="3515" />
+    </If>
+    <TurnIn QuestName="The Glowing Fruit" QuestId="930" TurnInName="Denalan" TurnInId="2080" />
+    <TurnIn QuestName="The Shimmering Frond" QuestId="931" TurnInName="Denalan" TurnInId="2080" />
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Taming the Beast" QuestId="6063" GiverName="Dazalar" GiverId="3601" />
+      <While Condition="((HasQuest(6063)) &amp;&amp; (!IsQuestCompleted(6063)))">
+        <CustomBehavior File="UseItemOn" QuestId="6063" MobId="0" ItemId="15921" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Taming the Beast" QuestId="6063" TurnInName="Dazalar" TurnInId="3601" />
+      <If Condition="((!HasQuest(6101)) &amp;&amp; (!IsQuestCompleted(6101)))">
+        <PickUp QuestName="Taming the Beast" QuestId="6101" GiverName="Dazalar" GiverId="3601" />
+      </If>
+      <While Condition="((HasQuest(6101)) &amp;&amp; (!IsQuestCompleted(6101)))">
+        <CustomBehavior File="UseItemOn" QuestId="6101" MobId="0" ItemId="15922" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Taming the Beast" QuestId="6101" TurnInName="Dazalar" TurnInId="3601" />
+      <If Condition="((!HasQuest(6102)) &amp;&amp; (!IsQuestCompleted(6102)))">
+        <PickUp QuestName="Taming the Beast" QuestId="6102" GiverName="Dazalar" GiverId="3601" />
+      </If>
+      <While Condition="((HasQuest(6102)) &amp;&amp; (!IsQuestCompleted(6102)))">
+        <CustomBehavior File="UseItemOn" QuestId="6102" MobId="0" ItemId="15923" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Taming the Beast" QuestId="6102" TurnInName="Dazalar" TurnInId="3601" />
+      <If Condition="((!HasQuest(6103)) &amp;&amp; (!IsQuestCompleted(6103)))">
+        <PickUp QuestName="Training the Beast" QuestId="6103" GiverName="Dazalar" GiverId="3601" />
+      </If>
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Returning Home" QuestId="5629" GiverName="Laurna Morninglight" GiverId="3600" />
+    </If>
+    <TurnIn QuestName="The Road to Darnassus" QuestId="487" TurnInName="Moon Priestess Amara" TurnInId="2151" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <If Condition="((!HasQuest(2241)) &amp;&amp; (!IsQuestCompleted(2241)))">
+        <PickUp QuestName="The Apple Falls" QuestId="2241" GiverName="Jannok Breezesong" GiverId="3599" />
+      </If>
+      <TurnIn QuestName="The Apple Falls" QuestId="2241" TurnInName="Syurna" TurnInId="4163" />
+      <If Condition="((!HasQuest(2242)) &amp;&amp; (!IsQuestCompleted(2242)))">
+        <PickUp QuestName="Destiny Calls" QuestId="2242" GiverName="Syurna" GiverId="4163" />
+      </If>
+    </If>
+    <Objective QuestName="Tumors" QuestId="923" Type="CollectItem" ItemId="5170" CollectCount="5" />
+    <Objective QuestName="Tears of the Moon" QuestId="2518" Type="KillMob" MobId="7319" KillCount="1" />
+    <Objective QuestName="Tears of the Moon" QuestId="2518" Type="CollectItem" ItemId="8344" CollectCount="1" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <Objective QuestName="Destiny Calls" QuestId="2242" Type="CollectItem" ItemId="7737" CollectCount="1" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid)">
+      <Objective QuestName="Gathering the Cure" QuestId="6123" Type="CollectItem" ItemId="2449" CollectCount="5" />
+    </If>
+    <If Condition="(Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Nessa Shadowsong" QuestId="6344" GiverName="Mydrannul" GiverId="4241" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Warrior)">
+      <TurnIn QuestName="Elanaria" QuestId="1684" TurnInName="Elanaria" TurnInId="4088" />
+      <If Condition="((!HasQuest(1683)) &amp;&amp; (!IsQuestCompleted(1683)))">
+        <PickUp QuestName="Vorlus Vilehoof" QuestId="1683" GiverName="Elanaria" GiverId="4088" />
+      </If>
+      <Objective QuestName="Vorlus Vilehoof" QuestId="1683" Type="KillMob" MobId="6128" KillCount="1" />
+      <Objective QuestName="Vorlus Vilehoof" QuestId="1683" Type="CollectItem" ItemId="6805" CollectCount="1" />
+      <TurnIn QuestName="Vorlus Vilehoof" QuestId="1683" TurnInName="Elanaria" TurnInId="4088" />
+    </If>
+    <TurnIn QuestName="Tumors" QuestId="923" TurnInName="Rellian Greenspyre" TurnInId="3517" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <TurnIn QuestName="Destiny Calls" QuestId="2242" TurnInName="Syurna" TurnInId="4163" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="Training the Beast" QuestId="6103" TurnInName="Jocaste" TurnInId="4146" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="Back to Darnassus" QuestId="5931" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
+      <If Condition="((!HasQuest(6001)) &amp;&amp; (!IsQuestCompleted(6001)))">
+        <PickUp QuestName="Body and Heart" QuestId="6001" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+      </If>
+    </If>
+    <TurnIn QuestName="Crown of the Earth" QuestId="935" TurnInName="Arch Druid Fandral Staghelm" TurnInId="3516" />
+    <TurnIn QuestName="Tears of the Moon" QuestId="2518" TurnInName="Priestess A'moora" TurnInId="7313" />
+    <If Condition="((!HasQuest(2520)) &amp;&amp; (!IsQuestCompleted(2520)))">
+      <PickUp QuestName="Sathrah's Sacrifice" QuestId="2520" GiverName="Priestess A'moora" GiverId="7313" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <!-- Quest 5629 may auto-complete (no turn-in found) -->
+      <PickUp QuestName="Stars of Elune" QuestId="5627" GiverName="Priestess Alathea" GiverId="11401" />
+    </If>
+    <While Condition="((HasQuest(2520)) &amp;&amp; (!IsQuestCompleted(2520)))">
+      <CustomBehavior File="UseItemOn" QuestId="2520" MobId="0" ItemId="8155" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Sathrah's Sacrifice" QuestId="2520" TurnInName="Priestess A'moora" TurnInId="7313" />
+    <If Condition="(Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="Nessa Shadowsong" QuestId="6344" TurnInName="Nessa Shadowsong" TurnInId="10118" />
+      <If Condition="((!HasQuest(6341)) &amp;&amp; (!IsQuestCompleted(6341)))">
+        <PickUp QuestName="The Bounty of Teldrassil" QuestId="6341" GiverName="Nessa Shadowsong" GiverId="10118" />
+      </If>
+      <TurnIn QuestName="The Bounty of Teldrassil" QuestId="6341" TurnInName="Vesprystus" TurnInId="3838" />
+      <If Condition="((!HasQuest(6342)) &amp;&amp; (!IsQuestCompleted(6342)))">
+        <PickUp QuestName="Flight to Auberdine" QuestId="6342" GiverName="Vesprystus" GiverId="3838" />
+      </If>
+      <TurnIn QuestName="Flight to Auberdine" QuestId="6342" TurnInName="Laird" TurnInId="4200" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Starter Guides (1-11)\Night Elf Starter (1-11) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Darkshore_(11-14)" />
+  </QuestOrder>
+</HBProfile>

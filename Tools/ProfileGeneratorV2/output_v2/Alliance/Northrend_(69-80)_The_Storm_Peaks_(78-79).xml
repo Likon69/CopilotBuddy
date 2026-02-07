@@ -1,0 +1,1000 @@
+<HBProfile>
+  <Name>Alliance\Northrend (69-80)\The Storm Peaks (78-79)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>79</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="12818" Name="Clean Up">
+    <Objective Type="CollectItem" ItemId="40603" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Charred Wreckage" Id="191530" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6125.42" Y="-969.57" Z="398.39" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12836" Name="Expression of Gratitude">
+    <Objective Type="KillMob" MobId="30003" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6136.29" Y="-315.893" Z="436.353" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12828" Name="Ample Inspiration">
+    <Objective Type="CollectItem" ItemId="40728" CollectCount="8">
+      <CollectFrom>
+        <GameObject Name="Mammoth Meat" Id="191567" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6444.77" Y="-1292.05" Z="459.4" />
+        <Hotspot X="6446.92" Y="-1300.06" Z="461.48" />
+        <Hotspot X="6464.77" Y="-1283.18" Z="466.65" />
+        <Hotspot X="6465.08" Y="-1296.23" Z="468.03" />
+        <Hotspot X="6465.34" Y="-1292.15" Z="467.53" />
+        <Hotspot X="6468.04" Y="-1289.74" Z="468.52" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12831" Name="Only Partly Forgotten">
+    <Objective Type="KillMob" MobId="29461" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6856.67" Y="-1576.58" Z="353.391" />
+        <Hotspot X="6820.01" Y="-1599.17" Z="352.365" />
+        <Hotspot X="6814.0" Y="-1511.77" Z="357.45" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12830" Name="Ore Repossession">
+    <Objective Type="KillMob" MobId="29413" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6533.12" Y="-1075.28" Z="432.917" />
+        <Hotspot X="6570.9" Y="-1050.44" Z="432.848" />
+        <Hotspot X="6594.65" Y="-1049.05" Z="430.103" />
+        <Hotspot X="6596.23" Y="-1008.78" Z="429.445" />
+        <Hotspot X="6580.09" Y="-997.177" Z="434.919" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12821" Name="Cell Block Tango">
+    <Objective Type="CollectItem" ItemId="40731" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Transporter Power Cell" Id="191576" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6291.64" Y="-1367.75" Z="425.25" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12822" Name="Know No Fear">
+    <Objective Type="KillMob" MobId="29409" KillCount="6">
+      <Hotspots>
+        <Hotspot X="6382.38" Y="-1647.29" Z="420.457" />
+        <Hotspot X="6479.16" Y="-1642.7" Z="465.234" />
+        <Hotspot X="6410.43" Y="-1613.44" Z="421.331" />
+        <Hotspot X="6420.79" Y="-1645.26" Z="420.897" />
+        <Hotspot X="6480.65" Y="-1717.4" Z="434.573" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="29407" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6297.12" Y="-1425.6" Z="426.168" />
+        <Hotspot X="6297.26" Y="-1406.99" Z="425.576" />
+        <Hotspot X="6278.49" Y="-1425.38" Z="425.555" />
+        <Hotspot X="6292.41" Y="-1374.15" Z="425.467" />
+        <Hotspot X="6293.24" Y="-1367.46" Z="425.361" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12844" Name="Equipment Recovery">
+    <Objective Type="CollectItem" ItemId="40726" CollectCount="8">
+      <CollectFrom>
+        <GameObject Name="K3 Equipment" Id="191568" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6665.59" Y="-1075.62" Z="758.63" />
+        <Hotspot X="6672.19" Y="-993.02" Z="766.05" />
+        <Hotspot X="6683.19" Y="-1136.84" Z="762.72" />
+        <Hotspot X="6724.52" Y="-1151.8" Z="769.8" />
+        <Hotspot X="6740.62" Y="-1050.96" Z="769.64" />
+        <Hotspot X="6758.04" Y="-959.36" Z="767.15" />
+        <Hotspot X="6759.12" Y="-1060.16" Z="769.65" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12854" Name="On Brann's Trail">
+    <Objective Type="CollectItem" ItemId="40947" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Disturbed Snow" Id="191708" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7156.99" Y="-722.9" Z="893.34" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12841" Name="The Crone's Bargain">
+    <Objective Type="KillMob" MobId="29518" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6868.52" Y="-1294.7" Z="819.349" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12907" Name="Examples to be Made">
+    <Objective Type="KillMob" MobId="30147" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6921.59" Y="-1388.17" Z="830.856" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12969" Name="Is That Your Goblin?">
+    <Objective Type="KillMob" MobId="30154" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6889.73" Y="-1590.0" Z="821.163" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12971" Name="Taking on All Challengers">
+    <Objective Type="KillMob" MobId="30012" KillCount="6">
+      <Hotspots>
+        <Hotspot X="7049.79" Y="-1787.23" Z="823.763" />
+        <Hotspot X="7027.54" Y="-1799.22" Z="822.578" />
+        <Hotspot X="7066.64" Y="-1824.94" Z="821.732" />
+        <Hotspot X="7095.77" Y="-1796.03" Z="823.103" />
+        <Hotspot X="7037.76" Y="-1821.12" Z="823.113" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12900" Name="Making a Harness">
+    <Objective Type="KillMob" MobId="29875" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6756.08" Y="-1503.3" Z="781.329" />
+        <Hotspot X="6731.65" Y="-1409.39" Z="738.971" />
+        <Hotspot X="6696.46" Y="-1374.95" Z="698.687" />
+        <Hotspot X="6687.54" Y="-1470.43" Z="700.404" />
+        <Hotspot X="6679.82" Y="-1591.49" Z="652.47" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12996" Name="The Warm-Up">
+    <Objective Type="KillMob" MobId="29352" KillCount="1">
+      <Hotspots>
+        <Hotspot X="7006.46" Y="-1767.26" Z="819.991" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12997" Name="Into the Pit">
+    <Objective Type="KillMob" MobId="30174" KillCount="6">
+      <Hotspots>
+        <Hotspot X="6915.33" Y="-1659.18" Z="810.854" />
+        <Hotspot X="6978.9" Y="-1673.39" Z="809.881" />
+        <Hotspot X="6962.0" Y="-1642.33" Z="810.435" />
+        <Hotspot X="6945.16" Y="-1682.83" Z="810.24" />
+        <Hotspot X="6941.39" Y="-1681.08" Z="810.232" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12968" Name="Yulda's Folly">
+    <Objective Type="KillMob" MobId="30046" KillCount="1">
+      <Hotspots>
+        <Hotspot X="7271.52" Y="139.207" Z="784.645" />
+        <Hotspot X="7261.41" Y="134.269" Z="784.703" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12925" Name="Aberrations">
+    <Objective Type="KillMob" MobId="29569" KillCount="1">
+      <Hotspots>
+        <Hotspot X="7320.8" Y="199.441" Z="785.156" />
+        <Hotspot X="7221.08" Y="-8.4437" Z="773.653" />
+        <Hotspot X="7299.66" Y="-134.323" Z="772.399" />
+        <Hotspot X="7290.74" Y="-113.937" Z="770.164" />
+        <Hotspot X="7280.21" Y="-131.25" Z="771.409" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12942" Name="Off With Their Black Wings">
+    <Objective Type="KillMob" MobId="29570" KillCount="12">
+      <Hotspots>
+        <Hotspot X="7389.0" Y="-43.5486" Z="800.707" />
+        <Hotspot X="7378.98" Y="255.403" Z="781.899" />
+        <Hotspot X="7377.79" Y="-40.1186" Z="785.906" />
+        <Hotspot X="7367.86" Y="178.811" Z="785.839" />
+        <Hotspot X="7358.03" Y="22.1333" Z="791.313" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12867" Name="Baby Stealers">
+    <Objective Type="CollectItem" ItemId="41341" CollectCount="15">
+      <CollectFrom>
+        <GameObject Name="Eagle Egg" Id="191770" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6950.64" Y="-736.87" Z="732.53" />
+        <Hotspot X="6955.24" Y="-739.98" Z="732.49" />
+        <Hotspot X="6963.41" Y="-703.79" Z="764.84" />
+        <Hotspot X="6986.32" Y="-797.43" Z="730.43" />
+        <Hotspot X="6987.68" Y="-797.27" Z="730.67" />
+        <Hotspot X="7006.75" Y="-461.03" Z="776.99" />
+        <Hotspot X="7007.9" Y="-457.69" Z="776.82" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12866" Name="Stemming the Aggressors">
+    <Objective Type="KillMob" MobId="29792" KillCount="8">
+      <Hotspots>
+        <Hotspot X="7040.75" Y="-749.475" Z="731.048" />
+        <Hotspot X="6925.83" Y="-732.16" Z="731.739" />
+        <Hotspot X="7131.69" Y="-621.245" Z="829.914" />
+        <Hotspot X="6856.39" Y="-811.036" Z="779.676" />
+        <Hotspot X="7082.84" Y="-522.47" Z="731.331" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="29793" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6829.03" Y="41.1422" Z="773.231" />
+        <Hotspot X="7029.17" Y="-835.859" Z="887.38" />
+        <Hotspot X="7010.38" Y="-414.571" Z="809.384" />
+        <Hotspot X="6529.95" Y="-741.761" Z="610.659" />
+        <Hotspot X="7066.76" Y="-742.368" Z="747.346" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12855" Name="Sniffing Out the Perpetrator">
+    <Objective Type="KillMob" MobId="29695" KillCount="1">
+      <Hotspots>
+        <Hotspot X="7313.96" Y="-1611.88" Z="944.595" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12915" Name="Mending Fences">
+    <Objective Type="CollectItem" ItemId="41506" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Granite Boulder" Id="191814" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7142.79" Y="-3581.79" Z="834.89" />
+        <Hotspot X="7160.92" Y="-3487.59" Z="857.13" />
+        <Hotspot X="7176.07" Y="-3613.49" Z="829.17" />
+        <Hotspot X="7184.85" Y="-3042.11" Z="860.24" />
+        <Hotspot X="7214.66" Y="-3579.06" Z="824.27" />
+        <Hotspot X="7229.83" Y="-3560.51" Z="840.16" />
+        <Hotspot X="7230.95" Y="-3504.92" Z="835.97" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="29375" KillCount="5">
+      <Hotspots>
+        <Hotspot X="7286.45" Y="-3148.94" Z="837.57" />
+        <Hotspot X="7266.46" Y="-3098.71" Z="837.577" />
+        <Hotspot X="7383.89" Y="-3080.81" Z="837.534" />
+        <Hotspot X="7523.4" Y="-3139.71" Z="837.561" />
+        <Hotspot X="7233.65" Y="-3437.45" Z="838.956" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="29503" KillCount="1">
+      <Hotspots>
+        <Hotspot X="7174.86" Y="-3647.9" Z="828.423" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12922" Name="The Refiner's Fire">
+    <Objective Type="KillMob" MobId="29504" KillCount="1">
+      <Hotspots>
+        <Hotspot X="7319.73" Y="-3256.89" Z="843.941" />
+        <Hotspot X="7318.66" Y="-3108.58" Z="837.577" />
+        <Hotspot X="7257.36" Y="-3650.48" Z="823.727" />
+        <Hotspot X="7250.41" Y="-3082.81" Z="837.577" />
+        <Hotspot X="7247.22" Y="-3147.93" Z="837.577" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12858" Name="Pieces to the Puzzle">
+    <Objective Type="KillMob" MobId="29724" KillCount="1">
+      <Hotspots>
+        <Hotspot X="8329.27" Y="-1060.86" Z="924.924" />
+        <Hotspot X="8319.95" Y="-950.624" Z="923.957" />
+        <Hotspot X="8140.12" Y="-1125.28" Z="925.848" />
+        <Hotspot X="8328.57" Y="-1125.45" Z="924.026" />
+        <Hotspot X="8319.7" Y="-1163.29" Z="925.14" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12930" Name="Rare Earth">
+    <Objective Type="CollectItem" ItemId="41614" CollectCount="7">
+      <CollectFrom>
+        <GameObject Name="Enchanted Earth" Id="191844" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="8518.98" Y="314.52" Z="762.04" />
+        <Hotspot X="8532.54" Y="68.42" Z="725.71" />
+        <Hotspot X="8535.68" Y="-496.9" Z="823.14" />
+        <Hotspot X="8546.7" Y="-263.98" Z="807.71" />
+        <Hotspot X="8549.12" Y="307.62" Z="663.94" />
+        <Hotspot X="8558.69" Y="-286.85" Z="704.25" />
+        <Hotspot X="8573.36" Y="-92.22" Z="673.31" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12957" Name="Slaves of the Stormforged">
+    <Objective Type="KillMob" MobId="29369" KillCount="3">
+      <Hotspots>
+        <Hotspot X="7842.92" Y="-124.645" Z="880.933" />
+        <Hotspot X="7827.68" Y="-77.0993" Z="882.731" />
+        <Hotspot X="7842.54" Y="-110.646" Z="882.807" />
+        <Hotspot X="7831.41" Y="-36.4311" Z="881.704" />
+        <Hotspot X="7806.82" Y="-50.189" Z="883.404" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12964" Name="The Dark Ore">
+    <Objective Type="CollectItem" ItemId="42109" CollectCount="5">
+      <CollectFrom>
+        <GameObject Name="Ore Cart" Id="192058" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7715.97" Y="-2.23" Z="867.29" />
+        <Hotspot X="7719.1" Y="-12.29" Z="866.16" />
+        <Hotspot X="7728.65" Y="-19.08" Z="867.68" />
+        <Hotspot X="7739.37" Y="-51.46" Z="869.63" />
+        <Hotspot X="7745.19" Y="-32.75" Z="868.12" />
+        <Hotspot X="7760.81" Y="4.83" Z="865.46" />
+        <Hotspot X="7760.88" Y="-69.61" Z="875.73" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12978" Name="Facing the Storm">
+    <Objective Type="KillMob" MobId="29380" KillCount="1">
+      <Hotspots>
+        <Hotspot X="8292.77" Y="-246.245" Z="925.667" />
+        <Hotspot X="7951.31" Y="-378.571" Z="887.771" />
+        <Hotspot X="8020.56" Y="-462.746" Z="945.596" />
+        <Hotspot X="8203.2" Y="-201.535" Z="871.047" />
+        <Hotspot X="7891.82" Y="29.8049" Z="1012.99" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12979" Name="Armor of Darkness">
+    <Objective Type="KillMob" MobId="29380" KillCount="1">
+      <Hotspots>
+        <Hotspot X="8292.77" Y="-246.245" Z="925.667" />
+        <Hotspot X="7951.31" Y="-378.571" Z="887.771" />
+        <Hotspot X="8020.56" Y="-462.746" Z="945.596" />
+        <Hotspot X="8203.2" Y="-201.535" Z="871.047" />
+        <Hotspot X="7891.82" Y="29.8049" Z="1012.99" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12984" Name="Valduran the Stormborn">
+    <Objective Type="KillMob" MobId="29368" KillCount="1">
+      <Hotspots>
+        <Hotspot X="7724.86" Y="114.941" Z="1013.57" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12991" Name="Hit Them Where it Hurts">
+    <Objective Type="KillMob" MobId="29376" KillCount="10">
+      <Hotspots>
+        <Hotspot X="8073.41" Y="-296.033" Z="901.671" />
+        <Hotspot X="8050.99" Y="-296.318" Z="868.735" />
+        <Hotspot X="8086.14" Y="-301.367" Z="863.713" />
+        <Hotspot X="7314.27" Y="-467.079" Z="813.076" />
+        <Hotspot X="8211.71" Y="-294.604" Z="1000.58" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12993" Name="A Colossal Threat">
+    <Objective Type="CollectItem" ItemId="42475" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Colossus Attack Specs" Id="192171" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="8108.98" Y="-212.62" Z="848.93" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="42476" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Colossus Defense Specs" Id="192172" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="8025.71" Y="-285.24" Z="849.04" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="13007" Name="The Iron Colossus">
+    <Objective Type="KillMob" MobId="30300" KillCount="1">
+      <Hotspots>
+        <Hotspot X="8015.63" Y="-126.515" Z="865.719" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12874" Name="Fervor of the Frostborn">
+    <Objective Type="CollectItem" ItemId="42624" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Battered Storm Hammer" Id="192243" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="8531.9" Y="-1971.44" Z="1467.57" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="30142" KillCount="1">
+      <Hotspots>
+        <Hotspot X="8392.7" Y="-1970.14" Z="1461.84" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="12967" Name="Battling the Elements">
+    <Objective Type="KillMob" MobId="29504" KillCount="10">
+      <Hotspots>
+        <Hotspot X="7319.73" Y="-3256.89" Z="843.941" />
+        <Hotspot X="7318.66" Y="-3108.58" Z="837.577" />
+        <Hotspot X="7257.36" Y="-3650.48" Z="823.727" />
+        <Hotspot X="7250.41" Y="-3082.81" Z="837.577" />
+        <Hotspot X="7247.22" Y="-3147.93" Z="837.577" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Northrend (69-80)\The Storm Peaks (78-79)" LogColor="Green" />
+    <PickUp QuestName="Clean Up" QuestId="12818" GiverName="Jeer Sparksocket" GiverId="29431" />
+    <If Condition="((!HasQuest(12843)) &amp;&amp; (!IsQuestCompleted(12843)))">
+      <PickUp QuestName="They Took Our Men!" QuestId="12843" GiverName="Gretchen Fizzlespark" GiverId="29473" />
+    </If>
+    <PickUp QuestName="Equipment Recovery" QuestId="12844" GiverName="Gretchen Fizzlespark" GiverId="29473" />
+    <If Condition="((!HasQuest(12827)) &amp;&amp; (!IsQuestCompleted(12827)))">
+      <PickUp QuestName="Reclaimed Rations" QuestId="12827" GiverName="Ricket" GiverId="29428" />
+    </If>
+    <If Condition="((!HasQuest(12836)) &amp;&amp; (!IsQuestCompleted(12836)))">
+      <PickUp QuestName="Expression of Gratitude" QuestId="12836" GiverName="Ricket" GiverId="29428" />
+    </If>
+    <Objective QuestName="Clean Up" QuestId="12818" Type="CollectItem" ItemId="40603" CollectCount="10" />
+    <TurnIn QuestName="Clean Up" QuestId="12818" TurnInName="Jeer Sparksocket" TurnInId="29431" />
+    <If Condition="((!HasQuest(12819)) &amp;&amp; (!IsQuestCompleted(12819)))">
+      <PickUp QuestName="Just Around the Corner" QuestId="12819" GiverName="Jeer Sparksocket" GiverId="29431" />
+    </If>
+    <Objective QuestName="Just Around the Corner" QuestId="12819" Type="CollectItem" ItemId="40642" CollectCount="1" />
+    <Objective QuestName="Expression of Gratitude" QuestId="12836" Type="KillMob" MobId="30003" KillCount="1" />
+    <Objective QuestName="Reclaimed Rations" QuestId="12827" Type="CollectItem" ItemId="40645" CollectCount="16" />
+    <TurnIn QuestName="Just Around the Corner" QuestId="12819" TurnInName="Jeer Sparksocket" TurnInId="29431" />
+    <If Condition="((!HasQuest(12826)) &amp;&amp; (!IsQuestCompleted(12826)))">
+      <PickUp QuestName="Slightly Unstable" QuestId="12826" GiverName="Jeer Sparksocket" GiverId="29431" />
+    </If>
+    <TurnIn QuestName="Slightly Unstable" QuestId="12826" TurnInName="Ricket" TurnInId="29428" />
+    <If Condition="((!HasQuest(12820)) &amp;&amp; (!IsQuestCompleted(12820)))">
+      <PickUp QuestName="A Delicate Touch" QuestId="12820" GiverName="Ricket" GiverId="29428" />
+    </If>
+    <TurnIn QuestName="Reclaimed Rations" QuestId="12827" TurnInName="Ricket" TurnInId="29428" />
+    <TurnIn QuestName="Expression of Gratitude" QuestId="12836" TurnInName="Ricket" TurnInId="29428" />
+    <If Condition="((!HasQuest(12828)) &amp;&amp; (!IsQuestCompleted(12828)))">
+      <PickUp QuestName="Ample Inspiration" QuestId="12828" GiverName="Ricket" GiverId="29428" />
+    </If>
+    <While Condition="((HasQuest(12820)) &amp;&amp; (!IsQuestCompleted(12820)))">
+      <RunTo X="6358.48" Y="-1188.55" Z="427.016" />
+      <CustomBehavior File="UseItemOn" QuestId="12820" MobId="29619" ItemId="40676" NumOfTimes="100" Range="5" CollectionDistance="1000" X="6358.48" Y="-1188.55" Z="427.016" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <If Condition="((!HasQuest(12829)) &amp;&amp; (!IsQuestCompleted(12829)))">
+      <PickUp QuestName="Moving In" QuestId="12829" GiverName="Tore Rumblewrench" GiverId="29430" />
+    </If>
+    <If Condition="((!HasQuest(12830)) &amp;&amp; (!IsQuestCompleted(12830)))">
+      <PickUp QuestName="Ore Repossession" QuestId="12830" GiverName="Tore Rumblewrench" GiverId="29430" />
+    </If>
+    <Objective QuestName="Ample Inspiration" QuestId="12828" Type="CollectItem" ItemId="40686" CollectCount="1" />
+    <While Condition="((HasQuest(12828)) &amp;&amp; (!IsQuestCompleted(12828)))">
+      <CustomBehavior File="UseItemOn" QuestId="12828" MobId="0" ItemId="40686" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Ample Inspiration" QuestId="12828" Type="CollectItem" ItemId="40728" CollectCount="8" />
+    <If Condition="((!HasQuest(12831)) &amp;&amp; (!IsQuestCompleted(12831)))">
+      <PickUp QuestName="Only Partly Forgotten" QuestId="12831" GiverName="Injured Goblin Miner" GiverId="29434" />
+    </If>
+    <Objective QuestName="Only Partly Forgotten" QuestId="12831" Type="KillMob" MobId="29461" KillCount="1" />
+    <Objective QuestName="Only Partly Forgotten" QuestId="12831" Type="CollectItem" ItemId="40944" CollectCount="1" />
+    <TurnIn QuestName="Only Partly Forgotten" QuestId="12831" TurnInName="Injured Goblin Miner" TurnInId="29434" />
+    <If Condition="((!HasQuest(12832)) &amp;&amp; (!IsQuestCompleted(12832)))">
+      <PickUp QuestName="Bitter Departure" QuestId="12832" GiverName="Injured Goblin Miner" GiverId="29434" />
+    </If>
+    <Objective QuestName="Ore Repossession" QuestId="12830" Type="KillMob" MobId="29413" KillCount="1" />
+    <Objective QuestName="Ore Repossession" QuestId="12830" Type="CollectItem" ItemId="40744" CollectCount="5" />
+    <TurnIn QuestName="Moving In" QuestId="12829" TurnInName="Tore Rumblewrench" TurnInId="29430" />
+    <TurnIn QuestName="Ore Repossession" QuestId="12830" TurnInName="Tore Rumblewrench" TurnInId="29430" />
+    <TurnIn QuestName="A Delicate Touch" QuestId="12820" TurnInName="Ricket" TurnInId="29428" />
+    <TurnIn QuestName="Ample Inspiration" QuestId="12828" TurnInName="Ricket" TurnInId="29428" />
+    <TurnIn QuestName="Bitter Departure" QuestId="12832" TurnInName="Ricket" TurnInId="29428" />
+    <If Condition="((!HasQuest(12821)) &amp;&amp; (!IsQuestCompleted(12821)))">
+      <PickUp QuestName="Cell Block Tango" QuestId="12821" GiverName="Ricket" GiverId="29428" />
+    </If>
+    <Objective QuestName="Cell Block Tango" QuestId="12821" Type="CollectItem" ItemId="40731" CollectCount="1" />
+    <While Condition="((HasQuest(12821)) &amp;&amp; (!IsQuestCompleted(12821)))">
+      <CustomBehavior File="UseItemOn" QuestId="12821" MobId="0" ItemId="40731" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Cell Block Tango" QuestId="12821" TurnInName="Ricket" TurnInId="29428" />
+    <If Condition="((!HasQuest(12822)) &amp;&amp; (!IsQuestCompleted(12822)))">
+      <PickUp QuestName="Know No Fear" QuestId="12822" GiverName="Ricket" GiverId="29428" />
+    </If>
+    <If Condition="((!HasQuest(12823)) &amp;&amp; (!IsQuestCompleted(12823)))">
+      <PickUp QuestName="A Flawless Plan" QuestId="12823" GiverName="Gino" GiverId="29432" />
+    </If>
+    <While Condition="((HasQuest(12823)) &amp;&amp; (!IsQuestCompleted(12823)))">
+      <RunTo X="6500.87" Y="-1746.74" Z="490.478" />
+      <CustomBehavior File="UseItemOn" QuestId="12823" MobId="29999" ItemId="41431" NumOfTimes="100" Range="5" CollectionDistance="1000" X="6500.87" Y="-1746.74" Z="490.478" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="A Flawless Plan" QuestId="12823" Type="KillMob" MobId="29626" KillCount="1" />
+    <Objective QuestName="Know No Fear" QuestId="12822" Type="KillMob" MobId="29409" KillCount="6" />
+    <Objective QuestName="Know No Fear" QuestId="12822" Type="KillMob" MobId="29407" KillCount="8" />
+    <TurnIn QuestName="A Flawless Plan" QuestId="12823" TurnInName="Gino" TurnInId="29432" />
+    <If Condition="((!HasQuest(12824)) &amp;&amp; (!IsQuestCompleted(12824)))">
+      <PickUp QuestName="Demolitionist Extraordinaire" QuestId="12824" GiverName="Gino" GiverId="29432" />
+    </If>
+    <TurnIn QuestName="Know No Fear" QuestId="12822" TurnInName="Ricket" TurnInId="29428" />
+    <TurnIn QuestName="Demolitionist Extraordinaire" QuestId="12824" TurnInName="Ricket" TurnInId="29428" />
+    <If Condition="((!HasQuest(12833)) &amp;&amp; (!IsQuestCompleted(12833)))">
+      <PickUp QuestName="Overstock" QuestId="12833" GiverName="Ricket" GiverId="29428" />
+    </If>
+    <If Condition="((!HasQuest(12862)) &amp;&amp; (!IsQuestCompleted(12862)))">
+      <PickUp QuestName="When All Else Fails" QuestId="12862" GiverName="Ricket" GiverId="29428" />
+    </If>
+    <CustomBehavior File="SetHearthstone" MobId="29904" X="6124.42" Y="-1080.96" Z="402.624" /> <!-- Set hearth: K3 -->
+    <While Condition="((HasQuest(12833)) &amp;&amp; (!IsQuestCompleted(12833)))">
+      <RunTo X="6358.48" Y="-1188.55" Z="427.016" />
+      <CustomBehavior File="UseItemOn" QuestId="12833" MobId="29619" ItemId="40676" NumOfTimes="100" Range="5" CollectionDistance="1000" X="6358.48" Y="-1188.55" Z="427.016" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="They Took Our Men!" QuestId="12843" Type="CollectItem" ItemId="40641" CollectCount="1" />
+    <Objective QuestName="Equipment Recovery" QuestId="12844" Type="CollectItem" ItemId="40726" CollectCount="8" />
+    <While Condition="((HasQuest(12844)) &amp;&amp; (!IsQuestCompleted(12844)))">
+      <CustomBehavior File="UseItemOn" QuestId="12844" MobId="0" ItemId="6948" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <!-- Use Hearthstone to K3 -->
+    <CustomBehavior File="UseItem" ItemId="6948" />
+    <CustomBehavior File="WaitTimer" WaitTime="12000" />
+    <TurnIn QuestName="They Took Our Men!" QuestId="12843" TurnInName="Gretchen Fizzlespark" TurnInId="29473" />
+    <If Condition="((!HasQuest(12846)) &amp;&amp; (!IsQuestCompleted(12846)))">
+      <PickUp QuestName="Leave No Goblin Behind" QuestId="12846" GiverName="Gretchen Fizzlespark" GiverId="29473" />
+    </If>
+    <TurnIn QuestName="Equipment Recovery" QuestId="12844" TurnInName="Gretchen Fizzlespark" TurnInId="29473" />
+    <TurnIn QuestName="Overstock" QuestId="12833" TurnInName="Ricket" TurnInId="29428" />
+    <TurnIn QuestName="When All Else Fails" QuestId="12862" TurnInName="Rork Sharpchin" TurnInId="29744" />
+    <PickUp QuestName="Ancient Relics" QuestId="12870" GiverName="Rork Sharpchin" GiverId="29744" />
+    <TurnIn QuestName="Ancient Relics" QuestId="12870" TurnInName="Rork Sharpchin" TurnInId="29744" />
+    <CustomBehavior File="SetHearthstone" MobId="29962" AreaId="67" X="8409.79" Y="-393.869" Z="903.202" /> <!-- Set hearth: Frosthold -->
+    <PickUp QuestName="On Brann's Trail" QuestId="12854" GiverName="Archaeologist Andorin" GiverId="29650" />
+    <PickUp QuestName="Offering Thanks" QuestId="12863" GiverName="Lagnus" GiverId="29743" />
+    <TurnIn QuestName="Offering Thanks" QuestId="12863" TurnInName="Glorthal Stiffbeard" TurnInId="29727" />
+    <If Condition="((!HasQuest(12864)) &amp;&amp; (!IsQuestCompleted(12864)))">
+      <PickUp QuestName="Missing Scouts" QuestId="12864" GiverName="Glorthal Stiffbeard" GiverId="29727" />
+    </If>
+    <If Condition="((!HasQuest(12865)) &amp;&amp; (!IsQuestCompleted(12865)))">
+      <PickUp QuestName="Loyal Companions" QuestId="12865" GiverName="Fjorlin Frostbrow" GiverId="29732" />
+    </If>
+    <Objective QuestName="On Brann's Trail" QuestId="12854" Type="CollectItem" ItemId="40947" CollectCount="1" />
+    <Objective QuestName="Loyal Companions" QuestId="12865" Type="CollectItem" ItemId="41340" CollectCount="8" />
+    <TurnIn QuestName="Leave No Goblin Behind" QuestId="12846" TurnInName="Lok'lira the Crone" TurnInId="29481" />
+    <If Condition="((!HasQuest(12841)) &amp;&amp; (!IsQuestCompleted(12841)))">
+      <PickUp QuestName="The Crone's Bargain" QuestId="12841" GiverName="Lok'lira the Crone" GiverId="29481" />
+    </If>
+    <Objective QuestName="The Crone's Bargain" QuestId="12841" Type="KillMob" MobId="29518" KillCount="1" />
+    <Objective QuestName="The Crone's Bargain" QuestId="12841" Type="CollectItem" ItemId="40690" CollectCount="1" />
+    <TurnIn QuestName="The Crone's Bargain" QuestId="12841" TurnInName="Lok'lira the Crone" TurnInId="29481" />
+    <If Condition="((!HasQuest(12905)) &amp;&amp; (!IsQuestCompleted(12905)))">
+      <PickUp QuestName="Mildred the Cruel" QuestId="12905" GiverName="Lok'lira the Crone" GiverId="29481" />
+    </If>
+    <TurnIn QuestName="Mildred the Cruel" QuestId="12905" TurnInName="Mildred the Cruel" TurnInId="29885" />
+    <If Condition="((!HasQuest(12906)) &amp;&amp; (!IsQuestCompleted(12906)))">
+      <PickUp QuestName="Discipline" QuestId="12906" GiverName="Mildred the Cruel" GiverId="29885" />
+    </If>
+    <While Condition="((HasQuest(12906)) &amp;&amp; (!IsQuestCompleted(12906)))">
+      <CustomBehavior File="UseItemOn" QuestId="12906" MobId="29886" ItemId="42837" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Discipline" QuestId="12906" TurnInName="Mildred the Cruel" TurnInId="29885" />
+    <If Condition="((!HasQuest(12907)) &amp;&amp; (!IsQuestCompleted(12907)))">
+      <PickUp QuestName="Examples to be Made" QuestId="12907" GiverName="Mildred the Cruel" GiverId="29885" />
+    </If>
+    <Objective QuestName="Examples to be Made" QuestId="12907" Type="KillMob" MobId="30147" KillCount="1" />
+    <TurnIn QuestName="Examples to be Made" QuestId="12907" TurnInName="Mildred the Cruel" TurnInId="29885" />
+    <If Condition="((!HasQuest(12908)) &amp;&amp; (!IsQuestCompleted(12908)))">
+      <PickUp QuestName="A Certain Prisoner" QuestId="12908" GiverName="Mildred the Cruel" GiverId="29885" />
+    </If>
+    <TurnIn QuestName="A Certain Prisoner" QuestId="12908" TurnInName="Lok'lira the Crone" TurnInId="29481" />
+    <If Condition="((!HasQuest(12921)) &amp;&amp; (!IsQuestCompleted(12921)))">
+      <PickUp QuestName="A Change of Scenery" QuestId="12921" GiverName="Lok'lira the Crone" GiverId="29481" />
+    </If>
+    <TurnIn QuestName="A Change of Scenery" QuestId="12921" TurnInName="Lok'lira the Crone" TurnInId="29975" />
+    <If Condition="((!HasQuest(12969)) &amp;&amp; (!IsQuestCompleted(12969)))">
+      <PickUp QuestName="Is That Your Goblin?" QuestId="12969" GiverName="Lok'lira the Crone" GiverId="29975" />
+    </If>
+    <Objective QuestName="Is That Your Goblin?" QuestId="12969" Type="KillMob" MobId="30154" KillCount="1" />
+    <TurnIn QuestName="Is That Your Goblin?" QuestId="12969" TurnInName="Lok'lira the Crone" TurnInId="29975" />
+    <If Condition="((!HasQuest(12970)) &amp;&amp; (!IsQuestCompleted(12970)))">
+      <PickUp QuestName="The Hyldsmeet" QuestId="12970" GiverName="Lok'lira the Crone" GiverId="29975" />
+    </If>
+    <TurnIn QuestName="The Hyldsmeet" QuestId="12970" TurnInName="Lok'lira the Crone" TurnInId="29975" />
+    <If Condition="((!HasQuest(12971)) &amp;&amp; (!IsQuestCompleted(12971)))">
+      <PickUp QuestName="Taking on All Challengers" QuestId="12971" GiverName="Lok'lira the Crone" GiverId="29975" />
+    </If>
+    <Objective QuestName="Taking on All Challengers" QuestId="12971" Type="KillMob" MobId="30012" KillCount="6" />
+    <TurnIn QuestName="Taking on All Challengers" QuestId="12971" TurnInName="Lok'lira the Crone" TurnInId="29975" />
+    <If Condition="((!HasQuest(12972)) &amp;&amp; (!IsQuestCompleted(12972)))">
+      <PickUp QuestName="You'll Need a Bear" QuestId="12972" GiverName="Lok'lira the Crone" GiverId="29975" />
+    </If>
+    <TurnIn QuestName="You'll Need a Bear" QuestId="12972" TurnInName="Brijana" TurnInId="29592" />
+    <If Condition="((!HasQuest(12851)) &amp;&amp; (!IsQuestCompleted(12851)))">
+      <PickUp QuestName="Bearly Hanging On" QuestId="12851" GiverName="Brijana" GiverId="29592" />
+    </If>
+    <TurnIn QuestName="Bearly Hanging On" QuestId="12851" TurnInName="Brijana" TurnInId="29592" />
+    <If Condition="((!HasQuest(12856)) &amp;&amp; (!IsQuestCompleted(12856)))">
+      <PickUp QuestName="Cold Hearted" QuestId="12856" GiverName="Brijana" GiverId="29592" />
+    </If>
+    <TurnIn QuestName="Cold Hearted" QuestId="12856" TurnInName="Brijana" TurnInId="29592" />
+    <If Condition="((!HasQuest(13063)) &amp;&amp; (!IsQuestCompleted(13063)))">
+      <PickUp QuestName="Deemed Worthy" QuestId="13063" GiverName="Brijana" GiverId="29592" />
+    </If>
+    <TurnIn QuestName="Deemed Worthy" QuestId="13063" TurnInName="Astrid Bjornrittar" TurnInId="29839" />
+    <If Condition="((!HasQuest(12900)) &amp;&amp; (!IsQuestCompleted(12900)))">
+      <PickUp QuestName="Making a Harness" QuestId="12900" GiverName="Astrid Bjornrittar" GiverId="29839" />
+    </If>
+    <Objective QuestName="Making a Harness" QuestId="12900" Type="KillMob" MobId="29875" KillCount="1" />
+    <Objective QuestName="Making a Harness" QuestId="12900" Type="CollectItem" ItemId="41424" CollectCount="3" />
+    <TurnIn QuestName="Making a Harness" QuestId="12900" TurnInName="Astrid Bjornrittar" TurnInId="29839" />
+    <If Condition="((!HasQuest(12983)) &amp;&amp; (!IsQuestCompleted(12983)))">
+      <PickUp QuestName="The Last of Her Kind" QuestId="12983" GiverName="Astrid Bjornrittar" GiverId="29839" />
+    </If>
+    <If Condition="((!HasQuest(12989)) &amp;&amp; (!IsQuestCompleted(12989)))">
+      <PickUp QuestName="The Slithering Darkness" QuestId="12989" GiverName="Astrid Bjornrittar" GiverId="29839" />
+    </If>
+    <TurnIn QuestName="The Last of Her Kind" QuestId="12983" TurnInName="Astrid Bjornrittar" TurnInId="29839" />
+    <If Condition="((!HasQuest(12996)) &amp;&amp; (!IsQuestCompleted(12996)))">
+      <PickUp QuestName="The Warm-Up" QuestId="12996" GiverName="Astrid Bjornrittar" GiverId="29839" />
+    </If>
+    <TurnIn QuestName="The Slithering Darkness" QuestId="12989" TurnInName="Astrid Bjornrittar" TurnInId="29839" />
+    <While Condition="((HasQuest(12996)) &amp;&amp; (!IsQuestCompleted(12996)))">
+      <CustomBehavior File="UseItemOn" QuestId="12996" MobId="30221" ItemId="42481" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Warm-Up" QuestId="12996" Type="KillMob" MobId="29352" KillCount="1" />
+    <TurnIn QuestName="The Warm-Up" QuestId="12996" TurnInName="Astrid Bjornrittar" TurnInId="29839" />
+    <If Condition="((!HasQuest(12997)) &amp;&amp; (!IsQuestCompleted(12997)))">
+      <PickUp QuestName="Into the Pit" QuestId="12997" GiverName="Astrid Bjornrittar" GiverId="29839" />
+    </If>
+    <While Condition="((HasQuest(12997)) &amp;&amp; (!IsQuestCompleted(12997)))">
+      <RunTo X="6915.33" Y="-1659.18" Z="810.854" />
+      <CustomBehavior File="UseItemOn" QuestId="12997" MobId="30174" ItemId="42499" NumOfTimes="100" Range="5" CollectionDistance="1000" X="6915.33" Y="-1659.18" Z="810.854" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Into the Pit" QuestId="12997" Type="KillMob" MobId="30174" KillCount="6" />
+    <TurnIn QuestName="Into the Pit" QuestId="12997" TurnInName="Astrid Bjornrittar" TurnInId="29839" />
+    <If Condition="((!HasQuest(13061)) &amp;&amp; (!IsQuestCompleted(13061)))">
+      <PickUp QuestName="Prepare for Glory" QuestId="13061" GiverName="Astrid Bjornrittar" GiverId="29839" />
+    </If>
+    <If Condition="((!HasQuest(12925)) &amp;&amp; (!IsQuestCompleted(12925)))">
+      <PickUp QuestName="Aberrations" QuestId="12925" GiverName="Thyra Kvinnshal" GiverId="30041" />
+    </If>
+    <PickUp QuestName="Off With Their Black Wings" QuestId="12942" GiverName="Iva the Vengeful" GiverId="29997" />
+    <PickUp QuestName="Yulda's Folly" QuestId="12968" GiverName="Iva the Vengeful" GiverId="29997" />
+    <TurnIn QuestName="Prepare for Glory" QuestId="13061" TurnInName="Lok'lira the Crone" TurnInId="29975" />
+    <If Condition="((!HasQuest(13062)) &amp;&amp; (!IsQuestCompleted(13062)))">
+      <PickUp QuestName="Lok'lira's Parting Gift" QuestId="13062" GiverName="Lok'lira the Crone" GiverId="29975" />
+    </If>
+    <TurnIn QuestName="Lok'lira's Parting Gift" QuestId="13062" TurnInName="Gretta the Arbiter" TurnInId="29796" />
+    <If Condition="((!HasQuest(12886)) &amp;&amp; (!IsQuestCompleted(12886)))">
+      <PickUp QuestName="The Drakkensryd" QuestId="12886" GiverName="Gretta the Arbiter" GiverId="29796" />
+    </If>
+    <While Condition="((HasQuest(12886)) &amp;&amp; (!IsQuestCompleted(12886)))">
+      <CustomBehavior File="UseItemOn" QuestId="12886" MobId="29800" ItemId="41058" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Drakkensryd" QuestId="12886" Type="KillMob" MobId="29694" KillCount="1" />
+    <While Condition="((HasQuest(12886)) &amp;&amp; (!IsQuestCompleted(12886)))">
+      <CustomBehavior File="UseItemOn" QuestId="12886" MobId="29800" ItemId="41058" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="The Drakkensryd" QuestId="12886" TurnInName="Thorim" TurnInId="29445" />
+    <If Condition="((!HasQuest(13064)) &amp;&amp; (!IsQuestCompleted(13064)))">
+      <PickUp QuestName="Sibling Rivalry" QuestId="13064" GiverName="Thorim" GiverId="29445" />
+    </If>
+    <TurnIn QuestName="Sibling Rivalry" QuestId="13064" TurnInName="Thorim" TurnInId="29445" />
+    <If Condition="((!HasQuest(12915)) &amp;&amp; (!IsQuestCompleted(12915)))">
+      <PickUp QuestName="Mending Fences" QuestId="12915" GiverName="Thorim" GiverId="29445" />
+    </If>
+    <Objective QuestName="Yulda's Folly" QuestId="12968" Type="KillMob" MobId="30046" KillCount="1" />
+    <If Condition="((!HasQuest(12953)) &amp;&amp; (!IsQuestCompleted(12953)))">
+      <PickUp QuestName="Valkyrion Must Burn" QuestId="12953" GiverName="Thorim" GiverId="29445" />
+    </If>
+    <Objective QuestName="Aberrations" QuestId="12925" Type="KillMob" MobId="29569" KillCount="1" />
+    <Objective QuestName="Aberrations" QuestId="12925" Type="CollectItem" ItemId="41612" CollectCount="6" />
+    <While Condition="((HasQuest(12925)) &amp;&amp; (!IsQuestCompleted(12925)))">
+      <CustomBehavior File="UseItemOn" QuestId="12925" MobId="0" ItemId="41612" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Off With Their Black Wings" QuestId="12942" Type="KillMob" MobId="29570" KillCount="12" />
+    <While Condition="((HasQuest(12942)) &amp;&amp; (!IsQuestCompleted(12942)))">
+      <RunTo X="7389.0" Y="-43.5486" Z="800.707" />
+      <CustomBehavior File="UseItemOn" QuestId="12942" MobId="29570" ItemId="6948" NumOfTimes="100" Range="5" CollectionDistance="1000" X="7389.0" Y="-43.5486" Z="800.707" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <!-- Use Hearthstone to Frosthold -->
+    <CustomBehavior File="UseItem" ItemId="6948" />
+    <CustomBehavior File="WaitTimer" WaitTime="12000" />
+    <TurnIn QuestName="Missing Scouts" QuestId="12864" TurnInName="Glorthal Stiffbeard" TurnInId="29727" />
+    <If Condition="((!HasQuest(12866)) &amp;&amp; (!IsQuestCompleted(12866)))">
+      <PickUp QuestName="Stemming the Aggressors" QuestId="12866" GiverName="Glorthal Stiffbeard" GiverId="29727" />
+    </If>
+    <TurnIn QuestName="On Brann's Trail" QuestId="12854" TurnInName="Archaeologist Andorin" TurnInId="29650" />
+    <If Condition="((!HasQuest(12855)) &amp;&amp; (!IsQuestCompleted(12855)))">
+      <PickUp QuestName="Sniffing Out the Perpetrator" QuestId="12855" GiverName="Archaeologist Andorin" GiverId="29650" />
+    </If>
+    <While Condition="((HasQuest(12865)) &amp;&amp; (!IsQuestCompleted(12865)))">
+      <CustomBehavior File="UseItemOn" QuestId="12865" MobId="29816" ItemId="41340" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Loyal Companions" QuestId="12865" TurnInName="Fjorlin Frostbrow" TurnInId="29732" />
+    <If Condition="((!HasQuest(12867)) &amp;&amp; (!IsQuestCompleted(12867)))">
+      <PickUp QuestName="Baby Stealers" QuestId="12867" GiverName="Fjorlin Frostbrow" GiverId="29732" />
+    </If>
+    <Objective QuestName="Baby Stealers" QuestId="12867" Type="CollectItem" ItemId="41341" CollectCount="15" />
+    <Objective QuestName="Stemming the Aggressors" QuestId="12866" Type="KillMob" MobId="29792" KillCount="8" />
+    <Objective QuestName="Stemming the Aggressors" QuestId="12866" Type="KillMob" MobId="29793" KillCount="8" />
+    <While Condition="((HasQuest(12855)) &amp;&amp; (!IsQuestCompleted(12855)))">
+      <CustomBehavior File="UseItemOn" QuestId="12855" MobId="29677" ItemId="41430" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Sniffing Out the Perpetrator" QuestId="12855" Type="KillMob" MobId="29695" KillCount="1" />
+    <Objective QuestName="Sniffing Out the Perpetrator" QuestId="12855" Type="CollectItem" ItemId="40971" CollectCount="1" />
+    <While Condition="((HasQuest(12867)) &amp;&amp; (!IsQuestCompleted(12867)))">
+      <CustomBehavior File="UseItemOn" QuestId="12867" MobId="0" ItemId="40971" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Sniffing Out the Perpetrator" QuestId="12855" TurnInName="Brann Bronzebeard" TurnInId="29579" />
+    <If Condition="((!HasQuest(12858)) &amp;&amp; (!IsQuestCompleted(12858)))">
+      <PickUp QuestName="Pieces to the Puzzle" QuestId="12858" GiverName="Brann Bronzebeard" GiverId="29579" />
+    </If>
+    <TurnIn QuestName="Aberrations" QuestId="12925" TurnInName="Thyra Kvinnshal" TurnInId="30041" />
+    <TurnIn QuestName="Off With Their Black Wings" QuestId="12942" TurnInName="Iva the Vengeful" TurnInId="29997" />
+    <TurnIn QuestName="Yulda's Folly" QuestId="12968" TurnInName="Iva the Vengeful" TurnInId="29997" />
+    <TurnIn QuestName="Valkyrion Must Burn" QuestId="12953" TurnInName="Iva the Vengeful" TurnInId="29997" />
+    <Objective QuestName="Mending Fences" QuestId="12915" Type="CollectItem" ItemId="41506" CollectCount="1" />
+    <While Condition="((HasQuest(12915)) &amp;&amp; (!IsQuestCompleted(12915)))">
+      <RunTo X="7174.86" Y="-3647.9" Z="828.423" />
+      <CustomBehavior File="UseItemOn" QuestId="12915" MobId="29503" ItemId="41505" NumOfTimes="100" Range="5" CollectionDistance="1000" X="7174.86" Y="-3647.9" Z="828.423" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Mending Fences" QuestId="12915" Type="KillMob" MobId="29375" KillCount="5" />
+    <Objective QuestName="The Refiner's Fire" QuestId="12922" Type="CollectItem" ItemId="41556" CollectCount="1" />
+    <While Condition="((HasQuest(12858)) &amp;&amp; (!IsQuestCompleted(12858)))">
+      <CustomBehavior File="UseItemOn" QuestId="12858" MobId="0" ItemId="41556" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="The Refiner's Fire" QuestId="12922" GiverName="Iva the Vengeful" GiverId="29997" />
+    <Objective QuestName="The Refiner's Fire" QuestId="12922" Type="KillMob" MobId="29504" KillCount="1" />
+    <Objective QuestName="The Refiner's Fire" QuestId="12922" Type="CollectItem" ItemId="41558" CollectCount="10" />
+    <Objective QuestName="Mending Fences" QuestId="12915" Type="CollectItem" ItemId="41506" CollectCount="1" />
+    <While Condition="((HasQuest(12915)) &amp;&amp; (!IsQuestCompleted(12915)))">
+      <RunTo X="7174.86" Y="-3647.9" Z="828.423" />
+      <CustomBehavior File="UseItemOn" QuestId="12915" MobId="29503" ItemId="41505" NumOfTimes="100" Range="5" CollectionDistance="1000" X="7174.86" Y="-3647.9" Z="828.423" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Mending Fences" QuestId="12915" Type="KillMob" MobId="29503" KillCount="1" />
+    <TurnIn QuestName="The Refiner's Fire" QuestId="12922" TurnInName="Object_192060" TurnInType="Object" TurnInId="192060" />
+    <If Condition="((!HasQuest(12956)) &amp;&amp; (!IsQuestCompleted(12956)))">
+      <PickUp QuestName="A Spark of Hope" QuestId="12956" GiverName="Iva the Vengeful" GiverId="29997" />
+    </If>
+    <Objective QuestName="Ancient Relics" QuestId="12870" Type="CollectItem" ItemId="42780" CollectCount="10" />
+    <While Condition="((HasQuest(12956)) &amp;&amp; (!IsQuestCompleted(12956)))">
+      <CustomBehavior File="UseItemOn" QuestId="12956" MobId="0" ItemId="6948" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <!-- Use Hearthstone to Frosthold -->
+    <CustomBehavior File="UseItem" ItemId="6948" />
+    <CustomBehavior File="WaitTimer" WaitTime="12000" />
+    <TurnIn QuestName="Stemming the Aggressors" QuestId="12866" TurnInName="Glorthal Stiffbeard" TurnInId="29727" />
+    <TurnIn QuestName="Baby Stealers" QuestId="12867" TurnInName="Fjorlin Frostbrow" TurnInId="29732" />
+    <TurnIn QuestName="Mending Fences" QuestId="12915" TurnInName="Thorim" TurnInId="29445" />
+    <TurnIn QuestName="A Spark of Hope" QuestId="12956" TurnInName="Thorim" TurnInId="29445" />
+    <If Condition="((!HasQuest(12924)) &amp;&amp; (!IsQuestCompleted(12924)))">
+      <PickUp QuestName="Forging an Alliance" QuestId="12924" GiverName="Thorim" GiverId="29445" />
+    </If>
+    <Objective QuestName="Pieces to the Puzzle" QuestId="12858" Type="KillMob" MobId="29724" KillCount="1" />
+    <Objective QuestName="Pieces to the Puzzle" QuestId="12858" Type="CollectItem" ItemId="41130" CollectCount="6" />
+    <While Condition="((HasQuest(12858)) &amp;&amp; (!IsQuestCompleted(12858)))">
+      <CustomBehavior File="UseItemOn" QuestId="12858" MobId="0" ItemId="41130" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Pieces to the Puzzle" QuestId="12858" Type="CollectItem" ItemId="41132" CollectCount="1" />
+    <While Condition="((HasQuest(12924)) &amp;&amp; (!IsQuestCompleted(12924)))">
+      <CustomBehavior File="UseItemOn" QuestId="12924" MobId="30126" ItemId="40971" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Pieces to the Puzzle" QuestId="12858" TurnInName="Brann Bronzebeard" TurnInId="29579" />
+    <If Condition="((!HasQuest(12860)) &amp;&amp; (!IsQuestCompleted(12860)))">
+      <PickUp QuestName="Data Mining" QuestId="12860" GiverName="Brann Bronzebeard" GiverId="29579" />
+    </If>
+    <While Condition="((HasQuest(12860)) &amp;&amp; (!IsQuestCompleted(12860)))">
+      <RunTo X="8308.78" Y="-1123.34" Z="929.533" />
+      <CustomBehavior File="UseItemOn" QuestId="12860" MobId="29752" ItemId="41179" NumOfTimes="100" Range="5" CollectionDistance="1000" X="8308.78" Y="-1123.34" Z="929.533" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(12860)) &amp;&amp; (!IsQuestCompleted(12860)))">
+      <RunTo X="8308.78" Y="-1123.34" Z="929.533" />
+      <CustomBehavior File="UseItemOn" QuestId="12860" MobId="29752" ItemId="40971" NumOfTimes="100" Range="5" CollectionDistance="1000" X="8308.78" Y="-1123.34" Z="929.533" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Data Mining" QuestId="12860" TurnInName="Brann Bronzebeard" TurnInId="29579" />
+    <If Condition="((!HasQuest(13415)) &amp;&amp; (!IsQuestCompleted(13415)))">
+      <PickUp QuestName="The Library Console" QuestId="13415" GiverName="Brann Bronzebeard" GiverId="29579" />
+    </If>
+    <TurnIn QuestName="The Library Console" QuestId="13415" TurnInName="Object_191760" TurnInType="Object" TurnInId="191760" />
+    <If Condition="((!HasQuest(12872)) &amp;&amp; (!IsQuestCompleted(12872)))">
+      <PickUp QuestName="Norgannon's Shell" QuestId="12872" GiverName="Brann Bronzebeard" GiverId="29579" />
+    </If>
+    <While Condition="((HasQuest(12872)) &amp;&amp; (!IsQuestCompleted(12872)))">
+      <CustomBehavior File="UseItemOn" QuestId="12872" MobId="0" ItemId="44704" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Norgannon's Shell" QuestId="12872" Type="KillMob" MobId="29775" KillCount="1" />
+    <Objective QuestName="Norgannon's Shell" QuestId="12872" Type="CollectItem" ItemId="41258" CollectCount="1" />
+    <While Condition="((HasQuest(12872)) &amp;&amp; (!IsQuestCompleted(12872)))">
+      <CustomBehavior File="UseItemOn" QuestId="12872" MobId="0" ItemId="40971" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Norgannon's Shell" QuestId="12872" TurnInName="Brann Bronzebeard" TurnInId="29579" />
+    <If Condition="((!HasQuest(12871)) &amp;&amp; (!IsQuestCompleted(12871)))">
+      <PickUp QuestName="Aid from the Explorers' League" QuestId="12871" GiverName="Brann Bronzebeard" GiverId="29579" />
+    </If>
+    <PickUp QuestName="The Exiles of Ulduar" QuestId="12885" GiverName="Brann Bronzebeard" GiverId="29579" />
+    <CustomBehavior File="SetHearthstone" MobId="30005" AreaId="67" X="7114.15" Y="-1633.32" Z="820.568" /> <!-- Set hearth: Bouldercrag's Refuge -->
+    <TurnIn QuestName="The Exiles of Ulduar" QuestId="12885" TurnInName="Bouldercrag the Rockshaper" TurnInId="29801" />
+    <If Condition="((!HasQuest(12930)) &amp;&amp; (!IsQuestCompleted(12930)))">
+      <PickUp QuestName="Rare Earth" QuestId="12930" GiverName="Bouldercrag the Rockshaper" GiverId="29801" />
+    </If>
+    <Objective QuestName="Rare Earth" QuestId="12930" Type="CollectItem" ItemId="41614" CollectCount="7" />
+    <Objective QuestName="Rare Earth" QuestId="12930" Type="CollectItem" ItemId="33470" CollectCount="5" />
+    <TurnIn QuestName="Rare Earth" QuestId="12930" TurnInName="Bouldercrag the Rockshaper" TurnInId="29801" />
+    <If Condition="((!HasQuest(12931)) &amp;&amp; (!IsQuestCompleted(12931)))">
+      <PickUp QuestName="Fighting Back" QuestId="12931" GiverName="Bouldercrag the Rockshaper" GiverId="29801" />
+    </If>
+    <If Condition="((!HasQuest(12937)) &amp;&amp; (!IsQuestCompleted(12937)))">
+      <PickUp QuestName="Relief for the Fallen" QuestId="12937" GiverName="Bouldercrag the Rockshaper" GiverId="29801" />
+    </If>
+    <While Condition="((HasQuest(12937)) &amp;&amp; (!IsQuestCompleted(12937)))">
+      <RunTo X="8443.45" Y="179.44" Z="796.767" />
+      <CustomBehavior File="UseItemOn" QuestId="12937" MobId="30035" ItemId="41988" NumOfTimes="100" Range="5" CollectionDistance="1000" X="8443.45" Y="179.44" Z="796.767" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <TurnIn QuestName="Fighting Back" QuestId="12931" TurnInName="Bouldercrag the Rockshaper" TurnInId="29801" />
+    <TurnIn QuestName="Relief for the Fallen" QuestId="12937" TurnInName="Bouldercrag the Rockshaper" TurnInId="29801" />
+    <If Condition="((!HasQuest(12957)) &amp;&amp; (!IsQuestCompleted(12957)))">
+      <PickUp QuestName="Slaves of the Stormforged" QuestId="12957" GiverName="Bouldercrag the Rockshaper" GiverId="29801" />
+    </If>
+    <If Condition="((!HasQuest(12964)) &amp;&amp; (!IsQuestCompleted(12964)))">
+      <PickUp QuestName="The Dark Ore" QuestId="12964" GiverName="Bouldercrag the Rockshaper" GiverId="29801" />
+    </If>
+    <Objective QuestName="Slaves of the Stormforged" QuestId="12957" Type="KillMob" MobId="29369" KillCount="3" />
+    <Objective QuestName="The Dark Ore" QuestId="12964" Type="CollectItem" ItemId="42109" CollectCount="5" />
+    <While Condition="((HasQuest(12964)) &amp;&amp; (!IsQuestCompleted(12964)))">
+      <CustomBehavior File="UseItemOn" QuestId="12964" MobId="0" ItemId="6948" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <!-- Use Hearthstone to Bouldercrag's Refuge -->
+    <CustomBehavior File="UseItem" ItemId="6948" />
+    <CustomBehavior File="WaitTimer" WaitTime="12000" />
+    <TurnIn QuestName="Slaves of the Stormforged" QuestId="12957" TurnInName="Bouldercrag the Rockshaper" TurnInId="29801" />
+    <TurnIn QuestName="The Dark Ore" QuestId="12964" TurnInName="Bouldercrag the Rockshaper" TurnInId="29801" />
+    <If Condition="((!HasQuest(12965)) &amp;&amp; (!IsQuestCompleted(12965)))">
+      <PickUp QuestName="The Gifts of Loken" QuestId="12965" GiverName="Bouldercrag the Rockshaper" GiverId="29801" />
+    </If>
+    <If Condition="((!HasQuest(12978)) &amp;&amp; (!IsQuestCompleted(12978)))">
+      <PickUp QuestName="Facing the Storm" QuestId="12978" GiverName="Bruor Ironbane" GiverId="30152" />
+    </If>
+    <Objective QuestName="Facing the Storm" QuestId="12978" Type="KillMob" MobId="29380" KillCount="1" />
+    <Objective QuestName="Facing the Storm" QuestId="12978" Type="CollectItem" ItemId="42203" CollectCount="1" />
+    <While Condition="((HasQuest(12978)) &amp;&amp; (!IsQuestCompleted(12978)))">
+      <RunTo X="7831.03" Y="24.9519" Z="1009.16" />
+      <CustomBehavior File="UseItemOn" QuestId="12978" MobId="29370" ItemId="42203" NumOfTimes="100" Range="5" CollectionDistance="1000" X="7831.03" Y="24.9519" Z="1009.16" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Armor of Darkness" QuestId="12979" GiverName="Bruor Ironbane" GiverId="30152" />
+    <Objective QuestName="Armor of Darkness" QuestId="12979" Type="KillMob" MobId="29380" KillCount="1" />
+    <Objective QuestName="Armor of Darkness" QuestId="12979" Type="CollectItem" ItemId="42204" CollectCount="4" />
+    <TurnIn QuestName="The Gifts of Loken" QuestId="12965" TurnInName="Bouldercrag the Rockshaper" TurnInId="29801" />
+    <TurnIn QuestName="Facing the Storm" QuestId="12978" TurnInName="Bruor Ironbane" TurnInId="30152" />
+    <TurnIn QuestName="Armor of Darkness" QuestId="12979" TurnInName="Bruor Ironbane" TurnInId="30152" />
+    <If Condition="((!HasQuest(12980)) &amp;&amp; (!IsQuestCompleted(12980)))">
+      <PickUp QuestName="The Armor's Secrets" QuestId="12980" GiverName="Bruor Ironbane" GiverId="30152" />
+    </If>
+    <TurnIn QuestName="The Armor's Secrets" QuestId="12980" TurnInName="Bruor Ironbane" TurnInId="30152" />
+    <If Condition="((!HasQuest(12984)) &amp;&amp; (!IsQuestCompleted(12984)))">
+      <PickUp QuestName="Valduran the Stormborn" QuestId="12984" GiverName="Bouldercrag the Rockshaper" GiverId="29801" />
+    </If>
+    <While Condition="((HasQuest(12984)) &amp;&amp; (!IsQuestCompleted(12984)))">
+      <RunTo X="7724.86" Y="114.941" Z="1013.57" />
+      <CustomBehavior File="UseItemOn" QuestId="12984" MobId="29368" ItemId="42419" NumOfTimes="100" Range="5" CollectionDistance="1000" X="7724.86" Y="114.941" Z="1013.57" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Valduran the Stormborn" QuestId="12984" Type="KillMob" MobId="29368" KillCount="1" />
+    <TurnIn QuestName="Valduran the Stormborn" QuestId="12984" TurnInName="Bouldercrag the Rockshaper" TurnInId="29801" />
+    <If Condition="((!HasQuest(12988)) &amp;&amp; (!IsQuestCompleted(12988)))">
+      <PickUp QuestName="Destroy the Forges!" QuestId="12988" GiverName="Bouldercrag the Rockshaper" GiverId="29801" />
+    </If>
+    <If Condition="((!HasQuest(12991)) &amp;&amp; (!IsQuestCompleted(12991)))">
+      <PickUp QuestName="Hit Them Where it Hurts" QuestId="12991" GiverName="Bruor Ironbane" GiverId="30152" />
+    </If>
+    <While Condition="((HasQuest(12988)) &amp;&amp; (!IsQuestCompleted(12988)))">
+      <RunTo X="8024.17" Y="-220.206" Z="849.378" />
+      <CustomBehavior File="UseItemOn" QuestId="12988" MobId="30209" ItemId="42441" NumOfTimes="100" Range="5" CollectionDistance="1000" X="8024.17" Y="-220.206" Z="849.378" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(12988)) &amp;&amp; (!IsQuestCompleted(12988)))">
+      <RunTo X="8024.17" Y="-220.206" Z="849.378" />
+      <CustomBehavior File="UseItemOn" QuestId="12988" MobId="30209" ItemId="42441" NumOfTimes="100" Range="5" CollectionDistance="1000" X="8024.17" Y="-220.206" Z="849.378" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <While Condition="((HasQuest(12988)) &amp;&amp; (!IsQuestCompleted(12988)))">
+      <RunTo X="8024.17" Y="-220.206" Z="849.378" />
+      <CustomBehavior File="UseItemOn" QuestId="12988" MobId="30209" ItemId="42441" NumOfTimes="100" Range="5" CollectionDistance="1000" X="8024.17" Y="-220.206" Z="849.378" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Hit Them Where it Hurts" QuestId="12991" Type="KillMob" MobId="29376" KillCount="10" />
+    <TurnIn QuestName="Hit Them Where it Hurts" QuestId="12991" TurnInName="Bruor Ironbane" TurnInId="30152" />
+    <TurnIn QuestName="Destroy the Forges!" QuestId="12988" TurnInName="Bouldercrag the Rockshaper" TurnInId="29801" />
+    <If Condition="((!HasQuest(12993)) &amp;&amp; (!IsQuestCompleted(12993)))">
+      <PickUp QuestName="A Colossal Threat" QuestId="12993" GiverName="Bouldercrag the Rockshaper" GiverId="29801" />
+    </If>
+    <Objective QuestName="A Colossal Threat" QuestId="12993" Type="CollectItem" ItemId="42475" CollectCount="1" />
+    <Objective QuestName="A Colossal Threat" QuestId="12993" Type="CollectItem" ItemId="42476" CollectCount="1" />
+    <TurnIn QuestName="A Colossal Threat" QuestId="12993" TurnInName="Bouldercrag the Rockshaper" TurnInId="29801" />
+    <If Condition="((!HasQuest(12998)) &amp;&amp; (!IsQuestCompleted(12998)))">
+      <PickUp QuestName="The Heart of the Storm" QuestId="12998" GiverName="Bouldercrag the Rockshaper" GiverId="29801" />
+    </If>
+    <While Condition="((HasQuest(12998)) &amp;&amp; (!IsQuestCompleted(12998)))">
+      <CustomBehavior File="UseItemOn" QuestId="12998" MobId="30299" ItemId="6948" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <!-- Use Hearthstone to Bouldercrag's Refuge -->
+    <CustomBehavior File="UseItem" ItemId="6948" />
+    <CustomBehavior File="WaitTimer" WaitTime="12000" />
+    <TurnIn QuestName="The Heart of the Storm" QuestId="12998" TurnInName="Bouldercrag the Rockshaper" TurnInId="29801" />
+    <If Condition="((!HasQuest(13007)) &amp;&amp; (!IsQuestCompleted(13007)))">
+      <PickUp QuestName="The Iron Colossus" QuestId="13007" GiverName="Bouldercrag the Rockshaper" GiverId="29801" />
+    </If>
+    <Objective QuestName="The Iron Colossus" QuestId="13007" Type="KillMob" MobId="30300" KillCount="1" />
+    <TurnIn QuestName="The Iron Colossus" QuestId="13007" TurnInName="Bouldercrag the Rockshaper" TurnInId="29801" />
+    <TurnIn QuestName="Aid from the Explorers' League" QuestId="12871" TurnInName="Lagnus" TurnInId="29743" />
+    <If Condition="((!HasQuest(12873)) &amp;&amp; (!IsQuestCompleted(12873)))">
+      <PickUp QuestName="The Frostborn King" QuestId="12873" GiverName="Lagnus" GiverId="29743" />
+    </If>
+    <CustomBehavior File="SetHearthstone" MobId="29962" AreaId="67" X="8409.79" Y="-393.869" Z="903.202" /> <!-- Set hearth: Frosthold -->
+    <TurnIn QuestName="The Frostborn King" QuestId="12873" TurnInName="Yorg Stormheart" TurnInId="29593" />
+    <If Condition="((!HasQuest(12874)) &amp;&amp; (!IsQuestCompleted(12874)))">
+      <PickUp QuestName="Fervor of the Frostborn" QuestId="12874" GiverName="Yorg Stormheart" GiverId="29593" />
+    </If>
+    <Objective QuestName="Fervor of the Frostborn" QuestId="12874" Type="CollectItem" ItemId="42624" CollectCount="1" />
+    <While Condition="((HasQuest(12874)) &amp;&amp; (!IsQuestCompleted(12874)))">
+      <RunTo X="8392.7" Y="-1970.14" Z="1461.84" />
+      <CustomBehavior File="UseItemOn" QuestId="12874" MobId="30142" ItemId="42624" NumOfTimes="100" Range="5" CollectionDistance="1000" X="8392.7" Y="-1970.14" Z="1461.84" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Fervor of the Frostborn" QuestId="12874" Type="KillMob" MobId="30142" KillCount="1" />
+    <PickUp QuestName="You Can't Miss Him" QuestId="12966" GiverName="King Jokkum" GiverId="30105" />
+    <TurnIn QuestName="You Can't Miss Him" QuestId="12966" TurnInName="Njormeld" TurnInId="30099" />
+    <If Condition="((!HasQuest(12967)) &amp;&amp; (!IsQuestCompleted(12967)))">
+      <PickUp QuestName="Battling the Elements" QuestId="12967" GiverName="Njormeld" GiverId="30099" />
+    </If>
+    <Objective QuestName="Battling the Elements" QuestId="12967" Type="KillMob" MobId="29504" KillCount="10" />
+    <TurnIn QuestName="Battling the Elements" QuestId="12967" TurnInName="Njormeld" TurnInId="30099" />
+    <TurnIn QuestName="Forging an Alliance" QuestId="12924" TurnInName="Njormeld" TurnInId="30127" />
+    <TurnIn QuestName="Fervor of the Frostborn" QuestId="12874" TurnInName="Yorg Stormheart" TurnInId="29593" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Northrend (69-80)\The Storm Peaks (78-79) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Northrend_(69-80)_Icecrown_(79-80)" />
+  </QuestOrder>
+</HBProfile>

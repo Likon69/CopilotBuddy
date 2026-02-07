@@ -1,0 +1,176 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Tanaris (49-50)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>50</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="2741" Name="The Super Egg-O-Matic">
+    <Objective Type="CollectItem" ItemId="8564" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Hippogryph Egg" Id="141931" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-5990.93" Y="1479.18" Z="149.16" />
+        <Hotspot X="-5950.36" Y="1458.3" Z="153.29" />
+        <Hotspot X="-5920.82" Y="1391.58" Z="137.52" />
+        <Hotspot X="-5901.82" Y="1412.07" Z="123.82" />
+        <Hotspot X="-5893.02" Y="1377.45" Z="122.54" />
+        <Hotspot X="-5889.6" Y="1556.15" Z="112.75" />
+        <Hotspot X="-5882.92" Y="1504.3" Z="120.24" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4450" Name="Ledger from Tanaris">
+    <Objective Type="CollectItem" ItemId="11727" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Goodsteel Ledger" Id="173266" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-7025.07" Y="-1784.32" Z="265.74" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="5863" Name="The Dunemaul Compound">
+    <Objective Type="KillMob" MobId="12046" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-8534.26" Y="-3082.25" Z="8.7831" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5474" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-8513.7" Y="-3022.47" Z="9.7518" />
+        <Hotspot X="-8477.67" Y="-3086.27" Z="10.2518" />
+        <Hotspot X="-8481.16" Y="-3072.51" Z="10.5018" />
+        <Hotspot X="-8543.9" Y="-2992.99" Z="10.0018" />
+        <Hotspot X="-8475.4" Y="-2856.09" Z="8.7497" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5472" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-8490.94" Y="-3029.45" Z="9.0018" />
+        <Hotspot X="-8917.38" Y="-3549.92" Z="11.1132" />
+        <Hotspot X="-8484.69" Y="-3053.96" Z="10.5458" />
+        <Hotspot X="-8544.89" Y="-2971.02" Z="9.3768" />
+        <Hotspot X="-8887.55" Y="-3388.78" Z="15.2814" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2605" Name="The Thirsty Goblin">
+    <Objective Type="KillMob" MobId="5481" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-8923.98" Y="-2244.71" Z="9.0017" />
+        <Hotspot X="-8953.94" Y="-2280.2" Z="9.1274" />
+        <Hotspot X="-8846.99" Y="-2312.58" Z="9.0686" />
+        <Hotspot X="-8830.75" Y="-2345.86" Z="18.1518" />
+        <Hotspot X="-8845.31" Y="-2311.82" Z="9.0019" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="3362" Name="Thistleshrub Valley">
+    <Objective Type="KillMob" MobId="5490" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-9097.28" Y="-2155.38" Z="12.3975" />
+        <Hotspot X="-8918.79" Y="-2152.61" Z="10.9722" />
+        <Hotspot X="-8954.01" Y="-2244.2" Z="9.3769" />
+        <Hotspot X="-8929.32" Y="-2264.71" Z="9.0017" />
+        <Hotspot X="-8889.62" Y="-2373.09" Z="13.3753" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5485" KillCount="8">
+      <Hotspots>
+        <Hotspot X="-8884.75" Y="-2181.8" Z="9.3737" />
+        <Hotspot X="-8950.98" Y="-2182.56" Z="8.9615" />
+        <Hotspot X="-8927.21" Y="-2267.43" Z="9.0017" />
+        <Hotspot X="-8947.19" Y="-2309.73" Z="11.2722" />
+        <Hotspot X="-8918.85" Y="-2343.8" Z="10.5468" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Tanaris (49-50)" LogColor="Green" />
+    <PickUp QuestName="Thistleshrub Valley" QuestId="3362" GiverName="Tran'rek" GiverId="7876" />
+    <PickUp QuestName="Super Sticky" QuestId="4504" GiverName="Tran'rek" GiverId="7876" />
+    <If Condition="((!HasQuest(5863)) &amp;&amp; (!IsQuestCompleted(5863)))">
+      <PickUp QuestName="The Dunemaul Compound" QuestId="5863" GiverName="Andi Lynn" GiverId="11758" />
+    </If>
+    <Objective QuestName="The Super Egg-O-Matic" QuestId="2741" Type="CollectItem" ItemId="8564" CollectCount="1" />
+    <Objective QuestName="Screecher Spirits" QuestId="3520" Type="CollectItem" ItemId="10699" CollectCount="1" />
+    <Objective QuestName="Ledger from Tanaris" QuestId="4450" Type="CollectItem" ItemId="11727" CollectCount="1" />
+    <Objective QuestName="Ledger from Tanaris" QuestId="4450" Type="CollectItem" ItemId="11723" CollectCount="1" />
+    <Objective QuestName="Ledger from Tanaris" QuestId="4450" Type="CollectItem" ItemId="11725" CollectCount="20" />
+    <TurnIn QuestName="Into the Field" QuestId="243" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <If Condition="((!HasQuest(379)) &amp;&amp; (!IsQuestCompleted(379)))">
+      <PickUp QuestName="Slake That Thirst" QuestId="379" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
+    </If>
+    <PickUp QuestName="The Super Egg-O-Matic" QuestId="2741" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
+    <PickUp QuestName="The Thirsty Goblin" QuestId="2605" GiverName="Marin Noggenfogger" GiverId="7564" />
+    <TurnIn QuestName="Ledger from Tanaris" QuestId="4450" TurnInName="Krinkle Goodsteel" TurnInId="5411" />
+    <If Condition="((!HasQuest(82)) &amp;&amp; (!IsQuestCompleted(82)))">
+      <PickUp QuestName="Noxious Lair Investigation" QuestId="82" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    </If>
+    <TurnIn QuestName="The Sunken Temple" QuestId="3380" TurnInName="Marvon Rivetseeker" TurnInId="7771" />
+    <If Condition="((!HasQuest(3444)) &amp;&amp; (!IsQuestCompleted(3444)))">
+      <PickUp QuestName="The Stone Circle" QuestId="3444" GiverName="Marvon Rivetseeker" GiverId="7771" />
+    </If>
+    <If Condition="((!HasQuest(3161)) &amp;&amp; (!IsQuestCompleted(3161)))">
+      <PickUp QuestName="Gahz'ridian" QuestId="3161" GiverName="Marvon Rivetseeker" GiverId="7771" />
+    </If>
+    <Objective QuestName="Noxious Lair Investigation" QuestId="82" Type="CollectItem" ItemId="8587" CollectCount="5" />
+    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="12046" KillCount="1" />
+    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="5474" KillCount="10" />
+    <Objective QuestName="The Dunemaul Compound" QuestId="5863" Type="KillMob" MobId="5472" KillCount="10" />
+    <Objective QuestName="Gahz'ridian" QuestId="3161" Type="CollectItem" ItemId="8443" CollectCount="30" />
+    <Objective QuestName="The Thirsty Goblin" QuestId="2605" Type="KillMob" MobId="5481" KillCount="1" />
+    <Objective QuestName="The Thirsty Goblin" QuestId="2605" Type="CollectItem" ItemId="8428" CollectCount="1" />
+    <Objective QuestName="Thistleshrub Valley" QuestId="3362" Type="KillMob" MobId="5490" KillCount="8" />
+    <Objective QuestName="Thistleshrub Valley" QuestId="3362" Type="KillMob" MobId="5485" KillCount="8" />
+    <PickUp QuestName="Tooga's Quest" QuestId="1560" GiverName="Marvon Rivetseeker" GiverId="7771" />
+    <TurnIn QuestName="Tooga's Quest" QuestId="1560" TurnInName="Torta" TurnInId="6015" />
+    <PickUp QuestName="Yuka Screwspigot" QuestId="4324" GiverName="Yorba Screwspigot" GiverId="9706" />
+    <TurnIn QuestName="Screecher Spirits" QuestId="3520" TurnInName="Yeh'kinya" TurnInId="8579" />
+    <Objective QuestName="Slake That Thirst" QuestId="379" Type="CollectItem" ItemId="8483" CollectCount="5" />
+    <TurnIn QuestName="The Thirsty Goblin" QuestId="2605" TurnInName="Marin Noggenfogger" TurnInId="7564" />
+    <If Condition="((!HasQuest(2606)) &amp;&amp; (!IsQuestCompleted(2606)))">
+      <PickUp QuestName="In Good Taste" QuestId="2606" GiverName="Marin Noggenfogger" GiverId="7564" />
+    </If>
+    <TurnIn QuestName="Slake That Thirst" QuestId="379" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
+    <TurnIn QuestName="In Good Taste" QuestId="2606" TurnInName="Sprinkle" TurnInId="7583" />
+    <If Condition="((!HasQuest(2641)) &amp;&amp; (!IsQuestCompleted(2641)))">
+      <PickUp QuestName="Sprinkle's Secret Ingredient" QuestId="2641" GiverName="Sprinkle" GiverId="7583" />
+    </If>
+    <TurnIn QuestName="Noxious Lair Investigation" QuestId="82" TurnInName="Alchemist Pestlezugg" TurnInId="5594" />
+    <If Condition="((!HasQuest(10)) &amp;&amp; (!IsQuestCompleted(10)))">
+      <PickUp QuestName="The Scrimshank Redemption" QuestId="10" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    </If>
+    <TurnIn QuestName="Thistleshrub Valley" QuestId="3362" TurnInName="Tran'rek" TurnInId="7876" />
+    <TurnIn QuestName="The Dunemaul Compound" QuestId="5863" TurnInName="Andi Lynn" TurnInId="11758" />
+    <CustomBehavior File="SetHearthstone" MobId="6807" AreaId="33" X="-14457.7" Y="495.348" Z="15.2129" /> <!-- Set hearth: Gadgetzan -->
+    <TurnIn QuestName="Gahz'ridian" QuestId="3161" TurnInName="Marvon Rivetseeker" TurnInId="7771" />
+    <Objective QuestName="The Scrimshank Redemption" QuestId="10" Type="CollectItem" ItemId="8593" CollectCount="1" />
+    <TurnIn QuestName="The Scrimshank Redemption" QuestId="10" TurnInName="Senior Surveyor Fizzledowser" TurnInId="7724" />
+    <If Condition="((!HasQuest(110)) &amp;&amp; (!IsQuestCompleted(110)))">
+      <PickUp QuestName="Insect Part Analysis" QuestId="110" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    </If>
+    <TurnIn QuestName="Insect Part Analysis" QuestId="110" TurnInName="Alchemist Pestlezugg" TurnInId="5594" />
+    <If Condition="((!HasQuest(113)) &amp;&amp; (!IsQuestCompleted(113)))">
+      <PickUp QuestName="Insect Part Analysis" QuestId="113" GiverName="Alchemist Pestlezugg" GiverId="5594" />
+    </If>
+    <TurnIn QuestName="Insect Part Analysis" QuestId="113" TurnInName="Senior Surveyor Fizzledowser" TurnInId="7724" />
+    <If Condition="((!HasQuest(32)) &amp;&amp; (!IsQuestCompleted(32)))">
+      <PickUp QuestName="Rise of the Silithid" QuestId="32" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
+    </If>
+    <Objective QuestName="Seeping Corruption" QuestId="3568" Type="CollectItem" ItemId="10695" CollectCount="1" />
+    <Objective QuestName="The Atal'ai Exile" QuestId="1429" Type="CollectItem" ItemId="6193" CollectCount="1" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Tanaris (49-50) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Azshara_(50-50)" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,171 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Stonetalon Mountains (23-24)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>24</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="6301" Name="Cycle of Rebirth">
+    <Objective Type="CollectItem" ItemId="16205" CollectCount="10">
+      <CollectFrom>
+        <GameObject Name="Gaea Seed" Id="177926" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="1447.92" Y="816.68" Z="142.06" />
+        <Hotspot X="1473.38" Y="902.27" Z="134.99" />
+        <Hotspot X="1488.74" Y="856.91" Z="132.45" />
+        <Hotspot X="1507.13" Y="819.18" Z="133.43" />
+        <Hotspot X="1529.0" Y="717.89" Z="142.33" />
+        <Hotspot X="1577.24" Y="757.41" Z="133.94" />
+        <Hotspot X="1622.01" Y="899.4" Z="123.17" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1058" Name="Jin'Zil's Forest Magic">
+    <Objective Type="KillMob" MobId="4018" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2418.92" Y="1285.55" Z="288.458" />
+        <Hotspot X="1725.45" Y="782.712" Z="135.104" />
+        <Hotspot X="1673.38" Y="962.59" Z="129.2" />
+        <Hotspot X="2222.59" Y="1048.16" Z="267.744" />
+        <Hotspot X="2261.5" Y="1026.63" Z="284.151" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4016" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2235.13" Y="1418.77" Z="281.766" />
+        <Hotspot X="2468.68" Y="1303.52" Z="277.247" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4020" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2414.55" Y="1379.6" Z="275.722" />
+        <Hotspot X="1955.66" Y="961.039" Z="178.955" />
+        <Hotspot X="2508.85" Y="1291.15" Z="272.074" />
+        <Hotspot X="2590.55" Y="1420.23" Z="235.497" />
+        <Hotspot X="2389.01" Y="1546.52" Z="278.888" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4067" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2541.94" Y="1677.84" Z="295.802" />
+        <Hotspot X="2555.0" Y="1648.58" Z="283.869" />
+        <Hotspot X="2516.98" Y="1619.75" Z="272.888" />
+        <Hotspot X="2587.06" Y="1559.79" Z="268.213" />
+        <Hotspot X="2657.44" Y="1569.87" Z="260.978" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1087" Name="Cenarius' Legacy">
+    <Objective Type="KillMob" MobId="4057" KillCount="4">
+      <Hotspots>
+        <Hotspot X="2488.92" Y="1417.0" Z="267.262" />
+        <Hotspot X="2489.65" Y="1522.74" Z="265.912" />
+        <Hotspot X="2513.46" Y="1429.79" Z="266.964" />
+        <Hotspot X="2506.69" Y="1496.79" Z="263.053" />
+        <Hotspot X="2574.32" Y="1492.71" Z="256.874" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4053" KillCount="4">
+      <Hotspots>
+        <Hotspot X="2490.58" Y="1465.8" Z="262.808" />
+        <Hotspot X="2408.95" Y="1453.22" Z="269.722" />
+        <Hotspot X="2483.81" Y="1375.16" Z="269.317" />
+        <Hotspot X="2557.19" Y="1522.97" Z="264.985" />
+        <Hotspot X="2522.76" Y="1519.64" Z="267.615" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4051" KillCount="4">
+      <Hotspots>
+        <Hotspot X="2428.87" Y="1440.5" Z="267.277" />
+        <Hotspot X="2530.7" Y="1470.43" Z="263.503" />
+        <Hotspot X="2442.16" Y="1489.85" Z="265.102" />
+        <Hotspot X="2511.81" Y="1552.15" Z="263.715" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1068" Name="Shredding Machines">
+    <Objective Type="KillMob" MobId="4074" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1222.28" Y="199.114" Z="5.526" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4073" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1406.56" Y="113.615" Z="16.2641" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1096" Name="Gerenzo Wrenchwhistle">
+    <Objective Type="KillMob" MobId="4202" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1605.99" Y="96.7067" Z="98.5654" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stonetalon Mountains (23-24)" LogColor="Green" />
+    <If Condition="((!HasQuest(1087)) &amp;&amp; (!IsQuestCompleted(1087)))">
+      <PickUp QuestName="Cenarius' Legacy" QuestId="1087" GiverName="Braelyn Firehand" GiverId="4198" />
+    </If>
+    <PickUp QuestName="Cycle of Rebirth" QuestId="6301" GiverName="Tammra Windfield" GiverId="11864" />
+    <PickUp QuestName="Calling in the Reserves" QuestId="5881" GiverName="Maggran Earthbinder" GiverId="11860" />
+    <If Condition="((!HasQuest(6282)) &amp;&amp; (!IsQuestCompleted(6282)))">
+      <PickUp QuestName="Harpies Threaten" QuestId="6282" GiverName="Maggran Earthbinder" GiverId="11860" />
+    </If>
+    <CustomBehavior File="SetHearthstone" MobId="6930" AreaId="8" X="-10487.3" Y="-3258.84" Z="21.1127" /> <!-- Set hearth: Sun Rock Retreat -->
+    <TurnIn QuestName="Boulderslide Ravine" QuestId="6421" TurnInName="Mor'rogal" TurnInId="11861" />
+    <PickUp QuestName="Elemental War" QuestId="6393" GiverName="Tsunaman" GiverId="11862" />
+    <Objective QuestName="Cycle of Rebirth" QuestId="6301" Type="CollectItem" ItemId="16205" CollectCount="10" />
+    <Objective QuestName="Jin'Zil's Forest Magic" QuestId="1058" Type="KillMob" MobId="4018" KillCount="1" />
+    <Objective QuestName="Jin'Zil's Forest Magic" QuestId="1058" Type="CollectItem" ItemId="5585" CollectCount="30" />
+    <Objective QuestName="Jin'Zil's Forest Magic" QuestId="1058" Type="KillMob" MobId="4016" KillCount="1" />
+    <Objective QuestName="Jin'Zil's Forest Magic" QuestId="1058" Type="CollectItem" ItemId="5583" CollectCount="1" />
+    <Objective QuestName="Jin'Zil's Forest Magic" QuestId="1058" Type="KillMob" MobId="4020" KillCount="1" />
+    <Objective QuestName="Jin'Zil's Forest Magic" QuestId="1058" Type="CollectItem" ItemId="5582" CollectCount="5" />
+    <Objective QuestName="Jin'Zil's Forest Magic" QuestId="1058" Type="KillMob" MobId="4067" KillCount="1" />
+    <Objective QuestName="Jin'Zil's Forest Magic" QuestId="1058" Type="CollectItem" ItemId="5584" CollectCount="5" />
+    <Objective QuestName="Cenarius' Legacy" QuestId="1087" Type="KillMob" MobId="4057" KillCount="4" />
+    <Objective QuestName="Cenarius' Legacy" QuestId="1087" Type="KillMob" MobId="4053" KillCount="4" />
+    <Objective QuestName="Cenarius' Legacy" QuestId="1087" Type="KillMob" MobId="4051" KillCount="4" />
+    <TurnIn QuestName="Cycle of Rebirth" QuestId="6301" TurnInName="Tammra Windfield" TurnInId="11864" />
+    <If Condition="((!HasQuest(6381)) &amp;&amp; (!IsQuestCompleted(6381)))">
+      <PickUp QuestName="New Life" QuestId="6381" GiverName="Tammra Windfield" GiverId="11864" />
+    </If>
+    <TurnIn QuestName="Cenarius' Legacy" QuestId="1087" TurnInName="Braelyn Firehand" TurnInId="4198" />
+    <TurnIn QuestName="Further Instructions" QuestId="1095" TurnInName="Ziz Fizziks" TurnInId="4201" />
+    <If Condition="((!HasQuest(1096)) &amp;&amp; (!IsQuestCompleted(1096)))">
+      <PickUp QuestName="Gerenzo Wrenchwhistle" QuestId="1096" GiverName="Ziz Fizziks" GiverId="4201" />
+    </If>
+    <Objective QuestName="Shredding Machines" QuestId="1068" Type="KillMob" MobId="4074" KillCount="1" />
+    <Objective QuestName="Shredding Machines" QuestId="1068" Type="KillMob" MobId="4073" KillCount="1" />
+    <If Condition="Me.Level &lt; 24">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 24 - XT:4</Name>
+          <TargetMinLevel>23</TargetMinLevel>
+          <TargetMaxLevel>23</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="1406.56" Y="113.61" Z="16.26" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="24" /> <!--  (grind XT:4) -->
+    </If>
+    <Objective QuestName="Gerenzo Wrenchwhistle" QuestId="1096" Type="KillMob" MobId="4202" KillCount="1" />
+    <Objective QuestName="Gerenzo Wrenchwhistle" QuestId="1096" Type="CollectItem" ItemId="5736" CollectCount="1" />
+    <TurnIn QuestName="Gerenzo Wrenchwhistle" QuestId="1096" TurnInName="Ziz Fizziks" TurnInId="4201" />
+    <TurnIn QuestName="Jin'Zil's Forest Magic" QuestId="1058" TurnInName="Witch Doctor Jin'Zil" TurnInId="3995" />
+    <TurnIn QuestName="Shredding Machines" QuestId="1068" TurnInName="Seereth Stonebreak" TurnInId="4049" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stonetalon Mountains (23-24) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_The_Barrens_(24-25)" />
+  </QuestOrder>
+</HBProfile>

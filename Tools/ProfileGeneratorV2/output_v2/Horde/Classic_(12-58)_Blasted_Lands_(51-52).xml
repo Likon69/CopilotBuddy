@@ -1,0 +1,68 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Blasted Lands (51-52)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>52</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="2585" Name="The Decisive Striker">
+    <Objective Type="KillMob" MobId="5988" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11216.3" Y="-2716.04" Z="12.7789" />
+        <Hotspot X="-11186.0" Y="-2746.19" Z="16.9086" />
+        <Hotspot X="-11057.1" Y="-2908.66" Z="13.4684" />
+        <Hotspot X="-11118.2" Y="-2765.16" Z="18.126" />
+        <Hotspot X="-11081.7" Y="-2714.15" Z="23.4506" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2603" Name="Vulture's Vigor">
+    <Objective Type="KillMob" MobId="5982" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-11199.3" Y="-3205.91" Z="8.2719" />
+        <Hotspot X="-11403.9" Y="-3141.91" Z="13.6571" />
+        <Hotspot X="-11380.9" Y="-3117.83" Z="4.1014" />
+        <Hotspot X="-11159.5" Y="-3342.99" Z="4.644" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Blasted Lands (51-52)" LogColor="Green" />
+    <TurnIn QuestName="Return to Fel'Zerul" QuestId="1444" TurnInName="Fel'zerul" TurnInId="1443" />
+    <If Condition="((!HasQuest(2581)) &amp;&amp; (!IsQuestCompleted(2581)))">
+      <PickUp QuestName="Snickerfang Jowls" QuestId="2581" GiverName="Bloodmage Drazial" GiverId="7505" />
+    </If>
+    <If Condition="((!HasQuest(2583)) &amp;&amp; (!IsQuestCompleted(2583)))">
+      <PickUp QuestName="A Boar's Vitality" QuestId="2583" GiverName="Bloodmage Drazial" GiverId="7505" />
+    </If>
+    <If Condition="((!HasQuest(2585)) &amp;&amp; (!IsQuestCompleted(2585)))">
+      <PickUp QuestName="The Decisive Striker" QuestId="2585" GiverName="Bloodmage Drazial" GiverId="7505" />
+    </If>
+    <PickUp QuestName="The Basilisk's Bite" QuestId="2601" GiverName="Bloodmage Lynnore" GiverId="7506" />
+    <PickUp QuestName="Vulture's Vigor" QuestId="2603" GiverName="Bloodmage Lynnore" GiverId="7506" />
+    <Objective QuestName="Snickerfang Jowls" QuestId="2581" Type="CollectItem" ItemId="8391" CollectCount="5" />
+    <Objective QuestName="A Boar's Vitality" QuestId="2583" Type="CollectItem" ItemId="8392" CollectCount="6" />
+    <Objective QuestName="The Decisive Striker" QuestId="2585" Type="KillMob" MobId="5988" KillCount="1" />
+    <Objective QuestName="The Decisive Striker" QuestId="2585" Type="CollectItem" ItemId="8393" CollectCount="6" />
+    <Objective QuestName="The Basilisk's Bite" QuestId="2601" Type="CollectItem" ItemId="8394" CollectCount="11" />
+    <Objective QuestName="Vulture's Vigor" QuestId="2603" Type="KillMob" MobId="5982" KillCount="1" />
+    <Objective QuestName="Vulture's Vigor" QuestId="2603" Type="CollectItem" ItemId="8396" CollectCount="14" />
+    <PickUp QuestName="Everything Counts In Large Amounts" QuestId="3501" GiverName="Kum'isha the Collector" GiverId="7363" />
+    <TurnIn QuestName="Everything Counts In Large Amounts" QuestId="3501" TurnInName="Kum'isha the Collector" TurnInId="7363" />
+    <TurnIn QuestName="The Basilisk's Bite" QuestId="2601" TurnInName="Bloodmage Lynnore" TurnInId="7506" />
+    <TurnIn QuestName="Vulture's Vigor" QuestId="2603" TurnInName="Bloodmage Lynnore" TurnInId="7506" />
+    <TurnIn QuestName="Snickerfang Jowls" QuestId="2581" TurnInName="Bloodmage Drazial" TurnInId="7505" />
+    <TurnIn QuestName="A Boar's Vitality" QuestId="2583" TurnInName="Bloodmage Drazial" TurnInId="7505" />
+    <TurnIn QuestName="The Decisive Striker" QuestId="2585" TurnInName="Bloodmage Drazial" TurnInId="7505" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Blasted Lands (51-52) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Un'Goro_Crater_(52-54)" />
+  </QuestOrder>
+</HBProfile>

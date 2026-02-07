@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Felwood (55-56)</Name>
+  <Name>Alliance\Felwood (55-56)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>56</MaxLevel>
@@ -8,8 +7,25 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="5086" Name="Toxic Horrors">
+    <Objective Type="KillMob" MobId="7132" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6115.07" Y="-1181.11" Z="372.293" />
+        <Hotspot X="6248.27" Y="-1202.01" Z="371.053" />
+        <Hotspot X="6188.19" Y="-1170.89" Z="370.52" />
+        <Hotspot X="6200.25" Y="-1137.86" Z="366.636" />
+        <Hotspot X="6220.18" Y="-1123.06" Z="370.549" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Felwood (55-56)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Felwood (55-56)" LogColor="Green" />
     <TurnIn QuestName="Cleansed Water Returns to Felwood" QuestId="5159" TurnInName="Greta Mosshoof" TurnInId="10922" />
     <If Condition="((!HasQuest(5165)) &amp;&amp; (!IsQuestCompleted(5165)))">
       <PickUp QuestName="Dousing the Flames of Protection" QuestId="5165" GiverName="Greta Mosshoof" GiverId="10922" />
@@ -19,17 +35,16 @@
       <PickUp QuestName="Purified!" QuestId="4442" GiverName="Eridan Bluewind" GiverId="9116" />
     </If>
     <TurnIn QuestName="Purified!" QuestId="4442" TurnInName="Eridan Bluewind" TurnInId="9116" />
-    <Objective QuestName="A Strange Red Key" QuestId="5202" Type="CollectItem" ItemId="13140" ItemName="Blood Red Key" CollectCount="1" />
+    <Objective QuestName="A Strange Red Key" QuestId="5202" Type="CollectItem" ItemId="13140" CollectCount="1" />
     <While Condition="((HasQuest(5165)) &amp;&amp; (!IsQuestCompleted(5165)))">
-      <RunTo X="36.29" Y="55.96" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="5165" ItemId="13140" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="5165" MobId="0" ItemId="13140" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="A Strange Red Key" QuestId="5202" GiverName="Eridan Bluewind" GiverId="9116" />
-    <TurnIn QuestName="A Strange Red Key" QuestId="5202" TurnInName="Captured Arko&apos;narin" TurnInId="11016" />
-    <Objective QuestName="Toxic Horrors" QuestId="5086" Type="KillMob" MobId="7132" MobName="Toxic Horror" KillCount="1" />
-    <Objective QuestName="Toxic Horrors" QuestId="5086" Type="CollectItem" ItemId="12822" ItemName="Toxic Horror Droplet" CollectCount="3" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Felwood (55-56) Complete" LogColor="Orange" />
+    <TurnIn QuestName="A Strange Red Key" QuestId="5202" TurnInName="Captured Arko'narin" TurnInId="11016" />
+    <Objective QuestName="Toxic Horrors" QuestId="5086" Type="KillMob" MobId="7132" KillCount="1" />
+    <Objective QuestName="Toxic Horrors" QuestId="5086" Type="CollectItem" ItemId="12822" CollectCount="3" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Felwood (55-56) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Winterspring_(56-56)" />
   </QuestOrder>
 </HBProfile>

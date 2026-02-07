@@ -1,0 +1,251 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Ashenvale (25-26)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>26</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="6503" Name="Ashenvale Outrunners">
+    <Objective Type="KillMob" MobId="12856" KillCount="9">
+      <Hotspots>
+        <Hotspot X="1841.4" Y="-2447.05" Z="81.5345" />
+        <Hotspot X="1887.73" Y="-2482.09" Z="70.0649" />
+        <Hotspot X="1928.89" Y="-2671.93" Z="98.3556" />
+        <Hotspot X="1882.36" Y="-2392.49" Z="86.8284" />
+        <Hotspot X="1737.92" Y="-2468.7" Z="96.0357" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1918" Name="The Befouled Element">
+    <Objective Type="KillMob" MobId="12759" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1960.89" Y="-1106.05" Z="81.4683" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="25" Name="Stonetalon Standstill">
+    <Objective Type="KillMob" MobId="3917" KillCount="12">
+      <Hotspots>
+        <Hotspot X="1914.86" Y="-986.527" Z="82.1531" />
+        <Hotspot X="1876.46" Y="-1306.84" Z="82.3311" />
+        <Hotspot X="2000.87" Y="-1214.95" Z="60.3939" />
+        <Hotspot X="1940.09" Y="-1171.98" Z="64.3597" />
+        <Hotspot X="1999.55" Y="-1152.56" Z="80.6255" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="23" Name="Ursangous's Paw">
+    <Objective Type="KillMob" MobId="12678" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2030.69" Y="-726.054" Z="102.369" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1195" Name="The Sacred Flame">
+    <Objective Type="KillMob" MobId="4054" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2520.04" Y="-1648.77" Z="144.428" />
+        <Hotspot X="2517.11" Y="-1697.29" Z="146.717" />
+        <Hotspot X="2547.33" Y="-1780.42" Z="149.309" />
+        <Hotspot X="2556.58" Y="-1683.6" Z="153.098" />
+        <Hotspot X="2580.97" Y="-1716.76" Z="159.502" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="24" Name="Shadumbra's Head">
+    <Objective Type="KillMob" MobId="12677" KillCount="1">
+      <Hotspots>
+        <Hotspot X="2518.44" Y="-1615.66" Z="144.605" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="216" Name="Between a Rock and a Thistlefur">
+    <Objective Type="KillMob" MobId="3925" KillCount="12">
+      <Hotspots>
+        <Hotspot X="3151.81" Y="-180.865" Z="109.181" />
+        <Hotspot X="2934.07" Y="-109.489" Z="97.047" />
+        <Hotspot X="2917.69" Y="-119.154" Z="99.4666" />
+        <Hotspot X="3318.4" Y="-420.494" Z="149.342" />
+        <Hotspot X="3230.53" Y="-225.786" Z="117.793" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="3924" KillCount="12">
+      <Hotspots>
+        <Hotspot X="2984.77" Y="-121.952" Z="99.5344" />
+        <Hotspot X="3120.52" Y="-89.7765" Z="101.797" />
+        <Hotspot X="3048.42" Y="-46.0318" Z="97.9058" />
+        <Hotspot X="3009.73" Y="-86.6333" Z="99.7185" />
+        <Hotspot X="2981.78" Y="-86.4844" Z="99.6927" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="6462" Name="Troll Charm">
+    <Objective Type="CollectItem" ItemId="16602" CollectCount="8">
+      <CollectFrom>
+        <GameObject Name="Troll Chest" Id="178144" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="3300.53" Y="-702.68" Z="161.36" />
+        <Hotspot X="3314.06" Y="-675.87" Z="163.48" />
+        <Hotspot X="3336.63" Y="-693.94" Z="162.41" />
+        <Hotspot X="3347.51" Y="-706.09" Z="167.38" />
+        <Hotspot X="3349.02" Y="-633.11" Z="178.18" />
+        <Hotspot X="3359.01" Y="-684.06" Z="161.11" />
+        <Hotspot X="3359.49" Y="-599.62" Z="181.77" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="2478" Name="Mission: Possible But Not Probable">
+    <Objective Type="KillMob" MobId="7310" KillCount="2">
+      <Hotspots>
+        <Hotspot X="1223.83" Y="-2921.81" Z="93.2948" />
+        <Hotspot X="1227.4" Y="-2920.36" Z="93.2948" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7308" KillCount="2">
+      <Hotspots>
+        <Hotspot X="1228.97" Y="-2915.53" Z="107.089" />
+        <Hotspot X="1234.63" Y="-2931.05" Z="107.019" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7307" KillCount="2">
+      <Hotspots>
+        <Hotspot X="1219.03" Y="-2928.51" Z="120.677" />
+        <Hotspot X="1222.56" Y="-2914.28" Z="120.677" />
+        <Hotspot X="1238.85" Y="-2925.31" Z="120.677" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7288" KillCount="1">
+      <Hotspots>
+        <Hotspot X="1235.16" Y="-2925.27" Z="141.818" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Ashenvale (25-26)" LogColor="Green" />
+    <PickUp QuestName="Vorsha the Lasher" QuestId="6641" GiverName="Muglash" GiverId="12717" />
+    <Objective QuestName="Vorsha the Lasher" QuestId="6641" Type="KillMob" MobId="12940" KillCount="1" />
+    <TurnIn QuestName="Vorsha the Lasher" QuestId="6641" TurnInName="Warsong Runner" TurnInId="12863" />
+    <PickUp QuestName="Stonetalon Standstill" QuestId="25" GiverName="Mastok Wrilehiss" GiverId="12737" />
+    <CustomBehavior File="SetHearthstone" MobId="12196" AreaId="331" X="2341.86" Y="-2566.99" Z="102.857" /> <!-- Set hearth: Splintertree Post -->
+    <PickUp QuestName="Ashenvale Outrunners" QuestId="6503" GiverName="Kuray'bin" GiverId="12867" />
+    <Objective QuestName="Ashenvale Outrunners" QuestId="6503" Type="KillMob" MobId="12856" KillCount="9" />
+    <PickUp QuestName="Torek's Assault" QuestId="6544" GiverName="Torek" GiverId="12858" />
+    <Objective QuestName="Torek's Assault" QuestId="6544" Type="KillMob" MobId="12860" KillCount="1" />
+    <Objective QuestName="The Befouled Element" QuestId="1918" Type="KillMob" MobId="12759" KillCount="1" />
+    <Objective QuestName="The Befouled Element" QuestId="1918" Type="CollectItem" ItemId="16408" CollectCount="1" />
+    <While Condition="((HasQuest(6544)) &amp;&amp; (!IsQuestCompleted(6544)))">
+      <CustomBehavior File="UseItemOn" QuestId="6544" MobId="0" ItemId="16408" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="The Befouled Element" QuestId="1918" GiverName="Torek" GiverId="12858" />
+    <Objective QuestName="Stonetalon Standstill" QuestId="25" Type="KillMob" MobId="3917" KillCount="12" />
+    <Objective QuestName="Ursangous's Paw" QuestId="23" Type="KillMob" MobId="12678" KillCount="1" />
+    <Objective QuestName="Ursangous's Paw" QuestId="23" Type="CollectItem" ItemId="16303" CollectCount="1" />
+    <While Condition="((HasQuest(1918)) &amp;&amp; (!IsQuestCompleted(1918)))">
+      <CustomBehavior File="UseItemOn" QuestId="1918" MobId="0" ItemId="16303" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <If Condition="((!HasQuest(23)) &amp;&amp; (!IsQuestCompleted(23)))">
+      <PickUp QuestName="Ursangous's Paw" QuestId="23" GiverName="Torek" GiverId="12858" />
+    </If>
+    <TurnIn QuestName="Stonetalon Standstill" QuestId="25" TurnInName="Mastok Wrilehiss" TurnInId="12737" />
+    <TurnIn QuestName="The Befouled Element" QuestId="1918" TurnInName="Mastok Wrilehiss" TurnInId="12737" />
+    <If Condition="((!HasQuest(824)) &amp;&amp; (!IsQuestCompleted(824)))">
+      <PickUp QuestName="Je'neu of the Earthen Ring" QuestId="824" GiverName="Mastok Wrilehiss" GiverId="12737" />
+    </If>
+    <PickUp QuestName="Satyr Horns" QuestId="6441" GiverName="Pixel" GiverId="12724" />
+    <TurnIn QuestName="Ursangous's Paw" QuestId="23" TurnInName="Senani Thunderheart" TurnInId="12696" />
+    <TurnIn QuestName="Torek's Assault" QuestId="6544" TurnInName="Ertog Ragetusk" TurnInId="12877" />
+    <TurnIn QuestName="Ashenvale Outrunners" QuestId="6503" TurnInName="Kuray'bin" TurnInId="12867" />
+    <Objective QuestName="Satyr Horns" QuestId="6441" Type="CollectItem" ItemId="5481" CollectCount="16" />
+    <If Condition="Me.Level &lt; 26">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 26 - Ursangous</Name>
+          <Factions>1097</Factions>
+          <TargetMinLevel>25</TargetMinLevel>
+          <TargetMaxLevel>25</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="2030.69" Y="-726.05" Z="102.37" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="26" /> <!--  (grind Ursangous) -->
+    </If>
+    <Objective QuestName="The Sacred Flame" QuestId="1195" Type="KillMob" MobId="4054" KillCount="1" />
+    <Objective QuestName="The Sacred Flame" QuestId="1195" Type="CollectItem" ItemId="5867" CollectCount="1" />
+    <Objective QuestName="Shadumbra's Head" QuestId="24" Type="KillMob" MobId="12677" KillCount="1" />
+    <Objective QuestName="Shadumbra's Head" QuestId="24" Type="CollectItem" ItemId="16304" CollectCount="1" />
+    <While Condition="((HasQuest(6441)) &amp;&amp; (!IsQuestCompleted(6441)))">
+      <CustomBehavior File="UseItemOn" QuestId="6441" MobId="0" ItemId="16304" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <If Condition="((!HasQuest(24)) &amp;&amp; (!IsQuestCompleted(24)))">
+      <PickUp QuestName="Shadumbra's Head" QuestId="24" GiverName="Kuray'bin" GiverId="12867" />
+    </If>
+    <While Condition="((HasQuest(1195)) &amp;&amp; (!IsQuestCompleted(1195)))">
+      <CustomBehavior File="UseItemOn" QuestId="1195" MobId="0" ItemId="5867" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="The Sacred Flame" QuestId="1195" Type="CollectItem" ItemId="5868" CollectCount="1" />
+    <TurnIn QuestName="Shadumbra's Head" QuestId="24" TurnInName="Senani Thunderheart" TurnInId="12696" />
+    <TurnIn QuestName="Satyr Horns" QuestId="6441" TurnInName="Pixel" TurnInId="12724" />
+    <TurnIn QuestName="Je'neu of the Earthen Ring" QuestId="824" TurnInName="Je'neu Sancrea" TurnInId="12736" />
+    <PickUp QuestName="Between a Rock and a Thistlefur" QuestId="216" GiverName="Karang Amakkar" GiverId="12757" />
+    <PickUp QuestName="Troll Charm" QuestId="6462" GiverName="Mitsuwa" GiverId="12721" />
+    <Objective QuestName="Between a Rock and a Thistlefur" QuestId="216" Type="KillMob" MobId="3925" KillCount="12" />
+    <Objective QuestName="Between a Rock and a Thistlefur" QuestId="216" Type="KillMob" MobId="3924" KillCount="12" />
+    <Objective QuestName="Troll Charm" QuestId="6462" Type="CollectItem" ItemId="16602" CollectCount="8" />
+    <PickUp QuestName="Freedom to Ruul" QuestId="6482" GiverName="Ruul Snowhoof" GiverId="12818" />
+    <TurnIn QuestName="Freedom to Ruul" QuestId="6482" TurnInName="Yama Snowhoof" TurnInId="12837" />
+    <TurnIn QuestName="Between a Rock and a Thistlefur" QuestId="216" TurnInName="Karang Amakkar" TurnInId="12757" />
+    <TurnIn QuestName="Troll Charm" QuestId="6462" TurnInName="Mitsuwa" TurnInId="12721" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <PickUp QuestName="The Shattered Salute" QuestId="2460" GiverName="Shenthul" GiverId="3401" />
+      <TurnIn QuestName="The Shattered Salute" QuestId="2460" TurnInName="Shenthul" TurnInId="3401" />
+      <If Condition="((!HasQuest(2458)) &amp;&amp; (!IsQuestCompleted(2458)))">
+        <PickUp QuestName="Deep Cover" QuestId="2458" GiverName="Shenthul" GiverId="3401" />
+      </If>
+    </If>
+    <While Condition="((HasQuest(2458)) &amp;&amp; (!IsQuestCompleted(2458)))">
+      <CustomBehavior File="UseItemOn" QuestId="2458" MobId="0" ItemId="8051" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <TurnIn QuestName="Deep Cover" QuestId="2458" TurnInName="Taskmaster Fizzule" TurnInId="7233" />
+      <If Condition="((!HasQuest(2478)) &amp;&amp; (!IsQuestCompleted(2478)))">
+        <PickUp QuestName="Mission: Possible But Not Probable" QuestId="2478" GiverName="Taskmaster Fizzule" GiverId="7233" />
+      </If>
+      <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="CollectItem" ItemId="8072" CollectCount="1" />
+      <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="KillMob" MobId="7310" KillCount="2" />
+      <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="KillMob" MobId="7308" KillCount="2" />
+      <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="KillMob" MobId="7307" KillCount="2" />
+      <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="KillMob" MobId="7288" KillCount="1" />
+      <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="CollectItem" ItemId="8073" CollectCount="1" />
+      <Objective QuestName="Mission: Possible But Not Probable" QuestId="2478" Type="CollectItem" ItemId="8074" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Mission: Possible But Not Probable" QuestId="2478" TurnInName="Shenthul" TurnInId="3401" />
+    <If Condition="(Me.Class == WoWClass.Rogue)">
+      <If Condition="((!HasQuest(2479)) &amp;&amp; (!IsQuestCompleted(2479)))">
+        <PickUp QuestName="Hinott's Assistance" QuestId="2479" GiverName="Shenthul" GiverId="3401" />
+      </If>
+      <TurnIn QuestName="Hinott's Assistance" QuestId="2479" TurnInName="Serge Hinott" TurnInId="2391" />
+      <If Condition="((!HasQuest(2480)) &amp;&amp; (!IsQuestCompleted(2480)))">
+        <PickUp QuestName="Hinott's Assistance" QuestId="2480" GiverName="Serge Hinott" GiverId="2391" />
+      </If>
+      <TurnIn QuestName="Hinott's Assistance" QuestId="2480" TurnInName="Serge Hinott" TurnInId="2391" />
+      <CustomBehavior File="UseItemOn" ItemId="8095" MobId="0" NumOfTimes="1" CollectionDistance="100" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Ashenvale (25-26) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Stonetalon_Mountains_(26-27)" />
+  </QuestOrder>
+</HBProfile>

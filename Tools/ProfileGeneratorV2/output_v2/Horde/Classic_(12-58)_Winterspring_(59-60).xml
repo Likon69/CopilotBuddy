@@ -1,0 +1,131 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Winterspring (59-60)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="5087" Name="Winterfall Runners">
+    <Objective Type="KillMob" MobId="10916" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6912.84" Y="-1821.66" Z="570.909" />
+        <Hotspot X="6886.71" Y="-4085.93" Z="690.912" />
+        <Hotspot X="6896.69" Y="-4094.36" Z="691.715" />
+        <Hotspot X="6891.28" Y="-4089.79" Z="691.189" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="5121" Name="High Chief Winterfall">
+    <Objective Type="KillMob" MobId="10738" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6720.0" Y="-5255.57" Z="777.95" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4741" Name="Wild Guardians">
+    <Objective Type="KillMob" MobId="7453" KillCount="13">
+      <Hotspots>
+        <Hotspot X="7691.51" Y="-4925.28" Z="747.139" />
+        <Hotspot X="7795.76" Y="-4728.46" Z="775.948" />
+        <Hotspot X="5793.15" Y="-4955.75" Z="832.644" />
+        <Hotspot X="5582.44" Y="-4890.33" Z="844.137" />
+        <Hotspot X="7591.82" Y="-4807.01" Z="736.494" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4809" Name="Chillwind Horns">
+    <Objective Type="KillMob" MobId="7448" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6034.82" Y="-5179.02" Z="866.623" />
+        <Hotspot X="6082.77" Y="-5156.01" Z="870.203" />
+        <Hotspot X="6012.81" Y="-5143.63" Z="848.952" />
+        <Hotspot X="7100.05" Y="-5158.99" Z="750.515" />
+        <Hotspot X="6303.35" Y="-4819.47" Z="755.203" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4721" Name="Wild Guardians">
+    <Objective Type="KillMob" MobId="7454" KillCount="10">
+      <Hotspots>
+        <Hotspot X="7632.01" Y="-4829.64" Z="779.258" />
+        <Hotspot X="5720.69" Y="-4979.07" Z="808.197" />
+        <Hotspot X="5486.5" Y="-4961.5" Z="851.092" />
+        <Hotspot X="5722.02" Y="-4456.3" Z="763.781" />
+        <Hotspot X="7323.38" Y="-5093.51" Z="726.533" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Winterspring (59-60)" LogColor="Green" />
+    <TurnIn QuestName="Toxic Horrors" QuestId="5086" TurnInName="Donova Snowden" TurnInId="9298" />
+    <If Condition="((!HasQuest(5087)) &amp;&amp; (!IsQuestCompleted(5087)))">
+      <PickUp QuestName="Winterfall Runners" QuestId="5087" GiverName="Donova Snowden" GiverId="9298" />
+    </If>
+    <Objective QuestName="Winterfall Runners" QuestId="5087" Type="KillMob" MobId="10916" KillCount="1" />
+    <Objective QuestName="Winterfall Runners" QuestId="5087" Type="CollectItem" ItemId="12829" CollectCount="1" />
+    <TurnIn QuestName="Winterfall Runners" QuestId="5087" TurnInName="Donova Snowden" TurnInId="9298" />
+    <If Condition="((!HasQuest(5121)) &amp;&amp; (!IsQuestCompleted(5121)))">
+      <PickUp QuestName="High Chief Winterfall" QuestId="5121" GiverName="Donova Snowden" GiverId="9298" />
+    </If>
+    <TurnIn QuestName="Are We There, Yeti?" QuestId="5163" TurnInName="Umi Rumplesnicker" TurnInId="10305" />
+    <If Condition="((!HasQuest(8798)) &amp;&amp; (!IsQuestCompleted(8798)))">
+      <PickUp QuestName="A Yeti of Your Own" QuestId="8798" GiverName="Umi Rumplesnicker" GiverId="10305" />
+    </If>
+    <TurnIn QuestName="A Yeti of Your Own" QuestId="8798" TurnInName="Umi Rumplesnicker" TurnInId="10305" />
+    <If Condition="((!HasQuest(4809)) &amp;&amp; (!IsQuestCompleted(4809)))">
+      <PickUp QuestName="Chillwind Horns" QuestId="4809" GiverName="Felnok Steelspring" GiverId="10468" />
+    </If>
+    <Objective QuestName="High Chief Winterfall" QuestId="5121" Type="KillMob" MobId="10738" KillCount="1" />
+    <Objective QuestName="Wild Guardians" QuestId="4741" Type="KillMob" MobId="7453" KillCount="13" />
+    <TurnIn QuestName="Wild Guardians" QuestId="4741" TurnInName="Trull Failbane" TurnInId="10306" />
+    <If Condition="((!HasQuest(4721)) &amp;&amp; (!IsQuestCompleted(4721)))">
+      <PickUp QuestName="Wild Guardians" QuestId="4721" GiverName="Trull Failbane" GiverId="10306" />
+    </If>
+    <CustomBehavior File="SetHearthstone" MobId="11118" AreaId="618" X="6695.15" Y="-4673.04" Z="721.65" /> <!-- Set hearth: Everlook -->
+    <Objective QuestName="Chillwind Horns" QuestId="4809" Type="KillMob" MobId="7448" KillCount="1" />
+    <Objective QuestName="Chillwind Horns" QuestId="4809" Type="CollectItem" ItemId="12444" CollectCount="8" />
+    <Objective QuestName="Guarding Secrets" QuestId="4882" Type="CollectItem" ItemId="12558" CollectCount="1" />
+    <While Condition="((HasQuest(4721)) &amp;&amp; (!IsQuestCompleted(4721)))">
+      <RunTo X="7632.01" Y="-4829.64" Z="779.258" />
+      <CustomBehavior File="UseItemOn" QuestId="4721" MobId="7454" ItemId="12558" NumOfTimes="100" Range="5" CollectionDistance="1000" X="7632.01" Y="-4829.64" Z="779.258" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <PickUp QuestName="Guarding Secrets" QuestId="4882" GiverName="Innkeeper Vizzie" GiverId="11118" />
+    <Objective QuestName="Wild Guardians" QuestId="4721" Type="KillMob" MobId="7454" KillCount="10" />
+    <TurnIn QuestName="Chillwind Horns" QuestId="4809" TurnInName="Felnok Steelspring" TurnInId="10468" />
+    <If Condition="((!HasQuest(4810)) &amp;&amp; (!IsQuestCompleted(4810)))">
+      <PickUp QuestName="Return to Tinkee" QuestId="4810" GiverName="Felnok Steelspring" GiverId="10468" />
+    </If>
+    <TurnIn QuestName="High Chief Winterfall" QuestId="5121" TurnInName="Donova Snowden" TurnInId="9298" />
+    <TurnIn QuestName="Wild Guardians" QuestId="4721" TurnInName="Trull Failbane" TurnInId="10306" />
+    <TurnIn QuestName="Guarding Secrets" QuestId="4882" TurnInName="Trull Failbane" TurnInId="10306" />
+    <If Condition="((!HasQuest(4883)) &amp;&amp; (!IsQuestCompleted(4883)))">
+      <PickUp QuestName="Guarding Secrets" QuestId="4883" GiverName="Trull Failbane" GiverId="10306" />
+    </If>
+    <TurnIn QuestName="Guarding Secrets" QuestId="4883" TurnInName="Nara Wildmane" TurnInId="5770" />
+    <TurnIn QuestName="Return to Tinkee" QuestId="4810" TurnInName="Tinkee Steamboil" TurnInId="10267" />
+    <If Condition="Me.Level &lt; 60">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 60 - Berserk Owlbeast</Name>
+          <TargetMinLevel>58</TargetMinLevel>
+          <TargetMaxLevel>59</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="7632.01" Y="-4829.64" Z="779.26" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="60" /> <!--  (grind Berserk Owlbeast) -->
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Winterspring (59-60) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="The_Burning_Crusade_(58-70)_Hellfire_Peninsula_(58-62)" />
+  </QuestOrder>
+</HBProfile>

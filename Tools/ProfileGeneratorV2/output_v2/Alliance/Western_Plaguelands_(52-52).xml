@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Western Plaguelands (52-52)</Name>
+  <Name>Alliance\Western Plaguelands (52-52)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -8,14 +7,40 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="5092" Name="Clear the Way">
+    <Objective Type="KillMob" MobId="1783" KillCount="10">
+      <Hotspots>
+        <Hotspot X="1748.61" Y="-1229.87" Z="59.776" />
+        <Hotspot X="1824.06" Y="-1222.59" Z="59.4233" />
+        <Hotspot X="1036.06" Y="-1702.13" Z="62.9725" />
+        <Hotspot X="1170.24" Y="-1716.64" Z="61.1124" />
+        <Hotspot X="992.87" Y="-1652.63" Z="74.4687" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1791" KillCount="10">
+      <Hotspots>
+        <Hotspot X="1783.24" Y="-1254.47" Z="59.8564" />
+        <Hotspot X="1755.85" Y="-1177.83" Z="59.5505" />
+        <Hotspot X="1792.8" Y="-1163.52" Z="60.0441" />
+        <Hotspot X="1059.46" Y="-1748.46" Z="61.6662" />
+        <Hotspot X="1180.93" Y="-1729.29" Z="60.8177" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Western Plaguelands (52-52)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Western Plaguelands (52-52)" LogColor="Green" />
     <TurnIn QuestName="A Call to Arms: The Plaguelands!" QuestId="5090" TurnInName="Commander Ashlam Valorfist" TurnInId="10838" />
     <If Condition="((!HasQuest(5092)) &amp;&amp; (!IsQuestCompleted(5092)))">
       <PickUp QuestName="Clear the Way" QuestId="5092" GiverName="Commander Ashlam Valorfist" GiverId="10838" />
     </If>
-    <Objective QuestName="Clear the Way" QuestId="5092" Type="KillMob" MobId="1783" MobName="Skeletal Flayer" KillCount="10" />
-    <Objective QuestName="Clear the Way" QuestId="5092" Type="KillMob" MobId="1791" MobName="Slavering Ghoul" KillCount="10" />
+    <Objective QuestName="Clear the Way" QuestId="5092" Type="KillMob" MobId="1783" KillCount="10" />
+    <Objective QuestName="Clear the Way" QuestId="5092" Type="KillMob" MobId="1791" KillCount="10" />
     <TurnIn QuestName="Clear the Way" QuestId="5092" TurnInName="Commander Ashlam Valorfist" TurnInId="10838" />
     <If Condition="((!HasQuest(5215)) &amp;&amp; (!IsQuestCompleted(5215)))">
       <PickUp QuestName="The Scourge Cauldrons" QuestId="5215" GiverName="Commander Ashlam Valorfist" GiverId="10838" />
@@ -28,8 +53,8 @@
     <TurnIn QuestName="The Super Snapper FX" QuestId="2944" TurnInName="Daryn Lightwind" TurnInId="7907" />
     <TurnIn QuestName="Rise of the Silithid" QuestId="162" TurnInName="Gracina Spiritmight" TurnInId="7740" />
     <PickUp QuestName="March of the Silithid" QuestId="4493" GiverName="Gracina Spiritmight" GiverId="7740" />
-    <CustomBehavior File="SetHearthstone" MobId="6735" AreaId="1657" X="67.42" Y="15.65" Z="0" /> <!-- Set hearth: Darnassus -->
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Western Plaguelands (52-52) Complete" LogColor="Orange" />
+    <CustomBehavior File="SetHearthstone" MobId="6735" AreaId="1657" X="10127.9" Y="2224.79" Z="1328.81" /> <!-- Set hearth: Darnassus -->
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Western Plaguelands (52-52) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Felwood_(52-53)" />
   </QuestOrder>
 </HBProfile>

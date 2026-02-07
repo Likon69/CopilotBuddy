@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\The Hinterlands (49-50)</Name>
+  <Name>Alliance\The Hinterlands (49-50)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>50</MaxLevel>
 
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
 
   <!-- Quest Overrides -->
   <Quest Id="3444" Name="The Stone Circle">
@@ -16,6 +19,38 @@
       </CollectFrom>
       <Hotspots>
         <Hotspot X="-991.67" Y="-3710.49" Z="4.46" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9471" Name="Preying on the Predators">
+    <Objective Type="KillMob" MobId="2923" KillCount="10">
+      <Hotspots>
+        <Hotspot X="245.741" Y="-2409.22" Z="129.106" />
+        <Hotspot X="76.3837" Y="-2156.37" Z="103.981" />
+        <Hotspot X="38.9945" Y="-2158.36" Z="111.859" />
+        <Hotspot X="62.7463" Y="-2205.18" Z="105.637" />
+        <Hotspot X="153.571" Y="-2441.92" Z="126.785" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2924" KillCount="5">
+      <Hotspots>
+        <Hotspot X="311.847" Y="-2954.5" Z="112.283" />
+        <Hotspot X="337.197" Y="-2963.14" Z="116.99" />
+        <Hotspot X="190.246" Y="-3010.89" Z="123.753" />
+        <Hotspot X="335.966" Y="-2921.4" Z="115.268" />
+        <Hotspot X="282.95" Y="-2886.99" Z="107.503" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9470" Name="A Gesture of Goodwill">
+    <Objective Type="KillMob" MobId="17235" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-216.613" Y="-2523.13" Z="118.367" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="17236" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-213.84" Y="-2525.19" Z="118.404" />
       </Hotspots>
     </Objective>
   </Quest>
@@ -32,9 +67,6 @@
         <Hotspot X="-401.47" Y="-2890.84" Z="86.47" />
         <Hotspot X="-400.91" Y="-2957.13" Z="94.3" />
         <Hotspot X="-399.68" Y="-2958.68" Z="94.38" />
-        <Hotspot X="-398.89" Y="-2957.72" Z="94.68" />
-        <Hotspot X="-257.61" Y="-2810.08" Z="115.94" />
-        <Hotspot X="-228.69" Y="-3109.74" Z="127.16" />
       </Hotspots>
     </Objective>
   </Quest>
@@ -51,28 +83,10 @@
         <Hotspot X="-121.65" Y="-2713.43" Z="127.66" />
         <Hotspot X="-114.57" Y="-4014.36" Z="127.39" />
         <Hotspot X="-73.5" Y="-3340.48" Z="117.2" />
-        <Hotspot X="-54.3" Y="-3515.72" Z="120.68" />
-        <Hotspot X="-54.21" Y="-3266.13" Z="117.09" />
-        <Hotspot X="-40.67" Y="-2525.25" Z="121.18" />
-        <Hotspot X="-34.51" Y="-3214.01" Z="124.44" />
-        <Hotspot X="-25.17" Y="-2656.91" Z="127.9" />
-        <Hotspot X="-22.19" Y="-2885.07" Z="122.15" />
-        <Hotspot X="-22.09" Y="-3577.59" Z="121.25" />
-        <Hotspot X="-12.08" Y="-2369.73" Z="122.52" />
-        <Hotspot X="26.18" Y="-3237.22" Z="120.66" />
-        <Hotspot X="27.89" Y="-2385.72" Z="127.71" />
-        <Hotspot X="38.86" Y="-2929.75" Z="115.44" />
-        <Hotspot X="45.35" Y="-3618.53" Z="119.94" />
-        <Hotspot X="59.15" Y="-2458.14" Z="123.16" />
-        <Hotspot X="61.14" Y="-2185.37" Z="106.8" />
-        <Hotspot X="62.04" Y="-2787.86" Z="117.09" />
-        <Hotspot X="64.98" Y="-2683.8" Z="115.36" />
-        <Hotspot X="70.38" Y="-3212.33" Z="117.14" />
-        <Hotspot X="72.43" Y="-2642.29" Z="111.75" />
       </Hotspots>
     </Objective>
   </Quest>
-  <Quest Id="2641" Name="Sprinkle&apos;s Secret Ingredient">
+  <Quest Id="2641" Name="Sprinkle's Secret Ingredient">
     <Objective Type="CollectItem" ItemId="8526" CollectCount="1">
       <CollectFrom>
         <GameObject Name="Violet Tragan" Id="141853" />
@@ -87,7 +101,27 @@
       </Hotspots>
     </Objective>
   </Quest>
-  <Quest Id="580" Name="Whiskey Slim&apos;s Lost Grog">
+  <Quest Id="2877" Name="Skulk Rock Clean-up">
+    <Objective Type="KillMob" MobId="2655" KillCount="10">
+      <Hotspots>
+        <Hotspot X="419.692" Y="-3756.2" Z="155.12" />
+        <Hotspot X="363.363" Y="-3876.68" Z="105.661" />
+        <Hotspot X="367.486" Y="-3892.53" Z="103.393" />
+        <Hotspot X="337.009" Y="-3713.52" Z="106.598" />
+        <Hotspot X="321.75" Y="-3719.41" Z="106.689" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2656" KillCount="10">
+      <Hotspots>
+        <Hotspot X="374.251" Y="-3752.94" Z="158.711" />
+        <Hotspot X="418.245" Y="-3844.48" Z="142.764" />
+        <Hotspot X="376.69" Y="-3897.29" Z="101.433" />
+        <Hotspot X="356.16" Y="-3854.42" Z="106.73" />
+        <Hotspot X="373.638" Y="-3821.84" Z="163.075" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="580" Name="Whiskey Slim's Lost Grog">
     <Objective Type="CollectItem" ItemId="3900" CollectCount="12">
       <CollectFrom>
         <GameObject Name="Pupellyverbos Port" Id="2068" />
@@ -100,83 +134,63 @@
         <Hotspot X="-743.03" Y="-4465.44" Z="9.26" />
         <Hotspot X="-731.01" Y="-4510.92" Z="6.03" />
         <Hotspot X="-670.49" Y="-4553.04" Z="5.86" />
-        <Hotspot X="-646.19" Y="-4594.06" Z="9.1" />
-        <Hotspot X="-631.21" Y="-4505.6" Z="14.11" />
-        <Hotspot X="-628.32" Y="-4639.52" Z="10.41" />
-        <Hotspot X="-607.98" Y="-4582.3" Z="9.72" />
-        <Hotspot X="-557.49" Y="-4620.13" Z="10.61" />
-        <Hotspot X="-528.29" Y="-4589.23" Z="9.63" />
-        <Hotspot X="-521.84" Y="-4502.74" Z="10.14" />
-        <Hotspot X="-493.69" Y="-4610.89" Z="7.73" />
-        <Hotspot X="-488.09" Y="-4548.03" Z="10.28" />
-        <Hotspot X="-485.25" Y="-4604.51" Z="7.43" />
-        <Hotspot X="-478.87" Y="-4597.85" Z="8.48" />
-        <Hotspot X="-473.16" Y="-4588.85" Z="8.9" />
-        <Hotspot X="-457.8" Y="-4549.83" Z="6.88" />
-        <Hotspot X="-346.47" Y="-4605.1" Z="8.97" />
-        <Hotspot X="-337.58" Y="-4633.88" Z="9.87" />
-        <Hotspot X="-334.88" Y="-4481.4" Z="10.96" />
-        <Hotspot X="-215.66" Y="-4570.68" Z="11.15" />
-        <Hotspot X="-112.02" Y="-4656.11" Z="6.37" />
       </Hotspots>
     </Objective>
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Hinterlands (49-50)" LogColor="Green" />
-    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6257" ItemName="Roc Gizzard" CollectCount="3" />
-    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6258" ItemName="Ironfur Liver" CollectCount="3" />
-    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6259" ItemName="Groddoc Liver" CollectCount="3" />
-    <Objective QuestName="The Stone Circle" QuestId="3444" Type="CollectItem" ItemId="10556" ItemName="Stone Circle" CollectCount="1" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\The Hinterlands (49-50)" LogColor="Green" />
+    <Objective QuestName="Rhapsody's Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6257" CollectCount="3" />
+    <Objective QuestName="Rhapsody's Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6258" CollectCount="3" />
+    <Objective QuestName="Rhapsody's Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6259" CollectCount="3" />
+    <Objective QuestName="The Stone Circle" QuestId="3444" Type="CollectItem" ItemId="10556" CollectCount="1" />
     <PickUp QuestName="Witherbark Cages" QuestId="2988" GiverName="Gryphon Master Talonaxe" GiverId="5636" />
     <PickUp QuestName="Troll Necklace Bounty" QuestId="2880" GiverName="Fraggar Thundermantle" GiverId="7884" />
-    <PickUp QuestName="Featherbeard&apos;s Endorsement" QuestId="9469" GiverName="Ambassador Rualeth" GiverId="17223" />
+    <PickUp QuestName="Featherbeard's Endorsement" QuestId="9469" GiverName="Ambassador Rualeth" GiverId="17223" />
     <PickUp QuestName="A Gesture of Goodwill" QuestId="9470" GiverName="Ambassador Rualeth" GiverId="17223" />
     <PickUp QuestName="Preying on the Predators" QuestId="9471" GiverName="Ambassador Rualeth" GiverId="17223" />
-    <TurnIn QuestName="Featherbeard&apos;s Endorsement" QuestId="9469" TurnInName="Object_181649" TurnInType="Object" TurnInId="181649" />
+    <TurnIn QuestName="Featherbeard's Endorsement" QuestId="9469" TurnInName="Object_181649" TurnInType="Object" TurnInId="181649" />
     <If Condition="((!HasQuest(9476)) &amp;&amp; (!IsQuestCompleted(9476)))">
       <PickUp QuestName="In Pursuit of Featherbeard" QuestId="9476" GiverName="Ambassador Rualeth" GiverId="17223" />
     </If>
-    <Objective QuestName="Preying on the Predators" QuestId="9471" Type="KillMob" MobId="2923" MobName="Mangy Silvermane" KillCount="10" />
-    <TurnIn QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" TurnInName="Rhapsody Shindigger" TurnInId="5634" />
-    <Objective QuestName="Preying on the Predators" QuestId="9471" Type="KillMob" MobId="2924" MobName="Silvermane Wolf" KillCount="5" />
-    <Objective QuestName="Troll Necklace Bounty" QuestId="2880" Type="CollectItem" ItemId="9259" ItemName="Troll Tribal Necklace" CollectCount="5" />
-    <Objective QuestName="A Gesture of Goodwill" QuestId="9470" Type="KillMob" MobId="17235" MobName="Witch Doctor Mai&apos;jin" KillCount="1" />
-    <Objective QuestName="A Gesture of Goodwill" QuestId="9470" Type="KillMob" MobId="17236" MobName="Tcha&apos;kaz" KillCount="1" />
+    <Objective QuestName="Preying on the Predators" QuestId="9471" Type="KillMob" MobId="2923" KillCount="10" />
+    <TurnIn QuestName="Rhapsody's Kalimdor Kocktail" QuestId="1452" TurnInName="Rhapsody Shindigger" TurnInId="5634" />
+    <Objective QuestName="Preying on the Predators" QuestId="9471" Type="KillMob" MobId="2924" KillCount="5" />
+    <Objective QuestName="Troll Necklace Bounty" QuestId="2880" Type="CollectItem" ItemId="9259" CollectCount="5" />
+    <Objective QuestName="A Gesture of Goodwill" QuestId="9470" Type="KillMob" MobId="17235" KillCount="1" />
+    <Objective QuestName="A Gesture of Goodwill" QuestId="9470" Type="KillMob" MobId="17236" KillCount="1" />
     <TurnIn QuestName="In Pursuit of Featherbeard" QuestId="9476" TurnInName="Object_181643" TurnInType="Object" TurnInId="181643" />
     <If Condition="((!HasQuest(9475)) &amp;&amp; (!IsQuestCompleted(9475)))">
       <PickUp QuestName="Reclaiming the Eggs" QuestId="9475" GiverName="Rhapsody Shindigger" GiverId="5634" />
     </If>
-    <Objective QuestName="Reclaiming the Eggs" QuestId="9475" Type="CollectItem" ItemId="23694" ItemName="Gryphon Egg" CollectCount="5" />
+    <Objective QuestName="Reclaiming the Eggs" QuestId="9475" Type="CollectItem" ItemId="23694" CollectCount="5" />
     <TurnIn QuestName="A Gesture of Goodwill" QuestId="9470" TurnInName="Ambassador Rualeth" TurnInId="17223" />
     <TurnIn QuestName="Preying on the Predators" QuestId="9471" TurnInName="Ambassador Rualeth" TurnInId="17223" />
     <TurnIn QuestName="Reclaiming the Eggs" QuestId="9475" TurnInName="Ambassador Rualeth" TurnInId="17223" />
     <TurnIn QuestName="Troll Necklace Bounty" QuestId="2880" TurnInName="Fraggar Thundermantle" TurnInId="7884" />
     <PickUp QuestName="Skulk Rock Clean-up" QuestId="2877" GiverName="Fraggar Thundermantle" GiverId="7884" />
-    <CustomBehavior File="SetHearthstone" MobId="21088" AreaId="3522" X="13.37" Y="41.83" Z="0" /> <!-- Set hearth: Wildhammer Keep -->
+    <CustomBehavior File="SetHearthstone" MobId="21088" AreaId="3522" X="2227.13" Y="4717.91" Z="162.075" /> <!-- Set hearth: Wildhammer Keep -->
     <TurnIn QuestName="Witherbark Cages" QuestId="2988" TurnInName="Gryphon Master Talonaxe" TurnInId="5636" />
     <If Condition="((!HasQuest(2989)) &amp;&amp; (!IsQuestCompleted(2989)))">
       <PickUp QuestName="The Altar of Zul" QuestId="2989" GiverName="Gryphon Master Talonaxe" GiverId="5636" />
     </If>
-    <Objective QuestName="Favored of Elune?" QuestId="3661" Type="CollectItem" ItemId="10819" ItemName="Wildkin Feather" CollectCount="15" />
-    <Objective QuestName="Sprinkle&apos;s Secret Ingredient" QuestId="2641" Type="CollectItem" ItemId="8526" ItemName="Violet Tragan" CollectCount="1" />
-    <Objective QuestName="Skulk Rock Clean-up" QuestId="2877" Type="KillMob" MobId="2655" MobName="Green Sludge" KillCount="10" />
-    <Objective QuestName="Skulk Rock Clean-up" QuestId="2877" Type="KillMob" MobId="2656" MobName="Jade Ooze" KillCount="10" />
+    <Objective QuestName="Favored of Elune?" QuestId="3661" Type="CollectItem" ItemId="10819" CollectCount="15" />
+    <Objective QuestName="Sprinkle's Secret Ingredient" QuestId="2641" Type="CollectItem" ItemId="8526" CollectCount="1" />
+    <Objective QuestName="Skulk Rock Clean-up" QuestId="2877" Type="KillMob" MobId="2655" KillCount="10" />
+    <Objective QuestName="Skulk Rock Clean-up" QuestId="2877" Type="KillMob" MobId="2656" KillCount="10" />
     <While Condition="((HasQuest(2989)) &amp;&amp; (!IsQuestCompleted(2989)))">
-      <RunTo X="48.95" Y="52.71" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="2989" ItemId="8704" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="2989" MobId="0" ItemId="8704" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="Find OOX-09/HL!" QuestId="485" GiverName="Gryphon Master Talonaxe" GiverId="5636" />
     <TurnIn QuestName="Find OOX-09/HL!" QuestId="485" TurnInName="Homing Robot OOX-09/HL" TurnInId="7806" />
-    <Objective QuestName="Whiskey Slim&apos;s Lost Grog" QuestId="580" Type="CollectItem" ItemId="3900" ItemName="Pupellyverbos Port" CollectCount="12" />
+    <Objective QuestName="Whiskey Slim's Lost Grog" QuestId="580" Type="CollectItem" ItemId="3900" CollectCount="12" />
     <While Condition="((HasQuest(2944)) &amp;&amp; (!IsQuestCompleted(2944)))">
-      <RunTo X="81.08" Y="55.81" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="2944" ItemId="9328" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="2944" MobId="0" ItemId="9328" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="The Super Snapper FX" QuestId="2944" Type="CollectItem" ItemId="9330" ItemName="Snapshot of Gammerita" CollectCount="1" />
-    <TurnIn QuestName="Cortello&apos;s Riddle" QuestId="626" TurnInName="Object_2556" TurnInType="Object" TurnInId="2556" />
+    <Objective QuestName="The Super Snapper FX" QuestId="2944" Type="CollectItem" ItemId="9330" CollectCount="1" />
+    <TurnIn QuestName="Cortello's Riddle" QuestId="626" TurnInName="Object_2556" TurnInType="Object" TurnInId="2556" />
     <TurnIn QuestName="Skulk Rock Clean-up" QuestId="2877" TurnInName="Fraggar Thundermantle" TurnInId="7884" />
     <TurnIn QuestName="The Altar of Zul" QuestId="2989" TurnInName="Gryphon Master Talonaxe" TurnInId="5636" />
     <PickUp QuestName="The Smoldering Ruins of Thaurissan" QuestId="3702" GiverName="Royal Historian Archesonus" GiverId="8879" />
@@ -184,9 +198,9 @@
     <If Condition="((!HasQuest(3701)) &amp;&amp; (!IsQuestCompleted(3701)))">
       <PickUp QuestName="The Smoldering Ruins of Thaurissan" QuestId="3701" GiverName="Royal Historian Archesonus" GiverId="8879" />
     </If>
-    <Objective QuestName="Caught!" QuestId="4449" Type="CollectItem" ItemId="4306" ItemName="Silk Cloth" CollectCount="15" />
-    <CustomBehavior File="SetHearthstone" MobId="5111" AreaId="1537" X="18.15" Y="51.46" Z="0" /> <!-- Set hearth: Ironforge -->
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\The Hinterlands (49-50) Complete" LogColor="Orange" />
+    <Objective QuestName="Caught!" QuestId="4449" Type="CollectItem" ItemId="4306" CollectCount="15" />
+    <CustomBehavior File="SetHearthstone" MobId="5111" AreaId="1537" X="-4840.67" Y="-857.094" Z="501.997" /> <!-- Set hearth: Ironforge -->
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\The Hinterlands (49-50) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Searing_Gorge_(50-51)" />
   </QuestOrder>
 </HBProfile>

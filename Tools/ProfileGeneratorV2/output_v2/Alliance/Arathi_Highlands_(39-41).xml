@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Arathi Highlands (39-41)</Name>
+  <Name>Alliance\Arathi Highlands (39-41)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>41</MaxLevel>
@@ -8,7 +7,18 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
+  <Quest Id="658" Name="Hints of a New Plague?">
+    <Objective Type="KillMob" MobId="2714" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1552.43" Y="-3029.31" Z="13.6448" />
+      </Hotspots>
+    </Objective>
+  </Quest>
   <Quest Id="651" Name="Stones of Binding">
     <Objective Type="CollectItem" ItemId="4484" CollectCount="1">
       <CollectFrom>
@@ -32,6 +42,33 @@
       </CollectFrom>
       <Hotspots>
         <Hotspot X="-855.91" Y="-1783.29" Z="39.61" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="691" Name="Worth Its Weight in Gold">
+    <Objective Type="KillMob" MobId="2557" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2032.18" Y="-3276.97" Z="55.7733" />
+        <Hotspot X="-2022.13" Y="-3292.49" Z="53.0674" />
+        <Hotspot X="-2065.27" Y="-3268.88" Z="50.428" />
+        <Hotspot X="-2095.68" Y="-3288.88" Z="51.7259" />
+        <Hotspot X="-2083.95" Y="-3270.32" Z="51.2645" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2555" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1854.99" Y="-3185.95" Z="51.416" />
+        <Hotspot X="-1864.62" Y="-3064.38" Z="57.9381" />
+        <Hotspot X="-1199.68" Y="-2040.94" Z="38.7946" />
+        <Hotspot X="-1978.56" Y="-3312.65" Z="57.2553" />
+        <Hotspot X="-2020.43" Y="-3316.22" Z="54.7064" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="693" Name="Wand over Fist">
+    <Objective Type="KillMob" MobId="2793" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2098.22" Y="-2837.68" Z="79.1394" />
       </Hotspots>
     </Objective>
   </Quest>
@@ -68,21 +105,41 @@
       </Hotspots>
     </Objective>
   </Quest>
+  <Quest Id="664" Name="Drowned Sorrows">
+    <Objective Type="KillMob" MobId="2596" KillCount="3">
+      <Hotspots>
+        <Hotspot X="-2289.71" Y="-1722.61" Z="-60.2961" />
+        <Hotspot X="-2288.97" Y="-1652.69" Z="-61.7458" />
+        <Hotspot X="-2151.36" Y="-1632.39" Z="-38.9054" />
+        <Hotspot X="-2173.45" Y="-1610.2" Z="-48.3585" />
+        <Hotspot X="-2168.51" Y="-1606.38" Z="-31.4455" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2595" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-2322.65" Y="-1784.94" Z="-37.8452" />
+        <Hotspot X="-2285.14" Y="-1768.57" Z="-28.924" />
+        <Hotspot X="-2147.36" Y="-1656.12" Z="-45.1224" />
+        <Hotspot X="-2149.24" Y="-1587.97" Z="-48.822" />
+        <Hotspot X="-2145.94" Y="-1553.34" Z="-46.6641" />
+      </Hotspots>
+    </Objective>
+  </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Arathi Highlands (39-41)" LogColor="Green" />
-    <Objective QuestName="Hints of a New Plague?" QuestId="658" Type="KillMob" MobId="2714" MobName="Forsaken Courier" KillCount="1" />
-    <Objective QuestName="Hints of a New Plague?" QuestId="658" Type="CollectItem" ItemId="4482" ItemName="Sealed Folder" CollectCount="1" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Arathi Highlands (39-41)" LogColor="Green" />
+    <Objective QuestName="Hints of a New Plague?" QuestId="658" Type="KillMob" MobId="2714" KillCount="1" />
+    <Objective QuestName="Hints of a New Plague?" QuestId="658" Type="CollectItem" ItemId="4482" CollectCount="1" />
     <If Condition="((!HasQuest(691)) &amp;&amp; (!IsQuestCompleted(691)))">
       <PickUp QuestName="Worth Its Weight in Gold" QuestId="691" GiverName="Apprentice Kryten" GiverId="2788" />
     </If>
     <PickUp QuestName="The Princess Trapped" QuestId="642" GiverName="Apprentice Kryten" GiverId="2788" />
-    <Objective QuestName="The Princess Trapped" QuestId="642" Type="CollectItem" ItemId="4435" ItemName="Mote of Myzrael" CollectCount="12" />
+    <Objective QuestName="The Princess Trapped" QuestId="642" Type="CollectItem" ItemId="4435" CollectCount="12" />
     <TurnIn QuestName="The Princess Trapped" QuestId="642" TurnInName="Object_2701" TurnInType="Object" TurnInId="2701" />
     <If Condition="((!HasQuest(651)) &amp;&amp; (!IsQuestCompleted(651)))">
       <PickUp QuestName="Stones of Binding" QuestId="651" GiverName="Apprentice Kryten" GiverId="2788" />
     </If>
-    <Objective QuestName="Stones of Binding" QuestId="651" Type="CollectItem" ItemId="4484" ItemName="Cresting Key" CollectCount="1" />
+    <Objective QuestName="Stones of Binding" QuestId="651" Type="CollectItem" ItemId="4484" CollectCount="1" />
     <TurnIn QuestName="Hints of a New Plague?" QuestId="658" TurnInName="Quae" TurnInId="2712" />
     <If Condition="((!HasQuest(657)) &amp;&amp; (!IsQuestCompleted(657)))">
       <PickUp QuestName="Hints of a New Plague?" QuestId="657" GiverName="Quae" GiverId="2712" />
@@ -95,23 +152,23 @@
     <If Condition="((!HasQuest(661)) &amp;&amp; (!IsQuestCompleted(661)))">
       <PickUp QuestName="Hints of a New Plague?" QuestId="661" GiverName="Quae" GiverId="2712" />
     </If>
-    <Objective QuestName="Worth Its Weight in Gold" QuestId="691" Type="KillMob" MobId="2557" MobName="Witherbark Shadow Hunter" KillCount="1" />
-    <Objective QuestName="Worth Its Weight in Gold" QuestId="691" Type="CollectItem" ItemId="5040" ItemName="Shadow Hunter Knife" CollectCount="1" />
-    <Objective QuestName="Worth Its Weight in Gold" QuestId="691" Type="KillMob" MobId="2555" MobName="Witherbark Witch Doctor" KillCount="1" />
-    <Objective QuestName="Worth Its Weight in Gold" QuestId="691" Type="CollectItem" ItemId="4522" ItemName="Witherbark Medicine Pouch" CollectCount="4" />
-    <Objective QuestName="Worth Its Weight in Gold" QuestId="691" Type="CollectItem" ItemId="4503" ItemName="Witherbark Tusk" CollectCount="10" />
-    <Objective QuestName="Stones of Binding" QuestId="651" Type="CollectItem" ItemId="4485" ItemName="Thundering Key" CollectCount="1" />
+    <Objective QuestName="Worth Its Weight in Gold" QuestId="691" Type="KillMob" MobId="2557" KillCount="1" />
+    <Objective QuestName="Worth Its Weight in Gold" QuestId="691" Type="CollectItem" ItemId="5040" CollectCount="1" />
+    <Objective QuestName="Worth Its Weight in Gold" QuestId="691" Type="KillMob" MobId="2555" KillCount="1" />
+    <Objective QuestName="Worth Its Weight in Gold" QuestId="691" Type="CollectItem" ItemId="4522" CollectCount="4" />
+    <Objective QuestName="Worth Its Weight in Gold" QuestId="691" Type="CollectItem" ItemId="4503" CollectCount="10" />
+    <Objective QuestName="Stones of Binding" QuestId="651" Type="CollectItem" ItemId="4485" CollectCount="1" />
     <TurnIn QuestName="Worth Its Weight in Gold" QuestId="691" TurnInName="Apprentice Kryten" TurnInId="2788" />
     <If Condition="((!HasQuest(693)) &amp;&amp; (!IsQuestCompleted(693)))">
       <PickUp QuestName="Wand over Fist" QuestId="693" GiverName="Skuerto" GiverId="2789" />
     </If>
-    <Objective QuestName="Wand over Fist" QuestId="693" Type="KillMob" MobId="2793" MobName="Kor&apos;gresh Coldrage" KillCount="1" />
-    <Objective QuestName="Wand over Fist" QuestId="693" Type="CollectItem" ItemId="4525" ItemName="Trelane&apos;s Wand of Invocation" CollectCount="1" />
+    <Objective QuestName="Wand over Fist" QuestId="693" Type="KillMob" MobId="2793" KillCount="1" />
+    <Objective QuestName="Wand over Fist" QuestId="693" Type="CollectItem" ItemId="4525" CollectCount="1" />
     <TurnIn QuestName="Wand over Fist" QuestId="693" TurnInName="Skuerto" TurnInId="2789" />
-    <Objective QuestName="Stones of Binding" QuestId="651" Type="CollectItem" ItemId="4483" ItemName="Burning Key" CollectCount="1" />
+    <Objective QuestName="Stones of Binding" QuestId="651" Type="CollectItem" ItemId="4483" CollectCount="1" />
     <TurnIn QuestName="Stones of Binding" QuestId="651" TurnInName="Object_2702" TurnInType="Object" TurnInId="2702" />
     <PickUp QuestName="Land Ho!" QuestId="663" GiverName="Lolo the Lookout" GiverId="2766" />
-    <TurnIn QuestName="Land Ho!" QuestId="663" TurnInName="Shakes O&apos;Breen" TurnInId="2610" />
+    <TurnIn QuestName="Land Ho!" QuestId="663" TurnInName="Shakes O'Breen" TurnInId="2610" />
     <If Condition="((!HasQuest(662)) &amp;&amp; (!IsQuestCompleted(662)))">
       <PickUp QuestName="Deep Sea Salvage" QuestId="662" GiverName="First Mate Nilzlix" GiverId="2767" />
     </If>
@@ -121,34 +178,35 @@
     <If Condition="((!HasQuest(666)) &amp;&amp; (!IsQuestCompleted(666)))">
       <PickUp QuestName="Sunken Treasure" QuestId="666" GiverName="Doctor Draxlegauge" GiverId="2774" />
     </If>
-    <While Condition="((HasQuest(666)) &amp;&amp; (!IsQuestCompleted(666)))">
-      <RunTo X="33.86" Y="80.45" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="666" ItemId="5996" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
-      <CustomBehavior File="WaitTimer" WaitTime="3000" />
-    </While>
-    <Objective QuestName="Deep Sea Salvage" QuestId="662" Type="CollectItem" ItemId="4489" ItemName="Maiden&apos;s Folly Log" CollectCount="1" />
-    <Objective QuestName="Deep Sea Salvage" QuestId="662" Type="CollectItem" ItemId="4487" ItemName="Maiden&apos;s Folly Charts" CollectCount="1" />
-    <Objective QuestName="Deep Sea Salvage" QuestId="662" Type="CollectItem" ItemId="4488" ItemName="Spirit of Silverpine Charts" CollectCount="1" />
-    <Objective QuestName="Deep Sea Salvage" QuestId="662" Type="CollectItem" ItemId="4490" ItemName="Spirit of Silverpine Log" CollectCount="1" />
-    <Objective QuestName="Sunken Treasure" QuestId="666" Type="CollectItem" ItemId="4492" ItemName="Elven Gem" CollectCount="10" />
-    <Objective QuestName="Drowned Sorrows" QuestId="664" Type="KillMob" MobId="2596" MobName="Daggerspine Sorceress" KillCount="3" />
-    <Objective QuestName="Drowned Sorrows" QuestId="664" Type="KillMob" MobId="2595" MobName="Daggerspine Raider" KillCount="10" />
+    <If Condition="!((Me.Class == WoWClass.Druid))">
+      <While Condition="((HasQuest(666)) &amp;&amp; (!IsQuestCompleted(666)))">
+        <CustomBehavior File="UseItemOn" QuestId="666" MobId="0" ItemId="5996" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+    </If>
+    <Objective QuestName="Deep Sea Salvage" QuestId="662" Type="CollectItem" ItemId="4489" CollectCount="1" />
+    <Objective QuestName="Deep Sea Salvage" QuestId="662" Type="CollectItem" ItemId="4487" CollectCount="1" />
+    <Objective QuestName="Deep Sea Salvage" QuestId="662" Type="CollectItem" ItemId="4488" CollectCount="1" />
+    <Objective QuestName="Deep Sea Salvage" QuestId="662" Type="CollectItem" ItemId="4490" CollectCount="1" />
+    <Objective QuestName="Sunken Treasure" QuestId="666" Type="CollectItem" ItemId="4492" CollectCount="10" />
+    <Objective QuestName="Drowned Sorrows" QuestId="664" Type="KillMob" MobId="2596" KillCount="3" />
+    <Objective QuestName="Drowned Sorrows" QuestId="664" Type="KillMob" MobId="2595" KillCount="10" />
     <TurnIn QuestName="Deep Sea Salvage" QuestId="662" TurnInName="First Mate Nilzlix" TurnInId="2767" />
     <TurnIn QuestName="Drowned Sorrows" QuestId="664" TurnInName="Captain Steelgut" TurnInId="2769" />
     <TurnIn QuestName="Sunken Treasure" QuestId="666" TurnInName="Doctor Draxlegauge" TurnInId="2774" />
     <If Condition="((!HasQuest(668)) &amp;&amp; (!IsQuestCompleted(668)))">
       <PickUp QuestName="Sunken Treasure" QuestId="668" GiverName="Doctor Draxlegauge" GiverId="2774" />
     </If>
-    <TurnIn QuestName="Sunken Treasure" QuestId="668" TurnInName="Shakes O&apos;Breen" TurnInId="2610" />
+    <TurnIn QuestName="Sunken Treasure" QuestId="668" TurnInName="Shakes O'Breen" TurnInId="2610" />
     <If Condition="((!HasQuest(669)) &amp;&amp; (!IsQuestCompleted(669)))">
-      <PickUp QuestName="Sunken Treasure" QuestId="669" GiverName="Shakes O&apos;Breen" GiverId="2610" />
+      <PickUp QuestName="Sunken Treasure" QuestId="669" GiverName="Shakes O'Breen" GiverId="2610" />
     </If>
     <TurnIn QuestName="Hints of a New Plague?" QuestId="661" TurnInName="Phin Odelic" TurnInId="2711" />
     <If Condition="(Me.Class == WoWClass.Paladin)">
       <PickUp QuestName="The Tome of Nobility" QuestId="1661" GiverName="Duthorian Rall" GiverId="6171" />
       <!-- Quest 1661 may auto-complete (no turn-in found) -->
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Arathi Highlands (39-41) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Arathi Highlands (39-41) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Dustwallow_Marsh_(41-42)" />
   </QuestOrder>
 </HBProfile>

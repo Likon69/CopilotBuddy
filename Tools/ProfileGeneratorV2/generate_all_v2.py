@@ -20,10 +20,10 @@ SPAWNS_JSON = Path(__file__).parent / "gameobject_spawns.json"
 GUIDES = [
     # Horde
     ("ZygorLevelingHordeCLASSIC.lua", "Horde"),
-    ("ZygorLevelingHordeWOTLKTrial.lua", "Horde"),
+    ("ZygorLevelingHordeWOTLK.lua", "Horde"),
     # Alliance
     ("ZygorLevelingAllianceCLASSIC.lua", "Alliance"),
-    ("ZygorLevelingAllianceWOTLKTrial.lua", "Alliance"),
+    ("ZygorLevelingAllianceWOTLK.lua", "Alliance"),
 ]
 
 def main():
@@ -49,6 +49,7 @@ def main():
             str(zygor_path),
             "-o", str(faction_dir),
             "--questie", str(QUESTIE_BASE),
+            "--faction", faction,
         ]
         
         print(f"\n{'='*60}")

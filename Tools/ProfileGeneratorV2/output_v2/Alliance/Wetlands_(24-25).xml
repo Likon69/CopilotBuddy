@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Wetlands (24-25)</Name>
+  <Name>Alliance\Wetlands (24-25)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>25</MaxLevel>
@@ -8,14 +7,63 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
-  <Quest Id="637" Name="Sully Balloo&apos;s Letter">
+  <Quest Id="484" Name="Young Crocolisk Skins">
+    <Objective Type="KillMob" MobId="1417" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3319.16" Y="-2616.13" Z="9.0319" />
+        <Hotspot X="-3582.6" Y="-1086.48" Z="-16.3328" />
+        <Hotspot X="-3463.88" Y="-1015.16" Z="7.5001" />
+        <Hotspot X="-3426.56" Y="-1041.64" Z="8.9154" />
+        <Hotspot X="-3285.11" Y="-2589.94" Z="11.4449" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="279" Name="Claws from the Deep">
+    <Objective Type="KillMob" MobId="1259" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3245.94" Y="-1136.65" Z="9.1511" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="276" Name="Tramping Paws">
+    <Objective Type="KillMob" MobId="1008" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-3819.35" Y="-3077.35" Z="12.0321" />
+        <Hotspot X="-3935.26" Y="-3095.5" Z="13.2071" />
+        <Hotspot X="-3679.55" Y="-2920.51" Z="11.7696" />
+        <Hotspot X="-3815.94" Y="-3021.42" Z="12.0012" />
+        <Hotspot X="-3746.0" Y="-2947.81" Z="10.4912" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="1007" KillCount="15">
+      <Hotspots>
+        <Hotspot X="-3868.23" Y="-3026.98" Z="12.4495" />
+        <Hotspot X="-3895.26" Y="-3046.43" Z="11.9087" />
+        <Hotspot X="-3869.76" Y="-3041.1" Z="12.9087" />
+        <Hotspot X="-4079.75" Y="-3146.84" Z="10.6866" />
+        <Hotspot X="-3913.66" Y="-3045.47" Z="11.7577" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="637" Name="Sully Balloo's Letter">
     <Objective Type="CollectItem" ItemId="4433" CollectCount="1">
       <CollectFrom>
         <GameObject Name="Waterlogged Letter" Id="2656" />
       </CollectFrom>
       <Hotspots>
         <Hotspot X="-2362.47" Y="-2461.07" Z="-20.89" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1640" Name="Beat Bartleby">
+    <Objective Type="KillMob" MobId="6090" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-8604.47" Y="389.102" Z="102.924" />
       </Hotspots>
     </Objective>
   </Quest>
@@ -41,77 +89,74 @@
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Wetlands (24-25)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Wetlands (24-25)" LogColor="Green" />
     <PickUp QuestName="Young Crocolisk Skins" QuestId="484" GiverName="James Halloran" GiverId="2094" />
     <PickUp QuestName="Claws from the Deep" QuestId="279" GiverName="Karl Boran" GiverId="1242" />
     <PickUp QuestName="The Third Fleet" QuestId="288" GiverName="First Mate Fitzsimmons" GiverId="1239" />
     <PickUp QuestName="The Greenwarden" QuestId="463" GiverName="First Mate Fitzsimmons" GiverId="1239" />
-    <CustomBehavior File="SetHearthstone" MobId="23995" AreaId="15" X="10.7" Y="60.95" Z="0" /> <!-- Set hearth: Deepwater Tavern -->
+    <CustomBehavior File="SetHearthstone" MobId="23995" AreaId="15" X="-4629.94" Y="-3176.12" Z="41.2235" /> <!-- Set hearth: Deepwater Tavern -->
     <TurnIn QuestName="The Absent Minded Prospector" QuestId="942" TurnInName="Archaeologist Flagongut" TurnInId="2911" />
     <TurnIn QuestName="The Third Fleet" QuestId="288" TurnInName="First Mate Fitzsimmons" TurnInId="1239" />
     <PickUp QuestName="Digging Through the Ooze" QuestId="470" GiverName="Sida" GiverId="2111" />
-    <Objective QuestName="Young Crocolisk Skins" QuestId="484" Type="KillMob" MobId="1417" MobName="Young Wetlands Crocolisk" KillCount="1" />
-    <Objective QuestName="Young Crocolisk Skins" QuestId="484" Type="CollectItem" ItemId="3397" ItemName="Young Crocolisk Skin" CollectCount="4" />
-    <Objective QuestName="Claws from the Deep" QuestId="279" Type="KillMob" MobId="1259" MobName="Gobbler" KillCount="1" />
-    <Objective QuestName="Claws from the Deep" QuestId="279" Type="CollectItem" ItemId="3618" ItemName="Gobbler&apos;s Head" CollectCount="1" />
-    <Objective QuestName="Digging Through the Ooze" QuestId="470" Type="CollectItem" ItemId="3349" ItemName="Sida&apos;s Bag" CollectCount="1" />
+    <Objective QuestName="Young Crocolisk Skins" QuestId="484" Type="KillMob" MobId="1417" KillCount="1" />
+    <Objective QuestName="Young Crocolisk Skins" QuestId="484" Type="CollectItem" ItemId="3397" CollectCount="4" />
+    <Objective QuestName="Claws from the Deep" QuestId="279" Type="KillMob" MobId="1259" KillCount="1" />
+    <Objective QuestName="Claws from the Deep" QuestId="279" Type="CollectItem" ItemId="3618" CollectCount="1" />
+    <Objective QuestName="Digging Through the Ooze" QuestId="470" Type="CollectItem" ItemId="3349" CollectCount="1" />
     <PickUp QuestName="Daily Delivery" QuestId="469" GiverName="Einar Stonegrip" GiverId="2093" />
     <TurnIn QuestName="The Greenwarden" QuestId="463" TurnInName="Rethiel the Greenwarden" TurnInId="1244" />
     <PickUp QuestName="Tramping Paws" QuestId="276" GiverName="Rethiel the Greenwarden" GiverId="1244" />
-    <Objective QuestName="Tramping Paws" QuestId="276" Type="KillMob" MobId="1008" MobName="Mosshide Mongrel" KillCount="10" />
-    <Objective QuestName="Tramping Paws" QuestId="276" Type="KillMob" MobId="1007" MobName="Mosshide Gnoll" KillCount="15" />
+    <Objective QuestName="Tramping Paws" QuestId="276" Type="KillMob" MobId="1008" KillCount="10" />
+    <Objective QuestName="Tramping Paws" QuestId="276" Type="KillMob" MobId="1007" KillCount="15" />
     <TurnIn QuestName="Tramping Paws" QuestId="276" TurnInName="Rethiel the Greenwarden" TurnInId="1244" />
     <If Condition="((!HasQuest(277)) &amp;&amp; (!IsQuestCompleted(277)))">
       <PickUp QuestName="Fire Taboo" QuestId="277" GiverName="Rethiel the Greenwarden" GiverId="1244" />
     </If>
-    <Objective QuestName="Sully Balloo&apos;s Letter" QuestId="637" Type="CollectItem" ItemId="4433" ItemName="Waterlogged Envelope" CollectCount="1" />
+    <Objective QuestName="Sully Balloo's Letter" QuestId="637" Type="CollectItem" ItemId="4433" CollectCount="1" />
     <TurnIn QuestName="Digging Through the Ooze" QuestId="470" TurnInName="Sida" TurnInId="2111" />
     <TurnIn QuestName="Young Crocolisk Skins" QuestId="484" TurnInName="James Halloran" TurnInId="2094" />
     <TurnIn QuestName="Daily Delivery" QuestId="469" TurnInName="James Halloran" TurnInId="2094" />
     <If Condition="((!HasQuest(471)) &amp;&amp; (!IsQuestCompleted(471)))">
-      <PickUp QuestName="Apprentice&apos;s Duties" QuestId="471" GiverName="James Halloran" GiverId="2094" />
+      <PickUp QuestName="Apprentice's Duties" QuestId="471" GiverName="James Halloran" GiverId="2094" />
     </If>
     <TurnIn QuestName="Claws from the Deep" QuestId="279" TurnInName="Karl Boran" TurnInId="1242" />
     <While Condition="((HasQuest(471)) &amp;&amp; (!IsQuestCompleted(471)))">
-      <RunTo X="8.31" Y="58.53" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="471" ItemId="4433" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="471" MobId="0" ItemId="4433" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Sully Balloo&apos;s Letter" QuestId="637" GiverName="Karl Boran" GiverId="1242" />
-    <TurnIn QuestName="Sully Balloo&apos;s Letter" QuestId="637" TurnInName="Sara Balloo" TurnInId="2695" />
+    <PickUp QuestName="Sully Balloo's Letter" QuestId="637" GiverName="Karl Boran" GiverId="1242" />
+    <TurnIn QuestName="Sully Balloo's Letter" QuestId="637" TurnInName="Sara Balloo" TurnInId="2695" />
     <If Condition="((!HasQuest(683)) &amp;&amp; (!IsQuestCompleted(683)))">
-      <PickUp QuestName="Sara Balloo&apos;s Plea" QuestId="683" GiverName="Sara Balloo" GiverId="2695" />
+      <PickUp QuestName="Sara Balloo's Plea" QuestId="683" GiverName="Sara Balloo" GiverId="2695" />
     </If>
-    <TurnIn QuestName="Sara Balloo&apos;s Plea" QuestId="683" TurnInName="King Magni Bronzebeard" TurnInId="2784" />
+    <TurnIn QuestName="Sara Balloo's Plea" QuestId="683" TurnInName="King Magni Bronzebeard" TurnInId="2784" />
     <If Condition="((!HasQuest(686)) &amp;&amp; (!IsQuestCompleted(686)))">
-      <PickUp QuestName="A King&apos;s Tribute" QuestId="686" GiverName="King Magni Bronzebeard" GiverId="2784" />
+      <PickUp QuestName="A King's Tribute" QuestId="686" GiverName="King Magni Bronzebeard" GiverId="2784" />
     </If>
-    <TurnIn QuestName="A King&apos;s Tribute" QuestId="686" TurnInName="Grand Mason Marblesten" TurnInId="2790" />
+    <TurnIn QuestName="A King's Tribute" QuestId="686" TurnInName="Grand Mason Marblesten" TurnInId="2790" />
     <If Condition="((!HasQuest(689)) &amp;&amp; (!IsQuestCompleted(689)))">
-      <PickUp QuestName="A King&apos;s Tribute" QuestId="689" GiverName="Grand Mason Marblesten" GiverId="2790" />
+      <PickUp QuestName="A King's Tribute" QuestId="689" GiverName="Grand Mason Marblesten" GiverId="2790" />
     </If>
     <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.NightElf)">
       <If Condition="((!HasQuest(1638)) &amp;&amp; (!IsQuestCompleted(1638)))">
-        <PickUp QuestName="A Warrior&apos;s Training" QuestId="1638" GiverName="Ilsa Corbin" GiverId="5480" />
+        <PickUp QuestName="A Warrior's Training" QuestId="1638" GiverName="Ilsa Corbin" GiverId="5480" />
       </If>
     </If>
-    <TurnIn QuestName="A Warrior&apos;s Training" QuestId="1638" TurnInName="Harry Burlguard" TurnInId="6089" />
+    <TurnIn QuestName="A Warrior's Training" QuestId="1638" TurnInName="Harry Burlguard" TurnInId="6089" />
     <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.NightElf)">
       <If Condition="((!HasQuest(1639)) &amp;&amp; (!IsQuestCompleted(1639)))">
         <PickUp QuestName="Bartleby the Drunk" QuestId="1639" GiverName="Harry Burlguard" GiverId="6089" />
       </If>
-    </If>
-    <TurnIn QuestName="Bartleby the Drunk" QuestId="1639" TurnInName="Bartleby" TurnInId="6090" />
-    <If Condition="((!HasQuest(1640)) &amp;&amp; (!IsQuestCompleted(1640)))">
-      <PickUp QuestName="Beat Bartleby" QuestId="1640" GiverName="Bartleby" GiverId="6090" />
-    </If>
-    <Objective QuestName="Beat Bartleby" QuestId="1640" Type="KillMob" MobId="6090" MobName="Bartleby" KillCount="1" />
-    <TurnIn QuestName="Beat Bartleby" QuestId="1640" TurnInName="Bartleby" TurnInId="6090" />
-    <If Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; (Me.Race == WoWRace.NightElf)">
-      <If Condition="((!HasQuest(1665)) &amp;&amp; (!IsQuestCompleted(1665)))">
-        <PickUp QuestName="Bartleby&apos;s Mug" QuestId="1665" GiverName="Bartleby" GiverId="6090" />
+      <TurnIn QuestName="Bartleby the Drunk" QuestId="1639" TurnInName="Bartleby" TurnInId="6090" />
+      <If Condition="((!HasQuest(1640)) &amp;&amp; (!IsQuestCompleted(1640)))">
+        <PickUp QuestName="Beat Bartleby" QuestId="1640" GiverName="Bartleby" GiverId="6090" />
       </If>
-      <TurnIn QuestName="Bartleby&apos;s Mug" QuestId="1665" TurnInName="Harry Burlguard" TurnInId="6089" />
+      <Objective QuestName="Beat Bartleby" QuestId="1640" Type="KillMob" MobId="6090" KillCount="1" />
+      <TurnIn QuestName="Beat Bartleby" QuestId="1640" TurnInName="Bartleby" TurnInId="6090" />
+      <If Condition="((!HasQuest(1665)) &amp;&amp; (!IsQuestCompleted(1665)))">
+        <PickUp QuestName="Bartleby's Mug" QuestId="1665" GiverName="Bartleby" GiverId="6090" />
+      </If>
+      <TurnIn QuestName="Bartleby's Mug" QuestId="1665" TurnInName="Harry Burlguard" TurnInId="6089" />
     </If>
     <If Condition="(Me.Class == WoWClass.Rogue)">
       <PickUp QuestName="Redridge Rendezvous" QuestId="2281" GiverName="Renzik &quot;The Shiv&quot;" GiverId="6946" />
@@ -120,17 +165,12 @@
       <If Condition="((!HasQuest(1793)) &amp;&amp; (!IsQuestCompleted(1793)))">
         <PickUp QuestName="The Tome of Valor" QuestId="1793" GiverName="Duthorian Rall" GiverId="6171" />
       </If>
-    </If>
-    <While Condition="((HasQuest(1793)) &amp;&amp; (!IsQuestCompleted(1793)))">
-      <RunTo X="50.48" Y="47.5" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="1793" ItemId="6776" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
-      <CustomBehavior File="WaitTimer" WaitTime="3000" />
-    </While>
-    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <While Condition="((HasQuest(1793)) &amp;&amp; (!IsQuestCompleted(1793)))">
+        <CustomBehavior File="UseItemOn" QuestId="1793" MobId="0" ItemId="6776" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
       <PickUp QuestName="The Tome of Valor" QuestId="1649" GiverName="Duthorian Rall" GiverId="6171" />
-    </If>
-    <TurnIn QuestName="The Tome of Valor" QuestId="1649" TurnInName="Duthorian Rall" TurnInId="6171" />
-    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <TurnIn QuestName="The Tome of Valor" QuestId="1649" TurnInName="Duthorian Rall" TurnInId="6171" />
       <If Condition="((!HasQuest(1650)) &amp;&amp; (!IsQuestCompleted(1650)))">
         <PickUp QuestName="The Tome of Valor" QuestId="1650" GiverName="Duthorian Rall" GiverId="6171" />
       </If>
@@ -140,9 +180,7 @@
       <If Condition="((!HasQuest(1651)) &amp;&amp; (!IsQuestCompleted(1651)))">
         <PickUp QuestName="The Tome of Valor" QuestId="1651" GiverName="Daphne Stilwell" GiverId="6182" />
       </If>
-    </If>
-    <TurnIn QuestName="The Tome of Valor" QuestId="1651" TurnInName="Daphne Stilwell" TurnInId="6182" />
-    <If Condition="(Me.Class == WoWClass.Paladin)">
+      <TurnIn QuestName="The Tome of Valor" QuestId="1651" TurnInName="Daphne Stilwell" TurnInId="6182" />
       <If Condition="((!HasQuest(1652)) &amp;&amp; (!IsQuestCompleted(1652)))">
         <PickUp QuestName="The Tome of Valor" QuestId="1652" GiverName="Daphne Stilwell" GiverId="6182" />
       </If>
@@ -158,42 +196,32 @@
       <If Condition="((!HasQuest(1738)) &amp;&amp; (!IsQuestCompleted(1738)))">
         <PickUp QuestName="Heartswood" QuestId="1738" GiverName="Takar the Seer" GiverId="6244" />
       </If>
-      <Objective QuestName="Heartswood" QuestId="1738" Type="CollectItem" ItemId="6912" ItemName="Heartswood" CollectCount="1" />
-    </If>
-    <TurnIn QuestName="Heartswood" QuestId="1738" TurnInName="Gakin the Darkbinder" TurnInId="6122" />
-    <If Condition="(Me.Class == WoWClass.Warlock)">
+      <Objective QuestName="Heartswood" QuestId="1738" Type="CollectItem" ItemId="6912" CollectCount="1" />
+      <TurnIn QuestName="Heartswood" QuestId="1738" TurnInName="Gakin the Darkbinder" TurnInId="6122" />
       <If Condition="((!HasQuest(1739)) &amp;&amp; (!IsQuestCompleted(1739)))">
         <PickUp QuestName="The Binding" QuestId="1739" GiverName="Gakin the Darkbinder" GiverId="6122" />
       </If>
-    </If>
-    <While Condition="((HasQuest(1739)) &amp;&amp; (!IsQuestCompleted(1739)))">
-      <RunTo X="39.22" Y="85.22" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="1739" ItemId="6913" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
-      <CustomBehavior File="WaitTimer" WaitTime="3000" />
-    </While>
-    <If Condition="(Me.Class == WoWClass.Warlock)">
-      <Objective QuestName="The Binding" QuestId="1739" Type="KillMob" MobId="5677" MobName="Summoned Succubus" KillCount="1" />
+      <While Condition="((HasQuest(1739)) &amp;&amp; (!IsQuestCompleted(1739)))">
+        <CustomBehavior File="UseItemOn" QuestId="1739" MobId="5677" ItemId="6913" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="The Binding" QuestId="1739" Type="KillMob" MobId="5677" KillCount="1" />
       <TurnIn QuestName="The Binding" QuestId="1739" TurnInName="Gakin the Darkbinder" TurnInId="6122" />
     </If>
     <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
-      <Objective QuestName="Trial of the Sea Lion" QuestId="272" Type="CollectItem" ItemId="15882" ItemName="Half Pendant of Aquatic Endurance" CollectCount="1" />
-    </If>
-    <While Condition="((HasQuest(272)) &amp;&amp; (!IsQuestCompleted(272)))">
-      <RunTo X="17.87" Y="33.11" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="272" ItemId="15883" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
-      <CustomBehavior File="WaitTimer" WaitTime="3000" />
-    </While>
-    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
-      <Objective QuestName="Trial of the Sea Lion" QuestId="272" Type="CollectItem" ItemId="15885" ItemName="Pendant of the Sea Lion" CollectCount="1" />
-    </If>
-    <TurnIn QuestName="Trial of the Sea Lion" QuestId="272" TurnInName="Dendrite Starblaze" TurnInId="11802" />
-    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <Objective QuestName="Trial of the Sea Lion" QuestId="272" Type="CollectItem" ItemId="15882" CollectCount="1" />
+      <While Condition="((HasQuest(272)) &amp;&amp; (!IsQuestCompleted(272)))">
+        <CustomBehavior File="UseItemOn" QuestId="272" MobId="0" ItemId="15883" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="Trial of the Sea Lion" QuestId="272" Type="CollectItem" ItemId="15885" CollectCount="1" />
+      <TurnIn QuestName="Trial of the Sea Lion" QuestId="272" TurnInName="Dendrite Starblaze" TurnInId="11802" />
       <If Condition="((!HasQuest(5061)) &amp;&amp; (!IsQuestCompleted(5061)))">
         <PickUp QuestName="Aquatic Form" QuestId="5061" GiverName="Dendrite Starblaze" GiverId="11802" />
       </If>
       <TurnIn QuestName="Aquatic Form" QuestId="5061" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Wetlands (24-25) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Wetlands (24-25) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Redridge_Mountains_(25-25)" />
   </QuestOrder>
 </HBProfile>

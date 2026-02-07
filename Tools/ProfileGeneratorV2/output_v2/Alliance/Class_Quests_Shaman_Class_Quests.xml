@@ -1,0 +1,276 @@
+<HBProfile>
+  <Name>Alliance\Class Quests\Shaman Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="9450" Name="Call of Earth">
+    <Objective Type="KillMob" MobId="17179" KillCount="4">
+      <Hotspots>
+        <Hotspot X="-3813.38" Y="-13392.9" Z="79.8274" />
+        <Hotspot X="-3822.59" Y="-13362.6" Z="79.8953" />
+        <Hotspot X="-3749.16" Y="-13356.3" Z="81.1474" />
+        <Hotspot X="-3787.35" Y="-13379.2" Z="80.2762" />
+        <Hotspot X="-3787.65" Y="-13351.4" Z="80.2212" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9465" Name="Call of Fire">
+    <Objective Type="KillMob" MobId="17189" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-3203.73" Y="-12384.4" Z="20.0718" />
+        <Hotspot X="-3217.99" Y="-12421.1" Z="19.4682" />
+        <Hotspot X="-3150.54" Y="-12503.2" Z="-0.3757" />
+        <Hotspot X="-3094.6" Y="-12515.8" Z="1.4301" />
+        <Hotspot X="-3078.97" Y="-12499.2" Z="1.8012" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9503" Name="Call of Water">
+    <Objective Type="KillMob" MobId="17358" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1611.48" Y="-11144.8" Z="77.7214" />
+        <Hotspot X="-1611.26" Y="-11119.5" Z="68.5231" />
+        <Hotspot X="-1589.34" Y="-11148.0" Z="78.4939" />
+        <Hotspot X="-1559.64" Y="-11146.9" Z="57.6976" />
+        <Hotspot X="-1639.41" Y="-11089.8" Z="69.9551" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8410" Name="Elemental Mastery">
+    <Objective Type="KillMob" MobId="2762" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-1413.11" Y="-2684.88" Z="51.4271" />
+        <Hotspot X="-1352.93" Y="-2780.61" Z="52.8388" />
+        <Hotspot X="-1278.76" Y="-2744.07" Z="52.9249" />
+        <Hotspot X="-1329.93" Y="-2706.24" Z="60.0018" />
+        <Hotspot X="-1353.3" Y="-2680.84" Z="69.1467" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2760" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-865.859" Y="-1744.28" Z="45.5624" />
+        <Hotspot X="-898.133" Y="-1766.28" Z="45.0305" />
+        <Hotspot X="-919.272" Y="-1751.73" Z="47.802" />
+        <Hotspot X="-868.848" Y="-1795.75" Z="41.221" />
+        <Hotspot X="-848.952" Y="-1789.83" Z="40.3907" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="92" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-6488.99" Y="-2490.99" Z="324.462" />
+        <Hotspot X="-6423.73" Y="-2465.14" Z="327.172" />
+        <Hotspot X="-6443.94" Y="-2413.38" Z="303.51" />
+        <Hotspot X="-6450.99" Y="-2447.3" Z="313.419" />
+        <Hotspot X="-6474.88" Y="-2453.17" Z="306.818" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2761" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-806.399" Y="-3314.1" Z="79.3342" />
+        <Hotspot X="-848.462" Y="-3207.26" Z="82.2388" />
+        <Hotspot X="-850.903" Y="-3262.96" Z="78.2393" />
+        <Hotspot X="-835.016" Y="-3270.11" Z="79.1955" />
+        <Hotspot X="-849.749" Y="-3281.32" Z="77.8205" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Class Quests\Shaman Class Quests" LogColor="Green" />
+    <If Condition="Me.Level &lt; 4">
+      <GrindTo Level="4" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Earth" QuestId="9449" GiverName="Firmanvaar" GiverId="17089" />
+    </If>
+    <TurnIn QuestName="Call of Earth" QuestId="9449" TurnInName="Spirit of the Vale" TurnInId="17087" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <If Condition="((!HasQuest(9450)) &amp;&amp; (!IsQuestCompleted(9450)))">
+        <PickUp QuestName="Call of Earth" QuestId="9450" GiverName="Spirit of the Vale" GiverId="17087" />
+      </If>
+      <Objective QuestName="Call of Earth" QuestId="9450" Type="KillMob" MobId="17179" KillCount="4" />
+      <TurnIn QuestName="Call of Earth" QuestId="9450" TurnInName="Spirit of the Vale" TurnInId="17087" />
+      <If Condition="((!HasQuest(9451)) &amp;&amp; (!IsQuestCompleted(9451)))">
+        <PickUp QuestName="Call of Earth" QuestId="9451" GiverName="Spirit of the Vale" GiverId="17087" />
+      </If>
+      <TurnIn QuestName="Call of Earth" QuestId="9451" TurnInName="Firmanvaar" TurnInId="17089" />
+    </If>
+    <If Condition="Me.Level &lt; 10">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 10 - Restless Spirit of Earth</Name>
+          <TargetMinLevel>4</TargetMinLevel>
+          <TargetMaxLevel>4</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="-3813.38" Y="-13392.90" Z="79.83" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="10" /> <!--  (grind Restless Spirit of Earth) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Fire" QuestId="9462" GiverName="Sulaa" GiverId="17219" />
+    </If>
+    <TurnIn QuestName="Call of Fire" QuestId="9462" TurnInName="Tuluun" TurnInId="17212" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Fire" QuestId="9464" GiverName="Tuluun" GiverId="17212" />
+      <TurnIn QuestName="Call of Fire" QuestId="9464" TurnInName="Temper" TurnInId="17205" />
+      <If Condition="((!HasQuest(9465)) &amp;&amp; (!IsQuestCompleted(9465)))">
+        <PickUp QuestName="Call of Fire" QuestId="9465" GiverName="Temper" GiverId="17205" />
+      </If>
+      <Objective QuestName="Call of Fire" QuestId="9465" Type="KillMob" MobId="17189" KillCount="1" />
+      <Objective QuestName="Call of Fire" QuestId="9465" Type="CollectItem" ItemId="23733" CollectCount="1" />
+      <TurnIn QuestName="Call of Fire" QuestId="9465" TurnInName="Temper" TurnInId="17205" />
+      <If Condition="((!HasQuest(9467)) &amp;&amp; (!IsQuestCompleted(9467)))">
+        <PickUp QuestName="Call of Fire" QuestId="9467" GiverName="Temper" GiverId="17205" />
+      </If>
+      <While Condition="((HasQuest(9467)) &amp;&amp; (!IsQuestCompleted(9467)))">
+        <CustomBehavior File="UseItemOn" QuestId="9467" MobId="0" ItemId="24336" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="Call of Fire" QuestId="9467" Type="CollectItem" ItemId="23682" CollectCount="1" />
+      <Objective QuestName="Call of Fire" QuestId="9467" Type="CollectItem" ItemId="24335" CollectCount="1" />
+      <Objective QuestName="Call of Fire" QuestId="9467" Type="KillMob" MobId="17206" KillCount="1" />
+      <Objective QuestName="Call of Fire" QuestId="9467" Type="CollectItem" ItemId="23688" CollectCount="1" />
+      <While Condition="((HasQuest(9467)) &amp;&amp; (!IsQuestCompleted(9467)))">
+        <CustomBehavior File="UseItemOn" QuestId="9467" MobId="0" ItemId="24335" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Call of Fire" QuestId="9467" TurnInName="Temper" TurnInId="17205" />
+      <If Condition="((!HasQuest(9468)) &amp;&amp; (!IsQuestCompleted(9468)))">
+        <PickUp QuestName="Call of Fire" QuestId="9468" GiverName="Temper" GiverId="17205" />
+      </If>
+    </If>
+    <TurnIn QuestName="Call of Fire" QuestId="9468" TurnInName="Tuluun" TurnInId="17212" />
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <If Condition="((!HasQuest(9461)) &amp;&amp; (!IsQuestCompleted(9461)))">
+        <PickUp QuestName="Call of Fire" QuestId="9461" GiverName="Tuluun" GiverId="17212" />
+      </If>
+      <TurnIn QuestName="Call of Fire" QuestId="9461" TurnInName="Prophet Velen" TurnInId="17468" />
+      <If Condition="((!HasQuest(9555)) &amp;&amp; (!IsQuestCompleted(9555)))">
+        <PickUp QuestName="Call of Fire" QuestId="9555" GiverName="Prophet Velen" GiverId="17468" />
+      </If>
+      <TurnIn QuestName="Call of Fire" QuestId="9555" TurnInName="Farseer Nobundo" TurnInId="17204" />
+    </If>
+    <If Condition="Me.Level &lt; 20">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 20 - Hauteur</Name>
+          <Hotspots>
+            <Hotspot X="31.00" Y="29.91" Z="0.00" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="20" /> <!--  (grind Hauteur) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; (Me.Race == WoWRace.Draenei)">
+      <PickUp QuestName="Call of Water" QuestId="9502" GiverName="Sulaa" GiverId="17219" />
+    </If>
+    <TurnIn QuestName="Call of Water" QuestId="9502" TurnInName="Farseer Nobundo" TurnInId="17204" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Call of Water" QuestId="9501" GiverName="Farseer Nobundo" GiverId="17204" />
+    </If>
+    <CustomBehavior File="SetHearthstone" MobId="16553" AreaId="3524" X="-4129.43" Y="-12469.0" Z="44.0842" /> <!-- Set hearth: The Exodar -->
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <TurnIn QuestName="Call of Water" QuestId="9501" TurnInName="Aqueous" TurnInId="17275" />
+      <If Condition="((!HasQuest(9503)) &amp;&amp; (!IsQuestCompleted(9503)))">
+        <PickUp QuestName="Call of Water" QuestId="9503" GiverName="Aqueous" GiverId="17275" />
+      </If>
+      <Objective QuestName="Call of Water" QuestId="9503" Type="KillMob" MobId="17358" KillCount="1" />
+      <Objective QuestName="Call of Water" QuestId="9503" Type="CollectItem" ItemId="23744" CollectCount="6" />
+    </If>
+    <TurnIn QuestName="Call of Water" QuestId="9503" TurnInName="Aqueous" TurnInId="17275" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(9504)) &amp;&amp; (!IsQuestCompleted(9504)))">
+        <PickUp QuestName="Call of Water" QuestId="9504" GiverName="Aqueous" GiverId="17275" />
+      </If>
+      <While Condition="((HasQuest(9504)) &amp;&amp; (!IsQuestCompleted(9504)))">
+        <CustomBehavior File="UseItemOn" QuestId="9504" MobId="0" ItemId="23749" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="Call of Water" QuestId="9504" Type="CollectItem" ItemId="23750" CollectCount="1" />
+      <TurnIn QuestName="Call of Water" QuestId="9504" TurnInName="Aqueous" TurnInId="17275" />
+      <If Condition="((!HasQuest(9508)) &amp;&amp; (!IsQuestCompleted(9508)))">
+        <PickUp QuestName="Call of Water" QuestId="9508" GiverName="Aqueous" GiverId="17275" />
+      </If>
+      <Objective QuestName="Call of Water" QuestId="9508" Type="KillMob" MobId="17359" KillCount="1" />
+      <Objective QuestName="Call of Water" QuestId="9508" Type="CollectItem" ItemId="23997" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="Call of Water" QuestId="9508" TurnInName="Aqueous" TurnInId="17275" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(9509)) &amp;&amp; (!IsQuestCompleted(9509)))">
+        <PickUp QuestName="Call of Water" QuestId="9509" GiverName="Aqueous" GiverId="17275" />
+      </If>
+      <TurnIn QuestName="Call of Water" QuestId="9509" TurnInName="Farseer Nobundo" TurnInId="17204" />
+    </If>
+    <If Condition="Me.Level &lt; 30">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 30 - Tel'athion the Impure</Name>
+          <Hotspots>
+            <Hotspot X="31.00" Y="29.91" Z="0.00" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="30" /> <!--  (grind Tel'athion the Impure) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <PickUp QuestName="Call of Air" QuestId="9552" GiverName="Farseer Nobundo" GiverId="17204" />
+    </If>
+    <TurnIn QuestName="Call of Air" QuestId="9552" TurnInName="Velaada" TurnInId="17431" />
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <If Condition="((!HasQuest(9553)) &amp;&amp; (!IsQuestCompleted(9553)))">
+        <PickUp QuestName="Call of Air" QuestId="9553" GiverName="Velaada" GiverId="17431" />
+      </If>
+      <TurnIn QuestName="Call of Air" QuestId="9553" TurnInName="Susurrus" TurnInId="17435" />
+      <If Condition="((!HasQuest(9554)) &amp;&amp; (!IsQuestCompleted(9554)))">
+        <PickUp QuestName="Call of Air" QuestId="9554" GiverName="Susurrus" GiverId="17435" />
+      </If>
+      <TurnIn QuestName="Call of Air" QuestId="9554" TurnInName="Farseer Nobundo" TurnInId="17204" />
+    </If>
+    <If Condition="Me.Level &lt; 50">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 50 - Tel'athion the Impure</Name>
+          <Hotspots>
+            <Hotspot X="31.00" Y="29.91" Z="0.00" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="50" /> <!--  (grind Tel'athion the Impure) -->
+    </If>
+    <Objective QuestName="Elemental Mastery" QuestId="8410" Type="KillMob" MobId="2762" KillCount="1" />
+    <Objective QuestName="Elemental Mastery" QuestId="8410" Type="KillMob" MobId="2760" KillCount="1" />
+    <Objective QuestName="Elemental Mastery" QuestId="8410" Type="KillMob" MobId="92" KillCount="1" />
+    <Objective QuestName="Elemental Mastery" QuestId="8410" Type="KillMob" MobId="2761" KillCount="1" />
+    <If Condition="((!HasQuest(8410)) &amp;&amp; (!IsQuestCompleted(8410)))">
+      <PickUp QuestName="Elemental Mastery" QuestId="8410" GiverName="Farseer Umbrua" GiverId="20407" />
+    </If>
+    <If Condition="(Me.Class == WoWClass.Shaman)">
+      <TurnIn QuestName="Elemental Mastery" QuestId="8410" TurnInName="Bath'rah the Windwatcher" TurnInId="6176" />
+      <If Condition="((!HasQuest(8412)) &amp;&amp; (!IsQuestCompleted(8412)))">
+        <PickUp QuestName="Spirit Totem" QuestId="8412" GiverName="Bath'rah the Windwatcher" GiverId="6176" />
+      </If>
+      <Objective QuestName="Spirit Totem" QuestId="8412" Type="CollectItem" ItemId="20610" CollectCount="8" />
+      <Objective QuestName="Spirit Totem" QuestId="8412" Type="CollectItem" ItemId="20611" CollectCount="8" />
+      <TurnIn QuestName="Spirit Totem" QuestId="8412" TurnInName="Bath'rah the Windwatcher" TurnInId="6176" />
+      <If Condition="((!HasQuest(8413)) &amp;&amp; (!IsQuestCompleted(8413)))">
+        <PickUp QuestName="Da Voodoo" QuestId="8413" GiverName="Bath'rah the Windwatcher" GiverId="6176" />
+      </If>
+      <Objective QuestName="Da Voodoo" QuestId="8413" Type="CollectItem" ItemId="20606" CollectCount="2" />
+      <Objective QuestName="Da Voodoo" QuestId="8413" Type="CollectItem" ItemId="20607" CollectCount="2" />
+      <Objective QuestName="Da Voodoo" QuestId="8413" Type="CollectItem" ItemId="20608" CollectCount="2" />
+      <TurnIn QuestName="a Voodoo" QuestId="8413" TurnInName="Bath'rah the Windwatcher" TurnInId="6176" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Class Quests\Shaman Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

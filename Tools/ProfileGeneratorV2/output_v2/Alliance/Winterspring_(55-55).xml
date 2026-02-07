@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Winterspring (55-55)</Name>
+  <Name>Alliance\Winterspring (55-55)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -8,8 +7,72 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="5082" Name="Threat of the Winterfall">
+    <Objective Type="KillMob" MobId="7441" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6418.35" Y="-3115.4" Z="580.961" />
+        <Hotspot X="6451.47" Y="-3161.82" Z="572.104" />
+        <Hotspot X="6453.58" Y="-3176.64" Z="572.206" />
+        <Hotspot X="6513.78" Y="-3138.88" Z="572.996" />
+        <Hotspot X="6496.59" Y="-3138.79" Z="571.354" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7442" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6413.54" Y="-3295.41" Z="592.913" />
+        <Hotspot X="6447.59" Y="-3328.85" Z="590.462" />
+        <Hotspot X="6496.07" Y="-3338.02" Z="588.009" />
+        <Hotspot X="6882.35" Y="-2513.31" Z="581.347" />
+        <Hotspot X="6875.04" Y="-2548.72" Z="589.002" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7440" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6906.65" Y="-5144.72" Z="695.65" />
+        <Hotspot X="6514.72" Y="-3269.61" Z="574.519" />
+        <Hotspot X="6878.17" Y="-4999.09" Z="694.566" />
+        <Hotspot X="6813.83" Y="-2470.48" Z="557.479" />
+        <Hotspot X="6847.1" Y="-2490.14" Z="561.889" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8461" Name="Deadwood of the North">
+    <Objective Type="KillMob" MobId="7156" KillCount="6">
+      <Hotspots>
+        <Hotspot X="6901.48" Y="-2020.1" Z="583.248" />
+        <Hotspot X="6821.03" Y="-1812.37" Z="564.751" />
+        <Hotspot X="6748.33" Y="-1890.33" Z="549.724" />
+        <Hotspot X="6627.08" Y="-1954.44" Z="550.976" />
+        <Hotspot X="6739.87" Y="-1955.28" Z="550.604" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7157" KillCount="6">
+      <Hotspots>
+        <Hotspot X="6810.62" Y="-1860.13" Z="551.045" />
+        <Hotspot X="6786.71" Y="-1871.71" Z="550.807" />
+        <Hotspot X="6820.06" Y="-2019.6" Z="569.76" />
+        <Hotspot X="6637.04" Y="-1996.57" Z="551.863" />
+        <Hotspot X="6689.16" Y="-2005.93" Z="559.684" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7158" KillCount="6">
+      <Hotspots>
+        <Hotspot X="6873.22" Y="-2039.05" Z="581.747" />
+        <Hotspot X="6795.32" Y="-1829.39" Z="559.952" />
+        <Hotspot X="6705.94" Y="-1892.44" Z="549.714" />
+        <Hotspot X="6660.46" Y="-2018.97" Z="552.197" />
+        <Hotspot X="6690.2" Y="-1950.99" Z="551.087" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Winterspring (55-55)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Winterspring (55-55)" LogColor="Green" />
     <TurnIn QuestName="The New Springs" QuestId="980" TurnInName="Donova Snowden" TurnInId="9298" />
     <If Condition="((!HasQuest(4842)) &amp;&amp; (!IsQuestCompleted(4842)))">
       <PickUp QuestName="Strange Sources" QuestId="4842" GiverName="Donova Snowden" GiverId="9298" />
@@ -17,13 +80,13 @@
     <If Condition="((!HasQuest(5082)) &amp;&amp; (!IsQuestCompleted(5082)))">
       <PickUp QuestName="Threat of the Winterfall" QuestId="5082" GiverName="Donova Snowden" GiverId="9298" />
     </If>
-    <Objective QuestName="Threat of the Winterfall" QuestId="5082" Type="KillMob" MobId="7441" MobName="Winterfall Totemic" KillCount="8" />
-    <Objective QuestName="Threat of the Winterfall" QuestId="5082" Type="KillMob" MobId="7442" MobName="Winterfall Pathfinder" KillCount="8" />
-    <Objective QuestName="Threat of the Winterfall" QuestId="5082" Type="KillMob" MobId="7440" MobName="Winterfall Den Watcher" KillCount="8" />
-    <Objective QuestName="Winterfall Firewater" QuestId="5083" Type="CollectItem" ItemId="12771" ItemName="Empty Firewater Flask" CollectCount="1" />
+    <Objective QuestName="Threat of the Winterfall" QuestId="5082" Type="KillMob" MobId="7441" KillCount="8" />
+    <Objective QuestName="Threat of the Winterfall" QuestId="5082" Type="KillMob" MobId="7442" KillCount="8" />
+    <Objective QuestName="Threat of the Winterfall" QuestId="5082" Type="KillMob" MobId="7440" KillCount="8" />
+    <Objective QuestName="Winterfall Firewater" QuestId="5083" Type="CollectItem" ItemId="12771" CollectCount="1" />
     <While Condition="((HasQuest(5082)) &amp;&amp; (!IsQuestCompleted(5082)))">
-      <RunTo X="30.57" Y="37.17" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="5082" ItemId="12771" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="6413.54" Y="-3295.41" Z="592.913" />
+      <CustomBehavior File="UseItemOn" QuestId="5082" MobId="7442" ItemId="12771" NumOfTimes="100" Range="5" CollectionDistance="1000" X="6413.54" Y="-3295.41" Z="592.913" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="Winterfall Firewater" QuestId="5083" GiverName="Donova Snowden" GiverId="9298" />
@@ -39,9 +102,9 @@
     <If Condition="((!HasQuest(5085)) &amp;&amp; (!IsQuestCompleted(5085)))">
       <PickUp QuestName="Mystery Goo" QuestId="5085" GiverName="Nafien" GiverId="15395" />
     </If>
-    <Objective QuestName="Deadwood of the North" QuestId="8461" Type="KillMob" MobId="7156" MobName="Deadwood Den Watcher" KillCount="6" />
-    <Objective QuestName="Deadwood of the North" QuestId="8461" Type="KillMob" MobId="7157" MobName="Deadwood Avenger" KillCount="6" />
-    <Objective QuestName="Deadwood of the North" QuestId="8461" Type="KillMob" MobId="7158" MobName="Deadwood Shaman" KillCount="6" />
+    <Objective QuestName="Deadwood of the North" QuestId="8461" Type="KillMob" MobId="7156" KillCount="6" />
+    <Objective QuestName="Deadwood of the North" QuestId="8461" Type="KillMob" MobId="7157" KillCount="6" />
+    <Objective QuestName="Deadwood of the North" QuestId="8461" Type="KillMob" MobId="7158" KillCount="6" />
     <TurnIn QuestName="Deadwood of the North" QuestId="8461" TurnInName="Nafien" TurnInId="15395" />
     <PickUp QuestName="Speak to Salfa" QuestId="8465" GiverName="Nafien" GiverId="15395" />
     <TurnIn QuestName="Speak to Salfa" QuestId="8465" TurnInName="Salfa" TurnInId="11556" />
@@ -49,7 +112,7 @@
     <If Condition="((!HasQuest(5086)) &amp;&amp; (!IsQuestCompleted(5086)))">
       <PickUp QuestName="Toxic Horrors" QuestId="5086" GiverName="Donova Snowden" GiverId="9298" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Winterspring (55-55) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Winterspring (55-55) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Felwood_(55-56)" />
   </QuestOrder>
 </HBProfile>

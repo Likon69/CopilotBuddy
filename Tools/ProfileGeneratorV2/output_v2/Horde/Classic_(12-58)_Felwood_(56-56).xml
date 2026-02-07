@@ -1,0 +1,49 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Felwood (56-56)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Felwood (56-56)" LogColor="Green" />
+    <TurnIn QuestName="Wild Guardians" QuestId="4521" TurnInName="Trull Failbane" TurnInId="10306" />
+    <TurnIn QuestName="Forces of Jaedenar" QuestId="5155" TurnInName="Greta Mosshoof" TurnInId="10922" />
+    <If Condition="((!HasQuest(5157)) &amp;&amp; (!IsQuestCompleted(5157)))">
+      <PickUp QuestName="Collection of the Corrupt Water" QuestId="5157" GiverName="Greta Mosshoof" GiverId="10922" />
+    </If>
+    <TurnIn QuestName="Verifying the Corruption" QuestId="5156" TurnInName="Taronn Redfeather" TurnInId="10921" />
+    <TurnIn QuestName="Cleansing Felwood" QuestId="4102" TurnInName="Maybess Riverbreeze" TurnInId="9529" />
+    <Objective QuestName="Salve via Hunting" QuestId="5887" Type="CollectItem" ItemId="11511" CollectCount="1" />
+    <While Condition="((HasQuest(4505)) &amp;&amp; (!IsQuestCompleted(4505)))">
+      <CustomBehavior File="UseItemOn" QuestId="4505" MobId="0" ItemId="12566" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Well of Corruption" QuestId="4505" Type="CollectItem" ItemId="12567" CollectCount="1" />
+    <Objective QuestName="Salve via Hunting" QuestId="5887" Type="CollectItem" ItemId="11515" CollectCount="6" />
+    <While Condition="((HasQuest(5157)) &amp;&amp; (!IsQuestCompleted(5157)))">
+      <CustomBehavior File="UseItemOn" QuestId="5157" MobId="0" ItemId="12922" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <Objective QuestName="Collection of the Corrupt Water" QuestId="5157" Type="CollectItem" ItemId="12907" CollectCount="1" />
+    <TurnIn QuestName="Well of Corruption" QuestId="4505" TurnInName="Winna Hazzard" TurnInId="9996" />
+    <TurnIn QuestName="Collection of the Corrupt Water" QuestId="5157" TurnInName="Greta Mosshoof" TurnInId="10922" />
+    <If Condition="((!HasQuest(5158)) &amp;&amp; (!IsQuestCompleted(5158)))">
+      <PickUp QuestName="Seeking Spiritual Aid" QuestId="5158" GiverName="Greta Mosshoof" GiverId="10922" />
+    </If>
+    <If Condition="((!HasQuest(5887)) &amp;&amp; (!IsQuestCompleted(5887)))">
+      <PickUp QuestName="Salve via Hunting" QuestId="5887" GiverName="Maybess Riverbreeze" GiverId="9529" />
+    </If>
+    <CustomBehavior File="SetHearthstone" MobId="6929" AreaId="1637" X="1633.99" Y="-4439.37" Z="15.7436" /> <!-- Set hearth: Orgrimmar -->
+    <TurnIn QuestName="Seeking Spiritual Aid" QuestId="5158" TurnInName="Islen Waterseer" TurnInId="5901" />
+    <TurnIn QuestName="The Strength of Corruption" QuestId="4120" TurnInName="Talo Thornhoof" TurnInId="7776" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Felwood (56-56) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Western_Plaguelands_(56-58)" />
+  </QuestOrder>
+</HBProfile>

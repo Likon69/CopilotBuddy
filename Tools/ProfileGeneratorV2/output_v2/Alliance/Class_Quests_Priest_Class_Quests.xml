@@ -1,0 +1,42 @@
+<HBProfile>
+  <Name>Alliance\Class Quests\Priest Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Class Quests\Priest Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Dwarf)">
+      <PickUp QuestName="Desperate Prayer" QuestId="5635" GiverName="Maxan Anvol" GiverId="1226" />
+      <!-- Quest 5635 may auto-complete (no turn-in found) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <PickUp QuestName="Desperate Prayer" QuestId="5637" GiverName="Priestess Josetta" GiverId="377" />
+      <!-- Quest 5637 may auto-complete (no turn-in found) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Returning Home" QuestId="5629" GiverName="Laurna Morninglight" GiverId="3600" />
+      <!-- Quest 5629 may auto-complete (no turn-in found) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Dwarf)">
+      <PickUp QuestName="A Lack of Fear" QuestId="5641" GiverName="High Priestess Laurena" GiverId="376" />
+      <!-- Quest 5641 may auto-complete (no turn-in found) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.Human)">
+      <PickUp QuestName="Arcane Feedback" QuestId="5676" GiverName="High Priest Rohan" GiverId="11406" />
+      <!-- Quest 5676 may auto-complete (no turn-in found) -->
+    </If>
+    <If Condition="(Me.Class == WoWClass.Priest) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Elune's Grace" QuestId="5673" GiverName="High Priestess Laurena" GiverId="376" />
+      <!-- Quest 5673 may auto-complete (no turn-in found) -->
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Class Quests\Priest Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

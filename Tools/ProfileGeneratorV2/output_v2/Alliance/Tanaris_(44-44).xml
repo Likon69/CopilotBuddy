@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Tanaris (44-44)</Name>
+  <Name>Alliance\Tanaris (44-44)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -8,8 +7,12 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
-  <Quest Id="1187" Name="Razzeric&apos;s Tweaking">
+  <Quest Id="1187" Name="Razzeric's Tweaking">
     <Objective Type="CollectItem" ItemId="5862" CollectCount="1">
       <CollectFrom>
         <GameObject Name="Gizmorium Shipping Crate" Id="20727" />
@@ -19,12 +22,32 @@
       </Hotspots>
     </Objective>
   </Quest>
+  <Quest Id="1690" Name="Wastewander Justice">
+    <Objective Type="KillMob" MobId="5618" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-7444.27" Y="-4606.74" Z="10.6268" />
+        <Hotspot X="-6987.99" Y="-4413.14" Z="9.6483" />
+        <Hotspot X="-7378.89" Y="-4712.7" Z="10.989" />
+        <Hotspot X="-7410.04" Y="-4548.58" Z="10.8202" />
+        <Hotspot X="-7275.84" Y="-4542.53" Z="9.0018" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5616" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-7409.34" Y="-4584.32" Z="8.8443" />
+        <Hotspot X="-7218.59" Y="-4645.01" Z="9.2493" />
+        <Hotspot X="-7319.44" Y="-4618.22" Z="8.8608" />
+        <Hotspot X="-7236.4" Y="-4631.24" Z="9.2985" />
+        <Hotspot X="-7411.57" Y="-4616.26" Z="10.9756" />
+      </Hotspots>
+    </Objective>
+  </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Tanaris (44-44)" LogColor="Green" />
-    <Objective QuestName="Rumors for Kravel" QuestId="1117" Type="CollectItem" ItemId="5804" ItemName="Goblin Rumors" CollectCount="1" />
-    <Objective QuestName="Razzeric&apos;s Tweaking" QuestId="1187" Type="CollectItem" ItemId="5862" ItemName="Seaforium Booster" CollectCount="1" />
-    <TurnIn QuestName="Tran&apos;rek" QuestId="2864" TurnInName="Tran&apos;rek" TurnInId="7876" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Tanaris (44-44)" LogColor="Green" />
+    <Objective QuestName="Rumors for Kravel" QuestId="1117" Type="CollectItem" ItemId="5804" CollectCount="1" />
+    <Objective QuestName="Razzeric's Tweaking" QuestId="1187" Type="CollectItem" ItemId="5862" CollectCount="1" />
+    <TurnIn QuestName="Tran'rek" QuestId="2864" TurnInName="Tran'rek" TurnInId="7876" />
     <TurnIn QuestName="Rumors for Kravel" QuestId="1117" TurnInName="Kravel Koalbeard" TurnInId="4452" />
     <If Condition="((!HasQuest(1118)) &amp;&amp; (!IsQuestCompleted(1118)))">
       <PickUp QuestName="Back to Booty Bay" QuestId="1118" GiverName="Kravel Koalbeard" GiverId="4452" />
@@ -33,37 +56,36 @@
     <If Condition="((!HasQuest(1190)) &amp;&amp; (!IsQuestCompleted(1190)))">
       <PickUp QuestName="Keeping Pace" QuestId="1190" GiverName="Pozzik" GiverId="4630" />
     </If>
-    <TurnIn QuestName="Razzeric&apos;s Tweaking" QuestId="1187" TurnInName="Razzeric" TurnInId="4706" />
+    <TurnIn QuestName="Razzeric's Tweaking" QuestId="1187" TurnInName="Razzeric" TurnInId="4706" />
     <If Condition="((!HasQuest(1188)) &amp;&amp; (!IsQuestCompleted(1188)))">
       <PickUp QuestName="Safety First" QuestId="1188" GiverName="Razzeric" GiverId="4706" />
     </If>
     <TurnIn QuestName="Keeping Pace" QuestId="1190" TurnInName="Object_20805" TurnInType="Object" TurnInId="20805" />
     <If Condition="((!HasQuest(1194)) &amp;&amp; (!IsQuestCompleted(1194)))">
-      <PickUp QuestName="Rizzle&apos;s Schematics" QuestId="1194" GiverName="Zamek" GiverId="4709" />
+      <PickUp QuestName="Rizzle's Schematics" QuestId="1194" GiverName="Zamek" GiverId="4709" />
     </If>
-    <TurnIn QuestName="Rizzle&apos;s Schematics" QuestId="1194" TurnInName="Pozzik" TurnInId="4630" />
+    <TurnIn QuestName="Rizzle's Schematics" QuestId="1194" TurnInName="Pozzik" TurnInId="4630" />
     <TurnIn QuestName="Safety First" QuestId="1188" TurnInName="Shreev" TurnInId="4708" />
     <PickUp QuestName="Water Pouch Bounty" QuestId="1707" GiverName="Spigot Operator Luglunket" GiverId="7408" />
     <PickUp QuestName="Wastewander Justice" QuestId="1690" GiverName="Chief Engineer Bilgewhizzle" GiverId="7407" />
     <PickUp QuestName="Gadgetzan Water Survey" QuestId="992" GiverName="Senior Surveyor Fizzledowser" GiverId="7724" />
-    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6257" ItemName="Roc Gizzard" CollectCount="3" />
+    <Objective QuestName="Rhapsody's Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6257" CollectCount="3" />
     <While Condition="((HasQuest(992)) &amp;&amp; (!IsQuestCompleted(992)))">
-      <RunTo X="49.47" Y="35.83" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="992" ItemId="8584" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="992" MobId="0" ItemId="8584" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="Gadgetzan Water Survey" QuestId="992" Type="CollectItem" ItemId="8585" ItemName="Tapped Dowsing Widget" CollectCount="1" />
+    <Objective QuestName="Gadgetzan Water Survey" QuestId="992" Type="CollectItem" ItemId="8585" CollectCount="1" />
     <TurnIn QuestName="Gadgetzan Water Survey" QuestId="992" TurnInName="Senior Surveyor Fizzledowser" TurnInId="7724" />
-    <PickUp QuestName="Screecher Spirits" QuestId="3520" GiverName="Yeh&apos;kinya" GiverId="8579" />
-    <TurnIn QuestName="Stoley&apos;s Debt" QuestId="2872" TurnInName="Stoley" TurnInId="7881" />
-    <Objective QuestName="Water Pouch Bounty" QuestId="1707" Type="CollectItem" ItemId="8483" ItemName="Wastewander Water Pouch" CollectCount="5" />
-    <Objective QuestName="Wastewander Justice" QuestId="1690" Type="KillMob" MobId="5618" MobName="Wastewander Bandit" KillCount="10" />
-    <Objective QuestName="Wastewander Justice" QuestId="1690" Type="KillMob" MobId="5616" MobName="Wastewander Thief" KillCount="10" />
-    <Objective QuestName="Rhapsody&apos;s Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6257" ItemName="Roc Gizzard" CollectCount="3" />
+    <PickUp QuestName="Screecher Spirits" QuestId="3520" GiverName="Yeh'kinya" GiverId="8579" />
+    <TurnIn QuestName="Stoley's Debt" QuestId="2872" TurnInName="Stoley" TurnInId="7881" />
+    <Objective QuestName="Water Pouch Bounty" QuestId="1707" Type="CollectItem" ItemId="8483" CollectCount="5" />
+    <Objective QuestName="Wastewander Justice" QuestId="1690" Type="KillMob" MobId="5618" KillCount="10" />
+    <Objective QuestName="Wastewander Justice" QuestId="1690" Type="KillMob" MobId="5616" KillCount="10" />
+    <Objective QuestName="Rhapsody's Kalimdor Kocktail" QuestId="1452" Type="CollectItem" ItemId="6257" CollectCount="3" />
     <TurnIn QuestName="Wastewander Justice" QuestId="1690" TurnInName="Chief Engineer Bilgewhizzle" TurnInId="7407" />
     <TurnIn QuestName="Water Pouch Bounty" QuestId="1707" TurnInName="Spigot Operator Luglunket" TurnInId="7408" />
-    <CustomBehavior File="SetHearthstone" MobId="6807" AreaId="33" X="52.51" Y="27.92" Z="0" /> <!-- Set hearth: Gadgetzan -->
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Tanaris (44-44) Complete" LogColor="Orange" />
+    <CustomBehavior File="SetHearthstone" MobId="6807" AreaId="33" X="-14457.7" Y="495.348" Z="15.2129" /> <!-- Set hearth: Gadgetzan -->
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Tanaris (44-44) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Dustwallow_Marsh_(44-45)" />
   </QuestOrder>
 </HBProfile>

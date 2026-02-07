@@ -1,0 +1,63 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Swamp of Sorrows (48-48)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="2623" Name="The Swamp Talker">
+    <Objective Type="KillMob" MobId="950" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-10967.6" Y="-3658.81" Z="27.9808" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4450" Name="Ledger from Tanaris">
+    <Objective Type="KillMob" MobId="9916" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-10416.8" Y="-4396.86" Z="4.0564" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Swamp of Sorrows (48-48)" LogColor="Green" />
+    <PickUp QuestName="Fall From Grace" QuestId="2784" GiverName="Fallen Hero of the Horde" GiverId="7572" />
+    <TurnIn QuestName="Fall From Grace" QuestId="2784" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
+    <If Condition="((!HasQuest(2621)) &amp;&amp; (!IsQuestCompleted(2621)))">
+      <PickUp QuestName="The Disgraced One" QuestId="2621" GiverName="Fallen Hero of the Horde" GiverId="7572" />
+    </If>
+    <TurnIn QuestName="Cortello's Riddle" QuestId="624" TurnInName="Object_2553" TurnInType="Object" TurnInId="2553" />
+    <If Condition="((!HasQuest(625)) &amp;&amp; (!IsQuestCompleted(625)))">
+      <PickUp QuestName="Cortello's Riddle" QuestId="625" GiverName="Fallen Hero of the Horde" GiverId="7572" />
+    </If>
+    <TurnIn QuestName="The Disgraced One" QuestId="2621" TurnInName="Dispatch Commander Ruag" TurnInId="7623" />
+    <If Condition="((!HasQuest(2622)) &amp;&amp; (!IsQuestCompleted(2622)))">
+      <PickUp QuestName="The Missing Orders" QuestId="2622" GiverName="Dispatch Commander Ruag" GiverId="7623" />
+    </If>
+    <TurnIn QuestName="The Missing Orders" QuestId="2622" TurnInName="Bengor" TurnInId="7643" />
+    <If Condition="((!HasQuest(2623)) &amp;&amp; (!IsQuestCompleted(2623)))">
+      <PickUp QuestName="The Swamp Talker" QuestId="2623" GiverName="Bengor" GiverId="7643" />
+    </If>
+    <Objective QuestName="The Swamp Talker" QuestId="2623" Type="KillMob" MobId="950" KillCount="1" />
+    <Objective QuestName="The Swamp Talker" QuestId="2623" Type="CollectItem" ItemId="8463" CollectCount="1" />
+    <Objective QuestName="Ledger from Tanaris" QuestId="4450" Type="KillMob" MobId="9916" KillCount="1" />
+    <Objective QuestName="Ledger from Tanaris" QuestId="4450" Type="CollectItem" ItemId="11723" CollectCount="1" />
+    <TurnIn QuestName="The Swamp Talker" QuestId="2623" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
+    <If Condition="((!HasQuest(2801)) &amp;&amp; (!IsQuestCompleted(2801)))">
+      <PickUp QuestName="A Tale of Sorrow" QuestId="2801" GiverName="Fallen Hero of the Horde" GiverId="7572" />
+    </If>
+    <TurnIn QuestName="A Tale of Sorrow" QuestId="2801" TurnInName="Fallen Hero of the Horde" TurnInId="7572" />
+    <PickUp QuestName="Whiskey Slim's Lost Grog" QuestId="580" GiverName="Whiskey Slim" GiverId="2491" />
+    <Objective QuestName="Return to Witch Doctor Uzer'i" QuestId="3122" Type="CollectItem" ItemId="9628" CollectCount="1" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Swamp of Sorrows (48-48) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Dustwallow_Marsh_(48-49)" />
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,142 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Stranglethorn Vale (30-31)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>31</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="185" Name="Tiger Mastery">
+    <Objective Type="KillMob" MobId="681" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11764.4" Y="16.7766" Z="22.4266" />
+        <Hotspot X="-11521.7" Y="-358.08" Z="38.049" />
+        <Hotspot X="-11650.8" Y="46.8981" Z="17.8964" />
+        <Hotspot X="-11642.9" Y="78.5515" Z="15.1527" />
+        <Hotspot X="-11591.5" Y="91.882" Z="16.7514" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="190" Name="Panther Mastery">
+    <Objective Type="KillMob" MobId="683" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11748.4" Y="-514.029" Z="18.5639" />
+        <Hotspot X="-11731.0" Y="-482.575" Z="17.1606" />
+        <Hotspot X="-11714.0" Y="-417.881" Z="19.0145" />
+        <Hotspot X="-11721.0" Y="-444.636" Z="18.9891" />
+        <Hotspot X="-11644.6" Y="-373.013" Z="16.2524" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="186" Name="Tiger Mastery">
+    <Objective Type="KillMob" MobId="682" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11787.1" Y="-680.766" Z="40.5718" />
+        <Hotspot X="-11750.9" Y="-587.018" Z="36.6516" />
+        <Hotspot X="-11817.3" Y="-786.911" Z="35.0214" />
+        <Hotspot X="-11853.2" Y="-750.76" Z="38.195" />
+        <Hotspot X="-11820.5" Y="-719.82" Z="40.0043" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="191" Name="Panther Mastery">
+    <Objective Type="KillMob" MobId="736" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11747.0" Y="341.463" Z="40.5989" />
+        <Hotspot X="-11692.0" Y="409.343" Z="44.5187" />
+        <Hotspot X="-11554.5" Y="344.974" Z="44.5138" />
+        <Hotspot X="-11622.6" Y="276.726" Z="42.7238" />
+        <Hotspot X="-11789.9" Y="383.486" Z="43.5087" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="194" Name="Raptor Mastery">
+    <Objective Type="KillMob" MobId="685" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-11777.8" Y="447.701" Z="48.8132" />
+        <Hotspot X="-11920.4" Y="462.843" Z="43.1403" />
+        <Hotspot X="-11826.2" Y="473.326" Z="47.7552" />
+        <Hotspot X="-11850.5" Y="526.607" Z="46.1151" />
+        <Hotspot X="-11841.5" Y="579.888" Z="42.3934" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stranglethorn Vale (30-31)" LogColor="Green" />
+    <PickUp QuestName="Welcome to the Jungle" QuestId="583" GiverName="Barnil Stonepot" GiverId="716" />
+    <TurnIn QuestName="Welcome to the Jungle" QuestId="583" TurnInName="Hemet Nesingwary" TurnInId="715" />
+    <If Condition="((!HasQuest(194)) &amp;&amp; (!IsQuestCompleted(194)))">
+      <PickUp QuestName="Raptor Mastery" QuestId="194" GiverName="Hemet Nesingwary" GiverId="715" />
+    </If>
+    <If Condition="((!HasQuest(185)) &amp;&amp; (!IsQuestCompleted(185)))">
+      <PickUp QuestName="Tiger Mastery" QuestId="185" GiverName="Ajeck Rouack" GiverId="717" />
+    </If>
+    <If Condition="((!HasQuest(190)) &amp;&amp; (!IsQuestCompleted(190)))">
+      <PickUp QuestName="Panther Mastery" QuestId="190" GiverName="Sir S. J. Erlgadin" GiverId="718" />
+    </If>
+    <Objective QuestName="Tiger Mastery" QuestId="185" Type="KillMob" MobId="681" KillCount="10" />
+    <TurnIn QuestName="Tiger Mastery" QuestId="185" TurnInName="Ajeck Rouack" TurnInId="717" />
+    <If Condition="((!HasQuest(186)) &amp;&amp; (!IsQuestCompleted(186)))">
+      <PickUp QuestName="Tiger Mastery" QuestId="186" GiverName="Ajeck Rouack" GiverId="717" />
+    </If>
+    <Objective QuestName="Panther Mastery" QuestId="190" Type="KillMob" MobId="683" KillCount="10" />
+    <Objective QuestName="Tiger Mastery" QuestId="186" Type="KillMob" MobId="682" KillCount="10" />
+    <TurnIn QuestName="Tiger Mastery" QuestId="186" TurnInName="Ajeck Rouack" TurnInId="717" />
+    <If Condition="((!HasQuest(187)) &amp;&amp; (!IsQuestCompleted(187)))">
+      <PickUp QuestName="Tiger Mastery" QuestId="187" GiverName="Ajeck Rouack" GiverId="717" />
+    </If>
+    <TurnIn QuestName="Panther Mastery" QuestId="190" TurnInName="Sir S. J. Erlgadin" TurnInId="718" />
+    <If Condition="((!HasQuest(191)) &amp;&amp; (!IsQuestCompleted(191)))">
+      <PickUp QuestName="Panther Mastery" QuestId="191" GiverName="Sir S. J. Erlgadin" GiverId="718" />
+    </If>
+    <If Condition="Me.Level &lt; 31">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 31 - Stranglethorn Tiger</Name>
+          <TargetMinLevel>32</TargetMinLevel>
+          <TargetMaxLevel>33</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="-11787.10" Y="-680.77" Z="40.57" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="31" /> <!--  (grind Stranglethorn Tiger) -->
+    </If>
+    <Objective QuestName="Panther Mastery" QuestId="191" Type="KillMob" MobId="736" KillCount="10" />
+    <Objective QuestName="Raptor Mastery" QuestId="194" Type="KillMob" MobId="685" KillCount="10" />
+    <TurnIn QuestName="Panther Mastery" QuestId="191" TurnInName="Sir S. J. Erlgadin" TurnInId="718" />
+    <TurnIn QuestName="Raptor Mastery" QuestId="194" TurnInName="Hemet Nesingwary" TurnInId="715" />
+    <If Condition="((!HasQuest(195)) &amp;&amp; (!IsQuestCompleted(195)))">
+      <PickUp QuestName="Raptor Mastery" QuestId="195" GiverName="Hemet Nesingwary" GiverId="715" />
+    </If>
+    <If Condition="((!HasQuest(338)) &amp;&amp; (!IsQuestCompleted(338)))">
+      <PickUp QuestName="The Green Hills of Stranglethorn" QuestId="338" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <If Condition="((!HasQuest(339)) &amp;&amp; (!IsQuestCompleted(339)))">
+      <PickUp QuestName="Chapter I" QuestId="339" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <TurnIn QuestName="Chapter I" QuestId="339" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <If Condition="((!HasQuest(340)) &amp;&amp; (!IsQuestCompleted(340)))">
+      <PickUp QuestName="Chapter II" QuestId="340" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <TurnIn QuestName="Chapter II" QuestId="340" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <If Condition="((!HasQuest(341)) &amp;&amp; (!IsQuestCompleted(341)))">
+      <PickUp QuestName="Chapter III" QuestId="341" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <TurnIn QuestName="Chapter III" QuestId="341" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <If Condition="((!HasQuest(342)) &amp;&amp; (!IsQuestCompleted(342)))">
+      <PickUp QuestName="Chapter IV" QuestId="342" GiverName="Barnil Stonepot" GiverId="716" />
+    </If>
+    <TurnIn QuestName="Chapter IV" QuestId="342" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <TurnIn QuestName="The Green Hills of Stranglethorn" QuestId="338" TurnInName="Barnil Stonepot" TurnInId="716" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Stranglethorn Vale (30-31) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Thousand_Needles_(31-32)" />
+  </QuestOrder>
+</HBProfile>

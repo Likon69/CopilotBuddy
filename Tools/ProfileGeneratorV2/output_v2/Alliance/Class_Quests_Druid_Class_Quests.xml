@@ -1,0 +1,197 @@
+<HBProfile>
+  <Name>Alliance\Class Quests\Druid Class Quests</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>60</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="6123" Name="Gathering the Cure">
+    <Objective Type="CollectItem" ItemId="15851" CollectCount="12">
+      <CollectFrom>
+        <GameObject Name="Lunar Fungal Bloom" Id="177750" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="6006.32" Y="-45.77" Z="22.25" />
+        <Hotspot X="6008.21" Y="-29.08" Z="21.08" />
+        <Hotspot X="6017.09" Y="-40.42" Z="21.86" />
+        <Hotspot X="6039.14" Y="166.16" Z="21.81" />
+        <Hotspot X="6046.65" Y="152.96" Z="21.51" />
+        <Hotspot X="6126.37" Y="71.03" Z="25.32" />
+        <Hotspot X="6128.16" Y="60.84" Z="27.12" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="29" Name="Trial of the Lake">
+    <Objective Type="CollectItem" ItemId="15877" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Bauble Container" Id="177785" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7634.21" Y="-2634.78" Z="396.33" />
+        <Hotspot X="7718.84" Y="-2631.14" Z="411.32" />
+        <Hotspot X="7745.94" Y="-2604.55" Z="387.03" />
+        <Hotspot X="7775.02" Y="-2641.81" Z="405.52" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="272" Name="Trial of the Sea Lion">
+    <Objective Type="CollectItem" ItemId="15883" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Strange Lockbox" Id="177792" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="7838.95" Y="-259.25" Z="-26.48" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="CollectItem" ItemId="15882" CollectCount="1">
+      <CollectFrom>
+        <GameObject Name="Strange Lockbox" Id="177790" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="818.01" Y="2321.37" Z="-201.87" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="9052" Name="Bloodpetal Poison">
+    <Objective Type="CollectItem" ItemId="22434" CollectCount="8">
+      <CollectFrom>
+        <GameObject Name="Bloodpetal Sprout" Id="164958" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-7953.48" Y="-1000.99" Z="-273.1" />
+        <Hotspot X="-7908.92" Y="-795.78" Z="-272.31" />
+        <Hotspot X="-7822.17" Y="-1808.88" Z="-271.98" />
+        <Hotspot X="-7787.23" Y="-1010.0" Z="-266.9" />
+        <Hotspot X="-7786.12" Y="-1116.57" Z="-263.09" />
+        <Hotspot X="-7734.7" Y="-567.25" Z="-265.8" />
+        <Hotspot X="-7702.4" Y="-1440.36" Z="-266.92" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Class Quests\Druid Class Quests" LogColor="Green" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <If Condition="((!HasQuest(5923)) &amp;&amp; (!IsQuestCompleted(5923)))">
+        <PickUp QuestName="Heeding the Call" QuestId="5923" GiverName="Denatharion" GiverId="4218" />
+      </If>
+    </If>
+    <TurnIn QuestName="Heeding the Call" QuestId="5923" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Moonglade" QuestId="5921" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+      <TurnIn QuestName="Moonglade" QuestId="5921" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+      <If Condition="((!HasQuest(5929)) &amp;&amp; (!IsQuestCompleted(5929)))">
+        <PickUp QuestName="Great Bear Spirit" QuestId="5929" GiverName="Dendrite Starblaze" GiverId="11802" />
+      </If>
+      <TurnIn QuestName="Great Bear Spirit" QuestId="5929" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+      <If Condition="((!HasQuest(5931)) &amp;&amp; (!IsQuestCompleted(5931)))">
+        <PickUp QuestName="Back to Darnassus" QuestId="5931" GiverName="Dendrite Starblaze" GiverId="11802" />
+      </If>
+      <TurnIn QuestName="Back to Darnassus" QuestId="5931" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
+      <If Condition="((!HasQuest(6001)) &amp;&amp; (!IsQuestCompleted(6001)))">
+        <PickUp QuestName="Body and Heart" QuestId="6001" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+      </If>
+      <While Condition="((HasQuest(6001)) &amp;&amp; (!IsQuestCompleted(6001)))">
+        <CustomBehavior File="UseItemOn" QuestId="6001" MobId="0" ItemId="15208" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="Body and Heart" QuestId="6001" Type="KillMob" MobId="12138" KillCount="1" />
+      <TurnIn QuestName="Body and Heart" QuestId="6001" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
+    </If>
+    <Objective QuestName="Gathering the Cure" QuestId="6123" Type="CollectItem" ItemId="2449" CollectCount="5" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <PickUp QuestName="Lessons Anew" QuestId="6121" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+      <TurnIn QuestName="Lessons Anew" QuestId="6121" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+      <If Condition="((!HasQuest(6122)) &amp;&amp; (!IsQuestCompleted(6122)))">
+        <PickUp QuestName="The Principal Source" QuestId="6122" GiverName="Dendrite Starblaze" GiverId="11802" />
+      </If>
+    </If>
+    <While Condition="((HasQuest(6122)) &amp;&amp; (!IsQuestCompleted(6122)))">
+      <CustomBehavior File="UseItemOn" QuestId="6122" MobId="0" ItemId="15844" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <Objective QuestName="The Principal Source" QuestId="6122" Type="CollectItem" ItemId="15845" CollectCount="1" />
+    </If>
+    <TurnIn QuestName="The Principal Source" QuestId="6122" TurnInName="Alanndarian Nightsong" TurnInId="3702" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <If Condition="((!HasQuest(6123)) &amp;&amp; (!IsQuestCompleted(6123)))">
+        <PickUp QuestName="Gathering the Cure" QuestId="6123" GiverName="Alanndarian Nightsong" GiverId="3702" />
+      </If>
+    </If>
+    <Objective QuestName="Gathering the Cure" QuestId="6123" Type="CollectItem" ItemId="15851" CollectCount="12" />
+    <TurnIn QuestName="Gathering the Cure" QuestId="6123" TurnInName="Alanndarian Nightsong" TurnInId="3702" />
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <If Condition="((!HasQuest(6124)) &amp;&amp; (!IsQuestCompleted(6124)))">
+        <PickUp QuestName="Curing the Sick" QuestId="6124" GiverName="Alanndarian Nightsong" GiverId="3702" />
+      </If>
+    </If>
+    <While Condition="((HasQuest(6124)) &amp;&amp; (!IsQuestCompleted(6124)))">
+      <CustomBehavior File="UseItemOn" QuestId="6124" MobId="12299" ItemId="15826" NumOfTimes="100" Range="5" CollectionDistance="1000" />
+      <CustomBehavior File="WaitTimer" WaitTime="3000" />
+    </While>
+    <If Condition="(Me.Class == WoWClass.Druid) &amp;&amp; (Me.Race == WoWRace.NightElf)">
+      <TurnIn QuestName="Curing the Sick" QuestId="6124" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+      <If Condition="((!HasQuest(6125)) &amp;&amp; (!IsQuestCompleted(6125)))">
+        <PickUp QuestName="Power over Poison" QuestId="6125" GiverName="Dendrite Starblaze" GiverId="11802" />
+      </If>
+      <TurnIn QuestName="Power over Poison" QuestId="6125" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
+      <PickUp QuestName="A Lesson to Learn" QuestId="26" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+      <TurnIn QuestName="A Lesson to Learn" QuestId="26" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+      <If Condition="((!HasQuest(29)) &amp;&amp; (!IsQuestCompleted(29)))">
+        <PickUp QuestName="Trial of the Lake" QuestId="29" GiverName="Dendrite Starblaze" GiverId="11802" />
+      </If>
+      <Objective QuestName="Trial of the Lake" QuestId="29" Type="CollectItem" ItemId="15877" CollectCount="1" />
+      <While Condition="((HasQuest(29)) &amp;&amp; (!IsQuestCompleted(29)))">
+        <CustomBehavior File="UseItemOn" QuestId="29" MobId="0" ItemId="15877" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Trial of the Lake" QuestId="29" TurnInName="Tajarri" TurnInId="11799" />
+      <If Condition="((!HasQuest(272)) &amp;&amp; (!IsQuestCompleted(272)))">
+        <PickUp QuestName="Trial of the Sea Lion" QuestId="272" GiverName="Tajarri" GiverId="11799" />
+      </If>
+      <Objective QuestName="Trial of the Sea Lion" QuestId="272" Type="CollectItem" ItemId="15883" CollectCount="1" />
+      <Objective QuestName="Trial of the Sea Lion" QuestId="272" Type="CollectItem" ItemId="15882" CollectCount="1" />
+      <While Condition="((HasQuest(272)) &amp;&amp; (!IsQuestCompleted(272)))">
+        <CustomBehavior File="UseItemOn" QuestId="272" MobId="0" ItemId="15883" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <Objective QuestName="Trial of the Sea Lion" QuestId="272" Type="CollectItem" ItemId="15885" CollectCount="1" />
+      <TurnIn QuestName="Trial of the Sea Lion" QuestId="272" TurnInName="Dendrite Starblaze" TurnInId="11802" />
+      <If Condition="((!HasQuest(5061)) &amp;&amp; (!IsQuestCompleted(5061)))">
+        <PickUp QuestName="Aquatic Form" QuestId="5061" GiverName="Dendrite Starblaze" GiverId="11802" />
+      </If>
+      <TurnIn QuestName="Aquatic Form" QuestId="5061" TurnInName="Mathrengyl Bearwalker" TurnInId="4217" />
+      <PickUp QuestName="Torwa Pathfinder" QuestId="9063" GiverName="Mathrengyl Bearwalker" GiverId="4217" />
+      <TurnIn QuestName="Torwa Pathfinder" QuestId="9063" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+      <If Condition="((!HasQuest(9052)) &amp;&amp; (!IsQuestCompleted(9052)))">
+        <PickUp QuestName="Bloodpetal Poison" QuestId="9052" GiverName="Torwa Pathfinder" GiverId="9619" />
+      </If>
+      <Objective QuestName="Bloodpetal Poison" QuestId="9052" Type="CollectItem" ItemId="22435" CollectCount="8" />
+      <Objective QuestName="Bloodpetal Poison" QuestId="9052" Type="CollectItem" ItemId="22434" CollectCount="8" />
+      <TurnIn QuestName="Bloodpetal Poison" QuestId="9052" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+      <If Condition="((!HasQuest(9051)) &amp;&amp; (!IsQuestCompleted(9051)))">
+        <PickUp QuestName="Toxic Test" QuestId="9051" GiverName="Torwa Pathfinder" GiverId="9619" />
+      </If>
+      <While Condition="((HasQuest(9051)) &amp;&amp; (!IsQuestCompleted(9051)))">
+        <CustomBehavior File="UseItemOn" QuestId="9051" MobId="0" ItemId="22432" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+        <CustomBehavior File="WaitTimer" WaitTime="3000" />
+      </While>
+      <TurnIn QuestName="Toxic Test" QuestId="9051" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+      <If Condition="((!HasQuest(9053)) &amp;&amp; (!IsQuestCompleted(9053)))">
+        <PickUp QuestName="A Better Ingredient" QuestId="9053" GiverName="Torwa Pathfinder" GiverId="9619" />
+      </If>
+      <Objective QuestName="A Better Ingredient" QuestId="9053" Type="KillMob" MobId="8580" KillCount="1" />
+      <Objective QuestName="A Better Ingredient" QuestId="9053" Type="CollectItem" ItemId="22444" CollectCount="1" />
+      <TurnIn QuestName="A Better Ingredient" QuestId="9053" TurnInName="Torwa Pathfinder" TurnInId="9619" />
+    </If>
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Class Quests\Druid Class Quests Complete" LogColor="Orange" />
+  </QuestOrder>
+</HBProfile>

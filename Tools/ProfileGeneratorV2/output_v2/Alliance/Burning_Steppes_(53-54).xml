@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Burning Steppes (53-54)</Name>
+  <Name>Alliance\Burning Steppes (53-54)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>54</MaxLevel>
@@ -8,9 +7,87 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="3823" Name="Extinguish the Firegut">
+    <Objective Type="KillMob" MobId="7033" KillCount="7">
+      <Hotspots>
+        <Hotspot X="-8122.61" Y="-2502.55" Z="140.039" />
+        <Hotspot X="-8131.44" Y="-2494.45" Z="140.027" />
+        <Hotspot X="-8102.46" Y="-2543.7" Z="133.82" />
+        <Hotspot X="-7781.69" Y="-2447.06" Z="143.591" />
+        <Hotspot X="-7952.06" Y="-2533.34" Z="130.588" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7035" KillCount="7">
+      <Hotspots>
+        <Hotspot X="-7855.76" Y="-2595.18" Z="211.648" />
+        <Hotspot X="-7948.58" Y="-2746.76" Z="158.321" />
+        <Hotspot X="-7941.2" Y="-2640.26" Z="218.238" />
+        <Hotspot X="-7911.77" Y="-2621.47" Z="177.223" />
+        <Hotspot X="-7917.51" Y="-2714.65" Z="164.614" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7034" KillCount="15">
+      <Hotspots>
+        <Hotspot X="-8050.44" Y="-2713.23" Z="152.43" />
+        <Hotspot X="-7711.6" Y="-2515.92" Z="143.971" />
+        <Hotspot X="-7803.35" Y="-2671.4" Z="173.683" />
+        <Hotspot X="-7846.59" Y="-2631.44" Z="120.791" />
+        <Hotspot X="-7721.52" Y="-2586.29" Z="159.832" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4182" Name="Dragonkin Menace">
+    <Objective Type="KillMob" MobId="7044" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-8143.2" Y="-2888.34" Z="135.543" />
+        <Hotspot X="-7587.0" Y="-2753.57" Z="133.237" />
+        <Hotspot X="-7887.52" Y="-2901.16" Z="133.264" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7041" KillCount="4">
+      <Hotspots>
+        <Hotspot X="-8233.13" Y="-2526.21" Z="138.866" />
+        <Hotspot X="-8213.39" Y="-1953.58" Z="142.58" />
+        <Hotspot X="-7762.67" Y="-2852.92" Z="133.457" />
+        <Hotspot X="-8014.03" Y="-2949.8" Z="131.403" />
+        <Hotspot X="-8080.6" Y="-2984.09" Z="134.251" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7040" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-7544.74" Y="-2809.85" Z="151.904" />
+        <Hotspot X="-8051.72" Y="-2916.74" Z="134.439" />
+        <Hotspot X="-8214.36" Y="-1916.62" Z="142.682" />
+        <Hotspot X="-8091.07" Y="-2917.47" Z="134.283" />
+        <Hotspot X="-8154.19" Y="-2984.48" Z="137.458" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7047" KillCount="15">
+      <Hotspots>
+        <Hotspot X="-8243.41" Y="-2744.53" Z="136.316" />
+        <Hotspot X="-7956.37" Y="-2919.74" Z="131.58" />
+        <Hotspot X="-8025.25" Y="-2917.08" Z="132.895" />
+        <Hotspot X="-7913.89" Y="-2918.32" Z="132.048" />
+        <Hotspot X="-7887.98" Y="-2887.42" Z="135.936" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="3824" Name="Gor'tesh the Brute Lord">
+    <Objective Type="KillMob" MobId="9176" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-8110.83" Y="-1418.6" Z="133.21" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Burning Steppes (53-54)" LogColor="Green" />
-    <Objective QuestName="A Taste of Flame" QuestId="4022" Type="CollectItem" ItemId="10575" ItemName="Black Dragonflight Molt" CollectCount="1" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Burning Steppes (53-54)" LogColor="Green" />
+    <Objective QuestName="A Taste of Flame" QuestId="4022" Type="CollectItem" ItemId="10575" CollectCount="1" />
     <TurnIn QuestName="A Little Slime Goes a Long Way" QuestId="4512" TurnInName="Laris Geardawdle" TurnInId="9616" />
     <If Condition="((!HasQuest(3823)) &amp;&amp; (!IsQuestCompleted(3823)))">
       <PickUp QuestName="Extinguish the Firegut" QuestId="3823" GiverName="Oralius" GiverId="9177" />
@@ -19,37 +96,36 @@
     <If Condition="((!HasQuest(4182)) &amp;&amp; (!IsQuestCompleted(4182)))">
       <PickUp QuestName="Dragonkin Menace" QuestId="4182" GiverName="Helendis Riverhorn" GiverId="9562" />
     </If>
-    <Objective QuestName="Extinguish the Firegut" QuestId="3823" Type="KillMob" MobId="7033" MobName="Firegut Ogre" KillCount="7" />
-    <Objective QuestName="Extinguish the Firegut" QuestId="3823" Type="KillMob" MobId="7035" MobName="Firegut Brute" KillCount="7" />
-    <Objective QuestName="Extinguish the Firegut" QuestId="3823" Type="KillMob" MobId="7034" MobName="Firegut Ogre Mage" KillCount="15" />
+    <Objective QuestName="Extinguish the Firegut" QuestId="3823" Type="KillMob" MobId="7033" KillCount="7" />
+    <Objective QuestName="Extinguish the Firegut" QuestId="3823" Type="KillMob" MobId="7035" KillCount="7" />
+    <Objective QuestName="Extinguish the Firegut" QuestId="3823" Type="KillMob" MobId="7034" KillCount="15" />
     <TurnIn QuestName="Extinguish the Firegut" QuestId="3823" TurnInName="Oralius" TurnInId="9177" />
     <If Condition="((!HasQuest(3824)) &amp;&amp; (!IsQuestCompleted(3824)))">
-      <PickUp QuestName="Gor&apos;tesh the Brute Lord" QuestId="3824" GiverName="Oralius" GiverId="9177" />
+      <PickUp QuestName="Gor'tesh the Brute Lord" QuestId="3824" GiverName="Oralius" GiverId="9177" />
     </If>
     <PickUp QuestName="Broodling Essence" QuestId="4726" GiverName="Tinkee Steamboil" GiverId="10267" />
     <PickUp QuestName="Tablet of the Seven" QuestId="4296" GiverName="Maxwort Uberglint" GiverId="9536" />
     <TurnIn QuestName="Yuka Screwspigot" QuestId="4324" TurnInName="Yuka Screwspigot" TurnInId="9544" />
     <While Condition="((HasQuest(4726)) &amp;&amp; (!IsQuestCompleted(4726)))">
-      <RunTo X="66.06" Y="21.95" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="4726" ItemId="12284" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="4726" MobId="0" ItemId="12284" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="Broodling Essence" QuestId="4726" Type="CollectItem" ItemId="12283" ItemName="Broodling Essence" CollectCount="8" />
+    <Objective QuestName="Broodling Essence" QuestId="4726" Type="CollectItem" ItemId="12283" CollectCount="8" />
     <If Condition="((!HasQuest(4022)) &amp;&amp; (!IsQuestCompleted(4022)))">
       <PickUp QuestName="A Taste of Flame" QuestId="4022" GiverName="Cyrus Therepentous" GiverId="9459" />
     </If>
-    <Objective QuestName="A Taste of Flame" QuestId="4022" Type="KillMob" MobId="9461" MobName="Frenzied Black Drake" KillCount="1" />
-    <Objective QuestName="A Taste of Flame" QuestId="4022" Type="CollectItem" ItemId="10575" ItemName="Black Dragonflight Molt" CollectCount="1" />
+    <Objective QuestName="A Taste of Flame" QuestId="4022" Type="KillMob" MobId="9461" KillCount="1" />
+    <Objective QuestName="A Taste of Flame" QuestId="4022" Type="CollectItem" ItemId="10575" CollectCount="1" />
     <TurnIn QuestName="A Taste of Flame" QuestId="4022" TurnInName="Cyrus Therepentous" TurnInId="9459" />
-    <Objective QuestName="Dragonkin Menace" QuestId="4182" Type="KillMob" MobId="7044" MobName="Black Drake" KillCount="1" />
-    <Objective QuestName="Dragonkin Menace" QuestId="4182" Type="KillMob" MobId="7041" MobName="Black Wyrmkin" KillCount="4" />
-    <Objective QuestName="Dragonkin Menace" QuestId="4182" Type="KillMob" MobId="7040" MobName="Black Dragonspawn" KillCount="10" />
-    <Objective QuestName="Dragonkin Menace" QuestId="4182" Type="KillMob" MobId="7047" MobName="Black Broodling" KillCount="15" />
-    <Objective QuestName="Tablet of the Seven" QuestId="4296" Type="CollectItem" ItemId="11470" ItemName="Tablet Transcript" CollectCount="1" />
-    <Objective QuestName="Gor&apos;tesh the Brute Lord" QuestId="3824" Type="KillMob" MobId="9176" MobName="Gor&apos;tesh" KillCount="1" />
-    <Objective QuestName="Gor&apos;tesh the Brute Lord" QuestId="3824" Type="CollectItem" ItemId="11080" ItemName="Gor&apos;tesh&apos;s Lopped Off Head" CollectCount="1" />
-    <Objective QuestName="FIFTY! YEP!" QuestId="4283" Type="CollectItem" ItemId="11467" ItemName="Blackrock Medallion" CollectCount="50" />
-    <TurnIn QuestName="Gor&apos;tesh the Brute Lord" QuestId="3824" TurnInName="Oralius" TurnInId="9177" />
+    <Objective QuestName="Dragonkin Menace" QuestId="4182" Type="KillMob" MobId="7044" KillCount="1" />
+    <Objective QuestName="Dragonkin Menace" QuestId="4182" Type="KillMob" MobId="7041" KillCount="4" />
+    <Objective QuestName="Dragonkin Menace" QuestId="4182" Type="KillMob" MobId="7040" KillCount="10" />
+    <Objective QuestName="Dragonkin Menace" QuestId="4182" Type="KillMob" MobId="7047" KillCount="15" />
+    <Objective QuestName="Tablet of the Seven" QuestId="4296" Type="CollectItem" ItemId="11470" CollectCount="1" />
+    <Objective QuestName="Gor'tesh the Brute Lord" QuestId="3824" Type="KillMob" MobId="9176" KillCount="1" />
+    <Objective QuestName="Gor'tesh the Brute Lord" QuestId="3824" Type="CollectItem" ItemId="11080" CollectCount="1" />
+    <Objective QuestName="FIFTY! YEP!" QuestId="4283" Type="CollectItem" ItemId="11467" CollectCount="50" />
+    <TurnIn QuestName="Gor'tesh the Brute Lord" QuestId="3824" TurnInName="Oralius" TurnInId="9177" />
     <If Condition="((!HasQuest(3825)) &amp;&amp; (!IsQuestCompleted(3825)))">
       <PickUp QuestName="Ogre Head On A Stick = Party" QuestId="3825" GiverName="Oralius" GiverId="9177" />
     </If>
@@ -65,7 +141,7 @@
     <If Condition="((!HasQuest(5159)) &amp;&amp; (!IsQuestCompleted(5159)))">
       <PickUp QuestName="Cleansed Water Returns to Felwood" QuestId="5159" GiverName="Islen Waterseer" GiverId="5901" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Burning Steppes (53-54) Complete" LogColor="Orange" />
-    <CustomBehavior File="LoadProfile" ProfileName="Un&apos;Goro_Crater_(54-55)" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Burning Steppes (53-54) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Un'Goro_Crater_(54-55)" />
   </QuestOrder>
 </HBProfile>

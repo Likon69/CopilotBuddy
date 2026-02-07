@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Stranglethorn Vale (45-46)</Name>
+  <Name>Alliance\Stranglethorn Vale (45-46)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>46</MaxLevel>
 
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
 
   <!-- Quest Overrides -->
   <Quest Id="604" Name="The Bloodsail Buccaneers">
@@ -27,6 +30,15 @@
         <Hotspot X="-14685.4" Y="486.47" Z="4.18" />
       </Hotspots>
     </Objective>
+    <Objective Type="KillMob" MobId="1563" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-13549.2" Y="683.992" Z="0.8244" />
+        <Hotspot X="-14891.1" Y="299.779" Z="3.0002" />
+        <Hotspot X="-14617.7" Y="245.016" Z="0.6818" />
+        <Hotspot X="-14549.5" Y="182.202" Z="2.7541" />
+        <Hotspot X="-14455.1" Y="116.533" Z="4.9448" />
+      </Hotspots>
+    </Objective>
   </Quest>
   <Quest Id="608" Name="The Bloodsail Buccaneers">
     <Objective Type="CollectItem" ItemId="4098" CollectCount="1">
@@ -41,24 +53,83 @@
         <Hotspot X="-14439.6" Y="-190.59" Z="-0.7" />
         <Hotspot X="-14434.9" Y="54.38" Z="0.18" />
         <Hotspot X="-14307.3" Y="32.82" Z="0.14" />
-        <Hotspot X="-14170.6" Y="-93.06" Z="-0.46" />
-        <Hotspot X="-13912.6" Y="-166.44" Z="0.53" />
-        <Hotspot X="-13870.7" Y="-211.54" Z="-1.21" />
-        <Hotspot X="-13734.8" Y="-255.34" Z="0.0" />
-        <Hotspot X="-13729.6" Y="-342.87" Z="0.45" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2550" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-14921.0" Y="123.1" Z="7.5177" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2546" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-15024.5" Y="269.352" Z="7.5161" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2548" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-14924.9" Y="349.625" Z="8.1238" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="630" Name="Message in a Bottle">
+    <Objective Type="KillMob" MobId="1559" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-14737.8" Y="-392.236" Z="8.2503" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="617" Name="Akiris by the Bundle">
+    <Objective Type="KillMob" MobId="1907" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-13708.2" Y="494.076" Z="47.2308" />
+        <Hotspot X="-13720.7" Y="535.934" Z="36.8568" />
+        <Hotspot X="-13818.5" Y="681.93" Z="5.2206" />
+        <Hotspot X="-13741.7" Y="622.868" Z="15.4835" />
+        <Hotspot X="-13875.4" Y="690.943" Z="3.2041" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="609" Name="Voodoo Dues">
+    <Objective Type="KillMob" MobId="2536" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-13374.3" Y="-7.6942" Z="22.044" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2535" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-13349.3" Y="-28.5316" Z="22.2773" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2537" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-13646.5" Y="-331.611" Z="8.3608" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="197" Name="Raptor Mastery">
+    <Objective Type="KillMob" MobId="730" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-13076.6" Y="387.179" Z="15.4089" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="193" Name="Panther Mastery">
+    <Objective Type="KillMob" MobId="728" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-12191.0" Y="-944.651" Z="32.9082" />
       </Hotspots>
     </Objective>
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (45-46)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Stranglethorn Vale (45-46)" LogColor="Green" />
     <If Condition="((!HasQuest(609)) &amp;&amp; (!IsQuestCompleted(609)))">
       <PickUp QuestName="Voodoo Dues" QuestId="609" GiverName="&quot;Sea Wolf&quot; MacKinley" GiverId="2501" />
     </If>
-    <PickUp QuestName="Whiskey Slim&apos;s Lost Grog" QuestId="580" GiverName="Whiskey Slim" GiverId="2491" />
+    <PickUp QuestName="Whiskey Slim's Lost Grog" QuestId="580" GiverName="Whiskey Slim" GiverId="2491" />
     <TurnIn QuestName="Back to Booty Bay" QuestId="1118" TurnInName="Crank Fizzlebub" TurnInId="2498" />
     <If Condition="((!HasQuest(621)) &amp;&amp; (!IsQuestCompleted(621)))">
-      <PickUp QuestName="Zanzil&apos;s Secret" QuestId="621" GiverName="Crank Fizzlebub" GiverId="2498" />
+      <PickUp QuestName="Zanzil's Secret" QuestId="621" GiverName="Crank Fizzlebub" GiverId="2498" />
     </If>
     <If Condition="((!HasQuest(587)) &amp;&amp; (!IsQuestCompleted(587)))">
       <PickUp QuestName="Up to Snuff" QuestId="587" GiverName="Deeg" GiverId="2488" />
@@ -70,22 +141,22 @@
     <If Condition="((!HasQuest(576)) &amp;&amp; (!IsQuestCompleted(576)))">
       <PickUp QuestName="Keep An Eye Out" QuestId="576" GiverName="Dizzy One-Eye" GiverId="2493" />
     </If>
-    <Objective QuestName="The Bloodsail Buccaneers" QuestId="604" Type="CollectItem" ItemId="3920" ItemName="Bloodsail Charts" CollectCount="1" />
-    <Objective QuestName="The Bloodsail Buccaneers" QuestId="604" Type="CollectItem" ItemId="3921" ItemName="Bloodsail Orders" CollectCount="1" />
-    <Objective QuestName="Up to Snuff" QuestId="587" Type="CollectItem" ItemId="3910" ItemName="Snuff" CollectCount="15" />
-    <Objective QuestName="Keep An Eye Out" QuestId="576" Type="CollectItem" ItemId="3897" ItemName="Dizzy&apos;s Eye" CollectCount="1" />
-    <Objective QuestName="The Bloodsail Buccaneers" QuestId="604" Type="KillMob" MobId="1563" MobName="Bloodsail Swashbuckler" KillCount="10" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="604" Type="CollectItem" ItemId="3920" CollectCount="1" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="604" Type="CollectItem" ItemId="3921" CollectCount="1" />
+    <Objective QuestName="Up to Snuff" QuestId="587" Type="CollectItem" ItemId="3910" CollectCount="15" />
+    <Objective QuestName="Keep An Eye Out" QuestId="576" Type="CollectItem" ItemId="3897" CollectCount="1" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="604" Type="KillMob" MobId="1563" KillCount="10" />
     <TurnIn QuestName="Keep An Eye Out" QuestId="576" TurnInName="Dizzy One-Eye" TurnInId="2493" />
-    <CustomBehavior File="SetHearthstone" MobId="7733" AreaId="440" X="27.04" Y="77.31" Z="0" /> <!-- Set hearth: Booty Bay -->
+    <CustomBehavior File="SetHearthstone" MobId="7733" AreaId="440" X="-7158.96" Y="-3841.61" Z="8.8481" /> <!-- Set hearth: Booty Bay -->
     <TurnIn QuestName="Up to Snuff" QuestId="587" TurnInName="Deeg" TurnInId="2488" />
     <TurnIn QuestName="The Bloodsail Buccaneers" QuestId="604" TurnInName="Fleet Master Seahorn" TurnInId="2487" />
     <If Condition="((!HasQuest(608)) &amp;&amp; (!IsQuestCompleted(608)))">
       <PickUp QuestName="The Bloodsail Buccaneers" QuestId="608" GiverName="Fleet Master Seahorn" GiverId="2487" />
     </If>
-    <Objective QuestName="The Bloodsail Buccaneers" QuestId="608" Type="CollectItem" ItemId="4098" ItemName="Carefully Folded Note" CollectCount="1" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="608" Type="CollectItem" ItemId="4098" CollectCount="1" />
     <While Condition="((HasQuest(608)) &amp;&amp; (!IsQuestCompleted(608)))">
-      <RunTo X="31.58" Y="72.33" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="608" ItemId="4098" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-14921.0" Y="123.1" Z="7.5177" />
+      <CustomBehavior File="UseItemOn" QuestId="608" MobId="2550" ItemId="4098" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-14921.0" Y="123.1" Z="7.5177" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="Message in a Bottle" QuestId="594" GiverName="Fleet Master Seahorn" GiverId="2487" />
@@ -93,48 +164,48 @@
     <If Condition="((!HasQuest(630)) &amp;&amp; (!IsQuestCompleted(630)))">
       <PickUp QuestName="Message in a Bottle" QuestId="630" GiverName="Princess Poobah" GiverId="2634" />
     </If>
-    <Objective QuestName="Message in a Bottle" QuestId="630" Type="KillMob" MobId="1559" MobName="King Mukla" KillCount="1" />
-    <Objective QuestName="Message in a Bottle" QuestId="630" Type="CollectItem" ItemId="4103" ItemName="Shackle Key" CollectCount="1" />
+    <Objective QuestName="Message in a Bottle" QuestId="630" Type="KillMob" MobId="1559" KillCount="1" />
+    <Objective QuestName="Message in a Bottle" QuestId="630" Type="CollectItem" ItemId="4103" CollectCount="1" />
     <TurnIn QuestName="Message in a Bottle" QuestId="630" TurnInName="Princess Poobah" TurnInId="2634" />
-    <Objective QuestName="The Bloodsail Buccaneers" QuestId="608" Type="KillMob" MobId="2550" MobName="Captain Stillwater" KillCount="1" />
-    <Objective QuestName="Cortello&apos;s Riddle" QuestId="624" Type="CollectItem" ItemId="4056" ItemName="Cortello&apos;s Riddle" CollectCount="1" />
-    <Objective QuestName="The Bloodsail Buccaneers" QuestId="608" Type="KillMob" MobId="2546" MobName="Fleet Master Firallon" KillCount="1" />
-    <Objective QuestName="Cortello&apos;s Riddle" QuestId="624" Type="CollectItem" ItemId="4056" ItemName="Cortello&apos;s Riddle" CollectCount="1" />
-    <Objective QuestName="The Bloodsail Buccaneers" QuestId="608" Type="KillMob" MobId="2548" MobName="Captain Keelhaul" KillCount="1" />
-    <Objective QuestName="Cortello&apos;s Riddle" QuestId="624" Type="CollectItem" ItemId="4056" ItemName="Cortello&apos;s Riddle" CollectCount="1" />
-    <CustomBehavior File="UseItemOn" ItemId="4056" MobId="0" NumOfTimes="1" />
-    <PickUp QuestName="Cortello&apos;s Riddle" QuestId="624" GiverName="Princess Poobah" GiverId="2634" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="608" Type="KillMob" MobId="2550" KillCount="1" />
+    <Objective QuestName="Cortello's Riddle" QuestId="624" Type="CollectItem" ItemId="4056" CollectCount="1" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="608" Type="KillMob" MobId="2546" KillCount="1" />
+    <Objective QuestName="Cortello's Riddle" QuestId="624" Type="CollectItem" ItemId="4056" CollectCount="1" />
+    <Objective QuestName="The Bloodsail Buccaneers" QuestId="608" Type="KillMob" MobId="2548" KillCount="1" />
+    <Objective QuestName="Cortello's Riddle" QuestId="624" Type="CollectItem" ItemId="4056" CollectCount="1" />
+    <CustomBehavior File="UseItemOn" ItemId="4056" MobId="0" NumOfTimes="1" CollectionDistance="100" />
+    <PickUp QuestName="Cortello's Riddle" QuestId="624" GiverName="Princess Poobah" GiverId="2634" />
     <While Condition="((HasQuest(608)) &amp;&amp; (!IsQuestCompleted(608)))">
-      <RunTo X="29.2" Y="88.6" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="608" ItemId="6948" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-14921.0" Y="123.1" Z="7.5177" />
+      <CustomBehavior File="UseItemOn" QuestId="608" MobId="2550" ItemId="6948" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-14921.0" Y="123.1" Z="7.5177" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <!-- Use Hearthstone to Booty Bay -->
     <CustomBehavior File="UseItem" ItemId="6948" />
     <CustomBehavior File="WaitTimer" WaitTime="12000" />
     <TurnIn QuestName="The Bloodsail Buccaneers" QuestId="608" TurnInName="Fleet Master Seahorn" TurnInId="2487" />
-    <Objective QuestName="Akiris by the Bundle" QuestId="617" Type="KillMob" MobId="1907" MobName="Naga Explorer" KillCount="1" />
-    <Objective QuestName="Akiris by the Bundle" QuestId="617" Type="CollectItem" ItemId="4029" ItemName="Akiris Reed" CollectCount="10" />
-    <Objective QuestName="Voodoo Dues" QuestId="609" Type="KillMob" MobId="2536" MobName="Jon-Jon the Crow" KillCount="1" />
-    <Objective QuestName="Voodoo Dues" QuestId="609" Type="CollectItem" ItemId="3925" ItemName="Jon-Jon&apos;s Golden Spyglass" CollectCount="1" />
-    <Objective QuestName="Voodoo Dues" QuestId="609" Type="KillMob" MobId="2535" MobName="Maury &quot;Club Foot&quot; Wilkins" KillCount="1" />
-    <Objective QuestName="Voodoo Dues" QuestId="609" Type="CollectItem" ItemId="3924" ItemName="Maury&apos;s Clubbed Foot" CollectCount="1" />
-    <Objective QuestName="Voodoo Dues" QuestId="609" Type="KillMob" MobId="2537" MobName="Chucky &quot;Ten Thumbs&quot;" KillCount="1" />
-    <Objective QuestName="Voodoo Dues" QuestId="609" Type="CollectItem" ItemId="3926" ItemName="Chucky&apos;s Huge Ring" CollectCount="1" />
-    <Objective QuestName="Zanzil&apos;s Secret" QuestId="621" Type="CollectItem" ItemId="4016" ItemName="Zanzil&apos;s Mixture" CollectCount="12" />
-    <Objective QuestName="Raptor Mastery" QuestId="197" Type="KillMob" MobId="730" MobName="Tethis" KillCount="1" />
-    <Objective QuestName="Raptor Mastery" QuestId="197" Type="CollectItem" ItemId="3877" ItemName="Talon of Tethis" CollectCount="1" />
-    <Objective QuestName="Panther Mastery" QuestId="193" Type="KillMob" MobId="728" MobName="Bhag&apos;thera" KillCount="1" />
-    <Objective QuestName="Panther Mastery" QuestId="193" Type="CollectItem" ItemId="3876" ItemName="Fang of Bhag&apos;thera" CollectCount="1" />
+    <Objective QuestName="Akiris by the Bundle" QuestId="617" Type="KillMob" MobId="1907" KillCount="1" />
+    <Objective QuestName="Akiris by the Bundle" QuestId="617" Type="CollectItem" ItemId="4029" CollectCount="10" />
+    <Objective QuestName="Voodoo Dues" QuestId="609" Type="KillMob" MobId="2536" KillCount="1" />
+    <Objective QuestName="Voodoo Dues" QuestId="609" Type="CollectItem" ItemId="3925" CollectCount="1" />
+    <Objective QuestName="Voodoo Dues" QuestId="609" Type="KillMob" MobId="2535" KillCount="1" />
+    <Objective QuestName="Voodoo Dues" QuestId="609" Type="CollectItem" ItemId="3924" CollectCount="1" />
+    <Objective QuestName="Voodoo Dues" QuestId="609" Type="KillMob" MobId="2537" KillCount="1" />
+    <Objective QuestName="Voodoo Dues" QuestId="609" Type="CollectItem" ItemId="3926" CollectCount="1" />
+    <Objective QuestName="Zanzil's Secret" QuestId="621" Type="CollectItem" ItemId="4016" CollectCount="12" />
+    <Objective QuestName="Raptor Mastery" QuestId="197" Type="KillMob" MobId="730" KillCount="1" />
+    <Objective QuestName="Raptor Mastery" QuestId="197" Type="CollectItem" ItemId="3877" CollectCount="1" />
+    <Objective QuestName="Panther Mastery" QuestId="193" Type="KillMob" MobId="728" KillCount="1" />
+    <Objective QuestName="Panther Mastery" QuestId="193" Type="CollectItem" ItemId="3876" CollectCount="1" />
     <TurnIn QuestName="Raptor Mastery" QuestId="197" TurnInName="Hemet Nesingwary" TurnInId="715" />
     <TurnIn QuestName="Panther Mastery" QuestId="193" TurnInName="Sir S. J. Erlgadin" TurnInId="718" />
-    <TurnIn QuestName="Zanzil&apos;s Secret" QuestId="621" TurnInName="Crank Fizzlebub" TurnInId="2498" />
+    <TurnIn QuestName="Zanzil's Secret" QuestId="621" TurnInName="Crank Fizzlebub" TurnInId="2498" />
     <TurnIn QuestName="Akiris by the Bundle" QuestId="617" TurnInName="Privateer Bloads" TurnInId="2494" />
     <If Condition="((!HasQuest(623)) &amp;&amp; (!IsQuestCompleted(623)))">
       <PickUp QuestName="Akiris by the Bundle" QuestId="623" GiverName="Privateer Bloads" GiverId="2494" />
     </If>
     <TurnIn QuestName="Voodoo Dues" QuestId="609" TurnInName="&quot;Sea Wolf&quot; MacKinley" TurnInId="2501" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Stranglethorn Vale (45-46) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Stranglethorn Vale (45-46) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Swamp_of_Sorrows_(46-46)" />
   </QuestOrder>
 </HBProfile>

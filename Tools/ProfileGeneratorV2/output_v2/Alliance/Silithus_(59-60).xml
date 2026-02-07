@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Silithus (59-60)</Name>
+  <Name>Alliance\Silithus (59-60)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>60</MaxLevel>
@@ -8,7 +7,42 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
   <!-- Quest Overrides -->
+  <Quest Id="8277" Name="Deadly Desert Venom">
+    <Objective Type="KillMob" MobId="11735" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-6813.63" Y="9.5851" Z="1.1148" />
+        <Hotspot X="-6590.27" Y="255.137" Z="4.0488" />
+        <Hotspot X="-6717.27" Y="224.413" Z="1.4393" />
+        <Hotspot X="-6632.93" Y="220.165" Z="5.7838" />
+        <Hotspot X="-6685.85" Y="283.361" Z="3.4601" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="11738" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-6889.03" Y="393.434" Z="3.0481" />
+        <Hotspot X="-6378.87" Y="1295.11" Z="3.3208" />
+        <Hotspot X="-6980.84" Y="107.419" Z="4.0671" />
+        <Hotspot X="-6306.3" Y="1190.83" Z="12.5116" />
+        <Hotspot X="-6489.3" Y="686.219" Z="3.2368" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8280" Name="Securing the Supply Lines">
+    <Objective Type="KillMob" MobId="11740" KillCount="15">
+      <Hotspots>
+        <Hotspot X="-6327.39" Y="1265.9" Z="6.5949" />
+        <Hotspot X="-6382.82" Y="1326.36" Z="3.3263" />
+        <Hotspot X="-6369.03" Y="467.862" Z="-0.5208" />
+        <Hotspot X="-6247.77" Y="552.957" Z="11.3063" />
+        <Hotspot X="-6847.24" Y="44.191" Z="0.6501" />
+      </Hotspots>
+    </Objective>
+  </Quest>
   <Quest Id="8284" Name="The Twilight Mystery">
     <Objective Type="CollectItem" ItemId="20378" CollectCount="8">
       <CollectFrom>
@@ -24,9 +58,49 @@
       </Hotspots>
     </Objective>
   </Quest>
+  <Quest Id="8281" Name="Stepping Up Security">
+    <Objective Type="KillMob" MobId="11741" KillCount="20">
+      <Hotspots>
+        <Hotspot X="-7056.8" Y="1839.1" Z="-0.9701" />
+        <Hotspot X="-6983.4" Y="1550.22" Z="2.311" />
+        <Hotspot X="-7483.33" Y="1383.33" Z="5.2249" />
+        <Hotspot X="-7168.41" Y="1326.74" Z="3.2032" />
+        <Hotspot X="-6973.82" Y="1352.36" Z="0.3958" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8278" Name="Noggle's Last Hope">
+    <Objective Type="KillMob" MobId="11736" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-7145.76" Y="1259.99" Z="0.1782" />
+        <Hotspot X="-6948.86" Y="1787.18" Z="0.0497" />
+        <Hotspot X="-6945.57" Y="1405.23" Z="4.5521" />
+        <Hotspot X="-6985.49" Y="1748.21" Z="1.86" />
+        <Hotspot X="-7350.8" Y="1316.01" Z="3.9908" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="11737" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-7852.47" Y="1616.24" Z="3.5576" />
+        <Hotspot X="-7746.17" Y="1751.7" Z="14.1443" />
+        <Hotspot X="-7783.18" Y="1765.03" Z="0.5279" />
+        <Hotspot X="-7690.77" Y="1627.25" Z="5.3248" />
+        <Hotspot X="-7883.63" Y="1540.15" Z="-4.1509" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="11739" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-7757.71" Y="1343.44" Z="0.4622" />
+        <Hotspot X="-7781.62" Y="1317.79" Z="-4.9786" />
+        <Hotspot X="-7689.71" Y="1411.01" Z="2.4335" />
+        <Hotspot X="-7864.6" Y="1453.36" Z="-3.5515" />
+        <Hotspot X="-7784.33" Y="1512.91" Z="1.2181" />
+      </Hotspots>
+    </Objective>
+  </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Silithus (59-60)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Silithus (59-60)" LogColor="Green" />
     <TurnIn QuestName="Taking Back Silithus" QuestId="8275" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
     <If Condition="((!HasQuest(8280)) &amp;&amp; (!IsQuestCompleted(8280)))">
       <PickUp QuestName="Securing the Supply Lines" QuestId="8280" GiverName="Windcaller Proudhorn" GiverId="15191" />
@@ -34,42 +108,42 @@
     <PickUp QuestName="Deadly Desert Venom" QuestId="8277" GiverName="Beetix Ficklespragg" GiverId="15189" />
     <PickUp QuestName="The Twilight Mystery" QuestId="8284" GiverName="Geologist Larksbane" GiverId="15183" />
     <PickUp QuestName="Secret Communication" QuestId="8318" GiverName="Bor Wildmane" GiverId="15306" />
-    <PickUp QuestName="Dearest Natalia" QuestId="8304" GiverName="Commander Mar&apos;alith" GiverId="15181" />
-    <Objective QuestName="Brann Bronzebeard&apos;s Lost Letter" QuestId="8308" Type="CollectItem" ItemId="20461" ItemName="Brann Bronzebeard&apos;s Lost Letter" CollectCount="1" />
+    <PickUp QuestName="Dearest Natalia" QuestId="8304" GiverName="Commander Mar'alith" GiverId="15181" />
+    <Objective QuestName="Brann Bronzebeard's Lost Letter" QuestId="8308" Type="CollectItem" ItemId="20461" CollectCount="1" />
     <While Condition="((HasQuest(8304)) &amp;&amp; (!IsQuestCompleted(8304)))">
-      <RunTo X="55.97" Y="49.86" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8304" ItemId="20461" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <RunTo X="-8029.8" Y="1122.73" Z="3.311" />
+      <CustomBehavior File="UseItemOn" QuestId="8304" MobId="15221" ItemId="20461" NumOfTimes="100" Range="5" CollectionDistance="1000" X="-8029.8" Y="1122.73" Z="3.311" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <PickUp QuestName="Brann Bronzebeard&apos;s Lost Letter" QuestId="8308" GiverName="Cloud Skydancer" GiverId="15177" />
-    <Objective QuestName="Secret Communication" QuestId="8318" Type="CollectItem" ItemId="20404" ItemName="Encrypted Twilight Text" CollectCount="10" />
-    <Objective QuestName="Deadly Desert Venom" QuestId="8277" Type="KillMob" MobId="11735" MobName="Stonelash Scorpid" KillCount="1" />
-    <Objective QuestName="Deadly Desert Venom" QuestId="8277" Type="CollectItem" ItemId="20373" ItemName="Stonelash Scorpid Stinger" CollectCount="8" />
-    <Objective QuestName="Deadly Desert Venom" QuestId="8277" Type="KillMob" MobId="11738" MobName="Sand Skitterer" KillCount="1" />
-    <Objective QuestName="Deadly Desert Venom" QuestId="8277" Type="CollectItem" ItemId="20376" ItemName="Sand Skitterer Fang" CollectCount="8" />
-    <Objective QuestName="Securing the Supply Lines" QuestId="8280" Type="KillMob" MobId="11740" MobName="Dredge Striker" KillCount="15" />
+    <PickUp QuestName="Brann Bronzebeard's Lost Letter" QuestId="8308" GiverName="Cloud Skydancer" GiverId="15177" />
+    <Objective QuestName="Secret Communication" QuestId="8318" Type="CollectItem" ItemId="20404" CollectCount="10" />
+    <Objective QuestName="Deadly Desert Venom" QuestId="8277" Type="KillMob" MobId="11735" KillCount="1" />
+    <Objective QuestName="Deadly Desert Venom" QuestId="8277" Type="CollectItem" ItemId="20373" CollectCount="8" />
+    <Objective QuestName="Deadly Desert Venom" QuestId="8277" Type="KillMob" MobId="11738" KillCount="1" />
+    <Objective QuestName="Deadly Desert Venom" QuestId="8277" Type="CollectItem" ItemId="20376" CollectCount="8" />
+    <Objective QuestName="Securing the Supply Lines" QuestId="8280" Type="KillMob" MobId="11740" KillCount="15" />
     <TurnIn QuestName="Securing the Supply Lines" QuestId="8280" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
     <If Condition="((!HasQuest(8281)) &amp;&amp; (!IsQuestCompleted(8281)))">
       <PickUp QuestName="Stepping Up Security" QuestId="8281" GiverName="Windcaller Proudhorn" GiverId="15191" />
     </If>
     <TurnIn QuestName="Deadly Desert Venom" QuestId="8277" TurnInName="Beetix Ficklespragg" TurnInId="15189" />
     <If Condition="((!HasQuest(8278)) &amp;&amp; (!IsQuestCompleted(8278)))">
-      <PickUp QuestName="Noggle&apos;s Last Hope" QuestId="8278" GiverName="Beetix Ficklespragg" GiverId="15189" />
+      <PickUp QuestName="Noggle's Last Hope" QuestId="8278" GiverName="Beetix Ficklespragg" GiverId="15189" />
     </If>
     <TurnIn QuestName="Secret Communication" QuestId="8318" TurnInName="Bor Wildmane" TurnInId="15306" />
-    <Objective QuestName="The Twilight Mystery" QuestId="8284" Type="CollectItem" ItemId="20378" ItemName="Twilight Tablet Fragment" CollectCount="8" />
-    <Objective QuestName="Stepping Up Security" QuestId="8281" Type="KillMob" MobId="11741" MobName="Dredge Crusher" KillCount="20" />
-    <Objective QuestName="Noggle&apos;s Last Hope" QuestId="8278" Type="KillMob" MobId="11736" MobName="Stonelash Pincer" KillCount="1" />
-    <Objective QuestName="Noggle&apos;s Last Hope" QuestId="8278" Type="CollectItem" ItemId="20374" ItemName="Stonelash Pincer Stinger" CollectCount="3" />
-    <TurnIn QuestName="Brann Bronzebeard&apos;s Lost Letter" QuestId="8308" TurnInName="Rutgar Glyphshaper" TurnInId="15170" />
-    <Objective QuestName="Noggle&apos;s Last Hope" QuestId="8278" Type="KillMob" MobId="11737" MobName="Stonelash Flayer" KillCount="1" />
-    <Objective QuestName="Noggle&apos;s Last Hope" QuestId="8278" Type="CollectItem" ItemId="20375" ItemName="Stonelash Flayer Stinger" CollectCount="3" />
-    <Objective QuestName="Noggle&apos;s Last Hope" QuestId="8278" Type="KillMob" MobId="11739" MobName="Rock Stalker" KillCount="1" />
-    <Objective QuestName="Noggle&apos;s Last Hope" QuestId="8278" Type="CollectItem" ItemId="20377" ItemName="Rock Stalker Fang" CollectCount="3" />
+    <Objective QuestName="The Twilight Mystery" QuestId="8284" Type="CollectItem" ItemId="20378" CollectCount="8" />
+    <Objective QuestName="Stepping Up Security" QuestId="8281" Type="KillMob" MobId="11741" KillCount="20" />
+    <Objective QuestName="Noggle's Last Hope" QuestId="8278" Type="KillMob" MobId="11736" KillCount="1" />
+    <Objective QuestName="Noggle's Last Hope" QuestId="8278" Type="CollectItem" ItemId="20374" CollectCount="3" />
+    <TurnIn QuestName="Brann Bronzebeard's Lost Letter" QuestId="8308" TurnInName="Rutgar Glyphshaper" TurnInId="15170" />
+    <Objective QuestName="Noggle's Last Hope" QuestId="8278" Type="KillMob" MobId="11737" KillCount="1" />
+    <Objective QuestName="Noggle's Last Hope" QuestId="8278" Type="CollectItem" ItemId="20375" CollectCount="3" />
+    <Objective QuestName="Noggle's Last Hope" QuestId="8278" Type="KillMob" MobId="11739" KillCount="1" />
+    <Objective QuestName="Noggle's Last Hope" QuestId="8278" Type="CollectItem" ItemId="20377" CollectCount="3" />
     <TurnIn QuestName="Stepping Up Security" QuestId="8281" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
-    <TurnIn QuestName="Noggle&apos;s Last Hope" QuestId="8278" TurnInName="Beetix Ficklespragg" TurnInId="15189" />
+    <TurnIn QuestName="Noggle's Last Hope" QuestId="8278" TurnInName="Beetix Ficklespragg" TurnInId="15189" />
     <TurnIn QuestName="The Twilight Mystery" QuestId="8284" TurnInName="Geologist Larksbane" TurnInId="15183" />
-    <TurnIn QuestName="Dearest Natalia" QuestId="8304" TurnInName="Commander Mar&apos;alith" TurnInId="15181" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Silithus (59-60) Complete" LogColor="Orange" />
+    <TurnIn QuestName="Dearest Natalia" QuestId="8304" TurnInName="Commander Mar'alith" TurnInId="15181" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Silithus (59-60) Complete" LogColor="Orange" />
   </QuestOrder>
 </HBProfile>

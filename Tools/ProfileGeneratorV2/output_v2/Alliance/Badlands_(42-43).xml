@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Badlands (42-43)</Name>
+  <Name>Alliance\Badlands (42-43)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>43</MaxLevel>
 
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
 
   <!-- Quest Overrides -->
   <Quest Id="718" Name="Mirages">
@@ -19,10 +22,59 @@
       </Hotspots>
     </Objective>
   </Quest>
+  <Quest Id="739" Name="Murdaloc">
+    <Objective Type="KillMob" MobId="2945" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-6989.15" Y="-3313.63" Z="244.636" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="2893" KillCount="12">
+      <Hotspots>
+        <Hotspot X="-6956.96" Y="-3345.77" Z="242.889" />
+        <Hotspot X="-7078.63" Y="-3315.34" Z="242.667" />
+        <Hotspot X="-7077.84" Y="-3352.25" Z="242.542" />
+        <Hotspot X="-7002.62" Y="-3327.03" Z="242.329" />
+        <Hotspot X="-7018.29" Y="-3380.5" Z="241.792" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="710" Name="Study of the Elements: Rock">
+    <Objective Type="KillMob" MobId="2735" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-6648.3" Y="-2554.05" Z="249.412" />
+        <Hotspot X="-6681.4" Y="-2653.75" Z="241.959" />
+        <Hotspot X="-6643.63" Y="-2664.42" Z="253.84" />
+        <Hotspot X="-6684.62" Y="-2580.44" Z="241.778" />
+        <Hotspot X="-6613.6" Y="-2636.94" Z="265.85" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="711" Name="Study of the Elements: Rock">
+    <Objective Type="KillMob" MobId="92" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-6488.99" Y="-2490.99" Z="324.462" />
+        <Hotspot X="-6423.73" Y="-2465.14" Z="327.172" />
+        <Hotspot X="-6443.94" Y="-2413.38" Z="303.51" />
+        <Hotspot X="-6450.99" Y="-2447.3" Z="313.419" />
+        <Hotspot X="-6474.88" Y="-2453.17" Z="306.818" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="712" Name="Study of the Elements: Rock">
+    <Objective Type="KillMob" MobId="2736" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-7389.7" Y="-2445.93" Z="311.469" />
+        <Hotspot X="-7283.98" Y="-2410.49" Z="272.681" />
+        <Hotspot X="-7317.67" Y="-2411.69" Z="280.345" />
+        <Hotspot X="-7385.82" Y="-2421.31" Z="303.94" />
+        <Hotspot X="-7349.08" Y="-2452.89" Z="303.762" />
+      </Hotspots>
+    </Objective>
+  </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Badlands (42-43)" LogColor="Green" />
-    <TurnIn QuestName="Stormpike&apos;s Deciphering" QuestId="554" TurnInName="Prospector Stormpike" TurnInId="1356" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Badlands (42-43)" LogColor="Green" />
+    <TurnIn QuestName="Stormpike's Deciphering" QuestId="554" TurnInName="Prospector Stormpike" TurnInId="1356" />
     <PickUp QuestName="Ironband Wants You!" QuestId="707" GiverName="Prospector Stormpike" GiverId="1356" />
     <If Condition="((!HasQuest(2500)) &amp;&amp; (!IsQuestCompleted(2500)))">
       <PickUp QuestName="Badlands Reagent Run" QuestId="2500" GiverName="Ghak Healtouch" GiverId="1470" />
@@ -35,8 +87,8 @@
     <TurnIn QuestName="A Sign of Hope" QuestId="720" TurnInName="Prospector Ryedol" TurnInId="2910" />
     <PickUp QuestName="A Dwarf and His Tools" QuestId="719" GiverName="Prospector Ryedol" GiverId="2910" />
     <PickUp QuestName="Mirages" QuestId="718" GiverName="Sigrun Ironhew" GiverId="2860" />
-    <Objective QuestName="A Dwarf and His Tools" QuestId="719" Type="CollectItem" ItemId="4616" ItemName="Ryedol&apos;s Lucky Pick" CollectCount="1" />
-    <Objective QuestName="Mirages" QuestId="718" Type="CollectItem" ItemId="4629" ItemName="Supply Crate" CollectCount="1" />
+    <Objective QuestName="A Dwarf and His Tools" QuestId="719" Type="CollectItem" ItemId="4616" CollectCount="1" />
+    <Objective QuestName="Mirages" QuestId="718" Type="CollectItem" ItemId="4629" CollectCount="1" />
     <TurnIn QuestName="A Dwarf and His Tools" QuestId="719" TurnInName="Prospector Ryedol" TurnInId="2910" />
     <TurnIn QuestName="Mirages" QuestId="718" TurnInName="Sigrun Ironhew" TurnInId="2860" />
     <If Condition="((!HasQuest(733)) &amp;&amp; (!IsQuestCompleted(733)))">
@@ -51,40 +103,40 @@
     <If Condition="((!HasQuest(739)) &amp;&amp; (!IsQuestCompleted(739)))">
       <PickUp QuestName="Murdaloc" QuestId="739" GiverName="Jazzrik" GiverId="9179" />
     </If>
-    <Objective QuestName="Murdaloc" QuestId="739" Type="KillMob" MobId="2945" MobName="Murdaloc" KillCount="1" />
-    <Objective QuestName="Murdaloc" QuestId="739" Type="KillMob" MobId="2893" MobName="Stonevault Bonesnapper" KillCount="12" />
-    <Objective QuestName="Indurium" QuestId="1108" Type="CollectItem" ItemId="5797" ItemName="Indurium Flake" CollectCount="10" />
+    <Objective QuestName="Murdaloc" QuestId="739" Type="KillMob" MobId="2945" KillCount="1" />
+    <Objective QuestName="Murdaloc" QuestId="739" Type="KillMob" MobId="2893" KillCount="12" />
+    <Objective QuestName="Indurium" QuestId="1108" Type="CollectItem" ItemId="5797" CollectCount="10" />
     <TurnIn QuestName="Indurium" QuestId="1108" TurnInName="Martek the Exiled" TurnInId="4618" />
     <If Condition="((!HasQuest(1137)) &amp;&amp; (!IsQuestCompleted(1137)))">
       <PickUp QuestName="News for Fizzle" QuestId="1137" GiverName="Martek the Exiled" GiverId="4618" />
     </If>
     <PickUp QuestName="Study of the Elements: Rock" QuestId="710" GiverName="Lotwil Veriatus" GiverId="2921" />
-    <Objective QuestName="Badlands Reagent Run" QuestId="2500" Type="CollectItem" ItemId="7848" ItemName="Rock Elemental Shard" CollectCount="5" />
-    <Objective QuestName="Study of the Elements: Rock" QuestId="710" Type="KillMob" MobId="2735" MobName="Lesser Rock Elemental" KillCount="1" />
-    <Objective QuestName="Study of the Elements: Rock" QuestId="710" Type="CollectItem" ItemId="4626" ItemName="Small Stone Shard" CollectCount="10" />
+    <Objective QuestName="Badlands Reagent Run" QuestId="2500" Type="CollectItem" ItemId="7848" CollectCount="5" />
+    <Objective QuestName="Study of the Elements: Rock" QuestId="710" Type="KillMob" MobId="2735" KillCount="1" />
+    <Objective QuestName="Study of the Elements: Rock" QuestId="710" Type="CollectItem" ItemId="4626" CollectCount="10" />
     <TurnIn QuestName="Study of the Elements: Rock" QuestId="710" TurnInName="Lotwil Veriatus" TurnInId="2921" />
     <If Condition="((!HasQuest(711)) &amp;&amp; (!IsQuestCompleted(711)))">
       <PickUp QuestName="Study of the Elements: Rock" QuestId="711" GiverName="Lotwil Veriatus" GiverId="2921" />
     </If>
-    <Objective QuestName="Study of the Elements: Rock" QuestId="711" Type="KillMob" MobId="92" MobName="Rock Elemental" KillCount="1" />
-    <Objective QuestName="Study of the Elements: Rock" QuestId="711" Type="CollectItem" ItemId="4627" ItemName="Large Stone Slab" CollectCount="3" />
+    <Objective QuestName="Study of the Elements: Rock" QuestId="711" Type="KillMob" MobId="92" KillCount="1" />
+    <Objective QuestName="Study of the Elements: Rock" QuestId="711" Type="CollectItem" ItemId="4627" CollectCount="3" />
     <TurnIn QuestName="Study of the Elements: Rock" QuestId="711" TurnInName="Lotwil Veriatus" TurnInId="2921" />
     <If Condition="((!HasQuest(712)) &amp;&amp; (!IsQuestCompleted(712)))">
       <PickUp QuestName="Study of the Elements: Rock" QuestId="712" GiverName="Lotwil Veriatus" GiverId="2921" />
     </If>
-    <Objective QuestName="Badlands Reagent Run" QuestId="2500" Type="CollectItem" ItemId="7847" ItemName="Buzzard Gizzard" CollectCount="5" />
-    <Objective QuestName="Barbecued Buzzard Wings" QuestId="703" Type="CollectItem" ItemId="3404" ItemName="Buzzard Wing" CollectCount="4" />
-    <Objective QuestName="Badlands Reagent Run" QuestId="2500" Type="CollectItem" ItemId="7846" ItemName="Crag Coyote Fang" CollectCount="10" />
-    <Objective QuestName="Study of the Elements: Rock" QuestId="712" Type="KillMob" MobId="2736" MobName="Greater Rock Elemental" KillCount="1" />
-    <Objective QuestName="Study of the Elements: Rock" QuestId="712" Type="CollectItem" ItemId="4628" ItemName="Bracers of Rock Binding" CollectCount="5" />
-    <Objective QuestName="Scrounging" QuestId="733" Type="CollectItem" ItemId="4630" ItemName="Scrap Metal" CollectCount="7" />
+    <Objective QuestName="Badlands Reagent Run" QuestId="2500" Type="CollectItem" ItemId="7847" CollectCount="5" />
+    <Objective QuestName="Barbecued Buzzard Wings" QuestId="703" Type="CollectItem" ItemId="3404" CollectCount="4" />
+    <Objective QuestName="Badlands Reagent Run" QuestId="2500" Type="CollectItem" ItemId="7846" CollectCount="10" />
+    <Objective QuestName="Study of the Elements: Rock" QuestId="712" Type="KillMob" MobId="2736" KillCount="1" />
+    <Objective QuestName="Study of the Elements: Rock" QuestId="712" Type="CollectItem" ItemId="4628" CollectCount="5" />
+    <Objective QuestName="Scrounging" QuestId="733" Type="CollectItem" ItemId="4630" CollectCount="7" />
     <TurnIn QuestName="Study of the Elements: Rock" QuestId="712" TurnInName="Lotwil Veriatus" TurnInId="2921" />
     <TurnIn QuestName="Barbecued Buzzard Wings" QuestId="703" TurnInName="Rigglefuzz" TurnInId="2817" />
     <TurnIn QuestName="Scrounging" QuestId="733" TurnInName="Sigrun Ironhew" TurnInId="2860" />
-    <CustomBehavior File="SetHearthstone" MobId="5111" AreaId="1537" X="35.53" Y="48.4" Z="0" /> <!-- Set hearth: Stoutlager Inn -->
+    <CustomBehavior File="SetHearthstone" MobId="5111" AreaId="1537" X="-4840.67" Y="-857.094" Z="501.997" /> <!-- Set hearth: Stoutlager Inn -->
     <TurnIn QuestName="Badlands Reagent Run" QuestId="2500" TurnInName="Ghak Healtouch" TurnInId="1470" />
     <TurnIn QuestName="Murdaloc" QuestId="739" TurnInName="Prospector Ironband" TurnInId="1344" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Badlands (42-43) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Badlands (42-43) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Stranglethorn_Vale_(43-44)" />
   </QuestOrder>
 </HBProfile>

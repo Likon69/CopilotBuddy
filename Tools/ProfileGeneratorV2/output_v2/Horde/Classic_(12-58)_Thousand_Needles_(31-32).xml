@@ -1,0 +1,107 @@
+<HBProfile>
+  <Name>Horde\Classic (12-58)\Thousand Needles (31-32)</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>32</MaxLevel>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="1175" Name="A Bump in the Road">
+    <Objective Type="KillMob" MobId="4147" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-5888.19" Y="-3588.84" Z="-58.625" />
+        <Hotspot X="-5849.22" Y="-3979.23" Z="-60.499" />
+        <Hotspot X="-5917.41" Y="-3539.97" Z="-58.625" />
+        <Hotspot X="-5952.69" Y="-3546.07" Z="-58.625" />
+        <Hotspot X="-5952.28" Y="-3568.22" Z="-58.625" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4150" KillCount="6">
+      <Hotspots>
+        <Hotspot X="-6486.17" Y="-3783.02" Z="-58.6249" />
+        <Hotspot X="-6511.09" Y="-3812.53" Z="-58.6325" />
+        <Hotspot X="-6417.78" Y="-3853.99" Z="-58.6282" />
+        <Hotspot X="-6552.09" Y="-3908.03" Z="-58.6374" />
+        <Hotspot X="-6523.54" Y="-3926.97" Z="-58.7389" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="4151" KillCount="10">
+      <Hotspots>
+        <Hotspot X="-6148.35" Y="-4318.72" Z="-58.6299" />
+        <Hotspot X="-6079.6" Y="-4247.33" Z="-58.625" />
+        <Hotspot X="-6487.98" Y="-3850.83" Z="-58.6249" />
+        <Hotspot X="-6201.55" Y="-3681.04" Z="-58.7358" />
+        <Hotspot X="-5910.75" Y="-3751.05" Z="-58.625" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1110" Name="Rocket Car Parts">
+    <Objective Type="CollectItem" ItemId="5798" CollectCount="30">
+      <CollectFrom>
+        <GameObject Name="Rocket Car Rubble" Id="19868" />
+      </CollectFrom>
+      <Hotspots>
+        <Hotspot X="-6179.37" Y="-4264.89" Z="-58.75" />
+        <Hotspot X="-6165.32" Y="-4317.76" Z="-58.75" />
+        <Hotspot X="-6151.0" Y="-4225.0" Z="-58.75" />
+        <Hotspot X="-6055.15" Y="-4286.29" Z="-58.75" />
+        <Hotspot X="-5917.3" Y="-4343.04" Z="-58.75" />
+        <Hotspot X="-5761.22" Y="-3496.09" Z="-57.79" />
+        <Hotspot X="-5700.76" Y="-3933.39" Z="-60.15" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
+  <QuestOrder>
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Thousand Needles (31-32)" LogColor="Green" />
+    <PickUp QuestName="The Swarm Grows" QuestId="1145" GiverName="Korran" GiverId="3428" />
+    <TurnIn QuestName="Regthar Deathgate" QuestId="1361" TurnInName="Regthar Deathgate" TurnInId="3389" />
+    <PickUp QuestName="The Kolkar of Desolace" QuestId="1362" GiverName="Regthar Deathgate" GiverId="3389" />
+    <PickUp QuestName="Rocket Car Parts" QuestId="1110" GiverName="Kravel Koalbeard" GiverId="4452" />
+    <PickUp QuestName="Wharfmaster Dizzywig" QuestId="1111" GiverName="Kravel Koalbeard" GiverId="4452" />
+    <PickUp QuestName="Hemet Nesingwary" QuestId="5762" GiverName="Kravel Koalbeard" GiverId="4452" />
+    <PickUp QuestName="Salt Flat Venom" QuestId="1104" GiverName="Fizzle Brassbolts" GiverId="4454" />
+    <PickUp QuestName="Hardened Shells" QuestId="1105" GiverName="Wizzle Brassbolts" GiverId="4453" />
+    <PickUp QuestName="Load Lightening" QuestId="1176" GiverName="Pozzik" GiverId="4630" />
+    <If Condition="((!HasQuest(1175)) &amp;&amp; (!IsQuestCompleted(1175)))">
+      <PickUp QuestName="A Bump in the Road" QuestId="1175" GiverName="Trackmaster Zherin" GiverId="4629" />
+    </If>
+    <Objective QuestName="Load Lightening" QuestId="1176" Type="CollectItem" ItemId="5848" CollectCount="10" />
+    <Objective QuestName="Hardened Shells" QuestId="1105" Type="CollectItem" ItemId="5795" CollectCount="9" />
+    <Objective QuestName="Salt Flat Venom" QuestId="1104" Type="CollectItem" ItemId="5794" CollectCount="6" />
+    <Objective QuestName="A Bump in the Road" QuestId="1175" Type="KillMob" MobId="4147" KillCount="10" />
+    <Objective QuestName="Rocket Car Parts" QuestId="1110" Type="CollectItem" ItemId="5798" CollectCount="30" />
+    <If Condition="Me.Level &lt; 32">
+      <SetGrindArea>
+        <GrindArea>
+          <Name>Grind to Level 32 - Saltstone Basilisk</Name>
+          <TargetMinLevel>30</TargetMinLevel>
+          <TargetMaxLevel>31</TargetMaxLevel>
+          <Hotspots>
+            <Hotspot X="-5888.19" Y="-3588.84" Z="-58.62" />
+          </Hotspots>
+        </GrindArea>
+      </SetGrindArea>
+      <GrindTo Level="32" /> <!--  (grind Saltstone Basilisk) -->
+    </If>
+    <TurnIn QuestName="Rocket Car Parts" QuestId="1110" TurnInName="Kravel Koalbeard" TurnInId="4452" />
+    <TurnIn QuestName="Salt Flat Venom" QuestId="1104" TurnInName="Fizzle Brassbolts" TurnInId="4454" />
+    <TurnIn QuestName="Hardened Shells" QuestId="1105" TurnInName="Wizzle Brassbolts" TurnInId="4453" />
+    <TurnIn QuestName="Load Lightening" QuestId="1176" TurnInName="Pozzik" TurnInId="4630" />
+    <If Condition="((!HasQuest(1178)) &amp;&amp; (!IsQuestCompleted(1178)))">
+      <PickUp QuestName="Goblin Sponsorship" QuestId="1178" GiverName="Pozzik" GiverId="4630" />
+    </If>
+    <Objective QuestName="A Bump in the Road" QuestId="1175" Type="KillMob" MobId="4150" KillCount="6" />
+    <Objective QuestName="A Bump in the Road" QuestId="1175" Type="KillMob" MobId="4151" KillCount="10" />
+    <TurnIn QuestName="A Bump in the Road" QuestId="1175" TurnInName="Trackmaster Zherin" TurnInId="4629" />
+    <PickUp QuestName="Family Tree" QuestId="5361" GiverName="Cliffwatcher Longhorn" GiverId="10537" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Horde\Classic (12-58)\Thousand Needles (31-32) Complete" LogColor="Orange" />
+    <CustomBehavior File="LoadProfile" ProfileName="Classic_(12-58)_Desolace_(32-34)" />
+  </QuestOrder>
+</HBProfile>

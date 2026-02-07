@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Desolace (35-37)</Name>
+  <Name>Alliance\Desolace (35-37)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>37</MaxLevel>
 
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
 
   <!-- Quest Overrides -->
   <Quest Id="5501" Name="Bone Collector">
@@ -22,9 +25,31 @@
         <Hotspot X="-1349.28" Y="2031.71" Z="50.14" />
         <Hotspot X="-1315.02" Y="1796.78" Z="50.14" />
         <Hotspot X="-1310.88" Y="2035.5" Z="50.14" />
-        <Hotspot X="-1307.84" Y="1949.76" Z="51.0" />
-        <Hotspot X="-1303.66" Y="1887.6" Z="50.34" />
-        <Hotspot X="-1258.74" Y="1856.7" Z="50.14" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1459" Name="Reagents for Reclaimers Inc.">
+    <Objective Type="KillMob" MobId="4700" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-2035.22" Y="1673.3" Z="61.1354" />
+        <Hotspot X="-2036.02" Y="1680.08" Z="61.6485" />
+        <Hotspot X="-2007.95" Y="1682.55" Z="61.5208" />
+        <Hotspot X="-1678.05" Y="1636.42" Z="61.4482" />
+        <Hotspot X="-752.193" Y="2013.92" Z="90.3763" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="5741" Name="Sceptre of Light">
+    <Objective Type="KillMob" MobId="13019" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-451.788" Y="1753.09" Z="153.571" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="1439" Name="Search for Tyranis">
+    <Objective Type="KillMob" MobId="5643" KillCount="1">
+      <Hotspots>
+        <Hotspot X="-419.61" Y="1850.15" Z="128.492" />
       </Hotspots>
     </Objective>
   </Quest>
@@ -41,58 +66,52 @@
         <Hotspot X="-1901.59" Y="977.03" Z="90.86" />
         <Hotspot X="-1864.22" Y="1121.96" Z="92.31" />
         <Hotspot X="-1809.68" Y="1045.78" Z="92.24" />
-        <Hotspot X="-1798.71" Y="943.65" Z="92.67" />
-        <Hotspot X="-1774.14" Y="924.5" Z="92.49" />
-        <Hotspot X="-1760.62" Y="930.16" Z="92.49" />
-        <Hotspot X="-1733.64" Y="921.22" Z="91.81" />
-        <Hotspot X="-1725.56" Y="903.26" Z="91.76" />
       </Hotspots>
     </Objective>
   </Quest>
 
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Desolace (35-37)" LogColor="Green" />
-    <PickUp QuestName="Vahlarriel&apos;s Search" QuestId="1437" GiverName="Vahlarriel Demonslayer" GiverId="5642" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Desolace (35-37)" LogColor="Green" />
+    <PickUp QuestName="Vahlarriel's Search" QuestId="1437" GiverName="Vahlarriel Demonslayer" GiverId="5642" />
     <PickUp QuestName="Centaur Bounty" QuestId="1387" GiverName="Corporal Melkins" GiverId="5752" />
     <PickUp QuestName="Strange Alliance" QuestId="1382" GiverName="Captain Pentigast" GiverId="5396" />
-    <TurnIn QuestName="Reclaimers&apos; Business in Desolace" QuestId="1453" TurnInName="Kreldig Ungor" TurnInId="5638" />
+    <TurnIn QuestName="Reclaimers' Business in Desolace" QuestId="1453" TurnInName="Kreldig Ungor" TurnInId="5638" />
     <If Condition="((!HasQuest(1454)) &amp;&amp; (!IsQuestCompleted(1454)))">
       <PickUp QuestName="The Karnitol Shipwreck" QuestId="1454" GiverName="Kreldig Ungor" GiverId="5638" />
     </If>
     <If Condition="((!HasQuest(1458)) &amp;&amp; (!IsQuestCompleted(1458)))">
       <PickUp QuestName="Reagents for Reclaimers Inc." QuestId="1458" GiverName="Kreldig Ungor" GiverId="5638" />
     </If>
-    <Objective QuestName="Reagents for Reclaimers Inc." QuestId="1458" Type="CollectItem" ItemId="6246" ItemName="Hatefury Claw" CollectCount="10" />
-    <Objective QuestName="Reagents for Reclaimers Inc." QuestId="1458" Type="CollectItem" ItemId="6247" ItemName="Hatefury Horn" CollectCount="10" />
+    <Objective QuestName="Reagents for Reclaimers Inc." QuestId="1458" Type="CollectItem" ItemId="6246" CollectCount="10" />
+    <Objective QuestName="Reagents for Reclaimers Inc." QuestId="1458" Type="CollectItem" ItemId="6247" CollectCount="10" />
     <TurnIn QuestName="Reagents for Reclaimers Inc." QuestId="1458" TurnInName="Kreldig Ungor" TurnInId="5638" />
     <If Condition="((!HasQuest(1459)) &amp;&amp; (!IsQuestCompleted(1459)))">
       <PickUp QuestName="Reagents for Reclaimers Inc." QuestId="1459" GiverName="Kreldig Ungor" GiverId="5638" />
     </If>
-    <CustomBehavior File="SetHearthstone" MobId="11103" AreaId="405" X="66.27" Y="6.56" Z="0" /> <!-- Set hearth: Nijel&apos;s Point -->
-    <TurnIn QuestName="Vahlarriel&apos;s Search" QuestId="1437" TurnInName="Object_50961" TurnInType="Object" TurnInId="50961" />
+    <CustomBehavior File="SetHearthstone" MobId="11103" AreaId="405" X="255.615" Y="1253.76" Z="192.224" /> <!-- Set hearth: Nijel's Point -->
+    <TurnIn QuestName="Vahlarriel's Search" QuestId="1437" TurnInName="Object_50961" TurnInType="Object" TurnInId="50961" />
     <If Condition="((!HasQuest(1465)) &amp;&amp; (!IsQuestCompleted(1465)))">
-      <PickUp QuestName="Vahlarriel&apos;s Search" QuestId="1465" GiverName="Christi Galvanis" GiverId="12960" />
+      <PickUp QuestName="Vahlarriel's Search" QuestId="1465" GiverName="Christi Galvanis" GiverId="12960" />
     </If>
-    <PickUp QuestName="Bone Collector" QuestId="5501" GiverName="Bibbly F&apos;utzbuckle" GiverId="11438" />
+    <PickUp QuestName="Bone Collector" QuestId="5501" GiverName="Bibbly F'utzbuckle" GiverId="11438" />
     <PickUp QuestName="Sceptre of Light" QuestId="5741" GiverName="Azore Aldamort" GiverId="11863" />
     <TurnIn QuestName="The Karnitol Shipwreck" QuestId="1454" TurnInName="Object_35251" TurnInType="Object" TurnInId="35251" />
     <If Condition="((!HasQuest(1455)) &amp;&amp; (!IsQuestCompleted(1455)))">
       <PickUp QuestName="The Karnitol Shipwreck" QuestId="1455" GiverName="Azore Aldamort" GiverId="11863" />
     </If>
-    <PickUp QuestName="Claim Rackmore&apos;s Treasure!" QuestId="6161" GiverName="Azore Aldamort" GiverId="11863" />
-    <Objective QuestName="Claim Rackmore&apos;s Treasure!" QuestId="6161" Type="CollectItem" ItemId="15878" ItemName="Rackmore&apos;s Silver Key" CollectCount="1" />
+    <PickUp QuestName="Claim Rackmore's Treasure!" QuestId="6161" GiverName="Azore Aldamort" GiverId="11863" />
+    <Objective QuestName="Claim Rackmore's Treasure!" QuestId="6161" Type="CollectItem" ItemId="15878" CollectCount="1" />
     <PickUp QuestName="Kodo Roundup" QuestId="5561" GiverName="Smeed Scrabblescrew" GiverId="11596" />
     <While Condition="((HasQuest(5561)) &amp;&amp; (!IsQuestCompleted(5561)))">
-      <RunTo X="60.86" Y="61.86" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="5561" ItemId="13892" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="5561" MobId="11627" ItemId="13892" NumOfTimes="100" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <TurnIn QuestName="Kodo Roundup" QuestId="5561" TurnInName="Smeed Scrabblescrew" TurnInId="11596" />
-    <Objective QuestName="Bone Collector" QuestId="5501" Type="CollectItem" ItemId="13703" ItemName="Kodo Bone" CollectCount="10" />
-    <Objective QuestName="Reagents for Reclaimers Inc." QuestId="1459" Type="KillMob" MobId="4700" MobName="Aged Kodo" KillCount="1" />
-    <Objective QuestName="Reagents for Reclaimers Inc." QuestId="1459" Type="CollectItem" ItemId="6249" ItemName="Aged Kodo Hide" CollectCount="3" />
-    <Objective QuestName="Centaur Bounty" QuestId="1387" Type="CollectItem" ItemId="6067" ItemName="Centaur Ear" CollectCount="15" />
-    <Objective QuestName="Reagents for Reclaimers Inc." QuestId="1459" Type="CollectItem" ItemId="6248" ItemName="Scorpashi Venom" CollectCount="10" />
+    <Objective QuestName="Bone Collector" QuestId="5501" Type="CollectItem" ItemId="13703" CollectCount="10" />
+    <Objective QuestName="Reagents for Reclaimers Inc." QuestId="1459" Type="KillMob" MobId="4700" KillCount="1" />
+    <Objective QuestName="Reagents for Reclaimers Inc." QuestId="1459" Type="CollectItem" ItemId="6249" CollectCount="3" />
+    <Objective QuestName="Centaur Bounty" QuestId="1387" Type="CollectItem" ItemId="6067" CollectCount="15" />
+    <Objective QuestName="Reagents for Reclaimers Inc." QuestId="1459" Type="CollectItem" ItemId="6248" CollectCount="10" />
     <TurnIn QuestName="Strange Alliance" QuestId="1382" TurnInName="Uthek the Wise" TurnInId="5397" />
     <If Condition="((!HasQuest(1384)) &amp;&amp; (!IsQuestCompleted(1384)))">
       <PickUp QuestName="Raid on the Kolkar" QuestId="1384" GiverName="Uthek the Wise" GiverId="5397" />
@@ -103,20 +122,20 @@
     </If>
     <TurnIn QuestName="Reagents for Reclaimers Inc." QuestId="1459" TurnInName="Kreldig Ungor" TurnInId="5638" />
     <TurnIn QuestName="Centaur Bounty" QuestId="1387" TurnInName="Corporal Melkins" TurnInId="5752" />
-    <TurnIn QuestName="Vahlarriel&apos;s Search" QuestId="1465" TurnInName="Vahlarriel Demonslayer" TurnInId="5642" />
+    <TurnIn QuestName="Vahlarriel's Search" QuestId="1465" TurnInName="Vahlarriel Demonslayer" TurnInId="5642" />
     <If Condition="((!HasQuest(1438)) &amp;&amp; (!IsQuestCompleted(1438)))">
-      <PickUp QuestName="Vahlarriel&apos;s Search" QuestId="1438" GiverName="Vahlarriel Demonslayer" GiverId="5642" />
+      <PickUp QuestName="Vahlarriel's Search" QuestId="1438" GiverName="Vahlarriel Demonslayer" GiverId="5642" />
     </If>
-    <Objective QuestName="Raid on the Kolkar" QuestId="1384" Type="CollectItem" ItemId="6079" ItemName="Crude Charm" CollectCount="10" />
-    <TurnIn QuestName="Bone Collector" QuestId="5501" TurnInName="Bibbly F&apos;utzbuckle" TurnInId="11438" />
-    <Objective QuestName="Sceptre of Light" QuestId="5741" Type="KillMob" MobId="13019" MobName="Burning Blade Seer" KillCount="1" />
-    <Objective QuestName="Sceptre of Light" QuestId="5741" Type="CollectItem" ItemId="15750" ItemName="Sceptre of Light" CollectCount="1" />
-    <TurnIn QuestName="Vahlarriel&apos;s Search" QuestId="1438" TurnInName="Dalinda Malem" TurnInId="5644" />
+    <Objective QuestName="Raid on the Kolkar" QuestId="1384" Type="CollectItem" ItemId="6079" CollectCount="10" />
+    <TurnIn QuestName="Bone Collector" QuestId="5501" TurnInName="Bibbly F'utzbuckle" TurnInId="11438" />
+    <Objective QuestName="Sceptre of Light" QuestId="5741" Type="KillMob" MobId="13019" KillCount="1" />
+    <Objective QuestName="Sceptre of Light" QuestId="5741" Type="CollectItem" ItemId="15750" CollectCount="1" />
+    <TurnIn QuestName="Vahlarriel's Search" QuestId="1438" TurnInName="Dalinda Malem" TurnInId="5644" />
     <If Condition="((!HasQuest(1439)) &amp;&amp; (!IsQuestCompleted(1439)))">
       <PickUp QuestName="Search for Tyranis" QuestId="1439" GiverName="Dalinda Malem" GiverId="5644" />
     </If>
-    <Objective QuestName="Search for Tyranis" QuestId="1439" Type="KillMob" MobId="5643" MobName="Tyranis Malem" KillCount="1" />
-    <Objective QuestName="Search for Tyranis" QuestId="1439" Type="CollectItem" ItemId="6767" ItemName="Tyranis&apos; Pendant" CollectCount="1" />
+    <Objective QuestName="Search for Tyranis" QuestId="1439" Type="KillMob" MobId="5643" KillCount="1" />
+    <Objective QuestName="Search for Tyranis" QuestId="1439" Type="CollectItem" ItemId="6767" CollectCount="1" />
     <TurnIn QuestName="Search for Tyranis" QuestId="1439" TurnInName="Dalinda Malem" TurnInId="5644" />
     <If Condition="((!HasQuest(1440)) &amp;&amp; (!IsQuestCompleted(1440)))">
       <PickUp QuestName="Return to Vahlarriel" QuestId="1440" GiverName="Dalinda Malem" GiverId="5644" />
@@ -125,24 +144,24 @@
     <If Condition="((!HasQuest(6027)) &amp;&amp; (!IsQuestCompleted(6027)))">
       <PickUp QuestName="Book of the Ancients" QuestId="6027" GiverName="Azore Aldamort" GiverId="11863" />
     </If>
-    <Objective QuestName="Claim Rackmore&apos;s Treasure!" QuestId="6161" Type="CollectItem" ItemId="15881" ItemName="Rackmore&apos;s Golden Key" CollectCount="1" />
-    <Objective QuestName="Book of the Ancients" QuestId="6027" Type="KillMob" MobId="12369" MobName="Lord Kragaru" KillCount="1" />
-    <Objective QuestName="Book of the Ancients" QuestId="6027" Type="CollectItem" ItemId="15803" ItemName="Book of the Ancients" CollectCount="1" />
-    <TurnIn QuestName="Claim Rackmore&apos;s Treasure!" QuestId="6161" TurnInName="Object_177786" TurnInType="Object" TurnInId="177786" />
-    <Objective QuestName="The Karnitol Shipwreck" QuestId="1456" Type="CollectItem" ItemId="6245" ItemName="Karnitol&apos;s Satchel" CollectCount="1" />
+    <Objective QuestName="Claim Rackmore's Treasure!" QuestId="6161" Type="CollectItem" ItemId="15881" CollectCount="1" />
+    <Objective QuestName="Book of the Ancients" QuestId="6027" Type="KillMob" MobId="12369" KillCount="1" />
+    <Objective QuestName="Book of the Ancients" QuestId="6027" Type="CollectItem" ItemId="15803" CollectCount="1" />
+    <TurnIn QuestName="Claim Rackmore's Treasure!" QuestId="6161" TurnInName="Object_177786" TurnInType="Object" TurnInId="177786" />
+    <Objective QuestName="The Karnitol Shipwreck" QuestId="1456" Type="CollectItem" ItemId="6245" CollectCount="1" />
     <TurnIn QuestName="Book of the Ancients" QuestId="6027" TurnInName="Azore Aldamort" TurnInId="11863" />
     <TurnIn QuestName="Raid on the Kolkar" QuestId="1384" TurnInName="Uthek the Wise" TurnInId="5397" />
     <If Condition="((!HasQuest(1370)) &amp;&amp; (!IsQuestCompleted(1370)))">
       <PickUp QuestName="Stealing Supplies" QuestId="1370" GiverName="Uthek the Wise" GiverId="5397" />
     </If>
-    <Objective QuestName="Stealing Supplies" QuestId="1370" Type="CollectItem" ItemId="6069" ItemName="Crudely Dried Meat" CollectCount="6" />
+    <Objective QuestName="Stealing Supplies" QuestId="1370" Type="CollectItem" ItemId="6069" CollectCount="6" />
     <TurnIn QuestName="Stealing Supplies" QuestId="1370" TurnInName="Uthek the Wise" TurnInId="5397" />
     <TurnIn QuestName="The Karnitol Shipwreck" QuestId="1456" TurnInName="Kreldig Ungor" TurnInId="5638" />
     <If Condition="((!HasQuest(1457)) &amp;&amp; (!IsQuestCompleted(1457)))">
       <PickUp QuestName="The Karnitol Shipwreck" QuestId="1457" GiverName="Kreldig Ungor" GiverId="5638" />
     </If>
     <TurnIn QuestName="Return to Vahlarriel" QuestId="1440" TurnInName="Vahlarriel Demonslayer" TurnInId="5642" />
-    <Objective QuestName="Parts for Kravel" QuestId="1112" Type="CollectItem" ItemId="5800" ItemName="Kravel&apos;s Parts" CollectCount="1" />
+    <Objective QuestName="Parts for Kravel" QuestId="1112" Type="CollectItem" ItemId="5800" CollectCount="1" />
     <TurnIn QuestName="Parts for Kravel" QuestId="1112" TurnInName="Kravel Koalbeard" TurnInId="4452" />
     <If Condition="((!HasQuest(1114)) &amp;&amp; (!IsQuestCompleted(1114)))">
       <PickUp QuestName="Delivery to the Gnomes" QuestId="1114" GiverName="Kravel Koalbeard" GiverId="4452" />
@@ -158,9 +177,9 @@
     </If>
     <TurnIn QuestName="The Eighteenth Pilot" QuestId="1186" TurnInName="Razzeric" TurnInId="4706" />
     <If Condition="((!HasQuest(1187)) &amp;&amp; (!IsQuestCompleted(1187)))">
-      <PickUp QuestName="Razzeric&apos;s Tweaking" QuestId="1187" GiverName="Razzeric" GiverId="4706" />
+      <PickUp QuestName="Razzeric's Tweaking" QuestId="1187" GiverName="Razzeric" GiverId="4706" />
     </If>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Desolace (35-37) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Desolace (35-37) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Stranglethorn_Vale_(37-38)" />
   </QuestOrder>
 </HBProfile>

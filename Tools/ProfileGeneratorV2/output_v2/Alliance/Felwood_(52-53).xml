@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <HBProfile>
-  <Name>Alliance\\Felwood (52-53)</Name>
+  <Name>Alliance\Felwood (52-53)</Name>
 
   <MinLevel>1</MinLevel>
   <MaxLevel>53</MaxLevel>
@@ -8,8 +7,189 @@
   <MinDurability>0.2</MinDurability>
   <MinFreeBagSlots>2</MinFreeBagSlots>
 
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <!-- Quest Overrides -->
+  <Quest Id="4512" Name="A Little Slime Goes a Long Way">
+    <Objective Type="KillMob" MobId="7086" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4415.64" Y="-726.783" Z="265.013" />
+        <Hotspot X="4401.86" Y="-695.602" Z="259.402" />
+        <Hotspot X="4377.32" Y="-699.738" Z="263.19" />
+        <Hotspot X="4409.83" Y="-613.529" Z="264.483" />
+        <Hotspot X="4403.14" Y="-639.289" Z="264.318" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7092" KillCount="1">
+      <Hotspots>
+        <Hotspot X="5309.27" Y="-810.188" Z="338.433" />
+        <Hotspot X="5352.43" Y="-784.759" Z="334.135" />
+        <Hotspot X="4984.95" Y="-657.641" Z="292.457" />
+        <Hotspot X="4997.94" Y="-686.841" Z="294.595" />
+        <Hotspot X="5029.49" Y="-642.252" Z="290.953" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4421" Name="The Corruption of the Jadefire">
+    <Objective Type="KillMob" MobId="9454" KillCount="1">
+      <Hotspots>
+        <Hotspot X="4560.85" Y="-211.739" Z="299.941" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7109" KillCount="11">
+      <Hotspots>
+        <Hotspot X="3821.08" Y="-897.164" Z="302.569" />
+        <Hotspot X="3725.89" Y="-889.261" Z="334.154" />
+        <Hotspot X="3917.71" Y="-827.547" Z="324.338" />
+        <Hotspot X="3941.83" Y="-811.354" Z="316.193" />
+        <Hotspot X="3765.6" Y="-840.981" Z="308.876" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7110" KillCount="9">
+      <Hotspots>
+        <Hotspot X="4597.95" Y="-194.047" Z="300.32" />
+        <Hotspot X="4494.58" Y="-508.303" Z="301.759" />
+        <Hotspot X="4521.83" Y="-488.169" Z="306.232" />
+        <Hotspot X="4553.74" Y="-493.49" Z="302.945" />
+        <Hotspot X="4582.93" Y="-519.227" Z="293.777" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7106" KillCount="9">
+      <Hotspots>
+        <Hotspot X="4599.52" Y="-507.243" Z="294.876" />
+        <Hotspot X="4566.84" Y="-193.845" Z="299.695" />
+        <Hotspot X="4570.74" Y="-479.976" Z="303.931" />
+        <Hotspot X="4574.13" Y="-400.651" Z="305.706" />
+        <Hotspot X="4577.54" Y="-505.157" Z="296.001" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="5155" Name="Forces of Jaedenar">
+    <Objective Type="KillMob" MobId="7125" KillCount="4">
+      <Hotspots>
+        <Hotspot X="4792.15" Y="-565.158" Z="285.087" />
+        <Hotspot X="4761.73" Y="-583.714" Z="279.782" />
+        <Hotspot X="4779.26" Y="-572.04" Z="275.844" />
+        <Hotspot X="4818.86" Y="-591.139" Z="290.55" />
+        <Hotspot X="4864.79" Y="-605.092" Z="307.287" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7113" KillCount="4">
+      <Hotspots>
+        <Hotspot X="4781.55" Y="-540.811" Z="284.361" />
+        <Hotspot X="4805.13" Y="-547.412" Z="272.959" />
+        <Hotspot X="4856.33" Y="-369.072" Z="352.084" />
+        <Hotspot X="4740.15" Y="-451.848" Z="349.006" />
+        <Hotspot X="4789.91" Y="-574.192" Z="285.208" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7115" KillCount="6">
+      <Hotspots>
+        <Hotspot X="4753.5" Y="-545.315" Z="284.959" />
+        <Hotspot X="4786.12" Y="-523.577" Z="283.96" />
+        <Hotspot X="4777.93" Y="-557.573" Z="275.15" />
+        <Hotspot X="4756.2" Y="-597.928" Z="279.563" />
+        <Hotspot X="4811.07" Y="-576.129" Z="286.274" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7112" KillCount="6">
+      <Hotspots>
+        <Hotspot X="4750.5" Y="-550.487" Z="283.622" />
+        <Hotspot X="4782.52" Y="-527.412" Z="283.624" />
+        <Hotspot X="4774.06" Y="-583.119" Z="280.288" />
+        <Hotspot X="4767.34" Y="-570.026" Z="278.062" />
+        <Hotspot X="4749.07" Y="-597.87" Z="280.253" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="8460" Name="Timbermaw Ally">
+    <Objective Type="KillMob" MobId="7153" KillCount="6">
+      <Hotspots>
+        <Hotspot X="3753.17" Y="-1217.82" Z="209.753" />
+        <Hotspot X="3607.32" Y="-1039.43" Z="220.976" />
+        <Hotspot X="3609.52" Y="-1156.05" Z="215.7" />
+        <Hotspot X="3621.24" Y="-1214.55" Z="217.544" />
+        <Hotspot X="3570.23" Y="-1127.83" Z="219.991" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7155" KillCount="6">
+      <Hotspots>
+        <Hotspot X="3552.57" Y="-1084.76" Z="223.412" />
+        <Hotspot X="3688.21" Y="-1011.26" Z="223.954" />
+        <Hotspot X="3618.7" Y="-1188.61" Z="213.385" />
+        <Hotspot X="3704.07" Y="-1135.35" Z="207.948" />
+        <Hotspot X="3724.05" Y="-1024.52" Z="226.88" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7154" KillCount="6">
+      <Hotspots>
+        <Hotspot X="3659.64" Y="-1020.65" Z="221.612" />
+        <Hotspot X="3584.86" Y="-1175.01" Z="219.842" />
+        <Hotspot X="3582.85" Y="-1082.78" Z="221.176" />
+        <Hotspot X="3718.73" Y="-1172.03" Z="207.628" />
+        <Hotspot X="3627.95" Y="-1189.24" Z="212.881" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="5156" Name="Verifying the Corruption">
+    <Objective Type="KillMob" MobId="9878" KillCount="2">
+      <Hotspots>
+        <Hotspot X="5568.85" Y="-882.877" Z="377.43" />
+        <Hotspot X="5562.34" Y="-925.108" Z="377.145" />
+        <Hotspot X="5546.28" Y="-817.698" Z="353.535" />
+        <Hotspot X="5683.37" Y="-729.215" Z="376.707" />
+        <Hotspot X="5669.46" Y="-811.385" Z="377.576" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="9879" KillCount="2">
+      <Hotspots>
+        <Hotspot X="5653.56" Y="-986.303" Z="377.195" />
+        <Hotspot X="5563.0" Y="-951.885" Z="376.765" />
+        <Hotspot X="5647.88" Y="-850.98" Z="379.829" />
+        <Hotspot X="5554.77" Y="-678.227" Z="335.743" />
+        <Hotspot X="5613.32" Y="-714.615" Z="343.297" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+  <Quest Id="4906" Name="Further Corruption">
+    <Objective Type="KillMob" MobId="10648" KillCount="1">
+      <Hotspots>
+        <Hotspot X="6276.51" Y="-604.761" Z="468.638" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7111" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6577.9" Y="-798.936" Z="474.935" />
+        <Hotspot X="6585.36" Y="-847.513" Z="474.696" />
+        <Hotspot X="6558.72" Y="-822.778" Z="475.694" />
+        <Hotspot X="6580.23" Y="-848.725" Z="473.957" />
+        <Hotspot X="6301.95" Y="-756.593" Z="468.317" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7108" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6580.91" Y="-803.787" Z="474.824" />
+        <Hotspot X="6583.47" Y="-952.907" Z="473.909" />
+        <Hotspot X="6279.44" Y="-614.379" Z="472.573" />
+        <Hotspot X="6288.15" Y="-598.156" Z="466.618" />
+        <Hotspot X="6377.46" Y="-799.804" Z="457.78" />
+      </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="7107" KillCount="8">
+      <Hotspots>
+        <Hotspot X="6523.57" Y="-813.494" Z="473.944" />
+        <Hotspot X="6484.12" Y="-819.725" Z="474.125" />
+        <Hotspot X="6535.05" Y="-835.165" Z="474.694" />
+        <Hotspot X="6552.89" Y="-842.578" Z="473.694" />
+        <Hotspot X="6569.07" Y="-806.169" Z="475.699" />
+      </Hotspots>
+    </Objective>
+  </Quest>
+
   <QuestOrder>
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Felwood (52-53)" LogColor="Green" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Felwood (52-53)" LogColor="Green" />
     <PickUp QuestName="Cleansing Felwood" QuestId="4101" GiverName="Arathandris Silversky" GiverId="9528" />
     <If Condition="((!HasQuest(5155)) &amp;&amp; (!IsQuestCompleted(5155)))">
       <PickUp QuestName="Forces of Jaedenar" QuestId="5155" GiverName="Greta Mosshoof" GiverId="10922" />
@@ -18,34 +198,31 @@
       <PickUp QuestName="The Corruption of the Jadefire" QuestId="4421" GiverName="Eridan Bluewind" GiverId="9116" />
     </If>
     <While Condition="((HasQuest(4512)) &amp;&amp; (!IsQuestCompleted(4512)))">
-      <RunTo X="51.35" Y="81.51" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="4512" ItemId="11912" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="4512" MobId="0" ItemId="11912" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="CollectItem" ItemId="11914" ItemName="Empty Cursed Ooze Jar" CollectCount="6" />
-    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="CollectItem" ItemId="11948" ItemName="Empty Tainted Ooze Jar" CollectCount="6" />
-    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="KillMob" MobId="7086" MobName="Cursed Ooze" KillCount="1" />
+    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="CollectItem" ItemId="11914" CollectCount="6" />
+    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="CollectItem" ItemId="11948" CollectCount="6" />
+    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="KillMob" MobId="7086" KillCount="1" />
     <While Condition="((HasQuest(4512)) &amp;&amp; (!IsQuestCompleted(4512)))">
-      <RunTo X="51.35" Y="81.51" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="4512" ItemId="11914" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="4512" MobId="0" ItemId="11914" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="CollectItem" ItemId="11947" ItemName="Filled Cursed Ooze Jar" CollectCount="6" />
-    <Objective QuestName="The Corruption of the Jadefire" QuestId="4421" Type="KillMob" MobId="9454" MobName="Xavathras" KillCount="1" />
-    <Objective QuestName="The Corruption of the Jadefire" QuestId="4421" Type="KillMob" MobId="7109" MobName="Jadefire Felsworn" KillCount="11" />
-    <Objective QuestName="The Corruption of the Jadefire" QuestId="4421" Type="KillMob" MobId="7110" MobName="Jadefire Shadowstalker" KillCount="9" />
-    <Objective QuestName="The Corruption of the Jadefire" QuestId="4421" Type="KillMob" MobId="7106" MobName="Jadefire Rogue" KillCount="9" />
-    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="KillMob" MobId="7092" MobName="Tainted Ooze" KillCount="1" />
+    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="CollectItem" ItemId="11947" CollectCount="6" />
+    <Objective QuestName="The Corruption of the Jadefire" QuestId="4421" Type="KillMob" MobId="9454" KillCount="1" />
+    <Objective QuestName="The Corruption of the Jadefire" QuestId="4421" Type="KillMob" MobId="7109" KillCount="11" />
+    <Objective QuestName="The Corruption of the Jadefire" QuestId="4421" Type="KillMob" MobId="7110" KillCount="9" />
+    <Objective QuestName="The Corruption of the Jadefire" QuestId="4421" Type="KillMob" MobId="7106" KillCount="9" />
+    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="KillMob" MobId="7092" KillCount="1" />
     <While Condition="((HasQuest(4512)) &amp;&amp; (!IsQuestCompleted(4512)))">
-      <RunTo X="42.64" Y="65.46" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="4512" ItemId="11948" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="4512" MobId="0" ItemId="11948" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="CollectItem" ItemId="11949" ItemName="Filled Tainted Ooze Jar" CollectCount="6" />
-    <Objective QuestName="Forces of Jaedenar" QuestId="5155" Type="KillMob" MobId="7125" MobName="Jaedenar Hound" KillCount="4" />
-    <Objective QuestName="Forces of Jaedenar" QuestId="5155" Type="KillMob" MobId="7113" MobName="Jaedenar Guardian" KillCount="4" />
-    <Objective QuestName="Forces of Jaedenar" QuestId="5155" Type="KillMob" MobId="7115" MobName="Jaedenar Adept" KillCount="6" />
-    <Objective QuestName="Forces of Jaedenar" QuestId="5155" Type="KillMob" MobId="7112" MobName="Jaedenar Cultist" KillCount="6" />
+    <Objective QuestName="A Little Slime Goes a Long Way" QuestId="4512" Type="CollectItem" ItemId="11949" CollectCount="6" />
+    <Objective QuestName="Forces of Jaedenar" QuestId="5155" Type="KillMob" MobId="7125" KillCount="4" />
+    <Objective QuestName="Forces of Jaedenar" QuestId="5155" Type="KillMob" MobId="7113" KillCount="4" />
+    <Objective QuestName="Forces of Jaedenar" QuestId="5155" Type="KillMob" MobId="7115" KillCount="6" />
+    <Objective QuestName="Forces of Jaedenar" QuestId="5155" Type="KillMob" MobId="7112" KillCount="6" />
     <TurnIn QuestName="Forces of Jaedenar" QuestId="5155" TurnInName="Greta Mosshoof" TurnInId="10922" />
     <If Condition="((!HasQuest(5157)) &amp;&amp; (!IsQuestCompleted(5157)))">
       <PickUp QuestName="Collection of the Corrupt Water" QuestId="5157" GiverName="Greta Mosshoof" GiverId="10922" />
@@ -58,34 +235,32 @@
     <If Condition="((!HasQuest(8460)) &amp;&amp; (!IsQuestCompleted(8460)))">
       <PickUp QuestName="Timbermaw Ally" QuestId="8460" GiverName="Grazle" GiverId="11554" />
     </If>
-    <Objective QuestName="Timbermaw Ally" QuestId="8460" Type="KillMob" MobId="7153" MobName="Deadwood Warrior" KillCount="6" />
-    <Objective QuestName="Timbermaw Ally" QuestId="8460" Type="KillMob" MobId="7155" MobName="Deadwood Pathfinder" KillCount="6" />
-    <Objective QuestName="Timbermaw Ally" QuestId="8460" Type="KillMob" MobId="7154" MobName="Deadwood Gardener" KillCount="6" />
+    <Objective QuestName="Timbermaw Ally" QuestId="8460" Type="KillMob" MobId="7153" KillCount="6" />
+    <Objective QuestName="Timbermaw Ally" QuestId="8460" Type="KillMob" MobId="7155" KillCount="6" />
+    <Objective QuestName="Timbermaw Ally" QuestId="8460" Type="KillMob" MobId="7154" KillCount="6" />
     <TurnIn QuestName="Timbermaw Ally" QuestId="8460" TurnInName="Grazle" TurnInId="11554" />
     <If Condition="((!HasQuest(8462)) &amp;&amp; (!IsQuestCompleted(8462)))">
       <PickUp QuestName="Speak to Nafien" QuestId="8462" GiverName="Grazle" GiverId="11554" />
     </If>
     <While Condition="((HasQuest(5157)) &amp;&amp; (!IsQuestCompleted(5157)))">
-      <RunTo X="38.37" Y="59.85" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="5157" ItemId="12922" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="5157" MobId="0" ItemId="12922" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
-    <Objective QuestName="Collection of the Corrupt Water" QuestId="5157" Type="CollectItem" ItemId="12907" ItemName="Corrupt Moonwell Water" CollectCount="1" />
-    <Objective QuestName="Verifying the Corruption" QuestId="5156" Type="KillMob" MobId="9878" MobName="Entropic Beast" KillCount="2" />
-    <Objective QuestName="Verifying the Corruption" QuestId="5156" Type="KillMob" MobId="9879" MobName="Entropic Horror" KillCount="2" />
-    <Objective QuestName="Further Corruption" QuestId="4906" Type="KillMob" MobId="10648" MobName="Xavaric" KillCount="1" />
-    <Objective QuestName="Flute of Xavaric" QuestId="939" Type="CollectItem" ItemId="11668" ItemName="Flute of Xavaric" CollectCount="1" />
+    <Objective QuestName="Collection of the Corrupt Water" QuestId="5157" Type="CollectItem" ItemId="12907" CollectCount="1" />
+    <Objective QuestName="Verifying the Corruption" QuestId="5156" Type="KillMob" MobId="9878" KillCount="2" />
+    <Objective QuestName="Verifying the Corruption" QuestId="5156" Type="KillMob" MobId="9879" KillCount="2" />
+    <Objective QuestName="Further Corruption" QuestId="4906" Type="KillMob" MobId="10648" KillCount="1" />
+    <Objective QuestName="Flute of Xavaric" QuestId="939" Type="CollectItem" ItemId="11668" CollectCount="1" />
     <While Condition="((HasQuest(8462)) &amp;&amp; (!IsQuestCompleted(8462)))">
-      <RunTo X="39.07" Y="22.35" Z="0" />
-      <CustomBehavior File="UseItemOn" QuestId="8462" ItemId="11668" MobId="0" NumOfTimes="1" CollectionDistance="30" WaitTime="1500" />
+      <CustomBehavior File="UseItemOn" QuestId="8462" MobId="0" ItemId="11668" NumOfTimes="1" Range="5" CollectionDistance="1000" />
       <CustomBehavior File="WaitTimer" WaitTime="3000" />
     </While>
     <PickUp QuestName="Flute of Xavaric" QuestId="939" GiverName="Grazle" GiverId="11554" />
-    <Objective QuestName="Flute of Xavaric" QuestId="939" Type="CollectItem" ItemId="11674" ItemName="Jadefire Felbind" CollectCount="5" />
-    <Objective QuestName="Further Corruption" QuestId="4906" Type="KillMob" MobId="7111" MobName="Jadefire Hellcaller" KillCount="8" />
-    <Objective QuestName="Further Corruption" QuestId="4906" Type="KillMob" MobId="7108" MobName="Jadefire Betrayer" KillCount="8" />
-    <Objective QuestName="Further Corruption" QuestId="4906" Type="KillMob" MobId="7107" MobName="Jadefire Trickster" KillCount="8" />
-    <Objective QuestName="Cleansing Felwood" QuestId="4101" Type="CollectItem" ItemId="11503" ItemName="Blood Amber" CollectCount="15" />
+    <Objective QuestName="Flute of Xavaric" QuestId="939" Type="CollectItem" ItemId="11674" CollectCount="5" />
+    <Objective QuestName="Further Corruption" QuestId="4906" Type="KillMob" MobId="7111" KillCount="8" />
+    <Objective QuestName="Further Corruption" QuestId="4906" Type="KillMob" MobId="7108" KillCount="8" />
+    <Objective QuestName="Further Corruption" QuestId="4906" Type="KillMob" MobId="7107" KillCount="8" />
+    <Objective QuestName="Cleansing Felwood" QuestId="4101" Type="CollectItem" ItemId="11503" CollectCount="15" />
     <TurnIn QuestName="Collection of the Corrupt Water" QuestId="5157" TurnInName="Greta Mosshoof" TurnInId="10922" />
     <If Condition="((!HasQuest(5158)) &amp;&amp; (!IsQuestCompleted(5158)))">
       <PickUp QuestName="Seeking Spiritual Aid" QuestId="5158" GiverName="Greta Mosshoof" GiverId="10922" />
@@ -97,13 +272,13 @@
     <TurnIn QuestName="Further Corruption" QuestId="4906" TurnInName="Eridan Bluewind" TurnInId="9116" />
     <TurnIn QuestName="Verifying the Corruption" QuestId="5156" TurnInName="Taronn Redfeather" TurnInId="10921" />
     <TurnIn QuestName="Cleansing Felwood" QuestId="4101" TurnInName="Arathandris Silversky" TurnInId="9528" />
-    <Objective QuestName="Salve via Hunting" QuestId="5882" Type="CollectItem" ItemId="11511" ItemName="Cenarion Beacon" CollectCount="1" />
-    <Objective QuestName="Salve via Hunting" QuestId="5882" Type="CollectItem" ItemId="11515" ItemName="Corrupted Soul Shard" CollectCount="6" />
+    <Objective QuestName="Salve via Hunting" QuestId="5882" Type="CollectItem" ItemId="11511" CollectCount="1" />
+    <Objective QuestName="Salve via Hunting" QuestId="5882" Type="CollectItem" ItemId="11515" CollectCount="6" />
     <If Condition="((!HasQuest(5882)) &amp;&amp; (!IsQuestCompleted(5882)))">
       <PickUp QuestName="Salve via Hunting" QuestId="5882" GiverName="Arathandris Silversky" GiverId="9528" />
     </If>
     <TurnIn QuestName="Speak to Nafien" QuestId="8462" TurnInName="Nafien" TurnInId="15395" />
-    <CustomBehavior File="Message" Text="Leveling Guides\\Alliance\\Felwood (52-53) Complete" LogColor="Orange" />
+    <CustomBehavior File="Message" Text="Leveling Guides\Alliance\Felwood (52-53) Complete" LogColor="Orange" />
     <CustomBehavior File="LoadProfile" ProfileName="Winterspring_(53-53)" />
   </QuestOrder>
 </HBProfile>
