@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/EchoSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- 
+    Transport Profile: Undercity to Vengeance Landing
+    Transport: Zeppelin to Howling Fjord (ID: 181689)
+    Faction: Horde
+    Route: Azeroth -> Northrend
+    
+    Generated from WRobot coordinates
+  -->
+  
+  <Name>Transport_Undercity_to_Vengeance_Landing</Name>
+  <MinLevel>1</MinLevel>
+  <MaxLevel>80</MaxLevel>
+  
+  <AvoidMobs>true</AvoidMobs>
+  <LootMobs>false</LootMobs>
+  <SellGrey>false</SellGrey>
+  
+  <QuestOrder>
+    <!-- Run to departure dock -->
+    <RunTo X="2058.89" Y="384.75" Z="97.03" />
+    
+    <!-- Take transport -->
+    <CustomBehavior File="UseTransport" TransportId="181689"
+        WaitAtX="2058.89" WaitAtY="384.75" WaitAtZ="97.03"
+        TransportStartX="2059.44" TransportStartY="393.2" TransportStartZ="115.0"
+        StandOnX="2065.1" StandOnY="388.07" StandOnZ="97.1"
+        TransportEndX="1989.26" TransportEndY="-6079.51" TransportEndZ="90.07"
+        GetOffX="2000.56" GetOffY="-6086.11" GetOffZ="69.32" />
+    
+    <!-- Move away from dock -->
+    <RunTo X="2000.56" Y="-6086.11" Z="69.32" />
+  </QuestOrder>
+  
+</HBProfile>

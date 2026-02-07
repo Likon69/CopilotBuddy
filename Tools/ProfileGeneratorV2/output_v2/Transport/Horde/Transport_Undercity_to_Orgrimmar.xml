@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/EchoSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- 
+    Transport Profile: Undercity to Orgrimmar
+    Transport: The Thundercaller (ID: 164871)
+    Faction: Horde
+    Route: Azeroth -> Kalimdor
+    
+    Generated from WRobot coordinates
+  -->
+  
+  <Name>Transport_Undercity_to_Orgrimmar</Name>
+  <MinLevel>1</MinLevel>
+  <MaxLevel>80</MaxLevel>
+  
+  <AvoidMobs>true</AvoidMobs>
+  <LootMobs>false</LootMobs>
+  <SellGrey>false</SellGrey>
+  
+  <QuestOrder>
+    <!-- Run to departure dock -->
+    <RunTo X="2066.298" Y="286.7292" Z="97.03134" />
+    
+    <!-- Take transport -->
+    <CustomBehavior File="UseTransport" TransportId="164871"
+        WaitAtX="2066.298" WaitAtY="286.7292" WaitAtZ="97.03134"
+        TransportStartX="2062.376" TransportStartY="292.998" TransportStartZ="114.973"
+        StandOnX="2068.04" StandOnY="295.0981" StandOnZ="97.23881"
+        TransportEndX="1318.107" TransportEndY="-4658.047" TransportEndZ="71.86043"
+        GetOffX="1325.077" GetOffY="-4651.817" GetOffZ="53.79624" />
+    
+    <!-- Move away from dock -->
+    <RunTo X="1325.077" Y="-4651.817" Z="53.79624" />
+  </QuestOrder>
+  
+</HBProfile>

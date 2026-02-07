@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/EchoSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- 
+    Transport Profile: Auberdine to Menethil Harbor
+    Transport: The Lady Mehley (ID: 176231)
+    Faction: Alliance
+    Route: Kalimdor -> Azeroth
+    
+    Generated from WRobot coordinates
+  -->
+  
+  <Name>Transport_Auberdine_to_Menethil_Harbor</Name>
+  <MinLevel>1</MinLevel>
+  <MaxLevel>80</MaxLevel>
+  
+  <AvoidMobs>true</AvoidMobs>
+  <LootMobs>false</LootMobs>
+  <SellGrey>false</SellGrey>
+  
+  <QuestOrder>
+    <!-- Run to departure dock -->
+    <RunTo X="6439.0" Y="814.7" Z="5.77" />
+    
+    <!-- Take transport -->
+    <CustomBehavior File="UseTransport" TransportId="176231"
+        WaitAtX="6439.0" WaitAtY="814.7" WaitAtZ="5.77"
+        TransportStartX="6443.32" TransportStartY="823.58" TransportStartZ="-0.04"
+        StandOnX="6447.2" StandOnY="829.1" StandOnZ="6.05"
+        TransportEndX="-3664.1" TransportEndY="-604.37" TransportEndZ="-0.04"
+        GetOffX="-3671.5" GetOffY="-599.5" GetOffZ="6.32" />
+    
+    <!-- Move away from dock -->
+    <RunTo X="-3671.5" Y="-599.5" Z="6.32" />
+  </QuestOrder>
+  
+</HBProfile>

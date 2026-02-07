@@ -20,6 +20,7 @@ namespace Styx.Logic.Pathing
 		private static IStuckHandler? _stuckHandler;
 		private static WaitTimer _stuckCheckTimer = new WaitTimer(TimeSpan.FromSeconds(2));
 		private static WaitTimer _doorInteractTimer = new WaitTimer(TimeSpan.FromSeconds(2)); // Cooldown between door interactions
+		private static WaitTimer _pathRegenThrottle = new WaitTimer(TimeSpan.FromMilliseconds(500)); // Prevent path regen spam
 
 		// Path metadata — stored alongside _currentPath to support off-mesh, terrain type, and ability checks
 		private static TripperNav.StraightPathFlags[]? _currentFlags;
@@ -247,6 +248,8 @@ namespace Styx.Logic.Pathing
 			_elevatorBoarded = false;
 			_ridingElevator = false;
 			_unstickAttempts = 0;
+			_doorCenterTarget = WoWPoint.Zero;
+			_pathRegenThrottle = new WaitTimer(TimeSpan.FromMilliseconds(500)); // Reset so next path gen is immediate
 			WoWMovement.MoveStop();
 		}
 
@@ -290,6 +293,23 @@ namespace Styx.Logic.Pathing
 				return MoveResult.ReachedDestination;
 			}
 
+			// Auto-mount check (HB 6.2.3 MeshNavigator L231):
+			// If distance >= MountDistance and we can mount, mount up before path following.
+			// This ensures all callers (quest behaviors, plugins, etc.) get auto-mounting.
+			if (Mount.ShouldMount(destination))
+			{
+				WoWPoint dest = destination;
+				Mount.StateMount(() => dest);
+			}
+
+			// Auto-dismount near destination (HB pattern):
+			// Dismount when close to interaction POIs (loot, vendor, quest NPC, etc.)
+			// to avoid running into NPCs mounted and failing to interact.
+			if (Mount.ShouldDismount(destination))
+			{
+				Mount.Dismount("Near destination");
+			}
+
 			// P6.14 — Combat abort: If we're in combat, skip expensive pathfinding.
 			// In synchronous mode we can't abort mid-pathfind, but we CAN short-circuit
 			// before calling FindPath() and use direct click-to-move instead.
@@ -303,9 +323,17 @@ namespace Styx.Logic.Pathing
 				return MoveResult.Moved;
 			}
 
-			// If destination changed, generate new path
+			// If destination changed, generate new path (with throttle to prevent regen spam)
 			if (_destination != destination)
 			{
+				if (!_pathRegenThrottle.IsFinished)
+				{
+					// Too soon since last path generation — use direct movement as fallback
+					WoWMovement.ClickToMove(destination);
+					return MoveResult.Moved;
+				}
+				_pathRegenThrottle.Reset();
+
 				_destination = destination;
 				_currentPath.Clear();
 				_stuckCheckTimer.Reset();
@@ -469,6 +497,7 @@ namespace Styx.Logic.Pathing
 					_currentFlags = null;
 					_currentPolyTypes = null;
 					_currentAbilityFlags = null;
+					_pathRegenThrottle = new WaitTimer(TimeSpan.FromMilliseconds(500)); // Allow immediate regen after combat
 					Logging.WriteDebug("[Navigator] Combat detected — aborting path to let combat routine take over");
 					return MoveResult.Moved;
 				}
@@ -492,6 +521,7 @@ namespace Styx.Logic.Pathing
 							Logging.Write("[Navigator] {0} unstick attempts failed — forcing path regeneration", _unstickAttempts);
 							_unstickAttempts = 0;
 							_destination = WoWPoint.Zero; // Force new path on next call
+							_pathRegenThrottle = new WaitTimer(TimeSpan.FromMilliseconds(500)); // Allow immediate regen
 							return MoveResult.Failed;
 						}
 						StuckHandler.Unstick();
@@ -511,6 +541,7 @@ namespace Styx.Logic.Pathing
 					{
 						Logging.WriteDebug("[Navigator] Player drifted {0:F1}yd from path — regenerating", distToSegment);
 						_destination = WoWPoint.Zero; // Force new path on next call
+						_pathRegenThrottle = new WaitTimer(TimeSpan.FromMilliseconds(500)); // Allow immediate regen
 						return MoveResult.Moved;
 					}
 				}
@@ -520,11 +551,41 @@ namespace Styx.Logic.Pathing
 				bool isFinalPoint = (_currentPathIndex == _currentPath.Count - 1);
 				float waypointPrecision = isFinalPoint ? precision : PathPrecision;
 
-				// HB: Check 2D distance AND Z difference (< 4.5 yards)
+				// Stair entry detection: if the NEXT waypoint has a big elevation change
+				// relative to the CURRENT waypoint, this waypoint is a stair entry/exit point.
+				// Tighten precision to ensure we actually reach it before turning toward stairs.
+				// Without this, the bot turns early (2yd away) and walks into the railing.
+				bool isStairEntryPoint = false;
+				if (!isFinalPoint && _currentPathIndex + 1 < _currentPath.Count)
+				{
+					float nextSegmentZDiff = Math.Abs(_currentPath[_currentPathIndex + 1].Z - nextPoint.Z);
+					if (nextSegmentZDiff > 2.5f)
+					{
+						isStairEntryPoint = true;
+						waypointPrecision = 1.0f; // Must reach within 1yd before advancing to stair waypoint
+					}
+				}
+
+				// Waypoint advance: use 2D distance + Z threshold for flat terrain,
+				// but use 3D distance for elevation changes (stairs/ramps) to avoid
+				// premature advance that changes direction and causes railing collisions.
 				float distance2DSqr = me.Location.Distance2DSqr(nextPoint);
 				float zDiff = Math.Abs(me.Location.Z - nextPoint.Z);
 				
-				if (distance2DSqr < waypointPrecision * waypointPrecision && zDiff < 4.5f)
+				bool reachedWaypoint;
+				if (zDiff > 2.0f)
+				{
+					// On stairs: use 3D distance — prevents skipping when Z gap is large
+					float dist3D = me.Location.Distance(nextPoint);
+					reachedWaypoint = dist3D < waypointPrecision + 0.5f;
+				}
+				else
+				{
+					// Flat terrain (or stair entry with tightened precision): 2D distance + Z < 4.5
+					reachedWaypoint = distance2DSqr < waypointPrecision * waypointPrecision && zDiff < 4.5f;
+				}
+				
+				if (reachedWaypoint)
 				{
 					// Off-mesh guard: if this waypoint is an off-mesh entry point (elevator, portal),
 					// require tighter precision before advancing — don't skip critical transition points
@@ -555,6 +616,7 @@ namespace Styx.Logic.Pathing
 					// Reset stuck timer and unstick counter on successful waypoint advance
 					_stuckCheckTimer.Reset();
 					_unstickAttempts = 0;
+					try { StuckHandler.Reset(); } catch { }
 
 					_currentPathIndex++;
 					if (_currentPathIndex >= _currentPath.Count)
@@ -614,23 +676,61 @@ namespace Styx.Logic.Pathing
 				}
 				// =========== END STAIR HANDLING ===========
 
-				// HB: Push waypoint ahead by PathPrecision in movement direction (for flat terrain)
-				// BUT validate with navmesh raycast to prevent cutting corners near walls (P6.5 fix)
+				// HB 6.2.3 method_26: Push waypoint ahead by PathPrecision in movement direction,
+				// BUT validate the extended point via navmesh raycast from BOTH the waypoint AND
+				// the player position. This prevents cutting corners near walls/barriers.
+				// Also reduce push near direction changes (turns) to prevent wall grazing.
 				WoWPoint direction = nextPoint - me.Location;
 				float length = (float)Math.Sqrt(direction.X * direction.X + direction.Y * direction.Y + direction.Z * direction.Z);
 				if (length > 0.01f)
 				{
 					direction = new WoWPoint(direction.X / length, direction.Y / length, direction.Z / length);
-					WoWPoint pushedPoint = nextPoint + direction * PathPrecision;
-
-					// Raycast from waypoint to pushed point: if clear, use push; if wall, click exact waypoint
-					if (!Raycast(nextPoint, pushedPoint, out _))
+					
+					// Check if next segment has a significant direction change (turn)
+					float pushDistance = PathPrecision;
+					if (_currentPathIndex + 1 < _currentPath.Count)
 					{
-						clickPoint = pushedPoint;
+						WoWPoint nextNextPoint = _currentPath[_currentPathIndex + 1];
+						WoWPoint nextDir = nextNextPoint - nextPoint;
+						float nextLen = (float)Math.Sqrt(nextDir.X * nextDir.X + nextDir.Y * nextDir.Y + nextDir.Z * nextDir.Z);
+						if (nextLen > 0.01f)
+						{
+							nextDir = new WoWPoint(nextDir.X / nextLen, nextDir.Y / nextLen, nextDir.Z / nextLen);
+							float dot = direction.X * nextDir.X + direction.Y * nextDir.Y;
+							// dot < 0.7 means >45° turn — reduce push to avoid wall grazing
+							if (dot < 0.7f)
+								pushDistance = 0f; // No push at turns — click exact waypoint
+							else if (dot < 0.9f)
+								pushDistance = PathPrecision * 0.5f; // Slight turn — half push
+						}
 					}
 					else
 					{
-						// Push would cross a navmesh edge (wall/cliff) — click exact waypoint
+						// Final waypoint — no push
+						pushDistance = 0f;
+					}
+					
+					if (pushDistance > 0.01f)
+					{
+						WoWPoint pushedPoint = nextPoint + direction * pushDistance;
+
+						// Double raycast validation (HB 6.2.3 pattern):
+						// 1. Waypoint → pushed point: no wall past the waypoint
+						// 2. Player → pushed point: no wall between player and overshoot target
+						bool clearFromWaypoint = !Raycast(nextPoint, pushedPoint, out _);
+						bool clearFromPlayer = !Raycast(me.Location, pushedPoint, out _);
+						
+						if (clearFromWaypoint && clearFromPlayer)
+						{
+							clickPoint = pushedPoint;
+						}
+						else
+						{
+							clickPoint = nextPoint;
+						}
+					}
+					else
+					{
 						clickPoint = nextPoint;
 					}
 				}
@@ -1043,14 +1143,33 @@ namespace Styx.Logic.Pathing
 				return null;
 			}
 
-			// If multiple transports found, prefer the one whose current Z is closer to player Z
-			// (i.e., the one at our level or approaching our level — direction-aware)
+			// Direction-aware elevator selection (AUDIT FIX):
+			// When multiple transports exist (e.g., Undercity, Thunder Bluff), pick the one
+			// whose current Z matches our boarding level AND is heading toward target Z.
+			// Step 1: Filter to elevators at our level (boardable = within 3yd Z).
+			// Step 2: Among those, prefer the one closest to target Z (going our direction).
+			// Fallback: if none at our level, pick closest Z to player (waiting for it).
 			WoWGameObject transport;
 			if (transports.Count > 1)
 			{
-				transport = transports.OrderBy(go => Math.Abs(go.Z - me.Z)).First();
-				Logging.WriteDebug("[Navigator] Multiple transports nearby ({0}), chose closest to player Z: {1}",
-					transports.Count, transport.Name);
+				var boardable = transports.Where(go => Math.Abs(go.Z - me.Z) < 3f).ToList();
+				if (boardable.Count > 1)
+				{
+					// Multiple at our level — pick the one whose Z is closest to target
+					// (i.e., heading in the right direction: up toward high target, down toward low)
+					transport = boardable.OrderBy(go => Math.Abs(go.Z - targetPoint.Z)).First();
+				}
+				else if (boardable.Count == 1)
+				{
+					transport = boardable[0];
+				}
+				else
+				{
+					// None at our level — pick closest to player Z (waiting for arrival)
+					transport = transports.OrderBy(go => Math.Abs(go.Z - me.Z)).First();
+				}
+				Logging.WriteDebug("[Navigator] Multiple transports nearby ({0}), chose: {1} (targetZ={2:F1})",
+					transports.Count, transport.Name, targetPoint.Z);
 			}
 			else
 			{
@@ -1086,6 +1205,13 @@ namespace Styx.Logic.Pathing
 				return MoveResult.Moved;
 			}
 
+			// Dismount before elevator interaction (can't board mounted)
+			if (me.Mounted)
+			{
+				Mount.Dismount("[Navigator] Dismounting for elevator");
+				return MoveResult.Moved;
+			}
+
 			// Not on transport yet — check if elevator is at our level
 			if (Math.Abs(transport.Z - me.Z) > 2f)
 			{
@@ -1100,6 +1226,8 @@ namespace Styx.Logic.Pathing
 						return MoveResult.Moved;
 					}
 				}
+				// Stop walking while waiting for elevator (HB pattern)
+				WoWMovement.MoveStop();
 				Logging.WriteNavigator("Waiting for elevator...");
 				return MoveResult.Moved;
 			}
@@ -1108,10 +1236,6 @@ namespace Styx.Logic.Pathing
 			if (!_elevatorBoarded)
 			{
 				Logging.WriteNavigator("Boarding elevator.");
-				if (me.Mounted)
-				{
-					Mount.Dismount();
-				}
 				WoWMovement.ClickToMove(transport.Location);
 				return MoveResult.Moved;
 			}
@@ -1170,8 +1294,11 @@ namespace Styx.Logic.Pathing
 		/// </summary>
 		private static MoveResult? HandleInteractUnit(LocalPlayer me)
 		{
+			// AUDIT FIX: Add 30yd range limit to prevent interacting with distant NPCs
+			const float maxSearchDistSqr = 900f; // 30 yards squared
 			var unit = ObjectManager.GetObjectsOfType<WoWUnit>(false, false)
-				.Where(u => !u.IsDead && !u.IsHostile && !u.PlayerControlled && !u.IsPlayer)
+				.Where(u => !u.IsDead && !u.IsHostile && !u.PlayerControlled && !u.IsPlayer
+				            && u.Location.DistanceSqr(me.Location) < maxSearchDistSqr)
 				.OrderBy(u => u.Location.DistanceSqr(me.Location))
 				.FirstOrDefault();
 
@@ -1187,7 +1314,8 @@ namespace Styx.Logic.Pathing
 				return MoveResult.Moved;
 			}
 
-			Mount.Dismount("InteractUnit in path");
+			if (me.Mounted)
+				Mount.Dismount("InteractUnit in path");
 			unit.Interact();
 			return MoveResult.Moved;
 		}
@@ -1198,9 +1326,11 @@ namespace Styx.Logic.Pathing
 		/// </summary>
 		private static MoveResult? HandleInteractObject(LocalPlayer me)
 		{
+			// AUDIT FIX: Add 30yd range limit + move to object if in range but not interact range
+			const float maxSearchDistSqr = 900f; // 30 yards squared
 			var gameObject = ObjectManager.GetObjectsOfType<WoWGameObject>(false, false)
+				.Where(go => go.Location.DistanceSqr(me.Location) < maxSearchDistSqr)
 				.OrderBy(go => go.Location.DistanceSqr(me.Location))
-				.Where(go => go.WithinInteractRange)
 				.FirstOrDefault();
 
 			if (gameObject == null)
@@ -1209,7 +1339,14 @@ namespace Styx.Logic.Pathing
 				return null;
 			}
 
-			Mount.Dismount("InteractObject in path");
+			if (!gameObject.WithinInteractRange)
+			{
+				WoWMovement.ClickToMove(gameObject.Location);
+				return MoveResult.Moved;
+			}
+
+			if (me.Mounted)
+				Mount.Dismount("InteractObject in path");
 			gameObject.Interact();
 			return MoveResult.Moved;
 		}
@@ -1217,10 +1354,29 @@ namespace Styx.Logic.Pathing
 		/// <summary>
 		/// Door handling: auto-detect closed doors on the path and interact to open them.
 		/// Ported from HB 6.2.3 MeshNavigator.method_7/method_8.
+		/// Improvement: steers through the door center point before resuming normal path,
+		/// so the bot passes cleanly through the doorframe like HB does.
 		/// Returns null if no door action needed, MoveResult.Moved if interacting with a door.
 		/// </summary>
+		private static WoWPoint _doorCenterTarget = WoWPoint.Zero;
+		
 		private static MoveResult? HandleDoors(LocalPlayer me)
 		{
+			// If we're actively steering through a door center, continue until we pass through
+			if (_doorCenterTarget != WoWPoint.Zero)
+			{
+				float distToDoorCenter = me.Location.Distance(_doorCenterTarget);
+				if (distToDoorCenter < 1.5f)
+				{
+					// Passed through door center — resume normal path following
+					_doorCenterTarget = WoWPoint.Zero;
+					return null;
+				}
+				// Keep steering toward door center
+				WoWMovement.ClickToMove(_doorCenterTarget);
+				return MoveResult.Moved;
+			}
+			
 			// Cooldown between door interactions to avoid spam
 			if (!_doorInteractTimer.IsFinished)
 				return null;
@@ -1266,10 +1422,18 @@ namespace Styx.Logic.Pathing
 			if (closestDoor == null)
 				return null;
 
-			// Move to door if not in interact range
+			// Move toward door center if not in interact range
 			if (!closestDoor.WithinInteractRange)
 			{
+				// Steer to door center (not nearby waypoint) to pass through cleanly
 				WoWMovement.ClickToMove(closestDoor.Location);
+				return MoveResult.Moved;
+			}
+
+			// HB 6.2.3 pattern: stop before interacting
+			if (me.IsMoving)
+			{
+				WoWMovement.MoveStop();
 				return MoveResult.Moved;
 			}
 
@@ -1277,6 +1441,32 @@ namespace Styx.Logic.Pathing
 			Logging.WriteDebug("[Navigator] Opening door: {0}", closestDoor.Name);
 			closestDoor.Interact();
 			_doorInteractTimer.Reset();
+			
+			// Set door center as steering target — bot will walk through the center
+			// of the doorframe before resuming normal waypoint following.
+			// Calculate a point slightly past the door in our movement direction.
+			if (_currentPathIndex < _currentPath.Count)
+			{
+				WoWPoint doorCenter = closestDoor.Location;
+				WoWPoint nextWp = _currentPath[_currentPathIndex];
+				WoWPoint dir = nextWp - doorCenter;
+				float dirLen = (float)Math.Sqrt(dir.X * dir.X + dir.Y * dir.Y + dir.Z * dir.Z);
+				if (dirLen > 0.01f)
+				{
+					// Target is 2 yards past the door center in path direction
+					dir = new WoWPoint(dir.X / dirLen, dir.Y / dirLen, dir.Z / dirLen);
+					_doorCenterTarget = doorCenter + dir * 2.0f;
+				}
+				else
+				{
+					_doorCenterTarget = doorCenter;
+				}
+			}
+			else
+			{
+				_doorCenterTarget = closestDoor.Location;
+			}
+
 			return MoveResult.Moved;
 		}
 	}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/EchoSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- 
+    Transport Profile: Stormwind Harbor to Valiance Keep
+    Transport: The Kraken (ID: 190536)
+    Faction: Alliance
+    Route: Azeroth -> Northrend
+    
+    Generated from WRobot coordinates
+  -->
+  
+  <Name>Transport_Stormwind_Harbor_to_Valiance_Keep</Name>
+  <MinLevel>1</MinLevel>
+  <MaxLevel>80</MaxLevel>
+  
+  <AvoidMobs>true</AvoidMobs>
+  <LootMobs>false</LootMobs>
+  <SellGrey>false</SellGrey>
+  
+  <QuestOrder>
+    <!-- Run to departure dock -->
+    <RunTo X="-8300.08" Y="1405.158" Z="4.422395" />
+    
+    <!-- Take transport -->
+    <CustomBehavior File="UseTransport" TransportId="190536"
+        WaitAtX="-8300.08" WaitAtY="1405.158" WaitAtZ="4.422395"
+        TransportStartX="-8288.816" TransportStartY="1424.703" TransportStartZ="0.04"
+        StandOnX="-8285.5" StandOnY="1430.5" StandOnZ="5.5"
+        TransportEndX="2218.391" TransportEndY="5119.589" TransportEndZ="0.04"
+        GetOffX="2234.375" GetOffY="5132.568" GetOffZ="5.343217" />
+    
+    <!-- Move away from dock -->
+    <RunTo X="2234.375" Y="5132.568" Z="5.343217" />
+  </QuestOrder>
+  
+</HBProfile>

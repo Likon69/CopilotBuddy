@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/EchoSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- 
+    Transport Profile: Theramore Isle to Menethil Harbor
+    Transport: The Bravery (ID: 176310)
+    Faction: Alliance
+    Route: Kalimdor -> Azeroth
+    
+    Generated from WRobot coordinates
+  -->
+  
+  <Name>Transport_Theramore_Isle_to_Menethil_Harbor</Name>
+  <MinLevel>1</MinLevel>
+  <MaxLevel>80</MaxLevel>
+  
+  <AvoidMobs>true</AvoidMobs>
+  <LootMobs>false</LootMobs>
+  <SellGrey>false</SellGrey>
+  
+  <QuestOrder>
+    <!-- Run to departure dock -->
+    <RunTo X="-3838.47" Y="-4535.83" Z="5.89" />
+    
+    <!-- Take transport -->
+    <CustomBehavior File="UseTransport" TransportId="176310"
+        WaitAtX="-3838.47" WaitAtY="-4535.83" WaitAtZ="5.89"
+        TransportStartX="-3842.29" TransportStartY="-4531.95" TransportStartZ="-0.1"
+        StandOnX="-3846.5" StandOnY="-4527.44" StandOnZ="6.05"
+        TransportEndX="-3727.3" TransportEndY="-583.98" TransportEndZ="-0.05"
+        GetOffX="-3733.074" GetOffY="-587.595" GetOffZ="6.316904" />
+    
+    <!-- Move away from dock -->
+    <RunTo X="-3733.074" Y="-587.595" Z="6.316904" />
+  </QuestOrder>
+  
+</HBProfile>

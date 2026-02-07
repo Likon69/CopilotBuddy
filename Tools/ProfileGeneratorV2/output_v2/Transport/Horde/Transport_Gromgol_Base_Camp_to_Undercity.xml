@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/EchoSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- 
+    Transport Profile: Grom'gol Base Camp to Undercity
+    Transport: The Purple Princess (ID: 195276)
+    Faction: Horde
+    Route: Azeroth -> Azeroth
+    
+    Generated from WRobot coordinates
+  -->
+  
+  <Name>Transport_Grom'gol_Base_Camp_to_Undercity</Name>
+  <MinLevel>1</MinLevel>
+  <MaxLevel>80</MaxLevel>
+  
+  <AvoidMobs>true</AvoidMobs>
+  <LootMobs>false</LootMobs>
+  <SellGrey>false</SellGrey>
+  
+  <QuestOrder>
+    <!-- Run to departure dock -->
+    <RunTo X="-12433.8" Y="204.32" Z="11.9" />
+    
+    <!-- Take transport -->
+    <CustomBehavior File="UseTransport" TransportId="195276"
+        WaitAtX="-12433.8" WaitAtY="204.32" WaitAtZ="11.9"
+        TransportStartX="-12441.14" TransportStartY="197.26" TransportStartZ="31.51"
+        StandOnX="-12437.92" StandOnY="204.98" StandOnZ="12.03"
+        TransportEndX="2047.52" TransportEndY="236.13" TransportEndZ="115.0"
+        GetOffX="2057.04" GetOffY="237.56" GetOffZ="97.03" />
+    
+    <!-- Move away from dock -->
+    <RunTo X="2057.04" Y="237.56" Z="97.03" />
+  </QuestOrder>
+  
+</HBProfile>

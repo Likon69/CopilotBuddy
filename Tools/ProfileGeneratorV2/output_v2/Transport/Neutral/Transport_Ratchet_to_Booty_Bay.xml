@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/EchoSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- 
+    Transport Profile: Ratchet to Booty Bay
+    Transport: The Maiden's Fancy (ID: 176495)
+    Faction: Neutral
+    Route: Kalimdor -> Azeroth
+    
+    Generated from WRobot coordinates
+  -->
+  
+  <Name>Transport_Ratchet_to_Booty_Bay</Name>
+  <MinLevel>1</MinLevel>
+  <MaxLevel>80</MaxLevel>
+  
+  <AvoidMobs>true</AvoidMobs>
+  <LootMobs>false</LootMobs>
+  <SellGrey>false</SellGrey>
+  
+  <QuestOrder>
+    <!-- Run to departure dock -->
+    <RunTo X="-1001.0" Y="-3834.5" Z="5.96" />
+    
+    <!-- Take transport -->
+    <CustomBehavior File="UseTransport" TransportId="176495"
+        WaitAtX="-1001.0" WaitAtY="-3834.5" WaitAtZ="5.96"
+        TransportStartX="-995.75" TransportStartY="-3827.4" TransportStartZ="-0.05"
+        StandOnX="-990.0" StandOnY="-3822.0" StandOnZ="6.05"
+        TransportEndX="-14276.35" TransportEndY="566.09" TransportEndZ="-0.05"
+        GetOffX="-14284.17" GetOffY="555.64" GetOffZ="9.01" />
+    
+    <!-- Move away from dock -->
+    <RunTo X="-14284.17" Y="555.64" Z="9.01" />
+  </QuestOrder>
+  
+</HBProfile>

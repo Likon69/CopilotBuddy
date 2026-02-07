@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/EchoSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- 
+    Transport Profile: Stormwind Harbor to Rut'theran Village
+    Transport: Ship to Stormwind (ID: 176310)
+    Faction: Alliance
+    Route: Azeroth -> Kalimdor
+    
+    Generated from WRobot coordinates
+  -->
+  
+  <Name>Transport_Stormwind_Harbor_to_Rut'theran_Village</Name>
+  <MinLevel>1</MinLevel>
+  <MaxLevel>80</MaxLevel>
+  
+  <AvoidMobs>true</AvoidMobs>
+  <LootMobs>false</LootMobs>
+  <SellGrey>false</SellGrey>
+  
+  <QuestOrder>
+    <!-- Run to departure dock -->
+    <RunTo X="-8639.334" Y="1318.533" Z="5.536631" />
+    
+    <!-- Take transport -->
+    <CustomBehavior File="UseTransport" TransportId="176310"
+        WaitAtX="-8639.334" WaitAtY="1318.533" WaitAtZ="5.536631"
+        TransportStartX="-8650.719" TransportStartY="1346.051" TransportStartZ="0.02488805"
+        StandOnX="-8656.5" StandOnY="1350.0" StandOnZ="6.0"
+        TransportEndX="8162.587" TransportEndY="1005.365" TransportEndZ="-0.04972067"
+        GetOffX="8177.832" GetOffY="1002.582" GetOffZ="6.699792" />
+    
+    <!-- Move away from dock -->
+    <RunTo X="8177.832" Y="1002.582" Z="6.699792" />
+  </QuestOrder>
+  
+</HBProfile>

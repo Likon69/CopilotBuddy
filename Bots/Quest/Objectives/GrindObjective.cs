@@ -128,7 +128,7 @@ public class GrindObjective : QuestObjective
                 }
                 else
                 {
-                    Logging.Write("[GrindObjective] Client quest area created 0 hotspots, trying DB...");
+                    Logging.WriteDiagnostic("[GrindObjective] Client quest area created 0 hotspots, trying DB...");
                 }
             }
             
@@ -142,7 +142,7 @@ public class GrindObjective : QuestObjective
                 
                 if (autoHotspots.Count > 0)
                 {
-                    Logging.Write("[GrindObjective] Auto-generated {0} hotspots from DB for mob {1} on map {2}", 
+                    Logging.WriteDiagnostic("[GrindObjective] Auto-generated {0} hotspots from DB for mob {1} on map {2}", 
                         autoHotspots.Count, mobId, mapId);
                     
                     int targetMax = (this.killMobInfo != null && this.killMobInfo.TargetMaxLevel > 0) 

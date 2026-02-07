@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/EchoSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- 
+    Transport Profile: Rut'theran Village to Auberdine
+    Transport: The Moonspray (ID: 176365)
+    Faction: Alliance
+    Route: Kalimdor -> Kalimdor
+    
+    Generated from WRobot coordinates
+  -->
+  
+  <Name>Transport_Rut'theran_Village_to_Auberdine</Name>
+  <MinLevel>1</MinLevel>
+  <MaxLevel>80</MaxLevel>
+  
+  <AvoidMobs>true</AvoidMobs>
+  <LootMobs>false</LootMobs>
+  <SellGrey>false</SellGrey>
+  
+  <QuestOrder>
+    <!-- Run to departure dock -->
+    <RunTo X="8555.0" Y="1012.55" Z="6.06" />
+    
+    <!-- Take transport -->
+    <CustomBehavior File="UseTransport" TransportId="176365"
+        WaitAtX="8555.0" WaitAtY="1012.55" WaitAtZ="6.06"
+        TransportStartX="8561.36" TransportStartY="1008.3" TransportStartZ="-0.04"
+        StandOnX="8568.2" StandOnY="1003.1" StandOnZ="6.05"
+        TransportEndX="6583.683" TransportEndY="764.0164" TransportEndZ="-0.05"
+        GetOffX="6576.501" GetOffY="769.4759" GetOffZ="5.575114" />
+    
+    <!-- Move away from dock -->
+    <RunTo X="6576.501" Y="769.4759" Z="5.575114" />
+  </QuestOrder>
+  
+</HBProfile>

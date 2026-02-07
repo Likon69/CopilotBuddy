@@ -43,7 +43,7 @@ namespace Styx.Logic.Pathing
             if (me == null)
                 return false;
 
-            if (me.Stunned || me.Fleeing || me.Dazed || me.Rooted)
+if (me.Stunned || me.Fleeing || me.Dazed || me.Rooted || me.IsFalling)
             {
                 Reset();
                 return false;
@@ -96,7 +96,7 @@ namespace Styx.Logic.Pathing
 
             float rotation = me.Rotation;
 
-            // HB pattern: Dismount -> Jump while moving -> Strafe sides -> Blackspot
+            // HB pattern: Dismount → Jump → Strafe sides → Blackspot
             if (!_triedDismount && me.Mounted)
             {
                 WoWPoint forward = location.RayCast(rotation, DismountRaycastDistance).Add(0f, 0f, 1f);
@@ -112,14 +112,10 @@ namespace Styx.Logic.Pathing
             }
             else if (_jumpAttempts < 3)
             {
-                // Permettre jusqu'à 3 tentatives de saut
-                WoWPoint forward = location.RayCast(rotation, JumpRaycastDistance).Add(0f, 0f, 2f);
-                WoWPoint start = location.Add(0f, 0f, 2f);
-                if (GameWorld.IsInLineOfSight(start, forward))
-                {
-                    Logging.WriteDebug("[STUCK] Jump attempt {0}/3 while moving forward.", _jumpAttempts + 1);
-                    PerformJump();
-                }
+                // HB 4.3.4 Class479: always try jumping when stuck — jumping IS the
+                // mechanism to clear small obstacles. No LOS gate on the jump itself.
+                Logging.WriteDebug("[STUCK] Jump attempt {0}/3 while moving forward.", _jumpAttempts + 1);
+                PerformJump();
                 _jumpAttempts++;
             }
             else if (!_triedStrafeForwardLeft)
@@ -144,12 +140,14 @@ namespace Styx.Logic.Pathing
             {
                 Logging.WriteDebug("[STUCK] Trying strafe left for {0}ms", duration);
                 MoveInDirection(WoWMovement.MovementDirection.StrafeLeft, duration);
+                RefreshClickToMove();
                 _triedStrafeLeft = true;
             }
             else if (!_triedStrafeRight)
             {
                 Logging.WriteDebug("[STUCK] Trying strafe right for {0}ms", duration);
                 MoveInDirection(WoWMovement.MovementDirection.StrafeRight, duration);
+                RefreshClickToMove();
                 _triedStrafeRight = true;
             }
             else
@@ -162,30 +160,28 @@ namespace Styx.Logic.Pathing
         }
 
         /// <summary>
-        /// Performs a jump while moving forward, like HB's LocalPlayerMover.PerformJump().
-        /// Does NOT stop movement - triggers jump while character continues walking.
+        /// Performs a jump while moving forward, like HB 4.3.4 Class479/Class485.
+        /// Uses WoWMovement.Move(Forward | JumpAscend) instead of Lua — matches HB exactly.
         /// </summary>
         private void PerformJump()
         {
-            // Start moving forward if not already
-            WoWMovement.Move(WoWMovement.MovementDirection.Forward);
-            
-            // HB pattern: JumpOrAscendStart() then AscendStop() after 50ms
-            // This triggers a jump without stopping forward movement
-            Lua.DoString("JumpOrAscendStart()");
-            Thread.Sleep(50);
-            Lua.DoString("AscendStop()");
+            // HB pattern: Forward + JumpAscend combined, 100ms pulse, then stop both
+            WoWMovement.Move(WoWMovement.MovementDirection.Forward | WoWMovement.MovementDirection.JumpAscend);
+            Thread.Sleep(100);
+            WoWMovement.MoveStop(WoWMovement.MovementDirection.Forward | WoWMovement.MovementDirection.JumpAscend);
+            Thread.Sleep(200);
 
-            // Wait for landing (up to 2.5 seconds like HB)
+            // Wait for landing (max 1.5s — HB Class485 uses 750ms total, we give a bit more)
             var me = ObjectManager.Me;
             int startTick = Environment.TickCount;
-            while (me != null && me.IsFalling && (Environment.TickCount - startTick) < 2500)
+            while (me != null && me.IsFalling && (Environment.TickCount - startTick) < 1500)
             {
                 Thread.Sleep(50);
             }
 
-            // Continue moving forward briefly after landing
-            Thread.Sleep(200);
+            // Re-issue ClickToMove to current waypoint after jump (HB Class472 pattern)
+            RefreshClickToMove();
+            Thread.Sleep(100);
         }
 
         public void Reset()
@@ -270,10 +266,17 @@ namespace Styx.Logic.Pathing
 
         private float GetExpectedTravelDistance(Styx.WoWInternals.WoWObjects.LocalPlayer me, TimeSpan timeSpan)
         {
+            float speed;
             if (me.MovementInfo.IsSwimming)
-                return me.MovementInfo.SwimSpeed * (float)timeSpan.TotalSeconds;
+                speed = me.MovementInfo.SwimSpeed;
+            else if (me.MovementInfo.IsFlying)
+                speed = me.MovementInfo.FlySpeed;
+            else if (me.Mounted)
+                speed = me.MovementInfo.RunSpeed; // RunSpeed already includes mount speed buff
+            else
+                speed = me.MovementInfo.RunSpeed;
 
-            return me.MovementInfo.RunSpeed * (float)timeSpan.TotalSeconds;
+            return speed * (float)timeSpan.TotalSeconds;
         }
 
         private float? TryGetPathDistance(WoWPoint from, WoWPoint to)

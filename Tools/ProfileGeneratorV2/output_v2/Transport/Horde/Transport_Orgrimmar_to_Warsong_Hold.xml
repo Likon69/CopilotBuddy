@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/EchoSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- 
+    Transport Profile: Orgrimmar to Warsong Hold
+    Transport: Zeppelin to Borean Tundra (ID: 186238)
+    Faction: Horde
+    Route: Kalimdor -> Northrend
+    
+    Generated from WRobot coordinates
+  -->
+  
+  <Name>Transport_Orgrimmar_to_Warsong_Hold</Name>
+  <MinLevel>1</MinLevel>
+  <MaxLevel>80</MaxLevel>
+  
+  <AvoidMobs>true</AvoidMobs>
+  <LootMobs>false</LootMobs>
+  <SellGrey>false</SellGrey>
+  
+  <QuestOrder>
+    <!-- Run to departure dock -->
+    <RunTo X="1763.203" Y="-4284.529" Z="133.1072" />
+    
+    <!-- Take transport -->
+    <CustomBehavior File="UseTransport" TransportId="186238"
+        WaitAtX="1763.203" WaitAtY="-4284.529" WaitAtZ="133.1072"
+        TransportStartX="1775.066" TransportStartY="-4299.745" TransportStartZ="151.0326"
+        StandOnX="1770.22" StandOnY="-4292.056" StandOnZ="133.1872"
+        TransportEndX="2837.908" TransportEndY="6187.443" TransportEndZ="140.1648"
+        GetOffX="2836.831" GetOffY="6185.15" GetOffZ="121.9923" />
+    
+    <!-- Move away from dock -->
+    <RunTo X="2836.831" Y="6185.15" Z="121.9923" />
+  </QuestOrder>
+  
+</HBProfile>

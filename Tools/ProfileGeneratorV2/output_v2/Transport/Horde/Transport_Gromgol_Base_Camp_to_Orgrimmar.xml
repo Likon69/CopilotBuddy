@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/EchoSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- 
+    Transport Profile: Grom'gol Base Camp to Orgrimmar
+    Transport: The Iron Eagle (ID: 20808)
+    Faction: Horde
+    Route: Azeroth -> Kalimdor
+    
+    Generated from WRobot coordinates
+  -->
+  
+  <Name>Transport_Grom'gol_Base_Camp_to_Orgrimmar</Name>
+  <MinLevel>1</MinLevel>
+  <MaxLevel>80</MaxLevel>
+  
+  <AvoidMobs>true</AvoidMobs>
+  <LootMobs>false</LootMobs>
+  <SellGrey>false</SellGrey>
+  
+  <QuestOrder>
+    <!-- Run to departure dock -->
+    <RunTo X="-12462.09" Y="145.83" Z="11.9" />
+    
+    <!-- Take transport -->
+    <CustomBehavior File="UseTransport" TransportId="20808"
+        WaitAtX="-12462.09" WaitAtY="145.83" WaitAtZ="11.9"
+        TransportStartX="-12457.91" TransportStartY="134.56" TransportStartZ="31.51"
+        StandOnX="-12455.25" StandOnY="139.63" StandOnZ="12.03"
+        TransportEndX="1312.28" TransportEndY="-4623.69" TransportEndZ="72.03"
+        GetOffX="1323.69" GetOffY="-4631.55" GetOffZ="53.89" />
+    
+    <!-- Move away from dock -->
+    <RunTo X="1323.69" Y="-4631.55" Z="53.89" />
+  </QuestOrder>
+  
+</HBProfile>

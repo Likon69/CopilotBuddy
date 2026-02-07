@@ -25,6 +25,10 @@ packages/
 Logs/
 *.log
 
+# Python cache
+__pycache__/
+*.pyc
+
 # Temporary files
 *.tmp
 *.temp

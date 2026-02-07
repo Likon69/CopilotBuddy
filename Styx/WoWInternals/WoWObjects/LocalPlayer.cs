@@ -1006,9 +1006,11 @@ namespace Styx.WoWInternals.WoWObjects
             while (facing < 0) facing += (float)(2 * Math.PI);
             while (facing >= 2 * Math.PI) facing -= (float)(2 * Math.PI);
 
-            // Use ClickToMove with Face type (2) for proper server-side facing update
-            // Adding small epsilon like HB 4.3.4 to prevent floating-point precision issues
-            WoWMovement.ClickToMove(0UL, WoWPoint.Empty, facing + 1E-06f, WoWMovement.ClickToMoveType.Face);
+            // Use ClickToMove with Face type for proper server-side facing update.
+            // Pass WoWPoint.Zero (not WoWPoint.Empty which is NaN) — the position is
+            // unused for Face type, only the facing float matters to the game.
+            // Adding small epsilon like HB 4.3.4 to prevent floating-point precision issues.
+            WoWMovement.ClickToMove(0UL, WoWPoint.Zero, facing + 1E-06f, WoWMovement.ClickToMoveType.Face);
         }
 
         #endregion
