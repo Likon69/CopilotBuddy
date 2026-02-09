@@ -16,6 +16,7 @@ namespace Styx.Logic.BehaviorTree
 		private static Thread? _workerThread;
 		private static string _statusText = "";
 		private static string _goalText = "";
+		private static readonly object _stateLock = new object();
 
 		public static byte TicksPerSecond { get; set; }
 
@@ -24,7 +25,20 @@ namespace Styx.Logic.BehaviorTree
 			get { return BotManager.Current; }
 		}
 
-		public static bool IsRunning { get; private set; }
+		/// <summary>
+		/// State machine for TreeRoot lifecycle — matches HB 6.2.3.
+		/// Stop() sets Stopping; worker thread does cleanup then sets Stopped.
+		/// </summary>
+		public static TreeRootState State { get; private set; } = TreeRootState.Stopped;
+
+		/// <summary>
+		/// Returns true when the bot is Running (excludes Stopping/Stopped/Starting).
+		/// Matches HB 6.2.3 computed property.
+		/// </summary>
+		public static bool IsRunning
+		{
+			get { return _workerThread != null && _workerThread.IsAlive && State == TreeRootState.Running; }
+		}
 
 		static TreeRoot()
 		{
@@ -48,9 +62,14 @@ namespace Styx.Logic.BehaviorTree
 
 		private static void Tick()
 		{
+			if (State != TreeRootState.Running)
+				return;
+
 			if (StyxWoW.Me == null || !StyxWoW.IsInGame)
 			{
-				Logging.Write("Not in game. Waiting...");
+				Logging.Write("Not in game");
+				Thread.Sleep(1000);
+				return;
 			}
 			else
 			{
@@ -90,78 +109,109 @@ namespace Styx.Logic.BehaviorTree
 
 		public static void Start()
 		{
-			if (!IsRunning && Current != null)
-			{
-				try
-				{
-					// Grab frame first to sync with WoW's main thread (like HB 3.3.5a)
-					if (ObjectManager.Executor != null)
-					{
-						ObjectManager.Executor.GrabFrame();
-					}
-					ObjectManager.Update();
-					string lastUsedPath = LevelbotSettings.Instance.LastUsedPath;
-					if (!string.IsNullOrEmpty(lastUsedPath) && System.IO.File.Exists(lastUsedPath))
-					{
-						ProfileManager.LoadNew(lastUsedPath);
-					}
-					Current.Initialize();
-					Current.Start();
-					Current.Root?.Start(null);
-					IsRunning = true;
-					
-					// Initialize Navigator BEFORE RaiseBotStart to ensure mesh loading happens
-					// Navigator's static constructor subscribes to OnBotStart, so we need to
-					// force it to initialize first by touching it
-					_ = Navigator.PathPrecision; // Forces static constructor to run
-					
-					// RaiseBotStart triggers OnBotStart which calls SpellManager.Refresh()
-					// This must be called BEFORE the worker thread starts (like HB 3.3.5a smethod_3)
-					BotEvents.RaiseBotStart();
-					_workerThread = new Thread(WorkerThread);
-					_workerThread.IsBackground = true;
-					_workerThread.Name = "TreeRoot Worker";
-					_workerThread.Start();
-
-					BotEvents.OnBotStartComplete();
-				}
-				catch (HonorbuddyUnableToStartException ex)
-				{
-					Logging.Write(Colors.Red, "Unable to start: {0}", ex.Message);
-					IsRunning = false;
-				}
-				catch (Exception ex)
-				{
-					Logging.WriteException(ex);
-					IsRunning = false;
-				}
-			}
-		}
-
-		public static void Stop()
-		{
-			Logging.Write("Stopping the bot...");
-
-			if (!IsRunning || Current == null)
+			if (State != TreeRootState.Stopped || Current == null)
 				return;
 
 			try
 			{
-				// HB 3.3.5a: Grab a frame to ensure memory consistency
-				try { ObjectManager.Executor?.GrabFrame(); } catch { }
+				State = TreeRootState.Starting;
 
-				// Clear navigation first (HB behavior)
-				try { Navigator.Clear(); } catch { }
+				// Grab frame first to sync with WoW's main thread (like HB 3.3.5a)
+				if (ObjectManager.Executor != null)
+				{
+					ObjectManager.Executor.GrabFrame();
+				}
+				ObjectManager.Update();
+				string lastUsedPath = LevelbotSettings.Instance.LastUsedPath;
+				if (!string.IsNullOrEmpty(lastUsedPath) && System.IO.File.Exists(lastUsedPath))
+				{
+					ProfileManager.LoadNew(lastUsedPath);
+				}
+				Current.Initialize();
+				Current.Start();
+				Current.Root?.Start(null);
 
-				// Notify handlers the bot is stopping
-				try { BotEvents.OnBotStopping(); } catch { }
+				// Initialize Navigator BEFORE RaiseBotStart to ensure mesh loading happens
+				// Navigator's static constructor subscribes to OnBotStart, so we need to
+				// force it to initialize first by touching it
+				_ = Navigator.PathPrecision; // Forces static constructor to run
 
-				// Stop the bot's current actions and stop the root behavior
-				try { Current.Stop(); } catch { }
-				try { Current.Root?.Stop(new object()); } catch { }
+				// RaiseBotStart triggers OnBotStart which calls SpellManager.Refresh()
+				// This must be called BEFORE the worker thread starts (like HB 3.3.5a smethod_3)
+				BotEvents.RaiseBotStart();
 
-				// Notify handlers that stop is complete
-				try { BotEvents.RaiseBotStopped(); } catch { }
+				// Worker thread transitions to Running once it starts ticking
+				_workerThread = new Thread(WorkerThread);
+				_workerThread.IsBackground = true;
+				_workerThread.Name = "TreeRoot Worker";
+				_workerThread.Start();
+
+				BotEvents.OnBotStartComplete();
+			}
+			catch (HonorbuddyUnableToStartException ex)
+			{
+				Logging.Write(Colors.Red, "Unable to start: {0}", ex.Message);
+				State = TreeRootState.Stopped;
+			}
+			catch (Exception ex)
+			{
+				Logging.WriteException(ex);
+				State = TreeRootState.Stopped;
+			}
+		}
+
+		/// <summary>
+		/// Stop the bot. HB 6.2.3 pattern: only sets State = Stopping.
+		/// The worker thread detects the state change, finishes the current tick,
+		/// then does the actual cleanup on its own thread — no race condition.
+		/// </summary>
+		public static void Stop(string? reason = null)
+		{
+			lock (_stateLock)
+			{
+				if (State != TreeRootState.Running && State != TreeRootState.Starting)
+					return;
+
+				Logging.Write(Colors.DeepSkyBlue, "Bot stopping! Reason: {0}", reason ?? "User request");
+				State = TreeRootState.Stopping;
+			}
+
+			// Only join if we're NOT on the worker thread.
+			// Bot behaviors (ForcedBehaviorExecutor, QuestBot, etc.) call Stop()
+			// from the worker thread — joining ourselves would deadlock.
+			if (Thread.CurrentThread != _workerThread && _workerThread != null)
+			{
+				if (!_workerThread.Join(TimeSpan.FromSeconds(5)))
+				{
+					Logging.WriteDebug("Worker thread did not exit gracefully within 5s");
+				}
+				_workerThread = null;
+			}
+			// If called from worker thread, the while loop will exit naturally
+			// and cleanup happens in the finally block.
+		}
+
+		private static void WorkerThread()
+		{
+			// Use lock to prevent race with Stop() called right after Start()
+			lock (_stateLock)
+			{
+				if (State != TreeRootState.Starting)
+				{
+					// Stop() was called before we could start — bail out
+					State = TreeRootState.Stopped;
+					return;
+				}
+				State = TreeRootState.Running;
+			}
+
+			try
+			{
+				// Main tick loop — exits when Stop() sets State to Stopping
+				while (State == TreeRootState.Running)
+				{
+					Tick();
+				}
 			}
 			catch (Exception ex)
 			{
@@ -169,27 +219,24 @@ namespace Styx.Logic.BehaviorTree
 			}
 			finally
 			{
-				// Signal the worker thread to exit
-				IsRunning = false;
-
-				// HB 3.3.5a: Wait for thread to exit gracefully
-				if (_workerThread != null)
+				// HB 6.2.3 pattern: cleanup happens on the WORKER THREAD
+				// — same thread that was calling Tick(), so no race condition
+				try
 				{
-					// Give the thread time to exit on its own
-					if (!_workerThread.Join(TimeSpan.FromSeconds(2)))
-					{
-						Logging.WriteDebug("Worker thread did not exit gracefully");
-					}
+					try { ObjectManager.Executor?.GrabFrame(); } catch { }
+					try { Navigator.Clear(); } catch { }
+					try { BotEvents.OnBotStopping(); } catch { }
+					try { Current?.Stop(); } catch { }
+					try { Current?.Root?.Stop(null); } catch { }
+					try { BotEvents.RaiseBotStopped(); } catch { }
 				}
-				_workerThread = null;
-			}
-		}
+				catch (Exception ex)
+				{
+					Logging.WriteException(ex);
+				}
 
-		private static void WorkerThread()
-		{
-			while (IsRunning)
-			{
-				Tick();
+				State = TreeRootState.Stopped;
+				Logging.WriteDebug("Worker thread exited cleanly");
 			}
 		}
 
@@ -210,7 +257,7 @@ namespace Styx.Logic.BehaviorTree
 			{
 				if (!string.IsNullOrEmpty(value) && _statusText != value)
 				{
-					Logging.WriteDebug("StatusText: " + value);
+					Logging.WriteDebug("Activity: {0}", value);
 				}
 				string oldStatus = _statusText;
 				_statusText = value;
@@ -235,7 +282,7 @@ namespace Styx.Logic.BehaviorTree
 			{
 				if (!string.IsNullOrEmpty(value) && _goalText != value)
 				{
-					Logging.WriteDebug("GoalText: {0}", value);
+					Logging.WriteDebug("Goal: {0}", value);
 				}
 				_goalText = value;
 			}

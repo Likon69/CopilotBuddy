@@ -30,7 +30,12 @@ namespace TreeSharp
                 return LastStatus.Value;
 
             if (_enumerator == null)
-                throw new ApplicationException("Cannot run Tick before running Start first!");
+            {
+                // Defensive: if Stop() was called between Start() and Tick(),
+                // return Failure instead of throwing (prevents NRE spam on shutdown)
+                LastStatus = RunStatus.Failure;
+                return RunStatus.Failure;
+            }
 
             try
             {
