@@ -36,15 +36,31 @@ namespace GreenMagic
         private uint m_InjectedCode;
         private uint m_DataPtr;
         private uint m_ReturnedDataPtr;
-        private uint m_InjectionWaitingHandlePtr;
-        private uint m_InjectionContinueHandlePtr;
-        private uint m_InjectionFinishedHandlePtr;
+        private uint m_InjectionWaitingHandlePtr;   // data + 0
+        private uint m_InjectionContinueHandlePtr;  // data + 4
+        private uint m_InjectionFinishedHandlePtr;  // data + 8
+
+        // VEH data region fields (data + 16..36)
+        private uint m_FrameCountPtr;               // data + 16
+        private uint m_InHookPtr;                   // data + 20
+        private uint m_StatusPtr;                   // data + 24
+        private uint m_TlsPtr;                      // data + 28 (init: 0xFFFFFFFF)
+        private uint m_VehPtr;                      // data + 32 (init: 0)
+        private uint m_FrameDropWaitTimePtr;        // data + 36
 
         // Kernel32 function addresses
         private UIntPtr WaitForSingleObject;
         private UIntPtr CreateEventA;
         private UIntPtr ResetEvent;
         private UIntPtr SetEvent;
+
+        // Kernel32 function addresses for VEH
+        private UIntPtr TlsAlloc;
+        private UIntPtr TlsFree;
+        private UIntPtr TlsGetValue;
+        private UIntPtr TlsSetValue;
+        private UIntPtr AddVectoredExceptionHandler;
+        private UIntPtr RemoveVectoredExceptionHandler;
 
         // State
         private bool m_ContinuousExecution;
@@ -58,6 +74,22 @@ namespace GreenMagic
         public uint DataPointer => m_DataPtr;
         public uint ReturnPointer => m_ReturnedDataPtr;
         public uint InjectCodePointer => m_InjectedCode;
+
+        /// <summary>
+        /// Number of EndScene frames that have been processed by the detour.
+        /// Read from the data region in the target process.
+        /// </summary>
+        public uint FrameCount => Memory.Read<uint>(new uint[] { m_FrameCountPtr });
+
+        /// <summary>
+        /// Whether the detour is currently executing (inside the hook code).
+        /// </summary>
+        public bool InHook => Memory.Read<uint>(new uint[] { m_InHookPtr }) != 0;
+
+        /// <summary>
+        /// Last VEH status code (0=OK, 1=TlsAlloc fail, 2=AddVEH fail, 3=TlsSetValue fail, 4=exception).
+        /// </summary>
+        public int LastStatus => Memory.Read<int>(new uint[] { m_StatusPtr });
 
         public ExecutorRand(Memory memory, uint endSceneAddress)
         {
@@ -163,23 +195,20 @@ namespace GreenMagic
                     {
                         m_InjectionContinueEvent.Reset();
                         m_InjectionWaitingEvent.Set();
-                        if (!m_InjectionFinishedEvent.WaitOne(10000, false))
-                            throw new Exception("Process must have frozen or gotten out of sync; InjectionFinishedEvent was never fired.");
+                        WaitForInjection(10000);
                         m_FirstExecution = false;
                     }
                     else
                     {
                         m_InjectionWaitingEvent.Set();
                         m_InjectionContinueEvent.Set();
-                        if (!m_InjectionFinishedEvent.WaitOne(10000, false))
-                            throw new Exception("Process must have frozen or gotten out of sync; InjectionFinishedEvent was never fired.");
+                        WaitForInjection(10000);
                     }
                 }
                 else
                 {
                     m_InjectionWaitingEvent.Set();
-                    if (!m_InjectionFinishedEvent.WaitOne(10000, false))
-                        throw new Exception("Process must have frozen or gotten out of sync; InjectionFinishedEvent was never fired.");
+                    WaitForInjection(10000);
                     m_InjectionWaitingEvent.Reset();
                     m_InjectionContinueEvent.Set();
                 }
@@ -194,6 +223,55 @@ namespace GreenMagic
                 throw new Exception("Process must have frozen or gotten out of sync; InjectionFinishedEvent was never fired.");
             m_InjectionWaitingEvent.Reset();
             m_InjectionContinueEvent.Set();
+        }
+
+        /// <summary>
+        /// Wait for the injection to complete and check the VEH status code.
+        /// Throws appropriate exceptions based on the status.
+        /// </summary>
+        /// <param name="timeout">Maximum wait time in milliseconds.</param>
+        private void WaitForInjection(int timeout = 10000)
+        {
+            if (!m_InjectionFinishedEvent.WaitOne(timeout, false))
+            {
+                throw new InjectionDesyncException(
+                    "Process must have frozen or gotten out of sync; " +
+                    "InjectionFinishedEvent was never fired within " + timeout + "ms.");
+            }
+
+            // Read the status code from the data region
+            int status = Memory.Read<int>(new uint[] { m_StatusPtr });
+
+            switch (status)
+            {
+                case 0:
+                    // Success — injected code ran normally
+                    break;
+
+                case 1:
+                    throw new InjectionException(1,
+                        "TlsAlloc returned TLS_OUT_OF_INDEXES (0xFFFFFFFF). " +
+                        "No TLS slots available in the target process.");
+
+                case 2:
+                    throw new InjectionException(2,
+                        "AddVectoredExceptionHandler returned NULL. " +
+                        "VEH registration failed.");
+
+                case 3:
+                    throw new InjectionException(3,
+                        "TlsSetValue returned FALSE. " +
+                        "Failed to mark current thread for VEH identification.");
+
+                case 4:
+                    // Read the exception code stored by the VEH handler
+                    uint exceptionCode = Memory.Read<uint>(new uint[] { m_ReturnedDataPtr });
+                    throw new InjectionSEHException(exceptionCode);
+
+                default:
+                    throw new InjectionException(status,
+                        $"Injection resulted in unknown status code {status}.");
+            }
         }
 
         #endregion
@@ -316,11 +394,25 @@ namespace GreenMagic
             ResetEvent          = Imports.GetProcAddress(k32, "ResetEvent");
             SetEvent            = Imports.GetProcAddress(k32, "SetEvent");
 
+            // VEH kernel32 functions
+            TlsAlloc                       = Imports.GetProcAddress(k32, "TlsAlloc");
+            TlsFree                        = Imports.GetProcAddress(k32, "TlsFree");
+            TlsGetValue                    = Imports.GetProcAddress(k32, "TlsGetValue");
+            TlsSetValue                    = Imports.GetProcAddress(k32, "TlsSetValue");
+            AddVectoredExceptionHandler    = Imports.GetProcAddress(k32, "AddVectoredExceptionHandler");
+            RemoveVectoredExceptionHandler = Imports.GetProcAddress(k32, "RemoveVectoredExceptionHandler");
+
             if (WaitForSingleObject == UIntPtr.Zero ||
                 CreateEventA == UIntPtr.Zero ||
                 ResetEvent == UIntPtr.Zero ||
                 SetEvent == UIntPtr.Zero)
                 throw new Exception("Failed to resolve required kernel32 exports");
+
+            if (TlsAlloc == UIntPtr.Zero || TlsFree == UIntPtr.Zero ||
+                TlsGetValue == UIntPtr.Zero || TlsSetValue == UIntPtr.Zero ||
+                AddVectoredExceptionHandler == UIntPtr.Zero ||
+                RemoveVectoredExceptionHandler == UIntPtr.Zero)
+                throw new Exception("Failed to resolve required VEH kernel32 exports");
 
             uint eventStub = Memory.AllocateMemory(size, 0x1000, 0x20); // PAGE_EXECUTE_READ
             if (eventStub == 0) throw new Exception("Allocate event stub failed");
@@ -344,15 +436,29 @@ namespace GreenMagic
             if (m_DataPtr == 0) throw new Exception("Allocate data failed");
 
             // Sauvegarder les bytes originaux de EndScene pour le prologue
-            m_OriginalEndSceneBytes = Memory.ReadBytes(m_OrigEndScene, 6);
+            // Read 16 bytes to cover all known prologue patterns (up to 7 bytes for Win8 KB3000850)
+            m_OriginalEndSceneBytes = Memory.ReadBytes(m_OrigEndScene, 16);
             System.Diagnostics.Debug.WriteLine($"[InitializeDetour] Original EndScene bytes: {(m_OriginalEndSceneBytes != null ? BitConverter.ToString(m_OriginalEndSceneBytes) : "null")}");
-            if (m_OriginalEndSceneBytes == null)
+            if (m_OriginalEndSceneBytes == null || m_OriginalEndSceneBytes.Length < 5)
                 throw new Exception("Failed to read original EndScene bytes.");
 
             m_InjectionWaitingHandlePtr  = m_DataPtr;
             m_InjectionContinueHandlePtr = m_DataPtr + 4;
             m_InjectionFinishedHandlePtr = m_DataPtr + 8;
             m_ReturnedDataPtr            = m_DataPtr + 12;
+            m_FrameCountPtr              = m_DataPtr + 16;
+            m_InHookPtr                  = m_DataPtr + 20;
+            m_StatusPtr                  = m_DataPtr + 24;
+            m_TlsPtr                     = m_DataPtr + 28;
+            m_VehPtr                     = m_DataPtr + 32;
+            m_FrameDropWaitTimePtr       = m_DataPtr + 36;
+
+            // Initialize VEH-related memory to safe defaults
+            Memory.Write<uint>(m_TlsPtr, 0xFFFFFFFF);  // TLS_OUT_OF_INDEXES sentinel
+            Memory.Write<uint>(m_VehPtr, 0);            // No VEH registered yet
+            Memory.Write<uint>(m_StatusPtr, 0);         // Status OK
+            Memory.Write<uint>(m_FrameCountPtr, 0);     // Frame counter
+            Memory.Write<uint>(m_InHookPtr, 0);         // Not in hook
 
             if (!InjectEventStub(eventStub, namesMem, name2, name3))
                 throw new Exception("InjectEventStub failed");
@@ -362,10 +468,196 @@ namespace GreenMagic
             Memory.FreeMemory(namesMem);
         }
 
+        /// <summary>
+        /// Emit the VEH infrastructure block into the detour ASM stream.
+        /// Must be called at the start of InjectDetour(), before the main loop.
+        /// Emits: @ExceptionHandler, @SetUpGate, @TearDownGate, @CallGate, @CallGateInterject
+        /// </summary>
+        private void EmitVehBlock()
+        {
+            // Jump over VEH definitions to the main detour code
+            AddLine("jmp @Continue");
+
+            // ═══════════════════════════════════════════════════
+            // @ExceptionHandler — VEH callback (called by Windows)
+            // ═══════════════════════════════════════════════════
+            // Windows VEH callback signature: LONG CALLBACK handler(EXCEPTION_POINTERS* pExInfo)
+            // Stack on entry: [esp+4] = EXCEPTION_POINTERS*
+            //   EXCEPTION_POINTERS { EXCEPTION_RECORD* ExceptionRecord; CONTEXT* ContextRecord; }
+
+            AddLine("@ExceptionHandler:");
+            AddLine("push ebp");
+            AddLine("mov ebp, esp");
+            AddLine("push ecx");                          // save scratch
+
+            // Check TLS to identify if this is our thread
+            AddLine("push dword [{0}]", m_TlsPtr);        // push TLS slot index
+            AddLine("call {0}", TlsGetValue);              // TlsGetValue(slot) → eax
+            AddLine("mov ecx, eax");                       // ecx = TLS value
+            AddLine("test ecx, ecx");
+            AddLine("jz @EHContinueSearch");               // TLS == 0 → not our thread
+
+            // ── Our thread: exception in injected code ──
+            // Read EXCEPTION_POINTERS* from stack
+            AddLine("mov eax, [ebp+8]");                   // eax = EXCEPTION_POINTERS*
+
+            // Read ExceptionRecord → ExceptionCode
+            AddLine("push eax");                           // save EXCEPTION_POINTERS*
+            AddLine("mov eax, [eax]");                     // eax = EXCEPTION_RECORD*
+            AddLine("mov eax, [eax]");                     // eax = ExceptionCode (first field)
+            AddLine("mov [{0}], eax", m_ReturnedDataPtr);  // store exception code
+
+            // Read ContextRecord and modify it
+            AddLine("pop eax");                            // eax = EXCEPTION_POINTERS* again
+            AddLine("mov eax, [eax+4]");                   // eax = CONTEXT*
+
+            // Write saved ESP (from TLS) into CONTEXT.Esp (offset 0xC4)
+            // This restores the stack pointer when Windows resumes execution
+            AddLine("mov [eax+0xC4], ecx");                // CONTEXT.Esp = TLS value (saved ESP)
+
+            // Redirect CONTEXT.Eip to @CallGateInterject (offset 0xB8)
+            AddLine("push @CallGateInterject");
+            AddLine("pop ecx");                            // ecx = address of @CallGateInterject
+            AddLine("mov [eax+0xB8], ecx");                // CONTEXT.Eip = @CallGateInterject
+
+            // Return EXCEPTION_CONTINUE_EXECUTION (-1)
+            AddLine("mov ecx, 0xFFFFFFFF");
+            AddLine("jmp @EHReturn");
+
+            AddLine("@EHContinueSearch:");
+            // Not our thread — let WoW's handler deal with it
+            AddLine("xor ecx, ecx");                       // return 0 = EXCEPTION_CONTINUE_SEARCH
+
+            AddLine("@EHReturn:");
+            AddLine("mov eax, ecx");
+            AddLine("pop ecx");                            // restore scratch
+            AddLine("pop ebp");
+            AddLine("retn 4");                             // stdcall: callee cleans 1 param (4 bytes)
+
+            // ═══════════════════════════════════════════════════
+            // @SetUpGate — Allocate TLS slot + register VEH
+            // ═══════════════════════════════════════════════════
+            // Returns: 0 = success, 1 = TlsAlloc failed, 2 = AddVEH failed
+
+            AddLine("@SetUpGate:");
+            AddLine("call {0}", TlsAlloc);                 // TlsAlloc() → eax
+            AddLine("cmp eax, 0xFFFFFFFF");
+            AddLine("je @SetUpGateFail1");
+            AddLine("mov [{0}], eax", m_TlsPtr);           // store TLS index
+
+            // AddVectoredExceptionHandler(1, @ExceptionHandler)
+            AddLine("push @ExceptionHandler");
+            AddLine("push 1");                             // first handler (highest priority)
+            AddLine("call {0}", AddVectoredExceptionHandler);
+            AddLine("test eax, eax");
+            AddLine("jz @SetUpGateFail2");
+            AddLine("mov [{0}], eax", m_VehPtr);            // store VEH handle
+
+            // Success
+            AddLine("xor eax, eax");                       // return 0
+            AddLine("jmp @SetUpGateReturn");
+
+            AddLine("@SetUpGateFail1:");
+            AddLine("mov eax, 1");                         // return 1 (TlsAlloc failed)
+            AddLine("jmp @SetUpGateReturn");
+
+            AddLine("@SetUpGateFail2:");
+            AddLine("mov eax, 2");                         // return 2 (AddVEH failed)
+
+            AddLine("@SetUpGateReturn:");
+            AddLine("retn");
+
+            // ═══════════════════════════════════════════════════
+            // @TearDownGate — Remove VEH + free TLS slot
+            // ═══════════════════════════════════════════════════
+
+            AddLine("@TearDownGate:");
+
+            // Remove VEH if registered
+            AddLine("mov eax, [{0}]", m_VehPtr);
+            AddLine("test eax, eax");
+            AddLine("jz @TearDownRemoveTLS");              // vehPtr == 0 → skip
+            AddLine("push eax");
+            AddLine("call {0}", RemoveVectoredExceptionHandler);
+            AddLine("mov dword [{0}], 0", m_VehPtr);       // zero out vehPtr
+
+            AddLine("@TearDownRemoveTLS:");
+            // Free TLS slot if allocated
+            AddLine("mov eax, [{0}]", m_TlsPtr);
+            AddLine("cmp eax, 0xFFFFFFFF");
+            AddLine("je @TearDownDone");                   // TLS_OUT_OF_INDEXES → skip
+            AddLine("push eax");
+            AddLine("call {0}", TlsFree);
+            AddLine("mov dword [{0}], 0xFFFFFFFF", m_TlsPtr); // reset sentinel
+
+            AddLine("@TearDownDone:");
+            AddLine("retn");
+
+            // ═══════════════════════════════════════════════════
+            // @CallGate — Set TLS, call injected code, return status
+            // ═══════════════════════════════════════════════════
+            // Returns: 0 = success, 3 = TlsSetValue failed, 4 = exception caught
+
+            AddLine("@CallGate:");
+            // TlsSetValue(tlsIndex, ESP) to mark current thread
+            AddLine("push esp");                           // value = current ESP
+            AddLine("push dword [{0}]", m_TlsPtr);        // key = TLS index
+            AddLine("call {0}", TlsSetValue);              // TlsSetValue(slot, esp)
+            AddLine("test eax, eax");
+            AddLine("jz @CallGateFail3");
+
+            // Call injected code
+            AddLine("call {0}", m_InjectedCode);
+            AddLine("mov [{0}], eax", m_ReturnedDataPtr);  // store return value
+
+            // Clear TLS (unmark thread)
+            AddLine("push 0");                             // value = 0
+            AddLine("push dword [{0}]", m_TlsPtr);        // key = TLS index
+            AddLine("call {0}", TlsSetValue);              // TlsSetValue(slot, 0)
+
+            // Success
+            AddLine("xor eax, eax");                       // return 0
+            AddLine("jmp @CallGateReturn");
+
+            AddLine("@CallGateFail3:");
+            AddLine("mov eax, 3");                         // return 3 (TlsSetValue failed)
+            AddLine("jmp @CallGateReturn");
+
+            // ═══════════════════════════════════════════════════
+            // @CallGateInterject — VEH redirects EIP here on crash
+            // ═══════════════════════════════════════════════════
+            // ESP was restored by VEH handler via CONTEXT.Esp (pointing at call @CallGate return addr)
+            // The exception code is already stored in m_ReturnedDataPtr by the handler
+
+            AddLine("@CallGateInterject:");
+
+            // Clear TLS (unmark thread)
+            AddLine("push 0");
+            AddLine("push dword [{0}]", m_TlsPtr);
+            AddLine("call {0}", TlsSetValue);              // TlsSetValue(slot, 0) — clear mark
+
+            AddLine("mov eax, 4");                         // return 4 (exception caught)
+
+            AddLine("@CallGateReturn:");
+            AddLine("retn");
+        }
+
         private void InjectDetour()
         {
             Clear();
+
+            // ── Emit VEH infrastructure (placed before main code, jumped over) ──
+            EmitVehBlock();
+
+            // ── Main detour code starts here ──
+            AddLine("@Continue:");
             AddRandomLine("pushad");
+
+            // ── Frame counter ──
+            AddRandomLine("mov eax, [{0}]", m_FrameCountPtr);
+            AddRandomLine("inc eax");
+            AddRandomLine("mov [{0}], eax", m_FrameCountPtr);
+
             AddRandomLine("@CheckInjection:");
             AddRandomLine("mov eax, [{0}]", m_InjectionWaitingHandlePtr);
             AddRandomLine("push 0");
@@ -373,46 +665,122 @@ namespace GreenMagic
             AddRandomLine("call {0}", WaitForSingleObject);
             AddRandomLine("test eax, eax");
             AddRandomLine("jnz @NoInjection");
-            AddRandomLine("@Injection:");
-            AddRandomLine("call {0}", m_InjectedCode);
-            AddRandomLine("mov [{0}], eax", m_ReturnedDataPtr);
+
+            // ── Mark as in-hook ──
+            AddRandomLine("mov dword [{0}], 1", m_InHookPtr);
+
+            // ── Set up VEH if not already done ──
+            AddRandomLine("mov eax, [{0}]", m_VehPtr);
+            AddRandomLine("test eax, eax");
+            AddRandomLine("jnz @DoCall");
+            AddRandomLine("call @SetUpGate");
+            AddRandomLine("test eax, eax");
+            AddRandomLine("jnz @StoreEaxAsStatus");
+
+            AddLine("@DoCall:");
+            // ── Call injected code through VEH-protected CallGate ──
+            AddRandomLine("call @CallGate");
+
+            AddLine("@StoreEaxAsStatus:");
+            AddRandomLine("mov [{0}], eax", m_StatusPtr);
+
+            // ── Clear in-hook flag ──
+            AddRandomLine("mov dword [{0}], 0", m_InHookPtr);
+
+            // ── Signal injection finished ──
             AddRandomLine("mov eax, [{0}]", m_InjectionFinishedHandlePtr);
             AddRandomLine("push eax");
             AddRandomLine("call {0}", SetEvent);
+
+            // ── Wait for continue signal ──
             AddRandomLine("mov eax, [{0}]", m_InjectionContinueHandlePtr);
             AddRandomLine("push 1000");
             AddRandomLine("push eax");
             AddRandomLine("call {0}", WaitForSingleObject);
             AddRandomLine("test eax, eax");
             AddRandomLine("jz @CheckInjection");
+
+            // ── Continue not signaled → reset waiting event and fall through ──
             AddRandomLine("mov eax, [{0}]", m_InjectionWaitingHandlePtr);
             AddRandomLine("push eax");
             AddRandomLine("call {0}", ResetEvent);
+
             AddLine("@NoInjection:");
+
+            // ── Tear down VEH if it was set up ──
+            AddRandomLine("mov eax, [{0}]", m_VehPtr);
+            AddRandomLine("test eax, eax");
+            AddRandomLine("jz @SkipTearDown");
+            AddRandomLine("call @TearDownGate");
+            AddLine("@SkipTearDown:");
+
             AddRandomLine("popad");
             
             // Restore original EndScene prologue based on captured bytes
-            // WoW 3.3.5a EndScene has two common prologues:
-            // 1) 55 8B EC 8B 45 08 = push ebp; mov ebp,esp; mov eax,[ebp+8] (6 bytes before our JMP)
-            // 2) 8B FF 55 8B EC = mov edi,edi; push ebp; mov ebp,esp (5 bytes before our JMP)
             var prolog = m_OriginalEndSceneBytes;
             if (prolog != null && prolog.Length >= 6)
             {
                 Debug.WriteLine($"[InjectDetour] Prologue bytes: {BitConverter.ToString(prolog)}");
-                
+
                 if (prolog[0] == 0x55 && prolog[1] == 0x8B && prolog[2] == 0xEC)
                 {
-                    // Prologue: push ebp; mov ebp,esp; mov eax,[ebp+8]
-                    Debug.WriteLine("[InjectDetour] Using 6-byte prologue (55 8B EC 8B 45 08)");
+                    if (prolog.Length >= 6 && prolog[3] == 0x8B && prolog[4] == 0x45 && prolog[5] == 0x08)
+                    {
+                        // Nvidia coproc manager: push ebp; mov ebp,esp; mov eax,[ebp+8]
+                        Debug.WriteLine("[InjectDetour] Using 6-byte prologue (55 8B EC 8B 45 08)");
+                        AddLine("push ebp");
+                        AddLine("mov ebp, esp");
+                        AddLine("mov eax, [ebp+8]");
+                        AddLine("jmp {0}", m_OrigEndScene + 6);
+                    }
+                    else if (prolog.Length >= 6 && prolog[3] == 0x83 && prolog[4] == 0xEC)
+                    {
+                        // Neverwinter-style: push ebp; mov ebp,esp; sub esp,XX
+                        Debug.WriteLine($"[InjectDetour] Using 6-byte prologue (55 8B EC 83 EC {prolog[5]:X2})");
+                        AddLine("push ebp");
+                        AddLine("mov ebp, esp");
+                        AddLine("sub esp, {0}", prolog[5]);
+                        AddLine("jmp {0}", m_OrigEndScene + 6);
+                    }
+                    else
+                    {
+                        // Generic push ebp; mov ebp,esp — assume 5 bytes overwritten
+                        Debug.WriteLine("[InjectDetour] Using generic 5-byte push ebp prologue");
+                        AddLine("push ebp");
+                        AddLine("mov ebp, esp");
+                        AddLine("jmp {0}", m_OrigEndScene + 5);
+                    }
+                }
+                else if (prolog[0] == 0x8B && prolog[1] == 0xFF)
+                {
+                    // Standard D3D9 hotpatch: mov edi,edi; push ebp; mov ebp,esp
+                    Debug.WriteLine("[InjectDetour] Using 5-byte prologue (8B FF 55 8B EC)");
+                    AddLine("mov edi, edi");
                     AddLine("push ebp");
                     AddLine("mov ebp, esp");
-                    AddLine("mov eax, [ebp+8]");
-                    AddLine("jmp {0}", m_OrigEndScene + 6);
+                    AddLine("jmp {0}", m_OrigEndScene + 5);
+                }
+                else if (prolog[0] == 0x6A && prolog.Length >= 7 && prolog[2] == 0xB8)
+                {
+                    // Win8 KB3000850: push imm8; mov eax,imm32 — 7 bytes
+                    Debug.WriteLine("[InjectDetour] Using 7-byte Win8 prologue (6A xx B8 xx xx xx xx)");
+                    AddLine("push {0}", prolog[1]);
+                    uint imm32 = BitConverter.ToUInt32(prolog, 3);
+                    AddLine("mov eax, {0}", imm32);
+                    AddLine("jmp {0}", m_OrigEndScene + 7);
+                }
+                else if (prolog[0] == 0xE9)
+                {
+                    // Existing hook (JMP rel32) — chain with it
+                    Debug.WriteLine("[InjectDetour] Existing hook detected (E9 xx xx xx xx) — chaining");
+                    int rel32 = BitConverter.ToInt32(prolog, 1);
+                    uint existingTarget = (uint)(m_OrigEndScene + 5 + rel32);
+                    AddLine("jmp {0}", existingTarget);
                 }
                 else
                 {
-                    // Prologue: mov edi,edi; push ebp; mov ebp,esp
-                    Debug.WriteLine("[InjectDetour] Using 5-byte prologue (8B FF 55 8B EC)");
+                    // Fallback to standard 5-byte prologue
+                    Debug.WriteLine("[InjectDetour] FALLBACK: Using standard 5-byte prologue");
                     AddLine("mov edi, edi");
                     AddLine("push ebp");
                     AddLine("mov ebp, esp");
@@ -421,7 +789,7 @@ namespace GreenMagic
             }
             else
             {
-                // Fallback to standard 5-byte prologue
+                // Fallback
                 Debug.WriteLine("[InjectDetour] FALLBACK: Using standard 5-byte prologue");
                 AddLine("mov edi, edi");
                 AddLine("push ebp");
@@ -440,7 +808,7 @@ namespace GreenMagic
             if (!Memory.Asm!.Inject(m_OrigEndScene))
                 throw new Exception("Failed to inject JMP at EndScene");
                 
-            Debug.WriteLine("[InjectDetour] Detour installed successfully");
+            Debug.WriteLine("[InjectDetour] VEH-protected detour installed successfully");
         }
 
         private bool InjectEventStub(uint eventStub, uint waitNamePtr, uint contNamePtr, uint finNamePtr)
@@ -527,6 +895,18 @@ namespace GreenMagic
             {
                 if (Memory != null && m_OriginalEndSceneBytes != null)
                 {
+                    // Signal one more frame to trigger TearDownGate in the target
+                    // Write a bare RET to injected code so it does nothing
+                    Memory.Write<byte>(m_InjectedCode, 195); // 0xC3 = retn
+                    try
+                    {
+                        m_InjectionWaitingEvent.Set();
+                        m_InjectionFinishedEvent.WaitOne(5000, false);
+                        m_InjectionWaitingEvent.Reset();
+                        m_InjectionContinueEvent.Set();
+                    }
+                    catch { }
+
                     // Restore original EndScene bytes
                     Memory.WriteBytes(m_OrigEndScene, m_OriginalEndSceneBytes);
                     Debug.WriteLine($"[ExecutorRand] Restored original EndScene bytes at 0x{m_OrigEndScene:X8}");
