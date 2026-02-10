@@ -203,8 +203,9 @@ namespace Styx.WoWInternals
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Logging.WriteDebug("Exception in GetReturnValues: {0}", ex.Message);
                 return new List<string>();
             }
         }
@@ -248,8 +249,9 @@ namespace Styx.WoWInternals
                 // Convert to target type
                 return (T)Convert.ChangeType(value, typeof(T), CultureInfo.InvariantCulture);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Logging.WriteDebug("Exception in GetReturnVal<{0}>: {1}", typeof(T).Name, ex.Message);
                 return default(T)!;
             }
         }
@@ -322,9 +324,9 @@ namespace Styx.WoWInternals
                     scriptMemory?.Dispose();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Silently fail
+                Logging.WriteDebug("Exception in DoString: {0} StackTrace:{1}", ex.Message, ex.StackTrace);
             }
         }
 
