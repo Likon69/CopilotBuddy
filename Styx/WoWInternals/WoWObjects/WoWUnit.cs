@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using GreenMagic;
 using Styx.Combat.CombatRoutine;
@@ -316,7 +317,10 @@ namespace Styx.WoWInternals.WoWObjects
             }
         }
 
-        public override WoWPoint Location
+        /// <summary>
+        /// Raw transport-local position (from CMovementData). Use Location for world coords.
+        /// </summary>
+        public WoWPoint RelativeLocation
         {
             get
             {
@@ -324,6 +328,16 @@ namespace Styx.WoWInternals.WoWObjects
                 if (wow == null)
                     return WoWPoint.Zero;
                 return wow.Read<WoWPoint>(BaseAddress + 1944);
+            }
+        }
+
+        public override WoWPoint Location
+        {
+            get
+            {
+                if (IsOnTransport)
+                    return GetWorldPosition();
+                return RelativeLocation;
             }
         }
 
@@ -1654,10 +1668,32 @@ namespace Styx.WoWInternals.WoWObjects
             }
         }
 
+        /// <summary>
+        /// Returns the world-space position of this unit.
+        /// When on a transport (elevator, ship), transforms the transport-local
+        /// position by the transport's world matrix (read from GO BaseAddress + 0x1A8).
+        /// Matches HB 3.3.5a's GetWorldPosition().
+        /// </summary>
         public WoWPoint GetWorldPosition()
         {
-            // For 3.3.5a: Returns location. Transport transform would require Matrix/Vector3 math.
-            return Location;
+            WoWPoint local = RelativeLocation;
+            if (!IsOnTransport)
+                return local;
+
+            WoWGameObject? transport = Transport;
+            if (transport == null)
+                return local;
+
+            // Read the 4×4 world matrix the WoW client maintains for this GO.
+            // Offset 0x1A8 (424) from GO base — continuously updated for moving transports.
+            Tripper.Tools.Math.Matrix worldMatrix = transport.GetWorldMatrix();
+            Matrix4x4 mat = worldMatrix;
+
+            // Transform local position to world position
+            var localVec = new System.Numerics.Vector3(local.X, local.Y, local.Z);
+            var worldVec = System.Numerics.Vector3.Transform(localVec, mat);
+
+            return new WoWPoint(worldVec.X, worldVec.Y, worldVec.Z);
         }
 
         public bool GetCachedInfo(out Styx.WoWInternals.WoWCache.WoWCache.CreatureCacheEntry info)

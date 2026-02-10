@@ -394,8 +394,24 @@ namespace Styx.WoWInternals.WoWObjects
 
         public Matrix WorldMatrix => GetWorldMatrix();
 
+        /// <summary>
+        /// World transform matrix. For transports (elevators, ships), reads the live
+        /// matrix from game memory at BaseAddress + 0x1A8 (updated each frame by the client).
+        /// For static objects, computes from position + rotation.
+        /// Matches HB 3.3.5a's GetWorldMatrix().
+        /// </summary>
         public Matrix GetWorldMatrix()
         {
+            // Transports (type 15 = TRANSPORT, type 11 = MO_TRANSPORT) have a live matrix
+            // maintained by the client at offset 0x1A8 (424 bytes from base).
+            if (SubType == WoWGameObjectType.Transport || SubType == WoWGameObjectType.MapObjectTransport)
+            {
+                Memory? wow = ObjectManager.Wow;
+                if (wow != null)
+                {
+                    return wow.Read<Matrix>(BaseAddress + 0x1A8);
+                }
+            }
             return BuildWorldMatrix(Location, Rotation);
         }
 
