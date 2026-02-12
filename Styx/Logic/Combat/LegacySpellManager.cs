@@ -1,6 +1,8 @@
 #nullable disable
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using Styx.Common;
 using Styx.Helpers;
 using Styx.Logic.Pathing;
 using Styx.WoWInternals;
@@ -14,6 +16,36 @@ namespace Styx.Logic.Combat
     /// </summary>
     public static class LegacySpellManager
     {
+        /// <summary>Known spells dictionary keyed by name (populated via Refresh).</summary>
+        public static Dictionary<string, WoWSpell> KnownSpells { get; } = new Dictionary<string, WoWSpell>(StringComparer.OrdinalIgnoreCase);
+
+        private static int _lastKnownSpellCount;
+
+        /// <summary>
+        /// Rebuilds the KnownSpells dictionary from the player's spell book.
+        /// Called when a combat routine is loaded or changed (HB 4.3.4 pattern).
+        /// </summary>
+        public static void Refresh()
+        {
+            var me = StyxWoW.Me;
+            if (me == null) return;
+
+            int currentCount = me.KnownSpells.Count;
+            if (_lastKnownSpellCount != 0 && currentCount == _lastKnownSpellCount)
+                return;
+
+            Logging.Write("Building spell book...");
+            KnownSpells.Clear();
+            foreach (WoWSpell spell in me.KnownSpells)
+            {
+                if (!KnownSpells.ContainsKey(spell.Name))
+                {
+                    KnownSpells.Add(spell.Name, spell);
+                }
+            }
+            _lastKnownSpellCount = currentCount;
+            Logging.Write("Spell book built. {0} spells.", KnownSpells.Count);
+        }
         /// <summary>
         /// Casts a spell by name on the current target.
         /// </summary>
