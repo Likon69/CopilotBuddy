@@ -1,0 +1,61 @@
+<HBProfile>
+  <Name>(GB2 0-75)(Loch Modan.Alliance)Herbalism</Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>91</MaxLevel>
+  <Factions>99999</Factions>
+
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+  <Vendors>
+
+  </Vendors>
+
+  <Mailboxes>
+
+  </Mailboxes>
+  <Blackspots>
+    <!-- Add blackspots manually -->
+  </Blackspots>
+
+  <Hotspots>
+    <Hotspot X="-4235.68" Y="-5448.57" Z="0.0" />
+    <Hotspot X="-4138.4" Y="-5370.18" Z="0.0" />
+    <Hotspot X="-4091.2" Y="-5310.51" Z="0.0" />
+    <Hotspot X="-4016.64" Y="-5279.83" Z="0.0" />
+    <Hotspot X="-3793.44" Y="-5260.33" Z="0.0" />
+    <Hotspot X="-3635.84" Y="-5333.26" Z="0.0" />
+    <Hotspot X="-3555.68" Y="-5378.76" Z="0.0" />
+    <Hotspot X="-3452.64" Y="-5399.69" Z="0.0" />
+    <Hotspot X="-3367.2" Y="-5349.9" Z="0.0" />
+    <Hotspot X="-3372.0" Y="-5302.71" Z="0.0" />
+    <Hotspot X="-3477.76" Y="-5275.15" Z="0.0" />
+    <Hotspot X="-3563.04" Y="-5268.52" Z="0.0" />
+    <Hotspot X="-3636.8" Y="-5225.49" Z="0.0" />
+    <Hotspot X="-3690.08" Y="-5166.99" Z="0.0" />
+    <Hotspot X="-3597.28" Y="-5129.68" Z="0.0" />
+    <Hotspot X="-3780.8" Y="-5100.82" Z="0.0" />
+    <Hotspot X="-3962.56" Y="-5122.79" Z="0.0" />
+    <Hotspot X="-4022.88" Y="-5091.98" Z="0.0" />
+    <Hotspot X="-4129.12" Y="-5098.87" Z="0.0" />
+    <Hotspot X="-4232.0" Y="-5080.93" Z="0.0" />
+    <Hotspot X="-4281.12" Y="-5103.94" Z="0.0" />
+    <Hotspot X="-4249.44" Y="-5151.0" Z="0.0" />
+    <Hotspot X="-4314.24" Y="-5227.83" Z="0.0" />
+    <Hotspot X="-4331.2" Y="-5341.45" Z="0.0" />
+    <Hotspot X="-4343.36" Y="-5382.92" Z="0.0" />
+    <Hotspot X="-4276.32" Y="-5425.82" Z="0.0" />
+  </Hotspots>
+</HBProfile>

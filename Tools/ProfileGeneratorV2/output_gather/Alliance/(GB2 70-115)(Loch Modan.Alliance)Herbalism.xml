@@ -1,0 +1,53 @@
+<HBProfile>
+  <Name>(GB2 70-115)(Loch Modan.Alliance)Herbalism</Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>91</MaxLevel>
+  <Factions>99999</Factions>
+
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+  <Vendors>
+
+  </Vendors>
+
+  <Mailboxes>
+
+  </Mailboxes>
+  <Blackspots>
+    <!-- Add blackspots manually -->
+  </Blackspots>
+
+  <Hotspots>
+    <Hotspot X="-3700.48" Y="-5573.63" Z="0.0" />
+    <Hotspot X="-3647.36" Y="-5572.33" Z="0.0" />
+    <Hotspot X="-3604.16" Y="-5571.94" Z="0.0" />
+    <Hotspot X="-3375.68" Y="-5546.85" Z="0.0" />
+    <Hotspot X="-3455.04" Y="-5482.89" Z="0.0" />
+    <Hotspot X="-3556.48" Y="-5440.38" Z="0.0" />
+    <Hotspot X="-3547.04" Y="-5380.58" Z="0.0" />
+    <Hotspot X="-3352.16" Y="-5367.32" Z="0.0" />
+    <Hotspot X="-3482.72" Y="-5281.26" Z="0.0" />
+    <Hotspot X="-3586.08" Y="-5247.98" Z="0.0" />
+    <Hotspot X="-3901.76" Y="-5208.07" Z="0.0" />
+    <Hotspot X="-4011.52" Y="-5276.32" Z="0.0" />
+    <Hotspot X="-4145.28" Y="-5365.63" Z="0.0" />
+    <Hotspot X="-4211.2" Y="-5453.77" Z="0.0" />
+    <Hotspot X="-4082.72" Y="-5541.78" Z="0.0" />
+    <Hotspot X="-3955.2" Y="-5571.03" Z="0.0" />
+    <Hotspot X="-3855.84" Y="-5601.32" Z="0.0" />
+    <Hotspot X="-3719.36" Y="-5633.3" Z="0.0" />
+  </Hotspots>
+</HBProfile>

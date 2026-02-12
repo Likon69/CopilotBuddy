@@ -1,0 +1,56 @@
+<HBProfile>
+  <Name>(GB2 0-75)(Eastern Plaguelands.Alliance)Herbalism</Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>91</MaxLevel>
+  <Factions>99999</Factions>
+
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+  <Vendors>
+
+  </Vendors>
+
+  <Mailboxes>
+
+  </Mailboxes>
+  <Blackspots>
+    <!-- Add blackspots manually -->
+  </Blackspots>
+
+  <Hotspots>
+    <Hotspot X="2387.92" Y="2829.72" Z="0.0" />
+    <Hotspot X="2373.28" Y="2919.39" Z="0.0" />
+    <Hotspot X="2392.0" Y="3013.26" Z="0.0" />
+    <Hotspot X="2411.44" Y="3076.26" Z="0.0" />
+    <Hotspot X="2421.04" Y="3126.03" Z="0.0" />
+    <Hotspot X="2360.8" Y="3145.56" Z="0.0" />
+    <Hotspot X="2280.16" Y="3162.57" Z="0.0" />
+    <Hotspot X="2171.44" Y="3181.47" Z="0.0" />
+    <Hotspot X="2072.8" Y="3186.51" Z="0.0" />
+    <Hotspot X="1979.68" Y="3156.48" Z="0.0" />
+    <Hotspot X="1937.2" Y="3114.48" Z="0.0" />
+    <Hotspot X="1912.96" Y="3085.92" Z="0.0" />
+    <Hotspot X="1859.92" Y="3069.96" Z="0.0" />
+    <Hotspot X="1818.16" Y="3031.74" Z="0.0" />
+    <Hotspot X="1887.52" Y="2945.01" Z="0.0" />
+    <Hotspot X="1868.8" Y="2903.01" Z="0.0" />
+    <Hotspot X="1926.16" Y="2865.63" Z="0.0" />
+    <Hotspot X="2033.68" Y="2858.91" Z="0.0" />
+    <Hotspot X="2110.0" Y="2840.01" Z="0.0" />
+    <Hotspot X="2163.76" Y="2828.25" Z="0.0" />
+    <Hotspot X="2282.32" Y="2843.58" Z="0.0" />
+  </Hotspots>
+</HBProfile>

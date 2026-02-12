@@ -1,0 +1,43 @@
+<HBProfile>
+  <Name>(GB2 0-75)(The Hinterlands.Alliance)Herbalism</Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>91</MaxLevel>
+  <Factions>99999</Factions>
+
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+  <Vendors>
+
+  </Vendors>
+
+  <Mailboxes>
+
+  </Mailboxes>
+  <Blackspots>
+    <!-- Add blackspots manually -->
+  </Blackspots>
+
+  <Hotspots>
+    <Hotspot X="-493.9" Y="550.75" Z="0.0" />
+    <Hotspot X="-467.65" Y="569.73" Z="0.0" />
+    <Hotspot X="-413.5" Y="577.79" Z="0.0" />
+    <Hotspot X="-380.05" Y="548.02" Z="0.0" />
+    <Hotspot X="-377.8" Y="525.66" Z="0.0" />
+    <Hotspot X="-413.35" Y="508.24" Z="0.0" />
+    <Hotspot X="-457.3" Y="506.42" Z="0.0" />
+    <Hotspot X="-490.3" Y="523.45" Z="0.0" />
+  </Hotspots>
+</HBProfile>

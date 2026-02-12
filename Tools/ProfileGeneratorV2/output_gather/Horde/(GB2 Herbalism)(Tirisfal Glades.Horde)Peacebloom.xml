@@ -1,0 +1,67 @@
+<HBProfile>
+  <Name>(GB2 0-75)(Tirisfal Glades.Horde)Herbalism</Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>91</MaxLevel>
+  <Factions>99999</Factions>
+
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+  <Vendors>
+
+  </Vendors>
+
+  <Mailboxes>
+
+  </Mailboxes>
+  <Blackspots>
+    <!-- Add blackspots manually -->
+  </Blackspots>
+
+  <Hotspots>
+    <Hotspot X="2069.44" Y="143.12" Z="0.0" />
+    <Hotspot X="2035.05" Y="106.72" Z="0.0" />
+    <Hotspot X="2090.72" Y="32.8" Z="0.0" />
+    <Hotspot X="2114.09" Y="-21.8" Z="0.0" />
+    <Hotspot X="2191.23" Y="14.88" Z="0.0" />
+    <Hotspot X="2222.39" Y="-47.28" Z="0.0" />
+    <Hotspot X="2290.79" Y="-101.88" Z="0.0" />
+    <Hotspot X="2324.99" Y="-139.4" Z="0.0" />
+    <Hotspot X="2334.3" Y="-204.92" Z="0.0" />
+    <Hotspot X="2279.2" Y="-210.24" Z="0.0" />
+    <Hotspot X="2223.34" Y="-222.0" Z="0.0" />
+    <Hotspot X="2199.21" Y="-278.56" Z="0.0" />
+    <Hotspot X="2185.34" Y="-332.88" Z="0.0" />
+    <Hotspot X="2184.77" Y="-403.44" Z="0.0" />
+    <Hotspot X="2143.54" Y="-411.84" Z="0.0" />
+    <Hotspot X="2127.39" Y="-350.24" Z="0.0" />
+    <Hotspot X="2115.04" Y="-253.92" Z="0.0" />
+    <Hotspot X="2110.48" Y="-219.2" Z="0.0" />
+    <Hotspot X="2073.43" Y="-186.44" Z="0.0" />
+    <Hotspot X="1994.01" Y="-160.96" Z="0.0" />
+    <Hotspot X="1944.8" Y="-154.24" Z="0.0" />
+    <Hotspot X="1893.69" Y="-126.24" Z="0.0" />
+    <Hotspot X="1859.49" Y="-67.44" Z="0.0" />
+    <Hotspot X="1838.97" Y="3.96" Z="0.0" />
+    <Hotspot X="1817.88" Y="75.08" Z="0.0" />
+    <Hotspot X="1830.23" Y="112.32" Z="0.0" />
+    <Hotspot X="1871.84" Y="143.96" Z="0.0" />
+    <Hotspot X="1912.69" Y="214.8" Z="0.0" />
+    <Hotspot X="1976.15" Y="275.84" Z="0.0" />
+    <Hotspot X="2052.72" Y="282.84" Z="0.0" />
+    <Hotspot X="2090.15" Y="206.68" Z="0.0" />
+    <Hotspot X="2055.19" Y="157.12" Z="0.0" />
+  </Hotspots>
+</HBProfile>

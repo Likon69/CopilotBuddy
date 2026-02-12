@@ -1,0 +1,51 @@
+<HBProfile>
+  <Name>(GB2 245-245)(The Hinterlands.Horde)Mining</Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>91</MaxLevel>
+  <Factions>99999</Factions>
+
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+  <Vendors>
+
+  </Vendors>
+
+  <Mailboxes>
+
+  </Mailboxes>
+  <Blackspots>
+    <!-- Add blackspots manually -->
+  </Blackspots>
+
+  <Hotspots>
+    <Hotspot X="-800.35" Y="260.85" Z="0.0" />
+    <Hotspot X="-754.75" Y="263.97" Z="0.0" />
+    <Hotspot X="-712.0" Y="241.61" Z="0.0" />
+    <Hotspot X="-669.7" Y="230.3" Z="0.0" />
+    <Hotspot X="-636.85" Y="213.01" Z="0.0" />
+    <Hotspot X="-636.25" Y="193.9" Z="0.0" />
+    <Hotspot X="-634.0" Y="183.89" Z="0.0" />
+    <Hotspot X="-646.15" Y="174.01" Z="0.0" />
+    <Hotspot X="-672.85" Y="156.2" Z="0.0" />
+    <Hotspot X="-702.1" Y="160.1" Z="0.0" />
+    <Hotspot X="-820.9" Y="156.46" Z="0.0" />
+    <Hotspot X="-790.15" Y="139.17" Z="0.0" />
+    <Hotspot X="-750.55" Y="133.06" Z="0.0" />
+    <Hotspot X="-681.4" Y="119.93" Z="0.0" />
+    <Hotspot X="-652.9" Y="99.26" Z="0.0" />
+    <Hotspot X="-647.35" Y="78.72" Z="0.0" />
+  </Hotspots>
+</HBProfile>

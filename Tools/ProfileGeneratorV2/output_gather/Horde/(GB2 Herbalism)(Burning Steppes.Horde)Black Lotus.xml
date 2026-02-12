@@ -1,0 +1,83 @@
+<HBProfile>
+  <Name>(GB2 0-75)(Burning Steppes.Horde)Herbalism</Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>91</MaxLevel>
+  <Factions>99999</Factions>
+
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+  <Vendors>
+
+  </Vendors>
+
+  <Mailboxes>
+
+  </Mailboxes>
+  <Blackspots>
+    <!-- Add blackspots manually -->
+  </Blackspots>
+
+  <Hotspots>
+    <Hotspot X="-6873.4" Y="-7142.16" Z="0.0" />
+    <Hotspot X="-6820.9" Y="-7254.86" Z="0.0" />
+    <Hotspot X="-6789.96" Y="-7282.3" Z="0.0" />
+    <Hotspot X="-6729.48" Y="-7303.02" Z="0.0" />
+    <Hotspot X="-6729.48" Y="-7311.28" Z="0.0" />
+    <Hotspot X="-6760.84" Y="-7355.8" Z="0.0" />
+    <Hotspot X="-6710.44" Y="-7504.9" Z="0.0" />
+    <Hotspot X="-6682.58" Y="-7551.94" Z="0.0" />
+    <Hotspot X="-6672.64" Y="-7597.16" Z="0.0" />
+    <Hotspot X="-6723.04" Y="-7613.68" Z="0.0" />
+    <Hotspot X="-6760.42" Y="-7619.56" Z="0.0" />
+    <Hotspot X="-6789.96" Y="-7602.48" Z="0.0" />
+    <Hotspot X="-6814.04" Y="-7610.46" Z="0.0" />
+    <Hotspot X="-6821.46" Y="-7643.36" Z="0.0" />
+    <Hotspot X="-6884.46" Y="-7698.24" Z="0.0" />
+    <Hotspot X="-6971.54" Y="-7733.24" Z="0.0" />
+    <Hotspot X="-7009.2" Y="-7755.78" Z="0.0" />
+    <Hotspot X="-7056.24" Y="-7820.18" Z="0.0" />
+    <Hotspot X="-6960.06" Y="-7848.04" Z="0.0" />
+    <Hotspot X="-6901.26" Y="-7879.82" Z="0.0" />
+    <Hotspot X="-6816.28" Y="-7946.6" Z="0.0" />
+    <Hotspot X="-6767.14" Y="-7983.42" Z="0.0" />
+    <Hotspot X="-6679.22" Y="-7984.12" Z="0.0" />
+    <Hotspot X="-6627.14" Y="-7985.1" Z="0.0" />
+    <Hotspot X="-6627.14" Y="-7985.1" Z="0.0" />
+    <Hotspot X="-6679.22" Y="-7984.12" Z="0.0" />
+    <Hotspot X="-6767.14" Y="-7983.42" Z="0.0" />
+    <Hotspot X="-6816.28" Y="-7946.6" Z="0.0" />
+    <Hotspot X="-6901.26" Y="-7879.82" Z="0.0" />
+    <Hotspot X="-6960.06" Y="-7848.04" Z="0.0" />
+    <Hotspot X="-7056.24" Y="-7820.18" Z="0.0" />
+    <Hotspot X="-7009.2" Y="-7755.78" Z="0.0" />
+    <Hotspot X="-6971.54" Y="-7733.24" Z="0.0" />
+    <Hotspot X="-6884.46" Y="-7698.24" Z="0.0" />
+    <Hotspot X="-6821.46" Y="-7643.36" Z="0.0" />
+    <Hotspot X="-6814.04" Y="-7610.46" Z="0.0" />
+    <Hotspot X="-6789.96" Y="-7602.48" Z="0.0" />
+    <Hotspot X="-6760.42" Y="-7619.56" Z="0.0" />
+    <Hotspot X="-6723.04" Y="-7613.68" Z="0.0" />
+    <Hotspot X="-6672.64" Y="-7597.16" Z="0.0" />
+    <Hotspot X="-6682.58" Y="-7551.94" Z="0.0" />
+    <Hotspot X="-6710.44" Y="-7504.9" Z="0.0" />
+    <Hotspot X="-6760.84" Y="-7355.8" Z="0.0" />
+    <Hotspot X="-6729.48" Y="-7311.28" Z="0.0" />
+    <Hotspot X="-6729.48" Y="-7303.02" Z="0.0" />
+    <Hotspot X="-6789.96" Y="-7282.3" Z="0.0" />
+    <Hotspot X="-6820.9" Y="-7254.86" Z="0.0" />
+    <Hotspot X="-6873.4" Y="-7142.16" Z="0.0" />
+  </Hotspots>
+</HBProfile>

@@ -1,0 +1,54 @@
+<HBProfile>
+  <Name>(GB2 0-75)(Un'Goro Crater.Alliance)Mining</Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>91</MaxLevel>
+  <Factions>99999</Factions>
+
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+  <Vendors>
+
+  </Vendors>
+
+  <Mailboxes>
+
+  </Mailboxes>
+  <Blackspots>
+    <!-- Add blackspots manually -->
+  </Blackspots>
+
+  <Hotspots>
+    <Hotspot X="-3669.5" Y="-6892.8" Z="0.0" />
+    <Hotspot X="-3705.0" Y="-6975.6" Z="0.0" />
+    <Hotspot X="-3789.25" Y="-7095.6" Z="0.0" />
+    <Hotspot X="-3848.0" Y="-6888.0" Z="0.0" />
+    <Hotspot X="-3948.0" Y="-6781.2" Z="0.0" />
+    <Hotspot X="-4118.0" Y="-6763.2" Z="0.0" />
+    <Hotspot X="-4218.5" Y="-6797.1" Z="0.0" />
+    <Hotspot X="-4294.75" Y="-6775.2" Z="0.0" />
+    <Hotspot X="-4241.0" Y="-6652.8" Z="0.0" />
+    <Hotspot X="-4194.5" Y="-6561.9" Z="0.0" />
+    <Hotspot X="-4196.75" Y="-6400.5" Z="0.0" />
+    <Hotspot X="-4105.0" Y="-6475.2" Z="0.0" />
+    <Hotspot X="-3984.75" Y="-6424.5" Z="0.0" />
+    <Hotspot X="-3852.5" Y="-6366.3" Z="0.0" />
+    <Hotspot X="-3727.5" Y="-6414.0" Z="0.0" />
+    <Hotspot X="-3572.0" Y="-6390.9" Z="0.0" />
+    <Hotspot X="-3544.5" Y="-6492.3" Z="0.0" />
+    <Hotspot X="-3631.0" Y="-6558.3" Z="0.0" />
+    <Hotspot X="-3536.25" Y="-6656.1" Z="0.0" />
+  </Hotspots>
+</HBProfile>

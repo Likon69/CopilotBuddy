@@ -1,0 +1,58 @@
+<HBProfile>
+  <Name>(GB2 375-450)(Shadowmoon Valley.Neutral)Herbalism</Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>91</MaxLevel>
+  <Factions>99999</Factions>
+
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+  <Vendors>
+
+  </Vendors>
+
+  <Mailboxes>
+
+  </Mailboxes>
+  <Blackspots>
+    <!-- Add blackspots manually -->
+  </Blackspots>
+
+  <Hotspots>
+    <Hotspot X="-2515.3" Y="5396.93" Z="0.0" />
+    <Hotspot X="-2395.0" Y="5582.3" Z="0.0" />
+    <Hotspot X="-2626.3" Y="5652.23" Z="0.0" />
+    <Hotspot X="-2515.0" Y="5515.7" Z="0.0" />
+    <Hotspot X="-4408.0" Y="4090.46" Z="0.0" />
+    <Hotspot X="-4576.3" Y="3969.1" Z="0.0" />
+    <Hotspot X="-4771.6" Y="3857.36" Z="0.0" />
+    <Hotspot X="-4855.6" Y="3728.23" Z="0.0" />
+    <Hotspot X="-4825.0" Y="3628.33" Z="0.0" />
+    <Hotspot X="-4660.3" Y="3724.53" Z="0.0" />
+    <Hotspot X="-4438.0" Y="3835.53" Z="0.0" />
+    <Hotspot X="-4408.0" Y="4090.83" Z="0.0" />
+    <Hotspot X="-4618.9" Y="3965.03" Z="0.0" />
+    <Hotspot X="-4573.6" Y="3802.23" Z="0.0" />
+    <Hotspot X="-4624.0" Y="3650.53" Z="0.0" />
+    <Hotspot X="-4825.9" Y="3469.6" Z="0.0" />
+    <Hotspot X="-4852.0" Y="3532.13" Z="0.0" />
+    <Hotspot X="-4867.6" Y="3650.16" Z="0.0" />
+    <Hotspot X="-4849.3" Y="3768.56" Z="0.0" />
+    <Hotspot X="-4825.3" Y="3871.79" Z="0.0" />
+    <Hotspot X="-4717.6" Y="3802.23" Z="0.0" />
+    <Hotspot X="-4777.3" Y="3735.26" Z="0.0" />
+    <Hotspot X="-4792.3" Y="3639.8" Z="0.0" />
+  </Hotspots>
+</HBProfile>

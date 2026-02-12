@@ -1,0 +1,42 @@
+<HBProfile>
+  <Name>(GB2 340-415)(Zangarmarsh.Neutral)Herbalism</Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>91</MaxLevel>
+  <Factions>99999</Factions>
+
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+  <Vendors>
+
+  </Vendors>
+
+  <Mailboxes>
+
+  </Mailboxes>
+  <Blackspots>
+    <!-- Add blackspots manually -->
+  </Blackspots>
+
+  <Hotspots>
+    <Hotspot X="-112.099" Y="2807.79" Z="0.0" />
+    <Hotspot X="-16.675" Y="2868.28" Z="0.0" />
+    <Hotspot X="44.669" Y="2872.42" Z="0.0" />
+    <Hotspot X="111.764" Y="2835.16" Z="0.0" />
+    <Hotspot X="88.973" Y="2786.86" Z="0.0" />
+    <Hotspot X="32.741" Y="2746.84" Z="0.0" />
+    <Hotspot X="-38.188" Y="2739.71" Z="0.0" />
+  </Hotspots>
+</HBProfile>

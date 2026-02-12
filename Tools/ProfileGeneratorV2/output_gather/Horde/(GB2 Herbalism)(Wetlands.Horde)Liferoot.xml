@@ -1,0 +1,55 @@
+<HBProfile>
+  <Name>(GB2 0-75)(Wetlands.Horde)Herbalism</Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>91</MaxLevel>
+  <Factions>99999</Factions>
+
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+  <Vendors>
+
+  </Vendors>
+
+  <Mailboxes>
+
+  </Mailboxes>
+  <Blackspots>
+    <!-- Add blackspots manually -->
+  </Blackspots>
+
+  <Hotspots>
+    <Hotspot X="-2402.52" Y="-3761.92" Z="0.0" />
+    <Hotspot X="-2446.72" Y="-3721.76" Z="0.0" />
+    <Hotspot X="-2512.34" Y="-3689.28" Z="0.0" />
+    <Hotspot X="-2539.2" Y="-3586.4" Z="0.0" />
+    <Hotspot X="-2605.84" Y="-3537.28" Z="0.0" />
+    <Hotspot X="-2670.44" Y="-3504.64" Z="0.0" />
+    <Hotspot X="-2764.11" Y="-3440.48" Z="0.0" />
+    <Hotspot X="-2866.11" Y="-3408.48" Z="0.0" />
+    <Hotspot X="-3057.02" Y="-3369.28" Z="0.0" />
+    <Hotspot X="-3172.96" Y="-3387.36" Z="0.0" />
+    <Hotspot X="-3172.96" Y="-3387.36" Z="0.0" />
+    <Hotspot X="-3057.02" Y="-3369.28" Z="0.0" />
+    <Hotspot X="-2866.11" Y="-3408.48" Z="0.0" />
+    <Hotspot X="-2764.11" Y="-3440.48" Z="0.0" />
+    <Hotspot X="-2670.44" Y="-3504.64" Z="0.0" />
+    <Hotspot X="-2605.84" Y="-3537.28" Z="0.0" />
+    <Hotspot X="-2539.2" Y="-3586.4" Z="0.0" />
+    <Hotspot X="-2512.34" Y="-3689.28" Z="0.0" />
+    <Hotspot X="-2446.72" Y="-3721.76" Z="0.0" />
+    <Hotspot X="-2402.52" Y="-3761.92" Z="0.0" />
+  </Hotspots>
+</HBProfile>
