@@ -614,23 +614,25 @@ namespace CopilotBuddy.UI
 
         #endregion
 
-        #region Settings Management (HB 4.3.4 Pattern)
+        #region Settings Management (HB 5.4.8 Pattern)
 
         /// <summary>
-        /// Loads all settings after game attachment. Reinitializes CharacterSettings with proper character name.
-        /// Pattern from HB 4.3.4.
+        /// Loads all settings after game attachment.
+        /// Creates CharacterSettings instance (per-realm/per-character folder).
+        /// Pattern from HB 5.4.8.
         /// </summary>
         private static void LoadSettings()
         {
-            if (ObjectManager.Wow == null || !StyxWoW.IsInGame)
+            if (ObjectManager.Wow == null || !StyxWoW.IsInGame || StyxWoW.Me == null)
                 return;
 
             try
             {
-                // Reinitialize CharacterSettings for the current character
-                CharacterSettings.Instance.ReinitializeForCharacter();
-                
-                // Load other settings
+                // Create CharacterSettings instance for the current character
+                // Pattern from HB 5.4.8 smethod_0() — called after game attachment
+                CharacterSettings.Initialize();
+
+                // Load other per-character settings
                 UISettings.Instance.Load();
                 StyxSettings.Instance.Load();
                 LevelbotSettings.Instance.Load();
