@@ -43,6 +43,12 @@ namespace Styx
 					Targeting.Instance.Pulse();
 				}
 
+				// BUG-07 fix: Pulse movement to flush timed movement entries
+				WoWMovement.Pulse();
+
+				// BUG-07 fix: Pulse avoidance zones (was missing per audit)
+				Styx.Logic.Pathing.AvoidanceManager.Pulse();
+
 				if ((flags & PulseFlags.BotEvents) != (PulseFlags)0U)
 				{
 					BotEvents.PulseEvents();
