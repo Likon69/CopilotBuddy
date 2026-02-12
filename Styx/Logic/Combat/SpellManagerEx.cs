@@ -9,15 +9,18 @@ using Styx.WoWInternals.WoWObjects;
 
 namespace Styx.Logic.Combat
 {
+    /// <summary>
+    /// Extended spell manager with CanBuff/Buff/CastRandom/BuffRandom helpers.
+    /// FEAT-06: All methods have been merged into SpellManager. This class is kept
+    /// for backward compatibility only — new code should use SpellManager directly.
+    /// </summary>
+    [System.Obsolete("Use SpellManager instead. All SpellManagerEx methods are now in SpellManager.")]
     public class SpellManagerEx
     {
         private static readonly Random _random;
-        private static Dictionary<string, WoWSpell> _spells;
-
         static SpellManagerEx()
         {
             _random = new Random(Environment.TickCount);
-            _spells = new Dictionary<string, WoWSpell>();
         }
 
         public SpellManagerEx()
@@ -26,17 +29,17 @@ namespace Styx.Logic.Combat
 
         public static bool HasSpell(string name)
         {
-            return _spells.ContainsKey(name);
+            return SpellManager.HasSpell(name);
         }
 
         public static bool HasSpell(int id)
         {
-            return _spells.Values.Any(s => s.Id == id);
+            return SpellManager.HasSpell(id);
         }
 
         public static bool HasSpell(WoWSpell spell)
         {
-            return _spells.ContainsValue(spell);
+            return SpellManager.KnownSpells.ContainsValue(spell);
         }
 
         public static bool CanCast(string spellName)
@@ -57,7 +60,7 @@ namespace Styx.Logic.Combat
         public static bool CanCast(string spellName, WoWUnit target, bool checkRange)
         {
             WoWSpell spell;
-            if (_spells.TryGetValue(spellName, out spell))
+            if (SpellManager.KnownSpells.TryGetValue(spellName, out spell))
             {
                 return CanCast(spell, target, checkRange);
             }
@@ -81,7 +84,7 @@ namespace Styx.Logic.Combat
 
         public static bool CanCast(int spellId, WoWUnit target, bool checkRange)
         {
-            return CanCast(_spells.Values.FirstOrDefault(s => s.Id == spellId), target, checkRange);
+            return CanCast(SpellManager.KnownSpells.Values.FirstOrDefault(s => s.Id == spellId), target, checkRange);
         }
 
         public static bool CanCast(WoWSpell spell)
@@ -154,7 +157,7 @@ namespace Styx.Logic.Combat
         public static bool CanBuff(string spellName, WoWUnit target, bool checkRange)
         {
             WoWSpell spell;
-            if (_spells.TryGetValue(spellName, out spell))
+            if (SpellManager.KnownSpells.TryGetValue(spellName, out spell))
             {
                 return CanBuff(spell, target, checkRange);
             }
@@ -178,7 +181,7 @@ namespace Styx.Logic.Combat
 
         public static bool CanBuff(int spellId, WoWUnit target, bool checkRange)
         {
-            return CanBuff(_spells.Values.FirstOrDefault(s => s.Id == spellId), target, checkRange);
+            return CanBuff(SpellManager.KnownSpells.Values.FirstOrDefault(s => s.Id == spellId), target, checkRange);
         }
 
         public static bool CanBuff(WoWSpell spell)
@@ -213,7 +216,7 @@ namespace Styx.Logic.Combat
         public static bool Cast(string spellName, WoWUnit target)
         {
             WoWSpell spell;
-            if (_spells.TryGetValue(spellName, out spell))
+            if (SpellManager.KnownSpells.TryGetValue(spellName, out spell))
             {
                 return Cast(spell, target);
             }
@@ -227,7 +230,7 @@ namespace Styx.Logic.Combat
 
         public static bool Cast(int spellId, WoWUnit target)
         {
-            return Cast(_spells.Values.FirstOrDefault(s => s.Id == spellId), target);
+            return Cast(SpellManager.KnownSpells.Values.FirstOrDefault(s => s.Id == spellId), target);
         }
 
         public static bool Cast(WoWSpell spell)
@@ -253,7 +256,7 @@ namespace Styx.Logic.Combat
         public static bool Buff(string spellName, WoWUnit target)
         {
             WoWSpell spell;
-            if (_spells.TryGetValue(spellName, out spell))
+            if (SpellManager.KnownSpells.TryGetValue(spellName, out spell))
             {
                 return Buff(spell, target);
             }
@@ -267,7 +270,7 @@ namespace Styx.Logic.Combat
 
         public static bool Buff(int spellId, WoWUnit target)
         {
-            return Buff(_spells.Values.FirstOrDefault(s => s.Id == spellId), target);
+            return Buff(SpellManager.KnownSpells.Values.FirstOrDefault(s => s.Id == spellId), target);
         }
 
         public static bool Buff(WoWSpell spell)
@@ -282,7 +285,7 @@ namespace Styx.Logic.Combat
 
         public static bool CastRandom(IEnumerable<string> spellNames, WoWUnit target, bool checkRange)
         {
-            return CastRandom(spellNames.Select(n => _spells.Values.FirstOrDefault(s => s.Name == n)), target, checkRange);
+            return CastRandom(spellNames.Select(n => SpellManager.KnownSpells.Values.FirstOrDefault(s => s.Name == n)), target, checkRange);
         }
 
         public static bool CastRandom(IEnumerable<string> spellNames, WoWUnit target)
@@ -297,7 +300,7 @@ namespace Styx.Logic.Combat
 
         public static bool CastRandom(IEnumerable<int> spellIds, WoWUnit target, bool checkRange)
         {
-            return CastRandom(spellIds.Select(i => _spells.Values.FirstOrDefault(s => s.Id == i)), target, checkRange);
+            return CastRandom(spellIds.Select(i => SpellManager.KnownSpells.Values.FirstOrDefault(s => s.Id == i)), target, checkRange);
         }
 
         public static bool CastRandom(IEnumerable<int> spellIds, WoWUnit target)
@@ -338,7 +341,7 @@ namespace Styx.Logic.Combat
 
         public static bool BuffRandom(IEnumerable<string> spellNames, WoWUnit target, bool checkRange)
         {
-            return BuffRandom(spellNames.Select(n => _spells.Values.FirstOrDefault(s => s.Name == n)), target, checkRange);
+            return BuffRandom(spellNames.Select(n => SpellManager.KnownSpells.Values.FirstOrDefault(s => s.Name == n)), target, checkRange);
         }
 
         public static bool BuffRandom(IEnumerable<string> spellNames, WoWUnit target)
@@ -353,7 +356,7 @@ namespace Styx.Logic.Combat
 
         public static bool BuffRandom(IEnumerable<int> spellIds, WoWUnit target, bool checkRange)
         {
-            return BuffRandom(spellIds.Select(i => _spells.Values.FirstOrDefault(s => s.Id == i)), target, checkRange);
+            return BuffRandom(spellIds.Select(i => SpellManager.KnownSpells.Values.FirstOrDefault(s => s.Id == i)), target, checkRange);
         }
 
         public static bool BuffRandom(IEnumerable<int> spellIds, WoWUnit target)
@@ -408,40 +411,30 @@ namespace Styx.Logic.Combat
 
         internal static void Initialize()
         {
+            // Delegates to SpellManager.KnownSpells — no separate spell cache needed
             BotEvents.OnBotStart += OnBotStart;
-            _spells.Clear();
-            RefreshSpells();
         }
 
         internal static void Shutdown()
         {
-            _spells.Clear();
             BotEvents.OnBotStart -= OnBotStart;
         }
 
         private static void OnSpellsChanged(object sender, LuaEventArgs e)
         {
-            RefreshSpells();
+            // SpellManager handles its own refresh via Refresh()
         }
 
         private static void RefreshSpells()
         {
-            _spells.Clear();
-            foreach (WoWSpell spell in StyxWoW.Me.KnownSpells)
-            {
-                _spells[spell.Name] = spell;
-            }
+            // SpellManager handles its own refresh via Refresh()
         }
 
         public static Dictionary<string, WoWSpell> Spells
         {
             get
             {
-                if (_spells != null)
-                {
-                    return new Dictionary<string, WoWSpell>(_spells);
-                }
-                return null;
+                return new Dictionary<string, WoWSpell>(SpellManager.KnownSpells);
             }
         }
     }
