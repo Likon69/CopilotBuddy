@@ -473,6 +473,41 @@ namespace Styx.WoWInternals
                 return obj as T;
             }
         }
+
+        /// <summary>
+        /// FEAT-29: Returns an object by GUID even if not fully valid.
+        /// Skips IsValid check — useful for cache lookups on recently despawned objects.
+        /// </summary>
+        public static T? GetAnyObjectByGuid<T>(ulong guid) where T : WoWObject
+        {
+            if (guid == 0UL) return null;
+
+            lock (_updateLock)
+            {
+                if (!_objectList.TryGetValue(guid, out WoWObject? obj))
+                    return null;
+
+                if (obj == null || obj.BaseAddress == 0U)
+                    return null;
+
+                if (typeof(T) == typeof(WoWObject))
+                    return (T)obj;
+                if (typeof(T) == typeof(WoWUnit))
+                    return obj.ToUnit() as T;
+                if (typeof(T) == typeof(WoWPlayer))
+                    return obj.ToPlayer() as T;
+                if (typeof(T) == typeof(WoWGameObject))
+                    return obj.ToGameObject() as T;
+                if (typeof(T) == typeof(WoWItem))
+                    return obj.ToItem() as T;
+                if (typeof(T) == typeof(WoWContainer))
+                    return obj.ToContainer() as T;
+                if (typeof(T) == typeof(WoWDynamicObject))
+                    return obj.ToDynamicObject() as T;
+
+                return obj as T;
+            }
+        }
         public static List<T> GetObjectsOfType<T>() where T : WoWObject
         {
             return GetObjectsOfType<T>(allowInheritance: false, includeMeIfFound: false);
