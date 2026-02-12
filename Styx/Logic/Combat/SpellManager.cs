@@ -27,7 +27,8 @@ namespace Styx.Logic.Combat
 
 		// HB 4.3.4 compatibility aliases
 		public static Dictionary<string, WoWSpell> Spells => _knownSpells;
-		public static Dictionary<string, WoWSpell> RawSpells => _knownSpells;
+		// BUG-09 fix: Return defensive copy so callers can't corrupt the internal dictionary
+		public static Dictionary<string, WoWSpell> RawSpells => new Dictionary<string, WoWSpell>(_knownSpells, StringComparer.OrdinalIgnoreCase);
 
 		public static int NumKnownSpells
 		{
@@ -246,8 +247,9 @@ namespace Styx.Logic.Combat
 			if (me.IsCasting)
 				return false;
 
-			// Step 3: Check Global Cooldown
-			if (GlobalCooldown)
+			// Step 3: Check Global Cooldown (BUG-19 fix: allow pre-cast within lag tolerance)
+			// SUS-06 fix: use dynamic latency instead of hardcoded 150ms
+			if (GlobalCooldownLeft.TotalMilliseconds > StyxWoW.WoWClient.Latency * 2)
 				return false;
 
 			// Step 4: Check spell-specific cooldown
@@ -302,19 +304,25 @@ namespace Styx.Logic.Combat
 
 		public static bool Cast(string spellName) => CastSpell(spellName);
 
+		/// <summary>
+		/// BUG-18 fix: Cast spell on a specific target using GUID-based casting.
+		/// No longer uses target-first approach which could lose the target between calls.
+		/// </summary>
 		public static bool Cast(string spellName, WoWUnit target)
 		{
 			if (target == null)
 				return Cast(spellName);
 			
-			StyxWoW.ResetAfk();
-			
-			// Ne PAS cibler si c'est un buff sur soi-même (évite de perdre la cible en combat)
-			if (!target.IsMe)
+			WoWSpell? spell = GetSpellByName(spellName);
+			if (spell == null)
 			{
-				target.Target();
+				Logging.WriteDebug("[SpellManager] Cast: spell '{0}' not found", spellName);
+				return false;
 			}
-			return CastSpell(spellName);
+			
+			// Use GUID-based casting — atomic, no target swap needed
+			CastSpellById(spell.Id, target.Guid);
+			return true;
 		}
 
 		public static bool Cast(WoWSpell spell)
@@ -323,6 +331,137 @@ namespace Styx.Logic.Combat
 				return false;
 			return CastSpell(spell.Name);
 		}
+
+		/// <summary>
+		/// Cast a spell (by WoWSpell) on a specific target using GUID-based casting.
+		/// FEAT-06: Merged from SpellManagerEx.
+		/// </summary>
+		public static bool Cast(WoWSpell spell, WoWUnit target)
+		{
+			if (spell == null)
+				return false;
+			CastSpellById(spell.Id, target?.Guid ?? 0UL);
+			return true;
+		}
+
+		/// <summary>Cast a spell by ID on the current target.</summary>
+		public static bool Cast(int spellId) => Cast(spellId, StyxWoW.Me?.CurrentTarget);
+
+		/// <summary>Cast a spell by ID on a specific target using GUID-based casting.</summary>
+		public static bool Cast(int spellId, WoWUnit target)
+		{
+			WoWSpell? spell = _knownSpells.Values.FirstOrDefault(s => s.Id == spellId);
+			if (spell == null)
+				return false;
+			return Cast(spell, target);
+		}
+
+		#region FEAT-06: CanBuff / Buff / CastRandom / BuffRandom (merged from SpellManagerEx)
+
+		private static readonly Random _spellRandom = new Random(Environment.TickCount);
+
+		/// <summary>Check if we can cast a buff (CanCast + target doesn't already have aura).</summary>
+		public static bool CanBuff(string spellName, WoWUnit target = null, bool checkRange = false)
+		{
+			target ??= StyxWoW.Me;
+			if (!CanCast(spellName, target, checkRange))
+				return false;
+			return !target.HasAura(spellName);
+		}
+
+		/// <summary>Check if we can cast a buff by spell ID.</summary>
+		public static bool CanBuff(int spellId, WoWUnit target = null, bool checkRange = false)
+		{
+			WoWSpell? spell = _knownSpells.Values.FirstOrDefault(s => s.Id == spellId);
+			if (spell == null) return false;
+			return CanBuff(spell.Name, target, checkRange);
+		}
+
+		/// <summary>Check if we can cast a buff (WoWSpell overload).</summary>
+		public static bool CanBuff(WoWSpell spell, WoWUnit target = null, bool checkRange = false)
+		{
+			if (spell == null) return false;
+			return CanBuff(spell.Name, target, checkRange);
+		}
+
+		/// <summary>Cast a buff on a target (cast only if target doesn't already have the aura).</summary>
+		public static bool Buff(string spellName, WoWUnit target = null)
+		{
+			target ??= StyxWoW.Me;
+			WoWSpell? spell = GetSpellByName(spellName);
+			if (spell == null) return false;
+			return Cast(spell, target);
+		}
+
+		/// <summary>Cast a buff by spell ID.</summary>
+		public static bool Buff(int spellId, WoWUnit target = null)
+		{
+			target ??= StyxWoW.Me;
+			WoWSpell? spell = _knownSpells.Values.FirstOrDefault(s => s.Id == spellId);
+			if (spell == null) return false;
+			return Cast(spell, target);
+		}
+
+		/// <summary>Cast a buff (WoWSpell overload).</summary>
+		public static bool Buff(WoWSpell spell, WoWUnit target = null)
+		{
+			if (spell == null) return false;
+			return Cast(spell, target ?? StyxWoW.Me);
+		}
+
+		/// <summary>Cast a random castable spell from the list on a target.</summary>
+		public static bool CastRandom(IEnumerable<string> spellNames, WoWUnit target = null, bool checkRange = false)
+		{
+			target ??= StyxWoW.Me?.CurrentTarget;
+			var spells = spellNames.Select(n => GetSpellByName(n)).Where(s => s != null).ToList();
+			return CastRandom(spells, target, checkRange);
+		}
+
+		/// <summary>Cast a random castable spell from the list on a target.</summary>
+		public static bool CastRandom(IEnumerable<WoWSpell> spellList, WoWUnit target = null, bool checkRange = false)
+		{
+			target ??= StyxWoW.Me?.CurrentTarget;
+			var list = spellList.Where(s => s != null).ToList();
+			while (list.Count > 0)
+			{
+				int idx = _spellRandom.Next(0, list.Count);
+				if (CanCast(list[idx], target, checkRange))
+				{
+					Cast(list[idx], target);
+					return true;
+				}
+				list.RemoveAt(idx);
+			}
+			return false;
+		}
+
+		/// <summary>Buff a random castable spell from the list on a target (skips if aura present).</summary>
+		public static bool BuffRandom(IEnumerable<string> spellNames, WoWUnit target = null, bool checkRange = false)
+		{
+			target ??= StyxWoW.Me;
+			var spells = spellNames.Select(n => GetSpellByName(n)).Where(s => s != null).ToList();
+			return BuffRandom(spells, target, checkRange);
+		}
+
+		/// <summary>Buff a random castable spell from the list on a target (skips if aura present).</summary>
+		public static bool BuffRandom(IEnumerable<WoWSpell> spellList, WoWUnit target = null, bool checkRange = false)
+		{
+			target ??= StyxWoW.Me;
+			var list = spellList.Where(s => s != null).ToList();
+			while (list.Count > 0)
+			{
+				int idx = _spellRandom.Next(0, list.Count);
+				if (CanBuff(list[idx], target, checkRange))
+				{
+					Buff(list[idx], target);
+					return true;
+				}
+				list.RemoveAt(idx);
+			}
+			return false;
+		}
+
+		#endregion
 
 		public static void CastSpellById(uint spellId)
 		{
