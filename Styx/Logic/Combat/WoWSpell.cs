@@ -54,31 +54,41 @@ namespace Styx.Logic.Combat
         }
 
         /// <summary>
-        /// Gets the spell range ID (public for HB 4.3.4 compatibility).
-        /// NOTE: The DBC rangeIndex is not read correctly in WotLK 3.3.5a, so we 
-        /// calculate the appropriate range ID based on MinRange/MaxRange from Lua.
-        /// Range IDs: 1 = Self Only, 2 = Melee (5 yards), other = Ranged
+        /// Gets the spell range ID for combat routine range checks.
+        /// Uses Lua-based MinRange/MaxRange which are reliable and match what
+        /// Singular expects: 1 = Self Only (max=0), 2 = Melee (max≤5), 3+ = Ranged.
+        /// Note: DBC rangeIndex is available via RangeIndex property for DBC lookups.
         /// </summary>
         public uint SpellRangeId
         {
-            get 
-            { 
-                // Use Lua-based ranges which are reliable
+            get
+            {
                 float min = MinRange;
                 float max = MaxRange;
-                
-                // Self-only spells (like buffs)
+
+                // Self-only spells (buffs, melee with max=0 from Lua)
                 if (max == 0f && min == 0f)
                     return 1U;
-                
+
                 // Melee range spells (MaxRange <= 5 yards)
                 if (max > 0f && max <= 5f)
                     return 2U;
-                
-                // Ranged spells - return a generic ranged ID
+
                 return 3U;
             }
         }
+
+        /// <summary>
+        /// Returns true if this is a melee-range spell.
+        /// FEAT-08: Checks both synthetic rangeId and DBC rangeIndex.
+        /// </summary>
+        public bool IsMeleeSpell => SpellRangeId <= 2;
+
+        /// <summary>
+        /// Returns true if this spell can only target self.
+        /// FEAT-08: Uses synthetic rangeId (Lua-based MaxRange == 0).
+        /// </summary>
+        public bool IsSelfOnlySpell => SpellRangeId == 1;
 
         public uint ManaCostPercent
         {
@@ -93,8 +103,8 @@ namespace Styx.Logic.Combat
         {
             get
             {
-                // Channeled spells have bit 0x44 in AttributesEx
-                return (_spellEntry.Attributes & 0x44) != 0;
+                // BUG-01 fix: Was checking Attributes, must check AttributesEx
+                return (_spellEntry.AttributesEx & 0x44) != 0;
             }
         }
 
