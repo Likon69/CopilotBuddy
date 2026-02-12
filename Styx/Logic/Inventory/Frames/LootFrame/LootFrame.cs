@@ -78,6 +78,18 @@ namespace Styx.Logic.Inventory.Frames.LootFrame
         }
 
         /// <summary>
+        /// BUG-21 fix: Returns structured loot slot info array instead of just a string.
+        /// </summary>
+        public LootSlotInfo[] GetLootSlots()
+        {
+            int count = LootItems;
+            var slots = new LootSlotInfo[count];
+            for (int i = 0; i < count; i++)
+                slots[i] = new LootSlotInfo(i);
+            return slots;
+        }
+
+        /// <summary>
         /// Gets loot information string.
         /// </summary>
         public string LootInfo(out bool locked)
@@ -134,9 +146,9 @@ namespace Styx.Logic.Inventory.Frames.LootFrame
         }
 
         /// <summary>
-        /// Internal class for loot slot information.
+        /// Loot slot information (BUG-21: made public for structured access).
         /// </summary>
-        private class LootSlotInfo
+        public class LootSlotInfo
         {
             private readonly List<string> _data;
 
