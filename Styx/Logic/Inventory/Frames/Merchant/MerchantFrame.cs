@@ -376,6 +376,33 @@ namespace Styx.Logic.Inventory.Frames.Merchant
             return true;
         }
 
+        /// <summary>
+        /// FEAT-32: Buys an item by name from the merchant.
+        /// Iterates through merchant items, finds by name, buys the requested amount.
+        /// Returns true if the item was found and purchased.
+        /// </summary>
+        public bool BuyItem(string name, int amount = 1)
+        {
+            if (string.IsNullOrEmpty(name) || amount <= 0)
+                return false;
+
+            int numItems = MerchantNumItems;
+            for (int i = 1; i <= numItems; i++)
+            {
+                var merchantItem = GetMerchantItemAtIndex(i);
+                if (merchantItem != null && 
+                    string.Equals(merchantItem.Name, name, StringComparison.OrdinalIgnoreCase))
+                {
+                    for (int j = 0; j < amount; j++)
+                    {
+                        Lua.DoString("BuyMerchantItem(" + i + ",1)");
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public static readonly MerchantFrame Instance;
     }
 }
