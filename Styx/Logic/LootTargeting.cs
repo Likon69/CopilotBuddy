@@ -37,6 +37,13 @@ namespace Styx.Logic
         {
             for (int i = objects.Count - 1; i >= 0; i--)
             {
+                // BUG-11: Check blacklist first (HB 4.3.4)
+                if (Blacklist.Contains(objects[i].Guid))
+                {
+                    objects.RemoveAt(i);
+                    continue;
+                }
+
                 if (objects[i] is WoWUnit unit && unit != null)
                 {
                     if (unit.IsDisabled)
