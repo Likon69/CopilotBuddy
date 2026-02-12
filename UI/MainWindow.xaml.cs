@@ -500,6 +500,10 @@ namespace CopilotBuddy.UI
             {
                 BotManager.Instance.SetCurrent(bot);
                 
+                // Show Bot Config button — always visible when a bot is selected.
+                // The handler checks ConfigurationForm at click time.
+                btnBotConfig.Visibility = Visibility.Visible;
+                
                 // Update selected bot index (no immediate save - HB 4.3.4 pattern)
                 CharacterSettings.Instance.SelectedBotIndex = cmbBotSelector.SelectedIndex;
             }
@@ -544,8 +548,29 @@ namespace CopilotBuddy.UI
 
         private void btnBotConfig_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Open bot config
-            Logging.Write("Bot Config - Not implemented yet");
+            if (BotManager.Current == null)
+            {
+                Logging.Write("No bot selected.");
+                return;
+            }
+
+            var configForm = BotManager.Current.ConfigurationForm;
+            if (configForm == null)
+            {
+                Logging.Write("[{0}] has no configuration window.", BotManager.Current.Name);
+                return;
+            }
+
+            if (configForm is System.Windows.Window window)
+            {
+                window.Owner = this;
+                window.ShowDialog();
+            }
+            else
+            {
+                Logging.Write("[{0}] ConfigurationForm type not supported: {1}",
+                    BotManager.Current.Name, configForm.GetType().Name);
+            }
         }
 
         private void btnClassConfig_Click(object sender, RoutedEventArgs e)

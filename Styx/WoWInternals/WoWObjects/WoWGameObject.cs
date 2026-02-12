@@ -189,9 +189,16 @@ namespace Styx.WoWInternals.WoWObjects
                     return null;
                 if (lockId == 0)
                     return null;
-                // TODO: Implement WoWDb[ClientDb.Lock].GetRow(lockId).GetStruct<LockEntry>()
-                // For now return null - herbs/minerals detection will need DBC support
-                return null;
+
+                var db = StyxWoW.Db[Patchables.ClientDb.Lock];
+                if (db == null)
+                    return null;
+
+                var row = db.GetRow((uint)lockId);
+                if (row == null || !row.IsValid)
+                    return null;
+
+                return row.GetStruct<LockEntry>();
             }
         }
         
