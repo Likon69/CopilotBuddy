@@ -19,6 +19,7 @@ namespace Styx.Logic.Profiles
 		private readonly List<QuestInfo> _quests = new();
 		private readonly OrderNodeCollection _questOrder = new();
 		private readonly List<Blackspot> _blackspots = new();
+		private int? _continentId;
 		private MailboxManager? _mailboxManager;
 		private VendorManager? _vendorManager;
 		private bool? _sellGrey;
@@ -55,6 +56,22 @@ namespace Styx.Logic.Profiles
 		public int MinLevel { get; set; }
 
 		public int MaxLevel { get; set; }
+
+		/// <summary>
+		/// Map ID this profile is for. -1 = any continent.
+		/// BUG-10: HB 4.3.4 uses ContinentId to filter profiles by map.
+		/// </summary>
+		public int ContinentId
+		{
+			get
+			{
+				if (_continentId.HasValue)
+					return _continentId.Value;
+				if (Parent != null)
+					return Parent.ContinentId;
+				return -1;
+			}
+		}
 
 		public GrindArea? GrindArea { get; set; }
 
@@ -509,6 +526,10 @@ namespace Styx.Logic.Profiles
 					case "maxlevel":
 						if (int.TryParse(element.Value, out int maxLevel))
 							MaxLevel = maxLevel;
+						break;
+					case "continentid":
+						if (int.TryParse(element.Value, out int continentId))
+							_continentId = continentId;
 						break;
 					case "sellgrey":
 					case "sellgray":
