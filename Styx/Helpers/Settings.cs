@@ -1,52 +1,71 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Xml.Linq;
 
 namespace Styx.Helpers
 {
+	/// <summary>
+	/// Base class for all settings. Ported from HB 3.3.5a Settings.cs.
+	/// Per-character settings use flat path: Settings/FileName_{Name}.xml
+	/// Supports migration from old paths via oldSettingsPath parameter.
+	/// </summary>
 	public abstract class Settings
 	{
-		private string _settingsPath;
+		[Browsable(false)]
+		public string SettingsPath { get; private set; }
 
-		protected Settings(string settingsPath)
+		/// <summary>
+		/// Constructor matching HB 5.4.8 pattern.
+		/// Supports migration from an old settings path to a new one.
+		/// </summary>
+		protected Settings(string settingsPath, string? oldSettingsPath = null)
 		{
-			_settingsPath = settingsPath;
-			InitializeDefaultValues();
-			if (!File.Exists(_settingsPath))
+			// Migration: if old path exists and new doesn't, move the file
+			if (oldSettingsPath != null && File.Exists(oldSettingsPath) && !File.Exists(settingsPath))
 			{
-				SaveToFile(_settingsPath);
+				string? dir = Path.GetDirectoryName(settingsPath);
+				if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
+				{
+					Directory.CreateDirectory(dir);
+				}
+				File.Move(oldSettingsPath, settingsPath);
+			}
+
+			SettingsPath = settingsPath;
+			InitializeDefaultValues();
+			if (!File.Exists(SettingsPath))
+			{
+				SaveToFile(SettingsPath);
 			}
 			else
 			{
-				LoadFromXML(XElement.Load(_settingsPath));
+				LoadFromXML(XElement.Load(SettingsPath));
 			}
 		}
 
 		/// <summary>
-		/// Gets the current settings file path.
+		/// Root settings directory: {AppPath}/Settings/
+		/// Pattern from HB 5.4.8.
 		/// </summary>
-		public string SettingsPath => _settingsPath;
-
-		/// <summary>
-		/// Reinitializes settings with a new path. Used after game attachment when character name is known.
-		/// Pattern from HB 4.3.4.
-		/// </summary>
-		protected void Reinitialize(string newPath)
+		public static string SettingsDirectory
 		{
-			_settingsPath = newPath;
-			InitializeDefaultValues();
-			if (File.Exists(_settingsPath))
+			get
 			{
-				LoadFromXML(XElement.Load(_settingsPath));
-			}
-			else
-			{
-				SaveToFile(_settingsPath);
+				string dir = Path.Combine(Logging.ApplicationPath, "Settings");
+				if (!Directory.Exists(dir))
+				{
+					Directory.CreateDirectory(dir);
+				}
+				return dir;
 			}
 		}
+
+
 
 		public Dictionary<string, object> GetSettings()
 		{
@@ -113,36 +132,39 @@ namespace Styx.Helpers
 
 			foreach (PropertyInfo propertyInfo in properties)
 			{
+				// Check for [Setting] attribute BEFORE calling GetValue().
+				// Pattern from HB 6.2.3. Prevents triggering lazy-loaded properties
+				// (e.g. SingularSettings per-class wrappers) that lack [Setting].
+				object[] attributes = propertyInfo.GetCustomAttributes(typeof(SettingAttribute), false);
+				if (attributes == null || attributes.Length == 0)
+					continue;
+
 				object value = propertyInfo.GetValue(this, null);
 				if (value != null)
 				{
-					object[] attributes = propertyInfo.GetCustomAttributes(typeof(SettingAttribute), false);
-					if (attributes != null && attributes.Length > 0)
+					SettingAttribute settingAttribute = (SettingAttribute)attributes[0];
+					string elementName = settingAttribute.ElementName ?? propertyInfo.Name;
+
+					if (!string.IsNullOrEmpty(settingAttribute.Explanation))
 					{
-						SettingAttribute settingAttribute = (SettingAttribute)attributes[0];
-						string elementName = settingAttribute.ElementName ?? propertyInfo.Name;
-
-						if (!string.IsNullOrEmpty(settingAttribute.Explanation))
-						{
-							root.Add(new XComment(settingAttribute.Explanation));
-						}
-
-						XElement element;
-						if (propertyInfo.PropertyType.IsArray)
-						{
-							element = new XElement(elementName);
-							Array array = (Array)value;
-							for (int i = 0; i < array.Length; i++)
-							{
-								element.Add(new XElement("Entry", array.GetValue(i).ToString()));
-							}
-						}
-						else
-						{
-							element = new XElement(elementName, value.ToString());
-						}
-						root.Add(element);
+						root.Add(new XComment(settingAttribute.Explanation));
 					}
+
+					XElement element;
+					if (propertyInfo.PropertyType.IsArray)
+					{
+						element = new XElement(elementName);
+						Array array = (Array)value;
+						for (int i = 0; i < array.Length; i++)
+						{
+							element.Add(new XElement("Entry", array.GetValue(i).ToString()));
+						}
+					}
+					else
+					{
+						element = new XElement(elementName, value.ToString());
+					}
+					root.Add(element);
 				}
 			}
 			return root;
@@ -213,12 +235,22 @@ namespace Styx.Helpers
 
 		public void Save()
 		{
-			SaveToFile(_settingsPath);
+			SaveToFile(SettingsPath);
 		}
 
+		/// <summary>
+		/// Loads settings from the current settings file.
+		/// Pattern from HB 5.4.8: checks File.Exists and uses StreamReader.
+		/// </summary>
 		public void Load()
 		{
-			LoadFromXML(XElement.Load(_settingsPath));
+			if (File.Exists(SettingsPath))
+			{
+				using (TextReader reader = new StreamReader(SettingsPath, Encoding.UTF8, true))
+				{
+					LoadFromXML(XElement.Load(reader));
+				}
+			}
 		}
 
 		public static T LoadFromXML<T>(XElement root) where T : Settings, new()
