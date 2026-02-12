@@ -63,10 +63,10 @@ namespace Styx.WoWInternals
                     {
                         if (Guid != ObjectManager.LocalGuid)
                         {
-                            // TODO: Port WoWContainer
-                            // WoWContainer container = ObjectManager.GetObjectByGuid<WoWContainer>(Guid);
-                            // if (container != null)
-                            //     return container.Name;
+                            // BUG-27: Look up WoWContainer to get real bag name (HB 3.3.5a)
+                            var container = ObjectManager.GetObjectByGuid<WoWObjects.WoWContainer>(Guid);
+                            if (container != null)
+                                return container.Name;
                             return "Unknown";
                         }
                     }
