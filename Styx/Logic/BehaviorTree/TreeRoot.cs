@@ -43,7 +43,7 @@ namespace Styx.Logic.BehaviorTree
 		static TreeRoot()
 		{
 			BotEvents.OnBotStart += OnBotStart;
-			TicksPerSecond = 10;
+			TicksPerSecond = 13; // ARCH-02: Matches HB 3.3.5a's 13 TPS (~77ms per tick)
 		}
 
 		private static void OnBotStart(EventArgs args)
@@ -52,6 +52,11 @@ namespace Styx.Logic.BehaviorTree
 			SpellDb.Initialize();
 			Lua.DoString("ClearTarget();");
 			Lua.DoString("MoveForwardStop();MoveBackwardStop();StrafeLeftStop();StrafeRightStop();");
+
+			// ARCH-03: Set CVars for bot safety (HB 3.3.5a sets autoSelfCast + autoLootDefault)
+			Lua.DoString("SetCVar('autoSelfCast', 1)");
+			Lua.DoString("SetCVar('autoLootDefault', 1)");
+
 			BotPoi.Clear();
 			SpellManager.Refresh();
 			if (RoutineManager.Current == null)
@@ -59,6 +64,10 @@ namespace Styx.Logic.BehaviorTree
 				throw new Exception("Unable to start. No Combat Routine loaded.");
 			}
 		}
+
+		// ARCH-03: Track fall state
+		private static bool _wasFalling;
+		private static int _fallStartTick;
 
 		private static void Tick()
 		{
@@ -71,40 +80,63 @@ namespace Styx.Logic.BehaviorTree
 				Thread.Sleep(1000);
 				return;
 			}
-			else
-			{
-				WoWPulsator.Pulse(Current?.PulseFlags ?? PulseFlags.All);
-				BotEvents.RaisePulse(EventArgs.Empty);
 
-				if (StyxWoW.Me.Mounted && StyxWoW.Me.IsFlying)
+			// ARCH-03: Check if WoW process has exited
+			if (ObjectManager.WoWProcess != null && ObjectManager.WoWProcess.HasExited)
+			{
+				Logging.Write("WoW process has exited. Stopping bot.");
+				Stop("WoW process exited");
+				return;
+			}
+
+			// ARCH-03: Skip tick while on taxi (flight path)
+			if (StyxWoW.Me.OnTaxi)
+			{
+				Thread.Sleep(1000 / (int)TicksPerSecond);
+				return;
+			}
+
+			// ARCH-03: Fall tracking — clear navigator during long free-falls
+			bool isFalling = StyxWoW.Me.IsFalling;
+			if (isFalling && !_wasFalling)
+			{
+				_fallStartTick = Environment.TickCount;
+			}
+			else if (isFalling && _wasFalling)
+			{
+				int fallDuration = Environment.TickCount - _fallStartTick;
+				if (fallDuration > 3000) // 3+ seconds of falling
 				{
-					Logging.Write("Flying. Dismounting before starting.");
-					Mount.Dismount();
-					Thread.Sleep(100);
-				}
-				else
-				{
-					Current?.Pulse();
-					try
-					{
-						Current?.Root?.Tick(null);
-						RunStatus? lastStatus = Current?.Root?.LastStatus;
-						if (lastStatus != RunStatus.Running)
-						{
-							Current?.Root?.Stop(null);
-							Current?.Root?.Start(null);
-						}
-					}
-					catch (Exception ex)
-					{
-						Logging.WriteException(ex);
-						Current?.Root?.Stop(null);
-						Current?.Root?.Start(null);
-						BotPoi.Clear();
-					}
-					Thread.Sleep(1000 / (int)TicksPerSecond);
+					Navigator.Clear();
 				}
 			}
+			_wasFalling = isFalling;
+
+			WoWPulsator.Pulse(Current?.PulseFlags ?? PulseFlags.All);
+			BotEvents.RaisePulse(EventArgs.Empty);
+
+			// BUG-03 fix: Removed mid-air dismount that killed the player.
+			// If mounted and flying, let the bot run normally — dismount is
+			// handled by individual bot behaviors when appropriate.
+			Current?.Pulse();
+			try
+			{
+				Current?.Root?.Tick(null);
+				RunStatus? lastStatus = Current?.Root?.LastStatus;
+				if (lastStatus != RunStatus.Running)
+				{
+					Current?.Root?.Stop(null);
+					Current?.Root?.Start(null);
+				}
+			}
+			catch (Exception ex)
+			{
+				Logging.WriteException(ex);
+				Current?.Root?.Stop(null);
+				Current?.Root?.Start(null);
+				BotPoi.Clear();
+			}
+			Thread.Sleep(1000 / (int)TicksPerSecond);
 		}
 
 		public static void Start()
@@ -125,9 +157,10 @@ namespace Styx.Logic.BehaviorTree
 				string lastUsedPath = LevelbotSettings.Instance.LastUsedPath;
 				if (!string.IsNullOrEmpty(lastUsedPath) && System.IO.File.Exists(lastUsedPath))
 				{
-					ProfileManager.LoadNew(lastUsedPath);
+				ProfileManager.LoadNew(lastUsedPath);
 				}
-				Current.Initialize();
+				// BUG-20 fix: Use DoInitialize() which guards against double-init
+				Current.DoInitialize();
 				Current.Start();
 				Current.Root?.Start(null);
 
