@@ -37,5 +37,6 @@ __pycache__/
 # Windows
 Thumbs.db
 Desktop.ini
+Tools/
 
 
