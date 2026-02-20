@@ -144,6 +144,12 @@ namespace Styx
             System.Threading.Thread.Sleep((int)(WoWClient.Latency * 2 + 150));
         }
 
+        public static void Sleep(int milliseconds)
+        {
+            // Convenience wrapper to match HB StyxWoW.Sleep usage
+            System.Threading.Thread.Sleep(milliseconds);
+        }
+
         public static void ResetAfk()
         {
             uint currentCounter = (uint)WoWClient.PerformanceCounter();
