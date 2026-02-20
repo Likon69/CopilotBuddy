@@ -35,6 +35,7 @@ namespace Styx.Logic.Pathing
 
         public StuckHandler()
         {
+            _lastCheckLocation = WoWPoint.Empty;
             _movementStopwatch.Restart();
         }
 
@@ -60,17 +61,12 @@ namespace Styx.Logic.Pathing
             WoWPoint currentLocation = me.Location;
             if (_lastCheckLocation != WoWPoint.Empty)
             {
-                float elapsed = (float)_movementStopwatch.Elapsed.TotalSeconds;
                 float expectedDistance = GetExpectedTravelDistance(me, _movementStopwatch.Elapsed) * ExpectedDistanceScale;
-                // HB uses straight-line distance between old/new position, NOT path-distance.
-                // Path-distance was buggy: returned 2×dist_to_nearest_waypoint for a stationary bot,
-                // which could exceed expectedDistance and prevent stuck detection entirely.
-                float actualDistance = _lastCheckLocation.Distance(currentLocation);
-
-                if (actualDistance < expectedDistance)
+                float? pathDistance = Navigator.PathDistance(_lastCheckLocation, currentLocation, expectedDistance);
+                if (pathDistance != null && pathDistance < expectedDistance)
                 {
-                    Logging.WriteDebug("[STUCK] Movement stalled — moved {0:F1}yd in {1:F1}s (expected {2:F1}yd).",
-                        actualDistance, elapsed, expectedDistance);
+                    Logging.WriteDebug("[STUCK] Movement stalled — path distance {0:F1}yd in {1:F1}s (expected {2:F1}yd).",
+                        pathDistance.Value, (float)_movementStopwatch.Elapsed.TotalSeconds, expectedDistance);
                     _movementStopwatch.Restart();
                     _lastCheckLocation = currentLocation;
                     return true;
@@ -127,9 +123,9 @@ namespace Styx.Logic.Pathing
                 {
                     Logging.WriteDebug("[STUCK] Jump attempt — forward path clear, jumping over obstacle.");
                     WoWMovement.Move(WoWMovement.MovementDirection.Forward | WoWMovement.MovementDirection.JumpAscend);
-                    Thread.Sleep(100);
+                    StyxWoW.Sleep(100);
                     WoWMovement.MoveStop(WoWMovement.MovementDirection.Forward | WoWMovement.MovementDirection.JumpAscend);
-                    Thread.Sleep(200);
+                    StyxWoW.Sleep(200);
                 }
                 else
                 {
@@ -199,9 +195,9 @@ namespace Styx.Logic.Pathing
         private void MoveInDirection(WoWMovement.MovementDirection direction, int milliseconds)
         {
             WoWMovement.Move(direction);
-            Thread.Sleep(milliseconds);
+            StyxWoW.Sleep(milliseconds);
             WoWMovement.MoveStop(direction);
-            Thread.Sleep(200);
+            StyxWoW.Sleep(200);
         }
 
         private void AddBlackspotAndReverse(int milliseconds)
@@ -211,13 +207,13 @@ namespace Styx.Logic.Pathing
                 return;
 
             Logging.WriteDebug("[STUCK] All attempts failed — adding blackspot and reversing.");
-            BlackspotManager.AddGlobalBlackspot(me.Location, 4f, 5f);
+            BlackspotManager.AddBlackspot(me.Location, 5f, 3f);
             WoWMovement.MoveStop();
-            Thread.Sleep(100);
+            StyxWoW.Sleep(100);
             WoWMovement.Move(WoWMovement.MovementDirection.Backwards);
-            Thread.Sleep(milliseconds);
+            StyxWoW.Sleep(milliseconds);
             WoWMovement.MoveStop();
-            Thread.Sleep(200);
+            StyxWoW.Sleep(200);
 
             Logging.WriteDebug("[STUCK] Clearing path to regenerate around blackspot.");
             Navigator.Clear();
