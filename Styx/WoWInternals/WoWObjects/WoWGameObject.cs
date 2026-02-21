@@ -134,14 +134,68 @@ namespace Styx.WoWInternals.WoWObjects
         }
 
         /// <summary>
-        /// Sub-object cache entry (InteractDistance, SpellFocus, etc.). Returns a lightweight placeholder when cache is missing.
+        /// Sub-object associated with this GameObject (chair, door, bobber, etc.).
+        /// HB-compatible API: returns a `WoWSubObject` so callers can cast to specific sub-types
+        /// (e.g. `WoWFishingBobber`). When a real sub-object pointer is unavailable we return
+        /// an inert `WoWSubObject` with a zero base address to preserve runtime safety.
         /// </summary>
-        public GameObjectSubData SubObj => new GameObjectSubData
+        public WoWSubObject SubObj
         {
-            InteractDistance = 4.5f,
-            SpellFocusId = 0,
-            ModelId = 0
-        };
+            get
+            {
+                try
+                {
+                    Memory? wow = ObjectManager.Wow;
+                    if (wow == null)
+                        return new WoWSubObject(0u);
+
+                    // HB 3.3.5a: sub-object pointer stored at offset +416
+                    const uint SUBOBJECT_PTR_OFFSET = 416u;
+                    uint ptr = wow.Read<uint>(BaseAddress + SUBOBJECT_PTR_OFFSET);
+                    if (ptr == 0u)
+                        return new WoWSubObject(0u);
+
+                    switch (SubType)
+                    {
+                        case WoWGameObjectType.Door:
+                            return new WoWDoor(ptr);
+                        case WoWGameObjectType.Chair:
+                            return new WoWChair(ptr);
+                        case WoWGameObjectType.FishingBobber:
+                            return new WoWFishingBobber(ptr);
+                        // Many GO types are represented by an animated/generic subobject in HB
+                        // Use WoWAnimatedSubObject where appropriate if a specialized class is not present
+                        case WoWGameObjectType.Button:
+                        case WoWGameObjectType.QuestGiver:
+                        case WoWGameObjectType.Chest:
+                        case WoWGameObjectType.Generic:
+                        case WoWGameObjectType.Trap:
+                        case WoWGameObjectType.SpellFocus:
+                        case WoWGameObjectType.Text:
+                        case WoWGameObjectType.Goober:
+                        case WoWGameObjectType.AreaDamage:
+                        case WoWGameObjectType.DuelFlag:
+                        case WoWGameObjectType.Ritual:
+                        case WoWGameObjectType.Mailbox:
+                        case WoWGameObjectType.SpellCaster:
+                        case WoWGameObjectType.MeetingStone:
+                        case WoWGameObjectType.FlagStand:
+                        case WoWGameObjectType.FishingHole:
+                        case WoWGameObjectType.FlagDrop:
+                        case WoWGameObjectType.MiniGame:
+                        case WoWGameObjectType.CapturePoint:
+                        case WoWGameObjectType.GuildBank:
+                            return new WoWAnimatedSubObject(ptr);
+                        default:
+                            return new WoWSubObject(ptr);
+                    }
+                }
+                catch
+                {
+                    return new WoWSubObject(0u);
+                }
+            }
+        }
         public byte ArtKit
         {
             get
