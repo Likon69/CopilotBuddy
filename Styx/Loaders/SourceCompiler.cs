@@ -53,6 +53,30 @@ namespace Styx.Loaders
             {
                 AddReference(assembly.Location);
             }
+
+            // Try to add common WPF / Windows Forms integration assemblies if available
+            var wpfAssemblyNames = new[] {
+                "PresentationCore",
+                "PresentationFramework",
+                "WindowsBase",
+                "WindowsFormsIntegration",
+                "System.Xaml",
+                "System.Windows.Forms"
+            };
+
+            foreach (var name in wpfAssemblyNames)
+            {
+                try
+                {
+                    var asm = Assembly.Load(new AssemblyName(name));
+                    if (asm != null && !string.IsNullOrEmpty(asm.Location))
+                        AddReference(asm.Location);
+                }
+                catch
+                {
+                    // ignore if assembly not available
+                }
+            }
         }
 
         public Assembly CompiledAssembly { get; private set; }
