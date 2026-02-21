@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 using Styx.Helpers;
 using Styx.Logic.AreaManagement;
@@ -12,6 +13,9 @@ namespace Styx.Logic.Profiles
 {
 	public class Profile : IEquatable<Profile>
 	{
+
+		public static event EventHandler<UnknownProfileElementEventArgs>? OnUnknownProfileElement;
+
 		private readonly DualHashSet<uint, string> _protectedItems = new();
 		private readonly DualHashSet<uint, string> _forceMail = new();
 		private readonly DualHashSet<uint, string> _avoidMobs = new();
@@ -655,6 +659,16 @@ namespace Styx.Logic.Profiles
 						Profile sub = new Profile(element, this);
 						SubProfiles.Add(sub);
 						break;
+				}
+				// HonorBuddy behavior: if element wasn't handled by switch, treat it as unknown
+				if (element.NodeType != XmlNodeType.XmlDeclaration && element.NodeType != XmlNodeType.Comment)
+				{
+					if (OnUnknownProfileElement == null)
+						throw new ProfileUnknownElementException(element);
+					var args = new UnknownProfileElementEventArgs(element);
+					OnUnknownProfileElement?.Invoke(this, args);
+					if (!args.Handled)
+						throw new ProfileUnknownElementException(element);
 				}
 			}
 		}
