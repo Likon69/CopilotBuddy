@@ -323,6 +323,9 @@ namespace Styx.WoWInternals.WoWCache
             public int BookTextId;
             public int BookPages;
             public int BookStationaryId;
+            // HonorBuddy-compatible alias: some plugins expect StartQuestId
+            public int StartQuestId { get { return this.BookStationaryId; } }
+            // Note: HB decompiled had StartQuestId in ItemSparseEntry; map to BookStationaryId here
             public int BeginQuestId;
             public int LockPickSkillRequired;
             public int MaterialId;
@@ -335,6 +338,8 @@ namespace Styx.WoWInternals.WoWCache
             public int ItemAreaId;
             public int ItemMapId;
             public int BagFamily;
+            // HonorBuddy-compatible alias
+            public int BagFamilyId { get { return BagFamily; } }
             public int TotemCategory;
             
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I4)]
