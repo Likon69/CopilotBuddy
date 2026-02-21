@@ -90,6 +90,14 @@ namespace Styx.Logic.Inventory.Frames.LootFrame
         }
 
         /// <summary>
+        /// Returns structured loot slot info for the specified slot (HonorBuddy-compatible).
+        /// </summary>
+        public LootSlotInfo LootInfo(int slot)
+        {
+            return new LootSlotInfo(slot);
+        }
+
+        /// <summary>
         /// Gets loot information string.
         /// </summary>
         public string LootInfo(out bool locked)
