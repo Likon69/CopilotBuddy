@@ -531,99 +531,123 @@ namespace Styx.Logic.Profiles
 						Name = element.Value;
 						break;
 					case "minlevel":
+						handled = true;
 						if (int.TryParse(element.Value, out int minLevel))
 							MinLevel = minLevel;
 						break;
 					case "maxlevel":
+						handled = true;
 						if (int.TryParse(element.Value, out int maxLevel))
 							MaxLevel = maxLevel;
 						break;
 					case "continentid":
+						handled = true;
 						if (int.TryParse(element.Value, out int continentId))
 							_continentId = continentId;
 						break;
 					case "sellgrey":
 					case "sellgray":
+						handled = true;
 						if (bool.TryParse(element.Value, out bool sellGrey))
 							_sellGrey = sellGrey;
 						break;
 					case "sellwhite":
+						handled = true;
 						if (bool.TryParse(element.Value, out bool sellWhite))
 							_sellWhite = sellWhite;
 						break;
 					case "sellgreen":
+						handled = true;
 						if (bool.TryParse(element.Value, out bool sellGreen))
 							_sellGreen = sellGreen;
 						break;
 					case "sellblue":
+						handled = true;
 						if (bool.TryParse(element.Value, out bool sellBlue))
 							_sellBlue = sellBlue;
 						break;
 					case "sellpurple":
+						handled = true;
 						if (bool.TryParse(element.Value, out bool sellPurple))
 							_sellPurple = sellPurple;
 						break;
 					case "mailgrey":
+						handled = true;
 						if (bool.TryParse(element.Value, out bool mailGrey))
 							_mailGrey = mailGrey;
 						break;
 					case "mailwhite":
+						handled = true;
 						if (bool.TryParse(element.Value, out bool mailWhite))
 							_mailWhite = mailWhite;
 						break;
 					case "mailgreen":
+						handled = true;
 						if (bool.TryParse(element.Value, out bool mailGreen))
 							_mailGreen = mailGreen;
 						break;
 					case "mailblue":
+						handled = true;
 						if (bool.TryParse(element.Value, out bool mailBlue))
 							_mailBlue = mailBlue;
 						break;
 					case "mailpurple":
+						handled = true;
 						if (bool.TryParse(element.Value, out bool mailPurple))
 							_mailPurple = mailPurple;
 						break;
 					case "targetelites":
 					case "elites":
 					case "elite":
+						handled = true;
 						if (bool.TryParse(element.Value, out bool targetElites))
 							TargetElitesValue = targetElites;
 						break;
 					case "protecteditems":
+						handled = true;
 						ParseItemList(element, _protectedItems);
 						break;
 					case "forcemail":
+						handled = true;
 						ParseItemList(element, _forceMail);
 						break;
 					case "avoidmobs":
 					case "avoids":
+						handled = true;
 						ParseAvoidMobs(element);
 						break;
 					case "minmaillevel":
+						handled = true;
 						if (int.TryParse(element.Value, out int minMailLevel))
 							_minMailLevel = minMailLevel;
 						break;
 					case "mindurability":
+						handled = true;
 						if (float.TryParse(element.Value, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float minDurability))
 							_minDurability = minDurability;
 						break;
 					case "minfreebagslots":
+						handled = true;
 						if (int.TryParse(element.Value, out int minFreeBagSlots))
 							_minFreeBagSlots = minFreeBagSlots;
 						break;
 					case "blackspots":
 					case "ignorespots":
+						handled = true;
 						ParseBlackspots(element);
 						break;
 					case "mailing":
 					case "mailboxes":
 					case "mails":
+						handled = true;
 						_mailboxManager = new MailboxManager(element);
 						break;
 					case "vendors":
+						handled = true;
 						_vendorManager = new VendorManager(element);
 						break;
 					case "grindarea":
+						handled = true;
 						GrindArea = GrindArea.FromXML(element);
 						// Copy factions to grindarea if specified at profile level
 						if (Factions.Count > 0 && GrindArea.Factions.Count == 0)
@@ -633,10 +657,12 @@ namespace Styx.Logic.Profiles
 						}
 						break;
 					case "hotspots":
+						handled = true;
 						HotspotManager = new HotspotManager(element);
 						GrindArea = new GrindArea(HotspotManager);
 						break;
 					case "factions":
+						handled = true;
 						foreach (System.Text.RegularExpressions.Match match in System.Text.RegularExpressions.Regex.Matches(element.Value, "\\d+"))
 							_factions.Add(Convert.ToUInt32(match.Value));
 						if (GrindArea != null && GrindArea.Factions.Count == 0)
@@ -647,6 +673,7 @@ namespace Styx.Logic.Profiles
 						break;
 					case "quest":
 					case "questinfo":
+						handled = true;
 						try
 						{
 							GetRootProfile()._quests.Add(QuestInfo.FromXML(element));
@@ -657,12 +684,14 @@ namespace Styx.Logic.Profiles
 						}
 						break;
 					case "questorder":
+						handled = true;
 						foreach (OrderNode node in OrderNodeCollection.FromXml(element))
 						{
 							_questOrder.Add(node);
 						}
 						break;
 					case "subprofile":
+						handled = true;
 						Profile sub = new Profile(element, this);
 						SubProfiles.Add(sub);
 						break;
