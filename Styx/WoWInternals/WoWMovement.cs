@@ -68,16 +68,19 @@ namespace Styx.WoWInternals
 		{
 			get
 			{
-				Memory? memory = ObjectManager.Wow;
-				if (memory == null)
-					return new ClickToMoveInfoStruct();
-				try
+				using (StyxWoW.Memory.AcquireFrame())
 				{
-					return memory.ReadStruct<ClickToMoveInfoStruct>(ClickToMove_Base);
-				}
-				catch
-				{
-					return new ClickToMoveInfoStruct();
+					Memory? memory = ObjectManager.Wow;
+					if (memory == null)
+						return new ClickToMoveInfoStruct();
+					try
+					{
+						return memory.ReadStruct<ClickToMoveInfoStruct>(ClickToMove_Base);
+					}
+					catch
+					{
+						return new ClickToMoveInfoStruct();
+					}
 				}
 			}
 		}
@@ -156,9 +159,12 @@ namespace Styx.WoWInternals
 		{
 			get
 			{
-				LocalPlayer? me = ObjectManager.Me;
-				if (me == null) return false;
-				return me.IsMoving;
+				using (StyxWoW.Memory.AcquireFrame())
+				{
+					LocalPlayer? me = ObjectManager.Me;
+					if (me == null) return false;
+					return me.IsMoving;
+				}
 			}
 		}
 
