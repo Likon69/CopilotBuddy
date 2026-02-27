@@ -415,7 +415,7 @@ namespace Bots.Gatherbuddy
                 // Find and move to spirit healer
                 new Action(ctx =>
                 {
-                    var spiritHealer = ObjectManager.GetObjectsOfType<WoWUnit>()
+                    var spiritHealer = ObjectManager.CachedUnits
                         .Where(u => u.IsSpiritHealer)
                         .OrderBy(u => u.DistanceSqr)
                         .FirstOrDefault();
