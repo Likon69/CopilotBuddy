@@ -311,7 +311,7 @@ namespace Bots.Grind
         private static Composite CreateSpiritHealerBehavior()
         {
             return new PrioritySelector(
-                ctx => ObjectManager.GetObjectsOfType<WoWUnit>()
+                ctx => ObjectManager.CachedUnits
                     .FirstOrDefault(u => u.IsSpiritHealer),
                 // Move to spirit healer
                 new Decorator(
@@ -1011,7 +1011,8 @@ namespace Bots.Grind
                 _repairCostTimer.Reset();
             }
 
-            if ((long)StyxWoW.Me.Copper <= (long)_lastRepairCost)
+            // ensure player object valid before checking coinage
+            if (StyxWoW.Me == null || !StyxWoW.Me.IsValid || (long)StyxWoW.Me.Copper <= (long)_lastRepairCost)
             {
                 if (Vendors.ForceRepair)
                 {
