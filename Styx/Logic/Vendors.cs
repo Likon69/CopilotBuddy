@@ -61,7 +61,8 @@ namespace Styx.Logic
 		{
 			get
 			{
-				return ObjectManager.GetObjectsOfType<WoWUnit>()
+				// leverage cached units for better performance
+				return ObjectManager.CachedUnits
 					.Where(u => u.IsFlightMaster && u.InteractType == WoWInteractType.TaxiPathAvailable)
 					.OrderBy(u => u.Distance)
 					.FirstOrDefault();
