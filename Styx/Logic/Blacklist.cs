@@ -10,7 +10,7 @@ namespace Styx.Logic
     public static class Blacklist
     {
         private static readonly Dictionary<ulong, DateTime> _blacklistedGuids;
-        private static Func<KeyValuePair<ulong, DateTime>, ulong> func_0;
+        private static Func<KeyValuePair<ulong, DateTime>, ulong> _keySelector;
 
         static Blacklist()
         {
@@ -23,11 +23,11 @@ namespace Styx.Logic
             {
                 DateTime now = DateTime.Now;
                 IEnumerable<KeyValuePair<ulong, DateTime>> source = Blacklist._blacklistedGuids.Where(kvp => kvp.Value < now);
-                if (Blacklist.func_0 == null)
+                if (Blacklist._keySelector == null)
                 {
-                    Blacklist.func_0 = new Func<KeyValuePair<ulong, DateTime>, ulong>(GetKey);
+                    Blacklist._keySelector = new Func<KeyValuePair<ulong, DateTime>, ulong>(GetKey);
                 }
-                List<ulong> list = source.Select(Blacklist.func_0).ToList<ulong>();
+                List<ulong> list = source.Select(Blacklist._keySelector).ToList<ulong>();
                 foreach (ulong expiredGuid in list)
                 {
                     Blacklist._blacklistedGuids.Remove(expiredGuid);
