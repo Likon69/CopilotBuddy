@@ -167,7 +167,12 @@ namespace Styx.WoWInternals.WoWObjects
                     executor.AddLine("add esp, 16");
                     executor.AddLine("retn");
                     executor.Execute();
-                    return executor.Memory.Read<string>(bufferPtr);
+                    string retval;
+                    using (StyxWoW.Memory.TemporaryCacheState(false))
+                    {
+                        retval = executor.Memory.Read<string>(bufferPtr);
+                    }
+                    return retval;
                 }
                 finally
                 {
@@ -482,7 +487,12 @@ namespace Styx.WoWInternals.WoWObjects
                     executor.AddLine("retn");
                     executor.Execute();
 
-                    return executor.Memory.Read<int>(executor.ReturnPointer) != 0;
+                    bool success;
+                    using (StyxWoW.Memory.TemporaryCacheState(false))
+                    {
+                        success = executor.Memory.Read<int>(executor.ReturnPointer) != 0;
+                    }
+                    return success;
                 }
                 finally
                 {
