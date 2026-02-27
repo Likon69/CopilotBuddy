@@ -40,6 +40,11 @@ namespace Styx.Helpers
         private int _pullDistance;
         private int _selectedBotIndex;
         private bool _skinMobs;
+
+        // backing fields for frame/look and tick settings
+        private bool _useFreeLook;
+        private int _freeLook;
+        private byte _ticksPerSecond;
         private bool _trainNewSkills;
         private bool _useFlightPaths;
         private bool _useMount;
@@ -295,6 +300,44 @@ namespace Styx.Helpers
             {
                 _pullDistance = value;
                 OnPropertyChanged(nameof(PullDistance));
+            }
+        }
+
+        // frame look support (UI removed per user request, but preserve settings)
+        [Setting]
+        [DefaultValue(false)]
+        public bool UseFreeLook
+        {
+            get => _useFreeLook;
+            set
+            {
+                _useFreeLook = value;
+                OnPropertyChanged(nameof(UseFreeLook));
+            }
+        }
+
+        [Setting]
+        [DefaultValue(0)]
+        public int FreeLook
+        {
+            get => _freeLook;
+            set
+            {
+                _freeLook = value;
+                OnPropertyChanged(nameof(FreeLook));
+            }
+        }
+
+        // ticks-per-second slider value
+        [Setting]
+        [DefaultValue((byte)13)]
+        public byte TicksPerSecond
+        {
+            get => _ticksPerSecond;
+            set
+            {
+                _ticksPerSecond = value;
+                OnPropertyChanged(nameof(TicksPerSecond));
             }
         }
 
