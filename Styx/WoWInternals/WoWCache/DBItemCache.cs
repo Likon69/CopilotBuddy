@@ -47,11 +47,16 @@ namespace Styx.WoWInternals.WoWCache
                     executor.AddLine("retn");
                     executor.Execute();
 
-                    // Read the modified parameter
-                    a3 = executor.Memory.Read<int>(paramPtr);
-
-                    // Read the result
-                    return executor.Memory.Read<uint>(executor.ReturnPointer);
+                    // Disable cache while reading results of the remote call
+                    uint result;
+                    using (StyxWoW.Memory.TemporaryCacheState(false))
+                    {
+                        // Read the modified parameter
+                        a3 = executor.Memory.Read<int>(paramPtr);
+                        // Read the result
+                        result = executor.Memory.Read<uint>(executor.ReturnPointer);
+                    }
+                    return result;
                 }
                 catch (Exception ex)
                 {
