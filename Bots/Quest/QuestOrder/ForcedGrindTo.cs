@@ -33,7 +33,18 @@ public class ForcedGrindTo : ForcedBehavior
     {
         get
         {
-            return this.Node.Condition != null ? this.Node.Condition() : (double)ObjectManager.Me.LevelFraction >= (double)this.Node.Level;
+            if (this.Node.Condition != null)
+            {
+                bool condResult = this.Node.Condition();
+                Logging.WriteDiagnostic("[ForcedGrindTo] IsDone (condition): {0}", condResult);
+                return condResult;
+            }
+            float fraction = ObjectManager.Me.LevelFraction;
+            float target = this.Node.Level;
+            bool done = fraction >= target;
+            if (done)
+                Logging.WriteDiagnostic("[ForcedGrindTo] IsDone=true: LevelFraction={0:F2} >= Level={1:F1}", fraction, target);
+            return done;
         }
     }
 
