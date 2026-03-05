@@ -2,7 +2,6 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using Styx.Helpers;
-using Bots.DungeonBuddy.Forms;
 
 namespace CopilotBuddy.UI
 {
@@ -81,20 +80,6 @@ namespace CopilotBuddy.UI
             catch { /* Ignore errors */ }
             
             base.OnClosing(e);
-        }
-
-        private void btnDungeonConfig_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                var dlg = new FormConfig();
-                dlg.Owner = this;
-                dlg.Show();
-            }
-            catch (Exception ex)
-            {
-                Logging.WriteException(ex);
-            }
         }
 
         private void btnSaveAndClose_Click(object sender, RoutedEventArgs e)

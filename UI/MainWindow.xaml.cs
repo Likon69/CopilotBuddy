@@ -163,6 +163,9 @@ namespace CopilotBuddy.UI
                     {
                         Logging.Write("Attached to WoW with ID {0}", wowPid);
 
+                        // HB 6.2.3 smethod_3: Start minimize guard thread + event handlers
+                        TreeRoot.Initialize();
+
                         // Log character info (HB 4.3.4 pattern after attach)
                         if (ObjectManager.Me != null)
                         {

@@ -27,9 +27,6 @@
   </FrameworkElement.Resources>
   <Grid x:Name="LayoutRoot">
     <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="8,0,0,8">
-      <Button Click="btnDungeonConfig_Click" x:Name="btnDungeonConfig"
-              Content="DungeonBuddy" Foreground="White" Background="#FF3F3F46"
-              Height="25.96" Width="112" Margin="0,0,8,0"/>
       <Button Click="btnSaveAndClose_Click" x:Name="btnSaveAndClose"
               Content="Save and Close" Foreground="White" Background="#FF3F3F46"
               Height="25.96" Width="112"/>
@@ -180,22 +177,38 @@
         <!-- General GroupBox -->
         <GroupBox x:Name="gbGeneral" Header="General"
                   Foreground="White" Height="199" Width="224" Margin="4">
-          <Grid>
+          <StackPanel Margin="8,6,8,0">
             <CheckBox x:Name="chkKillBetweenHotspots" Content="Kill Between Hotspots" Foreground="White"
-                      HorizontalAlignment="Left" Margin="8,9,0,0" VerticalAlignment="Top"
+                      Margin="0,0,0,4"
                       IsChecked="{Binding Path=StyxSettings.KillBetweenHotspots, Mode=TwoWay}"/>
-            <Label x:Name="lblPullDistance" Content="Pull Distance:" Foreground="White"
-                   Margin="8,53,0,0" HorizontalAlignment="Left" Height="16" VerticalAlignment="Top"/>
-            <Slider x:Name="sldPullDistance" Margin="8,75,28,0" VerticalAlignment="Top" Maximum="100"
-                    TickPlacement="BottomRight" TickFrequency="5" AutoToolTipPlacement="TopLeft" SmallChange="1"
-                    Value="{Binding Path=CharSettings.PullDistance, Mode=TwoWay}"/>
-            <Label x:Name="lblSliderPullDistanceValue" HorizontalAlignment="Right" Margin="0,73,8,0" Foreground="White"
-                   Height="16" VerticalAlignment="Top" ContentStringFormat="N0"
-                   Content="{Binding ElementName=sldPullDistance, Path=Value}"/>
+            <CheckBox x:Name="chkUseFrameLock" Content="Use Frame Lock" Foreground="White"
+                      Margin="0,0,0,4"
+                      IsChecked="{Binding Path=StyxSettings.UseFrameLock, Mode=TwoWay}"/>
             <CheckBox x:Name="chkLogoutForInactivity" Content="Logout For Inactivity" Foreground="White"
-                      HorizontalAlignment="Left" Margin="8,31,0,0" VerticalAlignment="Top"
+                      Margin="0,0,0,6"
                       IsChecked="{Binding Path=StyxSettings.LogoutForInactivity, Mode=TwoWay}"/>
-          </Grid>
+            <Label Content="Pull Distance:" Foreground="White"
+                   Margin="-4,0,0,0" Padding="0" Height="16"/>
+            <Grid Margin="0,2,0,4">
+              <Slider x:Name="sldPullDistance" Margin="0,0,24,0" Maximum="100"
+                      TickPlacement="BottomRight" TickFrequency="5" AutoToolTipPlacement="TopLeft" SmallChange="1"
+                      Value="{Binding Path=CharSettings.PullDistance, Mode=TwoWay}"/>
+              <Label x:Name="lblSliderPullDistanceValue" HorizontalAlignment="Right" Margin="0" Foreground="White"
+                     Height="16" VerticalAlignment="Top" ContentStringFormat="N0"
+                     Content="{Binding ElementName=sldPullDistance, Path=Value}"/>
+            </Grid>
+            <Label Content="Ticks Per Second:" Foreground="White"
+                   Margin="-4,0,0,0" Padding="0" Height="16"/>
+            <Grid Margin="0,2,0,0">
+              <Slider x:Name="sldTps" Margin="0,0,24,0" Maximum="100" Minimum="5"
+                      TickPlacement="BottomRight" TickFrequency="5" AutoToolTipPlacement="TopLeft"
+                      IsSnapToTickEnabled="True"
+                      Value="{Binding Path=CharSettings.TicksPerSecond, Mode=TwoWay}"/>
+              <Label x:Name="lblSliderTpsValue" HorizontalAlignment="Right" Margin="0" Foreground="White"
+                     Height="16" VerticalAlignment="Top" ContentStringFormat="N0"
+                     Content="{Binding ElementName=sldTps, Path=Value}"/>
+            </Grid>
+          </StackPanel>
         </GroupBox>
 
         <!-- Logging GroupBox -->
