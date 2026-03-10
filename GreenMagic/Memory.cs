@@ -34,7 +34,9 @@ namespace GreenMagic
 
         // cache control mimics HB GreyMagic.ExternalProcessMemory
         private ThreadLocal<Dictionary<IntPtr, byte[]>> _cache = new ThreadLocal<Dictionary<IntPtr, byte[]>>(() => new Dictionary<IntPtr, byte[]>());
-        private ThreadLocal<bool> _cacheEnabled = new ThreadLocal<bool>(() => true);
+        // HB 6.2.3 StyxWoW: DefaultCacheValue = false. Cache is only enabled
+        // inside the tick via TemporaryCacheState(true) under AcquireFrame.
+        private ThreadLocal<bool> _cacheEnabled = new ThreadLocal<bool>(() => false);
 
         public Memory(int processId)
         {
@@ -608,20 +610,19 @@ namespace GreenMagic
         }
 
         /// <summary>
-        /// ReleaseFrame is a stub in HB; the real logic lives in
-        /// <see cref="FrameLockRelease"/> but callers only ever use it for
-        /// API compatibility.  We mirror the simple signature.
+        /// HB 6.2.3 ExternalProcessMemory.ReleaseFrame — returns a
+        /// <see cref="FrameLockRelease"/> that ends the current continuous
+        /// execution, letting WoW render while we do CPU-only work (e.g.
+        /// pathfinding).  On Dispose the frame lock is reacquired.
         /// </summary>
-        public IDisposable ReleaseFrame(bool reacquireAsHardLock = false)
+        public FrameLockRelease ReleaseFrame(bool reacquireAsHardLock = false)
         {
-            if (reacquireAsHardLock)
-                ObjectManager.Executor?.GrabFrame();
-            return new Styx.FrameLock();
+            return new FrameLockRelease(ObjectManager.Executor, reacquireAsHardLock);
         }
 
-        public IDisposable ReleaseFrame()
+        public FrameLockRelease ReleaseFrame()
         {
-            return ReleaseFrame(false);
+            return new FrameLockRelease(ObjectManager.Executor, false);
         }
 
         #endregion

@@ -142,6 +142,9 @@ namespace Styx
         /// </summary>
         public static Memory? Memory => ObjectManager.Wow;
 
+        /// <summary>HB 6.2.3: Thread-safe Random instance for humanization.</summary>
+        public static Random Random { get; } = new Random();
+
         #endregion
 
         #region Methods
@@ -149,13 +152,33 @@ namespace Styx
         public static void SleepForLagDuration()
         {
             // BUG-17 fix: Base 150ms (was 50ms) — matches HB 4.3.4
-            System.Threading.Thread.Sleep((int)(WoWClient.Latency * 2 + 150));
+            Sleep((int)(WoWClient.Latency * 2 + 150));
         }
 
+        /// <summary>
+        /// HB 5.4.8 StyxWoW.Sleep — if called on the bot thread while a
+        /// FrameLock is active, releases the frame lock before sleeping so
+        /// WoW can render, then reacquires it on return.
+        /// </summary>
         public static void Sleep(int milliseconds)
         {
-            // Convenience wrapper to match HB StyxWoW.Sleep usage
-            System.Threading.Thread.Sleep(milliseconds);
+            Sleep(TimeSpan.FromMilliseconds(milliseconds));
+        }
+
+        /// <summary>
+        /// HB 5.4.8 StyxWoW.Sleep(TimeSpan) — releases FrameLock during sleep.
+        /// </summary>
+        public static void Sleep(TimeSpan timeSpan)
+        {
+            if (Logic.BehaviorTree.TreeRoot.CurrentThreadIsBotThread)
+            {
+                using (Memory!.ReleaseFrame(true))
+                {
+                    System.Threading.Thread.Sleep(timeSpan);
+                    return;
+                }
+            }
+            System.Threading.Thread.Sleep(timeSpan);
         }
 
         public static void ResetAfk()
