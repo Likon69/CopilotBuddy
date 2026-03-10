@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Threading.Tasks;
 using Styx.Helpers;
+using Styx.Logic.BehaviorTree;
 using Styx.Logic.Pathing.Interop;
 using Styx.WoWInternals;
 using Styx.WoWInternals.WoWObjects;
@@ -523,9 +525,63 @@ namespace Styx.Logic.Pathing
 					// This is HB 4.3.4's OnTileLoaded workaround
 					BlackspotManager.EnsureBlackspotsMarked();
 
-					var sw = System.Diagnostics.Stopwatch.StartNew();
-					var result = TripperNavigator.FindPath(mapId, start, end, true);
-					sw.Stop();
+					// HB 6.2.3 pattern: run pathfinding on a background thread so we
+					// can release the FrameLock and let WoW render while we wait.
+					var capturedMapId = mapId;
+					var capturedStart = start;
+					var capturedEnd = end;
+					var pathTask = Task<TripperNav.PathFindResult>.Factory.StartNew(
+						() => TripperNavigator.FindPath(capturedMapId, capturedStart, capturedEnd, true));
+
+					TripperNav.PathFindResult result;
+					try
+					{
+						if (pathTask.Wait(10))
+						{
+							// Fast path — pathfinding completed within 10ms, no need to release frame
+							result = pathTask.Result;
+						}
+						else
+						{
+							// Slow path — release FrameLock so WoW can render while we wait
+							using (StyxWoW.Memory.ReleaseFrame(true))
+							{
+								int tickInterval = TreeRoot.TicksPerSecond > 0
+									? 1000 / TreeRoot.TicksPerSecond
+									: 50;
+								while (!pathTask.Wait(tickInterval))
+								{
+									try
+									{
+										StyxWoW.Memory.ClearCache();
+										using (StyxWoW.Memory.AcquireFrame())
+										{
+											ObjectManager.Update();
+											WoWMovement.Pulse();
+										}
+										StyxWoW.ResetAfk();
+									}
+									catch (Exception ex)
+									{
+										Logging.WriteDebug("Exception during pathfind wait: {0}", ex.Message);
+									}
+								}
+								result = pathTask.Result;
+							}
+							// Re-update ObjectManager after re-acquiring frame
+							ObjectManager.Update();
+						}
+					}
+					catch (AggregateException ex)
+					{
+						Logging.WriteDebug("Pathfinding failed with exception: {0}", ex.InnerException?.Message ?? ex.Message);
+						return MoveResult.PathGenerationFailed;
+					}
+					finally
+					{
+						pathTask.Dispose();
+					}
+
 					LogPathResult(result, me.Location, destination, mapId);
 					if (result.Status.Succeeded && result.Points != null && result.Points.Length > 0)
 					{

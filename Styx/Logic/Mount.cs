@@ -75,10 +75,10 @@ namespace Styx.Logic
 					int maxTicks = 300; // ~30 seconds max descent
 					while (me.IsFlying && maxTicks-- > 0)
 					{
-						Thread.Sleep(100);
+						StyxWoW.Sleep(100);
 					}
 					WoWMovement.DescendStop();
-					Thread.Sleep(500); // Allow landing to settle
+					StyxWoW.Sleep(500); // Allow landing to settle
 				}
 				
 				WoWMovement.MoveStop();
@@ -92,8 +92,32 @@ namespace Styx.Logic
 					Lua.DoString("Dismount()");
 				}
 
-				// BUG-22 fix: Fire OnDismount event after dismounting
-				OnDismount?.Invoke(null, EventArgs.Empty);
+				// HB 6.2.3: Fire OnDismount event after dismounting
+				RaiseOnDismount(reason);
+			}
+		}
+
+		/// <summary>
+		/// HB 6.2.3 Mount.smethod_1: Safely raises OnDismount event,
+		/// catching exceptions from individual subscribers.
+		/// </summary>
+		internal static void RaiseOnDismount(string? reason)
+		{
+			reason ??= string.Empty;
+			EventHandler? handler = OnDismount;
+			if (handler == null)
+				return;
+
+			foreach (Delegate d in handler.GetInvocationList())
+			{
+				try
+				{
+					d.DynamicInvoke(reason, EventArgs.Empty);
+				}
+				catch (Exception ex)
+				{
+					Logging.WriteException(ex);
+				}
 			}
 		}
 
@@ -193,7 +217,7 @@ namespace Styx.Logic
 
 			WoWMovement.MoveStop();
 			Logging.Write("Mounting: {0}", LevelbotSettings.Instance.MountName);
-			Thread.Sleep(200);
+			StyxWoW.Sleep(200);
 
 			DoMount();
 			_mountTimer.Reset();
@@ -237,7 +261,7 @@ namespace Styx.Logic
 					break;
 				}
 
-				Thread.Sleep(250);
+				StyxWoW.Sleep(250);
 			}
 		}
 
