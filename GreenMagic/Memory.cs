@@ -59,12 +59,12 @@ namespace GreenMagic
             // VM_READ | VM_WRITE | VM_OPERATION | QUERY_INFORMATION | QUERY_LIMITED_INFORMATION
             // + SYNCHRONIZE (required for WaitForSingleObject on process handle)
             // HB used PROCESS_ALL_ACCESS (0x1F0FFF) — reduces handle detection surface.
-            uint flags = 0x0010  // PROCESS_VM_READ
-                       | 0x0020  // PROCESS_VM_WRITE
+            uint flags = 0x0002  // PROCESS_CREATE_THREAD (for InjectAndExecute via CreateRemoteThread)
                        | 0x0008  // PROCESS_VM_OPERATION
+                       | 0x0010  // PROCESS_VM_READ
+                       | 0x0020  // PROCESS_VM_WRITE
                        | 0x0400  // PROCESS_QUERY_INFORMATION
                        | 0x1000  // PROCESS_QUERY_LIMITED_INFORMATION
-                       | 0x0200  // PROCESS_SET_INFORMATION (for thread access)
                        | 0x100000; // SYNCHRONIZE
 
             _hProcess = Imports.OpenProcess(flags, false, processId);
@@ -659,7 +659,7 @@ namespace GreenMagic
 
         public uint AllocateMemory(int size)
         {
-            return AllocateMemory(size, 0x1000U, 0x40U); // MEM_COMMIT, PAGE_EXECUTE_READWRITE
+            return AllocateMemory(size, 0x1000U, 0x04U); // MEM_COMMIT, PAGE_READWRITE
         }
 
         /// <summary>
