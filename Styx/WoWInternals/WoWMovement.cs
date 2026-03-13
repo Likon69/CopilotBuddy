@@ -8,12 +8,16 @@ using Styx.WoWInternals.WoWObjects;
 
 namespace Styx.WoWInternals
 {
+	using Tripper.Tools.Math;
+	using Vector3 = Tripper.Tools.Math.Vector3;
+	using Matrix = Tripper.Tools.Math.Matrix;
+
 	public static class WoWMovement
 	{
 		#region Constants - Offsets 3.3.5a (12340)
 
 		// Click to move function address - FROM 335offsetsall.txt
-		private const uint CTM_Function = 0x00727400;  // 7509504 decimal (CGPlayer_C__ClickToMove)
+		private const uint CTM_Function = 0x00727400;  // 7500800 decimal (CGPlayer_C__ClickToMove)
 		// Stop movement function - FROM HB 3.3.5a GlobalOffsets.cs
 		private const uint CTM_Stop_Function = 0x0072B3A0;  // 7517088 decimal (CGPlayer_C__ClickToMoveStop)
 		// Click to move base address - FROM HB 3.3.5a (0xCA11D8)
@@ -199,13 +203,10 @@ namespace Styx.WoWInternals
 			// Stop keyboard movement — single batched DoString (see StopMovement)
 			StopMovement(MovementDirection.AllAllowed);
 			
-			// Stop Click-to-Move if active (like HB 3.3.5a)
-			if (ClickToMoveInfo.Type == ClickToMoveType.Move || 
-			    ClickToMoveInfo.Type == ClickToMoveType.NpcInteract ||
-			    ClickToMoveInfo.Type == ClickToMoveType.Loot)
-			{
-				ClickToMoveStop();
-			}
+			// HB 4.3.4: always stop CTM unconditionally (smethod_5).
+			// Previous code only stopped for Move/NpcInteract/Loot, missing
+			// ObjInteract, Skin, AttackPosition, AttackGuid, ConstantFace.
+			ClickToMoveStop();
 		}
 
 		public static void MoveStop(MovementDirection direction)
@@ -239,7 +240,13 @@ namespace Styx.WoWInternals
 
 		public static void StopFace()
 		{
-			MoveStop();
+			// HB 3.3.5a/4.3.4: StopFace does a final face-toward-current-target.
+			if (ObjectManager.Me == null) return;
+			WoWUnit? currentTarget = ObjectManager.Me.CurrentTarget;
+			if (currentTarget != null && !ObjectManager.Me.IsMoving)
+			{
+				ConstantFaceStop(currentTarget.Guid);
+			}
 		}
 
 		// HB 3.3.5a / 4.3.4: throttle redundant CTM calls.
@@ -278,6 +285,11 @@ namespace Styx.WoWInternals
 			CallClickToMove(type, guid, loc, precision);
 		}
 
+		public static void ClickToMove(float x, float y, float z)
+		{
+			ClickToMove(new WoWPoint(x, y, z));
+		}
+
 		// HB 3.3.5a style CTM execution
 		private static void CallClickToMove(ClickToMoveType clickToMoveType, ulong guid, WoWPoint clickPos, float facing)
 		{
@@ -293,6 +305,18 @@ namespace Styx.WoWInternals
 			ExecutorRand? executor = ObjectManager.Executor;
 			if (executor == null)
 				throw new Exception("Invalid executor used in CGPlayer_C__ClickToMove");
+
+			// HB 3.3.5a/4.3.4: Transform world coordinates to transport-local
+			// when the player is on a transport (boat, zeppelin, elevator).
+			WoWGameObject? transport = ObjectManager.Me?.Transport;
+			if (transport != null)
+			{
+				Matrix worldMatrix = transport.GetWorldMatrix();
+				Matrix.Invert(ref worldMatrix, out worldMatrix);
+				Vector3 vec = new Vector3(clickPos.X, clickPos.Y, clickPos.Z);
+				Vector3 transformed = Vector3.Transform(vec, worldMatrix);
+				clickPos = new WoWPoint(transformed.X, transformed.Y, transformed.Z);
+			}
 
 			using (AllocatedMemory allocatedMemory = new AllocatedMemory(20))
 			{
@@ -366,12 +390,29 @@ namespace Styx.WoWInternals
 				ConstantFace(currentTarget.Guid);
 		}
 
-		/// <summary>HB 4.3.4+ compatibility: Face an object by its GUID.</summary>
+		/// <summary>HB 3.3.5a/4.3.4 shared pattern (smethod_0):
+		/// stop=false → CTM LeftClick (causes game to face the target)
+		/// stop=true  → SetFacing toward the object (final face), fallback to CTM StopThrowsException</summary>
+		private static void FaceOrStopInternal(ulong guid, bool stop)
+		{
+			if (stop)
+			{
+				WoWObject? obj = ObjectManager.GetObjectByGuid<WoWObject>(guid);
+				if (obj != null)
+				{
+					ObjectManager.Me?.SetFacing(obj.Location);
+					return;
+				}
+			}
+			ClickToMove(guid, stop ? ClickToMoveType.StopThrowsException : ClickToMoveType.LeftClick);
+		}
+
+		/// <summary>HB 4.3.4+ compatibility: Face an object by its GUID.
+		/// Uses CTM LeftClick to trigger game-internal facing (HB 3.3.5a smethod_0).</summary>
 		public static void Face(ulong guid)
 		{
-			var obj = ObjectManager.GetObjectByGuid<WoWObject>(guid);
-			if (obj != null)
-				Face(obj.Location);
+			if (ObjectManager.Me == null) return;
+			FaceOrStopInternal(guid, false);
 		}
 
 		public static void Move(MovementDirection direction)
@@ -457,21 +498,16 @@ namespace Styx.WoWInternals
 
 		public static void ConstantFace(ulong guid)
 		{
-			WoWObject? obj = ObjectManager.GetObjectByGuid<WoWObject>(guid);
-			if (obj is WoWUnit unit)
-			{
-				Face(unit);
-			}
+			if (ObjectManager.Me == null) return;
+			FaceOrStopInternal(guid, false);
 		}
 
-		/// <summary>FEAT-04: Stop constant-facing a specific target GUID.</summary>
+		/// <summary>FEAT-04: Stop constant-facing a specific target GUID.
+		/// HB 3.3.5a/4.3.4: does a final SetFacing toward the target, then stops.</summary>
 		public static void ConstantFaceStop(ulong guid)
 		{
-			LocalPlayer? me = ObjectManager.Me;
-			if (me == null) return;
-			// Only stop if we're currently facing that guid
-			if (ClickToMoveInfo.InteractGuid == guid || guid == 0UL)
-				StopFace();
+			if (ObjectManager.Me == null) return;
+			FaceOrStopInternal(guid, true);
 		}
 
 		public static void ConstantFaceStop()
@@ -493,6 +529,18 @@ namespace Styx.WoWInternals
 			if (diff > Math.PI)
 				diff = (float)(2 * Math.PI - diff);
 			return diff;
+		}
+
+		public static void GetHeadingDiff(double currentHeading, double destHeading, out double headingDiff, out int directionCoeff)
+		{
+			headingDiff = currentHeading - destHeading;
+			directionCoeff = (int)(headingDiff / Math.Abs(headingDiff));
+			headingDiff = Math.Abs(headingDiff);
+			if (headingDiff > 3.1415926535897931)
+			{
+				headingDiff = 6.2831853071795862 - headingDiff;
+				directionCoeff *= -1;
+			}
 		}
 
 		public static void Navigate(WoWPoint destination)
@@ -541,22 +589,18 @@ namespace Styx.WoWInternals
 			public MovementDirection Flags;
 			[System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValArray, SizeConst = 5)]
 			private uint[] _reserved1;
-			public MovementControl MovementControl;
+			public MovementControl Movement;
 			[System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValArray, SizeConst = 11)]
 			private uint[] _reserved2;
 		}
 
-		[Flags]
-		public enum MovementControl : uint
+		/// <summary>HB 3.3.5a/4.3.4: MovementControl is a 40-byte struct, not an enum.
+		/// The internal fields are private/opaque in both HB versions.</summary>
+		public struct MovementControl
 		{
-			None = 0,
-			Forward = 1,
-			Backward = 2,
-			StrafeLeft = 4,
-			StrafeRight = 8,
-			TurnLeft = 16,
-			TurnRight = 32,
-			Jump = 64
+			private uint _flags;
+			[System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValArray, SizeConst = 9)]
+			private uint[] _reserved;
 		}
 
 		#endregion
