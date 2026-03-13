@@ -20,6 +20,11 @@ namespace Styx.WoWInternals.WoWObjects
         private const uint DescNextLevelXP = 0x27B;      // PLAYER_NEXT_LEVEL_XP
         private const uint DescCoinage = 0x492;          // PLAYER_FIELD_COINAGE
         private const uint DescHonor = 0x4FD;            // PLAYER_FIELD_HONOR_CURRENCY
+        private const uint DescPlayerBytes3 = 0x9B;       // PLAYER_BYTES_3 (Inebriation, BattlefieldArenaFaction)
+        private const uint DescGuildTimestamp = 0x9D;     // PLAYER_GUILD_TIMESTAMP
+        private const uint DescChosenTitle = 0x141;       // PLAYER_CHOSEN_TITLE
+        private const uint DescInebriation = 0x142;       // PLAYER_FIELD_INEBRIATION
+        private const uint DescPvpMedalCount = 0x4B0;     // PLAYER_FIELD_PVP_MEDALS
         
         // Race, Class, Gender are inherited from WoWUnit (offset 0x17 - UNIT_FIELD_BYTES_0)
         
@@ -247,8 +252,15 @@ namespace Styx.WoWInternals.WoWObjects
         public uint Coinage => ReadDescriptor<uint>(DescCoinage);
         
         public uint Gold => Coinage / 10000;
-        public uint Silver => (Coinage % 10000) / 100;
-        public uint Copper => Coinage % 100;
+        /// <summary>
+        /// Total money expressed in silver. HB 3.3.5a/4.3.4: Coinage / 100.
+        /// </summary>
+        public uint Silver => Coinage / 100;
+        /// <summary>
+        /// Total money expressed in copper (same as Coinage).
+        /// HB 3.3.5a: Copper == Coinage. HB 4.3.4: Copper reads the raw descriptor.
+        /// </summary>
+        public uint Copper => Coinage;
         
         public uint Honor => ReadDescriptor<uint>(DescHonor);
         
@@ -278,9 +290,9 @@ namespace Styx.WoWInternals.WoWObjects
         public bool IsPvPFlagged => PlayerFlags[512];
         public bool IsHidingHelm => PlayerFlags[1024];
         public bool IsHidingCloak => PlayerFlags[2048];
-        public bool IsOutOfBounds => PlayerFlags[4096];
-        public bool IsInsideSanctuary => PlayerFlags[8192];
-        public bool IsPvPTimerActive => PlayerFlags[16384];
+        public bool IsOutOfBounds => PlayerFlags[16384];
+        public bool IsInsideSanctuary => PlayerFlags[65536];
+        public bool IsPvPTimerActive => PlayerFlags[262144];
         
         #endregion
 
@@ -351,6 +363,8 @@ namespace Styx.WoWInternals.WoWObjects
             return ReadDescriptor<float>(DescSpellCritPercent1 + (uint)schoolIndex);
         }
 
+        /// <summary>Physical spell crit percentage (school 0).</summary>
+        public float PhysicalCritPercent => ReadDescriptor<float>(DescSpellCritPercent1);
         /// <summary>Holy spell crit percentage.</summary>
         public float HolyCritPercent => ReadDescriptor<float>(DescSpellCritPercent1 + 1);
         /// <summary>Fire spell crit percentage.</summary>
@@ -372,6 +386,8 @@ namespace Styx.WoWInternals.WoWObjects
             return ReadDescriptor<int>(DescModDamageDonePos + (uint)schoolIndex);
         }
 
+        /// <summary>Physical bonus damage (positive, school 0).</summary>
+        public int PhysicalBonusPositive => ReadDescriptor<int>(DescModDamageDonePos);
         /// <summary>Holy bonus damage (positive).</summary>
         public int HolyBonusPositive => ReadDescriptor<int>(DescModDamageDonePos + 1);
         /// <summary>Fire bonus damage (positive).</summary>
@@ -393,6 +409,8 @@ namespace Styx.WoWInternals.WoWObjects
             return ReadDescriptor<int>(DescModDamageDoneNeg + (uint)schoolIndex);
         }
 
+        /// <summary>Physical bonus damage (negative, school 0).</summary>
+        public int PhysicalBonusNegative => ReadDescriptor<int>(DescModDamageDoneNeg);
         /// <summary>Holy bonus damage (negative).</summary>
         public int HolyBonusNegative => ReadDescriptor<int>(DescModDamageDoneNeg + 1);
         /// <summary>Fire bonus damage (negative).</summary>
@@ -466,8 +484,8 @@ namespace Styx.WoWInternals.WoWObjects
         /// <summary>Expertise rating (index 23 = CR_EXPERTISE).</summary>
         public int ExpertiseRating => GetCombatRating(23);
 
-        /// <summary>Spell power modifier percent (from PLAYER_FIELD_MOD_DAMAGE_DONE_PCT school 0).</summary>
-        public float SpellPowerModifierPercent => ReadDescriptor<float>(DescModDamageDonePct);
+        /// <summary>Spell power modifier percent (Cata+ only, does not exist in WotLK). Always 1.0f.</summary>
+        public float SpellPowerModifierPercent => 1.0f;
 
         #endregion
 
@@ -508,13 +526,42 @@ namespace Styx.WoWInternals.WoWObjects
         /// <summary>Guild rank (PLAYER_GUILDRANK).</summary>
         public uint GuildRank => ReadDescriptor<uint>(DescGuildRank);
 
-        /// <summary>Number of purchased bank bag slots.</summary>
+        /// <summary>Guild timestamp (PLAYER_GUILD_TIMESTAMP).</summary>
+        public uint GuildTimestamp => ReadDescriptor<uint>(DescGuildTimestamp);
+
+        /// <summary>Guild level (Cata+ only). Always 0 in WotLK.</summary>
+        public uint GuildLevel => 0;
+
+        /// <summary>Guild delete date (Cata+ only). Always 0 in WotLK.</summary>
+        public uint GuildDeleteDate => 0;
+
+        /// <summary>Number of purchased bank bag slots (byte 2 of PLAYER_BYTES_2, 0x9A).</summary>
         public byte BankBagSlotCount
         {
             get
             {
+                uint bytes2 = ReadDescriptor<uint>(DescPlayerBytes2);
+                return (byte)((bytes2 >> 16) & 0xFF);
+            }
+        }
+
+        /// <summary>Whether the player is tracking stealthed units (bit 1 of PlayerFieldBytes byte 0).</summary>
+        public bool IsTrackingStealthed
+        {
+            get
+            {
                 uint fieldBytes = ReadDescriptor<uint>(DescFieldBytes);
-                return (byte)(fieldBytes & 0xFF);
+                return ((byte)(fieldBytes & 0xFF) & 0x02) != 0;
+            }
+        }
+
+        /// <summary>Whether the corpse release timer is visible (bit 3 of PlayerFieldBytes byte 0).</summary>
+        public bool ReleaseTimerIsVisible
+        {
+            get
+            {
+                uint fieldBytes = ReadDescriptor<uint>(DescFieldBytes);
+                return ((byte)(fieldBytes & 0xFF) & 0x08) != 0;
             }
         }
 
@@ -553,6 +600,24 @@ namespace Styx.WoWInternals.WoWObjects
             return ReadDescriptor<uint>(DescGlyphSlots1 + (uint)slot);
         }
 
+        /// <summary>Returns all 6 glyph slots as a list (WotLK: 3 major + 3 minor).</summary>
+        public List<WoWGlyphInfo> Glyphs
+        {
+            get
+            {
+                var list = new List<WoWGlyphInfo>(6);
+                uint enabledMask = GlyphsEnabled;
+                for (int i = 0; i < 6; i++)
+                {
+                    uint glyphId = GetGlyph(i);
+                    uint slotType = GetGlyphSlot(i);
+                    bool isEnabled = (enabledMask & (1u << i)) != 0;
+                    list.Add(new WoWGlyphInfo(i, slotType, glyphId, isEnabled));
+                }
+                return list;
+            }
+        }
+
         /// <summary>Today's honorable kills (lower 16 bits of PLAYER_FIELD_KILLS).</summary>
         public ushort HonorableKillsToday
         {
@@ -584,6 +649,9 @@ namespace Styx.WoWInternals.WoWObjects
 
         /// <summary>Arena points (PLAYER_FIELD_ARENA_CURRENCY).</summary>
         public uint ArenaCurrency => ReadDescriptor<uint>(DescArenaCurrency);
+
+        /// <summary>PvP medal count (PLAYER_FIELD_PVP_MEDALS).</summary>
+        public uint PvpMedalCount => ReadDescriptor<uint>(DescPvpMedalCount);
 
         /// <summary>Max level (80 in WotLK).</summary>
         public uint MaxLevel => ReadDescriptor<uint>(DescMaxLevel);
@@ -639,6 +707,22 @@ namespace Styx.WoWInternals.WoWObjects
             }
         }
 
+        /// <summary>Battlefield arena faction (byte 3 of PLAYER_BYTES_3).</summary>
+        public byte BattlefieldArenaFaction
+        {
+            get
+            {
+                uint bytes = ReadDescriptor<uint>(DescPlayerBytes3);
+                return (byte)((bytes >> 24) & 0xFF);
+            }
+        }
+
+        /// <summary>Currently displayed title (PLAYER_CHOSEN_TITLE).</summary>
+        public uint ChosenTitle => ReadDescriptor<uint>(DescChosenTitle);
+
+        /// <summary>Player inebriation level (PLAYER_FIELD_INEBRIATION).</summary>
+        public WoWInebriationLevel Inebriation => (WoWInebriationLevel)ReadDescriptor<uint>(DescInebriation);
+
         #endregion
         
         #region Equipment Properties
@@ -650,8 +734,9 @@ namespace Styx.WoWInternals.WoWObjects
         {
             get
             {
-                // now using cached items list to avoid repeated memory scans
-                return ObjectManager.CachedItems.FirstOrDefault();
+                var entryId = MainhandEntryId;
+                if (entryId == 0) return null;
+                return ObjectManager.CachedItems.FirstOrDefault(item => item.Entry == entryId);
             }
         }
         
@@ -659,7 +744,9 @@ namespace Styx.WoWInternals.WoWObjects
         {
             get
             {
-                return ObjectManager.CachedItems.Skip(1).FirstOrDefault();
+                var entryId = OffhandEntryId;
+                if (entryId == 0) return null;
+                return ObjectManager.CachedItems.FirstOrDefault(item => item.Entry == entryId);
             }
         }
         
