@@ -67,6 +67,36 @@ namespace Styx.Logic.Combat
 					}
 				}
 
+				// Druid form-specific spell aliases (ported from HB 4.3.4 smethod_4).
+				// In WotLK 3.3.5a, bear/cat variants share the same base name from the
+				// client, so only one survives the ContainsKey check above. This second
+				// pass adds form-qualified keys by spell ID so CRs that call e.g.
+				// HasSpell("Swipe (Bear)") or CanCast("Mangle (Cat)") resolve correctly.
+				foreach (WoWSpell spell in knownSpells)
+				{
+					switch (spell.Id)
+					{
+						case 779:   // Swipe (Bear)
+							_knownSpells["Swipe (Bear)"] = spell;
+							break;
+						case 62078: // Swipe (Cat)
+							_knownSpells["Swipe (Cat)"] = spell;
+							break;
+						case 33876: // Mangle (Cat)
+							_knownSpells["Mangle (Cat)"] = spell;
+							break;
+						case 33878: // Mangle (Bear)
+							_knownSpells["Mangle (Bear)"] = spell;
+							break;
+						case 16979: // Feral Charge (Bear)
+							_knownSpells["Feral Charge (Bear)"] = spell;
+							break;
+						case 49376: // Feral Charge (Cat) — WotLK 3.0.2+
+							_knownSpells["Feral Charge (Cat)"] = spell;
+							break;
+					}
+				}
+
 				_lastKnownSpellCount = NumKnownSpells;
 				Logging.Write("Spell book built");
 			}
@@ -234,6 +264,11 @@ namespace Styx.Logic.Combat
 			return false;
 		}
 
+		public static bool HasSpell(WoWSpell spell)
+		{
+			return spell != null && HasSpell(spell.Id);
+		}
+
 		public static WoWSpell? GetSpellByName(string name)
 		{
 			if (_knownSpells.TryGetValue(name, out WoWSpell? spell))
@@ -266,13 +301,25 @@ namespace Styx.Logic.Combat
 		}
 
 		// HB 4.3.4 compatibility wrappers
-		public static bool CanCast(string spellName) => CanCastSpell(spellName);
+		public static bool CanCast(string spellName) => CanCast(spellName, false);
+
+		/// <summary>
+		/// HB 4.3.4 overload: CanCast(string, bool checkRange) — uses current target.
+		/// </summary>
+		public static bool CanCast(string spellName, bool checkRange)
+			=> CanCast(spellName, StyxWoW.Me?.CurrentTarget!, checkRange);
 
 		// HB convenience overload: allow calling CanCast with just an int spellId
 		public static bool CanCast(int spellId)
 		{
 			return CanCast(spellId, StyxWoW.Me?.CurrentTarget);
 		}
+
+		/// <summary>
+		/// HB 4.3.4 overload: CanCast(int, bool checkRange) — uses current target.
+		/// </summary>
+		public static bool CanCast(int spellId, bool checkRange)
+			=> CanCast(spellId, StyxWoW.Me?.CurrentTarget!, checkRange);
 
 		public static bool CanCast(int spellId, WoWUnit target, bool checkRange = true, bool checkMovement = false)
 		{
@@ -295,6 +342,18 @@ namespace Styx.Logic.Combat
 				return false;
 			return CanCast(spell, target, checkRange, checkMovement);
 		}
+
+		/// <summary>
+		/// HB 4.3.4 overload: CanCast(WoWSpell) — no target, no range check.
+		/// </summary>
+		public static bool CanCast(WoWSpell spell)
+			=> CanCast(spell, false);
+
+		/// <summary>
+		/// HB 4.3.4 overload: CanCast(WoWSpell, bool checkRange) — uses current target.
+		/// </summary>
+		public static bool CanCast(WoWSpell spell, bool checkRange)
+			=> CanCast(spell, StyxWoW.Me?.CurrentTarget!, checkRange);
 
 		public static bool CanCast(WoWSpell spell, WoWUnit target, bool checkRange = true, bool checkMovement = false)
 		{
@@ -320,6 +379,8 @@ namespace Styx.Logic.Combat
 			// HB 4.3.4: Range checks
 			if (checkRange && target != null)
 			{
+				if (!target.InLineOfSpellSight)
+					return false;
 				if (spell.MaxRange != 0f && target.Distance > (double)spell.MaxRange)
 					return false;
 				if (spell.MaxRange == 0f && !target.IsWithinMeleeRange)
@@ -357,39 +418,30 @@ namespace Styx.Logic.Combat
 			}
 		}
 
-		public static bool Cast(string spellName) => CastSpell(spellName);
+		public static bool Cast(string spellName) => Cast(spellName, StyxWoW.Me?.CurrentTarget);
 
 		/// <summary>
-		/// BUG-18 fix: Cast spell on a specific target using GUID-based casting.
-		/// No longer uses target-first approach which could lose the target between calls.
+		/// HB 4.3.4 line 308: Resolves spell by name, delegates to Cast(WoWSpell, WoWUnit).
+		/// No CanCast guard — callers check CanCast separately before calling Cast.
 		/// </summary>
 		public static bool Cast(string spellName, WoWUnit target)
 		{
-			if (target == null)
-				return Cast(spellName);
-			
 			WoWSpell? spell = GetSpellByName(spellName);
 			if (spell == null)
-			{
-				Logging.WriteDebug("[SpellManager] Cast: spell '{0}' not found", spellName);
 				return false;
-			}
-			
-			// Use GUID-based casting — atomic, no target swap needed
-			CastSpellById(spell.Id, target.Guid);
-			return true;
+			return Cast(spell, target);
 		}
 
 		public static bool Cast(WoWSpell spell)
 		{
 			if (spell == null)
 				return false;
-			return CastSpell(spell.Name);
+			return Cast(spell, StyxWoW.Me?.CurrentTarget);
 		}
 
 		/// <summary>
-		/// Cast a spell (by WoWSpell) on a specific target using GUID-based casting.
-		/// FEAT-06: Merged from SpellManagerEx.
+		/// HB 4.3.4 line 333: Cast spell on target via GUID-based CastSpellById.
+		/// No CanCast guard — callers check CanCast separately before calling Cast.
 		/// </summary>
 		public static bool Cast(WoWSpell spell, WoWUnit target)
 		{
@@ -790,6 +842,65 @@ namespace Styx.Logic.Combat
 				return false;
 			}
 		}
+
+		#region LuaEvent Auto-Refresh (ported from HB 4.3.4 smethod_0/1/2/3)
+
+		/// <summary>
+		/// HB 4.3.4 smethod_1: Called once during engine initialization.
+		/// Hooks BotEvents.OnBotStarted so each bot run re-subscribes the Lua
+		/// events and forces a spellbook rebuild.
+		/// </summary>
+		internal static void Initialize()
+		{
+			BotEvents.OnBotStarted += OnBotStarted_RefreshSpells;
+			_knownSpells.Clear();
+			_lastKnownSpellCount = 0;
+			Refresh();
+			Logging.WriteDebug("[SpellManager] Initialize \u2014 subscribed to BotEvents.OnBotStarted");
+		}
+
+		/// <summary>
+		/// HB 4.3.4 smethod_2: Called during engine teardown.
+		/// Unhooks BotEvents.OnBotStarted and clears the spellbook.
+		/// </summary>
+		internal static void Shutdown()
+		{
+			_knownSpells.Clear();
+			_lastKnownSpellCount = 0;
+			BotEvents.OnBotStarted -= OnBotStarted_RefreshSpells;
+			Logging.WriteDebug("[SpellManager] Shutdown \u2014 unsubscribed from BotEvents.OnBotStarted");
+		}
+
+		/// <summary>
+		/// HB 4.3.4 smethod_0: OnBotStarted handler. Rebuilds the spellbook, then
+		/// detach+reattach the two Lua events (idempotent pattern from HB 4.3.4).
+		/// </summary>
+		private static void OnBotStarted_RefreshSpells(EventArgs args)
+		{
+			_lastKnownSpellCount = 0;
+			Refresh();
+
+			// Idempotent: detach first to avoid duplicate subscriptions (HB 4.3.4 pattern)
+			Lua.Events.DetachEvent("LEARNED_SPELL_IN_TAB", new LuaEventHandlerDelegate(OnSpellBookChanged));
+			Lua.Events.DetachEvent("ACTIVE_TALENT_GROUP_CHANGED", new LuaEventHandlerDelegate(OnSpellBookChanged));
+			Lua.Events.AttachEvent("LEARNED_SPELL_IN_TAB", new LuaEventHandlerDelegate(OnSpellBookChanged));
+			Lua.Events.AttachEvent("ACTIVE_TALENT_GROUP_CHANGED", new LuaEventHandlerDelegate(OnSpellBookChanged));
+
+			Logging.WriteDebug("[SpellManager] Subscribed to LEARNED_SPELL_IN_TAB, ACTIVE_TALENT_GROUP_CHANGED");
+		}
+
+		/// <summary>
+		/// HB 4.3.4 smethod_3: Lua event handler. Forces a full spellbook rebuild
+		/// when the player learns a new spell or switches talent spec.
+		/// </summary>
+		private static void OnSpellBookChanged(object sender, LuaEventArgs e)
+		{
+			Logging.Write("[SpellManager] Spellbook change detected ({0}) \u2014 rebuilding", e.EventName);
+			_lastKnownSpellCount = 0;
+			Refresh();
+		}
+
+		#endregion
 
 		#region Native Methods
 
