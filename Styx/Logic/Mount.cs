@@ -28,7 +28,7 @@ namespace Styx.Logic
 		/// <summary>
 		/// Fired when the player dismounts (HB 4.3.4 compatibility).
 		/// </summary>
-		public static event EventHandler? OnDismount;
+		public static event EventHandler<EventArgs>? OnDismount;
 
 		private static LocalPlayer? Me => ObjectManager.Me;
 
@@ -106,7 +106,7 @@ namespace Styx.Logic
 		internal static void RaiseOnDismount(string? reason)
 		{
 			reason ??= string.Empty;
-			EventHandler? handler = OnDismount;
+			EventHandler<EventArgs>? handler = OnDismount;
 			if (handler == null)
 				return;
 
@@ -196,26 +196,37 @@ namespace Styx.Logic
 			return true;
 		}
 
-		public static void MountUp(CanMountDelegate extra)
+		/// <summary>
+		/// Mounts up with a custom can-mount check and destination (HB 4.3.4).
+		/// Returns true if mount was attempted.
+		/// </summary>
+		public static bool MountUp(CanMountDelegate extra, LocationRetriever travelingTo)
+		{
+			_currentDestinationRetriever = travelingTo;
+			return MountUp(extra);
+		}
+
+		[Obsolete("Use MountUp(CanMountDelegate, LocationRetriever) instead.")]
+		public static bool MountUp(CanMountDelegate extra)
 		{
 			if (!extra())
-				return;
+				return false;
 
 			if (!LevelbotSettings.Instance.UseMount)
-				return;
+				return false;
 
 			// Auto-detect mount if enabled
 			AutoDetectMount();
 
 			if (string.IsNullOrEmpty(LevelbotSettings.Instance.MountName))
-				return;
+				return false;
 
 			LocalPlayer? me = Me;
 			if (me == null || me.Level < 20)
-				return;
+				return false;
 
 			if (!CanMount())
-				return;
+				return false;
 
 			WoWMovement.MoveStop();
 			Logging.Write("Mounting: {0}", LevelbotSettings.Instance.MountName);
@@ -223,6 +234,7 @@ namespace Styx.Logic
 
 			DoMount();
 			_mountTimer.Reset();
+			return true;
 		}
 
 		private static void DoMount()
@@ -367,6 +379,12 @@ namespace Styx.Logic
 			_cantMountSpots.Clear();
 		}
 
+		[Obsolete("StateMount(LocationRetriever) should be used.")]
+		public static void StateMount()
+		{
+			StateMount(static () => WoWPoint.Empty);
+		}
+
 		public static void StateMount(LocationRetriever travelingTo)
 		{
 			if (!LevelbotSettings.Instance.UseMount || Me?.Mounted == true || !CanMount())
@@ -495,7 +513,7 @@ namespace Styx.Logic
 			else if (!isMounted && _wasMounted)
 			{
 				// Just dismounted
-				OnDismount?.Invoke(null, EventArgs.Empty);
+				RaiseOnDismount(string.Empty);
 			}
 
 			_wasMounted = isMounted;

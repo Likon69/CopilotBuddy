@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using Styx.Logic;
 using Styx.Logic.AreaManagement;
 using Styx.Logic.BehaviorTree;
 using Styx.Logic.Combat;
@@ -110,6 +111,11 @@ namespace Styx
         /// FEAT-44: Provides access to the WoW camera.
         /// </summary>
         public static WoWCamera Camera { get; } = new WoWCamera();
+
+        /// <summary>
+        /// Provides access to battleground/world landmarks.
+        /// </summary>
+        public static Landmarks Landmarks { get; } = new Landmarks();
 
         [Obsolete("Use TreeRoot.StatusText instead. This property has been deprecated, and will be removed in a future release.")]
         public static string StatusText

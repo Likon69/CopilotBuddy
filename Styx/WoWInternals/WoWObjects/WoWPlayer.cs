@@ -23,7 +23,6 @@ namespace Styx.WoWInternals.WoWObjects
         private const uint DescPlayerBytes3 = 0x9B;       // PLAYER_BYTES_3 (Inebriation, BattlefieldArenaFaction)
         private const uint DescGuildTimestamp = 0x9D;     // PLAYER_GUILD_TIMESTAMP
         private const uint DescChosenTitle = 0x141;       // PLAYER_CHOSEN_TITLE
-        private const uint DescInebriation = 0x142;       // PLAYER_FIELD_INEBRIATION
         private const uint DescPvpMedalCount = 0x4B0;     // PLAYER_FIELD_PVP_MEDALS
         
         // Race, Class, Gender are inherited from WoWUnit (offset 0x17 - UNIT_FIELD_BYTES_0)
@@ -719,9 +718,6 @@ namespace Styx.WoWInternals.WoWObjects
 
         /// <summary>Currently displayed title (PLAYER_CHOSEN_TITLE).</summary>
         public uint ChosenTitle => ReadDescriptor<uint>(DescChosenTitle);
-
-        /// <summary>Player inebriation level (PLAYER_FIELD_INEBRIATION).</summary>
-        public WoWInebriationLevel Inebriation => (WoWInebriationLevel)ReadDescriptor<uint>(DescInebriation);
 
         #endregion
         

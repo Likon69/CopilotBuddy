@@ -29,7 +29,7 @@ namespace Styx
 		{
 			get
 			{
-				return "http://www.thebuddyforum.com/honorbuddy-forum/";
+				return "";
 			}
 		}
 	}
