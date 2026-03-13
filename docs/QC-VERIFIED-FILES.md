@@ -1,6 +1,6 @@
 # QC Verified Files — DO NOT RE-ANALYZE
 
-> **Last updated:** 2025-07-19
+> **Last updated:** 2026-03-13
 >
 > Every file below has been **manually QC'd** against the HB decompiled references (3.3.5a for offsets, 4.3.4 for API, 6.2.3 for nav/UI).
 > Each was verified line-by-line, then committed individually.
@@ -111,6 +111,48 @@
 | `Styx/WoWInternals/DBC/LfgDungeonExpansion.cs` | Struct34 deobfuscated |
 | `Styx/WoWInternals/Misc/DBC/CreatureFamily.cs` | Struct37 deobfuscated |
 | `Styx/WoWInternals/Misc/DBC/PetFoodFlags.cs` | Exact match |
+
+### Sonnet 4.6 session #2 — SpellAttributes (`6196bf6`)
+
+| File | Summary |
+|------|---------|
+| `Styx/SpellAttributes.cs` | Exact match HB 6.2.3 — [Flags] uint, 32 DBC spell attribute flags |
+| `Styx/SpellAttributesEx.cs` | Exact match HB 6.2.3 |
+| `Styx/SpellAttributesEx2.cs` | Exact match HB 6.2.3 |
+| `Styx/SpellAttributesEx3.cs` | Exact match HB 6.2.3 |
+| `Styx/SpellAttributesEx4.cs` | Exact match HB 6.2.3 |
+| `Styx/SpellAttributesEx5.cs` | Exact match HB 6.2.3 |
+| `Styx/SpellAttributesEx6.cs` | Exact match HB 6.2.3 |
+| `Styx/SpellAttributesEx7.cs` | Exact match HB 6.2.3 |
+| `Styx/SpellAttributesEx8.cs` | Match HB 6.2.3 — 3 Cata+ names (ArmorSpecialization, GuildPerks, Mastery) → Unk for 3.3.5a |
+
+### Sonnet 4.6 session #2 — WoWInternals enums + classes (`ac54f13`)
+
+| File | Summary |
+|------|---------|
+| `Styx/WoWInternals/MoveFlags.cs` | Exact match HB 6.2.3 — 30 flags + 7 composite masks |
+| `Styx/WoWInternals/InputMouseButton.cs` | Exact match HB 6.2.3 |
+| `Styx/WoWInternals/GameInput.cs` | Same API as HB 6.2.3, P/Invoke GetAsyncKeyState instead of internal smethod_13 |
+| `Styx/WoWSpec.cs` | HB 6.2.3 adapted — WotLK specs only, excludes DruidGuardian/Monk/DH |
+| `Styx/WoWInternals/WoWPetControl.cs` | HB 6.2.3 adapted — synchronous DismissPet, Lua focus for targeted cast |
+
+### Sonnet 4.6 session #2 — WoWObjects (`5e1632b`)
+
+| File | Summary |
+|------|---------|
+| `Styx/WoWInternals/WoWObjects/RaidTargetMarker.cs` | Exact match HB 6.2.3 |
+| `Styx/WoWInternals/WoWObjects/WoWArenaTeamInfo.cs` | Exact match HB 4.3.4 — struct, 7 uint fields |
+| `Styx/WoWInternals/WoWObjects/WoWPlayerCombatRating.cs` | HB 6.2.3 adapted — excludes Mastery (WoD) |
+
+### Sonnet 4.6 session #2 — CommonBot (`82ee308`)
+
+| File | Summary |
+|------|---------|
+| `Styx/CommonBot/HealTargeting.cs` | HB 6.2.3 adapted — IsTank instead of spec-based tank detection |
+| `Styx/CommonBot/Frames/GuildBankFrame.cs` | HB 6.2.3 adapted — Lua poll for IsVisible, omits async coroutines |
+| `Styx/CommonBot/Frames/GuildBankTab.cs` | Exact match HB 6.2.3 — same 7 fields, same NumWithdrawls typo |
+| `Styx/CommonBot/Inventory/EquipmentManager.cs` | HB 6.2.3 adapted — explicit Initialize(), omits event listener |
+| `Styx/CommonBot/Inventory/EquipmentSet.cs` | Exact match HB 6.2.3 — same Lua calls, same return indices |
 
 ---
 
