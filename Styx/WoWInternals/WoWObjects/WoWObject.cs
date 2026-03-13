@@ -285,28 +285,20 @@ namespace Styx.WoWInternals.WoWObjects
         /// FEAT-45: Made virtual so LocalPlayer can override.
         /// </summary>
         public virtual bool IsOutdoors => !IsIndoors;
-        public bool InLineOfSight
+        /// <summary>
+        /// Whether this object is in line of sight from the player.
+        /// Uses native CGWorldFrame::Intersect raycasting.
+        /// Ported from HB 4.3.4 WoWObject — WoWUnit overrides with BoundingHeight-aware version.
+        /// </summary>
+        public virtual bool InLineOfSight
         {
             get
             {
-                // Basic implementation: check distance and assume LOS if close enough
-                // Full implementation would require CGWorldFrame::Intersect raycast (expensive)
-                // For most bot purposes, assuming LOS within reasonable range is sufficient
                 if (ObjectManager.Me == null)
                     return false;
-                    
-                float distance = Location.Distance(ObjectManager.Me.Location);
-                // If very close, assume LOS
-                if (distance < 5f)
-                    return true;
-                    
-                // If too far, assume no LOS
-                if (distance > 100f)
-                    return false;
-                    
-                // For medium distances, use basic Z-axis check
-                float zDiff = Math.Abs(Location.Z - ObjectManager.Me.Location.Z);
-                return zDiff < 50f; // Reasonable vertical difference
+                return World.GameWorld.IsInLineOfSight(
+                    ObjectManager.Me.GetTraceLinePos(),
+                    Location.Add(0f, 0f, 2.132f));
             }
         }
 
@@ -314,7 +306,7 @@ namespace Styx.WoWInternals.WoWObjects
         /// HB 4.3.4 compat — was marked [Obsolete], just delegates to InLineOfSight.
         /// External bots (LazyRaider etc.) reference this.
         /// </summary>
-        public bool InLineOfSightOCD => InLineOfSight;
+        public virtual bool InLineOfSightOCD => InLineOfSight;
         
         #endregion
         
