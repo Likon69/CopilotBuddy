@@ -7,6 +7,7 @@ using Styx.Logic.Pathing;
 using Styx.Logic.POI;
 using Styx.WoWInternals;
 using Styx.WoWInternals.WoWObjects;
+using Styx.WoWInternals.World;
 
 namespace Styx.Logic
 {
@@ -17,6 +18,7 @@ namespace Styx.Logic
 		private static readonly List<WoWPoint> _cantMountSpots = new List<WoWPoint>();
 		private static CanMountDelegate? _defaultCanMount;
 		private static bool _wasMounted;
+		private static LocationRetriever? _currentDestinationRetriever;
 
 		/// <summary>
 		/// Fired when the player mounts up (HB 4.3.4 compatibility).
@@ -269,10 +271,10 @@ namespace Styx.Logic
 		{
 			// Use Lua to find mount index
 			string luaCode = string.Format(@"
-				local mountName = '{0}'
+				local mountName = string.lower('{0}')
 				for i = 1, GetNumCompanions('MOUNT') do
-					local _, name = GetCompanionInfo('MOUNT', i)
-					if name == mountName then
+					local _, name, id = GetCompanionInfo('MOUNT', i)
+					if string.lower(name) == mountName or tostring(id) == mountName then
 						return i
 					end
 				end
@@ -326,9 +328,20 @@ namespace Styx.Logic
 			if (!canMount)
 			{
 				AddCantMountSpot(location);
+				return false;
 			}
 
-			return canMount;
+			// HB 4.3.4 ceiling raycast — prevent mount attempts in low-ceiling areas
+			float boundingHeight = me.BoundingHeight;
+			WoWPoint headPos = location + new WoWPoint(0f, 0f, boundingHeight);
+			WoWPoint aboveHead = headPos + new WoWPoint(0f, 0f, boundingHeight / 2f);
+			if (GameWorld.TraceLine(headPos, aboveHead, GameWorld.CGWorldFrameHitFlags.HitTestLOS))
+			{
+				AddCantMountSpot(location);
+				return false;
+			}
+
+			return true;
 		}
 
 		public static bool IsOutdoors
@@ -364,6 +377,7 @@ namespace Styx.Logic
 
 		public static void MountUp(LocationRetriever travelingTo)
 		{
+			_currentDestinationRetriever = travelingTo;
 			MountUp(() =>
 			{
 				WoWUnit? firstUnit = Targeting.Instance.FirstUnit;
@@ -468,6 +482,7 @@ namespace Styx.Logic
 			{
 				// Just mounted — fire event and check Cancel flag (HB 6.2.3 pattern)
 				var args = new MountUpEventArgs(me.IsFlying, "Mount");
+				args.Destination = _currentDestinationRetriever?.Invoke() ?? WoWPoint.Empty;
 				OnMountUp?.Invoke(null, args);
 				if (args.Cancel)
 				{
