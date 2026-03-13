@@ -393,6 +393,8 @@ namespace Styx.WoWInternals.WoWObjects
             }
         }
 
+        public float RenderFacing => Rotation;
+
         public WoWGameObject? Transport => ObjectManager.GetObjectByGuid<WoWGameObject>(WoWMovementInfo.TransportGuid);
 
         public bool IsOnTransport => WoWMovementInfo.TransportGuid != 0UL;
@@ -613,6 +615,14 @@ namespace Styx.WoWInternals.WoWObjects
         /// </summary>
         public double RunicPowerPercent => GetPowerPercent(WoWPowerType.RunicPower);
 
+        /// <summary>Runes percentage (DK). WotLK-valid.</summary>
+        public double RunesPercent => GetPowerPercent(WoWPowerType.Runes);
+
+        // Cata stubs: Eclipse/HolyPower/SoulShards don't exist in WotLK — always 0.
+        public double EclipsePercent => 0.0;
+        public double HolyPowerPercent => 0.0;
+        public double SoulShardsPercent => 0.0;
+
         public double ManaPercent
         {
             get
@@ -636,6 +646,11 @@ namespace Styx.WoWInternals.WoWObjects
         internal int InternalLevel => GetDescriptor<int>(UnitFields.Level);
 
         public uint FactionId => GetDescriptor<uint>(UnitFields.FactionTemplate);
+
+        /// <summary>
+        /// HB 4.3.4 WoWUnit.Faction — returns the WoWFaction for this unit's FactionId.
+        /// </summary>
+        public WoWFaction? Faction => WoWFaction.FromId(FactionId);
         
         #endregion
 
@@ -670,6 +685,13 @@ namespace Styx.WoWInternals.WoWObjects
         public ulong Summon => GetDescriptor<ulong>(UnitFields.Summon);
         public ulong Charmed => GetDescriptor<ulong>(UnitFields.Charm);
         public ulong Critter => GetDescriptor<ulong>(UnitFields.Critter);
+
+        public WoWUnit? CharmedUnit => ObjectManager.GetObjectByGuid<WoWUnit>(Charmed);
+        public ulong CharmedUnitGuid => Charmed;
+        public WoWUnit? SummonedUnit => ObjectManager.GetObjectByGuid<WoWUnit>(Summon);
+        public ulong SummonedUnitGuid => Summon;
+        public WoWUnit? VanityPet => ObjectManager.GetObjectByGuid<WoWUnit>(Critter);
+        public ulong VanityPetGuid => Critter;
 
         public WoWUnit? SummonedBy => ObjectManager.GetObjectByGuid<WoWUnit>(SummonedByGuid);
         public ulong SummonedByGuid => GetDescriptor<ulong>(UnitFields.SummonedBy);
@@ -820,9 +842,8 @@ namespace Styx.WoWInternals.WoWObjects
         #region Casting
 
         /// <summary>
-        /// Gets the spell ID currently being cast (regular cast).
-        /// Returns 0 if not casting.
-        /// Offset: BaseAddress + 2668 (WoW 3.3.5a build 12340)
+        /// Gets the spell ID currently being cast or channeled (combined).
+        /// HB 4.3.4: returns NonChanneledCastingSpellId if != 0, else ChanneledCastingSpellId.
         /// </summary>
         public int CastingSpellId
         {
@@ -831,7 +852,8 @@ namespace Styx.WoWInternals.WoWObjects
                 Memory? wow = ObjectManager.Wow;
                 if (wow == null)
                     return 0;
-                return wow.Read<int>(BaseAddress + 2668);
+                int nonChanneled = wow.Read<int>(BaseAddress + 2668);
+                return nonChanneled != 0 ? nonChanneled : CastingChanneledId;
             }
         }
 
@@ -941,9 +963,19 @@ namespace Styx.WoWInternals.WoWObjects
         public int ChanneledCastingSpellId => ChannelSpellId;
 
         /// <summary>
-        /// Alias for CastingSpellId - HB 4.3.4 compatibility.
+        /// Returns the raw non-channeled casting spell ID (offset 2668).
+        /// HB 4.3.4 compatibility — reads only the non-channeled cast.
         /// </summary>
-        public int NonChanneledCastingSpellId => CastingSpellId;
+        public int NonChanneledCastingSpellId
+        {
+            get
+            {
+                Memory? wow = ObjectManager.Wow;
+                if (wow == null)
+                    return 0;
+                return wow.Read<int>(BaseAddress + 2668);
+            }
+        }
 
         /// <summary>
         /// Returns true if this unit's current cast can be interrupted.
@@ -1506,15 +1538,27 @@ namespace Styx.WoWInternals.WoWObjects
             return UnitThreatInfo.GetThreatInfo(this, otherUnit);
         }
 
-        public bool Aggro => ThreatInfo.ThreatStatus >= ThreatStatus.NoobishTank;
+        public bool Aggro
+        {
+            get
+            {
+                if (IsPlayer && PvpFlagged && IsHostile && (IsTargetingMeOrPet || IsTargetingAnyMinion))
+                    return Combat;
+                return ThreatInfo.ThreatStatus >= ThreatStatus.NoobishTank;
+            }
+        }
 
         public bool PetAggro
         {
             get
             {
-                WoWUnit? pet = ObjectManager.Me!.Pet;
-                if (pet != null && Guid == pet.CurrentTargetGuid)
-                    return pet.Combat;
+                WoWUnit? pet = StyxWoW.Me!.Pet;
+                if (pet != null && pet.GotTarget)
+                {
+                    WoWUnit? currentTarget = pet.CurrentTarget;
+                    if (currentTarget != null && currentTarget.Combat)
+                        return IsTargetingMeOrPet;
+                }
                 return false;
             }
         }
@@ -1782,6 +1826,14 @@ namespace Styx.WoWInternals.WoWObjects
         public PowerInfo HappinessInfo => GetPowerInfo(WoWPowerType.Happiness);
         /// <summary>Convenience: FocusInfo.</summary>
         public PowerInfo FocusInfo => GetPowerInfo(WoWPowerType.Focus);
+        /// <summary>Convenience: RunesPowerInfo (DK). WotLK-valid.</summary>
+        public PowerInfo RunesPowerInfo => GetPowerInfo(WoWPowerType.Runes);
+        // Cata stubs: these power types don't exist in WotLK.
+        public PowerInfo SoulShardsInfo => default;
+        public PowerInfo EclipseInfo => default;
+        public PowerInfo HolyPowerInfo => default;
+
+        public PowerInfo CurrentPowerInfo => GetPowerInfo(PowerType);
 
         /// <summary>Generic power percent — auto-selects the unit's active power type.</summary>
         public double PowerPercent => GetPowerPercent(PowerType);
@@ -1957,11 +2009,11 @@ namespace Styx.WoWInternals.WoWObjects
         public Dictionary<string, WoWAura> Buffs => Auras;
 
         public Dictionary<string, WoWAura> PassiveAuras =>
-            Auras.Where(a => a.Value.IsPassive || a.Value.TimeLeft.Milliseconds <= 0)
+            Auras.Where(a => a.Value.IsPassive || a.Value.TimeLeft.TotalMilliseconds <= 0)
                 .ToDictionary(k => k.Key, v => v.Value);
 
         public Dictionary<string, WoWAura> ActiveAuras =>
-            Auras.Where(a => !a.Value.IsPassive && a.Value.TimeLeft.Milliseconds > 0)
+            Auras.Where(a => !a.Value.IsPassive && a.Value.TimeLeft.TotalMilliseconds > 0)
                 .ToDictionary(k => k.Key, v => v.Value);
 
         public Dictionary<string, WoWAura> Debuffs =>
@@ -2037,9 +2089,10 @@ namespace Styx.WoWInternals.WoWObjects
 
         /// <summary>
         /// Whether this unit is in line of sight from the player.
-        /// Ported from HB 4.3.4.
+        /// Uses GetTraceLinePos() for eye-level raycast on both ends.
+        /// Ported from HB 4.3.4 WoWUnit — overrides WoWObject base.
         /// </summary>
-        public bool InLineOfSight
+        public override bool InLineOfSight
         {
             get
             {
