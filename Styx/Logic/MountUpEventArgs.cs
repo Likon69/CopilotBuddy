@@ -1,5 +1,6 @@
 #nullable disable
 using System;
+using Styx.Logic.Pathing;
 
 namespace Styx.Logic
 {
@@ -19,6 +20,11 @@ namespace Styx.Logic
         public string MountName { get; set; }
 
         /// <summary>
+        /// The destination the bot is traveling to.
+        /// </summary>
+        public WoWPoint Destination { get; set; }
+
+        /// <summary>
         /// Set to true to cancel the mount-up attempt (e.g. during elevator ride).
         /// HB 6.2.3 pattern: MeshNavigator.method_17 cancels mount while riding transport.
         /// </summary>
@@ -28,12 +34,14 @@ namespace Styx.Logic
         {
             IsFlying = false;
             MountName = string.Empty;
+            Destination = WoWPoint.Empty;
         }
 
         public MountUpEventArgs(bool isFlying, string mountName)
         {
             IsFlying = isFlying;
             MountName = mountName ?? string.Empty;
+            Destination = WoWPoint.Empty;
         }
     }
 }
