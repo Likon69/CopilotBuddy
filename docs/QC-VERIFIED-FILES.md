@@ -1,6 +1,6 @@
 # QC Verified Files — DO NOT RE-ANALYZE
 
-> **Last updated:** 2026-03-13
+> **Last updated:** 2026-03-14
 >
 > Every file below has been **manually QC'd** against the HB decompiled references (3.3.5a for offsets, 4.3.4 for API, 6.2.3 for nav/UI).
 > Each was verified line-by-line, then committed individually.
@@ -185,6 +185,33 @@
 |------|---------|
 | `Styx/Logic/Combat/RoutineManager.cs` | Added Current setter (exists in HB 4.3.4) |
 | `Styx/Logic/Combat/SpellManager.cs` | Added CastRandom/BuffRandom int+bool overloads (HB 4.3.4) |
+
+### Sonnet 4.6 session #4 — MountHelper (`f883ef3`)
+
+| File | Summary |
+|------|---------|
+| `Styx/Logic/MountHelper.cs` | MountType enum → DBC MountCapability IDs (exact match HB 4.3.4 MountType.cs), DetermineMountType hack removed → `SpellEffect1.MiscValueB` |
+
+**Rejected in session #4:**
+- 4 nav files (IPlayerMover, ITerrainHeightProvider, ClickToMoveMover, MeshMovePath) — CB uses HB WoD nav, don't touch
+- Navigator.cs modification — reverted
+- WoWCurrency.cs Cata currencies — reverted (not WotLK)
+
+### Sonnet 4.6 session #5 — Inventory + Camera + Props (`2705c20`, `ac87236`, `78c8015`)
+
+| File | Summary |
+|------|---------|
+| `Styx/WoWInventorySlot.cs` | None=-1, add Bag1-4 (Head=0..Bag4=22 match HB 4.3.4) — fixed from Sonnet's wrong None=0/Bag1=20 |
+| `Styx/WoWInternals/WoWPlayerInventory.cs` | Comment fix (slots 0-22), Equipped kept at 23U (HB 4.3.4) |
+| `Styx/WoWInternals/WoWPaperDoll.cs` | Add Bag1-4 properties + Shoulder/Wrist singular aliases (HB 4.3.4) |
+| `Styx/WoWInternals/WoWCamera.cs` | Rename CameraMatrix → Matrix (HB 4.3.4 primary name) |
+| `Styx/StyxWoW.cs` | Add GameGraphicsApi via GetCVar (HB 4.3.4 API, Lua impl) |
+| `Styx/WoWInternals/WoWObjects/WoWTotemInfo.cs` | Add Spell, IconPath, Expires properties (HB 4.3.4) |
+
+**Fixed during QC:**
+- WoWInventorySlot: Sonnet had None=0 shifting all values +1 (Bag1=20 instead of 19). Fixed: None=-1, auto-sequence from Head=0
+- WoWPlayerInventory: Sonnet changed Equipped to 24U. Reverted to 23U (HB 4.3.4)
+- WoWCamera: Sonnet invented "CameraMatrix" as primary. HB 4.3.4 uses "Matrix"
 
 ---
 
