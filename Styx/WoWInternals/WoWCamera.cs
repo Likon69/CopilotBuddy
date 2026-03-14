@@ -158,7 +158,7 @@ namespace Styx.WoWInternals
         {
             get
             {
-                Matrix4x4 matrix = CameraMatrix;
+                Matrix4x4 matrix = Matrix;
                 return new Vector3(matrix.M11, matrix.M12, matrix.M13);
             }
         }
@@ -170,7 +170,7 @@ namespace Styx.WoWInternals
         {
             get
             {
-                Matrix4x4 matrix = CameraMatrix;
+                Matrix4x4 matrix = Matrix;
                 return new Vector3(matrix.M21, matrix.M22, matrix.M23);
             }
         }
@@ -182,7 +182,7 @@ namespace Styx.WoWInternals
         {
             get
             {
-                Matrix4x4 matrix = CameraMatrix;
+                Matrix4x4 matrix = Matrix;
                 return new Vector3(matrix.M31, matrix.M32, matrix.M33);
             }
         }
@@ -190,7 +190,7 @@ namespace Styx.WoWInternals
         /// <summary>
         /// Gets the camera orientation matrix.
         /// </summary>
-        public Matrix4x4 CameraMatrix
+        public Matrix4x4 Matrix
         {
             get
             {
