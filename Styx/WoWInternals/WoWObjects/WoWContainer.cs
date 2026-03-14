@@ -101,6 +101,33 @@ namespace Styx.WoWInternals.WoWObjects
 
         public bool IsFull => FreeSlotsCount == 0;
         public bool IsEmpty => FreeSlotsCount == NumSlots;
+
+        /// <summary>
+        /// Alias for NumSlots. Ported from HB 4.3.4 WoWContainer.Slots.
+        /// </summary>
+        public uint Slots => NumSlots;
+
+        /// <summary>
+        /// Number of occupied slots. Ported from HB 4.3.4 WoWContainer.UsedSlots.
+        /// </summary>
+        public uint UsedSlots => NumSlots - FreeSlotsCount;
+
+        /// <summary>
+        /// Gets the bag slot index (0–10) this container occupies, or -1 if not found.
+        /// Ported from HB 4.3.4 WoWContainer.BagIndex.
+        /// </summary>
+        public new int BagIndex
+        {
+            get
+            {
+                for (uint i = 0U; i <= 10U; i++)
+                {
+                    if (ObjectManager.Me.GetBagGuidAtIndex(i) == Guid)
+                        return (int)i;
+                }
+                return -1;
+            }
+        }
         
         #endregion
         
@@ -179,6 +206,21 @@ namespace Styx.WoWInternals.WoWObjects
                 }
             }
         }
+
+        /// <summary>
+        /// Gets non-null items as an array. Ported from HB 4.3.4 WoWContainer.PhysicalItems.
+        /// </summary>
+        public WoWItem[] PhysicalItems => Items.ToArray();
+
+        /// <summary>
+        /// Returns the item GUID at the given slot. Ported from HB 4.3.4 WoWContainer.GetItemGuidBySlot.
+        /// </summary>
+        public ulong GetItemGuidBySlot(uint slot) => GetSlotGuid(slot);
+
+        /// <summary>
+        /// Returns the item at the given slot. Ported from HB 4.3.4 WoWContainer.GetItemBySlot.
+        /// </summary>
+        public WoWItem? GetItemBySlot(uint slot) => GetSlotItem(slot);
         
         #endregion
         
