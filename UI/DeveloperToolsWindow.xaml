@@ -344,7 +344,6 @@
                       <GridViewColumn Header="Position" Width="120" DisplayMemberBinding="{Binding Location, Mode=OneTime}"/>
                       <GridViewColumn Header="Distance" Width="75" DisplayMemberBinding="{Binding Distance, Mode=OneTime}"/>
                       <GridViewColumn Header="Type" Width="75" DisplayMemberBinding="{Binding Type, Mode=OneTime}"/>
-                      <GridViewColumn Header="Subtype" Width="90" DisplayMemberBinding="{Binding SubType, Mode=OneTime}"/>
                       <GridViewColumn Header="SpellFocus" Width="90" DisplayMemberBinding="{Binding SpellFocus, Mode=OneTime}"/>
                       <GridViewColumn Header="LockType" Width="90" DisplayMemberBinding="{Binding LockType, Mode=OneTime}"/>
                     </GridView>

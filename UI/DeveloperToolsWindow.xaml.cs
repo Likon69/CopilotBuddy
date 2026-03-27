@@ -674,10 +674,9 @@ namespace CopilotBuddy.UI
             var location = selected.Location;
             string xml = string.Format(
                 CultureInfo.InvariantCulture,
-                "<GameObject Name=\"{0}\" Entry=\"{1}\" X=\"{2}\" Y=\"{3}\" Z=\"{4}\" SubType=\"{5}\" />",
+                "<GameObject Name=\"{0}\" Entry=\"{1}\" X=\"{2}\" Y=\"{3}\" Z=\"{4}\" />",
                 selected.Name, selected.Entry,
-                FormatCoordinate(location.X), FormatCoordinate(location.Y), FormatCoordinate(location.Z),
-                selected.SubType);
+                FormatCoordinate(location.X), FormatCoordinate(location.Y), FormatCoordinate(location.Z));
 
             Logging.Write(xml);
             try { System.Windows.Clipboard.SetText(xml); } catch { }
