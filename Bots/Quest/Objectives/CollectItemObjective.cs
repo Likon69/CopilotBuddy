@@ -157,7 +157,12 @@ public class CollectItemObjective : QuestObjective
             return true;
         if (!this.QuestArea.HotspotsCreated)
             this.QuestArea.CreateHotspots();
-        return this.QuestArea.Hotspots.Count > 0;
+        if (this.QuestArea.Hotspots.Count > 0)
+            return true;
+        // item_loot.db can auto-generate hotspots in CreateBranch
+        if (ItemLootQueries.IsAvailable && ItemLootQueries.GetCreaturesForItem((uint)this.Objective.ID).Count > 0)
+            return true;
+        return false;
     }
 
     public override Composite CreateBranch()
@@ -180,6 +185,13 @@ public class CollectItemObjective : QuestObjective
                 this.QuestArea.TargetMaxLevel = level + 5;
                 this.QuestArea.TargetMinLevel = this.Quest.Level - 5;
                 area = (GrindArea)this.QuestArea;
+                // If QuestArea produced no hotspots, auto-generate from item_loot.db + CreatureSpawns.db
+                if (area.Hotspots.Count == 0)
+                {
+                    GrindArea autoArea = TryAutoGenerateHotspots(level);
+                    if (autoArea != null)
+                        area = autoArea;
+                }
             }
             StyxWoW.AreaManager.SetArea(area);
             
@@ -487,6 +499,7 @@ public class CollectItemObjective : QuestObjective
             CollectFromCollection collectFrom = this._collectItemInfo?.OverridedCollectFrom;
             if ((collectFrom == null || collectFrom.Count <= 0 || !collectFrom.ContainsMob(entry)) && 
                 !DropDatabase.UnitDropsItem(entry, (uint)this.Objective.ID) && 
+                !ItemLootQueries.UnitDropsItem(entry, (uint)this.Objective.ID) &&
                 !info.QuestItems.Contains((uint)this.Objective.ID))
             {
                 this._excludedMobs.Add(entry);
@@ -512,6 +525,7 @@ public class CollectItemObjective : QuestObjective
             CollectFromCollection collectFrom = this._collectItemInfo?.OverridedCollectFrom;
             if ((collectFrom == null || collectFrom.Count <= 0 || !collectFrom.ContainsGameObject(entry)) && 
                 !DropDatabase.GameObjectDropsItem(entry, (uint)this.Objective.ID) && 
+                !ItemLootQueries.GameObjectDropsItem(entry, (uint)this.Objective.ID) &&
                 !info.QuestItems.Contains(this.Objective.ID))
             {
                 this._excludedGameObjects.Add(entry);
@@ -527,5 +541,38 @@ public class CollectItemObjective : QuestObjective
     public override string ToString()
     {
         return string.Format("[CollectItemObjective ItemID: {0}, Count: {1}]", this.Objective.ID, this.Objective.Count);
+    }
+
+    /// <summary>
+    /// Auto-generates hotspots from item_loot.db (creature entries) + CreatureSpawns.db (spawn positions).
+    /// </summary>
+    private GrindArea TryAutoGenerateHotspots(int level)
+    {
+        uint itemId = (uint)this.Objective.ID;
+        uint mapId = StyxWoW.Me.MapId;
+        int targetMax = level + 5;
+        int targetMin = this.Quest.Level - 5;
+
+        if (!ItemLootQueries.IsAvailable || !CreatureSpawnQueries.IsAvailable)
+            return null;
+
+        var creatureEntries = ItemLootQueries.GetCreaturesForItem(itemId);
+        if (creatureEntries.Count == 0)
+            return null;
+
+        var allHotspots = new List<WoWPoint>();
+        foreach (uint creatureEntry in creatureEntries)
+            allHotspots.AddRange(CreatureSpawnQueries.GenerateHotspots(creatureEntry, mapId));
+
+        if (allHotspots.Count == 0)
+            return null;
+
+        Logging.Write("[CollectItem] Auto-generated {0} hotspots for item {1} from {2} creatures (quest: {3})",
+            allHotspots.Count, itemId, creatureEntries.Count, this.Quest.Name);
+        return new GrindArea(new HotspotManager((IEnumerable<WoWPoint>)allHotspots))
+        {
+            TargetMaxLevel = targetMax,
+            TargetMinLevel = targetMin
+        };
     }
 }
