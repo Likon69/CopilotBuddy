@@ -23,6 +23,9 @@ namespace Tripper.Navigation
         private bool _isDisposed;
         private DateTime _lastGarbageCollect = DateTime.UtcNow;
 
+        // HB 6.2.3 pattern: prevent GC of native callback delegate
+        private NativeMethods.TileLoadedCallbackDelegate? _nativeTileLoadedCallback;
+
         #endregion
 
         #region Events
@@ -215,6 +218,10 @@ namespace Tripper.Navigation
                 {
                     // Navigation.dll initializes automatically in DllMain
                     // Tiles are loaded on-demand when CalculatePath is called
+                    
+                    // HB 6.2.3 pattern: register tile loaded callback (mirrors WorldMeshManager.method_3)
+                    _nativeTileLoadedCallback = OnNativeTileLoaded;
+                    NativeMethods.SetTileLoadedCallback(_nativeTileLoadedCallback);
                     
                     // Sync managed filter to native filter once mesh layer is ready.
                     ApplyCurrentQueryFilterToNative();
@@ -1519,15 +1526,6 @@ namespace Tripper.Navigation
         }
 
         /// <summary>
-        /// Enables or disables tile streaming mode.
-        /// </summary>
-        /// <param name="enabled">Enable tile streaming.</param>
-        public void SetTileStreamingEnabled(bool enabled)
-        {
-            NativeMethods.SetTileStreamingEnabled(enabled);
-        }
-
-        /// <summary>
         /// Ensures tiles around position are loaded (HB-style streaming).
         /// Use this before pathfinding to ensure navmesh coverage.
         /// </summary>
@@ -1760,6 +1758,15 @@ namespace Tripper.Navigation
 
         #region Event Helpers
 
+        /// <summary>
+        /// Callback invoked by Navigation.dll when a navmesh tile is loaded.
+        /// Mirrors HB 6.2.3 WorldMeshManager.method_3 → fires TileLoaded event.
+        /// </summary>
+        private void OnNativeTileLoaded(uint mapId, int x, int y)
+        {
+            RaiseTileLoaded(mapId, x, y);
+        }
+
         private void RaisePathProgress(PathFindResult result)
         {
             PathProgress?.Invoke(this, new PathProgressEventArgs(result));
@@ -1794,6 +1801,13 @@ namespace Tripper.Navigation
 
             lock (_meshLock)
             {
+                // Unregister native callback before GC can collect the delegate
+                if (_nativeTileLoadedCallback != null)
+                {
+                    NativeMethods.SetTileLoadedCallback(null!);
+                    _nativeTileLoadedCallback = null;
+                }
+
                 UnloadMeshes();
                 _queryFilters.Clear();
                 _isDisposed = true;

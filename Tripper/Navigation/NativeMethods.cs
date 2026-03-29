@@ -437,14 +437,6 @@ namespace Tripper.Navigation
         internal static extern int GetLoadedTilesCount(uint mapId);
 
         /// <summary>
-        /// Enables or disables tile streaming mode.
-        /// When enabled, tiles are loaded on-demand instead of all at once.
-        /// </summary>
-        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void SetTileStreamingEnabled(
-            [MarshalAs(UnmanagedType.I1)] bool enabled);
-
-        /// <summary>
         /// Ensures tiles around position are loaded (HB-style streaming).
         /// </summary>
         /// <param name="mapId">Map ID.</param>
@@ -481,6 +473,20 @@ namespace Tripper.Navigation
         /// </summary>
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr GetDefaultFilter();
+
+        /// <summary>
+        /// Callback delegate invoked by Navigation.dll when a navmesh tile is loaded.
+        /// Mirrors HB 6.2.3 Tripper.RecastManaged.Detour.LoadTileDelegate pattern.
+        /// </summary>
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate void TileLoadedCallbackDelegate(uint mapId, int x, int y);
+
+        /// <summary>
+        /// Registers a managed callback to be invoked when a tile is loaded in MMapManager.
+        /// Mirrors HB 6.2.3 NavMeshQuery.SetTileLoaderFunction().
+        /// </summary>
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void SetTileLoadedCallback(TileLoadedCallbackDelegate callback);
 
         #endregion
 
