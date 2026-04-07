@@ -601,5 +601,42 @@ namespace Tripper.Navigation
         internal static extern bool NavStatusHasFlag(uint status, uint flag);
 
         #endregion
+
+        #region OffMesh Connections - HB 4.3.4 Style
+
+        /// <summary>
+        /// Checks if a position is near an offmesh connection (portal, elevator, etc.).
+        /// Returns the endpoint, type, and interact ID if found.
+        /// </summary>
+        [DllImport(DllName, EntryPoint = "IsOffMeshConnection_C", CallingConvention = CallingConvention.Cdecl)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        internal static extern bool IsOffMeshConnection(
+            uint mapId,
+            XYZ position,
+            out XYZ outEnd,
+            out byte outType,
+            out uint outInteractId);
+
+        /// <summary>
+        /// Adds a custom offmesh connection at runtime (injected into the navmesh).
+        /// </summary>
+        [DllImport(DllName, EntryPoint = "AddOffMeshConnection_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void AddOffMeshConnection(
+            uint mapId,
+            XYZ start,
+            XYZ end,
+            float radius,
+            byte flags,
+            byte type,
+            uint interactId);
+
+        /// <summary>
+        /// Loads offmesh connections from binary .offmesh file for a specific tile.
+        /// </summary>
+        [DllImport(DllName, EntryPoint = "LoadTileOffMesh_C", CallingConvention = CallingConvention.Cdecl)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        internal static extern bool LoadTileOffMesh(uint mapId, int tileX, int tileY);
+
+        #endregion
     }
 }
