@@ -32,7 +32,10 @@ public class ForcedQuestPickUp : ForcedBehavior
 {
     private static readonly Frame QuestTitleButton = new Frame("QuestTitleButton1");
     private static readonly Frame QuestFrameCompleteQuestButton = new Frame("QuestFrameCompleteQuestButton");
+    private static readonly Frame QuestFrameAcceptButton = new Frame("QuestFrameAcceptButton");
+    private static readonly Frame QuestFrameCompleteButton = new Frame("QuestFrameCompleteButton");
     private int lastShownQuestId = -1;
+    private int _handleQuestFrameAttempts;
 
     public ForcedQuestPickUp(
         uint questId,
@@ -169,16 +172,11 @@ public class ForcedQuestPickUp : ForcedBehavior
                     (Composite)new TreeSharp.Action((ActionDelegate)(context => this.SelectAvailableQuest(context))),
                     (Composite)new ActionSleep(500)
                 })),
-                (Composite)new DecoratorContinue(new CanRunDecoratorDelegate(this.IsQuestFrameVisible), (Composite)new Sequence(new Composite[3]
-                {
-                    (Composite)new DecoratorContinue(new CanRunDecoratorDelegate(this.IsCompleteQuestButtonVisible), (Composite)new Sequence(new Composite[2]
-                    {
-                        (Composite)new TreeSharp.Action((ActionDelegate)(context => this.CompleteQuestBeforeAccept(context))),
-                        (Composite)new TreeSharp.Action((ActionDelegate)(context => this.CloseFrames(context)))
-                    })),
-                    (Composite)new TreeSharp.Action((ActionSucceedDelegate)(context => QuestFrame.Instance.AcceptQuest())),
-                    (Composite)new ActionSleep(500)
-                })),
+                // QuestFrame handler: uses CurrentShownQuestId from memory to distinguish
+                // our pickup quest from a turn-in quest that the NPC shows first.
+                // Handles: Continue button → reward selection → Complete Quest → Accept.
+                (Composite)new DecoratorContinue(new CanRunDecoratorDelegate(this.IsQuestFrameVisible),
+                    (Composite)new TreeSharp.Action((ActionDelegate)(context => this.HandleQuestFrame(context)))),
                 (Composite)new TreeSharp.Action((ActionDelegate)(context => this.ClearTarget(context))),
                 (Composite)new TreeSharp.Action((ActionDelegate)(context => this.CloseFrames(context))),
                 (Composite)new ActionClearPoi("Quest Completed")
@@ -194,6 +192,7 @@ public class ForcedQuestPickUp : ForcedBehavior
 
     private RunStatus CloseFrames(object context)
     {
+        _handleQuestFrameAttempts = 0;
         if (!GossipFrame.Instance.IsVisible && !QuestFrame.Instance.IsVisible)
             return RunStatus.Success;
         GossipFrame.Instance.Close();
@@ -296,6 +295,91 @@ public class ForcedQuestPickUp : ForcedBehavior
     private bool IsQuestFrameVisible(object context)
     {
         return QuestFrame.Instance.IsVisible;
+    }
+
+    /// <summary>
+    /// Comprehensive QuestFrame handler for PickUp.
+    /// Reads CurrentShownQuestId from memory (0xC0E92C) to determine what the NPC is showing.
+    /// Handles the case where a turn-in quest opens directly before our pickup quest is available.
+    ///
+    /// WoW 3.3.5a QuestFrame button layout:
+    ///   - QuestFrameAcceptButton: visible when a new quest can be accepted
+    ///   - QuestFrameCompleteButton: "Continue" button shown first on turn-in dialogs
+    ///   - QuestFrameCompleteQuestButton: "Complete Quest" shown after Continue + reward selection
+    /// </summary>
+    private RunStatus HandleQuestFrame(object context)
+    {
+        if (!QuestFrame.Instance.IsVisible)
+            return RunStatus.Success;
+
+        // Safety: prevent infinite retries within one interaction cycle
+        if (_handleQuestFrameAttempts++ > 15)
+        {
+            Logging.WriteDebug("[QuestPickUp] HandleQuestFrame exceeded 15 attempts — closing frame and retrying.");
+            _handleQuestFrameAttempts = 0;
+            QuestFrame.Instance.Close();
+            StyxWoW.Sleep(500);
+            return RunStatus.Success;
+        }
+
+        uint shownQuestId = QuestFrame.Instance.CurrentShownQuestId;
+        bool acceptVisible = ForcedQuestPickUp.QuestFrameAcceptButton.IsVisible;
+        bool continueVisible = ForcedQuestPickUp.QuestFrameCompleteButton.IsVisible;
+        bool completeQuestVisible = ForcedQuestPickUp.QuestFrameCompleteQuestButton.IsVisible;
+
+        Logging.WriteDebug("[QuestPickUp] HandleQuestFrame: ShownId={0}, TargetId={1}, Accept={2}, Continue={3}, Complete={4}",
+            shownQuestId, this.QuestId, acceptVisible, continueVisible, completeQuestVisible);
+
+        // --- Accept our pickup quest ---
+        if (acceptVisible)
+        {
+            // AcceptButton is visible — this is a quest we can accept.
+            // Accept regardless of shownQuestId (memory read can return 0 for some quests).
+            Logging.WriteDebug("[QuestPickUp] AcceptButton visible — accepting quest.");
+            QuestFrame.Instance.AcceptQuest();
+            StyxWoW.Sleep(500);
+            _handleQuestFrameAttempts = 0;
+            return RunStatus.Success;
+        }
+
+        // --- Handle turn-in quest that the NPC shows before our pickup ---
+        // The NPC has a completed quest to turn in first. WoW opens QuestFrame directly
+        // with that quest's completion dialog. We must finish it before the pickup shows.
+
+        // Step 1: "Continue" button → click it to advance to the reward/completion screen
+        if (continueVisible)
+        {
+            Logging.WriteDebug("[QuestPickUp] Continue button visible (quest {0}) — clicking to advance.", shownQuestId);
+            QuestFrame.Instance.ClickContinue();
+            StyxWoW.Sleep(1000);
+            return RunStatus.Running;
+        }
+
+        // Step 2: Reward selection — if choices exist, pick the first one
+        int numChoices = Lua.GetReturnVal<int>("return GetNumQuestChoices()", 0U);
+        if (numChoices > 0 && !completeQuestVisible)
+        {
+            Logging.WriteDebug("[QuestPickUp] {0} reward choices for turn-in quest {1} — selecting first.", numChoices, shownQuestId);
+            QuestFrame.Instance.SelectQuestReward(0);
+            StyxWoW.Sleep(500);
+            return RunStatus.Running;
+        }
+
+        // Step 3: "Complete Quest" button → finish the turn-in
+        if (completeQuestVisible)
+        {
+            Logging.WriteDebug("[QuestPickUp] CompleteQuestButton visible (quest {0}) — completing turn-in.", shownQuestId);
+            QuestFrame.Instance.CompleteQuest();
+            StyxWoW.Sleep(500);
+            return RunStatus.Running;
+        }
+
+        // No actionable button — frame might be transitioning. Close and let outer loop re-interact.
+        Logging.WriteDebug("[QuestPickUp] QuestFrame visible but no actionable button (quest {0}) — closing.", shownQuestId);
+        QuestFrame.Instance.Close();
+        StyxWoW.Sleep(500);
+        _handleQuestFrameAttempts = 0;
+        return RunStatus.Success;
     }
 
     private bool IsCompleteQuestButtonVisible(object context)
