@@ -28,7 +28,9 @@ namespace Styx.Logic.Profiles.Quest;
 /// </summary>
 public class QuestBehaviorHelper
 {
-    private static readonly Dictionary<string, Assembly> _assemblyCache = new Dictionary<string, Assembly>(StringComparer.OrdinalIgnoreCase);
+    // HB 4.3.4 pattern: Dictionary + lock for compilation caching.
+    private static readonly Dictionary<string, Assembly> _assemblyCache =
+        new Dictionary<string, Assembly>(StringComparer.OrdinalIgnoreCase);
     private static readonly object _lockObject = new object();
     private static readonly List<MetadataReference> _defaultReferences;
     
@@ -164,19 +166,25 @@ public class QuestBehaviorHelper
     private Assembly CompileAssembly()
     {
         string cacheKey = this.Path.ToLowerInvariant();
-        
-        // Check cache first
+
+        // HB 4.3.4 pattern: TryGetValue outside lock, compile inside lock.
+        if (_assemblyCache.TryGetValue(cacheKey, out Assembly cached))
+            return cached;
+
         lock (_lockObject)
         {
-            if (_assemblyCache.TryGetValue(cacheKey, out Assembly cachedAsm))
-            {
-                if (cachedAsm != null)
-                    Logging.WriteDebug("[QuestBehavior] Using cached assembly for '{0}'", this.Path);
-                return cachedAsm;
-            }
+            // Double-check after acquiring lock.
+            if (_assemblyCache.TryGetValue(cacheKey, out cached))
+                return cached;
+
+            Assembly compiled = DoCompile();
+            _assemblyCache[cacheKey] = compiled;
+            return compiled;
         }
-        
-        // Compile outside of lock (can be slow)
+    }
+
+    private Assembly DoCompile()
+    {
         Assembly compiledAssembly = null;
         
         try
@@ -295,14 +303,7 @@ public class QuestBehaviorHelper
             Logging.Write(Color.Red, "[QuestBehavior] EXCEPTION during compilation: {0}", ex.Message);
             Logging.WriteException(ex);
         }
-        
-        // Cache the result (even if null to avoid repeated compilation attempts)
-        lock (_lockObject)
-        {
-            if (!_assemblyCache.ContainsKey(cacheKey))
-                _assemblyCache[cacheKey] = compiledAssembly;
-        }
-        
+
         return compiledAssembly;
     }
 
@@ -363,7 +364,7 @@ public class QuestBehaviorHelper
         lock (_lockObject)
         {
             _assemblyCache.Clear();
-            Logging.Write("[QuestBehavior] Assembly cache cleared");
         }
+        Logging.Write("[QuestBehavior] Assembly cache cleared");
     }
 }
