@@ -122,10 +122,12 @@ namespace Styx.Logic.Questing
 
 		/// <summary>
 		/// Gets quest info at a log index.
+		/// descriptor_ptr + (field * 4) — quest log starts at field 158, each entry is 5 fields (20 bytes).
+		/// So byte offset = (158 + index * 5) * 4, NOT 158 + index * 5 * 4.
 		/// </summary>
 		public QuestLogEntry GetQuestInfo(int index)
 		{
-			uint offset = (uint)(158 + index * 5 * 4);
+			uint offset = (uint)((158 + index * 5) * 4);
 			uint descriptorPtr = ObjectManager.Wow.Read<uint>(StyxWoW.Me.BaseAddress + 8U);
 			return ObjectManager.Wow.ReadStruct<QuestLogEntry>(descriptorPtr + offset);
 		}
