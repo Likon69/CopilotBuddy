@@ -32,3 +32,6 @@ Bug fixes:
     - GatherbuddyBot: auto-find mailbox — NeedsToMail checks profile mailbox → ObjectManager scan for WoWGameObjectType.Mailbox; CreateMailBehavior uses same fallback chain
     - New helpers: FindVendorFromDatabase(UnitNPCFlags) wraps NpcQueries.GetNearestNpc; FindNearbyMailbox() scans ObjectManager for nearby mailbox GameObjects
 
+  * Singular (Combat Routine)
+    - Rogue: new setting "Use Stealth on Pull" (default: on) — toggle stealth before pulling for all specs (Lowbie, Combat, Assassination, Subtlety) and rest behavior; disabling makes low-level rogues pull without going invisible
+
