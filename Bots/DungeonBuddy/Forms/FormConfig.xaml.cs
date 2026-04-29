@@ -39,7 +39,8 @@ namespace Bots.DungeonBuddy.Forms
         private void FormConfig_Load(object sender, RoutedEventArgs e)
         {
             propertyGridMain.SelectedObject = DungeonBuddySettings.Instance;
-            cbShowAll.IsChecked = false;
+            // HB 4.3.4 FormConfig_Load: restore persisted ShowAllDungeons state.
+            cbShowAll.IsChecked = DungeonBuddySettings.Instance.ShowAllDungeons;
             btnToggleMovement.Content = (ScriptHelpers.MovementEnabled ? "Disable Movement" : "Enable Movement");
             // populate trees according to original logic when tab selected
             tabControlMain_SelectedIndexChanged(null, null);
@@ -78,17 +79,11 @@ namespace Bots.DungeonBuddy.Forms
                     foreach (var lfg in grouping2)
                     {
                         string display = (lfg.Difficulty == 0U) ? lfg.Name : (lfg.Name + " [Heroic]");
+                        // HB 4.3.4 GenerateTreeView: debug mode appends Map Id so dungeon script
+                        // authors can look up the exact mapId for profile breadcrumbs.
+                        if (debug) display += " [Map Id: " + lfg.MapId + "]";
                         var node = parent.Nodes.Add(display, display);
-                        node.Tag = lfg.Id;
-                    }
-
-                    if (debug)
-                    {
-                        // optionally add debug child nodes (map id)
-                        foreach (wf.TreeNode child in parent.Nodes)
-                        {
-                            // nothing extra here for now
-                        }
+                        if (!debug) node.Tag = lfg.Id;
                     }
 
                     if (treeView.CheckBoxes)
@@ -147,8 +142,12 @@ namespace Bots.DungeonBuddy.Forms
 
         private void ToggleControlForSelection(bool value)
         {
+            // HB 4.3.4 ToggleControlForSelection parity: hide tree + buttons when QueueType
+            // is not Specific/SoloFarm; show warning label instead.
+            var vis = value ? Visibility.Visible : Visibility.Collapsed;
+            twDungeonSelectionHost.Visibility = vis;
+            dungeonSelectionButtons.Visibility = vis;
             lblWarningText.Visibility = value ? Visibility.Collapsed : Visibility.Visible;
-            // host visibility handled by WPF wrapper; nothing else needed here
         }
 
         private void btnSelectAll_Click(object sender, RoutedEventArgs e)
@@ -247,10 +246,12 @@ namespace Bots.DungeonBuddy.Forms
                 Logging.Write("<Hotspot X=\"{0}\" Y=\"{1}\" Z=\"{2}\" />", new object[] { StyxWoW.Me.CurrentTarget.X, StyxWoW.Me.CurrentTarget.Y, StyxWoW.Me.CurrentTarget.Z });
                 Logging.Write("<Boss isFinal=\"false\" entry=\"{0}\" name=\"{1}\" killOrder=\"1\" optional=\"false\" X=\"{2}\" Y=\"{3}\" Z=\"{4}\"/>", new object[] { StyxWoW.Me.CurrentTarget.Entry, StyxWoW.Me.CurrentTarget.Name, StyxWoW.Me.CurrentTarget.Location.X, StyxWoW.Me.CurrentTarget.Location.Y, StyxWoW.Me.CurrentTarget.Location.Z });
             }
-                foreach (var boss in BossManager.Bosses)
-                {
-                    Logging.Write("{0} - IsDead: {1}", new object[] { boss.Name, boss.IsDead });
-                }
+            var profile = Bots.DungeonBuddy.Profiles.ProfileManager.CurrentProfile;
+            if (profile != null)
+            {
+                foreach (var boss in profile.BossEncounters)
+                    Logging.Write("{0} - IsAlive: {1}", new object[] { boss.Name, boss.IsAlive });
+            }
         }
 
         private void loadProfile_click(object sender, RoutedEventArgs e)
@@ -274,21 +275,43 @@ namespace Bots.DungeonBuddy.Forms
 
         private void cbShowAll_CheckedChanged(object sender, RoutedEventArgs e)
         {
+            // HB 4.3.4: cbShowAll_CheckedChanged persists ShowAllDungeons so it survives FormConfig_Load.
+            DungeonBuddySettings.Instance.ShowAllDungeons = cbShowAll.IsChecked == true;
             tabControlMain_SelectedIndexChanged(null, null);
         }
 
         private void dbgButton2_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var boss in BossManager.Bosses)
+            // HB 4.3.4 dbgButton2_Click parity: test CanNavigateFully to each boss's first breadcrumb.
+            var profile = Bots.DungeonBuddy.Profiles.ProfileManager.CurrentProfile;
+            if (profile == null)
             {
-                Logging.Write("{0} - IsDead: {1}", new object[] { boss.Name, boss.IsDead });
+                Logging.Write("[DungeonBuddy] No profile loaded.");
+                return;
+            }
+            foreach (var boss in profile.BossEncounters)
+            {
+                // HB 4.3.4: optional bosses skip the nav check (boss.smethod_2() = IsOptional).
+                bool canNav = boss.Optional ||
+                              (boss.PathBreadCrumbs.Count > 0 &&
+                               Navigator.CanNavigateFully(StyxWoW.Me.Location, boss.PathBreadCrumbs.Peek()));
+                Logging.Write("{0} Can be fully navigated to?: {1}", new object[] { boss.Name, canNav });
             }
         }
 
         private void debugBtn3_Click(object sender, RoutedEventArgs e)
         {
-            // placeholder for original debug action
-            Logging.Write("debugBtn3 pressed");
+            // HB 4.3.4: debugBtn3 ("Show Path") opens the PathView navigation visualizer.
+            // PathView is a separate WinForms window that renders the live nav path + avoidance.
+            if (PathView.Instance != null && !PathView.Instance.IsDisposed)
+            {
+                PathView.Instance.Close();
+            }
+            else
+            {
+                var pv = new PathView();
+                pv.Show();
+            }
         }
 
         private void RecompileScriptsButton_Click(object sender, RoutedEventArgs e)
@@ -298,9 +321,11 @@ namespace Bots.DungeonBuddy.Forms
 
         private void btnToggleMovement_Click(object sender, RoutedEventArgs e)
         {
-            // toggle movement via ScriptHelpers as original
+            // HB 4.3.4 parity: toggle movement flag; if disabling and currently moving, stop.
             ScriptHelpers.ToggleMovement();
-            btnToggleMovement.Content = (ScriptHelpers.MovementEnabled ? "Disable Movement" : "Enable Movement");
+            if (!ScriptHelpers.MovementEnabled && StyxWoW.Me != null && StyxWoW.Me.IsMoving)
+                WoWMovement.MoveStop();
+            btnToggleMovement.Content = ScriptHelpers.MovementEnabled ? "Disable Movement" : "Enable Movement";
         }
 
         private void twBossTree_AfterCheck(object sender, wf.TreeViewEventArgs e)

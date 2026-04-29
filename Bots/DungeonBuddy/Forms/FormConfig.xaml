@@ -35,13 +35,13 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <wi:WindowsFormsHost Grid.Row="0">
+                    <wi:WindowsFormsHost x:Name="twDungeonSelectionHost" Grid.Row="0">
                         <wf:TreeView x:Name="twDungeonSelection" BeforeCheck="twDungeonSelection_BeforeCheck" AfterCheck="twDungeonSelection_AfterCheck" CheckBoxes="True"/>
                     </wi:WindowsFormsHost>
                     <Label x:Name="lblWarningText" Grid.Row="1" Foreground="Orange" Visibility="Collapsed" HorizontalAlignment="Center">
                         <TextBlock Text="You need to change Queue Type to Specific before editing the dungeon list" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Label>
-                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,4,0,0">
+                    <StackPanel x:Name="dungeonSelectionButtons" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,4,0,0">
                         <CheckBox x:Name="cbShowAll" Content="Show All Dungeons" Margin="0,0,8,0" Checked="cbShowAll_CheckedChanged" Unchecked="cbShowAll_CheckedChanged"/>
                         <Button x:Name="btnSelectAll" Content="Select All" Click="btnSelectAll_Click" Margin="0,0,5,0"/>
                         <Button x:Name="btnUnselectAll" Content="Unselect All" Click="btnUnselectAll_Click"/>
@@ -54,14 +54,15 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,4">
-                        <Button x:Name="btnToggleMovement" Content="Disable Movement" Click="btnToggleMovement_Click" Margin="0,0,4,0"/>
-                        <Button x:Name="loadProfileButton" Content="Load Profile" Click="loadProfile_click" Margin="0,0,4,0"/>
-                        <Button x:Name="button1" Content="CurrentTarget Info" Click="button1_Click"/>
-                        <Button x:Name="dbgButton2" Content="Navigation" Click="dbgButton2_Click" Margin="6,0,0,0"/>
-                        <Button x:Name="debugBtn3" Content="Show Path" Click="debugBtn3_Click" Margin="6,0,0,0"/>
-                        <Button x:Name="RecompileScriptsButton" Content="Reload Scripts" Click="RecompileScriptsButton_Click" Margin="6,0,0,0"/>
-                    </StackPanel>
+                    <!-- Buttons wrap to a second row automatically when the window is narrow -->
+                    <WrapPanel Grid.Row="0" Margin="0,0,0,4" Orientation="Horizontal">
+                        <Button x:Name="btnToggleMovement" Content="Disable Movement" Click="btnToggleMovement_Click" Margin="0,0,4,4"/>
+                        <Button x:Name="loadProfileButton" Content="Load Profile" Click="loadProfile_click" Margin="0,0,4,4"/>
+                        <Button x:Name="button1" Content="Target Info" Click="button1_Click" Margin="0,0,4,4"/>
+                        <Button x:Name="dbgButton2" Content="Navigation" Click="dbgButton2_Click" Margin="0,0,4,4"/>
+                        <Button x:Name="debugBtn3" Content="Show Path" Click="debugBtn3_Click" Margin="0,0,4,4"/>
+                        <Button x:Name="RecompileScriptsButton" Content="Reload Scripts" Click="RecompileScriptsButton_Click" Margin="0,0,4,4"/>
+                    </WrapPanel>
                     <TabControl x:Name="tabControl1" Grid.Row="1">
                         <TabItem x:Name="tabPage1" Header="Dungeon List">
                             <wi:WindowsFormsHost>
