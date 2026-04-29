@@ -981,6 +981,45 @@ namespace Styx.Logic.Pathing
 			return CanNavigateFully(me.Location, destination);
 		}
 
+		/// <summary>
+		/// Mirrors HB 4.3.4 Class81.method_10: returns true only if the actual nav path
+		/// from <paramref name="start"/> to <paramref name="destination"/> is complete
+		/// (not partial) and its total length in yards is ≤ <paramref name="maxPathDistance"/>.
+		/// Used by DungeonTargeting to reject through-wall mobs whose straight-line distance
+		/// is within range but whose nav path winds far around the dungeon geometry.
+		/// </summary>
+		public static bool CanNavigateWithinDistance(WoWPoint start, WoWPoint destination, float maxPathDistance)
+		{
+			if (!IsNavigatorLoaded)
+				return true;
+
+			uint mapId = (uint)(GetCurrentMapId());
+			var startVec = new Vector3(start.X, start.Y, start.Z);
+			var endVec = new Vector3(destination.X, destination.Y, destination.Z);
+
+			try
+			{
+				TripperNavigator.EnsureTilesAroundPosition(mapId, startVec, LoadTilesAroundRadius);
+				TripperNavigator.EnsureTilesAroundPosition(mapId, endVec, LoadTilesAroundRadius);
+			}
+			catch { }
+
+			BlackspotManager.EnsureBlackspotsMarked();
+
+			var result = TripperNavigator.FindPath(mapId, startVec, endVec, true);
+			if (!result.Status.Succeeded || result.IsPartialPath)
+				return false;
+
+			float totalLength = 0f;
+			Vector3[] pts = result.Points;
+			if (pts != null && pts.Length > 1)
+			{
+				for (int i = 1; i < pts.Length; i++)
+					totalLength += Vector3.Distance(pts[i - 1], pts[i]);
+			}
+			return totalLength <= maxPathDistance;
+		}
+
 		public static WoWPoint[] GeneratePath(WoWPoint start, WoWPoint destination)
 		{
 			if (!IsNavigatorLoaded)
