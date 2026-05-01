@@ -242,7 +242,8 @@ namespace GreenMagic
 
             // HB 5.4.8 ExternalProcessMemory.ReadByteBuffer cache pattern:
             // check cache first, RPM on miss, store result in cache.
-            var key = new IntPtr(address);
+            // unchecked: uint addresses > 0x7FFFFFFF overflow IntPtr(long) on x86 — reinterpret bits instead.
+            var key = new IntPtr(unchecked((int)address));
             if (_cacheEnabled.Value)
             {
                 var dict = _cache.Value;

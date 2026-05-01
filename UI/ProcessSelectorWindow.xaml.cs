@@ -100,7 +100,8 @@ namespace CopilotBuddy.UI
 
                     // Verify build matches 3.3.5a (12340)
                     int build = wowProcesses[i].MainModule?.FileVersionInfo.FilePrivatePart ?? 0;
-                    if (build != ObjectManager.SupportedBuild)
+                    // build == 0 means no version resource (custom/private server client)
+                    if (build != ObjectManager.SupportedBuild && build != 0)
                         continue;
 
                     using var memory = new Memory(wowProcesses[i].Id);

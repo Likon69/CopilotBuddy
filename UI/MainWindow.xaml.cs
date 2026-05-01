@@ -309,7 +309,8 @@ namespace CopilotBuddy.UI
                     {
                         if (proc.HasExited) continue;
                         int build = proc.MainModule?.FileVersionInfo.FilePrivatePart ?? 0;
-                        if (build == ObjectManager.SupportedBuild)
+                        // build == 0 means no version resource (custom/private server client)
+                        if (build == ObjectManager.SupportedBuild || build == 0)
                             candidates.Add(proc);
                     }
                     catch { /* Access denied or process exited */ }
