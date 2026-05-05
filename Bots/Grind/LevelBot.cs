@@ -822,23 +822,22 @@ namespace Bots.Grind
                                        LootTargeting.SkinMobs &&
                                        LootTargeting.Instance.FirstObject is WoWUnit unit &&
                                        unit.SkinType == WoWCreatureSkinType.Leather &&
-                                       unit.CanSkin &&
-                                       !IsPathBlocked(LootTargeting.Instance.FirstObject),
+                                       unit.CanSkin,
                                 new ActionSetPoi(ctx => new BotPoi(LootTargeting.Instance.FirstObject, PoiType.Skin))
                             ),
-                            // Harvestable (herbs/minerals)
+                            // Harvestable (herbs/minerals only — not chests)
                             new Decorator(
                                 ctx => BotPoi.Current.Type != PoiType.Harvest &&
-                                       LootTargeting.Instance.FirstObject is WoWGameObject &&
-                                       !IsPathBlocked(LootTargeting.Instance.FirstObject),
+                                       LootTargeting.Instance.FirstObject is WoWGameObject harvestObj &&
+                                       (harvestObj.IsHerb && LootTargeting.HarvestHerbs ||
+                                        harvestObj.IsMineral && LootTargeting.HarvestMinerals),
                                 new ActionSetPoi(ctx => new BotPoi(LootTargeting.Instance.FirstObject, PoiType.Harvest))
                             ),
-                            // Lootable
+                            // Lootable (units and chests)
                             new Decorator(
                                 ctx => BotPoi.Current.Type != PoiType.Skin &&
                                        BotPoi.Current.Type != PoiType.Loot &&
-                                       LootTargeting.Instance.FirstObject != null &&
-                                       !IsPathBlocked(LootTargeting.Instance.FirstObject),
+                                       LootTargeting.Instance.FirstObject != null,
                                 new ActionSetPoi(ctx => new BotPoi(LootTargeting.Instance.FirstObject, PoiType.Loot))
                             )
                         )
