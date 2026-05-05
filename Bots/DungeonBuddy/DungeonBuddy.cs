@@ -171,6 +171,7 @@ namespace Bots.DungeonBuddy
 
             // Keep avoidance updated every pulse.
             Bots.DungeonBuddy.Avoidance.AvoidanceManager.Update();
+            DynamicBlackspotManager.Pulse();
 
             // Recovery: si on est dans un donjon mais CurrentDungeon == null (race condition
             // pendant le loading screen — OnMapChanged a pu fire avant IsDungeon = true),
