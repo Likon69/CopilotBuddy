@@ -22,5 +22,15 @@ namespace Styx.Logic.Pathing
         /// Resets the stuck handler state.
         /// </summary>
         void Reset();
+
+        /// <summary>
+        /// Called when this stuck handler becomes the active navigation stuck handler.
+        /// </summary>
+        void OnSetAsCurrent();
+
+        /// <summary>
+        /// Called when this stuck handler is no longer the active navigation stuck handler.
+        /// </summary>
+        void OnRemoveAsCurrent();
     }
 }

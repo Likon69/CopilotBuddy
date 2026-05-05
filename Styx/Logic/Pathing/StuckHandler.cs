@@ -1,8 +1,12 @@
 using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
+using System.Windows.Media;
+using Styx.CommonBot;
 using Styx.Helpers;
 using Styx.WoWInternals;
+using Styx.WoWInternals.WoWObjects;
 using Styx.WoWInternals.World;
 
 namespace Styx.Logic.Pathing
@@ -32,11 +36,46 @@ namespace Styx.Logic.Pathing
         private bool _triedStrafeForwardRight;
         private bool _triedStrafeLeft;
         private bool _triedStrafeRight;
+        private bool _isCurrent;
 
         public StuckHandler()
         {
             _lastCheckLocation = WoWPoint.Empty;
             _movementStopwatch.Restart();
+        }
+
+        public void OnSetAsCurrent()
+        {
+            if (_isCurrent)
+                return;
+
+            Mount.OnMountUp += OnMountUp;
+            WoWMovement.OnMovementFlagsChanged += OnMovementFlagsChanged;
+            _isCurrent = true;
+        }
+
+        public void OnRemoveAsCurrent()
+        {
+            if (!_isCurrent)
+                return;
+
+            WoWMovement.OnMovementFlagsChanged -= OnMovementFlagsChanged;
+            Mount.OnMountUp -= OnMountUp;
+            _isCurrent = false;
+        }
+
+        private void OnMountUp(object? sender, MountUpEventArgs e)
+        {
+            e.Cancel = !_mountUpBlockTimer.IsFinished;
+        }
+
+        private void OnMovementFlagsChanged(WoWMovement.MovementEventArgs e)
+        {
+            if (e.Stop)
+            {
+                _movementStopwatch.Restart();
+                _lastCheckLocation = WoWPoint.Empty;
+            }
         }
 
         public bool IsStuck()
@@ -45,29 +84,31 @@ namespace Styx.Logic.Pathing
             if (me == null)
                 return false;
 
-            if (me.Stunned || me.Fleeing || me.Dazed || me.Rooted || me.IsFalling)
+            if (me.Stunned || me.Fleeing || me.Dazed || me.Rooted)
             {
                 Reset();
                 return false;
             }
 
-            // Don't check IsMoving here - when stuck, IsMoving stays true but player doesn't move
-            // WoD uses OnMovementFlagsChanged event to reset, but we don't have that in WotLK
-            // So we let the stopwatch run and rely on PathDistance check below
+            WoWUnit? activeMover = WoWMovement.ActiveMover;
+            if (activeMover == null || !activeMover.IsMe)
+                return false;
 
             if (_movementStopwatch.ElapsedMilliseconds < 500L)
                 return false;
 
-            WoWPoint currentLocation = me.Location;
+            WoWPoint currentLocation = activeMover.Location;
             if (_lastCheckLocation != WoWPoint.Empty)
             {
-                float expectedDistance = GetExpectedTravelDistance(me, _movementStopwatch.Elapsed) * ExpectedDistanceScale;
+                float expectedDistance = GetExpectedTravelDistance(activeMover, _movementStopwatch.Elapsed) * ExpectedDistanceScale;
                 float? pathDistance = Navigator.PathDistance(_lastCheckLocation, currentLocation, expectedDistance);
                 if (pathDistance != null && pathDistance < expectedDistance)
                 {
-                    Logging.WriteDebug("[STUCK] Movement stalled — path distance {0:F1}yd in {1:F1}s (expected {2:F1}yd).",
-                        pathDistance.Value, (float)_movementStopwatch.Elapsed.TotalSeconds, expectedDistance);
-                    _movementStopwatch.Restart();
+                    Logging.WriteVerbose(Colors.Red, "We are stuck! (TPS: {0:F1}, Latency: {1}, loc: {2})!",
+                        GameStats.TicksPerSecond,
+                        StyxWoW.WoWClient.Latency,
+                        currentLocation);
+                    LogNearestGameObject();
                     _lastCheckLocation = currentLocation;
                     return true;
                 }
@@ -107,8 +148,8 @@ namespace Styx.Logic.Pathing
 
                 if (!GameWorld.IsInLineOfSight(upper, forward) || !GameWorld.IsInLineOfSight(middle, forward))
                 {
-                    Logging.WriteDebug("[STUCK] Trying dismount.");
-                    Mount.Dismount("[STUCK] Dismounting to navigate obstacle");
+                    Logging.WriteVerbose("Trying dismount");
+                    Mount.Dismount("Stuck Handler");
                 }
                 _triedDismount = true;
             }
@@ -121,50 +162,46 @@ namespace Styx.Logic.Pathing
 
                 if (GameWorld.IsInLineOfSight(src, fwd))
                 {
-                    Logging.WriteDebug("[STUCK] Jump attempt — forward path clear, jumping over obstacle.");
+                    Logging.WriteVerbose("Trying jump");
                     WoWMovement.Move(WoWMovement.MovementDirection.Forward | WoWMovement.MovementDirection.JumpAscend);
                     StyxWoW.Sleep(100);
                     WoWMovement.MoveStop(WoWMovement.MovementDirection.Forward | WoWMovement.MovementDirection.JumpAscend);
                     StyxWoW.Sleep(200);
                 }
-                else
-                {
-                    Logging.WriteDebug("[STUCK] Jump skipped — forward path blocked, will try strafe.");
-                }
                 _triedJump = true;
             }
             else if (!_triedStrafeForwardLeft)
             {
-                Logging.WriteDebug("[STUCK] Trying strafe forward-left for {0}ms.", duration);
+                Logging.WriteVerbose("Trying strafe forward left for {0}ms", duration);
                 MoveInDirection(WoWMovement.MovementDirection.Forward | WoWMovement.MovementDirection.StrafeLeft, duration);
                 _triedStrafeForwardLeft = true;
             }
             else if (!_triedStrafeForwardRight)
             {
-                Logging.WriteDebug("[STUCK] Trying strafe forward-right for {0}ms.", duration);
+                Logging.WriteVerbose("Trying strafe forward right for {0}ms", duration);
                 MoveInDirection(WoWMovement.MovementDirection.Forward | WoWMovement.MovementDirection.StrafeRight, duration);
                 _triedStrafeForwardRight = true;
             }
             else if (me.Mounted)
             {
-                Logging.WriteDebug("[STUCK] Still mounted after strafe attempts — dismounting.");
-                Mount.Dismount("[STUCK] Dismounting to navigate obstacle");
+                Logging.WriteVerbose("Trying dismount");
+                Mount.Dismount("Stuck Handler");
             }
             else if (!_triedStrafeLeft)
             {
-                Logging.WriteDebug("[STUCK] Trying strafe left for {0}ms.", duration);
+                Logging.WriteVerbose("Trying strafe left for {0}ms", duration);
                 MoveInDirection(WoWMovement.MovementDirection.StrafeLeft, duration);
                 _triedStrafeLeft = true;
             }
             else if (!_triedStrafeRight)
             {
-                Logging.WriteDebug("[STUCK] Trying strafe right for {0}ms.", duration);
+                Logging.WriteVerbose("Trying strafe right for {0}ms", duration);
                 MoveInDirection(WoWMovement.MovementDirection.StrafeRight, duration);
                 _triedStrafeRight = true;
             }
             else
             {
-                AddBlackspotAndReverse(3000);
+                AddBlackspotAndReverse(duration * 2);
                 ResetUnstickAttempts();
             }
 
@@ -175,7 +212,6 @@ namespace Styx.Logic.Pathing
         {
             _movementStopwatch.Restart();
             _lastCheckLocation = WoWPoint.Empty;
-            _lastUnstickLocation = WoWPoint.Empty;
             ResetUnstickAttempts();
         }
 
@@ -206,8 +242,8 @@ namespace Styx.Logic.Pathing
             if (me == null)
                 return;
 
-            Logging.WriteDebug("[STUCK] All attempts failed — adding blackspot and reversing.");
-            BlackspotManager.AddGlobalBlackspot(me.Location, 4f, 5f);
+            Logging.WriteVerbose("Adding blackspot at current location and backing off for {0}ms", milliseconds);
+            BlackspotManager.AddBlackspot(me.Location, 5f, 3f, "StuckHandler");
             WoWMovement.MoveStop();
             StyxWoW.Sleep(100);
             WoWMovement.Move(WoWMovement.MovementDirection.Backwards);
@@ -219,16 +255,28 @@ namespace Styx.Logic.Pathing
             Navigator.Clear();
         }
 
-        private float GetExpectedTravelDistance(Styx.WoWInternals.WoWObjects.LocalPlayer me, TimeSpan timeSpan)
+        private void LogNearestGameObject()
         {
-            float speed;
-            if (me.MovementInfo.IsSwimming)
-                speed = me.MovementInfo.SwimSpeed;
-            else if (me.MovementInfo.IsFlying)
-                speed = me.MovementInfo.FlySpeed;
-            else
-                speed = me.MovementInfo.RunSpeed;
+            WoWGameObject? nearestGameObject = ObjectManager.GetObjectsOfType<WoWGameObject>()
+                .Where(gameObject => gameObject.DistanceSqr < 2500.0)
+                .OrderBy(gameObject => gameObject.DistanceSqr)
+                .FirstOrDefault();
 
+            if (nearestGameObject == null)
+                return;
+
+            Logging.WriteDiagnostic("Nearest game object, distance {0:F2} yards, entry {1}, type {2}, name {3}",
+                nearestGameObject.Distance,
+                nearestGameObject.Entry,
+                nearestGameObject.SubType,
+                nearestGameObject.Name);
+        }
+
+        private float GetExpectedTravelDistance(WoWUnit mover, TimeSpan timeSpan)
+        {
+            float speed = mover.MovementInfo.IsSwimming
+                ? mover.MovementInfo.SwimSpeed
+                : mover.MovementInfo.RunSpeed;
             return speed * (float)timeSpan.TotalSeconds;
         }
 
