@@ -15,8 +15,8 @@ namespace Tripper.Navigation
         /// <summary>Can walk/run on ground surfaces.</summary>
         Run = 1,
 
-        /// <summary>Can run safely - areas verified as safe traversal (HB 3.3.5).</summary>
-        RunSafe = 2,
+        /// <summary>Traversal is only valid while the character is alive.</summary>
+        OnlyWhileAlive = 2,
 
         /// <summary>Can swim through water.</summary>
         Swim = 4,
@@ -38,6 +38,9 @@ namespace Tripper.Navigation
 
         /// <summary>Alliance faction access - can traverse Alliance-only areas.</summary>
         Alliance = 8192,
+
+        /// <summary>Known building traversal area.</summary>
+        KnownBuilding = 16384,
 
         /// <summary>All abilities combined - full traversal capabilities.</summary>
         All = 65535

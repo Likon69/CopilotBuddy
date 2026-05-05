@@ -507,31 +507,6 @@ namespace Tripper.Navigation
 
         #endregion
 
-        #region Randomization
-
-        /// <summary>
-        /// Sets path randomization for more natural movement.
-        /// </summary>
-        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void SetPathRandomization(
-            [MarshalAs(UnmanagedType.I1)] bool enabled,
-            float magnitude);
-
-        #endregion
-
-        #region Slope Penalty
-
-        /// <summary>
-        /// Sets the slope penalty factor for the Detour cost function.
-        /// Adds (factor * elevation_change) to each path segment cost,
-        /// penalizing mountain shortcuts that our 533y tiles preserve.
-        /// Default: 5.0. Set to 0 to disable.
-        /// </summary>
-        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void SetSlopePenalty(float factor);
-
-        #endregion
-
         #region Raycast - HB Style
 
         /// <summary>

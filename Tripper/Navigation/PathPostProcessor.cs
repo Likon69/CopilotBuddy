@@ -62,13 +62,29 @@ namespace Tripper.Navigation
             float minOffset = 2.0f,
             float maxOffset = 6.0f)
         {
+            PolygonReference[] polygons = Array.Empty<PolygonReference>();
+            Randomize(mapId, ref points, ref flags, ref polygons, minOffset, maxOffset);
+        }
+
+        public static void Randomize(
+            uint mapId,
+            ref Vector3[] points,
+            ref StraightPathFlags[] flags,
+            ref PolygonReference[] polygons,
+            float minOffset = 2.0f,
+            float maxOffset = 6.0f)
+        {
             if (points == null || points.Length < 2)
                 return;
 
-            var polys = new PolygonReference[points.Length];
-            EnsurePolyRefs(mapId, points, ref polys);
+            if (polygons == null || polygons.Length == 0)
+                polygons = new PolygonReference[points.Length];
+            else if (polygons.Length < points.Length)
+                Array.Resize(ref polygons, points.Length);
 
-            RandomizeRecursive(mapId, ref points, ref polys, ref flags,
+            EnsurePolyRefs(mapId, points, ref polygons);
+
+            RandomizeRecursive(mapId, ref points, ref polygons, ref flags,
                                minOffset, maxOffset, 4f, new Random(), 0);
         }
 

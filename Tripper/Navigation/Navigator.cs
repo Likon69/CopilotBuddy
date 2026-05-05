@@ -122,7 +122,7 @@ namespace Tripper.Navigation
         {
             // HB 6.2.3 GetNewDefaultQueryFilter:
             // Include = All, Exclude = Unwalkable | Transport
-            _queryFilters["Default"] = new QueryFilter
+            QueryFilter defaultFilter = new QueryFilter
             {
                 IncludeFlags = AbilityFlags.All,
                 ExcludeFlags = AbilityFlags.Unwalkable | AbilityFlags.Transport,
@@ -133,44 +133,27 @@ namespace Tripper.Navigation
                     { AreaType.Road, 1.0f }
                 }
             };
+            _queryFilters["Default"] = defaultFilter;
 
-            // Swimming filter - prioritize water movement
-            _queryFilters["Swimming"] = new QueryFilter
-            {
-                IncludeFlags = AbilityFlags.Swim | AbilityFlags.Run,
-                ExcludeFlags = AbilityFlags.Unwalkable,
-                AreaCosts = new Dictionary<AreaType, float>
-                {
-                    { AreaType.Water, 1.0f },
-                    { AreaType.Ground, 1.5f }
-                }
-            };
+            QueryFilter hordeFilter = defaultFilter.Clone();
+            hordeFilter.ExcludeFlags |= AbilityFlags.Alliance;
+            hordeFilter.AreaCosts[AreaType.Alliance] = 50.0f;
+            _queryFilters["Horde"] = hordeFilter;
 
-            // Flying filter - allow all movement types
-            _queryFilters["Flying"] = new QueryFilter
-            {
-                IncludeFlags = AbilityFlags.Run | AbilityFlags.Swim | AbilityFlags.Jump | AbilityFlags.Transport,
-                ExcludeFlags = AbilityFlags.None,
-                AreaCosts = new Dictionary<AreaType, float>
-                {
-                    { AreaType.Ground, 1.0f },
-                    { AreaType.Water, 1.0f },
-                    { AreaType.Elevator, 1.0f }
-                }
-            };
+            QueryFilter allianceFilter = defaultFilter.Clone();
+            allianceFilter.ExcludeFlags |= AbilityFlags.Horde;
+            allianceFilter.AreaCosts[AreaType.Horde] = 50.0f;
+            _queryFilters["Alliance"] = allianceFilter;
 
-            // Transport filter - include elevators, boats, etc.
-            _queryFilters["Transport"] = new QueryFilter
-            {
-                IncludeFlags = AbilityFlags.Run | AbilityFlags.Swim | AbilityFlags.Transport,
-                ExcludeFlags = AbilityFlags.Unwalkable,
-                AreaCosts = new Dictionary<AreaType, float>
-                {
-                    { AreaType.Ground, 1.0f },
-                    { AreaType.Elevator, 0.5f },
-                    { AreaType.Portal, 0.5f }
-                }
-            };
+            QueryFilter hordeDeathKnightStartFilter = hordeFilter.Clone();
+            hordeDeathKnightStartFilter.ExcludeFlags &= ~AbilityFlags.Transport;
+            hordeDeathKnightStartFilter.IncludeFlags |= AbilityFlags.Transport;
+            _queryFilters["Horde_DeathKnightStart"] = hordeDeathKnightStartFilter;
+
+            QueryFilter allianceDeathKnightStartFilter = allianceFilter.Clone();
+            allianceDeathKnightStartFilter.ExcludeFlags &= ~AbilityFlags.Transport;
+            allianceDeathKnightStartFilter.IncludeFlags |= AbilityFlags.Transport;
+            _queryFilters["Alliance_DeathKnightStart"] = allianceDeathKnightStartFilter;
         }
 
         /// <summary>
@@ -240,18 +223,13 @@ namespace Tripper.Navigation
 
         /// <summary>
         /// Sets default area costs in the native DLL filter.
-        /// HB 6.2.3 uses Road=1.0, Ground=1.66 with 4×4 sub-tiles (133y).
-        /// Our mesh uses 1×1 tiles (533y) which preserves mountain shortcuts that
-        /// HB's tile-boundary splitting would eliminate. To compensate, the native
-        /// DLL applies a slope penalty in getCost() that penalizes elevation changes,
-        /// making mountain routes more expensive than flat valley roads.
+        /// HB 6.2.3 uses Road=1.0, Ground=1.66.
         /// </summary>
         private void SetDefaultAreaCosts()
         {
             try
             {
-                // HB 6.2.3 default area costs (unchanged).
-                // Mountain shortcuts are handled by the native slope penalty, not by area costs.
+                // HB 6.2.3 default area costs.
                 NativeMethods.SetAreaCost((uint)AreaType.Ground, 1.66f);
                 NativeMethods.SetAreaCost((uint)AreaType.Road, 1.0f);
                 NativeMethods.SetAreaCost((uint)AreaType.Water, 3.33f);
@@ -271,12 +249,7 @@ namespace Tripper.Navigation
                 NativeMethods.SetAreaCost((uint)AreaType.Horde, 1.66f);
                 NativeMethods.SetAreaCost((uint)AreaType.Alliance, 1.66f);
                 
-                // Slope penalty: 5.0 extra cost per unit of elevation change.
-                // Compensates for 533y tiles keeping mountain shortcuts that HB's
-                // 133y tiles would structurally eliminate.
-                NativeMethods.SetSlopePenalty(5.0f);
-                
-                Log("Default area costs set (Road=1.0, Ground=1.66, SlopePenalty=5.0)");
+                Log("Default area costs set (Road=1.0, Ground=1.66)");
             }
             catch (Exception ex)
             {
@@ -434,7 +407,7 @@ namespace Tripper.Navigation
                                 }
                                 else if (PathPostProcessing == PathPostProcessing.Randomize)
                                 {
-                                    PathPostProcessor.Randomize(mapId, ref points, ref flags);
+                                    PathPostProcessor.Randomize(mapId, ref points, ref flags, ref polygons);
                                 }
                             }
                             catch (Exception ex)
@@ -1352,34 +1325,16 @@ namespace Tripper.Navigation
         {
             try
             {
-                // HB pattern: build faction filter from a fresh default filter.
-                var baseFilter = _queryFilters["Default"].Clone();
-                var exclude = baseFilter.ExcludeFlags;
-
                 if (isHorde)
                 {
-                    exclude |= AbilityFlags.Alliance;
-                    exclude &= ~AbilityFlags.Horde;
-
-                    _currentQueryFilter = baseFilter;
-                    _currentQueryFilter.ExcludeFlags = exclude;
+                    _currentQueryFilter = _queryFilters["Horde"].Clone();
                     ApplyCurrentQueryFilterToNative();
-
-                    NativeMethods.SetAreaCost((uint)AreaType.Alliance, 50.0f);    // huge penalty
-                    NativeMethods.SetAreaCost((uint)AreaType.Horde, 1.66f);       // normal
                     Log("Faction filter set: Horde (excluding Alliance paths)");
                 }
                 else
                 {
-                    exclude |= AbilityFlags.Horde;
-                    exclude &= ~AbilityFlags.Alliance;
-
-                    _currentQueryFilter = baseFilter;
-                    _currentQueryFilter.ExcludeFlags = exclude;
+                    _currentQueryFilter = _queryFilters["Alliance"].Clone();
                     ApplyCurrentQueryFilterToNative();
-
-                    NativeMethods.SetAreaCost((uint)AreaType.Horde, 50.0f);       // huge penalty
-                    NativeMethods.SetAreaCost((uint)AreaType.Alliance, 1.66f);     // normal
                     Log("Faction filter set: Alliance (excluding Horde paths)");
                 }
             }
@@ -1522,16 +1477,6 @@ namespace Tripper.Navigation
         public uint GetPolyFlags(uint mapId, PolygonReference polyRef, out ushort flags)
         {
             return NativeMethods.GetPolyFlags(mapId, polyRef.Id, out flags);
-        }
-
-        /// <summary>
-        /// Sets path randomization for more natural movement.
-        /// </summary>
-        /// <param name="enabled">Enable randomization.</param>
-        /// <param name="magnitude">Randomization magnitude (0-1).</param>
-        public void SetPathRandomization(bool enabled, float magnitude = 0.05f)
-        {
-            NativeMethods.SetPathRandomization(enabled, magnitude);
         }
 
         /// <summary>

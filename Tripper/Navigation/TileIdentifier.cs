@@ -28,16 +28,17 @@ namespace Tripper.Navigation
 
         /// <summary>
         /// Gets the tile identifier for a given world position.
-        /// Coordinates: TileX = 32 - Floor(worldY / 533.3333), TileY = 32 - Floor(worldX / 533.3333)
+        /// Matches Navigation.dll's 1:1 raw-tile WorldToTile conversion.
         /// </summary>
         /// <param name="x">World X position.</param>
         /// <param name="y">World Y position.</param>
         /// <returns>TileIdentifier for the position.</returns>
         public static TileIdentifier GetByPosition(float x, float y)
         {
-            const float tileSize = 533.3333f;
-            int tileX = 32 - (int)Math.Floor(y / tileSize);
-            int tileY = 32 - (int)Math.Floor(x / tileSize);
+            const float tileSize = 533.33333f;
+            const float gridOrigin = 32.0f * tileSize;
+            int tileX = (int)((gridOrigin - x) / tileSize);
+            int tileY = (int)((gridOrigin - y) / tileSize);
             return new TileIdentifier(tileX, tileY);
         }
 
