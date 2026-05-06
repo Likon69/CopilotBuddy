@@ -484,12 +484,48 @@ namespace GreenMagic
             m_DataPtr = Memory.AllocateMemory(size, 0x1000, 0x04);
             if (m_DataPtr == 0) throw new Exception("Allocate data failed");
 
-            // Sauvegarder les bytes originaux de EndScene pour le prologue
-            // Read 16 bytes to cover all known prologue patterns (up to 7 bytes for Win8 KB3000850)
+            // Read original EndScene bytes.
+            // IMPORTANT: detect if a previous bot instance left our DXVK hook without restoring
+            // (force-kill / crash scenario). 0xB8 + FF E0 is unambiguous — real d3d9.dll
+            // on both Windows and Wine never starts with 0xB8 in a clean process.
+            // We do NOT treat E9 as a leftover because on Windows E9 is a legitimate
+            // "existing hook" case handled by the trampoline (chain to existing target).
             m_OriginalEndSceneBytes = Memory.ReadBytes(m_OrigEndScene, 16);
-            System.Diagnostics.Debug.WriteLine($"[InitializeDetour] Original EndScene bytes: {(m_OriginalEndSceneBytes != null ? BitConverter.ToString(m_OriginalEndSceneBytes) : "null")}");
+            Debug.WriteLine($"[InitializeDetour] Original EndScene bytes: {(m_OriginalEndSceneBytes != null ? BitConverter.ToString(m_OriginalEndSceneBytes) : "null")}");
+
             if (m_OriginalEndSceneBytes == null || m_OriginalEndSceneBytes.Length < 5)
                 throw new Exception("Failed to read original EndScene bytes.");
+
+            // Detect leftover 7-byte DXVK absolute JMP we install: B8 xx xx xx xx FF E0
+            bool leftoverDxvkHook = m_OriginalEndSceneBytes[0] == 0xB8 &&
+                                    m_OriginalEndSceneBytes.Length >= 7 &&
+                                    m_OriginalEndSceneBytes[5] == 0xFF &&
+                                    m_OriginalEndSceneBytes[6] == 0xE0;
+
+            if (leftoverDxvkHook)
+            {
+                Debug.WriteLine("[ExecutorRand] WARNING: EndScene has leftover DXVK hook (B8+FF E0) — previous bot crashed. Reconstructing original DXVK prologue.");
+                Debug.WriteLine("[InitializeDetour] Leftover DXVK hook detected — reconstructing original prologue bytes");
+
+                // IDA-verified DXVK d3d9 EndScene prologue (GCC/MinGW stack-alignment):
+                //   8D 4C 24 04  lea ecx, [esp+4]      (4 bytes)
+                //   83 E4 F8     and esp, 0FFFFFFF8h   (3 bytes)
+                //   FF 71 FC     push dword [ecx-4]    (3 bytes)
+                //   55           push ebp               (1 byte)
+                //   89 E5        mov ebp, esp           (2 bytes)
+                //   57 56 53     push edi/esi/ebx       (padding to 16)
+                m_OriginalEndSceneBytes = new byte[]
+                {
+                    0x8D, 0x4C, 0x24, 0x04,
+                    0x83, 0xE4, 0xF8,
+                    0xFF, 0x71, 0xFC,
+                    0x55,
+                    0x89, 0xE5,
+                    0x57, 0x56, 0x53
+                };
+            }
+
+            Debug.WriteLine($"[InitializeDetour] Original EndScene bytes: {BitConverter.ToString(m_OriginalEndSceneBytes)}");
 
             m_InjectionWaitingHandlePtr  = m_DataPtr;
             m_InjectionContinueHandlePtr = m_DataPtr + 4;
