@@ -826,6 +826,14 @@ namespace Styx.Logic.Pathing
 							return MoveResult.Failed;
 						}
 						StuckHandler.Unstick();
+						// HB 4.3.4 pattern: clear path after every unstick attempt.
+						// The character has moved laterally — regenerate from new position
+						// so the next CTM targets the correct forward direction.
+						_currentPath.Clear();
+						_currentPathIndex = 0;
+						_suppressDriftCheck = false;
+						_suppressDriftCheckIndex = 0;
+						_pathRegenThrottle = new WaitTimer(TimeSpan.FromMilliseconds(500)); // immediate regen
 						return MoveResult.UnstuckAttempt;
 					}
 				}
@@ -867,7 +875,7 @@ namespace Styx.Logic.Pathing
 						// HB uses PathPrecision (2yd), not 5× that. 10yd was too loose —
 						// the bot could be on the wrong side of a wall and still follow stale waypoints.
 						float distToSegment = DistanceToLineSegment2D(me.Location, prevPoint, nextPoint);
-						if (distToSegment > PathPrecision * 2f) // >4 yards off path = stale (HB 6.2.3 uses PathPrecision)
+						if (distToSegment > PathPrecision) // HB 6.2.3 method_15: smethod_1(prev,next,player) < Single_0 (PathPrecision²) → on path
 						{
 							// BUG FIX: Don't set _destination = WoWPoint.Zero here.
 							// That caused destinationChanged=true on next MoveTo(), resetting

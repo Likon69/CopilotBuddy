@@ -45,34 +45,15 @@ namespace Styx.Logic.Pathing.Interop
     {
         /// <summary>
         /// Moves the player towards a specific point using click-to-move.
+        /// HB 6.2.3 ClickToMoveMover: click the point directly, no look-ahead projection.
+        /// The push-ahead offset is already applied by Navigator.method_26 before this call.
         /// </summary>
         public void MoveTowards(Vector3 point)
         {
             if (ObjectManager.Me == null)
                 return;
 
-            WoWPoint targetPoint = new WoWPoint(point.X, point.Y, point.Z);
-            
-            // Limit click distance to avoid clicking through walls
-            // Like HB 3.3.5a, click on intermediate point if target is far
-            float distance = ObjectManager.Me.Location.Distance(targetPoint);
-            if (distance > 10f)
-            {
-                // Click on a point up to 30 yards away in the direction of target
-                // S5.1: Increased from 8yd to 30yd — 8yd was too short for Flightor,
-                // causing constant re-clicks and choppy flying movement.
-                // HB 6.2.3 uses 27yd; 30yd provides smooth CTM arcs for both ground and flying.
-                float clickDist = Math.Min(distance, 30f);
-                Vector3 direction = point - new Vector3(ObjectManager.Me.Location.X, ObjectManager.Me.Location.Y, ObjectManager.Me.Location.Z);
-                direction.Normalize();
-                targetPoint = new WoWPoint(
-                    ObjectManager.Me.Location.X + direction.X * clickDist,
-                    ObjectManager.Me.Location.Y + direction.Y * clickDist,
-                    ObjectManager.Me.Location.Z + direction.Z * clickDist
-                );
-            }
-
-            WoWMovement.ClickToMove(targetPoint);
+            WoWMovement.ClickToMove(new WoWPoint(point.X, point.Y, point.Z));
         }
 
         /// <summary>

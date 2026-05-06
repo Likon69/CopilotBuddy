@@ -226,10 +226,14 @@ namespace Styx.Logic.Pathing
         }
 
         /// <summary>
-        /// HB 6.2.3 pattern: Move → Sleep(duration) → MoveStop → Sleep(200).
+        /// HB 6.2.3 pattern: CTMStop → Move → Sleep(duration) → MoveStop → Sleep(200).
+        /// ClickToMoveStop() must precede keyboard movement to cancel any pending CTM;
+        /// without it, WoW's CTM state machine keeps driving the character toward the
+        /// old click target during the strafe, leaving the character facing sideways.
         /// </summary>
         private void MoveInDirection(WoWMovement.MovementDirection direction, int milliseconds)
         {
+            WoWMovement.ClickToMoveStop(); // Cancel pending CTM before keyboard movement
             WoWMovement.Move(direction);
             StyxWoW.Sleep(milliseconds);
             WoWMovement.MoveStop(direction);
