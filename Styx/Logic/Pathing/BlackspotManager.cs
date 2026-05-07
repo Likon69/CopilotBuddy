@@ -26,6 +26,7 @@ namespace Styx.Logic.Pathing
         private static readonly HashSet<Blackspot> _failedBlackspotMarks = new HashSet<Blackspot>();
         private static readonly Dictionary<Blackspot, List<PolyKey>> _blackspotPolygons = new Dictionary<Blackspot, List<PolyKey>>();
         private static readonly Dictionary<PolyKey, byte> _originalPolyAreas = new Dictionary<PolyKey, byte>();
+        private static readonly Dictionary<PolyKey, ushort> _originalPolyFlags = new Dictionary<PolyKey, ushort>();
         private static readonly object _lock = new object();
 
         private readonly struct PolyKey : IEquatable<PolyKey>
@@ -64,6 +65,14 @@ namespace Styx.Logic.Pathing
         /// High cost assigned to blackspot polygons (same as HB).
         /// </summary>
         private const float BlackspotAreaCost = 60f;
+
+        /// <summary>
+        /// Polygon flag bit used to exclude blackspot polygons from pathfinding entirely.
+        /// 0x0800 is unused in WoW navmesh polygon flags.
+        /// Cost-only approach (area 17 = 60x) fails when no alternate navmesh path exists.
+        /// Setting this bit + excluding it from the global filter makes polygons truly impassable.
+        /// </summary>
+        private const ushort BlackspotPolyFlag = 0x0800;
         
         /// <summary>
         /// Maximum polygons to query for a single blackspot.
@@ -341,8 +350,14 @@ namespace Styx.Logic.Pathing
             try
             {
                 NativeMethods.SetAreaCost(BlackspotAreaType, BlackspotAreaCost);
+
+                // Exclude the blackspot polygon flag so marked polys are truly impassable,
+                // not just expensive. Cost=60 is ignored when no alternate path exists.
+                ushort currentExclude = NativeMethods.GetExcludeFlags();
+                NativeMethods.SetExcludeFlags((ushort)(currentExclude | BlackspotPolyFlag));
+
                 _areaCostInitialized = true;
-                Logging.WriteDebug($"[Blackspot] Area cost initialized: area {BlackspotAreaType} = {BlackspotAreaCost}");
+                Logging.WriteDebug($"[Blackspot] Area cost initialized: area {BlackspotAreaType} = {BlackspotAreaCost}, excludeFlags = 0x{(currentExclude | BlackspotPolyFlag):X4}");
             }
             catch (Exception ex)
             {
@@ -505,18 +520,26 @@ namespace Styx.Logic.Pathing
                     {
                         uint areaStatus = NativeMethods.GetPolyArea(mapId, polyRef, out byte originalArea);
                         if ((areaStatus & 0x40000000) != 0) // DT_SUCCESS
-                        {
                             _originalPolyAreas[key] = originalArea;
-                        }
+                    }
+
+                    if (!_originalPolyFlags.ContainsKey(key))
+                    {
+                        uint flagStatus = NativeMethods.GetPolyFlags(mapId, polyRef, out ushort originalFlags);
+                        if ((flagStatus & 0x40000000) != 0) // DT_SUCCESS
+                            _originalPolyFlags[key] = originalFlags;
                     }
 
                     uint status = NativeMethods.SetPolyArea(mapId, polyRef, BlackspotAreaType);
                     if ((status & 0x40000000) != 0) // DT_SUCCESS
                     {
+                        // OR in the exclude flag. Use saved original flags as base so we
+                        // never wipe walkable/swim/etc bits if GetPolyFlags had failed earlier.
+                        ushort baseFlags = _originalPolyFlags.TryGetValue(key, out ushort orig) ? orig : (ushort)0x0001;
+                        NativeMethods.SetPolyFlags(mapId, polyRef, (ushort)(baseFlags | BlackspotPolyFlag));
+
                         if (!affectedPolys.Contains(key))
-                        {
                             affectedPolys.Add(key);
-                        }
                         markedCount++;
                     }
                 }
@@ -575,10 +598,17 @@ namespace Styx.Logic.Pathing
                     uint status = NativeMethods.SetPolyArea(key.MapId, key.PolyRef, originalArea);
                     if ((status & 0x40000000) != 0) // DT_SUCCESS
                     {
+                        // Restore exact original flags — never mask live value which may have
+                        // been corrupted if we set it incorrectly during marking.
+                        ushort restoreFlags = _originalPolyFlags.TryGetValue(key, out ushort origFlags)
+                            ? origFlags
+                            : (ushort)0x0001; // ground walkable fallback
+                        NativeMethods.SetPolyFlags(key.MapId, key.PolyRef, restoreFlags);
                         restoredCount++;
                     }
 
                     _originalPolyAreas.Remove(key);
+                    _originalPolyFlags.Remove(key);
                 }
             }
 
