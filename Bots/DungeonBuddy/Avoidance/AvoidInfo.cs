@@ -39,7 +39,8 @@ namespace Bots.DungeonBuddy.Avoidance
             Func<float> radiusSelector,
             Func<WoWPoint> leashPointSelector,
             float leashRadius,
-            bool isBlocking)
+            bool isBlocking,
+            AvoidancePriority priority = AvoidancePriority.Medium)
         {
             Condition = condition;
             ObjectSelector = objectSelector;
@@ -48,6 +49,7 @@ namespace Bots.DungeonBuddy.Avoidance
             LeashPointSelector = leashPointSelector;
             LeashRadius = leashRadius;
             IsBlocking = isBlocking;
+            Priority = priority;
         }
 
         /// <summary>
@@ -67,7 +69,8 @@ namespace Bots.DungeonBuddy.Avoidance
             Func<float> radiusSelector,
             Func<WoWPoint> leashPointSelector,
             float leashRadius,
-            bool isBlocking)
+            bool isBlocking,
+            AvoidancePriority priority = AvoidancePriority.Medium)
         {
             Condition = condition;
             ObjectSelector = null;
@@ -76,6 +79,7 @@ namespace Bots.DungeonBuddy.Avoidance
             LeashPointSelector = leashPointSelector;
             LeashRadius = leashRadius;
             IsBlocking = isBlocking;
+            Priority = priority;
         }
 
         /// <summary>
@@ -112,6 +116,14 @@ namespace Bots.DungeonBuddy.Avoidance
         /// Si true, bloque la navigation à travers cette zone
         /// </summary>
         public bool IsBlocking { get; private set; }
+
+        /// <summary>
+        /// HB 6.2.3 AvoidancePriority — weights the escape-route score in
+        /// GetBestLocationOutsideCluster. High-priority avoids dominate the
+        /// scoring so the bot exits through them first.
+        /// Default: Medium (10).
+        /// </summary>
+        public AvoidancePriority Priority { get; private set; } = AvoidancePriority.Medium;
 
         public bool CanRun(object ctx)
         {

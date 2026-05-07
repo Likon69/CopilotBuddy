@@ -15,7 +15,8 @@ namespace Bots.DungeonBuddy.Avoidance
 {
     public static class Helpers
     {
-        private static dynamic Nav => Styx.Logic.Pathing.Navigator.NavigationProvider;
+        // HB 6.2.3 pattern: Helpers delegates to Navigator statics for path access
+        // (replaces the MeshNavigator.CurrentMovePath dynamic dispatch from HB 6.2.3)
 
         // smethod_0: adjusts Z to nearest ground height
         internal static Vector3 AdjustGroundPoint(Vector3 point)
@@ -72,11 +73,24 @@ namespace Bots.DungeonBuddy.Avoidance
             var clusterOnPath = AvoidanceManager.AvoidClusters.FirstOrDefault(c => c.Any(a => a.IsPointInAvoid(@class.woWPoint_0)));
             if (clusterOnPath != null)
             {
-                var safeLocation = GetNearestLocationOutsideCluster(@class.woWPoint_0, clusterOnPath, Styx.Logic.Pathing.Navigator.PathPrecision + 0.5f);
+                // HB 6.2.3: exit directed toward current target; fall back to nearest if no target.
+                WoWUnit currentTarget0 = StyxWoW.Me.CurrentTarget;
+                WoWPoint goal0 = currentTarget0 != null ? currentTarget0.Location : WoWPoint.Zero;
+                var safeLocation = GetBestLocationOutsideCluster(@class.woWPoint_0, goal0, 2, clusterOnPath, 1.5f);
                 if (!safeLocation.Equals(Vector3.Zero))
                 {
-                    var generatedPath = (IEnumerable<WoWPoint>)Nav.GeneratePath(@class.woWPoint_0, safeLocation);
-                    return new AvoidPathResult(PathResult.Changed, generatedPath.Select(WoWPointToVector3).ToArray());
+                    // HB 6.2.3: reuse cached escape path if endpoint hasn't moved.
+                    if (_cachedAvoidPathResult == null || _cachedAvoidPathResult.Path == null ||
+                        _cachedAvoidPathResult.Path.Length == 0 ||
+                        _cachedAvoidPathResult.Path[_cachedAvoidPathResult.Path.Length - 1].DistanceSqr(safeLocation) > 0.25f)
+                    {
+                        // HB 6.2.3: GeneratePath(...).Skip(1) — skip the start (player pos) from path array.
+                        var rawPath = Styx.Logic.Pathing.Navigator.ComputeRawPath(@class.woWPoint_0, safeLocation);
+                        _cachedAvoidPathResult = new AvoidPathResult(PathResult.Changed,
+                            rawPath.Skip(1).Select(WoWPointToVector3).ToArray());
+                    }
+                    _lastDestination = safeLocation;
+                    return _cachedAvoidPathResult;
                 }
             }
 
@@ -85,25 +99,41 @@ namespace Bots.DungeonBuddy.Avoidance
             {
                 if (avoids.Count == 0)
                     return null;
-                if (_lastLocation.DistanceSqr(@class.woWPoint_1) < 0.25f)
+                if (_lastDestination.DistanceSqr(@class.woWPoint_1) < 0.25f)
                     return _cachedAvoidPathResult;
             }
 
-            if (Nav.CurrentMovePath == null)
+            if (!Styx.Logic.Pathing.Navigator.HasActivePath)
                 return null;
 
+            // HB 6.2.3: save original destination BEFORE any cluster-redirect modification.
+            // woWPoint_ = @class.woWPoint_1 is captured before clusterBlocking may change it.
+            // _lastDestination is updated to this original value at the end so cache hits work correctly.
+            WoWPoint originalDestination = @class.woWPoint_1;
+
             var clusterBlocking = AvoidanceManager.AvoidClusters.FirstOrDefault(c => c.Any(a => a.IsPointInAvoid(@class.woWPoint_1)));
+            bool pathOverriddenByCluster = false;
             if (clusterBlocking != null)
             {
-                @class.woWPoint_1 = GetNearestLocationOutsideCluster(@class.woWPoint_1, clusterBlocking, Styx.Logic.Pathing.Navigator.PathPrecision + 0.5f);
+                // HB 6.2.3: goal = last nav-path point that's NOT inside the cluster,
+                // so the exit is directed toward where the path was already going.
+                WoWPoint lastSafeNavPt = Styx.Logic.Pathing.Navigator.GetRemainingNavPath()
+                    .LastOrDefault(p => !clusterBlocking.Any(a => a.IsPointInAvoid(p)));
+                @class.woWPoint_1 = GetBestLocationOutsideCluster(@class.woWPoint_1, lastSafeNavPt, 2, clusterBlocking, 1f);
                 if (@class.woWPoint_1 == WoWPoint.Zero)
                     return null;
+                // HB 6.2.3: ALWAYS regenerate the nav path to the redirected destination.
+                // currentMovePath.Path = meshNavigator_.FindPath(from, newDest); currentMovePath.Index = 0;
+                Styx.Logic.Pathing.Navigator.OverrideCurrentPath(
+                    Styx.Logic.Pathing.Navigator.ComputeRawPath(@class.woWPoint_0, @class.woWPoint_1));
+                pathOverriddenByCluster = true;
             }
 
-            if (avoids.Count != _avoidLocations.Count || _lastLocation != @class.woWPoint_0)
+            // HB 6.2.3: refresh nav path when avoid set has changed (skip if already overridden above).
+            if (!pathOverriddenByCluster && avoids.Count != _avoidLocations.Count)
             {
-                Nav.CurrentMovePath.Path = Nav.Nav.FindPath(_lastLocation, @class.woWPoint_1);
-                Nav.CurrentMovePath.Index = 0;
+                Styx.Logic.Pathing.Navigator.OverrideCurrentPath(
+                    Styx.Logic.Pathing.Navigator.ComputeRawPath(@class.woWPoint_0, @class.woWPoint_1));
             }
 
             _avoidLocations.Clear();
@@ -113,11 +143,13 @@ namespace Bots.DungeonBuddy.Avoidance
             if (avoids.Count == 0)
                 return null;
 
-            var pathArray = Nav.CurrentMovePath.Path.Points.Skip(Nav.CurrentMovePath.Index).ToArray();
+            var pathArray = Styx.Logic.Pathing.Navigator.GetRemainingNavPath().Select(WoWPointToVector3).ToArray();
             AvoidPathResult avoidPathResult;
             try
             {
-                avoidPathResult = ComputeAvoidPathRecursive(_lastLocation, @class.woWPoint_1, pathArray, 0);
+                // HB 6.2.3 smethod_1(woWPoint_0, woWPoint_1, array2, 0): first arg is CURRENT player position.
+                // _lastLocation is only updated AFTER this call (would be Zero on first tick).
+                avoidPathResult = ComputeAvoidPathRecursive(@class.woWPoint_0, @class.woWPoint_1, pathArray, 0);
             }
             catch (AvoidPathNotFoundException ex)
             {
@@ -129,16 +161,58 @@ namespace Bots.DungeonBuddy.Avoidance
                 return null;
             }
 
-            _lastLocation = @class.woWPoint_0;
+            // HB 6.2.3: woWPoint_0 = woWPoint_ (original destination, not the redirected one).
+            _lastDestination = originalDestination;
+            // HB 6.2.3: if destination was redirected (clusterBlocking), downgrade Changed → Partial.
+            // Signals caller that this is a partial route to a redirected dest, not the final goal.
+            if (avoidPathResult.Result > PathResult.Partial && clusterBlocking != null)
+                avoidPathResult = new AvoidPathResult(PathResult.Partial, avoidPathResult.Path);
             if (avoidPathResult.Result != PathResult.Unchanged && avoidPathResult.Result != PathResult.Failed)
+            {
+                // HB 6.2.3: MeshTraceline(Me.Location, path[1]) == false → LOS clear → skip waypoint 0.
+                // The bot is already close enough that it can steer directly to the second waypoint,
+                // avoiding the micro-jitter of stopping at path[0] first.
+                // CB: Raycast returns false when the ray is unobstructed (hitT >= 1.0f = no navmesh wall).
+                if (avoidPathResult.Path != null && avoidPathResult.Path.Length > 1)
+                {
+                    var path1WP = new WoWPoint(avoidPathResult.Path[1].X, avoidPathResult.Path[1].Y, avoidPathResult.Path[1].Z);
+                    if (!Styx.Logic.Pathing.Navigator.Raycast(@class.woWPoint_0, path1WP, out _))
+                        avoidPathResult.Index = 1;
+                }
                 _cachedAvoidPathResult = avoidPathResult;
-            return avoidPathResult;
+                return avoidPathResult;
+            }
+            // HB 6.2.3: Unchanged or Failed → clear cache (avoidPathResult_0 = null) and return null.
+            // If cached, next tick would return stale Changed path even when no obstacle is in the way.
+            _cachedAvoidPathResult = null;
+            return null;
         }
 
         public static void ClearAvoidPath()
         {
             _avoidLocations.Clear();
             _cachedAvoidPathResult = null;
+            _lastDestination = WoWPoint.Zero;
+        }
+
+        /// <summary>
+        /// Wrapper consumed by Navigator.NavAvoidWaypointProvider.
+        /// Returns the current avoidance detour as WoWPoint[] (remaining waypoints from Index),
+        /// or null when no avoidance is needed.
+        /// HB 6.2.3 AvoidanceNavigationProvider.MovePath() pattern.
+        /// </summary>
+        public static WoWPoint[] GetAvoidWaypoints(WoWPoint destination)
+        {
+            if (!StyxWoW.Me.IsAlive) return null;
+            var result = GetAvoidPath(destination);
+            if (result == null || result.Path == null || result.Path.Length == 0)
+                return null;
+            // PathResult.Unchanged: no obstacles intersect the nav path — normal navigation handles it.
+            // HB 6.2.3 AvoidanceNavigationProvider falls through to base.MovePath() for Unchanged.
+            if (result.Result == PathResult.Unchanged)
+                return null;
+            int idx = result.Index >= 0 ? result.Index : 0;
+            return result.Path.Skip(idx).Select(v => new WoWPoint(v.X, v.Y, v.Z)).ToArray();
         }
 
         private static AvoidPathResult ComputeAvoidPathRecursive(Vector3 from, Vector3 to, Vector3[] points, int depth)
@@ -341,14 +415,125 @@ namespace Bots.DungeonBuddy.Avoidance
 
         private static AvoidPathResult ComputeDirectPath(Vector3 from, Vector3 to, Avoid avoid, int depth)
         {
-            var pathFindResult = Nav.Nav.FindPath(from, to);
-            if (!pathFindResult.Points.Any() && pathFindResult.Succeeded)
+            // HB smethod_3: FindPath from → to, fail if empty, recurse to check for more avoids.
+            var rawPts = Styx.Logic.Pathing.Navigator.ComputeRawPath(from, to);
+            if (rawPts == null || rawPts.Length == 0)
+                return new AvoidPathResult(PathResult.Failed, null);
+            var pathPts = rawPts.Select(WoWPointToVector3).ToArray();
+            if (avoid != null && pathPts.Any(p => avoid.IsPointInAvoid(p)))
+                return new AvoidPathResult(PathResult.Failed, pathPts);
+            return ComputeAvoidPathRecursive(from, to, pathPts, depth + 1);
+        }
+
+        /// <summary>
+        /// HB 6.2.3 Helpers.GetBestLocationOutsideCluster — goal-directed cluster escape.
+        /// Nudges the search origin toward 'goal' by up to 'goalPriority' units before scanning
+        /// exit directions, so the bot exits on the side closest to its current target.
+        /// CB uses the same Navigation.dll that HB's RecastManaged wraps, so all three
+        /// checks are now exact ports:
+        ///   - FindNearestPolyRef → candidate is on the navmesh
+        ///   - Raycast hitT == FLT_MAX → no wall between searchOrigin and candidate
+        ///   - FindDistanceToWall > 1f → candidate is not right next to a wall
+        /// AvoidInfo.Priority is now wired in; dungeon scripts can set priority=High on
+        /// instant-kill avoids so they dominate the exit-score and are escaped first.
+        /// </summary>
+        public static Vector3 GetBestLocationOutsideCluster(Vector3 from, Vector3 goal, int goalPriority, AvoidCluster cluster, float extendDistance)
+        {
+            Vector3 searchOrigin = from;
+            goalPriority %= 10;
+
+            // Nudge searchOrigin toward goal by min(dist, goalPriority) units.
+            // HB: vector3_0 = vector3_0.smethod_12(heading, min(dist, goalPriority))
+            if (!goal.Equals(Vector3.Zero) && !goal.Equals(from))
             {
-                if (pathFindResult.IsPartialPath)
-                    return new AvoidPathResult(PathResult.Partial, pathFindResult.Points);
-                return ComputeAvoidPathRecursive(from, to, pathFindResult.Points, depth + 1);
+                float dx = goal.X - from.X;
+                float dy = goal.Y - from.Y;
+                float dist = (float)Math.Sqrt(dx * dx + dy * dy);
+                if (dist > 0f)
+                {
+                    float nudge = dist < (float)goalPriority ? dist : (float)goalPriority;
+                    float heading = (float)Math.Atan2(dy, dx);
+                    searchOrigin = new Vector3(
+                        from.X + (float)Math.Cos(heading) * nudge,
+                        from.Y + (float)Math.Sin(heading) * nudge,
+                        from.Z);
+                    searchOrigin = AdjustGroundPoint(searchOrigin);
+                }
             }
-            return new AvoidPathResult(PathResult.Failed, pathFindResult.Points);
+
+            // Tag each cluster avoid: is searchOrigin inside it?
+            // If searchOrigin is outside all avoids, return it directly — already safe.
+            var avoidPairs = cluster.Select(a => (avoid: a, inside: a.IsPointInAvoid(searchOrigin))).ToList();
+            if (!avoidPairs.Any(p => p.inside))
+                return searchOrigin;
+
+            // Scan 20 equidistant angles. For each, find the farthest exit through blocking avoids.
+            // Score = sum of (enter→exit distance * Priority) — higher priority avoids dominate.
+            // Ascending score = shortest weighted escape path = preferred direction.
+            var candidates = new List<(float score, Vector3 point)>();
+            for (float t = 0f; t < 1f; t += 0.05f)
+            {
+                float angle = 6.28318548f * t;
+                WoWPoint rayEnd = GetPointAt(searchOrigin, 100f, angle, 0f);
+
+                var rayHits = avoidPairs
+                    .Where(p => p.inside)
+                    .Select(p => new { pair = p, trace = AvoidTraceline(p.avoid, searchOrigin, rayEnd) })
+                    .Where(x => x.trace.Hits > 0)
+                    .OrderByDescending(x => x.trace.Exit.DistanceSqr(searchOrigin))
+                    .ToList();
+
+                if (!rayHits.Any()) continue;
+
+                var farthest = rayHits.First();
+                Vector3 exitPt = farthest.trace.Exit;
+                Vector3 enterPt = farthest.pair.inside ? searchOrigin : farthest.trace.Enter;
+                exitPt.Z = enterPt.Z;
+
+                // Extend past the exit surface by extendDistance
+                Vector3 dir = exitPt - enterPt;
+                float len = (float)Math.Sqrt(dir.X * dir.X + dir.Y * dir.Y);
+                if (len > 0f) { dir.X /= len; dir.Y /= len; dir.Z = 0f; }
+                Vector3 extended = exitPt + dir * extendDistance;
+
+                // HB 6.2.3: score weighted by AvoidInfo.Priority so high-priority avoids
+                // (instant-kill fire) push the bot to pick the exit that clears them fastest.
+                float score = rayHits.Sum(x =>
+                {
+                    Vector3 entry = x.pair.inside ? searchOrigin : x.trace.Enter;
+                    float ddx = x.trace.Exit.X - entry.X;
+                    float ddy = x.trace.Exit.Y - entry.Y;
+                    return (float)Math.Sqrt(ddx * ddx + ddy * ddy) * (float)x.pair.avoid.AvoidInfo.Priority;
+                });
+
+                if (!extended.Equals(Vector3.Zero))
+                    candidates.Add((score, extended));
+            }
+
+            // HB 6.2.3 validation (exact port):
+            //   1. Raycast(searchOrigin→candidate) must be clear — no navmesh wall between them.
+            //      MeshTraceline: hitT == FLT_MAX → clear. CB Raycast returns true if blocked.
+            //   2. FindDistanceToWall > 1f — candidate is not right against a wall.
+            //      If the nav system isn't loaded, accept any candidate (fail-soft).
+            WoWPoint searchOriginWP = new WoWPoint(searchOrigin.X, searchOrigin.Y, searchOrigin.Z);
+            foreach (var (_, pt) in candidates.OrderBy(c => c.score))
+            {
+                Vector3 safe = AdjustGroundPoint(pt);
+                if (Styx.Logic.Pathing.Navigator.IsNavigatorLoaded)
+                {
+                    WoWPoint safeWP = new WoWPoint(safe.X, safe.Y, safe.Z);
+                    // HB 6.2.3: MeshTraceline(origin, candidate) must be false (hitT == FLT_MAX = no wall).
+                    if (Styx.Logic.Pathing.Navigator.Raycast(searchOriginWP, safeWP, out _))
+                        continue; // navmesh wall between origin and candidate — try next direction
+                    // HB 6.2.3: DistToWall(candidate, 1.5f) != null && > 1f
+                    float wallDist = Styx.Logic.Pathing.Navigator.FindDistanceToWall(safeWP, 5f);
+                    if (wallDist <= 1f)
+                        continue; // against a wall or off-mesh — try next direction
+                }
+                return safe;
+            }
+
+            return Vector3.Zero;
         }
 
         public static Vector3 GetNearestLocationOutsideCluster(Vector3 location, AvoidCluster cluster, float extendDistance)
@@ -378,7 +563,10 @@ namespace Bots.DungeonBuddy.Avoidance
 
         internal static MoveResult MoveAwayFromCluster(AvoidCluster cluster)
         {
-            var safeLocation = GetNearestLocationOutsideCluster(StyxWoW.Me.Location, cluster, Styx.Logic.Pathing.Navigator.PathPrecision + 0.5f);
+            // HB 6.2.3 smethod_4: directed escape toward current target.
+            WoWUnit currentTarget = StyxWoW.Me.CurrentTarget;
+            WoWPoint goal = currentTarget != null ? currentTarget.Location : WoWPoint.Zero;
+            var safeLocation = GetBestLocationOutsideCluster(StyxWoW.Me.Location, goal, 2, cluster, 1.5f);
             if (safeLocation.Equals(Vector3.Zero))
                 return MoveResult.Failed;
 
@@ -565,7 +753,9 @@ namespace Bots.DungeonBuddy.Avoidance
 
         private static readonly Dictionary<Avoid, WoWPoint> _avoidLocations = new();
         private static AvoidPathResult _cachedAvoidPathResult;
-        private static WoWPoint _lastLocation;
+        // HB 6.2.3 Helpers.woWPoint_0: tracks the LAST DESTINATION passed to GetAvoidPath, not player pos.
+        // Used to detect destination changes for cache invalidation.
+        private static WoWPoint _lastDestination;
 
         // CompilerGenerated delegate fields
         [CompilerGenerated] private static Func<WoWPoint, Vector3> _func_0;

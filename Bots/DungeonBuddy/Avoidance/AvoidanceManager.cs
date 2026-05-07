@@ -55,7 +55,9 @@ namespace Bots.DungeonBuddy.Avoidance
             {
                 foreach (var ai in AvoidInfos.Where(ai => ai.ObjectSelector != null))
                 {
-                    if (ai.ObjectSelector(obj) && ai.CanRun(obj) && !Avoids.Any(a => a is AvoidObject ao && ao.AvoidInfo == ai))
+                    // HB 6.2.3 Pulse(): uniqueness is (AvoidInfo, WoWObject) pair — allows N AvoidObjects
+                    // per AvoidInfo, one per distinct world object (e.g. every forge in range = one entry).
+                    if (ai.ObjectSelector(obj) && ai.CanRun(obj) && !Avoids.Any(a => a is AvoidObject ao && ao.AvoidInfo == ai && ao.Object == obj))
                     {
                         changed = true;
                         Avoids.Add(new AvoidObject(ai, obj));
