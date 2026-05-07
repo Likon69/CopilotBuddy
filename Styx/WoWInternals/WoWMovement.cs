@@ -23,8 +23,10 @@ namespace Styx.WoWInternals
 		private const uint CTM_Stop_Function = 0x0072B3A0;  // 7517088 decimal (CGPlayer_C__ClickToMoveStop)
 		// Click to move base address - FROM HB 3.3.5a (0xCA11D8)
 		private const uint ClickToMove_Base = 0xCA11D8;  // 13243864 decimal
-		// Active input control pointer
-		private const uint ActiveInputControl_Ptr = 0xC24D54;  // 12732756 decimal
+		// Pointer slot to active CGInputControl — CGInputControl__GetActive returns dword_C24954
+		// i.e., read the uint at 0xC24954 to get the actual struct address
+		private const uint ActiveInputControl_Ptr = 0xC24954; // 3.3.5a 12340 — stores pointer to CGInputControl
+
 		// GetActivePlayerObject - FROM 335offsetsall.txt
 		private const uint GetActivePlayerObject_Function = 0x004038F0;  // 4208880 decimal
 
@@ -118,6 +120,8 @@ namespace Styx.WoWInternals
 					return new InputControl();
 				try
 				{
+					// CGInputControl__GetActive returns dword_C24954: the DWORD at 0xC24954
+					// is a pointer to the actual CGInputControl struct.
 					uint controlPtr = memory.Read<uint>(ActiveInputControl_Ptr);
 					if (controlPtr == 0)
 						return new InputControl();
@@ -239,7 +243,9 @@ namespace Styx.WoWInternals
 
 		public static void MoveStop(MovementDirection direction)
 		{
-			direction &= ActiveInputControl.Flags;
+			// Do NOT mask against ActiveInputControl.Flags.
+			// Lua stop commands are idempotent — sending StrafeLeftStop() when not strafing is a no-op.
+			// Masking here caused strafe to never stop when the InputControl read returned 0.
 			if (direction == MovementDirection.None)
 				return;
 
@@ -251,8 +257,8 @@ namespace Styx.WoWInternals
 			StyxWoW.ResetAfk();
 			
 			// HB 3.3.5a pattern: batch all direction stops into a single Lua.DoString
-			// call so only ONE Execute() is needed instead of up to 6.
-			var sb = new System.Text.StringBuilder(128);
+			// call so only ONE Execute() is needed instead of up to 8.
+			var sb = new System.Text.StringBuilder(160);
 			if ((direction & MovementDirection.Forward) != 0)
 				sb.Append("MoveForwardStop();");
 			if ((direction & MovementDirection.Backwards) != 0)
@@ -261,6 +267,10 @@ namespace Styx.WoWInternals
 				sb.Append("StrafeLeftStop();");
 			if ((direction & MovementDirection.StrafeRight) != 0)
 				sb.Append("StrafeRightStop();");
+			if ((direction & MovementDirection.TurnLeft) != 0)
+				sb.Append("TurnLeftStop();");
+			if ((direction & MovementDirection.TurnRight) != 0)
+				sb.Append("TurnRightStop();");
 			if ((direction & MovementDirection.JumpAscend) != 0)
 				sb.Append("AscendStop();");
 			if ((direction & MovementDirection.Descend) != 0)
@@ -484,8 +494,8 @@ namespace Styx.WoWInternals
 				return;
 			}
 
-			if (ActiveInputControl.Flags.HasFlag(direction))
-				return;
+			// Do NOT guard on ActiveInputControl.Flags.HasFlag — start commands are idempotent
+			// and skipping them when the flag read is stale would block movement silently.
 
 			StyxWoW.ResetAfk();
 
