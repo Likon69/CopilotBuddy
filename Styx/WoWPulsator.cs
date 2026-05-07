@@ -49,6 +49,12 @@ namespace Styx
 				// BUG-07 fix: Pulse avoidance zones (was missing per audit)
 				Styx.Logic.Pathing.AvoidanceManager.Pulse();
 
+				// HB 6.2.3 AvoidanceNavigationProvider pattern:
+				// Update geometric obstacle avoidance zones so Navigator.MoveTo()
+				// can redirect the bot around registered world obstacles (forge, mailbox, etc.).
+				// Set by WorldObstacleManager.Initialize() — no-op when no bots have registered.
+				Styx.Logic.Pathing.Navigator.NavAvoidanceUpdater?.Invoke();
+
 				if ((flags & PulseFlags.BotEvents) != (PulseFlags)0U)
 				{
 					BotEvents.PulseEvents();
