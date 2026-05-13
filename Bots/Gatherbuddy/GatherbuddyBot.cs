@@ -10,7 +10,9 @@ using Styx.Helpers;
 using Styx.Logic;
 using Styx.Logic.BehaviorTree;
 using Styx.Logic.Inventory;
+using Styx.Logic.Inventory.Frames.Gossip;
 using Styx.Logic.Inventory.Frames.LootFrame;
+using Styx.Logic.Inventory.Frames.MailBox;
 using Styx.Logic.Inventory.Frames.Merchant;
 using Styx.Logic.Pathing;
 using Styx.Logic.Profiles;
@@ -62,13 +64,12 @@ namespace Bots.Gatherbuddy
         // WoD: woWObject_1
         private static WoWObject _currentNode;
 
+        // GUID of the last node we logged "Flying to" for — prevents per-tick log spam.
+        private static ulong _lastLoggedNodeGuid;
+
         // Per-node timer. If it exceeds BlacklistTimer seconds the node is blacklisted.
         // WoD: stopwatch_0
         internal static readonly Stopwatch _gatherTimer = new Stopwatch();
-
-        // Interval timer used by the vendor sub-behavior.
-        // WoD: stopwatch_1
-        private readonly Stopwatch _vendorTimer = new Stopwatch();
 
         // Session start time — used by RunningTime and the Stop() summary log.
         // WoD: dateTime_0
@@ -158,54 +159,28 @@ namespace Bots.Gatherbuddy
             _approachPoint            = WoWPoint.Zero;
             _gatherAttemptCount       = 0;
             _currentNode              = null;
+            _lastLoggedNodeGuid       = 0;
             _gatherTimer.Reset();
             _sessionStart             = DateTime.Now;
-            _vendorTimer.Restart();
 
             _waypoints.Clear();
             if (ProfileManager.CurrentProfile == null)
                 throw new InvalidOperationException("[GatherBuddy] No profile loaded.");
 
-            float heightMod = GatherBuddySettings.Instance.HeightModifier;
-
-            if (ProfileManager.CurrentProfile.GrindArea?.Hotspots != null &&
-                ProfileManager.CurrentProfile.GrindArea.Hotspots.Count > 0)
-            {
-                foreach (var hs in ProfileManager.CurrentProfile.GrindArea.Hotspots)
-                    _waypoints.Add(hs.ToWoWPoint().Add(0f, 0f, heightMod));
-            }
-            else if (ProfileManager.CurrentProfile.HotspotManager?.Hotspots != null &&
-                     ProfileManager.CurrentProfile.HotspotManager.Hotspots.Count > 0)
-            {
-                foreach (var pt in ProfileManager.CurrentProfile.HotspotManager.Hotspots)
-                    _waypoints.Add(pt.Add(0f, 0f, heightMod));
-            }
-            else
-            {
-                throw new InvalidOperationException("[GatherBuddy] Profile has no hotspots.");
-            }
-
-            if (GatherBuddySettings.Instance.RandomizeHotspots)
-                ShuffleList(_waypoints);
-
-            _waypointQueue = new CircularQueue<WoWPoint>();
-            foreach (var wp in _waypoints)
-                _waypointQueue.Enqueue(wp);
-
-            // Start from whichever hotspot is nearest rather than from the first in the list.
-            if (StyxWoW.Me != null && _waypoints.Count > 0)
-            {
-                var nearest = _waypoints.OrderBy(w => w.DistanceSqr(StyxWoW.Me.Location)).First();
-                _waypointQueue.CycleTo(nearest);
-            }
+            ReloadWaypoints();
 
             if (ProfileManager.CurrentProfile.Blackspots?.Count > 0)
                 BlackspotManager.AddBlackspots(ProfileManager.CurrentProfile.Blackspots);
+
+            // HB 6.2.3: invalidate cached PolyNav after loading blackspots so the flight engine
+            // rebuilds its path around any new aerial obstacles from the profile.
+            Flightor.Clear();
 
             Targeting.Instance.IncludeTargetsFilter      += IncludeTargetsFilter;
             LootTargeting.Instance.IncludeTargetsFilter  += IncludeLootFilter;
             LootTargeting.Instance.RemoveTargetsFilter   += RemoveLootFilter;
             LootTargeting.Instance.WeighTargetsFilter    += WeighLootTargetsFilter;
+            BotEvents.Profile.OnNewProfileLoaded         += OnProfileLoaded;
 
             Log("Started. Loaded {0} waypoints.", _waypoints.Count);
         }
@@ -233,6 +208,66 @@ namespace Bots.Gatherbuddy
             LootTargeting.Instance.IncludeTargetsFilter  -= IncludeLootFilter;
             LootTargeting.Instance.RemoveTargetsFilter   -= RemoveLootFilter;
             LootTargeting.Instance.WeighTargetsFilter    -= WeighLootTargetsFilter;
+            BotEvents.Profile.OnNewProfileLoaded         -= OnProfileLoaded;
+        }
+
+        /// <summary>
+        /// Rebuilds _waypoints and _waypointQueue from the current profile.
+        /// Called on Start() and when the user loads a new profile at runtime.
+        /// WoD: method_10 (OnNewProfileLoaded) + Start() hotspot block.
+        /// </summary>
+        private void ReloadWaypoints()
+        {
+            _waypoints.Clear();
+            float heightMod = GatherBuddySettings.Instance.HeightModifier;
+
+            if (ProfileManager.CurrentProfile?.GrindArea?.Hotspots != null &&
+                ProfileManager.CurrentProfile.GrindArea.Hotspots.Count > 0)
+            {
+                foreach (var hs in ProfileManager.CurrentProfile.GrindArea.Hotspots)
+                    _waypoints.Add(hs.ToWoWPoint().Add(0f, 0f, heightMod));
+            }
+            else if (ProfileManager.CurrentProfile?.HotspotManager?.Hotspots != null &&
+                     ProfileManager.CurrentProfile.HotspotManager.Hotspots.Count > 0)
+            {
+                foreach (var pt in ProfileManager.CurrentProfile.HotspotManager.Hotspots)
+                    _waypoints.Add(pt.Add(0f, 0f, heightMod));
+            }
+            else
+            {
+                Log("Profile has no hotspots — waypoints unchanged.");
+                return;
+            }
+
+            if (GatherBuddySettings.Instance.RandomizeHotspots)
+                ShuffleList(_waypoints);
+
+            _waypointQueue = new CircularQueue<WoWPoint>();
+            _waypointQueue.Mode = GatherBuddySettings.Instance.PathingType == PathType.Bounce
+                ? Styx.Helpers.QueueMode.Bounce
+                : Styx.Helpers.QueueMode.Circle;
+            foreach (var wp in _waypoints)
+                _waypointQueue.Enqueue(wp);
+
+            // Start from the nearest hotspot.
+            if (StyxWoW.Me != null && _waypoints.Count > 0)
+            {
+                var nearest = _waypoints.OrderBy(w => w.DistanceSqr(StyxWoW.Me.Location)).First();
+                _waypointQueue.CycleTo(nearest);
+            }
+        }
+
+        /// <summary>
+        /// Called when the user loads a new profile while the bot is running.
+        /// Reloads waypoints from the new profile without restarting the bot.
+        /// WoD: method_10 (BotEvents.Profile.OnNewProfileLoaded handler).
+        /// </summary>
+        private void OnProfileLoaded(BotEvents.Profile.NewProfileLoadedEventArgs args)
+        {
+            Log("New profile loaded — reloading waypoints.");
+            _approachPoint = WoWPoint.Zero;
+            _currentNode   = null;
+            ReloadWaypoints();
         }
 
         #endregion
@@ -265,11 +300,13 @@ namespace Bots.Gatherbuddy
                     })
                 ),
 
-                // [2] Any ground combat: reset per-node gather counters to avoid stale state.
+                // [2] Any ground combat (or eating/drinking): reset per-node gather counters.
+                //     HB 6.2.3 Class670.method_2: Me.Combat || HasAura("Food") || HasAura("Drink")
                 //     Returns Failure so the tree continues to the combat subtree below.
-                //     WoD: Class670.method_2/3
                 new Decorator(
-                    ctx => StyxWoW.Me.Combat,
+                    ctx => StyxWoW.Me.Combat ||
+                           StyxWoW.Me.HasAura("Food") ||
+                           StyxWoW.Me.HasAura("Drink"),
                     new Action(ctx =>
                     {
                         _gatherAttemptCount = 0;
@@ -293,12 +330,12 @@ namespace Bots.Gatherbuddy
                     })
                 ),
 
-                // [4] Combat subtree — only on the ground (not airborne) and not suppressed.
-                //     While flying toward a node the gather logic handles the landing/dismount;
-                //     once IsFlying=false the next tick enters combat normally.
-                //     HB 4.3.4: smethod_20 → !bool_1 gate; IsFlying implicit (can't cast airborne).
+                // [4] Combat subtree — run when not mounted OR not flying.
+                //     HB 6.2.3 Class670.method_6: !Flightor.MountHelper.Mounted || !Me.MovementInfo.IsFlying
+                //     Plus inner gate method_7: !bool_1 (not combat-suppressed from [1]).
+                //     When dismounted in combat, HB enters combat immediately; CB must match.
                 new Decorator(
-                    ctx => !StyxWoW.Me.MovementInfo.IsFlying && !_combatSuppressed,
+                    ctx => (!Flightor.MountHelper.Mounted || !StyxWoW.Me.MovementInfo.IsFlying) && !_combatSuppressed,
                     new PrioritySelector(
                         LevelBot.CreateCombatBehavior()
                     )
@@ -309,7 +346,7 @@ namespace Bots.Gatherbuddy
                 CreateVendorBehavior(),
 
                 // [6] Clear _combatSuppressed every tick; always returns Failure.
-                //     WoD: Class670.method_10
+                //     HB 6.2.3: Class670.method_10 — bool_1 = false; return Failure.
                 new Action(ctx =>
                 {
                     _combatSuppressed = false;
@@ -374,7 +411,7 @@ namespace Bots.Gatherbuddy
                 new Decorator(
                     ctx => _waypointQueue != null &&
                            _waypointQueue.Count > 0 &&
-                           StyxWoW.Me.Location.DistanceSqr(_waypointQueue.Peek()) < ArrivalThresholdSqr,
+                           StyxWoW.Me.Location.Distance2DSqr(_waypointQueue.Peek()) < ArrivalThresholdSqr,
                     new Action(ctx =>
                     {
                         _waypointQueue.Dequeue();
@@ -527,6 +564,11 @@ namespace Bots.Gatherbuddy
         private Composite CreateVendorBehavior()
         {
             return new PrioritySelector(
+                // MailToAlt enabled and there are items to mail — go to mailbox first.
+                new Decorator(
+                    new CanRunDecoratorDelegate(NeedsMailing),
+                    CreateMailBehavior()
+                ),
                 // Bags full for active gather type(s) — go sell (and repair while there).
                 new Decorator(
                     new CanRunDecoratorDelegate(NeedsBagsEmptied),
@@ -581,6 +623,19 @@ namespace Bots.Gatherbuddy
                     Log("Repairing at {0}.", vendorUnit.Name);
                     vendorUnit.Interact();
                     StyxWoW.SleepForLagDuration();
+
+                    // Some NPCs show a gossip frame before the merchant frame.
+                    // Select the first option ("Browse Wares" / "Repair") to open it.
+                    // WoD: method_95/96 — DecoratorContinue(!MerchantFrame.IsVisible && GossipFrame.IsVisible)
+                    if (!MerchantFrame.Instance.IsVisible && GossipFrame.Instance.IsVisible)
+                    {
+                        GossipFrame.Instance.SelectGossipOption(0);
+                        StyxWoW.SleepForLagDuration();
+                    }
+
+                    if (!MerchantFrame.Instance.IsVisible)
+                        return RunStatus.Running;
+
                     Lua.DoString("RepairAllItems()");
                     StyxWoW.SleepForLagDuration();
                     MerchantFrame.Instance.Close();
@@ -627,6 +682,19 @@ namespace Bots.Gatherbuddy
                     Log("Selling at {0}.", vendorUnit.Name);
                     vendorUnit.Interact();
                     StyxWoW.SleepForLagDuration();
+
+                    // Some NPCs show a gossip frame before the merchant frame.
+                    // Select the first option ("Browse Wares") to open the merchant frame.
+                    // WoD: method_95/96 — DecoratorContinue(!MerchantFrame.IsVisible && GossipFrame.IsVisible)
+                    if (!MerchantFrame.Instance.IsVisible && GossipFrame.Instance.IsVisible)
+                    {
+                        GossipFrame.Instance.SelectGossipOption(0);
+                        StyxWoW.SleepForLagDuration();
+                    }
+
+                    if (!MerchantFrame.Instance.IsVisible)
+                        return RunStatus.Running;
+
                     Vendors.ForceSell = true;
                     if (GatherBuddySettings.Instance.RepairAtVendor)
                     {
@@ -652,10 +720,128 @@ namespace Bots.Gatherbuddy
             if (!GatherBuddySettings.Instance.VendorWhenFull)
                 return false;
 
-            uint minFree    = (uint)GatherBuddySettings.Instance.MinFreeBagSlots;
-            bool herbsFull  = !GatherBuddySettings.Instance.GatherHerbs    || StyxWoW.Me.FreeBagSlots <= minFree;
-            bool mineralsFull = !GatherBuddySettings.Instance.GatherMinerals || StyxWoW.Me.FreeBagSlots <= minFree;
+            uint minFree      = (uint)GatherBuddySettings.Instance.MinFreeBagSlots;
+            bool herbsFull    = !GatherBuddySettings.Instance.GatherHerbs    || BagHelper.EmptyHerbSlots <= minFree;
+            bool mineralsFull = !GatherBuddySettings.Instance.GatherMinerals || BagHelper.EmptyMineSlots <= minFree;
             return herbsFull && mineralsFull;
+        }
+
+        /// <summary>
+        /// Returns true when MailToAlt is on, a recipient is set, a mailbox exists in the profile,
+        /// and there are non-soulbound items that qualify under the mail quality filters.
+        /// WoD: method_17 variant — smethod_160 (canRunDecoratorDelegate_65 gate).
+        /// </summary>
+        private bool NeedsMailing(object ctx)
+        {
+            var s = GatherBuddySettings.Instance;
+            if (!s.MailToAlt) return false;
+            if (string.IsNullOrEmpty(s.MailRecipient)) return false;
+            if (ProfileManager.CurrentProfile?.MailboxManager == null) return false;
+            if (StyxWoW.Me == null || StyxWoW.Me.Combat || StyxWoW.Me.IsDead || StyxWoW.Me.IsGhost) return false;
+            return GetItemsToMail().Length > 0;
+        }
+
+        /// <summary>
+        /// Collects carried items that should be mailed based on GatherBuddySettings quality flags.
+        /// Non-soulbound, non-conjured, not protected, quality matches enabled flags.
+        /// WoD: smethod_12 / list_3 population logic in GatherbuddyBot.
+        /// </summary>
+        private WoWItem[] GetItemsToMail()
+        {
+            var s = GatherBuddySettings.Instance;
+            return StyxWoW.Me?.CarriedItems
+                .Where(item => item.IsValid
+                    && !item.IsSoulbound
+                    && !item.IsConjured
+                    && !Styx.Logic.Profiles.ProtectedItemsManager.Contains(item.Entry)
+                    && IsMailQuality(item.Quality, s))
+                .ToArray() ?? Array.Empty<WoWItem>();
+        }
+
+        private static bool IsMailQuality(WoWItemQuality quality, GatherBuddySettings s)
+        {
+            switch (quality)
+            {
+                case WoWItemQuality.Poor:     return s.MailGrey;
+                case WoWItemQuality.Common:   return s.MailWhite;
+                case WoWItemQuality.Uncommon: return s.MailGreen;
+                case WoWItemQuality.Rare:     return s.MailBlue;
+                case WoWItemQuality.Epic:     return s.MailPurple;
+                default:                      return false;
+            }
+        }
+
+        /// <summary>
+        /// Navigate to the closest profiled mailbox, interact with the in-world mailbox game object,
+        /// then call SendMailWithManyAttachments. Mirrors HB 4.3.4 smethod_160–169 flow.
+        /// </summary>
+        private Composite CreateMailBehavior()
+        {
+            return new PrioritySelector(
+                new Action(ctx =>
+                {
+                    Mailbox profileMailbox = ProfileManager.CurrentProfile?.MailboxManager?.GetClosestMailbox();
+                    if (profileMailbox == null) return RunStatus.Failure;
+
+                    // Find the actual in-world mailbox game object near the profile location.
+                    WoWGameObject mailboxGo = ObjectManager.GetObjectsOfType<WoWGameObject>()
+                        .Where(go => go.IsValid && go.IsMailbox &&
+                                     go.Location.DistanceSqr(profileMailbox.Location) < 225f) // 15y
+                        .OrderBy(go => go.DistanceSqr)
+                        .FirstOrDefault();
+
+                    // Still far from profile point — fly/walk there.
+                    if (mailboxGo == null &&
+                        StyxWoW.Me.Location.DistanceSqr(profileMailbox.Location) > 400f) // 20y
+                    {
+                        TreeRoot.StatusText = "Moving to mailbox";
+                        if (Flightor.CanFly)
+                            Flightor.MoveTo(profileMailbox.Location, 40f);
+                        else
+                            Navigator.MoveTo(profileMailbox.Location);
+                        return RunStatus.Running;
+                    }
+
+                    // Close to profile point: also accept any mailbox in expanded radius.
+                    if (mailboxGo == null)
+                    {
+                        mailboxGo = ObjectManager.GetObjectsOfType<WoWGameObject>()
+                            .Where(go => go.IsValid && go.IsMailbox)
+                            .OrderBy(go => go.DistanceSqr)
+                            .FirstOrDefault();
+                    }
+
+                    if (mailboxGo == null) return RunStatus.Failure;
+
+                    if (!mailboxGo.WithinInteractRange)
+                    {
+                        TreeRoot.StatusText = "Approaching mailbox";
+                        Navigator.MoveTo(mailboxGo.Location);
+                        return RunStatus.Running;
+                    }
+
+                    // At mailbox: stop, interact, wait for mail frame.
+                    WoWMovement.MoveStop();
+                    if (!MailFrame.Instance.IsVisible)
+                    {
+                        mailboxGo.Interact();
+                        StyxWoW.SleepForLagDuration();
+                        return RunStatus.Running;
+                    }
+
+                    WoWItem[] items = GetItemsToMail();
+                    if (items.Length > 0)
+                    {
+                        Log("Mailing {0} item(s) to {1}.", items.Length, GatherBuddySettings.Instance.MailRecipient);
+                        MailFrame.Instance.SendMailWithManyAttachments(
+                            GatherBuddySettings.Instance.MailRecipient, 0, items);
+                        StyxWoW.SleepForLagDuration();
+                    }
+
+                    MailFrame.Instance.Close();
+                    return RunStatus.Success;
+                })
+            );
         }
 
         #endregion
@@ -752,17 +938,35 @@ namespace Bots.Gatherbuddy
                 //     ContextChangeHandler calls CalculateApproachPoint() every tick and stores
                 //     the result in _approachPoint. The Decorator condition checks whether we
                 //     still need to travel (height diff > 15y, or 2D dist > 2.5y).
+                //     Guard: after [4] dismounts and resets _approachPoint=Zero, the next tick
+                //     recalculates a point 2.5-3.5y from the node. Without the ground check,
+                //     [3] would immediately re-trigger Flightor.MoveTo() even though [5] can
+                //     walk the remaining distance — causing the infinite mount loop.
                 //     WoD: PrioritySelector(CTX=method_38, [Decorator(method_41, Seq(42,43))])
                 new PrioritySelector(new ContextChangeHandler(CalculateApproachPoint),
                     new Decorator(
-                        ctx => Math.Abs(StyxWoW.Me.Location.Z - _approachPoint.Z) > 15f ||
-                               _approachPoint.Distance2DSqr(StyxWoW.Me.Location) >= 6.25f,
+                        ctx =>
+                        {
+                            // Already on the ground within walking distance — let [5] handle it.
+                            if (!StyxWoW.Me.MovementInfo.IsFlying
+                                && _currentNode != null
+                                && _currentNode.Location.Distance2D(StyxWoW.Me.Location) <= 18f)
+                                return false;
+
+                            return Math.Abs(StyxWoW.Me.Location.Z - _approachPoint.Z) > 15f ||
+                                   _approachPoint.Distance2DSqr(StyxWoW.Me.Location) >= 6.25f;
+                        },
                         new Sequence(
                             new Action(ctx =>
                             {
-                                Log("Flying to {0} ({1:F0}y).",
-                                    _currentNode != null ? _currentNode.Name : "node",
-                                    _approachPoint.Distance(StyxWoW.Me.Location));
+                                ulong guid = _currentNode?.Guid ?? 0;
+                                if (guid != _lastLoggedNodeGuid)
+                                {
+                                    _lastLoggedNodeGuid = guid;
+                                    Log("Flying to {0} ({1:F0}y).",
+                                        _currentNode != null ? _currentNode.Name : "node",
+                                        _approachPoint.Distance(StyxWoW.Me.Location));
+                                }
                                 return RunStatus.Success;
                             }),
                             new ActionSetActivity("Flying to node"),
@@ -873,7 +1077,7 @@ namespace Bots.Gatherbuddy
                         {
                             if (StyxWoW.Me.Combat) return true;
                             if (StyxWoW.Me.MovementInfo.IsFlying) return true;
-                            if (LootFrame.Instance.IsVisible) return true;
+                            if (LootFrame.Instance.IsVisible && LootFrame.Instance.LootItems > 0) return true;
                             if (ctx == null || (WoWObject)ctx != _currentNode) return true;
                             return false;
                         },
@@ -963,7 +1167,6 @@ namespace Bots.Gatherbuddy
 
                 Logging.WriteDebug("[ApproachPt] Recalculating approach point (was Zero). Player Z={0:F1}, CanFly={1}, IsFlying={2}",
                     myLocation.Z, Flightor.CanFly, StyxWoW.Me.MovementInfo.IsFlying);
-
                 // Already in interact range: no movement needed.
                 if (firstObject.WithinInteractRange)
                     return _approachPoint = myLocation;
@@ -992,13 +1195,16 @@ namespace Bots.Gatherbuddy
                 GameWorld.MassTraceLine(lines, GameWorld.TraceLineHitFlags.Collision, out hitArr, out hitPoints);
 
                 WoWPoint best = hitPoints
-                    .Where(p => nodeLocation.DistanceSqr(p) <= 12.25f) // 3.5 y radius
-                    .OrderByDescending(p => p.Z)
+                    .Where(p => nodeLocation.DistanceSqr(p) <= 12.25f  // 3.5 y radius
+                             && p.Z <= nodeLocation.Z + 2f)             // HB used +6f but WotLK rocks pass that → tighten to +2f
+                    .OrderByDescending(p => p.Z)                         // HB 6.2.3 method_40: highest Z first (correct HB behavior)
                     .FirstOrDefault();
 
-                return _approachPoint = (best != WoWPoint.Zero)
+                WoWPoint newApproach = (best != WoWPoint.Zero)
                     ? best
                     : nodeLocation.Add(0f, 0f, 2f); // fallback: 2 y above node
+
+                return _approachPoint = newApproach;
             }
         }
 
@@ -1060,8 +1266,8 @@ namespace Bots.Gatherbuddy
             bool canFly       = Flightor.CanFly;
             WoWPoint myLoc    = StyxWoW.Me.Location;
             uint minFree      = (uint)GatherBuddySettings.Instance.MinFreeBagSlots;
-            bool herbsFull    = !GatherBuddySettings.Instance.GatherHerbs    || StyxWoW.Me.FreeBagSlots <= minFree;
-            bool mineralsFull = !GatherBuddySettings.Instance.GatherMinerals || StyxWoW.Me.FreeBagSlots <= minFree;
+            bool herbsFull    = !GatherBuddySettings.Instance.GatherHerbs    || BagHelper.EmptyHerbSlots <= minFree;
+            bool mineralsFull = !GatherBuddySettings.Instance.GatherMinerals || BagHelper.EmptyMineSlots <= minFree;
 
             var nearbyHostiles = ObjectManager.GetObjectsOfType<WoWUnit>()
                 .Where(u => u.IsValid && u.IsAlive && u.IsHostile)
@@ -1075,10 +1281,12 @@ namespace Bots.Gatherbuddy
                 if (Blacklist.Contains(list[i].Guid))
                     { list.RemoveAt(i); continue; }
 
-                // Units: keep only if LootMobs is on and unit has loot.
+                // Units: keep if LootMobs+CanLoot, or SkinMobs+CanSkin.
                 if (list[i] is WoWUnit unit)
                 {
-                    if (!GatherBuddySettings.Instance.LootMobs || !unit.CanLoot)
+                    bool wantLoot = GatherBuddySettings.Instance.LootMobs && unit.CanLoot;
+                    bool wantSkin = GatherBuddySettings.Instance.SkinMobs && unit.CanSkin;
+                    if (!wantLoot && !wantSkin)
                         list.RemoveAt(i);
                     continue;
                 }
@@ -1087,8 +1295,9 @@ namespace Bots.Gatherbuddy
                 if (!(list[i] is WoWGameObject go))
                     { list.RemoveAt(i); continue; }
 
-                if (_avoidList.Contains(go.Entry))     { list.RemoveAt(i); continue; }
-                if (!go.IsHerb && !go.IsMineral)       { list.RemoveAt(i); continue; }
+                if (_avoidList.Contains(go.Entry))                                                                                    { list.RemoveAt(i); continue; }
+                if (GatherBuddySettings.Instance.BlacklistedEntries.Contains(go.Entry))                                                { list.RemoveAt(i); continue; }
+                if (!go.IsHerb && !go.IsMineral && !(GatherBuddySettings.Instance.GatherChests && go.IsChest && go.CanLoot))            { list.RemoveAt(i); continue; }
                 if (go.IsHerb     && herbsFull)        { list.RemoveAt(i); continue; }
                 if (go.IsMineral  && mineralsFull)     { list.RemoveAt(i); continue; }
                 if (!go.CanLoot)                       { list.RemoveAt(i); continue; }
@@ -1100,6 +1309,14 @@ namespace Bots.Gatherbuddy
 
                 if (BlackspotManager.IsBlackspotted(nodePos))
                     { list.RemoveAt(i); continue; }
+
+                // HB 6.2.3 method_14: also filter nodes inside aerial (Flightor) blackspots.
+                if (Styx.Logic.Pathing.FlightorNavigation.BlackspotManager.IsInBlackspot(nodePos))
+                {
+                    Logging.WriteDebug("[GB Filter] Skipping aerial-blackspot node: {0} at {1}", go.Name, nodePos);
+                    list.RemoveAt(i);
+                    continue;
+                }
 
                 // NoNinja: skip any node another mounted player is clearly heading toward.
                 if (GatherBuddySettings.Instance.NoNinja && Flightor.MountHelper.Mounted)
@@ -1150,15 +1367,16 @@ namespace Bots.Gatherbuddy
                         continue;
                     }
 
-                    // Underground: ray from 200y above the node to 2y above it — if terrain/WMO
-                    // blocks the ray, there's a ceiling (cave). IsOutdoors() is not reliable on
-                    // WoWGameObjects in WotLK 3.3.5a (it's a CGUnit_C method, reads wrong offsets).
-                    if (canFly && GameWorld.TraceLine(
-                            nodePos.Add(0f, 0f, 200f),
-                            nodePos.Add(0f, 0f, 2f),
-                            GameWorld.CGWorldFrameHitFlags.HitTestGroundAndStructures))
+                    // Underground/indoor: HB 6.2.3 uses the game's own IsOutdoors check
+                    // (client routine 0x71B7F0) rather than a TraceLine from the sky. TraceLine
+                    // from 200y above falsely blacklists nodes under cliff overhangs and arches
+                    // that are outdoors and perfectly gatherable — exactly the root cause of
+                    // the "oscillation at 20y from node" flight bug. IsOutdoors is reliable
+                    // on WoWGameObjects in CB (WoWObject.cs calls 0x71B7F0 with object ECX).
+                    if (canFly && !go.IsOutdoors)
                     {
                         BlacklistNodes[nodePos] = "Underground node";
+                        Logging.WriteDebug("[GB Filter] Blacklisted indoor node: {0} at {1}", go.Name, nodePos);
                         list.RemoveAt(i);
                         continue;
                     }
