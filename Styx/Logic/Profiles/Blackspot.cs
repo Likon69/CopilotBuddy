@@ -1,5 +1,7 @@
 #nullable disable
 using System;
+using System.Globalization;
+using System.Xml.Linq;
 using Styx.Logic.Pathing;
 
 namespace Styx.Logic.Profiles
@@ -35,6 +37,23 @@ namespace Styx.Logic.Profiles
             Location = location;
             Radius = radius;
             Height = height;
+        }
+
+        /// <summary>
+        /// Initializes a blackspot from an XML element.
+        /// Ported from HB 4.3.4 Styx.Logic.Profiles.Blackspot(XElement).
+        /// </summary>
+        public Blackspot(XElement element)
+            : this(
+                new WoWPoint(
+                    float.Parse(element.Attribute("X").Value, CultureInfo.InvariantCulture),
+                    float.Parse(element.Attribute("Y").Value, CultureInfo.InvariantCulture),
+                    float.Parse(element.Attribute("Z").Value, CultureInfo.InvariantCulture)),
+                float.Parse(element.Attribute("Radius").Value, CultureInfo.InvariantCulture),
+                element.Attribute("Height") != null
+                    ? float.Parse(element.Attribute("Height").Value, CultureInfo.InvariantCulture)
+                    : 5f)
+        {
         }
 
         /// <summary>
