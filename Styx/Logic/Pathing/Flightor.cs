@@ -185,6 +185,12 @@ namespace Styx.Logic.Pathing
             // Ground nav is faster than mounting and flying: prefer walking (HB smethod_9)
             if (ShouldWalk(destination))
             {
+                // In no-fly zones (e.g. Eastern Kingdoms in WotLK), attempt a ground mount
+                // for faster patrol before falling back to on-foot navigation.
+                // ShouldWalk returns true here because !CanFly, not because distance is short,
+                // so mounting is appropriate.  Mount.MountUp() is a no-op when cooldown is active.
+                if (!CanFly && !StyxWoW.Me.Mounted)
+                    Mount.MountUp();
                 // Project destination to player Z before ground nav — aerial Z causes CalculatePathEx:FAILED.
                 Navigator.MoveTo(new WoWPoint(destination.X, destination.Y, myLocation.Z));
                 return;
@@ -195,6 +201,15 @@ namespace Styx.Logic.Pathing
             // Not mounted - need to mount up
             if (!MountHelper.Mounted)
             {
+                // No-fly zone (e.g. Eastern Kingdoms in WotLK): ShouldWalk() returned false
+                // because me.Mounted=true (ground mount), skipping its !CanFly early-return.
+                // Don't attempt flying-mount logic here — just do ground navigation.
+                if (!CanFly)
+                {
+                    Navigator.MoveTo(new WoWPoint(destination.X, destination.Y, myLocation.Z));
+                    return;
+                }
+
                 // HB 6.2.3 smethod_10 lines 581/604: can we take off from here?
                 // HB 6.2.3 reduced the LOS probe from 30f (4.3.4) → 10f for normal mode
                 // (flag2=false → not WoD Maelstrom map). 30f caused false negatives in canyons:
