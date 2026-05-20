@@ -338,8 +338,9 @@ namespace Styx.WoWInternals.WoWObjects
         #endregion
         
         #region Type Helpers
-        // HB 4.3.4: IsChest checks a dictionary of chest entries, simplified here
-        public bool IsChest => SubType == WoWGameObjectType.Chest;
+        // HB 4.3.4: IsChest checks a dictionary of chest entries, simplified here.
+        // Herb nodes and mineral nodes also use SubType=3 (Chest) in WoW's DB, so exclude them.
+        public bool IsChest => SubType == WoWGameObjectType.Chest && !IsHerb && !IsMineral;
         public bool IsDoor => SubType == WoWGameObjectType.Door;
         public bool IsButton => SubType == WoWGameObjectType.Button;
         public bool IsQuestGiver => SubType == WoWGameObjectType.QuestGiver;
