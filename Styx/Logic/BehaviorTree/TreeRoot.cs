@@ -492,12 +492,21 @@ namespace Styx.Logic.BehaviorTree
 				if (Current == null)
 					return;
 
-				// HB 6.2.3 pattern: if a previous thread is still stopping, join it first
+				// HB 6.2.3 pattern: if a previous thread is still stopping, wait for it to exit.
+				// IMPORTANT: do NOT wait while holding the lock if the caller is the worker thread
+				// itself (e.g. ChangeBotAction via Dispatcher.Invoke) — that would deadlock.
+				// Use a timed wait outside the lock instead.
 				if (State == TreeRootState.Stopping)
 				{
-					if (_workerThread != null && _workerThread.IsAlive)
+					if (_workerThread != null && _workerThread.IsAlive &&
+					    Thread.CurrentThread != _workerThread)
 					{
-						_workerThread.Join();
+						// Release the lock while waiting so the worker thread can acquire it to set Stopped
+						Monitor.Exit(_stateLock);
+						bool exited = _workerThread.Join(5000); // 5s max
+						Monitor.Enter(_stateLock);
+						if (!exited)
+							Logging.WriteDebug("[TreeRoot] Worker thread did not stop in time — forcing Stopped state");
 					}
 					State = TreeRootState.Stopped;
 				}
