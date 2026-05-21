@@ -45,7 +45,7 @@ namespace Bots.Gatherbuddy
         /// </summary>
         public static void Blacklist(WoWGameObject node)
         {
-            Blacklist(node, TimeSpan.FromSeconds(GatherBuddySettings.Instance.BlacklistTimer));
+            Blacklist(node, TimeSpan.FromSeconds(GatherbuddySettings.Instance.BlacklistTimer));
         }
 
         /// <summary>
