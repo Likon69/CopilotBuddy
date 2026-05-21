@@ -21,12 +21,12 @@ namespace Styx.Helpers
         #region Main Window
 
         [Setting]
-        [DefaultValue(20)]
-        public int MainWindowLocationX { get; set; } = 20;
+        [DefaultValue(-1)]
+        public int MainWindowLocationX { get; set; } = -1;
 
         [Setting]
-        [DefaultValue(20)]
-        public int MainWindowLocationY { get; set; } = 20;
+        [DefaultValue(-1)]
+        public int MainWindowLocationY { get; set; } = -1;
 
         [Setting]
         [DefaultValue(531)]
