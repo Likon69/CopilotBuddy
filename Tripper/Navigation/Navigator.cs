@@ -781,7 +781,7 @@ namespace Tripper.Navigation
                 {
                     var startC = new NativeMethods.XYZ(start);
                     var endC = new NativeMethods.XYZ(end);
-                    var extents = new NativeMethods.XYZ(Extents);
+                    var extents = new NativeMethods.XYZ(Extents.Z, Extents.X, Extents.Y);
 
                     // First find the start polygon
                     if (!NativeMethods.FindNearestPolyRef(mapId, startC, extents, out ulong startRef, out _))
@@ -873,7 +873,7 @@ namespace Tripper.Navigation
                 {
                     var startC = new NativeMethods.XYZ(start);
                     var endC = new NativeMethods.XYZ(end);
-                    var extentsC = new NativeMethods.XYZ(Extents);
+                    var extentsC = new NativeMethods.XYZ(Extents.Z, Extents.X, Extents.Y);
 
                     if (!NativeMethods.FindNearestPolyRef(mapId, startC, extentsC, out ulong startRef, out _))
                         return true;
@@ -1117,7 +1117,7 @@ namespace Tripper.Navigation
                 try
                 {
                     var posC = new NativeMethods.XYZ(position);
-                    var extentsC = new NativeMethods.XYZ(Extents);
+                    var extentsC = new NativeMethods.XYZ(Extents.Z, Extents.X, Extents.Y);
                     NativeMethods.XYZ nearestC;
                     bool success = NativeMethods.FindNearestPolyRef(mapId, posC, extentsC, out ulong refId, out nearestC);
                     if (success)
