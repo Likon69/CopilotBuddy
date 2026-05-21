@@ -277,7 +277,14 @@ namespace Styx.Loaders
                     "System.Text.RegularExpressions.dll",
                     "System.Linq.dll",
                     "System.Linq.Expressions.dll",
-                    "System.Data.Common.dll"
+                    "System.Data.Common.dll",
+                    // Type-forwarded APIs required by dynamic plugins
+                    "System.IO.FileSystem.Watcher.dll",             // FileSystemWatcher, FileSystemEventArgs, NotifyFilters
+                    "System.Private.DataContractSerialization.dll", // DataContractSerializer
+                    "System.Net.Mail.dll",                           // System.Net.Mime.MediaTypeNames
+                    "System.IO.Packaging.dll",               // System.IO.Packaging.Package
+                    "System.Windows.Forms.dll",
+                    "System.Drawing.Common.dll",
                 };
                 foreach (var refName in essentialRefs)
                 {
@@ -314,48 +321,51 @@ namespace Styx.Loaders
                     .WithOptimizationLevel(optimizationLevel)
                     .WithPlatform(Platform.AnyCpu));
 
-            // Emit to memory
-            using (var ms = new MemoryStream())
+            // Emit to a temp file so the loaded assembly has a valid Location.
+            // Assembly.Load(bytes) produces an assembly with empty Location, which breaks any
+            // secondary Roslyn compilation (e.g. DynamicCodeCompiler) that needs to reference it.
+            string tempAsmPath = Path.Combine(Path.GetTempPath(), $"{Path.GetFileNameWithoutExtension(AssemblyName)}_{Guid.NewGuid():N}.dll");
+
+            EmitResult emitResult = compilation.Emit(tempAsmPath);
+
+            // Create CompilerResults for compatibility
+            var results = new CompilerResults(new TempFileCollection(Path.GetTempPath()));
+
+            if (!emitResult.Success)
             {
-                EmitResult emitResult = compilation.Emit(ms);
+                // Clean up the (empty) temp file on failure.
+                try { if (File.Exists(tempAsmPath)) File.Delete(tempAsmPath); } catch { }
 
-                // Create CompilerResults for compatibility
-                var results = new CompilerResults(new TempFileCollection(Path.GetTempPath()));
-
-                if (!emitResult.Success)
+                foreach (var diagnostic in emitResult.Diagnostics)
                 {
-                    foreach (var diagnostic in emitResult.Diagnostics)
+                    if (diagnostic.Severity == DiagnosticSeverity.Error || 
+                        diagnostic.Severity == DiagnosticSeverity.Warning)
                     {
-                        if (diagnostic.Severity == DiagnosticSeverity.Error || 
-                            diagnostic.Severity == DiagnosticSeverity.Warning)
+                        var lineSpan = diagnostic.Location.GetLineSpan();
+                        var error = new CompilerError
                         {
-                            var lineSpan = diagnostic.Location.GetLineSpan();
-                            var error = new CompilerError
-                            {
-                                FileName = lineSpan.Path ?? "",
-                                Line = lineSpan.StartLinePosition.Line + 1,
-                                Column = lineSpan.StartLinePosition.Character + 1,
-                                ErrorNumber = diagnostic.Id,
-                                ErrorText = diagnostic.GetMessage(),
-                                IsWarning = diagnostic.Severity == DiagnosticSeverity.Warning
-                            };
-                            results.Errors.Add(error);
-                        }
+                            FileName = lineSpan.Path ?? "",
+                            Line = lineSpan.StartLinePosition.Line + 1,
+                            Column = lineSpan.StartLinePosition.Character + 1,
+                            ErrorNumber = diagnostic.Id,
+                            ErrorText = diagnostic.GetMessage(),
+                            IsWarning = diagnostic.Severity == DiagnosticSeverity.Warning
+                        };
+                        results.Errors.Add(error);
                     }
                 }
-                else
-                {
-                    ms.Seek(0, SeekOrigin.Begin);
-                    CompiledAssembly = Assembly.Load(ms.ToArray());
-                    
-                    // Set the compiled assembly in results
-                    typeof(CompilerResults)
-                        .GetField("compiledAssembly", BindingFlags.NonPublic | BindingFlags.Instance)
-                        ?.SetValue(results, CompiledAssembly);
-                }
-
-                return results;
             }
+            else
+            {
+                CompiledAssembly = Assembly.LoadFrom(tempAsmPath);
+
+                // Set the compiled assembly in results
+                typeof(CompilerResults)
+                    .GetField("compiledAssembly", BindingFlags.NonPublic | BindingFlags.Instance)
+                    ?.SetValue(results, CompiledAssembly);
+            }
+
+            return results;
         }
 
         public enum FileStructureType
