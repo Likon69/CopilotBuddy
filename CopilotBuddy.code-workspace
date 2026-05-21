@@ -8,6 +8,12 @@
         },
         {
             "path": "../hb decompile/.hb 6.2.3"
+        },
+        {
+            "path": "../Navigation C++"
+        },
+        {
+            "path": "../Navigation View3D/Extractor_projects-master/mangostwo-server/src/tools/Extractor_projects/Movemap-Generator"
         }
     ]
 }
