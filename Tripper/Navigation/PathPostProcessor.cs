@@ -202,12 +202,13 @@ namespace Tripper.Navigation
             Vector3 wallHitPoint = hitPointXyz.ToVector3();
             Vector3 wallNormal = hitNormalXyz.ToVector3();
 
-            // Step 2: snap hitPoint to nearest polygon (HB: FindNearestPolygon with extents 0.5/5/0.5)
+            // Step 2: snap hitPoint to nearest polygon (HB: FindNearestPolygon with extents 0.5/5/0.5 nav-space)
+            // WoW-space equivalent: X=0.5, Y=0.5, Z=5 (Z=hauteur en WoW)
             Vector3 snappedHit = wallHitPoint;
             if (!NativeMethods.FindNearestPolyRef(
                     mapId,
                     new NativeMethods.XYZ(wallHitPoint),
-                    new NativeMethods.XYZ(0.5f, 5f, 0.5f),
+                    new NativeMethods.XYZ(0.5f, 0.5f, 5f),
                     out ulong hitPolyRef,
                     out NativeMethods.XYZ snappedHitXyz))
                 return MoveResult.Failed;
@@ -310,7 +311,7 @@ namespace Tripper.Navigation
                         pt = rndPt.ToVector3();
                         // Re-snap to get poly ref
                         if (NativeMethods.FindNearestPolyRef(mapId,
-                                new NativeMethods.XYZ(pt), new NativeMethods.XYZ(0.5f, 5f, 0.5f),
+                                new NativeMethods.XYZ(pt), new NativeMethods.XYZ(0.5f, 0.5f, 5f),
                                 out ulong rndRef, out _) && rndRef != 0)
                             pr = new PolygonReference(rndRef);
                         moved = true;
@@ -376,7 +377,7 @@ namespace Tripper.Navigation
                     Vector3 nudged = segStart + dir * 0.1f;
 
                     if (NativeMethods.FindNearestPolyRef(mapId,
-                            new NativeMethods.XYZ(nudged), new NativeMethods.XYZ(0.5f, 5f, 0.5f),
+                            new NativeMethods.XYZ(nudged), new NativeMethods.XYZ(0.5f, 0.5f, 5f),
                             out ulong nudgedRef, out NativeMethods.XYZ nudgedSnapped) && nudgedRef != 0)
                     {
                         nudged = nudgedSnapped.ToVector3();
@@ -406,7 +407,7 @@ namespace Tripper.Navigation
                     if (endPolyId == 0)
                     {
                         if (!NativeMethods.FindNearestPolyRef(mapId,
-                                new NativeMethods.XYZ(segEnd), new NativeMethods.XYZ(0.5f, 5f, 0.5f),
+                                new NativeMethods.XYZ(segEnd), new NativeMethods.XYZ(0.5f, 0.5f, 5f),
                                 out endPolyId, out _) || endPolyId == 0)
                             continue;
                     }
@@ -514,7 +515,7 @@ namespace Tripper.Navigation
                 {
                     if (NativeMethods.FindNearestPolyRef(mapId,
                             new NativeMethods.XYZ(points[i]),
-                            new NativeMethods.XYZ(0.5f, 5f, 0.5f),
+                            new NativeMethods.XYZ(0.5f, 0.5f, 5f),
                             out ulong refId, out _) && refId != 0)
                     {
                         if (i < polygons.Length)
