@@ -28,7 +28,7 @@ namespace Styx.Logic.AreaManagement
 			}
 		}
 
-		public void SetArea(GrindArea area)
+		public void SetArea(GrindArea? area)
 		{
 			_currentGrindArea = area;
 		}

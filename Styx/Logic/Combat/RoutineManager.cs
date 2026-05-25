@@ -135,7 +135,7 @@ namespace Styx.Logic.Combat
 
 			if (matching.Count == 0)
 			{
-				Logging.Write("Could not find a routine fitting for your class. Using default.");
+				Logging.Write("Could not find a routine fitting for your class. Please make sure you have a proper combat class routine in your Routines folder, and restart CopilotBuddy. Using default.");
 				_current = new DefaultCombatRoutine();
 				return;
 			}
