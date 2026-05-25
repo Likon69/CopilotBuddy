@@ -451,18 +451,19 @@ namespace Styx.WoWInternals.WoWObjects
             PendingStrafeRight = 0x00040000,
             PendingSTrFlagRight = PendingStrafeRight,
             PendingRoot = 0x00080000,
-            Swimming = 0x00100000,
-            Ascending = 0x00200000,
-            Descending = 0x00400000,
-            CanFly = 0x00800000,
-            Flying = 0x01000000,
-            SplineElevation = 0x02000000,
-            SplineEnabled = 0x04000000,
-            WaterWalking = 0x08000000,
+            // 0x00100000 unused in 3.3.5a (gap between pending flags and swim/fly flags)
+            Swimming = 0x00200000,          // IsSwimming_Mask = 0x200000 (Offsets335.txt)
+            Ascending = 0x00400000,
+            Descending = 0x00800000,
+            CanFly = 0x01000000,
+            Flying = 0x02000000,            // IsFlying_Mask = 0x2000000 (Offsets335.txt)
+            SplineElevation = 0x04000000,
+            SplineEnabled = 0x08000000,     // CMovement__SetMovementFlag_0x8000000
+            WaterWalking = 0x10000000,      // CMovement__ToggleMovementFlag_0x10000000_WaterWalk
             Waterwalking = WaterWalking,
-            SafeFall = 0x10000000,
+            SafeFall = 0x20000000,          // CMovement__ToggleMovementFlag_0x20000000_FeatherFall
             FallingSlow = SafeFall,
-            Hover = 0x20000000,
+            Hover = 0x40000000,             // CMovement__ToggleMovementFlag_0x40000000_Hover
             PlayerFlag = 0x80000000,
             
             // Masks (ported from HB 4.3.4)
