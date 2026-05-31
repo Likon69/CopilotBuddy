@@ -163,7 +163,7 @@ namespace Styx.WoWInternals.WoWObjects
         public bool Lootable => HasDynamicFlag(UnitDynamicFlags.Lootable);
         public bool Dazed => HasUnitFlag(UnitFlags.Dazed);
         public bool Disarmed => HasUnitFlag(UnitFlags.Disarmed);
-        public bool Attackable => !HasUnitFlag(UnitFlags.NotAttackable);
+        public bool Attackable => !HasUnitFlag(UnitFlags.ImmuneToPc); // HB 4.3.4: Enum8.flag_6 = 0x100
         public bool PvpFlagged => HasUnitFlag(UnitFlags.PvpEnabling);
         public bool PlayerControlled => HasUnitFlag(UnitFlags.PlayerControlled);
         public bool Fleeing => HasUnitFlag(UnitFlags.Fleeing);
