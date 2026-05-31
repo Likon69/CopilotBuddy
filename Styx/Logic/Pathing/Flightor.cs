@@ -74,6 +74,13 @@ namespace Styx.Logic.Pathing
                 // from mid-air when mount classification fails to populate FlyingMounts.
                 if (StyxWoW.Me.MovementInfo.IsFlying) return true;
 
+                // WotLK 3.3.5a: flying is ONLY valid in Outland (530) or Northrend (571).
+                // Explicit map guard prevents aerial path attempts in old world zones even when
+                // the private server's IsFlyableArea() incorrectly returns true outside those maps.
+                uint mapId = StyxWoW.Me.MapId;
+                if (mapId != 530U && mapId != 571U)
+                    return false;
+
                 // NOTE: do NOT add MovementInfo.CanFly fast-path here.
                 // That bypasses IsFlyableArea() and causes Navigator→Flightor→Navigator recursion
                 // when the player is already airborne in a no-fly zone (Dalaran etc.).
@@ -90,7 +97,7 @@ namespace Styx.Logic.Pathing
                     && MountHelper.FlyingMount != null
                     && (StyxWoW.Me.Level >= 60 || StyxWoW.Me.Class == WoWClass.Druid)
                     && (StyxWoW.Me.Level >= 58 || StyxWoW.Me.Class != WoWClass.Druid)
-                    && (StyxWoW.Me.MapId != 571U || SpellManager.HasSpell("Cold Weather Flying"));
+                    && (mapId != 571U || SpellManager.HasSpell("Cold Weather Flying"));
             }
         }
 
@@ -911,7 +918,11 @@ namespace Styx.Logic.Pathing
                     LocalPlayer me = StyxWoW.Me;
                     if (me == null) return false;
 
-                    // WotLK: Cold Weather Flying for Northrend
+                    // WotLK 3.3.5a: flying only valid in Outland (530) or Northrend (571)
+                    if (me.MapId != 530U && me.MapId != 571U)
+                        return false;
+
+                    // WotLK: Cold Weather Flying required for Northrend
                     if (!SpellManager.HasSpell("Cold Weather Flying") && me.MapId == 571U)
                         return false;
 
