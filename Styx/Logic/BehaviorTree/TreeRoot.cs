@@ -131,6 +131,7 @@ namespace Styx.Logic.BehaviorTree
 			Lua.DoString("MoveForwardStop();MoveBackwardStop();StrafeLeftStop();StrafeRightStop();");
 
 			// ARCH-03: Set CVars for bot safety (HB 3.3.5a sets autoSelfCast + autoLootDefault)
+			Logging.WriteDebug("Setting CVars: autoSelfCast=1, autoLootDefault=1");
 			Lua.DoString("SetCVar('autoSelfCast', 1)");
 			Lua.DoString("SetCVar('autoLootDefault', 1)");
 
@@ -138,7 +139,7 @@ namespace Styx.Logic.BehaviorTree
 			SpellManager.Initialize();
 			if (RoutineManager.Current == null)
 			{
-				throw new Exception("Unable to start. No Combat Routine loaded.");
+				throw new HonorbuddyUnableToStartException("Unable to start. No Combat Routine loaded.");
 			}
 		}
 
@@ -341,15 +342,12 @@ namespace Styx.Logic.BehaviorTree
 			}
 			else
 			{
-				// Soft frame mode: keep continuous execution for the tick without hard frame grab.
-				// This avoids per-call EndScene waits when the game is throttled (background/low FPS)
-				// while reducing the visual tearing seen with hard frame lock.
-				using (StyxWoW.Memory.AcquireFrame(false))
-				using (StyxWoW.Memory.TemporaryCacheState(true))
-				{
-					StyxWoW.Memory.ClearCache();
-					RunTickBody();
-				}
+				// No frame lock: do NOT acquire any continuous execution scope.
+				// Each individual Lua/Execute call does its own per-call EndScene sync
+				// (hold render thread for microseconds only), so WoW can render frames freely
+				// between bot operations. BeginExecute() for the full tick duration is what
+				// kills FPS — this path avoids it entirely.
+				RunTickBody();
 			}
 
 			// HB 6.2.3: Force-release leaked frame lock (runs for BOTH branches)
@@ -368,13 +366,6 @@ namespace Styx.Logic.BehaviorTree
 
 			// HB 6.2.3 pattern: sleep OUTSIDE AcquireFrame so WoW can render
 			int remainingMs = (int)Math.Ceiling(1000.0 / TicksPerSecond - sw.Elapsed.TotalMilliseconds);
-			if (remainingMs <= 0)
-			{
-				Logging.WriteDebug("[PERF] Tick took {0:F0}ms (budget {1:F0}ms) - over budget by {2:F0}ms",
-					sw.Elapsed.TotalMilliseconds,
-					1000.0 / TicksPerSecond,
-					-remainingMs);
-			}
 			if (remainingMs > 0)
 			{
 				Thread.Sleep(remainingMs);
@@ -519,6 +510,13 @@ namespace Styx.Logic.BehaviorTree
 				try
 				{
 					State = TreeRootState.Starting;
+
+					if (!StyxWoW.IsInGame)
+					{
+						Logging.Write(System.Windows.Media.Colors.Red, "The bot cannot be started while not ingame.");
+						State = TreeRootState.Stopped;
+						return;
+					}
 
 					// HB 6.2.3: ObjectManager.Update() directly, no GrabFrame
 					ObjectManager.Update();
