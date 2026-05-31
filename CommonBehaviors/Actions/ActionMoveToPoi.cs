@@ -108,16 +108,11 @@ namespace CommonBehaviors.Actions
 					break;
 			}
 
-			// Mount if needed
-			if (Mount.ShouldMount(_lastLocation))
-			{
-				Mount.StateMount(() => _lastLocation);
-			}
-
-			MoveResult moveResult = Navigator.MoveTo(_lastLocation, precision);
-
-			// HB pattern: stuck detection is handled inside Navigator.MoveTo() — no duplicate check here.
-			return Navigator.GetRunStatusFromMoveResult(moveResult);
+			// HB 6.2.3 pattern: movement always goes through Flightor, which dispatches to
+			// Navigator internally when ground nav is needed (ShouldWalk / IsInNoFlyZone).
+			// FlightPaths still owns flight-master POIs; Flightor must not override that.
+			Flightor.MoveTo(_lastLocation);
+			return RunStatus.Success;
 		}
 	}
 }
