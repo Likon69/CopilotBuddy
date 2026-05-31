@@ -4,9 +4,18 @@ using System.Numerics;
 namespace Tripper.Navigation
 {
     /// <summary>
-    /// Identifies a navigation mesh tile using X/Y coordinates.
-    /// Trinity uses standard 1:1 mapping (1 WoW tile = 1 Detour tile = 533.33 yards).
-    /// Unlike Honorbuddy which subdivides into 4x4 Detour tiles per WoW tile.
+    /// Identifies a WoW ADT navigation tile using X/Y coordinates.
+    ///
+    /// One ADT tile = 533.333 yards. The 64×64 ADT grid has its origin at tile [32, 32]
+    /// (world position 0, 0).
+    ///
+    /// With the V5 mmtile format (MMAP_MULTI_TILE_VERSION = 5), each ADT is stored as a
+    /// 4×4 grid of 16 Detour sub-tiles (133.333 yards each). Navigation.dll handles the
+    /// sub-tile decomposition internally. <see cref="MeshMapCalculator"/> converts between
+    /// ADT tile coordinates and their 16 Detour sub-tile coordinates.
+    ///
+    /// <c>GetByPosition</c> always returns ADT-level coordinates, matching Navigation.dll's
+    /// <c>WorldToTile_C</c> (floor((gridOrigin - world) / 533.333)).
     /// </summary>
     public struct TileIdentifier : IEquatable<TileIdentifier>
     {
