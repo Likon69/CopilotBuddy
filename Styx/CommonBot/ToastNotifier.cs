@@ -24,11 +24,13 @@ namespace Styx.CommonBot
             if (!StyxWoW.IsInGame)
                 return;
 
-            var overlay = StyxWoW.Overlay;
-            if (!overlay.IsActive)
+            // Guard: do NOT access StyxWoW.Overlay here — that getter lazily creates
+            // and activates the overlay even when BuddyControlPanel is disabled.
+            // IsOverlayActive checks _overlayManager != null without triggering creation.
+            if (!StyxWoW.IsOverlayActive)
                 return;
 
-            overlay.AddToast($"Ding! You are now level {args.NewLevel}.", 7000);
+            StyxWoW.Overlay.AddToast($"Ding! You are now level {args.NewLevel}.", 7000);
             Logging.Write("Toast: level up to {0}.", args.NewLevel);
         }
 
@@ -37,11 +39,10 @@ namespace Styx.CommonBot
             if (!StyxWoW.IsInGame)
                 return;
 
-            var overlay = StyxWoW.Overlay;
-            if (!overlay.IsActive)
+            if (!StyxWoW.IsOverlayActive)
                 return;
 
-            overlay.AddToast("You have died.", 5000);
+            StyxWoW.Overlay.AddToast("You have died.", 5000);
             Logging.Write("Toast: player died.");
         }
     }
