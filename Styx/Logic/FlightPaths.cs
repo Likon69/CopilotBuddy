@@ -403,7 +403,9 @@ namespace Styx.Logic
         }
 
         /// <summary>
-        /// Handle taxi map opened event
+        /// Handle taxi map opened event (fired by TAXIMAP_OPENED Lua event).
+        /// Saves all visible nodes + connections to the per-character XML file,
+        /// then takes the flight if Reason == Use.
         /// </summary>
         private static void HandleTaxiMapOpened(object sender, LuaEventArgs e)
         {
@@ -412,62 +414,74 @@ namespace Styx.Logic
                 if (!CharacterSettings.Instance.UseFlightPaths || BotPoi.Current.Type != PoiType.Fly)
                     return;
 
-                Logging.Write("TaxiMap is opened. Updating known nodes list.");
+                Logging.Write("TaxiMap opened — updating known nodes list.");
 
-                // Get current node info
-                var currentNodeName = Lua.GetReturnVal<string>("return TaxiNodeName(TaxiFrame.slot)", 0);
-                var currentNodeX = Lua.GetReturnVal<float>("return TaxiNodeGetX(TaxiFrame.slot)", 0);
-                var currentNodeY = Lua.GetReturnVal<float>("return TaxiNodeGetY(TaxiFrame.slot)", 0);
-                WoWPoint currentLocation = new WoWPoint(currentNodeX, currentNodeY, 0);
+                // HB Class577 approach: read current node DBC ID directly from CGTaxiMap memory.
+                // dword_C0D7EC (0xC0D7EC) — verified via IDA, CGTaxiMap__TaxiNodeType. No Lua needed.
+                var currentDbc = TaxiNodeInfo.GetCurrent();
+                if (currentDbc == null || !currentDbc.IsValid || string.IsNullOrEmpty(currentDbc.Name))
+                {
+                    Logging.WriteDebug("HandleTaxiMapOpened: Could not read current taxi node from CGTaxiMap (dword_C0D7EC).");
+                    return;
+                }
 
+                string currentNodeName = currentDbc.Name;
+                WoWPoint currentLocation = currentDbc.Location != WoWPoint.Empty ? currentDbc.Location : StyxWoW.Me.Location;
+
+                // Insert or update the current node record.
                 XmlFlightNode currentNode = FindNodeByName(currentNodeName);
                 if (currentNode == null)
                 {
-                    currentNode = new XmlFlightNode(BotPoi.Current.Entry, StyxWoW.Me.Level, currentNodeName, StyxWoW.Me.MapId, StyxWoW.Me.Location);
+                    currentNode = new XmlFlightNode(
+                        BotPoi.Current.Entry, StyxWoW.Me.Level,
+                        currentNodeName, StyxWoW.Me.MapId, currentLocation);
                     XmlNodes.Add(currentNode);
                 }
                 else
                 {
                     currentNode.MasterEntry = BotPoi.Current.Entry;
                     currentNode.UpdateLevel = StyxWoW.Me.Level;
+                    if (currentNode.Location == WoWPoint.Empty)
+                        currentNode.Location = currentLocation;
                 }
 
-                // Update node connections from taxi frame
-                if (TaxiFrame.Instance != null)
+                // Walk every node in the path table — HB Class577.method_1(i) pattern.
+                // Reachability still uses TaxiFrame Lua nodes (frameNodes[i].Reachable),
+                // exactly as HB does with TaxiFrame.Instance.Nodes[(int)num].Reachable.
+                var frameNodes = TaxiFrame.Instance?.Nodes;
+                uint nodeCount = TaxiNodeInfo.GetNodeCount();
+                for (uint i = 0; i < nodeCount; i++)
                 {
-                    foreach (var node in TaxiFrame.Instance.Nodes)
+                    var nodeDbc = TaxiNodeInfo.GetByTableIndex(i);
+                    if (nodeDbc == null || !nodeDbc.IsValid || string.IsNullOrEmpty(nodeDbc.Name))
+                        continue;
+
+                    if (nodeDbc.Name == currentNodeName)
+                        continue;
+
+                    XmlFlightNode xmlNode = FindNodeByName(nodeDbc.Name);
+                    if (xmlNode == null)
                     {
-                        if (node.Name == currentNodeName)
-                            continue;
+                        xmlNode = new XmlFlightNode(nodeDbc.Name, (uint)nodeDbc.MapId,
+                            nodeDbc.Location != WoWPoint.Empty ? nodeDbc.Location : WoWPoint.Empty);
+                        XmlNodes.Add(xmlNode);
+                    }
 
-                        XmlFlightNode xmlNode = FindNodeByName(node.Name);
-                        if (xmlNode == null)
-                        {
-                            // Try to get real world location from TaxiNodes.dbc
-                            var taxiNodeInfo = TaxiNodeInfo.FindByName(node.Name);
-                            WoWPoint nodeLocation = taxiNodeInfo?.Location ?? WoWPoint.Empty;
-                            
-                            xmlNode = new XmlFlightNode(node.Name, StyxWoW.Me.MapId, nodeLocation);
-                            XmlNodes.Add(xmlNode);
-                        }
-
-                        if (node.Reachable)
-                        {
-                            currentNode.Connect(xmlNode.Name);
-                            xmlNode.Connect(currentNode.Name);
-                        }
+                    bool reachable = frameNodes != null && (int)i < frameNodes.Count && frameNodes[(int)i].Reachable;
+                    if (reachable)
+                    {
+                        currentNode.Connect(xmlNode.Name);
+                        xmlNode.Connect(currentNode.Name);
                     }
                 }
 
-                // Save to XML
                 SaveToXml();
 
-                // Take flight or clear POI
                 if (Reason == FlightPathReason.Use && TakingPathTo != null)
                 {
-                    Logging.Write("Taking flight path to {0}", TakingPathTo.Name);
-                    var targetNode = TaxiFrame.Instance?.Nodes.FirstOrDefault(n => n.Name == TakingPathTo.Name);
-                    targetNode?.TakeNode();
+                    Logging.Write("Taking flight path to {0} from {1}", TakingPathTo.Name, TakingPathFrom?.Name ?? StyxWoW.Me.Location.ToString());
+                    var target = frameNodes?.FirstOrDefault(n => n.Name == TakingPathTo.Name);
+                    target?.TakeNode();
                     StyxWoW.SleepForLagDuration();
                 }
                 else
