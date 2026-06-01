@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "../Navigation C++"
+		},
+		{
+			"path": "../Navigation View3D/Extractor_projects-master/extractor-csharp"
 		}
 	],
 	"settings": {}
