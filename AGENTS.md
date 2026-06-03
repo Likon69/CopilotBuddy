@@ -32,6 +32,28 @@ datadb/                     # Python scripts + SQLite DBs (CreatureSpawns.db, it
 Offsets335.txt             # 6184-line 3.3.5a memory offset reference
 ```
 
+## Reference hb decompile dans tripper.recastmanager 
+
+Default Profiles C:\Users\Texy6\Desktop\newhcb\CopilotBuddy\bin\Debug\net10.0-windows7.0\Default Profiles
+
+Singular C:\Users\Texy6\Desktop\newhcb\CopilotBuddy\bin\Debug\net10.0-windows7.0\Routines\Singular wotlk
+
+Quest Behaviors C:\Users\Texy6\Desktop\newhcb\CopilotBuddy\bin\Debug\net10.0-windows7.0\Quest Behaviors
+
+Plugins C:\Users\Texy6\Desktop\newhcb\CopilotBuddy\bin\Debug\net10.0-windows7.0\Plugins
+
+Dungeon Scripts C:\Users\Texy6\Desktop\newhcb\CopilotBuddy\bin\Debug\net10.0-windows7.0\Dungeon Scripts
+
+Botbase C:\Users\Texy6\Desktop\newhcb\CopilotBuddy\bin\Debug\net10.0-windows7.0\Bots
+
+C:\Users\Texy6\Desktop\newhcb\hb decompile\.hb 4.3.4\Honorbuddy\Honorbuddy
+
+C:\Users\Texy6\Desktop\newhcb\hb decompile\.hb 6.2.3\Honorbuddy
+
+C:\Users\Texy6\Desktop\newhcb\hb decompile\.hb 6.2.3\Tripper.RecastManaged
+
+
+
 ## Runtime Structure
 
 External code is loaded at runtime into `bin/Debug/net10.0-windows7.0/`:

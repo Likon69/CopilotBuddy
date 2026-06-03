@@ -15,7 +15,7 @@
     <!-- Application icon (barre des tâches + exe) -->
     <ApplicationIcon>Resources\bender.ico</ApplicationIcon>
     <!-- FileVersion = right-click Properties → Details. AssemblyVersion intentionally omitted (BAML crash on .NET 10) -->
-    <FileVersion>1.2.0.0</FileVersion>
+    <FileVersion>1.3.0.0</FileVersion>
     <!-- Exclude satellite assemblies (localization folders like cs, de, es, fr, it, ja, ko, pl, pt-BR, ru, tr, zh-Hans, zh-Hant) -->
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
 
