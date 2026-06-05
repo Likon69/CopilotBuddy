@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using Styx.Helpers;
 using Styx.WoWInternals;
 using Styx.WoWInternals.WoWObjects;
 
@@ -154,33 +155,14 @@ namespace Styx.Logic.Inventory.Frames.MailBox
 
 			if (attachmentItems.Length > 0)
 			{
-				string itemTable = "local itemTable = { ";
 				for (int i = 0; i < attachmentItems.Length; i++)
 				{
-					itemTable += $"{{ name = \"{Lua.Escape(attachmentItems[i].Name)}\", count = {attachmentItems[i].StackCount} }}, ";
+					attachmentItems[i].UseContainerItem();
+					StyxWoW.Sleep(100);
 				}
-				itemTable = itemTable.Remove(itemTable.Length - 2);
 
-				string luaScript = itemTable + " } " +
-					"local retTable = { } for k, v in pairs(itemTable) do if v and v.count and v.name then " +
-					"for bag = 0, 4 do if GetBagName(bag) then for slot = 1, GetContainerNumSlots(bag) do " +
-					"local iLink = GetContainerItemLink(bag, slot) local _, stackCount = GetContainerItemInfo(bag, slot) " +
-					"if iLink and stackCount and string.find(iLink, v.name) and v.count == stackCount then " +
-					"local contained = false for i = 1, #retTable, 2 do if retTable[i] == bag and retTable[i + 1] == slot then " +
-					"contained = true break end end if not contained then tinsert(retTable, bag) tinsert(retTable, slot) break end " +
-					"end end end end end end return unpack(retTable)";
-
-				var result = Lua.GetReturnValues(luaScript, "_main.lua");
-				if (result != null)
-				{
-					for (int i = 0; i < result.Count; i += 2)
-					{
-						int bag = int.Parse(result[i]);
-						int slot = int.Parse(result[i + 1]);
-						Lua.DoString($"UseContainerItem({bag}, {slot})", "_main.lua");
-						StyxWoW.Sleep(250);
-					}
-				}
+				if (SendMailItems.Length != attachmentItems.Length)
+					Logging.Write("Something is messed up, we didn't attach all of our items.");
 			}
 
 			Lua.DoString($"SendMail(\"{recipient}\", \"{subject}\", \"{body}\")", "_main.lua");
@@ -191,14 +173,14 @@ namespace Styx.Logic.Inventory.Frames.MailBox
 		/// </summary>
 		public void SendMailWithManyAttachments(string recipient, int copper, params WoWItem[] attachments)
 		{
-			int numMails = (int)Math.Ceiling((float)attachments.Length / 11f);
+			int numMails = (int)Math.Ceiling((float)attachments.Length / 12f);
 			var itemList = attachments.ToList();
 
 			for (int i = 0; i < numMails; i++)
 			{
-				var batch = itemList.TakeWhile((item, index) => index < 11).ToList();
-				if (itemList.Count >= 11)
-					itemList.RemoveRange(0, 11);
+				var batch = itemList.Take(12).ToList();
+				if (batch.Count > 0)
+					itemList.RemoveRange(0, batch.Count);
 
 				// Snapshot item count BEFORE send, with fresh memory read.
 				// HB 3.3.5a: clear cache so we read the actual in-game bag state,
