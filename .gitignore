@@ -9,6 +9,8 @@ obj/
 *.userosscache
 *.sln.docstates
 .github/
+AGENTS.md
+agent.md
 .test/
 .test
 # NuGet
