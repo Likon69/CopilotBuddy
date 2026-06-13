@@ -18,6 +18,12 @@ namespace Styx.Logic
         private static readonly Landmarks _landmarks = new Landmarks();
         private static DateTime _battlefieldStartTime = DateTime.MinValue;
 
+        // Per-slot tracking of the BG type we initiated the queue for.
+        // HB 4.3.4 reads the type from memory; our Lua port has to track it
+        // ourselves because GetBattlefieldStatus() does not return the BG type.
+        // Cleared automatically when the slot's status returns to None.
+        private static readonly BattlegroundType[] _queuedSlotType = new BattlegroundType[3]; // index 1..2
+
         #region Properties
 
         /// <summary>
@@ -210,10 +216,29 @@ namespace Styx.Logic
 
         /// <summary>
         /// Whether the player is queued for a specific BG type.
+        /// HB 4.3.4 reads the type from QueuedBattlegroundInfo (memory reader).
+        /// Our Lua port does not expose the BG type per slot, so we match the
+        /// tracked type we initiated the queue with against the live slot status.
+        /// Slot returns to None ⇒ tracked type is cleared so we don't match
+        /// stale data after the queue pops or the player leaves the BG.
         /// </summary>
         public static bool IsQueuedForBattleground(BattlegroundType type)
         {
-            return QueuedInfos.Any(q => q.BattlegroundType == type && q.Status != BattlegroundStatus.None);
+            if (type == BattlegroundType.None) return false;
+
+            for (int slot = 1; slot <= 2; slot++)
+            {
+                var status = GetQueuedBattlegroundInfo((uint)slot).Status;
+                if (status == BattlegroundStatus.None)
+                {
+                    _queuedSlotType[slot] = BattlegroundType.None;
+                    continue;
+                }
+
+                if (_queuedSlotType[slot] == type)
+                    return true;
+            }
+            return false;
         }
 
         #endregion
@@ -222,17 +247,38 @@ namespace Styx.Logic
 
         /// <summary>
         /// Joins a battleground queue via Lua.
+        /// Backward-compatible overload: defaults to slot 1.
+        /// Ported from HB 4.3.4 Battlegrounds.JoinBattlefield.
         /// </summary>
         public static void JoinBattlefield(BattlegroundType type, bool asGroup = false)
         {
-            if (type == BattlegroundType.None) return;
+            JoinBattlefield(1, type, asGroup);
+        }
 
+        /// <summary>
+        /// Joins a battleground queue in a specific WoW BG slot (1 or 2).
+        /// Also records the BG type for that slot so IsQueuedForBattleground()
+        /// can tell which BG each queued slot belongs to.
+        /// </summary>
+        public static void JoinBattlefield(int slot, BattlegroundType type, bool asGroup = false)
+        {
+            if (type == BattlegroundType.None) return;
+            if (slot < 1 || slot > 2) return;
+
+            // Update WoW's BG UI to show the requested type, then click Join.
+            // GetBattlegroundInfo returns the BG id at the 5th return position;
+            // when it matches our type, refresh that slot's instance info so
+            // the queue button is bound to the correct BG.
             Lua.DoString(
                 $"for i=1,GetNumBattlegroundTypes() do " +
                 $"local _,_,_,_,id = GetBattlegroundInfo(i); " +
                 $"if id == {(uint)type} then RequestBattlegroundInstanceInfo(i); end end");
-            Lua.DoString($"JoinBattlefield(1, {(asGroup ? "true" : "false")})");
+            Lua.DoString($"JoinBattlefield({slot}, {(asGroup ? "true" : "false")})");
             StyxWoW.Sleep(500);
+
+            // Record the queued type for this slot so IsQueuedForBattleground()
+            // can map a queue status back to its BG type.
+            _queuedSlotType[slot] = type;
         }
 
         /// <summary>
