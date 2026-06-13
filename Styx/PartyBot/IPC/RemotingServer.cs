@@ -96,7 +96,7 @@ namespace PartyBot.IPC
 							msg = _current;
 
 						if (msg != null)
-							writer.WriteLine(JsonSerializer.Serialize(msg));
+							writer.WriteLine(JsonSerializer.Serialize(msg, _jsonOptions));
 
 						Thread.Sleep(76);
 					}
@@ -112,5 +112,10 @@ namespace PartyBot.IPC
 		private readonly Thread? _thread;
 		private readonly object _lock = new object();
 		private BotMessage? _current;
+		// BotMessage exposes its data as public fields (no properties), which matches the
+		// HB 3.3.5a Remoting/MarshalByRefObject contract. System.Text.Json only serializes
+		// properties by default — we MUST opt in to fields or the wire payload is "{}"
+		// and the member sees an empty BotMessage (LeaderName='', LeaderGuid=0, ...).
+		private static readonly JsonSerializerOptions _jsonOptions = new() { IncludeFields = true };
 	}
 }
