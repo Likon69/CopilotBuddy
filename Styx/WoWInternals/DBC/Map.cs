@@ -48,14 +48,24 @@ namespace Styx.WoWInternals.DBC
             var wow = ObjectManager.Wow;
             var table = StyxWoW.Db?[ClientDb.Map];
             _row = table?.GetRow(id);
-            
+
             if (_row != null && _row.IsValid)
             {
                 _data = _row.GetStruct<MapDbc>();
+                if (id == 628 || id == 489 || id == 529 || id == 566 || id == 607 || id == 30)
+                {
+                    Styx.Helpers.Logging.WriteDebug("[BG-DIAG-MAP] MapId={0} IsBattleground={1} MapType={2} MapFlags=0x{3:X} validRow=true",
+                        _data.MapId, _data.IsBattleground, _data.MapTypeId, _data.MapFlags);
+                }
             }
             else
             {
                 _data = default;
+                if (id == 628 || id == 489 || id == 529 || id == 566 || id == 607 || id == 30)
+                {
+                    Styx.Helpers.Logging.WriteDebug("[BG-DIAG-MAP] MapId={0} validRow=FALSE (table={1} row={2})",
+                        id, table != null, _row != null);
+                }
             }
         }
         
@@ -228,25 +238,23 @@ namespace Styx.WoWInternals.DBC
         private struct MapDbc
         {
             public uint MapId;              // 0
-            public uint InternalNamePtr;    // 1
-            public uint MapTypeId;          // 2
-            public uint MapFlags;           // 3
-            private readonly uint _reserved1;  // 4
-            public uint IsBattleground;     // 5
-            public uint NamePtr;            // 6 (localized string ptr)
-            public uint AreaTableId;        // 7
-            private readonly uint _descPtr1;   // 8
-            private readonly uint _descPtr2;   // 9
-            public uint LoadingScreenId;    // 10
-            public float BattlefieldMapIconScale; // 11
-            public int GhostEntranceMapId;  // 12
-            public float GhostX;            // 13
-            public float GhostY;            // 14
-            public uint TimeOfDayOverride;  // 15
-            public uint ExpansionId;        // 16
-            public uint RaidOffset;         // 17
-            public uint MaxPlayers;         // 18
-            private readonly uint _reserved2;  // 19
+            public uint InternalNamePtr;    // 1 (Directory)
+            public uint MapTypeId;          // 2 (InstanceType)
+            public uint MapFlags;           // 3 (Flags)
+            public uint IsBattleground;     // 4 (VERIFIED against Map.dbc 3.3.5a row 607: col 4 = 1 for BG)
+            public uint NamePtr;            // 5 (1st Name[0] localized string ref)
+            public uint AreaTableId;        // 6
+            private readonly uint _descPtr1;   // 7 (1st Description localized string ref)
+            private readonly uint _descPtr2;   // 8
+            public uint LoadingScreenId;    // 9
+            public float BattlefieldMapIconScale; // 10
+            public int GhostEntranceMapId;  // 11
+            public float GhostX;            // 12
+            public float GhostY;            // 13
+            public uint TimeOfDayOverride;  // 14
+            public uint ExpansionId;        // 15
+            public uint RaidOffset;         // 16
+            public uint MaxPlayers;         // 17
         }
     }
 }
