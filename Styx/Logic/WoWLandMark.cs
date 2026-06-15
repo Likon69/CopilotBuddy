@@ -32,6 +32,17 @@ namespace Styx.Logic
             }
         }
 
+        // Ported from .hb 4.3.4 WoWLandMark.cs (lines 257-289 in the decompiled source).
+        // HB exposes these as instance methods on WoWLandMark, using the private
+        // 'uint_0' field. Our port uses '_baseAddress'. Each method simply re-wraps
+        // this landmark in the BG-specific subclass.
+        public ArathiBasinLandmark ToArathiBasinLandmark() => new ArathiBasinLandmark(_baseAddress);
+        public EyeOfTheStormLandmark ToEyeOfTheStormLandmark() => new EyeOfTheStormLandmark(_baseAddress);
+        public BattleForGilneasLandmark ToBattleForGilneasLandmark() => new BattleForGilneasLandmark(_baseAddress);
+        public AlteracValleyLandmark ToAlteracValleyLandmark() => new AlteracValleyLandmark(_baseAddress);
+        public IsleOfConquestLandmark ToIsleOfConquestLandmark() => new IsleOfConquestLandmark(_baseAddress);
+        public StrandOfTheAncientsLandmark ToStrandOfTheAncientsLandmark() => new StrandOfTheAncientsLandmark(_baseAddress);
+
         public bool IsValid => _baseAddress != 0;
         
         public uint Entry => _landmarkData.Entry;
