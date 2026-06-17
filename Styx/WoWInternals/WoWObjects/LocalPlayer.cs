@@ -450,10 +450,9 @@ namespace Styx.WoWInternals.WoWObjects
         {
             get
             {
-                // use cached units list instead of hitting memory each access
-                return (Combat || PetInCombat) && 
-                       !ObjectManager.CachedUnits.All(u => !u.Aggro) && 
-                       Targeting.Instance.FirstUnit != null;
+                // HB 4.3.4 faithful port: Me.Combat/PetInCombat + at least one unit has Aggro
+                return (Combat || PetInCombat) &&
+                       !ObjectManager.CachedUnits.All(u => !u.Aggro);
             }
         }
 
