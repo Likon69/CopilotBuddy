@@ -2256,6 +2256,9 @@ namespace Bots.DungeonBuddy
                         new ActionSetPoi(true, ctx => new BotPoi(Targeting.Instance.FirstUnit, PoiType.Kill))
                     ),
 
+                    // SoloFarm-only maintenance: vendor/drinks/sell/train/wrong-instance checks.
+                    // In regular LFG mode this branch is skipped — CreateLeaderMovementBehavior
+                    // below handles the navigation.
                     new Decorator(
                         ctx => DungeonBuddySettings.Instance.QueueType == QueueType.SoloFarm,
                         new Sequence(
@@ -2264,11 +2267,116 @@ namespace Bots.DungeonBuddy
                         )
                     ),
 
+                    // Leader/tank drives the dungeon by walking between encounters
+                    // via Profile.BossEncounters.PathBreadCrumbs. HB 4.3.4 method_22/23
+                    // (the in-dungeon SoloFarm-style movement) — here ungated from
+                    // SoloFarm so LFG-mode tanks (and any role acting as leader)
+                    // also navigate the dungeon. Followers (DPS/healer) skip this
+                    // and fall through to CreateFollowBehavior.
+                    new Decorator(
+                        ctx => StyxWoW.Me.IsLeader(),
+                        CreateLeaderMovementBehavior()
+                    ),
+
+                    // DPS/Healer follower behavior: walk to the tank.
                     CreateFollowBehavior()
                 )
             );
         }
 
+        // ═══════════════════════════════════════════════════════════
+        // LEADER MOVEMENT (HB 4.3.4 method_22/23 — ungated)
+        // ═══════════════════════════════════════════════════════════
+
+        /// <summary>
+        /// Drives the leader through the dungeon by picking the next
+        /// waypoint to walk toward. Reuses the existing 6-priority
+        /// GetSoloFarmMoveToPoint() (in-combat member → dead member →
+        /// distant members → Hotspot POI → boss unit in ObjectManager →
+        /// boss PathBreadCrumbs from the profile) so the logic is
+        /// identical to SoloFarm but applied to any leader regardless
+        /// of QueueType. HB 4.3.4 method_22 is the in-dungeon
+        /// movement; here it's the leader-only variant.
+        /// </summary>
+        private Composite CreateLeaderMovementBehavior()
+        {
+            return new Action(ctx =>
+            {
+                // Bail if we don't have a profile loaded yet (no boss data → no waypoints).
+                if (ProfileManager.CurrentProfile == null)
+                    return RunStatus.Failure;
+
+                if (StyxWoW.Me.Combat || StyxWoW.Me.IsActuallyInCombat ||
+                    Targeting.Instance.TargetList.Count > 0)
+                    return RunStatus.Failure;
+
+                // Use the LEADER priorities only — Hotspot POI, boss in
+                // ObjectManager, boss PathBreadCrumbs. We must NOT call
+                // GetSoloFarmMoveToPoint() here because its priorities 1-3
+                // (in-combat member, dead member, 2+ distant members) are
+                // designed for FOLLOWERS to regroup with the tank. A tank
+                // that uses those priorities will abandon the boss path
+                // every time a party member wanders too far and end up
+                // tail-chasing a mage across the dungeon. Bug observed
+                // in The Nexus on 2026-06-15: tank moved to boss, then
+                // // [D] Activity: Moving towards distant party member
+                // Marabela (the mage) — exactly the wrong direction.
+                WoWPoint moveTo = GetLeaderMoveToPoint();
+                if (moveTo == WoWPoint.Zero)
+                    return RunStatus.Failure;
+
+                Navigator.MoveTo(moveTo);
+                return RunStatus.Running;
+            });
+        }
+
+        /// <summary>
+        /// Leader-only movement target. Restricts GetSoloFarmMoveToPoint's
+        /// 6-priority chain to the 3 priorities that drive the dungeon
+        /// forward (Hotspot, boss unit, boss breadcrumbs) and drops the
+        /// 3 follower-only priorities (in-combat member, dead member,
+        /// 2+ distant members) that would otherwise drag the tank away
+        /// from its pull path.
+        /// </summary>
+        private WoWPoint GetLeaderMoveToPoint()
+        {
+            // Priority 4 (HB method_23 priority 4): Hotspot POI.
+            if (BotPoi.Current.Type == PoiType.Hotspot && BotPoi.Current.Location != WoWPoint.Zero)
+            {
+                var hotspot = BotPoi.Current.Location;
+                if (StyxWoW.Me.Location.DistanceSqr(hotspot) <= 16f)
+                    BotPoi.Clear("Reached Hotspot location");
+                return hotspot;
+            }
+
+            // Priority 5 (HB method_23 priority 5 / method_24): boss unit
+            // in ObjectManager. Use Profile.Boss for alive status and
+            // kill order (Profile.Boss has Location from XML; BossManager
+            // boss has no location).
+            var bossUnit = FindCurrentBossUnit();
+            if (bossUnit != null)
+            {
+                TreeRoot.StatusText = $"Moving towards boss {bossUnit.Name}";
+                return bossUnit.Location;
+            }
+
+            // Priority 6 (HB method_23 priority 6): boss PathBreadCrumbs
+            // from the profile. Drives movement toward the boss when no
+            // boss is in draw distance.
+            TreeRoot.StatusText = string.Empty;
+            var currentProfileBoss = ProfileManager.CurrentProfile?.BossEncounters
+                .FirstOrDefault(b => b.IsAlive);
+            if (currentProfileBoss != null && currentProfileBoss.PathBreadCrumbs.Count > 0)
+            {
+                var crumb = currentProfileBoss.PathBreadCrumbs.Peek();
+                TreeRoot.StatusText = $"Moving to boss {currentProfileBoss.Name}";
+                if (StyxWoW.Me.Location.DistanceSqr(crumb) < 25f)
+                    currentProfileBoss.PathBreadCrumbs.Dequeue();
+                return crumb;
+            }
+
+            return WoWPoint.Zero;
+        }
         private Composite CreateSoloFarmSupportBehavior()
         {
             return new PrioritySelector(

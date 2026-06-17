@@ -68,36 +68,60 @@ namespace Bots.DungeonBuddy
         // QUEUE ACTIONS
         // ═══════════════════════════════════════════════════════════
 
+        // LFG IDs des "Random" dungeons pour WotLK 3.3.5a.
+        // Source: LFGDungeons.dbc du client 3.3.5a (build 12340), filtrés sur
+        //   TypeId=6 (Random), ExpansionId=2 (WotLK).
+        // Vérifié par parsing direct du DBC dans C:\Users\Texy6\Desktop\World of Warcraft 3.3.5a original\dbc\LFGDungeons.dbc
+        //   Id=261 → "Random Lich King Dungeon"   Difficulty=0  MinLvl=69  MaxLvl=80
+        //   Id=262 → "Random Lich King Heroic"    Difficulty=1  MinLvl=80  MaxLvl=83
+        // Cross-check avec HB 4.3.4 Instancebuddy.cs:2607 (SetDungeons case 3 → click "262" pour lvl 80).
+        private const uint RandomWotlkNormalDungeonId = 261U;
+        private const uint RandomWotlkHeroicDungeonId = 262U;
+
         /// <summary>
-        /// Queue pour un donjon aléatoire
+        /// Queue pour un Random Normal Dungeon (WotLK id=261).
+        /// Bypass l'UI LFD et set explicitement le LFG dungeon ID via l'API directe.
+        /// L'ancienne approche (LFDQueueFrame_Join()) lisait LFDQueueFrame.type qui dépend
+        /// de l'onglet UI actif — bug: si l'UI était sur "Random Heroic", ça queue Heroic
+        /// peu importe le QueueType setting.
         /// </summary>
         public static void QueueForRandomDungeon()
         {
-            Logging.Write("[DungeonBuddy] Queuing for Random Dungeon via UI (Instancebuddy style)...");
+            Logging.Write("[DungeonBuddy] Queuing for Random Normal Dungeon (WotLK id={0})...",
+                RandomWotlkNormalDungeonId);
 
-            // Apply the user-configured Role setting before clicking Join, so the
-            // LFG popup reflects the role the user picked (HB 5.4.8/6.2.3 pattern).
+            // Apply the user-configured Role setting before joining.
             SetLfgRoles();
 
-            // Just like Instancebuddy, we rely on the user having selected their roles and the random dungeon manually.
-            Lua.DoString(@"
+            // WotLK 3.3.5a API:
+            //   SetLFGDungeon(dungeonId, true) — second arg=true = "Dungeon Finder" (LFD)
+            //   JoinLFG() — no args in 3.3.5a (Cataclysm+ added the category arg).
+            // ClearAllLFGDungeons() first to wipe any leftover state from a previous queue attempt
+            // (e.g. deserter dequeue, manual queue, etc.) that would otherwise make JoinLFG() fail.
+            Lua.DoString($@"
                 if not LFDQueueFrame then LoadAddOn('Blizzard_LFGUI') end
-                LFDQueueFrame_Join();
+                ClearAllLFGDungeons()
+                SetLFGDungeon({RandomWotlkNormalDungeonId}, true)
+                JoinLFG()
             ");
         }
 
         /// <summary>
-        /// Queue pour un héroïque aléatoire
+        /// Queue pour un Random Heroic Dungeon (WotLK id=262).
+        /// Même approche que QueueForRandomDungeon — API directe, pas de dépendance UI.
         /// </summary>
         public static void QueueForRandomHeroic()
         {
-            Logging.Write("[DungeonBuddy] Queuing for Random Heroic via UI (Instancebuddy style)...");
+            Logging.Write("[DungeonBuddy] Queuing for Random Heroic Dungeon (WotLK id={0})...",
+                RandomWotlkHeroicDungeonId);
 
             SetLfgRoles();
 
-            Lua.DoString(@"
+            Lua.DoString($@"
                 if not LFDQueueFrame then LoadAddOn('Blizzard_LFGUI') end
-                LFDQueueFrame_Join();
+                ClearAllLFGDungeons()
+                SetLFGDungeon({RandomWotlkHeroicDungeonId}, true)
+                JoinLFG()
             ");
         }
 
