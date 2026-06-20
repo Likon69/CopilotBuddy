@@ -1,18 +1,19 @@
 using System;
+using System.Numerics;
 
 namespace Tripper.Navigation
 {
     /// <summary>
-    /// Identifies a navigation mesh tile using X/Y coordinates.
-    /// Trinity uses standard 1:1 mapping (1 WoW tile = 1 Detour tile = 533.33 yards).
-    /// Unlike Honorbuddy which subdivides into 4x4 Detour tiles per WoW tile.
+    /// Identifies a MaNGOS ADT navigation tile using the same X/Y coordinates as
+    /// the .mmtile file names and Navigation.dll's WorldToTile helper.
+    /// V5 .mmtile files may contain a 4x4 grid of Detour sub-tiles inside one ADT.
     /// </summary>
     public struct TileIdentifier : IEquatable<TileIdentifier>
     {
-        /// <summary>Tile X coordinate (0-63 for standard WoW maps).</summary>
+        /// <summary>MaNGOS ADT tile X coordinate (0-63 for standard WoW maps).</summary>
         public int X { get; }
 
-        /// <summary>Tile Y coordinate (0-63 for standard WoW maps).</summary>
+        /// <summary>MaNGOS ADT tile Y coordinate (0-63 for standard WoW maps).</summary>
         public int Y { get; }
 
         /// <summary>
@@ -27,8 +28,9 @@ namespace Tripper.Navigation
         }
 
         /// <summary>
-        /// Gets the tile identifier for a given world position.
-        /// Coordinates: TileX = 32 - Floor(worldY / 533.3333), TileY = 32 - Floor(worldX / 533.3333)
+        /// Gets the MaNGOS ADT tile identifier for a given world position.
+        /// Matches Navigation::WorldToTile: tileX = (origin - worldX) / tileSize,
+        /// tileY = (origin - worldY) / tileSize, with C-style integer truncation.
         /// </summary>
         /// <param name="x">World X position.</param>
         /// <param name="y">World Y position.</param>
@@ -36,9 +38,20 @@ namespace Tripper.Navigation
         public static TileIdentifier GetByPosition(float x, float y)
         {
             const float tileSize = 533.3333f;
-            int tileX = 32 - (int)Math.Floor(y / tileSize);
-            int tileY = 32 - (int)Math.Floor(x / tileSize);
+            const float gridOrigin = 32.0f * tileSize;
+            int tileX = (int)((gridOrigin - x) / tileSize);
+            int tileY = (int)((gridOrigin - y) / tileSize);
             return new TileIdentifier(tileX, tileY);
+        }
+
+        public static TileIdentifier GetByPosition(Vector3 position)
+        {
+            return GetByPosition(position.X, position.Y);
+        }
+
+        public static TileIdentifier GetByPosition(ref Vector3 position)
+        {
+            return GetByPosition(position.X, position.Y);
         }
 
         /// <summary>

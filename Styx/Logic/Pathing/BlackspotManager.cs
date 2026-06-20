@@ -437,7 +437,7 @@ namespace Styx.Logic.Pathing
         }
 
         /// <summary>
-        /// Checks whether a blackspot can affect a loaded 1:1 raw navigation tile.
+        /// Checks whether a blackspot can affect a loaded MaNGOS ADT navigation tile.
         /// </summary>
         private static bool ShouldMarkOnTileLoaded(Blackspot spot, int tileX, int tileY)
         {

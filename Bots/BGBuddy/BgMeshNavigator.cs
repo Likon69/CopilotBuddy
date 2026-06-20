@@ -1,7 +1,7 @@
 // Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/ns5/Class80.cs
 // Target path: Bots/BGBuddy/BgMeshNavigator.cs
 // Deobfuscated: Class80         → BgMeshNavigator
-//              method_10        → OnTileLoaded (1x1 reading, single event per ADT)
+//              method_10        → OnTileLoaded (ADT reading, single event per MaNGOS tile)
 //              method_11        → OnTileLoaded
 //              bool_1           → _pathRandomized
 //              dictionary_0     → _savedPolyAreas
@@ -87,7 +87,7 @@ namespace Bots.BGBuddy
         #region Tile loaded — blackspot injection (HB Class80.method_10 / method_11)
 
         /// <summary>
-        /// Called when a 1x1 navmesh tile is loaded.
+        /// Called when a MaNGOS ADT navmesh tile is loaded.
         /// Resets path randomization state and re-injects BG profile blackspots.
         /// </summary>
         private void OnTileLoaded(object? sender, TileLoadedEventArgs e)

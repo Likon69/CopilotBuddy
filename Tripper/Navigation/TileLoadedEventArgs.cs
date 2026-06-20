@@ -3,8 +3,9 @@ using System;
 namespace Tripper.Navigation
 {
     /// <summary>
-    /// Event arguments for the <see cref="Navigator.TileLoaded"/> event.
-    /// 1x1 MaNGOS-style reading: one event per ADT tile loaded by Navigation.dll.
+    /// Event arguments for tile-load notifications.
+    /// TileLoaded uses MaNGOS ADT tile coordinates; OnSubTileLoaded uses Detour
+    /// sub-tile coordinates produced by MeshMapCalculator.
     /// </summary>
     public class TileLoadedEventArgs : EventArgs
     {

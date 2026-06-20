@@ -16,5 +16,7 @@ namespace Tripper.Navigation
         PathFindResult FindPath(Vector3 start, Vector3 end);
 
         bool LoadTile(TileIdentifier tid);
+
+        bool UnloadTile(TileIdentifier tid);
     }
 }

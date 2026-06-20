@@ -73,6 +73,11 @@ namespace Styx.Logic.Pathing
 
 		// Avoidance path (set by Navigator facade from NavAvoidWaypointProvider)
 		private WoWPoint[]? _currentAvoidPath;
+
+		// Phase B: streaming directionnel — tracks last pulse position to derive velocity.
+		// HB 6.2.3 MeshNavigator.method_1: UpdateMaps() called UNCONDITIONALLY each pulse.
+		private Vector3 _lastPulsePos = Vector3.Zero;
+		private bool _hasLastPulsePos;
 		private int _currentAvoidPathIndex;
 
 		private StuckHandler _stuckHandler;
@@ -130,18 +135,39 @@ namespace Styx.Logic.Pathing
 		}
 
 		/// <summary>
-		/// HB 6.2.3 method_1: updates faction area type on pulse.
-		/// Tile streaming (UpdateMaps) is NOT called here - HB only triggers
-		/// UpdateMaps on faction change and from ProfileManager when a profile
-		/// is active. Calling it per-pulse causes constant tile preloading
-		/// even in bots without an XML profile (e.g. BGBuddy, QuestBot behaviors).
-		/// Source: .hb 6.2.3 MeshNavigator.method_1 / ProfileManager.UpdateMaps
+		/// HB 6.2.3 method_1: updates faction area type on pulse + tile streaming.
+		/// Tile streaming is triggered here UNCONDITIONALLY (HB 6.2.3 pattern).
+		/// Directional prefetch uses position delta from last pulse as velocity.
+		/// Source: .hb 6.2.3 MeshNavigator.method_1 + ProfileManager.UpdateMaps
 		/// </summary>
 		private void OnPulse(object sender, EventArgs e)
 		{
 			var me = ObjectManager.Me;
-			if (me != null)
-				_factionAreaType = me.IsHorde ? TripperNav.AreaType.Horde : TripperNav.AreaType.Alliance;
+			if (me == null)
+				return;
+
+			_factionAreaType = me.IsHorde ? TripperNav.AreaType.Horde : TripperNav.AreaType.Alliance;
+
+			var pos = new Vector3(me.Location.X, me.Location.Y, me.Location.Z);
+			try
+			{
+				if (_hasLastPulsePos)
+				{
+					// Velocity ≈ (pos - lastPos). Pulse period is ~50ms so this approximates m/s reasonably.
+					var velocity = pos - _lastPulsePos;
+					TripperNavigator.EnsureTilesDirectional(
+						(uint)me.MapId, pos, velocity, 1);
+				}
+				else
+				{
+					// First pulse: no velocity yet, just load the ring around the player.
+					TripperNavigator.EnsureTilesAroundPosition((uint)me.MapId, pos, 1);
+				}
+			}
+			catch { /* best-effort streaming */ }
+
+			_lastPulsePos = pos;
+			_hasLastPulsePos = true;
 		}
 
 		/// <summary>
@@ -515,6 +541,7 @@ namespace Styx.Logic.Pathing
 
 				// Push-ahead (HB 6.2.3 method_25/26)
 				WoWPoint clickPoint = ComputeClickPoint(me, nextPoint);
+
 				Navigator.PlayerMover.MoveTowards(clickPoint);
 				return MoveResult.Moved;
 			}

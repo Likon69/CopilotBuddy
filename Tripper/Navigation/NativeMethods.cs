@@ -467,6 +467,25 @@ namespace Tripper.Navigation
         internal static extern int GetLoadedTilesCount(uint mapId);
 
         /// <summary>
+        /// Counts loaded ADT (MaNGOS) tiles for the map. One ADT = up to 16 Detour
+        /// sub-tiles in V5 4x4 format. This differs from <see cref="GetLoadedTilesCount"/>
+        /// which counts Detour sub-tiles.
+        /// </summary>
+        [DllImport(DllName, EntryPoint = "GetLoadedAdtCount_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int GetLoadedAdtCount(uint mapId);
+
+        /// <summary>
+        /// Unloads a specific MaNGOS ADT tile. In V5 .mmtile format this removes
+        /// all Detour sub-tiles stored inside that ADT tile.
+        /// </summary>
+        [DllImport(DllName, EntryPoint = "UnloadTile_C", CallingConvention = CallingConvention.Cdecl)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        internal static extern bool UnloadTile(
+            uint mapId,
+            int x,
+            int y);
+
+        /// <summary>
         /// Ensures tiles around position are loaded (HB-style streaming).
         /// </summary>
         /// <param name="mapId">Map ID.</param>
@@ -556,24 +575,6 @@ namespace Tripper.Navigation
             IntPtr pathPoints,
             int currentWaypointIndex,
             int agentId);
-
-        [DllImport(DllName, EntryPoint = "CreateCorridorForAgent_C", CallingConvention = CallingConvention.Cdecl)]
-        [return: MarshalAs(UnmanagedType.I1)]
-        internal static extern bool CreateCorridorForAgent(
-            int agentId,
-            uint mapId,
-            XYZ start,
-            XYZ end);
-
-        [DllImport(DllName, EntryPoint = "UpdateCorridorAgentPosition_C", CallingConvention = CallingConvention.Cdecl)]
-        [return: MarshalAs(UnmanagedType.I1)]
-        internal static extern bool UpdateCorridorAgentPosition(
-            int agentId,
-            XYZ newPos);
-
-        [DllImport(DllName, EntryPoint = "DestroyCorridorForAgent_C", CallingConvention = CallingConvention.Cdecl)]
-        [return: MarshalAs(UnmanagedType.I1)]
-        internal static extern bool DestroyCorridorForAgent(int agentId);
 
         #endregion
 

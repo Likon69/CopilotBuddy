@@ -46,7 +46,7 @@ namespace Tripper.Navigation
 
         /// <summary>
         /// HB-compatible sub-tile event alias.
-        /// 1x1 MaNGOS tiles do not have sub-tiles, so this mirrors OnTileLoaded.
+        /// V5 MaNGOS .mmtile files contain a 4x4 grid of Detour sub-tiles.
         /// </summary>
         public event EventHandler<TileLoadedEventArgs>? OnSubTileLoaded;
 
@@ -1862,6 +1862,34 @@ namespace Tripper.Navigation
         }
 
         /// <summary>
+        /// Unloads a MaNGOS ADT tile. For V5 4x4 tiles, Navigation.dll removes
+        /// all Detour sub-tiles stored inside that ADT tile.
+        /// </summary>
+        public bool UnloadTile(uint mapId, TileIdentifier tile)
+        {
+            if (!IsLoaded)
+                return false;
+
+            lock (_meshLock)
+            {
+                try
+                {
+                    return NativeMethods.UnloadTile(mapId, tile.X, tile.Y);
+                }
+                catch (EntryPointNotFoundException)
+                {
+                    Log("UnloadTile_C not exported by Navigation.dll - explicit tile unload disabled");
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    Log($"UnloadTile exception: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
+        /// <summary>
         /// Gets count of loaded tiles for a map.
         /// </summary>
         /// <param name="mapId">Map ID.</param>
@@ -1871,12 +1899,37 @@ namespace Tripper.Navigation
             return NativeMethods.GetLoadedTilesCount(mapId);
         }
 
+        /// <summary>
+        /// Returns the number of ADT tiles loaded for the map. Each ADT holds up to
+        /// 16 Detour sub-tiles (V5 4x4), so this is the right counter for "how many
+        /// ADT files are currently in memory".
+        /// </summary>
+        /// <remarks>
+        /// CUSTOM METRIC — NOT A PORT OF HONORBUDDY 6.2.3.
+        /// HB's WorldMeshManager exposes Mesh.GetAllTiles() which enumerates Detour
+        /// sub-tiles, but has no ADT-level counter. This API was added because
+        /// V5 .mmtile format stores 16 sub-tiles per ADT, making the raw Detour tile
+        /// count misleading for diagnostics.
+        /// </remarks>
+        /// <param name="mapId">Map ID.</param>
+        /// <returns>Number of ADT tiles loaded.</returns>
+        public int GetLoadedAdtCount(uint mapId)
+        {
+            if (!IsLoaded)
+                return 0;
+            return NativeMethods.GetLoadedAdtCount(mapId);
+        }
+
         #endregion
 
         #region OffMesh Connections
 
         /// <summary>
         /// Adds a custom offmesh connection at runtime.
+        /// <summary>
+
+        /// <summary>
+        /// Adds a custom offmesh connection between two positions.
         /// </summary>
         /// <param name="mapId">Map ID.</param>
         /// <param name="start">Connection start position.</param>
@@ -1941,12 +1994,21 @@ namespace Tripper.Navigation
         }
 
         /// <summary>
+        /// HB-compatible tile unload helper.
+        /// </summary>
+        public bool UnloadTile(TileIdentifier wowTile)
+        {
+            return _worldMesh.UnloadTile(wowTile);
+        }
+
+        /// <summary>
         /// HB-compatible tile unload API.
-        /// Navigation.dll streams tiles and does not expose explicit unload-all.
+        /// The current Navigation.dll bridge exposes per-tile unload only when
+        /// UnloadTile_C is available; no loaded-tile enumeration exists yet.
         /// </summary>
         public void UnloadAllTiles()
         {
-            Log("UnloadAllTiles not supported by Navigation.dll streaming model");
+            Log("UnloadAllTiles not supported without a native loaded-tile enumeration/export");
         }
 
         #endregion
@@ -1968,9 +2030,8 @@ namespace Tripper.Navigation
             {
                 try
                 {
-                    // EnsureTiles not directly exported - tiles load on-demand
-                    // Navigation.dll handles tile streaming internally
-                    Log($"Tile streaming handled automatically by Navigation.dll");
+                    var posC = new NativeMethods.XYZ(position);
+                    NativeMethods.EnsureTiles(mapId, posC, ring);
                 }
                 catch (Exception ex)
                 {

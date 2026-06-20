@@ -221,7 +221,7 @@ namespace Bots.BGBuddy
 
             // Set up BG navigation provider
             Navigator.NavigationProvider = new BgMeshNavigator();
-            Navigator.TripperNavigator.ChangeMap(new[] { StyxWoW.Me.MapName });
+            Navigator.TripperNavigator.ChangeMap(new[] { StyxWoW.Me.MapId.ToString() });
             Navigator.TripperNavigator.QueryFilter.AreaCosts[AreaType.Water] = 7.33f;
             Navigator.TripperNavigator.QueryFilter.AreaCosts[AreaType.Misc8] = 7.33f;
             Navigator.TripperNavigator.QueryFilter.AreaCosts[AreaType.Fall] = 1f;
@@ -234,7 +234,7 @@ namespace Bots.BGBuddy
         {
             // Reset navigation to default
             Navigator.NavigationProvider = new MeshNavigator();
-            Navigator.TripperNavigator.ChangeMap(new[] { StyxWoW.Me.MapName }); // plain MeshNavigator on stop — BgMeshNavigator only active during BG run
+            Navigator.TripperNavigator.ChangeMap(new[] { StyxWoW.Me.MapId.ToString() }); // plain MeshNavigator on stop — BgMeshNavigator only active during BG run
             Navigator.TripperNavigator.ResetQueryFilter();
 
             BotEvents.Player.OnMapChanged -= OnMapChanged;

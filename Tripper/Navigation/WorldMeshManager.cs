@@ -67,6 +67,11 @@ namespace Tripper.Navigation
             return _navigator.IsTileLoaded(_navigator.CurrentMapId, tid.X, tid.Y);
         }
 
+        public bool UnloadTile(TileIdentifier tid)
+        {
+            return _navigator.UnloadTile(_navigator.CurrentMapId, tid);
+        }
+
         public void UnloadAllTiles()
         {
             _navigator.UnloadAllTiles();

@@ -28,6 +28,11 @@ namespace Tripper.Navigation
             return false;
         }
 
+        public bool UnloadTile(TileIdentifier tid)
+        {
+            return false;
+        }
+
         public void Dispose()
         {
         }
