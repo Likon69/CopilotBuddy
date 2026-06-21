@@ -1,0 +1,9 @@
+# GitHub Linguist — files to NOT count as a language
+# (They still appear in the repo, just excluded from language statistics.)
+
+# External guides downloaded from The Buddy Forum (huge HTML scraped pages)
+# are bundled for offline reference in output/Guides/, but they're not
+# the project's own source code. Mark them as documentation so they
+# don't skew the language stats.
+output/Guides/*.html linguist-documentation
+output/Guides/*.pdf  linguist-documentation
