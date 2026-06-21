@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<PvpProfile>
+  <Name>Isle of Conquest</Name>
+  
+  <StartLocation X="1168.348" Y="-761.9674" Z="48.62987" Side="Horde" />
+  <StartLocation X="391.5189" Y="-833.1606" Z="48.62804" Side="Alliance" />
+
+  <Blackspots>
+    <!-- Brazier at Horde Keep entrance -->
+    <Blackspot X="1262.476" Y="-781.9775" Z="49.01769" Radius="3" />
+  </Blackspots>
+
+  <Boxes Side="Horde">
+    <Box Name="Hangar">
+      <TopLeft X="735.1211" Y="-1104.929" Z="134.566" />
+      <BottomRight X="735.1211" Y="-1104.929" Z="134.566" />
+      <Center X="735.1211" Y="-1104.929" Z="134.566" />
+    </Box>
+    <Box Name="AllianceKeep">
+      <TopLeft X="238.8202" Y="-812.9496" Z="59.5785" />
+      <BottomRight X="238.8202" Y="-812.9496" Z="59.5785" />
+      <Center X="238.8202" Y="-812.9496" Z="59.5785" />
+    </Box>
+    <Box Name="HordeKeep">
+      <TopLeft X="1339.021" Y="-765.8522" Z="60.81643" />
+      <BottomRight X="1339.021" Y="-765.8522" Z="60.81643" />
+      <Center X="1339.021" Y="-765.8522" Z="60.81643" />
+    </Box>
+  </Boxes>
+
+  <Boxes Side="Alliance">
+    <Box Name="Hangar">
+      <TopLeft X="735.1211" Y="-1104.929" Z="134.566" />
+      <BottomRight X="735.1211" Y="-1104.929" Z="134.566" />
+      <Center X="735.1211" Y="-1104.929" Z="134.566" />
+    </Box>
+    <Box Name="AllianceKeep">
+      <TopLeft X="238.8202" Y="-812.9496" Z="59.5785" />
+      <BottomRight X="238.8202" Y="-812.9496" Z="59.5785" />
+      <Center X="238.8202" Y="-812.9496" Z="59.5785" />
+    </Box>
+    <Box Name="HordeKeep">
+      <TopLeft X="1339.021" Y="-765.8522" Z="60.81643" />
+      <BottomRight X="1339.021" Y="-765.8522" Z="60.81643" />
+      <Center X="1339.021" Y="-765.8522" Z="60.81643" />
+    </Box>
+  </Boxes>
+  
+</PvpProfile>

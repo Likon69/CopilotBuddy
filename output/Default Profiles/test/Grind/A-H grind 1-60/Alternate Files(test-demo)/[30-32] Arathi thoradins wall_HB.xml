@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[30-32] Arathi thoradins wall</Name>
+	<MinLevel>30</MinLevel>
+	<MaxLevel>32</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Twlight vale -->
+		<Name>Twlight vale</Name>
+		<MinLevel>30</MinLevel>
+		<MaxLevel>32</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>28</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2559 2563 2560 2578 -->
+			<Factions>7 22 48</Factions>
+			<Hotspots>
+				<Hotspot X="-1262.632" Y="-1708.893" Z="57.28203" />
+				<Hotspot X="-1300.785" Y="-1711.11" Z="63.51533" />
+				<Hotspot X="-1344.74" Y="-1672.473" Z="54.57119" />
+				<Hotspot X="-1377.793" Y="-1579.611" Z="41.04951" />
+				<Hotspot X="-1326.52" Y="-1519.292" Z="51.73854" />
+				<Hotspot X="-1273.814" Y="-1519.003" Z="53.57925" />
+				<Hotspot X="-1185.084" Y="-1474.669" Z="55.51439" />
+				<Hotspot X="-1071.395" Y="-1534.642" Z="48.85796" />
+				<Hotspot X="-1142.821" Y="-1605.4" Z="47.80852" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2724.50781" Y="-89.87437" Z="93.8633347" Radius="14.5" />
+		<Blackspot X="-3108.75073" Y="-3253.044" Z="65.36017" Radius="7.5" />
+		<Blackspot X="-489.89743" Y="-1477.14282" Z="88.31435" Radius="95.5" />
+	</Blackspots>
+</HBProfile>

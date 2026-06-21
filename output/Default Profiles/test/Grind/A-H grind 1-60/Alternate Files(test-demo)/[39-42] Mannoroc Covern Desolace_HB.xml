@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[39-42] Mannoroc Covern Desolace</Name>
+	<MinLevel>39</MinLevel>
+	<MaxLevel>42</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Manoroc_covern -->
+		<Name>Manoroc_covern</Name>
+		<MinLevel>39</MinLevel>
+		<MaxLevel>42</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>37</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4685 4676 4668 416 4682 4677 4679 4680 -->
+			<Factions>90 554</Factions>
+			<Hotspots>
+				<Hotspot X="-2083.301" Y="1829.243" Z="60.04643" />
+				<Hotspot X="-1871.764" Y="1808.231" Z="65.17428" />
+				<Hotspot X="-1758.783" Y="1807.677" Z="62.03608" />
+				<Hotspot X="-1709.99" Y="1860.707" Z="60.48542" />
+				<Hotspot X="-1617.764" Y="1919.69" Z="61.73632" />
+				<Hotspot X="-1752.628" Y="1956.062" Z="62.25627" />
+				<Hotspot X="-1818.628" Y="1987.868" Z="59.01582" />
+				<Hotspot X="-1877.721" Y="1997.673" Z="63.29189" />
+				<Hotspot X="-1939.932" Y="2043.158" Z="53.43583" />
+				<Hotspot X="-1981.445" Y="2019.913" Z="62.57602" />
+				<Hotspot X="-1984.066" Y="1957.769" Z="62.19947" />
+				<Hotspot X="-1991.537" Y="1906.086" Z="60.85322" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

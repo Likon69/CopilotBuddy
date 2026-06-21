@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>[Guide] How to write a basic Questing Profile – Maffyx</title>
+<style>
+  body { font-family: Segoe UI, Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { color: #1a3a6e; border-bottom: 2px solid #1a3a6e; padding-bottom: 8px; }
+  h2 { color: #2a5298; margin-top: 32px; }
+  h3 { color: #333; }
+  pre, code { background: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; padding: 2px 6px; font-family: Consolas, monospace; font-size: 0.92em; }
+  pre { padding: 12px 16px; overflow-x: auto; white-space: pre-wrap; }
+  .author { color: #666; font-style: italic; font-size: 0.9em; margin-bottom: 24px; }
+  .section { margin-bottom: 32px; }
+  .note { background: #fffbe6; border-left: 4px solid #f0c000; padding: 10px 16px; margin: 16px 0; border-radius: 2px; }
+  .post { border-top: 2px solid #e0e0e0; margin-top: 40px; padding-top: 24px; }
+  .post-author { font-weight: bold; color: #1a3a6e; }
+  a { color: #1a5276; }
+  ol, ul { padding-left: 24px; }
+  li { margin-bottom: 6px; }
+  @media print { body { margin: 20px; } }
+</style>
+</head>
+<body>
+
+<h1>[Guide] How to write a basic Questing Profile</h1>
+<p class="author">Par <strong>Maffyx</strong> — publié le 26 août 2015 sur RebornBuddy (rebornbuddy.com)<br>
+Source : <a href="https://rebornbuddy.com/xf/threads/guide-how-to-write-a-basic-questing-profile.223620/">https://rebornbuddy.com/xf/threads/guide-how-to-write-a-basic-questing-profile.223620/</a></p>
+
+<hr>
+
+<!-- POST #1 -->
+<div class="section">
+<p>Hello All, I've seen a lot of requests around the forums for a guide on how to write profiles. I've seen a lot of requests for grinding profiles but I feel that using the questing bot is more useful since we can take advantage of Quest Behaviors and this can make our profiles more robust. This guide is not meant to be all inclusive but to be a starting point for those who want to begin building profiles.</p>
+
+<h2>1. Text Editor Setup</h2>
+<p>I personally use <strong>Notepad++</strong> to write my profiles. It allows me to quickly edit and change text without much hassle.</p>
+<ul>
+  <li>Download: <a href="https://notepad-plus-plus.org/">https://notepad-plus-plus.org/</a></li>
+  <li>Recommended theme: <em>Settings &gt; Style Configurator &gt; Select Theme &gt; Obsidian</em></li>
+  <li>For XML color: go to Language column &gt; XML &gt; change comment foreground to lime green so comments stand out</li>
+</ul>
+
+<h2>2. Setting Up an SVN (for Distribution)</h2>
+<p>If you want to distribute your profiles, set up an SVN. Recommended tools:</p>
+<ul>
+  <li><a href="https://www.assembla.com/home">Assembla</a> — free SVN hosting</li>
+  <li><a href="http://tortoisesvx.net/">TortoiseSVN</a> — Windows SVN client</li>
+</ul>
+<ol>
+  <li>Create your SVN account on Assembla; get your SVN trunk link from <em>SVN tab &gt; Instructions sub tab</em></li>
+  <li>Create a folder (not inside the Honorbuddy folder), e.g. on your Desktop</li>
+  <li>Right-click the folder &gt; <em>SVN Checkout</em> &gt; paste your trunk URL &gt; OK</li>
+  <li>Recommended folder structure:
+    <pre>Farming/
+  Classic/
+  Burning Crusade/
+  Wrath of the Lich King/
+  Cataclysm/
+  Mists of Pandaria/
+  Warlords of Draenor/
+Reputation/
+  ...same sub-folders...</pre>
+  </li>
+  <li>Save your profiles to the trunk folder</li>
+</ol>
+
+<h2>3. Resources</h2>
+<h3>a. Honorbuddy Developer Tools</h3>
+<p>The most important tool for building profiles — built into the HB interface.</p>
+
+<h3>b. Quest Behaviors</h3>
+<p>Found in your Honorbuddy folder under <code>Quest Behaviors/</code>. Main behaviors:</p>
+<ul>
+  <li><strong>InteractWith</strong> — Interacts with a mob or object; many variables</li>
+  <li><strong>KillUntilComplete</strong> — Grinds mobs until a condition is met</li>
+  <li><strong>UseItem</strong> — Uses an item in your bag</li>
+  <li><strong>RunMacro</strong> — Runs an in-game macro command</li>
+</ul>
+
+<h3>c. Documentation Links</h3>
+<ul>
+  <li>Profile Tags: <a href="http://wiki.thebuddyforum.com/index.php?title=Honorbuddy:Levelbot:Grammar:HBProfile">HBProfile Grammar</a></li>
+  <li>Conditions: <a href="http://wiki.thebuddyforum.com/index.php?title=Honorbuddy:Levelbot:Grammar:Condition_attribute">Condition attribute</a></li>
+  <li>Condition Examples: <a href="http://wiki.thebuddyforum.com/index.php?title=Honorbuddy:Levelbot:Grammar:Condition_attribute_examples">Condition examples</a></li>
+  <li>API Docs: <a href="http://docs.honorbuddy.com/html/cd33c286-7af4-90b0-df04-9b928247da3e.htm">docs.honorbuddy.com</a></li>
+</ul>
+
+<h2>4. Test Profile Structure</h2>
+<p>A basic profile skeleton:</p>
+<pre>&lt;HBProfile&gt;
+  &lt;QuestOrder&gt;
+
+    &lt;!-- The Crone's Bargain --&gt;
+    &lt;While Condition="!HasQuest(12841) &amp;&amp; !IsQuestCompleted(12841)"&gt;
+      &lt;PickUp Nav="Fly" QuestName="The Crone's Bargain" QuestId="12841"
+              GiverName="Lok'lira the Crone" GiverId="29481" /&gt;
+    &lt;/While&gt;
+
+    &lt;While Condition="HasQuest(12841) &amp;&amp; !IsQuestCompleted(12841)"&gt;
+      &lt;CustomBehavior File="InteractWith" QuestId="12841" MobId="29518"
+              CollectionDistance="200" X="6929.614" Y="-1316.467" Z="831.2584" /&gt;
+    &lt;/While&gt;
+
+    &lt;While Condition="HasQuest(12841) &amp;&amp; IsQuestCompleted(12841)"&gt;
+      &lt;TurnIn Nav="Fly" QuestName="The Crone's Bargain" QuestId="12841"
+              TurnInName="Lok'lira the Crone" TurnInId="29481" /&gt;
+    &lt;/While&gt;
+    &lt;!-- End The Crone's Bargain --&gt;
+
+  &lt;/QuestOrder&gt;
+&lt;/HBProfile&gt;</pre>
+
+<h3>While Loop Logic (the 3-loop pattern)</h3>
+<ol>
+  <li><code>!HasQuest(X) &amp;&amp; !IsQuestCompleted(X)</code> → Pick up the quest</li>
+  <li><code>HasQuest(X) &amp;&amp; !IsQuestCompleted(X)</code> → Complete the quest objective(s)</li>
+  <li><code>HasQuest(X) &amp;&amp; IsQuestCompleted(X)</code> → Turn it in</li>
+</ol>
+
+<div class="note">
+  <strong>Note XML:</strong> <code>&lt;</code> and <code>&gt;</code> must be escaped in condition attributes:
+  <code>&amp;lt;</code> for <code>&lt;</code>, <code>&amp;gt;</code> for <code>&gt;</code>, <code>&amp;amp;&amp;amp;</code> for <code>&amp;&amp;</code>.<br>
+  Reference: <a href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#Predefined_entities_in_XML">XML character entities (Wikipedia)</a>
+</div>
+
+<h2>5. Using Quest Overrides</h2>
+<p>Overrides are placed <strong>outside</strong> the <code>&lt;QuestOrder&gt;</code>, usually above it. They refine how the bot handles a specific quest (e.g. better hotspots).</p>
+<pre>&lt;Quest Id="28145" Name="Venomblood Antidote"&gt;
+  &lt;Objective Type="KillMob" MobId="47748" KillCount="8"&gt;
+    &lt;Hotspots&gt;
+      &lt;!-- Add hotspot coordinates here --&gt;
+    &lt;/Hotspots&gt;
+  &lt;/Objective&gt;
+&lt;/Quest&gt;
+
+&lt;QuestOrder&gt;
+  ...
+&lt;/QuestOrder&gt;</pre>
+
+<h2>6. XML Profile Tags — Developer Tools Quick Reference</h2>
+
+<h3>PickUp / TurnIn (from Dev Tools copy XML)</h3>
+<pre>&lt;PickUp Nav="Fly" QuestName="Venomblood Antidote" QuestId="28145"
+        GiverName="Sun Priest Asaris" GiverId="47715" /&gt;
+&lt;Objective QuestName="Venomblood Antidote" QuestId="28145"
+        Type="KillMob" Nav="Fly" MobId="47748" KillCount="8" /&gt;
+&lt;TurnIn Nav="Fly" QuestName="Venomblood Antidote" QuestId="28145"
+        TurnInName="Sun Priest Asaris" TurnInId="47715" /&gt;</pre>
+
+<h3>Vendor / NPC (from Dev Tools — Current Target)</h3>
+<pre>&lt;Vendor Name="Innkeeper Allison" Entry="6740" Type="Food"
+        Nav="Fly" X="-8867.786" Y="673.6729" Z="97.90324" /&gt;</pre>
+<ul>
+  <li><strong>Entry</strong> = Unit ID (also visible on Wowhead: <code>wowhead.com/npc=6740</code>)</li>
+  <li><strong>Type</strong>: Food, Repair, Innkeeper — only matters for vendor sections</li>
+  <li><strong>XYZ</strong> — coordinates in the game world</li>
+</ul>
+
+<h3>Blackspot</h3>
+<pre>&lt;Blackspots&gt;
+  &lt;Blackspot X="-5137.301" Y="544.6486" Z="84.33643" Radius="22.15761" /&gt;
+  &lt;Blackspot X="-5117.417" Y="537.1185" Z="85.25964" Radius="22.15761" /&gt;
+&lt;/Blackspots&gt;</pre>
+<div class="note">
+  <strong>Important (thebrodieman):</strong> Blackspots don't just punch a hole in the mesh — any mesh segment that intersects the blackspot radius becomes entirely blackspotted. Keep them small.
+</div>
+
+<h3>Hotspot</h3>
+<pre>&lt;Hotspot X="-1441.929" Y="9866.271" Z="200.9235" /&gt;</pre>
+<p>Generated via Dev Tools &gt; Generate Hotspot button (your character's current position).</p>
+
+<h2>7. Developer Tools Tabs Reference</h2>
+
+<h3>Profiles Tab</h3>
+<ul>
+  <li><strong>Local Player Info</strong> — current position (hit Refresh to update)</li>
+  <li><strong>Current Target Info</strong> — Copy XML button: generates PickUp/TurnIn/Vendor XML for whatever you have targeted</li>
+  <li><strong>Common Buttons</strong> — Generate Blackspot (walk edge-to-edge), Generate Hotspot (current pos)</li>
+  <li><strong>Quests</strong> — shows quest log; right-click &gt; Copy XML to auto-generate PickUp + Objective + TurnIn</li>
+</ul>
+
+<h3>Console Tab</h3>
+<ul>
+  <li>Test bed for scripts/C# expressions before putting them in profiles or plugins</li>
+  <li><strong>New</strong> — fresh window; <strong>Delete</strong> — remove script; <strong>Run (F5)</strong> — debug/run</li>
+  <li><strong>Click to set Keybind</strong> — bind a common test script to a key</li>
+</ul>
+
+<h3>Objects Tab — Sub-tabs</h3>
+<p><strong>GameObjects</strong>: Mailboxes, chairs, interactable objects. Key columns: Entry (MobId for InteractWith), Name, Position (XYZ), Distance, Type, SubType.</p>
+<p><strong>Units</strong>: All non-player NPCs + player pets. Key columns: Entry (MobId/UnitId), Name, Position, FactionID, Distance, NPC Flags.</p>
+<p><strong>Bag Items</strong>: Everything in bags, reagent bank, personal bank. Key columns: Entry (ItemId for UseItem), Name, Stack Count.</p>
+
+<h3>Auras Tab</h3>
+<ul>
+  <li><strong>Auras on Me</strong> — SpellID, Name, StackCount, AuraFlags, TimeLeft, Creator, CreatorGUID</li>
+  <li><strong>Auras on Current Target</strong> — same info for targeted unit</li>
+</ul>
+<p>SpellID useful for <code>HasAura()</code> conditions and InteractWith requirements.</p>
+
+<h3>Merchant Items Tab</h3>
+<p>Open a vendor window in-game first. Shows: ItemId, Name, Quantity, BuyPrice (copper), NumAvailable (-1 = infinite).</p>
+
+<h3>Targeting Tab</h3>
+<p>When the bot is running and killing/collecting, shows active kill targets and lootable mobs within loot radius.</p>
+
+<h2>8. Publishing Your Profile</h2>
+<ol>
+  <li>Make sure the file is in the correct SVN trunk folder (don't move it later)</li>
+  <li>Right-click the file &gt; <em>SVN Commit</em> → enter credentials if prompted</li>
+  <li>Navigate to your SVN trunk URL, right-click the file &gt; <em>Copy Link Address</em></li>
+  <li>Post that link in your forum thread for distribution</li>
+</ol>
+
+<h2>9. Helpful Resources</h2>
+<ul>
+  <li><a href="https://www.thebuddyforum.com/honorbuddy-forum/community-developer-forum/">thebuddyforum.com — Community Developer Forum</a></li>
+  <li><a href="http://docs.honorbuddy.com/html/cd33c286-7af4-90b0-df04-9b928247da3e.htm">Honorbuddy API Documentation</a></li>
+  <li><a href="https://subversion.assembla.com/svn/buddy-profiles.honorbuddy/trunk/">Kickazz Repository (excellent profile examples)</a> — recommandé par Aion</li>
+</ul>
+</div>
+
+<!-- POST #2 — Developer Tools deep dive -->
+<div class="post">
+<p class="post-author">Addendum de Maffyx — 1er septembre 2015</p>
+
+<h2>10. Developer Tools — Vue détaillée</h2>
+
+<h3>Profiles Tab (détail)</h3>
+<p>Quand tu cibles un NPC et cliques <em>Copy XML</em> sur <em>Current Target Info</em>, tu obtiens :</p>
+<pre>&lt;Vendor Name="Forest Spider" Entry="30" Type="Repair"
+        Nav="Fly" X="-9226.476" Y="272.2993" Z="72.97188" /&gt;</pre>
+<p>L'<strong>Entry</strong> est synonyme de UnitId, MobId, NpcId — c'est la même valeur que sur Wowhead (<code>wowhead.com/npc=30</code>).</p>
+
+<p>Pour les quêtes, <em>Copy All Quests</em> génère le XML pour toutes les quêtes du journal. <em>Copy Overrides</em> génère les blocs <code>&lt;Quest Id="..."&gt;</code> pour chacune.</p>
+
+<p><strong>Refresh</strong> : toujours appuyer sur Refresh après avoir bougé ou changé de cible avant de copier les coordonnées.</p>
+
+<h3>Pattern complet d'un profil avec overrides</h3>
+<pre>&lt;Quest Id="28145" Name="Venomblood Antidote"&gt;
+  &lt;Objective Type="KillMob" MobId="47748" KillCount="8"&gt;
+    &lt;Hotspots&gt;
+      &lt;Hotspot X="..." Y="..." Z="..." /&gt;
+    &lt;/Hotspots&gt;
+  &lt;/Objective&gt;
+&lt;/Quest&gt;
+
+&lt;QuestOrder&gt;
+  &lt;!-- The Crone's Bargain --&gt;
+  &lt;While Condition="!HasQuest(12841) &amp;&amp; !IsQuestCompleted(12841)"&gt;
+    &lt;PickUp Nav="Fly" QuestName="The Crone's Bargain" QuestId="12841"
+            GiverName="Lok'lira the Crone" GiverId="29481" /&gt;
+  &lt;/While&gt;
+  &lt;While Condition="HasQuest(12841) &amp;&amp; !IsQuestCompleted(12841)"&gt;
+    &lt;CustomBehavior File="InteractWith" QuestId="12841" MobId="29518"
+            CollectionDistance="200" X="6929.614" Y="-1316.467" Z="831.2584" /&gt;
+  &lt;/While&gt;
+  &lt;While Condition="HasQuest(12841) &amp;&amp; IsQuestCompleted(12841)"&gt;
+    &lt;TurnIn Nav="Fly" QuestName="The Crone's Bargain" QuestId="12841"
+            TurnInName="Lok'lira the Crone" TurnInId="29481" /&gt;
+  &lt;/While&gt;
+  &lt;!-- End The Crone's Bargain --&gt;
+&lt;/QuestOrder&gt;</pre>
+</div>
+
+<hr>
+<p style="font-size:0.8em; color:#888;">Contenu archivé depuis rebornbuddy.com — Guide original par Maffyx, Aug 2015. Pour usage personnel uniquement.</p>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[41-44]Lariss Pavailion Feralas</Name>
+	<MinLevel>41</MinLevel>
+	<MaxLevel>44</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Lariss Pavailion -->
+		<Name>Lariss Pavailion</Name>
+		<MinLevel>41</MinLevel>
+		<MaxLevel>44</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>39</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 5268 5286 -->
+			<Factions>38 44</Factions>
+			<Hotspots>
+				<Hotspot X="-4153.918" Y="199.5824" Z="60.11945" />
+				<Hotspot X="-4086.301" Y="174.4837" Z="60.49027" />
+				<Hotspot X="-4052.038" Y="66.69041" Z="61.56623" />
+				<Hotspot X="-4099.728" Y="-11.57774" Z="57.52837" />
+				<Hotspot X="-4119.953" Y="-81.8293" Z="57.06325" />
+				<Hotspot X="-4130.085" Y="-119.7" Z="58.99258" />
+				<Hotspot X="-4165.93" Y="-137.1657" Z="57.77913" />
+				<Hotspot X="-4195.602" Y="-147.0581" Z="58.61562" />
+				<Hotspot X="-4272.018" Y="-125.9715" Z="61.51123" />
+				<Hotspot X="-4303.106" Y="-45.44076" Z="62.39816" />
+				<Hotspot X="-4249.075" Y="49.56927" Z="58.79443" />
+				<Hotspot X="-4231.806" Y="126.7345" Z="57.15405" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+		<Blackspot X="-4282.609" Y="75.1086044" Z="57.9219933" Radius="14.5" />
+		<Blackspot X="-4278.926" Y="79.92961" Z="57.75357" Radius="24.5" />
+	</Blackspots>
+</HBProfile>

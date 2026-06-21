@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[14-16] Xroads South Barrens</Name>
+	<MinLevel>14</MinLevel>
+	<MaxLevel>16</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- South XR Grind -->
+		<Name>South XR Grind</Name>
+		<MinLevel>14</MinLevel>
+		<MaxLevel>16</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>12</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3242 3246 3274 4316 3255 3273 -->
+			<Factions>48 130 189</Factions>
+			<Hotspots>
+				<Hotspot X="-926.12" Y="-2911.711" Z="91.66671" />
+				<Hotspot X="-1017.537" Y="-2902.518" Z="91.82967" />
+				<Hotspot X="-1052.234" Y="-2842.392" Z="91.66686" />
+				<Hotspot X="-1047.46" Y="-2787.09" Z="91.7962" />
+				<Hotspot X="-1012.093" Y="-2686.181" Z="93.27901" />
+				<Hotspot X="-983.9212" Y="-2597.284" Z="93.36038" />
+				<Hotspot X="-948.1804" Y="-2569.432" Z="91.69181" />
+				<Hotspot X="-888.3245" Y="-2587.091" Z="92.49046" />
+				<Hotspot X="-875.4755" Y="-2640.903" Z="92.73641" />
+				<Hotspot X="-789.7638" Y="-2648.26" Z="94.63969" />
+				<Hotspot X="-741.0823" Y="-2714.104" Z="92.26328" />
+				<Hotspot X="-698.5674" Y="-2785.771" Z="92.45654" />
+				<Hotspot X="-773.394" Y="-2819.547" Z="91.66669" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="1254.42322" Y="-7.0831995" Z="-5.4597683" Radius="34.5" />
+		<Blackspot X="1233.13684" Y="10.2530689" Z="-4.02991438" Radius="34.5" />
+		<Blackspot X="1237.88416" Y="29.5894566" Z="-5.10984039" Radius="34.5" />
+		<Blackspot X="-1619.094" Y="-1791.27185" Z="92.2063751" Radius="34.5" />
+		<Blackspot X="-1618.94006" Y="-1791.93176" Z="92.2834244" Radius="74.5" />
+	</Blackspots>
+</HBProfile>

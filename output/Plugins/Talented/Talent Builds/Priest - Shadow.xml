@@ -1,0 +1,28 @@
+<!--http://www.wowhead.com/talent#bfMoZbZGMGdMkrdzco-->
+
+<TalentTree Name="Priest - Shadow" Specialization="3" Class="Priest">
+  <Talent Tab="3" Index="1" Count="3" Name="Darkness" />
+  <Talent Tab="3" Index="2" Count="2" Name="Improved Shadow Word: Pain" />
+  <Talent Tab="3" Index="4" Count="2" Name="Improved Psychic Scream" />
+  <Talent Tab="3" Index="5" Count="3" Name="Improved Mind Blast" />
+  <Talent Tab="3" Index="8" Count="1" Name="Shadowform" />
+  <Talent Tab="3" Index="7" Count="2" Name="Twisted Faith" />
+  <Talent Tab="3" Index="6" Count="2" Name="Improved Devouring Plague" />
+  <Talent Tab="3" Index="12" Count="1" Name="Vampiric Embrace" />
+  <Talent Tab="3" Index="11" Count="1" Name="Silence" />
+  <Talent Tab="3" Index="10" Count="2" Name="Harnessed Shadows" />
+  <Talent Tab="3" Index="14" Count="1" Name="Mind Melt" />
+  <Talent Tab="3" Index="16" Count="1" Name="Vampiric Touch" />
+  <Talent Tab="3" Index="14" Count="2" Name="Mind Melt" />
+  <Talent Tab="3" Index="15" Count="2" Name="Pain and Suffering" />
+  <Talent Tab="3" Index="13" Count="1" Name="Masochism" />
+  <Talent Tab="3" Index="18" Count="1" Name="Psychic Horror" />
+  <Talent Tab="3" Index="20" Count="3" Name="Shadowy Apparition" />
+  <Talent Tab="3" Index="13" Count="2" Name="Masochism" />
+  <Talent Tab="3" Index="21" Count="1" Name="Dispersion" />
+  <Talent Tab="1" Index="1" Count="2" Name="Improved Power Word: Shield" />
+  <Talent Tab="1" Index="3" Count="3" Name="Mental Agility" />
+  <Talent Tab="1" Index="4" Count="2" Name="Evangelism" />
+  <Talent Tab="1" Index="5" Count="1" Name="Archangel" />
+  <Talent Tab="2" Index="1" Count="2" Name="Improved Renew" />
+</TalentTree>

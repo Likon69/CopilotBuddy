@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[31-34] Tethris Aran Desolace</Name>
+	<MinLevel>31</MinLevel>
+	<MaxLevel>34</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Tethris_Aran -->
+		<Name>Tethris_Aran</Name>
+		<MinLevel>31</MinLevel>
+		<MaxLevel>34</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>29</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4728 4696 4692 4689 11576 -->
+			<Factions>38 49 73 91 413</Factions>
+			<Hotspots>
+				<Hotspot X="116.8731" Y="1691.331" Z="96.09875" />
+				<Hotspot X="91.66078" Y="1621.776" Z="122.7295" />
+				<Hotspot X="62.63428" Y="1531.449" Z="115.273" />
+				<Hotspot X="-10.45717" Y="1439.051" Z="91.70011" />
+				<Hotspot X="-67.81032" Y="1352.342" Z="89.63084" />
+				<Hotspot X="-109.2328" Y="1306.846" Z="89.9199" />
+				<Hotspot X="-148.3764" Y="1297.16" Z="89.65929" />
+				<Hotspot X="-202.2289" Y="1258.623" Z="89.6518" />
+				<Hotspot X="-252.824" Y="1252.435" Z="91.15318" />
+				<Hotspot X="-306.5259" Y="1241.554" Z="90.71141" />
+				<Hotspot X="-350.0154" Y="1249.388" Z="94.55865" />
+				<Hotspot X="-405.7843" Y="1284.011" Z="91.30171" />
+				<Hotspot X="-459.4076" Y="1367.116" Z="94.35887" />
+				<Hotspot X="-514.9653" Y="1390.133" Z="89.08151" />
+				<Hotspot X="-586.1582" Y="1429.269" Z="89.48892" />
+				<Hotspot X="-710.9362" Y="1517.27" Z="90.68641" />
+				<Hotspot X="-680.2138" Y="1549.001" Z="88.37472" />
+				<Hotspot X="-625.1176" Y="1549.274" Z="90.97701" />
+				<Hotspot X="-498.609" Y="1548.102" Z="92.01402" />
+				<Hotspot X="-408.11" Y="1542.453" Z="90.8796" />
+				<Hotspot X="-341.4158" Y="1552.663" Z="91.11475" />
+				<Hotspot X="-270.2765" Y="1577.535" Z="92.63884" />
+				<Hotspot X="-203.6953" Y="1607.551" Z="89.47916" />
+				<Hotspot X="-104.1948" Y="1672.226" Z="92.58618" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

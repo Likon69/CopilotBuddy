@@ -1,0 +1,57 @@
+<HBProfile>
+    <Name>RunCode Test</Name>
+    <MinLevel>1</MinLevel>
+    <MaxLevel>90</MaxLevel>
+    <QuestOrder>
+
+        <!--
+            TEST 1 : Type="Definition"
+            Le code CDATA est injecté comme membre de classe dans le CompileBatch.
+            La fonction Log() sera accessible depuis tous les noeuds Statement ci-dessous.
+        -->
+        <CustomBehavior File="RunCode" Type="Definition"><![CDATA[
+            void Log(string msg)
+            {
+                Logging.Write(Colors.Cyan, "[RunCode Test] " + msg);
+            }
+        ]]></CustomBehavior>
+
+        <!--
+            TEST 2 : Type="Statement" (défaut) avec CDATA multi-ligne
+            Le code est enveloppé dans async () => { ... } par RunCode.
+            Appelle la fonction Log() définie ci-dessus.
+        -->
+        <CustomBehavior File="RunCode"><![CDATA[
+            Log("=== RunCode Compile & Execute Test ===");
+            Log(string.Format("Joueur : {0}  |  Niveau : {1}  |  Classe : {2}",
+                Me.Name, Me.Level, Me.Class));
+            Log(string.Format("MapId : {0}  |  ZoneId : {1}",
+                Me.MapId, Me.ZoneId));
+            Log(">>> Type=Statement (CDATA) : OK <<<");
+        ]]></CustomBehavior>
+
+        <!--
+            TEST 3 : Attribut Code inline (sans CDATA)
+            &quot; = guillemet dans XML.
+            Teste que le chemin Code= fonctionne (pas seulement CDATA).
+        -->
+        <CustomBehavior File="RunCode" Code="Log(&quot;[OK] Attribut Code inline&quot;)"/>
+
+        <!--
+            TEST 4 : Coroutine await dans un Statement
+            Vérifie que le système async/await fonctionne dans les profiles.
+        -->
+        <CustomBehavior File="RunCode"><![CDATA[
+            Log("Pause 1 seconde (await Coroutine.Sleep)...");
+            await Coroutine.Sleep(1000);
+            Log(">>> await Coroutine.Sleep : OK <<<");
+        ]]></CustomBehavior>
+
+        <!--
+            TEST 5 : Stop le bot — si on arrive ici, tout a compilé et exécuté correctement.
+        -->
+        <CustomBehavior File="RunCode" Code="Log(&quot;=== Tous les tests ont passe. Arret du bot. ===&quot;)"/>
+        <CustomBehavior File="RunCode" Code="TreeRoot.Stop(&quot;RunCode_Test.xml : succes&quot;)"/>
+
+    </QuestOrder>
+</HBProfile>

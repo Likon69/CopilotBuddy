@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Hellfire Ramparts Heroic</Name>
+  <DungeonId>188</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="17306" name="Watchkeeper Gargolmar" killOrder="1" optional="true" >
+      <Path>
+		<Hotspot X="-1209.931" Y="1451.348" Z="68.54567" />
+		<Hotspot X="-1183.945" Y="1524.685" Z="68.46674" />
+      </Path>
+    </Boss>	
+	<Boss isFinal="false" entry="17308" name="Omor the Unscarred" killOrder="2" optional="true" X="-1122.34" Y="1718.407" Z="89.34843" />
+	<Boss isFinal="false" entry="17537" name="Vazruden" killOrder="3" optional="false" X="-1405.533" Y="1735.979" Z="81.2851" />
+	<Boss isFinal="true" entry="17536" name="Nazan" killOrder="4" optional="false" X="-1405.533" Y="1735.979" Z="81.2851" />
+	<!-- Loot the chest -->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

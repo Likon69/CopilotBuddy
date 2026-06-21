@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[54-60] Irontree Cavern Felwood</Name>
+	<MinLevel>54</MinLevel>
+	<MaxLevel>60</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Irontree Cavern -->
+		<Name>Irontree Cavern</Name>
+		<MinLevel>54</MinLevel>
+		<MaxLevel>60</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>52</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 8957 8961 7098 7100 -->
+			<Factions>7 16 38 44</Factions>
+			<Hotspots>
+				<Hotspot X="6632.783" Y="-1232.86" Z="454.8126" />
+				<Hotspot X="6671.954" Y="-1324.614" Z="465.6194" />
+				<Hotspot X="6688.379" Y="-1416.176" Z="477.0415" />
+				<Hotspot X="6612.683" Y="-1449.277" Z="466.0532" />
+				<Hotspot X="6377.191" Y="-1524.542" Z="442.065" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

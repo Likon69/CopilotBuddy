@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[6-8]Tiragarde Durotar</Name>
+	<MinLevel>6</MinLevel>
+	<MaxLevel>8</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Tirigarde Grind -->
+		<Name>Tirigarde Grind</Name>
+		<MinLevel>6</MinLevel>
+		<MaxLevel>8</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>4</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3128 3129 -->
+			<Factions>123</Factions>
+			<Hotspots>
+				<Hotspot X="-117.8454" Y="-4968.937" Z="18.87471" />
+				<Hotspot X="-177.8115" Y="-5010.015" Z="21.15007" />
+				<Hotspot X="-227.6588" Y="-5009.492" Z="20.82024" />
+				<Hotspot X="-249.2012" Y="-5039.911" Z="21.03372" />
+				<Hotspot X="-236.6985" Y="-5050.912" Z="20.47045" />
+				<Hotspot X="-203.8936" Y="-5073.636" Z="21.36309" />
+				<Hotspot X="-255.3354" Y="-5171.796" Z="21.2377" />
+				<Hotspot X="-90.25343" Y="-5112.693" Z="19.81905" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="-245.7894" Y="-5097.04639" Z="23.7846661" Radius="14.5" />
+		<Blackspot X="-266.620331" Y="-5098.174" Z="25.24467" Radius="14.5" />
+		<Blackspot X="-269.445068" Y="-5110.78027" Z="25.24467" Radius="14.5" />
+		<Blackspot X="-251.792114" Y="-5111.53857" Z="25.24467" Radius="14.5" />
+		<Blackspot X="-253.318665" Y="-5126.63867" Z="29.1724281" Radius="14.5" />
+		<Blackspot X="-249.242355" Y="-5111.855" Z="34.06575" Radius="14.5" />
+		<Blackspot X="-237.047363" Y="-5112.39" Z="34.06575" Radius="24.5" />
+		<Blackspot X="-243.236" Y="-5100.41162" Z="41.3476944" Radius="24.5" />
+		<Blackspot X="-245.700287" Y="-5113.30225" Z="41.87963" Radius="24.5" />
+		<Blackspot X="-225.0638" Y="-5107.35059" Z="49.3241539" Radius="24.5" />
+	</Blackspots>
+</HBProfile>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[16-18] Grol Dom North Barrens</Name>
+	<MinLevel>16</MinLevel>
+	<MaxLevel>18</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Grol Dom north Grind -->
+		<Name>Grol Dom north Grind</Name>
+		<MinLevel>16</MinLevel>
+		<MaxLevel>18</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>14</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3425 3248 4127 3255 3242 3234 -->
+			<Factions>15 16 38 48 189</Factions>
+			<Hotspots>
+				<Hotspot X="493.2829" Y="-2764.008" Z="93.67642" />
+				<Hotspot X="573.4914" Y="-2756.533" Z="91.98809" />
+				<Hotspot X="639.5557" Y="-2779.355" Z="94.62155" />
+				<Hotspot X="683.8329" Y="-2802.001" Z="93.07347" />
+				<Hotspot X="709.673" Y="-2862.392" Z="93.88622" />
+				<Hotspot X="679.6437" Y="-2918.496" Z="91.66898" />
+				<Hotspot X="652.9141" Y="-2971.442" Z="94.62431" />
+				<Hotspot X="641.6412" Y="-3016.008" Z="91.93285" />
+				<Hotspot X="590.4197" Y="-3044.202" Z="92.69328" />
+				<Hotspot X="539.4207" Y="-3049.501" Z="91.66683" />
+				<Hotspot X="491.6823" Y="-3020.668" Z="92.83944" />
+				<Hotspot X="503.7711" Y="-2943.469" Z="93.14791" />
+				<Hotspot X="497.5053" Y="-2910.531" Z="92.04971" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

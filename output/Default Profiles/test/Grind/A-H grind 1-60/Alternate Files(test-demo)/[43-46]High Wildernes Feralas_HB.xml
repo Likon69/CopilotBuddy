@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[43-46]High Wildernes Feralas</Name>
+	<MinLevel>43</MinLevel>
+	<MaxLevel>46</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Lariss Pavailion -->
+		<Name>Lariss Pavailion</Name>
+		<MinLevel>43</MinLevel>
+		<MaxLevel>46</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>41</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 5300 5260 5292 5307 5268 -->
+			<Factions>14 16 44 72</Factions>
+			<Hotspots>
+				<Hotspot X="-5188.923" Y="1591.721" Z="57.69775" />
+				<Hotspot X="-5142.499" Y="1579.909" Z="57.90756" />
+				<Hotspot X="-5083.137" Y="1540.681" Z="47.90644" />
+				<Hotspot X="-5005.164" Y="1541.736" Z="56.74788" />
+				<Hotspot X="-4997.481" Y="1489.772" Z="57.4738" />
+				<Hotspot X="-5076.582" Y="1423.037" Z="40.77188" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+		<Blackspot X="-4282.609" Y="75.1086044" Z="57.9219933" Radius="14.5" />
+	</Blackspots>
+</HBProfile>

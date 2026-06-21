@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Razorfen Kraul</Name>
+  <DungeonId>16</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="4428" name="Death Speaker Jargba" killOrder="1" optional="true" X="2146.427" Y="1411.243" Z="73.87074" />
+	<Boss isFinal="false" entry="4424" name="Aggem Thorncurse" killOrder="2" optional="true" X="2082.312" Y="1463.538" Z="73.09563" />
+	<Boss isFinal="false" entry="4420" name="Overlord Ramtusk" killOrder="3" optional="true" X="2203.132" Y="1640.051" Z="85.81918" />
+	<Boss isFinal="false" entry="4842" name="Earthcaller Halmgar" killOrder="4" optional="true" /> <!-- Rare - X="2114.618" Y="1692.745" Z="80.67014" /> -->
+	<!-- kill the 2 keepers to gain access to next boss - <Vendor Name="Death's Head Ward Keeper" Entry="4625" Type="Repair" X="2069.229" Y="2015.302" Z="63.92669" /> --> 
+	<Boss isFinal="false" entry="4422" name="Agathelos the Raging" killOrder="5" optional="true" X="2002.588" Y="1986.068" Z="63.98317" />
+	<Boss isFinal="true" entry="4421" name="Charlga Razorflank" killOrder="6" optional="false" X="2190.398" Y="1864.285" Z="79.05725" />
+	<!-- You can Jump down and Escort Willix out of the Dungeon if you want -->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

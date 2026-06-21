@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[53-57] Irontree woods Felwood</Name>
+	<MinLevel>53</MinLevel>
+	<MaxLevel>57</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- South XR Grind -->
+		<Name>South XR Grind</Name>
+		<MinLevel>53</MinLevel>
+		<MaxLevel>57</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>51</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 7139 7132 -->
+			<Factions>16 91</Factions>
+			<Hotspots>
+				<Hotspot X="6028.954" Y="-1200.642" Z="373.7825" />
+				<Hotspot X="6117.26" Y="-1178.446" Z="371.6603" />
+				<Hotspot X="6088.093" Y="-1263.005" Z="380.3809" />
+				<Hotspot X="6415.48" Y="-1260.57" Z="380.8898" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="1254.42322" Y="-7.0831995" Z="-5.4597683" Radius="34.5" />
+		<Blackspot X="1233.13684" Y="10.2530689" Z="-4.02991438" Radius="34.5" />
+		<Blackspot X="1237.88416" Y="29.5894566" Z="-5.10984039" Radius="34.5" />
+		<Blackspot X="-1619.094" Y="-1791.27185" Z="92.2063751" Radius="34.5" />
+		<Blackspot X="-1618.94006" Y="-1791.93176" Z="92.2834244" Radius="74.5" />
+	</Blackspots>
+</HBProfile>

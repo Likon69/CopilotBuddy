@@ -1,0 +1,39 @@
+Current Version: 1.1.1
+
+Changes:
+//Version 1.1.1
+Removed the useless FrameLock (no reason, just wanted to try it out)
+Added a /PetAbandon() macro to the invisibility function, so frost mages don't stay in combat because of the pet.
+Added for it to stop casting before trying to cast Invisibility, and it will now remove the target also (The CC should stop targetting, no POI)
+
+//Version 1.1.0
+Updated heavily (in comparison to ammount of code)
+-Added FrameLocks (because I was bored, and wanted to see how they worked)
+-Reworking of how the bot checks to see if the blink to POI/Loot will be successful
+	-Now checks the HB Navigator to see if only 1 click remains (the click to the loot)
+-Also added a single variable to turn on/off the logs (just havent added it to the settings yet)
+	-The Logging should ALWAYS be off unless I tell you to turn it on, because it spams the shit out of the log.
+-Changed where my methods are, cleaned up the main file
+[Things to add]
+-Check for the +5 yards blink Glyph, and adjust distances accordingly
+-Anything else that is requested (if worth the time)
+-Potentially adding teleporting to repair/mail, and using a portal/teleport to continent back (gonna be a while before this is done :P )
+-Potentially having it blink to the next pathing point, intead of only blinking only straight to the loot
+
+//Version 1.0.2
+Changed where it saves the settings file to: /HB/Settings/MageHelper/[ToonNameAndSuch].xml
+
+Changed it to check for if you are a mage before it does any other checks.
+
+
+//Version 1.0.1
+Invisibilty now checks for non friendly mobs and also doesn't check the see if the mob is targetting you (most CCs use Polymorph so it made that part useless)
+-Invisibility should now work as described.
+
+Changed the Blink method to look at current POI instead of useing Objectmanager.
+-This made it so you wouldn't blink towards a lootable when the bot was moving towards a closer lootable (blinked to the wrong loot, the bot would run back)
+
+----------------------------------------
+Outdated Versions: 1.0 (Initial Release)
+
+No Changes.

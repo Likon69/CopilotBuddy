@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Scarlet Monastery - Cathedral</Name>
+  <DungeonId>164</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="4542" name="High Inquisitor Fairbanks" killOrder="1" optional="true" X="1158.86" Y="1354.272" Z="30.30578" />
+	<Boss isFinal="false" entry="3976" name="Scarlet Commander Mograine" killOrder="2" optional="false" X="1153.868" Y="1398.394" Z="32.52789" />
+	<Boss isFinal="true" entry="3977" name="High Inquisitor Whitemane" killOrder="3" optional="false" X="1153.868" Y="1398.394" Z="32.52789" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

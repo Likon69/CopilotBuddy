@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Mana-Tombs</Name>
+  <DungeonId>148</DungeonId>
+  <BossEncounters>
+	<!-- Clear rooms before pulling bosses -->
+	<Boss isFinal="false" entry="18341" name="Pandemonius" killOrder="1" optional="true" X="-69.74343" Y="-119.0649" Z="-1.133458" />
+	<Boss isFinal="false" entry="18343" name="Tavarok" killOrder="2" optional="true" X="-321.7171" Y="-222.1826" Z="-0.9403169" />
+	<Boss isFinal="true" entry="18344" name="Nexus-Prince Shaffar" killOrder="3" optional="false" X="-184.3657" Y="9.333467" Z="16.73412" />
+ 	<!-- after last boss, runto X="-98.4843" Y="-53.56448" Z="16.78716" /> and jump down to X="-99.11709" Y="-72.85658" Z="-1.098569" /> -->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

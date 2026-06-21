@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[18-20] Webwinder Path STM</Name>
+	<MinLevel>18</MinLevel>
+	<MaxLevel>20</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Webwinder Grind -->
+		<Name>Webwinder Grind</Name>
+		<MinLevel>18</MinLevel>
+		<MaxLevel>20</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>16</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4005 4007 -->
+			<Factions>22</Factions>
+			<Hotspots>
+				<Hotspot X="353.6917" Y="314.042" Z="39.47984" />
+				<Hotspot X="438.8279" Y="627.9079" Z="77.50454" />
+				<Hotspot X="447.252" Y="669.0359" Z="77.16989" />
+				<Hotspot X="477.558" Y="680.717" Z="79.04414" />
+				<Hotspot X="500.9692" Y="662.9285" Z="75.16335" />
+				<Hotspot X="571.4777" Y="625.8411" Z="68.2585" />
+				<Hotspot X="511.106" Y="603.761" Z="74.62074" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

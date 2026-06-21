@@ -1,0 +1,21 @@
+<!--http://www.wowhead.com/talent#hGGZfch0srhRGo-->
+<TalentTree Name="Shaman - Enhancement" Specialization="2" Class="Shaman">
+  <Talent Tab="2" Index="1" Count="2" Name="Elemental Weapons" />
+  <Talent Tab="2" Index="2" Count="3" Name="Focused Strikes" />
+  <Talent Tab="2" Index="3" Count="3" Name="Improved Shields" />
+  <Talent Tab="2" Index="4" Count="3" Name="Elemental Devastation" />
+  <Talent Tab="2" Index="5" Count="3" Name="Flurry" />
+  <Talent Tab="2" Index="9" Count="1" Name="Stormstrike" />
+  <Talent Tab="2" Index="10" Count="3" Name="Static Shock" />
+  <Talent Tab="2" Index="12" Count="2" Name="Seasoned Winds" />
+  <Talent Tab="2" Index="13" Count="3" Name="Searing Flames" />
+  <Talent Tab="2" Index="15" Count="1" Name="Shamanistic Rage" />
+  <Talent Tab="2" Index="16" Count="2" Name="Unleashed Rage" />
+  <Talent Tab="2" Index="17" Count="3" Name="Maelstrom Weapon" />
+  <Talent Tab="2" Index="18" Count="2" Name="Improved Lava Lash" />
+  <Talent Tab="2" Index="19" Count="1" Name="Feral Spirit" />
+  <Talent Tab="1" Index="1" Count="3" Name="Acuity" />
+  <Talent Tab="1" Index="2" Count="2" Name="Convection" />
+  <Talent Tab="1" Index="3" Count="3" Name="Concussion" />
+  <Talent Tab="1" Index="4" Count="1" Name="Call of Flame" />  
+</TalentTree>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[44-48] DM West Feralas</Name>
+	<MinLevel>44</MinLevel>
+	<MaxLevel>48</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- DM_West -->
+		<Name>DM_West</Name>
+		<MinLevel>44</MinLevel>
+		<MaxLevel>48</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>42</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 5272 5287 5308 -->
+			<Factions>14 38 44</Factions>
+			<Hotspots>
+				<Hotspot X="-4684.723" Y="1610.469" Z="112.5656" />
+				<Hotspot X="-4644.071" Y="1593.998" Z="117.7879" />
+				<Hotspot X="-4545.603" Y="1583.677" Z="102.1615" />
+				<Hotspot X="-4559.78" Y="1675.871" Z="99.14309" />
+				<Hotspot X="-4530.966" Y="1744.358" Z="91.95422" />
+				<Hotspot X="-4510.71" Y="1784.82" Z="103.6397" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

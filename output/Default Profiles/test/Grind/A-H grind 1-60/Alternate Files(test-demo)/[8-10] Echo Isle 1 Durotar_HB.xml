@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[8-10] Echo Isle 1 Durotar</Name>
+	<MinLevel>8</MinLevel>
+	<MaxLevel>10</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Echo Isle Grind -->
+		<Name>Echo Isle Grind</Name>
+		<MinLevel>8</MinLevel>
+		<MaxLevel>10</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>6</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3122 3121 -->
+			<Factions>14</Factions>
+			<Hotspots>
+				<Hotspot X="-653.4371" Y="-5521.644" Z="5.900066" />
+				<Hotspot X="-630.8074" Y="-5572.787" Z="0.3942847" />
+				<Hotspot X="-642.526" Y="-5621.715" Z="6.637795" />
+				<Hotspot X="-668.6472" Y="-5660.645" Z="7.626333" />
+				<Hotspot X="-711.5082" Y="-5669.449" Z="12.06847" />
+				<Hotspot X="-760.4395" Y="-5664.826" Z="13.21228" />
+				<Hotspot X="-806.7005" Y="-5647.344" Z="7.398239" />
+				<Hotspot X="-837.9773" Y="-5590.014" Z="4.28998" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

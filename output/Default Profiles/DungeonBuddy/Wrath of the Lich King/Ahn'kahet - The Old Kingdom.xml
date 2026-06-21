@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Ahn'kahet - The Old Kingdom</Name>
+  <DungeonId>218</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="29309" name="Elder Nadox" killOrder="1" optional="true" X="679.892" Y="-905.4669" Z="25.61439" />
+	<!-- Open the Ancient Nerubian Devices on both platforms to spawn next boss (non-optional) -->
+	<Boss isFinal="false" entry="29308" name="Prince Taldaram" killOrder="2" optional="false" X="528.8479" Y="-846.149" Z="11.16903" />
+	<Boss isFinal="false" entry="29310" name="Jedoga Shadowseeker" killOrder="3" optional="true" X="376.7172" Y="-705.337" Z="-16.17958" /> <!-- Make sure we kill the volunteer when she goes up - do not stand in pulsing circle -->
+	<!--<Boss isFinal="false" entry="30258" name="Amanitar" killOrder="4" optional="true" X="340.1726" Y="-878.5924" Z="-74.94714" />  I don't think he's avail on regular --><!-- make sure we kill a healthy mushroom if we're small -->
+	<Boss isFinal="true" entry="29311" name="Herald Volazj" killOrder="4" optional="false" X="520.1063" Y="-454.2148" Z="26.35609" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

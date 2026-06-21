@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Blackrock Depths - Upper City</Name>
+  <DungeonId>276</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="9018" name="High Interrogator Gerstahn" killOrder="1" optional="true" X="312.1501" Y="-146.8754" Z="-70.38619" />
+    <!-- prob not false for lfd -->
+    <Boss isFinal="false" entry="9016" name="Bael'Gar" killOrder="2" optional="true" X="701.8241" Y="185.5464" Z="-72.06669" />
+    <Boss isFinal="false" entry="9017" name="Lord Incendius" killOrder="3" optional="true" X="898.1608" Y="-279.1427" Z="-71.89228" />
+    <Boss isFinal="false" entry="9056" name="Fineous Darkvire" killOrder="4" optional="true">
+      <Path>
+        <Hotspot X="898.4032" Y="-378.3233" Z="-49.93592" />
+        <Hotspot X="965.1691" Y="-346.1095" Z="-71.73936" />
+      </Path>
+    </Boss>
+
+    <Boss isFinal="false" entry="9319" name="Houndmaster Grebmar" killOrder="5" optional="true" X="607.0128" Y="-205.4245" Z="-84.49047" />
+    <Boss isFinal="false" entry="9025" name="Lord Roccor" killOrder="6" optional="true" />
+    <!-- Move to Ring of the Law - <Hotspot X="596.848" Y="-188.4963" Z="-54.15257" /> - and defend against the 3 waves - kill order 3 -->
+    <!-- Guessing on the killorder now - please re-arrange later! - I did it the way if you did *not* open the Shadowforge Lock; if you did open it - you gotta do Bael'gar first, then pyro backwards to lord incendius... then trek your steps back to the shadowforge lock! -->
+
+
+    <Boss isFinal="false" entry="9041" name="Warder Stilgiss" killOrder="7" optional="true" X="823.387" Y="-342.2777" Z="-50.19098" />
+    <Boss isFinal="false" entry="9042" name="Verek" killOrder="8" optional="true" X="821.7055" Y="-340.3836" Z="-50.19083" />
+    <!-- Keeper will come here if you open all of the coffers -->
+    <Boss isFinal="false" entry="9024" name="Pyromancer Loregrain" killOrder="9" optional="true" X="530.1683" Y="-243.9297" Z="-43.10135" />
+    <!-- Use Shadowforge Lock -->
+
+    <!-- This here probably starts the Upper -->
+    <Boss isFinal="false" entry="9033" name="General Angerforge" killOrder="10" optional="false" X="652.39" Y="21.37371" Z="-60.05927" />
+    <Boss isFinal="false" entry="8983" name="Golem Lord Argelmach" killOrder="11" optional="false" X="846.8005" Y="16.28058" Z="-53.72277" />
+    <!-- beat on 3x Thunderbrew lager keg to make boss spawn - <Hotspot X="913.723" Y="-150.3462" Z="-49.75738" /> -->
+    <Boss isFinal="false" entry="9537" name="Hurley Blackbreath" killOrder="12" optional="true" X="899.0654" Y="-147.2863" Z="-49.75905" />
+    <!-- Interactwith Ribbly - and gossip 1 time to make him attack ... then haul ass to <Hotspot X="905.2552" Y="-145.5917" Z="-49.75666" /> so you don't aoe and pull adds! -->
+    <Boss isFinal="false" entry="9543" name="Ribbly Screwspigot" killOrder="13" optional="true" X="878.4709" Y="-167.7259" Z="-49.75836" />
+    <!-- Now we have to open the Bar Door - buy Dark Iron Ale Mug from Plugger and get some patrons drunk... or just kill some
+		<Vendor Name="Plugger Spazzring" Entry="9499" Type="Repair" X="880.6778" Y="-178.3633" Z="-42.96239" />
+	-->
+    <Boss isFinal="false" entry="9156" name="Ambassador Flamelash" killOrder="14" optional="false" X="1009.754" Y="-239.0168" Z="-61.38711" />
+    <Boss isFinal="false" entry="8923" name="Panzor the Invincible" killOrder="15" optional="true" />
+
+    <!-- The Seven 'Event' - defend yourself from the 7 noobs - killorder 15 - optional - false
+	<Vendor Name="Doom'rel" Entry="9039" Type="Repair" X="1281.137" Y="-282.1509" Z="-78.21918" /> // gossip 1
+	//
+	<Vendor Name="Anger'rel" Entry="9035" Type="Repair" X="1217.398" Y="-220.6826" Z="-85.67351" />
+	<Vendor Name="Seeth'rel" Entry="9038" Type="Repair" X="1286.562" Y="-253.3309" Z="-78.14455" />
+	<Vendor Name="Dope'rel" Entry="9040" Type="Repair" X="1238.032" Y="-290.7191" Z="-78.21924" />
+	<Vendor Name="Gloom'rel" Entry="9037" Type="Repair" X="1227.392" Y="-245.6477" Z="-85.67356" />
+	<Vendor Name="Vile'rel" Entry="9036" Type="Repair" X="1272.324" Y="-199.8165" Z="-85.67376" />
+	<Vendor Name="Hate'rel" Entry="9034" Type="Repair" X="1246.18" Y="-189.9686" Z="-85.67285" />
+	<Vendor Name="Doom'rel" Entry="9039" Type="Repair" X="1281.137" Y="-282.1509" Z="-78.21918" />
+	Loot Chest of the Seven after encounter
+	-->
+    <!-- Next room - you must kill the  <Vendor Name="Shadowforge Flame Keeper" Entry="9956" /> - loot his flame (5m duration) - go to the braziers and light them; do note: if you have not lit both w/in 5 minutes - they will go out (i think!) -->
+    <!-- Watch the flames on Magmus (flames from the side of the walls -->
+    <Boss isFinal="false" entry="9938" name="Magmus" killOrder="16" optional="false" X="1380.718" Y="-659.314" Z="-92.05436" />
+    <!-- Clear this whole room (optional - but i recommend it); kill Emporer and CC the princess - if you kill both... you won't get credit for your quest for saving her!
+		<Vendor Name="Princess Moira Bronzebeard" Entry="8929" Type="Repair" X="1384.642" Y="-831.486" Z="-87.67249" />
+	-->
+    <Boss isFinal="true" entry="9019" name="Emperor Dagran Thaurissan" killOrder="17" optional="falsem" X="1380.183" Y="-831.6447" Z="-87.67301" />
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="705.5214" Y="-113.2382" Z="-71.6756" Radius="4.584189" />
+    <Blackspot X="844.3685" Y="-144.2743" Z="-49.75337" Radius="4.12123" />
+    <Blackspot X="1343.74" Y="-761.6123" Z="-92.17238" Radius="3.682891" />
+    <Blackspot X="1343.857" Y="-783.8096" Z="-91.945" Radius="4.534772" />
+    <Blackspot X="706.8105" Y="-101.5247" Z="-71.52113" Radius="4.823775" />
+    <Blackspot X="704.7612" Y="-107.0776" Z="-71.5792" Radius="5.782586" />
+    <Blackspot X="701.964" Y="-113.7177" Z="-71.67381" Radius="7.091434" />
+    <Blackspot X="726.0967" Y="-97.89439" Z="-71.72559" Radius="5.382183" />
+    <Blackspot X="730.6218" Y="-91.88594" Z="-71.72479" Radius="7.674931" />
+    <Blackspot X="712.5372" Y="-120.0275" Z="-71.73148" Radius="5.833334" />
+    <Blackspot X="715.0609" Y="-102.557" Z="-71.66547" Radius="2.680762" />
+    <Blackspot X="714.3832" Y="-105.1029" Z="-71.69449" Radius="2.854118" />
+    <Blackspot X="713.5162" Y="-108.3493" Z="-71.71204" Radius="2.941514" />
+    <Blackspot X="712.144" Y="-113.4389" Z="-71.72462" Radius="1.482999" />
+    <Blackspot X="714.2006" Y="-122.1423" Z="-71.7667" Radius="6.934504" />
+  </Blackspots>
+</DungeonBuddyProfile>

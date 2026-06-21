@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Hunter (9/31/1) http://www.wowhead.com/talent#cZfMG0GRMuro:kzV -->
+<TalentTree Specialization="2" Name="Hunter - Marksmanship" Class="Hunter">
+  <!-- Marksmanship Talents 31 Points -->
+  <Talent Tab="2" Index="1" Count="2" Name="Go for the Throat" />
+  <Talent Tab="2" Index="2" Count="3" Name="Efficency" />
+  <Talent Tab="2" Index="4" Count="2" Name="Sic'Em!" />
+  <Talent Tab="2" Index="5" Count="3" Name="Improved Steady Shot" />
+  <Talent Tab="2" Index="6" Count="2" Name="Careful Aim" />
+  <Talent Tab="2" Index="9" Count="3" Name="Piercing Shots" />
+  <Talent Tab="2" Index="10" Count="2" Name="Bombardment" />
+  <Talent Tab="2" Index="11" Count="1" Name="Trueshot Aura" />
+  <Talent Tab="2" Index="12" Count="2" Name="Termination" />
+  <Talent Tab="2" Index="14" Count="2" Name="Rapid Recuperation" />
+  <Talent Tab="2" Index="15" Count="3" Name="Master Marksman" />
+  <Talent Tab="2" Index="16" Count="1" Name="Readiness" />
+  <Talent Tab="2" Index="17" Count="2" Name="Posthaste" />
+  <Talent Tab="2" Index="18" Count="2" Name="Marked for Death" />
+  <Talent Tab="2" Index="19" Count="1" Name="Chimera Shot" />
+  <!-- Beast Mastery Talents 9 Points -->
+  <Talent Tab="1" Index="2" Count="3" Name="One with Nature" />
+  <Talent Tab="1" Index="3" Count="3" Name="Bestial Discipline" />
+  <Talent Tab="1" Index="6" Count="3" Name="Frenzy" />
+  <!-- Survival Talents 1 Points -->
+  <Talent Tab="3" Index="2" Count="1" Name="Pathing" />
+</TalentTree>

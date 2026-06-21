@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[56-60]WPL Withering_Haunt</Name>
+	<MinLevel>56</MinLevel>
+	<MaxLevel>60</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- WPL_Withering -->
+		<Name>WPL_Withering</Name>
+		<MinLevel>56</MinLevel>
+		<MaxLevel>60</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>54</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1793 1796 10580 -->
+			<Factions>21</Factions>
+			<Hotspots>
+				<Hotspot X="1546.385" Y="-1878.974" Z="58.05026" />
+				<Hotspot X="1444.985" Y="-1909.582" Z="59.95799" />
+				<Hotspot X="1419.739" Y="-1835.951" Z="59.26845" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[6-8] Razor Hill Durotar</Name>
+	<MinLevel>6</MinLevel>
+	<MaxLevel>8</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Razor hill Grind -->
+		<Name>Razor hill Grind</Name>
+		<MinLevel>6</MinLevel>
+		<MaxLevel>8</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>4</TargetMinLevel>
+			<TargetMaxLevel>7</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3099 3125 -->
+			<Factions>189 413</Factions>
+			<Hotspots>
+				<Hotspot X="232.6297" Y="-4895.335" Z="21.45407" />
+				<Hotspot X="265.8291" Y="-4971.739" Z="19.34554" />
+				<Hotspot X="294.0097" Y="-5042.764" Z="10.78443" />
+				<Hotspot X="292.912" Y="-5077.167" Z="8.876832" />
+				<Hotspot X="235.0776" Y="-5095.122" Z="9.412108" />
+				<Hotspot X="149.7527" Y="-5101.431" Z="8.870841" />
+				<Hotspot X="98.8847" Y="-5106.354" Z="2.332515" />
+				<Hotspot X="61.57495" Y="-5100.196" Z="4.752008" />
+				<Hotspot X="15.83484" Y="-5103.87" Z="6.098488" />
+				<Hotspot X="-7.844939" Y="-5068.54" Z="9.214523" />
+				<Hotspot X="-6.630554" Y="-5021.287" Z="10.26807" />
+				<Hotspot X="7.977112" Y="-4976.497" Z="13.54231" />
+				<Hotspot X="40.68254" Y="-4931.462" Z="13.58849" />
+				<Hotspot X="81.75062" Y="-4892.474" Z="13.87304" />
+				<Hotspot X="161.1576" Y="-4911.626" Z="13.59802" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

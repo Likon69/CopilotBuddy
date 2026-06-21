@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Azjol-Nerub</Name>
+  <DungeonId>204</DungeonId>
+  <BossEncounters>
+	<!-- 1st boss - kill his 3 sets of watchers and rest before pulling him - after pulling the 1st set - the other 2 auto pull after a set period of time -->
+	<Boss isFinal="false" entry="28684" name="Krik'thir the Gatewatcher" killOrder="1" optional="false" X="529.2531" Y="646.195" Z="777.3327" />
+	<!-- Moveto X="514.5785" Y="513.0976" Z="746.8685" /> pull the 3 crushers... then move to X="514.5785" Y="513.0976" Z="746.8685" /> - and wait for big spider to come up and kill everything. 
+	EVEN IF WE'RE IN COMBAT - FORCE /CHILL until the adds are dead and the boss targets you or a group member!
+		note: do not stand in the acid cloud!-->
+	<Boss isFinal="false" entry="28921" name="Hadronox" killOrder="2" optional="false" X="530.42" Y="560.003" Z="733.0309" />
+	<!-- After Hadronox - move to X="515.5123" Y="544.2806" Z="673.5768" />, 
+	ctmto X="508.3062" Y="556.468" Z="660.5866" />, // down from the web onto hill
+	moveto X="526.2931" Y="544.3235" Z="646.1825" /> and kill bugs, from hill to hole area
+	moveto hole X="529.8711" Y="546.1671" Z="645.3507" />
+	nudge forward into hole... you might DC if you CTM to the bottom (try it and see... ctmto: X="531.7566" Y="552.1677" Z="285.8825" /> )
+	get out of water by moving to X="534.261" Y="536.4139" Z="286.5124" /> and jumping to X="533.3466" Y="532.0385" Z="288.9551" />
+	then move to next boss
+	-->
+    <Boss isFinal="true" entry="29120" name="Anub'arak" killOrder="3" optional="false" X="551.8637" Y="251.1986" Z="223.8891" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

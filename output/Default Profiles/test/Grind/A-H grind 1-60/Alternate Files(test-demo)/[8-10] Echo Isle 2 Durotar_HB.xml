@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[8-10] Echo Isle 2 Durotar</Name>
+	<MinLevel>8</MinLevel>
+	<MaxLevel>10</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Echo Isle Grind -->
+		<Name>Echo Isle Grind</Name>
+		<MinLevel>8</MinLevel>
+		<MaxLevel>10</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>6</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3122 3121 -->
+			<Factions>14</Factions>
+			<Hotspots>
+				<Hotspot X="-1002.353" Y="-5437.506" Z="2.999013" />
+				<Hotspot X="-1027.279" Y="-5474.186" Z="7.627823" />
+				<Hotspot X="-1029.782" Y="-5542.25" Z="5.771868" />
+				<Hotspot X="-1049.75" Y="-5599.989" Z="4.87793" />
+				<Hotspot X="-1085.224" Y="-5628.693" Z="3.411287" />
+				<Hotspot X="-1132.065" Y="-5622.548" Z="4.25839" />
+				<Hotspot X="-1173.28" Y="-5618.67" Z="4.512015" />
+				<Hotspot X="-1237.701" Y="-5608.66" Z="3.871146" />
+				<Hotspot X="-1281.938" Y="-5578.2" Z="6.765069" />
+				<Hotspot X="-1321.095" Y="-5546.712" Z="5.568147" />
+				<Hotspot X="-1335.313" Y="-5478.861" Z="5.960495" />
+				<Hotspot X="-1315.76" Y="-5407.811" Z="3.829101" />
+				<Hotspot X="-1286.743" Y="-5373.746" Z="3.46252" />
+				<Hotspot X="-1253.694" Y="-5358.937" Z="5.251432" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="-1281.22314" Y="-5483.83252" Z="4.34652472" Radius="34.5" />
+		<Blackspot X="-1253.76733" Y="-5527.06348" Z="5.80383" Radius="34.5" />
+		<Blackspot X="-1164.43811" Y="-5571.78125" Z="8.529459" Radius="34.5" />
+		<Blackspot X="-1155.11438" Y="-5577.90674" Z="8.498816" Radius="34.5" />
+		<Blackspot X="-1140.57129" Y="-5529.061" Z="5.86116362" Radius="34.5" />
+	</Blackspots>
+</HBProfile>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Scarlet Monastery - Armory</Name>
+  <DungeonId>163</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="true" entry="3975" name="Herod" killOrder="1" optional="false" X="1965.093" Y="-431.607" Z="6.179171"/>
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

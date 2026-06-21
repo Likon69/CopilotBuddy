@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Paladin" Specialization="1" Name="Paladin-Holy">
+  <Intellect>100</Intellect>
+  <HasteRating>80</HasteRating>
+  <Spirit>50</Spirit>
+  <Mastery>50</Mastery>
+  <SpellPower>50</SpellPower>
+  <CriticalStrikeRating>25</CriticalStrikeRating>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>The Culling of Stratholme</Name>
+  <DungeonId>209</DungeonId>
+  <BossEncounters>
+    <!-- If you haven't done the quest? or instance maybe? - Dispelling Illusions - 13419 - then you must do it to go further; if you have done it... you can talk with chromie and gossipoptions 1 to get passed the beginning
+  after you've done the quest - Talk to chromie (north) at <Vendor Name="Chromie" Entry="27915" Type="Repair" X="1813.298" Y="1283.578" Z="142.2427" /> to start the Arthas escort 
+	(again, you skip the role play if you've done the instance before) 
+	 Always: start Arthas Escort so shit spawns - <Vendor Name="Arthas" Entry="26499" Type="Repair" X="2047.948" Y="1287.598" Z="142.8344" /> 
+	Various pats spawn and there are 2 bosses in the 1st 'gauntlet' -->
+
+    <Boss isFinal="false" entry="26529" name="Meathook" killOrder="1" optional="false" />
+    <Boss isFinal="false" entry="26530" name="Salramm the Fleshcrafter" killOrder="2" optional="false" />
+    <Boss isFinal="false" entry="26532" name="Chrono-Lord Epoch" killOrder="3" optional="false" X="2435.197" Y="1112.821" Z="148.2137" />
+    <Boss isFinal="true" entry="26533" name="Mal'Ganis" killOrder="4" optional="false" X="2300.392" Y="1479.855" Z="128.2289" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>
+
+<!--
+after killing salramm
+<Vendor Name="Arthas" Entry="26499" Type="Repair" X="2366.24" Y="1195.253" Z="131.9611" /> // gossip 1, 1 and escort to epoch
+
+after killing epoch
+
+<Vendor Name="Arthas" Entry="26499" Type="Repair" X="2425.898" Y="1118.842" Z="148.0759" /> // gossip 1 and move to X="2539.145" Y="1128.769" Z="130.8722" />
+then wait a few secs
+<Vendor Name="Arthas" Entry="26499" Type="Repair" X="2534.988" Y="1126.163" Z="130.7618" /> // gossip 1 and escort
+
+move to <Vendor Name="Arthas" Entry="26499" Type="Repair" X="2513.089" Y="1323.535" Z="131.7823" /> and wait 30? or so seconds
+
+if on heroic - escort arthas to <Vendor Name="Arthas" Entry="26499" Type="Repair" X="2363.44" Y="1404.906" Z="128.7842" />
+if on heroic and if time left (2 mins or more) ignore arthas and go and kill <Vendor Name="Infinite Corruptor" Entry="32273" Type="Repair" X="2331.642" Y="1273.273" Z="132.8692" />
+
+now go back to to arthas and gossipoptions 1 and move to <Vendor Name="Arthas" Entry="26499" Type="Repair" X="2301.056" Y="1478.977" Z="128.1497" />
+to kill 
+
+<Vendor Name="Mal'Ganis" Entry="26533" Type="Repair" X="2300.392" Y="1479.855" Z="128.2289" />
+after killing malganis, loot the chest and zone out via the portal
+-->

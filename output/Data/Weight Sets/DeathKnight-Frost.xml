@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="DeathKnight" Specialization="2" Name="Death Knight-Frost">
+  <Strength>100</Strength>
+  <HitRating>43</HitRating>
+  <ExpertiseRating>41</ExpertiseRating>
+  <HasteRating>37</HasteRating>
+  <Mastery>35</Mastery>
+  <AttackPower>32</AttackPower>
+  <CriticalStrikeRating>26</CriticalStrikeRating>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

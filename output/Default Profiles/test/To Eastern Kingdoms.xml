@@ -1,0 +1,407 @@
+<HBProfile>
+<QuestOrder>
+<!-- This is just a snip.  Copy and Paste me! -->
+<!-- Universal Nav Start -->
+<CustomBehavior File="RunCode" Type="Definition"><![CDATA[
+	bool HasArrivedEK()
+	{
+		if (Me.ZoneId == 7078 || Me.ZoneId == 7004) return false; // Draenor Garrisons count as instanced locations.
+		if (StyxWoW.Me.MapId == 0  || Me.IsInInstance) return true;
+		return false;
+	}
+	bool InPriorityLocationEK()
+	{
+		if (StyxWoW.Me.IsAlliance)
+		{
+			if (StyxWoW.Me.ZoneId == 6142 || StyxWoW.Me.ZoneId == 6553) return true; // Alliance Shrine
+			if (StyxWoW.Me.ZoneId == 4395) return true; // Dalaran, portal to Stormwind only applies for Alliance.
+		}
+		else
+		{
+			if (StyxWoW.Me.ZoneId == 6554 || StyxWoW.Me.ZoneId == 6141) return true; // Horde Shrine
+		}
+		return false;
+	}
+	bool HearthIsPriorityLocationEK()
+	{
+		if (StyxWoW.Me.IsAlliance)
+		{
+			if (StyxWoW.Me.HearthstoneAreaId == 6484) return true; // Alliance Shrine
+			if (StyxWoW.Me.HearthstoneAreaId == 4395 || StyxWoW.Me.HearthstoneAreaId == 4560) return true; // Dalaran, portal to Stormwind only applies for Alliance.
+		}
+		else
+		{
+			if (StyxWoW.Me.HearthstoneAreaId == 6519) return true; // Horde Shrine
+		}
+		if (Styx.WoWInternals.DBC.AreaTable.FromId(StyxWoW.Me.HearthstoneAreaId).MapId == 0) return true; // All EK inns.
+		return false;
+	}
+	bool HearthIsReadyEK()
+	{
+		if (HasItem(64488) && !WoWSpell.FromId(94719).Cooldown) return true; // Innkeeper Daughter
+		if (HasItem(6948) && !WoWSpell.FromId(8690).Cooldown) return true; // Hearthstone
+		if (SpellManager.CanCast(556)) return true; // Astral Recall
+		return false;
+	}
+	bool HasHearthEK()
+	{
+		if (HasItem(64488)) return true; // Innkeeper Daughter
+		if (HasItem(6948)) return true; // Hearthstone
+		if (SpellManager.CanCast(556)) return true; // Astral Recall
+		return false;
+	}
+	bool CastingInterruptedEK()
+	{
+		if (StyxWoW.Me.Combat || !Me.IsCasting) return true;
+		return false;
+	}
+	void EKLog(System.Windows.Media.Color color, string message)
+	{
+		Bots.Professionbuddy.PBLog.Log(System.Windows.Media.Colors.DeepSkyBlue, "[Azyul Navigator]: ", color, $"{message}");
+	}
+	]]>
+</CustomBehavior>
+
+<If Condition="!HasArrivedEK()" >
+	<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;Going to Eastern Kingdoms!&quot;);" />
+
+	<!-- /// Death Knight Logic /// -->
+	<If Condition="SpellManager.CanCast(50977)" > <!-- Checks if we're a Death Knight and spell is fully learnt+castable -->
+		<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're a Death Knight! Using the Death Gate to Eastern Kingdoms.&quot;);" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!HasArrivedEK()" >
+			<CustomBehavior File="Misc\RunLua" Lua="CastSpellByID(50977);" WaitTime="500" />
+			<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="HasArrivedEK() || CastingInterruptedEK()" />
+			<CustomBehavior File="InteractWith" MobId="190942" WaitForNpcs="false" />
+		</While>
+	</If>
+
+	<If Condition="Me.IsAlliance" >
+		<!-- /// Mage Logic /// -->
+		<If Condition="SpellManager.CanCast(3561)" > <!-- Checks if we're a mage and spell is fully learnt+castable -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're a Mage! Teleporting to Stormwind.&quot;);" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!HasArrivedEK()" >
+				<CustomBehavior File="Misc\RunLua" Lua="CastSpellByID(3561);" WaitTime="500" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="HasArrivedEK() || Me.Combat || !Me.IsCasting" />
+			</While>
+		</If>
+		<!-- /// Item Teleportation Logic.   Teleport to area that has portals (Shrine/etc) or teleport to destination /// -->
+		<If Condition="!HasArrivedEK() &amp;&amp; HearthIsPriorityLocationEK() &amp;&amp; !InPriorityLocationEK() &amp;&amp; HasHearthEK()" >
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;Hearthing would be faster to reach our destination, attempting to Hearth!&quot;);" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!(HasArrivedEK() || InPriorityLocationEK())" >
+				<CustomBehavior File="RunCode" Code="await Coroutine.Wait(1800000, () => HearthIsReadyEK() || InPriorityLocationEK());" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948); UseItemByName(64488); CastSpellByID(556);" WaitTime="500" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="HasArrivedEK() || InPriorityLocationEK() || CastingInterruptedEK()" />
+			</While>
+		</If>
+		<!-- /// Generic Logic /// -->
+		<If Condition="Me.ZoneId == 4080" > <!-- Isle of Quel'Danas -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Isle of Quel'Danas, using the Flight Master to Stormwind.&quot;);" />
+			<MoveTo DestName="Ohura, the flight master." X="13009.74" Y="-6910.024" Z="9.584676" />
+			<CustomBehavior File="InteractWith" MobId="26560" X="13012.39" Y="-6911.189" Z="9.586156" WaitTime="850" />
+			<CustomBehavior File="WaitTimer" WaitTime="600000" TerminateWhen="!Me.OnTaxi" />
+			<CustomBehavior File="Misc\RunLua" Lua="TaxiButton1:Click();" WaitTime="1000" />
+		</If>
+		<If Condition="Me.MapId == 870" > <!-- Pandaria -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Pandaria, using the Shrine portal to Stormwind.&quot;);" />
+			<If Condition="Me.ZoneId != 6553" > <!-- If not inside of Shrine building -->
+				<MoveTo Nav="Fly" X="861.8756" Y="283.1115" Z="503.678" />
+			</If>
+			<MoveTo X="827.9234" Y="179.0442" Z="519.5684" />
+			<While Condition="!HasArrivedEK()" >
+				<CustomBehavior File="InteractWith" MobId="215119" X="828.2266" Y="176.9051" Z="519.9392" TerminateWhen="HasArrivedEK()" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="HasArrivedEK() || Me.Combat" />
+			</While>
+		</If>
+		<If Condition="Me.MapId == 571" > <!-- Northrend -->
+			<If Condition="Me.Y &gt;= 3000 &amp;&amp; Me.MapId == 571" > <!-- Western Northrend, Valiance Keep to Stormwind -->
+				<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Western Northrend, using the Valiance Keep boat to Stormwind.&quot;);" />
+				<MoveTo Nav="Fly" X="2232.81" Y="5135.507" Z="5.343734" />
+				<CustomBehavior File="ForcedDismount" />
+				<DisableBehavior Name="FlightPath" />
+				<CustomBehavior File="UseTransport" TransportId="190536"
+					WaitAtX="2229.971" WaitAtY="5130.375" WaitAtZ="5.343726" 
+					TransportStartX="2218.391" TransportStartY="5119.588" TransportStartZ="0.02626281"
+					StandOnX="2224.698" StandOnY="5120.346" StandOnZ="9.452395"
+					TransportEndX="-8288.816" TransportEndY="1424.703" TransportEndZ="0.04"
+					GetOffX="-8293.984" GetOffY="1404.746" GetOffZ="4.412152"
+				/>
+				<EnableBehavior Name="FlightPath" />
+			</If>
+			<If Condition="Me.Y &lt; 3000 &amp;&amp; Me.Y &gt; -2200 &amp;&amp; Me.MapId == 571" > <!-- Middle Northrend, Dalaran to Stormwind -->
+				<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Mid-Northrend, using the Dalaran portal to Stormwind.&quot;);" />
+				<MoveTo Nav="Fly" X="5719.701" Y="722.6963" Z="641.6025" />
+				<While Condition="!HasArrivedEK()" >
+					<CustomBehavior File="InteractWith" MobId="190960" X="5719.184" Y="719.6667" Z="641.7278" TerminateWhen="HasArrivedEK()" />
+					<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="HasArrivedEK() || Me.Combat" />
+				</While>
+			</If>
+			<If Condition="Me.Y &lt;= -2200 &amp;&amp; Me.MapId == 571" > <!-- Eastern Northrend, Valgarde Port to Stormwind -->
+				<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Eastern Northrend, using the Valgarde Port boat to Menethil Harbor.&quot;);" />
+				<MoveTo X="589.7719" Y="-5100.328" Z="5.261706" />
+				<DisableBehavior Name="FlightPath" />
+				<CustomBehavior File="UseTransport" TransportId="181688"
+					WaitAtX="593.5266" WaitAtY="-5103.054" WaitAtZ="5.260394"
+					StandOnX="589.7733" StandOnY="-5118.479" StandOnZ="9.560918"
+					TransportStartX="584.0138" TransportStartY="-5118.855" TransportStartZ="0.04796536"
+					TransportEndX="-3674.43" TransportEndY="-586.774" TransportEndZ="-0.04061334" 
+					GetOffX="-3687.306" GetOffY="-602.1353" GetOffZ="4.406231"
+				/>	
+				<EnableBehavior Name="FlightPath" />
+			</If>
+		</If>
+		<If Condition="(Me.ZoneId == 3557 || Me.ZoneId == 3524 || Me.ZoneId == 6456 || Me.ZoneId == 3525)" > <!-- Instanced Draenei Zone, shares MapId with Outlands so we're using ZoneId -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're a in Azure/Bloodmyst Isle, using the Exodar portal to Darnassus.&quot;);" />
+			<MoveTo DestName="The Vault of Lights, portal to Darnassus." X="-4040.254" Y="-11569.56" Z="-138.4055" />
+			<While Condition="Me.MapId != 1" >
+				<CustomBehavior File="InteractWith" MobId="207996" X="-4047.53" Y="-11569.33" Z="-138.4902" TerminateWhen="Me.MapId == 1" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="Me.MapId == 1 || Me.Combat" />
+			</While>
+		</If>
+		<If Condition="Me.MapId == 530" > <!-- Outlands -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Outlands, using the Shattrath portal to Stormwind.&quot;);" />
+			<MoveTo Nav="Fly" X="-1892.768" Y="5392.862" Z="-12.4277" />
+			<While Condition="!HasArrivedEK()" >
+				<CustomBehavior File="InteractWith" MobId="183325" X="-1894.189" Y="5387.939" Z="-12.42825" TerminateWhen="HasArrivedEK()" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="HasArrivedEK() || Me.Combat" />
+			</While>
+		</If>
+		<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+			<If Condition="Me.X &gt;= 4555 &amp;&amp; Me.MapId == 1" >  <!-- Northern Kalimdor, Rut'theran Village to Stormwind -->
+				<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Northern Kalimdor, using the Rut'theran Village boat to Stormwind.&quot;);" />
+				<MoveTo Nav="Fly" X="8181.456" Y="1002.158" Z="7.062304" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UseTransport" TransportId="176310"
+					WaitAtX="8177.582" WaitAtY="1003.428" WaitAtZ="6.633576" 
+					TransportStartX="8162.587" TransportStartY="1005.365" TransportStartZ="-0.04886735"
+					StandOnX="8171.134" StandOnY="1005.961" StandOnZ="6.141735"
+					TransportEndX="-8650.719" TransportEndY="1346.051" TransportEndZ="-0.01967851"
+					GetOffX="-8642.581" GetOffY="1329.113" GetOffZ="5.232904"
+				/>
+			</If>
+			<If Condition="Me.X &lt; 4555 &amp;&amp; Me.MapId == 1" > <!-- Southern Kalimdor, Ratchet to Booty Bay -->
+				<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Kalimdor, using the Ratchet boat to Booty Bay.&quot;);" />
+				<MoveTo Nav="Fly" X="-995.5635" Y="-3827.638" Z="5.630721" />
+				<CustomBehavior File="UseTransport" TransportId="20808"
+					WaitAtX="-996.8669" WaitAtY="-3826.07" WaitAtZ="5.536246" 
+					TransportStartX="-1005.613" TransportStartY="-3841.648" TransportStartZ="0.01553879"
+					StandOnX="-997.3311" StandOnY="-3836.707" StandOnZ="6.030852"
+					TransportEndX="-14277.75" TransportEndY="582.8661" TransportEndZ="0.03330701"
+					GetOffX="-14280.88" GetOffY="566.6268" GetOffZ="6.979454"
+				/>
+			</If>
+		</If>
+		<If Condition="Me.MapId == 646" > <!-- Deepholm -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Deepholm, using the portal for Stormwind.&quot;);" />
+			<MoveTo Nav="Fly" X="968.8371" Y="573.3804" Z="-44.5801" />
+			<While Condition="!HasArrivedEK()" >
+				<CustomBehavior File="InteractWith" MobId="205272" X="965.25" Y="577.229" Z="-44.2583" TerminateWhen="HasArrivedEK()" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="HasArrivedEK() || Me.Combat" />
+			</While>
+		</If>
+		<If Condition="Me.CurrentMap.ExpansionId == 5" > <!-- Draenor -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Draenor, using the Ashran portal to Stormwind.&quot;);" />
+			<If Condition="Me.Y &gt; -3509.631" > <!-- Not in Ashran -->
+				<If Condition="Me.BagItems.FirstOrDefault(h => h.Entry == 110560).CooldownTimeLeft.TotalMilliseconds == 0 &amp;&amp; Me.ZoneId != 7078" > <!-- Can cast G-Hearth and Outside of Garrison. -->
+					<While Condition="Me.ZoneId != 7078" >
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(110560);" WaitTime="500" />
+						<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="Me.ZoneId == 7078 || CastingInterruptedEK()" />
+					</While>
+					<Else>
+						<MoveTo DestName="Garrison" X="1866.757" Y="222.1068" Z="76.69209" />
+					</Else>
+				</If>
+				<If Condition="Me.MapId == 1159" > <!-- Tier 3 Garrison, use Ashran portal -->
+					<MoveTo DestName="Ashran Portal" X="1953.104" Y="88.81237" Z="85.35315" />
+					<CustomBehavior File="MyCTM" X="1963.944" Y="78.09597" Z="86.78989" />
+					<CustomBehavior File="MyCTM" X="1973.674" Y="76.40543" Z="89.06419" />
+					<CustomBehavior File="MyCTM" X="1971.38" Y="68.47722" Z="94.09551" />
+					<CustomBehavior File="MyCTM" X="1964.62" Y="70.38988" Z="98.61308" />
+					<CustomBehavior File="MyCTM" X="1965.144" Y="77.05215" Z="103.1184" />
+					<CustomBehavior File="MyCTM" X="1973.379" Y="75.69478" Z="108.3821" />
+					<CustomBehavior File="MyCTM" X="1968.117" Y="65.75282" Z="108.9199" />
+					<While Condition="Me.ZoneId != 7332" >
+						<CustomBehavior File="InteractWith" MobId="233610" X="1966.385" Y="66.29166" Z="108.92" TerminateWhen="Me.ZoneId == 7332" />
+						<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="Me.ZoneId == 7332 || Me.Combat" />
+					</While>
+				</If>
+				<MoveTo DestName="Ashran" X="3732.467" Y="-4043.326" Z="44.81949" />
+			</If>
+			<While Condition="Me.MapId != 0" >
+				<CustomBehavior File="InteractWith" MobId="235883" X="3734.65" Y="-4042.976" Z="44.81873" TerminateWhen="Me.MapId == 0" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="Me.MapId == 0 || Me.Combat" />
+			</While>
+		</If>
+	</If>
+
+	<If Condition="Me.IsHorde" >
+		<!-- /// Mage Logic /// -->
+		<If Condition="SpellManager.CanCast(49358)" > <!-- Checks if we're a mage and spell is fully learnt+castable -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're a Mage! Teleporting to Stonard.&quot;);" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!HasArrivedEK()" >
+				<CustomBehavior File="Misc\RunLua" Lua="CastSpellByID(49358);" WaitTime="500" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="HasArrivedEK() || CastingInterruptedEK()" />
+			</While>
+		</If>
+		<!-- /// Item Teleportation Logic.   Teleport to area that has portals (Shrine/etc) or teleport to destination /// -->
+		<If Condition="!HasArrivedEK() &amp;&amp; HearthIsPriorityLocationEK() &amp;&amp; !InPriorityLocationEK() &amp;&amp; HasHearthEK()" >
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;Hearthing would be faster to reach our destination, attempting to Hearth!&quot;);" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!(HasArrivedEK() || InPriorityLocationEK())" >
+				<CustomBehavior File="RunCode" Code="await Coroutine.Wait(1800000, () => HearthIsReadyEK() || InPriorityLocationEK());" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948); UseItemByName(64488); CastSpellByID(556);" WaitTime="500" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="HasArrivedEK() || InPriorityLocationEK() || CastingInterruptedEK()" />
+			</While>
+		</If>
+		<!-- /// Generic Logic /// -->
+		<If Condition="Me.ZoneId == 6455 || Me.ZoneId == 3430 || Me.ZoneId == 3487 || Me.ZoneId == 3433" > <!-- Sunstrider Isle, Eversong Woods, Silvermoon City, Ghostlands -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in northen Eastern Kingdoms.  Using the Orb of Translocation to enter Undercity.&quot;);" />
+			<MoveTo DestName="Inner Sanctum" X="10039.12" Y="-7000.733" Z="61.95295" />
+			<While Condition="Me.ZoneId != 85" >
+				<CustomBehavior File="InteractWith" MobId="184502" X="10032.36" Y="-7000.288" Z="61.30979" WaitTime="2500" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="Me.ZoneId == 85" />
+			</While>
+		</If>
+		<If Condition="Me.ZoneId == 4080" > <!-- Isle of Quel'Danas -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Isle of Quel'Danas, using the Flight Master to Undercity.&quot;);" />
+			<MoveTo DestName="Ohura, the flight master." X="13009.74" Y="-6910.024" Z="9.584676" />
+			<CustomBehavior File="InteractWith" MobId="26560" X="13012.39" Y="-6911.189" Z="9.586156" WaitTime="850" />
+			<CustomBehavior File="WaitTimer" WaitTime="600000" TerminateWhen="!Me.OnTaxi" />
+			<CustomBehavior File="Misc\RunLua" Lua="TaxiButton2:Click();" WaitTime="1000" />
+		</If>
+		<If Condition="Me.MapId == 870" > <!-- Pandaria -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Pandaria, using the Shrine portal to Undercity.&quot;);" />
+			<If Condition="Me.ZoneId != 6141" > <!-- If not inside of Shrine building -->
+				<MoveTo Nav="Fly" X="1629.72" Y="924.5151" Z="471.1836" />
+			</If>
+			<MoveTo X="1725.195" Y="875.6638" Z="487.0624" />
+			<While Condition="!HasArrivedEK()" >
+				<CustomBehavior File="InteractWith" MobId="215124" X="1725.625" Y="871.726" Z="487.3716" TerminateWhen="HasArrivedEK()" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="HasArrivedEK() || Me.Combat" />
+			</While>
+		</If>
+		<If Condition="Me.MapId == 571" > <!-- Northrend -->
+			<If Condition="Me.Y &gt;= 3000 &amp;&amp; Me.MapId == 571" > <!-- Western Northrend, Warsong Hold to Orgrimmar -->
+				<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Western Northrend, using the Warsong Hold zeppelin to Orgrimmar.&quot;);" />
+				<CustomBehavior File="FlyTo" X="2946.323" Y="6069.065" Z="147.4432" />
+				<DisableBehavior Name="FlightPath" />
+				<CustomBehavior File="MyCTM" X="2829.086" Y="6176.118" Z="128.0574" />
+				<CustomBehavior File="WaitTimer" WaitTime="850" /> <!-- Consider lag and CTM tolerance. -->
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UseTransport" TransportId="186238"
+					WaitAtX="2837.035" WaitAtY="6185.063" WaitAtZ="121.9975"
+					TransportStartX="2837.908" TransportStartY="6187.443" TransportStartZ="140.1648"
+					StandOnX="2844.346" StandOnY="6191.38" StandOnZ="122.3167"					  
+					TransportEndX="1775.066" TransportEndY="-4299.745" TransportEndZ="151.0326"
+					GetOffX="1761.337" GetOffY="-4281.487" GetOffZ="133.1072"
+				/>
+				<EnableBehavior Name="FlightPath" />
+			</If>
+			<If Condition="Me.Y &lt; 3000 &amp;&amp; Me.Y &gt; -2200 &amp;&amp; Me.MapId == 571" > <!-- Middle Northrend, Dalaran to Orgrimmar -->
+				<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Northrend, using the Dalaran portal to Orgrimmar.&quot;);" />
+				<MoveTo Nav="Fly" X="5923.893" Y="589.9543" Z="639.8708" />
+				<While Condition="Me.MapId != 1" >
+					<CustomBehavior File="InteractWith" MobId="191009" X="5925.874" Y="593.1875" Z="640.5933" TerminateWhen="Me.MapId == 1" />
+					<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="Me.MapId == 1 || Me.Combat" />
+				</While>
+			</If>
+			<If Condition="Me.Y &lt;= -2200 &amp;&amp; Me.MapId == 571" > <!-- Eastern Northrend, Vengeance Landing to Thunder Bluff -->
+				<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Eastern Northrend, using the Vengeance Landing zeppelin to Undercity.&quot;);" />
+				<MoveTo Nav="Fly" X="1974.872" Y="-6098.991" Z="67.15174" />
+				<DisableBehavior Name="FlightPath" />
+				<CustomBehavior File="UseTransport" TransportId="181689"
+					WaitAtX="1976.73" WaitAtY="-6095.377" WaitAtZ="67.15933"
+					TransportStartX="1989.353" TransportStartY="-6082.776" TransportStartZ="85.59646"
+					StandOnX="1982.445" StandOnY="-6091.406" StandOnZ="67.6969"
+					TransportEndX="2056.493" TransportEndY="381.6347" TransportEndZ="100.362"
+					GetOffX="2061.253" GetOffY="360.2228" GetOffZ="82.48778"
+				/>
+				<EnableBehavior Name="FlightPath" />
+			</If>
+		</If>
+		<If Condition="Me.MapId == 530" > <!-- Outlands -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Outlands, using the Shattrath portal to Orgrimmar.&quot;);" />
+			<MoveTo Nav="Fly" X="-1898.129" Y="5395.677" Z="-12.42727" />
+			<While Condition="Me.MapId != 1" >
+				<CustomBehavior File="InteractWith" MobId="183323" X="-1899.45" Y="5393.01" Z="-12.42832" TerminateWhen="Me.MapId == 1" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="Me.MapId == 1 || Me.Combat" />
+			</While>
+		</If>
+		<!--<If Condition="Me.MapId == 530" >  Instanced Draenei Zone 
+			Do we really need Horde support for this?
+		</If> -->
+		<If Condition="Me.CurrentMap.ExpansionId == 5" > <!-- Draenor -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Draenor, using the Ashran portal to Orgrimmar.&quot;);" />
+			<If Condition="Me.Y &gt; -3509.631" > <!-- Not in Ashran -->
+				<If Condition="Me.BagItems.FirstOrDefault(h => h.Entry == 110560).CooldownTimeLeft.TotalMilliseconds == 0 &amp;&amp; Me.ZoneId != 7004" > <!-- Can cast G-Hearth and Outside of Garrison. -->
+					<While Condition="Me.ZoneId != 7004" >
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(110560);" WaitTime="500" />
+						<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="Me.ZoneId == 7004 || CastingInterruptedEK()" />
+					</While>
+					<Else>
+						<MoveTo DestName="Garrison" X="5592.404" Y="4529.675" Z="126.3718" />
+					</Else>
+				</If>
+				<If Condition="Me.MapId == 1153" >
+					<MoveTo DestName="Ashran Portal" X="5583.557" Y="4373.989" Z="137.6236" />
+					<CustomBehavior File="MyCTM" X="5579.374" Y="4366.707" Z="138.9411" />
+					<CustomBehavior File="MyCTM" X="5575.75" Y="4367.552" Z="138.9789" />
+					<CustomBehavior File="MyCTM" X="5572.477" Y="4361.848" Z="143.433" />
+					<CustomBehavior File="MyCTM" X="5578.62" Y="4358.129" Z="147.87" />
+					<CustomBehavior File="MyCTM" X="5582.464" Y="4364.247" Z="152.3972" />
+					<CustomBehavior File="MyCTM" X="5576.058" Y="4368.637" Z="156.7244" />
+					<CustomBehavior File="MyCTM" X="5572.972" Y="4361.899" Z="159.8998" />
+					<CustomBehavior File="MyCTM" X="5584.697" Y="4356.71" Z="160.9148" />
+				</If>
+				<While Condition="Me.ZoneId != 7333" >
+					<CustomBehavior File="InteractWith" MobId="233600" X="5586.819" Y="4357.713" Z="161.427" TerminateWhen="Me.ZoneId == 7333" />
+					<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="Me.ZoneId == 7333 || Me.Combat" />
+				</While>
+			</If>
+			<MoveTo X="5266.4" Y="-4075.891" Z="21.13024" />
+			<While Condition="Me.MapId != 1" >
+				<CustomBehavior File="InteractWith" MobId="235880" X="5266.4" Y="-4075.891" Z="21.13024" TerminateWhen="Me.MapId == 1" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="Me.MapId == 1 || Me.Combat" />
+			</While>
+		</If>
+		<If Condition="Me.MapId == 646" > <!-- Deepholm -->
+			<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Deepholm, using the portal for Orgrimmar.&quot;);" />
+			<MoveTo Nav="Fly" X="991.8574" Y="458.2401" Z="-44.27066" />
+			<While Condition="Me.MapId != 1" >
+				<CustomBehavior File="InteractWith" MobId="205273" X="990.495" Y="454.457" Z="-44.2477" TerminateWhen="Me.MapId == 1" />
+				<CustomBehavior File="WaitTimer" WaitTime="50000" TerminateWhen="Me.MapId == 1 || Me.Combat" />
+			</While>
+		</If>
+		<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+			<If Condition="Me.X &gt;= 345 &amp;&amp; Me.MapId == 1" > <!-- Northern Kaldimor, Orgrimmar to Grom'gol -->
+				<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Kalimdor, taking the Zeppelin in Orgrimmar to Grom'gol Basecamp.&quot;);" />
+				<MoveTo Nav="Fly" X="1869.472" Y="-4418.937" Z="135.2326" />
+				<CustomBehavior File="UseTransport" TransportId="175080"
+					WaitAtX="1870.458" WaitAtY="-4419.85" WaitAtZ="135.2326" 
+					TransportStartX="1880.818" TransportStartY="-4435.269" TransportStartZ="152.8608"
+					StandOnX="1874.402" StandOnY="-4423.503" StandOnZ="135.1099"
+					TransportEndX="-12464.34" TransportEndY="233.1597" TransportEndZ="49.53437"
+					GetOffX="-12450.56" GetOffY="219.4632" GetOffZ="31.63087"
+				/>
+			</If>
+			<If Condition="Me.X &lt; 345 &amp;&amp; Me.MapId == 1" > <!-- Southern Kalimdor, Ratchet to Booty Bay -->
+				<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We're in Kalimdor, using the Ratchet boat to Booty Bay.&quot;);" />
+				<MoveTo Nav="Fly" X="-995.5635" Y="-3827.638" Z="5.630721" />
+				<CustomBehavior File="UseTransport" TransportId="20808"
+					WaitAtX="-996.8669" WaitAtY="-3826.07" WaitAtZ="5.536246" 
+					TransportStartX="-1005.613" TransportStartY="-3841.648" TransportStartZ="0.01553879"
+					StandOnX="-997.3311" StandOnY="-3836.707" StandOnZ="6.030852"
+					TransportEndX="-14277.75" TransportEndY="582.8661" TransportEndZ="0.03330701"
+					GetOffX="-14280.88" GetOffY="566.6268" GetOffZ="6.979454"
+				/>
+			</If>
+		</If>
+	</If>
+	<CustomBehavior File="RunCode" Code="EKLog(Colors.LightGreen, &quot;We have reached Eastern Kingdoms!&quot;);" />
+</If>
+<!-- Universal Nav End -->
+</QuestOrder>
+</HBProfile>

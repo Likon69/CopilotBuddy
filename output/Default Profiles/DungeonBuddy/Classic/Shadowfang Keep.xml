@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Shadowfang Keep</Name>
+  <DungeonId>8</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="46962" name="Baron Ashbury" killOrder="1" optional="false" X="-256.1198" Y="2117.153" Z="81.17957"/>
+    <Boss isFinal="false" entry="3887" name="Baron Silverlaine" killOrder="2" optional="false" X="-266.0377" Y="2293.816" Z="76.15334" />
+    <Boss isFinal="false" entry="4278" name="Commander Springvale" killOrder="3" optional="false" X="-223.1647" Y="2259.973" Z="102.7569"/>
+    <Boss isFinal="false" entry="46963" name="Lord Walden" killOrder="4" optional="false" X="-133.62" Y="2174.04" Z="128.9437"/>
+    <Boss isFinal="true" entry="46964" name="Lord Godfrey" killOrder="5" optional="false" X="-82.66493" Y="2157.446" Z="155.712"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Light post in Commanders room -->
+    <Blackspot X="-249.0789" Y="2242.855" Z="100.8921" Radius="0.6894027" />
+    <!-- Door messed up after Commanders room -->
+    <Blackspot X="-234.4324" Y="2229.138" Z="93.54119" Radius="0.5389959" />
+    <!-- Door messed up after 2nd boss -->
+    <Blackspot X="-289.4478" Y="2300.298" Z="90.45692" Radius="0.6405292" />
+    <!-- Door messed up before 2nd boss -->
+    <Blackspot X="-178.5918" Y="2222.235" Z="79.75758" Radius="0.7041734" />
+    <!-- Door messed up before springfield boss -->
+    <Blackspot X="-251.2009" Y="2260.961" Z="101.5895" Radius="0.9515269" />
+</Blackspots>
+</DungeonBuddyProfile>

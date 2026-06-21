@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[8-10] Dead Eye Shore Durotar</Name>
+	<MinLevel>8</MinLevel>
+	<MaxLevel>10</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Dead eye shore Grind -->
+		<Name>Dead eye shore Grind</Name>
+		<MinLevel>8</MinLevel>
+		<MaxLevel>10</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>6</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3100 3122 3126 -->
+			<Factions>14 189 413</Factions>
+			<Hotspots>
+				<Hotspot X="757.6393" Y="-4961.037" Z="16.80888" />
+				<Hotspot X="809.8147" Y="-4945.375" Z="18.31931" />
+				<Hotspot X="894.6536" Y="-4950.89" Z="8.536346" />
+				<Hotspot X="933.6504" Y="-4938.035" Z="11.35969" />
+				<Hotspot X="982.9988" Y="-4922.908" Z="14.63971" />
+				<Hotspot X="1014.138" Y="-4914.735" Z="14.84458" />
+				<Hotspot X="1048.282" Y="-4904.862" Z="16.66863" />
+				<Hotspot X="1094.184" Y="-4883.622" Z="15.11551" />
+				<Hotspot X="1060.488" Y="-4937.048" Z="14.47932" />
+				<Hotspot X="1044.784" Y="-5000.083" Z="16.63809" />
+				<Hotspot X="1018.814" Y="-5046.967" Z="10.63608" />
+				<Hotspot X="986.5269" Y="-5063.671" Z="7.602038" />
+				<Hotspot X="961.8631" Y="-5064.365" Z="7.774979" />
+				<Hotspot X="929.5244" Y="-5062.016" Z="4.135011" />
+				<Hotspot X="892.7291" Y="-5056.063" Z="3.228264" />
+				<Hotspot X="865.2653" Y="-5051.621" Z="3.913488" />
+				<Hotspot X="817.5269" Y="-5050.317" Z="6.087435" />
+				<Hotspot X="794.5056" Y="-5037.4" Z="6.403089" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="-1281.22314" Y="-5483.83252" Z="4.34652472" Radius="34.5" />
+		<Blackspot X="-1253.76733" Y="-5527.06348" Z="5.80383" Radius="34.5" />
+		<Blackspot X="-1164.43811" Y="-5571.78125" Z="8.529459" Radius="34.5" />
+		<Blackspot X="-1155.11438" Y="-5577.90674" Z="8.498816" Radius="34.5" />
+		<Blackspot X="-1140.57129" Y="-5529.061" Z="5.86116362" Radius="34.5" />
+	</Blackspots>
+</HBProfile>

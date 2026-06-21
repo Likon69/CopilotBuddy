@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Dire Maul - Gordok Commons</Name>
+  <DungeonId>38</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="14326" name="Guard Mol'dar" killOrder="1" optional="false" X="407.8457" Y="-3.773254" Z="-24.70943"/>
+    <Boss isFinal="false" entry="14322" name="Stomper Kreeg" killOrder="2" optional="false" X="491.2311" Y="97.38786" Z="-2.583669"/>
+    <Boss isFinal="false" entry="14321" name="Guard Fengus" killOrder="3" optional="false">
+      <Path>
+        <Hotspot X="378.0889" Y="254.8684" Z="11.43957" />
+        <Hotspot X="319.7104" Y="254.1465" Z="11.21814" />
+        <Hotspot X="387.3818" Y="336.6444" Z="2.870327" />
+      </Path>
+    </Boss>
+    <Boss isFinal="false" entry="14323" name="Guard Slip'kik" killOrder="4" optional="false" X="564.6356" Y="552.8641" Z="-25.39971"/>
+    <Boss isFinal="false" entry="14325" name="Captain Kromcrush" killOrder="5" optional="false" X="624.2033" Y="481.7355" Z="29.46412"/>
+    <Boss isFinal="true" entry="11501" name="King Gordok" killOrder="6" optional="false" X="829.6969" Y="481.3277" Z="37.31823"/>
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="495.2476" Y="524.7095" Z="28.6264" Radius="3.010209" />
+    <Blackspot X="581.7793" Y="561.6704" Z="-4.26405" Radius="3.690299" />  
+  </Blackspots>
+</DungeonBuddyProfile>

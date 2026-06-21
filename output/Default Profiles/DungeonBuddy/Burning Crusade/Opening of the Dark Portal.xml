@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Opening of the Dark Portal</Name>
+  <DungeonId>171</DungeonId>
+  <BossEncounters>
+	<!-- Speak to Name="Sa'at" Entry="20201" X="-1547.062" Y="7113.633" Z="32.73595" /> and gossipoptions 1 before starting - so you have a chrono beacon
+	then, clear around the 'grindarea' where the portals will be spawning.
+	once cleared enough for your liking... runto (X="-2013.55" Y="7118.431" Z="22.58715" />) to start the portals spawning.
+	Each 6th portal will spawn a boss; you cannot use your beacons on bosses, i recommend 13 14 15 16 17 for beacons (if they're even still required) 
+	I will not set a XYZ for any of the bosses below ... because they can spawn anywhere that the portals spawn! -->
+	<Boss isFinal="false" entry="17879" name="Chrono Lord Deja" killOrder="1" optional="false" />
+	<Boss isFinal="false" entry="17880" name="Temporus" killOrder="2" optional="false" />
+	<Boss isFinal="true" entry="17881" name="Aeonus" killOrder="3" optional="false" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

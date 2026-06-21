@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Rogue" Specialization="3" Name="Rogue-Subtlety">
+  <Agility>100</Agility>
+  <HitRating>40</HitRating>
+  <HasteRating>37</HasteRating>
+  <ExpertiseRating>33</ExpertiseRating>
+  <CriticalStrikeRating>31</CriticalStrikeRating>
+  <Mastery>20</Mastery>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

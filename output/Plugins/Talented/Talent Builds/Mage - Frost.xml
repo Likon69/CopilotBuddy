@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TalentTree Specialization="3" Name="Mage - Frost" Class="Mage">
+  <!-- Frost Talents -->
+  <Talent Tab="3" Index="1" Count="2" Name="Early Frost"/>
+  <Talent Tab="3" Index="2" Count="3" Name="Piercing Ice"/>
+  <Talent Tab="3" Index="3" Count="2" Name="Shatter"/>
+  <Talent Tab="3" Index="4" Count="3" Name="Ice Floes"/>
+  <Talent Tab="3" Index="9" Count="1" Name="Icy Veins"/>
+  <Talent Tab="3" Index="10" Count="3" Name="Fingers of Frost"/>
+  <Talent Tab="3" Index="11" Count="3" Name="Improved Freeze"/>
+  <Talent Tab="3" Index="13" Count="1" Name="Cold Snap"/>
+  <Talent Tab="3" Index="14" Count="2" Name="Brain Freeze"/>
+  <Talent Tab="3" Index="16" Count="1" Name="Ice Barrier"/>
+  <Talent Tab="3" Index="14" Count="1" Name="Brain Freeze"/>
+  <Talent Tab="3" Index="12" Count="3" Name="Enduring Winter"/>
+  <Talent Tab="3" Index="18" Count="2" Name="Frostfire Orb"/>
+  <Talent Tab="3" Index="17" Count="2" Name="Reactive Barrier"/>
+  <Talent Tab="3" Index="5" Count="1" Name="Improved Cone of Cold"/>
+  <Talent Tab="3" Index="19" Count="1" Name="Deep Freeze"/>
+  <!-- Arcane Talents-->
+  <Talent Tab="1" Index="1" Count="3" Name="Arcane Concentration"/>
+  <Talent Tab="1" Index="3" Count="3" Name="Netherwind Presence"/>
+  <!-- Fire Talents -->
+  <Talent Tab="2" Index="1" Count="2" Name="Master of Elements"/>
+  <Talent Tab="2" Index="2" Count="2" Name="Burning soul"/>
+</TalentTree>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- http://wowtal.com/#k=Yf9IUZW2..deathknight.-RLySO + Additions by DarkBen -->
+<TalentTree Specialization="1" Name="Death Knight - Blood" Class="DeathKnight">
+  <!-- Blood Talents 34-->
+  <Talent Tab="1" Index="2" Count="3" Name="Blade Barrier" />
+  <Talent Tab="1" Index="3" Count="3" Name="Bladed Armor" />
+  <Talent Tab="1" Index="4" Count="2" Name="Improved Blood Tap" />
+  <Talent Tab="1" Index="5" Count="3" Name="Scent of Blood" />
+  <Talent Tab="1" Index="6" Count="2" Name="Scarlet Fever" />
+  <Talent Tab="1" Index="9" Count="1" Name="Bone Shield" />
+  <Talent Tab="1" Index="10" Count="3" Name="Toughness" />
+  <Talent Tab="1" Index="12" Count="2" Name="Sanguine Fortitude" />
+  <Talent Tab="1" Index="13" Count="2" Name="Blood Parasite" />
+  <Talent Tab="1" Index="14" Count="2" Name="Improved Blood Presence" />
+  <Talent Tab="1" Index="15" Count="3" Name="Will of the Necropolis" />
+  <Talent Tab="1" Index="16" Count="1" Name="Rune Tap" />
+  <Talent Tab="1" Index="17" Count="1" Name="Vampiric Blood" />
+  <Talent Tab="1" Index="18" Count="3" Name="Improved Death Strike" />
+  <Talent Tab="1" Index="19" Count="2" Name="Crimson Scourge" />
+  <Talent Tab="1" Index="20" Count="1" Name="Dancing Rune Weapon" />
+
+  </TalentTree>

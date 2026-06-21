@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- These Mobs are tameable -->
+<!-- Rarekiller will tame them by default if Tamepart is activated-->
+<Blacklist>
+	<Mob Entry="49822" Name="Jadefang" />
+	<Mob Entry="50051" Name="Ghostcrawler" />
+	<Mob Entry="50138" Name="Karoma" />
+	<Mob Entry="51401" Name="Madexx Red" />
+	<Mob Entry="51402" Name="Madexx Green" />
+	<Mob Entry="51403" Name="Madexx Black" />
+	<Mob Entry="51404" Name="Madexx Blue" />
+	<Mob Entry="50154" Name="Madexx Brown" />				
+	<Mob Entry="50058" Name="Terrorpene" />
+	<Mob Entry="32517" Name="Loque'nahak" />
+	<Mob Entry="32481" Name="Aotona" />
+	<Mob Entry="35189" Name="Skoll" />
+	<Mob Entry="33776" Name="Gondria" />
+	<Mob Entry="38543" Name="Arcturis" />
+	<Mob Entry="32485" Name="King Krush" />
+	<Mob Entry="20932" Name="Nuramoc" />
+	<Mob Entry="17144" Name="Goretooth" />
+	<Mob Entry="50159" Name="Sambas" />
+</Blacklist>

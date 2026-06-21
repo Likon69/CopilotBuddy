@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Dire Maul - Warpwood Quarter</Name>
+  <DungeonId>34</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="14327" name="Lethtendris" killOrder="1" optional="false" X="-13.65876" Y="-453.2047" Z="16.40296"/>
+    <Boss isFinal="false" entry="13280" name="Hydrospawn" killOrder="2" optional="false" X="-24.33454" Y="-421.3419" Z="-59.95171"/>
+    <!-- Pusillin is an optional random spawn boss -->
+    <Boss isFinal="false" entry="14354" name="Pusillin" killOrder="3" optional="true" />
+    <Boss isFinal="true" entry="11490" name="Zevrim Thornhoof" killOrder="4" optional="false" X="-34.98296" Y="-448.0004" Z="-37.96173"/>
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="-18.32319" Y="-448.6054" Z="-37.961" Radius="2.462001" />
+    <Blackspot X="-19.25402" Y="-456.5672" Z="-37.9607" Radius="3.368366" />
+    <Blackspot X="-26.04924" Y="-458.1366" Z="-37.96091" Radius="2.789329" />
+    <Blackspot X="-32.31172" Y="-455.522" Z="-37.96153" Radius="3.636249" />
+    <Blackspot X="-32.2344" Y="-440.4858" Z="-37.96186" Radius="3.451389" />
+    <Blackspot X="-25.80351" Y="-438.5005" Z="-37.96185" Radius="2.279121" />
+    <Blackspot X="-19.57451" Y="-440.7239" Z="-37.96144" Radius="3.550007" />
+    <Blackspot X="-26.02555" Y="-448.3294" Z="-37.6196" Radius="3.045587" />
+  </Blackspots>
+</DungeonBuddyProfile>

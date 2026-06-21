@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[56-60] Scarlet WPL</Name>
+	<MinLevel>56</MinLevel>
+	<MaxLevel>60</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Scarlet -->
+		<Name>Scarlet</Name>
+		<MinLevel>56</MinLevel>
+		<MaxLevel>60</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>54</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1835 10979 1831 10605 -->
+			<Factions>67 89</Factions>
+			<Hotspots>
+				<Hotspot X="2112.49" Y="-1813.31" Z="59.0745" />
+				<Hotspot X="2098.153" Y="-1770.641" Z="66.06197" />
+				<Hotspot X="2066.836" Y="-1785.94" Z="60.2689" />
+				<Hotspot X="2061.586" Y="-1812.687" Z="66.68115" />
+				<Hotspot X="2071.323" Y="-1838.296" Z="68.46526" />
+				<Hotspot X="2097.547" Y="-1852.14" Z="63.78995" />
+				<Hotspot X="2130.516" Y="-1845.853" Z="73.92049" />
+				<Hotspot X="2133.299" Y="-1820.359" Z="62.58981" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

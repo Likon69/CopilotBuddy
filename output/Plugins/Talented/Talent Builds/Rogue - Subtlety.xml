@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- http://wowtal.com/#k=kWbJNsJxm.b0w.rogue. -->
+<TalentTree Specialization="3" Name="Rogue - Subtlety" Class="Rogue">
+  <!-- Subtlety Talents 31-->
+  <Talent Tab="3" Index="1" Count="2" Name="NightStalker" />
+  <Talent Tab="3" Index="2" Count="3" Name="Improved Ambush" />
+  <Talent Tab="3" Index="3" Count="3" Name="Relentless Strikes" />
+  <Talent Tab="3" Index="4" Count="2" Name="Elusiveness" />
+  <Talent Tab="3" Index="5" Count="1" Name="WayLay" />
+  <Talent Tab="3" Index="6" Count="3" Name="Opportunity" />
+  <Talent Tab="3" Index="8" Count="3" Name="Energetic Recovery" />
+  <Talent Tab="3" Index="9" Count="2" Name="Find Weakness" />
+  <Talent Tab="3" Index="10" Count="1" Name="Hemorrhage" />
+  <Talent Tab="3" Index="11" Count="3" Name="Honor Among Thieves" />
+  <Talent Tab="3" Index="12" Count="1" Name="Premeditation" />
+  <Talent Tab="3" Index="15" Count="1" Name="Preparation" />
+  <Talent Tab="3" Index="16" Count="2" Name="Sanguinary Vein" />
+  <Talent Tab="3" Index="17" Count="3" Name="Slaughter From The Shadows" />
+  <Talent Tab="3" Index="18" Count="2" Name="Serrated Blades" />
+  <Talent Tab="3" Index="19" Count="1" Name="Shadow Dance" />
+  <!-- Assassination Talents 8-->
+  <Talent Tab="1" Index="2" Count="3" Name="Coup De Grace" />
+  <Talent Tab="1" Index="3" Count="3" Name="Lethality" />
+  <!-- Combat Talents 2-->
+  <Talent Tab="2" Index="1" Count="2" Name="Improved Recuperate" />
+   </TalentTree>

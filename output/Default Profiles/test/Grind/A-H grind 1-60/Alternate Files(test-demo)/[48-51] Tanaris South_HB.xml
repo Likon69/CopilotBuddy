@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[48-51] Tanaris South</Name>
+	<MinLevel>48</MinLevel>
+	<MaxLevel>51</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- tanaris lower grind -->
+		<Name>tanaris lower grind</Name>
+		<MinLevel>48</MinLevel>
+		<MaxLevel>51</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>46</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 5421 5427 5424 5430 -->
+			<Factions>38 49 73 413</Factions>
+			<Hotspots>
+				<Hotspot X="-9126.478" Y="-2826.71" Z="29.65403" />
+				<Hotspot X="-9259.824" Y="-2762.204" Z="12.71459" />
+				<Hotspot X="-9124.062" Y="-2687.179" Z="27.71491" />
+				<Hotspot X="-9017.523" Y="-2809.154" Z="41.93689" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

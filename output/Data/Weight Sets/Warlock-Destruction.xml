@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Warlock" Specialization="3" Name="Warlock-Destruction">
+  <Intellect>100</Intellect>
+  <SpellPower>77</SpellPower>
+  <HitRating>64</HitRating>
+  <HasteRating>36</HasteRating>
+  <CriticalStrikeRating>34</CriticalStrikeRating>
+  <Mastery>29</Mastery>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

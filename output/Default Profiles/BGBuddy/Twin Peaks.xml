@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<PvpProfile>
+  <Name>Twin Peaks</Name>
+
+  <StartLocation X="1557.086" Y="326.6952" Z="1.545058" Side="Horde" />
+  <StartLocation X="2153.134" Y="209.2529" Z="43.65028"  Side="Alliance" />
+
+  <Blackspots>
+  </Blackspots>
+</PvpProfile>

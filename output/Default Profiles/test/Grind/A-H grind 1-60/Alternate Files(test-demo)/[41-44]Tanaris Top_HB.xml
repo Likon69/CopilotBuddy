@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[41-44]Tanaris Top</Name>
+	<MinLevel>41</MinLevel>
+	<MaxLevel>44</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Tanaris Top -->
+		<Name>Tanaris Top</Name>
+		<MinLevel>41</MinLevel>
+		<MaxLevel>44</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>39</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 5425 5428 5422 5419 5423 -->
+			<Factions>38 49 73 413</Factions>
+			<Hotspots>
+				<Hotspot X="-7126.129" Y="-3588.902" Z="9.057477" />
+				<Hotspot X="-7126.57" Y="-3522.508" Z="9.72424" />
+				<Hotspot X="-7149.8" Y="-3456.342" Z="9.800954" />
+				<Hotspot X="-7150.434" Y="-3390.493" Z="9.786365" />
+				<Hotspot X="-7155.59" Y="-3328.571" Z="14.30763" />
+				<Hotspot X="-7186.553" Y="-3287.481" Z="12.43753" />
+				<Hotspot X="-7242.954" Y="-3274.637" Z="11.09011" />
+				<Hotspot X="-7284.442" Y="-3346.423" Z="9.789505" />
+				<Hotspot X="-7291.663" Y="-3418.545" Z="9.207024" />
+				<Hotspot X="-7309.082" Y="-3495.104" Z="9.259716" />
+				<Hotspot X="-7360.818" Y="-3513.833" Z="10.93004" />
+				<Hotspot X="-7348.84" Y="-3582.116" Z="9.078106" />
+				<Hotspot X="-7267.41" Y="-3603.632" Z="12.96221" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

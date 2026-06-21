@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<PvpProfile>
+  <Name>Alterac Valley</Name>
+
+  <StartLocation X="-1387.628" Y="-551.105" Z="54.9678" Side="Horde" />
+  <StartLocation X="806.1611" Y="-494.3407" Z="100.0156" Side="Alliance" />
+
+
+  <Blackspots>
+    <!-- Frostwolf Keep braziers -->
+    <Blackspot X="-1282.26" Y="-284.0545" Z="88.02536" Radius="2.5" />
+    <Blackspot X="-1139.965" Y="-356.7996" Z="51.83506" Radius="2.5" />
+    <Blackspot X="-1140.849" Y="-343.3044" Z="51.15092" Radius="2.5" />
+    
+    <!-- Annoying cart near bridge in Dun Baldur - Hawker Jan 12 2012 -->
+    <Blackspot X="628.1241" Y="-137.4776" Z="35.20272" Radius="4" />
+    <!-- Snowfall GY Flag posts -->
+    <Blackspot X="-191.103" Y="-130.1133" Z="78.79039" Radius="1" />
+    <Blackspot X="-201.2911" Y="-134.0051" Z="78.82697" Radius="1" />
+    <!-- A little lamp -->
+    <Blackspot X="-1283.037" Y="-284.9004" Z="88.29289" Radius="3" />
+  </Blackspots>
+
+  <Boxes Side="Horde">
+    <Box Name="FrostwolfReliefHut">
+      <TopLeft X="-1416.457" Y="-323.1943" Z="89.00099" />
+      <Center X="-1402.618" Y="-306.1053" Z="89.5062" />
+      <BottomRight X="-1393.822" Y="-295.2166" Z="85.82154" />
+    </Box>
+
+    <Box Name="FrostwolfKeep">
+      <TopLeft X="-1382.175" Y="-211.3506" Z="99.37146" />
+      <Center  X="-1360.146" Y="-253.3394" Z="99.36983" />
+      <BottomRight X="-1353.365" Y="-271.1688" Z="97.24264" />
+    </Box>
+
+    <Box Name="WestFrostwolfTower">
+      <TopLeft X="-1303.651" Y="-251.3898" Z="92.34224" />
+      <Center X="-1298.302" Y="-267.0432" Z="114.1503" />
+      <BottomRight X="-1316.745" Y="-289.3403" Z="90.35452" />
+    </Box>
+
+    <Box Name="EastFrostwolfTower">
+      <TopLeft X="-1316.745" Y="-289.3403" Z="90.35452" />
+      <Center X="-1303.773" Y="-315.3723" Z="113.8658" />
+      <BottomRight X="-1309.347" Y="-330.5755" Z="91.23616" />
+    </Box>
+
+    <Box Name="FrostwolfGraveyard">
+      <TopLeft X="-1069.12" Y="-336.7621" Z="56.09465" />
+      <Center X="-1084.617" Y="-346.1363" Z="55.09029" />
+      <BottomRight X="-1102.699" Y="-361.5452" Z="51.66135" />
+    </Box>
+
+    <Box Name="TowerPoint">
+      <TopLeft X="-767.9817" Y="-388.2192" Z="80.0909" />
+      <Center X="-769.136" Y="-361.7828" Z="90.89497" />
+      <BottomRight X="-613.8636" Y="-406.2671" Z="59.66953" />
+    </Box>
+
+    <Box Name="IcebloodGarrison">
+      <TopLeft X="-560.4742" Y="-167.3902" Z="57.95571" />
+      <Center X="-542.7599" Y="-163.3699" Z="57.0109" />
+      <BottomRight X="-518.4249" Y="-154.8673" Z="57.95689" />
+    </Box>
+
+    <Box Name="IcebloodTower">
+      <TopLeft X="-558.4028" Y="-247.569" Z="55.42175" />
+      <Center X="-570.8574" Y="-263.812" Z="75.00826" />
+      <BottomRight X="-561.6418" Y="-283.9132" Z="51.9542" />
+    </Box>
+
+    <Box Name="IcebloodGraveyard">
+      <TopLeft X="-600.6538" Y="-412.2351" Z="58.49937" />
+      <Center X="-611.9578" Y="-394.7544" Z="60.854" />
+      <BottomRight X="-625.2151" Y="-374.468" Z="57.66253" />
+    </Box>
+
+    <Box Name="StonehearthBunker">
+      <TopLeft X="-131.6626" Y="-431.2637" Z="27.41577" />
+      <Center X="-159.6747" Y="-459.7626" Z="40.38681" />
+      <BottomRight X="-181.4192" Y="-466.2151" Z="27.4537" />
+    </Box>
+
+    <Box Name="SnowfallGraveyard">
+      <TopLeft X="-194.9029" Y="-134.526" Z="76.56757" />
+      <Center X="-204.8813" Y="-113.6155" Z="78.56417" />
+      <BottomRight X="-221.2261" Y="-96.61044" Z="78.38284" />
+    </Box>
+
+    <Box Name="IcewingBunker">
+      <TopLeft X="166.8596" Y="-386.9913" Z="44.91754"  />
+      <Center X="203.2704" Y="-359.8108" Z="56.38459"  />
+      <BottomRight X="231.6792" Y="-338.0199" Z="45.30066" />
+    </Box>
+
+    <Box Name="StonehearthGraveyard">
+      <TopLeft X="92.67112" Y="-392.5514" Z="45.14958" />
+      <Center X="76.7593" Y="-403.4769" Z="46.47937" />
+      <BottomRight X="65.10061" Y="-419.5542" Z="50.4808" />
+    </Box>
+
+    <Box Name="StormpikeAidStation">
+      <TopLeft X="640.9767" Y="-19.97034" Z="48.2965" />
+      <Center X="636.9496" Y="-33.21344" Z="45.84002" />
+      <BottomRight X="635.8323" Y="-50.77401" Z="42.59388" />
+    </Box>
+
+    <Box Name="StormpikeGraveyard">
+      <TopLeft X="675.4199" Y="-283.8174" Z="27.90726" />
+      <Center X="670.7874" Y="-292.2694" Z="30.27469" />
+      <BottomRight X="665.6463" Y="-307.7408" Z="29.55466" />
+    </Box>
+
+    <Box Name="DunBaldarSouthBunker">
+      <TopLeft X="532.1061" Y="-78.32219" Z="37.72239" />
+      <Center X="553.1511" Y="-77.37878" Z="51.92493" />
+      <BottomRight X="591.1111" Y="-92.4409" Z="39.11071" />
+    </Box>
+
+    <Box Name="DunBaldarNorthBunker">
+      <TopLeft X="694.804" Y="-110.3107" Z="51.89672" />
+      <Center X="672.9373" Y="-142.5185" Z="63.6593" />
+      <BottomRight X="642.4457" Y="-120.2782" Z="49.46856" />
+    </Box>
+
+    <Box Name="DunBaldar">
+      <TopLeft X="712.1597" Y="-32.05498" Z="50.61977" />
+      <Center X="683.8859" Y="-21.60244" Z="50.61976" />
+      <BottomRight X="660.557" Y="-31.07532" Z="49.84662" />
+    </Box>
+
+    <Box Name="StonehearthOutpost">
+      <TopLeft X="-0.3942407" Y="-334.2792" Z="16.03365" />
+      <Center X="-44.49652" Y="-288.391" Z="15.07864" />
+      <BottomRight X="-65.64626" Y="-246.5114" Z="9.969877" />
+    </Box>
+  </Boxes>
+
+  <Boxes Side="Alliance">
+    <Box Name="FrostwolfReliefHut">
+      <TopLeft X="-1416.457" Y="-323.1943" Z="89.00099" />
+      <Center X="-1402.618" Y="-306.1053" Z="89.5062" />
+      <BottomRight X="-1393.822" Y="-295.2166" Z="85.82154" />
+    </Box>
+
+    <Box Name="FrostwolfKeep">
+      <TopLeft X="-1382.175" Y="-211.3506" Z="99.37146" />
+      <Center X="-1371.212" Y="-220.1107" Z="98.42708" />
+      <BottomRight X="-1349.586" Y="-226.7053" Z="99.37136" />
+    </Box>
+
+    <Box Name="WestFrostwolfTower">
+      <TopLeft X="-1303.651" Y="-251.3898" Z="92.34224" />
+      <Center X="-1298.302" Y="-267.0432" Z="114.1503" />
+      <BottomRight X="-1316.745" Y="-289.3403" Z="90.35452" />
+    </Box>
+
+    <Box Name="EastFrostwolfTower">
+      <TopLeft X="-1316.745" Y="-289.3403" Z="90.35452" />
+      <Center X="-1303.773" Y="-315.3723" Z="113.8658" />
+      <BottomRight X="-1309.347" Y="-330.5755" Z="91.23616" />
+    </Box>
+
+    <Box Name="FrostwolfGraveyard">
+      <TopLeft X="-1069.12" Y="-336.7621" Z="56.09465" />
+      <Center X="-1084.617" Y="-346.1363" Z="55.09029" />
+      <BottomRight X="-1102.699" Y="-361.5452" Z="51.66135" />
+    </Box>
+
+    <Box Name="TowerPoint">
+      <TopLeft X="-767.9817" Y="-388.2192" Z="80.0909" />
+      <Center X="-769.136" Y="-361.7828" Z="90.89497" />
+      <BottomRight X="-613.8636" Y="-406.2671" Z="59.66953" />
+    </Box>
+
+    <Box Name="IcebloodGarrison">
+      <TopLeft X="-560.4742" Y="-167.3902" Z="57.95571" />
+      <Center X="-542.7599" Y="-163.3699" Z="57.0109" />
+      <BottomRight X="-518.4249" Y="-154.8673" Z="57.95689" />
+    </Box>
+
+    <Box Name="IcebloodTower">
+      <TopLeft X="-558.4028" Y="-247.569" Z="55.42175" />
+      <Center X="-570.8574" Y="-263.812" Z="75.00826" />
+      <BottomRight X="-561.6418" Y="-283.9132" Z="51.9542" />
+    </Box>
+
+    <Box Name="IcebloodGraveyard">
+      <TopLeft X="-600.6538" Y="-412.2351" Z="58.49937" />
+      <Center X="-611.9578" Y="-394.7544" Z="60.854" />
+      <BottomRight X="-625.2151" Y="-374.468" Z="57.66253" />
+    </Box>
+
+    <Box Name="StonehearthBunker">
+      <TopLeft X="-131.6626" Y="-431.2637" Z="27.41577" />
+      <Center X="-159.6747" Y="-459.7626" Z="40.38681" />
+      <BottomRight X="-181.4192" Y="-466.2151" Z="27.4537" />
+    </Box>
+
+    <Box Name="SnowfallGraveyard">
+      <TopLeft X="-194.9029" Y="-134.526" Z="76.56757" />
+      <Center X="-204.8813" Y="-113.6155" Z="78.56417" />
+      <BottomRight X="-221.2261" Y="-96.61044" Z="78.38284" />
+    </Box>
+
+    <Box Name="IcewingBunker">
+      <TopLeft X="166.8596" Y="-386.9913" Z="44.91754"  />
+      <Center X="203.2704" Y="-359.8108" Z="56.38459"  />
+      <BottomRight X="231.6792" Y="-338.0199" Z="45.30066" />
+    </Box>
+
+    <Box Name="StonehearthGraveyard">
+      <TopLeft X="92.67112" Y="-392.5514" Z="45.14958" />
+      <Center X="76.7593" Y="-403.4769" Z="46.47937" />
+      <BottomRight X="65.10061" Y="-419.5542" Z="50.4808" />
+    </Box>
+
+    <Box Name="StormpikeAidStation">
+      <TopLeft X="640.9767" Y="-19.97034" Z="48.2965" />
+      <Center X="636.9496" Y="-33.21344" Z="45.84002" />
+      <BottomRight X="635.8323" Y="-50.77401" Z="42.59388" />
+    </Box>
+
+    <Box Name="StormpikeGraveyard">
+      <TopLeft X="675.4199" Y="-283.8174" Z="27.90726" />
+      <Center X="670.7874" Y="-292.2694" Z="30.27469" />
+      <BottomRight X="665.6463" Y="-307.7408" Z="29.55466" />
+    </Box>
+
+    <Box Name="DunBaldarSouthBunker">
+      <TopLeft X="532.1061" Y="-78.32219" Z="37.72239" />
+      <Center X="553.1511" Y="-77.37878" Z="51.92493" />
+      <BottomRight X="591.1111" Y="-92.4409" Z="39.11071" />
+    </Box>
+
+    <Box Name="DunBaldarNorthBunker">
+      <TopLeft X="694.804" Y="-110.3107" Z="51.89672" />
+      <Center X="672.9373" Y="-142.5185" Z="63.6593" />
+      <BottomRight X="642.4457" Y="-120.2782" Z="49.46856" />
+    </Box>
+
+     <Box Name="DunBaldar">
+      <TopLeft X="712.1597" Y="-32.05498" Z="50.61977" />
+      <Center X="683.8859" Y="-21.60244" Z="50.61976" />
+      <BottomRight X="660.557" Y="-31.07532" Z="49.84662" />
+    </Box>
+
+    <Box Name="StonehearthOutpost">
+      <TopLeft X="-0.3942407" Y="-334.2792" Z="16.03365" />
+      <Center X="-44.49652" Y="-288.391" Z="15.07864" />
+      <BottomRight X="-65.64626" Y="-246.5114" Z="9.969877" />
+    </Box>
+  </Boxes>
+</PvpProfile>

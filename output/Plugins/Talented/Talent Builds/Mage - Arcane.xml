@@ -1,0 +1,24 @@
+<TalentTree Name="Mage - Arcane" Specialization="1" Class="Mage">
+  <Talent Tab="1" Index="1" Count="3" Name="Arcane Concentration" />
+  <Talent Tab="1" Index="2" Count="2" Name="Improved Counterspell" />
+  <Talent Tab="1" Index="3" Count="3" Name="Netherwind Presence" />
+  <Talent Tab="1" Index="4" Count="3" Name="Torment the Weak" />
+  <Talent Tab="1" Index="5" Count="2" Name="Invocation" />
+  <Talent Tab="1" Index="6" Count="2" Name="Improved Arcane Missiles" />
+  <Talent Tab="1" Index="7" Count="2" Name="Improved Blink" />
+  <Talent Tab="1" Index="8" Count="2" Name="Arcane Flows" />
+  <Talent Tab="1" Index="9" Count="1" Name="Presence of Mind" />
+  <Talent Tab="1" Index="10" Count="2" Name="Missile Barrage" />
+  <Talent Tab="1" Index="13" Count="1" Name="Arcane Tactics" />
+  <Talent Tab="1" Index="14" Count="2" Name="Incanter's Absorption" />
+  <Talent Tab="1" Index="16" Count="2" Name="Improved Arcane Explosion" />
+  <Talent Tab="1" Index="17" Count="2" Name="Arcane Potency" />
+  <Talent Tab="1" Index="18" Count="1" Name="Slow" />
+  <Talent Tab="1" Index="19" Count="2" Name="Nether Vortex" />
+  <Talent Tab="1" Index="20" Count="1" Name="Focus Magic" />
+  <Talent Tab="1" Index="21" Count="2" Name="Improved Mana Gem" />
+  <Talent Tab="1" Index="22" Count="1" Name="Arcane Power" />
+  <Talent Tab="2" Index="1" Count="2" Name="Master of Elements" />
+  <Talent Tab="2" Index="2" Count="1" Name="Burning Soul" />
+  <Talent Tab="3" Index="2" Count="2" Name="Piercing Ice" />
+</TalentTree>

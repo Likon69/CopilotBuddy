@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Slave Pens</Name>
+  <DungeonId>140</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="17941" name="Mennu the Betrayer" killOrder="1" optional="true" >
+      <Path>
+		<Hotspot X="56.75635" Y="-380.5388" Z="3.035704" />
+		<Hotspot X="121.6561" Y="-380.4664" Z="29.95693" />
+      </Path>
+    </Boss>	
+	<!-- add to mesh if it's not already:
+		Runto X="-186.6095" Y="-346.8474" Z="55.41445" /> 
+	   ctmto (jumppoint to) X="-202.7518" Y="-378.8442" Z="6.356101" /> - in the water ofc! -->
+	<Boss isFinal="false" entry="17991" name="Rokmar the Crackler" killOrder="2" optional="true" >
+      <Path>
+		<Hotspot X="-49.26908" Y="-456.5793" Z="-1.592323" />
+		<Hotspot X="16.75937" Y="-448.7451" Z="3.035869" />
+      </Path>
+    </Boss>	
+	<Boss isFinal="true" entry="17942" name="Quagmirran" killOrder="3" optional="false" X="-204.4615" Y="-704.7633" Z="37.29663" /> <!-- Force wait here for the boss to come so u don't drown! -->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

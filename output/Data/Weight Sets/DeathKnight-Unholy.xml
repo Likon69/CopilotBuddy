@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="DeathKnight" Specialization="3" Name="Death Knight-Unholy">
+  <Strength>100</Strength>
+  <HasteRating>25</HasteRating>
+  <HitRating>25</HitRating>
+  <AttackPower>23</AttackPower>
+  <ExpertiseRating>21</ExpertiseRating>
+  <CriticalStrikeRating>20</CriticalStrikeRating>
+  <Mastery>8</Mastery>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

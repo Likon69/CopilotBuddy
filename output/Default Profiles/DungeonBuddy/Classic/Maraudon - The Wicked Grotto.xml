@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Maraudon - The Wicked Grotto</Name>
+  <DungeonId>272</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="13601" name="Tinkerer Gizlock" killOrder="1" optional="false" X="834.651" Y="-327.653" Z="-51.57735"/>
+    <Boss isFinal="true" entry="12236" name="Lord Vyletongue" killOrder="2" optional="false" X="748.8743" Y="-219.6467" Z="-47.7639"/>
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

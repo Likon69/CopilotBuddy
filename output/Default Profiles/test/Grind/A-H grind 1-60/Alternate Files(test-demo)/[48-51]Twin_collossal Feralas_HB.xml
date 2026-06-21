@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[48-51]Twin_collossal Feralas</Name>
+	<MinLevel>48</MinLevel>
+	<MaxLevel>51</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Twin_collossal -->
+		<Name>Twin_collossal</Name>
+		<MinLevel>48</MinLevel>
+		<MaxLevel>51</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>46</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 5262 5288 5274 5276 -->
+			<Factions>7 38 44 72</Factions>
+			<Hotspots>
+				<Hotspot X="-3404.045" Y="2252.616" Z="21.16155" />
+				<Hotspot X="-3460.333" Y="2203.704" Z="25.65859" />
+				<Hotspot X="-3499.156" Y="2175.734" Z="31.78337" />
+				<Hotspot X="-3551.741" Y="2177.697" Z="41.49164" />
+				<Hotspot X="-3574.806" Y="2230.851" Z="38.44519" />
+				<Hotspot X="-3557.982" Y="2266.278" Z="41.35318" />
+				<Hotspot X="-3547.13" Y="2411.664" Z="61.24828" />
+				<Hotspot X="-3484.6" Y="2512.791" Z="53.63296" />
+				<Hotspot X="-3361.712" Y="2522.169" Z="22.91109" />
+				<Hotspot X="-3256.275" Y="2578.959" Z="26.41122" />
+				<Hotspot X="-3161.779" Y="2572.259" Z="46.32898" />
+				<Hotspot X="-3087.982" Y="2532.644" Z="49.16132" />
+				<Hotspot X="-3029.087" Y="2493.783" Z="57.05648" />
+				<Hotspot X="-2969.25" Y="2415" Z="49.39507" />
+				<Hotspot X="-2944.177" Y="2320.08" Z="29.71877" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+		<Blackspot X="-3434.24121" Y="2678.0293" Z="72.74535" Radius="99.5" />
+	</Blackspots>
+</HBProfile>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>n</Name>
+  <DungeonId>32</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="9196" name="Highlord Omokk" killOrder="1" optional="true" X="-22.65184" Y="-299.7505" Z="31.61827" />
+	<!-- Loot Omokk's head if you want to summon a guy later, then you'll need a pike -->
+	<Boss isFinal="false" entry="9219" name="Spirestone Butcher" killOrder="2" optional="true" /> <!-- Rare Spawn, Pat X="-37.03796" Y="-462.3943" Z="30.70639" -->
+	<Boss isFinal="false" entry="9236" name="Shadow Hunter Vosh'gajin" killOrder="3" optional="true" X="-122.5679" Y="-482.1221" Z="24.52528" />
+	<Boss isFinal="false" entry="9237" name="War Master Voone" killOrder="4" optional="true" X="-9.941799" Y="-458.6518" Z="-18.64422" />
+	<!-- There's another boss where u toss down a pike with Omokk's head on it - but i forgot where you get the pikes from - stupid boss anyways; ignoring! -->
+	<Boss isFinal="false" entry="10596" name="Mother Smolderweb" killOrder="5" optional="true" X="-146.4719" Y="-545.066" Z="7.775175" />
+	<Boss isFinal="false" entry="10220" name="Halycon" killOrder="6" optional="true" X="-195.6387" Y="-322.5889" Z="64.42444" />
+	<Boss isFinal="false" entry="10268" name="Gizrul the Slavener" killOrder="7" optional="true" X="-167.8155" Y="-332.5129" Z="64.40083" />
+	<Boss isFinal="false" entry="9736" name="Quartermaster Zigris" killOrder="8" optional="true" X="-194.7133" Y="-469.2927" Z="87.39023" /> <!-- Rare - but always spawns -->
+	<Boss isFinal="true" entry="9568" name="Overlord Wyrmthalak" killOrder="9" optional="false" X="-22.63246" Y="-486.1864" Z="90.66984" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

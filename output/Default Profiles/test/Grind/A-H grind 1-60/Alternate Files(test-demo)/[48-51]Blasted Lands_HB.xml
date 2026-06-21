@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[48-51]Blasted Lands</Name>
+	<MinLevel>48</MinLevel>
+	<MaxLevel>51</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Blasted beast grind -->
+		<Name>Blasted beast grind</Name>
+		<MinLevel>48</MinLevel>
+		<MaxLevel>51</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>46</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 5991 8299 5985 8675 5983 5988 5984 5979 -->
+			<Factions>38 49 51 73 90 413</Factions>
+			<Hotspots>
+				<Hotspot X="-11488.6" Y="-3232.912" Z="12.00712" />
+				<Hotspot X="-11444.62" Y="-3006.953" Z="3.02144" />
+				<Hotspot X="-11359.73" Y="-2770.841" Z="5.961339" />
+				<Hotspot X="-11267.63" Y="-2733.142" Z="11.97139" />
+				<Hotspot X="-10953.16" Y="-2776.149" Z="6.407346" />
+				<Hotspot X="-11195.54" Y="-3114.481" Z="8.574385" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

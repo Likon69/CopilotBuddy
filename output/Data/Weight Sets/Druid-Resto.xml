@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Druid" Specialization="3" Name="Druid-Restoration">
+  <Intellect>100</Intellect>
+  <SpellPower>95</SpellPower>
+  <Spirit>90</Spirit>
+  <Mastery>80</Mastery>
+  <HasteRating>70</HasteRating>
+  <CriticalStrikeRating>60</CriticalStrikeRating>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

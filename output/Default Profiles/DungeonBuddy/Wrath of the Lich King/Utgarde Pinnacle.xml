@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Utgarde Pinnacle</Name>
+  <DungeonId>203</DungeonId>
+  <BossEncounters>
+	<!-- 1st boss
+	<Vendor Name="Svala" Entry="29281" Type="Repair" X="296.6323" Y="-346.0749" Z="90.54748" /> // original form tha starts the encounter - ignore this; just move into the room and encounter starts
+	<Vendor Name="Svala Sorrowgrave" Entry="26668" Type="Repair" X="296.703" Y="-346.099" Z="97.63113" /> // transformed / boss form
+	-->
+	<Boss isFinal="false" entry="26668" name="Svala Sorrowgrave" killOrder="1" optional="true" X="296.703" Y="-346.099" Z="97.63113" />
+	<!-- For 2nd encounter - use the Statis Generator at X="238.6988" Y="-458.3569" Z="105.4821" /> and kill the 4x mini bosses (heroic), 2x mini bosses (non-heroic) and then the main boss (killorder 2) - skippable -->
+	<!-- mini's for boss #2
+	<Vendor Name="Ravenous Furbolg" Entry="26684" Type="Repair" X="262.1187" Y="-463.1034" Z="104.7041" />
+	<Vendor Name="Massive Jormungar" Entry="26685" Type="Repair" X="290.7813" Y="-440.816" Z="104.7323" />
+	<Vendor Name="Frenzied Worgen" Entry="26683" Type="Repair" X="263.245" Y="-440.6304" Z="104.7345" />
+	<Vendor Name="Ferocious Rhino" Entry="26686" Type="Repair" X="291.5493" Y="-462.6527" Z="104.7408" />
+	<Vendor Name="Gortok Palehoof" Entry="26687" Type="Repair" X="320.7909" Y="-453.1447" Z="104.7243" /> // boss
+	-->
+	<Boss isFinal="false" entry="26687" name="Gortok Palehoof" killOrder="2" optional="true" X="320.7909" Y="-453.1447" Z="104.7243" />
+	<!-- moveto X="481.8631" Y="-513.1083" Z="104.7234" /> and kill harpooners x3, use 3 harpoon launchers when boss is able to be launched upon and de-mount him -->
+	<Boss isFinal="false" entry="26693" name="Skadi the Ruthless" killOrder="3" optional="false" X="476.3372" Y="-504.3306" Z="104.724" />
+	<Boss isFinal="true" entry="26861" name="King Ymiron" killOrder="4" optional="false" X="392.8011" Y="-289.0229" Z="109.2514" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

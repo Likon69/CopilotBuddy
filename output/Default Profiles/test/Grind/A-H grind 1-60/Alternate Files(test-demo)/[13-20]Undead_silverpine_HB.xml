@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[13-20]Undead_silverpine</Name>
+	<MinLevel>13</MinLevel>
+	<MaxLevel>20</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Valgens -->
+		<Name>Valgens</Name>
+		<MinLevel>13</MinLevel>
+		<MaxLevel>16</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>11</TargetMinLevel>
+			<TargetMaxLevel>13</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1769 1770 -->
+			<Factions>24</Factions>
+			<Hotspots>
+				<Hotspot X="935.1561" Y="1255.917" Z="46.52765" />
+				<Hotspot X="991.4383" Y="1228.048" Z="51.00189" />
+				<Hotspot X="901.6323" Y="1180.03" Z="48.79666" />
+				<Hotspot X="911.5091" Y="1226.582" Z="46.7643" />
+				<Hotspot X="1007.084" Y="1140.544" Z="45.8452" />
+				<Hotspot X="1086.954" Y="1101.903" Z="39.58638" />
+				<Hotspot X="1110.026" Y="1137.938" Z="44.28046" />
+				<Hotspot X="1110.4" Y="1106.45" Z="41.49709" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Olsens -->
+		<Name>Olsens</Name>
+		<MinLevel>13</MinLevel>
+		<MaxLevel>17</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>11</TargetMinLevel>
+			<TargetMaxLevel>14</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1865 1866 -->
+			<Factions>21</Factions>
+			<Hotspots>
+				<Hotspot X="177.7988" Y="1428.313" Z="111.4537" />
+				<Hotspot X="182.5778" Y="1479.441" Z="114.4154" />
+				<Hotspot X="156.3848" Y="1455.91" Z="114.4592" />
+				<Hotspot X="144.9018" Y="1481.62" Z="114.4149" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Olsenz -->
+		<Name>Olsenz</Name>
+		<MinLevel>13</MinLevel>
+		<MaxLevel>18</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>11</TargetMinLevel>
+			<TargetMaxLevel>15</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1865 1866 -->
+			<Factions>21</Factions>
+			<Hotspots>
+				<Hotspot X="177.7988" Y="1428.313" Z="111.4537" />
+				<Hotspot X="182.5778" Y="1479.441" Z="114.4154" />
+				<Hotspot X="156.3848" Y="1455.91" Z="114.4592" />
+				<Hotspot X="144.9018" Y="1481.62" Z="114.4149" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Greymane wall grind -->
+		<Name>Greymane wall grind</Name>
+		<MinLevel>13</MinLevel>
+		<MaxLevel>20</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>11</TargetMinLevel>
+			<TargetMaxLevel>20</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1924 1923 -->
+			<Factions>24 38</Factions>
+			<Hotspots>
+				<Hotspot X="-412.6336" Y="1250.753" Z="42.06925" />
+				<Hotspot X="-489.8554" Y="1177.013" Z="62.37684" />
+				<Hotspot X="-521.7675" Y="1291.139" Z="55.30526" />
+				<Hotspot X="-595.9531" Y="1352.471" Z="37.36623" />
+				<Hotspot X="-509.1434" Y="1358.7" Z="37.83295" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Decripit_ferry_grind -->
+		<Name>Decripit_ferry_grind</Name>
+		<MinLevel>13</MinLevel>
+		<MaxLevel>20</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>11</TargetMinLevel>
+			<TargetMaxLevel>15</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1868 1869 -->
+			<Factions>21</Factions>
+			<Hotspots>
+				<Hotspot X="718.9436" Y="1266.576" Z="68.66609" />
+				<Hotspot X="781.8708" Y="1221.861" Z="56.32041" />
+				<Hotspot X="724.0383" Y="1196.582" Z="60.64035" />
+				<Hotspot X="765.4578" Y="1075.61" Z="45.60571" />
+				<Hotspot X="705.0188" Y="1019.317" Z="47.3168" />
+				<Hotspot X="644.5475" Y="993.1897" Z="44.14923" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="-75.429184" Y="969.7414" Z="67.95591" Radius="24.5" />
+		<Blackspot X="-80.4807739" Y="946.578" Z="68.25965" Radius="24.5" />
+		<Blackspot X="-562.0882" Y="1560.88806" Z="11.7551908" Radius="84.5" />
+		<Blackspot X="-718.2012" Y="1501.83325" Z="12.0871143" Radius="94.5" />
+	</Blackspots>
+</HBProfile>

@@ -1,0 +1,24 @@
+<TalentTree Name="Mage - Fire" Specialization="2" Class="Mage">
+  <Talent Tab="2" Index="1" Count="2" Name="Master of Elements" />
+  <Talent Tab="2" Index="2" Count="1" Name="Burning Soul" />
+  <Talent Tab="2" Index="3" Count="2" Name="Improved Fire Blast" />
+  <Talent Tab="2" Index="4" Count="3" Name="Ignite" />
+  <Talent Tab="2" Index="5" Count="1" Name="Fire Power" />
+  <Talent Tab="2" Index="7" Count="2" Name="Impact" />
+  <Talent Tab="2" Index="8" Count="1" Name="Cauterize" />
+  <Talent Tab="2" Index="9" Count="1" Name="Blast Wave" />
+  <Talent Tab="2" Index="10" Count="1" Name="Hot Streak" />
+  <Talent Tab="2" Index="11" Count="2" Name="Improved Scorch" />
+  <Talent Tab="2" Index="13" Count="1" Name="Combustion" />
+  <Talent Tab="2" Index="14" Count="2" Name="Improved Hot Streak" />
+  <Talent Tab="2" Index="15" Count="1" Name="Firestarter" />
+  <Talent Tab="2" Index="16" Count="2" Name="Improved Flamestrike" />
+  <Talent Tab="2" Index="17" Count="1" Name="Dragon's Breath" />
+  <Talent Tab="2" Index="18" Count="3" Name="Molten Fury" />
+  <Talent Tab="2" Index="19" Count="2" Name="Pyromaniac" />
+  <Talent Tab="2" Index="20" Count="3" Name="Critical Mass" />
+  <Talent Tab="2" Index="21" Count="1" Name="Living Bomb" />
+  <Talent Tab="1" Index="1" Count="3" Name="Arcane Concentration" />
+  <Talent Tab="1" Index="3" Count="3" Name="Netherwind Presence" />
+  <Talent Tab="3" Index="2" Count="3" Name="Piercing Ice" />
+</TalentTree>

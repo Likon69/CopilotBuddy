@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[16-27] Barrens_STM_Ashenvale</Name>
+	<MinLevel>16</MinLevel>
+	<MaxLevel>27</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Barrens WC -->
+		<Name>Barrens WC</Name>
+		<MinLevel>16</MinLevel>
+		<MaxLevel>20</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>14</TargetMinLevel>
+			<TargetMaxLevel>17</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3425 3248 4127 -->
+			<Factions>16 38 189</Factions>
+			<Hotspots>
+				<Hotspot X="-736.865" Y="-1822.023" Z="91.78118" />
+				<Hotspot X="-829.7288" Y="-1851.959" Z="92.30129" />
+				<Hotspot X="-924.026" Y="-1830.872" Z="91.71628" />
+				<Hotspot X="-1070.132" Y="-1836.046" Z="93.70457" />
+				<Hotspot X="-1086.243" Y="-1787.625" Z="91.66652" />
+				<Hotspot X="-980.4335" Y="-1757.395" Z="91.69415" />
+				<Hotspot X="-900.097" Y="-1724.009" Z="93.2289" />
+				<Hotspot X="-760.046" Y="-1684.79" Z="91.66671" />
+				<Hotspot X="-602.6003" Y="-1638.257" Z="91.66671" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- STM Webwinder -->
+		<Name>STM Webwinder</Name>
+		<MinLevel>16</MinLevel>
+		<MaxLevel>22</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>14</TargetMinLevel>
+			<TargetMaxLevel>19</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4005 4006 4011 4007 -->
+			<Factions>16 22</Factions>
+			<Hotspots>
+				<Hotspot X="323.3227" Y="317.219" Z="36.1367" />
+				<Hotspot X="443.0352" Y="649.6252" Z="76.22436" />
+				<Hotspot X="575.0004" Y="635.6014" Z="69.55322" />
+				<Hotspot X="499.1724" Y="351.9884" Z="53.04977" />
+				<Hotspot X="755.9977" Y="266.2905" Z="24.53448" />
+				<Hotspot X="921.5008" Y="296.7674" Z="23.08581" />
+				<Hotspot X="1025.008" Y="231.5672" Z="22.98817" />
+				<Hotspot X="1016.503" Y="168.1459" Z="18.21304" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- STM Windshear -->
+		<Name>STM Windshear</Name>
+		<MinLevel>16</MinLevel>
+		<MaxLevel>24</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>14</TargetMinLevel>
+			<TargetMaxLevel>21</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3991 3989 4073 -->
+			<Factions>16 47</Factions>
+			<Hotspots>
+				<Hotspot X="1089.773" Y="63.72316" Z="-1.011188" />
+				<Hotspot X="1320.817" Y="116.3789" Z="3.94587" />
+				<Hotspot X="1429.057" Y="113.116" Z="15.10419" />
+				<Hotspot X="1437.623" Y="30.38337" Z="23.83015" />
+				<Hotspot X="1321.618" Y="-76.7414" Z="7.206913" />
+				<Hotspot X="1275.859" Y="-182.5838" Z="3.106351" />
+				<Hotspot X="1313.664" Y="-305.2063" Z="6.630381" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Ashenvale_stardust -->
+		<Name>Ashenvale_stardust</Name>
+		<MinLevel>16</MinLevel>
+		<MaxLevel>26</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>14</TargetMinLevel>
+			<TargetMaxLevel>23</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3819 3823 -->
+			<Factions>22 38</Factions>
+			<Hotspots>
+				<Hotspot X="2803.208" Y="-103.5221" Z="100.3982" />
+				<Hotspot X="2666.985" Y="-146.4893" Z="104.4282" />
+				<Hotspot X="2617.745" Y="-80.57029" Z="96.69817" />
+				<Hotspot X="2449.391" Y="-0.9844095" Z="92.44385" />
+				<Hotspot X="2478.457" Y="62.52253" Z="91.24626" />
+				<Hotspot X="2578.117" Y="111.4932" Z="91.45771" />
+				<Hotspot X="2612.765" Y="254.1502" Z="100.196" />
+				<Hotspot X="2680.089" Y="155.0029" Z="92.53289" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Sunken Temple</Name>
+  <DungeonId>28</DungeonId>
+  <BossEncounters>
+	<!-- Clear first circular room of all dragonkin (may be optional since cata), then go to lair of the chosen (east) and clear that room - RUN AWAY FROM GHOSTS!!! -->
+	<Boss isFinal="false" entry="5711" name="Ogom the Wretched" killOrder="1" optional="false" X="-422.358" Y="-90.3028" Z="-88.22404" />
+	<Boss isFinal="false" entry="5710" name="Jammal'an the Prophet" killOrder="2" optional="false" X="-426.677" Y="-85.7376" Z="-88.22396" />
+	<!-- Run back to Pit (middle room) <Hotspot X="-485.5198" Y="78.1883" Z="-93.09639" /> and 2 drakes will spawn - neither drop loot -->
+	<Boss isFinal="false" entry="5721" name="Dreamscythe" killOrder="3" optional="false" X="-493.3264" Y="64.10408" Z="-90.9801" />
+	<Boss isFinal="false" entry="5720" name="Weaver" killOrder="4" optional="false" X="-493.3264" Y="64.10408" Z="-90.9801" />
+	<!-- Go to Sanctum of the Fallen God (west) - use Shrine of the Soulflayer -->
+	<Boss isFinal="false" entry="8443" name="Avatar of Hakkar" killOrder="5" optional="false" X="-467.1977" Y="272.8625" Z="-90.44836" />
+	<!-- Go to Chamber of the Dreamer (South) -->
+	<Boss isFinal="false" entry="5719" name="Morphaz" killOrder="6" optional="false" X="-660.1409" Y="93.23988" Z="-90.83199" />
+	<Boss isFinal="false" entry="5722" name="Hazzas" killOrder="7" optional="false" X="-660.1409" Y="93.23988" Z="-90.83199" />
+	<Boss isFinal="true" entry="5709" name="Shade of Eranikus" killOrder="8" optional="false" X="-659.994" Y="-34.0331" Z="-90.83508" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

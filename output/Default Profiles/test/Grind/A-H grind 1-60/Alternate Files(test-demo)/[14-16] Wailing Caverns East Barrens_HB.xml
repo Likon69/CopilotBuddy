@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[14-16] Wailing Caverns East Barrens</Name>
+	<MinLevel>14</MinLevel>
+	<MaxLevel>16</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- WC East Grind -->
+		<Name>WC East Grind</Name>
+		<MinLevel>14</MinLevel>
+		<MaxLevel>16</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>12</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3242 3255 3246 -->
+			<Factions>48 189</Factions>
+			<Hotspots>
+				<Hotspot X="-828.2582" Y="-2488.936" Z="92.90189" />
+				<Hotspot X="-832.8326" Y="-2410.142" Z="93.21935" />
+				<Hotspot X="-835.001" Y="-2344.511" Z="92.49728" />
+				<Hotspot X="-857.4774" Y="-2266.313" Z="91.99907" />
+				<Hotspot X="-893.0925" Y="-2254.63" Z="95.29031" />
+				<Hotspot X="-943.4973" Y="-2275.703" Z="92.20621" />
+				<Hotspot X="-965.4304" Y="-2308.584" Z="91.66785" />
+				<Hotspot X="-996.8514" Y="-2349.637" Z="92.68235" />
+				<Hotspot X="-1037.568" Y="-2362.219" Z="92.34092" />
+				<Hotspot X="-1072.844" Y="-2397.609" Z="93.46086" />
+				<Hotspot X="-1018.943" Y="-2421.767" Z="94.58223" />
+				<Hotspot X="-966.369" Y="-2434.197" Z="92.80856" />
+				<Hotspot X="-870.7249" Y="-2422.594" Z="91.66706" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

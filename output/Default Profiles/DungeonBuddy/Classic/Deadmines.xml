@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Deadmines</Name>
+  <DungeonId>6</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="47162" name="Glubtok" killOrder="1" optional="false" X="-192.509" Y="-447.4075" Z="54.39291"/>
+    <Boss isFinal="false" entry="47296" name="Helix Gearbreaker" killOrder="2" optional="false" X="-301.1495" Y="-515.7927" Z="51.39309"/>
+    <Boss isFinal="false" entry="43778" name="Foe Reaper 5000" killOrder="3" optional="false" X="-209.837" Y="-568.622" Z="20.97682"/>
+    <Boss isFinal="false" entry="47626" name="Admiral Ripsnarl" killOrder="4" optional="false" X="-66.7813" Y="-837.863" Z="40.97976"/>
+    <Boss isFinal="true" entry="47739" name="Captain Cookie" killOrder="5" optional="false" X="-82.6318" Y="-819.8193" Z="39.56989"/>
+    
+  </BossEncounters>
+  <Blackspots>
+    <!-- Cannon at entrance to final area -->
+    <Blackspot X="-107.3257" Y="-660.2736" Z="7.421467" Radius="2.552785" />
+
+    <!-- Post on Dock-->
+    <Blackspot X="-4.758108" Y="-780.5305" Z="9.795969" Radius="0.8994852" />
+    <!-- back ship ramp-->
+    <Blackspot X="-66.67523" Y="-881.4882" Z="15.10234" Radius="9.900934" />
+    <!-- corner on dock that followers go to and fall off.-->
+    <Blackspot X="-40.37247" Y="-733.9104" Z="9.485084" Radius="2.697061" />
+  </Blackspots>
+</DungeonBuddyProfile>

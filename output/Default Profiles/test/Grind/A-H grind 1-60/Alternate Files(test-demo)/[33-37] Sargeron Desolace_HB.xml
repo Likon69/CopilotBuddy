@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[33-37] Sargeron Desolace</Name>
+	<MinLevel>33</MinLevel>
+	<MaxLevel>37</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Sargeron -->
+		<Name>Sargeron</Name>
+		<MinLevel>33</MinLevel>
+		<MaxLevel>37</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>31</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4670 4671 4673 4672 4675 4674 -->
+			<Factions>90</Factions>
+			<Hotspots>
+				<Hotspot X="-337.6195" Y="922.3505" Z="89.7187" />
+				<Hotspot X="-234.2079" Y="945.5031" Z="90.55431" />
+				<Hotspot X="-179.3797" Y="947.6557" Z="89.18813" />
+				<Hotspot X="-122.8801" Y="960.0939" Z="90.81654" />
+				<Hotspot X="-48.97155" Y="944.3353" Z="91.67529" />
+				<Hotspot X="-22.61844" Y="900.0909" Z="91.95127" />
+				<Hotspot X="-12.32354" Y="851.916" Z="91.88213" />
+				<Hotspot X="0.2245092" Y="803.627" Z="91.36671" />
+				<Hotspot X="-6.896341" Y="760.9083" Z="91.42885" />
+				<Hotspot X="-16.74301" Y="707.2566" Z="91.36601" />
+				<Hotspot X="-42.83347" Y="663.5587" Z="91.36601" />
+				<Hotspot X="-88.39497" Y="638.3719" Z="91.36635" />
+				<Hotspot X="-142.8091" Y="658.3663" Z="91.41432" />
+				<Hotspot X="-175.7198" Y="698.4212" Z="91.65626" />
+				<Hotspot X="-199.6366" Y="760.1753" Z="90.58337" />
+				<Hotspot X="-254.1313" Y="809.0552" Z="91.68906" />
+				<Hotspot X="-267.1956" Y="854.4379" Z="90.30218" />
+				<Hotspot X="-240.36" Y="894.7256" Z="90.44591" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

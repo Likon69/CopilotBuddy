@@ -1,0 +1,109 @@
+Mote of Air
+Mote of Earth
+Mote of Fire
+Mote of Life
+Mote of Mana
+Mote of Shadow
+Mote of Water
+Crystallized Air
+Crystallized Earth
+Crystallized Fire
+Crystallized Shadow
+Crystallized Life
+Crystallized Water
+Lovely Charm
+Skyshard
+Mote of Harmony
+Sparkling Shard
+Ghost Iron Nugget
+Kyparite Fragment
+Torn Green Tea Leaf
+Rain Poppy Petal
+Silkweed Stem
+Snow Lily Petal
+Fool's Cap Spores
+Desecrated Herb Pod
+Silver Ore Nugget
+Tin Ore Nugget
+Gold Ore Nugget
+Iron Ore Nugget
+Thorium Ore Nugget
+Truesilver Ore Nugget
+Mithril Ore Nugget
+Fel Iron Ore Nugget
+Adamantite Ore Nugget
+Khorium Ore Nugget
+Cobalt Ore Nugget
+Saronite Ore Nugget
+Obsidium Ore Nugget
+Elementium Ore Nugget
+Mageroyal Petal
+Earthroot Stem
+Briarthorn Bramble
+Swiftthistle Leaf
+Bruiseweed Stem
+Wild Steelbloom Petal
+Kingsblood Petal
+Liferoot Stem
+Khadgar's Whisker Stem
+Grave Moss Leaf
+Fadeleaf Petal
+Dragon's Teeth Stem
+Stranglekelp Blade
+Goldthorn Bramble
+Firebloom Petal
+Purple Lotus Petal
+Arthas' Tears Petal
+Sungrass Stalk
+Blindweed Stem
+Ghost Mushroom Cap
+Gromsblood Leaf
+Dreamfoil Blade
+Golden Sansam Leaf
+Mountain Silversage Stalk
+Sorrowmoss Leaf
+Icecap Petal
+Felweed Stalk
+Dreaming Glory Petal
+Ragveil Cap
+Terocone Leaf
+Ancient Lichen Petal
+Netherbloom Leaf
+Nightmare Vine Stem
+Mana Thistle Leaf
+Goldclover Leaf
+Adder's Tongue Stem
+Tiger Lily Petal
+Lichbloom Stalk
+Icethorn Bramble
+Talandra's Rose Petal
+Deadnettle Bramble
+Fire Leaf Bramble
+Cinderbloom Petal
+Stormvine Stalk
+Azshara's Veil Stem
+Heartblossom Petal
+Twilight Jasmine Petal
+Whiptail Stem
+Titanium Ore Nugget
+Gorgrond Flytrap Ichor
+Starflower Petal
+Nagrand Arrowbloom Petal
+Talador Orchid Petal
+Frostweed Seed
+Fireweed Seed
+Fractured Temporal Crystal
+Raw Beast Hide Scraps
+Prismatic Scale Fragment
+Deepsea Scale Fragment
+Blackened Dragonscale Fragment
+Icy Dragonscale Fragment
+Jormungar Scale Fragment
+Nerubian Chitin Fragment
+Patch of Fel Hide
+Patch of Thick Clefthoof Leather
+Patch of Crystal Infused Leather
+Fel Scale Fragment
+Nether Dragonscale Fragment
+Cobra Scale Fragment
+Wind Scale Fragment

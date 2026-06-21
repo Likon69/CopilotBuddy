@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TalentTree Specialization="1" Name="Warrior - Arms" Class="Warrior">
+  <!-- http://www.wowhead.com/talent#LGrfcRbRurkhb0o -->
+  <!-- Arms Talents -->
+  <Talent Tab="1" Index="1" Count="3" Name="War Academy" />
+  <Talent Tab="1" Index="2" Count="2" Name="Field Dressing" />
+  <Talent Tab="1" Index="3" Count="2" Name="Blitz" />
+  <Talent Tab="1" Index="4" Count="2" Name="Tatical Mastery" />
+  <Talent Tab="1" Index="5" Count="2" Name="second Wind" />
+  <Talent Tab="1" Index="6" Count="3" Name="Deep Wounds" />
+  <Talent Tab="1" Index="8" Count="3" Name="Taste for Blood" />
+  <Talent Tab="1" Index="9" Count="1" Name="Sweeping Strikes" />
+  <Talent Tab="1" Index="10" Count="2" Name="Impale" />
+  <Talent Tab="1" Index="11" Count="2" Name="Improved Hamstring" />
+  <Talent Tab="1" Index="13" Count="1" Name="Deadly Calm" />
+  <Talent Tab="1" Index="14" Count="2" Name="Blood Frenzy" />
+  <Talent Tab="1" Index="15" Count="3" Name="Lambs to the Slaughter" />
+  <Talent Tab="1" Index="16" Count="1" Name="Juggernaut" />
+  <Talent Tab="1" Index="17" Count="2" Name="Sudden Death" />
+  <Talent Tab="1" Index="18" Count="2" Name="Wrecking Crew" />
+  <Talent Tab="1" Index="19" Count="1" Name="Throwdown" />
+  <Talent Tab="1" Index="20" Count="1" Name="Bladestorm" />
+  <!-- Fury Talents-->
+  <Talent Tab="2" Index="1" Count="3" Name="Blood Craze" />
+  <Talent Tab="2" Index="3" Count="2" Name="Cruelty" />
+  <Talent Tab="2" Index="7" Count="1" Name="Piercing Howl" />
+</TalentTree>

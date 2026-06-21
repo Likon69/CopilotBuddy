@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Pit of Saron</Name>
+  <DungeonId>253</DungeonId>
+  <BossEncounters>
+    <!--<Boss isFinal="false" entry="11517" name="Oggleflint" killOrder="1" optional="false" X="-279.14" Y="-57.96" Z="-60.44"/>-->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

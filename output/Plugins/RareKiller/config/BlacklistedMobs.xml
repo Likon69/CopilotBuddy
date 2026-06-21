@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- These Mobs are underground or inhouse Mobs -->
+<!-- Rarekiller will only pull these Mobs if you place your toon-->
+<!-- right next to them in there Cave, House etc. -->
+<Blacklist>
+	<Mob Entry="8278" Name="Smoldar" />
+	<Mob Entry="1137" Name="Edan the Howler" />
+	<Mob Entry="43613" Name="Doomsayer Wiserunner" />
+	<Mob Entry="2162" Name="Agal" />
+	<Mob Entry="1119" Name="Hammerspine" />
+	<Mob Entry="5822" Name="Felweaver Scornn" />
+	<Mob Entry="2191" Name="Licillin" />
+	<Mob Entry="22062" Name="Dr. Whitherlimb" />
+	<Mob Entry="2192" Name="Firecaller Radison" />
+	<Mob Entry="1920" Name="Dalaran Spellscribe" />
+	<Mob Entry="1112" Name="Leech Widow" />
+	<Mob Entry="2603" Name="Kovork" />
+	<Mob Entry="2453" Name="Lo'Grosh" />
+	<Mob Entry="2609" Name="Geomancer Flintdagger" />
+	<Mob Entry="1847" Name="Foulmane" />
+	<Mob Entry="5343" Name="Lady Szallah" />
+	<Mob Entry="5346" Name="Bloodroar the Stalker" />
+	<Mob Entry="4132" Name="Krkk'kx" />
+	<Mob Entry="8203" Name="Kregg Keelhaul" />
+	<Mob Entry="44759" Name="Andre Firebeard" />
+	<Mob Entry="7104" Name="Dessecus" />
+	<Mob Entry="6582" Name="Clutchmother Zavas" />
+	<Mob Entry="5348" Name="Dreamwatcher Forktongue" />
+	<Mob Entry="3470" Name="Rathorian" />
+	<Mob Entry="1140" Name="Razormaw Matriarch" />
+	<Mob Entry="14433" Name="Sludgin" />
+	<Mob Entry="8283" Name="Slave Master Blackheart" />
+	<Mob Entry="8219" Name="Zul'arek Hatefowler" />
+	<Mob Entry="2744" Name="Shadowforge Commander" />
+	<Nest Entry="99999999" Name="Example Raptor Nest" />
+</Blacklist>

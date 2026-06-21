@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- http://www.wowhead.com/talent#fcIfzsMdoGo0hZbhM -->
+<TalentTree Specialization="1" Name="Rogue - Assassination" Class="Rogue">
+  <!-- Assassination Talents -->
+  <Talent Tab="1" Index="2" Count="3" Name="Coup de Grace" />
+  <Talent Tab="1" Index="3" Count="3" Name="Lethality" />
+  <Talent Tab="1" Index="4" Count="3" Name="Ruthlessness" />
+  <Talent Tab="1" Index="5" Count="2" Name="Quickening" />
+  <Talent Tab="1" Index="6" Count="3" Name="Puncturing Wounds" />
+  <Talent Tab="1" Index="8" Count="1" Name="Deadly Brew" />
+  <Talent Tab="1" Index="9" Count="1" Name="Cold Blood" />
+  <Talent Tab="1" Index="10" Count="3" Name="Vile Poisons" />
+  <Talent Tab="1" Index="12" Count="2" Name="Seal Fate" />
+  <Talent Tab="1" Index="13" Count="2" Name="Murderous Intent" />
+  <Talent Tab="1" Index="14" Count="1" Name="Overkill" />
+  <Talent Tab="1" Index="15" Count="1" Name="Master Poisoner" />
+  <Talent Tab="1" Index="17" Count="3" Name="Cut to the Chase" />
+  <Talent Tab="1" Index="18" Count="2" Name="Venomous Wounds" />
+  <Talent Tab="1" Index="19" Count="1" Name="Vendetta" />
+
+  <!-- Combat Talents -->
+  <Talent Tab="2" Index="3" Count="3" Name="Precision" />
+  <!-- Subtlety Talents -->
+  <Talent Tab="3" Index="1" Count="2" Name="Night Stalker" />
+  <Talent Tab="3" Index="3" Count="3" Name="Relentless Strikes" />
+  <Talent Tab="3" Index="6" Count="2" Name="Opportunity" />
+</TalentTree>

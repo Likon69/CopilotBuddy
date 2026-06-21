@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Warlock" Specialization="1" Name="Warlock-Afflication">
+  <Intellect>100</Intellect>
+  <SpellPower>81</SpellPower>
+  <HitRating>52</HitRating>
+  <HasteRating>43</HasteRating>
+  <CriticalStrikeRating>32</CriticalStrikeRating>
+  <Mastery>30</Mastery>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

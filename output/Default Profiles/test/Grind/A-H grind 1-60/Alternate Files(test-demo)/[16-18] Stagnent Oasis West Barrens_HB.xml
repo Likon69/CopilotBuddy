@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[16-18] Stagnent Oasis West Barrens</Name>
+	<MinLevel>16</MinLevel>
+	<MaxLevel>18</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Stagnent oasis West Grind -->
+		<Name>Stagnent oasis West Grind</Name>
+		<MinLevel>16</MinLevel>
+		<MaxLevel>18</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>14</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3425 3248 4127 3255 3242 3234 -->
+			<Factions>15 16 38 48 189</Factions>
+			<Hotspots>
+				<Hotspot X="-367.0453" Y="-1716.585" Z="91.66697" />
+				<Hotspot X="-347.9636" Y="-1616.456" Z="92.88777" />
+				<Hotspot X="-305.9332" Y="-1585.107" Z="91.70764" />
+				<Hotspot X="-247.0901" Y="-1550.194" Z="93.90359" />
+				<Hotspot X="-173.9965" Y="-1525.973" Z="91.67041" />
+				<Hotspot X="-94.65671" Y="-1487.757" Z="91.70051" />
+				<Hotspot X="-16.19923" Y="-1453.354" Z="95.85485" />
+				<Hotspot X="51.09304" Y="-1464.175" Z="92.38345" />
+				<Hotspot X="103.606" Y="-1487.836" Z="91.66788" />
+				<Hotspot X="144.104" Y="-1520.235" Z="91.66788" />
+				<Hotspot X="126.4923" Y="-1559.427" Z="91.94358" />
+				<Hotspot X="68.79962" Y="-1596.431" Z="92.38182" />
+				<Hotspot X="13.19391" Y="-1588.833" Z="91.66884" />
+				<Hotspot X="-27.48618" Y="-1584.974" Z="91.66677" />
+				<Hotspot X="-71.00265" Y="-1584.023" Z="93.01584" />
+				<Hotspot X="-119.9874" Y="-1585.247" Z="91.66686" />
+				<Hotspot X="-161.6945" Y="-1590.726" Z="91.66686" />
+				<Hotspot X="-252.4871" Y="-1638.535" Z="91.70091" />
+				<Hotspot X="-295.676" Y="-1681.944" Z="91.66797" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

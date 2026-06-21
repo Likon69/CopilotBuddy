@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>The Nexus Heroic</Name>
+  <DungeonId>226</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="26796" name="Commander Stoutbeard" killOrder="1" faction="Horde" optional="true" X="418.5029" Y="183.1167" Z="-35.01973" />
+	<Boss isFinal="false" entry="26798" name="Commander Kolurg" killOrder="1" faction="Alliance" optional="true" X="418.5029" Y="183.1167" Z="-35.01973" />
+	<Boss isFinal="false" entry="26731" name="Grand Magus Telestra" killOrder="2" optional="false" X="494.7272" Y="89.12881" Z="-16.12457" />
+	<Boss isFinal="false" entry="26763" name="Anomalus" killOrder="3" optional="false" X="637.6702" Y="-289.1205" Z="-9.216069" /> <!-- make sure we switch to chaotic rift -->
+	<Boss isFinal="false" entry="26794" name="Ormorok the Tree-Shaper" killOrder="4" optional="false" X="264.9587" Y="-225.4145" Z="-9.101002" />
+	<!-- After Ormorok - RunTo X="334.9804" Y="-202.1041" Z="6.851036" /> and jump down to X="352.9522" Y="-193.9225" Z="-14.08861" /> -->
+	<!-- Clear Keristrasza's room before pulling her - then use the 3x sphere's to spawn her -->
+	<Boss isFinal="true" entry="26723" name="Keristrasza" killOrder="5" optional="false" X="299.1596" Y="-5.458313" Z="-15.56409" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

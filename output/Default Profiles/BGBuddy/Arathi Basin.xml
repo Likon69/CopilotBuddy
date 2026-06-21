@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<PvpProfile>
+  <Name>Arathi Basin</Name>
+  
+  <StartLocation X="701.6498" Y="702.2996" Z="-15.83955" Side="Horde" />
+  <StartLocation X="1292.919" Y="1291.104" Z="-13.14064"  Side="Alliance" />
+
+  <Blackspots>
+  </Blackspots>
+
+  <Boxes Side="Horde">
+    <Box Name="Farm">
+      <TopLeft X="748.8779" Y="836.6469" Z="-43.24615" />
+      <BottomRight X="856.0086" Y="885.7817" Z="-60.38012" />
+      <Center X="798.022" Y="878.2909" Z="-55.1918" />
+    </Box>
+
+    <Box Name="Blacksmith">
+      <TopLeft X="1055.28" Y="1028.763" Z="-50.60835" />
+      <BottomRight X="903.3351" Y="1022.337" Z="-48.88707"  />
+      <Center X="974.5204" Y="1040.614" Z="-44.3847"  />
+    </Box>
+
+    <Box Name="Stables">
+      <TopLeft X="1184.041" Y="1120.338" Z="-59.86497" />
+      <BottomRight X="1156.984" Y="1230.337" Z="-53.69385" />
+      <Center X="1164.465" Y="1198.99" Z="-56.4528" />
+    </Box>
+
+    <Box Name="GoldMine">
+      <TopLeft X="1172.554" Y="934.3177" Z="-101.0654" />
+      <BottomRight X="1125.513" Y="801.1833" Z="-96.55599" />
+      <Center X="1147.498" Y="847.794" Z="-109.6731" />
+    </Box>
+
+    <Box Name="LumberMill">
+      <TopLeft X="748.2808" Y="1125.161" Z="19.35049" />
+      <BottomRight X="903.0594" Y="1184.737" Z="6.039042" />
+      <Center X="849.3735" Y="1154.198" Z="11.49594" />
+    </Box>
+  </Boxes>
+
+  <Boxes Side="Alliance">
+    <Box Name="Farm">
+      <TopLeft X="748.8779" Y="836.6469" Z="-43.24615" />
+      <BottomRight X="856.0086" Y="885.7817" Z="-60.38012" />
+      <Center X="798.022" Y="878.2909" Z="-55.1918" />
+    </Box>
+
+    <Box Name="Blacksmith">
+      <TopLeft X="1055.28" Y="1028.763" Z="-50.60835" />
+      <BottomRight X="903.3351" Y="1022.337" Z="-48.88707"  />
+      <Center X="974.5204" Y="1040.614" Z="-44.3847"  />
+    </Box>
+
+    <Box Name="Stables">
+      <TopLeft X="1184.041" Y="1120.338" Z="-59.86497" />
+      <BottomRight X="1156.984" Y="1230.337" Z="-53.69385" />
+      <Center X="1164.465" Y="1198.99" Z="-56.4528" />
+    </Box>
+
+    <Box Name="GoldMine">
+      <TopLeft X="1172.554" Y="934.3177" Z="-101.0654" />
+      <BottomRight X="1125.513" Y="801.1833" Z="-96.55599" />
+      <Center X="1147.498" Y="847.794" Z="-109.6731" />
+    </Box>
+
+    <Box Name="LumberMill">
+      <TopLeft X="748.2808" Y="1125.161" Z="19.35049" />
+      <BottomRight X="903.0594" Y="1184.737" Z="6.039042" />
+      <Center X="849.3735" Y="1154.198" Z="11.49594" />
+    </Box>
+  </Boxes>
+</PvpProfile>

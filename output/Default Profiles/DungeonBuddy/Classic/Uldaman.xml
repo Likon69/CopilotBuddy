@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Uldaman</Name>
+  <DungeonId>22</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="6910" name="Revelosh" killOrder="1" optional="false" X="-233.5311" Y="171.0864" Z="-44.6301"/>
+    <Boss isFinal="false" entry="6908" name="Olaf" killOrder="2" optional="true" faction="Horde" X="-356.9853" Y="132.0945" Z="-47.86781"/>
+    <Boss isFinal="false" entry="6907" name="Eric &quot;The Swift&quot;" killOrder="3" optional="true" faction="Horde" X="-358.3354" Y="118.9469" Z="-44.48908"/>
+    <Boss isFinal="false" entry="6906" name="Baelog" killOrder="4" optional="true" faction="Horde" X="-353.0067" Y="117.1865" Z="-44.45176"/>
+    <Boss isFinal="false" entry="7228" name="Ironaya" killOrder="5" optional="false" X="-234.3073" Y="272.5791" Z="-50.19356"/>
+    <Boss isFinal="false" entry="7023" name="Obsidian Sentinel" killOrder="6" optional="false" X="-163.7602" Y="387.9915" Z="-36.43969"/>
+    <Boss isFinal="false" entry="7206" name="Ancient Stone Keeper" killOrder="7" optional="true" X="-38.80538" Y="221.2138" Z="-48.36493"/>
+    <Boss isFinal="false" entry="7291" name="Galgann Firehammer" killOrder="8" optional="false" X="-5.170609" Y="415.3047" Z="-47.60084"/>
+    <Boss isFinal="false" entry="4854" name="Grimlok" killOrder="9" optional="false" X="56.70963" Y="455.2987" Z="-41.04565"/>
+    <Boss isFinal="true" entry="2748" name="Archaedas" killOrder="10" optional="false" X="94.36077" Y="273.675" Z="-52.1487"/>
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="-16.31688" Y="336.0356" Z="-41.30222" Radius="2.327915" />
+  </Blackspots>
+</DungeonBuddyProfile>

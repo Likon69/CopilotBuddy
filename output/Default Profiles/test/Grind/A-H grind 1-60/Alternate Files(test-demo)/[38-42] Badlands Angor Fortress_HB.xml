@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[38-42] Badlands Angor Fortress</Name>
+	<MinLevel>38</MinLevel>
+	<MaxLevel>42</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Grind -->
+		<Name>Grind</Name>
+		<MinLevel>38</MinLevel>
+		<MaxLevel>42</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>36</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2743 2742 2723 -->
+			<Factions>54</Factions>
+			<Hotspots>
+				<Hotspot X="-6357.73" Y="-3117.518" Z="301.1111" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2724.50781" Y="-89.87437" Z="93.8633347" Radius="14.5" />
+		<Blackspot X="-3108.75073" Y="-3253.044" Z="65.36017" Radius="7.5" />
+		<Blackspot X="-676.3856" Y="-165.303925" Z="40.48251" Radius="114.5" />
+		<Blackspot X="-764.7019" Y="16.5465813" Z="26.83492" Radius="114.5" />
+		<Blackspot X="-938.994568" Y="119.561066" Z="44.7650032" Radius="114.5" />
+		<Blackspot X="-6353.763" Y="-3111.97559" Z="285.2787" Radius="14.5" />
+	</Blackspots>
+</HBProfile>

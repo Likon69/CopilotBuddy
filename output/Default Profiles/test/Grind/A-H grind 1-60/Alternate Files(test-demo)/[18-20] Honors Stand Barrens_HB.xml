@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[18-20] Honors Stand Barrens</Name>
+	<MinLevel>18</MinLevel>
+	<MaxLevel>20</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Honors stand Grind -->
+		<Name>Honors stand Grind</Name>
+		<MinLevel>18</MinLevel>
+		<MaxLevel>20</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>16</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3426 3245 3256 -->
+			<Factions>14 48 189</Factions>
+			<Hotspots>
+				<Hotspot X="-354.2876" Y="-1392.019" Z="99.93214" />
+				<Hotspot X="-313.7796" Y="-1204.342" Z="73.0675" />
+				<Hotspot X="-315.2964" Y="-1150.556" Z="58.69646" />
+				<Hotspot X="-317.1123" Y="-1028.784" Z="40.18936" />
+				<Hotspot X="-192.2374" Y="-1090.862" Z="45.09084" />
+				<Hotspot X="-162.2817" Y="-1141.376" Z="54.6994" />
+				<Hotspot X="-163.8116" Y="-1186.41" Z="64.48779" />
+				<Hotspot X="-154.6148" Y="-1228.217" Z="74.26958" />
+				<Hotspot X="-125.8878" Y="-1263.808" Z="79.82539" />
+				<Hotspot X="-73.58158" Y="-1332.69" Z="90.9865" />
+				<Hotspot X="-68.96434" Y="-1368.228" Z="92.01485" />
+				<Hotspot X="-75.93005" Y="-1423.346" Z="91.73709" />
+				<Hotspot X="-102.4766" Y="-1478.698" Z="91.6791" />
+				<Hotspot X="-167.7668" Y="-1518.682" Z="91.66881" />
+				<Hotspot X="-205.7412" Y="-1536.293" Z="91.6996" />
+				<Hotspot X="-251.9985" Y="-1549.761" Z="94.17003" />
+				<Hotspot X="-283.1952" Y="-1565.848" Z="91.93562" />
+				<Hotspot X="-313.8632" Y="-1579.575" Z="91.78975" />
+				<Hotspot X="-328.673" Y="-1554.838" Z="92.53724" />
+				<Hotspot X="-343.5971" Y="-1498.704" Z="92.46432" />
+				<Hotspot X="-354.4921" Y="-1462.926" Z="94.37431" />
+				<Hotspot X="-352.8579" Y="-1418.599" Z="91.66694" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

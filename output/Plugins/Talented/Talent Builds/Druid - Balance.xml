@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TalentTree Specialization="1" Name="Druid - Balance" Class="Druid">
+  <!-- Balance Talents -->
+  <Talent Tab="1" Index="1" Count="3" Name="Nature's Grace" />
+  <Talent Tab="1" Index="2" Count="3" Name="Starlight Wrath" />
+  <Talent Tab="1" Index="3" Count="2" Name="Nature's Majesty" />
+  <Talent Tab="1" Index="4" Count="3" Name="Genesis" />
+  <Talent Tab="1" Index="6" Count="2" Name="Balance of Power" />
+  <Talent Tab="1" Index="7" Count="2" Name="Euphoria" />
+  <Talent Tab="1" Index="8" Count="1" Name="Moonkin Form" />
+  <Talent Tab="1" Index="9" Count="1" Name="Typhoon" />
+  <Talent Tab="1" Index="10" Count="2" Name="Shooting Stars" />
+  <Talent Tab="1" Index="11" Count="3" Name="Owlkin Frenzy" />
+  <Talent Tab="1" Index="13" Count="1" Name="Solar Beam" />
+  <Talent Tab="1" Index="15" Count="1" Name="Force of Nature" />
+  <Talent Tab="1" Index="16" Count="1" Name="Sunfire" />
+  <Talent Tab="1" Index="17" Count="1" Name="Earth and Moon" />
+  <Talent Tab="1" Index="18" Count="2" Name="Fungal Growth" />
+  <Talent Tab="1" Index="19" Count="3" Name="Lunar Shower" />
+  <Talent Tab="1" Index="20" Count="1" Name="Starfall" />
+  <!-- Restoration Talents -->
+  <Talent Tab="3" Index="1" Count="2" Name="Blessing of the Grove" />
+  <Talent Tab="3" Index="2" Count="2" Name="Natural Shapeshifter" />
+  <Talent Tab="3" Index="4" Count="3" Name="Heart of the Wild" />
+  <Talent Tab="3" Index="5" Count="1" Name="Perseverance" />
+  <Talent Tab="3" Index="6" Count="1" Name="Master Shapeshifter" />
+</TalentTree>

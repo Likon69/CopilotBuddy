@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Halls of Stone</Name>
+  <DungeonId>208</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="27977" name="Krystallus" killOrder="1" optional="true" X="1008.559" Y="759.9138" Z="208.6224" />
+	<Boss isFinal="false" entry="27975" name="Maiden of Grief" killOrder="2" optional="true" X="842.6321" Y="666.0472" Z="190.0329" />
+	<!-- Talk to <Vendor Name="Brann Bronzebeard" Entry="28070" Type="Repair" X="1077.41" Y="474.1604" Z="207.7253" /> to move him to the event area
+		talk to him again at <Vendor Name="Brann Bronzebeard" Entry="28070" Type="Repair" X="939.6468" Y="375.4893" Z="207.4222" /> to start the event for boss 3
+		tank should stand at <Hotspot X="939.4825" Y="375.597" Z="207.4214" /> and wait for shizz to come to him -->
+	<Boss isFinal="false" entry="28234" name="Tribunal of Ages" killOrder="3" optional="false" X="939.6468" Y="375.4893" Z="207.4222" /> <!-- Tribunal of Ages Event -->
+	<!-- open chest and then talk to brann again to get to Sjonnir's door - talk to him again at the door to open it and start the next boss / event -->
+	<Boss isFinal="true" entry="27978" name="Sjonnir The Ironshaper" killOrder="4" optional="false" X="1295.208" Y="667.157" Z="189.6078" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

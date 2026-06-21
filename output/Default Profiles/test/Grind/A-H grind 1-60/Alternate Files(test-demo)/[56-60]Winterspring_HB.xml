@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[56-60]Winterspring</Name>
+	<MinLevel>56</MinLevel>
+	<MaxLevel>60</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Winterspring -->
+		<Name>Winterspring</Name>
+		<MinLevel>56</MinLevel>
+		<MaxLevel>60</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>54</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 7443 7455 7451 7448 7457 -->
+			<Factions>7 16</Factions>
+			<Hotspots>
+				<Hotspot X="6918.383" Y="-4547.492" Z="711.8933" />
+				<Hotspot X="6914.258" Y="-4456.249" Z="720.4076" />
+				<Hotspot X="6810.481" Y="-4233.196" Z="716.8918" />
+				<Hotspot X="6820.927" Y="-4173.694" Z="717.3256" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

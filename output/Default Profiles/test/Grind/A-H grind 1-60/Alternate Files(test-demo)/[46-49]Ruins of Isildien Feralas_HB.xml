@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[46-49]Ruins of Isildien Feralas</Name>
+	<MinLevel>46</MinLevel>
+	<MaxLevel>49</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Ruins of Isildien -->
+		<Name>Ruins of Isildien</Name>
+		<MinLevel>46</MinLevel>
+		<MaxLevel>49</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>44</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 5234 5240 5238 5239 5241 -->
+			<Factions>45</Factions>
+			<Hotspots>
+				<Hotspot X="-5293.909" Y="1293.894" Z="51.26828" />
+				<Hotspot X="-5322.208" Y="1330.614" Z="43.12912" />
+				<Hotspot X="-5373.974" Y="1341.866" Z="26.06722" />
+				<Hotspot X="-5420.119" Y="1318.077" Z="19.84557" />
+				<Hotspot X="-5481.177" Y="1311.3" Z="21.17471" />
+				<Hotspot X="-5544.843" Y="1227.854" Z="22.0344" />
+				<Hotspot X="-5512.393" Y="1225.658" Z="21.71079" />
+				<Hotspot X="-5433.966" Y="1254.637" Z="22.39117" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

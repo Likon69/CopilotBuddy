@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[31-34] Thunder_Axe_fort Desolace</Name>
+	<MinLevel>31</MinLevel>
+	<MaxLevel>34</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Thunder_Axe_fort -->
+		<Name>Thunder_Axe_fort</Name>
+		<MinLevel>31</MinLevel>
+		<MaxLevel>34</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>29</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4664 4663 4666 -->
+			<Factions>554</Factions>
+			<Hotspots>
+				<Hotspot X="-201.4297" Y="1672.497" Z="100.8292" />
+				<Hotspot X="-258.8827" Y="1689.456" Z="104.8263" />
+				<Hotspot X="-323.7072" Y="1635.067" Z="108.1945" />
+				<Hotspot X="-413.4829" Y="1651.885" Z="107.9881" />
+				<Hotspot X="-459.7197" Y="1691.691" Z="117.4861" />
+				<Hotspot X="-492.6138" Y="1720.287" Z="108.8603" />
+				<Hotspot X="-558.3533" Y="1820.667" Z="95.3605" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

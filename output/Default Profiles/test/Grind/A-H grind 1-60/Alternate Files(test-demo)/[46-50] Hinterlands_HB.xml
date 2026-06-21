@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[46-50] Hinterlands</Name>
+	<MinLevel>46</MinLevel>
+	<MaxLevel>50</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Twlight vale -->
+		<Name>Twlight vale</Name>
+		<MinLevel>46</MinLevel>
+		<MaxLevel>50</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>44</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2925 2928 2929 -->
+			<Factions>14 38</Factions>
+			<Hotspots>
+				<Hotspot X="-7.935025" Y="-3570.915" Z="120.2333" />
+				<Hotspot X="55.18462" Y="-3525.469" Z="119.7362" />
+				<Hotspot X="-78.57767" Y="-3573.117" Z="120.5819" />
+				<Hotspot X="-148.1367" Y="-3484.694" Z="127.5011" />
+				<Hotspot X="-68.64044" Y="-3033.934" Z="125.902" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2724.50781" Y="-89.87437" Z="93.8633347" Radius="14.5" />
+		<Blackspot X="2365.81274" Y="46.4043579" Z="92.41625" Radius="4.5" />
+		<Blackspot X="2365.81274" Y="46.4043579" Z="92.41625" Radius="114.5" />
+		<Blackspot X="2363.57642" Y="436.812256" Z="112.236923" Radius="74.5" />
+		<Blackspot X="2452.04028" Y="416.7384" Z="95.86777" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

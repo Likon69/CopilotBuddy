@@ -1,0 +1,26 @@
+<!--http://www.wowhead.com/talent#bcGoZfubrR0rkfzoo-->
+
+<TalentTree Name="Priest - Holy" Specialization="2" Class="Priest">
+  <Talent Tab="2" Index="1" Count="2" Name="Improved Renew" />
+  <Talent Tab="2" Index="2" Count="3" Name="Empowered Healing" />
+  <Talent Tab="2" Index="3" Count="3" Name="Divine Fury" />
+  <Talent Tab="2" Index="4" Count="1" Name="Desperate Prayer" />
+  <Talent Tab="2" Index="5" Count="2" Name="Surge of Light" />
+  <Talent Tab="2" Index="7" Count="2" Name="Divine Touch" />
+  <Talent Tab="2" Index="8" Count="2" Name="Holy Concentration" />
+  <Talent Tab="2" Index="9" Count="1" Name="Lightwell" />
+  <Talent Tab="2" Index="10" Count="2" Name="Tome of Light" />
+  <Talent Tab="2" Index="12" Count="1" Name="Spirit of Redemption" />
+  <Talent Tab="2" Index="13" Count="2" Name="Serendipity" />
+  <Talent Tab="2" Index="14" Count="2" Name="Body and Soul" />
+  <Talent Tab="2" Index="15" Count="1" Name="Chakra" />
+  <Talent Tab="2" Index="16" Count="1" Name="Revalations" />
+  <Talent Tab="2" Index="17" Count="2" Name="Blessed Resilience" />
+  <Talent Tab="2" Index="18" Count="3" Name="Test of Faith" />
+  <Talent Tab="2" Index="20" Count="1" Name="Circle of Healing" />
+  <Talent Tab="2" Index="21" Count="1" Name="Guardian Spirit" />
+  <Talent Tab="1" Index="2" Count="3" Name="Twin Disciplines" />
+  <Talent Tab="1" Index="3" Count="3" Name="Mental Agility" />
+  <Talent Tab="1" Index="4" Count="2" Name="Evangelism" />
+  <Talent Tab="1" Index="5" Count="1" Name="Archangel" />
+</TalentTree>

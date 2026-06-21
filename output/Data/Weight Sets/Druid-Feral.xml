@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Druid" Specialization="2" Name="Druid-Feral">
+  <Agility>100</Agility>
+  <Strength>78</Strength>
+  <AttackPower>37</AttackPower>
+  <Mastery>35</Mastery>
+  <HasteRating>32</HasteRating>
+  <ExpertiseRating>29</ExpertiseRating>
+  <HitRating>28</HitRating>
+  <CriticalStrikeRating>28</CriticalStrikeRating>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

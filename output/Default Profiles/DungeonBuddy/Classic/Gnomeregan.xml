@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Gnomeregan</Name>
+  <DungeonId>14</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="7361" name="Grubbis" killOrder="1" optional="true" X="-520.1395" Y="-115.3092" Z="-156.102"/>
+    <Boss isFinal="false" entry="7079" name="Viscous Fallout" killOrder="2" optional="false" X="-429.8701" Y="42.60674" Z="-208.7294"/>
+    <Boss isFinal="false" entry="6235" name="Electrocutioner 6000" killOrder="3" optional="false" X="-550.5341" Y="505.3698" Z="-216.81"/>
+    <Boss isFinal="false" entry="6229" name="Crowd Pummeler 9-60" killOrder="4" optional="false" X="-890.681" Y="363.3805" Z="-272.5962"/>
+    <Boss isFinal="true" entry="7800" name="Mekgineer Thermaplugg" killOrder="5" optional="false" X="-531.3243" Y="670.1588" Z="-325.2682"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+    <PullBlackspot X="-368.29" Y="85.01" Z="-154.70" Radius="2.5" />
+  </PullBlackspots>
+</DungeonBuddyProfile>

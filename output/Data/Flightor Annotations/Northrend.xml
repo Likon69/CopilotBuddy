@@ -1,0 +1,235 @@
+<FlightorAnnotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:noNamespaceSchemaLocation="FlightorAnnotations.xsd">
+  <IndoorAreas>
+    <PolygonIndoorArea MinZ="645" MaxZ="670" Name="The Violet Hold">
+      <Entrance Dismount="True" Radius="3" X="5691.816" Y="501.1288" Z="652.6663" />
+      <Points>
+        <Point X="5677.298" Y="477.4375" />
+        <Point X="5672.103" Y="481.6425" />
+        <Point X="5688.322" Y="503.1978" />
+        <Point X="5694.691" Y="498.0159" />
+      </Points>
+    </PolygonIndoorArea>
+    <PolygonIndoorArea MinZ="-27" MaxZ="60" Name="Aziol Nerub">
+      <Entrance Dismount="True" Radius="3"  X="3712.845" Y="2152.734" Z="52.597" />
+      <Points>
+        <Point X="3608.017" Y="2034.498" />
+        <Point X="3667.318" Y="2016.641" />
+        <Point X="3813.745" Y="2005.552" />
+        <Point X="3823.357" Y="2032.111" />
+        <Point X="3783.699" Y="2207.714" />
+        <Point X="3498.789" Y="2244.07" />
+      </Points>
+    </PolygonIndoorArea>
+    <TubularIndoorArea Radius="35" Name="DrakTharon Keep" >
+      <Entrance Dismount="True" Radius="2" X="4885.717" Y="-2047.122" Z="250.8749" />
+      <Points>
+        <Point X="4864.613" Y="-2046.573" Z="249.2894" />
+        <Point X="4822.966" Y="-2046.559" Z="250.9451" />
+        <Point X="4790.091" Y="-2046.187" Z="230.7682" />
+        <Point X="4757.865" Y="-2045.46" Z="230.2451" />
+        <Point X="4662.255" Y="-2045.064" Z="185.0201" />
+        <Point X="4647.735" Y="-2030.072" Z="184.8436" />
+        <Point X="4585.941" Y="-2033.311" Z="185.2451" />
+        <Point X="4592.789" Y="-2056.092" Z="185.1835" />
+        <Point X="4644.17" Y="-2049.223" Z="184.8107" />
+      </Points>
+    </TubularIndoorArea>
+    <TubularIndoorArea Radius="25" Name="DrakTharon Keep" >
+      <Entrance Dismount="True" Radius="2" X="4885.717" Y="-2047.122" Z="250.8749" />
+      <EntrancePath>
+        <Waypoint Radius="3" X="1075.672" Y="-4915.579" Z="51.76102" Dismount="False" />
+        <Waypoint Radius="3" X="1101.731" Y="-4903.69" Z="41.24874" Dismount="True" />
+      </EntrancePath>
+      <Points>
+        <Point X="1112.145" Y="-4900.608" Z="41.24969" />
+        <Point X="1212.232" Y="-4868.12" Z="41.24969" />
+        <Point X="1249.625" Y="-4953.336" Z="35.89624" />
+        <Point X="1233.912" Y="-4961.122" Z="35.89624" />
+        <Point X="1233.912" Y="-4961.122" Z="35.89624" />
+        <Point X="1220.818" Y="-4937.317" Z="35.89696" />
+        <Point X="1183.76" Y="-4949.489" Z="35.89593" />
+        <Point X="1218.231" Y="-5011.364" Z="37.6679" />
+        <Point X="1221.401" Y="-4928.722" Z="35.89574" />
+        <Point X="1203.738" Y="-4879.35" Z="41.24824" />
+      </Points>
+    </TubularIndoorArea>
+    <CylinderIndoorArea Height="55" Name="The Nexus - Lower portion" Radius="60" X="3869.761" Y="6984.188" Z="67">
+      <Entrance Dismount="True" Radius="2" X="3794.518" Y="6965.827" Z="103.9051" />
+    </CylinderIndoorArea>
+    
+    <CylinderIndoorArea Height="74" Name="The Nexus - Upper portion" Radius="60" X="3869.761" Y="6984.188" Z="121">
+      <Entrance Dismount="True" Radius="3" X="3873.137" Y="6926.384" Z="161.3269" />
+    </CylinderIndoorArea>
+    
+    <PolygonIndoorArea MinZ="-78" MaxZ="-72" Name="Tent at Nesingwary Base Camp">
+      <Entrance Dismount="True" Radius="2" X="5551.562" Y="5740.471" Z="-75.65353" />
+      <Points>
+        <Point X="5552.442" Y="5735.756" />
+        <Point X="5546.108" Y="5739.568" />
+        <Point X="5541.821" Y="5733.014" />
+        <Point X="5548.236" Y="5729.116" />
+      </Points>
+    </PolygonIndoorArea>
+
+		<PolygonIndoorArea MinZ="160" MaxZ="180" Name="Westguard Keep">
+			<Entrance Dismount="True" Radius="1"  X="1345.32153" Y="-3186.53369" Z="162.819763" />
+			<Points>
+				<Point X="1386.44519" Y="-3199.14966" />
+				<Point X="1403.83044" Y="-3190.935" />
+				<Point X="1370.66626" Y="-3128.819" />
+				<Point X="1357.18359" Y="-3140.65942" />
+				<Point X="1346.18372" Y="-3135.12524" />
+				<Point X="1329.21252" Y="-3143.82666" />
+				<Point X="1326.50085" Y="-3154.40186" />
+				<Point X="1309.19739" Y="-3161.139" />
+				<Point X="1342.24377" Y="-3223.706" />
+				<Point X="1357.46265" Y="-3215.64087" />
+				<Point X="1336.566" Y="-3178.03979" />
+				<Point X="1369.18347" Y="-3160.99365" />
+				<Point X="1387.4856" Y="-3197.495" />
+			</Points>
+		</PolygonIndoorArea>
+
+    <CompositeIndoorArea Name="Warsong Hold, Northrend">
+        <Entrances>
+            <Entrance Radius="5" Dismount="True" X="2742.702" Y="6098.644" Z="77.09596" />
+            <Entrance Radius="5" Dismount="True" X="2758.523" Y="6277.063" Z="77.87929" />
+            <Entrance Radius="4" Dismount="True" X="2919.464" Y="6098.114" Z="77.89127" />
+        </Entrances>
+      <IndoorAreas>
+        <CylinderIndoorArea Name="Center" Radius="40" Height="190" X="2844.616" Y="6185.379" Z="75" />
+          <PolygonIndoorArea Name="North-East corner" MinZ="75" MaxZ="207.5">
+              <Points>
+                  <Point X="2897.107" Y="6092.179" />
+                  <Point X="2914.749" Y="6103.727" />
+                  <Point X="2927.442" Y="6119.427" />
+                  <Point X="2863.896" Y="6189.024" />
+                  <Point X="2834.228" Y="6160.17" />
+              </Points>
+          </PolygonIndoorArea>
+          <PolygonIndoorArea Name="South-East corner" MinZ="75" MaxZ="207.5">
+              <Points>
+                  <Point X="2756.683" Y="6100.627" />
+                  <Point X="2761.883" Y="6104.298" />
+                  <Point X="2771.685" Y="6097.523" />
+                  <Point X="2808.057" Y="6130.233" />
+                  <Point X="2779.594" Y="6162.193" />
+                  <Point X="2742.207" Y="6126.551" />
+                  <Point X="2749.941" Y="6117.65" />
+                  <Point X="2745.246" Y="6112.753" />
+              </Points>
+          </PolygonIndoorArea>
+          <PolygonIndoorArea Name="North-West corner" MinZ="75" MaxZ="207.5">
+              <Points>
+                <Point X="2897.534" Y="6091.993" />
+                <Point X="2928.571" Y="6120.086" />
+                <Point X="2886.23" Y="6166.72" />
+                <Point X="2855.132" Y="6137.242" />
+              </Points>
+          </PolygonIndoorArea>
+          <PolygonIndoorArea Name="Bottom floor" MinZ="75" MaxZ="96">
+              <Points>
+                <Point X="2779.305" Y="6282.542" />
+                <Point X="2822.295" Y="6235.928" />
+                <Point X="2849.084" Y="6245.69" />
+                <Point X="2890.896" Y="6232.901" />
+                <Point X="2897.854" Y="6194.15" />
+                <Point X="2886.277" Y="6165.791" />
+                <Point X="2927.49" Y="6120.568" />
+                <Point X="2897.477" Y="6091.419" />
+                <Point X="2885.481" Y="6103.271" />
+                <Point X="2834.272" Y="6082.322" />
+                <Point X="2783.853" Y="6107.989" />
+                <Point X="2771.493" Y="6097.077" />
+                <Point X="2742.707" Y="6128.082" />
+                <Point X="2754.547" Y="6138.792" />
+                <Point X="2733.347" Y="6191.991" />
+                <Point X="2759.242" Y="6242.021" />
+                <Point X="2747.894" Y="6254.864" />
+              </Points>
+          </PolygonIndoorArea>
+          <PolygonIndoorArea Name="Bottom floor 2" MinZ="95.8" MaxZ="119">
+              <Points>
+                <Point X="2779.305" Y="6282.542" />
+                <Point X="2822.295" Y="6235.928" />
+                <Point X="2849.084" Y="6245.69" />
+                <Point X="2890.896" Y="6232.901" />
+                <Point X="2897.854" Y="6194.15" />
+                <Point X="2886.277" Y="6165.791" />
+                <Point X="2927.49" Y="6120.568" />
+                <Point X="2897.477" Y="6091.419" />
+                <Point X="2881.356" Y="6109.373" />
+                <Point X="2834.603" Y="6091.386" />
+                <Point X="2789.119" Y="6113.342" />
+                <Point X="2771.493" Y="6097.077" />
+                <Point X="2742.707" Y="6128.082" />
+                <Point X="2765.638" Y="6149.397" />
+                <Point X="2753.376" Y="6192.688" />
+                <Point X="2769.104" Y="6231.4" />
+                <Point X="2747.894" Y="6254.864" />
+              </Points>
+          </PolygonIndoorArea>
+          <PolygonIndoorArea Name="Bottom floor 3" MinZ="118.8" MaxZ="155">
+              <Points>
+                <Point X="2856.624" Y="6123.973" />
+                <Point X="2838.208" Y="6116.104" />
+                <Point X="2817.208" Y="6124.955"/>
+                <Point X="2774.453" Y="6171.328"/>
+                <Point X="2768.316" Y="6188.299" />
+                <Point X="2777.149" Y="6210.717" />
+                <Point X="2813.534" Y="6246.34" />
+                <Point X="2854.028" Y="6257.399" />
+                <Point X="2901.92" Y="6239.124" />
+                <Point X="2910.362" Y="6191.457" />
+                <Point X="2896.331" Y="6155.855" />
+              </Points>
+          </PolygonIndoorArea>
+      </IndoorAreas>
+    </CompositeIndoorArea>
+
+
+    <PolygonIndoorArea MinZ="1175" MaxZ="1202" Name="Crashed Zeplin in Storm Peak">
+      <EntrancePath>
+        <Waypoint Dismount="False" X="7857.093" Y="-758.4158" Z="1195.997" />
+        <Waypoint Dismount="True" Radius="1" X="7848.192" Y="-769.8707" Z="1178.225" />
+      </EntrancePath>
+      <Points>
+        <Point X="7853.656" Y="-782.0125" />
+        <Point X="7855.708" Y="-787.5762" />
+        <Point X="7855.673" Y="-797.8097" />
+        <Point X="7851.571" Y="-815.0867" />
+        <Point X="7846.311" Y="-820.5012" />
+        <Point X="7838.333" Y="-821.7427" />
+        <Point X="7833.748" Y="-813.3065" />
+        <Point X="7831.731" Y="-806.0864" />
+        <Point X="7831.614" Y="-792.1094" />
+        <Point X="7836.631" Y="-778.6709" />
+      </Points>
+    </PolygonIndoorArea>
+
+    <PolygonIndoorArea MinZ="804" MaxZ="848.572" Name="Storm's Peak, Longhouse">
+      <Entrances>
+        <Entrance Dismount="True" Radius="1" X="6866.223" Y="-1629.688" Z="820.6136" />
+        <Entrance Dismount="True" Radius="1" X="6752.438" Y="-1581.709" Z="806.9485" />
+      </Entrances>
+      <Points>
+        <Point X="6840.902" Y="-1643.385" />
+        <Point X="6825.905" Y="-1642.635" />
+        <Point X="6775.77" Y="-1623.308" />
+        <Point X="6757.322" Y="-1603.529" />
+        <Point X="6751.736" Y="-1595.473" />
+        <Point X="6757.122" Y="-1581.715" />
+        <Point X="6765.528" Y="-1578.078" />
+        <Point X="6774.141" Y="-1576.455" />
+        <Point X="6794.302" Y="-1576.468" />
+        <Point X="6842.759" Y="-1595.068" />
+        <Point X="6856.379" Y="-1603.771" />
+        <Point X="6856.781" Y="-1626.178" />
+      </Points>
+    </PolygonIndoorArea>
+
+  </IndoorAreas>
+  
+</FlightorAnnotations>
+

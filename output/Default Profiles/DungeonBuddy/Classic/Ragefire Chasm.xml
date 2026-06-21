@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Ragefire Chasm</Name>
+  <DungeonId>4</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="11517" name="Oggleflint" killOrder="1" optional="false" X="-279.14" Y="-57.96" Z="-60.44"/>
+    <Boss isFinal="true" entry="11520" name="Taragaman the Hungerer" killOrder="2" optional="false" X="-243.50" Y="153.06" Z="-18.72"/>
+    <Boss isFinal="false" entry="11518" name="Jergosh the Invoker" killOrder="3" optional="true" X="-376.8114" Y="209.2238" Z="-21.88431"/>
+    <Boss isFinal="false" entry="11519" name="Bazzalan" killOrder="4" optional="true" X="-384.8668" Y="146.0445" Z="7.738581"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them-->
+    <Blackspot X="-6.582247" Y="-37.59494" Z="-21.7345" Radius="1.6835" />
+  </Blackspots>
+</DungeonBuddyProfile>

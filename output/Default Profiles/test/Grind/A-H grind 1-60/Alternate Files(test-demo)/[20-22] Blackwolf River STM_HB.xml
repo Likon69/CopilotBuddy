@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[20-22] Blackwolf River STM</Name>
+	<MinLevel>20</MinLevel>
+	<MaxLevel>22</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Blackwolf River Grind -->
+		<Name>Blackwolf River Grind</Name>
+		<MinLevel>20</MinLevel>
+		<MaxLevel>22</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>18</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3989 3991 -->
+			<Factions>47</Factions>
+			<Hotspots>
+				<Hotspot X="1116.388" Y="149.3479" Z="1.710844" />
+				<Hotspot X="1046.058" Y="112.1304" Z="15.85822" />
+				<Hotspot X="1056.979" Y="-66.68478" Z="9.990303" />
+				<Hotspot X="1072.119" Y="-149.3136" Z="7.997545" />
+				<Hotspot X="1065.742" Y="-221.7452" Z="4.338651" />
+				<Hotspot X="1107.169" Y="-248.1074" Z="-1.617812" />
+				<Hotspot X="1163.698" Y="-310.7094" Z="-2.40372" />
+				<Hotspot X="1212.909" Y="-334.3583" Z="5.63545" />
+				<Hotspot X="1305.919" Y="-251.0139" Z="-1.681293" />
+				<Hotspot X="1331.882" Y="-204.5136" Z="-3.141248" />
+				<Hotspot X="1315.29" Y="-158.2134" Z="-0.9763569" />
+				<Hotspot X="1304.112" Y="-70.27284" Z="10.51203" />
+				<Hotspot X="1301.211" Y="-2.845823" Z="4.790034" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="1254.42322" Y="-7.0831995" Z="-5.4597683" Radius="34.5" />
+		<Blackspot X="1233.13684" Y="10.2530689" Z="-4.02991438" Radius="34.5" />
+		<Blackspot X="1237.88416" Y="29.5894566" Z="-5.10984039" Radius="34.5" />
+	</Blackspots>
+</HBProfile>

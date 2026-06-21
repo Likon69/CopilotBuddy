@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TalentTree Specialization="2" Name="Druid - Feral" Class="Druid">
+  <!-- Feral Combat Talents -->
+  <Talent Tab="2" Index="1" Count="2" Name="Feral Swiftness" />
+  <Talent Tab="2" Index="2" Count="3" Name="Furor" />
+  <Talent Tab="2" Index="3" Count="2" Name="Predatory Strikes" />
+  <Talent Tab="2" Index="5" Count="3" Name="Fury Swipes" />
+  <Talent Tab="2" Index="6" Count="2" Name="Primal Fury" />
+  <Talent Tab="2" Index="7" Count="2" Name="Feral Aggression" />
+  <Talent Tab="2" Index="8" Count="3" Name="King of the Jungle" />
+  <Talent Tab="2" Index="9" Count="1" Name="Feral Charge" />
+  <Talent Tab="2" Index="10" Count="2" Name="Stampede" />
+  <Talent Tab="2" Index="12" Count="1" Name="Leader of the Pack" />
+  <Talent Tab="2" Index="15" Count="2" Name="Primal Madness" />
+  <Talent Tab="2" Index="17" Count="2" Name="Endless Carnage" />
+  <Talent Tab="2" Index="19" Count="2" Name="Blood in the Water" />
+  <Talent Tab="2" Index="20" Count="3" Name="Rend and Tear" />
+  <Talent Tab="2" Index="21" Count="1" Name="Pulverize" />
+  <Talent Tab="2" Index="22" Count="1" Name="Berserk" />
+
+  <!-- Restoration Talents -->
+  <Talent Tab="3" Index="2" Count="2" Name="Natural Shapeshifter" />
+  <Talent Tab="3" Index="4" Count="3" Name="Heart of the Wild" />
+  <Talent Tab="3" Index="5" Count="3" Name="Perseverance" />
+  <Talent Tab="3" Index="6" Count="1" Name="Master Shapeshifter" />
+</TalentTree>

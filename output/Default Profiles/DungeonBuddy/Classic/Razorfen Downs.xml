@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Razorfen Downs</Name>
+  <DungeonId>20</DungeonId>
+  <BossEncounters>
+	<!-- http://wikicheats.gametrailers.com/images/5/50/World_of_Warcraft_Razorfen_Downs_Map.jpg -->
+	<!-- Use the Gong at X="2550.492" Y="856.8027" Z="51.24283" /> 3 times (2 waves, 1 boss)   -->
+	<Boss isFinal="false" entry="7355" name="Tuten'kash" killOrder="1" optional="true" X="2517.191" Y="859.7884" Z="47.67898" />
+	<!-- Ignoring optional quest from Belnistrasz - NE Holding Pens -->
+	<Boss isFinal="false" entry="7357" name="Mordresh Fire Eye" killOrder="2" optional="true" X="2466.618" Y="671.4426" Z="63.38702" />
+	<Boss isFinal="false" entry="8567" name="Glutton" killOrder="3" optional="true" >
+      <Path>
+		<Hotspot X="2439.573" Y="1039.46" Z="24.36209" />
+		<Hotspot X="2323.108" Y="968.0912" Z="26.58107" />
+      </Path>
+	</Boss>
+	<Boss isFinal="true" entry="7358" name="Amnennar the Coldbringer" killOrder="4" optional="false" X="2403.367" Y="960.9299" Z="55.06085" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>	

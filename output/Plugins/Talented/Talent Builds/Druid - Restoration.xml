@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TalentTree Specialization="3" Name="Druid - Restoration" Class="Druid">
+  <!-- Restoration Talents -->
+  <Talent Tab="3" Index="1" Count="2" Name="Blessing of the Grove" />
+  <Talent Tab="3" Index="2" Count="2" Name="Natural Shapeshifter" />
+  <Talent Tab="3" Index="3" Count="2" Name="Naturalist" />
+  <Talent Tab="3" Index="4" Count="3" Name="Heart of the Wild" />
+  <Talent Tab="3" Index="5" Count="2" Name="Perseverance" />
+  <Talent Tab="3" Index="6" Count="1" Name="Master Shapeshifter" />
+  <Talent Tab="3" Index="7" Count="3" Name="Improved Rejuvenation" />
+  <Talent Tab="3" Index="8" Count="3" Name="Living Seed" />
+  <Talent Tab="3" Index="9" Count="2" Name="Revitalize" />
+  <Talent Tab="3" Index="10" Count="1" Name="Nature's Swiftness" />
+  <Talent Tab="3" Index="12" Count="3" Name="Nature's Bounty" />
+  <Talent Tab="3" Index="13" Count="2" Name="Empowered Touch" />
+  <Talent Tab="3" Index="14" Count="2" Name="Malfurion's Gift" />
+  <Talent Tab="3" Index="15" Count="3" Name="Efflorescence" />
+  <Talent Tab="3" Index="16" Count="1" Name="Wild Growth" />
+  <Talent Tab="3" Index="18" Count="2" Name="Nature's Ward" />
+  <Talent Tab="3" Index="19" Count="3" Name="Gift of the Earthmother" />
+  <Talent Tab="3" Index="20" Count="1" Name="Swift Rejuvenation" />
+  <Talent Tab="3" Index="21" Count="1" Name="Tree of Life" />
+  <!-- Balance Talents -->
+  <Talent Tab="1" Index="3" Count="2" Name="Nature's Majesty" />
+</TalentTree>

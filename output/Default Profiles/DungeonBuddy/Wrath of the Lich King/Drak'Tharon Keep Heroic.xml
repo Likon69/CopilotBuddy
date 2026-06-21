@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Drak'Tharon Keep Heroic</Name>
+  <DungeonId>215</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="26630" name="Trollgore" killOrder="1" optional="true" X="-267.7312" Y="-659.4961" Z="26.50847" />
+	<Boss isFinal="false" entry="26631" name="Novos the Summoner" killOrder="2" optional="true" X="-379.2697" Y="-737.7283" Z="27.22986" />
+	<Boss isFinal="false" entry="27483" name="King Dred" killOrder="3" optional="true" >
+      <Path>
+ 		<Hotspot X="-531.3629" Y="-709.9655" Z="30.24642" />
+		<Hotspot X="-538.3854" Y="-667.6472" Z="30.2798" />
+     </Path>
+    </Boss>	
+	<Boss isFinal="true" entry="26632" name="The Prophet Tharon'ja" killOrder="4" optional="false" X="-236.8264" Y="-675.4053" Z="131.8646" />
+	<!-- Script 'vehicle' for last boss -->
+	<!-- After last boss - moveto X="-251.6709" Y="-619.1616" Z="112.1996" /> and ctm to X="-270.1885" Y="-619.5102" Z="88.66006" />
+	then moveto X="-240.141" Y="-630.5725" Z="90.78286" /> and ctm to X="-240.4616" Y="-642.0247" Z="61.85806" />
+	then moveto X="-239.9402" Y="-618.3743" Z="65.7029" /> and ctm to X="-239.7693" Y="-609.0121" Z="8.325371" />
+	(basically - go down the shafts to get out... if we don't re-queue / leave) -->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

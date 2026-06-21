@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[16-18] The Dry Hills Barrens</Name>
+	<MinLevel>16</MinLevel>
+	<MaxLevel>18</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Dry hills Grind -->
+		<Name>Dry hills Grind</Name>
+		<MinLevel>16</MinLevel>
+		<MaxLevel>18</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>14</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3276 3277 -->
+			<Factions>514</Factions>
+			<Hotspots>
+				<Hotspot X="276.5399" Y="-1592.011" Z="91.66668" />
+				<Hotspot X="354.6102" Y="-1575.724" Z="91.66683" />
+				<Hotspot X="453.3696" Y="-1523.125" Z="93.21163" />
+				<Hotspot X="481.0591" Y="-1553.733" Z="91.66683" />
+				<Hotspot X="490.0195" Y="-1451.727" Z="93.21039" />
+				<Hotspot X="464.1271" Y="-1362.239" Z="91.68286" />
+				<Hotspot X="390.3068" Y="-1475.357" Z="91.66682" />
+				<Hotspot X="329.1974" Y="-1462.555" Z="91.66694" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

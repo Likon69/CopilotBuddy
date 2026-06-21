@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[53-57] Un goro</Name>
+	<MinLevel>53</MinLevel>
+	<MaxLevel>57</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- un goro -->
+		<Name>un goro</Name>
+		<MinLevel>53</MinLevel>
+		<MaxLevel>57</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>51</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 9164 6512 9167 6559 -->
+			<Factions>7 14</Factions>
+			<Hotspots>
+				<Hotspot X="-6721.196" Y="-656.6932" Z="-271.9168" />
+				<Hotspot X="-6786.951" Y="-517.4108" Z="-270.7597" />
+				<Hotspot X="-6818.556" Y="-693.759" Z="-271.4065" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

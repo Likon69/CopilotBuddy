@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Stratholme - Service Entrance</Name>
+  <DungeonId>274</DungeonId>
+  <BossEncounters>
+	<!-- These 3 can be done in any order -->
+	<Boss isFinal="false" entry="10437" name="Nerub'enkan" killOrder="1" optional="false" X="3854.984" Y="-3528.841" Z="144.2106" />
+	<!-- kill <Vendor Name="Thuzadin Acolyte" Entry="10399" Type="Repair" X="3839.723" Y="-3500.136" Z="144.2098" /> x5 after Nerub -->
+	<Boss isFinal="false" entry="10436" name="Baroness Anastari" killOrder="2" optional="false" X="3855.335" Y="-3715.75" Z="148.0918" />
+	<!-- kill <Vendor Name="Thuzadin Acolyte" Entry="10399" Type="Repair" X="3846.91" Y="-3750.449" Z="146.9532" /> x5 after Baroness -->
+	<Boss isFinal="false" entry="10438" name="Maleki the Pallid" killOrder="3" optional="false" X="4035.807" Y="-3647.778" Z="135.6554" />
+    
+	<!-- kill <Vendor Name="Thuzadin Acolyte" Entry="10399" Type="Repair" X="4057.547" Y="-3666.56" Z="135.6545" /> x5 after Maleki -->
+	
+	<Boss isFinal="false" entry="10435" name="Magistrate Barthilas" killOrder="4" optional="true" X="4068.74" Y="-3535.97" Z="122.825" />
+	<!-- Clear room of Bile Spewer / Belchers to 'summon' Ramstein the Gorger -->
+	<Boss isFinal="false" entry="10439" name="Ramstein the Gorger" killOrder="5" optional="false" X="4032.816" Y="-3390.796" Z="119.7393" />
+	<!-- Wait in a group and kill undead - wait here at door <Hotspot X="4032.033" Y="-3401.521" Z="115.1975" /> -->
+	<!-- Wait for 4x Black Guard Sentry to spawn - kill them at door <Hotspot X="4032.033" Y="-3401.521" Z="115.1975" /> -->
+	<Boss isFinal="true" entry="45412" name="Lord Aurius Rivendare" killOrder="6" optional="false" X="4035.828" Y="-3336.308" Z="115.0599" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

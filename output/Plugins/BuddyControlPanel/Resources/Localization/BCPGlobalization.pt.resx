@@ -1,0 +1,1082 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Item_Help_StartHere_Uri" xml:space="preserve">
+    <value>"file:///{APPDIR}/START HERE.html"</value>
+    <comment>file:///{APPDIR}/START HERE.html</comment>
+  </data>
+  <data name="GeneralText_FinalLogPhrase" xml:space="preserve">
+    <value>(Porfavor veja registro para mais detalhes)</value>
+    <comment>"(Please see log for details)"
+NOTES:
+* For translations, please maintain the parentheses, if possible.</comment>
+  </data>
+  <data name="GeneralText_FailedToStartBot" xml:space="preserve">
+    <value>{0} falha ao inciar {1}</value>
+    <comment>"{0} failed to start {1}"
+NOTES:
+* {0} will be supplied as BuddyBot name (e.g., Honorbuddy)
+* {1} will be supplied as the Bot name (e.g., QuestBot)</comment>
+  </data>
+  <data name="GeneralTextFormat_Event_Paused" xml:space="preserve">
+    <value>{0} pausado{1}</value>
+    <comment>"{0} paused {1}"
+NOTES:
+* {0} will be provided as the BuddyBot name (e.g., Honorbuddy)
+* {1} wll be provided as the bot name (e.g., QuestBot)</comment>
+  </data>
+  <data name="TitleFormat_Preferences" xml:space="preserve">
+    <value>{0} Preferências</value>
+    <comment>"{0} Preferences"
+NOTES:
+* {0} will be supplied as the plugin name (e.g., BuddyControlPanel)</comment>
+  </data>
+  <data name="GeneralTextFormat_Event_Resumed" xml:space="preserve">
+    <value>{0} reiniciado {1}</value>
+    <comment>"{0} resumed {1}"
+NOTES:
+* {0} will be provided as the BuddyBot name (e.g., Honorbuddy)
+* {1} wll be provided as the bot name (e.g., QuestBot)</comment>
+  </data>
+  <data name="GeneralTextFormat_Event_Running" xml:space="preserve">
+    <value>{0} em funcionamento {1}</value>
+    <comment>"{0} running {1}"
+NOTES:
+* {0} will be provided as the BuddyBot name (e.g., Honorbuddy)
+* {1} wll be provided as the bot name (e.g., QuestBot)</comment>
+  </data>
+  <data name="Item_BuddyBotConfiguration_LabelFormat" xml:space="preserve">
+    <value>{0}Configurações &amp; Ferramentas...</value>
+    <comment>"{0} Settings &amp; Tools..."
+NOTES:
+* {0} will be supplied as the Combat Routine name (e.g., "Singular")
+* For translations, please maintain the trailing ellipses ('...') if possible.  This is a standard cue to the user that the item will pop up a dialog.</comment>
+  </data>
+  <data name="GeneralTextFormat_Event_Stopped" xml:space="preserve">
+    <value>{0} parado</value>
+    <comment>"{0} running {1}"
+NOTES:
+* {0} will be provided as the BuddyBot name (e.g., Honorbuddy)</comment>
+  </data>
+  <data name="GeneralTextFormat_Event_Stopping" xml:space="preserve">
+    <value>{0} encerrando {1}...</value>
+    <comment>"{0} stopping {1}..."
+NOTES:
+* {0} will be provided as the BuddyBot name (e.g., Honorbuddy)
+* {1} wll be provided as the bot name (e.g., QuestBot)
+* For translations, please maintain the trailing ellipses ('...') if possible.  This is a standard cue to the user that the item will pop up a dialog.</comment>
+  </data>
+  <data name="Dialog_FormatText_IsNotAValidKeybind" xml:space="preserve">
+    <value>'{1}' não é um comando válido.{0}{0}Por favor selecione outra tecla,{0}  ou adicione o Alt  , Ctrl, ou Shift modificador{0}  à seleção atual.
+</value>
+    <comment>"'{1}' is not a viable keybind.{0}{0}Please select another key,{0}  or add an Alt, Ctrl, or Shift modifier{0}  to the current selection."
+NOTES:
+* {0} will be supplied s the 'newline' character
+* {1} will be supplied as the name of the offending key
+* Please use the newline character to break the translation at logical places where its not all one long text line.</comment>
+  </data>
+  <data name="TitleFormat_About" xml:space="preserve">
+    <value>Sobre {0}</value>
+    <comment>"About {0}"
+NOTES:
+* {0} will be supplied as the plugin name (e.g., "BuddyControlPanel")</comment>
+  </data>
+  <data name="Item_Plugins_ToolTipFormat" xml:space="preserve">
+    <value>Access to enabling and configuring {0} plugins.</value>
+    <comment>"Access to enabling and configuring {0} plugins."
+NOTES:
+* {0} will be supplied as the BuddyBot name (e.g., Honorbuddy)
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_ProfileConfiguration_ToolTip" xml:space="preserve">
+    <value>Permite que o usuário substitua certas configurações de perfil.</value>
+    <comment>"Allows the user to override certain profile settings."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_StatusDisplayFontSize_ToolTip" xml:space="preserve">
+    <value>Alters the font size used in the Status Display panel.</value>
+    <comment>"Alters the font size used in the Status Display panel"
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_ControlBarSize_ToolTip" xml:space="preserve">
+    <value>Altera o tamanho dos controles na Barra do painel de controle.</value>
+    <comment>"Alters the size of the controls in the Control Bar panel."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_ItemQuality_RareColor" xml:space="preserve">
+    <value>Azul</value>
+    <comment>"Blue"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_BotConfigurationSpecific_LabelFormat" xml:space="preserve">
+    <value>Bot ({0}) configuração...</value>
+    <comment>"Bot ({0}) configuration..."
+NOTES:
+* {0} will be supplied as the bot name (e.g.,, QuestBot)
+* For translations, please maintain the trailing ellipses ('...') if possible.  This is a standard cue to the user that the item will pop up a dialog.</comment>
+  </data>
+  <data name="Item_BotConfigurationSpecificUnavailable_ToolTipFormat" xml:space="preserve">
+    <value>Bot '{0}' não tem nenhuma configuração.</value>
+    <comment>"Bot '{0}' does not have any configuration."
+NOTES:
+* {0} will be supplied as the bot name (e.g.,, QuestBot)
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="GeneralText_BotActions" xml:space="preserve">
+    <value>Ações do Bot </value>
+    <comment>"Bot Actions"
+(examples of bot actions are "repair", "sell", and "mail").</comment>
+  </data>
+  <data name="Item_BotConfiguration_Label" xml:space="preserve">
+    <value>Configuração do Bot ...</value>
+    <comment>"Bot Configuration..."
+NOTES:
+* For translations, please maintain the trailing ellipses ('...') if possible.  This is a standard cue to the user that the item will pop up a dialog.</comment>
+  </data>
+  <data name="Item_BotConfigurationUnavailable_ToolTip" xml:space="preserve">
+    <value>Bot não tem nenhuma configuração.</value>
+    <comment>"Bot does not have any configuration."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_Bots_Label" xml:space="preserve">
+    <value>Bots</value>
+    <comment>"Bots"</comment>
+  </data>
+  <data name="Item_Help_BuddyAuthenticationPortal_Label" xml:space="preserve">
+    <value>Portal de Autenticação Buddy </value>
+    <comment>"Buddy Authentication Portal"
+NOTES:
+* The Buddy Authentication Portal is available in English only.  If you feel appropriate, you may want to translate this as "Buddy Authentication Portal (English)"</comment>
+  </data>
+  <data name="Item_Help_BuddyStore_Label" xml:space="preserve">
+    <value>Loja Buddy </value>
+    <comment>"Buddy Store"
+NOTES:
+* The Buddy Store is available in English only.  If you feel appropriate, you may want to translate this as "Buddy Store (English)"</comment>
+  </data>
+  <data name="PluginName" xml:space="preserve">
+    <value>BuddyPaineldeControle</value>
+    <comment>"BuddyControlPanel" (no spaces)</comment>
+  </data>
+  <data name="ButtonText_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+    <comment>"Cancel"</comment>
+  </data>
+  <data name="Item_ContextMenuCancel_Label" xml:space="preserve">
+    <value>Cancelar</value>
+    <comment>"Cancel"</comment>
+  </data>
+  <data name="Title_Changelog" xml:space="preserve">
+    <value>Changelog(Registro de alterações)</value>
+    <comment>"Changelog"</comment>
+  </data>
+  <data name="Item_ContextMenuCancel_ToolTip" xml:space="preserve">
+    <value>Fechar o menu de contexto sem atividade.</value>
+    <comment>"Closes the context menu with no action."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_CombatRoutineConfiguration_LabelFormat" xml:space="preserve">
+    <value>Combate configuração  ({0}) de rotina...</value>
+    <comment>"Combat Routine ({0}) configuration..."
+NOTES:
+* {0} will be supplied as the Combat Routine name (e.g., "Singular")
+* For translations, please maintain the trailing ellipses ('...') if possible.  This is a standard cue to the user that the item will pop up a dialog.</comment>
+  </data>
+  <data name="Item_ItemQuality_Common" xml:space="preserve">
+    <value>Comum</value>
+    <comment>"Common"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_BotConfigurationSpecific_ToolTipFormat" xml:space="preserve">
+    <value>Definições de configurações para o '{0}' bot.</value>
+    <comment>"Configuration settings for the '{0}' bot."
+NOTES:
+* {0} will be supplied as the bot name (e.g.,, QuestBot)
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_CombatRoutineConfiguration_ToolTipFormat" xml:space="preserve">
+    <value>Definições de configuração para a  {0} Rotina de Combate.</value>
+    <comment>"Configuration settings for the {0} Combat Routine."
+NOTES:
+* {0} will be supplied as the Combat Routine name (e.g., "Singular")
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_BuddyControlPanelPreferences_ToolTipFormat" xml:space="preserve">
+    <value>Definições de configuração para {0}.</value>
+    <comment>"Configuration settings for the {0}."
+NOTES:
+* {0} will be supplied as the Plugin name (e.g., BuddyControlPanel)
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_BotConfiguration_ToolTip" xml:space="preserve">
+    <value>Definições de configuração para a seleção atual de Bot.</value>
+    <comment>"Configuration settings for the currently selected Bot."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_ControlBarSize_Label" xml:space="preserve">
+    <value>Tamanho da barra de controle:</value>
+    <comment>"Control Bar Size:"
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="Item_KeybindPauseResume_ToolTip" xml:space="preserve">
+    <value>Define o atalho para pausar ou reiniciar o bot.</value>
+    <comment>"Defines the hotkey for pausing or resuming the bot."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_KeybindStartStop_ToolTip" xml:space="preserve">
+    <value>Define o atalho para iniciar ou parar o bot.</value>
+    <comment>"Defines the hotkey for starting or stopping the bot."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_DeveloperTools_Label" xml:space="preserve">
+    <value>Ferramentas...</value>
+    <comment>"Developer Tools..."
+NOTES:
+* For translations, please maintain the trailing ellipses ('...') if possible.  This is a standard cue to the user that the item will pop up a dialog.</comment>
+  </data>
+  <data name="GeneralText_DisabledWhileBotIsRunning" xml:space="preserve">
+    <value>Desabilidado enquanto o bot estiver em funcionamento.</value>
+    <comment>"Disabled while bot is running."</comment>
+  </data>
+  <data name="GeneralText_DisabledWhileProfileIsLoading" xml:space="preserve">
+    <value>Desabilitado enquanto o perfil estiver carregando.</value>
+    <comment>"Disabled while profile is loading."</comment>
+  </data>
+  <data name="GeneralText_ExitConfirmationFormat" xml:space="preserve">
+    <value>Tem certeza que quer sair{0}?</value>
+    <comment>"Do you wish to exit {0}?"
+NOTES:
+* {0} will be supplied as the BuddyBot name (e.g., Honorbuddy)</comment>
+  </data>
+  <data name="Item_ItemQuality_Epic" xml:space="preserve">
+    <value>Épico</value>
+    <comment>"Epic"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_Exit_Label" xml:space="preserve">
+    <value>Saida</value>
+    <comment>"Exit"</comment>
+  </data>
+  <data name="Title_ExitConfirmation" xml:space="preserve">
+    <value>Confirmação de saída</value>
+    <comment>"Exit Confirmation"</comment>
+  </data>
+  <data name="GeneralText_ProfileFailedToLoad" xml:space="preserve">
+    <value>Falaha ao carregar o perfil:</value>
+    <comment>""Failed to load profile:"
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="Item_LoadProfileFromBuddyStore_Label" xml:space="preserve">
+    <value>Da Loja Buddy...</value>
+    <comment>"From Buddy Store..."
+NOTES:
+* For translations, please maintain the trailing ellipses ('...') if possible.  This is a standard cue to the user that the item will pop up a dialog.</comment>
+  </data>
+  <data name="Item_LoadProfileFromFile_Label" xml:space="preserve">
+    <value>Do Arquivo...</value>
+    <comment>"From File..."
+NOTES:
+* For translations, please maintain the trailing ellipses ('...') if possible.  This is a standard cue to the user that the item will pop up a dialog.</comment>
+  </data>
+  <data name="Item_LoadProfileFromWebSource_Label" xml:space="preserve">
+    <value>Da Fonte Web ...</value>
+    <comment>"From Web Source..."
+NOTES:
+* For translations, please maintain the trailing ellipses ('...') if possible.  This is a standard cue to the user that the item will pop up a dialog.</comment>
+  </data>
+  <data name="Item_Goal_Label" xml:space="preserve">
+    <value>Objetivol:</value>
+    <comment>"Goal:"
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="Item_ItemQuality_UncommonColor" xml:space="preserve">
+    <value>Verde</value>
+    <comment>"Green"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_ItemQuality_PoorColor" xml:space="preserve">
+    <value>Cinza</value>
+    <comment>"Grey"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_Help_GuidesForum_Label" xml:space="preserve">
+    <value>Guia do  forum</value>
+    <comment>"Guides forum"
+NOTES:
+* If there is no 'guides forum' for your locale, you may want to translate this phrase as "Guides forum (English)".
+* If your locale does have a 'guides forum', you will want to do a straight translation, and alter the Item_Help_GuidesForum_Uri accordingly.</comment>
+  </data>
+  <data name="Item_Help_HelpDesk_Label" xml:space="preserve">
+    <value>Apoio ao usuário</value>
+    <comment>"HelpDesk"
+NOTES:
+* The HelpDesk is available in English only.    If you feel appropriate, you may want to translate this as "HelpDesk (English)"</comment>
+  </data>
+  <data name="BuddyBotName" xml:space="preserve">
+    <value>Honorbuddy</value>
+    <comment>"Honorbuddy"</comment>
+  </data>
+  <data name="Item_Help_TheBuddyForums_Uri" xml:space="preserve">
+    <value>http://thebuddyforum.com/</value>
+    <comment>http://thebuddyforum.com/
+NOTES:
+* The Buddy Forum proper is not locale-specific, so there is no point in altering this URI.</comment>
+  </data>
+  <data name="Item_Help_Updates_Uri" xml:space="preserve">
+    <value>http://updates.buddyauth.com/</value>
+    <comment>http://updates.buddyauth.com/
+NOTES:
+* The Updates portal is only available in English, so there is no point in altering this URI.</comment>
+  </data>
+  <data name="Item_Help_ReleaseNotes_Uri" xml:space="preserve">
+    <value>http://updates.buddyauth.com/GetNewestChangelog?filter=Honorbuddy</value>
+    <comment>http://updates.buddyauth.com/GetNewestChangelog?filter=Honorbuddy</comment>
+  </data>
+  <data name="Item_Help_Wiki_Uri" xml:space="preserve">
+    <value>http://wiki.thebuddyforum.com/index.php?title=Category:Honorbuddy</value>
+    <comment>http://wiki.thebuddyforum.com/index.php?title=Category:Honorbuddy
+NOTES:
+* The Wiki is only available in English, so there is no point in altering this URI.</comment>
+  </data>
+  <data name="Item_Help_HelpDesk_Uri" xml:space="preserve">
+    <value>http://wiki.thebuddyforum.com/index.php?title=Category:Honorbuddy:HelpDesk</value>
+    <comment>http://wiki.thebuddyforum.com/index.php?title=Category:Honorbuddy:HelpDesk</comment>
+  </data>
+  <data name="Item_Help_BuddyAuthenticationPortal_Uri" xml:space="preserve">
+    <value>https://buddyauth.com/</value>
+    <comment>https://buddyauth.com/
+NOTES:
+* The Buddy Authentication Portal is not locale-specific, so there is no point in altering this URI.</comment>
+  </data>
+  <data name="Item_Help_BuddyStore_Uri" xml:space="preserve">
+    <value>https://store.buddyauth.com/</value>
+    <comment>https://store.buddyauth.com/
+NOTES:
+* The Buddy Store is not locale-specific, so there is no point in altering this URI.</comment>
+  </data>
+  <data name="Item_Help_GuidesForum_Uri" xml:space="preserve">
+    <value>https://www.thebuddyforum.com/honorbuddy-forum/honorbuddy-guides/</value>
+    <comment>https://www.thebuddyforum.com/honorbuddy-forum/honorbuddy-guides/
+NOTES:
+* If your locale has a language-specific 'guides forum', please alter this URIto point to it.</comment>
+  </data>
+  <data name="Item_Help_SupportForum_Uri" xml:space="preserve">
+    <value>https://www.thebuddyforum.com/honorbuddy-forum/honorbuddy-support/</value>
+    <comment>https://www.thebuddyforum.com/honorbuddy-forum/honorbuddy-support/</comment>
+  </data>
+  <data name="Item_Help_ReleaseForum_Uri" xml:space="preserve">
+    <value>https://www.thebuddyforum.com/releases/</value>
+    <comment>https://www.thebuddyforum.com/releases/</comment>
+  </data>
+  <data name="Item_IgnoreCheckpoints_Label" xml:space="preserve">
+    <value>Ignorar verificação</value>
+    <comment>"Ignore Checkpoints"</comment>
+  </data>
+  <data name="Title_InvalidKeybind" xml:space="preserve">
+    <value>Comando Inválido</value>
+    <comment>"Invalid Keybind"</comment>
+  </data>
+  <data name="Title_InventoryManagement" xml:space="preserve">
+    <value>Administração de Inventário</value>
+    <comment>"Inventory Management"</comment>
+  </data>
+  <data name="GeneralText_MailSell_HowItWorks" xml:space="preserve">
+    <value>Faz sentido para ambos serem checados, Correio e Venda. Mala direta (Mailing) é dada preferência sobre a venda de itens que são qualificados para ambos.  Itens que não podem ser enviados—talvez por serem soulbound— serão vendidos.
+</value>
+    <comment>"It does make sense for both Mail and Sell to be checked, simultaneously.  Mailing is given preference over selling for items that are eligible for both.  Items that cannot be mailed—perhaps because they are soulbound—will be sold instead."</comment>
+  </data>
+  <data name="Item_KeybindKey_Label" xml:space="preserve">
+    <value>Chave:</value>
+    <comment>"Key:"
+A label used to identify the key used for a keybind.
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="Item_KeybindPauseResume_Label" xml:space="preserve">
+    <value>Comando Pausa/Continuar:</value>
+    <comment>"Keybind Pause/Resume:"
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="Item_KeybindStartStop_Label" xml:space="preserve">
+    <value>Comando Começar/Parar:</value>
+    <comment>"Keybind Start/Stop:"
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="Title_KeyBindingConfiguration" xml:space="preserve">
+    <value>Configuração Comando(keybind)</value>
+    <comment>"Keybinding Configuration"</comment>
+  </data>
+  <data name="Button_BuddyPopUpDown_ToolTipFormat" xml:space="preserve">
+    <value>Clique com o botão esquerdo do mouse para minimizar ou restaurar</value>
+    <comment>"Left-click mouse to minimize or restore {0}."
+NOTES:
+* {0} will be supplied as the BuddyBot name (e.g., Honorbuddy)
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Button_Pause_ToolTipFormat" xml:space="preserve">
+    <value>Clique com o botão esquerdo do mouse para pausar ou continuar</value>
+    <comment>"Left-click mouse to pause or resume {0}."
+NOTES:
+* {0} will be supplied as the bot name (e.g., Gatherbuddy)* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Button_Start_ToolTipFormat" xml:space="preserve">
+    <value>Clique com o botão esquerdo do mouse para começar {0}.</value>
+    <comment>"Left-click mouse to start {0}"
+NOTES:
+* {0} will be supplied as the bot name (e.g., Gatherbuddy)* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Button_Stop_ToolTipFormat" xml:space="preserve">
+    <value>Clique com o botão esquerdo do mouse para parar {0}.</value>
+    <comment>"Left-click mouse to stop {0}"
+NOTES:
+* {0} will be supplied as the bot name (e.g., Gatherbuddy)* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="GeneralText_MouseLeftButtonToEnableOrDisable" xml:space="preserve">
+    <value>Clique com o botão esquerdo do mouse para ativar/desativar.</value>
+    <comment>"Left-mouse button to enable/disable."</comment>
+  </data>
+  <data name="Title_Legal" xml:space="preserve">
+    <value>Legal</value>
+    <comment>"Legal"
+(used to display licensing information &amp; disclaimers)</comment>
+  </data>
+  <data name="ButtonText_Load" xml:space="preserve">
+    <value>Carregar</value>
+    <comment>"Load"
+(as in, "Load a profile")</comment>
+  </data>
+  <data name="Title_LoadAProfile" xml:space="preserve">
+    <value>Carregar o Perfil</value>
+    <comment>"Load a Profile"</comment>
+  </data>
+  <data name="Title_LoadAProfileFromTheWeb" xml:space="preserve">
+    <value>Carregar o perfil à partir da Web</value>
+    <comment>"Load a Profile from the Web"</comment>
+  </data>
+  <data name="Item_LoadProfile_Label" xml:space="preserve">
+    <value>Carregar Perfil</value>
+    <comment>"Load Profile"</comment>
+  </data>
+  <data name="GeneralText_LoadingProfile" xml:space="preserve">
+    <value>Carregando perfil...</value>
+    <comment>"Loading profile..."
+NOTES:
+* For translations, please maintain the trailing ellipses ('...') if possible.  This is a standard cue to the user that the item will pop up a dialog.</comment>
+  </data>
+  <data name="Item_RecentProfile_ToolTipFormat" xml:space="preserve">
+    <value>Perfil carregado: '{0}'.</value>
+    <comment>"Loads profile: '{0}'."
+(as in "Loads Profile: PROFILENAME")
+NOTES:
+* {0} will be supplied as the profile location
+* For translations, please maintain the trailing ':' if possible.
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_LockControlPositions_Label" xml:space="preserve">
+    <value>Bloquear Controle de Posições</value>
+    <comment>"Lock Control Positions"
+(prevents screen controls from being moved around or resized)</comment>
+  </data>
+  <data name="Item_VendorAction_Mail_Label" xml:space="preserve">
+    <value>Correio</value>
+    <comment>"Mail"</comment>
+  </data>
+  <data name="Item_ItemAction_MailBlue" xml:space="preserve">
+    <value>Correio Azul</value>
+    <comment>"Mail Blue"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_ItemAction_MailGreen" xml:space="preserve">
+    <value>Correio Verde</value>
+    <comment>"Mail Green"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_ItemAction_MailGrey" xml:space="preserve">
+    <value>Correio Cinza</value>
+    <comment>"Mail Grey"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_ItemAction_MailPurple" xml:space="preserve">
+    <value>Correio Roxo</value>
+    <comment>"Mail Purple"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_ItemAction_MailWhite" xml:space="preserve">
+    <value>Correio Branco</value>
+    <comment>"Mail White"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_VendorAction_MailSellRepair_Label" xml:space="preserve">
+    <value>Correio, Reparação, &amp; Venda</value>
+    <comment>"Mail, Repair, &amp; Sell"</comment>
+  </data>
+  <data name="Item_BuddyBotConfiguration_ToolTipFormat" xml:space="preserve">
+    <value>Definições de configuração para {0}.</value>
+    <comment>"Main configuration settings for {0}."
+NOTES:
+* {0} will be supplied as the BuddyBot name (e.g., "Honorbuddy")
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="GeneralTextFormat_MinimizingBuddyBot" xml:space="preserve">
+    <value>Minimalizando {0}</value>
+    <comment>"Minimizing {0}"
+(we are sending the BuddyBot to iconic form)
+NOTES:
+* {0} will be supplied as the BuddyBot name (e.g., Honorbuddy)</comment>
+  </data>
+  <data name="Item_KeybindModifiers_Label" xml:space="preserve">
+    <value>Modificadores:</value>
+    <comment>"Modifiers:"
+A section heading describing the modifier used for a keybind of Alt, Control, and Shift.
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="ButtonText_No" xml:space="preserve">
+    <value>Não</value>
+    <comment>"No"</comment>
+  </data>
+  <data name="GeneralText_NoProfileCurrentlySelected" xml:space="preserve">
+    <value>Nenhum perfil selecionado no momento.</value>
+    <comment>"No profile currently selected."</comment>
+  </data>
+  <data name="GeneralText_None" xml:space="preserve">
+    <value>nenhum</value>
+    <comment>"none"</comment>
+  </data>
+  <data name="ButtonText_OK" xml:space="preserve">
+    <value>OK</value>
+    <comment>"OK"</comment>
+  </data>
+  <data name="GeneralText_OnlyProfilesForTheFollowingBotsMayBeConfigured" xml:space="preserve">
+    <value>Apenas perfis para os seguintes bots poderão ser configurados:</value>
+    <comment>"Only profiles for the following bots may be configured:"</comment>
+  </data>
+  <data name="Item_DeveloperTools_ToolTip" xml:space="preserve">
+    <value>OAbre o painel de Ferramentas.</value>
+    <comment>"Opens the Developer Tools panel."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Title_OverlayConfiguration" xml:space="preserve">
+    <value>Configuração de Overlay (camadas)</value>
+    <comment>"Overlay Configuration"</comment>
+  </data>
+  <data name="GeneralTextFormat_OverlayIsNotActive" xml:space="preserve">
+    <value>Overlay não está ativado, ou a composição do computador está desativada no seu sistema operacional.{0}    O {1} não está disponível por este motivo.
+</value>
+    <comment>"Overlay is not active, or Desktop Composition is disabled in your operating system.{0}    The {1} will not be available because of this."
+NOTES:
+* {0} will be supplied as the 'newline' character
+* {1} will be supplied as the plugin name (e.g., BuddyControlPanel)
+* Please use the newline character to break the translation at logical places where its not all one long text line.</comment>
+  </data>
+  <data name="Button_Pause_Label" xml:space="preserve">
+    <value>Pausa</value>
+    <comment>"Pause"</comment>
+  </data>
+  <data name="GeneralText_PauseHotkeyIgnoredBotIsNotRunning" xml:space="preserve">
+    <value>Atalho Pausa ignorado: {0} não está em execução</value>
+    <comment>"Pause hotkey ignored: {0} is not running"
+NOTES:
+* {0} will be supplied as the Bot name (e.g., QuestBot)</comment>
+  </data>
+  <data name="Item_LoadProfileFromBuddyStoreExcuse_Label" xml:space="preserve">
+    <value>Por favor , use a janela principal do Honorbuddy para isto</value>
+    <comment>"Please use main Honorbuddy window for this"</comment>
+  </data>
+  <data name="GeneralText_PluginHasNoSettings" xml:space="preserve">
+    <value>Plugin sem configuração</value>
+    <comment>"Plugin has no settings"</comment>
+  </data>
+  <data name="GeneralText_PluginIsNowDisabled" xml:space="preserve">
+    <value>Plugin agora está desativado</value>
+    <comment>"Plugin is now disabled"</comment>
+  </data>
+  <data name="GeneralText_PluginIsNowEnabled" xml:space="preserve">
+    <value>Plugin agora está ativado</value>
+    <comment>"Plugin is now enabled"</comment>
+  </data>
+  <data name="Item_Plugins_Label" xml:space="preserve">
+    <value>Plugins</value>
+    <comment>"Plugins"</comment>
+  </data>
+  <data name="Item_ItemQuality_Poor" xml:space="preserve">
+    <value>Pobre</value>
+    <comment>"Poor"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_BuddyControlPanelPreferences_Label" xml:space="preserve">
+    <value>Preferências...</value>
+    <comment>"Preferences..."
+NOTES:
+* For translations, please maintain the trailing ellipses ('...') if possible.  This is a standard cue to the user that the item will pop up a dialog.</comment>
+  </data>
+  <data name="GeneralText_ProblemEncounteredTryingToObtain" xml:space="preserve">
+    <value>Obtendo problema encontrado</value>
+    <comment>"Problem encountered trying to obtain "
+(as in "Problem encountered trying to obtain ITEMNAME")</comment>
+  </data>
+  <data name="Title_ProfileConfigurationSettings" xml:space="preserve">
+    <value>Definições de Configuração de Perfil</value>
+    <comment>"Profile Configuration Settings"</comment>
+  </data>
+  <data name="Item_ProfileConfiguration_Label" xml:space="preserve">
+    <value>Configuração de perfil...</value>
+    <comment>"Profile Configuration..."
+NOTES:
+* For translations, please maintain the trailing ellipses ('...') if possible.  This is a standard cue to the user that the item will pop up a dialog.</comment>
+  </data>
+  <data name="GeneralText_ProfileCouldNotBeFound" xml:space="preserve">
+    <value>Perfil não encontrado:</value>
+    <comment>""Profile could not be found:"
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="GeneralText_ProfileLoadCompleted" xml:space="preserve">
+    <value>Carregamento de Perfil completo</value>
+    <comment>"Profile load completed"</comment>
+  </data>
+  <data name="GeneralTextFormat_ProfileLoadingPleaseWait" xml:space="preserve">
+    <value>Carregando Perfil{0}(por favor, aguarde)</value>
+    <comment>"Profile loading{0}(please wait)"
+NOTES:
+* {0} will be supplied as the 'newline' character
+* Please use the newline character to break the translation at logical places where its not all one long text line. The screen real-estate we have to work with this is very small.</comment>
+  </data>
+  <data name="Item_ProfileLocation_ToolTipFormat" xml:space="preserve">
+    <value>Localização de Perfil: {0}.</value>
+    <comment>"Profile location: {0}."
+NOTE:
+* {0} will be supplied as the profile location
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_ProfileLocation_Label" xml:space="preserve">
+    <value>Perfil:</value>
+    <comment>"Profile:"
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="Item_ItemQuality_EpicColor" xml:space="preserve">
+    <value>Roxo</value>
+    <comment>"Purple"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Title_QuestSpecificConfiguration" xml:space="preserve">
+    <value>Configuração específica de busca</value>
+    <comment>"Quest-specific configuration"</comment>
+  </data>
+  <data name="Item_ItemQuality_Rare" xml:space="preserve">
+    <value>Raro</value>
+    <comment>"Rare"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_Help_ReleaseForum_Label" xml:space="preserve">
+    <value>Forum de Lançamento</value>
+    <comment>"Release forum"
+NOTES:
+* The Release forum is available only in English.  If you feel appropriate, you may want to translate this as "Release forum (English)"</comment>
+  </data>
+  <data name="Item_Help_ReleaseNotes_Label" xml:space="preserve">
+    <value>Tópicos Lançados</value>
+    <comment>"Release Notes"
+NOTES:
+* Release notes are delivered only in English.  So, you may want to translate this phrase as "Release Notes (English)".</comment>
+  </data>
+  <data name="Item_VendorAction_Repair_Label" xml:space="preserve">
+    <value>Repair</value>
+    <comment>"Repair"</comment>
+  </data>
+  <data name="ButtonText_Reset" xml:space="preserve">
+    <value>Reiniciar</value>
+    <comment>"Reset"</comment>
+  </data>
+  <data name="ButtonText_ResetToDefaults" xml:space="preserve">
+    <value>Reiniciar padrão</value>
+    <comment>"Reset to Defaults"</comment>
+  </data>
+  <data name="GeneralTextFormat_RestoringBuddyBot" xml:space="preserve">
+    <value>Restoring {0}</value>
+    <comment>"Restoring {0}"
+(we are restoring the BuddyBot from iconic form)
+NOTES:
+* {0} will be supplied as the BuddyBot name (e.g., Honorbuddy)</comment>
+  </data>
+  <data name="GeneralText_MouseRightForContextMenu" xml:space="preserve">
+    <value>Clique com o botão direito do mouse para o menu de contexto.</value>
+    <comment>"Right-click mouse for context menu."</comment>
+  </data>
+  <data name="GeneralText_MouseRightButtonForPluginSettings" xml:space="preserve">
+    <value>Clique com o botão direito do mouse para definições de plugin.</value>
+    <comment>"Right-mouse button for plugin settings."</comment>
+  </data>
+  <data name="Item_VendorAction_Sell_ToolTip" xml:space="preserve">
+    <value>Agende uma visita para Vender itens para o Vendedor mais próximo,</value>
+    <comment>"Schedules a visit to Sell items at nearest Vendor."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_VendorAction_Mail_ToolTip" xml:space="preserve">
+    <value>Agende uma visita a caixa de correios mais proxima.</value>
+    <comment>"Schedules a visit to the nearest Mailbox."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_VendorAction_Repair_ToolTip" xml:space="preserve">
+    <value>Agende uma visita ao Reparador mais próximo.</value>
+    <comment>"Schedules a visit to the nearest Repair vendor."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_VendorAction_MailSellRepair_ToolTip" xml:space="preserve">
+    <value>Horários de mala direta, reparação e venda de atividades.</value>
+    <comment>"Schedules mailing, repairing, and selling activities."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="GeneralTextFormat_BotActionsDefined_SpecificBot" xml:space="preserve">
+    <value>Selecione atividades específicas para o {0} bot conduzir.</value>
+    <comment>"Selects specific activities for the {0} bot to conduct."
+NOTES:
+* {0} will be supplied as the bot name (e.g., Gatherbuddy)</comment>
+  </data>
+  <data name="GeneralText_BotActionsDefined_UnknownBot" xml:space="preserve">
+    <value>Selecione atividades especificas para este bot conduzir.</value>
+    <comment>"Selects specific activities for this bot to conduct."</comment>
+  </data>
+  <data name="Item_Bots_ToolTipFormat" xml:space="preserve">
+    <value>Selecione o bot atual para ser usado por{0}.</value>
+    <comment>"Selects the current bot for use by {0}."
+NOTES:
+* {0} will be supplied as the BuddyBot name (e.g., Honorbuddy)
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_VendorAction_Sell_Label" xml:space="preserve">
+    <value>Venda</value>
+    <comment>"Sell"</comment>
+  </data>
+  <data name="Item_ItemAction_SellBlue" xml:space="preserve">
+    <value>Venda Azul</value>
+    <comment>"Sell Blue"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_ItemActon_SellGreen" xml:space="preserve">
+    <value>Venda Verde</value>
+    <comment>"Sell Green"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_ItemAction_SellGrey" xml:space="preserve">
+    <value>Venda Cinza</value>
+    <comment>"Sell Grey"	
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_ItemAction_SellPurple" xml:space="preserve">
+    <value>Venda Roxa</value>
+    <comment>"Sell Purple"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_ItemAction_SellWhite" xml:space="preserve">
+    <value>Venda Branca</value>
+    <comment>"Sell White"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_Exit_ToolTipFormat" xml:space="preserve">
+    <value>Deliga {0}.</value>
+    <comment>"Shuts down {0}."
+NOTES:
+* {0} will be supplied as the BuddyBot name (e.g., Honorbuddy)
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Button_Start_Label" xml:space="preserve">
+    <value>Começar</value>
+    <comment>"Start"</comment>
+  </data>
+  <data name="Item_Help_StartHere_Label" xml:space="preserve">
+    <value>COMEÇAR AQUI</value>
+    <comment>"START HERE"
+NOTES:
+* The 'START HERE' page is available in English only. So, you may want to translate the phrase as "START HERE (English)".
+* If your locale has a language-specific "START HERE"document, you will want to do a straight translation, and alter the Item_Help_StartHere_Uri accordingly.</comment>
+  </data>
+  <data name="Item_StatusDisplayFontSize_Label" xml:space="preserve">
+    <value>Exibir Status Tamanho da Fonte:</value>
+    <comment>"Status Display Font Size:"
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="Item_Status_Label" xml:space="preserve">
+    <value>Status:</value>
+    <comment>"Status:"
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="Button_Stop_Label" xml:space="preserve">
+    <value>Parar</value>
+    <comment>"Stop"</comment>
+  </data>
+  <data name="Item_Help_SupportForum_Label" xml:space="preserve">
+    <value>Forum Suporte</value>
+    <comment>"Support forum"
+NOTES:
+* This link will take the user to the English Support forums.  So, you may want to translate the phrase as "Support forum (English)".  Alternatively, if your locale has a language-specific Support forum, you will want to do a straight translation, and alter the Item_Help_SupportForum_Uri accordingly.</comment>
+  </data>
+  <data name="Item_Help_TheBuddyForums_Label" xml:space="preserve">
+    <value>ForumThe Buddy </value>
+    <comment>"The Buddy Forums"</comment>
+  </data>
+  <data name="GeneralTextFormat_BotActionsNotAvailable_SpecificBot" xml:space="preserve">
+    <value>Não tem ações disponíveis para o {0} bot.</value>
+    <comment>"There are no available actions for the {0} bot."	
+NOTES:
+* {0} will be supplied as the bot name (e.g., Gatherbuddy)</comment>
+  </data>
+  <data name="GeneralText_BotActionsNotAvailable_UnknownBot" xml:space="preserve">
+    <value>Não tem ações disponíveis para este bot.</value>
+    <comment>"There are no available actions for this bot."</comment>
+  </data>
+  <data name="GeneralText_ThereIsNoProfileLoadedToConfigure" xml:space="preserve">
+    <value>Nenhum perfil carregado para configurar.</value>
+    <comment>"There is no profile loaded to configure."</comment>
+  </data>
+  <data name="GeneralText_ThereWasAnErrorRequestingTheWebProfile" xml:space="preserve">
+    <value>There was an error requesting the web profile:</value>
+    <comment>"There was an error requesting the web profile:"
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="GeneralText_ThisActionIsOnlyAvailableForTheFollowingBots" xml:space="preserve">
+    <value>Esta ação está disponível apenas para os seguintes bots:</value>
+    <comment>"This action is only available to the following bots:"
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="Item_KeybindDisclaimer_ToolTipFormat" xml:space="preserve">
+    <value>Este comando apenas irá funcionar quando o a janela do cliente do jogo  tiver foco.{0} Nem todos os comandos funcionarão em uma determinada máquina.
+</value>
+    <comment>"This keybind will only work when the game client window has focus.{0}Not all keybind combinations will work on a given machine."
+NOTES:
+* {0} will be supplied as the 'newline' character
+* Please use the newline character to break the translation at logical places where its not all one long text line.
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="GeneralTextFormat_ThisPluginCanOnlyBeEnabledOrDisabledFromTheMainHonorbuddyUI" xml:space="preserve">
+    <value>Este plugin apenas pode ser ativado  ou desativado a partir da principal {0} UI.</value>
+    <comment>"This plugin can only be enabled or disabled from the main {0} UI."
+NOTES:
+* {0} will be supplied as the BuddyBot name (e.g., Honorbuddy)
+* "UI"means 'user interface'.  If this acronym is not common in your locale, you will need to translate accordingly.</comment>
+  </data>
+  <data name="Item_ItemQuality_Uncommon" xml:space="preserve">
+    <value>Incomum</value>
+    <comment>"Uncommon"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="GeneralText_Unknown" xml:space="preserve">
+    <value>Desconhecido</value>
+    <comment>"Unknown"
+(as in 'Unknown" CombatRoutine)</comment>
+  </data>
+  <data name="Item_Help_Updates_Label" xml:space="preserve">
+    <value>Atualizações</value>
+    <comment>"Updates"
+NOTES:
+* The Updates website is available in English only.  If you feel appropriate, you may want to translate this as "Updates (English)"</comment>
+  </data>
+  <data name="Item_Uri_Label" xml:space="preserve">
+    <value>URI:</value>
+    <comment>"URI:"
+(Uniform Resource Identifier; also known as the older "URL", Uniform Resource Locator).
+NOTES:
+* For translations, please maintain the trailing ':' if possible.</comment>
+  </data>
+  <data name="GeneralTextFormat_VendorActionsCancelled" xml:space="preserve">
+    <value>Ações do vendedor canceladas: {0}</value>
+    <comment>"Vendor actions cancelled: {0}"
+NOTES:
+* {0} will be supplied as the vendor action that is affected (e.g., Mail, Sell, etc.)</comment>
+  </data>
+  <data name="GeneralTextFormat_VendorActionsScheduled" xml:space="preserve">
+    <value>Ações do vendedor agendadas: {0}</value>
+    <comment>"Vendor actions cancelled: {0}"
+NOTES:
+* {0} will be supplied as the vendor action that is affected (e.g., Mail, Sell, etc.)</comment>
+  </data>
+  <data name="Item_LockControlPositions_ToolTip" xml:space="preserve">
+    <value>Quando ativado, impede arrastar e redimensionar os componentes do Painel de Controle do Buddy.</value>
+    <comment>"When enabled, prevents dragging and resizing of the Buddy Control Panel components."
+NOTES:
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_IgnoreCheckpoints_ToolTipFormat" xml:space="preserve">
+    <value>Quando a verificação de perfis é ignorada, {1} não tente pular adiante{0} para uma parte do nível-apropriado do perfil depois de iniciado. {0}. Este recurso é útil para ''completionists ", tais como aqueles que veêm a realização Loremaster.</value>
+    <comment>"When profile checkpoints are ignored, {1} will not try to skip ahead{0} to a level-appropriate part of the profile when started.{0}. This feature is useful for 'completionists', such as those seeing the Loremaster achievement."
+NOTES:
+* {0} will be supplied as the 'newline' character
+* {1} will be supplied as the Bot name (e.g., QuestBot)
+* Please use the newline character to break the translation at logical places where its not all one long text line.
+* ToolTips should be properly capitalized and punctuated (e.g., end in a 'period').  This is required because ToolTips for certain controls are frequently composed of many smaller ToolTips.</comment>
+  </data>
+  <data name="Item_ItemQuality_CommonColor" xml:space="preserve">
+    <value>Branco</value>
+    <comment>"White"
+NOTES:
+* Quality name and Color from this list: http://www.wowwiki.com/API_ITEM_QUALITY_COLORS)</comment>
+  </data>
+  <data name="Item_Help_Wiki_Label" xml:space="preserve">
+    <value>Wiki</value>
+    <comment>"Wiki"
+NOTES:
+* The Wiki is available in English only.   If you feel appropriate, you may want to translate this as "Wiki (English)"</comment>
+  </data>
+  <data name="Sim" xml:space="preserve">
+    <value>Sim</value>
+    <comment>"Yes"</comment>
+  </data>
+</root>

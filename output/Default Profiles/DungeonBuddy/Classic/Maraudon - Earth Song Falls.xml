@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Maraudon - Earth Song Falls</Name>
+  <DungeonId>273</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="12203" name="Landslide" killOrder="1" optional="true" X="356.6814" Y="-185.4548" Z="-59.89887"/>
+    <Boss isFinal="true" entry="12201" name="Princess Theradras" killOrder="2" optional="false" X="37.61699" Y="77.70605" Z="-123.96"/>
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Scarlet Monastery - Graveyard</Name>
+  <DungeonId>18</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="3983" name="Interrogator Vishas" killOrder="1" optional="false" X="1786.552" Y="1124.444" Z="7.490312"/>
+    <Boss isFinal="true" entry="4543" name="Bloodmage Thalnos" killOrder="2" optional="false" X="1820.34" Y="1416.71" Z="-7.91" />
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="1821.054" Y="1354.999" Z="18.57684" Radius="0.8080238" />
+  </Blackspots>
+  <PullBlackspots>
+    <PullBlackspot X="1841" Y="1252.82" Z="17.60" Radius="5" />
+    <PullBlackspot X="1751" Y="1244.67" Z="18.16" Radius="5" />
+    <PullBlackspot X="1754.81" Y="1284.46" Z="17.6" Radius="5" />
+    <PullBlackspot X="1831.48" Y="1278.39" Z="17.60" Radius="5" />
+    <PullBlackspot X="1748.86" Y="1310.82" Z="18.39" Radius="5" />
+    <PullBlackspot X="1848.82" Y="1343.63" Z="18.39" Radius="5" />
+    <PullBlackspot X="1763.26" Y="1397.76" Z="20.60" Radius="5" />
+    <PullBlackspot X="1848.82" Y="1343.63" Z="18.39" Radius="5" />
+  </PullBlackspots>
+</DungeonBuddyProfile>

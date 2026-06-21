@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>The Escape From Durnholde</Name>
+  <DungeonId>170</DungeonId>
+  <BossEncounters>
+	<!-- after entering the instance - gossipoption 1 with Name="Erozion" Entry="18723" X="2375.554" Y="1178.651" Z="65.38133" /> and get a pack of bombs 
+		Then, Take Taxi Name="Brazen" Entry="18725" X="2382.093" Y="1172.208" Z="66.58888" /> to start. make sure we are not on a mount nor shapeshifted! 
+		we finish our taxi at X="2014.65" Y="239.65" Z="68.51789" /> -->
+		<!-- use the Barrel x5 (1 in each house in the pit) to light them on fire to summon first boss -->
+	<Boss isFinal="false" entry="17848" name="Lieutenant Drake" killOrder="1" optional="false" >
+      <Path>
+ 		<Hotspot X="2112.949" Y="96.42111" Z="52.55193" />
+		<Hotspot X="2184.458" Y="232.0309" Z="52.44104" />
+     </Path>
+    </Boss>	
+	<!-- Next - Talk to Thrall (Name="Thrall" Entry="17876" X="2231.521" Y="119.1349" Z="82.29906" />) 
+		and escort him to next boss - but make sure everyone is on the next step of the quest before continueing! lots of ppl QQ about it!
+		I recommend clearing his escort path before escorting him -->
+	<Boss isFinal="false" entry="17862" name="Captain Skarloc" killOrder="2" optional="false" X="2059.899" Y="234.2594" Z="64.0804" />
+	<!-- After 2nd boss is dead - Talk to thrall again (gossip 1, 1, 1) <Vendor Name="Thrall" Entry="17876" Type="Repair" X="2063.042" Y="229.1765" Z="64.49025" />
+	and then escort him to next point (as he likes to fight ppl on the road - make sure you force use groundmount while escorting, unless fighting): <Vendor Name="Thrall" Entry="17876" Type="Repair" X="2486.878" Y="624.3096" Z="57.90591" />
+	once at next point - wait 10 seconds for horse to run away and gossipoption 1 and escort
+	once Thrall is upstairs at <Vendor Name="Thrall" Entry="17876" Type="Repair" X="2660.485" Y="659.4092" Z="61.9355" /> - 
+	gossipoptions 1, 1 to Taretha <Vendor Name="Taretha" Entry="18887" Type="Repair" X="2664.657" Y="657.5964" Z="61.93855" />
+	then after she collapses, escort thrall to <Vendor Name="Thrall" Entry="17876" Type="Repair" X="2635.069" Y="673.2795" Z="54.46173" /> and kill the waves
+	after the waves - kill Epoch Hunter <Vendor Name="Epoch Hunter" Entry="18096" Type="Repair" X="2636.226" Y="676.757" Z="54.53129" />
+	-->
+	<Boss isFinal="false" entry="18096" name="Epoch Hunter" killOrder="3" optional="false" X="2636.226" Y="676.757" Z="54.53129" />
+	<!-- After killing Epoch ... you can wait for the roleplay to end and turn in the quest / port back to start of entrance by talking to Erozion <Vendor Name="Erozion" Entry="18723" Type="Repair" X="2647.48" Y="682.7882" Z="55.53776" /> -->
+	<!-- YOU DO NOT HAVE TO COMPLETE THE QUESTS TO GET INTO NEXT INSTANCE (Black Morass) -->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

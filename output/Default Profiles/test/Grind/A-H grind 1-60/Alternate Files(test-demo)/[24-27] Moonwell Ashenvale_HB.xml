@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[24-27] Moonwell Ashenvale</Name>
+	<MinLevel>24</MinLevel>
+	<MaxLevel>27</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- moonwell Grind -->
+		<Name>moonwell Grind</Name>
+		<MinLevel>24</MinLevel>
+		<MaxLevel>27</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>22</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3820 3824 -->
+			<Factions>22 38</Factions>
+			<Hotspots>
+				<Hotspot X="2068.404" Y="-1641.029" Z="65.67255" />
+				<Hotspot X="2043.357" Y="-1587.172" Z="66.8" />
+				<Hotspot X="2027.946" Y="-1566.954" Z="64.51513" />
+				<Hotspot X="2018.58" Y="-1540.766" Z="65.79727" />
+				<Hotspot X="2011.379" Y="-1484.942" Z="78.78961" />
+				<Hotspot X="1994.331" Y="-1430.851" Z="90.19384" />
+				<Hotspot X="1931.181" Y="-1397.11" Z="92.85758" />
+				<Hotspot X="1923.579" Y="-1465.749" Z="86.38691" />
+				<Hotspot X="1921.153" Y="-1513.792" Z="76.74477" />
+				<Hotspot X="1900.475" Y="-1549.65" Z="65.44775" />
+				<Hotspot X="1861.43" Y="-1592.508" Z="68.6701" />
+				<Hotspot X="1832.927" Y="-1588.538" Z="73.05281" />
+				<Hotspot X="1755.932" Y="-1586.771" Z="84.63737" />
+				<Hotspot X="1708.07" Y="-1592.806" Z="93.43877" />
+				<Hotspot X="1677.256" Y="-1595.299" Z="111.728" />
+				<Hotspot X="1659.833" Y="-1614.719" Z="118.7302" />
+				<Hotspot X="1667.466" Y="-1662.138" Z="103.5076" />
+				<Hotspot X="1724.436" Y="-1694.289" Z="105.1003" />
+				<Hotspot X="1800.933" Y="-1730.703" Z="62.13576" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="1254.42322" Y="-7.0831995" Z="-5.4597683" Radius="34.5" />
+		<Blackspot X="1233.13684" Y="10.2530689" Z="-4.02991438" Radius="34.5" />
+		<Blackspot X="1237.88416" Y="29.5894566" Z="-5.10984039" Radius="34.5" />
+		<Blackspot X="-1619.094" Y="-1791.27185" Z="92.2063751" Radius="34.5" />
+		<Blackspot X="-1618.94006" Y="-1791.93176" Z="92.2834244" Radius="74.5" />
+		<Blackspot X="-4163.441" Y="-2190.379" Z="50.20716" Radius="24.5" />
+		<Blackspot X="1766.05457" Y="-1506.11487" Z="95.486824" Radius="44.5" />
+		<Blackspot X="1747.54346" Y="-1481.94214" Z="103.63501" Radius="44.5" />
+		<Blackspot X="1724.95789" Y="-1485.16187" Z="111.751495" Radius="44.5" />
+		<Blackspot X="1701.14819" Y="-1484.51624" Z="127.296707" Radius="44.5" />
+		<Blackspot X="1774.70361" Y="-1520.20667" Z="87.7003" Radius="44.5" />
+	</Blackspots>
+</HBProfile>

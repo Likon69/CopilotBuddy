@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[54-56]Shattered Stand Azshara</Name>
+	<MinLevel>54</MinLevel>
+	<MaxLevel>56</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Soutridge Beach -->
+		<Name>Soutridge Beach</Name>
+		<MinLevel>54</MinLevel>
+		<MaxLevel>56</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>52</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 6352 6371 6370 6348 -->
+			<Factions>7 14 18 129</Factions>
+			<Hotspots>
+				<Hotspot X="4402.447" Y="-7646.589" Z="23.05488" />
+				<Hotspot X="4314.738" Y="-7622.848" Z="6.51907" />
+				<Hotspot X="4357.565" Y="-7518.333" Z="11.20028" />
+				<Hotspot X="4399.75" Y="-7533.36" Z="27.57882" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="4318.536" Y="-7459.36865" Z="2.57787442" Radius="54.5" />
+		<Blackspot X="4271.04346" Y="-7508.174" Z="-1.71465039" Radius="54.5" />
+		<Blackspot X="4252.29248" Y="-7561.311" Z="-1.68747616" Radius="54.5" />
+		<Blackspot X="4242.885" Y="-7599.4" Z="-3.52292228" Radius="54.5" />
+		<Blackspot X="4226.18555" Y="-7647.91846" Z="-2.18002582" Radius="54.5" />
+		<Blackspot X="4198.821" Y="-7669.15527" Z="-4.3034296" Radius="54.5" />
+		<Blackspot X="4164.62939" Y="-7695.106" Z="-1.765482" Radius="54.5" />
+		<Blackspot X="4133.697" Y="-7727.369" Z="-1.6875093" Radius="54.5" />
+		<Blackspot X="4114.76563" Y="-7757.373" Z="-1.80446851" Radius="54.5" />
+		<Blackspot X="4106.20947" Y="-7790.38037" Z="-2.11010885" Radius="54.5" />
+		<Blackspot X="4098.487" Y="-7831.71143" Z="-2.1464572" Radius="54.5" />
+		<Blackspot X="4108.33545" Y="-7871.232" Z="-1.68751442" Radius="54.5" />
+		<Blackspot X="4133.92041" Y="-7901.41943" Z="-1.68751347" Radius="54.5" />
+		<Blackspot X="4172.59375" Y="-7902.96973" Z="-1.68751144" Radius="54.5" />
+		<Blackspot X="4211.84229" Y="-7905.69727" Z="-1.68747866" Radius="54.5" />
+		<Blackspot X="4287.75635" Y="-7902.63965" Z="-1.68751967" Radius="54.5" />
+		<Blackspot X="4362.98047" Y="-7905.943" Z="-1.68763685" Radius="34.5" />
+		<Blackspot X="4409.613" Y="-7896.767" Z="-1.68750465" Radius="34.5" />
+		<Blackspot X="4421.968" Y="-7875.49463" Z="-1.68753934" Radius="34.5" />
+		<Blackspot X="4467.36572" Y="-7872.03" Z="-1.687454" Radius="34.5" />
+		<Blackspot X="4520.333" Y="-7867.535" Z="-1.68761158" Radius="54.5" />
+		<Blackspot X="4558.57031" Y="-7853.33252" Z="-1.68746543" Radius="54.5" />
+		<Blackspot X="4608.06934" Y="-7825.994" Z="-1.68752408" Radius="54.5" />
+		<Blackspot X="4656.23145" Y="-7786.02246" Z="2.23403835" Radius="84.5" />
+	</Blackspots>
+</HBProfile>

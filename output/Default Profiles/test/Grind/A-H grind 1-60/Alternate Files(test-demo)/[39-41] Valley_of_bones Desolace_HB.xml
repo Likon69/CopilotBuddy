@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[39-41] Valley_of_bones Desolace</Name>
+	<MinLevel>39</MinLevel>
+	<MaxLevel>41</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Valley_of_bones -->
+		<Name>Valley_of_bones</Name>
+		<MinLevel>39</MinLevel>
+		<MaxLevel>41</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>37</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 11561 11559 -->
+			<Factions>16 21</Factions>
+			<Hotspots>
+				<Hotspot X="-2024.609" Y="1331.777" Z="63.96841" />
+				<Hotspot X="-2168.617" Y="1304.518" Z="63.60743" />
+				<Hotspot X="-2248.45" Y="1312.843" Z="63.59432" />
+				<Hotspot X="-2304.575" Y="1369.238" Z="63.60636" />
+				<Hotspot X="-2282.605" Y="1432.35" Z="63.58819" />
+				<Hotspot X="-2264.712" Y="1498.175" Z="63.74553" />
+				<Hotspot X="-2247.822" Y="1534.212" Z="63.58839" />
+				<Hotspot X="-2205.365" Y="1608.118" Z="60.18815" />
+				<Hotspot X="-2170.399" Y="1636.326" Z="60.85538" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

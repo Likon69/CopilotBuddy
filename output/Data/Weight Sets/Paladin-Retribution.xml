@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Paladin" Specialization="3" Name="Paladin-Retribution">
+  <Strength>100</Strength>
+  <AttackPower>45</AttackPower>
+  <HitRating>35</HitRating>
+  <ExpertiseRating>22</ExpertiseRating>
+  <HasteRating>18</HasteRating>
+  <CriticalStrikeRating>16</CriticalStrikeRating>
+  <Mastery>9</Mastery>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Mage" Specialization="1" Name="Mage-Arcane">
+  <SpellPower>100</SpellPower>
+  <Intellect>100</Intellect>
+  <HitRating>80</HitRating>
+  <HasteRating>50</HasteRating>
+  <CriticalStrikeRating>45</CriticalStrikeRating>
+  <Mastery>40</Mastery>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

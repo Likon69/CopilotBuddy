@@ -1,0 +1,130 @@
+﻿=======================================================================
+
+                Rare Mob Killer -Plugin - Version
+              Honorbuddy Plugin - www.thebuddyforum.com
+                        Autor: katzerle
+
+========================================================================
+
+Version 1.1 - 24.03.2011:
+ Implemented Slowfallability Cloak
+ I forced to loot all Mobs killed by the Plugin. So you could uncheck Loot Mobs in GB2.
+ Fixed a Typo in Priest Pull Spell
+ Log output if he founds a Mob but you have config not to kill him or if you found a dragon while using Ground Moult Mode - Just for your Info ;)
+
+Version 1.2 - 25.03.2011:
+ Bugfix with loot BoP
+
+Version 1.3 - 26.03.2011:
+ Now the Bot will not attack mobs which are tagged by other players - but he will wait if the other player really kills the mob. If the other player dies or looses the Aggro your Char will tagg and kill the Mob. - Is this ok so? Because maybe it is some kind of ninja
+ Blacklist not lootable corpses he founds for 5 minutes so he will not spam the "I found something dead"-message and other messages again and again in HB
+ Replaced the Default Pull Behavior for Palas
+ Now you could choose more then one Slowfallability. The Bot will try to use the one which is not in Cooldown till he gets a Slowfall Aura.
+	First he will try to use the configured Slowfallspell (if you have enabled it)
+	Then he will try per default: Slow Fall or Levitate - only if your Char is a Mage or Priest
+	Then he trys a equipped Cloak, if you enable it
+	Then last but not least he trys the configured Item, if enabled
+ Implemented some better querys when saved the Config Window to avoid failed behavior of the Bot.
+ Implemented that Rogues and Warrior shoot or throw Vyragosa down.
+
+Version 1.3a
+Fixed some typos in Rogue and Paladin Pull spell
+
+Version 1.4 - 31.03.2011:
+ Implement some better Plausichecks
+ Implement: a Option to be a nice Guy and not Ninja other Players Mobs
+--> instead of waiting who wins the fight, he now will (if checked) go ahead and Blacklist the Mob for 2 Minutes --> Note you surely will lose the Mob
+ Implement a Wisper Alert with HB-Log-Output.
+ Implement Druid Flight Form as Slowfall Ability if not in combat.
+ Implement Jadefang for Little Pet Spider
+ Implement a variable Slowfall Timer
+ Implement Testversions for Aeonaxx and Camel Figurine Collector
+
+Version 1.4.1 - 02.04.2011:
+ Some little Bugfixing (for example the Log-Output)
+ Fixed a Bug with spamming Logs if found other Players Pets
+ Implemented that Jadefang and Tarvus the Vile (Undergroud Mobs) would only be attacked if your Char is standing right beside them.
+ Implemented Collect Raptor Nests: Takks Nest, Darts Nest, Ravasaur Matriarch's Nest, Rasormaw Matriarch's Nest
+ Deactivated Shoot down Welps in Tastpart Aeonaxx. No need for this because the Welps are in Melee Range.
+
+Version 1.4.2 - 02.04.2011
+ Fixed a Bug in the Targetingsystem of Aeonaxx. 
+
+Version 1.4.3 - 06.04.2011
+ Fixed Debug-Logspam while Slowfall.
+ Changed the Cast-Funktions, to better Debuglogs if he could not cast a Spell and to cast Spells safer (gcd, cooldowns etc)
+ Rewrite all Functions for better working and Cleanup the whole Plugin.
+ Implemented a Guild Chat Alert (this Feature I personally need) 
+ Implemented a Quick Slowfall especially for TLPD, Vyragosa and Chillmaw
+ Implemented a Keypresser for Humanlike Behavior while camping.
+ Implemented a LogOut-Funktion if your Char changes the Continent. (as Reaction to possible GM-Ports)
+ Implemented Developer Testfunktions, so I can test and verify the Pluginfunctions better and quicker.
+ Implemented to Heart if you get stuck or a Player follows you.
+
+Version 1.5 - 07.04.2011
+ Now the Plugin dont work in BGs and Inis
+ Better Behavior if your Char hearts because of Player Follow. He now will
+-- Hang around 30 Minutes and go back camping if he can
+-- Quit WOW if the Heartstone is bound to another Continent and he can't go back camping
+ Fixed another Log-Spam of the Slowfall Behavior 
+
+Version 1.5.1 - 10.04.2011
+ Some Bugfixing with Tamer, Slowfallspell and Just Alert if Contintentchange
+
+Version 1.6 - 12.04.2011
+Version 1.6
+ Variable Alert Files for Wisper, Found Mob and Guild Message.
+--> Continent Change, Player Follow and found Aeonaxx will use siren.wav
+ Screenshots from Raremob found and Raremob killed
+ Monitoring which Players are also near when you found Aeonaxx
+
+Version 1.6.1
+Checkbox for don't kill Blazewing, because the Bot has Problems to get him
+
+Version 1.7
+ Implement Blacklist Mob after try to reach him x Seconds.
+ Implement an Option to Blacklist a Mob if the Bot wants to change the Zone while flying to him.
+ Hopefully Blacklist also all Level 1-60 underground and inside Mobs (List is attached in the Readme Folder).
+ Implement a dismount before Pull for all Mobs excluding TLPD, Vyragosa, Blazewing
+
+Version 2.0
+ Implement Auto Updater SVN
+ Implement BlacklistMob.txt for Users
+ Implement avoid Dormus AOE
+ Implement Groundmountmode for TLPD and other flying Mobs
+ Battlenetwisperalert and Officerschatalert
+ Implement Cleanup on Botstop
+ Implemented List of Tameable Default Mobs
+ Klick to Move for Dormus
+
+Version 2.1
+ Re-Arrange Config Window
+ Implement Blood Seeker für Aeonaxx
+ Implement kill only Poseidus for Mounts
+ Implement Logout after successfull Looting TLPD, Aeonaxx, Dormus and Poseidus
+ Groundmountmode for Poseidus
+ Fixed a Bug with the "don't leave Zone Feature"
+ rewrite Move to Dormus Part to Navigatormovement
+
+
+Version 2.2
+ Rewrite Aeonaxx Part
+ Implement Underground Nest Razormaw Matriarchs Nest
+ Implement Pet passiv while Pull
+
+Version 2.3
+Fixed a Bug in Shoot Down Vyragosa
+
+Version 2.4
+Rewrite of the Behavior "kill tagged Mobs or don't kill them"
+Descend before use Heartstone and before pulling a nonflying Mob.
+
+Version 2.5
+Keypresser now press A and D instead of Arrows
+Version 2.5a
+Keypresser now use Botcommands: TurnLeft and TurnRight
+Heart me if Player follows-Feature now use Botcommand Descend.
+Version 2.5b
+Quickfix for Mage and Priest Slowfall
+Version 2.5c
+Quickfix for Tameable Mobs

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[54-60]Serpents Coil Bablands</Name>
+	<MinLevel>54</MinLevel>
+	<MaxLevel>60</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- serpents coil -->
+		<Name>serpents coil</Name>
+		<MinLevel>54</MinLevel>
+		<MaxLevel>60</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>52</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 5991 8675 5993 7668 -->
+			<Factions>49 90</Factions>
+			<Hotspots>
+				<Hotspot X="-11705.33" Y="-2798.856" Z="7.044534" />
+				<Hotspot X="-11849.61" Y="-2972.948" Z="11.10926" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[36-42]Duskwallow_grind</Name>
+	<MinLevel>36</MinLevel>
+	<MaxLevel>42</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Witch Hill -->
+		<Name>Witch Hill</Name>
+		<MinLevel>36</MinLevel>
+		<MaxLevel>40</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>34</TargetMinLevel>
+			<TargetMaxLevel>37</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4352 4351 23554 23555 14232 -->
+			<Factions>14 48</Factions>
+			<Hotspots>
+				<Hotspot X="-2754.327" Y="-3573.103" Z="33.52711" />
+				<Hotspot X="-2671.41" Y="-3591.583" Z="34.53516" />
+				<Hotspot X="-2659.103" Y="-3508.35" Z="34.27403" />
+				<Hotspot X="-2671.064" Y="-3458.841" Z="35.68058" />
+				<Hotspot X="-2609.392" Y="-3489.199" Z="34.47802" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Bluefen -->
+		<Name>Bluefen</Name>
+		<MinLevel>36</MinLevel>
+		<MaxLevel>42</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>34</TargetMinLevel>
+			<TargetMaxLevel>39</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4378 4376 4379 4382 4385 4341 4346 4414 -->
+			<Factions>14 16 22</Factions>
+			<Hotspots>
+				<Hotspot X="-2847.139" Y="-2827.428" Z="34.22501" />
+				<Hotspot X="-2792.539" Y="-2797.617" Z="33.6634" />
+				<Hotspot X="-2652.72" Y="-2905.961" Z="34.8477" />
+				<Hotspot X="-2526.609" Y="-2944.253" Z="34.44409" />
+				<Hotspot X="-2549.914" Y="-3068.145" Z="35.13857" />
+				<Hotspot X="-2622.099" Y="-3239.579" Z="30.08232" />
+				<Hotspot X="-2793.382" Y="-3405.53" Z="34.43431" />
+				<Hotspot X="-2859.143" Y="-3277.396" Z="35.07759" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Quagmire -->
+		<Name>Quagmire</Name>
+		<MinLevel>36</MinLevel>
+		<MaxLevel>42</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>34</TargetMinLevel>
+			<TargetMaxLevel>99</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4412 4348 4344 4343 -->
+			<Factions>14 16 22</Factions>
+			<Hotspots>
+				<Hotspot X="-4048.873" Y="-2857.155" Z="32.09812" />
+				<Hotspot X="-4001.128" Y="-2831.195" Z="33.22831" />
+				<Hotspot X="-4167.392" Y="-2804.456" Z="28.52284" />
+				<Hotspot X="-4154.354" Y="-2920.14" Z="31.14463" />
+				<Hotspot X="-4132.457" Y="-3007.196" Z="28.68063" />
+				<Hotspot X="-4102.054" Y="-3098.902" Z="30.44864" />
+				<Hotspot X="-3982.88" Y="-3202.685" Z="30.61827" />
+				<Hotspot X="-3902.951" Y="-3218.914" Z="29.78012" />
+				<Hotspot X="-3818.382" Y="-3192.75" Z="43.26905" />
+				<Hotspot X="-3725.966" Y="-3155.162" Z="40.1301" />
+				<Hotspot X="-3628.032" Y="-3159.551" Z="31.3093" />
+				<Hotspot X="-3634.643" Y="-3091.734" Z="31.61899" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Wyrmbog -->
+		<Name>Wyrmbog</Name>
+		<MinLevel>36</MinLevel>
+		<MaxLevel>42</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>34</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4324 4331 4329 4334 4328 4323 -->
+			<Factions>103</Factions>
+			<Hotspots>
+				<Hotspot X="-4853.41" Y="-3270.934" Z="34.91673" />
+				<Hotspot X="-4870.458" Y="-3227.995" Z="38.48803" />
+				<Hotspot X="-4904.803" Y="-3335.345" Z="37.71754" />
+				<Hotspot X="-4949.484" Y="-3415.301" Z="37.90188" />
+				<Hotspot X="-4909.561" Y="-3562.386" Z="41.47226" />
+				<Hotspot X="-4981.526" Y="-3733.284" Z="42.93595" />
+				<Hotspot X="-4950.57" Y="-3846.217" Z="42.4425" />
+				<Hotspot X="-4909.551" Y="-3929.717" Z="49.42714" />
+				<Hotspot X="-4787.42" Y="-3982.57" Z="47.18387" />
+				<Hotspot X="-4662.759" Y="-3937.48" Z="41.45186" />
+				<Hotspot X="-4591.075" Y="-3869.897" Z="32.01281" />
+				<Hotspot X="-4584.829" Y="-3771.685" Z="37.88758" />
+				<Hotspot X="-4648.662" Y="-3690.556" Z="42.07095" />
+				<Hotspot X="-4677.81" Y="-3540.29" Z="38.13073" />
+				<Hotspot X="-4818.81" Y="-3620.94" Z="44.14107" />
+				<Hotspot X="-4854.437" Y="-3502.522" Z="37.17225" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="-3745.013" Y="-3528.90576" Z="32.0424347" Radius="64.5" />
+		<Blackspot X="-3916.07153" Y="-3483.79028" Z="29.5668125" Radius="64.5" />
+		<Blackspot X="-3949.97534" Y="-3495.2583" Z="30.8818264" Radius="64.5" />
+		<Blackspot X="-4002.0603" Y="-3506.50732" Z="31.4690456" Radius="64.5" />
+		<Blackspot X="-4062.869" Y="-3552.83325" Z="33.5199928" Radius="64.5" />
+		<Blackspot X="-4088.91553" Y="-3583.83545" Z="34.16783" Radius="64.5" />
+		<Blackspot X="-4145.155" Y="-3605.09424" Z="33.4596558" Radius="64.5" />
+		<Blackspot X="-4166.565" Y="-3633.69" Z="32.9217873" Radius="64.5" />
+		<Blackspot X="-4206.54736" Y="-3628.165" Z="32.97382" Radius="64.5" />
+		<Blackspot X="-4238.59863" Y="-3627.551" Z="33.3118477" Radius="64.5" />
+		<Blackspot X="-4284.69238" Y="-3586.31934" Z="32.2853966" Radius="84.5" />
+		<Blackspot X="-4300.938" Y="-3514.23828" Z="30.9575157" Radius="84.5" />
+		<Blackspot X="-4349.175" Y="-3560.67261" Z="39.466404" Radius="84.5" />
+		<Blackspot X="-4392.34668" Y="-3604.08179" Z="30.8723965" Radius="84.5" />
+		<Blackspot X="-4460.59375" Y="-3618.00146" Z="33.0494423" Radius="84.5" />
+		<Blackspot X="-4500.078" Y="-3582.55664" Z="30.9804325" Radius="84.5" />
+		<Blackspot X="-4502.171" Y="-3515.77954" Z="30.3297424" Radius="84.5" />
+		<Blackspot X="-4559.6543" Y="-3469.4978" Z="30.57106" Radius="84.5" />
+		<Blackspot X="-4607.43555" Y="-3426.16382" Z="32.77335" Radius="84.5" />
+		<Blackspot X="-4669.778" Y="-3365.808" Z="31.18918" Radius="84.5" />
+		<Blackspot X="-4584.602" Y="-3314.64136" Z="30.0280571" Radius="84.5" />
+	</Blackspots>
+</HBProfile>

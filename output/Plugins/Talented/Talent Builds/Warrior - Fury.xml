@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- http://www.wowhead.com/talent#LZIrMsszoRfz -->
+<TalentTree Specialization="2" Name="Warrior - Fury with Titan's Grip" Class="Warrior">
+  <!-- Fury Talents -->
+  <Talent Tab="2" Index="1" Count="3" Name="Blood Craze" />
+  <Talent Tab="2" Index="2" Count="3" Name="Battle Trance" />
+  <Talent Tab="2" Index="3" Count="2" Name="Cruelty" />
+  <Talent Tab="2" Index="4" Count="2" Name="Executioner " />
+  <Talent Tab="2" Index="6" Count="2" Name="Rude Interruption" />
+  <Talent Tab="2" Index="7" Count="1" Name="Piercing Howl" />
+  <Talent Tab="2" Index="8" Count="3" Name="Flurry" />
+  <Talent Tab="2" Index="9" Count="1" Name="Death Wish" />
+  <Talent Tab="2" Index="10" Count="3" Name="Enrage " />
+  <Talent Tab="2" Index="12" Count="1" Name="Raging Blow" />
+  <Talent Tab="2" Index="13" Count="1" Name="Rampage " />
+  <Talent Tab="2" Index="15" Count="1" Name="Furious Attacks" />
+  <Talent Tab="2" Index="16" Count="2" Name="Meat Cleaver" />
+  <Talent Tab="2" Index="17" Count="2" Name="Intensify Rage" />
+  <Talent Tab="2" Index="18" Count="3" Name="Bloodsurge" />
+  <Talent Tab="2" Index="20" Count="1" Name="Titan’s Grip" />
+  <!-- Arms Talents-->
+  <Talent Tab="1" Index="1" Count="3" Name="War Academy" />
+  <Talent Tab="1" Index="2" Count="2" Name="Field Dressing" />
+  <Talent Tab="1" Index="3" Count="2" Name="Blitz" />
+  <!-- Protection Talents -->
+  <Talent Tab="3" Index="2" Count="3" Name="Toughness" />
+</TalentTree>
+
+

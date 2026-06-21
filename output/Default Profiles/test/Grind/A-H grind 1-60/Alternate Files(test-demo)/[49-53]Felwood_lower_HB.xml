@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[49-53]Felwood_lower</Name>
+	<MinLevel>49</MinLevel>
+	<MaxLevel>53</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Felwood -->
+		<Name>Felwood</Name>
+		<MinLevel>49</MinLevel>
+		<MaxLevel>53</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>47</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 7097 8956 8959 -->
+			<Factions>7 38 44</Factions>
+			<Hotspots>
+				<Hotspot X="3952.18" Y="-889.102" Z="272.4434" />
+				<Hotspot X="3986.794" Y="-783.6769" Z="287.4347" />
+				<Hotspot X="4018.746" Y="-759.1389" Z="288.4445" />
+				<Hotspot X="4125.946" Y="-727.607" Z="279.8047" />
+				<Hotspot X="4191.683" Y="-715.3071" Z="279.0984" />
+				<Hotspot X="4219.555" Y="-744.6444" Z="271.0855" />
+				<Hotspot X="4219.555" Y="-744.6444" Z="271.0855" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="-245.7894" Y="-5097.04639" Z="23.7846661" Radius="14.5" />
+		<Blackspot X="-266.620331" Y="-5098.174" Z="25.24467" Radius="14.5" />
+		<Blackspot X="-269.445068" Y="-5110.78027" Z="25.24467" Radius="14.5" />
+		<Blackspot X="-251.792114" Y="-5111.53857" Z="25.24467" Radius="14.5" />
+		<Blackspot X="-253.318665" Y="-5126.63867" Z="29.1724281" Radius="14.5" />
+		<Blackspot X="-249.242355" Y="-5111.855" Z="34.06575" Radius="14.5" />
+		<Blackspot X="-237.047363" Y="-5112.39" Z="34.06575" Radius="24.5" />
+		<Blackspot X="-243.236" Y="-5100.41162" Z="41.3476944" Radius="24.5" />
+		<Blackspot X="-245.700287" Y="-5113.30225" Z="41.87963" Radius="24.5" />
+		<Blackspot X="-225.0638" Y="-5107.35059" Z="49.3241539" Radius="24.5" />
+	</Blackspots>
+</HBProfile>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- http://www.wowhead.com/talent#IrGr0hsGsdcZI -->
+<TalentTree Specialization="1" Name="Warlock - Affliction" Class="Warlock">
+  
+  <!-- Affliction Talents -->
+  <Talent Tab="1" Index="1" Count="2" Name="Doom and Gloom" />
+  <Talent Tab="1" Index="2" Count="2" Name="Improved Life Tap" />
+  <Talent Tab="1" Index="3" Count="3" Name="Improved Corruption" />
+  <Talent Tab="1" Index="4" Count="2" Name="Jinx" />
+  <Talent Tab="1" Index="5" Count="2" Name="Soul Siphon" />
+  <Talent Tab="1" Index="6" Count="2" Name="Siphon Life" />
+  <Talent Tab="1" Index="9" Count="3" Name="Eradication" />
+  <Talent Tab="1" Index="11" Count="1" Name="Soul Swap" />
+  <Talent Tab="1" Index="12" Count="3" Name="Shadow Embrace" />
+  <Talent Tab="1" Index="13" Count="3" Name="Death's Embrace" />
+  <Talent Tab="1" Index="14" Count="2" Name="Nightfall" />
+  <Talent Tab="1" Index="15" Count="1" Name="Soulburn: Seed of Corruption" />
+  <Talent Tab="1" Index="16" Count="3" Name="Everlasting Affliction" />
+  <Talent Tab="1" Index="17" Count="2" Name="Pandemic" />
+  <Talent Tab="1" Index="18" Count="1" Name="Haunt" />
+  
+  <!-- Demonology Talents -->
+  <Talent Tab="2" Index="2" Count="3" Name="Dark Arts" />
+
+  <!-- Destruction Talents -->
+  <Talent Tab="3" Index="1" Count="3" Name="Bane" />
+  <Talent Tab="3" Index="2" Count="3" Name="Shadow and Flame" />
+
+</TalentTree>

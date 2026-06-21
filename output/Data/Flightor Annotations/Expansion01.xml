@@ -1,0 +1,172 @@
+<FlightorAnnotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:noNamespaceSchemaLocation="FlightorAnnotations.xsd">
+    <IndoorAreas>
+        <SphericalIndoorArea Name="Terrace of Light" Radius="77" X="-1864.385" Y="5429.754" Z="-12.42721">
+            <EntrancePath>
+                <Waypoint Radius="5" Dismount="False" X="-1824.965" Y="5353.66" Z="-0.1197103" />
+                <Waypoint Radius="5" Dismount="False" X="-1841.908" Y="5386.192" Z="-7.756896" />
+            </EntrancePath>
+        </SphericalIndoorArea>
+
+        <PolygonIndoorArea Name="Hellfire Ramparts Entrance, Hellfire Peninsula" MinZ="-16" MaxZ="-8">
+            <Entrance Dismount="True" Radius="2" X="-360.1551" Y="3066.122" Z="-11.52197" />
+            <Points>
+                <Point X="-368.4962" Y="3096.953" />
+                <Point X="-362.0441" Y="3095.454" />
+                <Point X="-358.6761" Y="3081.233" />
+                <Point X="-366.2346" Y="3078.163" />
+            </Points>
+        </PolygonIndoorArea>
+
+        <PolygonIndoorArea Name="Blood Furnace Entrance, Hellfire Peninsula" MinZ="20" MaxZ="40">
+            <Entrance Dismount="False" Radius="1" X="-362.7776" Y="3077.334" Z="-15.01587" />
+            <Points>
+                <Point X="-305.8382" Y="3160.605" />
+                <Point X="-333.1713" Y="3198.156" />
+                <Point X="-324.5808" Y="3204.369" />
+                <Point X="-296.6964" Y="3171.377" />
+            </Points>
+        </PolygonIndoorArea>
+
+        <PolygonIndoorArea Name="Shattered Halls Entrance, Hellfire Peninsula" MinZ="-10" MaxZ="6">
+            <Entrance Dismount="True" Radius="2" X="-302.2825" Y="3040.836" Z="-4.208281" />
+            <Points>
+                <Point X="-291.5779" Y="3046.772" />
+                <Point X="-310.9656" Y="3042.968" />
+                <Point X="-319" Y="3116" />
+                <Point X="-292" Y="3100" />
+            </Points>
+        </PolygonIndoorArea>
+
+        <CylinderIndoorArea Name="Auchenai Crypt Entrance, Terokkar Forest" Height="30" Radius="71" X="-3361.886"
+                            Y="5181.483" Z="-110">
+            <EntrancePath>
+                <Waypoint Dismount="False" Radius="3" X="-3362.622" Y="5060.228" Z="-82.93845" />
+                <Waypoint Dismount="True" Radius="3" X="-3361.399" Y="5124.894" Z="-101.396" />
+            </EntrancePath>
+        </CylinderIndoorArea>
+
+        <CylinderIndoorArea Name="Mana-Tombs Entrance, Terokkar Forest" Height="30" Radius="70" X="-3121.674"
+                            Y="4942.958" Z="-110">
+            <EntrancePath>
+                <Waypoint Dismount="False" Radius="3" X="-3236.424" Y="4943.719" Z="-84.95773" />
+                <Waypoint Dismount="True" Radius="3" X="-3179.177" Y="4942.971" Z="-101.396" />
+            </EntrancePath>
+        </CylinderIndoorArea>
+
+        <CylinderIndoorArea Name="Shadow Labyrinth Entrance, Terokkar Forest" Height="30" Radius="70" X="-3608.383"
+                            Y="4942.92" Z="-110">
+            <EntrancePath>
+                <Waypoint Dismount="False" Radius="3" X="-3482.679" Y="4943.901" Z="-77.59322" />
+                <Waypoint Dismount="True" Radius="3" X="-3546.369" Y="4943.693" Z="-101.3961" />
+            </EntrancePath>
+        </CylinderIndoorArea>
+
+        <PolygonIndoorArea Name="The Mechanar Entrance, Netherstorm" MinZ="245" MaxZ="260">
+            <Entrance Dismount="False" Radius="2" X="2875" Y="1558" Z="261" />
+            <Points>
+                <Point X="2870.18" Y="1548.892" />
+                <Point X="2863.033" Y="1538.432" />
+                <Point X="2855.092" Y="1547.277" />
+                <Point X="2865.993" Y="1553.269" />
+            </Points>
+        </PolygonIndoorArea>
+
+        <PolygonIndoorArea Name="The Arctraz Entrance, Netherstorm" MinZ="500" MaxZ="515">
+            <Entrance Dismount="True" Radius="2" X="3309.032" Y="1339.395" Z="505.5599" />
+            <Points>
+                <Point X="3312.831" Y="1338.744" />
+                <Point X="3319.202" Y="1327.66" />
+                <Point X="3309.894" Y="1323.99" />
+                <Point X="3306.663" Y="1336.333" />
+            </Points>
+        </PolygonIndoorArea>
+
+        <PolygonIndoorArea Name="The Botanica Entrance, Netherstorm" MinZ="175" MaxZ="190">
+            <Entrance Dismount="False" Radius="2" X="3403" Y="1490" Z="191" />
+            <Points>
+                <Point X="3410.909" Y="1489.34" />
+                <Point X="3422.64" Y="1484.05" />
+                <Point X="3415.485" Y="1474.578" />
+                <Point X="3406.886" Y="1484.083" />
+            </Points>
+        </PolygonIndoorArea>
+
+        <CompositeIndoorArea Name="The Exodar">
+            <Entrance Dismount="True" Radius="4" X="-3995.715" Y="-11860.01" Z="0.2650089" />
+            <IndoorAreas>
+                <CylinderIndoorArea Name="Main section" Height="285" Radius="230" X="-3901.979" Y="-11678.71" Z="-310" />
+                <TubularIndoorArea Name="Main Entrance Passage" Radius="20">
+                    <Points>
+                        <Point X="-3846.23" Y="-11765.28" Z="-97.63431" />
+                        <Point X="-3835.154" Y="-11812.88" Z="-76.6125" />
+                        <Point X="-3873.812" Y="-11843.94" Z="-56.67123" />
+                        <Point X="-3917.743" Y="-11830.34" Z="-37.13326" />
+                        <Point X="-3947.496" Y="-11805.3" Z="-21.46837" />
+                        <Point X="-3978.955" Y="-11829.88" Z="-9.041728" />
+                        <Point X="-3985.395" Y="-11842.36" Z="-4.094864" />
+                    </Points>
+                </TubularIndoorArea>
+            </IndoorAreas>
+        </CompositeIndoorArea>
+
+        <PolygonIndoorArea Name="Scryer Bank" MinZ="-45" MaxZ="-2.2">
+            <Entrance Dismount="False" Radius="2" X="-1988.064" Y="5367.847" Z="-11.33842" />
+            <Points>
+                <Point X="-1971.364" Y="5319.569" Z="-12.42816" />
+                <Point X="-1968.905" Y="5326.584" Z="-12.42815" />
+                <Point X="-1970.963" Y="5336.505" Z="-12.42816" />
+                <Point X="-1976.795" Y="5342.631" Z="-11.51334" />
+                <Point X="-1989.07" Y="5345.859" Z="-11.73414" />
+                <Point X="-2003.468" Y="5378.289" Z="-12.42816" />
+                <Point X="-2006.118" Y="5381.07" Z="-12.42815" />
+                <Point X="-2001.48" Y="5391.267" Z="-12.42815" />
+                <Point X="-2003.042" Y="5401.194" Z="-12.42815" />
+                <Point X="-2011.554" Y="5409.796" Z="-12.42815" />
+                <Point X="-2037.949" Y="5403.52" Z="-26.05476" />
+                <Point X="-2031.055" Y="5379.724" Z="-30.25426" />
+                <Point X="-2038.554" Y="5373.651" Z="-38.69031" />
+                <Point X="-2045.044" Y="5363.13" Z="-40.33426" />
+                <Point X="-2046.573" Y="5351.957" Z="-40.86497" />
+                <Point X="-2034.611" Y="5332.8" Z="-41.18378" />
+                <Point X="-2023.968" Y="5324.574" Z="-39.73863" />
+                <Point X="-2013.519" Y="5324.806" Z="-40.27922" />
+                <Point X="-2002.135" Y="5327.5" Z="-23.72428" />
+                <Point X="-1992.378" Y="5315.674" Z="-25.49696" />
+                <Point X="-1986.76" Y="5312.198" Z="-17.35738" />
+            </Points>
+        </PolygonIndoorArea>
+
+        <PolygonIndoorArea Name="Stables In Helfire Peninsula" MinZ="64" MaxZ="70">
+            <Entrance Dismount="True" Radius="1" X="-1047.39" Y="2015.382" Z="66.93993" />
+            <Points>
+                <Point X="-1060.759" Y="2017.155" />
+                <Point X="-1073.216" Y="1997.157" />
+                <Point X="-1048.67" Y="1983.309" />
+                <Point X="-1037.245" Y="2003.322" />
+                <Point X="-1050.258" Y="2013.549" />
+            </Points>
+        </PolygonIndoorArea>
+
+      <CylinderIndoorArea Name="Arena, Nagrand" Height="32" Radius="34.6" X="-1225.324" Y="7158.704" Z="83.33144">
+        <Entrances>
+          <Entrance Dismount="True" Radius="1" X="-1266.515" Y="7184.293" Z="56.6492" />
+          <Entrance Dismount="True" Radius="1" X="-1185.071" Y="7188.116" Z="57.75648" />
+          <Entrance Dismount="True" Radius="1" X="-1233.023" Y="7110.969" Z="54.15654" />
+        </Entrances>
+      </CylinderIndoorArea>
+
+      <PolygonIndoorArea Name="Giant bridge, Blade's Edge Mountains" MinZ="-15" MaxZ="122">
+        <Entrances>
+          <Entrance Dismount="False" Radius="2" X="2185" Y="6408" Z="82" />
+          <Entrance Dismount="False" Radius="2"  X="1900" Y="6417" Z="82" />
+        </Entrances>
+        <Points>
+          <Point X="2095.476" Y="6560.456" />
+          <Point X="1981.455" Y="6564.227" />
+          <Point X="1970.043" Y="6220.821" />
+          <Point X="2096.788" Y="6211.558" />
+        </Points>
+      </PolygonIndoorArea>
+    </IndoorAreas>
+</FlightorAnnotations>

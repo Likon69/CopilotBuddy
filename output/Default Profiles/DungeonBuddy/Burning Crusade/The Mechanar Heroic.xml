@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>The Mechanar Heroic</Name>
+  <DungeonId>192</DungeonId>
+  <BossEncounters>
+
+    <Boss isFinal="false" entry="19710" name="Gatewatcher Iron-Hand" killOrder="1" optional="false" X="187.9233" Y="-58.47197" Z="0.0008387789" />
+    <Boss isFinal="false" entry="19219" name="Mechano-Lord Capacitus" killOrder="2" optional="false" X="207.9535" Y="-13.8104" Z="-2.192101" />
+    <Boss isFinal="false" entry="19218" name="Gatewatcher Gyro-Kill" killOrder="3" optional="false" X="85.52759" Y="20.20054" Z="14.92211" />
+    <!-- Script the Elevator -->
+    <Boss isFinal="false" entry="19221" name="Nethermancer Sepethrea" killOrder="4" optional="true" X="326.5168" Y="13.19593" Z="27.83659" />
+    <!-- 4? sets of auto-spawn mobs before last boss while going down the hallway -->
+    <Boss isFinal="true" entry="19220" name="Pathaleon the Calculator" killOrder="5" optional="false" X="136.8035" Y="153.1892" Z="25.57937" />
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="185.7457" Y="23.84559" Z="0.5024155" Radius="9.599912" />
+    <Blackspot X="191.9394" Y="29.70245" Z="-0.00506109" Radius="5.395691" />
+  </Blackspots>
+</DungeonBuddyProfile>

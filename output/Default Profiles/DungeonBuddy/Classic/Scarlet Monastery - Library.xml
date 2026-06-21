@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Scarlet Monastery - Library</Name>
+  <DungeonId>165</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="3974" name="Houndmaster Loksey" killOrder="1" optional="false" X="119.9384" Y="-260.8691" Z="18.5466"/>
+    <Boss isFinal="true" entry="6487" name="Arcanist Doan" killOrder="2" optional="false" X="152.8182" Y="-438.5754" Z="18.48546"/>
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

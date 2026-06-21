@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Hunter http://www.wowhead.com/talent#ccZfzZcrhcMhrRsd -->
+<TalentTree Specialization="1" Name="Hunter - Survival" Class="Hunter">
+  <!-- Survival Talents 31 Points -->
+  <Talent Tab="3" Index="2" Count="3" Name="Pathing" />
+  <Talent Tab="3" Index="3" Count="2" Name="Improved Serpents Sting" />
+  <Talent Tab="3" Index="4" Count="2" Name="Survival Tactics" />
+  <Talent Tab="3" Index="5" Count="3" Name="Trap Mastery" />
+  <Talent Tab="3" Index="8" Count="3" Name="Thrill of the Hunt" />
+  <Talent Tab="3" Index="10" Count="2" Name="Lock and Load" />
+  <Talent Tab="3" Index="11" Count="3" Name="Resourcefulness" />
+  <Talent Tab="3" Index="13" Count="2" Name="T.N.T" />
+  <Talent Tab="3" Index="14" Count="2" Name="Toxicology" />
+  <Talent Tab="3" Index="15" Count="1" Name="Wyvern Sting" />
+  <Talent Tab="3" Index="16" Count="2" Name="Noxious Stings" />
+  <Talent Tab="3" Index="17" Count="1" Name="Hunting Party" />
+  <Talent Tab="3" Index="18" Count="3" Name="Sniper Training" />
+  <Talent Tab="3" Index="19" Count="2" Name="Serpent Spread" />
+  <Talent Tab="3" Index="20" Count="1" Name="Black Arrow" />
+
+  <!-- Marksmanship Talents 10 Points -->
+  <Talent Tab="2" Index="1" Count="2" Name="Go for the Throat" />
+  <Talent Tab="2" Index="2" Count="3" Name="Efficency" />
+  <Talent Tab="2" Index="3" Count="2" Name="Papid Killing" />
+  <Talent Tab="2" Index="4" Count="2" Name="Sic'Em!" />
+</TalentTree>

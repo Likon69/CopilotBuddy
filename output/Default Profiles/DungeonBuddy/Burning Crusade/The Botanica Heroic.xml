@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>The Botanica Heroic</Name>
+  <DungeonId>191</DungeonId>
+  <BossEncounters>
+	<!-- 1st boss - wait until she pats to window area before pulling the trash before her (to you) X="127.3439" Y="319.82" Z="-3.105688"  -->
+	<Boss isFinal="false" entry="17976" name="Commander Sarannis" killOrder="1" optional="true" >
+      <Path>
+		<Hotspot X="160.724" Y="289.4839" Z="-4.210154" />
+		<Hotspot X="127.3439" Y="319.82" Z="-3.105688" />
+      </Path>
+    </Boss>	
+	<Boss isFinal="false" entry="17975" name="High Botanist Freywinn" killOrder="2" optional="true" X="116.3259" Y="455.5696" Z="-4.941451" />
+	<Boss isFinal="false" entry="17978" name="Thorngrin the Tender" killOrder="3" optional="true" X="4.9486" Y="596.5779" Z="-15.16158" />
+  <Boss isFinal="false" entry="17980" name="Laj" killOrder="4" optional="true" X="-198.9372" Y="395.5074" Z="-14.1318" />
+	<Boss isFinal="true" entry="17977" name="Warp Splinter" killOrder="5" optional="false" X="63.84069" Y="391.8824" Z="-27.97712" />
+	<!-- After last boss, run out of portal -->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

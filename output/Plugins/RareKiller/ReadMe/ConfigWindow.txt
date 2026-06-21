@@ -1,0 +1,11 @@
+=======================================================================
+
+                Rare Mob Killer -Plugin - Version
+              Honorbuddy Plugin - www.thebuddyforum.com
+                        Autor: katzerle
+
+========================================================================
+
+Explanation of the Config Window:
+
+http://code.google.com/p/pluginrarekiller/wiki/DescriptionConfigWindow

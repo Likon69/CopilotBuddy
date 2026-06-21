@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<PvpProfile>
+  <Name>Battle for Gilneas</Name>
+  
+  <StartLocation X="1404.859" Y="980.0989" Z="7.429097" Side="Horde" />
+  <StartLocation X="909.46" Y="1337.36" Z="27.59665" Side="Alliance" />
+
+  <Blackspots>
+    <Blackspot X="1328.841" Y="1032.114" Z="-10" Height="30" Radius="15" />
+    <!-- Lamppost at Mines - Hawker 14 Jan 2012-->
+    <Blackspot X="1252.915" Y="975.5382" Z="7.289099" Radius="2.5" />
+  </Blackspots>
+
+  <Boxes Side="Horde">
+    <Box Name="Mines">
+      <TopLeft X="1278.736" Y="1005.169" Z="5.535599" />
+      <BottomRight X="1226.927" Y="917.1533" Z="9.496819" />
+      <Center X="1249.563" Y="959.337" Z="6.164304" />
+    </Box>
+
+    <Box Name="Waterworks">
+      <TopLeft X="987.3209" Y="912.5197" Z="13.17014" />
+      <BottomRight X="962.7557" Y="1004.837" Z="16.26053" />
+      <Center X="974.4443" Y="948.5432" Z="13.17166" />
+    </Box>
+
+    <Box Name="Lighthouse">
+      <TopLeft X="1085.446" Y="1282.628" Z="3.628658" />
+      <BottomRight X="993.3767" Y="1273.237" Z="3.848938" />
+      <Center X="1047.119" Y="1287.746" Z="3.551034" />
+    </Box>
+  </Boxes>
+
+  <Boxes Side="Alliance">
+    <Box Name="Mines">
+      <TopLeft X="1278.736" Y="1005.169" Z="5.535599" />
+      <BottomRight X="1226.927" Y="917.1533" Z="9.496819" />
+      <Center X="1249.563" Y="959.337" Z="6.164304" />
+    </Box>
+
+    <Box Name="Waterworks">
+      <TopLeft X="987.3209" Y="912.5197" Z="13.17014" />
+      <BottomRight X="962.7557" Y="1004.837" Z="16.26053" />
+      <Center X="974.4443" Y="948.5432" Z="13.17166" />
+    </Box>
+
+    <Box Name="Lighthouse">
+      <TopLeft X="1085.446" Y="1282.628" Z="3.628658" />
+      <BottomRight X="993.3767" Y="1273.237" Z="3.848938" />
+      <Center X="1047.119" Y="1287.746" Z="3.551034" />
+    </Box>
+  </Boxes>
+</PvpProfile>

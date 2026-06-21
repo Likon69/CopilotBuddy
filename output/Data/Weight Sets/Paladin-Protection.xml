@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Paladin" Specialization="2" Name="Paladin-Protection">
+  <Stamina>100</Stamina>
+  <Mastery>90</Mastery>
+  <DodgeRating>80</DodgeRating>
+  <ParryRating>80</ParryRating>
+  <HitRating>70</HitRating>
+  <ExpertiseRating>60</ExpertiseRating>
+  <Strength>50</Strength>
+  <Armor>1</Armor>
+</WeightSet>

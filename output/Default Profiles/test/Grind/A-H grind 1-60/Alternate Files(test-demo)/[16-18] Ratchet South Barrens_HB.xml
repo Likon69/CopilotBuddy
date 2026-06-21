@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[16-18] Ratchet South Barrens</Name>
+	<MinLevel>16</MinLevel>
+	<MaxLevel>18</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Ratch South Grind -->
+		<Name>Ratch South Grind</Name>
+		<MinLevel>16</MinLevel>
+		<MaxLevel>18</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>14</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3425 3248 4127 3255 3242 -->
+			<Factions>16 38 48 189</Factions>
+			<Hotspots>
+				<Hotspot X="-1092.087" Y="-3340.35" Z="90.19419" />
+				<Hotspot X="-1120.519" Y="-3374.895" Z="92.80979" />
+				<Hotspot X="-1147.122" Y="-3428.305" Z="93.4565" />
+				<Hotspot X="-1181.032" Y="-3449.375" Z="93.57677" />
+				<Hotspot X="-1174.702" Y="-3394.04" Z="92.23156" />
+				<Hotspot X="-1165.996" Y="-3354.419" Z="93.38892" />
+				<Hotspot X="-1176.197" Y="-3325.418" Z="93.01251" />
+				<Hotspot X="-1186.067" Y="-3289.05" Z="91.66693" />
+				<Hotspot X="-1156.293" Y="-3258.277" Z="91.77134" />
+				<Hotspot X="-1108.964" Y="-3225.113" Z="95.73887" />
+				<Hotspot X="-1082.929" Y="-3207.75" Z="92.78006" />
+				<Hotspot X="-1064.561" Y="-3187.271" Z="91.66701" />
+				<Hotspot X="-1034.683" Y="-3185.136" Z="91.66701" />
+				<Hotspot X="-1015.481" Y="-3204.154" Z="92.30285" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

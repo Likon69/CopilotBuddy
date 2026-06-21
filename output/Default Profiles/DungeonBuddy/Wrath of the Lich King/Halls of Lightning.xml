@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Halls of Lightning</Name>
+  <DungeonId>207</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="28586" name="General Bjarngrim" killOrder="1" optional="true" >
+      <Path>
+		<Hotspot X="1261.928" Y="98.94911" Z="33.50559" />
+  		<Hotspot X="1263.343" Y="-26.87601" Z="33.50568" />
+		<Hotspot X="1331.648" Y="-27.02919" Z="40.17995" />
+		<Hotspot X="1394.671" Y="35.86361" Z="50.03827" />
+     </Path>
+    </Boss>	
+	<Boss isFinal="false" entry="28587" name="Volkhan" killOrder="2" optional="false" X="1332.382" Y="-102.078" Z="56.71774" />
+	<!-- small 'event' after this boss in the next hallway - it's very annoying -->
+	<!-- For Ionar ... make sure you gtfo of little sparks when he disperses -->
+	<Boss isFinal="false" entry="28546" name="Ionar" killOrder="3" optional="false" X="1081.995" Y="-261.8092" Z="61.20797" />
+	<Boss isFinal="true" entry="28923" name="Loken" killOrder="4" optional="false" X="1186.47" Y="33.83051" Z="60.72986" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

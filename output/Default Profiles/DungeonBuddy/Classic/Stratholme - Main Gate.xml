@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Stratholme - Main Gate</Name>
+  <DungeonId>40</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="10516" name="The Unforgiven" killOrder="1" optional="true"/>
+    <Boss isFinal="false" entry="10393" name="Skul" killOrder="2" optional="true"/>
+    <Boss isFinal="false" entry="10808" name="Timmy the Cruel" killOrder="3" optional="true"/>
+    <Boss isFinal="false" entry="11032" name="Commander Malor" killOrder="4" optional="false" X="3621.065" Y="-3126.817" Z="135.6653"/>
+    <Boss isFinal="false" entry="10997" name="Willey Hopebreaker" killOrder="5" optional="false" X="3571.482" Y="-2939.924" Z="125.0003" />
+    <Boss isFinal="false" entry="10811" name="Instructor Galford" killOrder="6" optional="false" X="3456.547" Y="-3104.162" Z="136.5455"/>
+    <Boss isFinal="true" entry="10813" name="Balnazzar" killOrder="7" optional="false" X="3415.845" Y="-3044.543" Z="136.5163"/>
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

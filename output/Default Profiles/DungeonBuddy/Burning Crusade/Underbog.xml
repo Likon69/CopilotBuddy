@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Underbog</Name>
+  <DungeonId>146</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="17770" name="Hungarfen" killOrder="1" optional="true" X="-121.3438" Y="-388.6259" Z="36.86593" />
+	<!-- MoveTo X="162.4285" Y="-478.5458" Z="74.14125" /> and Ghaz'ran will come to the group - then move to X="253.2852" Y="-457.8166" Z="81.37284" /> and force wait for him to come -->
+	<Boss isFinal="false" entry="18105" name="Ghaz'an" killOrder="2" optional="true" X="248.3929" Y="-465.8279" Z="81.37161" />
+	<!-- after ghaz'ran - jump off the north slope of the platform and moveto X="331.4355" Y="-475.012" Z="51.2484" /> and ctm to the hallway below X="351.2751" Y="-477.8207" Z="24.01898" />
+	... or maybe you can path around, but this is the way that groups go! -->
+	<Boss isFinal="false" entry="17826" name="Swamplord Musel'ek" killOrder="3" optional="true" X="279.7744" Y="-120.7644" Z="29.80644" />
+	<!-- We don't actually kill Claw, he's a friendly after we beat him down Name="Claw" Entry="17827" -->
+	<Boss isFinal="true" entry="17882" name="The Black Stalker" killOrder="4" optional="false" X="150.6087" Y="21.06009" Z="26.84999" />
+	<!-- After last bos - run to X="42.76073" Y="-21.52993" Z="19.27992"  and then jump down to X="28.2747" Y="-30.50156" Z="-2.749845"  -->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

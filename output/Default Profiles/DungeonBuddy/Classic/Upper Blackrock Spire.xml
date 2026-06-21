@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>e
+  <Name>Upper Blackrock Spire</Name>
+  <DungeonId>330</DungeonId>
+  <BossEncounters>
+	<!-- Clear all trash in the first hallway to the left to open door -->
+	<!-- Use Blackrock Altar for ~7s and then kill all trash in next room with fire guy in it to make him spawn -->
+	<Boss isFinal="false" entry="9816" name="Pyroguard Emberseer" killOrder="1" optional="false" X="144.4382" Y="-258.0341" Z="96.32328" />
+	<Boss isFinal="false" entry="10899" name="Goraluk Anvilcrack" killOrder="2" optional="true" X="150.3108" Y="-247.8854" Z="110.8679" />
+	<!-- MoveTo <Hotspot X="152.0112" Y="-420.8652" Z="110.4723" /> and kill the waves that come out until the small door eventually re-opens -->
+	<Boss isFinal="false" entry="10339" name="Gyth" killOrder="3" optional="false" X="185.2924" Y="-420.4681" Z="110.8715" /> <!-- Last wave to re-open door -->
+	<Boss isFinal="false" entry="10429" name="Warchief Rend Blackhand" killOrder="4" optional="false" X="185.2924" Y="-420.4681" Z="110.8715" />
+	<Boss isFinal="false" entry="10509" name="Jed Runewatcher" killOrder="5" optional="true" /> <!-- Rare spawn - X="31.35668" Y="-493.0902" Z="110.9525" -->
+	<Boss isFinal="false" entry="10430" name="The Beast" killOrder="6" optional="true" X="124.2105" Y="-563.7994" Z="107.3413" />
+	<Boss isFinal="true" entry="10363" name="General Drakkisath" killOrder="7" optional="false" X="36.45086" Y="-285.9936" Z="110.9529" />
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="74.48026" Y="-252.0172" Z="93.34351" Radius="9.479718" />
+    <Blackspot X="81.72168" Y="-242.102" Z="92.72366" Radius="9.794183" />
+  </Blackspots>
+</DungeonBuddyProfile>

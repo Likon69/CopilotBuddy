@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>The Arcatraz</Name>
+  <DungeonId>174</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="20870" name="555" killOrder="1" optional="true" X="274.1761" Y="-122.933" Z="-10.12323" />
+	<!-- 2 and 3 - doesn't matter the order they're killed in - but killing both opens the door -->
+	<Boss isFinal="false" entry="20886" name="Wrath-Scryer Soccothrates" killOrder="2" optional="false" X="122.1035" Y="192.7203" Z="22.44115" />
+	<Boss isFinal="false" entry="20885" name="Dalliah the Doomsayer" killOrder="3" optional="false" X="118.6038" Y="96.84682" Z="22.44116" />
+	<!-- attack Name="Warden Mellichar" Entry="20904" X="445.8029" Y="-169.0068" Z="43.64423" /> and then wait for mini-bosses to spawn -->
+	<!-- Mini-bosses 
+	<Vendor Name="Blazing Trickster" Entry="20905" Type="Repair" X="476.3471" Y="-150.7758" Z="42.5723" />
+	<Vendor Name="Millhouse Manastorm" Entry="20977" Type="Repair" X="417.242" Y="-149.7949" Z="42.57151" /> // helper (not miniboss) - keep him alive for a quest
+	<Vendor Name="Sulfuron Magma-Thrower" Entry="20909" Type="Repair" X="439.3463" Y="-159.1218" Z="43.09452" />
+	<Vendor Name="Blackwing Drakonaar" Entry="20911" Type="Repair" X="450.0363" Y="-157.9003" Z="43.08405" />
+	<Vendor Name="Harbinger Skyriss" Entry="20912" Type="Repair" X="446.0855" Y="-182.5062" Z="44.00191" /> // boss - he spawns extra adds of himself as well lol
+	<Vendor Name="Harbinger Skyriss" Entry="21467" Type="Repair" X="446.8637" Y="-157.8326" Z="43.07254" /> // spawn - not real boss
+	-->
+	<Boss isFinal="true" entry="20912" name="Harbinger Skyriss" killOrder="" optional="false" X="446.0855" Y="-182.5062" Z="44.00191" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

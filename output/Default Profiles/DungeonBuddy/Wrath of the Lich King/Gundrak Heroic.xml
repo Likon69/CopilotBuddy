@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Gundrak Heroic</Name>
+  <DungeonId>217</DungeonId>
+  <BossEncounters>
+	<!-- Any of the first 3 (non optionals) can be killed in any order; just make sure that you use the Altar of (Boss Name) behind the boss after you kill them! -->
+	<Boss isFinal="false" entry="29304" name="Slad'ran" killOrder="1" optional="false" X="1775.129" Y="674.9809" Z="129.2167" /> <!-- Snake -->
+	<!-- Colossus turns into Elemental and visa versa until it's dead (technically it's only the Colossus) -->
+	<Boss isFinal="false" entry="29307" name="Drakkari Colossus" killOrder="2" optional="false" X="1672.963" Y="743.488" Z="142.7861" /> <!-- Colossus -->
+	<!-- <Boss isFinal="false" entry="29573" name="Drakkari Elemental" killOrder="2" optional="false" X="1672.963" Y="743.488" Z="142.7861" /> -->
+	<Boss isFinal="false" entry="29305" name="Moorabi" killOrder="3" optional="false" X="1772.471" Y="809.537" Z="129.2167" /> <!-- Troll / Mammoth -->
+	<Boss isFinal="false" entry="29932" name="Eck the Ferocious" killOrder="4" optional="true" X="1644.08" Y="935.6218" Z="107.2053" />
+	<Boss isFinal="true" entry="29306" name="Gal'darah" killOrder="5" optional="false" X="1914.748" Y="743.6536" Z="136.4954" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

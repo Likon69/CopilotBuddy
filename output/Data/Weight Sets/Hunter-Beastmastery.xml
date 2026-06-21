@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Hunter" Specialization="1" Name="Hunter-Beastmastery">
+  <Agility>100</Agility>
+  <HitRating>80</HitRating>
+  <CriticalStrikeRating>60</CriticalStrikeRating>
+  <Mastery>40</Mastery>
+  <HasteRating>20</HasteRating>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

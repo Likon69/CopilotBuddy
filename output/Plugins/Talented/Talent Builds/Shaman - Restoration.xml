@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TalentTree Specialization="3" Name="Shaman - Restoration" Class="Shaman">
+  <!-- Restoration Talents 41-->
+  <Talent Tab="1" Index="1" Count="3" Name="Acuity" />
+  <Talent Tab="2" Index="1" Count="2" Name="Elemental Weapons" />
+  <Talent Tab="2" Index="3" Count="3" Name="Improved Shields" />
+  <Talent Tab="2" Index="6" Count="2" Name="Ancestral Swiftness" />
+  <Talent Tab="3" Index="2" Count="3" Name="Tidal Focus" />
+  <Talent Tab="3" Index="3" Count="3" Name="Spark of Life" />
+  <Talent Tab="3" Index="4" Count="2" Name="Resurgence" />
+  <Talent Tab="3" Index="5" Count="2" Name="Totemic Focus" />
+  <Talent Tab="3" Index="8" Count="2" Name="Ancestral Healing" />
+  <Talent Tab="3" Index="9" Count="1" Name="Nature's Swiftness" />
+  <Talent Tab="3" Index="10" Count="3" Name="Nature's Blessing" />
+  <Talent Tab="3" Index="11" Count="2" Name="Soothing Rains" />
+  <Talent Tab="3" Index="12" Count="1" Name="Improved Cleanse Spirit" />
+  <Talent Tab="3" Index="13" Count="2" Name="Cleansing Waters" />
+  <Talent Tab="3" Index="14" Count="3" Name="Ancestral Awakening" />
+  <Talent Tab="3" Index="15" Count="1" Name="Mana Tide Totem" />
+  <Talent Tab="3" Index="17" Count="1" Name="Spirit Link Totem" />
+  <Talent Tab="3" Index="18" Count="2" Name="Tidal Waves" />
+  <Talent Tab="3" Index="19" Count="2" Name="Blessing of the Eternals" />
+  <Talent Tab="3" Index="20" Count="1" Name="Riptide" />
+</TalentTree>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Violet Hold Heroic</Name>
+  <DungeonId>221</DungeonId>
+  <BossEncounters>
+	<!-- This one is ... kill the portals. it will pick 2 random of the first 6 here for the first 2 boss portals - last 1 is always Cyanigosa -->
+	<Boss isFinal="false" entry="29315" name="Erekem" killOrder="1" optional="true" />
+	<Boss isFinal="false" entry="29316" name="Moragg" killOrder="1" optional="true" />
+	<Boss isFinal="false" entry="29313" name="Ichoron" killOrder="1" optional="true" />
+	<Boss isFinal="false" entry="29266" name="Xevozz" killOrder="1" optional="true" />
+	<Boss isFinal="false" entry="29312" name="Lavanthor" killOrder="1" optional="true" />
+	<Boss isFinal="false" entry="29314" name="Zuramat the Obliterator" killOrder="1" optional="true" />
+	<Boss isFinal="true" entry="31134" name="Cyanigosa" killOrder="3" optional="false" X="1885.786" Y="799.4411" Z="38.42309" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

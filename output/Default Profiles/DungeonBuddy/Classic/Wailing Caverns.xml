@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Wailing Caverns</Name>
+  <DungeonId>1</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="3671" name="Lady Anacondra" killOrder="1" optional="false" X="-55.2565" Y="274.696" Z="-92.84425" />
+    <Boss isFinal="false" entry="3653" name="Kresh" killOrder="2" optional="true" /> <!-- This is a Neutral Pat -->
+    <Boss isFinal="false" entry="3670" name="Lord Pythas" killOrder="3" optional="false" X="-45.4295" Y="372.129" Z="-60.11849" />
+    <Boss isFinal="false" entry="3669" name="Lord Cobrahn" killOrder="4" optional="false" X="-151.139" Y="414.367" Z="-72.71276" />
+	  <Boss isFinal="false" entry="3674" name="Skum" killOrder="5" optional="false" X="-232.3872" Y="-8.845966" Z="-105.6474" />
+	  <Boss isFinal="false" entry="3673" name="Lord Serpentis" killOrder="6" optional="false" X="-117.2339" Y="-27.81972" Z="-28.65132" />
+	  <Boss isFinal="false" entry="5775" name="Verdan the Everliving" killOrder="7" optional="false" X="-81.8554" Y="32.2565" Z="-31.07722" />
+	    <!-- talk to someone at beginning and start event for last boss -->
+    <Boss isFinal="true" entry="3654" name="Mutanus the Devourer" killOrder="8" optional="false" X="115.408" Y="240.017" Z="-95.10153" />
+  </BossEncounters>
+  <Blackspots>
+		<!--   -->
+  </Blackspots>
+</DungeonBuddyProfile>

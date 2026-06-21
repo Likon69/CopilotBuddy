@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Blood Furnace</Name>
+  <DungeonId>137</DungeonId>
+  <BossEncounters>
+	<!-- Clear 'The Maker's' room before killing him! -->
+	<Boss isFinal="false" entry="17381" name="The Maker" killOrder="1" optional="false" X="330.0381" Y="128.7361" Z="9.61755" />
+	<!-- MoveTo X="456.2928" Y="63.9902" Z="9.615136" /> and pull lever - but clear the room first!!! -->
+	<Boss isFinal="false" entry="17380" name="Broggok" killOrder="2" optional="false" X="461.3173" Y="57.70611" Z="9.616555" />
+	<!-- Pull a channeler and LOS them all into the room! -->
+	<Boss isFinal="true" entry="17377" name="Keli'dan the Breaker" killOrder="3" optional="false" X="326.6071" Y="-91.41425" Z="-24.63426" />	
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

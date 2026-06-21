@@ -1,0 +1,30 @@
+<HBProfile>
+	<Name>[GoTo] Orgrimmar</Name>
+	<MinDurability>0.3</MinDurability>
+	<MinFreeBagSlots>3</MinFreeBagSlots>
+
+	<MinLevel>1</MinLevel>
+	<MaxLevel>101</MaxLevel>
+	<Factions>99999</Factions>
+
+	<MailGrey>false</MailGrey>
+	<MailWhite>True</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>false</SellGrey>
+	<SellWhite>false</SellWhite>
+	<SellGreen>false</SellGreen>
+	<SellBlue>false</SellBlue>
+	<SellPurple>false</SellPurple>
+	<Vendors>
+	</Vendors>
+	<Mailboxes>
+	</Mailboxes>
+	<Blackspots>
+	</Blackspots>
+	<Hotspots>
+	    <Hotspot X="1781.731" Y="-4353.641" Z="102.7028" />
+	</Hotspots>
+</HBProfile>

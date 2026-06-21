@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[51-54] Felstone Field WPL</Name>
+	<MinLevel>51</MinLevel>
+	<MaxLevel>54</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Felstone -->
+		<Name>Felstone</Name>
+		<MinLevel>51</MinLevel>
+		<MaxLevel>54</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>49</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1791 1784 1783 10801 -->
+			<Factions>21</Factions>
+			<Hotspots>
+				<Hotspot X="1720.203" Y="-1125.786" Z="61.89908" />
+				<Hotspot X="1747.97" Y="-1141.04" Z="60.68999" />
+				<Hotspot X="1777.972" Y="-1169.444" Z="59.40635" />
+				<Hotspot X="1781.213" Y="-1197.46" Z="59.47897" />
+				<Hotspot X="1762.517" Y="-1218.645" Z="59.66648" />
+				<Hotspot X="1740.456" Y="-1220.414" Z="59.67637" />
+				<Hotspot X="1721.788" Y="-1210.874" Z="59.83258" />
+				<Hotspot X="1701.72" Y="-1193.748" Z="59.43379" />
+				<Hotspot X="1695.39" Y="-1173.594" Z="59.83825" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="1758.59851" Y="-1240.71387" Z="59.6740341" Radius="14.5" />
+		<Blackspot X="1784.95007" Y="-1251.538" Z="59.8335228" Radius="24.5" />
+		<Blackspot X="1810.63611" Y="-1224.03357" Z="60.3427773" Radius="24.5" />
+		<Blackspot X="1815.51379" Y="-1210.14441" Z="60.3427734" Radius="24.5" />
+		<Blackspot X="1804.547" Y="-1223.48279" Z="65.083725" Radius="24.5" />
+		<Blackspot X="1812.79163" Y="-1231.10938" Z="66.25268" Radius="24.5" />
+	</Blackspots>
+</HBProfile>

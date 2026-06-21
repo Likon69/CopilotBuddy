@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[53-60] shattered strand Azshara</Name>
+	<MinLevel>53</MinLevel>
+	<MaxLevel>60</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Shattered strand -->
+		<Name>Shattered strand</Name>
+		<MinLevel>53</MinLevel>
+		<MaxLevel>60</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>51</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 6370 6371 6348 -->
+			<Factions>14 18 129</Factions>
+			<Hotspots>
+				<Hotspot X="4345.789" Y="-7582.564" Z="10.8895" />
+				<Hotspot X="4383.229" Y="-7611.921" Z="20.84493" />
+				<Hotspot X="4442.724" Y="-7681.916" Z="31.65192" />
+				<Hotspot X="4386.016" Y="-7750.373" Z="11.72989" />
+				<Hotspot X="4317.887" Y="-7757.182" Z="7.331885" />
+				<Hotspot X="4294.232" Y="-7708.058" Z="6.777744" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

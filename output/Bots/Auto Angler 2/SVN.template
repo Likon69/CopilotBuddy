@@ -1,0 +1,22 @@
+﻿// This file is auto genorated from using SubRCRev.exe and template SVN.template
+// Build Date: $WCDATE$
+// SVN url: $WCURL$
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace HighVoltz
+{
+    public partial class Svn
+    {
+        protected override string RevString
+        {
+            get
+            {
+                return "$WCREV$";
+            }
+        }
+    }
+}

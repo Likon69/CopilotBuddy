@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TalentTree Specialization="1" Name="Priest - Discipline" Class="Priest">
+  <!-- Discipline Talents-->
+  <Talent Tab="1" Index="1" Count="2" Name="Improved Power Word: Shield" />
+  <Talent Tab="1" Index="2" Count="3" Name="Twin Disciplines" />
+  <Talent Tab="1" Index="3" Count="3" Name="Mental Agility" />
+  <Talent Tab="1" Index="4" Count="2" Name="Evangelism" />
+  <Talent Tab="1" Index="5" Count="1" Name="Archangel" />
+  <Talent Tab="1" Index="7" Count="2" Name="Soul Warding" />
+  <Talent Tab="1" Index="8" Count="2" Name="Renewed Hope" />
+  <Talent Tab="1" Index="9" Count="1" Name="Power Infusion" />
+  <Talent Tab="1" Index="11" Count="1" Name="Inner Focus" />
+  <Talent Tab="1" Index="10" Count="2" Name="Atonement" />
+  <Talent Tab="1" Index="12" Count="3" Name="Rapture" />
+  <Talent Tab="1" Index="13" Count="2" Name="Borrowed Time" />
+  <Talent Tab="1" Index="15" Count="2" Name="Strength of Soul" />
+  <Talent Tab="1" Index="16" Count="3" Name="Divine Aegis" />
+  <Talent Tab="1" Index="17" Count="1" Name="Pain Supression" />
+  <Talent Tab="1" Index="18" Count="2" Name="Train of Thought" />
+  <Talent Tab="1" Index="19" Count="2" Name="Grace" />
+  <Talent Tab="1" Index="20" Count="1" Name="Power Word: Barrier" />
+  <!-- Holy Talents -->
+  <Talent Tab="2" Index="2" Count="3" Name="Empowered Healing" />
+  <Talent Tab="2" Index="3" Count="3" Name="Divine Fury" />
+</TalentTree>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[33-37] Ethel_rethor Desolace</Name>
+	<MinLevel>33</MinLevel>
+	<MaxLevel>37</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Ethel_rethor -->
+		<Name>Ethel_rethor</Name>
+		<MinLevel>33</MinLevel>
+		<MaxLevel>37</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>31</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4688 4726 4692 4700 11576 4701 4728 -->
+			<Factions>14 15 38 49 73 91</Factions>
+			<Hotspots>
+				<Hotspot X="-416.9935" Y="2151.203" Z="88.91124" />
+				<Hotspot X="-299.2707" Y="2209.543" Z="105.4337" />
+				<Hotspot X="-239.0739" Y="2195.615" Z="104.0494" />
+				<Hotspot X="-142.0143" Y="2217.723" Z="82.69699" />
+				<Hotspot X="-79.47441" Y="2189.457" Z="96.60417" />
+				<Hotspot X="-65.21481" Y="2237.018" Z="76.62931" />
+				<Hotspot X="-341.9046" Y="2335.661" Z="46.7659" />
+				<Hotspot X="-373.8189" Y="2375.167" Z="43.70059" />
+				<Hotspot X="-418.6581" Y="2359.365" Z="56.59175" />
+				<Hotspot X="-435.1846" Y="2290.886" Z="82.55753" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Maraudon - Foulspore Cavern</Name>
+  <DungeonId>26</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="13282" name="Noxxion" killOrder="1" optional="false" X="1130.396" Y="-191.3418" Z="-80.08455"/>
+    <Boss isFinal="false" entry="12258" name="Razorlash" killOrder="1" optional="false" X="978.887" Y="-10.15195" Z="-62.58673"/>
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="1076.818" Y="-452.0625" Z="-39.25589" Radius="3.434067" />
+  </Blackspots>
+</DungeonBuddyProfile>

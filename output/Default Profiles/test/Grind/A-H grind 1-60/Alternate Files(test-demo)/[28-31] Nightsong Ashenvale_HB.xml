@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[28-31] Nightsong Ashenvale</Name>
+	<MinLevel>28</MinLevel>
+	<MaxLevel>31</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Nightsong Grind -->
+		<Name>Nightsong Grind</Name>
+		<MinLevel>28</MinLevel>
+		<MaxLevel>31</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>26</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3834 3818 3825 3919 -->
+			<Factions>38 91 189</Factions>
+			<Hotspots>
+				<Hotspot X="2961.829" Y="-1868.916" Z="168.8246" />
+				<Hotspot X="3183.419" Y="-1763.714" Z="172.7815" />
+				<Hotspot X="3310.648" Y="-1670.509" Z="173.7789" />
+				<Hotspot X="3385.781" Y="-1637.968" Z="168.4314" />
+				<Hotspot X="3459.472" Y="-1608.71" Z="167.1963" />
+				<Hotspot X="3444.749" Y="-1519.039" Z="165.9037" />
+				<Hotspot X="3398.412" Y="-1477.303" Z="167.7299" />
+				<Hotspot X="3218.836" Y="-1593.578" Z="170.8117" />
+				<Hotspot X="3089.699" Y="-1621.985" Z="181.6542" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="1254.42322" Y="-7.0831995" Z="-5.4597683" Radius="34.5" />
+		<Blackspot X="1233.13684" Y="10.2530689" Z="-4.02991438" Radius="34.5" />
+		<Blackspot X="1237.88416" Y="29.5894566" Z="-5.10984039" Radius="34.5" />
+		<Blackspot X="-1619.094" Y="-1791.27185" Z="92.2063751" Radius="34.5" />
+		<Blackspot X="-1618.94006" Y="-1791.93176" Z="92.2834244" Radius="74.5" />
+		<Blackspot X="-4163.441" Y="-2190.379" Z="50.20716" Radius="24.5" />
+		<Blackspot X="1766.05457" Y="-1506.11487" Z="95.486824" Radius="44.5" />
+		<Blackspot X="1747.54346" Y="-1481.94214" Z="103.63501" Radius="44.5" />
+		<Blackspot X="1724.95789" Y="-1485.16187" Z="111.751495" Radius="44.5" />
+		<Blackspot X="1701.14819" Y="-1484.51624" Z="127.296707" Radius="44.5" />
+		<Blackspot X="1774.70361" Y="-1520.20667" Z="87.7003" Radius="44.5" />
+	</Blackspots>
+</HBProfile>

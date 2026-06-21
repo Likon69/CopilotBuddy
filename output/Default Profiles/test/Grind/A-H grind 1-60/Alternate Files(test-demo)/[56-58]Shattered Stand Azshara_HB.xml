@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[56-58]Shattered Stand Azshara</Name>
+	<MinLevel>56</MinLevel>
+	<MaxLevel>58</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Soutridge Beach -->
+		<Name>Soutridge Beach</Name>
+		<MinLevel>56</MinLevel>
+		<MaxLevel>58</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>54</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 6135 6136 -->
+			<Factions>16</Factions>
+			<Hotspots>
+				<Hotspot X="4209" Y="-7199.546" Z="22.65734" />
+				<Hotspot X="4290.133" Y="-7217.6" Z="24.11304" />
+				<Hotspot X="4255.734" Y="-7294.925" Z="8.967087" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="4110.78" Y="-7183.36572" Z="12.9156475" Radius="34.5" />
+		<Blackspot X="4104.913" Y="-7244.12744" Z="9.496182" Radius="34.5" />
+		<Blackspot X="4063.65137" Y="-7214.837" Z="1.63110316" Radius="34.5" />
+		<Blackspot X="4059.837" Y="-7256.601" Z="7.334967" Radius="34.5" />
+		<Blackspot X="4058.9585" Y="-7317.55762" Z="8.568504" Radius="34.5" />
+		<Blackspot X="4089.186" Y="-7376.457" Z="11.5767269" Radius="64.5" />
+		<Blackspot X="4073.25781" Y="-7006.6" Z="2.167377" Radius="177.5" />
+		<Blackspot X="4037.968" Y="-7349.22266" Z="-2.82009768" Radius="117.5" />
+		<Blackspot X="4116.26367" Y="-7527.70654" Z="-1.687527" Radius="117.5" />
+	</Blackspots>
+</HBProfile>

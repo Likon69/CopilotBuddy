@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>Horde6-12</Name>
+	<MinLevel>6</MinLevel>
+	<MaxLevel>12</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Lower Durotar -->
+		<Name>Lower Durotar</Name>
+		<MinLevel>6</MinLevel>
+		<MaxLevel>11</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ghrawt" Entry="3165" Type="Repair" X="362.105" Y="-4763.84" Z="12.46956" />
+			<Vendor Name="Nargal Deatheye" Entry="3479" Type="Sell" X="-356.996" Y="-2568.86" Z="95.78793" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>4</TargetMinLevel>
+			<TargetMaxLevel>8</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3099 3125 -->
+			<Factions>189 413</Factions>
+			<Hotspots>
+				<Hotspot X="-581.9296" Y="-4736.889" Z="33.56548" />
+				<Hotspot X="-589.2346" Y="-4792.453" Z="32.61257" />
+				<Hotspot X="-750.2066" Y="-4742.578" Z="31.64965" />
+				<Hotspot X="-814.4198" Y="-4782.903" Z="24.58955" />
+				<Hotspot X="-885.8667" Y="-4781.6" Z="20.14838" />
+				<Hotspot X="-143.083" Y="-4999.522" Z="22.35394" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- MiddleDurotar -->
+		<Name>MiddleDurotar</Name>
+		<MinLevel>6</MinLevel>
+		<MaxLevel>12</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ghrawt" Entry="3165" Type="Repair" X="362.105" Y="-4763.84" Z="12.46956" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>4</TargetMinLevel>
+			<TargetMaxLevel>10</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3126 3112 3099 3122 3100 -->
+			<Factions>14 109 189 413</Factions>
+			<Hotspots>
+				<Hotspot X="719.1022" Y="-4923.373" Z="22.06522" />
+				<Hotspot X="770.1019" Y="-4936.651" Z="19.51692" />
+				<Hotspot X="826.7994" Y="-4945.466" Z="16.55869" />
+				<Hotspot X="875.3477" Y="-4950.723" Z="9.876972" />
+				<Hotspot X="925.6542" Y="-4942.282" Z="9.709831" />
+				<Hotspot X="964.8344" Y="-4928.737" Z="14.56388" />
+				<Hotspot X="1023.192" Y="-4910.146" Z="14.86414" />
+				<Hotspot X="1079.353" Y="-4889.783" Z="14.76982" />
+				<Hotspot X="1125.018" Y="-4875.787" Z="19.11333" />
+				<Hotspot X="1150.369" Y="-4886.082" Z="20.27727" />
+				<Hotspot X="1182.106" Y="-4901.72" Z="18.78184" />
+				<Hotspot X="1180.037" Y="-4928.427" Z="16.43979" />
+				<Hotspot X="1160.854" Y="-4947.843" Z="15.94622" />
+				<Hotspot X="1113.602" Y="-4958.326" Z="15.70161" />
+				<Hotspot X="1082.379" Y="-4976.883" Z="15.86536" />
+				<Hotspot X="1045.787" Y="-5015.84" Z="15.64132" />
+				<Hotspot X="1034.502" Y="-5033.55" Z="11.64089" />
+				<Hotspot X="1011.557" Y="-5062.795" Z="8.595436" />
+				<Hotspot X="980.4888" Y="-5079.167" Z="6.681273" />
+				<Hotspot X="943.2692" Y="-5075.863" Z="6.160964" />
+				<Hotspot X="884.9171" Y="-5066.669" Z="2.333012" />
+				<Hotspot X="840.0881" Y="-5065.958" Z="4.392095" />
+				<Hotspot X="805.7752" Y="-5056.596" Z="4.648016" />
+				<Hotspot X="636.1424" Y="-4885.671" Z="24.25648" />
+				<Hotspot X="598.7975" Y="-4878.068" Z="24.62877" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- UpperDurotar -->
+		<Name>UpperDurotar</Name>
+		<MinLevel>6</MinLevel>
+		<MaxLevel>12</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ghrawt" Entry="3165" Type="Repair" X="362.105" Y="-4763.84" Z="12.46956" />
+			<Vendor Name="Nargal Deatheye" Entry="3479" Type="Sell" X="-356.996" Y="-2568.86" Z="95.78793" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>4</TargetMinLevel>
+			<TargetMaxLevel>11</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3126 3100 3225 3123 3127 -->
+			<Factions>14 48 189 413</Factions>
+			<Hotspots>
+				<Hotspot X="408.2115" Y="-4093.066" Z="32.2315" />
+				<Hotspot X="343.3834" Y="-3936.733" Z="33.21688" />
+				<Hotspot X="503.9292" Y="-3872.679" Z="19.95628" />
+				<Hotspot X="419.9512" Y="-3838.633" Z="23.24793" />
+				<Hotspot X="225.1903" Y="-3825.951" Z="30.01235" />
+				<Hotspot X="70.18173" Y="-3818.531" Z="32.89238" />
+				<Hotspot X="-42.29076" Y="-3881.234" Z="46.32935" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- mid_durotar -->
+		<Name>mid_durotar</Name>
+		<MinLevel>6</MinLevel>
+		<MaxLevel>12</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ghrawt" Entry="3165" Type="Repair" X="362.105" Y="-4763.84" Z="12.46956" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>4</TargetMinLevel>
+			<TargetMaxLevel>10</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3100 3126 3122 -->
+			<Factions>14 189 413</Factions>
+			<Hotspots>
+				<Hotspot X="816.7406" Y="-4879.336" Z="36.29417" />
+				<Hotspot X="943.9617" Y="-5016.181" Z="4.371155" />
+				<Hotspot X="845.9456" Y="-5052.542" Z="5.123814" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="-2249.409" Y="-2364.45752" Z="91.668045" Radius="59" />
+		<Blackspot X="-1034.17285" Y="-2254.88721" Z="100.335587" Radius="100.5" />
+		<Blackspot X="-1064.51929" Y="-2278.32739" Z="89.57765" Radius="100.5" />
+		<Blackspot X="-916.4271" Y="-2135.23926" Z="92.5639343" Radius="100.5" />
+		<Blackspot X="-4309.32764" Y="-1.08503377" Z="58.0456047" Radius="114.5" />
+		<Blackspot X="-4270.078" Y="61.95019" Z="55.6441078" Radius="114.5" />
+		<Blackspot X="-4132.63867" Y="-610.531433" Z="-13.3207178" Radius="14.5" />
+		<Blackspot X="11.5398445" Y="-1735.112" Z="102.98056" Radius="43.5" />
+		<Blackspot X="-331.6546" Y="-1814.12183" Z="95.8496246" Radius="143.5" />
+		<Blackspot X="1531.02063" Y="-1896.14636" Z="105.143837" Radius="54.5" />
+		<Blackspot X="1542.39832" Y="-1873.94543" Z="104.005966" Radius="54.5" />
+		<Blackspot X="1554.988" Y="-1853.80542" Z="108.830582" Radius="54.5" />
+		<Blackspot X="1492.82275" Y="-1891.38257" Z="110.6135" Radius="54.5" />
+		<Blackspot X="1480.83826" Y="-1869.52319" Z="115.245255" Radius="54.5" />
+		<Blackspot X="1460.04285" Y="-1859.90088" Z="124.333359" Radius="54.5" />
+		<Blackspot X="1460.04285" Y="-1859.90088" Z="124.333359" Radius="100.5" />
+		<Blackspot X="1467.976" Y="-1839.16943" Z="125.693565" Radius="100.5" />
+		<Blackspot X="1487.39551" Y="-1851.592" Z="118.271805" Radius="100.5" />
+		<Blackspot X="1491.62793" Y="-1900.13086" Z="111.11277" Radius="100.5" />
+		<Blackspot X="-2894.53345" Y="-3347.05" Z="31.8216629" Radius="44.5" />
+		<Blackspot X="-4132.616" Y="-611.425" Z="-13.5174341" Radius="43.5" />
+		<Blackspot X="-1221.86353" Y="-2129.88379" Z="93.22069" Radius="34.5" />
+		<Blackspot X="-7223.694" Y="-3734.85742" Z="8.387314" Radius="14.5" />
+		<Blackspot X="-1066.3689" Y="-1913.76135" Z="91.74884" Radius="44.5" />
+		<Blackspot X="2371.84277" Y="-1202.04846" Z="89.434845" Radius="34.5" />
+		<Blackspot X="2366.7312" Y="-1186.67847" Z="89.53475" Radius="34.5" />
+		<Blackspot X="-175.051178" Y="-3018.743" Z="91.668045" Radius="94.5" />
+		<Blackspot X="-156.954025" Y="-2980.52441" Z="92.855545" Radius="94.5" />
+		<Blackspot X="-141.240753" Y="-2957.21387" Z="92.34388" Radius="94.5" />
+		<Blackspot X="-127.301025" Y="-2929.123" Z="91.66761" Radius="94.5" />
+		<Blackspot X="-116.799156" Y="-2883.845" Z="91.7584" Radius="144.5" />
+		<Blackspot X="-137.533051" Y="-2870.83984" Z="93.01418" Radius="144.5" />
+		<Blackspot X="1770.437" Y="-1519.04541" Z="89.59864" Radius="44.5" />
+		<Blackspot X="1751.28906" Y="-1479.11511" Z="104.230278" Radius="44.5" />
+		<Blackspot X="1726.65747" Y="-1483.51428" Z="110.990372" Radius="44.5" />
+		<Blackspot X="1741.79993" Y="-1531.05" Z="97.4949341" Radius="44.5" />
+		<Blackspot X="2169.3877" Y="-2167.426" Z="120.540154" Radius="12.5" />
+		<Blackspot X="2118.58252" Y="-2094.523" Z="117.820206" Radius="14.5" />
+		<Blackspot X="1041.944" Y="-2111.36523" Z="122.945976" Radius="34.5" />
+	</Blackspots>
+</HBProfile>

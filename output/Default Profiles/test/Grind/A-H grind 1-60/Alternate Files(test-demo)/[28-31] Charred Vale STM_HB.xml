@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[28-31] Charred Vale STM</Name>
+	<MinLevel>28</MinLevel>
+	<MaxLevel>31</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Charred_Vale -->
+		<Name>Charred_Vale</Name>
+		<MinLevel>28</MinLevel>
+		<MaxLevel>31</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>26</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4024 4023 4041 4031 4027 4037 4032 4029 4044 -->
+			<Factions>16 49 91 514</Factions>
+			<Hotspots>
+				<Hotspot X="685.5677" Y="1497.131" Z="-17.10882" />
+				<Hotspot X="596.254" Y="1514.247" Z="-9.848136" />
+				<Hotspot X="562.4283" Y="1546.337" Z="-9.14048" />
+				<Hotspot X="545.7248" Y="1597.314" Z="-4.18357" />
+				<Hotspot X="537.3394" Y="1638.114" Z="-7.443878" />
+				<Hotspot X="533.6161" Y="1690.52" Z="-4.611418" />
+				<Hotspot X="551.6331" Y="1767.933" Z="-9.562977" />
+				<Hotspot X="579.5574" Y="1824.709" Z="-9.320818" />
+				<Hotspot X="636.7477" Y="1847.158" Z="-13.1322" />
+				<Hotspot X="719.8079" Y="1834.074" Z="-8.48361" />
+				<Hotspot X="879.8789" Y="1663.981" Z="-15.92754" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[37-40] Desolace_west</Name>
+	<MinLevel>37</MinLevel>
+	<MaxLevel>40</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Desolace_west -->
+		<Name>Desolace_west</Name>
+		<MinLevel>37</MinLevel>
+		<MaxLevel>40</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>35</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 4729 11577 4697 4693 4727 -->
+			<Factions>14 49 73 91 413</Factions>
+			<Hotspots>
+				<Hotspot X="-1442.11" Y="2376.414" Z="91.66724" />
+				<Hotspot X="-1323.707" Y="2349.669" Z="92.78217" />
+				<Hotspot X="-1171.622" Y="2370.129" Z="91.30527" />
+				<Hotspot X="-1058.173" Y="2345.204" Z="95.39648" />
+				<Hotspot X="-962.3123" Y="2342.635" Z="92.33209" />
+				<Hotspot X="-907.5208" Y="2305.925" Z="91.77536" />
+				<Hotspot X="-882.0487" Y="2250.219" Z="92.26934" />
+				<Hotspot X="-843.8364" Y="2172.465" Z="85.27909" />
+				<Hotspot X="-922.207" Y="2096.826" Z="63.12489" />
+				<Hotspot X="-1019.13" Y="2086.929" Z="62.96809" />
+				<Hotspot X="-1072.401" Y="2123.904" Z="61.24985" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

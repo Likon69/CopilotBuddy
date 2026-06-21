@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Blackfathom Deeps</Name>
+  <DungeonId>10</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="4887" name="Ghamoo-Ra" killOrder="1" optional="false" X="-447.1551" Y="219.4487" Z="-53.03698"/>
+    <Boss isFinal="false" entry="4831" name="Lady Sarevess" killOrder="2" optional="true" X="-325.1531" Y="401.8607" Z="-55.86141"/>
+    <Boss isFinal="false" entry="6243" name="Gelihast" killOrder="3" optional="true" X="-412.653" Y="40.91904" Z="-48.21954"/>
+    <Boss isFinal="false" entry="4832" name="Twilight Lord Kelris" killOrder="4" optional="false" X="-818.8325" Y="-155.5761" Z="-25.87557"/>
+    <Boss isFinal="true" entry="4829" name="Aku'mai" killOrder="5" optional="false" X="-837.5421" Y="-428.1876" Z="-33.89083"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

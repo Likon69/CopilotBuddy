@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[47-56]Azshara</Name>
+	<MinLevel>47</MinLevel>
+	<MaxLevel>56</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Azshara Deer Hunter -->
+		<Name>Azshara Deer Hunter</Name>
+		<MinLevel>47</MinLevel>
+		<MaxLevel>53</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>45</TargetMinLevel>
+			<TargetMaxLevel>50</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 8759 6375 6116 6117 -->
+			<Factions>7 14 21</Factions>
+			<Hotspots>
+				<Hotspot X="3257.11" Y="-4434.006" Z="101.3238" />
+				<Hotspot X="3161.836" Y="-4392.254" Z="102.5875" />
+				<Hotspot X="3141.665" Y="-4313.826" Z="101.5228" />
+				<Hotspot X="3020.208" Y="-4156.104" Z="102.832" />
+				<Hotspot X="2821.503" Y="-3952.107" Z="97.64106" />
+				<Hotspot X="3494.497" Y="-4169.307" Z="100.5152" />
+				<Hotspot X="3567.61" Y="-4199.914" Z="103.3786" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- nagaplease -->
+		<Name>nagaplease</Name>
+		<MinLevel>47</MinLevel>
+		<MaxLevel>56</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>45</TargetMinLevel>
+			<TargetMaxLevel>53</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 6193 6190 6194 6195 7864 6649 -->
+			<Factions>21 74</Factions>
+			<Hotspots>
+				<Hotspot X="3620.869" Y="-4582.247" Z="108.4769" />
+				<Hotspot X="3585.333" Y="-4772.709" Z="115.2631" />
+				<Hotspot X="3507.023" Y="-4864.456" Z="136.4702" />
+				<Hotspot X="3397.103" Y="-4933.669" Z="131.5674" />
+				<Hotspot X="3359.19" Y="-4999.86" Z="88.67744" />
+				<Hotspot X="3307.802" Y="-4954.87" Z="128.775" />
+				<Hotspot X="3331.443" Y="-5124.291" Z="87.92436" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Legashi -->
+		<Name>Legashi</Name>
+		<MinLevel>47</MinLevel>
+		<MaxLevel>56</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>45</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 6378 8761 6379 8764 8766 6380 -->
+			<Factions>7 14</Factions>
+			<Hotspots>
+				<Hotspot X="4386.1" Y="-5929.082" Z="103.6815" />
+				<Hotspot X="4536.955" Y="-6122.039" Z="99.66748" />
+				<Hotspot X="4721.633" Y="-6142.792" Z="99.29113" />
+				<Hotspot X="4702.969" Y="-6387.038" Z="110.8775" />
+				<Hotspot X="4643.313" Y="-6585.431" Z="101.9484" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="3798.51147" Y="-4919.998" Z="145.540985" Radius="114.5" />
+		<Blackspot X="3823.121" Y="-4930.047" Z="146.645782" Radius="114.5" />
+		<Blackspot X="3877.51147" Y="-4974.67725" Z="142.7471" Radius="114.5" />
+		<Blackspot X="3958.04541" Y="-5027.541" Z="137.484711" Radius="114.5" />
+		<Blackspot X="3947.2522" Y="-5055.615" Z="132.059326" Radius="114.5" />
+		<Blackspot X="4083.03174" Y="-5177.69" Z="116.37851" Radius="114.5" />
+		<Blackspot X="4463.105" Y="-5487.34766" Z="108.83773" Radius="114.5" />
+		<Blackspot X="4430.872" Y="-5541.29932" Z="109.524544" Radius="114.5" />
+		<Blackspot X="4460.84326" Y="-5567.22" Z="103.784042" Radius="114.5" />
+		<Blackspot X="4502.33447" Y="-5596.45459" Z="102.244987" Radius="114.5" />
+		<Blackspot X="4545.254" Y="-5593.89355" Z="99.66958" Radius="114.5" />
+		<Blackspot X="4595.493" Y="-5602.69873" Z="99.91212" Radius="114.5" />
+	</Blackspots>
+</HBProfile>

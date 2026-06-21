@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Shaman" Specialization="3" Name="Shaman-Restoration">
+  <Intellect>100</Intellect>
+  <SpellPower>83</SpellPower>
+  <Spirit>75</Spirit>
+  <HasteRating>67</HasteRating>
+  <CriticalStrikeRating>58</CriticalStrikeRating>
+  <Mastery>42</Mastery>
+  <Stamina>8</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TalentTree Specialization="2" Name="Warlock - Demonology" Class="Warlock">
+  <!-- Demo Talents -->
+  <Talent Tab="2" Index="1" Count="3" Name="Demonic Embrace" />
+  <Talent Tab="2" Index="2" Count="3" Name="Dark Arts" />
+  <Talent Tab="2" Index="3" Count="2" Name="Fel Synergy" />
+  <Talent Tab="2" Index="5" Count="2" Name="Mana Feed" />
+  <Talent Tab="2" Index="6" Count="2" Name="Demonic Aegis" />
+  <Talent Tab="2" Index="7" Count="2" Name="Master Summoner" />
+  <Talent Tab="2" Index="8" Count="3" Name="Impending Doom" />
+  <Talent Tab="2" Index="9" Count="1" Name="Demonic Empowerment" />
+  <Talent Tab="2" Index="11" Count="3" Name="Molten Core" />
+  <Talent Tab="2" Index="12" Count="1" Name="Hand of Gul'dan" />
+  <Talent Tab="2" Index="13" Count="2" Name="Aura of Foreboding" />
+  <Talent Tab="2" Index="14" Count="2" Name="Ancient Grimoire" />
+  <Talent Tab="2" Index="15" Count="1" Name="Inferno" />
+  <Talent Tab="2" Index="16" Count="2" Name="Decimation" />
+  <Talent Tab="2" Index="17" Count="2" Name="Cremation" />
+  <Talent Tab="2" Index="18" Count="1" Name="Demonic Pact" />
+  <Talent Tab="2" Index="19" Count="1" Name="Metamorphosis" />
+  <!-- Destruction Talents -->
+  <Talent Tab="3" Index="1" Count="3" Name="Bane" />
+  <Talent Tab="3" Index="3" Count="2" Name="Improved Immolate" />
+  <Talent Tab="3" Index="5" Count="2" Name="Emberstorm" />
+  <Talent Tab="3" Index="6" Count="1" Name="Improved Searing Pain" />
+</TalentTree>

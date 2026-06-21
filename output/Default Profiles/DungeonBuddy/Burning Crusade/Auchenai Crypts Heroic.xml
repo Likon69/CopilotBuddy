@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Auchenai Crypts Heroic</Name>
+  <DungeonId>178</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="18371" name="Shirrak the Dead Watcher" killOrder="1" optional="true" X="-26.24541" Y="-162.7846" Z="26.11106" />
+	<Boss isFinal="true" entry="18373" name="Exarch Maladaar" killOrder="2" optional="false" X="66.76575" Y="-388.3454" Z="26.59005" />
+	<!-- There might be an optional guy here for a quest, I dunno -->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

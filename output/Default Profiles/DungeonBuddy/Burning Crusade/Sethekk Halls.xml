@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Sethekk Halls</Name>
+  <DungeonId>150</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="18472" name="Darkweaver Syth" killOrder="1" optional="true" X="-144.8268" Y="173.5574" Z="1.685323" />
+    <Boss isFinal="true" entry="18473" name="Talon King Ikiss" killOrder="2" optional="false">
+      <Path>
+        <Hotspot X="-181.7562" Y="173.5054" Z="0.01078472" />
+        <Hotspot X="-213.7061" Y="333.5848" Z="26.70532" />
+        <Hotspot X="-9.387436" Y="288.9479" Z="26.73014" />
+        <Hotspot X="44.72272" Y="286.9597" Z="25.01322" />
+      </Path>
+    </Boss>
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="44.44881" Y="143.8359" Z="0.7090786" Radius="11.59044" />
+  </Blackspots>
+</DungeonBuddyProfile>

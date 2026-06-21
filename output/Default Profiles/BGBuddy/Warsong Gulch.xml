@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<PvpProfile>
+  <Name>Warsong Gulch</Name>
+
+  <StartLocation X="943.4707" Y="1424.74" Z="345.4574" Side="Horde" />
+  <StartLocation X="1511.525" Y="1490.999" Z="352.0117" Side="Alliance" />
+
+  <Blackspots>
+    <!-- Lamp post near Silverwing base -->
+    <Blackspot X="1401.266" Y="1415.457" Z="344.8266" Radius="2" />
+    <!--Strange spot in Warsong Flag Room -->
+    <Blackspot X="945.6219" Y="1453.789" Z="344.457" Radius="4" />
+  </Blackspots>
+</PvpProfile>

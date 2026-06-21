@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[8-10] Tor kren Farm Durotar</Name>
+	<MinLevel>8</MinLevel>
+	<MaxLevel>10</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Tor Kren Farm Grind -->
+		<Name>Tor Kren Farm Grind</Name>
+		<MinLevel>8</MinLevel>
+		<MaxLevel>10</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>6</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3100 3122 3126 3099 -->
+			<Factions>14 189 413</Factions>
+			<Hotspots>
+				<Hotspot X="668.0541" Y="-4251.845" Z="15.84922" />
+				<Hotspot X="613.2592" Y="-4253.988" Z="14.18221" />
+				<Hotspot X="569.3234" Y="-4206.509" Z="14.00926" />
+				<Hotspot X="520.8" Y="-4165.999" Z="20.76132" />
+				<Hotspot X="506.8188" Y="-4133.851" Z="25.40408" />
+				<Hotspot X="509.2262" Y="-4091.707" Z="26.8588" />
+				<Hotspot X="531.453" Y="-4054.53" Z="22.99" />
+				<Hotspot X="565.0488" Y="-3998.625" Z="13.88024" />
+				<Hotspot X="580.9528" Y="-3954.596" Z="15.23445" />
+				<Hotspot X="611.7127" Y="-3955.905" Z="15.45228" />
+				<Hotspot X="638.544" Y="-4008.496" Z="4.271124" />
+				<Hotspot X="646.6372" Y="-4088.325" Z="10.16603" />
+				<Hotspot X="697.5961" Y="-4184.279" Z="16.26752" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="-1281.22314" Y="-5483.83252" Z="4.34652472" Radius="34.5" />
+		<Blackspot X="-1253.76733" Y="-5527.06348" Z="5.80383" Radius="34.5" />
+		<Blackspot X="-1164.43811" Y="-5571.78125" Z="8.529459" Radius="34.5" />
+		<Blackspot X="-1155.11438" Y="-5577.90674" Z="8.498816" Radius="34.5" />
+		<Blackspot X="-1140.57129" Y="-5529.061" Z="5.86116362" Radius="34.5" />
+	</Blackspots>
+</HBProfile>

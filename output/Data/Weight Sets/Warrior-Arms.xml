@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Warrior" Specialization="1" Name="Warrior-Arms">
+  <Strength>100</Strength>
+  <HitRating>90</HitRating>
+  <ExpertiseRating>85</ExpertiseRating>
+  <CriticalStrikeRating>80</CriticalStrikeRating>
+  <Mastery>70</Mastery>
+  <HasteRating>50</HasteRating>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

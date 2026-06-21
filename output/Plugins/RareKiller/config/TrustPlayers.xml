@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- These Players will be ignored by the "Logout if Player follows"-Function -->
+<Blacklist>
+	<Player Name="xxxxxx xxxxx" />
+	<Player Name="xxxxxx xxxxx" />
+</Blacklist>

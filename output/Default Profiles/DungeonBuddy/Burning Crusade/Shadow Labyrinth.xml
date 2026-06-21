@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Shadow Labyrinth</Name>
+  <DungeonId>151</DungeonId>
+  <BossEncounters>
+	<!-- You gotta clear the room before pulling the bosses - unless ur 85 farming -->
+	<Boss isFinal="false" entry="18731" name="Ambassador Hellmaw" killOrder="1" optional="true" X="-156.6754" Y="4.982729" Z="8.073091" />
+	<Boss isFinal="false" entry="18667" name="Blackheart the Inciter" killOrder="2" optional="false" X="-328.209" Y="-39.05535" Z="12.68884" />
+	<Boss isFinal="false" entry="18732" name="Grandmaster Vorpil" killOrder="3" optional="false" X="-253.4046" Y="-263.66" Z="17.08638" />
+	<Boss isFinal="true" entry="18708" name="Murmur" killOrder="4" optional="false" X="-157.8953" Y="-497.3225" Z="15.78175" />
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

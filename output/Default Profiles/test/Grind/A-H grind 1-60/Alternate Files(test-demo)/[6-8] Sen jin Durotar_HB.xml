@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[6-8] Sen jin Durotar</Name>
+	<MinLevel>6</MinLevel>
+	<MaxLevel>8</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Sen jin Grind -->
+		<Name>Sen jin Grind</Name>
+		<MinLevel>6</MinLevel>
+		<MaxLevel>8</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>4</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3099 3125 -->
+			<Factions>189 413</Factions>
+			<Hotspots>
+				<Hotspot X="-578.3102" Y="-4777.485" Z="33.30868" />
+				<Hotspot X="-728.8504" Y="-4720.356" Z="33.54787" />
+				<Hotspot X="-743.5001" Y="-4691.551" Z="36.30202" />
+				<Hotspot X="-786.3243" Y="-4717.086" Z="30.8889" />
+				<Hotspot X="-860.5536" Y="-4777.81" Z="14.79567" />
+				<Hotspot X="-673.6779" Y="-4929.843" Z="25.17789" />
+				<Hotspot X="-586.7449" Y="-4895.834" Z="34.33849" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>

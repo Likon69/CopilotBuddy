@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[30-33] Howling Vale Ashenvale</Name>
+	<MinLevel>30</MinLevel>
+	<MaxLevel>33</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Howling Vale Grind -->
+		<Name>Howling Vale Grind</Name>
+		<MinLevel>30</MinLevel>
+		<MaxLevel>33</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>28</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3789 3791 -->
+			<Factions>16</Factions>
+			<Hotspots>
+				<Hotspot X="3246.063" Y="-1358.938" Z="239.1036" />
+				<Hotspot X="3158.65" Y="-1181.86" Z="216.1805" />
+				<Hotspot X="3154.602" Y="-1197.505" Z="216.275" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="1254.42322" Y="-7.0831995" Z="-5.4597683" Radius="34.5" />
+		<Blackspot X="1233.13684" Y="10.2530689" Z="-4.02991438" Radius="34.5" />
+		<Blackspot X="1237.88416" Y="29.5894566" Z="-5.10984039" Radius="34.5" />
+		<Blackspot X="-1619.094" Y="-1791.27185" Z="92.2063751" Radius="34.5" />
+		<Blackspot X="-1618.94006" Y="-1791.93176" Z="92.2834244" Radius="74.5" />
+		<Blackspot X="-4163.441" Y="-2190.379" Z="50.20716" Radius="24.5" />
+		<Blackspot X="1766.05457" Y="-1506.11487" Z="95.486824" Radius="44.5" />
+		<Blackspot X="1747.54346" Y="-1481.94214" Z="103.63501" Radius="44.5" />
+		<Blackspot X="1724.95789" Y="-1485.16187" Z="111.751495" Radius="44.5" />
+		<Blackspot X="1701.14819" Y="-1484.51624" Z="127.296707" Radius="44.5" />
+		<Blackspot X="1774.70361" Y="-1520.20667" Z="87.7003" Radius="44.5" />
+	</Blackspots>
+</HBProfile>

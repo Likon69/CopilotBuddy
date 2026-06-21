@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[1-13]Undead quests</Name>
+	<MinLevel>1</MinLevel>
+	<MaxLevel>13</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Deathknell_grind -->
+		<Name>Deathknell_grind</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>8</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>5</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1513 1509 -->
+			<Factions>7 32</Factions>
+			<Hotspots>
+				<Hotspot X="2072.518" Y="1385.922" Z="59.89697" />
+				<Hotspot X="1998.768" Y="1410.885" Z="61.58904" />
+				<Hotspot X="2062.516" Y="1468.092" Z="67.65802" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- ColdHearthManor -->
+		<Name>ColdHearthManor</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>10</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>7</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1525 1526 -->
+			<Factions>21</Factions>
+			<Hotspots>
+				<Hotspot X="2126.251" Y="586.4753" Z="35.79886" />
+				<Hotspot X="2146.028" Y="604.2015" Z="35.43948" />
+				<Hotspot X="2147.912" Y="623.6896" Z="34.7074" />
+				<Hotspot X="2138.872" Y="645.4026" Z="33.99747" />
+				<Hotspot X="2128.834" Y="654.922" Z="34.20612" />
+				<Hotspot X="2116.461" Y="652.0026" Z="34.71973" />
+				<Hotspot X="2097.049" Y="642.4519" Z="35.01368" />
+				<Hotspot X="2084.901" Y="633.8393" Z="34.88295" />
+				<Hotspot X="2075.628" Y="620.2451" Z="34.39926" />
+				<Hotspot X="2078.262" Y="606.3932" Z="34.42257" />
+				<Hotspot X="2096.972" Y="587.7801" Z="35.58423" />
+				<Hotspot X="2261.029" Y="709.2297" Z="34.05895" />
+				<Hotspot X="2283.253" Y="640.4913" Z="25.07552" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Brightwater lake Grind -->
+		<Name>Brightwater lake Grind</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>11</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1554 1548 -->
+			<Factions>16 38</Factions>
+			<Hotspots>
+				<Hotspot X="2257.111" Y="-190.6014" Z="34.67538" />
+				<Hotspot X="2329.085" Y="-188.9373" Z="34.50923" />
+				<Hotspot X="2490.556" Y="-251.6503" Z="39.37878" />
+				<Hotspot X="2521.718" Y="-271.1501" Z="47.96675" />
+				<Hotspot X="2588.492" Y="-269.4446" Z="54.57483" />
+				<Hotspot X="2666.812" Y="-239.9139" Z="48.62703" />
+				<Hotspot X="2748.321" Y="-196.8661" Z="39.68837" />
+				<Hotspot X="2764.96" Y="-89.18981" Z="35.21114" />
+				<Hotspot X="2727.75" Y="-10.9713" Z="31.85847" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Sinlverpine Entrance -->
+		<Name>Sinlverpine Entrance</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>12</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1766 1765 -->
+			<Factions>38</Factions>
+			<Hotspots>
+				<Hotspot X="1374.622" Y="937.969" Z="49.85064" />
+				<Hotspot X="1426.552" Y="841.1255" Z="50.32433" />
+				<Hotspot X="1351.79" Y="801.8941" Z="40.22289" />
+				<Hotspot X="1460.172" Y="725.1877" Z="44.69613" />
+				<Hotspot X="1491.599" Y="657.4105" Z="44.89262" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Alterac_gallows -->
+		<Name>Alterac_gallows</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>39</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2252 2253 2251 -->
+			<Factions>16 45</Factions>
+			<Hotspots>
+				<Hotspot X="591.9496" Y="-776.9236" Z="165.5512" />
+				<Hotspot X="533.756" Y="-752.6452" Z="163.2173" />
+				<Hotspot X="490.6146" Y="-691.248" Z="162.4803" />
+				<Hotspot X="461.5226" Y="-661.9582" Z="167.3121" />
+				<Hotspot X="391.4263" Y="-622.6777" Z="161.9042" />
+				<Hotspot X="337.9085" Y="-549.0732" Z="160.0255" />
+				<Hotspot X="317.2754" Y="-471.6847" Z="161.2029" />
+				<Hotspot X="216.2518" Y="-368.7563" Z="156.2935" />
+				<Hotspot X="280.1365" Y="-324.7817" Z="158.3741" />
+				<Hotspot X="348.1603" Y="-378.9031" Z="174.5928" />
+				<Hotspot X="375.9887" Y="-476.5103" Z="178.0614" />
+				<Hotspot X="409.2947" Y="-515.7927" Z="171.5423" />
+				<Hotspot X="423.269" Y="-518.1628" Z="174.1198" />
+				<Hotspot X="486.1833" Y="-606.3633" Z="172.8909" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Alterac_uplands -->
+		<Name>Alterac_uplands</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>41</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2243 2407 2318 2245 -->
+			<Factions>14 16 87</Factions>
+			<Hotspots>
+				<Hotspot X="895.2422" Y="-666.7513" Z="126.8467" />
+				<Hotspot X="1006.851" Y="-649.8138" Z="109.2944" />
+				<Hotspot X="1045.247" Y="-609.6104" Z="101.5393" />
+				<Hotspot X="1077.046" Y="-550.5299" Z="96.76718" />
+				<Hotspot X="1129.913" Y="-507.0558" Z="76.25191" />
+				<Hotspot X="1162.803" Y="-530.2958" Z="76.78338" />
+				<Hotspot X="1112.656" Y="-617.276" Z="83.77561" />
+				<Hotspot X="1095.344" Y="-669.6299" Z="84.1414" />
+				<Hotspot X="1024.288" Y="-692.8426" Z="102.058" />
+				<Hotspot X="967.2296" Y="-749.2327" Z="113.4433" />
+				<Hotspot X="911.317" Y="-804.1865" Z="124.1543" />
+				<Hotspot X="887.53" Y="-853.069" Z="128.2288" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Ambermill -->
+		<Name>Ambermill</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>19</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1912 1914 1867 -->
+			<Factions>76</Factions>
+			<Hotspots>
+				<Hotspot X="-80.74615" Y="1007.042" Z="66.30794" />
+				<Hotspot X="-65.07801" Y="955.2962" Z="67.78151" />
+				<Hotspot X="-158.5851" Y="942.6117" Z="65.35106" />
+				<Hotspot X="-183.2976" Y="1036.953" Z="62.64189" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Arathi -->
+		<Name>Arathi</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>36</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2563 2559 2578 -->
+			<Factions>7 22 48</Factions>
+			<Hotspots>
+				<Hotspot X="-1294.388" Y="-3224.084" Z="33.53753" />
+				<Hotspot X="-1215.694" Y="-3214.204" Z="42.81484" />
+				<Hotspot X="-1180.694" Y="-3244.381" Z="30.56771" />
+				<Hotspot X="-1143.571" Y="-3300.047" Z="43.3218" />
+				<Hotspot X="-1248.789" Y="-3335.245" Z="32.14516" />
+				<Hotspot X="-1480.411" Y="-3280.814" Z="35.36318" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Arathi2 -->
+		<Name>Arathi2</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>36</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2554 2555 2565 2579 2556 2560 2561 -->
+			<Factions>7 22 48 654</Factions>
+			<Hotspots>
+				<Hotspot X="-1719.531" Y="-3171.223" Z="27.8496" />
+				<Hotspot X="-1719.531" Y="-3171.223" Z="27.8496" />
+				<Hotspot X="-1719.531" Y="-3171.223" Z="27.8496" />
+				<Hotspot X="-1848.77" Y="-3086.99" Z="54.75895" />
+				<Hotspot X="-1804.254" Y="-2977.66" Z="51.64565" />
+				<Hotspot X="-1753.965" Y="-2914.263" Z="41.3667" />
+				<Hotspot X="-1709.035" Y="-2932.006" Z="37.22058" />
+				<Hotspot X="-1752.103" Y="-2681.007" Z="40.36187" />
+				<Hotspot X="-1640.683" Y="-2557.604" Z="53.85421" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- BalnirFarmstead -->
+		<Name>BalnirFarmstead</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>12</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1532 1529 -->
+			<Factions>21</Factions>
+			<Hotspots>
+				<Hotspot X="1978.452" Y="-348.4319" Z="35.45237" />
+				<Hotspot X="2014.612" Y="-352.8362" Z="35.45229" />
+				<Hotspot X="2043.772" Y="-381.2625" Z="35.45239" />
+				<Hotspot X="2026.987" Y="-426.8234" Z="35.45079" />
+				<Hotspot X="1989.476" Y="-428.4764" Z="36.27662" />
+				<Hotspot X="1961.462" Y="-387.3018" Z="35.45228" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- DecrepitFerry -->
+		<Name>DecrepitFerry</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>18</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1868 1869 1870 -->
+			<Factions>21</Factions>
+			<Hotspots>
+				<Hotspot X="728.0656" Y="1215.283" Z="63.38259" />
+				<Hotspot X="784.2978" Y="1241.376" Z="53.88933" />
+				<Hotspot X="761.3769" Y="1199.175" Z="55.89053" />
+				<Hotspot X="759.1187" Y="1147.313" Z="49.32846" />
+				<Hotspot X="753.3092" Y="1041.576" Z="47.4721" />
+				<Hotspot X="695.7732" Y="1066.983" Z="50.01991" />
+				<Hotspot X="631.9247" Y="1123.921" Z="62.96516" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Durnholde_keep -->
+		<Name>Durnholde_keep</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>25</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2261 2244 -->
+			<Factions>87</Factions>
+			<Hotspots>
+				<Hotspot X="-551.3652" Y="-1484.81" Z="52.44104" />
+				<Hotspot X="-547.3522" Y="-1510.151" Z="52.4609" />
+				<Hotspot X="-544.5963" Y="-1537.134" Z="52.57066" />
+				<Hotspot X="-545.9496" Y="-1539.505" Z="52.50234" />
+				<Hotspot X="-548.7751" Y="-1541.685" Z="52.69061" />
+				<Hotspot X="-553.4432" Y="-1541.132" Z="53.21963" />
+				<Hotspot X="-572.997" Y="-1526.527" Z="53.07081" />
+				<Hotspot X="-588.2977" Y="-1494.49" Z="52.51493" />
+				<Hotspot X="-569.4762" Y="-1460.881" Z="53.14857" />
+				<Hotspot X="-552.1799" Y="-1430.58" Z="54.05714" />
+				<Hotspot X="-533.8635" Y="-1403.417" Z="52.79974" />
+				<Hotspot X="-505.1974" Y="-1372.135" Z="52.44189" />
+				<Hotspot X="-479.3497" Y="-1351.392" Z="52.72833" />
+				<Hotspot X="-464.7589" Y="-1360.668" Z="52.92102" />
+				<Hotspot X="-467.7832" Y="-1375.286" Z="52.70269" />
+				<Hotspot X="-508.2608" Y="-1395.198" Z="52.48397" />
+				<Hotspot X="-529.7282" Y="-1411.401" Z="52.96568" />
+				<Hotspot X="-541.6451" Y="-1430.434" Z="53.12994" />
+				<Hotspot X="-548.0151" Y="-1444.831" Z="53.4587" />
+				<Hotspot X="-556.2462" Y="-1463.433" Z="52.44117" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Hillsbrad fields -->
+		<Name>Hillsbrad fields</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>26</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2354 2384 2350 2351 -->
+			<Factions>14 22 44</Factions>
+			<Hotspots>
+				<Hotspot X="-516.7625" Y="-164.3414" Z="52.28104" />
+				<Hotspot X="-414.9055" Y="-178.7473" Z="57.59309" />
+				<Hotspot X="-387.5996" Y="-214.466" Z="59.16118" />
+				<Hotspot X="-367.1198" Y="-327.7414" Z="59.38108" />
+				<Hotspot X="-381.328" Y="-362.0162" Z="59.06963" />
+				<Hotspot X="-367.1454" Y="-460.7534" Z="54.21074" />
+				<Hotspot X="-332.2999" Y="-486.6033" Z="55.05552" />
+				<Hotspot X="-311.5919" Y="-531.656" Z="57.29475" />
+				<Hotspot X="-313.9043" Y="-599.2294" Z="55.86479" />
+				<Hotspot X="-362.4246" Y="-604.0977" Z="53.23087" />
+				<Hotspot X="-407.0035" Y="-579.0457" Z="53.79538" />
+				<Hotspot X="-391.5641" Y="-502.2293" Z="51.47206" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Hinterlands -->
+		<Name>Hinterlands</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>45</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2923 2657 -->
+			<Factions>38 84</Factions>
+			<Hotspots>
+				<Hotspot X="68.81631" Y="-2149.857" Z="104.8859" />
+				<Hotspot X="161.959" Y="-2196.78" Z="99.13547" />
+				<Hotspot X="145.5403" Y="-2334.851" Z="114.0233" />
+				<Hotspot X="116.3367" Y="-2329.34" Z="111.0848" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Hinterlands2 -->
+		<Name>Hinterlands2</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2924 2927 2651 2649 2650 2652 -->
+			<Factions>14 38 654</Factions>
+			<Hotspots>
+				<Hotspot X="105.6692" Y="-2949.562" Z="113.8052" />
+				<Hotspot X="169.6126" Y="-2948.265" Z="114.9158" />
+				<Hotspot X="94.20907" Y="-2867.425" Z="114.9704" />
+				<Hotspot X="88.13573" Y="-2787.873" Z="117.5215" />
+				<Hotspot X="89.25581" Y="-2714.958" Z="108.4925" />
+				<Hotspot X="46.54896" Y="-2649.836" Z="115.1669" />
+				<Hotspot X="-12.59128" Y="-2626.761" Z="122.1067" />
+				<Hotspot X="-11.52813" Y="-2543.431" Z="117.5586" />
+				<Hotspot X="-107.4995" Y="-2595.346" Z="120.3506" />
+				<Hotspot X="-156.8478" Y="-2681.009" Z="119.8141" />
+				<Hotspot X="-159.6211" Y="-2813.635" Z="117.4226" />
+				<Hotspot X="-7.783575" Y="-2870.571" Z="121.7776" />
+				<Hotspot X="97.42966" Y="-2873.157" Z="114.5023" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Ivar_Patch -->
+		<Name>Ivar_Patch</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>13</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1866 -->
+			<Factions>21</Factions>
+			<Hotspots>
+				<Hotspot X="1222.311" Y="1188.679" Z="52.37558" />
+				<Hotspot X="1246.743" Y="1225.3" Z="52.61037" />
+				<Hotspot X="1254.477" Y="1199.868" Z="52.58504" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Nethander_stead -->
+		<Name>Nethander_stead</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>31</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2349 2348 2385 -->
+			<Factions>14 22</Factions>
+			<Hotspots>
+				<Hotspot X="-803.4698" Y="-949.6098" Z="27.20869" />
+				<Hotspot X="-754.0597" Y="-916.0007" Z="32.01089" />
+				<Hotspot X="-802.7226" Y="-817.334" Z="19.3649" />
+				<Hotspot X="-847.5287" Y="-858.8243" Z="22.09094" />
+				<Hotspot X="-1028.888" Y="-886.7868" Z="36.96036" />
+				<Hotspot X="-1072.234" Y="-910.8033" Z="46.70601" />
+				<Hotspot X="-1048.262" Y="-966.6763" Z="48.88527" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- OlsensFarthing -->
+		<Name>OlsensFarthing</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>16</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1866 1865 -->
+			<Factions>21</Factions>
+			<Hotspots>
+				<Hotspot X="182.9797" Y="1475.841" Z="114.4642" />
+				<Hotspot X="151.6197" Y="1477.386" Z="114.591" />
+				<Hotspot X="139.5816" Y="1450.369" Z="115.3471" />
+				<Hotspot X="186.4831" Y="1447.339" Z="114.3618" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Watchers -->
+		<Name>Watchers</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>13</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Repair" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>22</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1888 1889 -->
+			<Factions>76</Factions>
+			<Hotspots>
+				<Hotspot X="-496.733" Y="941.0583" Z="89.73225" />
+				<Hotspot X="-473.613" Y="832.846" Z="96.81752" />
+				<Hotspot X="-415.435" Y="829.3008" Z="94.70297" />
+				<Hotspot X="-417.8989" Y="784.5833" Z="94.60036" />
+				<Hotspot X="-472.0443" Y="732.7067" Z="87.67148" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="-498.808319" Y="-1482.30688" Z="87.17684" Radius="14.5" />
+		<Blackspot X="-585.7359" Y="-917.715149" Z="39.8114128" Radius="14.5" />
+		<Blackspot X="689.6482" Y="-894.414246" Z="157.779831" Radius="14.5" />
+		<Blackspot X="679.721863" Y="-904.3851" Z="157.778564" Radius="14.5" />
+		<Blackspot X="678.3718" Y="-986.950134" Z="170.34108" Radius="14.5" />
+		<Blackspot X="683.8829" Y="-993.6543" Z="170.3583" Radius="14.5" />
+		<Blackspot X="-9.736089" Y="-2814.50562" Z="123.191376" Radius="43.5" />
+		<Blackspot X="1796.91626" Y="1341.27759" Z="88.864006" Radius="34.5" />
+		<Blackspot X="2507.867" Y="833.726257" Z="120.920914" Radius="24.5" />
+		<Blackspot X="1237.47412" Y="952.948547" Z="36.8175049" Radius="34.5" />
+		<Blackspot X="2452.8418" Y="1590.00989" Z="72.15585" Radius="14.5" />
+		<Blackspot X="2449.27637" Y="1602.313" Z="72.15585" Radius="14.5" />
+		<Blackspot X="2440.01782" Y="1595.9895" Z="72.15585" Radius="14.5" />
+	</Blackspots>
+</HBProfile>

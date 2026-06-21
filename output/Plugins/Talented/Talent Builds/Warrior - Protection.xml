@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--http://www.wowhead.com/talent#LMbZhb0oZhfGdRRobbu-->
+<TalentTree Specialization="3" Name="Warrior - Protection" Class="Warrior">
+  <!-- Protection Talents -->
+  <Talent Tab="3" Index="1" Count="3" Name="Incite" />
+  <Talent Tab="3" Index="3" Count="2" Name="Blood and Thunder" />
+  <Talent Tab="3" Index="4" Count="3" Name="Shield Specialization" />
+  <Talent Tab="3" Index="5" Count="3" Name="Shield Mastery" />
+  <Talent Tab="3" Index="6" Count="2" Name="Hold the Line" />
+  <Talent Tab="3" Index="7" Count="2" Name="Gag Order" />
+  <Talent Tab="3" Index="8" Count="1" Name="Last Stand" />
+  <Talent Tab="3" Index="9" Count="1" Name="Concussion Blow" />
+  <Talent Tab="3" Index="10" Count="2" Name="Bastion of Defense" />
+  <Talent Tab="3" Index="11" Count="1" Name="Warbringer" />
+  <Talent Tab="3" Index="12" Count="2" Name="Improved Revenge" />
+  <Talent Tab="3" Index="13" Count="1" Name="Devastate" />
+  <Talent Tab="3" Index="15" Count="2" Name="Thunderstruck" />
+  <Talent Tab="3" Index="17" Count="2" Name="Heavy Repercussions" />
+  <Talent Tab="3" Index="19" Count="3" Name="Sword and Board" />
+  <Talent Tab="3" Index="20" Count="1" Name="Shockwave" />
+   <!-- Arms Talents-->
+  <Talent Tab="1" Index="2" Count="2" Name="Field Dressing" />
+  <Talent Tab="1" Index="3" Count="2" Name="Blitz" />
+  <!-- Fury Talents -->
+  <Talent Tab="2" Index="1" Count="3" Name="Blood Craze" />
+  <Talent Tab="2" Index="3" Count="2" Name="Cruelty" />
+  <Talent Tab="2" Index="7" Count="1" Name="Piercing Howl" />
+  
+</TalentTree>
+

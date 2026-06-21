@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>The Steamvault Heroic</Name>
+  <DungeonId>185</DungeonId>
+  <BossEncounters>
+	<!-- Use the Main Chambers Access Panel behind boss after killing 1 & 2 -->
+    <Boss isFinal="false" entry="17797" name="Hydromancer Thespia" killOrder="1" optional="false" >
+      <Path>
+        <!-- Use the shortcut -->
+        <Hotspot X="-73.48984" Y="-124.6556" Z="-17.71136" />
+        <Hotspot X="-27.11519" Y="-206.1781" Z="-20.87949" />
+        <Hotspot X="88.39713" Y="-316.1105" Z="-7.870739" />
+      </Path>
+    </Boss>
+	<Boss isFinal="false" entry="17796" name="Mekgineer Steamrigger" killOrder="2" optional="false" X="-331.3518" Y="-122.1729" Z="-8.083851" />
+	<Boss isFinal="true" entry="17798" name="Warlord Kalithresh" killOrder="3" optional="false" X="-95.41883" Y="-552.0314" Z="8.187087" />
+	<!-- Tank has to drag final boss to the water tanks so the boss doesn't enrage -->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

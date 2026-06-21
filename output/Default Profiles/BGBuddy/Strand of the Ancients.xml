@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<PvpProfile>
+  <Name>Strand of the Ancients</Name>
+  
+  <StartLocation X="1545.061" Y="99.0054" Z="5.628502" Side="Defend" />
+  
+  <Blackspots>
+  </Blackspots>
+
+  <Boxes Side="Defend">
+    <Box Name="ChamberOfAncientRelics">
+      <Center X="962.5902" Y="-106.6647" Z="93.86793" />
+      <TopLeft X="962.5902" Y="-106.6647" Z="93.86793" />
+      <BottomRight X="962.5902" Y="-106.6647" Z="93.86793" />
+    </Box>
+
+    <Box Name="GateOfTheYellowMoon">
+      <Center X="1094.945" Y="-106.6107" Z="72.15096" />
+      <TopLeft X="1094.945" Y="-106.6107" Z="72.15096" />
+      <BottomRight X="1094.945" Y="-106.6107" Z="72.15096" />
+    </Box>
+
+    <Box Name="GateOfThePurpleAmethyst">
+      <Center X="1249.467" Y="68.25315" Z="42.67157" />
+      <TopLeft X="1249.467" Y="68.25315" Z="42.67157" />
+      <BottomRight X="1249.467" Y="68.25315" Z="42.67157" />
+    </Box>
+
+    <Box Name="GateOfTheRedSun">
+      <Center X="1257.36" Y="-198.2806" Z="46.36218" />
+      <TopLeft X="1257.36" Y="-198.2806" Z="46.36218" />
+      <BottomRight X="1257.36" Y="-198.2806" Z="46.36218" />
+    </Box>
+  </Boxes>
+
+  <Boxes Side="Attack">
+    <Box Name="ChamberOfAncientRelics">
+      <Center X="962.5902" Y="-106.6647" Z="93.86793" />
+      <TopLeft X="962.5902" Y="-106.6647" Z="93.86793" />
+      <BottomRight X="962.5902" Y="-106.6647" Z="93.86793" />
+    </Box>
+
+    <Box Name="GateOfTheYellowMoon">
+      <Center X="1094.945" Y="-106.6107" Z="72.15096" />
+      <TopLeft X="1094.945" Y="-106.6107" Z="72.15096" />
+      <BottomRight X="1094.945" Y="-106.6107" Z="72.15096" />
+    </Box>
+
+    <Box Name="GateOfThePurpleAmethyst">
+      <Center X="1249.467" Y="68.25315" Z="42.67157" />
+      <TopLeft X="1249.467" Y="68.25315" Z="42.67157" />
+      <BottomRight X="1249.467" Y="68.25315" Z="42.67157" />
+    </Box>
+
+    <Box Name="GateOfTheRedSun">
+      <Center X="1257.36" Y="-198.2806" Z="46.36218" />
+      <TopLeft X="1257.36" Y="-198.2806" Z="46.36218" />
+      <BottomRight X="1257.36" Y="-198.2806" Z="46.36218" />
+    </Box>
+  </Boxes>
+</PvpProfile>

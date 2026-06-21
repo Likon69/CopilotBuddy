@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Shaman" Specialization="2" Name="Shaman-Enhancement">
+  <Agility>100</Agility>
+  <HitRating>60</HitRating>
+  <ExpertiseRating>48</ExpertiseRating>
+  <Mastery>44</Mastery>
+  <Strength>42</Strength>
+  <AttackPower>40</AttackPower>
+  <Intellect>36</Intellect>
+  <SpellPower>36</SpellPower>
+  <CriticalStrikeRating>28</CriticalStrikeRating>
+  <HasteRating>16</HasteRating>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

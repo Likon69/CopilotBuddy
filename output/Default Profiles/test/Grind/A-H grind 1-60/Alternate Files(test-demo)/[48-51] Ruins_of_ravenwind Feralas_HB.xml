@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[48-51] Ruins_of_ravenwind Feralas</Name>
+	<MinLevel>48</MinLevel>
+	<MaxLevel>51</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Ruins_of_ravenwind -->
+		<Name>Ruins_of_ravenwind</Name>
+		<MinLevel>48</MinLevel>
+		<MaxLevel>51</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>46</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 5363 5362 5366 5364 -->
+			<Factions>514</Factions>
+			<Hotspots>
+				<Hotspot X="-2961.693" Y="2573.508" Z="45.33599" />
+				<Hotspot X="-3096.843" Y="2705.309" Z="55.06428" />
+				<Hotspot X="-3139.792" Y="2761.038" Z="69.63486" />
+				<Hotspot X="-3097.509" Y="2778.749" Z="73.63476" />
+				<Hotspot X="-3040.596" Y="2794.155" Z="64.4044" />
+				<Hotspot X="-2987.975" Y="2746.764" Z="52.56892" />
+				<Hotspot X="-3019.684" Y="2673.326" Z="58.94709" />
+				<Hotspot X="-2926.05" Y="2717.235" Z="73.68307" />
+				<Hotspot X="-2916.019" Y="2806.319" Z="77.99636" />
+				<Hotspot X="-2814.102" Y="2690.262" Z="73.22994" />
+				<Hotspot X="-2857.965" Y="2604.268" Z="58.89461" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="2053.02563" Y="991.3203" Z="211.3387" Radius="144.5" />
+		<Blackspot X="1961.339" Y="958.6144" Z="179.8755" Radius="44.5" />
+		<Blackspot X="1929.52075" Y="961.1703" Z="172.045792" Radius="44.5" />
+		<Blackspot X="1897.10828" Y="957.998535" Z="164.17395" Radius="44.5" />
+		<Blackspot X="888.288147" Y="1740.20618" Z="-12.6744785" Radius="74.5" />
+		<Blackspot X="879.420654" Y="1739.1532" Z="-13.1571789" Radius="54.5" />
+	</Blackspots>
+</HBProfile>

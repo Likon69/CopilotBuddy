@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Shaman" Specialization="1" Name="Shaman-Elemental">
+  <HitRating>100</HitRating>
+  <SpellPower>80</SpellPower>
+  <Intellect>80</Intellect>
+  <Mastery>75</Mastery>
+  <HasteRating>75</HasteRating>
+  <CriticalStrikeRating>40</CriticalStrikeRating>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Stormwind Stockade</Name>
+  <DungeonId>12</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="46383" name="Randolph Moloch" killOrder="1" optional="false" X="144.6028" Y="2.146715" Z="-25.60624"/>
+    <Boss isFinal="false" entry="46264" name="Lord Overheat" killOrder="2" optional="false" X="99.4527" Y="-116.802" Z="-35.18953"/>
+    <Boss isFinal="true" entry="46254" name="Hogger" killOrder="3" optional="false" X="158.016" Y="116.564" Z="-35.18957"/>
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="109.965" Y="-3.15503" Z="-25.88335" Radius="2.048146" />
+    <Blackspot X="73.73563" Y="-87.46348" Z="-33.93955" Radius="0.7283562" />
+    <Blackspot X="72.21924" Y="-90.40993" Z="-33.93919" Radius="0.5977057" />
+    <Blackspot X="155.3795" Y="41.15371" Z="-34.85617" Radius="0.3920015" />
+  </Blackspots>
+</DungeonBuddyProfile>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Warlock" Specialization="2" Name="Warlock-Demonology">
+  <Intellect>100</Intellect>
+  <SpellPower>79</SpellPower>
+  <HitRating>63</HitRating>
+  <HasteRating>40</HasteRating>
+  <CriticalStrikeRating>35</CriticalStrikeRating>
+  <Mastery>31</Mastery>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

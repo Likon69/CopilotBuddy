@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- http://wowtal.com/#k=xsU3ENku6.b0w.deathknight. -->
+<TalentTree Specialization="2" Name="Death Knight - Frost" Class="DeathKnight">
+  <!-- Frost Talents 31-->
+  <Talent Tab="2" Index="1" Count="3" Name="Runic Power Mastery" />
+  <Talent Tab="2" Index="2" Count="2" Name="Icy Reach" />
+  <Talent Tab="2" Index="4" Count="3" Name="Annihilation" />
+  <Talent Tab="2" Index="7" Count="2" Name="Endless Winter" />
+  <Talent Tab="2" Index="8" Count="2" Name="Merciless Combat" />
+  <Talent Tab="2" Index="9" Count="2" Name="Chill Of The Grave" />
+  <Talent Tab="2" Index="10" Count="3" Name="Killing Machine" />
+  <Talent Tab="2" Index="11" Count="3" Name="Rime" />
+  <Talent Tab="2" Index="12" Count="1" Name="Pillar Of Frost" />
+  <Talent Tab="2" Index="13" Count="1" Name="Improved Icy Talons" />
+  <Talent Tab="2" Index="14" Count="2" Name="Brittle Bones" />
+  <Talent Tab="2" Index="16" Count="1" Name="Hungering Cold" />
+  <Talent Tab="2" Index="17" Count="2" Name="Improved Forst Presence" />
+  <Talent Tab="2" Index="19" Count="3" Name="Might Of The Frozen Wastes" />
+  <Talent Tab="2" Index="20" Count="1" Name="Howling Blast" />
+  <!-- Blood Talents 5-->
+  <Talent Tab="1" Index="1" Count="2" Name="Butchery" />
+  <Talent Tab="1" Index="3" Count="3" Name="Bladed Armor" />
+  <!-- Unholy Talents 5-->
+  <Talent Tab="3" Index="2" Count="3" Name="Virulence" />
+  <Talent Tab="3" Index="3" Count="2" Name="Epidemic" />
+ </TalentTree>

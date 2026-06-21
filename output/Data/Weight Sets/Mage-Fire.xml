@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Mage" Specialization="2" Name="Mage-Fire">
+  <Intellect>100</Intellect>
+  <HitRating>82</HitRating>
+  <SpellPower>68</SpellPower>
+  <CriticalStrikeRating>52</CriticalStrikeRating>
+  <Mastery>37</Mastery>
+  <HasteRating>35</HasteRating>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[20-23] Southern Barrens Gold Road</Name>
+	<MinLevel>20</MinLevel>
+	<MaxLevel>23</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Taurajo South Grind -->
+		<Name>Taurajo South Grind</Name>
+		<MinLevel>20</MinLevel>
+		<MaxLevel>23</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>18</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3239 3466 3236 -->
+			<Factions>15 16 189</Factions>
+			<Hotspots>
+				<Hotspot X="-2482.761" Y="-1821.732" Z="93.50264" />
+				<Hotspot X="-2537.139" Y="-1889.295" Z="93.49944" />
+				<Hotspot X="-2546.287" Y="-1972.217" Z="92.74515" />
+				<Hotspot X="-2536.9" Y="-2042.322" Z="94.19338" />
+				<Hotspot X="-2615.152" Y="-2109.531" Z="94.36206" />
+				<Hotspot X="-2744.938" Y="-2130.729" Z="93.51055" />
+				<Hotspot X="-2919.966" Y="-2154.079" Z="91.667" />
+				<Hotspot X="-3007.441" Y="-2119.776" Z="92.54079" />
+				<Hotspot X="-3016.268" Y="-2066.18" Z="96.66202" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="1254.42322" Y="-7.0831995" Z="-5.4597683" Radius="34.5" />
+		<Blackspot X="1233.13684" Y="10.2530689" Z="-4.02991438" Radius="34.5" />
+		<Blackspot X="1237.88416" Y="29.5894566" Z="-5.10984039" Radius="34.5" />
+		<Blackspot X="-1619.094" Y="-1791.27185" Z="92.2063751" Radius="34.5" />
+		<Blackspot X="-1618.94006" Y="-1791.93176" Z="92.2834244" Radius="74.5" />
+	</Blackspots>
+</HBProfile>

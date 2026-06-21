@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Priest" Specialization="2" Name="Priest-Holy">
+  <Intellect>100</Intellect>
+  <Spirit>95</Spirit>
+  <HasteRating>85</HasteRating>
+  <Mastery>80</Mastery>
+  <CriticalStrikeRating>30</CriticalStrikeRating>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

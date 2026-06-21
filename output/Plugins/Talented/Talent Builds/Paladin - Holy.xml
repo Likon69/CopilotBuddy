@@ -1,0 +1,22 @@
+<TalentTree Name="Paladin - Holy" Specialization="1" Class="Paladin">
+  <Talent Tab="1" Index="2" Count="3" Name="Protector of the Innocent" />
+  <Talent Tab="1" Index="3" Count="3" Name="Judgements of the Pure" />
+  <Talent Tab="1" Index="4" Count="3" Name="Clarity of Purpose" />
+  <Talent Tab="1" Index="5" Count="1" Name="Last Word" />
+  <Talent Tab="1" Index="8" Count="1" Name="Divine Favor" />
+  <Talent Tab="1" Index="9" Count="2" Name="Infusion of Light" />
+  <Talent Tab="1" Index="10" Count="2" Name="Daybreak" />
+  <Talent Tab="1" Index="11" Count="1" Name="Enlightened Judgements" />
+  <Talent Tab="1" Index="12" Count="1" Name="Beacon of Light" />
+  <Talent Tab="1" Index="13" Count="3" Name="Speed of Light" />
+  <Talent Tab="1" Index="14" Count="1" Name="Sacred Cleansing" />
+  <Talent Tab="1" Index="15" Count="3" Name="Conviction" />
+  <Talent Tab="1" Index="16" Count="1" Name="Aura Mastery" />
+  <Talent Tab="1" Index="17" Count="2" Name="Paragon of Virtue" />
+  <Talent Tab="1" Index="18" Count="3" Name="Tower of Radiance" />
+  <Talent Tab="1" Index="20" Count="1" Name="Light of Dawn" />
+  <Talent Tab="2" Index="1" Count="3" Name="Divinity" />
+  <Talent Tab="2" Index="3" Count="2" Name="Eternal Glory" />
+  <Talent Tab="3" Index="2" Count="3" Name="Crusade" />
+  <Talent Tab="3" Index="3" Count="2" Name="Improved Judgement" />
+</TalentTree>

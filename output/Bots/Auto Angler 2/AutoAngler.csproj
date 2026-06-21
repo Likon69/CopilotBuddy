@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1759A9F-89B9-406E-9B5A-7EC14ABC8338}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HighVoltz</RootNamespace>
+    <AssemblyName>AutoAngler</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Honorbuddy">
+      <HintPath>..\..\Honorbuddy\Honorbuddy.exe</HintPath>
+    </Reference>
+    <Reference Include="Honorbuddy, Version=2.0.0.5999, Culture=neutral, PublicKeyToken=50a565ab5c01ae50">
+      <HintPath>..\..\Honorbuddy.exe</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tripper.Tools">
+      <HintPath>..\..\Honorbuddy\Tripper.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Tripper.Tools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c40611ce03f849a2">
+      <HintPath>..\..\Tripper.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoAngler.cs" />
+    <Compile Include="AutoAnglerSettings.cs" />
+    <None Include="SVN.template" />
+    <Compile Include="Composites\ApplyLureAction.cs" />
+    <Compile Include="Composites\CombatAction.cs" />
+    <Compile Include="Composites\AutoAnglerDecorator.cs" />
+    <Compile Include="Composites\EquipPoleAction.cs" />
+    <Compile Include="Composites\FishAction.cs" />
+    <Compile Include="Composites\FollowPathAction.cs" />
+    <Compile Include="Composites\HarvestPoolDecorator.cs" />
+    <Compile Include="Composites\LogoutAction.cs" />
+    <Compile Include="Composites\LootAction.cs" />
+    <Compile Include="Composites\LootNPCsAction.cs" />
+    <Compile Include="Composites\MailAction.cs" />
+    <Compile Include="Composites\MoveToPoolAction.cs" />
+    <Compile Include="Composites\VendorAction.cs" />
+    <Compile Include="Composites\WaterWalkingAction.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SVN.cs" />
+    <Compile Include="SvnBase.cs" />
+    <Compile Include="Util1.cs" />
+    <Compile Include="WaterWalking.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)*.cs" "$(ProjectDir)..\..\Honorbuddy\Bots\AutoAngler2" /I /S /Y
+xcopy "$(ProjectDir)*.xml" "$(ProjectDir)..\..\Honorbuddy\Bots\AutoAngler2" /I /S /Y
+</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>SubWCRev.exe $(ProjectDir) $(ProjectDir)\SVN.template $(ProjectDir)\SVN.cs</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

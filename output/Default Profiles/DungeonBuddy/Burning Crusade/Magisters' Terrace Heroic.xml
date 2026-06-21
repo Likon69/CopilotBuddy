@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Magisters' Terrace Heroic</Name>
+  <DungeonId>201</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="24723" name="Selin Fireheart" killOrder="1" optional="false" X="242.0751" Y="0.300781" Z="1.756554" />
+	<Boss isFinal="false" entry="24744" name="Vexallus" killOrder="2" optional="false" X="231.3668" Y="-214.3461" Z="-6.406586" />
+	<Boss isFinal="false" entry="24560" name="Priestess Delrissa" killOrder="3" optional="false" X="126.9013" Y="19.15473" Z="-20.00487" />
+	<!-- Priestess comes with 5 named adds - she is the 'boss' -->
+	<Boss isFinal="true" entry="24664" name="Kael'thas Sunstrider" killOrder="4" optional="false" X="148.5494" Y="186.9807" Z="-16.72742" />
+	<!-- Use the (Escape to the Isle of Quel'Danas) gameobject behind boss to gtfo -->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

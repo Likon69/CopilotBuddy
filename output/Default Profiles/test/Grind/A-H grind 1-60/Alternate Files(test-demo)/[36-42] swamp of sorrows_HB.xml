@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[36-42] swamp of sorrows</Name>
+	<MinLevel>36</MinLevel>
+	<MaxLevel>42</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Swamp_beast_grind -->
+		<Name>Swamp_beast_grind</Name>
+		<MinLevel>36</MinLevel>
+		<MaxLevel>42</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>34</TargetMinLevel>
+			<TargetMaxLevel>40</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 767 861 1084 858 -->
+			<Factions>14 16 22 29</Factions>
+			<Hotspots>
+				<Hotspot X="-10550.07" Y="-2823.569" Z="22.53186" />
+				<Hotspot X="-10529.09" Y="-2930.202" Z="22.03669" />
+				<Hotspot X="-10475.91" Y="-3019.11" Z="21.91238" />
+				<Hotspot X="-10400.29" Y="-3083.348" Z="17.37442" />
+				<Hotspot X="-10327.35" Y="-3125.02" Z="21.64682" />
+				<Hotspot X="-10249.66" Y="-3264.55" Z="17.80445" />
+				<Hotspot X="-10167.05" Y="-3275.588" Z="18.85663" />
+				<Hotspot X="-10098.22" Y="-3221.432" Z="19.38099" />
+				<Hotspot X="-10122.16" Y="-3115.315" Z="21.72911" />
+				<Hotspot X="-10165.08" Y="-2991.923" Z="23.76445" />
+				<Hotspot X="-10150.76" Y="-2890.059" Z="22.65907" />
+				<Hotspot X="-10199.57" Y="-2828.506" Z="22.09166" />
+				<Hotspot X="-10214.6" Y="-2765.235" Z="21.22266" />
+				<Hotspot X="-10343.49" Y="-2694.594" Z="22.30876" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="-9339.796" Y="-1375.90515" Z="64.6232" Radius="10" />
+		<Blackspot X="-9234.794" Y="-2452.01636" Z="57.200798" Radius="10" />
+		<Blackspot X="-9233.955" Y="-2450.85986" Z="57.08908" Radius="15" />
+		<Blackspot X="-9226.469" Y="-2465.65576" Z="55.4579468" Radius="15" />
+		<Blackspot X="-9242.635" Y="-2432.83472" Z="54.6309624" Radius="15" />
+		<Blackspot X="-9236.683" Y="-623.3877" Z="62.24694" Radius="144.5" />
+		<Blackspot X="-9275.166" Y="-689.1942" Z="63.7245026" Radius="44.5" />
+		<Blackspot X="-9956.776" Y="544.1972" Z="37.69945" Radius="64.5" />
+		<Blackspot X="-10458.874" Y="-818.168762" Z="50.7234154" Radius="43.5" />
+		<Blackspot X="-9587.319" Y="1444.18738" Z="1.857995" Radius="24.5" />
+		<Blackspot X="-9838.218" Y="-211.926758" Z="37.5097466" Radius="44.5" />
+		<Blackspot X="-9600.088" Y="-2516.15747" Z="59.7222557" Radius="34.5" />
+		<Blackspot X="-9773.243" Y="-2270.09277" Z="59.29187" Radius="24.5" />
+		<Blackspot X="-9790.506" Y="-2209.35645" Z="58.6095352" Radius="24.5" />
+		<Blackspot X="-11209.6631" Y="-169.97464" Z="3.92586565" Radius="52.5" />
+		<Blackspot X="-11835.8682" Y="71.99002" Z="14.7256517" Radius="74.5" />
+		<Blackspot X="-10035.8066" Y="-961.2361" Z="32.69168" Radius="44.5" />
+		<Blackspot X="-10376.0469" Y="197.685" Z="33.9285851" Radius="84.5" />
+		<Blackspot X="-10379.0879" Y="170.74234" Z="35.0074959" Radius="84.5" />
+		<Blackspot X="-10335.3086" Y="163.394424" Z="36.0766068" Radius="84.5" />
+		<Blackspot X="-10325.7744" Y="217.986" Z="32.98704" Radius="84.5" />
+		<Blackspot X="-10368.2607" Y="222.9967" Z="32.7312279" Radius="84.5" />
+		<Blackspot X="-9685.698" Y="-69.453064" Z="40.0703926" Radius="99.5" />
+		<Blackspot X="-9805.044" Y="-928.4625" Z="39.8556137" Radius="4.5" />
+		<Blackspot X="-9805.044" Y="-928.4625" Z="39.8556137" Radius="24.5" />
+	</Blackspots>
+</HBProfile>

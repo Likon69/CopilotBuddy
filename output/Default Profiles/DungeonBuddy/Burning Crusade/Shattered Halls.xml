@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Shattered Halls</Name>
+  <DungeonId>138</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="16807" name="Grand Warlock Nethekurse" killOrder="1" optional="false" X="177.7292" Y="288.4614" Z="-8.186083" />
+	<Boss isFinal="false" entry="20923" name="Blood Guard Porung" killOrder="2" optional="false" X="512.6873" Y="315.6516" Z="1.935071" />
+	<Boss isFinal="false" entry="16809" name="Warbringer O'mrogg" killOrder="3" optional="true" X="375.1204" Y="57.5781" Z="-7.299201" />
+	<Boss isFinal="true" entry="16808" name="Warchief Kargath Bladefist" killOrder="4" optional="false" X="231.25" Y="-83.64489" Z="4.940101" />  
+	<!-- Kill this guy for some potions... and there should be a 'save me' npc back here 
+	<Vendor Name="Shattered Hand Executioner" Entry="17301" Type="Repair" X="152.8524" Y="-83.63912" Z="1.937684" /> -->
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

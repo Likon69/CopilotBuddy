@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="Priest" Specialization="3" Name="Priest-Shadow">
+  <Intellect>100</Intellect>
+  <SpellPower>79</SpellPower>
+  <HasteRating>50</HasteRating>
+  <CriticalStrikeRating>40</CriticalStrikeRating>
+  <Mastery>38</Mastery>
+  <Spirit>37</Spirit>
+  <HitRating>37</HitRating>
+  <Stamina>1</Stamina>
+  <Armor>1</Armor>
+</WeightSet>

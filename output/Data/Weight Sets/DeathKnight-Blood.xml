@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightSet Class="DeathKnight" Specialization="1" Name="Death Knight-Blood">
+  <Strength>100</Strength>
+  <Stamina>20</Stamina>
+  <Mastery>50</Mastery>
+  <DodgeRating>50</DodgeRating>
+  <ParryRating>50</ParryRating>
+  <ExpertiseRating>38</ExpertiseRating>
+  <CriticalStrikeRating>22</CriticalStrikeRating>
+  <Armor>18</Armor>
+  <HitRating>16</HitRating>
+  <HasteRating>16</HasteRating>
+</WeightSet>

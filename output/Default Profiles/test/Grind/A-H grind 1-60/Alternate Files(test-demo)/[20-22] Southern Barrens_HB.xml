@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[20-22] Southern Barrens</Name>
+	<MinLevel>20</MinLevel>
+	<MaxLevel>22</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Southern Barrens Grind -->
+		<Name>Southern Barrens Grind</Name>
+		<MinLevel>20</MinLevel>
+		<MaxLevel>22</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>18</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 3245 3426 3256 4129 3247 3463 -->
+			<Factions>14 38 48 189</Factions>
+			<Hotspots>
+				<Hotspot X="-1757.102" Y="-2545.907" Z="91.66741" />
+				<Hotspot X="-1723.594" Y="-2422.773" Z="93.54634" />
+				<Hotspot X="-1691.844" Y="-2260.841" Z="92.28834" />
+				<Hotspot X="-1639.646" Y="-2125.878" Z="93.21412" />
+				<Hotspot X="-1527.321" Y="-1988.713" Z="92.05614" />
+				<Hotspot X="-1522.273" Y="-1941.908" Z="91.6675" />
+				<Hotspot X="-1519.357" Y="-1899.896" Z="93.09924" />
+				<Hotspot X="-1603.174" Y="-1894.759" Z="93.33494" />
+				<Hotspot X="-1757.723" Y="-1981.809" Z="93.09322" />
+				<Hotspot X="-1810.629" Y="-2119.18" Z="92.32763" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="1254.42322" Y="-7.0831995" Z="-5.4597683" Radius="34.5" />
+		<Blackspot X="1233.13684" Y="10.2530689" Z="-4.02991438" Radius="34.5" />
+		<Blackspot X="1237.88416" Y="29.5894566" Z="-5.10984039" Radius="34.5" />
+		<Blackspot X="-1619.094" Y="-1791.27185" Z="92.2063751" Radius="34.5" />
+		<Blackspot X="-1618.94006" Y="-1791.93176" Z="92.2834244" Radius="74.5" />
+	</Blackspots>
+</HBProfile>

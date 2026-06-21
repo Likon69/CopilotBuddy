@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PvpProfile>
+  <Name>Eye of the Storm</Name>
+  
+  <!-- These are the starting area locations where we'll wait for the BG to begin. Change these as you see fit.
+  <StartLocation X="1807.736" Y="1539.416" Z="1267.624" Side="Horde"/>
+  <StartLocation X="2523.686" Y="1596.597" Z="1269.345" Side="Alliance" /> -->
+  
+  <!-- Yes... blackspot support! -->
+  <!--
+  <Blackspots>
+    <Blackspot X="-18000" Y="-18000" Z="-18000" Height="0" Radius="0" />
+    <Blackspot X="18000" Y="18000" Z="18000" Height="1000" Radius="1000" />
+    <Blackspot X="-17998.9" Y="-17998.9" Z="-17998.9" Height="1.1" Radius="1.1" />
+  </Blackspots>
+  -->
+  
+  <!-- Each "side" has its own set of boxes. These may be exact duplicates, and may not be. Change them as you see fit, leaving names intact. -->
+  <Boxes Side="Horde">
+    
+    <Box Name="FelReaverRuins">
+      <!-- The top-left of a bounding box, to pull friendly player counts from. -->
+      <TopLeft X="2028.01" Y="1705.049" Z="1185.55" />
+      <!-- The bottom-right of a bounding box, to pull friendly player counts from. -->
+      <BottomRight X="2070.148" Y="1763.969" Z="1186.176" />
+      <!-- The actual "center" of the box. This is where the bot will move you to, when this box is selected as the "best to be at". -->
+      <Center X="2042.904" Y="1738.793" Z="1190.063" />
+    </Box>
+
+    <Box Name="BloodElfTower">
+      <TopLeft X="2036.316" Y="1429.174" Z="1183.712" />
+      <BottomRight X="2070.244" Y="1359.657" Z="1191.965" />
+      <Center X="2048.365" Y="1396.737" Z="1194.286" />
+    </Box>
+
+    <Box Name="MageTower">
+      <TopLeft X="2265.134" Y="1699.419" Z="1172.905" />
+      <BottomRight X="2309.144" Y="1774.506" Z="1188.77" />
+      <Center X="2285.397" Y="1726.766" Z="1188.291" />
+    </Box>
+
+    <Box Name="DraeneiRuins">
+      <TopLeft X="2262.025" Y="1438.084" Z="1183.25" />
+      <BottomRight X="2314.736" Y="1367.639" Z="1199.44" />
+      <Center X="2285.415" Y="1391.91" Z="1196.19" />
+    </Box>
+
+    <Box Name="Flag">
+      <TopLeft X="0" Y="0" Z="0" />
+      <BottomRight X="0" Y="0" Z="0" />
+      <Center  X="2174.99" Y="1569.236" Z="1159.942" />
+    </Box>
+  </Boxes>
+  
+  <Boxes Side="Alliance">
+    <Box Name="FelReaverRuins">
+      <TopLeft X="2028.01" Y="1705.049" Z="1185.55" />
+      <BottomRight X="2070.148" Y="1763.969" Z="1186.176" />
+      <Center X="2042.904" Y="1738.793" Z="1190.063" />
+    </Box>
+
+    <Box Name="BloodElfTower">
+      <TopLeft X="2036.316" Y="1429.174" Z="1183.712" />
+      <BottomRight X="2070.244" Y="1359.657" Z="1191.965" />
+      <Center X="2048.365" Y="1396.737" Z="1194.286" />
+    </Box>
+
+    <Box Name="MageTower">
+      <TopLeft X="2265.134" Y="1699.419" Z="1172.905" />
+      <BottomRight X="2309.144" Y="1774.506" Z="1188.77" />
+      <Center X="2285.397" Y="1726.766" Z="1188.291" />
+    </Box>
+
+    <Box Name="DraeneiRuins">
+      <TopLeft X="2262.025" Y="1438.084" Z="1183.25" />
+      <BottomRight X="2314.736" Y="1367.639" Z="1199.44" />
+      <Center X="2285.415" Y="1391.91" Z="1196.19" />
+    </Box>
+
+    <Box Name="Flag">
+      <TopLeft X="0" Y="0" Z="0" />
+      <BottomRight X="0" Y="0" Z="0" />
+      <Center  X="2174.99" Y="1569.236" Z="1159.942" />
+    </Box>
+  </Boxes>
+</PvpProfile>

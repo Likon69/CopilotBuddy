@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>The Oculus</Name>
+  <DungeonId>206</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="27654" name="Drakos the Interrogator" killOrder="1" optional="false" >
+      <Path>
+        <Hotspot X="1045.784" Y="1103.722" Z="361.087" /> <!-- Portal location -->
+        <Hotspot X="947.7938" Y="1045.8" Z="359.9674"/> 
+      </Path>
+    </Boss>
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

@@ -1,0 +1,60 @@
+<HBProfile>
+  <Name>TestPath</Name>
+
+  <MinLevel>1</MinLevel>
+  <MaxLevel>9999999999999</MaxLevel>
+  <MailGrey>False</MailGrey>
+  <MailWhite>False</MailWhite>
+  <MailGreen>False</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>True</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+  <MinDurability>0.2</MinDurability>
+  <MinFreeBagSlots>2</MinFreeBagSlots>
+
+  <AvoidMobs />
+  <Blackspots />
+  <Mailboxes />
+
+  <QuestOrder>
+<!-- <MoveTo X="5817.193" Y="456.9332" Z="658.76245" /> -->
+
+<!-- elwyn forest -->
+  <!-- <RunTo X="-8637.258" Y="-143.45193" Z="86.32801" /> -->
+  <!-- <Runto X="-8916.1875" Y="-122.97689" Z="81.76287" />
+  <Runto X="-9046.188" Y="-50.053825" Z="88.24492" />
+  <Runto X="-9121.001" Y="-84.72696" Z="79.11379" />
+  <RunTo X="-9355.681" Y="-33.89244" Z="64.23837" />
+  <RunTo X="-9447.185" Y="55.642105" Z="56.1817" /> -->
+<!-- Gnomeregan -->
+<!-- <Runto X="-5116.493" Y="857.5943" Z="253.53717" /> -->
+  <!-- dwarf -->
+  <!-- <RunTo X="-6101.336" Y="394.95868" Z="395.54236" /> -->
+<!-- blod elf -->
+<!-- <Runto X="9048.161" Y="-5979.165" Z="21.338226"/>
+<Runto X="9050.22" Y="-5987.7373" Z="30.388342" /> -->
+<!-- Darnassus -->
+  <RunTo X="9841.047" Y="439.72827" Z="1317.1829" />
+  <RunTo X="10096.428" Y="1084.8146" Z="1327.4629" />
+  <RunTo X="10100.894" Y="1463.4824" Z="1276.6847" />
+  <RunTo X="9737.258" Y="1578.0975" Z="1269.1271" />
+
+		<!-- <PickUp QuestName="Give it a Name" QuestId="12181" GiverName="Chief Plaguebringer Harris" GiverId="24251" />
+		<TurnIn QuestName="Give it a Name" QuestId="12181" TurnInName="Tobias Sarkhoff" TurnInId="24155" />
+		<PickUp QuestName="To Venomspite!" QuestId="12182" GiverName="Tobias Sarkhoff" GiverId="24155" />
+		<PickUp QuestName="Funding the War Effort" QuestId="12303" GiverName="Quartermaster Bartlett" GiverId="27267" />
+		<PickUp QuestName="Materiel Plunder" QuestId="12209" GiverName="Quartermaster Bartlett" GiverId="27267" />
+		<PickUp QuestName="Wanted: The Scarlet Onslaught" QuestId="12205" GiverName="Quartermaster Bartlett" GiverId="27267" />
+		<PickUp QuestName="Blighted Last Rites" QuestId="12206" GiverName="Apothecary Vicky Levine" GiverId="27248" />
+		<While Condition="((HasQuest(12206)) &amp;&amp; (!IsQuestCompleted(12206)))" >
+			<CustomBehavior File="UseItemOn" QuestId="12206" MobId="27253" ItemId="37129" NumOfTimes="1" Range="5" CollectionDistance="1000" />
+		</While> -->
+
+  </QuestOrder>
+</HBProfile>

@@ -1,0 +1,126 @@
+﻿<ProtectedItems>
+  <!-- Water -->
+  <Item name="Purified Draenic Water" entry="27860" />
+  <Item name="Melon Juice" entry="1205" />
+
+  <!-- Food -->
+  <Item name="Clefthoof Ribs" entry="29451" />
+  <Item name="Wild hog Shank" entry="3771" />
+  <Item name="Crusty Flatbread" entry="33449" />
+  <Item name="Mag'har Grainbread" entry="27855" />
+  <Item name="Sweetened Goat's Milk" entry="35954" />
+
+  <!-- Enchanting -->
+  <Item name="Runed Copper Rod" entry="6218" />
+  <Item name="Runed Silver Rod" entry="7795" />
+  <Item name="Runed Golden Rod" entry="13628" />
+  <Item name="Runed Truesilver Rod" entry="13702" />
+  <Item name="Runed Arcanite Rod" entry="20051" />
+  <Item name="Runed Fel Iron Rod" entry="32664" />
+  <Item name="Runed Adamantite Rod" entry="32665" />
+  <Item name="Runed Eternium Rod" entry="32667" />
+  <Item name="Runed Titanium Rod" entry="60619" />
+
+  <!-- Instant Poison -->
+  <Item name="Instant Poison" entry="6497" />
+  <Item name="Instant Poison" entry="6949" />
+  <Item name="Instant Poison" entry="6950" />
+  <Item name="Instant Poison" entry="8926" />
+  <Item name="Instant Poison" entry="8927" />
+  <Item name="Instant Poison" entry="8928" />
+  <Item name="Instant Poison" entry="21927" />
+  <Item name="Instant Poison" entry="43230" />
+  <Item name="Instant Poison" entry="43231" />
+
+  <!--Rune of Teleportation-->
+  <Item name="" entry="17031" />
+
+  <!--Potions-->
+  <!--Healing Potions-->
+  <Item name="Healing Potion" entry="118" />
+  <Item name="Healing Potion" entry="858" />
+  <Item name="Healing Potion" entry="929" />
+  <Item name="Healing Potion" entry="1710" />
+  <Item name="Healing Potion" entry="3928" />
+  <Item name="Healing Potion" entry="13446" />
+  <Item name="Healing Potion" entry="17556" />
+  <Item name="Healing Potion" entry="28551" />
+  <Item name="Healing Potion" entry="33447" />
+
+  <!--Hunter Ammo-->
+  <Item name="Ammo" entry="30319" />
+  <Item name="Ammo" entry="34581" />
+  <Item name="Ammo" entry="34582" />
+  <Item name="Ammo" entry="32760" />
+  <Item name="Ammo" entry="32761" />
+  <Item name="Ammo" entry="31737" />
+  <Item name="Ammo" entry="31735" />
+  <Item name="Ammo" entry="23773" />
+  <Item name="Ammo" entry="33803" />
+  <Item name="Ammo" entry="12654" />
+  <Item name="Ammo" entry="10579" />
+  <Item name="Ammo" entry="32883" />
+  <Item name="Ammo" entry="30612" />
+  <Item name="Ammo" entry="30611" />
+  <Item name="Ammo" entry="32882" />
+  <Item name="Ammo" entry="41164" />
+  <Item name="Ammo" entry="13377" />
+  <Item name="Ammo" entry="11630" />
+  <Item name="Ammo" entry="41165" />
+  <Item name="Ammo" entry="31949" />
+  <Item name="Ammo" entry="3465" />
+  <Item name="Ammo" entry="3464" />
+  <Item name="Ammo" entry="23772" />
+  <Item name="Ammo" entry="10512" />
+  <Item name="Ammo" entry="19316" />
+  <Item name="Ammo" entry="19317" />
+  <Item name="Ammo" entry="10513" />
+  <Item name="Ammo" entry="9399" />
+  <Item name="Ammo" entry="24417" />
+  <Item name="Ammo" entry="18042" />
+  <Item name="Ammo" entry="15997" />
+  <Item name="Ammo" entry="11284" />
+  <Item name="Ammo" entry="28056" />
+  <Item name="Ammo" entry="8068" />
+  <Item name="Ammo" entry="8067" />
+  <Item name="Ammo" entry="8069" />
+  <Item name="Ammo" entry="4960" />
+  <Item name="Ammo" entry="41584" />
+  <Item name="Ammo" entry="2519" />
+  <Item name="Ammo" entry="28060" />
+  <Item name="Ammo" entry="28061" />
+  <Item name="Ammo" entry="11285" />
+  <Item name="Ammo" entry="2516" />
+  <Item name="Ammo" entry="3030" />
+  <Item name="Ammo" entry="2512" />
+  <Item name="Ammo" entry="2515" />
+  <Item name="Ammo" entry="5568" />
+  <Item name="Ammo" entry="3033" />
+  <Item name="Ammo" entry="41586" />
+  <Item name="Ammo" entry="28053" />
+
+  <!--Lowbie Bags-->
+  <Item name="Pouch" entry="4496" />
+  <Item name="Pouch" entry="5571" />
+  <Item name="Pouch" entry="828" />
+  <Item name="Pouch" entry="5572" />
+  <Item name="Pouch" entry="805" />
+
+  <!--Bandages-->
+  <Item name="Bandage" entry="1251" />
+  <Item name="Bandage" entry="2581" />
+  <Item name="Bandage" entry="3530" />
+  <Item name="Bandage" entry="3531" />
+  <Item name="Bandage" entry="6450" />
+  <Item name="Bandage" entry="6451" />
+  <Item name="Bandage" entry="8544" />
+  <Item name="Bandage" entry="8545" />
+  <Item name="Bandage" entry="14529" />
+  <Item name="Bandage" entry="14530" />
+  <Item name="Bandage" entry="21990" />
+  <Item name="Bandage" entry="21991" />
+  <Item name="Bandage" entry="34721" />
+  <Item name="Bandage" entry="34722" />
+  <Item name="Bandage" entry="38640" />
+  <Item name="Bandage" entry="38643" />
+</ProtectedItems>

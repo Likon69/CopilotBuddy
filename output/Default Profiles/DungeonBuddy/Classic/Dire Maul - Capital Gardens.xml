@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Dire Maul - Capital Gardens</Name>
+  <DungeonId>36</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="11489" name="Tendris Warpwood" killOrder="1" optional="false" X="14.17542" Y="474.4224" Z="-23.29932"/>
+    <Boss isFinal="false" entry="11488" name="Illyanna Ravenoak" killOrder="2" optional="false">
+      <Path>
+        <Hotspot X="-9.23214" Y="543.2924" Z="28.60414" />
+        <Hotspot X="-88.85644" Y="530.4175" Z="28.6077" />
+        <Hotspot X="-88.85644" Y="530.4175" Z="28.6077" />
+      </Path>
+    </Boss>
+    <Boss isFinal="false" entry="11487" name="Magister Kalendris" killOrder="3" optional="false" X="27.11058" Y="571.2575" Z="-4.392772"/>
+    <Boss isFinal="false" entry="11496" name="Immol'thar" killOrder="4" optional="false" X="-38.08067" Y="812.4398" Z="-29.53582"/>
+    <Boss isFinal="true" entry="11486" name="Prince Tortheldrin" killOrder="5" optional="false" X="132.6259" Y="625.9129" Z="-48.4669"/>
+
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

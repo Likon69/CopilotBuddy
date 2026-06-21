@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Scholomance</Name>
+  <DungeonId>2</DungeonId>
+  
+  <BossEncounters>
+  	<Boss isFinal="false" entry="10506" name="Kirtonos the Herald" killOrder="1" optional="true" X="322.5301" Y="93.84167" Z="101.6397" /> <!-- Use Brazier of Herald to Summon him -->
+  	<Boss isFinal="false" entry="10503" name="Jandice Barov" killOrder="2" optional="true" X="268.2231" Y="73.63297" Z="95.84163" />
+  	<Boss isFinal="false" entry="11622" name="Rattlegore" killOrder="3" optional="true" X="135.3889" Y="171.349" Z="95.84857" /> <!-- is skippable, but i don't recommend it - it clears most of the guys from the next door -->
+  	<Boss isFinal="false" entry="10432" name="Vectus" killOrder="4" optional="true" X="143.4814" Y="99.09635" Z="104.576" /> <!-- I do not recommend killing him, as it makes the students mad -->
+  	<Boss isFinal="false" entry="10433" name="Marduk Blackpool" killOrder="5" optional="true" X="150.3675" Y="116.2197" Z="104.5776" /> <!-- I do not recommend killing him, as it makes the students mad -->
+  	<Boss isFinal="false" entry="10508" name="Ras Frostwhisper" killOrder="6" optional="true" X="-25.10786" Y="141.2836" Z="83.96582" />
+	<!-- These next 6 are not optional - can be done in any order -->
+  	<Boss isFinal="false" entry="10901" name="Lorekeeper Polkelt" killOrder="7" optional="false" X="264.3365" Y="0.5861936" Z="84.8408" />
+	<Boss isFinal="false" entry="11261" name="Doctor Theolen Krastinov" killOrder="8" optional="false" X="182.2463" Y="-95.43707" Z="85.22827" />
+  	<Boss isFinal="false" entry="10505" name="Instructor Malicia" killOrder="9" optional="false" X="86.66341" Y="-1.960395" Z="85.22826" />
+  	<Boss isFinal="false" entry="10502" name="Lady Illucia Barov" killOrder="10" optional="false" X="265.9555" Y="0.903429" Z="75.24997" />
+	<Boss isFinal="false" entry="10504" name="Lord Alexei Barov" killOrder="11" optional="false" X="178.7237" Y="-91.02322" Z="70.77338" />
+  	<Boss isFinal="false" entry="10507" name="The Ravenian" killOrder="12" optional="false" X="103.305" Y="-1.677517" Z="75.13351" />
+	<Boss isFinal="true" entry="1853" name="Darkmaster Gandling" killOrder="13" optional="false" X="181.1163" Y="-7.159391" Z="75.49542" />
+</BossEncounters>
+  
+  <Blackspots>
+  </Blackspots>
+  
+</DungeonBuddyProfile>

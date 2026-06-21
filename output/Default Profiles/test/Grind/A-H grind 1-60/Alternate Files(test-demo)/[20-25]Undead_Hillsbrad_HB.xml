@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[20-25]Undead_Hillsbrad</Name>
+	<MinLevel>20</MinLevel>
+	<MaxLevel>25</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Berens Wizard Grind -->
+		<Name>Berens Wizard Grind</Name>
+		<MinLevel>21</MinLevel>
+		<MaxLevel>23</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Sell" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>19</TargetMinLevel>
+			<TargetMaxLevel>20</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1889 1888 -->
+			<Factions>76</Factions>
+			<Hotspots>
+				<Hotspot X="-416.4791" Y="831.3052" Z="94.32442" />
+				<Hotspot X="-445.6981" Y="734.561" Z="93.41165" />
+				<Hotspot X="-510.534" Y="763.7607" Z="89.94804" />
+				<Hotspot X="-540.7439" Y="792.5728" Z="92.90216" />
+				<Hotspot X="-558.8103" Y="874.2095" Z="88.72865" />
+				<Hotspot X="-544.0813" Y="939.5834" Z="88.71535" />
+				<Hotspot X="-590.1823" Y="977.0189" Z="89.55309" />
+				<Hotspot X="-471.9316" Y="948.5663" Z="91.23855" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Dawning Isles Grind -->
+		<Name>Dawning Isles Grind</Name>
+		<MinLevel>21</MinLevel>
+		<MaxLevel>24</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Sell" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>19</TargetMinLevel>
+			<TargetMaxLevel>21</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 1958 1957 1955 1908 1939 1940 1953 -->
+			<Factions>14 18 70</Factions>
+			<Hotspots>
+				<Hotspot X="740.8693" Y="194.3417" Z="35.10688" />
+				<Hotspot X="916.1923" Y="159.4266" Z="37.72451" />
+				<Hotspot X="1039.088" Y="216.2815" Z="34.27474" />
+				<Hotspot X="1082.563" Y="285.5369" Z="35.71918" />
+				<Hotspot X="783.123" Y="590.7191" Z="35.12955" />
+				<Hotspot X="721.1121" Y="510.2019" Z="34.56986" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Tarrenmill spiders and bears -->
+		<Name>Tarrenmill spiders and bears</Name>
+		<MinLevel>21</MinLevel>
+		<MaxLevel>25</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Sell" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>19</TargetMinLevel>
+			<TargetMaxLevel>22</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2350 2351 -->
+			<Factions>14 22</Factions>
+			<Hotspots>
+				<Hotspot X="-414.4387" Y="-886.0255" Z="55.77926" />
+				<Hotspot X="-307.283" Y="-922.7211" Z="57.05594" />
+				<Hotspot X="-146.7106" Y="-1018.152" Z="49.59415" />
+				<Hotspot X="62.35768" Y="-1067.193" Z="54.77736" />
+				<Hotspot X="110.827" Y="-1124.123" Z="43.19295" />
+				<Hotspot X="-349.4421" Y="-823.0411" Z="58.6569" />
+				<Hotspot X="-242.3244" Y="-769.6871" Z="58.68588" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Behind durnholde -->
+		<Name>Behind durnholde</Name>
+		<MinLevel>21</MinLevel>
+		<MaxLevel>25</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Sell" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>19</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2349 2356 -->
+			<Factions>22 44</Factions>
+			<Hotspots>
+				<Hotspot X="-443.3323" Y="-1674.782" Z="84.16036" />
+				<Hotspot X="-405.0876" Y="-1711.58" Z="88.49287" />
+				<Hotspot X="-360.4225" Y="-1543.068" Z="71.00542" />
+				<Hotspot X="-304.7844" Y="-1446.75" Z="82.71017" />
+				<Hotspot X="-320.5556" Y="-1325.625" Z="71.18761" />
+				<Hotspot X="-238.4748" Y="-1337.877" Z="86.53742" />
+				<Hotspot X="-84.23776" Y="-1278.939" Z="90.16104" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Durnholde Grind -->
+		<Name>Durnholde Grind</Name>
+		<MinLevel>20</MinLevel>
+		<MaxLevel>25</MaxLevel>
+		<Vendors>
+			<Vendor Name="Ott" Entry="3539" Type="Sell" X="-158.525" Y="-867.18" Z="56.89799" />
+		</Vendors>
+		<GrindArea>
+			<TargetMinLevel>18</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2244 2261 2260 -->
+			<Factions>87</Factions>
+			<Hotspots>
+				<Hotspot X="-548.993" Y="-1497.827" Z="52.44101" />
+				<Hotspot X="-551.6241" Y="-1438.357" Z="52.44093" />
+				<Hotspot X="-485.4818" Y="-1360.342" Z="52.80156" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<Blackspots>
+		<Blackspot X="-488.139832" Y="831.979248" Z="94.92379" Radius="34.5" />
+		<Blackspot X="-477.657257" Y="832.198242" Z="96.34647" Radius="34.5" />
+		<Blackspot X="-474.076965" Y="810.5249" Z="95.7844849" Radius="34.5" />
+		<Blackspot X="797.8941" Y="177.579742" Z="31.3459015" Radius="4.5" />
+		<Blackspot X="797.8941" Y="177.579742" Z="31.3459015" Radius="54.5" />
+		<Blackspot X="870.3664" Y="78.02023" Z="33.7603264" Radius="44.5" />
+		<Blackspot X="1205.60229" Y="387.394135" Z="34.7242" Radius="34.5" />
+		<Blackspot X="1211.2561" Y="369.437836" Z="33.7698135" Radius="34.5" />
+		<Blackspot X="-496.575531" Y="-1342.59766" Z="53.4698868" Radius="4.5" />
+		<Blackspot X="-599.3417" Y="-1472.67725" Z="53.7464561" Radius="14.5" />
+		<Blackspot X="-589.6961" Y="-1469.971" Z="53.643074" Radius="8.5" />
+	</Blackspots>
+</HBProfile>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile creator="WRobotConverter" version="1.0">
+	<Name>[1-12] Tauren Start</Name>
+	<MinLevel>1</MinLevel>
+	<MaxLevel>12</MaxLevel>
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+
+	<SubProfile> <!-- Grind -->
+		<Name>Grind</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>12</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>11</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2959 3035 2957 2960 2971 2967 3566 -->
+			<Factions>14 16 38 73 131 189</Factions>
+			<Hotspots>
+				<Hotspot X="-1998.516" Y="-886.9714" Z="-7.298438" />
+				<Hotspot X="-1800.282" Y="-784.217" Z="-2.301214" />
+				<Hotspot X="-1684.082" Y="-765.5618" Z="0.2214359" />
+				<Hotspot X="-1530.768" Y="-701.8005" Z="-51.30025" />
+				<Hotspot X="-1515.285" Y="-634.9366" Z="-55.80031" />
+				<Hotspot X="-1510.55" Y="-538.2596" Z="-53.42089" />
+				<Hotspot X="-1515.742" Y="-465.2649" Z="-49.47362" />
+				<Hotspot X="-1576.841" Y="-433.6159" Z="-41.32967" />
+				<Hotspot X="-1688.25" Y="-448.3983" Z="-15.27741" />
+				<Hotspot X="-1722.567" Y="-473.5044" Z="-9.77836" />
+				<Hotspot X="-1354.245" Y="-366.6003" Z="-40.63189" />
+				<Hotspot X="-930.8251" Y="-406.1132" Z="-36.00867" />
+				<Hotspot X="-640.064" Y="-401.4586" Z="-5.147045" />
+				<Hotspot X="-635.5138" Y="-574.2809" Z="-6.351023" />
+				<Hotspot X="-789.3164" Y="-733.6027" Z="-5.194472" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+	<SubProfile> <!-- Call of Earth -->
+		<Name>Call of Earth</Name>
+		<MinLevel>1</MinLevel>
+		<MaxLevel>12</MaxLevel>
+		<GrindArea>
+			<TargetMinLevel>1</TargetMinLevel>
+			<TargetMaxLevel>100</TargetMaxLevel>
+			<!-- WRobot EntryIDs: 2953 -->
+			<Factions>7</Factions>
+			<Hotspots>
+				<Hotspot X="-3084.516" Y="-1039.205" Z="49.1503" />
+				<Hotspot X="-3110.42" Y="-1202.75" Z="85.23293" />
+				<Hotspot X="-2957.208" Y="-1006.629" Z="55.75743" />
+				<Hotspot X="-2868.458" Y="-1128.199" Z="88.53979" />
+			</Hotspots>
+		</GrindArea>
+	</SubProfile>
+
+</HBProfile>
