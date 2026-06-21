@@ -48,3 +48,7 @@ obfuscator/
 
 # Database backups
 datadb/*.backup
+
+# Runtime content shipped as release zip (replaces the tracked output/ tree)
+output/
+

@@ -32,6 +32,26 @@ A sincere thank you to the community around this bot. The bug reports, the test 
 - Lua: executed in the game thread through a custom ASM/FASM layer
 - Profiles: XML, Honorbuddy-compatible format
 
+## Branches
+
+Two mmap variants are kept side-by-side. Pick the one that matches the mmaps your server ships.
+
+- **`sub-tile-4x4-v2`** *(default branch on GitHub)* — 4x4 sub-tile navigation (Trinity / MMAP v5). Each ADT is split into 16 Detour sub-tiles of 133 yards, converted through `Tripper.Navigation.MeshMapCalculator`. This is where active development happens.
+- **`master`** — 1x1 navigation (MaNGOS / MMAP v4). One ADT = one Detour tile of 533 yards. Ships `Lib/Navigation 1x1.dll` (prebuilt MaNGOS runtime) and stays on the conservative 1x1 mmap path.
+
+Both branches share the same bot UI, behaviors, profiles and plugins. The only differences are the navigation stack (Detour tile geometry) and the runtime `Navigation*.dll` shipped under `Lib/`.
+
+## Release
+
+A pre-packaged runtime drop is attached at the root of each branch as **`output.zip`**. Extract it next to `CopilotBuddy.exe` (typically under `bin/Release/net10.0-windows7.0/`) and the bot has everything it needs to run: `Bots/`, `Plugins/`, `Routines/`, `Default Profiles/`, `Dungeon Scripts/`, `Languages/`, `Data/`, `Navigation.dll`, `data.bin`, `item_loot.db`, `Spells.bin`, etc.
+
+The `output/` folder itself is gitignored — only `output.zip` is tracked. Rebuild it whenever runtime content changes:
+
+```powershell
+# from the repo root
+Compress-Archive -Path .\output\* -DestinationPath .\output.zip -Force
+```
+
 ## Included botbases
 
 All under `Bots/`. Every botbase inherits from `BotBase` and runs as a synchronous behavior tree.
