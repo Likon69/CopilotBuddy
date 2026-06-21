@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -590,5 +590,600 @@
   </data>
   <data name="ColorWhite" xml:space="preserve">
     <value>White</value>
+  </data>
+  <data name="QuestBot_Name" xml:space="preserve">
+    <value>Quest Bot</value>
+  </data>
+  <data name="LevelBot_Name" xml:space="preserve">
+    <value>Gathering</value>
+  </data>
+  <data name="BuddyBotName" xml:space="preserve">
+    <value>Buddy Bot</value>
+  </data>
+
+  <data name="BotAction_MoveToInnkeepAndExitGame_Label" xml:space="preserve">
+    <value>Move to nearest Innkeep &amp; Exit game</value>
+  </data>
+  <data name="BotAction_MoveToInnkeepAndLogout_Label" xml:space="preserve">
+    <value>Move to nearest Innkeep &amp; Logout</value>
+  </data>
+  <data name="BotAction_MoveToInnkeepAndStopBot_Label" xml:space="preserve">
+    <value>Move to nearest Innkeep &amp; Stop bot</value>
+  </data>
+  <data name="ButtonText_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ButtonText_Load" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="ButtonText_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="ButtonText_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ButtonText_Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="ButtonText_ResetToDefaults" xml:space="preserve">
+    <value>Reset to Defaults</value>
+  </data>
+  <data name="ButtonText_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Button_BuddyPopUpDown_ToolTipFormat" xml:space="preserve">
+    <value>Left-click mouse to minimize or restore {0}.</value>
+  </data>
+  <data name="Button_OverrideProfileSettings_Label" xml:space="preserve">
+    <value>Override Profile Settings</value>
+  </data>
+  <data name="Button_OverrideProfileSettings_ToolTip" xml:space="preserve">
+    <value>If enabled, these configuration settings will override those defined in the profile.</value>
+  </data>
+  <data name="Button_Pause_Label" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="Button_Pause_ToolTipFormat" xml:space="preserve">
+    <value>Left-click mouse to pause or resume {0}.</value>
+  </data>
+  <data name="Button_Start_Label" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Button_Start_ToolTipFormat" xml:space="preserve">
+    <value>Left-click mouse to start {0}.</value>
+  </data>
+  <data name="Button_Stop_Label" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Button_Stop_ToolTipFormat" xml:space="preserve">
+    <value>Left-click mouse to stop {0}.</value>
+  </data>
+  <data name="Dialog_FormatText_IsNotAValidKeybind" xml:space="preserve">
+    <value>'{1}' is not a viable keybind.{0}{0}Please select another key,{0}  or add an Alt, Ctrl, or Shift modifier{0}  to the current selection.</value>
+  </data>
+  <data name="GeneralTextFormat_ArrivedAtLocation_BotStopped" xml:space="preserve">
+    <value>Arrived at {0}... Bot stopped.</value>
+  </data>
+  <data name="GeneralTextFormat_ArrivedAtLocation_GameExiting" xml:space="preserve">
+    <value>Arrived at {1}... Exiting game.{0}(To cancel, turn off 'Innkeeper' Bot Action)</value>
+  </data>
+  <data name="GeneralTextFormat_ArrivedAtLocation_LoggingOut" xml:space="preserve">
+    <value>Arrived at {1}... Logging out.{0}(To cancel, turn off 'Innkeeper' Bot Action)</value>
+  </data>
+  <data name="GeneralTextFormat_BotActionsNotAvailable_SpecificBot" xml:space="preserve">
+    <value>There are no available actions for the {0} bot.</value>
+  </data>
+  <data name="GeneralTextFormat_DefaultProfileSettingInUse" xml:space="preserve">
+    <value>Default profile settings are in use.{0}Current profile setting is reflected here</value>
+  </data>
+  <data name="GeneralTextFormat_Event_Paused" xml:space="preserve">
+    <value>{0} paused {1}</value>
+  </data>
+  <data name="GeneralTextFormat_Event_Resumed" xml:space="preserve">
+    <value>{0} resumed {1}</value>
+  </data>
+  <data name="GeneralTextFormat_Event_Running" xml:space="preserve">
+    <value>{0} running {1}</value>
+  </data>
+  <data name="GeneralTextFormat_Event_Stopped" xml:space="preserve">
+    <value>{0} stopped</value>
+  </data>
+  <data name="GeneralTextFormat_Event_Stopping" xml:space="preserve">
+    <value>{0} stopping {1}...</value>
+  </data>
+  <data name="GeneralTextFormat_HowItWorks_IgnoreCheckpoints" xml:space="preserve">
+    <value>When enabled, {1} will not try to skip ahead to a level-appropriate part of the profile when the bot is started.  This feature is useful for 'completionists', such as those seeking the Loremaster achievement.  Enabling this feature means you may have to occasionally help {1} if you are considerably over-geared or over-level.</value>
+  </data>
+  <data name="GeneralTextFormat_HowItWorks_ProfileSettings" xml:space="preserve">
+    <value>Profile setting overrides are maintained on a per-toon basis.{0}If 'Override Profile Settings' is enabled, the changes affect all profiles.</value>
+  </data>
+  <data name="GeneralTextFormat_InnkeeperNotNavigable" xml:space="preserve">
+    <value>Unable to find path to Innkeeper &quot;{0}&quot;—finding another</value>
+  </data>
+  <data name="GeneralTextFormat_InnkeeperNotPresent" xml:space="preserve">
+    <value>Innkeeper &quot;{0}&quot; is not present—finding another.</value>
+  </data>
+  <data name="GeneralTextFormat_ItemDisposition_ToolTip" xml:space="preserve">
+    <value>Controls the disposition of {0} items.</value>
+  </data>
+  <data name="GeneralTextFormat_MailItem_Label" xml:space="preserve">
+    <value>&quot;Mail {0}&quot;</value>
+  </data>
+  <data name="GeneralTextFormat_MailItem_ToolTip" xml:space="preserve">
+    <value>If checked, {1} items will be mailed if:{0}* The {1} item is 'unbound', and{0}* A Mail Recipient has been configured.</value>
+  </data>
+  <data name="GeneralTextFormat_MinimizingBuddyBot" xml:space="preserve">
+    <value>Minimizing {0}</value>
+  </data>
+  <data name="GeneralTextFormat_MovingToPlace" xml:space="preserve">
+    <value>Moving to {0}  (dist: {1}) @ {2}</value>
+  </data>
+  <data name="GeneralTextFormat_OverlayIsNotActive" xml:space="preserve">
+    <value>Overlay is not active, or Desktop Composition is disabled in your operating system.{0}    The {1} will not be available because of this.</value>
+  </data>
+  <data name="GeneralTextFormat_ProfileLoadingPleaseWait" xml:space="preserve">
+    <value>Profile loading{0}(please wait)</value>
+  </data>
+  <data name="GeneralTextFormat_RestoringBuddyBot" xml:space="preserve">
+    <value>Restoring {0}</value>
+  </data>
+  <data name="GeneralTextFormat_SellItem_Label" xml:space="preserve">
+    <value>&quot;Sell {0}&quot;</value>
+  </data>
+  <data name="GeneralTextFormat_SellItem_ToolTip" xml:space="preserve">
+    <value>If checked, {1} items will be sold to a vendor if:{0}* The item is not on the 'protected items' list, and{0}* The item is soulbound, or{0}* {1} item mailing is disabled</value>
+  </data>
+  <data name="GeneralTextFormat_ThisPluginCanOnlyBeEnabledOrDisabledFromTheMainHonorbuddyUI" xml:space="preserve">
+    <value>This plugin can only be enabled or disabled from the main {0} UI.</value>
+  </data>
+  <data name="GeneralTextFormat_UnableToLocateInnkeeperOnMap" xml:space="preserve">
+    <value>Unable to locate an Innkeeper on Map {0}({1}) to pursue.</value>
+  </data>
+  <data name="GeneralTextFormat_VendorActionsCancelled" xml:space="preserve">
+    <value>Vendor actions cancelled: {0}</value>
+  </data>
+  <data name="GeneralTextFormat_VendorActionsScheduled" xml:space="preserve">
+    <value>Vendor actions scheduled: {0}</value>
+  </data>
+  <data name="GeneralText_BotActionUnusable_VendorsInaccessible" xml:space="preserve">
+    <value>Toon is not in an area where vendors are accessible.</value>
+  </data>
+  <data name="GeneralText_BotActions" xml:space="preserve">
+    <value>Bot Actions</value>
+  </data>
+  <data name="GeneralText_BotActionsNotAvailable_UnknownBot" xml:space="preserve">
+    <value>There are no available actions for this bot.</value>
+  </data>
+  <data name="GeneralText_DisabledWhileBotIsRunning" xml:space="preserve">
+    <value>Disabled while bot is running.</value>
+  </data>
+  <data name="GeneralText_DisabledWhileProfileIsLoading" xml:space="preserve">
+    <value>Disabled while profile is loading.</value>
+  </data>
+  <data name="GeneralText_FailedToStartBot" xml:space="preserve">
+    <value>{0} failed to start {1}</value>
+  </data>
+  <data name="GeneralText_FinalLogPhrase" xml:space="preserve">
+    <value>(Please see log for details)</value>
+  </data>
+  <data name="GeneralText_HowItWorks_MailSell" xml:space="preserve">
+    <value>It does make sense for both Mail and Sell to be checked, simultaneously.  Mailing is given preference over selling for items that are eligible for both.  Items that cannot be mailed—perhaps because they are soulbound—will be sold instead.</value>
+  </data>
+  <data name="GeneralText_LoadingProfile" xml:space="preserve">
+    <value>Loading profile...</value>
+  </data>
+  <data name="GeneralText_LocatingInnkeeper" xml:space="preserve">
+    <value>Locating an Innkeeper...</value>
+  </data>
+  <data name="GeneralText_MouseLeftButtonToEnableOrDisable" xml:space="preserve">
+    <value>Left-mouse button to enable/disable.</value>
+  </data>
+  <data name="GeneralText_MouseRightButtonForPluginSettings" xml:space="preserve">
+    <value>Right-mouse button for plugin settings.</value>
+  </data>
+  <data name="GeneralText_MouseRightForContextMenu" xml:space="preserve">
+    <value>Right-click mouse for context menu.</value>
+  </data>
+  <data name="GeneralText_None" xml:space="preserve">
+    <value>none</value>
+  </data>
+  <data name="GeneralText_PauseHotkeyIgnoredBotIsNotRunning" xml:space="preserve">
+    <value>Pause hotkey ignored: {0} is not running</value>
+  </data>
+  <data name="GeneralText_PluginHasNoSettings" xml:space="preserve">
+    <value>Plugin has no settings</value>
+  </data>
+  <data name="GeneralText_PluginIsNowDisabled" xml:space="preserve">
+    <value>Plugin is now disabled</value>
+  </data>
+  <data name="GeneralText_PluginIsNowEnabled" xml:space="preserve">
+    <value>Plugin is now enabled</value>
+  </data>
+  <data name="GeneralText_ProblemEncounteredTryingToObtain" xml:space="preserve">
+    <value>Problem encountered trying to obtain</value>
+  </data>
+  <data name="GeneralText_ProfileCouldNotBeFound" xml:space="preserve">
+    <value>Profile could not be found:</value>
+  </data>
+  <data name="GeneralText_ProfileFailedToLoad" xml:space="preserve">
+    <value>Failed to load profile:</value>
+  </data>
+  <data name="GeneralText_ProfileLoadCompleted" xml:space="preserve">
+    <value>Profile load completed</value>
+  </data>
+  <data name="GeneralText_ThereWasAnErrorRequestingTheWebProfile" xml:space="preserve">
+    <value>There was an error requesting the web profile:</value>
+  </data>
+  <data name="GeneralText_Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="GeneralText_UserCanceledInnkeeperGameExit" xml:space="preserve">
+    <value>User canceled Innkeeper pursuit... Game Exit aborted.</value>
+  </data>
+  <data name="GeneralText_UserCanceledInnkeeperLogout" xml:space="preserve">
+    <value>User canceled Innkeeper pursuit... Logout aborted.</value>
+  </data>
+  <data name="Item_BotConfigurationSpecificUnavailable_ToolTipFormat" xml:space="preserve">
+    <value>Bot '{0}' does not have any configuration.</value>
+  </data>
+  <data name="Item_BotConfigurationSpecific_LabelFormat" xml:space="preserve">
+    <value>Bot ({0}) configuration...</value>
+  </data>
+  <data name="Item_BotConfigurationSpecific_ToolTipFormat" xml:space="preserve">
+    <value>Configuration settings for the '{0}' bot.</value>
+  </data>
+  <data name="Item_BotConfigurationUnavailable_ToolTip" xml:space="preserve">
+    <value>Bot does not have any configuration.</value>
+  </data>
+  <data name="Item_BotConfiguration_Label" xml:space="preserve">
+    <value>Bot Configuration...</value>
+  </data>
+  <data name="Item_BotConfiguration_ToolTip" xml:space="preserve">
+    <value>Configuration settings for the currently selected Bot.</value>
+  </data>
+  <data name="Item_Bots_Label" xml:space="preserve">
+    <value>Bots</value>
+  </data>
+  <data name="Item_Bots_ToolTipFormat" xml:space="preserve">
+    <value>Selects the current bot for use by {0}.</value>
+  </data>
+  <data name="Item_BuddyBotConfiguration_LabelFormat" xml:space="preserve">
+    <value>{0} Settings &amp; Tools...</value>
+  </data>
+  <data name="Item_BuddyBotConfiguration_ToolTipFormat" xml:space="preserve">
+    <value>Main configuration settings for {0}.</value>
+  </data>
+  <data name="Item_BuddyControlPanelPreferences_Label" xml:space="preserve">
+    <value>Preferences...</value>
+  </data>
+  <data name="Item_BuddyControlPanelPreferences_ToolTipFormat" xml:space="preserve">
+    <value>Configuration settings for the {0}.</value>
+  </data>
+  <data name="Item_CombatRoutineConfiguration_LabelFormat" xml:space="preserve">
+    <value>Combat Routine ({0}) configuration...</value>
+  </data>
+  <data name="Item_CombatRoutineConfiguration_ToolTipFormat" xml:space="preserve">
+    <value>Configuration settings for the {0} Combat Routine.</value>
+  </data>
+  <data name="Item_ContextMenuCancel_Label" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Item_ContextMenuCancel_ToolTip" xml:space="preserve">
+    <value>Closes the context menu with no action.</value>
+  </data>
+  <data name="Item_ControlBarSize_Label" xml:space="preserve">
+    <value>Control Bar Size:</value>
+  </data>
+  <data name="Item_ControlBarSize_ToolTip" xml:space="preserve">
+    <value>Alters the size of the controls in the Control Bar panel.</value>
+  </data>
+  <data name="Item_DeveloperTools_Label" xml:space="preserve">
+    <value>Developer Tools...</value>
+  </data>
+  <data name="Item_DeveloperTools_ToolTip" xml:space="preserve">
+    <value>Opens the Developer Tools panel.</value>
+  </data>
+  <data name="Item_Exit_BuddyBotClose_ConfirmationQuestion" xml:space="preserve">
+    <value>Do you wish to EXIT {0}?</value>
+  </data>
+  <data name="Item_Exit_BuddyBotClose_LabelFormat" xml:space="preserve">
+    <value>Close {0}</value>
+  </data>
+  <data name="Item_Exit_BuddyBotClose_ToolTipFormat" xml:space="preserve">
+    <value>Shuts down {0}.</value>
+  </data>
+  <data name="Item_Exit_GameClientExit_ConfirmationQuestion" xml:space="preserve">
+    <value>Do you wish to TERMINATE the Game client, and exit {0}?</value>
+  </data>
+  <data name="Item_Exit_GameClientExit_Label" xml:space="preserve">
+    <value>Game client Exit</value>
+  </data>
+  <data name="Item_Exit_GameClientExit_ToolTipFormat" xml:space="preserve">
+    <value>Terminates the Game client, and shuts down {0}.</value>
+  </data>
+  <data name="Item_Exit_GameClientLogout_ConfirmationQuestion" xml:space="preserve">
+    <value>Do you wish to LOG OUT of the Game client, and exit {0}?</value>
+  </data>
+  <data name="Item_Exit_GameClientLogout_Label" xml:space="preserve">
+    <value>Game client Logout</value>
+  </data>
+  <data name="Item_Exit_GameClientLogout_ToolTipFormat" xml:space="preserve">
+    <value>Logs out of the Game client, and shuts down {0}.</value>
+  </data>
+  <data name="Item_Exit_Label" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Item_Goal_Label" xml:space="preserve">
+    <value>Goal:</value>
+  </data>
+  <data name="Item_Help_BuddyAuthenticationPortal_Label" xml:space="preserve">
+    <value>Buddy Authentication Portal</value>
+  </data>
+  <data name="Item_Help_BuddyAuthenticationPortal_Uri" xml:space="preserve">
+    <value>https://buddyauth.com/</value>
+  </data>
+  <data name="Item_Help_BuddyStore_Label" xml:space="preserve">
+    <value>Buddy Store</value>
+  </data>
+  <data name="Item_Help_BuddyStore_Uri" xml:space="preserve">
+    <value>https://store.buddyauth.com/</value>
+  </data>
+  <data name="Item_Help_GuidesForum_Label" xml:space="preserve">
+    <value>Guides forum</value>
+  </data>
+  <data name="Item_Help_GuidesForum_Uri" xml:space="preserve">
+    <value>https://www.thebuddyforum.com/honorbuddy-forum/honorbuddy-guides/</value>
+  </data>
+  <data name="Item_Help_HelpDesk_Label" xml:space="preserve">
+    <value>HelpDesk</value>
+  </data>
+  <data name="Item_Help_HelpDesk_Uri" xml:space="preserve">
+    <value>http://wiki.thebuddyforum.com/index.php?title=Category:Honorbuddy:HelpDesk</value>
+  </data>
+  <data name="Item_Help_ReleaseForum_Label" xml:space="preserve">
+    <value>Release forum</value>
+  </data>
+  <data name="Item_Help_ReleaseForum_Uri" xml:space="preserve">
+    <value>https://www.thebuddyforum.com/releases/</value>
+  </data>
+  <data name="Item_Help_ReleaseNotes_Label" xml:space="preserve">
+    <value>Release Notes</value>
+  </data>
+  <data name="Item_Help_ReleaseNotes_Uri" xml:space="preserve">
+    <value>http://updates.buddyauth.com/GetNewestChangelog?filter=Honorbuddy</value>
+  </data>
+  <data name="Item_Help_StartHere_Label" xml:space="preserve">
+    <value>START HERE</value>
+  </data>
+  <data name="Item_Help_StartHere_Uri" xml:space="preserve">
+    <value>&quot;file:///{APPDIR}/START HERE.html&quot;</value>
+  </data>
+  <data name="Item_Help_SupportForum_Label" xml:space="preserve">
+    <value>Support forum</value>
+  </data>
+  <data name="Item_Help_SupportForum_Uri" xml:space="preserve">
+    <value>https://www.thebuddyforum.com/honorbuddy-forum/honorbuddy-support/</value>
+  </data>
+  <data name="Item_Help_TheBuddyForums_Label" xml:space="preserve">
+    <value>The Buddy Forums</value>
+  </data>
+  <data name="Item_Help_TheBuddyForums_Uri" xml:space="preserve">
+    <value>http://thebuddyforum.com/</value>
+  </data>
+  <data name="Item_Help_Updates_Label" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="Item_Help_Updates_Uri" xml:space="preserve">
+    <value>http://updates.buddyauth.com/</value>
+  </data>
+  <data name="Item_Help_Wiki_Label" xml:space="preserve">
+    <value>Wiki</value>
+  </data>
+  <data name="Item_Help_Wiki_Uri" xml:space="preserve">
+    <value>http://wiki.thebuddyforum.com/index.php?title=Category:Honorbuddy</value>
+  </data>
+  <data name="Item_IgnoreCheckpoints_Label" xml:space="preserve">
+    <value>Pursue all quests</value>
+  </data>
+  <data name="Item_ItemQuality_Common" xml:space="preserve">
+    <value>Common</value>
+  </data>
+  <data name="Item_ItemQuality_CommonColor" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="Item_ItemQuality_Epic" xml:space="preserve">
+    <value>Epic</value>
+  </data>
+  <data name="Item_ItemQuality_EpicColor" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="Item_ItemQuality_Poor" xml:space="preserve">
+    <value>Poor</value>
+  </data>
+  <data name="Item_ItemQuality_PoorColor" xml:space="preserve">
+    <value>Grey</value>
+  </data>
+  <data name="Item_ItemQuality_Rare" xml:space="preserve">
+    <value>Rare</value>
+  </data>
+  <data name="Item_ItemQuality_RareColor" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="Item_ItemQuality_Uncommon" xml:space="preserve">
+    <value>Uncommon</value>
+  </data>
+  <data name="Item_ItemQuality_UncommonColor" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="Item_KeybindDisclaimer_ToolTipFormat" xml:space="preserve">
+    <value>This keybind will only work when the game client window has focus.{0}Not all keybind combinations will work on a given machine.</value>
+  </data>
+  <data name="Item_KeybindKey_Label" xml:space="preserve">
+    <value>Key:</value>
+  </data>
+  <data name="Item_KeybindModifiers_Label" xml:space="preserve">
+    <value>Modifiers:</value>
+  </data>
+  <data name="Item_KeybindPauseResume_Label" xml:space="preserve">
+    <value>Keybind Pause/Resume:</value>
+  </data>
+  <data name="Item_KeybindPauseResume_ToolTip" xml:space="preserve">
+    <value>Defines the hotkey for pausing or resuming the bot.</value>
+  </data>
+  <data name="Item_KeybindStartStop_Label" xml:space="preserve">
+    <value>Keybind Start/Stop:</value>
+  </data>
+  <data name="Item_KeybindStartStop_ToolTip" xml:space="preserve">
+    <value>Defines the hotkey for starting or stopping the bot.</value>
+  </data>
+  <data name="Item_LoadProfileFromBuddyStore_Label" xml:space="preserve">
+    <value>From Buddy Store...</value>
+  </data>
+  <data name="Item_LoadProfileFromFile_Label" xml:space="preserve">
+    <value>From File...</value>
+  </data>
+  <data name="Item_LoadProfileFromWebSource_Label" xml:space="preserve">
+    <value>From Web Source...</value>
+  </data>
+  <data name="Item_LoadProfile_Label" xml:space="preserve">
+    <value>Load Profile</value>
+  </data>
+  <data name="Item_LockControlPositions_Label" xml:space="preserve">
+    <value>Lock Control Positions</value>
+  </data>
+  <data name="Item_LockControlPositions_ToolTip" xml:space="preserve">
+    <value>When enabled, prevents dragging and resizing of the Buddy Control Panel components.</value>
+  </data>
+  <data name="Item_Plugins_Label" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="Item_Plugins_ToolTipFormat" xml:space="preserve">
+    <value>Access to enabling and configuring {0} plugins.</value>
+  </data>
+  <data name="Item_ProfileConfiguration_Label" xml:space="preserve">
+    <value>Profile Configuration...</value>
+  </data>
+  <data name="Item_ProfileConfiguration_ToolTip" xml:space="preserve">
+    <value>Allows the user to override certain profile settings.</value>
+  </data>
+  <data name="Item_ProfileLocation_LabelFormat" xml:space="preserve">
+    <value>Profile:</value>
+  </data>
+  <data name="Item_ProfileLocation_ToolTipFormat" xml:space="preserve">
+    <value>Profile location: {0}.</value>
+  </data>
+  <data name="Item_RecentProfile_ToolTipFormat" xml:space="preserve">
+    <value>Loads profile: '{0}'.</value>
+  </data>
+  <data name="Item_StatusDisplayFontSize_Label" xml:space="preserve">
+    <value>Status Display Font Size:</value>
+  </data>
+  <data name="Item_StatusDisplayFontSize_ToolTip" xml:space="preserve">
+    <value>Alters the font size used in the Status Display panel.</value>
+  </data>
+  <data name="Item_Status_Label" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="Item_Uri_Label" xml:space="preserve">
+    <value>URI:</value>
+  </data>
+  <data name="Item_VendorAction_MailSellRepair_Label" xml:space="preserve">
+    <value>Mail, Repair, &amp; Sell</value>
+  </data>
+  <data name="Item_VendorAction_MailSellRepair_ToolTip" xml:space="preserve">
+    <value>Schedules mailing, repairing, and selling activities.</value>
+  </data>
+  <data name="Item_VendorAction_Mail_Label" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="Item_VendorAction_Mail_ToolTip" xml:space="preserve">
+    <value>Schedules a visit to the nearest Mailbox.</value>
+  </data>
+  <data name="Item_VendorAction_Repair_Label" xml:space="preserve">
+    <value>Repair</value>
+  </data>
+  <data name="Item_VendorAction_Repair_ToolTip" xml:space="preserve">
+    <value>Schedules a visit to the nearest Repair vendor.</value>
+  </data>
+  <data name="Item_VendorAction_Sell_Label" xml:space="preserve">
+    <value>Sell</value>
+  </data>
+  <data name="Item_VendorAction_Sell_ToolTip" xml:space="preserve">
+    <value>Schedules a visit to Sell items at nearest Vendor.</value>
+  </data>
+  <data name="PluginName" xml:space="preserve">
+    <value>BuddyControlPanel</value>
+  </data>
+  <data name="TitleFormat_About" xml:space="preserve">
+    <value>About {0}</value>
+  </data>
+  <data name="TitleFormat_Preferences" xml:space="preserve">
+    <value>{0} Preferences</value>
+  </data>
+  <data name="Title_Changelog" xml:space="preserve">
+    <value>Changelog</value>
+  </data>
+  <data name="Title_ExitConfirmation" xml:space="preserve">
+    <value>Exit Confirmation</value>
+  </data>
+  <data name="Title_InvalidKeybind" xml:space="preserve">
+    <value>Invalid Keybind</value>
+  </data>
+  <data name="Title_InventoryManagement" xml:space="preserve">
+    <value>Inventory Management</value>
+  </data>
+  <data name="Title_KeyBindingConfiguration" xml:space="preserve">
+    <value>Keybinding Configuration</value>
+  </data>
+  <data name="Title_Legal" xml:space="preserve">
+    <value>Legal</value>
+  </data>
+  <data name="Title_LoadAProfile" xml:space="preserve">
+    <value>Load a Profile</value>
+  </data>
+  <data name="Title_LoadAProfileFromTheWeb" xml:space="preserve">
+    <value>Load a Profile from the Web</value>
+  </data>
+  <data name="Title_OverlayConfiguration" xml:space="preserve">
+    <value>Overlay Configuration</value>
+  </data>
+  <data name="Title_ProfileConfigurationSettings" xml:space="preserve">
+    <value>Profile Configuration Settings</value>
+  </data>
+  <data name="Title_QuestSpecificConfiguration" xml:space="preserve">
+    <value>Quest-specific configuration</value>
+  </data>
+  <data name="DevColFactionId" xml:space="preserve">
+    <value>Faction ID</value>
+  </data>
+  <data name="DevColStackCount" xml:space="preserve">
+    <value>StackCount</value>
+  </data>
+  <data name="DevColType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="DevLblEmpty" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="DevLblUnknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="DevLblNone" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="DevTooltipDoubleClickCopy" xml:space="preserve">
+    <value>Double Click to Copy</value>
+  </data>
+  <data name="ButtonText_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ButtonText_SaveAndClose" xml:space="preserve">
+    <value>Save and close</value>
+  </data>
+  <data name="LvlTitle" xml:space="preserve">
+    <value>Levelbot Settings</value>
+  </data>
+  <data name="LvlGroundMountFarming" xml:space="preserve">
+    <value>Ground mount farming mode</value>
   </data>
 </root>

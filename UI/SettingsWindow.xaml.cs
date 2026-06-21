@@ -26,6 +26,9 @@ namespace CopilotBuddy.UI
             // Initialize log level ComboBox
             InitializeLogLevelComboBox();
 
+            // Initialize language ComboBox
+            InitializeLanguageComboBox();
+
             // Restore window position/size
             try
             {
@@ -50,6 +53,22 @@ namespace CopilotBuddy.UI
             if (logLevelIndex >= 0 && logLevelIndex < cmbLogLevel.Items.Count)
             {
                 cmbLogLevel.SelectedIndex = logLevelIndex;
+            }
+        }
+
+        private void InitializeLanguageComboBox()
+        {
+            // Set selected item based on current StyxSettings.Language.
+            // HB 6.2.3 WoD pattern: set SelectedItem in ctor (IsLoaded=false), the
+            // SelectionChanged handler ignores this initial set via its IsLoaded guard.
+            string currentLang = StyxSettings.Instance.Language ?? "";
+            foreach (var item in cmbLanguage.Items)
+            {
+                if (item is ComboBoxItem cbi && cbi.Tag is string lang && lang == currentLang)
+                {
+                    cmbLanguage.SelectedItem = cbi;
+                    return;
+                }
             }
         }
 

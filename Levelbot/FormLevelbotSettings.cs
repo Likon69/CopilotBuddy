@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 using Styx;
 using Styx.Helpers;
+using Styx.Localization;
 
 namespace Levelbot
 {
@@ -13,7 +14,7 @@ namespace Levelbot
 
         public FormLevelbotSettings()
         {
-            Text = "Levelbot Settings";
+            Text = Globalization.Get("LvlTitle");
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -23,7 +24,7 @@ namespace Levelbot
 
             _groundMountFarmingMode = new CheckBox
             {
-                Text = "Ground mount farming mode",
+                Text = Globalization.Get("LvlGroundMountFarming"),
                 AutoSize = true,
                 Checked = false,
                 Margin = new Padding(12, 12, 12, 6)
@@ -31,14 +32,14 @@ namespace Levelbot
 
             _save = new Button
             {
-                Text = "Save",
+                Text = Globalization.Get("ButtonText_Save"),
                 AutoSize = true,
                 Anchor = AnchorStyles.Right
             };
 
             _saveAndClose = new Button
             {
-                Text = "Save and close",
+                Text = Globalization.Get("ButtonText_SaveAndClose"),
                 AutoSize = true,
                 Anchor = AnchorStyles.Right
             };

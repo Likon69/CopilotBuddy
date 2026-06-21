@@ -25,7 +25,7 @@ namespace Styx.Localization
 
             try
             {
-                string value = Globalization.ResourceManager.GetString(Key, Globalization.Culture);
+                string value = Globalization.Get(Key);
                 if (value != null)
                     return value;
             }

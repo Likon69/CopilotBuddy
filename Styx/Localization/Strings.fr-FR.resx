@@ -591,4 +591,13 @@
   <data name="ColorWhite" xml:space="preserve">
     <value>Blanc</value>
   </data>
+  <data name="QuestBot_Name" xml:space="preserve">
+    <value>Bot de quêtes</value>
+  </data>
+  <data name="LevelBot_Name" xml:space="preserve">
+    <value>Cueillette</value>
+  </data>
+  <data name="BuddyBotName" xml:space="preserve">
+    <value>Bot Buddy</value>
+  </data>
 </root>

@@ -591,4 +591,13 @@
   <data name="ColorWhite" xml:space="preserve">
     <value>白色</value>
   </data>
+  <data name="QuestBot_Name" xml:space="preserve">
+    <value>任务机器人</value>
+  </data>
+  <data name="LevelBot_Name" xml:space="preserve">
+    <value>采集</value>
+  </data>
+  <data name="BuddyBotName" xml:space="preserve">
+    <value>Buddy机器人</value>
+  </data>
 </root>

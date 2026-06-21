@@ -54,7 +54,7 @@
               <TextBlock x:Name="textBlock2_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{loc:Resx GroupName}"
                          Foreground="#FFFFFFFF" Margin="8,27.96,0,0" VerticalAlignment="Top"/>
               <TextBlock MouseDown="HandleTextBlockDoubleClick" x:Name="tbCTName" Margin="92,27.96,0,0"
-                         TextWrapping="NoWrap" Text="Empty" VerticalAlignment="Top" Foreground="#FFFFFFFF"
+                         TextWrapping="NoWrap" Text="{loc:Resx DevLblEmpty}" VerticalAlignment="Top" Foreground="#FFFFFFFF"
                          ToolTip="Double Click to Copy" HorizontalAlignment="Left"/>
               <TextBlock x:Name="textBlock2_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{loc:Resx GroupEntry}"
                          Foreground="#FFFFFFFF" Margin="8,47.92,0,0" VerticalAlignment="Top"/>
@@ -69,7 +69,7 @@
               <TextBlock x:Name="textBlock2_Copy3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{loc:Resx LblFactionName}"
                          Foreground="#FFFFFFFF" Margin="8,87.84,0,0" Height="15" VerticalAlignment="Top"/>
               <TextBlock MouseDown="HandleTextBlockDoubleClick" x:Name="tbCTFactionName" Margin="92,87.84,0,0"
-                         TextWrapping="NoWrap" Text="Unknown" Foreground="#FFFFFFFF" ToolTip="Double Click to Copy"
+                         TextWrapping="NoWrap" Text="{loc:Resx DevLblUnknown}" Foreground="#FFFFFFFF" ToolTip="{loc:Resx DevTooltipDoubleClickCopy}"
                          HorizontalAlignment="Left" Height="15" VerticalAlignment="Top"/>
               <TextBlock x:Name="textBlock2_Copy4" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{loc:Resx LblGroupID}"
                          Foreground="#FFFFFFFF" Margin="8,107,0,0" Height="16" VerticalAlignment="Top"/>
@@ -85,7 +85,7 @@
                          Foreground="#FFFFFFFF" Margin="8,147,0,0" RenderTransformOrigin="0.485,-0.664" Height="16"
                          VerticalAlignment="Top"/>
               <TextBlock MouseDown="HandleTextBlockDoubleClick" x:Name="tbCTVendorType" Margin="92,147,0,0"
-                         TextWrapping="Wrap" Text="None" Foreground="#FFFFFFFF" ToolTip="Double Click to Copy"
+                         TextWrapping="Wrap" Text="{loc:Resx DevLblNone}" Foreground="#FFFFFFFF" ToolTip="{loc:Resx DevTooltipDoubleClickCopy}"
                          HorizontalAlignment="Left" Height="16" VerticalAlignment="Top"/>
               <Button Click="btnCopyCTXmlInfo_Click" x:Name="btnCopyCTXmlInfo" Content="{loc:Resx CopyXML}" Margin="8,0,0,8"
                       VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
@@ -203,7 +203,7 @@
                       <GridViewColumn Header="{loc:Resx GroupName}" Width="150" DisplayMemberBinding="{Binding Name, Mode=OneTime}"/>
                       <GridViewColumn Header="{loc:Resx GroupGUID}" Width="150" DisplayMemberBinding="{Binding Guid, Mode=OneTime}"/>
                       <GridViewColumn Header="{loc:Resx GroupPosition}" Width="120" DisplayMemberBinding="{Binding Location, Mode=OneTime}"/>
-                      <GridViewColumn Header="Faction ID" Width="75" DisplayMemberBinding="{Binding FactionId, Mode=OneTime}"/>
+                      <GridViewColumn Header="{loc:Resx DevColFactionId}" Width="75" DisplayMemberBinding="{Binding FactionId, Mode=OneTime}"/>
                       <GridViewColumn Header="{loc:Resx GroupDistance}" Width="75" DisplayMemberBinding="{Binding Distance, Mode=OneTime}"/>
                       <GridViewColumn Header="{loc:Resx GroupType}" Width="75" DisplayMemberBinding="{Binding Type, Mode=OneTime}"/>
                     </GridView>
@@ -224,8 +224,8 @@
                     <GridView>
                       <GridViewColumn Header="{loc:Resx GroupEntry}" Width="50" DisplayMemberBinding="{Binding Entry, Mode=OneTime}"/>
                       <GridViewColumn Header="{loc:Resx GroupName}" Width="200" DisplayMemberBinding="{Binding Name, Mode=OneTime}"/>
-                      <GridViewColumn Header="StackCount" Width="90" DisplayMemberBinding="{Binding StackCount, Mode=OneTime}"/>
-                      <GridViewColumn Header="Type" Width="90" DisplayMemberBinding="{Binding Type, Mode=OneTime}"/>
+                      <GridViewColumn Header="{loc:Resx DevColStackCount}" Width="90" DisplayMemberBinding="{Binding StackCount, Mode=OneTime}"/>
+                      <GridViewColumn Header="{loc:Resx DevColType}" Width="90" DisplayMemberBinding="{Binding Type, Mode=OneTime}"/>
                     </GridView>
                   </ListView.View>
                 </ListView>
