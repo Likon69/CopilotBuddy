@@ -44,6 +44,14 @@
     <Content Remove="Tools\**" />
   </ItemGroup>
 
+  <!-- Exclude runtime output/ folder from the build (Bots/, Plugins/, Routines/, profiles, data, etc. live next to the exe at runtime, not in the project) -->
+  <ItemGroup>
+    <Compile Remove="output\**" />
+    <EmbeddedResource Remove="output\**" />
+    <None Remove="output\**" />
+    <Content Remove="output\**" />
+  </ItemGroup>
+
   <ItemGroup>
     <Page Remove="UI\App.xaml" />
   </ItemGroup>
