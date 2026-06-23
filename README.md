@@ -65,6 +65,15 @@ The `output/` folder itself is gitignored — only `output.zip` is tracked. Rebu
 Compress-Archive -Path .\output\* -DestinationPath .\output.zip -Force
 ```
 
+## Downloads
+
+Pre-built binaries (CopilotBuddy.exe + `output.zip` ready to drop next to it) are also mirrored outside the repo for users who do not want to build from source:
+
+- [CopilotBuddy on Mega](https://mega.nz/file/iN4FVISI#s41tkwqg-7rQRWap8BrnnE9fCCtWHG4nilflzyJLuH0)
+- [CopilotBuddy on Google Drive](https://drive.google.com/file/d/1_JsG9NNmTxUV-3PA_38eaDptDn6nn-Jg/view)
+
+The in-repo `output.zip` and the source build are always the most up-to-date. The external mirrors above are convenience links for the latest published release only.
+
 ## Included botbases
 
 All under `Bots/`. Every botbase inherits from `BotBase` and runs as a synchronous behavior tree.
