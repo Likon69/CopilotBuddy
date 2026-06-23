@@ -2,6 +2,29 @@
 
 Public World of Warcraft 3.3.5a (Wrath of the Lich King, build 12340) bot written in C# (.NET 10, WPF, x86). The API surface and behavior are ported from Honorbuddy. 
 
+## ⬇️ Downloads (ready-to-play build)
+
+For players who just want to launch the bot without compiling anything, a complete prebuilt package is provided. It contains everything needed to run CopilotBuddy on a WotLK 3.3.5a (build 12340) client:
+
+- Precompiled `CopilotBuddy.exe` + `Navigation.dll`
+- All runtime content: `Bots/`, `Plugins/`, `Routines/`, `Default Profiles/`, `Dungeon Scripts/`, `Languages/`, `Data/`
+- `data.bin`, `item_loot.db`, `Spells.bin`
+- The matching **`mmaps/` folder** (Trinity 4x4 / MMAP v5) so pathfinding works out of the box — no extractor to run, no tiles to generate
+- A `Default Profiles/` folder with profiles ready to load
+
+Just extract the archive next to your WoW 3.3.5a client, double-click `CopilotBuddy.exe`, attach to the game, and you are ready to play.
+
+| Mirror | Download |
+| --- | --- |
+| **Mega.nz** | https://mega.nz/file/iN4FVISI#s41tkwqg-7rQRWap8BrnnE9fCCtWHG4nilflzyJLuH0 |
+| **Google Drive** | https://drive.google.com/file/d/1_JsG9NNmTxUV-3PA_38eaDptDn6nn-Jg/view |
+
+> Both mirrors host the same package. If one is down or full, try the other. Checksums are listed in the Discord.
+
+For more builds, mirror updates, 1x1 / 4x4 mmap variants, additional profiles and community content, join the Discord:
+
+👉 **https://discord.com/invite/ep5TcGMCcB**
+
 ## Ecosystem
 
 CopilotBuddy is split across a few sibling repositories. Each one covers one slice of the stack; together they make a complete, build-it-yourself bot:
