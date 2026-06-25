@@ -100,24 +100,40 @@ namespace Bots.BGBuddy.Logic.Battlegrounds
         // Called by BGBuddy's CreateBeforePrepBehavior override during the
         // 60s Preparation phase. Mount up + run to the boat + wait for teleport.
         // HB 4.3.4 Class55.method_19..22 / smethod_58..62.
+        //
+        // Fix: was using go.DistanceSqr < 400f (any Transport GO within 20 yards) to detect
+        // "on boat" — this was always TRUE at the docks since the boat stays moored nearby.
+        // Now uses StyxWoW.Me.IsOnTransport (same property as Battleground.cs:422) which is
+        // only TRUE when the player is physically riding the transport.
         protected override Composite CreateBeforePrepBehavior()
         {
             return new PrioritySelector(
-                // [0] smethod_58: Preparation aura still up — keep timers warm, return Failure so the
-                // outer BGBuddy loop re-evaluates next tick.
+                // [0] smethod_58: Preparation aura still up — move toward nearest pier and
+                // keep timers warm. Returns Failure so the outer loop re-evaluates next tick.
                 new Decorator(ctx => StyxWoW.Me.HasAura("Preparation"),
-                    new Action(ctx => { _boatTimer.Reset(); return RunStatus.Failure; })),
-                // [1] smethod_59: past Preparation AND on the boat — wait for the teleport buff to
-                // land, or click-to-move to the nearest pier. The inner PrioritySelector is
-                // NESTED inside this Decorator so it only fires while on the boat.
-                new Decorator(ctx => ObjectManager.GetObjectsOfType<WoWGameObject>()
-                        .Any(go => go.SubType == WoWGameObjectType.Transport && go.DistanceSqr < 400f),
+                    new Action(ctx =>
+                    {
+                        _boatTimer.Reset();
+                        var pier = BoatPierPoints.OrderBy(p => p.DistanceSqr(StyxWoW.Me.Location)).First();
+                        if (StyxWoW.Me.Location.DistanceSqr(pier) > 100f) // > 10 yards — keep moving
+                            WoWMovement.ClickToMove(pier);
+                        return RunStatus.Failure;
+                    })),
+                // [1] smethod_59: past Preparation AND physically on the boat transport —
+                // wait the 5s timer then ClickToMove to pier to debark.
+                // StyxWoW.Me.IsOnTransport is the correct check (cf. Battleground.cs:422).
+                new Decorator(ctx => StyxWoW.Me.IsOnTransport,
                     new PrioritySelector(
                         new Decorator(ctx => !_boatTimer.IsFinished,
-                            new Action(ctx => { Logger.Write(BGBuddyResources.WaitingForBoat); return RunStatus.Failure; })),
+                            new Action(ctx => { Logger.Write(BGBuddyResources.WaitingForBoat); return RunStatus.Running; })),
                         new Sequence(
                             new Action(ctx => { Logger.Write(BGBuddyResources.GettingOfTheBoat); return RunStatus.Success; }),
-                            new Action(ctx => { WoWMovement.ClickToMove(BoatPierPoints.OrderBy(p => p.DistanceSqr(StyxWoW.Me.Location)).First()); return RunStatus.Success; })))),
+                            new Action(ctx =>
+                            {
+                                _boatTimer.Reset();
+                                WoWMovement.ClickToMove(BoatPierPoints.OrderBy(p => p.DistanceSqr(StyxWoW.Me.Location)).First());
+                                return RunStatus.Success;
+                            })))),
                 // [2] Fallback: side change + teleport buff toggle detection.
                 // HB 4.3.4 Class55.method_22 — runs as the last child of CreateBeforePrepBehavior's
                 // PrioritySelector, i.e. only when we are not in Preparation and not on the boat.
