@@ -385,12 +385,15 @@ namespace Styx.WoWInternals.WoWObjects
         {
             get
             {
-                // HB 4.3.4 pattern: BotEvents sets InstanceDeathLocation from dungeon map DB
-                // when player dies inside an instance, and clears it to Empty otherwise.
-                // Fall back to CorpsePoint when InstanceDeathLocation is not set.
-                if (InstanceDeathLocation != WoWPoint.Empty)
+                // HB 4.3.4: BotEvents sets InstanceDeathLocation from the dungeon map DB on an
+                // instance death, else leaves it Empty. Return Empty (NOT CorpsePoint) in the open
+                // world — the death tree reads "!= Empty" as "died in an instance". The CorpsePoint
+                // fallback (regression 9572f78) made every open-world death take that branch, which
+                // walks the ghost onto the corpse itself (there is no portal) instead of
+                // FindSafeResPoint's safe spot → endless SafeRes-into-the-pack loop on a camp.
+                if (InstanceDeathLocation != WoWPoint.Empty && InstanceDeathLocation != WoWPoint.Zero)
                     return InstanceDeathLocation;
-                return CorpsePoint;
+                return WoWPoint.Empty;
             }
         }
         
