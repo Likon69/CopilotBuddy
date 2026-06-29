@@ -1746,6 +1746,42 @@ namespace Tripper.Navigation
             return NativeMethods.GetPolyFlags(mapId, polyRef.Id, out flags);
         }
 
+        /// <summary>Like HB 6.2.3 NavMesh.EncodePolyId.</summary>
+        public ulong EncodePolyId(uint mapId, uint salt, uint it, uint ip)
+        {
+            return NativeMethods.EncodePolyId(mapId, salt, it, ip);
+        }
+
+        /// <summary>Like HB 6.2.3 NavMesh.DecodePolyId.</summary>
+        public void DecodePolyId(uint mapId, ulong polyRef, out uint salt, out uint it, out uint ip)
+        {
+            NativeMethods.DecodePolyId(mapId, polyRef, out salt, out it, out ip);
+        }
+
+        public uint DecodePolyIdSalt(uint mapId, ulong polyRef)   => NativeMethods.DecodePolyIdSalt(mapId, polyRef);
+        public uint DecodePolyIdTile(uint mapId, ulong polyRef)   => NativeMethods.DecodePolyIdTile(mapId, polyRef);
+        public uint DecodePolyIdPoly(uint mapId, ulong polyRef)   => NativeMethods.DecodePolyIdPoly(mapId, polyRef);
+
+        /// <summary>Like HB 6.2.3 NavMesh.GetMaxTiles.</summary>
+        public int GetMaxTiles(uint mapId) => NativeMethods.GetMaxTiles(mapId);
+
+        /// <summary>Like HB 6.2.3 NavMesh.GetTileAt. Returns IntPtr.Zero if no tile at (x, y).</summary>
+        public IntPtr GetTileAt(uint mapId, int x, int y) => NativeMethods.GetTileAt(mapId, x, y);
+
+        /// <summary>Like HB 6.2.3 NavMesh.GetTile. Returns IntPtr.Zero if i out of range.</summary>
+        public IntPtr GetTile(uint mapId, int i) => NativeMethods.GetTile(mapId, i);
+
+        /// <summary>Like HB 6.2.3 NavMesh.GetTileStateSize.</summary>
+        public int GetTileStateSize(uint mapId, IntPtr tile) => NativeMethods.GetTileStateSize(mapId, tile);
+
+        /// <summary>Like HB 6.2.3 NavMesh.StoreTileState.</summary>
+        public uint StoreTileState(uint mapId, IntPtr tile, byte[] outData, int maxDataSize)
+            => NativeMethods.StoreTileState(mapId, tile, outData, maxDataSize);
+
+        /// <summary>Like HB 6.2.3 NavMesh.RestoreTileState.</summary>
+        public uint RestoreTileState(uint mapId, IntPtr tile, byte[] data, int dataSize)
+            => NativeMethods.RestoreTileState(mapId, tile, data, dataSize);
+
         /// <summary>
         /// Ensures tiles around position are loaded (HB-style streaming).
         /// Use this before pathfinding to ensure navmesh coverage.

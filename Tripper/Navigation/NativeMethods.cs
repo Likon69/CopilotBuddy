@@ -328,6 +328,43 @@ namespace Tripper.Navigation
         [DllImport(DllName, EntryPoint = "GetPolyFlags_C", CallingConvention = CallingConvention.Cdecl)]
         internal static extern uint GetPolyFlags(uint mapId, ulong polyRef, out ushort outFlags);
 
+        // HB 6.2.3 NavMesh.EncodePolyId / DecodePolyId*
+        [DllImport(DllName, EntryPoint = "EncodePolyId_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern ulong EncodePolyId(uint mapId, uint salt, uint it, uint ip);
+
+        [DllImport(DllName, EntryPoint = "DecodePolyId_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void DecodePolyId(uint mapId, ulong polyRef, out uint outSalt, out uint outIt, out uint outIp);
+
+        [DllImport(DllName, EntryPoint = "DecodePolyIdSalt_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern uint DecodePolyIdSalt(uint mapId, ulong polyRef);
+
+        [DllImport(DllName, EntryPoint = "DecodePolyIdTile_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern uint DecodePolyIdTile(uint mapId, ulong polyRef);
+
+        [DllImport(DllName, EntryPoint = "DecodePolyIdPoly_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern uint DecodePolyIdPoly(uint mapId, ulong polyRef);
+
+        // HB 6.2.3 NavMesh.GetMaxTiles
+        [DllImport(DllName, EntryPoint = "GetMaxTiles_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int GetMaxTiles(uint mapId);
+
+        // HB 6.2.3 NavMesh.GetTile* — returns opaque tile handle (IntPtr).
+        [DllImport(DllName, EntryPoint = "GetTileAt_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern IntPtr GetTileAt(uint mapId, int x, int y);
+
+        [DllImport(DllName, EntryPoint = "GetTile_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern IntPtr GetTile(uint mapId, int i);
+
+        // HB 6.2.3 NavMesh tile state save/restore
+        [DllImport(DllName, EntryPoint = "GetTileStateSize_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int GetTileStateSize(uint mapId, IntPtr tile);
+
+        [DllImport(DllName, EntryPoint = "StoreTileState_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern uint StoreTileState(uint mapId, IntPtr tile, byte[] outData, int maxDataSize);
+
+        [DllImport(DllName, EntryPoint = "RestoreTileState_C", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern uint RestoreTileState(uint mapId, IntPtr tile, byte[] data, int dataSize);
+
         #endregion
 
         #region Polygon Queries
