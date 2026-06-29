@@ -345,12 +345,10 @@ namespace Bots.Gatherbuddy
                     })
                 ),
 
-                // [4] Combat subtree — run when not mounted OR not flying.
-                //     HB 6.2.3 Class670.method_6: !Flightor.MountHelper.Mounted || !Me.MovementInfo.IsFlying
-                //     Plus inner gate method_7: !bool_1 (not combat-suppressed from [1]).
-                //     When dismounted in combat, HB enters combat immediately; CB must match.
+                // [4] Combat subtree — gated only by !_combatSuppressed.
+                //     HB 4.3.4 smethod_20 (Token 0x060016E5) = !bool_1 = !_combatSuppressed. No (!Mounted||!Flying) gate at this level.
                 new Decorator(
-                    ctx => (!Flightor.MountHelper.Mounted || !StyxWoW.Me.MovementInfo.IsFlying) && !_combatSuppressed,
+                    ctx => !_combatSuppressed,
                     new PrioritySelector(
                         LevelBot.CreateCombatBehavior()
                     )
