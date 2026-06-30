@@ -74,7 +74,7 @@ namespace CopilotBuddy.UI
 
             // Log version (HB 4.3.4: "Honorbuddy v{0} started.")
             // AssemblyVersion is intentionally not set in .csproj (causes BAML crash under .NET 10).
-            const string BotVersion = "1.5.0";
+            const string BotVersion = "1.5.2";
             Title = $"CopilotBuddy v{BotVersion}";
             Logging.Write("CopilotBuddy v{0} started. Original HonorBuddy by Apoc, raphus, highvoltz, bobby53, xanathos, chinajade. Ported to WotLK 3.3.5a by Likon69.", BotVersion);
         }

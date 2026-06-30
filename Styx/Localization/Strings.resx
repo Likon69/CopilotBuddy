@@ -432,6 +432,9 @@
   <data name="ChkLootMobs" xml:space="preserve">
     <value>Loot Mobs</value>
   </data>
+  <data name="LootKilledMobs" xml:space="preserve">
+    <value>Loot killed mobs</value>
+  </data>
   <data name="ChkLootChests" xml:space="preserve">
     <value>Loot Chests</value>
   </data>

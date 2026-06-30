@@ -135,6 +135,7 @@ namespace Styx.Localization
         public static string ChkSkinMobs => ResourceManager.GetString("ChkSkinMobs", Culture);
         public static string ChkNinjaSkin => ResourceManager.GetString("ChkNinjaSkin", Culture);
         public static string ChkLootMobs => ResourceManager.GetString("ChkLootMobs", Culture);
+        public static string LootKilledMobs => ResourceManager.GetString("LootKilledMobs", Culture);
         public static string ChkLootChests => ResourceManager.GetString("ChkLootChests", Culture);
         public static string ChkLootCorpses => ResourceManager.GetString("ChkLootCorpses", Culture);
         public static string ChkMailToAlt => ResourceManager.GetString("ChkMailToAlt", Culture);

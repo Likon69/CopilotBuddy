@@ -79,50 +79,95 @@ namespace Bots.DungeonBuddy
         private const uint RandomWotlkHeroicDungeonId = 262U;
 
         /// <summary>
-        /// Queue pour un Random Normal Dungeon (WotLK id=261).
-        /// Bypass l'UI LFD et set explicitement le LFG dungeon ID via l'API directe.
-        /// L'ancienne approche (LFDQueueFrame_Join()) lisait LFDQueueFrame.type qui dépend
-        /// de l'onglet UI actif — bug: si l'UI était sur "Random Heroic", ça queue Heroic
-        /// peu importe le QueueType setting.
+        /// Queue pour un Random Normal Dungeon.
+        /// WotLK 3.3.5a: read the LfgDungeons DBC (already loaded via
+        /// Styx/WoWInternals/DBC/LfgDungeons.cs) and pick the first Random
+        /// entry (TypeId==6) matching the player's level with Difficulty==0
+        /// (Normal). This replaces the hardcoded WotLK-only IDs 261/262 which
+        /// broke for any character below level 69 (level 56 got
+        /// "you do not meet the requirement" from the server).
+        ///
+        /// Equivalent to HB 6.2.3's LfgDungeons.Dungeons.Where(...) pattern;
+        /// the underlying DBC wrapper is itself a port of HB 4.3.4
+        /// LfgDungeons.dbc schema, so the lookup is faithful to the reference.
         /// </summary>
         public static void QueueForRandomDungeon()
         {
-            Logging.Write("[DungeonBuddy] Queuing for Random Normal Dungeon (WotLK id={0})...",
-                RandomWotlkNormalDungeonId);
-
-            // Apply the user-configured Role setting before joining.
             SetLfgRoles();
 
-            // WotLK 3.3.5a API:
-            //   SetLFGDungeon(dungeonId, true) — second arg=true = "Dungeon Finder" (LFD)
-            //   JoinLFG() — no args in 3.3.5a (Cataclysm+ added the category arg).
-            // ClearAllLFGDungeons() first to wipe any leftover state from a previous queue attempt
-            // (e.g. deserter dequeue, manual queue, etc.) that would otherwise make JoinLFG() fail.
+            var dungeon = FindRandomDungeonByLevel(isHeroic: false);
+            if (dungeon == null)
+            {
+                Logging.Write("[DungeonBuddy] No Random Normal dungeon found for level {0}",
+                    StyxWoW.Me.Level);
+                return;
+            }
+
+            Logging.Write("[DungeonBuddy] Queued Random Normal Dungeon: id={0}, name='{1}', level {2}-{3}",
+                dungeon.Id, dungeon.Name, dungeon.MinLevel, dungeon.MaxLevel);
+
+            // WotLK 3.3.5a Lua: SetLFGDungeon(id) selects the dungeon, JoinLFG()
+            // joins. ClearAllLFGDungeons() first to wipe any leftover state from
+            // a previous queue attempt (deserter dequeue, manual queue, etc.).
+            // Verified against Wow_12340.exe string table that SetLFGDungeon and
+            // JoinLFG both exist as C-exposed Lua bindings.
             Lua.DoString($@"
-                if not LFDQueueFrame then LoadAddOn('Blizzard_LFGUI') end
                 ClearAllLFGDungeons()
-                SetLFGDungeon({RandomWotlkNormalDungeonId}, true)
+                SetLFGDungeon({dungeon.Id})
                 JoinLFG()
             ");
         }
 
         /// <summary>
-        /// Queue pour un Random Heroic Dungeon (WotLK id=262).
-        /// Même approche que QueueForRandomDungeon — API directe, pas de dépendance UI.
+        /// Queue pour un Random Heroic Dungeon.
+        /// Same lookup pattern as QueueForRandomDungeon but Difficulty==1.
+        /// In WotLK 3.3.5a only the WotLK expansion has a Random Heroic
+        /// entry, gated to level 80 — so non-80 characters will get the
+        /// no-match branch (the DBC has no Random Heroic for their level).
         /// </summary>
         public static void QueueForRandomHeroic()
         {
-            Logging.Write("[DungeonBuddy] Queuing for Random Heroic Dungeon (WotLK id={0})...",
-                RandomWotlkHeroicDungeonId);
-
             SetLfgRoles();
 
+            var dungeon = FindRandomDungeonByLevel(isHeroic: true);
+            if (dungeon == null)
+            {
+                Logging.Write("[DungeonBuddy] No Random Heroic dungeon found for level {0}",
+                    StyxWoW.Me.Level);
+                return;
+            }
+
+            Logging.Write("[DungeonBuddy] Queued Random Heroic Dungeon: id={0}, name='{1}', level {2}-{3}",
+                dungeon.Id, dungeon.Name, dungeon.MinLevel, dungeon.MaxLevel);
+
             Lua.DoString($@"
-                if not LFDQueueFrame then LoadAddOn('Blizzard_LFGUI') end
                 ClearAllLFGDungeons()
-                SetLFGDungeon({RandomWotlkHeroicDungeonId}, true)
+                SetLFGDungeon({dungeon.Id})
                 JoinLFG()
             ");
+        }
+
+        /// <summary>
+        /// Search the loaded LfgDungeons DBC for the first Random entry
+        /// (TypeId==6) matching the current player's level and the requested
+        /// difficulty. Returns null if no match (e.g. level 56 for Heroic).
+        /// Uses the existing Styx/WoWInternals/DBC/LfgDungeons.cs wrapper.
+        /// </summary>
+        private static Styx.WoWInternals.DBC.LfgDungeons? FindRandomDungeonByLevel(bool isHeroic)
+        {
+            var wanted = isHeroic ? 1U : 0U;
+            var level = StyxWoW.Me.Level;
+
+            foreach (var kv in Styx.WoWInternals.DBC.LfgDungeons.All)
+            {
+                var d = kv.Value;
+                if (!d.IsValid) continue;
+                if (!d.IsRandomDungeon) continue;
+                if (d.Difficulty != wanted) continue;
+                if (level < d.MinLevel || level > d.MaxLevel) continue;
+                return d;
+            }
+            return null;
         }
 
         /// <summary>
