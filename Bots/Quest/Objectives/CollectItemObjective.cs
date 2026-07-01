@@ -14,6 +14,7 @@ using Styx.Logic;
 using Styx.Logic.AreaManagement;
 using Styx.Logic.Combat;
 using Styx.Logic.Inventory.Frames.Gossip;
+using Styx.Logic.Inventory.Frames.LootFrame;
 using Styx.Logic.Inventory.Frames.Merchant;
 using Styx.Logic.Pathing;
 using Styx.Logic.POI;
@@ -50,6 +51,14 @@ public class CollectItemObjective : QuestObjective
     private readonly HashSet<uint> _includedVendors = new HashSet<uint>();
     private readonly HashSet<uint> _excludedGameObjects = new HashSet<uint>();
     private readonly HashSet<uint> _includedGameObjects = new HashSet<uint>();
+    private readonly HashSet<uint> _profileGameObjectIds = new HashSet<uint>();
+    private readonly bool _usesProfileGameObjectCollection;
+    private WoWGameObject _profileGameObjectTarget;
+    private bool _goSourceLogged;
+    private bool _goInteractSent;
+    private int _itemCountBeforeGoInteract;
+    private readonly Stopwatch _goLootWaitTimer = new Stopwatch();
+    private ulong _lastMoveLogGoGuid;
 
     public CollectItemObjective(
         PlayerQuest quest,
@@ -65,6 +74,15 @@ public class CollectItemObjective : QuestObjective
         ProtectedItemsManager.Add((uint)this.Objective.ID);
         if (this.OverridedQuestInfo != null)
             this._collectItemInfo = this.OverridedQuestInfo.FindCollectItem((uint)this.Objective.ID);
+        if (this._collectItemInfo?.OverridedCollectFrom != null)
+        {
+            foreach (CollectFrom collectFrom in this._collectItemInfo.OverridedCollectFrom)
+            {
+                if (collectFrom.Type == CollectFromType.GameObject)
+                    this._profileGameObjectIds.Add(collectFrom.ID);
+            }
+        }
+        this._usesProfileGameObjectCollection = this._profileGameObjectIds.Count > 0;
     }
 
     public Styx.Logic.Questing.Quest.QuestObjective Objective { get; private set; }
@@ -194,8 +212,16 @@ public class CollectItemObjective : QuestObjective
                 }
             }
             StyxWoW.AreaManager.SetArea(area);
-            
-            this._behaviorTree = (Composite)new PrioritySelector(new Composite[3]
+
+            if (this._usesProfileGameObjectCollection && !this._goSourceLogged)
+            {
+                this._goSourceLogged = true;
+                Logging.Write("[CollectItem:GO] source detected QuestId={0} ItemId={1} CollectCount={2} GameObjectIds=[{3}]",
+                    (object)this.Quest.Id, (object)this.Objective.ID, (object)this.Objective.Count,
+                    (object)string.Join(",", this._profileGameObjectIds));
+            }
+
+            var branchChildren = new List<Composite>
             {
                 (Composite)new Decorator(ctx => this.GetVendorId() != 0U, (Composite)new PrioritySelector((ContextChangeHandler)(ctx => (object)this.FindVendor()), new Composite[2]
                 {
@@ -210,13 +236,20 @@ public class CollectItemObjective : QuestObjective
                 (Composite)new Decorator(new CanRunDecoratorDelegate(this.CanUseStartingItem), (Composite)new Decorator(ctx => this.QuestArea.CircledHotspots.Count == 1, (Composite)new PrioritySelector(new Composite[1]
                 {
                     (Composite)new Decorator(ctx => (double)this.QuestArea.CurrentHotSpot.Position.Distance(StyxWoW.Me.Location) <= 5.0, (Composite)new TreeSharp.Action(ctx => this.UseStartingItem(null)))
-                }))),
-                (Composite)new DecoratorIsNotPoiType((IEnumerable<PoiType>)new PoiType[2]
-                {
-                    PoiType.Loot,
-                    PoiType.Skin
-                }, (Composite)LevelBot.CreateRoamBehavior())
-            });
+                })))
+            };
+            if (this._usesProfileGameObjectCollection)
+            {
+                branchChildren.Add((Composite)new Decorator(
+                    ctx => !this.IsCompleted && !StyxWoW.Me.Combat,
+                    this.CreateProfileGameObjectBranch()));
+            }
+            branchChildren.Add((Composite)new DecoratorIsNotPoiType((IEnumerable<PoiType>)new PoiType[2]
+            {
+                PoiType.Loot,
+                PoiType.Skin
+            }, (Composite)LevelBot.CreateRoamBehavior()));
+            this._behaviorTree = (Composite)new PrioritySelector(branchChildren.ToArray());
         }
         return this._behaviorTree;
     }
@@ -510,6 +543,139 @@ public class CollectItemObjective : QuestObjective
             }
         }
         return this._includedMobs.Contains(entry);
+    }
+
+    private Composite CreateProfileGameObjectBranch()
+    {
+        return (Composite)new PrioritySelector(new Composite[1]
+        {
+            (Composite)new Decorator(new CanRunDecoratorDelegate(this.HasProfileGameObjectTarget), (Composite)new PrioritySelector(new Composite[2]
+            {
+                (Composite)new Decorator(new CanRunDecoratorDelegate(this.IsWithinProfileGameObjectInteractRange), (Composite)new TreeSharp.Action(ctx => this.InteractWithProfileGameObject(ctx))),
+                (Composite)new Decorator(new CanRunDecoratorDelegate(this.NeedsToMoveToProfileGameObject), (Composite)new TreeSharp.Action(ctx => this.MoveToProfileGameObject(ctx)))
+            }))
+        });
+    }
+
+    private WoWGameObject FindNearestProfileGameObject()
+    {
+        WoWPoint myLocation = ObjectManager.Me.Location;
+        WoWGameObject nearest = null;
+        float nearestDistSqr = float.MaxValue;
+        foreach (WoWGameObject gameObject in ObjectManager.GetObjectsOfType<WoWGameObject>())
+        {
+            if (!this._profileGameObjectIds.Contains(gameObject.Entry) || !gameObject.CanUse())
+                continue;
+            float distSqr = myLocation.DistanceSqr(gameObject.Location);
+            if (distSqr >= nearestDistSqr)
+                continue;
+            nearestDistSqr = distSqr;
+            nearest = gameObject;
+        }
+        return nearest;
+    }
+
+    private bool HasProfileGameObjectTarget(object context)
+    {
+        WoWGameObject found = this.FindNearestProfileGameObject();
+        if (found == null)
+        {
+            this._profileGameObjectTarget = null;
+            this._goInteractSent = false;
+            return false;
+        }
+        if (this._profileGameObjectTarget == null || this._profileGameObjectTarget.Guid != found.Guid)
+        {
+            Logging.Write("[CollectItem:GO] object found entry={0} name={1} distance={2:F1}",
+                (object)found.Entry, (object)found.Name, (object)found.Distance);
+            this._profileGameObjectTarget = found;
+            this._goInteractSent = false;
+            this._lastMoveLogGoGuid = 0UL;
+        }
+        return true;
+    }
+
+    private bool IsWithinProfileGameObjectInteractRange(object context)
+    {
+        return this._profileGameObjectTarget != null &&
+               (this._profileGameObjectTarget.WithinInteractRange || this._profileGameObjectTarget.DistanceSqr < 25.0);
+    }
+
+    private bool NeedsToMoveToProfileGameObject(object context)
+    {
+        return this._profileGameObjectTarget != null && !this.IsWithinProfileGameObjectInteractRange(context);
+    }
+
+    private RunStatus MoveToProfileGameObject(object context)
+    {
+        if (this._profileGameObjectTarget != null && this._lastMoveLogGoGuid != this._profileGameObjectTarget.Guid)
+        {
+            this._lastMoveLogGoGuid = this._profileGameObjectTarget.Guid;
+            Logging.Write("[CollectItem:GO] moving to object entry={0} name={1} distance={2:F1}",
+                (object)this._profileGameObjectTarget.Entry, (object)this._profileGameObjectTarget.Name, (object)this._profileGameObjectTarget.Distance);
+        }
+        Navigator.MoveTo(this._profileGameObjectTarget.Location);
+        return RunStatus.Success;
+    }
+
+    private int GetCollectedItemCount()
+    {
+        return (int)ObjectManager.Me.CarriedItems
+            .Where(item => (int)item.Entry == this.Objective.ID)
+            .Sum(item => (long)item.StackCount);
+    }
+
+    private RunStatus InteractWithProfileGameObject(object context)
+    {
+        if (this._profileGameObjectTarget == null)
+            return RunStatus.Failure;
+        if (StyxWoW.Me.IsMoving)
+        {
+            WoWMovement.MoveStop();
+            StyxWoW.Sleep(250);
+            return RunStatus.Running;
+        }
+        if (!this._goInteractSent)
+        {
+            this._itemCountBeforeGoInteract = this.GetCollectedItemCount();
+            Logging.Write("[CollectItem:GO] interacting entry={0} name={1}",
+                (object)this._profileGameObjectTarget.Entry, (object)this._profileGameObjectTarget.Name);
+            this._profileGameObjectTarget.Interact();
+            this._goInteractSent = true;
+            this._goLootWaitTimer.Restart();
+            return RunStatus.Running;
+        }
+        if (LootFrame.Instance.IsVisible)
+        {
+            Logging.Write("[CollectItem:GO] loot opened");
+            LootFrame.Instance.LootAll();
+            StyxWoW.Sleep(500);
+            int countAfter = this.GetCollectedItemCount();
+            Logging.Write("[CollectItem:GO] item count {0} -> {1}",
+                (object)this._itemCountBeforeGoInteract, (object)countAfter);
+            this._goInteractSent = false;
+            this._goLootWaitTimer.Stop();
+            return RunStatus.Success;
+        }
+        int currentCount = this.GetCollectedItemCount();
+        if (currentCount > this._itemCountBeforeGoInteract || this.IsCompleted)
+        {
+            Logging.Write("[CollectItem:GO] item count {0} -> {1} (no loot window)",
+                (object)this._itemCountBeforeGoInteract, (object)currentCount);
+            this._goInteractSent = false;
+            this._goLootWaitTimer.Stop();
+            return RunStatus.Success;
+        }
+        if (this._goLootWaitTimer.Elapsed.TotalSeconds > 3.0)
+        {
+            Logging.Write("[CollectItem:GO] loot timed out, item count {0} -> {1}",
+                (object)this._itemCountBeforeGoInteract, (object)currentCount);
+            this._goInteractSent = false;
+            this._goLootWaitTimer.Stop();
+            return RunStatus.Success;
+        }
+        StyxWoW.Sleep(100);
+        return RunStatus.Running;
     }
 
     private bool IsValidGameObjectTarget(WoWGameObject gameObject)
