@@ -657,6 +657,7 @@ namespace Bots.Grind
                         StyxWoW.Me.IsInInstance ||
                         Targeting.GetAggroOnMeWithin(StyxWoW.Me.Location, 30f) != 0)
                         return;
+                    StyxWoW.Sleep(1500);
                 };
                 _lootEventsAttached = true;
             }
