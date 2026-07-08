@@ -68,6 +68,12 @@ namespace Bots.Gatherbuddy
         // GUID of the last node we logged "Flying to" for — prevents per-tick log spam.
         private static ulong _lastLoggedNodeGuid;
 
+        // Cached vendor unit passed between the move-to-vendor Action and the vendor-interaction
+        // Sequence. Without a cache we'd have to re-query ObjectManager in every Action, and the
+        // Sequence children each need to refer to the same unit. Set when we enter interact range,
+        // cleared when the Sequence completes.
+        private static WoWUnit _cachedVendorUnit;
+
         // Per-node timer. If it exceeds BlacklistTimer seconds the node is blacklisted.
         // WoD: stopwatch_0
         internal static readonly Stopwatch _gatherTimer = new Stopwatch();
@@ -527,7 +533,7 @@ namespace Bots.Gatherbuddy
                                     if (spiritHealer.Distance > 3.0)
                                     {
                                         if (StyxWoW.Me.HasAura("Sea Legs"))
-                                            Flightor.MoveTo(spiritHealer.Location, 40f, false);
+                                            Flightor.MoveTo(spiritHealer.Location, 40f);
                                         else
                                             Navigator.MoveTo(spiritHealer.Location, -1);
                                         return RunStatus.Success;
@@ -537,13 +543,13 @@ namespace Bots.Gatherbuddy
                                     return RunStatus.Success;
                                 }),
                                 // HB 6.2.3 smethod_95 timing: 1000 / 500 / 2000ms between clicks.
-                                new Sleep(1000),
+                                new ActionSleep(1000),
                                 // HB 6.2.3 method_79 — single click on StaticPopup1.
                                 new Action(ctx => { Lua.DoString("StaticPopup1Button1:Click()"); return RunStatus.Success; }),
-                                new Sleep(500),
+                                new ActionSleep(500),
                                 // HB 6.2.3 method_80 — second click.
                                 new Action(ctx => { Lua.DoString("StaticPopup1Button1:Click()"); return RunStatus.Success; }),
-                                new Sleep(2000)
+                                new ActionSleep(2000)
                             )
                         ),
 
@@ -607,6 +613,7 @@ namespace Bots.Gatherbuddy
         private Composite CreateRepairBehavior()
         {
             return new PrioritySelector(
+                // Phase 1: find repair vendor, move into range. Cache the unit for Phase 2.
                 new Action(ctx =>
                 {
                     var vendor = ProfileManager.CurrentProfile?.VendorManager?
@@ -634,40 +641,51 @@ namespace Bots.Gatherbuddy
                         return RunStatus.Running;
                     }
 
-                    WoWMovement.MoveStop();
-                    Log("Repairing at {0}.", vendorUnit.Name);
-                    vendorUnit.Interact();
-                    StyxWoW.SleepForLagDuration();
-
-                    // If a gossip frame is visible, find and select the Vendor gossip option.
-                    // HB 3.3.5a smethod_169: source.Where(go => go.Type == BotPoi.Type.GetGossipType())
-                    // Selecting option 0 is wrong when the NPC has a trainer option first.
-                    if (!MerchantFrame.Instance.IsVisible && GossipFrame.Instance.IsVisible)
-                    {
-                        var gossipEntries = GossipFrame.Instance.GossipOptionEntries;
-                        var vendorEntry = gossipEntries?
-                            .Cast<GossipEntry?>()
-                            .FirstOrDefault(e => e.HasValue && e.Value.Type == GossipEntry.GossipEntryType.Vendor);
-
-                        if (vendorEntry.HasValue)
-                            GossipFrame.Instance.SelectGossipOption(vendorEntry.Value.Index);
-                        else
-                        {
-                            Logging.WriteDebug("[GatherBuddy] No Vendor gossip option found at {0}, closing.", vendorUnit.Name);
-                            GossipFrame.Instance.Close();
-                            return RunStatus.Failure;
-                        }
-                        StyxWoW.SleepForLagDuration();
-                    }
-
-                    if (!MerchantFrame.Instance.IsVisible)
-                        return RunStatus.Running;
-
-                    Lua.DoString("RepairAllItems()");
-                    StyxWoW.SleepForLagDuration();
-                    MerchantFrame.Instance.Close();
+                    _cachedVendorUnit = vendorUnit;
                     return RunStatus.Success;
-                })
+                }),
+                // Phase 2: HB 6.2.3 vendor Sequence - runs once per evaluation, sleeps gate re-entry.
+                new Sequence(
+                    new Action(ctx => WoWMovement.MoveStop()),
+                    new Action(ctx => { StyxWoW.SleepForLagDuration(); return RunStatus.Success; }),
+                    new Action(ctx =>
+                    {
+                        if (_cachedVendorUnit == null) return;
+                        Log("Repairing at {0}.", _cachedVendorUnit.Name);
+                        _cachedVendorUnit.Interact();
+                    }),
+                    new ActionSleep(1000),  // wait 1 second for frame to appear (HB 6.2.3)
+                    // DecoratorContinue: select vendor gossip if present, but never block the Sequence.
+                    new DecoratorContinue(
+                        ctx => !MerchantFrame.Instance.IsVisible && GossipFrame.Instance.IsVisible,
+                        new Action(ctx =>
+                        {
+                            var vendorEntry = GossipFrame.Instance.GossipOptionEntries?
+                                .Cast<GossipEntry?>()
+                                .FirstOrDefault(e => e.HasValue && e.Value.Type == GossipEntry.GossipEntryType.Vendor);
+
+                            if (vendorEntry.HasValue)
+                                GossipFrame.Instance.SelectGossipOption(vendorEntry.Value.Index);
+                            else if (_cachedVendorUnit != null)
+                            {
+                                Logging.WriteDebug("[GatherBuddy] No Vendor gossip option found at {0}, closing.", _cachedVendorUnit.Name);
+                                GossipFrame.Instance.Close();
+                            }
+                        })
+                    ),
+                    new Action(ctx =>
+                    {
+                        if (!MerchantFrame.Instance.IsVisible) return;
+                        Lua.DoString("RepairAllItems()");
+                    }),
+                    new Action(ctx => { StyxWoW.SleepForLagDuration(); return RunStatus.Success; }),
+                    new Action(ctx =>
+                    {
+                        if (MerchantFrame.Instance.IsVisible)
+                            MerchantFrame.Instance.Close();
+                        _cachedVendorUnit = null;
+                    })
+                )
             );
         }
 
@@ -678,6 +696,7 @@ namespace Bots.Gatherbuddy
         private Composite CreateSellBehavior()
         {
             return new PrioritySelector(
+                // Phase 1: find vendor, move into range. Cache the unit for Phase 2.
                 new Action(ctx =>
                 {
                     var vendor = ProfileManager.CurrentProfile?.VendorManager?
@@ -705,45 +724,58 @@ namespace Bots.Gatherbuddy
                         return RunStatus.Running;
                     }
 
-                    WoWMovement.MoveStop();
-                    Log("Selling at {0}.", vendorUnit.Name);
-                    vendorUnit.Interact();
-                    StyxWoW.SleepForLagDuration();
-
-                    // Some NPCs show a gossip frame before the merchant frame.
-                    // HB 3.3.5a smethod_169: select by GossipEntryType.Vendor, not by index 0.
-                    if (!MerchantFrame.Instance.IsVisible && GossipFrame.Instance.IsVisible)
-                    {
-                        var gossipEntries = GossipFrame.Instance.GossipOptionEntries;
-                        var vendorEntry = gossipEntries?
-                            .Cast<GossipEntry?>()
-                            .FirstOrDefault(e => e.HasValue && e.Value.Type == GossipEntry.GossipEntryType.Vendor);
-
-                        if (vendorEntry.HasValue)
-                            GossipFrame.Instance.SelectGossipOption(vendorEntry.Value.Index);
-                        else
-                        {
-                            Logging.WriteDebug("[GatherBuddy] No Vendor gossip option found at {0}, closing.", vendorUnit.Name);
-                            GossipFrame.Instance.Close();
-                            return RunStatus.Failure;
-                        }
-                        StyxWoW.SleepForLagDuration();
-                    }
-
-                    if (!MerchantFrame.Instance.IsVisible)
-                        return RunStatus.Running;
-
-                    // Sell items — LevelBot.cs smethod_134 pattern.
-                    Vendors.SellAllItems();
-                    StyxWoW.SleepForLagDuration();
-                    if (GatherbuddySettings.Instance.RepairAtVendor)
-                    {
-                        Lua.DoString("RepairAllItems()");
-                        StyxWoW.SleepForLagDuration();
-                    }
-                    MerchantFrame.Instance.Close();
+                    _cachedVendorUnit = vendorUnit;
                     return RunStatus.Success;
-                })
+                }),
+                // Phase 2: HB 6.2.3 vendor Sequence - runs once per evaluation, sleeps gate re-entry.
+                new Sequence(
+                    new Action(ctx => WoWMovement.MoveStop()),
+                    new Action(ctx => { StyxWoW.SleepForLagDuration(); return RunStatus.Success; }),
+                    new Action(ctx =>
+                    {
+                        if (_cachedVendorUnit == null) return;
+                        Log("Selling at {0}.", _cachedVendorUnit.Name);
+                        _cachedVendorUnit.Interact();
+                    }),
+                    new ActionSleep(1000),  // wait 1 second for frame to appear (HB 6.2.3)
+                    // DecoratorContinue: select vendor gossip if present, but never block the Sequence.
+                    new DecoratorContinue(
+                        ctx => !MerchantFrame.Instance.IsVisible && GossipFrame.Instance.IsVisible,
+                        new Action(ctx =>
+                        {
+                            var vendorEntry = GossipFrame.Instance.GossipOptionEntries?
+                                .Cast<GossipEntry?>()
+                                .FirstOrDefault(e => e.HasValue && e.Value.Type == GossipEntry.GossipEntryType.Vendor);
+
+                            if (vendorEntry.HasValue)
+                                GossipFrame.Instance.SelectGossipOption(vendorEntry.Value.Index);
+                            else if (_cachedVendorUnit != null)
+                            {
+                                Logging.WriteDebug("[GatherBuddy] No Vendor gossip option found at {0}, closing.", _cachedVendorUnit.Name);
+                                GossipFrame.Instance.Close();
+                            }
+                        })
+                    ),
+                    // Sell items - only if MerchantFrame is visible.
+                    new Action(ctx =>
+                    {
+                        if (!MerchantFrame.Instance.IsVisible) return;
+                        Vendors.SellAllItems();
+                    }),
+                    new Action(ctx => { StyxWoW.SleepForLagDuration(); return RunStatus.Success; }),
+                    // Repair if enabled and frame still open.
+                    new DecoratorContinue(
+                        ctx => GatherbuddySettings.Instance.RepairAtVendor && MerchantFrame.Instance.IsVisible,
+                        new Action(ctx => Lua.DoString("RepairAllItems()"))
+                    ),
+                    new Action(ctx => { StyxWoW.SleepForLagDuration(); return RunStatus.Success; }),
+                    new Action(ctx =>
+                    {
+                        if (MerchantFrame.Instance.IsVisible)
+                            MerchantFrame.Instance.Close();
+                        _cachedVendorUnit = null;
+                    })
+                )
             );
         }
 
