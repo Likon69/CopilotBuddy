@@ -35,6 +35,13 @@ namespace Styx.Logic.Inventory
 
         /// <summary>
         /// Gets the best food item.
+        /// Picks the highest RequiredLevel consumable the player can use; on tie, the largest stack.
+        /// HB 4.3.4 Consumable.GetBestFood uses `StackCount > num && RequiredLevel > num2` (both strict)
+        /// which is logically broken — a single item cannot have BOTH more stack AND higher required
+        /// level than itself, so the loop only ever accepts the very first item that passes against
+        /// the initial `num=0, num2=-1` and never upgrades to a better one with the same stack count.
+        /// We port the same intent (pick the best consumable the player can use) but with correct
+        /// ordering: highest RequiredLevel first, largest StackCount on tie.
         /// </summary>
         /// <param name="includeSpecialtyItems">Include items with special effects.</param>
         public static WoWItem GetBestFood(bool includeSpecialtyItems)
@@ -43,21 +50,22 @@ namespace Styx.Logic.Inventory
             if (food.Count == 0)
                 return null;
 
-            uint bestStack = 0;
-            int bestLevel = -1;
             WoWItem bestItem = null;
             int playerLevel = StyxWoW.Me.Level;
 
             foreach (var item in food)
             {
-                if (item.StackCount > bestStack && item.ItemInfo.RequiredLevel > bestLevel && item.ItemInfo.RequiredLevel <= playerLevel)
-                {
-                    if (!includeSpecialtyItems && !item.ItemSpells.All(IsBasicFoodOrDrink))
-                        continue;
+                if (item.ItemInfo.RequiredLevel > playerLevel)
+                    continue;
+                if (!includeSpecialtyItems && !item.ItemSpells.All(IsBasicFoodOrDrink))
+                    continue;
 
+                if (bestItem == null ||
+                    item.ItemInfo.RequiredLevel > bestItem.ItemInfo.RequiredLevel ||
+                    (item.ItemInfo.RequiredLevel == bestItem.ItemInfo.RequiredLevel &&
+                     item.StackCount > bestItem.StackCount))
+                {
                     bestItem = item;
-                    bestStack = item.StackCount;
-                    bestLevel = item.ItemInfo.RequiredLevel;
                 }
             }
 
@@ -66,6 +74,8 @@ namespace Styx.Logic.Inventory
 
         /// <summary>
         /// Gets the best drink item.
+        /// Same fix as GetBestFood: HB 4.3.4 has the same broken `> && >` strict-greater condition.
+        /// We use highest RequiredLevel with largest StackCount tie-break.
         /// </summary>
         /// <param name="includeSpecialtyItems">Include items with special effects.</param>
         public static WoWItem GetBestDrink(bool includeSpecialtyItems)
@@ -74,21 +84,22 @@ namespace Styx.Logic.Inventory
             if (drinks.Count == 0)
                 return null;
 
-            uint bestStack = 0;
-            int bestLevel = -1;
             WoWItem bestItem = null;
             int playerLevel = StyxWoW.Me.Level;
 
             foreach (var item in drinks)
             {
-                if (item.StackCount > bestStack && item.ItemInfo.RequiredLevel > bestLevel && item.ItemInfo.RequiredLevel <= playerLevel)
-                {
-                    if (!includeSpecialtyItems && !item.ItemSpells.All(IsBasicFoodOrDrink))
-                        continue;
+                if (item.ItemInfo.RequiredLevel > playerLevel)
+                    continue;
+                if (!includeSpecialtyItems && !item.ItemSpells.All(IsBasicFoodOrDrink))
+                    continue;
 
+                if (bestItem == null ||
+                    item.ItemInfo.RequiredLevel > bestItem.ItemInfo.RequiredLevel ||
+                    (item.ItemInfo.RequiredLevel == bestItem.ItemInfo.RequiredLevel &&
+                     item.StackCount > bestItem.StackCount))
+                {
                     bestItem = item;
-                    bestStack = item.StackCount;
-                    bestLevel = item.ItemInfo.RequiredLevel;
                 }
             }
 
