@@ -98,6 +98,17 @@ namespace Styx.Logic.Profiles
         {
             try
             {
+                // BUG-04: Skip vendor lookup while on a transport. While on a boat/zeppelin/tram the
+                // player's MapId still reports the previous continent, so NpcQueries.GetNearestNpc
+                // would return a vendor on the old continent and the bot would try to path back
+                // through the transport — causing the "vendor during transport breaks the bot"
+                // symptom (only fix was relaunch). The transport movement is owned by the
+                // profile-level UseTransport Quest Behavior; this guard just suppresses the
+                // pre-mature auto-vendor search. All botbases (GatherBuddy, Grind, Quest, BG)
+                // using GetClosestVendor pick this up.
+                if (StyxWoW.Me != null && StyxWoW.Me.IsOnTransport)
+                    return null;
+
                 List<Vendor> source = null;
 
                 // Use forced vendors if available
