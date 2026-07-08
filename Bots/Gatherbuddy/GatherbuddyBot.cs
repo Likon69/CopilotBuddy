@@ -502,48 +502,48 @@ namespace Bots.Gatherbuddy
                     ctx => StyxWoW.Me.IsGhost,
                     new PrioritySelector(
                         // Spirit healer path: explicitly enabled, or no flight and can't navigate to corpse.
+                        // HB 6.2.3 method_76: also excludes Sea Legs (handled by the path below).
                         new Decorator(
                             ctx => GatherbuddySettings.Instance.UseSpiritHealer ||
                                    (!Flightor.CanFly &&
                                     StyxWoW.Me.CorpsePoint != WoWPoint.Empty &&
-                                    !Navigator.CanNavigateFully(StyxWoW.Me.Location, StyxWoW.Me.CorpsePoint)),
+                                    !Navigator.CanNavigateFully(StyxWoW.Me.Location, StyxWoW.Me.CorpsePoint) &&
+                                    !StyxWoW.Me.HasAura("Sea Legs")),
                             new Sequence(
+                                // HB 6.2.3 method_77 — find nearest, move to within 3.0 yards, interact.
                                 new Action(ctx =>
                                 {
-                                    var spiritHealer = ObjectManager.GetObjectsOfType<WoWUnit>()
+                                    var spiritHealer = ObjectManager.GetObjectsOfType<WoWUnit>(false, false)
                                         .Where(u => u.IsValid && u.IsSpiritHealer)
                                         .OrderBy(u => u.DistanceSqr)
                                         .FirstOrDefault();
 
                                     if (spiritHealer == null)
-                                        return RunStatus.Failure;
-
-                                    if (!spiritHealer.WithinInteractRange)
                                     {
-                                        if (Flightor.CanFly)
-                                            Flightor.MoveTo(spiritHealer.Location, 40f);
-                                        else
-                                            Navigator.MoveTo(spiritHealer.Location);
-                                        return RunStatus.Running;
+                                        Logging.Write("[GatherBuddy] Couldn't find a spirit healer around");
+                                        return RunStatus.Failure;
                                     }
 
-                                    WoWMovement.MoveStop();
+                                    if (spiritHealer.Distance > 3.0)
+                                    {
+                                        if (StyxWoW.Me.HasAura("Sea Legs"))
+                                            Flightor.MoveTo(spiritHealer.Location, 40f, false);
+                                        else
+                                            Navigator.MoveTo(spiritHealer.Location, -1);
+                                        return RunStatus.Success;
+                                    }
+
                                     spiritHealer.Interact();
                                     return RunStatus.Success;
                                 }),
-                                new Action(ctx => { StyxWoW.Sleep(1000); return RunStatus.Success; }),
-                                new Action(ctx =>
-                                {
-                                    Lua.DoString("if StaticPopup1 and StaticPopup1:IsVisible() then StaticPopup1Button1:Click() else AcceptResurrect() end");
-                                    return RunStatus.Success;
-                                }),
-                                new Action(ctx => { StyxWoW.Sleep(500); return RunStatus.Success; }),
-                                new Action(ctx =>
-                                {
-                                    Lua.DoString("if StaticPopup1 and StaticPopup1:IsVisible() then StaticPopup1Button1:Click() else AcceptResurrect() end");
-                                    return RunStatus.Success;
-                                }),
-                                new Action(ctx => { StyxWoW.Sleep(2000); return RunStatus.Success; })
+                                // HB 6.2.3 smethod_95 timing: 1000 / 500 / 2000ms between clicks.
+                                new Sleep(1000),
+                                // HB 6.2.3 method_79 — single click on StaticPopup1.
+                                new Action(ctx => { Lua.DoString("StaticPopup1Button1:Click()"); return RunStatus.Success; }),
+                                new Sleep(500),
+                                // HB 6.2.3 method_80 — second click.
+                                new Action(ctx => { Lua.DoString("StaticPopup1Button1:Click()"); return RunStatus.Success; }),
+                                new Sleep(2000)
                             )
                         ),
 
