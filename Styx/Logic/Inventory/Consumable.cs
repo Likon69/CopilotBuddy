@@ -143,7 +143,7 @@ namespace Styx.Logic.Inventory
         /// </summary>
         private static bool IsBasicFoodOrDrink(WoWItem.WoWItemSpell spell)
         {
-            return spell.ActualSpell.Name == "Food" || spell.ActualSpell.Name == "Drink";
+            return spell.ActualSpell.Name == "Food" || spell.ActualSpell.Name == "Drink" || spell.ActualSpell.Name == "Refreshment";
         }
     }
 }
