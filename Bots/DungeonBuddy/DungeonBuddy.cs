@@ -1103,11 +1103,7 @@ namespace Bots.DungeonBuddy
                         new Action(ctx =>
                         {
                             Logging.Write("[DungeonBuddy] Role check in progress");
-                            // CompleteLFGRoleCheck() is confirmed taint-free (IDA: 0x553E20, no
-                            // CheckPermissions call). Direct API call is more reliable than clicking
-                            // LFDRoleCheckPopupAcceptButton which may silently fail if the frame
-                            // isn't loaded yet.
-                            Lua.DoString("CompleteLFGRoleCheck()");
+                            Lua.DoString("LFDRoleCheckPopupAcceptButton:Click() StaticPopup1Button1:Click()");
                             return RunStatus.Success;
                         }),
                         new Action(ctx =>
