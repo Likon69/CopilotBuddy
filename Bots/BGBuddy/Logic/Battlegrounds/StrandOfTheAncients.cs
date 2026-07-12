@@ -122,7 +122,7 @@ namespace Bots.BGBuddy.Logic.Battlegrounds
                 // [1] smethod_59: past Preparation AND physically on the boat transport —
                 // wait the 5s timer then ClickToMove to pier to debark.
                 // StyxWoW.Me.IsOnTransport is the correct check (cf. Battleground.cs:422).
-                new Decorator(ctx => StyxWoW.Me.IsOnTransport,
+                new Decorator(ctx => !StyxWoW.Me.HasAura("Preparation") && StyxWoW.Me.IsOnTransport,
                     new PrioritySelector(
                         new Decorator(ctx => !_boatTimer.IsFinished,
                             new Action(ctx => { Logger.Write(BGBuddyResources.WaitingForBoat); return RunStatus.Running; })),
