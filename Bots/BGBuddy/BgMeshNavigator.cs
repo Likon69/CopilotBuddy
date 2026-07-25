@@ -69,21 +69,6 @@ namespace Bots.BGBuddy
 
         #endregion
 
-        #region Door handling override (HB 4.3.4 BgMeshNavigator had no door click)
-
-        // HB 4.3.4 BgMeshNavigator (ns5/Class80) inherits from a MeshNavigator that
-        // had no door handling at all. HB 6.2.3 MeshNavigator added method_7/8/29
-        // (HandleDoors/IsDoorUsable) for open-world doors. CopilotBuddy's base
-        // MeshNavigator is a port of HB 6.2.3, so we inherit HandleDoors by default.
-        // BG gates (WSG portcullis entry 179919, IoC gates, SotA gates, AV banners)
-        // are script-driven — the server lowers them on prep timer expiry, the WoW
-        // API keeps reporting IsClosed=true for several seconds, and the open-world
-        // HandleDoors then spam-clicks an already-open sliding door. Override the
-        // hook to a no-op so the bot just walks through.
-        protected override MoveResult? HandleDoors(LocalPlayer me) => null;
-
-        #endregion
-
         #region Tile loaded — blackspot injection (HB Class80.method_10 / method_11)
 
         /// <summary>

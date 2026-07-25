@@ -16,16 +16,21 @@ namespace Styx.Logic.Pathing
 	/// Concrete NavigationProvider that wraps Tripper.Navigator (Navigation.dll).
 	/// Direct port of HB 6.2.3 MeshNavigator (Styx.Pathing.MeshNavigator).
 	///
-	/// Responsibilities (matching HB WoD):
+	/// Responsibilities (matching HB WoD minus HB 6.2.3 door handling):
 	/// - Navmesh path generation (FindPath + EnsureTiles + Blackspot sync)
 	/// - Path following with push-ahead (method_25/26)
 	/// - Start-index skip (method_14)
 	/// - Off-mesh connection dispatch (elevator, portal, interact, jump)
-	/// - Door detection and interaction (method_7/8)
 	/// - Stuck detection and recovery (Class469)
 	/// - Drift detection (method_15)
 	/// - Alive/ghost query filter (method_28)
 	/// - PathPrecision-based waypoint advance (method_24/27)
+	///
+	/// HB 4.3.4 base MeshNavigator had no door handling (method_7/8 came in HB 6.2.3).
+	/// The HB 6.2.3 door-handling port spam-clicked BG gates (script-driven, server
+	/// opens on prep timer) for several seconds before the WoW API caught up to the
+	/// open state. Restoring the HB 4.3.4 behavior — bot walks through open doors
+	/// when pathing; the WoW client auto-opens closed doors as the player walks in.
 	///
 	/// Not here (stays in Navigator facade):
 	/// - Flightor routing, mount/dismount, avoidance wiring, bot lifecycle
@@ -58,8 +63,6 @@ namespace Styx.Logic.Pathing
 		private WoWPoint _cachedClickPoint = WoWPoint.Zero;
 
 		// Timers
-		private WaitTimer _doorScanTimer = new WaitTimer(TimeSpan.FromSeconds(1));
-		private WaitTimer _doorInteractTimer = new WaitTimer(TimeSpan.FromSeconds(1));
 		private WaitTimer _pathRegenThrottle = new WaitTimer(TimeSpan.FromMilliseconds(500));
 		private WaitTimer _interactTimer = new WaitTimer(TimeSpan.FromMilliseconds(2000));
 
@@ -363,11 +366,6 @@ namespace Styx.Logic.Pathing
 
 				return DispatchOffMesh(me, offMeshEndPt, offMeshStartPt, offMeshAreaType);
 			}
-
-			// Door handling (HB 6.2.3 method_7)
-			var doorResult = HandleDoors(me);
-			if (doorResult != null)
-				return doorResult.Value;
 
 			// Stuck detection (HB 6.2.3 Class469)
 				bool isAtOffMesh = _currentFlags != null && _currentPathIndex > 0
@@ -1150,73 +1148,6 @@ namespace Styx.Logic.Pathing
 			gameObject.Interact();
 			_interactTimer.Reset();
 			return MoveResult.Moved;
-		}
-
-		#endregion
-
-		#region Internal — door handling (HB 6.2.3 method_7/8)
-
-		// protected virtual so BgMeshNavigator (the BG-specific navigator set in
-		// BGBuddy.Start) can opt out — the WSG/IoC/SotA/AV gates open by server
-		// script when the prep timer expires and the API still reports IsClosed=true
-		// for several seconds, causing the bot to spam Interact() on a sliding door
-		// it should just walk through. HB 4.3.4 BgMeshNavigator (ns5/Class80) had
-		// no door handling at all; we keep the open-world door-click logic in the
-		// base class and no-op it from the BG subclass.
-		protected virtual MoveResult? HandleDoors(LocalPlayer me)
-		{
-			if (!_doorScanTimer.IsFinished)
-				return null;
-
-			WoWGameObject? closestDoor = ObjectManager.GetObjectsOfType<WoWGameObject>(false, false)
-				.FirstOrDefault(IsDoorUsable);
-
-			if (closestDoor == null)
-			{
-				_doorScanTimer.Reset();
-				return null;
-			}
-
-			if (me.IsMoving)
-			{
-				WoWMovement.MoveStop();
-			}
-			else if (!me.IsCasting && _doorInteractTimer.IsFinished)
-			{
-				Logging.WriteDiagnostic("Opening Closed Door {0} (Id: {1})", closestDoor.Name, closestDoor.Entry);
-				closestDoor.Interact();
-				_doorInteractTimer.Reset();
-			}
-
-			return MoveResult.Moved;
-		}
-
-		private bool IsDoorUsable(WoWGameObject gameObject)
-		{
-			if (gameObject.SubType != WoWGameObjectType.Door)
-				return false;
-
-			if (gameObject.SubObj is not WoWDoor door || !door.IsClosed)
-				return false;
-
-			if (gameObject.Locked || !gameObject.WithinInteractRange || !gameObject.CanUse() || !gameObject.CanUseNow())
-				return false;
-
-			LockEntry? lockEntry = gameObject.LockRecord;
-			if (lockEntry == null)
-				return true;
-
-			for (int i = 0; i < lockEntry.Value.LockProperties.Length && i < lockEntry.Value.Type.Length; i++)
-			{
-				uint itemId = lockEntry.Value.LockProperties[i];
-				if (itemId == 0 || lockEntry.Value.Type[i] != 1)
-					continue;
-
-				if (ObjectManager.Me?.CarriedItems.Any(item => item.Entry == itemId) != true)
-					return false;
-			}
-
-			return true;
 		}
 
 		#endregion
