@@ -108,32 +108,27 @@ namespace Bots.BGBuddy.Logic.Battlegrounds
         protected override Composite CreateBeforePrepBehavior()
         {
             return new PrioritySelector(
-                // [0] smethod_58: Preparation aura still up — move toward nearest pier and
-                // keep timers warm. Returns Failure so the outer loop re-evaluates next tick.
+                // [0] smethod_58: Preparation aura still up — keep timers warm, return
+                // Failure so the outer BGBuddy loop re-evaluates next tick.
+                // Movement toward the StartingLocation (boat pier for offense, defender
+                // base for defense) is handled by Battleground.cs CreateCommonLogic's
+                // Preparation handler — see BGBuddy.CreateMoveToLocationBehavior near
+                // Battleground.cs:422. Adding a hardcoded pier ClickToMove here (as the
+                // previous port did) wrongly teleported defense-side bots onto the boat
+                // pier every 60s prep.
                 new Decorator(ctx => StyxWoW.Me.HasAura("Preparation"),
-                    new Action(ctx =>
-                    {
-                        _boatTimer.Reset();
-                        var pier = BoatPierPoints.OrderBy(p => p.DistanceSqr(StyxWoW.Me.Location)).First();
-                        if (StyxWoW.Me.Location.DistanceSqr(pier) > 100f) // > 10 yards — keep moving
-                            WoWMovement.ClickToMove(pier);
-                        return RunStatus.Failure;
-                    })),
-                // [1] smethod_59: past Preparation AND physically on the boat transport —
-                // wait the 5s timer then ClickToMove to pier to debark.
-                // StyxWoW.Me.IsOnTransport is the correct check (cf. Battleground.cs:422).
+                    new Action(ctx => { _boatTimer.Reset(); return RunStatus.Failure; })),
+                // [1] smethod_59: past Preparation AND on the boat — wait for the teleport
+                // buff to land, then click-to-move to the nearest pier to debark.
+                // The inner PrioritySelector is NESTED inside this Decorator so it only
+                // fires while on the boat.
                 new Decorator(ctx => !StyxWoW.Me.HasAura("Preparation") && StyxWoW.Me.IsOnTransport,
                     new PrioritySelector(
                         new Decorator(ctx => !_boatTimer.IsFinished,
                             new Action(ctx => { Logger.Write(BGBuddyResources.WaitingForBoat); return RunStatus.Running; })),
                         new Sequence(
                             new Action(ctx => { Logger.Write(BGBuddyResources.GettingOfTheBoat); return RunStatus.Success; }),
-                            new Action(ctx =>
-                            {
-                                _boatTimer.Reset();
-                                WoWMovement.ClickToMove(BoatPierPoints.OrderBy(p => p.DistanceSqr(StyxWoW.Me.Location)).First());
-                                return RunStatus.Success;
-                            })))),
+                            new Action(ctx => { WoWMovement.ClickToMove(BoatPierPoints.OrderBy(p => p.DistanceSqr(StyxWoW.Me.Location)).First()); return RunStatus.Success; })))),
                 // [2] Fallback: side change + teleport buff toggle detection.
                 // HB 4.3.4 Class55.method_22 — runs as the last child of CreateBeforePrepBehavior's
                 // PrioritySelector, i.e. only when we are not in Preparation and not on the boat.
