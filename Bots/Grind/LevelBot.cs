@@ -1385,7 +1385,13 @@ namespace Bots.Grind
         }
 
         /// <summary>
-        /// HB 4.3.4 LevelBotIncludeTargetsFilter - filters combat targets by faction
+        /// HB 6.2.3 LevelBotIncludeTargetsFilter — filters combat targets by faction,
+        /// MobIDs, level range, and an aggro-based fallback when traveling mounted.
+        /// Excludes critters, player-owned NPCs (except flight masters), mobs tagged
+        /// by other players, and any unit whose MyReaction >= Neutral (i.e. friendly
+        /// or neutral NPCs like quest givers, vendors, and goblin faction NPCs such
+        /// as Marvon Rivetseeker — without this check, the bot would happily target
+        /// them because their FactionId is listed in the grind area / profile).
         /// </summary>
         public static void LevelBotIncludeTargetsFilter(List<WoWObject> incomingUnits, HashSet<WoWObject> outgoingUnits)
         {
@@ -1393,39 +1399,100 @@ namespace Bots.Grind
             if (currentProfile == null || StyxWoW.Me.Combat)
                 return;
 
-            // HB 6.2.3: Don't add faction targets when traveling to vendor/trainer/mail
-            // Only aggro mobs (handled by DefaultIncludeTargetsFilter) should be included
-            PoiType poiType = BotPoi.Current.Type;
-            bool isVendorRun = poiType == PoiType.Sell || poiType == PoiType.Repair ||
-                               poiType == PoiType.Train || poiType == PoiType.Buy ||
-                               poiType == PoiType.Mail;
-            if (isVendorRun)
-                return;
-
-            HashSet<uint> validFactions = new HashSet<uint>();
             GrindArea grindArea = StyxWoW.AreaManager?.CurrentGrindArea;
 
-            if (grindArea != null && grindArea.Factions.Count > 0)
+            HashSet<uint> validFactions = new HashSet<uint>();
+            List<int> validMobIds = new List<int>();
+
+            if (grindArea != null)
             {
-                foreach (uint faction in grindArea.Factions)
-                    validFactions.Add(faction);
+                validMobIds = grindArea.MobIDs;
+                if (grindArea.Factions.Count > 0)
+                {
+                    foreach (int faction in grindArea.Factions)
+                        validFactions.Add((uint)faction);
+                }
             }
-            else
+            if (validFactions.Count == 0 && currentProfile.Factions != null)
             {
                 foreach (uint faction in currentProfile.Factions)
                     validFactions.Add(faction);
             }
 
+            int minLevel = grindArea != null ? grindArea.TargetMinLevel
+                          : currentProfile != null ? currentProfile.TargetMinLevel
+                          : int.MinValue;
+            int maxLevel = grindArea != null ? grindArea.TargetMaxLevel
+                          : currentProfile != null ? currentProfile.TargetMaxLevel
+                          : int.MaxValue;
+
+            WoWPoint meLocation = StyxWoW.Me.Location;
+            bool mounted = StyxWoW.Me.Mounted;
+            PoiType poiType = BotPoi.Current.Type;
+            bool isVendorRun = poiType == PoiType.Buy || poiType == PoiType.Mail ||
+                               poiType == PoiType.Repair || poiType == PoiType.Sell;
+
+            // Snapshot the navigator's current path so the aggro-based fallback can
+            // pull in mobs that are on-route while we're mounted (HB 6.2.3).
+            WoWPoint pathDestination = meLocation;
+            if (Navigator.NavigationProvider is MeshNavigator meshNav && meshNav.HasActivePath)
+            {
+                pathDestination = meshNav.CurrentPath[meshNav.CurrentPath.Count - 1];
+            }
+
             foreach (WoWObject obj in incomingUnits)
             {
-                if (obj is WoWUnit unit && !(obj is WoWPlayer))
+                WoWUnit unit = obj as WoWUnit;
+                if (unit == null || unit.IsPlayer)
+                    continue;
+
+                // HB 6.2.3: exclude player-owned NPCs (companions, hunter pets),
+                // unless the owner is a flight master (so taxi NPCs are kept
+                // accessible to FlightPaths).
+                WoWUnit ownedByRoot = unit.OwnedByRoot;
+                if (ownedByRoot != null && (ownedByRoot.IsPlayer || ownedByRoot.IsFlightMaster))
                 {
-                    if (!currentProfile.AvoidMobs.Contains(unit.Entry) &&
-                        !IsTooNearBlackspot(currentProfile.Blackspots, unit.Location) &&
-                        validFactions.Contains(unit.FactionId))
-                    {
-                        outgoingUnits.Add(obj);
-                    }
+                    if (ownedByRoot.IsPlayer && !ownedByRoot.IsFlightMaster)
+                        continue;
+                }
+
+                // HB 6.2.3: skip critters (non-combat critters like rats, rabbits).
+                if (unit.IsCritter)
+                    continue;
+
+                // HB 6.2.3: skip mobs tagged by another player (loot rights)
+                // unless they already have a valid target.
+                if (unit.TaggedByOther && unit.CurrentTargetGuid == 0)
+                    continue;
+
+                if (currentProfile != null && IsTooNearBlackspot(currentProfile.Blackspots, unit.Location))
+                    continue;
+
+                bool inLevelRange = unit.Level >= minLevel && unit.Level <= maxLevel;
+
+                // Primary faction / MobIDs match — this is the "profile wants this mob" path.
+                if (inLevelRange && !isVendorRun &&
+                    (validFactions.Contains(unit.FactionId) || validMobIds.Contains((int)unit.Entry)) &&
+                    !currentProfile.AvoidMobs.Contains(unit.Entry))
+                {
+                    outgoingUnits.Add(obj);
+                    continue;
+                }
+
+                // HB 6.2.3: mounted-travel fallback. While we're mounted and moving
+                // toward a hotspot, pull any aggressive mob that's on our path
+                // (regardless of faction list). Skip when mounted and the kill-between
+                // option is off, or when the target is on a transport/has no target.
+                bool mountedPull = mounted
+                    ? (Targeting.Instance.KillBetweenHotspots && unit.Difficulty > DifficultyColor.Gray)
+                    : true;
+                if (mountedPull
+                    && unit.CurrentTargetGuid == 0
+                    && unit.MyReaction < WoWUnitReaction.Neutral
+                    && WoWMathHelper.IsInPath(unit, meLocation, pathDestination)
+                    && (Math.Abs(meLocation.Z - unit.Location.Z) <= 10f || unit.InLineOfSpellSight))
+                {
+                    outgoingUnits.Add(obj);
                 }
             }
         }
