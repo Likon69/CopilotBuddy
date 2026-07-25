@@ -89,7 +89,10 @@ public class QuestBot : BotBase
             throw new HonorbuddyUnableToStartException("Can not start quest bot - this profile does not contain a quest order.");
         QuestState.Instance.InitializeFromProfile(ProfileManager.CurrentProfile);
         LootTargeting.Instance.IncludeTargetsFilter += new IncludeTargetsFilterDelegate(LevelBot.LevelbotIncludeLootsFilter);
-        Targeting.Instance.IncludeTargetsFilter += new IncludeTargetsFilterDelegate(QuestBot.QuestIncludeTargetsFilter);
+        // HB 6.2.3: QuestBot delegates target filtering to LevelBot.LevelBotIncludeTargetsFilter
+        // so that profile AvoidMobs / MobIDs / level range / critter / player-pet filtering
+        // is honored (previously the bot pathed through chain-of-mobs to reach an AvoidMob).
+        Targeting.Instance.IncludeTargetsFilter += new IncludeTargetsFilterDelegate(LevelBot.LevelBotIncludeTargetsFilter);
         QuestState.Instance.Order.OnNoMoreNodes += new EventHandler<EventArgs>(OnNoMoreNodes);
         if (StyxSettings.Instance.ProfileDebuggingMode && !CheckQuestBehaviors(ProfileManager.CurrentOuterProfile))
             throw new HonorbuddyUnableToStartException("Could not construct all quest behaviors.");
@@ -151,7 +154,7 @@ public class QuestBot : BotBase
             QuestState.Instance.Order.CurrentBehavior = (ForcedBehavior)null;
         }
         LootTargeting.Instance.IncludeTargetsFilter -= new IncludeTargetsFilterDelegate(LevelBot.LevelbotIncludeLootsFilter);
-        Targeting.Instance.IncludeTargetsFilter -= new IncludeTargetsFilterDelegate(QuestBot.QuestIncludeTargetsFilter);
+        Targeting.Instance.IncludeTargetsFilter -= new IncludeTargetsFilterDelegate(LevelBot.LevelBotIncludeTargetsFilter);
     }
 
     private float GetPathPrecision() => MathEx.Clamp(StyxWoW.Me.MovementInfo.CurrentSpeed * 0.15f, 1.5f, 10f);
