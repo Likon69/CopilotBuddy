@@ -1166,6 +1166,7 @@ namespace Styx.WoWInternals.WoWObjects
 
         /// <summary>
         /// Check if the unit is in the player's party or raid.
+        /// Includes cross-realm BG group members (WotLK 3.3.5a feature).
         /// </summary>
         public bool IsInMyPartyOrRaid
         {
@@ -1173,19 +1174,29 @@ namespace Styx.WoWInternals.WoWObjects
             {
                 if (StyxWoW.Me == null) return false;
                 if (Guid == StyxWoW.Me.Guid) return true;
-                
+
+                // Cross-realm BG group detection — uses Lua GetRaidRosterInfo() under the hood
+                // (WoWGroupInfo.Instance). Memory-based StyxWoW.Me.RaidMemberGuids misses BG
+                // group members in 3.3.5a, so the bot ends up targeting them as enemies
+                // (cross-realm group = different faction, hostile reaction). HB 3.0.904 / MoP+
+                // Singular (Helpers/Unit.cs:1171-1174) uses this exact API for the same reason.
+                foreach (var guid in StyxWoW.Me.GroupInfo.RaidMemberGuids)
+                {
+                    if (guid == Guid) return true;
+                }
+
                 // Check party
                 foreach (var guid in StyxWoW.Me.PartyMemberGuids)
                 {
                     if (guid == Guid) return true;
                 }
-                
+
                 // Check raid
                 foreach (var guid in StyxWoW.Me.RaidMemberGuids)
                 {
                     if (guid == Guid) return true;
                 }
-                
+
                 return false;
             }
         }
@@ -1383,16 +1394,6 @@ namespace Styx.WoWInternals.WoWObjects
                     {
                         return WoWUnitReaction.Friendly;
                     }
-                }
-
-                // Contested PvP flag check - both flagged for PvP = hostile
-                // Only check for players (ContestedPvPFlagged is a WoWPlayer property)
-                if (IsPlayer && otherUnit.IsPlayer)
-                {
-                    var me = ToPlayer();
-                    var other = otherUnit.ToPlayer();
-                    if (me != null && other != null && me.ContestedPvPFlagged && other.ContestedPvPFlagged)
-                        return WoWUnitReaction.Hostile;
                 }
             }
 
