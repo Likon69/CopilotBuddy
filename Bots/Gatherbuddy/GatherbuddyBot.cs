@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Bots.Grind;
+using CommonBehaviors;
 using CommonBehaviors.Actions;
+using CommonBehaviors.Decorators;
 using Styx;
 using Styx.Common;
 using Styx.CommonBot;
@@ -542,13 +544,38 @@ namespace Bots.Gatherbuddy
                                     spiritHealer.Interact();
                                     return RunStatus.Success;
                                 }),
-                                // HB 6.2.3 smethod_95 timing: 1000 / 500 / 2000ms between clicks.
-                                new ActionSleep(1000),
-                                // HB 6.2.3 method_79 — single click on StaticPopup1.
-                                new Action(ctx => { Lua.DoString("StaticPopup1Button1:Click()"); return RunStatus.Success; }),
-                                new ActionSleep(500),
-                                // HB 6.2.3 method_80 — second click.
-                                new Action(ctx => { Lua.DoString("StaticPopup1Button1:Click()"); return RunStatus.Success; }),
+                                // WotLK 3.3.5a spirit healer opens a GossipFrame with a "Resurrect"
+                                // option before any StaticPopup1 confirmation appears. The previous
+                                // logic only clicked StaticPopup1Button1, which is a no-op until
+                                // the gossip has been accepted — leaving the bot stuck spamming
+                                // Interact on the spirit healer forever. Pattern ported from
+                                // HB 6.2.3 LevelBot method_52-57 (via existing LevelBot.CreateSpiritHealerBehavior).
+                                new Wait(5, ctx =>
+                                    Lua.GetReturnVal<bool>("return StaticPopup1:IsVisible() or GossipFrame:IsVisible()", 0),
+                                    new Sequence(
+                                        // HB 6.2.3 LevelBot method_54-56: select the Healer gossip option.
+                                        new DecoratorFrameIsVisible<GossipFrame>(
+                                            new Action(ctx =>
+                                            {
+                                                var entries = GossipFrame.Instance.GossipOptionEntries;
+                                                if (entries == null || entries.Count == 0)
+                                                    return RunStatus.Failure;
+                                                var healer = entries.FirstOrDefault(e => e.Type == GossipEntry.GossipEntryType.Healer);
+                                                int idx = healer.Type == GossipEntry.GossipEntryType.Healer ? healer.Index : 0;
+                                                GossipFrame.Instance.SelectGossipOption(idx);
+                                                return RunStatus.Success;
+                                            })
+                                        ),
+                                        // HB 6.2.3 LevelBot method_79/80 + method_57: click the resurrection
+                                        // confirmation popup, accept XP loss dialog.
+                                        new Action(ctx =>
+                                        {
+                                            Lua.DoString("if StaticPopup1 and StaticPopup1:IsVisible() then StaticPopup1Button1:Click() else AcceptResurrect() end");
+                                            Lua.DoString("AcceptXPLoss()");
+                                            return RunStatus.Success;
+                                        })
+                                    )
+                                ),
                                 new ActionSleep(2000)
                             )
                         ),
