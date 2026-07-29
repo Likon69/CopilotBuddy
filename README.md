@@ -35,8 +35,26 @@ CopilotBuddy is split across a few sibling repositories. Each one covers one sli
 | **Extractor (4x4)** — C#, native | [extractor-csharp](https://github.com/Likon69/extractor-csharp) | Navmesh extractor written in C# / WPF, ported and heavily extended from the MaNGOS extractor. Produces 4x4 sub-tile `.mmtile` files in HonorBuddy format (PAMM, `mmapVer = 5`). |
 | **Extractor (1x1)** — MaNGOS C++ | [Extractor_projects](https://github.com/Likon69/Extractor_projects) | The original MaNGOS extractor. Produces 1x1 `.mmap` / `.mmtile` files for the MaNGOS / MMAP v4 path. |
 | **MeshViewer 3D** | [MeshViewer3D](https://github.com/Likon69/MeshViewer3D) | Standalone 3D viewer for the produced navmesh tiles. Useful for debugging pathfinding without launching the bot. |
+| **HBRelog** | [HBRelog](https://github.com/Likon69/HBRelog) | Launcher and WCF relay. Spawns `Wow.exe`, drives the login glue via injected Lua, detects when the character is in-world (`g_ClientConnectionState` at `0xBD0792`), then launches CopilotBuddy with `/pid=<wow pid> /autostart /loadprofile=<path> /botname=<BotBase>`. Watches both processes for hangs/crashes/logouts and restarts whichever side dies. No combat, profile or botbase logic — strictly the launcher and relay. |
 
 Use the 4x4 extractor + `Navigation.dll` for Trinity mmaps; use the MaNGOS extractor + `Navigation 1x1.dll` for the older 1x1 layout. The bot auto-detects which format to load from the file header.
+
+### HBRelog integration
+
+HBRelog (a .NET 4.8 desktop tool, fork of HighVoltz's HBRelog adapted for WotLK 3.3.5a build 12340) is the recommended way to run CopilotBuddy unattended across multiple accounts — multiboxing, gold farming, BG premades, etc. It pairs the WoW client and CopilotBuddy in lockstep:
+
+- Launches `Wow.exe`, installs an EndScene hook, drives the login dialog / realm select / character select / EnterWorld through injected Lua.
+- Detects when the character is fully in-world (via `g_ClientConnectionState` at `0xBD0792`) and starts the bot.
+- Talks to CopilotBuddy over a NetNamedPipe WCF channel (`net.pipe://localhost/HBRelog/Server`) and forwards tool / status / heartbeat signals both ways.
+- Watches the client and the bot for hangs, crashes and logouts, and restarts whichever side dies, optionally with a different character or profile.
+
+The bot-side contract CopilotBuddy already satisfies:
+
+- Compiles and runs `Plugins/HBRelogHelper.cs` (dropped next to the executable) — opens the named pipe and calls `Init(botPid)`.
+- Implements an `IRemotingApi`-shaped WCF channel via `HBRelogApi`.
+- Consumes the cmdline args at startup: `/pid`, `/autostart`, `/customclass=<X>`, `/loadprofile=<path>`, `/botname=<BotBase>` — wired up by the `ApplyAutoStartConfig` equivalent of HB 4.3.4's `AfterInitOnAuthSuccess` (commit `e8d46d3`, `UI/MainWindow.xaml.cs`).
+
+Configure one row per account in HBRelog's accounts grid: WoW path, credentials, character, server, region; path to `CopilotBuddy.exe`, the botbase name, the profile path, the combat routine name; and an ordered task list (Logon, Wait, ChangeProfile, StopProfile, StartProfile, Idle). Everything else (the WCF pipe, window placement, `gameTip` strings) is handled by the managers themselves. Build with `msbuild HBRelog.csproj /p:Configuration=Release /p:Platform=x86 /t:Build` (Visual Studio 2022, .NET 4.8) — output is `bin\Release\HBRelog.exe`.
 
 ## How this project started
 
