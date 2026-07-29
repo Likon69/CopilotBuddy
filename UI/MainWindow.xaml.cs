@@ -256,7 +256,7 @@ namespace CopilotBuddy.UI
                             {
                                 cmbBotSelector.Items.Add(bot.Key);
                             }
-                            
+
                             // Restore last selected bot (HB 4.3.4 pattern)
                             if (cmbBotSelector.Items.Count > 0)
                             {
@@ -273,6 +273,12 @@ namespace CopilotBuddy.UI
                             ToggleButtons(true);
                             SetStatus("CopilotBuddy Startup Complete");
                             _infoTimer.Start();
+
+                            // AfterInitOnAuthSuccess equivalent for HBRelog integration.
+                            // Mirrors Honorbuddy 4.3.4 MainWindow.xaml.cs:419-437 + Start():847-866.
+                            // CommandLine.AutoLoadProfile / AutoStartBotName are parsed in
+                            // Styx/Helpers/CommandLine.cs but were never consumed prior to this.
+                            ApplyAutoStartConfig();
                         });
                     }
                     else
@@ -683,6 +689,90 @@ namespace CopilotBuddy.UI
         #endregion
 
         #region Bot Control
+
+        /// <summary>
+        /// AfterInitOnAuthSuccess equivalent for CopilotBuddy.
+        /// Mirrors Honorbuddy 4.3.4 MainWindow.xaml.cs:419-437 (AfterInitOnAuthSuccess)
+        /// and Start():847-866. Consumes command-line arguments forwarded by HBRelog
+        /// (and any other external launcher) — loads the profile first, then selects
+        /// the requested botbase, then auto-starts the bot.
+        ///
+        /// Command-line contract (see Styx/Helpers/CommandLine.cs):
+        ///   /loadprofile=&lt;absolute path&gt;   — load this profile before starting
+        ///   /botname=&lt;name fragment&gt;       — substring-match a BotBase key, case-insensitive
+        ///   /autostart                       — start the bot without waiting for user click
+        ///
+        /// If none of these are present this method is a no-op and the user has to
+        /// pick the botbase/profile/Start manually.
+        /// </summary>
+        private void ApplyAutoStartConfig()
+        {
+            try
+            {
+                string autoLoadProfile = CommandLine.AutoLoadProfile;
+                string autoStartBot = CommandLine.AutoStartBotName;
+
+                // Step 1 — load profile. Mirrors 4.3.4 AfterInitOnAuthSuccess:428-431.
+                if (!string.IsNullOrEmpty(autoLoadProfile))
+                {
+                    Logging.Write("Auto-load profile from /loadprofile: {0}", autoLoadProfile);
+                    try
+                    {
+                        ProfileManager.LoadNew(autoLoadProfile);
+                        Logging.Write("Profile loaded: {0}", System.IO.Path.GetFileName(autoLoadProfile));
+                    }
+                    catch (Exception ex)
+                    {
+                        Logging.Write(Colors.Red, "Failed to auto-load profile '{0}': {1}", autoLoadProfile, ex.Message);
+                        Logging.WriteException(ex);
+                    }
+                }
+
+                // Step 2 — select botbase. Mirrors 4.3.4 MainWindow.xaml.cs:851-859 exactly:
+                // substring match on bot.Name (which is the dictionary key). Honorbuddy "start
+                // legion" method_18:819-836 uses strict OrdinalIgnoreCase equality on bot.Name.
+                // We follow 4.3.4 since it's the version HBRelog was built for.
+                //
+                // IMPORTANT: bot.Name in CopilotBuddy is the *display* name (QuestBot class returns
+                // "Questing", LevelBot returns "Grind", DiscoBot returns "Party Bot"). In HBRelog's
+                // BotBase field you must type the bot.Name value, NOT the class name.
+                // So /botname=Questing (not /botname=QuestBot) selects the questing bot.
+                if (!string.IsNullOrEmpty(autoStartBot))
+                {
+                    string needle = autoStartBot.ToLowerInvariant();
+                    var match = BotManager.Instance.Bots
+                        .FirstOrDefault(b => b.Key != null && b.Key.ToLowerInvariant().Contains(needle));
+                    if (match.Value != null)
+                    {
+                        Logging.Write("Auto-select botbase from /botname: {0}", match.Key);
+                        BotManager.Instance.SetCurrent(match.Value);
+                        // Sync the combobox so the UI matches what HBRelog requested; mirrors
+                        // cmbBotSelector.SelectedItem = value at 4.3.4 Start():856.
+                        if (cmbBotSelector.Items.Contains(match.Key))
+                            cmbBotSelector.SelectedItem = match.Key;
+                        else
+                            CharacterSettings.Instance.SelectedBotIndex = 0;
+                    }
+                    else
+                    {
+                        Logging.Write(Colors.Red, "/botname='{0}' did not match any loaded bot base (available: {1})",
+                            autoStartBot, string.Join(", ", BotManager.Instance.Bots.Keys));
+                    }
+                }
+
+                // Step 3 — auto-start. Mirrors 4.3.4 AfterInitOnAuthSuccess:432-435.
+                // We treat *any* auto-config (loadprofile or botname) as an implicit /autostart,
+                // because HBRelog only forwards those two args together with /autostart.
+                bool shouldAutoStart = !string.IsNullOrEmpty(autoLoadProfile) || !string.IsNullOrEmpty(autoStartBot);
+                if (shouldAutoStart)
+                    StartBot();
+            }
+            catch (Exception ex)
+            {
+                Logging.Write(Colors.Red, "ApplyAutoStartConfig failed: {0}", ex.Message);
+                Logging.WriteException(ex);
+            }
+        }
 
         private void StartBot()
         {
