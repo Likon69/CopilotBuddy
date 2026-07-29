@@ -37,7 +37,7 @@ namespace Styx.WoWInternals.WoWObjects
         private const uint AccountNamePtr = 0xB6AA40;       // 11971136U
         private const uint CorpsePointPtr = 0xBD0A58;       // 12388952U — matches GlobalOffsets.CorpsePositionX
         private const uint ZoneIdPtr = 0xBD080C;            // 12388364U — matches GlobalOffsets.ZoneId
-        private const uint MapIdPtr = 0xAB63BC;             // 11232188U — matches GlobalOffsets.MapId
+        private const uint MapIdPtr = 0xBD088C;             // 12388492U — matches GlobalOffsets.MapId
         private const uint ContinentNamePtr = 0xCD8620;     // 13469216U
         private const uint PlayerNamePtr = 0xBD08A8;        // 12388520U
         private const uint LastRedErrorPtr = 0xBCFB90;      // 12385168U

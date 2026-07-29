@@ -125,7 +125,7 @@ namespace Styx.Offsets
 
 		// ==================== Zone & Map ====================
 		/// <summary>Current continent/map ID.</summary>
-		public const uint MapId = 0x00AB63BC;
+		public const uint MapId = 0x00BD088C;
 
 		/// <summary>Current zone ID.</summary>
 		public const uint ZoneId = 0x00BD080C;
