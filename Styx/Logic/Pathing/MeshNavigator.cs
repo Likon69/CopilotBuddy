@@ -71,6 +71,8 @@ namespace Styx.Logic.Pathing
 		private WoWPoint _lastElevatorPos = WoWPoint.Zero;
 		private WaitTimer _elevatorMotionTimer = new WaitTimer(TimeSpan.FromMilliseconds(400));
 
+		private bool _isBypassActive;
+
 		// HB 6.2.3 areaType_0: faction area type for RaycastBlocked
 		private TripperNav.AreaType _factionAreaType = TripperNav.AreaType.Ground;
 
@@ -235,6 +237,9 @@ namespace Styx.Logic.Pathing
 
 		public MoveResult MoveTo(WoWPoint destination, float precision, string destinationName)
 		{
+			if (_isBypassActive)
+				return MoveResult.Failed;
+
 			if (destination == WoWPoint.Zero)
 				return MoveResult.Failed;
 
@@ -247,22 +252,13 @@ namespace Styx.Logic.Pathing
 
 			ApplyAliveQueryFilter(me.IsAlive);
 
-			// HB 4.3.4 Class81.MoveTo: WotLK movemaps contain no water polygons, so Detour
-			// always returns partial/failed for underwater destinations. When swimming and
-			// no valid ground path exists within 2000 units, bypass the navmesh and
-			// ClickToMove directly — matches what Flightor.MoveTo does for swimming.
-			if (me.IsSwimming)
+			// WotLK movemaps have no water polygons, so Detour can't path underwater.
+			if (me.IsSwimming && !HasShortGroundPath(me.Location, destination, 2000f))
 			{
-				var swimResult = FindPath(me.Location, destination);
-				bool hasGroundPath = swimResult.Succeeded
-				    && !swimResult.IsPartialPath
-				    && swimResult.Points != null
-				    && ComputePathLength(swimResult.Points) <= 2000f;
-				if (!hasGroundPath)
-				{
-					Navigator.PlayerMover.MoveTowards(destination);
-					return MoveResult.Moved;
-				}
+				_isBypassActive = true;
+				Flightor.MoveTo(destination);
+				_isBypassActive = false;
+				return MoveResult.Moved;
 			}
 
 			// Check if already at destination
@@ -820,6 +816,14 @@ namespace Styx.Logic.Pathing
 		#endregion
 
 		#region Internal — start-index skip (HB 6.2.3 method_14)
+
+		private bool HasShortGroundPath(WoWPoint from, WoWPoint to, float maxLength)
+		{
+			TripperNav.PathFindResult result = FindPath(from, to);
+			if (result.Succeeded && !result.IsPartialPath && result.Points != null)
+				return ComputePathLength(result.Points) <= maxLength;
+			return false;
+		}
 
 		/// <summary>
 		/// HB 6.2.3 MeshNavigator.method_14: skips waypoints the player has already passed.

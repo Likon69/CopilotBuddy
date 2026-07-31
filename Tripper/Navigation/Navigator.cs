@@ -124,7 +124,7 @@ namespace Tripper.Navigation
         /// Path post-processing mode. Default is MoveAwayFromEdges to avoid stairs/wall issues.
         /// Matches Honorbuddy's PathPostProcessing behavior.
         /// </summary>
-        public PathPostProcessing PathPostProcessing { get; set; } = PathPostProcessing.MoveAwayFromEdges;
+        public PathPostProcessing PathPostProcessing { get; set; } = PathPostProcessing.None;
 
         /// <summary>
         /// Edge distance threshold for MoveAwayFromEdges post-processing.
