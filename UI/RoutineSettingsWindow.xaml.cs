@@ -16,6 +16,7 @@ using GroupBox = System.Windows.Controls.GroupBox;
 using TextBox = System.Windows.Controls.TextBox;
 using HorizontalAlignment = System.Windows.HorizontalAlignment;
 using VerticalAlignment = System.Windows.VerticalAlignment;
+using Application = System.Windows.Application;
 
 namespace CopilotBuddy.UI
 {
@@ -27,6 +28,8 @@ namespace CopilotBuddy.UI
             new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x9A, 0x9A, 0x9A));
 
         private readonly List<object> _pages = new List<object>();
+        private readonly List<KeyValuePair<PropertyInfo, KeyValuePair<object, object>>> _originalValues =
+            new List<KeyValuePair<PropertyInfo, KeyValuePair<object, object>>>();
 
         public RoutineSettingsWindow(string title, string brand, string version)
         {
@@ -36,6 +39,9 @@ namespace CopilotBuddy.UI
             txtVersion.Text = version;
             SectionForeground.Freeze();
             HintForeground.Freeze();
+
+            if (Application.Current != null && !ReferenceEquals(Application.Current.MainWindow, this))
+                Owner = Application.Current.MainWindow;
         }
 
         public void AddPage(string header, object settings)
@@ -44,6 +50,7 @@ namespace CopilotBuddy.UI
                 return;
 
             _pages.Add(settings);
+            Snapshot(settings);
             tabs.Items.Add(new TabItem
             {
                 Header = header,
@@ -67,16 +74,38 @@ namespace CopilotBuddy.UI
                 tabs.SelectedIndex = 0;
         }
 
+        private static IEnumerable<PropertyInfo> EditableProperties(object settings)
+        {
+            return settings.GetType()
+                .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                .Where(p => p.CanRead && p.CanWrite && p.GetIndexParameters().Length == 0)
+                .Where(p => p.GetCustomAttribute<SettingAttribute>() != null);
+        }
+
+        private void Snapshot(object settings)
+        {
+            foreach (var prop in EditableProperties(settings))
+            {
+                try
+                {
+                    _originalValues.Add(new KeyValuePair<PropertyInfo, KeyValuePair<object, object>>(
+                        prop, new KeyValuePair<object, object>(settings, prop.GetValue(settings))));
+                }
+                catch (Exception ex)
+                {
+                    Logging.WriteException(ex);
+                }
+            }
+        }
+
         private UIElement BuildPage(object settings)
         {
             var root = new StackPanel { Margin = new Thickness(4, 8, 4, 4) };
 
-            var groups = settings.GetType()
-                .GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                .Where(p => p.CanRead && p.CanWrite && p.GetIndexParameters().Length == 0)
-                .Where(p => p.GetCustomAttribute<SettingAttribute>() != null)
+            var groups = EditableProperties(settings)
                 .GroupBy(p => p.GetCustomAttribute<CategoryAttribute>()?.Category ?? "General")
-                .OrderBy(g => g.Key, StringComparer.OrdinalIgnoreCase);
+                .OrderBy(g => string.Equals(g.Key, "General", StringComparison.OrdinalIgnoreCase) ? 0 : 1)
+                .ThenBy(g => g.Key, StringComparer.OrdinalIgnoreCase);
 
             foreach (var group in groups)
             {
@@ -181,13 +210,24 @@ namespace CopilotBuddy.UI
                 return combo;
             }
 
-            if (type == typeof(string) || type.IsPrimitive || type == typeof(decimal))
+            if (type == typeof(string))
             {
-                binding.Converter = null;
-                binding.StringFormat = null;
                 var text = new TextBox { Margin = margin };
                 text.SetBinding(TextBox.TextProperty, binding);
                 return text;
+            }
+
+            if (type.IsPrimitive || type == typeof(decimal))
+            {
+                var number = new TextBox
+                {
+                    Margin = margin,
+                    Width = 90,
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    TextAlignment = TextAlignment.Right
+                };
+                number.SetBinding(TextBox.TextProperty, binding);
+                return number;
             }
 
             return null;
@@ -219,6 +259,18 @@ namespace CopilotBuddy.UI
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
+            foreach (var entry in _originalValues)
+            {
+                try
+                {
+                    entry.Key.SetValue(entry.Value.Key, entry.Value.Value);
+                }
+                catch (Exception ex)
+                {
+                    Logging.WriteException(ex);
+                }
+            }
+
             DialogResult = false;
             Close();
         }
