@@ -452,26 +452,33 @@ namespace Styx.Logic
                 uint nodeCount = TaxiNodeInfo.GetNodeCount();
                 for (uint i = 0; i < nodeCount; i++)
                 {
-                    var nodeDbc = TaxiNodeInfo.GetByTableIndex(i);
-                    if (nodeDbc == null || !nodeDbc.IsValid || string.IsNullOrEmpty(nodeDbc.Name))
-                        continue;
-
-                    if (nodeDbc.Name == currentNodeName)
-                        continue;
-
-                    XmlFlightNode xmlNode = FindNodeByName(nodeDbc.Name);
-                    if (xmlNode == null)
+                    try
                     {
-                        xmlNode = new XmlFlightNode(nodeDbc.Name, (uint)nodeDbc.MapId,
-                            nodeDbc.Location != WoWPoint.Empty ? nodeDbc.Location : WoWPoint.Empty);
-                        XmlNodes.Add(xmlNode);
+                        var nodeDbc = TaxiNodeInfo.GetByTableIndex(i);
+                        if (nodeDbc == null || !nodeDbc.IsValid || string.IsNullOrEmpty(nodeDbc.Name))
+                            continue;
+
+                        if (nodeDbc.Name == currentNodeName)
+                            continue;
+
+                        XmlFlightNode xmlNode = FindNodeByName(nodeDbc.Name);
+                        if (xmlNode == null)
+                        {
+                            xmlNode = new XmlFlightNode(nodeDbc.Name, (uint)nodeDbc.MapId,
+                                nodeDbc.Location != WoWPoint.Empty ? nodeDbc.Location : WoWPoint.Empty);
+                            XmlNodes.Add(xmlNode);
+                        }
+
+                        bool reachable = frameNodes != null && (int)i < frameNodes.Count && frameNodes[(int)i].Reachable;
+                        if (reachable)
+                        {
+                            currentNode.Connect(xmlNode.Name);
+                            xmlNode.Connect(currentNode.Name);
+                        }
                     }
-
-                    bool reachable = frameNodes != null && (int)i < frameNodes.Count && frameNodes[(int)i].Reachable;
-                    if (reachable)
+                    catch (Exception ex)
                     {
-                        currentNode.Connect(xmlNode.Name);
-                        xmlNode.Connect(currentNode.Name);
+                        Logging.Write(ex.ToString());
                     }
                 }
 

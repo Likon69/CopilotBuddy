@@ -40,6 +40,8 @@ namespace Styx.Logic.Inventory.Frames.Taxi
         {
             Current,
             Reachable,
+            Unreachable,
+            Distant,
             None,
         }
 

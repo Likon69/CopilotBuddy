@@ -119,7 +119,7 @@ namespace Styx.Patchables
         
         // Taxi node frame statics (WotLK 3.3.5a) — verified via IDA: CGTaxiMap__TaxiNodeType, lua_NumTaxiNodes
         TaxiNodeCount     = 0x00C0D7E4,             // uint — count of nodes in the active taxi frame
-        TaxiCurrentNodeId = 0x00C0D7EC,             // uint — DBC node ID of the current (player's) node
+        TaxiCurrentNodeId = 0x00C0D7EC,             // ptr  — points at the current node's DBC record; [0] = DBC node ID
         TaxiNodeTablePtr  = 0x00C0DC38,             // ptr  — base of 48-byte-stride path entry array; [i*48+0] = DBC record ptr
 
         // Performance

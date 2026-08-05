@@ -197,7 +197,11 @@ namespace Styx.Logic
             if (wow == null)
                 return null;
 
-            uint id = wow.Read<uint>((uint)GlobalOffsets.TaxiCurrentNodeId);
+            uint nodePtr = wow.Read<uint>((uint)GlobalOffsets.TaxiCurrentNodeId);
+            if (nodePtr == 0)
+                return null;
+
+            uint id = wow.Read<uint>(nodePtr);
             if (id == 0)
                 return null;
 
