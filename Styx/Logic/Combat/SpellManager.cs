@@ -18,6 +18,8 @@ namespace Styx.Logic.Combat
 		// Cooldown linked list head — HB 3.3.5a decompile: address 13890996 = SpellCooldownPtr(0xD3F5AC) + 8.
 		private const uint CooldownListBase = 0xD3F5B4;  // 13890996 decimal
 
+		private const uint PendingSpellListBase = 0xAF5254;
+
 		#endregion
 
 		private static int _lastKnownSpellCount;
@@ -247,6 +249,37 @@ namespace Styx.Logic.Combat
 			{
 				return TimeSpan.Zero;
 			}
+		}
+
+		public static bool IsCurrentSpell(int spellId)
+		{
+			try
+			{
+				Memory? memory = ObjectManager.Wow;
+				if (memory == null)
+					return false;
+
+				uint nodePtr = memory.Read<uint>(PendingSpellListBase);
+
+				while (nodePtr != 0U && (nodePtr & 1U) == 0U)
+				{
+					if (memory.Read<uint>(nodePtr + 0x20U) == (uint)spellId)
+						return true;
+					nodePtr = memory.Read<uint>(nodePtr + 0x04U);
+				}
+
+				return false;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
+		public static bool IsCurrentSpell(string spellName)
+		{
+			WoWSpell? spell = GetSpellByName(spellName);
+			return spell != null && IsCurrentSpell(spell.Id);
 		}
 
 		public static bool HasSpell(string name)
