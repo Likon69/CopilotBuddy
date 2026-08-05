@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Media;
 
@@ -379,13 +381,17 @@ namespace Styx.Helpers
 
         #region File Logging
 
-        private static readonly object _fileLock = new object();
+        private static readonly object _queueLock = new object();
+        private static readonly object _writeLock = new object();
+        private static readonly Queue<string> _pendingLines = new Queue<string>();
+        private static Thread _writerThread;
 
         public static void WriteToFileSync(LogLevel level, string message)
         {
             if (level <= LogFileLevel)
             {
                 WriteToFile($"[{DateTime.Now:HH:mm:ss.fff}] [{level.ToString()[0]}] {message}");
+                FlushPending();
             }
         }
 
@@ -399,20 +405,67 @@ namespace Styx.Helpers
             if (string.IsNullOrEmpty(LogFilePath))
                 return;
 
+            lock (_queueLock)
+            {
+                _pendingLines.Enqueue(message);
+
+                if (_writerThread == null)
+                {
+                    _writerThread = new Thread(FileWriterLoop)
+                    {
+                        IsBackground = true,
+                        Name = "CopilotBuddy Log Writer"
+                    };
+                    _writerThread.Start();
+                    AppDomain.CurrentDomain.ProcessExit += (s, e) => FlushPending();
+                    AppDomain.CurrentDomain.UnhandledException += (s, e) => FlushPending();
+                }
+            }
+        }
+
+        public static void FlushPending()
+        {
             try
             {
-                lock (_fileLock)
+                List<string> batch;
+                lock (_queueLock)
+                {
+                    if (_pendingLines.Count == 0)
+                        return;
+
+                    batch = new List<string>(_pendingLines);
+                    _pendingLines.Clear();
+                }
+
+                if (string.IsNullOrEmpty(LogFilePath))
+                    return;
+
+                lock (_writeLock)
                 {
                     var directory = Path.GetDirectoryName(LogFilePath);
                     if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
                         Directory.CreateDirectory(directory);
 
-                    File.AppendAllText(LogFilePath, message + Environment.NewLine);
+                    using (var writer = new StreamWriter(
+                        new FileStream(LogFilePath, FileMode.Append, FileAccess.Write, FileShare.Read)))
+                    {
+                        foreach (var line in batch)
+                            writer.WriteLine(line);
+                    }
                 }
             }
             catch
             {
                 // Ignore file write errors
+            }
+        }
+
+        private static void FileWriterLoop()
+        {
+            while (true)
+            {
+                FlushPending();
+                Thread.Sleep(75);
             }
         }
 
