@@ -15,6 +15,15 @@ namespace Styx.WoWInternals.WoWObjects
 
         private readonly int _slot;
 
+        private const uint TotemSlotTable = 0xBD0B00;
+        private const uint SlotStride = 32;
+        private const uint OffsetGuid = 8;
+        private const uint OffsetName = 0x10;
+        private const uint OffsetDuration = 0x14;
+        private const uint OffsetStart = 0x18;
+
+        private uint SlotBase => TotemSlotTable + SlotStride * (uint)_slot;
+
         #endregion
 
         #region Constructor
@@ -53,17 +62,7 @@ namespace Styx.WoWInternals.WoWObjects
         /// <summary>
         /// Returns true if a totem is active in this slot.
         /// </summary>
-        public bool Active
-        {
-            get
-            {
-                // Lua slot is 1-indexed
-                int luaSlot = _slot + 1;
-                var result = Lua.GetReturnVal<int>(
-                    $"local haveTotem, name, startTime, duration = GetTotemInfo({luaSlot}); return haveTotem and 1 or 0", 0);
-                return result == 1;
-            }
-        }
+        public bool Active => Guid != 0UL;
 
         /// <summary>
         /// Gets the name of the active totem.
@@ -72,9 +71,22 @@ namespace Styx.WoWInternals.WoWObjects
         {
             get
             {
-                int luaSlot = _slot + 1;
-                return Lua.GetReturnVal<string>(
-                    $"local haveTotem, name = GetTotemInfo({luaSlot}); return name or ''", 0) ?? "";
+                try
+                {
+                    var memory = ObjectManager.Wow;
+                    if (memory == null || Guid == 0UL)
+                        return string.Empty;
+
+                    uint namePtr = memory.Read<uint>(SlotBase + OffsetName);
+                    if (namePtr == 0U)
+                        return string.Empty;
+
+                    return memory.ReadString(namePtr) ?? string.Empty;
+                }
+                catch
+                {
+                    return string.Empty;
+                }
             }
         }
 
@@ -145,30 +157,18 @@ namespace Styx.WoWInternals.WoWObjects
         {
             get
             {
-                // WotLK doesn't have direct totem GUID access
-                // Find totem by searching nearby units owned by player
-                var me = StyxWoW.Me;
-                if (me == null)
-                    return 0;
-
-                var totemName = Name;
-                if (string.IsNullOrEmpty(totemName))
-                    return 0;
-
-                // Search for our totem in object manager
-                foreach (var obj in ObjectManager.ObjectList)
+                try
                 {
-                    if (!(obj is WoWUnit unit))
-                        continue;
-                    
-                    if (unit.CreatedByGuid == me.Guid && 
-                        unit.Name.Contains(totemName.Replace(" Totem", "")))
-                    {
-                        return unit.Guid;
-                    }
-                }
+                    var memory = ObjectManager.Wow;
+                    if (memory == null)
+                        return 0UL;
 
-                return 0;
+                    return memory.Read<ulong>(SlotBase + OffsetGuid);
+                }
+                catch
+                {
+                    return 0UL;
+                }
             }
         }
 
@@ -179,32 +179,22 @@ namespace Styx.WoWInternals.WoWObjects
         {
             get
             {
-                int luaSlot = _slot + 1;
-                var startTime = Lua.GetReturnVal<double>(
-                    $"local haveTotem, name, startTime = GetTotemInfo({luaSlot}); return startTime or 0", 0);
-                
-                if (startTime <= 0)
+                uint startMs = RawStartMs;
+                if (startMs == 0U)
                     return DateTime.MinValue;
-                
-                // Convert game time to DateTime using GetTime()
-                var currentGameTime = Lua.GetReturnVal<double>("return GetTime()", 0);
-                var secondsAgo = currentGameTime - startTime;
-                return DateTime.Now.AddSeconds(-secondsAgo);
+
+                long elapsed = (long)ObjectManager.PerformanceCounter - startMs;
+                if (elapsed < 0L)
+                    return DateTime.MinValue;
+
+                return DateTime.Now.AddMilliseconds(-elapsed);
             }
         }
 
         /// <summary>
         /// Gets the duration of the totem in seconds.
         /// </summary>
-        public double Duration
-        {
-            get
-            {
-                int luaSlot = _slot + 1;
-                return Lua.GetReturnVal<double>(
-                    $"local haveTotem, name, startTime, duration = GetTotemInfo({luaSlot}); return duration or 0", 0);
-            }
-        }
+        public double Duration => RawDurationMs / 1000.0;
 
         /// <summary>
         /// Gets the remaining time on the totem.
@@ -213,19 +203,29 @@ namespace Styx.WoWInternals.WoWObjects
         {
             get
             {
-                int luaSlot = _slot + 1;
-                var values = Lua.GetReturnValues(
-                    $"local haveTotem, name, startTime, duration = GetTotemInfo({luaSlot}); " +
-                    $"if haveTotem and duration > 0 then return duration - (GetTime() - startTime) else return 0 end");
-                
-                if (values == null || values.Count == 0)
+                uint startMs = RawStartMs;
+                uint durationMs = RawDurationMs;
+                if (startMs == 0U || durationMs == 0U || Guid == 0UL)
                     return TimeSpan.Zero;
-                
-                double remaining;
-                if (double.TryParse(values[0], out remaining) && remaining > 0)
-                    return TimeSpan.FromSeconds(remaining);
-                
-                return TimeSpan.Zero;
+
+                long remaining = (long)startMs + durationMs - ObjectManager.PerformanceCounter;
+                return remaining > 0 ? TimeSpan.FromMilliseconds(remaining) : TimeSpan.Zero;
+            }
+        }
+
+        private uint RawStartMs => ReadSlotDword(OffsetStart);
+        private uint RawDurationMs => ReadSlotDword(OffsetDuration);
+
+        private uint ReadSlotDword(uint offset)
+        {
+            try
+            {
+                var memory = ObjectManager.Wow;
+                return memory == null ? 0U : memory.Read<uint>(SlotBase + offset);
+            }
+            catch
+            {
+                return 0U;
             }
         }
 
