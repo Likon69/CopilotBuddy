@@ -76,14 +76,13 @@ namespace Styx.Logic
 			LocalPlayer? me = Me;
 			if (me == null) return;
 
-			if (!string.IsNullOrEmpty(reason))
-				Logging.WriteDebug("Stop and dismount. Reason: {0}", reason);
-
 			ShapeshiftForm shapeshift = me.Shapeshift;
 			if (me.Mounted || shapeshift == ShapeshiftForm.FlightForm || shapeshift == ShapeshiftForm.EpicFlightForm)
 			{
 				if (string.IsNullOrEmpty(reason))
 					Logging.WriteDebug("Stop and dismount.");
+				else
+					Logging.WriteDebug("Stop and dismount. Reason: {0}", reason);
 
 				// HB 4.3.4: no descent loop — just stop and dismount.
 				// Descent before dismount is the caller's responsibility
