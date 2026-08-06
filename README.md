@@ -14,14 +14,14 @@ For players who just want to launch the bot without compiling anything, a comple
 
 Just extract the archive next to your WoW 3.3.5a client, double-click `CopilotBuddy.exe`, attach to the game, and you are ready to play.
 
-| Mirror | Download (v1.5.4) |
+| Mirror | Download (v1.5.5) |
 | --- | --- |
-| **Mega.nz** | https://mega.nz/file/CcxyyQ7a#-lsGpEnuHrw9auviWSpZLsHNrt-p-kJZmWxbUopUTPI |
-| **fast-file.com** | https://fast-file.com/46d9acc7 |
+| **Mega.nz** | https://mega.nz/file/qVpGjZJY#E1YqzQc7jXtYwzFMbins9nhXXveSTucAsrvPkEYQdH0 |
+| **fast-file.com** | https://fast-file.com/2a57d1f2 |
 
 > Both mirrors host the same package. If one is down or full, try the other. Checksums are listed on the Discord.
 
-For more builds, mirror updates, 1x1 / 4x4 mmap variants, additional profiles and community content, join the Discord:
+For more builds, mirror updates, additional profiles and community content, join the Discord:
 
 => **[Discord](https://discord.com/invite/ep5TcGMCcB)** <=
 
@@ -33,11 +33,11 @@ CopilotBuddy is split across a few sibling repositories. Each one covers one sli
 | --- | --- | --- |
 | **Navigation** (C++ Detour runtime) | [Navigation-C-](https://github.com/Likon69/Navigation-C-) | C++ wrapper around Recast/Detour. Ships `Navigation.dll` (4x4, Trinity / MMAP v5) and `Navigation 1x1.dll` (1x1, MaNGOS / MMAP v4). Based on Honorbuddy's `Tripper.RecastManager` from the WoD / Legion client. |
 | **Extractor (4x4)** — C#, native | [extractor-csharp](https://github.com/Likon69/extractor-csharp) | Navmesh extractor written in C# / WPF, ported and heavily extended from the MaNGOS extractor. Produces 4x4 sub-tile `.mmtile` files in HonorBuddy format (PAMM, `mmapVer = 5`). |
-| **Extractor (1x1)** — MaNGOS C++ | [Extractor_projects](https://github.com/Likon69/Extractor_projects) | The original MaNGOS extractor. Produces 1x1 `.mmap` / `.mmtile` files for the MaNGOS / MMAP v4 path. |
+| **Extractor (1x1)** — MaNGOS C++ | [Extractor_projects](https://github.com/Likon69/Extractor_projects) | The original MaNGOS extractor. Produces 1x1 `.mmap` / `.mmtile` files for the MaNGOS / MMAP v4 path — usable only with the `1x1` branch, not with `master`. |
 | **MeshViewer 3D** | [MeshViewer3D](https://github.com/Likon69/MeshViewer3D) | Standalone 3D viewer for the produced navmesh tiles. Useful for debugging pathfinding without launching the bot. |
 | **HBRelog** | [HBRelog](https://github.com/Likon69/HBRelog) | Launcher and WCF relay. Spawns `Wow.exe`, drives the login glue via injected Lua, detects when the character is in-world (`g_ClientConnectionState` at `0xBD0792`), then launches CopilotBuddy with `/pid=<wow pid> /autostart /loadprofile=<path> /botname=<BotBase>`. Watches both processes for hangs/crashes/logouts and restarts whichever side dies. No combat, profile or botbase logic — strictly the launcher and relay. |
 
-Use the 4x4 extractor + `Navigation.dll` for Trinity mmaps; use the MaNGOS extractor + `Navigation 1x1.dll` for the older 1x1 layout. The bot auto-detects which format to load from the file header.
+The bot only reads the 4x4 format. Use the 4x4 extractor + `Navigation.dll`. The MaNGOS extractor and `Navigation 1x1.dll` belong to the separate `1x1` branch — there is no runtime detection and no way to load 1x1 mmaps on `master`.
 
 ### HBRelog integration
 
@@ -90,12 +90,12 @@ CopilotBuddy grew out of the **Robot reVolt** community. All appropriate contrib
 
 ## Branches
 
-Two mmap variants are kept side by side. Pick the one that matches the mmaps your server ships.
+The mmap format is fixed per branch, not selectable at runtime. Check out the branch that matches the mmaps your server ships.
 
-- **`master`** — 4x4 sub-tile navigation (Trinity / MMAP v5). Each ADT is split into 16 Detour sub-tiles of 133 yards, converted through `Tripper.Navigation.MeshMapCalculator`. Active development happens here.
-- **`1x1`** — 1x1 navigation (MaNGOS / MMAP v4). One ADT = one Detour tile of 533 yards. Ships `Lib/Navigation 1x1.dll`.
+- **`master`** — 4x4 sub-tile navigation (Trinity / MMAP v5). Each ADT is split into 16 Detour sub-tiles of 133 yards, converted through `Tripper.Navigation.MeshMapCalculator`. This is the only format `master` can load. Active development happens here.
+- **`1x1`** — 1x1 navigation (MaNGOS / MMAP v4). One ADT = one Detour tile of 533 yards. Ships `Lib/Navigation 1x1.dll`. Not maintained.
 
-Both branches share the same bot UI, behaviors, profiles and plugins. The only differences are the navigation stack (Detour tile geometry) and the `Navigation*.dll` under `Lib/`.
+Both branches share the same bot UI, behaviors, profiles and plugins. The only differences are the navigation stack (Detour tile geometry) and the `Navigation*.dll` under `Lib/`. `Lib/Navigation 1x1.dll` is still present on `master` for historical reasons but is never loaded.
 
 ## Release
 
@@ -123,11 +123,9 @@ All under `Bots/`. Every botbase inherits from `BotBase` and runs as a synchrono
 
 The navigation code lives in `Tripper/`. It calls `Navigation.dll`, a C++ wrapper around Detour (Recast) ported from HB 6.2.3. See the `Navigation C++` repository for details.
 
-Two mmap formats are supported:
-- 1x1 (MaNGOS, MMAP v4): one ADT = one Detour tile of 533 yards
-- 4x4 (Trinity, MMAP v5): one ADT = 16 Detour sub-tiles of 133 yards
+One mmap format is supported: 4x4 (Trinity, MMAP v5), one ADT = 16 Detour sub-tiles of 133 yards. There is no format detection and no 1x1 (MaNGOS, MMAP v4) code path — 1x1 mmaps will not load. See the `1x1` branch if that is what your server ships.
 
-The format is auto-detected from the file header. The ADT-to-sub-tile conversion is handled by `Tripper.Navigation.MeshMapCalculator`, with the ADT grid origin at [32, 32] and `detourX = (adt.X - 32) * 4 + subX`.
+The ADT-to-sub-tile conversion is handled by `Tripper.Navigation.MeshMapCalculator`, with the ADT grid origin at [32, 32] and `detourX = (adt.X - 32) * 4 + subX`.
 
 ## Combat routines
 
