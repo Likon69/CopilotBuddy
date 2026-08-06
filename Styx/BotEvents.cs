@@ -31,6 +31,8 @@ namespace Styx
 			// HB 4.3.4 pattern: register event checkers that run each pulse
 			_eventCheckers.Add(Player.CheckLevelChange);
 			_eventCheckers.Add(Player.CheckMapChange);
+			_eventCheckers.Add(Player.CheckMobKilled);
+			_eventCheckers.Add(Player.CheckPlayerDeath);
 		}
 
 		/// <summary>
@@ -511,6 +513,8 @@ namespace Styx
 			// HB 4.3.4 pattern: track last known level/map to detect changes
 			private static int _lastKnownLevel;
 			private static uint? _lastKnownMapId;
+			private static readonly Dictionary<ulong, DateTime> _killedMobs = new Dictionary<ulong, DateTime>();
+			private static bool _wasDead;
 
 			/// <summary>
 			/// HB 4.3.4 pattern: Check if player level changed since last pulse.
@@ -564,6 +568,54 @@ namespace Styx
 					_lastKnownMapId = currentMapId;
 					RaiseMapChanged(oldMapId, currentMapId);
 				}
+			}
+
+			/// <summary>
+			/// HB 3.3.5a Player.smethod_1: scan nearby units each pulse and fire
+			/// OnMobKilled for every unit we tagged that is now dead. A 5 minute
+			/// per-GUID memory prevents the same corpse from firing twice.
+			/// </summary>
+			internal static void CheckMobKilled()
+			{
+				if (ObjectManager.Me == null || !StyxWoW.IsInGame)
+					return;
+
+				DateTime now = DateTime.Now;
+
+				foreach (WoWUnit unit in ObjectManager.GetObjectsOfType<WoWUnit>())
+				{
+					ulong guid = unit.Guid;
+
+					if (_killedMobs.TryGetValue(guid, out DateTime killedAt))
+					{
+						if (now.Subtract(killedAt).TotalMinutes <= 5.0)
+							continue;
+						_killedMobs.Remove(guid);
+					}
+
+					if (unit.KilledByMe)
+					{
+						_killedMobs[guid] = now;
+						RaiseMobKilled(unit);
+					}
+				}
+			}
+
+			/// <summary>
+			/// HB 3.3.5a Player.smethod_3: fire OnPlayerDied on the rising edge of
+			/// LocalPlayer.Dead.
+			/// </summary>
+			internal static void CheckPlayerDeath()
+			{
+				LocalPlayer me = ObjectManager.Me;
+				if (me == null || !StyxWoW.IsInGame)
+					return;
+
+				bool dead = me.Dead;
+				if (dead && !_wasDead)
+					RaisePlayerDied();
+
+				_wasDead = dead;
 			}
 
 			public static event LevelUpDelegate OnLevelUp
