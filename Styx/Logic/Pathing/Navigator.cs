@@ -520,7 +520,10 @@ namespace Styx.Logic.Pathing
 					}
 				}
 			}
-			catch { }
+			catch (Exception ex)
+			{
+				Logging.WriteDebug("Flight path check threw: {0}", ex.Message);
+			}
 
 			// HB WoD architecture: delegate ground navmesh movement to MeshNavigator
 			if (_meshNavigator == null)

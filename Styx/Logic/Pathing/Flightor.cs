@@ -259,8 +259,8 @@ namespace Styx.Logic.Pathing
                 }
 
                 // HB 6.2.3 smethod_10 line 678: in WotLK 3.3.5a CanMount=false while IsSwimming=true.
-                // Without this guard, the bot falls into the CanMount=false→Navigator.MoveTo(waterZ)
-                // path which fails (navmesh has no water polygons) → infinite mount loop.
+                // Without this guard the bot keeps retrying the CanMount=false→Navigator.MoveTo
+                // path while still in the water and never mounts → infinite mount loop.
                 // Fix: ascend to surface via JumpAscend every pulse until !IsSwimming, then mount normally.
                 if (me.IsSwimming && !hasSeaLegs)
                 {

@@ -252,7 +252,7 @@ namespace Styx.Logic.Pathing
 
 			ApplyAliveQueryFilter(me.IsAlive);
 
-			// WotLK movemaps have no water polygons, so Detour can't path underwater.
+			// Fallback for destinations Detour cannot reach at all.
 			if (me.IsSwimming && !HasShortGroundPath(me.Location, destination, 2000f))
 			{
 				_isBypassActive = true;

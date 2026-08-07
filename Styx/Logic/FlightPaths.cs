@@ -192,12 +192,18 @@ namespace Styx.Logic
         /// </summary>
         public static TimeSpan GetFullTravelTime(WoWPoint start, WoWPoint end, WoWPoint flightPathStart, WoWPoint flightPathEnd, float travelSpeed)
         {
-            var pathToStart = Navigator.GeneratePath(start, flightPathStart);
-            var pathFromEnd = Navigator.GeneratePath(flightPathEnd, end);
-            
-            return GetFlightPathTime(flightPathStart, flightPathEnd) + 
-                   GetRunPathTime(pathToStart, travelSpeed) + 
-                   GetRunPathTime(pathFromEnd, travelSpeed);
+            TimeSpan toStart = start.Distance(flightPathStart) < 5f
+                ? TimeSpan.Zero
+                : GetRunPathTime(Navigator.GeneratePath(start, flightPathStart), travelSpeed);
+
+            TimeSpan fromEnd = flightPathEnd.Distance(end) < 5f
+                ? TimeSpan.Zero
+                : GetRunPathTime(Navigator.GeneratePath(flightPathEnd, end), travelSpeed);
+
+            if (toStart == TimeSpan.MaxValue || fromEnd == TimeSpan.MaxValue)
+                return TimeSpan.MaxValue;
+
+            return GetFlightPathTime(flightPathStart, flightPathEnd) + toStart + fromEnd;
         }
 
         /// <summary>
@@ -315,6 +321,12 @@ namespace Styx.Logic
                 return false;
 
             TimeSpan fullTravelTime = GetFullTravelTime(start, end, startNode.Location, endNode.Location, travelSpeed);
+
+            if (fullTravelTime == TimeSpan.MaxValue)
+                return false;
+            if (runPathTime == TimeSpan.MaxValue)
+                return true;
+
             int differenceSeconds = (int)Math.Abs((runPathTime - fullTravelTime).TotalSeconds);
 
             if (differenceSeconds <= 30)
