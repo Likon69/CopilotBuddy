@@ -125,14 +125,17 @@ namespace Styx.Logic.POI
 			get { return _current; }
 			set
 			{
-				_current = value ?? new BotPoi(PoiType.None);
-				if (_current.Type == PoiType.None)
+				if (_current != value)
 				{
-					Logging.WriteDebug("Cleared POI");
-				}
-				else
-				{
-					Logging.WriteDebug("Changed POI to: {0}", value);
+					_current = value ?? new BotPoi(PoiType.None);
+					if (_current.Type == PoiType.None)
+					{
+						Logging.WriteDebug("Cleared POI");
+					}
+					else
+					{
+						Logging.WriteDebug("Changed POI to: {0}", value);
+					}
 				}
 			}
 		}
