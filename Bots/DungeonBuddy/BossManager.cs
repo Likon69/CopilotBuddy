@@ -65,7 +65,7 @@ namespace Bots.DungeonBuddy
 
         /// <summary>
         /// HB 4.3.4 parity: returns the first Boss object that is not yet dead,
-        /// ordered by registration order (kill order from [EncounterHandler] attributes).
+        /// in registration order — the profile's KillOrder, then any script-only bosses.
         /// Does NOT require the boss to be in ObjectManager range — using ObjectManager
         /// here would return null when bosses are out of draw distance at the dungeon
         /// entrance, causing IsComplete = true and premature 'dungeon complete'.
@@ -85,7 +85,7 @@ namespace Bots.DungeonBuddy
 
         /// <summary>
         /// Initialise les boss pour le donjon actuel.
-        /// Remet à zéro les boss tués et re-peuple la liste depuis les attributs [EncounterHandler].
+        /// Remet à zéro les boss tués et re-peuple la liste depuis le profil XML, puis les attributs [EncounterHandler].
         /// </summary>
         public static void Initialize(Dungeon dungeon)
         {
@@ -95,9 +95,13 @@ namespace Bots.DungeonBuddy
             if (dungeon == null)
                 return;
 
-            // Re-register bosses from [EncounterHandler] attributes on the dungeon script.
-            // IndexHandlers() populated these at load time; Initialize() is called per-dungeon-entry
-            // so we must re-populate here to keep the list valid.
+            var profile = ProfileManager.CurrentProfile;
+            if (profile != null)
+            {
+                foreach (var profileBoss in profile.BossEncounters.OrderBy(b => b.KillOrder))
+                    RegisterBoss(profileBoss.Entry, profileBoss.Name, profileBoss.Optional);
+            }
+
             foreach (var method in dungeon.GetType().GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
             {
                 foreach (EncounterHandlerAttribute attr in method.GetCustomAttributes(typeof(EncounterHandlerAttribute), false))

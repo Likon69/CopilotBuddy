@@ -366,11 +366,11 @@ if (Activator.CreateInstance(type) is not Dungeon instance)
 
                 _currentDungeon = dungeon;
                 _currentDungeon.Attach();
-                BossManager.Initialize(_currentDungeon);
                 if (ProfileManager.CurrentProfile == null || ProfileManager.CurrentProfile.DungeonId != dungeonId)
                 {
                     ProfileManager.LoadProfileForDungeon(dungeonId);
                 }
+                BossManager.Initialize(_currentDungeon);
                 Logging.Write("Entered dungeon: {0}", _currentDungeon.Name);
             }
             else
