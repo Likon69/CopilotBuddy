@@ -391,21 +391,22 @@ namespace Styx.Logic.Pathing
             
             lock (_lock)
             {
-                // Re-mark profile blackspots that haven't been successfully marked.
-                // Retry failed blackspots on every pathfind: the tile that wasn't loaded at profile-load
-                // time may now be loaded. HB 4.3.4 / 5.4.8 re-mark unconditionally (no _failedBlackspotMarks gate).
+                // A spot whose tile is not loaded is left to OnTileLoaded, which clears the failed
+                // flag and marks it once the tile streams in. HB 4.3.4 smethod_1 works the same way:
+                // it only ever queries from the tile-loaded callback, so the tile is always present.
                 foreach (var spot in _blackspots)
                 {
-                    if (!_markedBlackspots.Contains(spot))
+                    if (!_markedBlackspots.Contains(spot) && !_failedBlackspotMarks.Contains(spot))
                     {
                         MarkBlackspotPolygons(spot, currentMapId);
                     }
                 }
 
-                // Re-mark global blackspots for current map
                 foreach (var globalSpot in _globalBlackspots)
                 {
-                    if (globalSpot.MapId == currentMapId && !_markedBlackspots.Contains(globalSpot.Blackspot))
+                    if (globalSpot.MapId == currentMapId
+                        && !_markedBlackspots.Contains(globalSpot.Blackspot)
+                        && !_failedBlackspotMarks.Contains(globalSpot.Blackspot))
                     {
                         MarkBlackspotPolygons(globalSpot.Blackspot, currentMapId);
                     }
