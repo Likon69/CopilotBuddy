@@ -39,23 +39,6 @@ CopilotBuddy is split across a few sibling repositories. Each one covers one sli
 
 The bot only reads the 4x4 format. Use the 4x4 extractor + `Navigation.dll`. The MaNGOS extractor and `Navigation 1x1.dll` belong to the separate `1x1` branch — there is no runtime detection and no way to load 1x1 mmaps on `master`.
 
-### HBRelog integration
-
-HBRelog (a .NET 4.8 desktop tool, fork of HighVoltz's HBRelog adapted for WotLK 3.3.5a build 12340) is the recommended way to run CopilotBuddy unattended across multiple accounts — multiboxing, gold farming, BG premades, etc. It pairs the WoW client and CopilotBuddy in lockstep:
-
-- Launches `Wow.exe`, installs an EndScene hook, drives the login dialog / realm select / character select / EnterWorld through injected Lua.
-- Detects when the character is fully in-world (via `g_ClientConnectionState` at `0xBD0792`) and starts the bot.
-- Talks to CopilotBuddy over a NetNamedPipe WCF channel (`net.pipe://localhost/HBRelog/Server`) and forwards tool / status / heartbeat signals both ways.
-- Watches the client and the bot for hangs, crashes and logouts, and restarts whichever side dies, optionally with a different character or profile.
-
-The bot-side contract CopilotBuddy already satisfies:
-
-- Compiles and runs `Plugins/HBRelogHelper.cs` (dropped next to the executable) — opens the named pipe and calls `Init(botPid)`.
-- Implements an `IRemotingApi`-shaped WCF channel via `HBRelogApi`.
-- Consumes the cmdline args at startup: `/pid`, `/autostart`, `/customclass=<X>`, `/loadprofile=<path>`, `/botname=<BotBase>` — wired up by the `ApplyAutoStartConfig` equivalent of HB 4.3.4's `AfterInitOnAuthSuccess` (commit `e8d46d3`, `UI/MainWindow.xaml.cs`).
-
-Configure one row per account in HBRelog's accounts grid: WoW path, credentials, character, server, region; path to `CopilotBuddy.exe`, the botbase name, the profile path, the combat routine name; and an ordered task list (Logon, Wait, ChangeProfile, StopProfile, StartProfile, Idle). Everything else (the WCF pipe, window placement, `gameTip` strings) is handled by the managers themselves. Build with `msbuild HBRelog.csproj /p:Configuration=Release /p:Platform=x86 /t:Build` (Visual Studio 2022, .NET 4.8) — output is `bin\Release\HBRelog.exe`.
-
 ## How this project started
 
 Back in 2020 I created a group called **Robot reVolt** to help people run Honorbuddy on private servers — sharing builds, giving support, distributing server-specific content. Over the years the community grew, and one request kept coming back: a bot like HB, but for WotLK 3.3.5a.
