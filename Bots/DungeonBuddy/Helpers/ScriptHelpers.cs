@@ -454,8 +454,37 @@ namespace Bots.DungeonBuddy.Helpers
             return CreateForceJump(canRun, from, to);
         }
 
-        public static Composite CreateForceJump(CanRunDecoratorDelegate canRun, bool actuallyJump, WoWPoint from, WoWPoint to) => new ActionAlwaysSucceed();
-        public static Composite CreateForceJump(CanRunDecoratorDelegate canRun, WoWPoint from, WoWPoint to) => new ActionAlwaysSucceed();
+        public static Composite CreateForceJump(CanRunDecoratorDelegate canRun, bool actuallyJump, WoWPoint from, WoWPoint to)
+        {
+            return new PrioritySelector(
+                new Decorator(canRun,
+                    new Sequence(
+                        new DecoratorContinue(ctx => StyxWoW.Me.Location.DistanceSqr(from) > 25f,
+                            CreateMoveToContinue(() => from)),
+                        new DecoratorContinue(ctx => StyxWoW.Me.Class == WoWClass.Hunter && StyxWoW.Me.GotAlivePet,
+                            new Sequence(
+                                new DecoratorContinue(ctx => StyxWoW.Me.IsMoving,
+                                    new Sequence(
+                                        new Action(ctx => WoWMovement.MoveStop()),
+                                        new WaitContinue(2, ctx => !StyxWoW.Me.IsMoving, new ActionAlwaysSucceed()))),
+                                new Action(ctx => SpellManager.Cast("Dismiss Pet")),
+                                new WaitContinue(3, ctx => false, new ActionAlwaysSucceed()))),
+                        new DecoratorContinue(ctx => true,
+                            new Sequence(
+                                new Action(ctx => Lua.DoString("PetDismiss()")),
+                                new Action(ctx => WoWMovement.ClickToMove(to)),
+                                new WaitContinue(TimeSpan.FromMilliseconds(150.0), ctx => false, new ActionAlwaysSucceed()),
+                                new DecoratorContinue(ctx => actuallyJump,
+                                    new Action(ctx => WoWMovement.Move(WoWMovement.MovementDirection.JumpAscend))),
+                                new WaitContinue(2, ctx => false, new ActionAlwaysSucceed()),
+                                new DecoratorContinue(ctx => actuallyJump,
+                                    new Action(ctx => WoWMovement.MoveStop(WoWMovement.MovementDirection.JumpAscend))))))));
+        }
+
+        public static Composite CreateForceJump(CanRunDecoratorDelegate canRun, WoWPoint from, WoWPoint to)
+        {
+            return CreateJumpDown(canRun, false, from, to);
+        }
 
         public static Composite CreateRunAwayFromLocation(CanRunDecoratorDelegate canRun, Func<WoWPoint> loc, float distance)
         {
@@ -467,8 +496,42 @@ namespace Bots.DungeonBuddy.Helpers
             return CreateRunAwayFromLocation(canRun, loc, distance);
         }
 
-        public static Composite CreateJumpDown(CanRunDecoratorDelegate canRun, WoWPoint from, WoWPoint to) => new ActionAlwaysSucceed();
-        public static Composite CreateJumpDown(CanRunDecoratorDelegate canRun, bool actuallyJump, WoWPoint from, WoWPoint to) => new ActionAlwaysSucceed();
+        public static Composite CreateJumpDown(CanRunDecoratorDelegate canRun, WoWPoint from, WoWPoint to)
+        {
+            return CreateJumpDown(canRun, false, from, to);
+        }
+
+        public static Composite CreateJumpDown(CanRunDecoratorDelegate canRun, bool actuallyJump, WoWPoint from, WoWPoint to)
+        {
+            return new PrioritySelector(
+                new Decorator(ctx => canRun(ctx) && StyxWoW.Me.Z > to.Z + 6f,
+                    new PrioritySelector(
+                        new Decorator(
+                            ctx => StyxWoW.Me.IsTank()
+                                   || (Tank != null && Tank.Z < from.Z - 6f
+                                       && !Navigator.CanNavigateWithinDistance(from, Tank.Location, 50f)),
+                            new Sequence(
+                                new DecoratorContinue(ctx => StyxWoW.Me.Location.DistanceSqr(from) > 25f,
+                                    CreateMoveToContinue(() => from)),
+                                new DecoratorContinue(ctx => StyxWoW.Me.Class == WoWClass.Hunter && StyxWoW.Me.GotAlivePet,
+                                    new Sequence(
+                                        new DecoratorContinue(ctx => StyxWoW.Me.IsMoving,
+                                            new Sequence(
+                                                new Action(ctx => WoWMovement.MoveStop()),
+                                                new WaitContinue(2, ctx => !StyxWoW.Me.IsMoving, new ActionAlwaysSucceed()))),
+                                        new Action(ctx => SpellManager.Cast("Dismiss Pet")),
+                                        new WaitContinue(3, ctx => false, new ActionAlwaysSucceed()))),
+                                new DecoratorContinue(ctx => StyxWoW.Me.Class != WoWClass.Hunter && StyxWoW.Me.GotAlivePet,
+                                    new Action(ctx => Lua.DoString("PetDismiss()"))),
+                                new DecoratorContinue(ctx => StyxWoW.Me.Z > to.Z + 6f,
+                                    new Sequence(
+                                        new Action(ctx => WoWMovement.ClickToMove(to)),
+                                        new DecoratorContinue(ctx => actuallyJump,
+                                            new Action(ctx => WoWMovement.Move(WoWMovement.MovementDirection.JumpAscend))),
+                                        new WaitContinue(2, ctx => false, new ActionAlwaysSucceed()),
+                                        new DecoratorContinue(ctx => actuallyJump,
+                                            new Action(ctx => WoWMovement.MoveStop(WoWMovement.MovementDirection.JumpAscend))))))))));
+        }
 
         public static Composite CreateJumpDown(CanRunDecoratorDelegate canRun, Func<WoWPoint> pointSelector)
         {
