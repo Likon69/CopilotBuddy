@@ -2359,7 +2359,6 @@ namespace Bots.DungeonBuddy
             // Priority 6 (HB method_23 priority 6): boss PathBreadCrumbs
             // from the profile. Drives movement toward the boss when no
             // boss is in draw distance.
-            TreeRoot.StatusText = string.Empty;
             var currentProfileBoss = ProfileManager.CurrentProfile?.BossEncounters
                 .FirstOrDefault(b => b.IsAlive);
             if (currentProfileBoss != null && currentProfileBoss.PathBreadCrumbs.Count > 0)
@@ -2370,6 +2369,8 @@ namespace Bots.DungeonBuddy
                     currentProfileBoss.PathBreadCrumbs.Dequeue();
                 return crumb;
             }
+
+            TreeRoot.StatusText = string.Empty;
 
             return WoWPoint.Zero;
         }
@@ -2488,7 +2489,6 @@ namespace Bots.DungeonBuddy
             // Profile.Boss.PathBreadCrumbs is populated from <Path><Hotspot .../></Path> in the XML,
             // or falls back to the boss's X/Y/Z coordinates when no explicit path is defined.
             // This is what drives movement toward the boss when no targets are visible.
-            TreeRoot.StatusText = string.Empty;
             var currentProfileBoss = ProfileManager.CurrentProfile?.BossEncounters
                 .FirstOrDefault(b => b.IsAlive);
             if (currentProfileBoss != null && currentProfileBoss.PathBreadCrumbs.Count > 0)
@@ -2499,6 +2499,8 @@ namespace Bots.DungeonBuddy
                     currentProfileBoss.PathBreadCrumbs.Dequeue();
                 return crumb;
             }
+
+            TreeRoot.StatusText = string.Empty;
 
             return WoWPoint.Zero;
         }
