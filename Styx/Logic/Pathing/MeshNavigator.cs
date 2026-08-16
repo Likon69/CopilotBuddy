@@ -54,10 +54,6 @@ namespace Styx.Logic.Pathing
 		private bool _isPartialPath;
 		private bool _ridingElevator;
 
-		// Path drift suppression after start-index skip
-		private bool _suppressDriftCheck;
-		private int _suppressDriftCheckIndex;
-
 		// Push-ahead cache (HB 6.2.3 method_25/26)
 		private int _cachedPushAheadIndex = -1;
 		private WoWPoint _cachedClickPoint = WoWPoint.Zero;
@@ -70,8 +66,6 @@ namespace Styx.Logic.Pathing
 		private bool _elevatorMoving;
 		private WoWPoint _lastElevatorPos = WoWPoint.Zero;
 		private WaitTimer _elevatorMotionTimer = new WaitTimer(TimeSpan.FromMilliseconds(400));
-
-		private bool _isBypassActive;
 
 		// HB 6.2.3 areaType_0: faction area type for RaycastBlocked
 		private TripperNav.AreaType _factionAreaType = TripperNav.AreaType.Ground;
@@ -237,9 +231,6 @@ namespace Styx.Logic.Pathing
 
 		public MoveResult MoveTo(WoWPoint destination, float precision, string destinationName)
 		{
-			if (_isBypassActive)
-				return MoveResult.Failed;
-
 			if (destination == WoWPoint.Zero)
 				return MoveResult.Failed;
 
@@ -255,9 +246,7 @@ namespace Styx.Logic.Pathing
 			// Fallback for destinations Detour cannot reach at all.
 			if (me.IsSwimming && !HasShortGroundPath(me.Location, destination, 2000f))
 			{
-				_isBypassActive = true;
-				Flightor.MoveTo(destination);
-				_isBypassActive = false;
+				Navigator.PlayerMover.MoveTowards(destination);
 				return MoveResult.Moved;
 			}
 
@@ -312,8 +301,6 @@ namespace Styx.Logic.Pathing
 				_isPartialPath = pathResult.IsPartialPath;
 
 				_currentPathIndex = 0;
-				_suppressDriftCheck = false;
-				_suppressDriftCheckIndex = 0;
 				_cachedPushAheadIndex = -1;
 
 				// Detour always outputs path[0] = the snapped start position, which is within
@@ -329,17 +316,76 @@ namespace Styx.Logic.Pathing
 
 				// HB 6.2.3 method_14: skip waypoints the player has already passed
 				SkipPassedWaypoints(me);
-
-				if (_currentPathIndex > 0)
-				{
-					_suppressDriftCheck = true;
-					_suppressDriftCheckIndex = _currentPathIndex;
-				}
 			}
 
 			// Follow existing path
 			if (_currentPath.Count > 0 && _currentPathIndex < _currentPath.Count)
 			{
+				// Drift detection (HB 6.2.3 method_9 → method_15). HB runs the on-path check
+				// on every MoveTo, BEFORE the off-mesh dispatch and the stuck check, with no
+				// suppression. Uses navmesh RaycastBlocked as primary check: if the player can
+				// see the next waypoint through the navmesh, we are still on path. Only when
+				// the raycast is blocked AND the hit is not near the waypoint AND 2D perp
+				// distance exceeds PathPrecision do we regenerate. Off-mesh connection
+				// segments and falling are on-path by definition (HB method_15 early returns).
+				if (_currentPathIndex > 0 && _currentPathIndex < _currentPath.Count
+				    && !(WoWMovement.ActiveMover ?? StyxWoW.Me).IsFalling)
+				{
+					bool isOffMeshSeg = _currentFlags != null && (_currentPathIndex - 1) < _currentFlags.Length
+					    && (_currentFlags[_currentPathIndex - 1] & TripperNav.StraightPathFlags.OffMeshConnection) != 0;
+
+					if (!isOffMeshSeg)
+					{
+						bool offPath;
+						if (Navigator.IsNavigatorLoaded)
+						{
+							uint mapId = (uint)me.MapId;
+							var playerVec = new Vector3(me.Location.X, me.Location.Y, me.Location.Z);
+							WoWPoint nextWp = _currentPath[_currentPathIndex];
+							var nextVec = new Vector3(nextWp.X, nextWp.Y, nextWp.Z);
+							bool blocked = TripperNavigator.RaycastBlocked(mapId, playerVec, nextVec, out float hitT, _factionAreaType);
+							if (!blocked)
+							{
+								// Clear line-of-sight to next waypoint — still on path.
+								offPath = false;
+							}
+							else if (Math.Abs(hitT) < 1e-5f)
+							{
+								// Hit immediately at player position — on path.
+								offPath = false;
+							}
+							else
+							{
+								// Compute hit point and check if it is near the target waypoint.
+								WoWPoint hitPoint = new WoWPoint(
+									me.Location.X + (nextWp.X - me.Location.X) * hitT,
+									me.Location.Y + (nextWp.Y - me.Location.Y) * hitT,
+									me.Location.Z + (nextWp.Z - me.Location.Z) * hitT);
+								bool hitCloseToWaypoint = IsAtPoint(hitPoint, nextWp);
+								// Fallback 2D perp-distance to confirm we are truly off-path.
+								float perpDist = DistanceToLineSegment2D(me.Location, _currentPath[_currentPathIndex - 1], nextWp);
+								offPath = !hitCloseToWaypoint && perpDist * perpDist >= PathPrecision * PathPrecision;
+							}
+						}
+						else
+						{
+							// Navigator not loaded — fall back to pure 2D geometry.
+							float driftDist = DistanceToLineSegment2D(me.Location,
+								_currentPath[_currentPathIndex - 1], _currentPath[_currentPathIndex]);
+							offPath = driftDist * driftDist > PathPrecision * PathPrecision;
+						}
+
+						if (offPath)
+						{
+							Logging.WriteDiagnostic("Generating new path because we are not on the old path anymore!");
+							_currentPath.Clear();
+							_currentPathIndex = 0;
+							_cachedPushAheadIndex = -1;
+							return MoveTo(destination, precision, destinationName);
+						}
+					}
+				}
+
 				// Off-mesh segment re-dispatch (HB 6.2.3 method_18)
 				if (_currentPathIndex > 0 && _currentFlags != null
 				    && (_currentPathIndex - 1) < _currentFlags.Length
@@ -363,13 +409,9 @@ namespace Styx.Logic.Pathing
 				return DispatchOffMesh(me, offMeshEndPt, offMeshStartPt, offMeshAreaType);
 			}
 
-			// Stuck detection (HB 6.2.3 Class469)
-				bool isAtOffMesh = _currentFlags != null && _currentPathIndex > 0
-					&& (_currentPathIndex - 1) < _currentFlags.Length
-					&& (_currentFlags[_currentPathIndex - 1] & TripperNav.StraightPathFlags.OffMeshConnection) != 0;
 				// Stuck detection — exact HB 6.2.3 method_24: IsStuck() → Unstick() per tick.
 				// IsStuck() manages its own 500ms throttle internally (stopwatch in StuckHandler).
-				if (!isAtOffMesh && !_ridingElevator)
+				if (!_ridingElevator)
 				{
 					if (StuckHandler.IsStuck())
 					{
@@ -426,71 +468,6 @@ namespace Styx.Logic.Pathing
 					}
 				}
 
-				// Drift detection (HB 6.2.3 method_15)
-				// Uses navmesh RaycastBlocked as primary check: if the player can see the next
-				// waypoint through the navmesh, we are still on path. Only when the raycast
-				// is blocked AND the hit is not near the waypoint AND 2D perp distance exceeds
-				// PathPrecision do we regenerate. Off-mesh connection segments are skipped
-				// (HB method_15: Flags[Index-1] & OffMeshConnection → return true = on path).
-				if (!_suppressDriftCheck && _currentPathIndex > 0 && _currentPathIndex < _currentPath.Count
-				    && !(WoWMovement.ActiveMover ?? StyxWoW.Me).IsFalling)
-				{
-					// Skip drift check on off-mesh connection segments (HB method_15).
-					bool isOffMeshSeg = _currentFlags != null && (_currentPathIndex - 1) < _currentFlags.Length
-					    && (_currentFlags[_currentPathIndex - 1] & TripperNav.StraightPathFlags.OffMeshConnection) != 0;
-
-					if (!isOffMeshSeg)
-					{
-						bool offPath;
-						if (Navigator.IsNavigatorLoaded)
-						{
-							uint mapId = (uint)me.MapId;
-							var playerVec = new Vector3(me.Location.X, me.Location.Y, me.Location.Z);
-							WoWPoint nextWp = _currentPath[_currentPathIndex];
-							var nextVec = new Vector3(nextWp.X, nextWp.Y, nextWp.Z);
-							bool blocked = TripperNavigator.RaycastBlocked(mapId, playerVec, nextVec, out float hitT, _factionAreaType);
-							if (!blocked)
-							{
-								// Clear line-of-sight to next waypoint — still on path.
-								offPath = false;
-							}
-							else if (Math.Abs(hitT) < 1e-5f)
-							{
-								// Hit immediately at player position — on path.
-								offPath = false;
-							}
-							else
-							{
-								// Compute hit point and check if it is near the target waypoint.
-								WoWPoint hitPoint = new WoWPoint(
-									me.Location.X + (nextWp.X - me.Location.X) * hitT,
-									me.Location.Y + (nextWp.Y - me.Location.Y) * hitT,
-									me.Location.Z + (nextWp.Z - me.Location.Z) * hitT);
-								bool hitCloseToWaypoint = IsAtPoint(hitPoint, nextWp);
-								// Fallback 2D perp-distance to confirm we are truly off-path.
-								float perpDist = DistanceToLineSegment2D(me.Location, _currentPath[_currentPathIndex - 1], nextWp);
-								offPath = !hitCloseToWaypoint && perpDist * perpDist >= PathPrecision * PathPrecision;
-							}
-						}
-						else
-						{
-							// Navigator not loaded — fall back to pure 2D geometry.
-							float driftDist = DistanceToLineSegment2D(me.Location,
-								_currentPath[_currentPathIndex - 1], _currentPath[_currentPathIndex]);
-							offPath = driftDist * driftDist > PathPrecision * PathPrecision;
-						}
-
-						if (offPath)
-						{
-							Logging.WriteDiagnostic("Generating new path because we are not on the old path anymore!");
-							_currentPath.Clear();
-							_currentPathIndex = 0;
-							_cachedPushAheadIndex = -1;
-							return MoveTo(destination, precision, destinationName);
-						}
-					}
-				}
-
 				WoWPoint nextPoint = _currentPath[_currentPathIndex];
 
 				// Advance through reached waypoints (HB 6.2.3 method_24)
@@ -507,11 +484,6 @@ namespace Styx.Logic.Pathing
 						break;
 
 					_currentPathIndex++;
-					if (_suppressDriftCheck && _currentPathIndex > _suppressDriftCheckIndex)
-					{
-						_suppressDriftCheck = false;
-						_suppressDriftCheckIndex = 0;
-					}
 					if (_currentPathIndex >= _currentPath.Count)
 						return _isPartialPath ? MoveResult.Failed : MoveResult.ReachedDestination;
 
@@ -561,8 +533,6 @@ namespace Styx.Logic.Pathing
 			_currentAvoidPathIndex = 0;
 			_cachedPushAheadIndex = -1;
 			_pathRegenThrottle = new WaitTimer(TimeSpan.FromMilliseconds(500));
-			_suppressDriftCheck = false;
-			_suppressDriftCheckIndex = 0;
 			return true;
 		}
 
@@ -951,6 +921,14 @@ namespace Styx.Logic.Pathing
 					Logging.WriteDiagnostic("Invalid offmesh connection encountered at {0}", me.Location);
 					return MoveResult.Failed;
 				}
+			}
+
+			// HB 6.2.3 method_19 hands off to method_24, whose first statement is the stuck
+			// check — the gap crossing is driven by Unstick's jump, not by the connection.
+			if (StuckHandler.IsStuck())
+			{
+				StuckHandler.Unstick();
+				return MoveResult.UnstuckAttempt;
 			}
 
 			// WoW CTM (type Move) uses client-side pathfinding which stops at ledge edges —
