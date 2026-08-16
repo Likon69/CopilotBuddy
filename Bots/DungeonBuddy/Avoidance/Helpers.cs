@@ -64,6 +64,21 @@ namespace Bots.DungeonBuddy.Avoidance
         private static ClusterHit ToClusterHit(Class254<Class253<AvoidCluster, AvoidTracelineResult>, Vector3> x)
             => new ClusterHit(x.Cluster.cluster, x.Cluster.nearestHit.Enter, (float)Math.Atan2(x.relativePoint.Y, x.relativePoint.X));
 
+        internal static WoWPoint SnapToNavHeight(WoWPoint point)
+        {
+            try
+            {
+                List<float> heights = Navigator.FindHeights(point.X, point.Y);
+                if (heights != null && heights.Count > 0)
+                    point.Z = heights.OrderBy(height => Math.Abs(height - point.Z)).FirstOrDefault();
+            }
+            catch
+            {
+            }
+
+            return point;
+        }
+
         public static AvoidPathResult GetAvoidPath(WoWPoint destination)
         {
             var @class = new Class111();

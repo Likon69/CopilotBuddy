@@ -142,6 +142,15 @@ namespace Styx.Helpers
             return CalculatePointBehind(target, targetFacingInRadians, distanceToTarget);
         }
         
+        public static WoWPoint GetPointAt(WoWPoint from, float distance, float rotationRadians, float pitchRadians)
+        {
+            float x = (float)(Math.Cos(pitchRadians) * Math.Cos(rotationRadians) * distance);
+            float y = (float)(Math.Cos(pitchRadians) * Math.Sin(rotationRadians) * distance);
+            float z = (float)(Math.Sin(pitchRadians) * distance);
+
+            return from + new WoWPoint(x, y, z);
+        }
+
         public static WoWPoint CalculatePointFrom(WoWPoint from, WoWPoint target, float distance)
         {
             var direction = new WoWPoint
