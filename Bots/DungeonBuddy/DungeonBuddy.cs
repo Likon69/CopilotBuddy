@@ -2113,20 +2113,9 @@ namespace Bots.DungeonBuddy
                                 Routine?.MoveToTargetBehavior ?? new ActionAlwaysFail()
                             ),
 
-                                // [5b] Navigate to melee range when Routine has no MoveToTargetBehavior.
-                                // HB method_0(): NavigationAction navigates toward FirstUnit after targeting.
-                                // Without this, melee routines fail to pull when target is in LOS but out
-                                // of melee range — the pull behavior returns Failure and the tree idles.
-                                new Decorator(
-                                    ctx => Routine?.MoveToTargetBehavior == null &&
-                                           StyxWoW.Me.CurrentTarget != null &&
-                                           StyxWoW.Me.CurrentTarget.DistanceSqr > 4 * 4,
-                                    new NavigationAction(ctx => StyxWoW.Me.CurrentTarget.Location)
-                                ),
-
-                                // [6] Pull
-                                Routine?.PullBehavior ?? new ActionAlwaysFail()
-                            ))
+                            // [6] Pull
+                            Routine?.PullBehavior ?? new ActionAlwaysFail()
+                        ))
                         )
                     ),
 
