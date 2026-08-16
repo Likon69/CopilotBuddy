@@ -2135,6 +2135,25 @@ namespace Styx.WoWInternals.WoWObjects
             }
         }
 
+        public int GetCarriedItemCount(uint itemId)
+        {
+            try
+            {
+                int count = 0;
+                foreach (WoWItem item in CarriedItems)
+                {
+                    if (item.Entry == itemId)
+                        count += (int)Math.Max(1u, item.StackCount);
+                }
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Logging.WriteException(ex);
+                return 0;
+            }
+        }
+
         #endregion
 
         #region Equipment & Item Checking

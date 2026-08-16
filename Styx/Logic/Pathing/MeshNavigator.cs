@@ -62,6 +62,9 @@ namespace Styx.Logic.Pathing
 		private WaitTimer _pathRegenThrottle = new WaitTimer(TimeSpan.FromMilliseconds(500));
 		private WaitTimer _interactTimer = new WaitTimer(TimeSpan.FromMilliseconds(2000));
 
+		private readonly WaitTimer _doorScanTimer = new WaitTimer(TimeSpan.FromSeconds(1.0));
+		private readonly WaitTimer _doorInteractTimer = new WaitTimer(TimeSpan.FromSeconds(1.0));
+
 		// Elevator motion detection (HB 6.2.3 bool_2, woWPoint_0, waitTimer_2)
 		private bool _elevatorMoving;
 		private WoWPoint _lastElevatorPos = WoWPoint.Zero;
@@ -258,6 +261,9 @@ namespace Styx.Logic.Pathing
 				_currentPath.Clear();
 				return MoveResult.ReachedDestination;
 			}
+
+			if (TryOpenClosedDoor(me))
+				return MoveResult.Moved;
 
 			// HB 6.2.3 method_9: compare new destination against PATH ENDPOINT
 			float destThresholdSqr = PathPrecision * PathPrecision;
@@ -1027,6 +1033,88 @@ namespace Styx.Logic.Pathing
 			}
 
 			return MoveResult.Moved;
+		}
+
+		#endregion
+
+		#region Internal — closed doors (HB 6.2.3 method_7/8/29)
+
+		private bool TryOpenClosedDoor(LocalPlayer me)
+		{
+			if (!_doorScanTimer.IsFinished)
+				return false;
+
+			WoWGameObject? door = ObjectManager.GetObjectsOfType<WoWGameObject>(false, false)
+				.FirstOrDefault(go => IsOpenableDoor(go, me));
+
+			if (door == null)
+			{
+				_doorScanTimer.Reset();
+				return false;
+			}
+
+			if (me.IsMoving)
+			{
+				WoWMovement.MoveStop();
+			}
+			else if (!me.IsCasting && _doorInteractTimer.IsFinished)
+			{
+				Logging.WriteDiagnostic("Opening Closed Door {0} (Id: {1})", door.Name, door.Entry);
+				door.Interact();
+				_doorInteractTimer.Reset();
+			}
+			return true;
+		}
+
+		private bool IsOpenableDoor(WoWGameObject go, LocalPlayer me)
+		{
+			try
+			{
+				if (go.SubType != WoWGameObjectType.Door)
+					return false;
+
+				if (go.SubObj is not WoWDoor door || !door.IsClosed)
+					return false;
+
+				if (!go.WithinInteractRange || go.InUse)
+					return false;
+
+				uint requiredItem = 0;
+				LockEntry? lockRecord = go.LockRecord;
+				if (lockRecord.HasValue)
+				{
+					LockEntry lockEntry = lockRecord.Value;
+					for (int i = 0; i < lockEntry.Type.Length; i++)
+					{
+						if (lockEntry.Type[i] == 1 && lockEntry.LockProperties[i] != 0)
+						{
+							requiredItem = lockEntry.LockProperties[i];
+							break;
+						}
+					}
+				}
+
+				if (requiredItem != 0 && me.GetCarriedItemCount(requiredItem) <= 0)
+					return false;
+
+				if (go.Locked && requiredItem == 0)
+					return false;
+
+				if (!door.CanOpenNow(out uint reason))
+				{
+					if (requiredItem != 0)
+						Logging.WriteDiagnostic(
+							"Closed Door {0} (Id: {1}) refused: carrying key {2}, client reason {3}",
+							go.Name, go.Entry, requiredItem, reason);
+					return false;
+				}
+
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
 		}
 
 		#endregion
