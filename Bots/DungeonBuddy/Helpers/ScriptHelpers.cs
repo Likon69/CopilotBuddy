@@ -11,7 +11,9 @@ using Styx.Logic;
 using Styx.Logic.BehaviorTree;
 using Styx.Logic.Combat;
 using Styx.Logic.Inventory.Frames.Gossip;
+using Styx.Logic.Inventory.Frames.Quest;
 using Styx.Logic.Pathing;
+using Styx.Logic.POI;
 using Styx.WoWInternals;
 using Styx.WoWInternals.WoWObjects;
 using TreeSharp;
@@ -37,8 +39,8 @@ namespace Bots.DungeonBuddy.Helpers
             Tank = 1,
             Healer = 2,
             Dps = 4,
-            Melee = 8,
-            Ranged = 16,
+            Ranged = 8,
+            Melee = 16,
             Leader = 32,
             Follower = 64
         }
@@ -110,8 +112,435 @@ namespace Bots.DungeonBuddy.Helpers
             return true;
         }
 
-        // --- WOWPLAYER/WOWUNIT OVERLOADS ---
-        // Role methods removed. Using Styx.Helpers.WoWPlayerExtensions instead to resolve ambiguity.
+        public static bool? IsTank(this WoWPartyMember partyMember)
+        {
+            if (partyMember.HasRole(WoWPartyMember.GroupRole.Tank))
+                return true;
+
+            return partyMember.Role != WoWPartyMember.GroupRole.None ? false : (bool?)null;
+        }
+
+        public static bool? IsHealer(this WoWPartyMember partyMember)
+        {
+            if (partyMember.HasRole(WoWPartyMember.GroupRole.Healer))
+                return true;
+
+            return partyMember.Role != WoWPartyMember.GroupRole.None ? false : (bool?)null;
+        }
+
+        public static bool? IsDps(this WoWPartyMember partyMember)
+        {
+            if (partyMember.HasRole(WoWPartyMember.GroupRole.Damage))
+                return true;
+
+            return partyMember.Role != WoWPartyMember.GroupRole.None ? false : (bool?)null;
+        }
+
+        public static bool? IsRange(this WoWPartyMember partyMember)
+        {
+            WoWPlayer player = partyMember.ToPlayer();
+            if (player == null)
+                return null;
+
+            switch (player.Class)
+            {
+                case WoWClass.Warrior:
+                case WoWClass.Rogue:
+                case WoWClass.DeathKnight:
+                    return false;
+                case WoWClass.Hunter:
+                case WoWClass.Priest:
+                case WoWClass.Mage:
+                case WoWClass.Warlock:
+                    return true;
+            }
+
+            return null;
+        }
+
+        public static bool? IsMelee(this WoWPartyMember partyMember)
+        {
+            bool? isRange = partyMember.IsRange();
+            return isRange == null ? null : new bool?(!isRange.Value);
+        }
+
+        public static readonly Random Rnd = new Random();
+
+        public static Composite CreateTeleporterLogic(params uint[] teleporterIds)
+        {
+            return new PrioritySelector(
+                ctx =>
+                {
+                    WoWPartyMember tank = DungeonBuddy.PartyMemberInfos
+                        .FirstOrDefault(member => member.HasRole(WoWPartyMember.GroupRole.Tank));
+
+                    if (tank == null)
+                        return ctx;
+
+                    WoWPlayer tankPlayer = tank.ToPlayer();
+                    if (tankPlayer != null
+                        && Navigator.CanNavigateFully(StyxWoW.Me.Location, tankPlayer.Location))
+                    {
+                        return ctx;
+                    }
+
+                    IEnumerable<WoWUnit> candidates = ctx as IEnumerable<WoWUnit>
+                        ?? ObjectManager.GetObjectsOfType<WoWUnit>();
+
+                    return candidates
+                        .Where(unit => teleporterIds.Contains(unit.Entry))
+                        .OrderBy(unit => unit.DistanceSqr)
+                        .FirstOrDefault();
+                },
+                new Decorator(
+                    ctx => ctx is WoWUnit,
+                    new PrioritySelector(
+                        new Decorator(
+                            ctx => !((WoWUnit)ctx).WithinInteractRange,
+                            new Sequence(
+                                new Action(ctx => Logger.Write("Moving towards {0}", ((WoWUnit)ctx).Name)),
+                                new Action(ctx => Navigator.MoveTo(((WoWUnit)ctx).Location)))),
+                        new Sequence(
+                            new Action(ctx => WoWMovement.MoveStop()),
+                            new WaitContinue(3, ctx => !StyxWoW.Me.IsMoving, new ActionAlwaysSucceed()),
+                            new Action(ctx => Logger.Write("Interacting with the teleporter")),
+                            new Action(ctx => ((WoWUnit)ctx).Interact())))));
+        }
+
+        public enum PartyDispellType
+        {
+            Magic,
+            Poison,
+            Disease,
+            Curse
+        }
+
+        private static WoWSpell GetSpellIfKnown(params string[] spellNames)
+        {
+            foreach (string spellName in spellNames)
+            {
+                if (SpellManager.HasSpell(spellName))
+                    return SpellManager.Spells[spellName];
+            }
+
+            return null;
+        }
+
+        private static WoWSpell GetPartyDispellSpell(PartyDispellType dispellType)
+        {
+            switch (dispellType)
+            {
+                case PartyDispellType.Magic:
+                    switch (StyxWoW.Me.Class)
+                    {
+                        case WoWClass.Priest:
+                            return GetSpellIfKnown("Dispel Magic");
+                        case WoWClass.Paladin:
+                            return GetSpellIfKnown("Cleanse");
+                    }
+                    return null;
+
+                case PartyDispellType.Poison:
+                    switch (StyxWoW.Me.Class)
+                    {
+                        case WoWClass.Paladin:
+                            return GetSpellIfKnown("Cleanse", "Purify");
+                        case WoWClass.Druid:
+                            return GetSpellIfKnown("Abolish Poison");
+                        case WoWClass.Shaman:
+                            return GetSpellIfKnown("Cleanse Spirit", "Cure Toxins");
+                    }
+                    return null;
+
+                case PartyDispellType.Disease:
+                    switch (StyxWoW.Me.Class)
+                    {
+                        case WoWClass.Priest:
+                            return GetSpellIfKnown("Abolish Disease", "Cure Disease");
+                        case WoWClass.Paladin:
+                            return GetSpellIfKnown("Cleanse", "Purify");
+                        case WoWClass.Shaman:
+                            return GetSpellIfKnown("Cleanse Spirit", "Cure Toxins");
+                    }
+                    return null;
+
+                case PartyDispellType.Curse:
+                    switch (StyxWoW.Me.Class)
+                    {
+                        case WoWClass.Mage:
+                        case WoWClass.Druid:
+                            return GetSpellIfKnown("Remove Curse");
+                        case WoWClass.Shaman:
+                            return GetSpellIfKnown("Cleanse Spirit");
+                    }
+                    return null;
+            }
+
+            return null;
+        }
+
+        public static Composite CreateDispellParty(string spellName, PartyDispellType dispellType)
+        {
+            WoWPlayer afflicted = null;
+            WoWSpell dispell = null;
+
+            return new PrioritySelector(
+                ctx =>
+                {
+                    afflicted = PartyIncludingMe.FirstOrDefault(player => player.HasAura(spellName));
+                    if (afflicted != null)
+                        dispell = GetPartyDispellSpell(dispellType);
+
+                    return ctx;
+                },
+                new Decorator(
+                    ctx => afflicted != null && dispell != null && dispell.CanCast,
+                    new PrioritySelector(
+                        new Decorator(
+                            ctx => afflicted.Distance > dispell.ActualMaxRange(afflicted),
+                            new Action(ctx => Navigator.GetRunStatusFromMoveResult(
+                                Navigator.MoveTo(afflicted.Location)))),
+                        new Decorator(
+                            ctx => afflicted.Distance <= dispell.ActualMaxRange(afflicted),
+                            new Sequence(
+                                new Action(ctx => Logger.Write(
+                                    "Dispelling {0} effect {1} on party member {2}",
+                                    dispellType,
+                                    dispell.Name,
+                                    afflicted.Name)),
+                                new Action(ctx => SpellManager.Cast(dispell, afflicted)))))));
+        }
+
+        private static WoWSpell GetInterruptSpell()
+        {
+            switch (StyxWoW.Me.Class)
+            {
+                case WoWClass.Warrior:
+                    if (SpellManager.HasSpell("Shield Bash"))
+                        return SpellManager.Spells["Shield Bash"];
+                    return SpellManager.HasSpell("Pummel") ? SpellManager.Spells["Pummel"] : null;
+                case WoWClass.Rogue:
+                    return SpellManager.HasSpell("Kick") ? SpellManager.Spells["Kick"] : null;
+                case WoWClass.Hunter:
+                    return SpellManager.HasSpell("Silencing Shot") ? SpellManager.Spells["Silencing Shot"] : null;
+                case WoWClass.Priest:
+                    return SpellManager.HasSpell("Silence") ? SpellManager.Spells["Silence"] : null;
+                case WoWClass.DeathKnight:
+                    return SpellManager.HasSpell("Mind Freeze") ? SpellManager.Spells["Mind Freeze"] : null;
+                case WoWClass.Shaman:
+                    return SpellManager.HasSpell("Wind Shear") ? SpellManager.Spells["Wind Shear"] : null;
+                case WoWClass.Mage:
+                    return SpellManager.HasSpell("Counterspell") ? SpellManager.Spells["Counterspell"] : null;
+                case WoWClass.Druid:
+                    return SpellManager.HasSpell("Bash") ? SpellManager.Spells["Bash"] : null;
+            }
+
+            return null;
+        }
+
+        public static Composite CreateWaitAtLocationWhile(
+            CanRunDecoratorDelegate canRun,
+            Func<WoWPoint> locationSelector,
+            float radius,
+            params PartyRole[] roles)
+        {
+            float radiusSqr = radius * radius;
+
+            return new Decorator(
+                ctx => canRun(ctx)
+                    && (roles.Length == 0 || roles.Any(role => StyxWoW.Me.Roles().HasFlag(role)))
+                    && PartyIncludingMe.All(player =>
+                        StyxWoW.Me.IsHealer() ? player.HealthPercent > 50.0 : player.IsAlive),
+                new PrioritySelector(
+                    new Action(ctx =>
+                    {
+                        TreeRoot.StatusText = string.Format("Waiting at location {0}", locationSelector());
+                        Navigator.NavigationProvider?.StuckHandler?.Reset();
+                        return RunStatus.Failure;
+                    }),
+                    new Decorator(
+                        ctx => StyxWoW.Me.Location.DistanceSqr(locationSelector()) <= radiusSqr,
+                        new PrioritySelector(
+                            new Decorator(
+                                ctx => StyxWoW.Me.IsMoving,
+                                new Action(ctx => WoWMovement.MoveStop())),
+                            new ActionAlwaysSucceed())),
+                    new Decorator(
+                        ctx => StyxWoW.Me.Location.DistanceSqr(locationSelector()) > radiusSqr,
+                        new Action(ctx => Navigator.GetRunStatusFromMoveResult(
+                            Navigator.MoveTo(locationSelector()))))));
+        }
+
+        public static Composite CreateInterruptCast(Func<WoWUnit> targetSelector, params int[] spellIds)
+        {
+            WoWUnit target = null;
+            WoWSpell interrupt = null;
+            int castingSpellId = 0;
+
+            return new PrioritySelector(
+                ctx =>
+                {
+                    target = targetSelector();
+                    if (target != null)
+                    {
+                        interrupt = GetInterruptSpell();
+                        castingSpellId = target.CastingSpellId;
+                    }
+
+                    return ctx;
+                },
+                new Decorator(
+                    ctx => target != null
+                        && spellIds.Contains(castingSpellId)
+                        && interrupt != null
+                        && interrupt.CanCast,
+                    new PrioritySelector(
+                        new Decorator(
+                            ctx => target.Distance > interrupt.ActualMaxRange(target),
+                            new Action(ctx => Navigator.GetRunStatusFromMoveResult(Navigator.MoveTo(target.Location)))),
+                        new Decorator(
+                            ctx => target.Distance <= interrupt.ActualMaxRange(target),
+                            new Sequence(
+                                new Action(ctx => Logger.Write(
+                                    "Interrupted spell {0} casted by {1}",
+                                    WoWSpell.FromId(castingSpellId)?.Name ?? castingSpellId.ToString(),
+                                    target.Name)),
+                                new Action(ctx => SpellManager.Cast(interrupt, target)))))));
+        }
+
+        public static WoWPoint GetSpreadOutLocation(float stepDistance, WoWPoint centerPoint, float directionToHead, float maxDistanceFromCenterPoint)
+        {
+            float maxDistanceSqr = maxDistanceFromCenterPoint * maxDistanceFromCenterPoint;
+            WoWPoint location = StyxWoW.Me.Location;
+
+            for (int angle = 0; angle < 180; angle = -angle + (angle >= 0 ? -20 : 0))
+            {
+                WoWPoint candidate = WoWMathHelper.GetPointAt(
+                    location,
+                    stepDistance,
+                    directionToHead + WoWMathHelper.DegreesToRadians(angle),
+                    0f);
+
+                if (!WillPullAggroAtLocation(candidate)
+                    && candidate.DistanceSqr(centerPoint) <= maxDistanceSqr
+                    && Navigator.CanNavigateFully(location, candidate))
+                {
+                    return candidate;
+                }
+            }
+
+            return WoWPoint.Zero;
+        }
+
+        public static bool WillPullAggroAtLocation(WoWPoint loc)
+        {
+            return ObjectManager.GetObjectsOfType<WoWUnit>()
+                .Any(unit => unit.IsHostile
+                          && unit.Attackable
+                          && unit.CanSelect
+                          && unit.IsAlive
+                          && Math.Abs(unit.Z - loc.Z) < 12f
+                          && !unit.Combat
+                          && unit.MyAggroRange * unit.MyAggroRange + 16f > unit.Location.DistanceSqr(loc));
+        }
+
+        public static List<WoWUnit> GetUnfriendlyNpcsAtArea(DungeonArea area)
+        {
+            return GetUnfriendlyNpcsAtArea(area, null);
+        }
+
+        public static List<WoWUnit> GetUnfriendlyNpcsAtArea(DungeonArea area, Predicate<WoWUnit>? unitSelector)
+        {
+            return ObjectManager.GetObjectsOfType<WoWUnit>()
+                .Where(unit => unit.IsValid
+                            && unit.IsAlive
+                            && !unit.IsFriendly
+                            && !unit.IsCritter
+                            && unit.Attackable
+                            && unit.CanSelect
+                            && area.IsPointInPoly(unit.Location)
+                            && (unitSelector == null || unitSelector(unit))
+                            && Navigator.CanNavigateFully(StyxWoW.Me.Location, unit.Location))
+                .OrderBy(unit => unit.DistanceSqr)
+                .ToList();
+        }
+
+        public static string UtilBuildTimeAsString(TimeSpan timeSpan)
+        {
+            string format;
+            if (timeSpan.Hours > 0)
+                format = "{0:D2}h:{1:D2}m:{2:D2}s";
+            else if (timeSpan.Minutes > 0)
+                format = "{1:D2}m:{2:D2}s";
+            else
+                format = "{2:D2}s";
+
+            return string.Format(format, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
+        }
+
+        public static string UnitId(this WoWPartyMember partyMember)
+        {
+            WoWPartyMember[] members = DungeonBuddy.PartyMemberInfos;
+
+            for (int i = 0; i < members.Length; i++)
+            {
+                if (members[i].Guid == partyMember.Guid)
+                    return (StyxWoW.Me.IsInRaid ? "raid" : "party") + (i + 1);
+            }
+
+            return "none";
+        }
+
+        public static PartyRole Roles(this LocalPlayer me)
+        {
+            PartyRole roles = PartyRole.None;
+
+            if (me.IsLeader())
+                roles |= PartyRole.Leader;
+
+            if (me.IsFollower())
+                roles |= PartyRole.Follower;
+
+            if (me.IsTank())
+                return roles | PartyRole.Tank | PartyRole.Melee;
+
+            if (me.IsHealer())
+                return roles | PartyRole.Healer | PartyRole.Ranged;
+
+            if (me.IsRange())
+                return roles | PartyRole.Ranged | PartyRole.Dps;
+
+            return roles | PartyRole.Melee | PartyRole.Dps;
+        }
+
+        public static PartyRole Roles(this WoWPartyMember partyMember)
+        {
+            PartyRole roles = PartyRole.None;
+
+            bool? isTank = partyMember.IsTank();
+            if (isTank != null && isTank.Value)
+                roles |= PartyRole.Leader;
+
+            if (isTank != null && !isTank.Value)
+                roles |= PartyRole.Follower;
+
+            if (isTank != null && isTank.Value)
+                return roles | PartyRole.Tank | PartyRole.Melee;
+
+            bool? isHealer = partyMember.IsHealer();
+            if (isHealer != null && isHealer.Value)
+                return roles | PartyRole.Healer | PartyRole.Ranged;
+
+            bool? isRange = partyMember.IsRange();
+            if (isRange != null && isRange.Value)
+                return roles | PartyRole.Ranged | PartyRole.Dps;
+
+            bool? isMelee = partyMember.IsMelee();
+            if (isMelee != null && isMelee.Value)
+                return roles | PartyRole.Melee | PartyRole.Dps;
+
+            return roles;
+        }
 
         // ═══════════════════════════════════════════════════════════
         // PHASE 2, 3, 4: COMBAT, OBJECTS, BOSSES (Ported from HB 4.3.4)
@@ -168,42 +597,178 @@ namespace Bots.DungeonBuddy.Helpers
             }));
         }
 
-        public static Composite DisableMovement(Func<bool> whileTrue)
+        public static void DisableMovement(Func<bool> whileTrue)
         {
-            return new Decorator(ctx => whileTrue(), new Action(ctx => { Navigator.PlayerMover.MoveStop(); return RunStatus.Success; }));
+            if (_movementBlocks.All(block => block.Condition != whileTrue))
+                _movementBlocks.Add(new MovementBlock(whileTrue, MovementBlockType.DisableMovement));
+
+            if (MovementEnabled)
+            {
+                Navigator.PlayerMover = new NoMover();
+
+                if (Navigator.NavigationProvider != null)
+                {
+                    _savedStuckHandler ??= Navigator.NavigationProvider.StuckHandler;
+                    Navigator.NavigationProvider.StuckHandler = new NoUnstuck();
+                }
+
+                _controlledDestination = WoWPoint.Zero;
+            }
         }
 
-        public static WoWUnit FindBestTargetWithIdsRange(float range, params uint[] entryIds)
+        public static void RestoreMovement()
+        {
+            if (!MovementEnabled)
+            {
+                _movementBlocks.Clear();
+                Navigator.PlayerMover = new ClickToMoveMover();
+
+                if (Navigator.NavigationProvider != null && _savedStuckHandler != null)
+                    Navigator.NavigationProvider.StuckHandler = _savedStuckHandler;
+
+                _controlledDestination = WoWPoint.Zero;
+            }
+        }
+
+        public static WoWUnit FindBestTargetWithIdsRange(int maxRange, params uint[] entryIds)
         {
             return ObjectManager.GetObjectsOfType<WoWUnit>()
-                .Where(u => u.IsAlive && u.DistanceSqr <= range * range && entryIds.Contains(u.Entry))
+                .Where(u => u.IsAlive && u.DistanceSqr <= maxRange * maxRange && entryIds.Contains(u.Entry))
                 .OrderBy(u => u.DistanceSqr)
                 .FirstOrDefault();
         }
 
-        public static Composite CreateInteractWithObject(Func<WoWGameObject> objectSelector, float range)
+        public static Composite CreateInteractWithObject(uint id)
         {
-            return CreateInteractWithObject(objectSelector, range, false);
+            return CreateInteractWithObject(id, 0, false);
         }
 
-        public static Composite CreateInteractWithObject(uint id) => CreateInteractWithObject(() => ObjectManager.GetObjectsOfType<WoWGameObject>().FirstOrDefault(o => o.Entry == id), 5f, false);
-        
-        public static Composite CreateInteractWithObject(uint id, float range) => CreateInteractWithObject(() => ObjectManager.GetObjectsOfType<WoWGameObject>().FirstOrDefault(o => o.Entry == id), range, false);
-
-        public static Composite CreateInteractWithObject(uint id, int channelTime) => CreateInteractWithObject(() => ObjectManager.GetObjectsOfType<WoWGameObject>().FirstOrDefault(o => o.Entry == id), 5f, false);
-        
-        public static Composite CreateInteractWithObject(uint id, int channelTime, bool ignoreCombat) => CreateInteractWithObject(() => ObjectManager.GetObjectsOfType<WoWGameObject>().FirstOrDefault(o => o.Entry == id), 5f, ignoreCombat);
-
-        public static Composite CreateInteractWithObjectContinue(CanRunDecoratorDelegate canRun, Func<WoWGameObject> obj, float range = 5f)
+        public static Composite CreateInteractWithObject(uint id, int channelTime)
         {
-            return new Decorator(canRun, CreateInteractWithObject(obj, range, false));
+            return CreateInteractWithObject(id, channelTime, false);
         }
 
-        public static Composite CreateInteractWithObjectContinue(uint id) => CreateInteractWithObjectContinue(ctx => true, () => ObjectManager.GetObjectsOfType<WoWGameObject>().FirstOrDefault(o => o.Entry == id), 5f);
-        
-        public static Composite CreateInteractWithObjectContinue(uint id, int channelTime) => CreateInteractWithObjectContinue(ctx => true, () => ObjectManager.GetObjectsOfType<WoWGameObject>().FirstOrDefault(o => o.Entry == id), 5f);
-        
-        public static Composite CreateInteractWithObjectContinue(uint id, int channelTime, bool ignoreCombat) => CreateInteractWithObjectContinue(ctx => true, () => ObjectManager.GetObjectsOfType<WoWGameObject>().FirstOrDefault(o => o.Entry == id), 5f);
+        public static Composite CreateInteractWithObject(uint id, int channelTime, bool ignoreCombat)
+        {
+            WoWGameObject gameObject = null;
+
+            return new PrioritySelector(
+                ctx =>
+                {
+                    gameObject = ObjectManager.GetObjectsOfType<WoWGameObject>()
+                        .Where(obj => obj.Entry == id)
+                        .OrderBy(obj => obj.DistanceSqr)
+                        .FirstOrDefault();
+                    return gameObject;
+                },
+                CreateInteractWithObject(() => gameObject, channelTime, ignoreCombat));
+        }
+
+        public static Composite CreateInteractWithObject(Func<WoWGameObject> objectSelector, int channelTime)
+        {
+            return CreateInteractWithObject(objectSelector, channelTime, false);
+        }
+
+        public static Composite CreateInteractWithObject(Func<WoWGameObject> objectSelector, int channelTime, bool ignoreCombat)
+        {
+            WoWGameObject gameObject = null;
+
+            return new PrioritySelector(
+                ctx => gameObject = objectSelector(),
+
+                new Action(ctx =>
+                {
+                    if (gameObject != null)
+                        TreeRoot.StatusText = string.Format("Interacting with {0}", gameObject.Name);
+
+                    return RunStatus.Failure;
+                }),
+
+                new Decorator(
+                    ctx => gameObject != null && gameObject.DistanceSqr > 16.0,
+                    new Action(ctx => Navigator.MoveTo(gameObject.Location))),
+
+                new Decorator(
+                    ctx => gameObject != null && gameObject.DistanceSqr <= 16.0,
+                    new Sequence(
+                        new DecoratorContinue(
+                            ctx => StyxWoW.Me.IsMoving,
+                            new Sequence(
+                                new Action(ctx => WoWMovement.MoveStop()),
+                                new WaitContinue(2, ctx => !StyxWoW.Me.IsMoving, new ActionAlwaysSucceed()))),
+                        new Action(ctx => gameObject.Interact()),
+                        new WaitContinue(
+                            2,
+                            ctx => StyxWoW.Me.IsCasting || (!ignoreCombat && StyxWoW.Me.IsActuallyInCombat),
+                            new ActionAlwaysSucceed()),
+                        new WaitContinue(
+                            channelTime,
+                            ctx => !StyxWoW.Me.IsCasting || (!ignoreCombat && StyxWoW.Me.IsActuallyInCombat),
+                            new ActionAlwaysSucceed()))));
+        }
+
+        public static Composite CreateInteractWithObjectContinue(uint id)
+        {
+            return CreateInteractWithObjectContinue(id, 0, false);
+        }
+
+        public static Composite CreateInteractWithObjectContinue(uint id, int channelTime)
+        {
+            return CreateInteractWithObjectContinue(id, channelTime, false);
+        }
+
+        public static Composite CreateInteractWithObjectContinue(uint id, int channelTime, bool ignoreCombat)
+        {
+            return CreateInteractWithObjectContinue(
+                () => ObjectManager.GetObjectsOfType<WoWGameObject>()
+                    .Where(obj => obj.Entry == id)
+                    .OrderBy(obj => obj.DistanceSqr)
+                    .FirstOrDefault(),
+                channelTime,
+                ignoreCombat);
+        }
+
+        public static Composite CreateInteractWithObjectContinue(Func<WoWGameObject> objectSelector)
+        {
+            return CreateInteractWithObjectContinue(objectSelector, 0, false);
+        }
+
+        public static Composite CreateInteractWithObjectContinue(Func<WoWGameObject> objectSelector, int channelTime)
+        {
+            return CreateInteractWithObjectContinue(objectSelector, channelTime, false);
+        }
+
+        public static Composite CreateInteractWithObjectContinue(Func<WoWGameObject> objectSelector, int channelTime, bool ignoreCombat)
+        {
+            WoWGameObject gameObject = null;
+
+            return new Sequence(
+                ctx => gameObject = objectSelector(),
+
+                new ActionSetActivity("Interacting with Object"),
+
+                new DecoratorContinue(
+                    ctx => gameObject != null && gameObject.DistanceSqr > 16.0,
+                    CreateMoveToContinue(ctx => true, () => (WoWObject)objectSelector(), ignoreCombat)),
+
+                new DecoratorContinue(
+                    ctx => gameObject != null && gameObject.DistanceSqr <= 16.0,
+                    new Sequence(
+                        new DecoratorContinue(
+                            ctx => StyxWoW.Me.IsMoving,
+                            new Sequence(
+                                new Action(ctx => WoWMovement.MoveStop()),
+                                new WaitContinue(2, ctx => !StyxWoW.Me.IsMoving, new ActionAlwaysSucceed()))),
+                        new Action(ctx => gameObject.Interact()),
+                        new WaitContinue(
+                            2,
+                            ctx => StyxWoW.Me.IsCasting || (!ignoreCombat && StyxWoW.Me.IsActuallyInCombat),
+                            new ActionAlwaysSucceed()),
+                        new WaitContinue(
+                            channelTime,
+                            ctx => !StyxWoW.Me.IsCasting || (!ignoreCombat && StyxWoW.Me.IsActuallyInCombat),
+                            new ActionAlwaysSucceed()))));
+        }
 
         public static Composite CreateTalkToNpcContinue(CanRunDecoratorDelegate canRun, Func<WoWUnit> npc)
         {
@@ -236,37 +801,133 @@ namespace Bots.DungeonBuddy.Helpers
                 ));
         }
 
-        public static Composite CreateTankTalkToThenEscortNpc(CanRunDecoratorDelegate canRun, Func<WoWUnit> npc, float range, bool waitToTalk, int gossipIndex, Func<WoWPoint> waitLocation)
-        {
-            return new Decorator(ctx => canRun(ctx) && StyxWoW.Me.IsTank(), new ActionAlwaysSucceed()); 
-        }
-
         public static void MarkAsDead(this WoWUnit unit)
         {
             if (unit != null) BossManager.MarkBossDead(unit.Entry);
         }
 
-        public static Composite CreateTankAgainstObject(Func<WoWGameObject> obj)
+        public static Composite CreateTankAgainstObject(
+            CanRunDecoratorDelegate canRun,
+            Func<WoWPoint> objectLocationToTankAt,
+            Func<float> objectRadius)
         {
-            return new Decorator(ctx => StyxWoW.Me.IsTank(), new ActionAlwaysSucceed());
+            WoWPoint tankPoint = WoWPoint.Zero;
+
+            return new Decorator(
+                ctx => canRun(ctx)
+                    && StyxWoW.Me.IsTank()
+                    && StyxWoW.Me.IsActuallyInCombat
+                    && StyxWoW.Me.GotTarget,
+                new PrioritySelector(
+                    ctx =>
+                    {
+                        tankPoint = WoWMathHelper.CalculatePointFrom(
+                            StyxWoW.Me.CurrentTarget.Location,
+                            objectLocationToTankAt(),
+                            objectRadius());
+                        return ctx;
+                    },
+                    new Decorator(
+                        ctx => StyxWoW.Me.Location.Distance2DSqr(tankPoint) > 100f,
+                        new Action(ctx => Navigator.GetRunStatusFromMoveResult(
+                            ControlledMoveTo(tankPoint)))),
+                    new Decorator(
+                        ctx => StyxWoW.Me.Location.Distance2DSqr(tankPoint) > 2.25f
+                            && StyxWoW.Me.Location.Distance2DSqr(tankPoint) <= 100f,
+                        new Action(ctx => WoWMovement.ClickToMove(tankPoint)))));
         }
 
-        public static Composite CreateTankAgainstObject(CanRunDecoratorDelegate canRun, Func<WoWGameObject> obj, float range)
+        public static Composite CreateTurninQuest(uint npcId)
         {
-            return new Decorator(ctx => canRun(ctx) && StyxWoW.Me.IsTank(), new ActionAlwaysSucceed());
+            return CreateTurninQuest(npcId, 1, 1);
         }
 
-        public static Composite CreateTankAgainstObject(CanRunDecoratorDelegate canRun, Func<WoWPoint> objectLocationToTankAt, Func<float> objectRadius)
+        public static Composite CreateTurninQuest(uint npcId, int rewardIndex)
         {
-            return new Decorator(ctx => canRun(ctx) && StyxWoW.Me.IsTank(), new ActionAlwaysSucceed());
+            return CreateTurninQuest(npcId, 1, rewardIndex);
         }
 
-        public static Composite CreateTurninQuest(uint npcId) => new ActionAlwaysSucceed();
-        public static Composite CreateTurninQuest(uint npcId, int rewardIndex) => new ActionAlwaysSucceed();
-        public static Composite CreateTurninQuest(uint npcId, int gossipIndex, int rewardIndex) => new ActionAlwaysSucceed();
+        public static Composite CreateTurninQuest(uint npcId, int gossipIndex, int rewardIndex)
+        {
+            WoWUnit questGiver = null;
+
+            return new Sequence(
+                ctx => questGiver = ObjectManager.GetObjectsOfType<WoWUnit>()
+                    .FirstOrDefault(unit => unit.Entry == npcId),
+
+                new DecoratorContinue(
+                    ctx => questGiver != null && questGiver.DistanceSqr > 16.0,
+                    CreateMoveToContinue(ctx => true, npcId, false)),
+
+                new DecoratorContinue(
+                    ctx => questGiver != null
+                        && !QuestFrame.Instance.IsVisible
+                        && !GossipFrame.Instance.IsVisible,
+                    new Sequence(
+                        new Action(ctx => questGiver.Interact()),
+                        new WaitContinue(
+                            4,
+                            ctx => QuestFrame.Instance.IsVisible || GossipFrame.Instance.IsVisible,
+                            new ActionAlwaysSucceed()))),
+
+                new DecoratorContinue(
+                    ctx => questGiver != null && GossipFrame.Instance.IsVisible,
+                    new Sequence(
+                        new Action(ctx => GossipFrame.Instance.SelectActiveQuest(gossipIndex - 1)),
+                        new WaitContinue(4, ctx => QuestFrame.Instance.IsVisible, new ActionAlwaysSucceed()))),
+
+                new DecoratorContinue(
+                    ctx => questGiver != null && QuestFrame.Instance.IsVisible,
+                    new Sequence(
+                        new Action(ctx => Lua.DoString(
+                            "if QuestFrameCompleteButton:IsVisible() then QuestFrameCompleteButton:Click() end")),
+                        new WaitContinue(1, ctx => false, new ActionAlwaysSucceed()),
+                        new Action(ctx => Lua.DoString(
+                            "if GetNumQuestChoices() > 0 then QuestInfoItem{0}:Click() end", rewardIndex)),
+                        new Action(ctx => QuestFrame.Instance.CompleteQuest()),
+                        new WaitContinue(2, ctx => false, new ActionAlwaysSucceed()))));
+        }
         
-        public static Composite CreatePickupQuest(uint npcId) => new ActionAlwaysSucceed();
-        public static Composite CreatePickupQuest(uint npcId, int questIndex) => new ActionAlwaysSucceed();
+        public static Composite CreatePickupQuest(uint npcId)
+        {
+            return CreatePickupQuest(npcId, 1);
+        }
+
+        public static Composite CreatePickupQuest(uint npcId, int questIndex)
+        {
+            WoWUnit questGiver = null;
+
+            return new Sequence(
+                ctx => questGiver = ObjectManager.GetObjectsOfType<WoWUnit>()
+                    .FirstOrDefault(unit => unit.Entry == npcId),
+
+                new DecoratorContinue(
+                    ctx => questGiver != null && questGiver.DistanceSqr > 16.0,
+                    CreateMoveToContinue(ctx => true, npcId, false)),
+
+                new DecoratorContinue(
+                    ctx => questGiver != null
+                        && !QuestFrame.Instance.IsVisible
+                        && !GossipFrame.Instance.IsVisible,
+                    new Sequence(
+                        new Action(ctx => questGiver.Interact()),
+                        new WaitContinue(
+                            4,
+                            ctx => QuestFrame.Instance.IsVisible || GossipFrame.Instance.IsVisible,
+                            new ActionAlwaysSucceed()))),
+
+                new DecoratorContinue(
+                    ctx => questGiver != null && GossipFrame.Instance.IsVisible,
+                    new Sequence(
+                        new Action(ctx => GossipFrame.Instance.SelectAvailableQuest(questIndex - 1)),
+                        new WaitContinue(4, ctx => QuestFrame.Instance.IsVisible, new ActionAlwaysSucceed()))),
+
+                new DecoratorContinue(
+                    ctx => questGiver != null && QuestFrame.Instance.IsVisible,
+                    new Sequence(
+                        new Action(ctx => QuestFrame.Instance.AcceptQuest()),
+                        new WaitContinue(2, ctx => false, new ActionAlwaysSucceed()))));
+        }
 
         public static void BuyItem(uint itemId, int amount)
         {
@@ -429,7 +1090,36 @@ namespace Bots.DungeonBuddy.Helpers
 
         public static Composite CreateWaitAtLocationUntilTankPulled(Func<WoWPoint> loc) => CreateWaitAtLocationUntilTankPulled(ctx => true, loc, 5f);
 
-        public static Composite CreateLosLocation(CanRunDecoratorDelegate canRun, Func<WoWPoint> locationToLos, Func<WoWPoint> objectLocationToLosAt, Func<float> objectRadius) => new ActionAlwaysSucceed();
+        public static Composite CreateLosLocation(
+            CanRunDecoratorDelegate canRun,
+            Func<WoWPoint> locationToLos,
+            Func<WoWPoint> objectLocationToLosAt,
+            Func<float> objectRadius)
+        {
+            WoWPoint losPoint = WoWPoint.Zero;
+
+            return new Decorator(
+                canRun,
+                new PrioritySelector(
+                    ctx =>
+                    {
+                        losPoint = WoWMathHelper.CalculatePointFrom(
+                            locationToLos(),
+                            objectLocationToLosAt(),
+                            -objectRadius());
+                        return ctx;
+                    },
+                    new Decorator(
+                        ctx => Navigator.CanNavigateFully(StyxWoW.Me.Location, losPoint),
+                        new PrioritySelector(
+                            new Decorator(
+                                ctx => StyxWoW.Me.Location.Distance2DSqr(losPoint) > 16f,
+                                new Action(ctx => Navigator.GetRunStatusFromMoveResult(
+                                    ControlledMoveTo(losPoint)))),
+                            new Decorator(
+                                ctx => StyxWoW.Me.Location.Distance2DSqr(losPoint) <= 16f,
+                                new Action(ctx => DisableMovement(() => canRun(null))))))));
+        }
         
         public static Composite CreateLosLocation(CanRunDecoratorDelegate canRun, Func<WoWPoint> loc)
         {
@@ -454,14 +1144,15 @@ namespace Bots.DungeonBuddy.Helpers
             return CreateForceJump(canRun, from, to);
         }
 
-        public static Composite CreateForceJump(CanRunDecoratorDelegate canRun, bool actuallyJump, WoWPoint from, WoWPoint to)
+        public static Composite CreateForceJump(CanRunDecoratorDelegate canRun, bool dismissPet, WoWPoint from, WoWPoint to)
         {
+            WoWPoint jumpTrack = WoWPoint.Zero;
             return new PrioritySelector(
                 new Decorator(canRun,
                     new Sequence(
                         new DecoratorContinue(ctx => StyxWoW.Me.Location.DistanceSqr(from) > 25f,
                             CreateMoveToContinue(() => from)),
-                        new DecoratorContinue(ctx => StyxWoW.Me.Class == WoWClass.Hunter && StyxWoW.Me.GotAlivePet,
+                        new DecoratorContinue(ctx => dismissPet && StyxWoW.Me.Class == WoWClass.Hunter && StyxWoW.Me.GotAlivePet,
                             new Sequence(
                                 new DecoratorContinue(ctx => StyxWoW.Me.IsMoving,
                                     new Sequence(
@@ -469,16 +1160,55 @@ namespace Bots.DungeonBuddy.Helpers
                                         new WaitContinue(2, ctx => !StyxWoW.Me.IsMoving, new ActionAlwaysSucceed()))),
                                 new Action(ctx => SpellManager.Cast("Dismiss Pet")),
                                 new WaitContinue(3, ctx => false, new ActionAlwaysSucceed()))),
-                        new DecoratorContinue(ctx => true,
-                            new Sequence(
-                                new Action(ctx => Lua.DoString("PetDismiss()")),
-                                new Action(ctx => WoWMovement.ClickToMove(to)),
-                                new WaitContinue(TimeSpan.FromMilliseconds(150.0), ctx => false, new ActionAlwaysSucceed()),
-                                new DecoratorContinue(ctx => actuallyJump,
-                                    new Action(ctx => WoWMovement.Move(WoWMovement.MovementDirection.JumpAscend))),
-                                new WaitContinue(2, ctx => false, new ActionAlwaysSucceed()),
-                                new DecoratorContinue(ctx => actuallyJump,
-                                    new Action(ctx => WoWMovement.MoveStop(WoWMovement.MovementDirection.JumpAscend))))))));
+                        new DecoratorContinue(ctx => dismissPet && StyxWoW.Me.Class != WoWClass.Hunter && StyxWoW.Me.GotAlivePet,
+                            new Action(ctx => Lua.DoString("PetDismiss()"))),
+                        new Action(ctx => WoWMovement.ClickToMove(to)),
+                        new Action(ctx => jumpTrack = (WoWMovement.ActiveMover ?? StyxWoW.Me).Location),
+                        new WaitContinue(TimeSpan.FromMilliseconds(100.0), ctx => false, new ActionAlwaysSucceed()),
+                        new WaitContinue(TimeSpan.FromMilliseconds(2000.0), ctx => ReachedJumpEdge(ref jumpTrack, from), new ActionAlwaysSucceed()),
+                        new Action(ctx => WoWMovement.Move(WoWMovement.MovementDirection.JumpAscend)),
+                        new WaitContinue(TimeSpan.FromMilliseconds(200.0), ctx => false, new ActionAlwaysSucceed()),
+                        new Action(ctx => WoWMovement.MoveStop(WoWMovement.MovementDirection.JumpAscend)),
+                        new WaitContinue(2, ctx => !(WoWMovement.ActiveMover ?? StyxWoW.Me).IsFalling, new ActionAlwaysSucceed()),
+                        new Action(ctx => Navigator.Clear()))));
+        }
+
+        private static bool ReachedJumpEdge(ref WoWPoint tracked, WoWPoint jumpAt)
+        {
+            WoWPoint location = (WoWMovement.ActiveMover ?? StyxWoW.Me).Location;
+            float trackedSqr = tracked.DistanceSqr(jumpAt);
+            float currentSqr = location.DistanceSqr(jumpAt);
+            if (currentSqr > trackedSqr)
+            {
+                Logging.WriteDiagnostic("Jumping because distance increased (old: {0:F3}, cur: {1:F3})", Math.Sqrt(trackedSqr), Math.Sqrt(currentSqr));
+                return true;
+            }
+            if ((tracked - jumpAt).Dot(location - jumpAt) < 0f)
+            {
+                Logging.WriteDiagnostic("Jumping because direction flipped");
+                return true;
+            }
+            float step = 7f / TreeRoot.TicksPerSecond;
+            if (currentSqr < (step + 0.5f) * (step + 0.5f))
+            {
+                Logging.WriteDiagnostic("Jumping because we are close enough ({0:F3} yards, {1:F3} tolerance)", location.Distance(jumpAt), step + 0.5f);
+                return true;
+            }
+            if (Navigator.IsNavigatorLoaded)
+            {
+                WoWPoint ahead = WoWMathHelper.GetPointAt(location, step + 0.5f, StyxWoW.Me.Rotation, 0f);
+                var start = new System.Numerics.Vector3(location.X, location.Y, location.Z);
+                var end = new System.Numerics.Vector3(ahead.X, ahead.Y, ahead.Z);
+                var factionArea = StyxWoW.Me.IsHorde ? Tripper.Navigation.AreaType.Horde : Tripper.Navigation.AreaType.Alliance;
+                if (Navigator.TripperNavigator.RaycastBlocked((uint)StyxWoW.Me.MapId, start, end, out float hitT, factionArea)
+                    && hitT >= 0.01f && hitT < 1f)
+                {
+                    Logging.WriteDiagnostic("Jumping because we are close to edge of mesh");
+                    return true;
+                }
+            }
+            tracked = location;
+            return false;
         }
 
         public static Composite CreateForceJump(CanRunDecoratorDelegate canRun, WoWPoint from, WoWPoint to)
@@ -486,14 +1216,41 @@ namespace Bots.DungeonBuddy.Helpers
             return CreateJumpDown(canRun, false, from, to);
         }
 
-        public static Composite CreateRunAwayFromLocation(CanRunDecoratorDelegate canRun, Func<WoWPoint> loc, float distance)
+        public static Composite CreateRunAwayFromLocation(CanRunDecoratorDelegate canRun, float maxDistanceToRun, Func<WoWPoint> locationSelector)
         {
-            return new Decorator(canRun, new ActionAlwaysSucceed());
+            return CreateRunAwayFromLocation(canRun, null, 40f, () => maxDistanceToRun, locationSelector);
         }
 
-        public static Composite CreateRunAwayFromLocation(CanRunDecoratorDelegate canRun, float distance, Func<WoWPoint> loc)
+        public static Composite CreateRunAwayFromLocation(CanRunDecoratorDelegate canRun, Func<float> maxDistanceToRunSelector, Func<WoWPoint> locationSelector)
         {
-            return CreateRunAwayFromLocation(canRun, loc, distance);
+            return CreateRunAwayFromLocation(canRun, null, 40f, maxDistanceToRunSelector, locationSelector);
+        }
+
+        public static Composite CreateRunAwayFromLocation(CanRunDecoratorDelegate canRun, Func<WoWPoint> leashPointSelector, float leashRadius, float maxDistanceToRun, Func<WoWPoint> locationSelector)
+        {
+            return CreateRunAwayFromLocation(canRun, leashPointSelector, leashRadius, () => maxDistanceToRun, locationSelector);
+        }
+
+        public static Composite CreateRunAwayFromLocation(CanRunDecoratorDelegate canRun, Func<WoWPoint> leashPointSelector, float leashRadius, Func<float> maxDistanceToRunSelector, Func<WoWPoint> locationSelector)
+        {
+            DungeonManager.CurrentDungeon?.AddAvoid(
+                new AvoidInfo(canRun, locationSelector, maxDistanceToRunSelector, leashPointSelector, leashRadius, true));
+
+            AvoidCluster cluster = null;
+
+            return new PrioritySelector(
+                new ContextChangeHandler(ctx =>
+                {
+                    cluster = Bots.DungeonBuddy.Avoidance.AvoidanceManager.AvoidClusters
+                        .FirstOrDefault(c => c.Any(avoid =>
+                            avoid.IsPointInAvoid(StyxWoW.Me.Location) && avoid is AvoidLocation));
+
+                    return cluster;
+                }),
+                new Decorator(
+                    ctx => canRun(ctx) && cluster != null,
+                    new Action(ctx => Navigator.GetRunStatusFromMoveResult(
+                        Bots.DungeonBuddy.Avoidance.Helpers.MoveAwayFromCluster(cluster)))));
         }
 
         public static Composite CreateJumpDown(CanRunDecoratorDelegate canRun, WoWPoint from, WoWPoint to)
@@ -533,14 +1290,24 @@ namespace Bots.DungeonBuddy.Helpers
                                             new Action(ctx => WoWMovement.MoveStop(WoWMovement.MovementDirection.JumpAscend))))))))));
         }
 
-        public static Composite CreateJumpDown(CanRunDecoratorDelegate canRun, Func<WoWPoint> pointSelector)
+        private static WoWPoint GetPointBehindUnit(Func<WoWUnit> unitSelector)
         {
-            return new Decorator(canRun, new ActionAlwaysSucceed());
+            WoWUnit unit = unitSelector();
+
+            WoWPoint closePoint = WoWMathHelper.CalculatePointBehind(unit.Location, unit.Rotation, 3f);
+            WoWPoint meleePoint = WoWMathHelper.CalculatePointBehind(unit.Location, unit.Rotation, unit.MeleeRange());
+
+            return StyxWoW.Me.Location.DistanceSqr(closePoint) >= StyxWoW.Me.Location.DistanceSqr(meleePoint)
+                ? meleePoint
+                : closePoint;
         }
 
         public static Composite GetBehindUnit(CanRunDecoratorDelegate canRun, Func<WoWUnit> unit)
         {
-            return new Decorator(canRun, new ActionAlwaysSucceed());
+            return new PrioritySelector(
+                new Decorator(
+                    canRun,
+                    new Action(ctx => Navigator.MoveTo(GetPointBehindUnit(unit)))));
         }
 
         // ═══════════════════════════════════════════════════════════
@@ -591,17 +1358,185 @@ namespace Bots.DungeonBuddy.Helpers
             return new Decorator(canRun, new ActionAlwaysSucceed());
         }
         
-        public static Composite CreateTankTalkToThenEscortNpc(int escortNpcId, int gossipIndex, WoWPoint escortNpcLocation, WoWPoint endLocation, float followDistance, Func<bool> isDoneCondition) => new ActionAlwaysSucceed();
-        public static Composite CreateTankTalkToThenEscortNpc(int escortNpcId, WoWPoint escortNpcLocation, WoWPoint endLocation) => new ActionAlwaysSucceed();
-        
-        public static Composite ControlledMoveTo(Func<WoWPoint> loc)
+        [Obsolete("Use CreateTankTalkToThenEscortNpc instead.")]
+        public static Composite CreateTankTalkToThenEscortUntilMob(int talkMob, WoWPoint talkMobLocation, params uint[] unitIds)
         {
-            return new Action(ctx => { Navigator.MoveTo(loc()); return RunStatus.Success; });
+            WoWUnit talkUnit = ObjectManager.GetObjectsOfType<WoWUnit>()
+                .Where(unit => unit.Entry == (uint)talkMob)
+                .OrderByDescending(unit => unit.DistanceSqr)
+                .FirstOrDefault();
+
+            WoWUnit deadMob = ObjectManager.GetObjectsOfType<WoWUnit>()
+                .Where(unit => unitIds.Contains(unit.Entry) && unit.Dead)
+                .OrderByDescending(unit => unit.DistanceSqr)
+                .FirstOrDefault();
+
+            if (Tank != StyxWoW.Me
+                || deadMob != null
+                || talkUnit == null
+                || Profiles.ProfileManager.CurrentProfile.BossEncounters.Any(
+                    boss => unitIds.Contains(boss.Entry) && !boss.IsAlive))
+            {
+                Profiles.Handlers.Boss aliveBoss = Profiles.ProfileManager.CurrentProfile.BossEncounters
+                    .FirstOrDefault(boss => unitIds.Contains(boss.Entry) && boss.IsAlive);
+
+                if (aliveBoss != null)
+                    aliveBoss.MarkAsDead();
+
+                return new PrioritySelector();
+            }
+
+            return new PrioritySelector(
+                new Decorator(
+                    ctx => Convert.ToInt32(talkUnit.Location.X) == Convert.ToInt32(talkMobLocation.X)
+                        && Convert.ToInt32(talkUnit.Location.Y) == Convert.ToInt32(talkMobLocation.Y)
+                        && Convert.ToInt32(talkUnit.Location.Z) == Convert.ToInt32(talkMobLocation.Z),
+                    new PrioritySelector(
+                        new Decorator(
+                            ctx => talkUnit.InteractRange > talkUnit.Distance,
+                            new Sequence(
+                                new Action(ctx => talkUnit.Interact()),
+                                new WaitContinue(1, ctx => false, new ActionAlwaysSucceed()),
+                                new Action(ctx => GossipFrame.Instance.SelectGossipOption(0)))),
+                        new Decorator(
+                            ctx => talkUnit.InteractRange < talkUnit.Distance,
+                            new Action(ctx => Navigator.MoveTo(talkUnit.Location))))),
+                new Decorator(
+                    ctx => talkUnit.Location != talkMobLocation,
+                    new PrioritySelector(
+                        new Decorator(
+                            ctx => PartyIncludingMe.All(player => !player.Combat),
+                            new Action(ctx => Navigator.MoveTo(talkUnit.Location))))));
         }
 
-        public static Composite ControlledMoveTo(WoWPoint loc)
+        public static Composite CreateTankTalkToThenEscortNpc(int escortNpcId, WoWPoint escortNpcLocation, WoWPoint endLocation)
         {
-            return new Action(ctx => { Navigator.MoveTo(loc); return RunStatus.Success; });
+            return CreateTankTalkToThenEscortNpc(escortNpcId, 0, escortNpcLocation, endLocation, 10f, () => true);
+        }
+
+        public static Composite CreateTankTalkToThenEscortNpc(
+            int escortNpcId,
+            int gossipIndex,
+            WoWPoint escortNpcLocation,
+            WoWPoint endLocation,
+            float followDistance,
+            Func<bool> isDoneCondition)
+        {
+            WoWUnit escortNpc = null;
+            WoWUnit[] attackers = Array.Empty<WoWUnit>();
+            bool npcAtStart = false;
+            bool escortDone = false;
+
+            return new Decorator(
+                ctx => !escortDone,
+                new PrioritySelector(
+                    ctx =>
+                    {
+                        if (!EventInProcess)
+                            EventInProcess = true;
+
+                        escortNpc = ObjectManager.GetObjectsOfType<WoWUnit>()
+                            .FirstOrDefault(unit => unit.IsAlive && unit.Entry == (uint)escortNpcId);
+
+                        npcAtStart = escortNpc != null
+                            && escortNpc.Location.DistanceSqr(escortNpcLocation) < 25f;
+
+                        return escortNpc;
+                    },
+
+                    new Decorator(
+                        ctx => escortNpc == null,
+                        new PrioritySelector(
+                            new Action(ctx => MoveTankTo(escortNpcLocation)),
+                            new Decorator(
+                                ctx => StyxWoW.Me.Location.DistanceSqr(escortNpcLocation) < 25f
+                                    && Targeting.Instance.FirstUnit == null,
+                                new ActionAlwaysSucceed()))),
+
+                    new Decorator(
+                        ctx => escortNpc != null,
+                        new PrioritySelector(
+                            new Decorator(
+                                ctx => GossipFrame.Instance.IsVisible,
+                                new Sequence(
+                                    new WaitContinue(1, ctx => false, new ActionAlwaysSucceed()),
+                                    new Action(ctx => GossipFrame.Instance.SelectGossipOption(gossipIndex)))),
+
+                            new Decorator(
+                                ctx => npcAtStart,
+                                new PrioritySelector(
+                                    new Decorator(
+                                        ctx => escortNpc.WithinInteractRange,
+                                        new Action(ctx => escortNpc.Interact())),
+                                    new Decorator(
+                                        ctx => !escortNpc.WithinInteractRange
+                                            && BotPoi.Current.Type != PoiType.Hotspot,
+                                        new Sequence(
+                                            new Action(ctx => TreeRoot.StatusText =
+                                                string.Format("Talking to {0}", escortNpc.Name)),
+                                            new Action(ctx => MoveTankTo(escortNpc.Location)))))),
+
+                            new Decorator(
+                                ctx => !npcAtStart,
+                                new PrioritySelector(
+                                    ctx => attackers = ObjectManager.GetObjectsOfType<WoWUnit>()
+                                        .Where(unit => unit != escortNpc && unit.CurrentTarget == escortNpc)
+                                        .OrderBy(unit => unit.DistanceSqr)
+                                        .ToArray(),
+
+                                    new Decorator(
+                                        ctx => StyxWoW.Me.IsTank()
+                                            && attackers.Any()
+                                            && BotPoi.Current.Type != PoiType.Kill,
+                                        new Action(ctx => BotPoi.Current = new BotPoi(attackers[0], PoiType.Kill))),
+
+                                    new Decorator(
+                                        ctx => escortNpc.Location.DistanceSqr(endLocation) < 100f
+                                            && !escortNpc.Combat
+                                            && isDoneCondition(),
+                                        new Sequence(
+                                            new Action(ctx => escortDone = true),
+                                            new Action(ctx => EventInProcess = false))),
+
+                                    new Decorator(
+                                        ctx => StyxWoW.Me.IsTank() && Targeting.Instance.FirstUnit == null,
+                                        new PrioritySelector(
+                                            CreateMountBehavior(() => escortNpc.Location),
+                                            new Decorator(
+                                                ctx => escortNpc.DistanceSqr > followDistance * followDistance
+                                                    || !escortNpc.InLineOfSight,
+                                                new Action(ctx => Navigator.GetRunStatusFromMoveResult(
+                                                    Navigator.MoveTo(escortNpc.Location)))),
+                                            new ActionAlwaysSucceed()))))))));
+        }
+        
+        public static MoveResult ControlledMoveTo(WoWPoint location)
+        {
+            bool sameDestination = location == _controlledDestination;
+
+            if (MovementEnabled)
+            {
+                Navigator.PlayerMover = new ClickToMoveMover();
+                if (_savedStuckHandler != null)
+                    Navigator.NavigationProvider.StuckHandler = _savedStuckHandler;
+            }
+
+            MoveResult moveResult = Navigator.MoveTo(location);
+
+            if (!sameDestination)
+            {
+                _movementBlocks.RemoveAll(block => block.Type == MovementBlockType.MoveTo);
+                _movementBlocks.Add(new MovementBlock(
+                    () => StyxWoW.Me.Location.DistanceSqr(location) > 16f && StyxWoW.Me.IsAlive,
+                    MovementBlockType.MoveTo));
+            }
+
+            Navigator.PlayerMover = new NoMover();
+            _savedStuckHandler ??= Navigator.NavigationProvider.StuckHandler;
+            Navigator.NavigationProvider.StuckHandler = new NoUnstuck();
+            _controlledDestination = location;
+
+            return moveResult;
         }
 
         // ═══════════════════════════════════════════════════════════
@@ -659,24 +1594,6 @@ namespace Bots.DungeonBuddy.Helpers
         // ═══════════════════════════════════════════════════════════
         // PARTY ROLE DETECTION
         // ═══════════════════════════════════════════════════════════
-
-        /// <summary>
-        /// Obtient le rôle du joueur actuel
-        /// </summary>
-        public static PartyRole MyRole
-        {
-            get
-            {
-                string role = Lua.GetReturnVal<string>("return UnitGroupRolesAssigned('player')", 0);
-                return role switch
-                {
-                    "TANK" => PartyRole.Tank,
-                    "HEALER" => PartyRole.Healer,
-                    "DAMAGER" => PartyRole.Dps,
-                    _ => PartyRole.Dps
-                };
-            }
-        }
 
         /// <summary>
         /// Le joueur est le tank du groupe
@@ -798,12 +1715,94 @@ namespace Bots.DungeonBuddy.Helpers
         /// </summary>
         public static bool EventInProcess { get; set; }
 
-        // Movement control helper (simple toggle for UI compatibility)
-        private static bool _movementEnabled = true;
-        public static bool MovementEnabled => _movementEnabled;
-        public static void ToggleMovement()
+        private enum MovementBlockType
         {
-            _movementEnabled = !_movementEnabled;
+            MoveTo,
+            DisableMovement
+        }
+
+        private sealed class MovementBlock
+        {
+            public MovementBlock(Func<bool> condition, MovementBlockType type)
+            {
+                Condition = condition;
+                Type = type;
+            }
+
+            public Func<bool> Condition { get; private set; }
+
+            public MovementBlockType Type { get; private set; }
+        }
+
+        public class NoMover : IPlayerMover
+        {
+            public void Move(WoWMovement.MovementDirection direction)
+            {
+            }
+
+            public void MoveStop()
+            {
+            }
+
+            public void MoveTowards(WoWPoint location)
+            {
+            }
+        }
+
+        public class NoUnstuck : StuckHandler
+        {
+            public override bool IsStuck()
+            {
+                return false;
+            }
+
+            public override void Reset()
+            {
+            }
+
+            public override void Unstick()
+            {
+            }
+        }
+
+        private static readonly List<MovementBlock> _movementBlocks = new List<MovementBlock>();
+        private static StuckHandler? _savedStuckHandler;
+        private static WoWPoint _controlledDestination = WoWPoint.Zero;
+
+        public static bool MovementEnabled => !(Navigator.PlayerMover is NoMover);
+
+        internal static void UpdateMovementBlocks()
+        {
+            try
+            {
+                _movementBlocks.RemoveAll(block => !block.Condition() || !StyxWoW.Me.IsAlive);
+
+                if (_movementBlocks.Any())
+                {
+                    if (_controlledDestination != WoWPoint.Zero)
+                    {
+                        if (!MovementEnabled)
+                            Navigator.PlayerMover = new ClickToMoveMover();
+
+                        Navigator.MoveTo(_controlledDestination);
+                        Navigator.PlayerMover = new NoMover();
+
+                        if (Navigator.NavigationProvider != null)
+                            Navigator.NavigationProvider.StuckHandler = new NoUnstuck();
+                    }
+
+                    Navigator.NavigationProvider?.StuckHandler?.Reset();
+                }
+                else if (!MovementEnabled)
+                {
+                    RestoreMovement();
+                    _controlledDestination = WoWPoint.Zero;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteDebug(ex.ToString());
+            }
         }
 
         // ═══════════════════════════════════════════════════════════
@@ -911,10 +1910,60 @@ namespace Bots.DungeonBuddy.Helpers
         public static Composite CreateRunAwayFromBad(
             CanRunDecoratorDelegate condition,
             float radius,
+            Predicate<WoWObject> objectSelector) =>
+            CreateRunAwayFromBad(condition, () => radius, objectSelector);
+
+        public static Composite CreateRunAwayFromBad(
+            CanRunDecoratorDelegate condition,
+            Func<float> maxDistanceToRunSelector,
+            params uint[] objectEntries) =>
+            CreateRunAwayFromBad(condition, maxDistanceToRunSelector, obj => objectEntries.Contains(obj.Entry));
+
+        public static Composite CreateRunAwayFromBad(
+            CanRunDecoratorDelegate condition,
+            Func<WoWPoint> leashPointSelector,
+            float leashRadius,
+            float maxDistanceToRun,
+            params uint[] objectEntries) =>
+            CreateRunAwayFromBad(
+                condition,
+                leashPointSelector,
+                leashRadius,
+                () => maxDistanceToRun,
+                obj => objectEntries.Contains(obj.Entry));
+
+        public static Composite CreateRunAwayFromBad(
+            CanRunDecoratorDelegate condition,
+            Func<WoWPoint> leashPointSelector,
+            float leashRadius,
+            Func<float> maxDistanceToRunSelector,
+            params uint[] objectEntries) =>
+            CreateRunAwayFromBad(
+                condition,
+                leashPointSelector,
+                leashRadius,
+                maxDistanceToRunSelector,
+                obj => objectEntries.Contains(obj.Entry));
+
+        public static Composite CreateRunAwayFromBad(
+            CanRunDecoratorDelegate condition,
+            Func<WoWPoint> leashPointSelector,
+            float leashRadius,
+            Func<float> maxDistanceToRunSelector,
+            Predicate<WoWObject> objectSelector) =>
+            CreateRunAwayFromBad(
+                ctx => condition(ctx) &&
+                       leashPointSelector != null &&
+                       StyxWoW.Me.Location.DistanceSqr(leashPointSelector()) < leashRadius * leashRadius,
+                maxDistanceToRunSelector,
+                objectSelector);
+
+        public static Composite CreateRunAwayFromBad(
+            CanRunDecoratorDelegate condition,
+            Func<float> maxDistanceToRunSelector,
             Predicate<WoWObject> objectSelector)
         {
             WoWObject badThing = null;
-            float radiusSqr = radius * radius;
 
             return new Decorator(
                 ctx =>
@@ -922,8 +1971,10 @@ namespace Bots.DungeonBuddy.Helpers
                     if (!condition(ctx))
                         return false;
 
+                    float radius = maxDistanceToRunSelector();
+
                     badThing = ObjectManager.ObjectList
-                        .Where(obj => objectSelector(obj) && obj.DistanceSqr < radiusSqr)
+                        .Where(obj => objectSelector(obj) && obj.DistanceSqr < radius * radius)
                         .OrderBy(obj => obj.DistanceSqr)
                         .FirstOrDefault();
 
@@ -931,7 +1982,9 @@ namespace Bots.DungeonBuddy.Helpers
                 },
                 new Action(ctx =>
                 {
-                    var safePoint = Bots.DungeonBuddy.Avoidance.AvoidanceManager.GetSafePoint(StyxWoW.Me.Location, radius);
+                    var safePoint = Bots.DungeonBuddy.Avoidance.AvoidanceManager.GetSafePoint(
+                        StyxWoW.Me.Location,
+                        maxDistanceToRunSelector());
                     Navigator.MoveTo(safePoint);
                     return RunStatus.Running;
                 })
@@ -945,47 +1998,55 @@ namespace Bots.DungeonBuddy.Helpers
         /// <summary>
         /// Le tank doit faire face away du groupe (pour cleave/breath)
         /// </summary>
-        public static Composite CreateTankFaceAwayGroupUnit(float distance = 10f)
+        public static Composite CreateTankFaceAwayGroupUnit(int maxDistance)
         {
-            return new Decorator(
-                ctx => StyxWoW.Me.IsTank() && StyxWoW.Me.CurrentTarget != null,
-                new Action(ctx =>
-                {
-                    var target = StyxWoW.Me.CurrentTarget;
-                    var groupCenter = GetGroupCenter();
-                    
-                    // Position opposée au groupe
-                    var directionFromGroup = (StyxWoW.Me.Location - groupCenter);
-                    directionFromGroup.Normalize();
-                    
-                    var tankPosition = target.Location + (directionFromGroup * distance);
-                    
-                    if (StyxWoW.Me.Location.DistanceSqr(tankPosition) > 3*3)
-                    {
-                        Navigator.MoveTo(tankPosition);
-                        return RunStatus.Running;
-                    }
-                    
-                    return RunStatus.Failure;
-                })
-            );
+            return CreateTankFaceAwayGroupUnit(StyxWoW.Me.CurrentTarget, maxDistance);
         }
 
-        private static WoWPoint GetGroupCenter()
+        public static Composite CreateTankFaceAwayGroupUnit(WoWUnit unit, int maxDistance)
         {
-            var members = StyxWoW.Me.GroupInfo.RaidMembers
-                .Select(m => m.ToPlayer())
-                .Where(p => p != null && p.IsAlive && !p.IsMe)
-                .ToList();
+            int maxDistanceSqr = maxDistance * maxDistance;
 
-            if (members.Count == 0)
-                return StyxWoW.Me.Location;
+            return new Action(ctx =>
+            {
+                if (unit == null || !StyxWoW.Me.IsTank() || !StyxWoW.Me.IsActuallyInCombat || unit.IsFriendly)
+                    return RunStatus.Failure;
 
-            float x = members.Average(p => p.Location.X);
-            float y = members.Average(p => p.Location.Y);
-            float z = members.Average(p => p.Location.Z);
+                WoWPoint unitLocation = unit.Location;
 
-            return new WoWPoint(x, y, z);
+                if (!StyxWoW.Me.PartyMembers.Any(member =>
+                        unit.IsFacing(member) && member.Location.DistanceSqr(unitLocation) < maxDistanceSqr))
+                {
+                    return RunStatus.Failure;
+                }
+
+                float[] angles = StyxWoW.Me.PartyMembers
+                    .Where(member => member.Location.DistanceSqr(unitLocation) <= maxDistanceSqr)
+                    .Select(member => unitLocation.GetDirectionTo(member.Location))
+                    .Select(direction => (float)Math.Atan2(direction.Y, direction.X))
+                    .ToArray();
+
+                float midAngle = (angles.Max() + angles.Min()) / 2f;
+                float distance = Math.Min((float)unit.Distance, unit.MeleeRange());
+
+                WoWPoint destination = Avoidance.Helpers.SnapToNavHeight(
+                    WoWMathHelper.GetPointAt(unitLocation, distance, -midAngle, 0f));
+
+                if (StyxWoW.Me.Location.DistanceSqr(destination) <= 0.5
+                    || !Navigator.CanNavigateFully(StyxWoW.Me.Location, destination))
+                {
+                    return RunStatus.Failure;
+                }
+
+                Logger.Write("Facing {0} away from party", unit.Name);
+
+                if (StyxWoW.Me.Location.DistanceSqr(destination) <= Navigator.PathPrecision * Navigator.PathPrecision)
+                    WoWMovement.ClickToMove(destination);
+                else
+                    Navigator.MoveTo(destination);
+
+                return RunStatus.Success;
+            });
         }
 
         /// <summary>
@@ -1010,15 +2071,34 @@ namespace Bots.DungeonBuddy.Helpers
         /// <summary>
         /// Crée un behavior pour parler à un NPC
         /// </summary>
-        public static Composite CreateTalkToNpc(uint npcEntryId)
+        public static Composite CreateTalkToNpc(int unitId)
+        {
+            return CreateTalkToNpc(unitId, 0);
+        }
+
+        public static Composite CreateTalkToNpc(int unitId, int gossipIndex)
+        {
+            return CreateTalkToNpc(
+                () => ObjectManager.GetObjectsOfType<WoWUnit>()
+                    .Where(unit => unit.Entry == (uint)unitId)
+                    .OrderBy(unit => unit.DistanceSqr)
+                    .FirstOrDefault(),
+                gossipIndex);
+        }
+
+        public static Composite CreateTalkToNpc(Func<WoWUnit> unitSelector)
+        {
+            return CreateTalkToNpc(unitSelector, 0);
+        }
+
+        public static Composite CreateTalkToNpc(Func<WoWUnit> unitSelector, int gossipIndex)
         {
             WoWUnit npc = null;
 
             return new Decorator(
                 ctx =>
                 {
-                    npc = ObjectManager.GetObjectsOfType<WoWUnit>()
-                        .FirstOrDefault(u => u.Entry == npcEntryId && u.CanGossip);
+                    npc = unitSelector();
                     return npc != null && StyxWoW.Me.IsTank();
                 },
                 new Sequence(
@@ -1030,8 +2110,8 @@ namespace Bots.DungeonBuddy.Helpers
                         ctx => npc.DistanceSqr <= 5*5,
                         new Sequence(
                             new Action(ctx => npc.Interact()),
-                            new WaitContinue(2, ctx => GossipFrame.Instance.IsVisible, 
-                                new Action(ctx => GossipFrame.Instance.SelectGossipOption(0)))
+                            new WaitContinue(2, ctx => GossipFrame.Instance.IsVisible,
+                                new Action(ctx => GossipFrame.Instance.SelectGossipOption(gossipIndex)))
                         )
                     )
                 )
@@ -1058,7 +2138,7 @@ namespace Bots.DungeonBuddy.Helpers
                 // Talk to NPC to start escort
                 new Decorator(
                     ctx => npc != null && npc.Location.DistanceSqr(startLocation) < 10*10 && npc.CanGossip,
-                    CreateTalkToNpc(npcEntryId)
+                    CreateTalkToNpc((int)npcEntryId)
                 ),
                 // Follow NPC during escort
                 new Decorator(
@@ -1118,41 +2198,8 @@ namespace Bots.DungeonBuddy.Helpers
         /// </summary>
         public static Composite CreateInteractWithObject(Func<WoWGameObject> objectSelector)
         {
-            return new Decorator(
-                ctx => objectSelector() != null && objectSelector().CanUse(),
-                new Sequence(
-                    new Decorator(
-                        ctx => objectSelector().DistanceSqr > 5*5,
-                        new Action(ctx => Navigator.MoveTo(objectSelector().Location))
-                    ),
-                    new Decorator(
-                        ctx => objectSelector().DistanceSqr <= 5*5,
-                        new Action(ctx => objectSelector().Interact())
-                    )
-                )
-            );
+            return CreateInteractWithObject(objectSelector, 0, false);
         }
-
-        /// <summary>
-        /// Overload avec range + ignoreCombat — UP, Nexus, Violet Hold, HoS.
-        /// </summary>
-        public static Composite CreateInteractWithObject(
-            Func<WoWGameObject> objectSelector,
-            float range,
-            bool ignoreCombat) =>
-            new Decorator(
-                ctx => (ignoreCombat || !StyxWoW.Me.Combat) &&
-                       objectSelector() != null &&
-                       objectSelector().CanUse(),
-                new Sequence(
-                    new Decorator(
-                        ctx => objectSelector().DistanceSqr > range * range,
-                        new Action(ctx => Navigator.MoveTo(objectSelector().Location))),
-                    new Decorator(
-                        ctx => objectSelector().DistanceSqr <= range * range,
-                        new Action(ctx => objectSelector().Interact()))
-                )
-            );
 
         // ═══════════════════════════════════════════════════════════
         // UTILITY QUERIES
@@ -1169,7 +2216,7 @@ namespace Bots.DungeonBuddy.Helpers
         public static List<WoWUnit> GetUnfriendlyNpsAtLocation(
             Func<WoWPoint> locationSelector,
             float radius,
-            Func<WoWUnit, bool> filter)
+            Predicate<WoWUnit>? filter)
         {
             var location = locationSelector();
             float radiusSqr = radius * radius;
@@ -1488,7 +2535,7 @@ namespace Bots.DungeonBuddy.Helpers
         /// Tue les PNJ hostiles dans un rayon autour d'une position.
         /// Référence HB 4.3.4 ScriptHelpers.cs L395
         /// </summary>
-        public static Composite CreateClearArea(Func<WoWPoint> centerLocationSelector, float radius, Func<WoWUnit, bool> unitSelector)
+        public static Composite CreateClearArea(Func<WoWPoint> centerLocationSelector, float radius, Predicate<WoWUnit> unitSelector)
         {
             WoWUnit target = null;
             float radiusSqr = radius * radius;
@@ -1634,6 +2681,79 @@ namespace Bots.DungeonBuddy.Helpers
                     }
                 })
             );
+        }
+
+        public static float MeleeRange(this WoWUnit unit)
+        {
+            if (unit == null)
+                return 0f;
+
+            if (unit.IsPlayer)
+                return 3.5f;
+
+            return Math.Max(4.5f, StyxWoW.Me.CombatReach + 1f + unit.CombatReach);
+        }
+
+        public static float ActualMaxRange(this WoWSpell spell, WoWUnit unit)
+        {
+            if (spell.IsMeleeSpell)
+                return unit.MeleeRange();
+
+            if (spell.MaxRange == 0f)
+                return 0f;
+
+            if (unit == null)
+                return spell.MaxRange;
+
+            return spell.MaxRange + unit.CombatReach + 1f;
+        }
+
+        public static float ActualMinRange(this WoWSpell spell, WoWUnit unit)
+        {
+            if (spell.MinRange == 0f)
+                return 0f;
+
+            if (unit == null)
+                return spell.MinRange;
+
+            return spell.MinRange + unit.CombatReach + 1.66666675f;
+        }
+
+        public static void Cancel(this WoWAura aura)
+        {
+            if (aura == null || !aura.Cancellable)
+                return;
+
+            Lua.DoString("CancelUnitBuff('player', '{0}')", aura.Name);
+        }
+
+        public static bool IsEmpty(this Targeting targeting)
+        {
+            return targeting == null || targeting.FirstUnit == null;
+        }
+
+        public static bool IsPointLeftOfLine(this WoWPoint point, WoWPoint lineStart, WoWPoint lineEnd)
+        {
+            return (lineEnd.X - lineStart.X) * (point.Y - lineStart.Y)
+                 - (lineEnd.Y - lineStart.Y) * (point.X - lineStart.X) > 0f;
+        }
+
+        public static float PathDistance(this WoWPoint from, WoWPoint to)
+        {
+            WoWPoint[] path = Navigator.GeneratePath(from, to);
+            if (path == null || path.Length <= 1)
+                return 0f;
+
+            float distance = 0f;
+            for (int i = 1; i < path.Length; i++)
+                distance += path[i - 1].Distance(path[i]);
+
+            return distance;
+        }
+
+        public static bool HasFlag(this PartyRole role, PartyRole flag)
+        {
+            return (role & flag) > PartyRole.None;
         }
     }
 }

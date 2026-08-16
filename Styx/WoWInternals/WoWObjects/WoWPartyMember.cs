@@ -404,16 +404,6 @@ namespace Styx.WoWInternals.WoWObjects
             return (Role & role) != GroupRole.None;
         }
 
-        /// <summary>
-        /// Returns true if this member is a tank (main tank or assigned tank role).
-        /// </summary>
-        public bool IsTank => IsMainTank || HasRole(GroupRole.Tank);
-
-        /// <summary>
-        /// Returns true if this member is a healer.
-        /// </summary>
-        public bool IsHealer => HasRole(GroupRole.Healer);
-
         #endregion
 
         #region Raid Info

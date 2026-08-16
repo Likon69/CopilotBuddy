@@ -71,8 +71,6 @@ namespace Bots.DungeonBuddy
         private uint _lastObservedLfgDungeonId;
         private bool _hasSetRole;
 
-        // Active dungeon behavior — updated when dungeon changes (fixes stale reference at tree-build time)
-        private Composite? _activeDungeonBehavior;
         private readonly WaitTimer _soloFarmExitTimer = new WaitTimer(TimeSpan.FromSeconds(30.0));
 
         // Death behavior fields (HB stopwatch_0, woWPoint_1, waitTimer_6, woWUnit_0 parity)
@@ -117,7 +115,7 @@ namespace Bots.DungeonBuddy
             _lastMapId = StyxWoW.Me.MapId;
             _lastObservedLfgMapId = _lastMapId;
             _lastObservedLfgDungeonId = LfgManager.CurrentLfgDungeonId;
-            _activeDungeonBehavior = null;
+            _root = null;
 
             // SoloFarm HB parity: précharger le donjon sélectionné même hors instance
             // pour avoir CurrentDungeon + profile disponibles avant d'entrer.
@@ -155,11 +153,13 @@ namespace Bots.DungeonBuddy
             // HB 6.2.3: unset AvoidanceNavigationProvider on stop. Our equivalent: Shutdown().
             Bots.DungeonBuddy.Avoidance.WorldObstacleManager.Shutdown();
             Bots.DungeonBuddy.Avoidance.AvoidanceManager.Clear();
-            _activeDungeonBehavior = null;
+            _root = null;
         }
 
         public override void Pulse()
         {
+            Bots.DungeonBuddy.Helpers.ScriptHelpers.UpdateMovementBlocks();
+
             // NOTE: HB 4.3.4 wrappe Root.Tick() dans un FrameLock (ObjectManager.Update + lock).
             // Si on observe des incohérences d'état (objets désync), envisager:
             //   using (StyxWoW.Memory.AcquireFrame()) { Root.Tick(...); }
@@ -187,6 +187,8 @@ namespace Bots.DungeonBuddy
                     DungeonManager.SetDungeonById(settings2.SelectedDungeonIds[0]);
                 else
                     DungeonManager.SetDungeon(StyxWoW.Me.MapId);
+
+                _root = null;
             }
 
         }
@@ -201,6 +203,8 @@ namespace Bots.DungeonBuddy
                                   StyxWoW.Me.CurrentMap.IsRaid ||
                                   LfgManager.CurrentLfgDungeonId > 0U;
 
+            _root = null;
+
             if (isInDungeonMap)
             {
                 var settings = DungeonBuddySettings.Instance;
@@ -209,15 +213,9 @@ namespace Bots.DungeonBuddy
                 else
                     DungeonManager.SetDungeon(newMapId);
 
-                _activeDungeonBehavior = null;
                 LfgManager.DungeonCompletedReason = CompleteReason.None;
                 _soloFarmResetInstancesPending = false;
                 _outsideFlyPoint = WoWPoint.Zero;
-
-                // Force le behavior tree à redémarrer depuis zéro au prochain tick.
-                // Sans ça, le Decorator de CreateOutsideDungeonBehavior reste suspendu
-                // dans son while(Running) et ne ré-évalue jamais son guard !IsInInstance.
-                _root?.Stop(null!);
             }
             else
             {
@@ -227,7 +225,6 @@ namespace Bots.DungeonBuddy
                     Logging.Write("Left dungeon: {0}", DungeonManager.CurrentDungeon.Name);
                     DungeonManager.Clear();
                     BossManager.Reset();
-                    _activeDungeonBehavior = null;
 
                     if (LfgManager.DungeonCompletedReason != CompleteReason.None)
                         _soloFarmResetInstancesPending = true;
@@ -245,9 +242,39 @@ namespace Bots.DungeonBuddy
         // BEHAVIOR TREE
         // ═══════════════════════════════════════════════════════════
 
+        private static WoWPartyMember[] _partyMemberInfos = Array.Empty<WoWPartyMember>();
+
+        public static WoWPartyMember[] PartyMemberInfos
+        {
+            get
+            {
+                if (!(TreeRoot.Current is DungeonBuddy))
+                    return StyxWoW.Me.PartyMemberInfos.ToArray();
+
+                return _partyMemberInfos;
+            }
+        }
+
+        public Composite CreateFrameUpdateBehavior()
+        {
+            return new Action(ctx =>
+            {
+                using (new FrameLock())
+                {
+                    _partyMemberInfos = StyxWoW.Me.IsInRaid
+                        ? StyxWoW.Me.RaidMemberInfos.ToArray()
+                        : StyxWoW.Me.PartyMemberInfos.ToArray();
+                }
+
+                return RunStatus.Failure;
+            });
+        }
+
         private PrioritySelector CreateRootBehavior()
         {
             return new PrioritySelector(
+                CreateFrameUpdateBehavior(),
+
                 CreateLfgBehavior(),
 
                 new Decorator(
@@ -727,14 +754,14 @@ namespace Bots.DungeonBuddy
                             var result = Navigator.MoveTo(lootTarget.Location);
                             if (result == MoveResult.Failed || result == MoveResult.PathGenerationFailed)
                                 return RunStatus.Failure;
-                            return RunStatus.Running;
+                            return RunStatus.Success;
                         }
 
                         if (!LootFrame.Instance.IsVisible)
                         {
                             WoWMovement.MoveStop();
                             lootTarget.Interact();
-                            return RunStatus.Running;
+                            return RunStatus.Success;
                         }
 
                         Lua.DoString("for i=1, GetNumLootItems() do LootSlot(i) ConfirmBindOnUse() ConfirmLootSlot(i) end CloseLoot()");
@@ -1023,7 +1050,6 @@ namespace Bots.DungeonBuddy
                                         new Action(ctx =>
                                         {
                                             DungeonManager.Clear();
-                                            _activeDungeonBehavior = null;
                                             return RunStatus.Success;
                                         }),
                                         new Action(ctx =>
@@ -1074,7 +1100,6 @@ namespace Bots.DungeonBuddy
                         {
                             DungeonManager.Clear();
                             BossManager.Reset();
-                            _activeDungeonBehavior = null;
                             _lastObservedLfgDungeonId = 0U;
                             return RunStatus.Success;
                         }),
@@ -1841,7 +1866,7 @@ namespace Bots.DungeonBuddy
                         // HB outside-instance portal travel keeps driving toward entrance until map changes.
                         TreeRoot.StatusText = "SoloFarm: Moving to dungeon entrance";
                         Navigator.MoveTo(entrance);
-                        return RunStatus.Running;
+                        return RunStatus.Success;
                     })
                 )
             );
@@ -1956,37 +1981,15 @@ namespace Bots.DungeonBuddy
             );
         }
 
+        // HB 4.3.4 DungeonBot.method_11(): the script composite is a plain tree child, so its
+        // parent PrioritySelector drives Start/Stop. The tree is rebuilt on dungeon change
+        // (Root nulled, HB composite_0 = null in method_41/method_43).
         private Composite CreateDungeonBehavior()
         {
-            // IMPORTANT: do NOT pass DungeonManager.CurrentDungeonBehavior as a constructor argument —
-            // that evaluates the property ONCE at tree-build time (when CurrentDungeon is still null),
-            // storing a permanent empty PrioritySelector.  Instead, re-evaluate each tick via Action
-            // and manage Start/Stop manually using the _activeDungeonBehavior instance field.
-            return new Decorator(
-                ctx =>
-                {
-                    var me = StyxWoW.Me;
-                    return me != null && me.CurrentMap.IsDungeon && DungeonManager.CurrentDungeon != null;
-                },
-                new Action(ctx =>
-                {
-                    var current = DungeonManager.CurrentDungeonBehavior;
-                    if (current == null)
-                        return RunStatus.Failure;
-
-                    // Call Start() once when the behavior instance changes (new dungeon loaded).
-                    // HB equivalent: composite_0, nulled only on dungeon change (method_41/method_43),
-                    // not on tick result. Do NOT Stop/null here on Failure — that would cause a
-                    // tight Start/Stop loop every pulse when the script has nothing to do.
-                    if (_activeDungeonBehavior != current)
-                    {
-                        _activeDungeonBehavior?.Stop(ctx);
-                        _activeDungeonBehavior = current;
-                        _activeDungeonBehavior.Start(ctx);
-                    }
-
-                    return _activeDungeonBehavior.Tick(ctx);
-                })
+            return new PrioritySelector(
+                new Decorator(
+                    ctx => DungeonManager.CurrentDungeon != null,
+                    DungeonManager.CurrentDungeonBehavior)
             );
         }
 
@@ -2322,7 +2325,7 @@ namespace Bots.DungeonBuddy
                     return RunStatus.Failure;
 
                 Navigator.MoveTo(moveTo);
-                return RunStatus.Running;
+                return RunStatus.Success;
             });
         }
 
@@ -2404,16 +2407,12 @@ namespace Bots.DungeonBuddy
 
         private Composite CreateSoloFarmMovementBehavior()
         {
-            // ARCH: The outer Decorator(ShouldMoveInSoloFarm, ...) only evaluates its
-            // condition once at Start(). An inner PrioritySelector coroutine resumes
-            // where it left off every tick — the navigator Action always returned Running,
-            // making movement unstoppable once started.
-            //
-            // Using a single Action here instead: Action.Execute() is a while(true) loop
-            // that calls RunAction every tick. ShouldMoveInSoloFarm is re-evaluated each
-            // tick. The moment Me.Combat fires or a mob enters the targeting list,
-            // this Action returns Failure → tree unwinds → Root goes non-Running →
-            // Start() called next tick → CombatBehavior evaluated from the top.
+            // HB 4.3.4 Class132.method_3 (DungeonBot.cs:9797): the move leaf is an
+            // ActionSucceedDelegate — Navigator.MoveTo then Success every tick, never
+            // Running. Success completes the root each pulse so TreeRoot restarts the
+            // tree, and higher priorities (dungeon script ForceJump, combat, death)
+            // are re-evaluated every pulse while walking. Returning Running here parks
+            // the whole tree on this leaf and starves them for the entire walk.
             return new Action(ctx =>
             {
                 if (!ShouldMoveInSoloFarm(ctx))
@@ -2424,7 +2423,7 @@ namespace Bots.DungeonBuddy
                     return RunStatus.Failure;
 
                 Navigator.MoveTo(moveTo);
-                return RunStatus.Running;
+                return RunStatus.Success;
             });
         }
 
@@ -2435,7 +2434,7 @@ namespace Bots.DungeonBuddy
         private WoWPoint GetSoloFarmMoveToPoint()
         {
             // Case 1: In-combat party member (HB method_23 priority 1)
-            var inCombatMember = StyxWoW.Me.PartyMemberInfos
+            var inCombatMember = PartyMemberInfos
                 .Select(pm => pm.ToPlayer())
                 .FirstOrDefault(p => p != null && p.Combat);
             if (inCombatMember != null)
@@ -2445,7 +2444,7 @@ namespace Bots.DungeonBuddy
             }
 
             // Case 2: Dead party member (HB method_23 priority 2)
-            var deadMember = StyxWoW.Me.PartyMemberInfos
+            var deadMember = PartyMemberInfos
                 .Select(pm => pm.ToPlayer())
                 .FirstOrDefault(p => p != null && p.IsDead);
             if (deadMember != null)
@@ -2456,7 +2455,7 @@ namespace Bots.DungeonBuddy
 
             // Case 3: 2+ distant party members (HB method_23 priority 3)
             var followDist = DungeonBuddySettings.Instance.FollowingDistance;
-            var distantMembers = StyxWoW.Me.PartyMemberInfos
+            var distantMembers = PartyMemberInfos
                 .Select(pm => pm.ToPlayer())
                 .Where(p => p != null && StyxWoW.Me.Location.DistanceSqr(p.Location) > followDist * followDist * 4.0)
                 .ToArray();
@@ -2796,7 +2795,7 @@ namespace Bots.DungeonBuddy
                     if (tooFar || offBossPath)
                     {
                         Navigator.MoveTo(followTarget.Location);
-                        return RunStatus.Running;
+                        return RunStatus.Success;
                     }
 
                     return RunStatus.Failure;

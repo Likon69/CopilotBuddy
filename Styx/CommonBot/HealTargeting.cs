@@ -78,9 +78,8 @@ namespace Styx.CommonBot
 
         protected override void DefaultTargetWeight(List<Targeting.TargetPriority> units)
         {
-            // Build list of tank players from raid using WoWPartyMember.IsTank
             var tanks = StyxWoW.Me.RaidMemberInfos
-                .Where(m => m.IsTank)
+                .Where(m => m.IsMainTank || m.HasRole(WoWPartyMember.GroupRole.Tank))
                 .Select(m => m.ToPlayer())
                 .Where(p => p != null)
                 .ToList();

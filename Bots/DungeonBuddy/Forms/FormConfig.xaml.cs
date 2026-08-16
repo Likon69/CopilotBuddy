@@ -321,10 +321,17 @@ namespace Bots.DungeonBuddy.Forms
 
         private void btnToggleMovement_Click(object sender, RoutedEventArgs e)
         {
-            // HB 4.3.4 parity: toggle movement flag; if disabling and currently moving, stop.
-            ScriptHelpers.ToggleMovement();
-            if (!ScriptHelpers.MovementEnabled && StyxWoW.Me != null && StyxWoW.Me.IsMoving)
-                WoWMovement.MoveStop();
+            if (ScriptHelpers.MovementEnabled)
+            {
+                ScriptHelpers.DisableMovement(() => true);
+                if (StyxWoW.Me != null && StyxWoW.Me.IsMoving)
+                    WoWMovement.MoveStop();
+            }
+            else
+            {
+                ScriptHelpers.RestoreMovement();
+            }
+
             btnToggleMovement.Content = ScriptHelpers.MovementEnabled ? "Disable Movement" : "Enable Movement";
         }
 

@@ -144,7 +144,9 @@ namespace Bots.DungeonBuddy
             
             // Retirer les avoids
             Bots.DungeonBuddy.Avoidance.AvoidanceManager.RemoveAll(a => _avoidInfos.Contains(a));
-            
+
+            Bots.DungeonBuddy.Helpers.ScriptHelpers.RestoreMovement();
+
             OnExit();
         }
 
@@ -166,7 +168,7 @@ namespace Bots.DungeonBuddy
         // AVOIDANCE HELPERS
         // ═══════════════════════════════════════════════════════════
 
-        protected void AddAvoid(AvoidInfo avoidInfo)
+        protected internal void AddAvoid(AvoidInfo avoidInfo)
         {
             Bots.DungeonBuddy.Avoidance.AvoidanceManager.Add(avoidInfo);
             _avoidInfos.Add(avoidInfo);

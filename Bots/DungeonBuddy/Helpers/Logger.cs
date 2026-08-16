@@ -1,13 +1,34 @@
+using System.Drawing;
 using Styx.Helpers;
 
 namespace Bots.DungeonBuddy.Helpers
 {
     public static class Logger
     {
-        public static void Write(string message) => Logging.Write(message);
-        public static void Write(string format, params object[] args) => Logging.Write(format, args);
-        public static void WriteDiagnostic(string message) => Logging.WriteDiagnostic(message);
-        public static void WriteDiagnostic(string format, params object[] args) => Logging.WriteDiagnostic(format, args);
+        public static void Write(Color color, string format, params object[] args)
+        {
+            Logging.Write(color, "[DungeonBuddy]: " + string.Format(format, args));
+        }
+
+        public static void Write(string format, params object[] args)
+        {
+            Write(Color.PowderBlue, string.Format(format, args));
+        }
+
+        public static void Write(string message)
+        {
+            Write(Color.PowderBlue, message);
+        }
+
+        public static void WriteDebug(string message)
+        {
+            Logging.WriteDebug(Color.Orange, "[DungeonBuddy-DEBUG]: " + message);
+        }
+
+        public static void WriteDebug(string format, params object[] args)
+        {
+            WriteDebug(string.Format(format, args));
+        }
 
         public static void WriteError(Error error)
         {
