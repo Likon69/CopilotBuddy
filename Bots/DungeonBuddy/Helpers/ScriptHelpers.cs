@@ -1602,6 +1602,7 @@ namespace Bots.DungeonBuddy.Helpers
         {
             get
             {
+                if (DungeonBuddySettings.Instance.QueueType == QueueType.SoloFarm) return StyxWoW.Me;
                 return GetPartyMembersByRole(PartyRole.Tank).FirstOrDefault();
             }
         }
@@ -2222,10 +2223,17 @@ namespace Bots.DungeonBuddy.Helpers
             float radiusSqr = radius * radius;
 
             return ObjectManager.GetObjectsOfType<WoWUnit>()
-                .Where(u => u.IsAlive &&
-                           !u.IsFriendly &&
-                           u.Location.DistanceSqr(location) < radiusSqr &&
-                           (filter == null || filter(u))).ToList();
+                .Where(u => u.IsValid
+                         && u.IsAlive
+                         && !u.IsFriendly
+                         && !u.IsCritter
+                         && u.Attackable
+                         && u.CanSelect
+                         && u.Location.DistanceSqr(location) < radiusSqr
+                         && (filter == null || filter(u))
+                         && Navigator.CanNavigateFully(StyxWoW.Me.Location, u.Location))
+                .OrderBy(u => u.DistanceSqr)
+                .ToList();
         }
 
         // ═══════════════════════════════════════════════════════════
@@ -2537,39 +2545,13 @@ namespace Bots.DungeonBuddy.Helpers
         /// </summary>
         public static Composite CreateClearArea(Func<WoWPoint> centerLocationSelector, float radius, Predicate<WoWUnit> unitSelector)
         {
-            WoWUnit target = null;
-            float radiusSqr = radius * radius;
+            List<WoWUnit>? units = null;
 
-            return new Decorator(
-                ctx =>
-                {
-                    target = ObjectManager.GetObjectsOfType<WoWUnit>()
-                        .Where(u => u.IsAlive && !u.IsFriendly &&
-                                   u.Location.DistanceSqr(centerLocationSelector()) < radiusSqr &&
-                                   unitSelector(u))
-                        .OrderBy(u => u.DistanceSqr)
-                        .FirstOrDefault();
-                    return target != null;
-                },
-                new PrioritySelector(
-                    new Decorator(
-                        ctx => target.DistanceSqr > 5*5,
-                        new Action(ctx =>
-                        {
-                            Navigator.MoveTo(target.Location);
-                            return RunStatus.Running;
-                        })
-                    ),
-                    new Decorator(
-                        ctx => target.DistanceSqr <= 5*5,
-                        new Action(ctx =>
-                        {
-                            target.Target();
-                            return RunStatus.Success;
-                        })
-                    )
-                )
-            );
+            return new PrioritySelector(
+                new ContextChangeHandler(ctx => units = GetUnfriendlyNpsAtLocation(centerLocationSelector, radius, unitSelector)),
+                new Decorator(
+                    ctx => units != null && units.Count > 0 && Targeting.Instance.FirstUnit == null,
+                    new Action(ctx => MoveTankTo(units![0].Location))));
         }
 
         /// <summary>
