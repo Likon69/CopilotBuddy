@@ -134,7 +134,7 @@ namespace Styx.Logic.Pathing
         private static float GetExpectedDistance(WoWUnit unit, TimeSpan elapsed)
         {
             var mi = unit.MovementInfo;
-            float speed = unit.IsSwimming ? mi.SwimSpeed : mi.RunSpeed;
+            float speed = mi.CurrentSpeed;
             return speed * (float)elapsed.TotalSeconds * 0.6f;
         }
 
