@@ -1,6 +1,7 @@
 # Build outputs
 bin/
 obj/
+*_wpftmp.csproj
 
 # Visual Studio temp files
 .vs/
