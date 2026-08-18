@@ -2711,7 +2711,7 @@ namespace Bots.DungeonBuddy.Helpers
 
         public static bool IsEmpty(this Targeting targeting)
         {
-            return targeting == null || targeting.FirstUnit == null;
+            return targeting == null || !targeting.TargetList.Any();
         }
 
         public static bool IsPointLeftOfLine(this WoWPoint point, WoWPoint lineStart, WoWPoint lineEnd)
