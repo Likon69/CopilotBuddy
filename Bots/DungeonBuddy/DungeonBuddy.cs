@@ -2071,7 +2071,7 @@ namespace Bots.DungeonBuddy
                             // HB smethod_33 uses CanNavigateFully(from, to, maxHops=20) to detect unreachable;
                             // our Navigator wrapper has no maxHops overload so we use the 2-arg form.
                             new Decorator(
-                                ctx => !Targeting.Instance.FirstUnit.InLineOfSpellSight,
+                                ctx => !Targeting.Instance.FirstUnit.InLineOfSight,
                                 new PrioritySelector(
                                     new Decorator(
                                         ctx => !Navigator.CanNavigateFully(StyxWoW.Me.Location, Targeting.Instance.FirstUnit.Location),
