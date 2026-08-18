@@ -1864,7 +1864,6 @@ namespace Bots.DungeonBuddy
                         }
 
                         // HB outside-instance portal travel keeps driving toward entrance until map changes.
-                        TreeRoot.StatusText = "SoloFarm: Moving to dungeon entrance";
                         Navigator.MoveTo(entrance);
                         return RunStatus.Success;
                     })
