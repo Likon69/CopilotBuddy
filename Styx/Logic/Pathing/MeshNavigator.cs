@@ -937,12 +937,8 @@ namespace Styx.Logic.Pathing
 				return MoveResult.UnstuckAttempt;
 			}
 
-			// WoW CTM (type Move) uses client-side pathfinding which stops at ledge edges —
-			// it cannot navigate to a point significantly below the current terrain.
-			// For fall-down connections: project Z to player's current Z so WoW walks
-			// forward over the edge and gravity handles the drop.
 			WoWPoint moveTarget = targetPoint;
-			if (me.Location.Z - targetPoint.Z > 2.0f)
+			if (!me.IsSwimming && me.Location.Z - targetPoint.Z > 2.0f)
 				moveTarget = new WoWPoint(targetPoint.X, targetPoint.Y, me.Location.Z);
 
 			WoWMovement.ClickToMove(moveTarget);
