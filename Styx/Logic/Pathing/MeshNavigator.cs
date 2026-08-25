@@ -65,6 +65,12 @@ namespace Styx.Logic.Pathing
 		private readonly WaitTimer _doorScanTimer = new WaitTimer(TimeSpan.FromSeconds(1.0));
 		private readonly WaitTimer _doorInteractTimer = new WaitTimer(TimeSpan.FromSeconds(1.0));
 
+		// HB 6.2.3 uint_0: transports the elevator search must skip. HB lists the two doors
+		// of the middle Undervator plus a Draenor object; the other four Undercity doors are
+		// the same lowerLdoor/upperLdoor models (displayId 462, the Undervator itself is 455).
+		private static readonly uint[] ElevatorDoorEntries =
+			{ 20650, 20651, 20653, 20654, 20656, 20657 };
+
 		// Elevator motion detection (HB 6.2.3 bool_2, woWPoint_0, waitTimer_2)
 		private bool _elevatorMoving;
 		private WoWPoint _lastElevatorPos = WoWPoint.Zero;
@@ -957,8 +963,7 @@ namespace Styx.Logic.Pathing
 
 			var transport = ObjectManager.GetObjectsOfType<WoWGameObject>(false, false)
 				.Where(go => go.SubType == WoWGameObjectType.Transport
-				              && go.Entry != 20657 && go.Entry != 20656
-				              && go.Entry != 20655 && go.Entry != 20654) // WotLK lowerLdoor/upperLdoor (equiv. WoD 205080)
+				              && !ElevatorDoorEntries.Contains(go.Entry))
 				.OrderBy(go => go.Location.Distance2DSqr(playerPos))
 				.FirstOrDefault();
 
