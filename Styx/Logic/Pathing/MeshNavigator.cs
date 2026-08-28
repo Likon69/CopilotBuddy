@@ -21,7 +21,6 @@ namespace Styx.Logic.Pathing
 	/// - Path following with push-ahead (method_25/26)
 	/// - Start-index skip (method_14)
 	/// - Off-mesh connection dispatch (elevator, portal, interact, jump)
-	/// - Stuck detection and recovery (Class469)
 	/// - Drift detection (method_15)
 	/// - Alive/ghost query filter (method_28)
 	/// - PathPrecision-based waypoint advance (method_24/27)
@@ -106,7 +105,6 @@ namespace Styx.Logic.Pathing
 
 		/// <summary>
 		/// HB 6.2.3 MeshNavigator.OnSetAsCurrent — hooks BotEvents.OnPulse for per-pulse
-		/// faction update + tile streaming (Class1039.method_0 equivalent).
 		/// Guard mirrors HB 6.2.3 bool_0: throws if already current.
 		/// </summary>
 		public override void OnSetAsCurrent()
@@ -168,7 +166,6 @@ namespace Styx.Logic.Pathing
 
 		/// <summary>
 		/// HB 6.2.3 MeshNavigator.UpdateMaps():
-		/// Preloads navmesh tiles around player position each pulse (Class1039.method_0).
 		/// </summary>
 		public void UpdateMaps()
 		{
@@ -1043,10 +1040,13 @@ namespace Styx.Logic.Pathing
 				if (go.State != WoWGameObjectState.Ready)
 					return false;
 
-				if (go.SubObj is not WoWDoor door)
+				if (go.SubObj is not WoWDoor)
 					return false;
 
 				if (!go.WithinInteractRange || go.InUse)
+					return false;
+
+				if (!go.CanUse() || !go.CanUseNow())
 					return false;
 
 				uint requiredItem = 0;
@@ -1069,15 +1069,6 @@ namespace Styx.Logic.Pathing
 
 				if (go.Locked && requiredItem == 0)
 					return false;
-
-				if (!door.CanOpenNow(out uint reason))
-				{
-					if (requiredItem != 0)
-						Logging.WriteDiagnostic(
-							"Closed Door {0} (Id: {1}) refused: carrying key {2}, client reason {3}",
-							go.Name, go.Entry, requiredItem, reason);
-					return false;
-				}
 
 				return true;
 			}
