@@ -137,14 +137,7 @@ namespace Bots.DungeonBuddy.Profiles
             CurrentProfile = null;
         }
 
-        /// <summary>
-        /// HB 4.3.4: GetLfgDungeonIdFromMapId
-        /// Recherche l'ID du donjon LFG correspondant à un MapId et une difficulté.
-        /// Utilise LfgDungeons.dbc pour la correspondance.
-        /// </summary>
-        /// <param name="mapId">MapId du donjon</param>
-        /// <returns>LFG Dungeon ID</returns>
-        /// <exception cref="InstanceNotFoundException">Aucun donjon ne correspond au mapId+difficulty</exception>
+        /// <summary>HB 4.3.4: GetLfgDungeonIdFromMapId</summary>
         public static uint GetLfgDungeonIdFromMapId(uint mapId)
         {
             int difficultyIndex = Lua.GetReturnVal<int>("return GetInstanceDifficulty()", 0) - 1;
@@ -154,23 +147,45 @@ namespace Bots.DungeonBuddy.Profiles
             if (table == null)
                 throw new InstanceNotFoundException("Unable to find LfgDungeon for mapId " + mapId);
 
+            int validRows = 0;
+            int mapMatches = 0;
+
             for (uint i = (uint)table.MinIndex; i <= (uint)table.MaxIndex; i++)
             {
                 var dungeon = new LfgDungeons(i);
                 if (!dungeon.IsValid || dungeon.IsHolidayEvent)
                     continue;
-                if (dungeon.MapId == (int)mapId && dungeon.Difficulty == (uint)difficultyIndex)
+                validRows++;
+                if (dungeon.MapId != (int)mapId)
+                    continue;
+                mapMatches++;
+                if (dungeon.Difficulty == (uint)difficultyIndex)
                     candidates.Add(dungeon);
+            }
+
+            int beforeLevelFilter = candidates.Count;
+            int dungeonLevel = -1;
+            if (candidates.Count > 1)
+            {
+                dungeonLevel = Lua.GetReturnVal<int>("return GetCurrentMapDungeonLevel()", 0);
+                if (dungeonLevel > 0)
+                    candidates.RemoveAll(d => d.RecommendedLevel != (uint)dungeonLevel);
             }
 
             if (candidates.Count > 1)
             {
-                int dungeonLevel = Lua.GetReturnVal<int>("return GetCurrentMapDungeonLevel()", 0);
-                candidates.RemoveAll(d => d.RecommendedLevel != (uint)dungeonLevel);
+                uint myLevel = (uint)(StyxWoW.Me?.Level ?? 0);
+                var inBracket = candidates.FindAll(d => myLevel >= d.MinLevel && myLevel <= d.MaxLevel);
+                if (inBracket.Count > 0)
+                    candidates = inBracket;
             }
 
             if (candidates.Count > 0)
                 return candidates[0].Id;
+
+            Logging.WriteDiagnostic(
+                "[LfgDungeons] mapId={0} rows={1}..{2} valid={3} mapMatches={4} difficultyIndex={5} candidates={6} dungeonLevel={7}",
+                mapId, table.MinIndex, table.MaxIndex, validRows, mapMatches, difficultyIndex, beforeLevelFilter, dungeonLevel);
 
             throw new InstanceNotFoundException("Unable to find LfgDungeon for mapId " + mapId);
         }
