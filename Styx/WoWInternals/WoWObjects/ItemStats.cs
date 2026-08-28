@@ -25,59 +25,56 @@ namespace Styx.WoWInternals.WoWObjects
         #endregion
         
         #region Internal Methods
+        private const uint FillItemStatsAddress = 6424480U;
+        private const int ItemStatFieldCount = 73;
+        // CGItemStats_C struct: float DPS + 73 stat dwords + trailing flags dword = 300 bytes (HB Struct24)
+        private const int ItemStatsStructSize = 4 + ItemStatFieldCount * 4 + 4;
+
         private static ItemStats GetItemStatsFromLink(string itemLink)
         {
-            // Parse item stats using Lua tooltip scanning (3.3.5a compatible)
-            var stats = new ItemStats
+            var stats = new ItemStats();
+
+            ExecutorRand? executor = ObjectManager.Executor;
+            if (executor == null || string.IsNullOrEmpty(itemLink))
+                return stats;
+
+            lock (executor.AssemblyLock)
             {
-                DPS = 0f,
-                Stats = new Dictionary<StatTypes, int>()
-            };
-            
-            try
-            {
-                // Use GameTooltip to scan item stats
-                string lua = string.Format(@"
-                    local stats = {{}};
-                    GameTooltip:SetOwner(UIParent, 'ANCHOR_NONE');
-                    GameTooltip:SetHyperlink('{0}');
-                    
-                    for i = 2, GameTooltip:NumLines() do
-                        local line = _G['GameTooltipTextLeft'..i];
-                        if line then
-                            local text = line:GetText();
-                            if text then
-                                -- Parse DPS
-                                local dps = text:match('%(([%d%.]+) damage per second%)');
-                                if dps then stats.dps = tonumber(dps); end
-                                
-                                -- Parse stats (+X Stat)
-                                local val, stat = text:match('%+(%d+)%s+(.+)');
-                                if val and stat then
-                                    stats[stat] = tonumber(val);
-                                end
-                            end
-                        end
-                    end
-                    
-                    GameTooltip:Hide();
-                    return stats.dps or 0;
-                ", itemLink);
-                
-                string dpsStr = Lua.GetReturnVal<string>(lua, 0);
-                if (!string.IsNullOrEmpty(dpsStr) && float.TryParse(dpsStr, out float dps))
+                using (AllocatedMemory linkBuffer = new AllocatedMemory(itemLink.Length + 2))
+                using (AllocatedMemory buffer = new AllocatedMemory(ItemStatsStructSize))
                 {
-                    stats.DPS = dps;
+                    if (linkBuffer.Address == 0U || buffer.Address == 0U)
+                        return stats;
+
+                    Memory memory = executor.Memory;
+                    if (memory == null)
+                        return stats;
+
+                    memory.Write(linkBuffer.Address, itemLink);
+
+                    executor.Clear();
+                    executor.AddLine("push {0}", linkBuffer.Address);
+                    executor.AddLine("mov ecx, {0}", buffer.Address);
+                    executor.AddLine("call {0}", FillItemStatsAddress);
+                    executor.AddLine("retn");
+                    executor.Execute();
+
+                    using (StyxWoW.Memory.TemporaryCacheState(false))
+                    {
+                        stats.DPS = memory.Read<float>(buffer.Address);
+                        if (float.IsNaN(stats.DPS))
+                            stats.DPS = 0f;
+
+                        for (int i = 0; i < ItemStatFieldCount; i++)
+                        {
+                            int value = memory.Read<int>(buffer.Address + 4U + (uint)(i * 4));
+                            if (value != 0)
+                                stats.Stats[(StatTypes)i] = value;
+                        }
+                    }
                 }
-                
-                // Note: Full stat parsing would require additional Lua calls
-                // For now, DPS is the most critical stat for weapon comparison
             }
-            catch (Exception ex)
-            {
-                Logging.WriteDebug("[ItemStats] Failed to parse item link: {0}", ex.Message);
-            }
-            
+
             return stats;
         }
         #endregion

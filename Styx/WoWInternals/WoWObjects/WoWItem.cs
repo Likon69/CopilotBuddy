@@ -427,18 +427,56 @@ namespace Styx.WoWInternals.WoWObjects
             }
         }
 
-        private static ItemStats CalculateItemStats(WoWItem item)
+        private const uint CreateItemLinkAddress = 6415264U;
+        private const uint FillItemStatsAddress = 6424480U;
+        private const int ItemStatFieldCount = 73;
+        // CGItemStats_C struct: float DPS + 73 stat dwords + trailing flags dword = 300 bytes (HB Struct24)
+        private const int ItemStatsStructSize = 4 + ItemStatFieldCount * 4 + 4;
+
+    private static ItemStats CalculateItemStats(WoWItem item)
         {
             var stats = new ItemStats();
-            var info = item.ItemInfo;
-            if (info == null) return stats;
 
-            if (info.IsWeapon)
-                stats.DPS = info.DPS;
+            ExecutorRand? executor = ObjectManager.Executor;
+            if (executor == null)
+                return stats;
 
-            var itemStats = info.GetItemStats();
-            foreach (var kvp in itemStats)
-                stats.Stats[(StatTypes)(int)kvp.Key] = kvp.Value;
+            lock (executor.AssemblyLock)
+            {
+                using (AllocatedMemory buffer = new AllocatedMemory(ItemStatsStructSize))
+                {
+                    if (buffer.Address == 0U)
+                        return stats;
+
+                    executor.Clear();
+                    executor.AddLine("push {0}", item.BaseAddress);
+                    executor.AddLine("call {0}", CreateItemLinkAddress);
+                    executor.AddLine("add esp, 4");
+                    executor.AddLine("push eax");
+                    executor.AddLine("mov ecx, {0}", buffer.Address);
+                    executor.AddLine("call {0}", FillItemStatsAddress);
+                    executor.AddLine("retn");
+                    executor.Execute();
+
+                    Memory memory = executor.Memory;
+                    if (memory == null)
+                        return stats;
+
+                    using (StyxWoW.Memory.TemporaryCacheState(false))
+                    {
+                        stats.DPS = memory.Read<float>(buffer.Address);
+                        if (float.IsNaN(stats.DPS))
+                            stats.DPS = 0f;
+
+                        for (int i = 0; i < ItemStatFieldCount; i++)
+                        {
+                            int value = memory.Read<int>(buffer.Address + 4U + (uint)(i * 4));
+                            if (value != 0)
+                                stats.Stats[(StatTypes)i] = value;
+                        }
+                    }
+                }
+            }
 
             return stats;
         }
