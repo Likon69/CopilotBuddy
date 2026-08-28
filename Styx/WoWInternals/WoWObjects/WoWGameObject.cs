@@ -474,23 +474,9 @@ namespace Styx.WoWInternals.WoWObjects
             return x.Distance.CompareTo(y.Distance);
         }
 
-        public bool CanUse() => !Locked && !InUse;
-        public bool CanUseNow() => CanUse();
-        public bool CanUseNow(out GameError reason)
-        {
-            reason = 0; // No error
-            if (Locked)
-            {
-                reason = GameError.ChestInUse;
-                return false;
-            }
-            if (InUse)
-            {
-                reason = GameError.ChestInUse;
-                return false;
-            }
-            return true;
-        }
+        public bool CanUse() => SubObj.CanUse();
+        public bool CanUseNow() => SubObj.CanUseNow();
+        public bool CanUseNow(out GameError reason) => SubObj.CanUseNow(out reason);
 
         public bool GetDataSlot(GameObjectDataSlot slot, out int value)
         {

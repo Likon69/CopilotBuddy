@@ -70,6 +70,9 @@ namespace Styx.WoWInternals.WoWObjects
         /// </summary>
         public bool CanUse()
         {
+            if (BaseAddress == 0)
+                return false;
+
             ExecutorRand? executor = ObjectManager.Executor;
             if (executor == null)
                 throw new InvalidOperationException("Invalid executor in WoWSubObject.CanUse!");
@@ -97,6 +100,9 @@ namespace Styx.WoWInternals.WoWObjects
         /// </summary>
         public bool CanUseNow()
         {
+            if (BaseAddress == 0)
+                return false;
+
             ExecutorRand? executor = ObjectManager.Executor;
             if (executor == null)
                 throw new InvalidOperationException("Invalid executor in WoWSubObject.CanUseNow");
@@ -125,6 +131,12 @@ namespace Styx.WoWInternals.WoWObjects
         /// </summary>
         public bool CanUseNow(out GameError reason)
         {
+            if (BaseAddress == 0)
+            {
+                reason = (GameError)0;
+                return false;
+            }
+
             ExecutorRand? executor = ObjectManager.Executor;
             if (executor == null)
                 throw new InvalidOperationException("Invalid executor in WoWSubObject.CanUseNow");
