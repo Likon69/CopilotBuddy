@@ -26,12 +26,6 @@ namespace Styx.Logic.Pathing
 	/// - Alive/ghost query filter (method_28)
 	/// - PathPrecision-based waypoint advance (method_24/27)
 	///
-	/// HB 4.3.4 base MeshNavigator had no door handling (method_7/8 came in HB 6.2.3).
-	/// The HB 6.2.3 door-handling port spam-clicked BG gates (script-driven, server
-	/// opens on prep timer) for several seconds before the WoW API caught up to the
-	/// open state. Restoring the HB 4.3.4 behavior — bot walks through open doors
-	/// when pathing; the WoW client auto-opens closed doors as the player walks in.
-	///
 	/// Not here (stays in Navigator facade):
 	/// - Flightor routing, mount/dismount, avoidance wiring, bot lifecycle
 	/// </summary>
@@ -58,7 +52,6 @@ namespace Styx.Logic.Pathing
 		private int _cachedPushAheadIndex = -1;
 		private WoWPoint _cachedClickPoint = WoWPoint.Zero;
 
-		// Timers
 		private WaitTimer _pathRegenThrottle = new WaitTimer(TimeSpan.FromMilliseconds(500));
 		private WaitTimer _interactTimer = new WaitTimer(TimeSpan.FromMilliseconds(2000));
 
@@ -115,7 +108,6 @@ namespace Styx.Logic.Pathing
 		/// HB 6.2.3 MeshNavigator.OnSetAsCurrent — hooks BotEvents.OnPulse for per-pulse
 		/// faction update + tile streaming (Class1039.method_0 equivalent).
 		/// Guard mirrors HB 6.2.3 bool_0: throws if already current.
-		/// Source: .hb 6.2.3 MeshNavigator.OnSetAsCurrent
 		/// </summary>
 		public override void OnSetAsCurrent()
 		{
@@ -130,7 +122,6 @@ namespace Styx.Logic.Pathing
 		/// <summary>
 		/// HB 6.2.3 MeshNavigator.OnRemoveAsCurrent — unhooks BotEvents.OnPulse.
 		/// Guard mirrors HB 6.2.3 bool_0: throws if not currently registered.
-		/// Source: .hb 6.2.3 MeshNavigator.OnRemoveAsCurrent
 		/// </summary>
 		public override void OnRemoveAsCurrent()
 		{
@@ -146,7 +137,6 @@ namespace Styx.Logic.Pathing
 		/// HB 6.2.3 method_1: updates faction area type on pulse + tile streaming.
 		/// Tile streaming is triggered here UNCONDITIONALLY (HB 6.2.3 pattern).
 		/// Directional prefetch uses position delta from last pulse as velocity.
-		/// Source: .hb 6.2.3 MeshNavigator.method_1 + ProfileManager.UpdateMaps
 		/// </summary>
 		private void OnPulse(object sender, EventArgs e)
 		{
@@ -161,14 +151,12 @@ namespace Styx.Logic.Pathing
 			{
 				if (_hasLastPulsePos)
 				{
-					// Velocity ≈ (pos - lastPos). Pulse period is ~50ms so this approximates m/s reasonably.
 					var velocity = pos - _lastPulsePos;
 					TripperNavigator.EnsureTilesDirectional(
 						(uint)me.MapId, pos, velocity, 1);
 				}
 				else
 				{
-					// First pulse: no velocity yet, just load the ring around the player.
 					TripperNavigator.EnsureTilesAroundPosition((uint)me.MapId, pos, 1);
 				}
 			}
@@ -252,14 +240,12 @@ namespace Styx.Logic.Pathing
 
 			ApplyAliveQueryFilter(me.IsAlive);
 
-			// Fallback for destinations Detour cannot reach at all.
 			if (me.IsSwimming && !HasShortGroundPath(me.Location, destination, 2000f))
 			{
 				Navigator.PlayerMover.MoveTowards(destination);
 				return MoveResult.Moved;
 			}
 
-			// Check if already at destination
 			float distance = me.Location.Distance(destination);
 			if (distance < precision)
 			{
@@ -330,7 +316,6 @@ namespace Styx.Logic.Pathing
 				SkipPassedWaypoints(me);
 			}
 
-			// Follow existing path
 			if (_currentPath.Count > 0 && _currentPathIndex < _currentPath.Count)
 			{
 				// Drift detection (HB 6.2.3 method_9 → method_15). HB runs the on-path check
@@ -358,30 +343,25 @@ namespace Styx.Logic.Pathing
 							bool blocked = TripperNavigator.RaycastBlocked(mapId, playerVec, nextVec, out float hitT, _factionAreaType);
 							if (!blocked)
 							{
-								// Clear line-of-sight to next waypoint — still on path.
 								offPath = false;
 							}
 							else if (Math.Abs(hitT) < 1e-5f)
 							{
-								// Hit immediately at player position — on path.
 								offPath = false;
 							}
 							else
 							{
-								// Compute hit point and check if it is near the target waypoint.
 								WoWPoint hitPoint = new WoWPoint(
 									me.Location.X + (nextWp.X - me.Location.X) * hitT,
 									me.Location.Y + (nextWp.Y - me.Location.Y) * hitT,
 									me.Location.Z + (nextWp.Z - me.Location.Z) * hitT);
 								bool hitCloseToWaypoint = IsAtPoint(hitPoint, nextWp);
-								// Fallback 2D perp-distance to confirm we are truly off-path.
 								float perpDist = DistanceToLineSegment2D(me.Location, _currentPath[_currentPathIndex - 1], nextWp);
 								offPath = !hitCloseToWaypoint && perpDist * perpDist >= PathPrecision * PathPrecision;
 							}
 						}
 						else
 						{
-							// Navigator not loaded — fall back to pure 2D geometry.
 							float driftDist = DistanceToLineSegment2D(me.Location,
 								_currentPath[_currentPathIndex - 1], _currentPath[_currentPathIndex]);
 							offPath = driftDist * driftDist > PathPrecision * PathPrecision;
@@ -506,7 +486,6 @@ namespace Styx.Logic.Pathing
 					try { StuckHandler.Reset(); } catch { }
 				}
 
-				// Move toward current waypoint with push-ahead
 				nextPoint = _currentPath[_currentPathIndex];
 
 				// Water/lava Z+2f lift (HB 6.2.3 step 15)
@@ -647,19 +626,14 @@ namespace Styx.Logic.Pathing
 
 		#region Public properties/accessors
 
-		/// <summary>Current navmesh destination.</summary>
 		public WoWPoint Destination => _destination;
 
-		/// <summary>Current path waypoints.</summary>
 		public List<WoWPoint> CurrentPath => _currentPath;
 
-		/// <summary>Current waypoint index in path.</summary>
 		public int CurrentPathIndex => _currentPathIndex;
 
-		/// <summary>true when there are unvisited waypoints.</summary>
 		public bool HasActivePath => _currentPath.Count > 0 && _currentPathIndex < _currentPath.Count;
 
-		/// <summary>true while riding an elevator.</summary>
 		public bool IsRidingElevator => _ridingElevator;
 
 		/// <summary>
@@ -690,9 +664,6 @@ namespace Styx.Logic.Pathing
 			_cachedPushAheadIndex = -1;
 		}
 
-		/// <summary>
-		/// Sets faction area type. Called by Navigator on bot start.
-		/// </summary>
 		public void SetFactionAreaType(TripperNav.AreaType areaType)
 		{
 			_factionAreaType = areaType;
@@ -705,7 +676,6 @@ namespace Styx.Logic.Pathing
 		private TripperNav.Navigator TripperNavigator => Navigator.TripperNavigator;
 
 		// HB 6.2.3 MeshNavigator.smethod_0: route navigator internal messages to the log.
-		// Source: .hb 6.2.3 MeshNavigator.cs line 38
 		private static void OnNavigatorLog(string msg) => Logging.WriteDiagnostic(System.Windows.Media.Colors.LightBlue, msg);
 
 		/// <summary>
@@ -735,10 +705,6 @@ namespace Styx.Logic.Pathing
 			return TripperNavigator.FindPath(mapId, start, end, true);
 		}
 
-		/// <summary>
-		/// Generates path via navmesh. Returns true on success.
-		/// HB 6.2.3 MeshNavigator method — uses Task.Run for tile loading (non-blocking).
-		/// </summary>
 
 		#endregion
 
@@ -1074,7 +1040,10 @@ namespace Styx.Logic.Pathing
 				if (go.SubType != WoWGameObjectType.Door)
 					return false;
 
-				if (go.SubObj is not WoWDoor door || !door.IsClosed)
+				if (go.State != WoWGameObjectState.Ready)
+					return false;
+
+				if (go.SubObj is not WoWDoor door)
 					return false;
 
 				if (!go.WithinInteractRange || go.InUse)
@@ -1200,7 +1169,7 @@ namespace Styx.Logic.Pathing
 
 			var gameObject = ObjectManager.GetObjectsOfType<WoWGameObject>(false, false)
 				.OrderBy(go => go.Location.DistanceSqr(offMeshEntry))
-				.FirstOrDefault();
+				.FirstOrDefault(go => go.CanUseNow() && !go.InUse);
 
 			if (gameObject == null)
 			{
