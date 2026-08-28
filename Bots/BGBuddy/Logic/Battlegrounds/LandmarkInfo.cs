@@ -1,6 +1,3 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/Logic/Battlegrounds/LandmarkInfo.cs
-// Target path: Bots/BGBuddy/Logic/Battlegrounds/LandmarkInfo.cs
-
 using System;
 using Styx;
 using Styx.Logic;

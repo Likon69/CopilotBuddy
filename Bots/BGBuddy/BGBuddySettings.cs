@@ -1,6 +1,3 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/BGBuddySettings.cs
-// Target path: Bots/BGBuddy/BGBuddySettings.cs
-
 using System;
 using System.ComponentModel;
 using Styx;

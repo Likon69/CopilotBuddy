@@ -12,8 +12,6 @@ namespace Styx.Helpers
 {
     /// <summary>
     /// Value converter to support enum display names and localization.
-    /// Ported from HB 4.3.4. Deobfuscated: Class442→EnumCacheEntry, Class443→CultureCacheEntry,
-    /// Class444→ResourceLocalizer, Delegate5→LocalizerDelegate.
     /// </summary>
     public class EnumTypeConverter : EnumConverter
     {

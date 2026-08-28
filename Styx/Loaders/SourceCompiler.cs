@@ -15,7 +15,6 @@ namespace Styx.Loaders
 {
     /// <summary>
     /// Compiles C# source files at runtime.
-    /// Ported from HB's Class52 (ns5).
     /// </summary>
     internal class SourceCompiler
     {

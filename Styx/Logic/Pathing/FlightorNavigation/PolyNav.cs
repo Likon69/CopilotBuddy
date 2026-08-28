@@ -1,6 +1,5 @@
 // PolyNav.cs — Ported from HB 6.2.3 Styx/Pathing/FlightorNavigation/PolyNav.cs
 // 2D polygon-aware pathfinder using a visibility graph + A*.
-// Deobfuscated: Class1071 → VisibilityGraph, Struct427 → GraphNode, Class1069 → AStarSolver.
 //
 // Usage:
 //   var nav = new PolyNav(continentBoundary, aerialBlackspots);
@@ -18,13 +17,12 @@ namespace Styx.Logic.Pathing.FlightorNavigation
     /// <summary>
     /// A node in the visibility graph. Holds a world-space 2D position and an
     /// adjacency list of indices into the graph's node collection.
-    /// Deobfuscated from HB 6.2.3 Struct427.
     /// </summary>
     internal sealed class GraphNode
     {
-        public readonly int    Index;     // int_0
-        public readonly Vector2 Position; // vector2_0
-        public readonly List<int> Neighbors = new List<int>(); // list_0
+        public readonly int    Index;
+        public readonly Vector2 Position;
+        public readonly List<int> Neighbors = new List<int>();
 
         public GraphNode(int index, Vector2 position)
         {
@@ -37,7 +35,6 @@ namespace Styx.Logic.Pathing.FlightorNavigation
     /// Builds and maintains a visibility graph from a set of polygon boundary
     /// vertices and hole vertices.  Temp nodes (start/end of each path query)
     /// are appended, used, then removed after each query.
-    /// Deobfuscated from HB 6.2.3 Class1071.
     /// </summary>
     internal sealed class VisibilityGraph
     {
@@ -99,7 +96,6 @@ namespace Styx.Logic.Pathing.FlightorNavigation
     /// Takes a snapshot of the graph's nodes at construction time so that
     /// transient start/end nodes added during a query don't interfere with
     /// subsequent queries.
-    /// Deobfuscated from HB 6.2.3 Class1069.
     /// </summary>
     internal sealed class AStarSolver
     {

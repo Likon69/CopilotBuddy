@@ -1,4 +1,3 @@
-// Target path: CommonBehaviors/Resources/CommonBehaviorsResources.cs
 // Strings shared by the reusable behavior tree actions. Hardcoded English
 // values (no .resx), matching the style of BGBuddyResources.
 

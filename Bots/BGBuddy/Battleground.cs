@@ -1,23 +1,3 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/Battleground.cs
-// Target path: Bots/BGBuddy/Battleground.cs
-// Deobfuscated: smethod_0 → IsHordeLandmark512, smethod_1 → IsAllianceLandmark1024
-//              smethod_2 → HasPreparationAura, smethod_3 → IsNotSotAMap
-//              smethod_4 → ResetHotspotTimer, smethod_5 → CanMountReturnTrue
-//              smethod_6 → IsLandmarkStale, smethod_7/smethod_19-23 → loot corpse chain
-//              smethod_24-36 → interact flags chain, smethod_37-41 → targeting sanity
-//              smethod_42-48 → combat behavior chain, smethod_49-56 → landmark/player queries
-//              method_0 → MountUpBehavior, method_1 → HasValidStartingLocation
-//              method_2 → GetStartingLocation, method_3 → CanInteractFlags
-//              method_4 → ProcessStaleLandmarks, method_5 → GetStartingLocationForMount
-//              method_6 → ClearDeadTarget, method_7 → NeedDropTarget
-//              method_8 → BlacklistAndClearTarget, method_9 → ShouldTargetFirstUnit
-//              method_10 → TargetFirstUnitAction, method_11 → HasTargetGuid
-//              method_12 → ClearTargetAction, woWPoint_0 → _lastTargetLocation
-//              ulong_0 → _lastTargetGuid, waitTimer_0 → _randomizeTimer
-//              waitTimer_1/2 → static hotspot/wait timers
-//              hashSet_0 → _blacklistedFlagEntries
-//              Class58-66 → inlined as lambdas
-
 using System;
 using System.Collections.Generic;
 using System.Linq;

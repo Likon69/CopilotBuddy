@@ -1,6 +1,3 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/Helpers/Logger.cs
-// Target path: Bots/BGBuddy/Helpers/Logger.cs
-
 using System;
 using System.Drawing;
 using Bots.BGBuddy.Resources;

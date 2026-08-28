@@ -56,11 +56,9 @@ namespace Bots.DungeonBuddy.Avoidance
         private static bool HasNearestHit(Class253<AvoidCluster, AvoidTracelineResult> x)
             => x.nearestHit != null;
 
-        // smethod_13: Class254(cluster, nearestHit.Exit - nearestHit.Enter)
         private static Class254<Class253<AvoidCluster, AvoidTracelineResult>, Vector3> ToClusterDelta(Class253<AvoidCluster, AvoidTracelineResult> x)
             => new Class254<Class253<AvoidCluster, AvoidTracelineResult>, Vector3>(x, x.nearestHit.Exit - x.nearestHit.Enter);
 
-        // smethod_14: ClusterHit from Class254
         private static ClusterHit ToClusterHit(Class254<Class253<AvoidCluster, AvoidTracelineResult>, Vector3> x)
             => new ClusterHit(x.Cluster.cluster, x.Cluster.nearestHit.Enter, (float)Math.Atan2(x.relativePoint.Y, x.relativePoint.X));
 
@@ -783,14 +781,12 @@ namespace Bots.DungeonBuddy.Avoidance
         [CompilerGenerated] private static Func<Class253<AvoidCluster, AvoidTracelineResult>, Class254<Class253<AvoidCluster, AvoidTracelineResult>, Vector3>> _func_7;
         [CompilerGenerated] private static Func<Class254<Class253<AvoidCluster, AvoidTracelineResult>, Vector3>, ClusterHit> _func_8;
 
-        // Class110: ground Z adjustment
         private sealed class Class110
         {
             public Vector3 vector3_0;
             public float method_0(float z) => Math.Abs(z - this.vector3_0.Z);
         }
 
-        // Class111: GetAvoidPath state
         private sealed class Class111
         {
             public bool method_0(AvoidCluster cluster) => cluster.Any(a => a.IsPointInAvoid(this.woWPoint_0));
@@ -801,7 +797,6 @@ namespace Bots.DungeonBuddy.Avoidance
             public WoWPoint woWPoint_1;
         }
 
-        // Class112: trace ordering
         private sealed class Class112
         {
             public Vector3 vector3_0;
@@ -810,14 +805,12 @@ namespace Bots.DungeonBuddy.Avoidance
             public bool method_1(AvoidCluster c) => c != this.avoidCluster_0;
         }
 
-        // Class113: pathfind result check
         private sealed class Class113
         {
             public Avoid avoid_0;
             public bool method_0(Vector3 p) => this.avoid_0 != null && this.avoid_0.IsPointInAvoid(p);
         }
 
-        // Class114: GetNearestLocationOutsideCluster
         private sealed class Class114
         {
             public Vector3 vector3_0;
@@ -825,7 +818,6 @@ namespace Bots.DungeonBuddy.Avoidance
             public float method_1(Vector3 p) => this.vector3_0.DistanceSqr(p);
         }
 
-        // Class115: GetAvoidsHitByTraceline
         private sealed class Class115
         {
             public Vector3 vector3_0;
@@ -836,7 +828,6 @@ namespace Bots.DungeonBuddy.Avoidance
                 => this.vector3_1.DistanceSqr(x.trace.Enter);
         }
 
-        // Class116: AvoidClusterTraceline
         private sealed class Class116
         {
             public Vector3 vector3_0;
@@ -849,14 +840,12 @@ namespace Bots.DungeonBuddy.Avoidance
                 => this.vector3_0.DistanceSqr(h.Enter);
         }
 
-        // Class117: BuildClusters - cluster contains avoid
         private sealed class Class117
         {
             public Avoid avoid_0;
             public bool method_0(AvoidCluster c) => c.Contains(this.avoid_0);
         }
 
-        // Class118: BuildClusters - avoid not in cluster + overlap check
         private sealed class Class118
         {
             public Class117 class117_0;
@@ -894,7 +883,6 @@ namespace Bots.DungeonBuddy.Avoidance
         }
     }
 
-    // Class252/253/254 used by Helpers but not AvoidCluster
     internal class Class252<T1, T2>
     {
         public T1 avoid;

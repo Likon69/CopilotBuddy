@@ -428,7 +428,6 @@ namespace Styx.Logic
 
                 Logging.Write("TaxiMap opened — updating known nodes list.");
 
-                // HB Class577 approach: read current node DBC ID directly from CGTaxiMap memory.
                 // dword_C0D7EC (0xC0D7EC) — verified via IDA, CGTaxiMap__TaxiNodeType. No Lua needed.
                 var currentDbc = TaxiNodeInfo.GetCurrent();
                 if (currentDbc == null || !currentDbc.IsValid || string.IsNullOrEmpty(currentDbc.Name))
@@ -457,7 +456,6 @@ namespace Styx.Logic
                         currentNode.Location = currentLocation;
                 }
 
-                // Walk every node in the path table — HB Class577.method_1(i) pattern.
                 // Reachability still uses TaxiFrame Lua nodes (frameNodes[i].Reachable),
                 // exactly as HB does with TaxiFrame.Instance.Nodes[(int)num].Reachable.
                 var frameNodes = TaxiFrame.Instance?.Nodes;

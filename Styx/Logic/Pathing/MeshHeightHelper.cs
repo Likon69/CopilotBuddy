@@ -1,4 +1,3 @@
-// Ported from ns6.Class646 (obfuscated name)
 // Type: Styx.Logic.Pathing.MeshHeightHelper
 // Purpose: Find mesh height at a given X,Y position for navigation
 

@@ -1,5 +1,3 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/Resources/BGBuddyResources.cs
-// Target path: Bots/BGBuddy/Resources/BGBuddyResources.cs
 // Note: Original uses ResourceManager + .resx. Ported to hardcoded English strings
 // since CopilotBuddy doesn't use .resx satellite assemblies.
 // Twin Peaks and Battle for Gilneas entries kept for parity but are Cataclysm-only.

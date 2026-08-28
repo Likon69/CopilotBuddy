@@ -441,7 +441,6 @@ namespace Styx.Logic.Profiles.Quest
                     else
                         Logging.WriteDebug("Compiling expression '{0}'", expression);
                     
-                    // Try fast-path parser first (equivalent to Class1204.smethod_0 in HB)
                     func = FastPathParser.TryParse(expression);
                     if (func != null)
                     {

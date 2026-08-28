@@ -1,7 +1,4 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/Forms/ConfigWindow.cs
-// Target path: Bots/BGBuddy/Forms/ConfigWindow.xaml.cs
 // Rewritten: WinForms → WPF (System.Windows.Window), dark theme XAML.
-// Deobfuscated: smethod_0 → BgTypeFromString, smethod_1 → BgTypeToString
 
 using System;
 using System.Collections.Generic;

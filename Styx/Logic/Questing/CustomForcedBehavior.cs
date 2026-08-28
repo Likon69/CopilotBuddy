@@ -27,7 +27,6 @@ public abstract class CustomForcedBehavior
   private readonly string _elementName;
   private static Regex VariableSubstitutionRegex = new Regex("^\\$[^:]+:[:]?[ \t]*([^$]+)[ \t]*\\$$");
 
-  // Helper class to replace Class587<T1, T2> - a simple tuple for attribute name pairs
   private sealed class AttributeNamePair<T1, T2>
   {
     public T1 aliasBaseName;
@@ -117,7 +116,6 @@ public abstract class CustomForcedBehavior
     CustomForcedBehavior.IConstraintChecker<T> constraints,
     string[] aliasBaseNames)
   {
-    // Inline closure logic replacing Class491<T>
     string capturedBaseName = baseName;
     CustomForcedBehavior capturedThis = this;
     bool isWoWPoint = typeof(T) == typeof(WoWPoint);
@@ -966,7 +964,6 @@ label_10:
     int maxValue,
     string[] aliasBaseNames)
   {
-    // Inline closure logic replacing Class492
     string capturedBaseName = baseName;
     CustomForcedBehavior capturedThis = this;
 

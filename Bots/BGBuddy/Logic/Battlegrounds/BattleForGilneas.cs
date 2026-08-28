@@ -1,6 +1,4 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/Logic/Battlegrounds/BattleForGilneas.cs
 // Source: .hb 4.3.4/Honorbuddy/Honorbuddy/ns25/Class52.cs
-// Target path: Bots/BGBuddy/Logic/Battlegrounds/BattleForGilneas.cs
 // WotLK note: Battle For Gilneas is a Cataclysm battleground. The map (761) and
 // landmarks are not present in 3.3.5a. The class is included for completeness
 // and will be a no-op for WotLK — DllLoader<Battleground> finds it but the

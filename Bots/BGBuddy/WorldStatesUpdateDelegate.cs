@@ -1,6 +1,3 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/WorldStatesUpdateDelegate.cs
-// Target path: Bots/BGBuddy/WorldStatesUpdateDelegate.cs
-
 using System;
 
 namespace Bots.BGBuddy

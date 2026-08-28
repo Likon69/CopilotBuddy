@@ -1,8 +1,3 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/RaidHelper.cs
-// Target path: Bots/BGBuddy/RaidHelper.cs
-// Deobfuscated: smethod_0 → CountEnemyPlayersInBox, smethod_1 → CountFriendlyPlayersInBox
-//              smethod_2 → PlayerToVector2, smethod_3 → IsAliveRaidMember
-//              smethod_4/5 →raid member position projection
 // Rewritten without BoundingBox2 dependency — uses inline range check.
 
 using System;

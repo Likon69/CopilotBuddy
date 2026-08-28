@@ -421,7 +421,6 @@ namespace Tripper.Navigation
                     if (subPts.Length <= 1)
                         continue;
 
-                    // Recursive callback on the sub-path (HB delegate12_0)
                     if (callback != null)
                         callback(ref subPts, ref subPolys, ref subFlags);
 

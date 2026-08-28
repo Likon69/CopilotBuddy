@@ -1,7 +1,4 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/Logic/Battlegrounds/EyeOfTheStorm.cs
 // Source: .hb 4.3.4/Honorbuddy/Honorbuddy/ns27/Class53.cs
-// Target path: Bots/BGBuddy/Logic/Battlegrounds/EyeOfTheStorm.cs
-
 using System;
 using System.Linq;
 using Bots.BGBuddy.Resources;

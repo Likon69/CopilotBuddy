@@ -2297,7 +2297,6 @@ namespace Bots.DungeonBuddy.Helpers
             Func<WoWPoint> waitAtLocationSellector,
             int waitTimeAtPullLocationTimeout)
         {
-            // State captured across ticks (HB Class214 fields).
             WoWUnit pullUnit = null;
             WoWPoint pullLocation = WoWPoint.Zero;
 

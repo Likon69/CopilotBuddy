@@ -1699,9 +1699,6 @@ namespace Bots.DungeonBuddy
         {
             using (StyxWoW.Memory.AcquireFrame())
             {
-                // smethod_288→Select: Boss → Class272(Boss, WoWUnit)
-                // smethod_289→Where: Class272 → bool (party.Any(IsAlive) && unit != null && unit.Combat)
-                // smethod_290→Select: Class272 → Boss
                 // .Any() → if true, return false (don't release)
                 bool bossInCombatWithAlivePartyMember = BossManager.BossEncounters
                     .Select(b => new { boss = b, unit = b.ToWoWUnit() })
@@ -1715,20 +1712,11 @@ namespace Bots.DungeonBuddy
                 if (_deathTimer.Elapsed >= TimeSpan.FromMinutes(5.0))
                     return true;
 
-                // Class142.bool_0 = PartyMode && TankAlive && HealerAlive
                 bool tankAliveAndInDungeon = StyxWoW.Me.GroupInfo.RaidMembers.Any(m => m.HasRole(WoWPartyMember.GroupRole.Tank) && (m.ToPlayer()?.IsAlive == true) && m.AreaTableId == (int)StyxWoW.Me.CurrentMap.AreaTableId);
                 bool healerAliveAndInDungeon = StyxWoW.Me.GroupInfo.RaidMembers.Any(m => m.HasRole(WoWPartyMember.GroupRole.Healer) && (m.ToPlayer()?.IsAlive == true) && m.AreaTableId == (int)StyxWoW.Me.CurrentMap.AreaTableId);
                 bool partyModeAndTankHealerAlive = DungeonBuddySettings.Instance.PartyMode != PartyMode.Off && tankAliveAndInDungeon && healerAliveAndInDungeon;
 
-                // smethod_291→Select: WoWPartyMember → Class257(member, player)
-                // smethod_292→Select: Class257 → Class273(loc = player?.Location ?? member.Location3D)
-                // smethod_293→Select: Class273 → Class274(isOnline = player != null || member.IsOnline)
-                // smethod_294→Select: Class274 → Class275(isAlive = player ? player.IsAlive && not SoR : member.!Ghost && !Dead || health > 0)
-                // smethod_295→Select: Class275 → Class276(mapId = member.CurrentMap.MapId)
-                // smethod_296→Select: Class276 → Class277(inDungeon = mapId == null || mapId == Me.MapId)
-                // smethod_297→Select: Class277 → Class278(canRez = CanRezClass(player) || member.Role.IsHealer)
                 // Where(@class.method_0): isOnline && isAlive && inDungeon && canRez && CanNavigateFully && distance checks
-                // smethod_298→Select: Class278 → WoWPartyMember
                 // .Any() → if false (no eligible members), return true (release)
                 var chain = StyxWoW.Me.GroupInfo.RaidMembers
                     .Select(m => new { member = m, player = m.ToPlayer() })
@@ -1766,14 +1754,11 @@ namespace Bots.DungeonBuddy
             }
         }
 
-        // method_28: Corpse recovery behavior (HB Class141 — PrioritySelector with ContextChangeHandler + 3 decorators)
         private Composite CreateCorpseRecoveryBehavior()
         {
             return new PrioritySelector(
-                // ContextChangeHandler (HB Class141.method_0): finds spirit healer, stores in field, returns it
                 new ContextChangeHandler(SpiritHealerContextChangeHandler),
 
-                // Guard: Me.IsGhost && spirit healer (HB Class141.method_1)
                 new Decorator(
                     ctx => StyxWoW.Me.IsGhost && _corpseSpiritHealer != null,
                     new PrioritySelector(

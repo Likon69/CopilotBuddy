@@ -112,7 +112,6 @@ public class WeightSetEx : IDisposable
       if (WeightSetEx._cachedWeightSet != null)
         return WeightSetEx._cachedWeightSet;
 
-      // Capture for closure (replacing Class461)
       WoWClass playerClass = StyxWoW.Me.Class;
       // HB 3.3.5a requires groupIndex parameter for GetTalentTabInfo to return correct pointsSpent
       // Without it, the function returns 0 for all tabs, defaulting to spec=1 (Balance for Druid)

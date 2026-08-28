@@ -1,6 +1,4 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/Logic/Battlegrounds/IsleOfConquest.cs
 // Source: .hb 4.3.4/Honorbuddy/Honorbuddy/ns28/Class54.cs
-// Target path: Bots/BGBuddy/Logic/Battlegrounds/IsleOfConquest.cs
 //
 // Navigation adaptation note:
 // HB 4.3.4 (Tripper.RecastManaged) iterated every Poly of every loaded MeshTile and

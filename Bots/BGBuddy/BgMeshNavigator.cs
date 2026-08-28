@@ -1,15 +1,7 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/ns5/Class80.cs
-// Target path: Bots/BGBuddy/BgMeshNavigator.cs
-// Deobfuscated: Class80         → BgMeshNavigator
-//              method_10        → OnTileLoaded (ADT reading, single event per MaNGOS tile)
-//              method_11        → OnTileLoaded
-//              bool_1           → _pathRandomized
-//              dictionary_0     → _savedPolyAreas
-//              random_0         → _random
+// Source: .hb 4.3.4/Honorbuddy/Honorbuddy/ns5/Class80.cs
 // Adaptation:  base.Nav.Mesh.SetPolyArea/GetPolyArea/GetPolyFlags
 //              → Navigator.TripperNavigator.SetPolyArea/GetPolyArea/GetPolyFlags (CopilotBuddy API)
 //              Constructor hooks → OnSetAsCurrent/OnRemoveAsCurrent lifecycle
-//              Class80.MoveTo (complete override) → TryRandomizePath + base.MoveTo
 //              (Preserves CopilotBuddy's full MeshNavigator.MoveTo logic)
 
 using System;
@@ -32,7 +24,6 @@ namespace Bots.BGBuddy
     ///   2. Per-path polygon area randomization to vary routes and avoid bot-like repetition.
     /// </summary>
     /// <remarks>
-    /// Source: HB 4.3.4 ns5/Class80.cs — deobfuscated and adapted to CopilotBuddy's
     /// Navigator API (no Nav.Mesh shim; uses Navigator.TripperNavigator directly).
     /// </remarks>
     internal class BgMeshNavigator : MeshNavigator

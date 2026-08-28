@@ -1,5 +1,3 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/BattlegroundSide.cs
-// Target path: Bots/BGBuddy/BattlegroundSide.cs
 // Note: This is the BGBuddy-specific side enum (includes Attack/Defend for SotA).
 // Distinct from Styx.Logic.BattlegroundSide which is faction-only.
 

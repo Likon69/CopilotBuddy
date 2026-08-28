@@ -1,7 +1,3 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/MapBox.cs
-// Target path: Bots/BGBuddy/MapBox.cs
-// smethod_0 → FromXElement (deobfuscated)
-
 using System;
 using System.Globalization;
 using System.Xml.Linq;

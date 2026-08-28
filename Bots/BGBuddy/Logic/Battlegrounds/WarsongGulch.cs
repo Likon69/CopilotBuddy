@@ -1,7 +1,4 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/Logic/Battlegrounds/WarsongGulch.cs
 // Source: .hb 4.3.4/Honorbuddy/Honorbuddy/ns30/Class57.cs
-// Target path: Bots/BGBuddy/Logic/Battlegrounds/WarsongGulch.cs
-
 using System.Linq;
 using Bots.BGBuddy.Resources;
 using CommonBehaviors.Actions;

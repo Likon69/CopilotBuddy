@@ -1,6 +1,4 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/Logic/Battlegrounds/TwinPeaks.cs
 // Source: .hb 4.3.4/Honorbuddy/Honorbuddy/ns29/Class56.cs
-// Target path: Bots/BGBuddy/Logic/Battlegrounds/TwinPeaks.cs
 // WotLK note: Twin Peaks is a Cataclysm battleground. The map (726) is not
 // present in 3.3.5a. The class is a no-op for WotLK — DllLoader<Battleground>
 // finds it but BGBuddy never reaches MapId 726.

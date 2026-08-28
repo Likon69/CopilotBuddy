@@ -1,7 +1,3 @@
-// Ported from: .hb 4.3.4/Honorbuddy/Honorbuddy/Bots/BGBuddy/BgBotProfile.cs
-// Target path: Bots/BGBuddy/BgBotProfile.cs
-// Deobfuscated: smethod_0 → OnValidationError, smethod_1 → ParseBoxes, Load() rewritten with LINQ
-
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

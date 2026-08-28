@@ -6,7 +6,6 @@ namespace Styx
     /// <summary>
     /// Creates named mutexes to claim ownership of a WoW process.
     /// Prevents multiple CopilotBuddy instances from attaching to the same WoW.
-    /// Deobfuscated from HB 4.3.4 ns18.Class21.
     /// </summary>
     internal static class ProcessMutex
     {

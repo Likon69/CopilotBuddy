@@ -11,7 +11,6 @@ using Styx.RemotableObjects;
 namespace PartyBot.IPC
 {
 	/// <summary>
-	/// TCP server on port 1337 — port of ns18.Class23 (RemotingServer).
 	/// Accepts connections from RemotingClient(s) and streams the latest BotMessage as JSON.
 	/// Replaces System.Runtime.Remoting.Channels.TcpChannel which is .NET Framework only.
 	/// </summary>
@@ -44,7 +43,6 @@ namespace PartyBot.IPC
 
 		/// <summary>
 		/// Called by LeaderPlugin each Pulse to push the current BotMessage.
-		/// Equivalent to Class23.method_0 → botMessage_0.SetMessage(msg).
 		/// </summary>
 		public void SetMessage(BotMessage message)
 		{
