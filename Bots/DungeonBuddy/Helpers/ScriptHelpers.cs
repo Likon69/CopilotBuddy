@@ -2055,14 +2055,28 @@ namespace Bots.DungeonBuddy.Helpers
         /// </summary>
         public static RunStatus MoveTankTo(WoWPoint location)
         {
-            if (!StyxWoW.Me.IsTank())
-                return RunStatus.Failure;
+            if (StyxWoW.Me.IsTank()
+                && BotPoi.Current.Type != PoiType.Kill
+                && BotPoi.Current.Type != PoiType.Repair
+                && BotPoi.Current.Type != PoiType.Sell
+                && BotPoi.Current.Type != PoiType.Train
+                && BotPoi.Current.Type != PoiType.Mail
+                && BotPoi.Current.Type != PoiType.Loot
+                && BotPoi.Current.Type != PoiType.Harvest
+                && BotPoi.Current.Type != PoiType.Skin
+                && (BotPoi.Current.Type != PoiType.Hotspot || BotPoi.Current.Location != location))
+            {
+                if (location.DistanceSqr(StyxWoW.Me.Location) > 16f)
+                {
+                    BotPoi.Current = new BotPoi(location, PoiType.Hotspot);
+                    return RunStatus.Success;
+                }
 
-            if (StyxWoW.Me.Location.DistanceSqr(location) < 5*5)
-                return RunStatus.Success;
+                if (BotPoi.Current.Type == PoiType.Hotspot)
+                    BotPoi.Clear();
+            }
 
-            Navigator.MoveTo(location);
-            return RunStatus.Running;
+            return RunStatus.Failure;
         }
 
         // ═══════════════════════════════════════════════════════════
