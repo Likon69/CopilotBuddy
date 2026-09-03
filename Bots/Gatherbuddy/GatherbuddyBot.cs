@@ -1446,13 +1446,13 @@ namespace Bots.Gatherbuddy
                     continue;
                 }
 
-                // NoNinja: skip any node another mounted player is clearly heading toward.
-                if (GatherbuddySettings.Instance.NoNinja && Flightor.MountHelper.Mounted)
+                if (GatherbuddySettings.Instance.NoNinja && (StyxWoW.Me.Mounted || Flightor.MountHelper.Mounted))
                 {
                     bool playerNearby = ObjectManager.GetObjectsOfType<WoWPlayer>()
-                        .Any(p => !p.IsMe && p.IsAlive && p.Location.DistanceSqr(nodePos) < 15f * 15f);
+                        .Any(p => !p.IsMe && p.Location.DistanceSqr(nodePos) < 100f);
                     if (playerNearby)
                     {
+                        Logging.WriteDebug("[GB Filter] Removing \"{0}\" from loot list. Ninja attempt avoided", go.Name);
                         Blacklist.Add(go.Guid, TimeSpan.FromSeconds(5));
                         list.RemoveAt(i);
                         continue;
