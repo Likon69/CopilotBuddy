@@ -146,7 +146,6 @@ namespace Styx.Logic
 				{
 					var mount = groundMounts[_random.Next(0, groundMounts.Count)];
 					CharacterSettings.Instance.MountName = mount.CreatureSpellId.ToString();
-					Logging.WriteDebug("Auto-detected random ground mount: {0}", mount.Name);
 				}
 
 				var flyingMounts = MountHelper.FlyingMounts;
@@ -154,7 +153,6 @@ namespace Styx.Logic
 				{
 					var mount = flyingMounts[_random.Next(0, flyingMounts.Count)];
 					CharacterSettings.Instance.FlyingMountName = mount.CreatureSpellId.ToString();
-					Logging.WriteDebug("Auto-detected random flying mount: {0}", mount.Name);
 				}
 			}
 			else
@@ -299,19 +297,18 @@ namespace Styx.Logic
 				}
 			}
 
+			string lastError = me.LastRedErrorMessage;
 			Lua.DoString(string.Format("CallCompanion('MOUNT', {0})", GetMountIndex(mountName)));
 
 			int startTime = Environment.TickCount;
-			string lastError = me.LastRedErrorMessage;
 
 			while (!me.Mounted && Environment.TickCount - startTime < 6500)
 			{
 				if (me.Combat)
 					break;
 
-				if (!string.IsNullOrEmpty(lastError) && me.LastRedErrorMessage != lastError)
+				if (lastError != "You can't mount here." && me.LastRedErrorMessage == "You can't mount here.")
 				{
-					Logging.Write("You can't mount here.");
 					AddCantMountSpot(me.Location);
 					break;
 				}
