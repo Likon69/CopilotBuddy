@@ -1150,18 +1150,17 @@ namespace Bots.Gatherbuddy
                     new PrioritySelector(new ContextChangeHandler(
                             ctx => _currentNode != null ? (object)_currentNode.Location : WoWPoint.Zero),
                         new Decorator(
-                            ctx => ctx is WoWPoint pt &&
-                                   Navigator.CanNavigateFully(StyxWoW.Me.Location, pt),
+                            ctx => ctx is WoWPoint && StyxWoW.Me.IsSwimming,
                             new Action(ctx =>
                             {
-                                Navigator.MoveTo((WoWPoint)ctx);
+                                WoWMovement.ClickToMove((WoWPoint)ctx);
                                 return RunStatus.Success;
                             })
                         ),
                         new Action(ctx =>
                         {
                             if (ctx is WoWPoint pt)
-                                WoWMovement.ClickToMove(pt);
+                                Navigator.MoveTo(pt);
                             return RunStatus.Success;
                         })
                     )
