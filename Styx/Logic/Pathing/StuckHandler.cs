@@ -128,13 +128,10 @@ namespace Styx.Logic.Pathing
             return false;
         }
 
-        // HB 6.2.3 Class469.method_3: expected travel distance over elapsed time.
-        // WotLK: MovementInfo has SwimSpeed (offset 0xA4) and RunSpeed (offset 0x94).
-        // IsSwimming is a flag on WoWUnit (movement flag 0x200000 at offset 0xA30).
         private static float GetExpectedDistance(WoWUnit unit, TimeSpan elapsed)
         {
             var mi = unit.MovementInfo;
-            float speed = mi.CurrentSpeed;
+            float speed = mi.IsSwimming ? mi.SwimSpeed : mi.RunSpeed;
             return speed * (float)elapsed.TotalSeconds * 0.6f;
         }
 
