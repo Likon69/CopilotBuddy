@@ -26,9 +26,9 @@ namespace CopilotBuddy.UI
     public partial class DeveloperToolsWindow : MetroWindow
     {
         // ObservableCollections for data binding
-        private readonly ObservableCollection<WGameObject> _gameObjects = new ObservableCollection<WGameObject>();
-        private readonly ObservableCollection<WUnit> _units = new ObservableCollection<WUnit>();
-        private readonly ObservableCollection<WItem> _items = new ObservableCollection<WItem>();
+        private readonly ObservableCollection<WoWGameObject> _gameObjects = new ObservableCollection<WoWGameObject>();
+        private readonly ObservableCollection<WoWUnit> _units = new ObservableCollection<WoWUnit>();
+        private readonly ObservableCollection<WoWItem> _items = new ObservableCollection<WoWItem>();
         public ObservableCollection<WoWObject> Targets = new ObservableCollection<WoWObject>();
         public ObservableCollection<WoWObject> Loots = new ObservableCollection<WoWObject>();
 
@@ -557,73 +557,36 @@ namespace CopilotBuddy.UI
             RefreshItems(GetItems());
         }
 
-        private List<WGameObject> GetGameObjects()
+        private List<WoWGameObject> GetGameObjects()
         {
-            // use cached game objects to avoid expensive queries during UI refresh
-            return ObjectManager.CachedObjects
-                .OrderBy(o => o.DistanceSqr)
-                .Select(o => new WGameObject
-                {
-                    Entry = (uint)o.Entry,
-                    Name = o.Name,
-                    Guid = o.Guid,
-                    Location = o.Location,
-                    Distance = o.Distance,
-                    Type = o.Type,
-                    SubType = o.SubType
-                })
-                .ToList();
+            return ObjectManager.CachedObjects.OrderBy(o => o.DistanceSqr).ToList();
         }
 
-        private void RefreshGameObjects(IEnumerable<WGameObject> objects)
+        private void RefreshGameObjects(IEnumerable<WoWGameObject> objects)
         {
             _gameObjects.Clear();
             foreach (var gameObject in objects)
                 _gameObjects.Add(gameObject);
         }
 
-        private List<WUnit> GetUnits()
+        private List<WoWUnit> GetUnits()
         {
-            return ObjectManager.CachedUnits
-                .OrderBy(o => o.DistanceSqr)
-                .Select(o => new WUnit
-                {
-                    Entry = (uint)o.Entry,
-                    Name = o.Name,
-                    Guid = o.Guid,
-                    Location = o.Location,
-                    Distance = o.Distance,
-                    Type = o.Type,
-                    FactionId = (uint)o.FactionId
-                })
-                .ToList();
+            return ObjectManager.CachedUnits.OrderBy(o => o.DistanceSqr).ToList();
         }
 
-        private void RefreshUnits(IEnumerable<WUnit> units)
+        private void RefreshUnits(IEnumerable<WoWUnit> units)
         {
             _units.Clear();
             foreach (var unit in units)
                 _units.Add(unit);
         }
 
-        private List<WItem> GetItems()
+        private List<WoWItem> GetItems()
         {
-            return ObjectManager.GetObjectsOfType<WoWItem>()
-                .OrderBy(o => o.Name)
-                .Select(o => new WItem
-                {
-                    Entry = (uint)o.Entry,
-                    Name = o.Name,
-                    Guid = o.Guid,
-                    Location = o.Location,
-                    Distance = o.Distance,
-                    Type = o.Type,
-                    StackCount = (uint)o.StackCount
-                })
-                .ToList();
+            return ObjectManager.GetObjectsOfType<WoWItem>().OrderBy(o => o.DistanceSqr).ToList();
         }
 
-        private void RefreshItems(IEnumerable<WItem> items)
+        private void RefreshItems(IEnumerable<WoWItem> items)
         {
             _items.Clear();
             foreach (var item in items)
@@ -669,7 +632,7 @@ namespace CopilotBuddy.UI
 
         private void CopyGameObjectInfo_OnClick(object sender, RoutedEventArgs e)
         {
-            if (lvGameObjectsDump.SelectedItem is not WGameObject selected)
+            if (lvGameObjectsDump.SelectedItem is not WoWGameObject selected)
                 return;
 
             var location = selected.Location;
@@ -685,7 +648,7 @@ namespace CopilotBuddy.UI
 
         private void CopyUnitInfo_OnClick(object sender, RoutedEventArgs e)
         {
-            if (lvUnitsDump.SelectedItem is not WUnit selected)
+            if (lvUnitsDump.SelectedItem is not WoWUnit selected)
                 return;
 
             var location = selected.Location;
@@ -701,7 +664,7 @@ namespace CopilotBuddy.UI
 
         private void ViewAurasOnUnit_OnClick(object sender, RoutedEventArgs e)
         {
-            if (lvUnitsDump.SelectedItem is not WUnit selected)
+            if (lvUnitsDump.SelectedItem is not WoWUnit selected)
                 return;
 
             var unit = ObjectManager.GetObjectByGuid<WoWUnit>(selected.Guid);
@@ -725,7 +688,7 @@ namespace CopilotBuddy.UI
 
         private void CopyItemInfo_OnClick(object sender, RoutedEventArgs e)
         {
-            if (lvItemsDump.SelectedItem is not WItem selected)
+            if (lvItemsDump.SelectedItem is not WoWItem selected)
                 return;
 
             string xml = string.Format(
@@ -791,21 +754,6 @@ namespace CopilotBuddy.UI
             public WoWPoint Location { get; set; }
             public double Distance { get; set; }
             public WoWObjectType Type { get; set; }
-        }
-
-        private class WGameObject : WObject
-        {
-            public Styx.WoWGameObjectType SubType { get; set; }
-        }
-
-        private class WUnit : WObject
-        {
-            public uint FactionId { get; set; }
-        }
-
-        private class WItem : WObject
-        {
-            public uint StackCount { get; set; }
         }
 
         #endregion
