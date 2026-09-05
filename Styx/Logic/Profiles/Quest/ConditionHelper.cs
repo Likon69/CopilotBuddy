@@ -513,21 +513,43 @@ namespace Styx.Logic.Profiles.Quest
     /// Globals object for Roslyn script evaluation.
     /// Provides Me property (like ProfileHelperFunctionsBase in HB)
     /// </summary>
-    public class ConditionGlobals
+    public class ConditionGlobals : ProfileHelperFunctionsBase
     {
         /// <summary>
         /// The local player - equivalent to StyxWoW.Me / ObjectManager.Me
         /// </summary>
-        public Styx.WoWInternals.WoWObjects.LocalPlayer Me => Styx.WoWInternals.ObjectManager.Me;
-        
+        public new Styx.WoWInternals.WoWObjects.LocalPlayer Me => Styx.WoWInternals.ObjectManager.Me;
+
         /// <summary>
         /// Check if player has quest in their log
         /// </summary>
-        public bool HasQuest(uint questId) => ProfileHelperFunctions.HasQuest(questId);
-        
+        public new bool HasQuest(uint questId) => ProfileHelperFunctions.HasQuest(questId);
+
         /// <summary>
         /// Check if player has completed quest
         /// </summary>
-        public bool IsQuestCompleted(uint questId) => ProfileHelperFunctions.IsQuestCompleted(questId);
+        public new bool IsQuestCompleted(uint questId) => ProfileHelperFunctions.IsQuestCompleted(questId);
+
+        public new bool IsObjectiveComplete(int objectiveId, uint questId) => base.IsObjectiveComplete(objectiveId, questId);
+        public new bool HasItem(int itemId) => base.HasItem(itemId);
+        public new int GetItemCount(int itemId) => base.GetItemCount(itemId);
+        public new bool HasQuestAvailable(int objectId) => base.HasQuestAvailable(objectId);
+        public new bool HasQuestAvailable(int objectId, string type) => base.HasQuestAvailable(objectId, type);
+        public new bool HasSpell(string spellName) => base.HasSpell(spellName);
+        public new bool HasSpell(int spellId) => base.HasSpell(spellId);
+        public new bool CanFly() => base.CanFly();
+        public new bool IsAchievementCompleted(int id) => base.IsAchievementCompleted(id);
+        public new bool IsAchievementCompleted(int achievementId, int index) => base.IsAchievementCompleted(achievementId, index);
+        public new bool HasFaction(int factionId) => base.HasFaction(factionId);
+        public new int GetFactionReputation(int factionId) => base.GetFactionReputation(factionId);
+        public new uint GetCurrencyAmount(uint currencyId) => base.GetCurrencyAmount(currencyId);
+        public new bool HasMininion(uint entry) => base.HasMininion(entry);
+        public new bool Chance(double val) => base.Chance(val);
+        public new int Random(int max) => base.Random(max);
+        public new int Random(int min, int max) => base.Random(min, max);
+        public new bool OnTransport => base.OnTransport;
+        public new WoWSkill SkinningSkill => base.SkinningSkill;
+        public new WoWSkill MiningSkill => base.MiningSkill;
+        public new WoWSkill HerbalismSkill => base.HerbalismSkill;
     }
 }
