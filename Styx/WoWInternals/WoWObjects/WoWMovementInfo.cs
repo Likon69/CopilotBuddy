@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 using GreenMagic;
 using Styx.Logic.Pathing;
@@ -227,6 +227,14 @@ namespace Styx.WoWInternals.WoWObjects
                 if (!IsValid) return 0f;
                 return GetStorageField<float>(MoveInfoOffsets.SwimSpeed);
             }
+        }
+
+        /// <summary>
+        /// Swim speed, under the name the stock Quest Behaviors use.
+        /// </summary>
+        public float SwimmingForwardSpeed
+        {
+            get { return SwimSpeed; }
         }
 
         /// <summary>
