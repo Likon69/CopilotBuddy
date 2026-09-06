@@ -4,6 +4,7 @@ using System.Xml.Linq;
 using Styx.Combat.CombatRoutine;
 using Styx.Helpers;
 using Styx.Logic.Pathing;
+using Styx.Logic.Profiles.Quest;
 using Styx.WoWInternals.WoWObjects;
 
 namespace Styx.Logic.Profiles
@@ -11,7 +12,7 @@ namespace Styx.Logic.Profiles
     /// <summary>
     /// Represents a vendor NPC in a profile.
     /// </summary>
-    public class Vendor : IEquatable<Vendor>
+    public class Vendor : IEquatable<Vendor>, IXmlObject
     {
         /// <summary>
         /// Vendor type enumeration.
@@ -45,6 +46,7 @@ namespace Styx.Logic.Profiles
         /// </summary>
         public Vendor(XElement xml)
         {
+            Element = xml;
             Location = ProfileHelper.ParseLocation(xml);
             Type = VendorType.Unknown;
             Name = string.Empty;
@@ -111,12 +113,16 @@ namespace Styx.Logic.Profiles
                                     "Warrior"
                                 });
                             }
+                        case "usablewhen":
+                            if (!string.IsNullOrWhiteSpace(attribute.Value))
+                                UsableWhen = DelayCompiledExpression.Condition(attribute.Value);
+                            continue;
                         case "x":
                         case "y":
                         case "z":
                             continue;
                         default:
-                            throw new ProfileUnknownAttributeException(attribute, new string[7]
+                            throw new ProfileUnknownAttributeException(attribute, new string[8]
                             {
                                 nameof(Name),
                                 nameof(Entry),
@@ -124,7 +130,8 @@ namespace Styx.Logic.Profiles
                                 "X",
                                 "Y",
                                 "Z",
-                                nameof(TrainClass)
+                                nameof(TrainClass),
+                                nameof(UsableWhen)
                             });
                     }
                 }
@@ -175,6 +182,18 @@ namespace Styx.Logic.Profiles
         /// Gets or sets the class this trainer trains (if applicable).
         /// </summary>
         public WoWClass TrainClass { get; set; }
+
+        /// <summary>
+        /// The XML element this vendor was parsed from, null when it was built from a WoWObject.
+        /// </summary>
+        public XElement Element { get; private set; }
+
+        /// <summary>
+        /// Optional condition guarding the vendor, compiled with the rest of the profile.
+        /// HB 6.2.3 Vendor.UsableWhen; VendorManager skips a vendor whose condition is false.
+        /// </summary>
+        [CompileExpression]
+        public DelayCompiledExpression<Func<bool>> UsableWhen { get; private set; }
 
         /// <summary>
         /// Determines whether this vendor equals another.

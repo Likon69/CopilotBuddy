@@ -99,7 +99,7 @@ namespace Styx.Logic.Profiles
                 ? ForcedMailboxes
                 : Mailboxes;
 
-            foreach (var mailbox in mailboxList)
+            foreach (var mailbox in mailboxList.Where(IsUsable))
             {
                 float dist = location.DistanceSqr(mailbox.Location);
                 if (dist < closestDist)
@@ -109,6 +109,15 @@ namespace Styx.Logic.Profiles
                 }
             }
             return closest;
+        }
+
+        /// <summary>
+        /// A mailbox with no UsableWhen is always usable, otherwise its condition decides.
+        /// HB 6.2.3 MailboxManager.Class1186.method_0, applied where HB applies it: at selection.
+        /// </summary>
+        private static bool IsUsable(Mailbox mailbox)
+        {
+            return mailbox.UsableWhen == null || mailbox.UsableWhen.CallableExpression();
         }
 
         /// <summary>

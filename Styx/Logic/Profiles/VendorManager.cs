@@ -72,7 +72,7 @@ namespace Styx.Logic.Profiles
                 // Filter blacklisted vendors at query time instead of mutating _filteredVendors,
                 // so vendors that are later un-blacklisted remain available.
                 return (Lookup<Vendor.VendorType, Vendor>)_filteredVendors
-                    .Where(v => !Blacklist.Contains(v))
+                    .Where(v => !Blacklist.Contains(v) && IsUsable(v))
                     .ToLookup(v => v.Type);
             }
         }
@@ -91,6 +91,15 @@ namespace Styx.Logic.Profiles
         }
 
         /// <summary>
+        /// A vendor with no UsableWhen is always usable, otherwise its condition decides.
+        /// HB 6.2.3 VendorManager.smethod_0 folds this into the same predicate as the blacklist.
+        /// </summary>
+        private static bool IsUsable(Vendor vendor)
+        {
+            return vendor.UsableWhen == null || vendor.UsableWhen.CallableExpression();
+        }
+
+        /// <summary>
         /// Gets the closest vendor of a specific type.
         /// For Sell type, also accepts Repair and Ammo vendors (they can all buy items).
         /// </summary>
@@ -103,7 +112,7 @@ namespace Styx.Logic.Profiles
                 // Use forced vendors if available
                 if (ForcedVendors != null && ForcedVendors.Count > 0)
                 {
-                    source = ForcedVendors.Where(v => MatchesVendorType(v, type)).ToList();
+                    source = ForcedVendors.Where(v => MatchesVendorType(v, type) && IsUsable(v)).ToList();
                 }
                 else
                 {
@@ -113,9 +122,9 @@ namespace Styx.Logic.Profiles
                         if (type == Vendor.VendorType.Sell)
                         {
                             source = AllVendors?.Where(v => 
-                                v.Type == Vendor.VendorType.Sell || 
-                                v.Type == Vendor.VendorType.Repair ||
-                                v.Type == Vendor.VendorType.Ammo).ToList();
+                                (v.Type == Vendor.VendorType.Sell || 
+                                 v.Type == Vendor.VendorType.Repair ||
+                                 v.Type == Vendor.VendorType.Ammo) && IsUsable(v)).ToList();
                         }
                         else if (Vendors != null)
                         {
@@ -124,7 +133,7 @@ namespace Styx.Logic.Profiles
                     }
                     else
                     {
-                        source = AllVendors;
+                        source = AllVendors?.Where(IsUsable).ToList();
                     }
                 }
 
