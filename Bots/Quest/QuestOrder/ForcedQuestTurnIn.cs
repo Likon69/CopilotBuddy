@@ -40,6 +40,15 @@ public class ForcedQuestTurnIn : ForcedBehavior
         this.Location = location;
     }
 
+    /// <summary>
+    /// HB 4.3.4 signature (ForcedQuestTurnIn.cs:28), which carries no npc name.
+    /// SafeQuestTurnin and the other stock behaviors construct the turn-in this way.
+    /// </summary>
+    public ForcedQuestTurnIn(uint questId, string questName, uint npcId, WoWPoint location)
+        : this(questId, questName, npcId, string.Empty, location)
+    {
+    }
+
     public override bool IsDone => !ObjectManager.Me.QuestLog.ContainsQuest(this.QuestId);
 
     public uint QuestId { get; private set; }
