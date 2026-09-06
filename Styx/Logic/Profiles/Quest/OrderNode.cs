@@ -13,7 +13,7 @@ using System.Xml.Linq;
 #nullable disable
 namespace Styx.Logic.Profiles.Quest;
 
-public abstract class OrderNode
+public abstract class OrderNode : IXmlObject
 {
     private static readonly Dictionary<OrderNodeType, Func<XElement, OrderNode>> _nodeFactories = new Dictionary<OrderNodeType, Func<XElement, OrderNode>>()
     {

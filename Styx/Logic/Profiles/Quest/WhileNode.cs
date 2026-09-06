@@ -1,9 +1,3 @@
-// Decompiled with JetBrains decompiler
-// Type: Styx.Logic.Profiles.Quest.WhileNode
-// Assembly: Honorbuddy, Version=2.0.0.5999, Culture=neutral, PublicKeyToken=50a565ab5c01ae50
-// MVID: FB7FEB85-27C0-4D17-B8DE-615FDFDA7752
-// Assembly location: C:\Users\Texy6\Desktop\Honorbuddy-cleaned.exe
-
 using Styx.Helpers;
 
 using System;
@@ -17,14 +11,21 @@ namespace Styx.Logic.Profiles.Quest;
 
 public class WhileNode : OrderNode, INodeContainer
 {
-    public WhileNode(Func<bool> condition, IEnumerable<OrderNode> body)
-        : base(OrderNodeType.While)
+    public WhileNode(string conditionText, IEnumerable<OrderNode> body, XElement element)
+        : base(OrderNodeType.While, element)
     {
-        this.Condition = condition != null ? condition : throw new ArgumentNullException(nameof(condition));
+        if (string.IsNullOrEmpty(conditionText))
+            throw new ArgumentException("condition cannot be null or empty", nameof(conditionText));
+
+        this.ConditionText = conditionText;
+        this.Condition = DelayCompiledExpression.Condition(conditionText);
         this.Body = body != null ? new OrderNodeCollection(body) : new OrderNodeCollection();
     }
 
-    public Func<bool> Condition { get; private set; }
+    public string ConditionText { get; private set; }
+
+    [CompileExpression]
+    public DelayCompiledExpression<Func<bool>> Condition { get; private set; }
 
     public OrderNodeCollection Body { get; private set; }
 
@@ -41,10 +42,6 @@ public class WhileNode : OrderNode, INodeContainer
         if (conditionAttr == null)
             throw new ProfileMissingAttributeException("condition", element);
 
-        Func<bool> condition = ConditionHelper.CompileCondition(conditionAttr);
-        if (condition == null)
-            throw new ProfileException($"Could not parse 'While'. Condition code \"{conditionAttr.Value}\" could not be compiled into C# code.");
-
         List<OrderNode> body = new List<OrderNode>();
         foreach (XElement childElement in element.Elements().Where(e => e.NodeType != XmlNodeType.Comment))
         {
@@ -59,6 +56,6 @@ public class WhileNode : OrderNode, INodeContainer
                 throw new ProfileException("Could not parse While body node", ex);
             }
         }
-        return new WhileNode(condition, body);
+        return new WhileNode(conditionAttr.Value, body, element);
     }
 }

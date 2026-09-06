@@ -55,7 +55,7 @@ public class ForcedWhile : ForcedBehavior
                 bool flag;
                 try
                 {
-                    flag = this.whileNode.Condition();
+                    flag = this.whileNode.Condition.CallableExpression();
                 }
                 catch (Exception ex)
                 {

@@ -53,6 +53,17 @@ namespace Styx.Logic.Profiles.Quest
                 "Styx.Logic.BehaviorTree",
                 "Buddy.Coroutines",
                 "TreeSharp",
+                // The rest of the namespaces a profile condition could name under the old
+                // per-condition ConditionHelper script, kept so batching does not shrink the
+                // vocabulary. HB 6.2.3 CompileBatch carries the same set under its own names.
+                "System.Drawing",
+                "Styx.Combat.CombatRoutine",
+                "Styx.Logic.AreaManagement",
+                "Styx.Logic.Inventory.Frames.Gossip",
+                "Styx.Logic.Inventory.Frames.LootFrame",
+                "Styx.Logic.POI",
+                "Styx.Plugins",
+                "Styx.WoWInternals.World",
             };
         }
 

@@ -8,27 +8,33 @@ using Styx.Helpers;
 #nullable disable
 namespace Styx.Logic.Profiles.Quest
 {
-    public class ElseIf
+    public class ElseIf : IXmlObject
     {
-        public ElseIf(Func<bool> condition, IEnumerable<OrderNode> body)
+        public ElseIf(string conditionText, IEnumerable<OrderNode> body, XElement element)
         {
-            this.Condition = condition ?? throw new ArgumentNullException(nameof(condition));
+            if (string.IsNullOrEmpty(conditionText))
+                throw new ArgumentException("condition cannot be null or empty", nameof(conditionText));
+
+            this.ConditionText = conditionText;
+            this.Condition = DelayCompiledExpression.Condition(conditionText);
             this.Body = body != null ? new OrderNodeCollection(body) : new OrderNodeCollection();
+            this.Element = element;
         }
 
-        public Func<bool> Condition { get; private set; }
+        public string ConditionText { get; private set; }
+
+        [CompileExpression]
+        public DelayCompiledExpression<Func<bool>> Condition { get; private set; }
 
         public OrderNodeCollection Body { get; private set; }
+
+        public XElement Element { get; private set; }
 
         public static ElseIf FromXml(XElement element)
         {
             var condAttr = element.Attribute("Condition") ?? element.Attribute("condition");
             if (condAttr == null)
                 throw new ProfileMissingAttributeException("Condition", element);
-
-            Func<bool> condition = ConditionHelper.ParseConditionString(condAttr.Value);
-            if (condition == null)
-                throw new ProfileException($"Could not parse ElseIf Condition code: {condAttr.Value}");
 
             List<OrderNode> body = new List<OrderNode>();
             foreach (XElement child in element.Elements().Where(e => e.NodeType != XmlNodeType.Comment))
@@ -44,7 +50,7 @@ namespace Styx.Logic.Profiles.Quest
                     throw new ProfileException($"Could not parse ElseIf body node: {ex.Message}", ex);
                 }
             }
-            return new ElseIf(condition, body);
+            return new ElseIf(condAttr.Value, body, element);
         }
     }
 }

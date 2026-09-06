@@ -556,6 +556,13 @@ namespace Styx.Logic.Profiles
 			return Quests.FirstOrDefault(q => q.ID == id);
 		}
 
+		/// <summary>
+		/// The single compile batch that owns every expression of this profile.
+		/// HB 6.2.3 keeps it on Profile (Class1208_0) and ProfileManager compiles it once, right
+		/// after the load, so a profile costs one assembly instead of one per condition.
+		/// </summary>
+		public CodeComposition CodeComposition { get; } = new CodeComposition();
+
 		public Profile()
 		{
 			MinLevel = 1;
@@ -577,7 +584,8 @@ namespace Styx.Logic.Profiles
 
 			try
 			{
-				XDocument doc = XDocument.Load(path);
+				// SetLineInfo so a compile error can name the profile line, the way HB reports them
+				XDocument doc = XDocument.Load(path, LoadOptions.SetLineInfo);
 				if (doc.Root == null)
 				{
 					Logging.Write("Profile has no root element: {0}", path);

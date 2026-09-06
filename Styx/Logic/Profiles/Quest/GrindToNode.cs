@@ -11,15 +11,16 @@ namespace Styx.Logic.Profiles.Quest
     /// </summary>
     public class GrindToNode : OrderNode
     {
-        public GrindToNode(float level, Func<bool> condition)
-            : base(OrderNodeType.GrindTo)
+        public GrindToNode(float level, string conditionText, XElement element)
+            : base(OrderNodeType.GrindTo, element)
         {
             Level = level;
-            Condition = condition;
+            ConditionText = conditionText;
+            Condition = conditionText == null ? null : DelayCompiledExpression.Condition(conditionText);
         }
 
-        public GrindToNode(float level)
-            : this(level, null)
+        public GrindToNode(float level, XElement element)
+            : this(level, null, element)
         {
         }
 
@@ -29,9 +30,15 @@ namespace Styx.Logic.Profiles.Quest
         public float Level { get; private set; }
 
         /// <summary>
-        /// Condition function for grinding.
+        /// The condition text as written in the profile.
         /// </summary>
-        public Func<bool> Condition { get; private set; }
+        public string ConditionText { get; private set; }
+
+        /// <summary>
+        /// Condition expression for grinding, null when the node grinds to a level instead.
+        /// </summary>
+        [CompileExpression]
+        public DelayCompiledExpression<Func<bool>> Condition { get; private set; }
 
         /// <summary>
         /// Goal text to display while grinding.
@@ -55,10 +62,7 @@ namespace Styx.Logic.Profiles.Quest
                 .FirstOrDefault(a => a.Name.LocalName.Equals("condition", StringComparison.OrdinalIgnoreCase));
             if (conditionAttr != null)
             {
-                var condition = ConditionHelper.ParseConditionString(conditionAttr.Value);
-                if (condition == null)
-                    throw new ProfileException($"Could not parse GrindTo Condition code: {conditionAttr.Value}");
-                return new GrindToNode(-1f, condition) { GoalText = goalText };
+                return new GrindToNode(-1f, conditionAttr.Value, element) { GoalText = goalText };
             }
 
             // Check for level attribute
@@ -68,7 +72,7 @@ namespace Styx.Logic.Profiles.Quest
             {
                 if (!float.TryParse(levelAttr.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out var level))
                     throw new ProfileAttributeExpectedException<float>(levelAttr);
-                return new GrindToNode(level) { GoalText = goalText };
+                return new GrindToNode(level, element) { GoalText = goalText };
             }
 
             throw new ProfileException("You need at least one level or condition attribute in GrindToNode!");

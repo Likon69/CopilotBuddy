@@ -129,6 +129,39 @@ namespace Styx.Logic.Profiles
 			return null;
 		}
 
+		/// <summary>
+		/// Composes every expression of the profile into its single batch and compiles it before any
+		/// node runs. HB 6.2.3 ProfileManager.smethod_4: a compile failure stops the bot there.
+		/// </summary>
+		private static bool CompileProfileCode(Profile? profile)
+		{
+			if (profile == null)
+				return true;
+
+			profile.CodeComposition.AddProfile(profile);
+			if (profile.CodeComposition.Batch.Compile())
+				return true;
+
+			Styx.Logic.Profiles.Quest.CompileError[] errors = profile.CodeComposition.Batch.Errors;
+			Logging.Write(System.Drawing.Color.Red, "{0} compiler error(s) in profile '{1}'",
+				errors.Length, profile.Name);
+			foreach (Styx.Logic.Profiles.Quest.CompileError error in errors)
+			{
+				var element = error.Context as System.Xml.Linq.XElement;
+				var lineInfo = element as System.Xml.IXmlLineInfo;
+				if (lineInfo != null && lineInfo.HasLineInfo())
+				{
+					Logging.Write(System.Drawing.Color.Red, "  line {0} <{1}>: {2}",
+						lineInfo.LineNumber, element.Name.LocalName, error.Error);
+				}
+				else
+				{
+					Logging.Write(System.Drawing.Color.Red, "  {0}: {1}", error.Code, error.Error);
+				}
+			}
+			return false;
+		}
+
 		public static void LoadNew(string path, bool rememberMe)
 		{
 			if (string.IsNullOrEmpty(path) || !File.Exists(path))
@@ -146,6 +179,11 @@ namespace Styx.Logic.Profiles
 			StyxWoW.AreaManager.SetArea(null);
 			Logging.WriteDebug("Loading profile from {0}", path);
 			CurrentOuterProfile = new Profile(path, null);
+			if (!CompileProfileCode(CurrentOuterProfile))
+			{
+				TreeRoot.Stop();
+				return;
+			}
 			LoadProfileForLevel();
 		}
 

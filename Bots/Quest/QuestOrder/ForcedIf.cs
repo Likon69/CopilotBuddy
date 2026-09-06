@@ -40,7 +40,7 @@ public class ForcedIf : ForcedBehavior
     {
         try
         {
-            if (this.IfNode.Condition())
+            if (this.IfNode.Condition.CallableExpression())
             {
                 Logging.WriteDiagnostic("[If] Condition is true, executing If body");
                 this.conditionalOrder = new QuestOrder(new OrderNodeCollection((IEnumerable<OrderNode>)this.IfNode.Body));
@@ -86,7 +86,7 @@ public class ForcedIf : ForcedBehavior
                 else
                     goto label_6;
             }
-            while (!current.Condition());
+            while (!current.Condition.CallableExpression());
             matchingBody = current.Body;
             flag = true;
             goto label_7;

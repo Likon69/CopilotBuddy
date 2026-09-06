@@ -8,14 +8,17 @@ using Styx.Helpers;
 #nullable disable
 namespace Styx.Logic.Profiles.Quest
 {
-    public class Else
+    public class Else : IXmlObject
     {
-        public Else(IEnumerable<OrderNode> body)
+        public Else(IEnumerable<OrderNode> body, XElement element)
         {
             this.Body = body != null ? new OrderNodeCollection(body) : new OrderNodeCollection();
+            this.Element = element;
         }
 
         public OrderNodeCollection Body { get; private set; }
+
+        public XElement Element { get; private set; }
 
         public static Else FromXml(XElement element)
         {
@@ -33,7 +36,7 @@ namespace Styx.Logic.Profiles.Quest
                     throw new ProfileException("Could not parse Else body node", ex);
                 }
             }
-            return new Else(body);
+            return new Else(body, element);
         }
     }
 }
