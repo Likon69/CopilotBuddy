@@ -96,22 +96,21 @@ public class QuestBehaviorHelper
                 _defaultReferences.Add(MetadataReference.CreateFromFile(objectModel));
         }
         
-        // Add WPF assemblies from TRUSTED_PLATFORM_ASSEMBLIES (same runtime as CopilotBuddy)
+        // HB 4.3.4 (ns15\Class455 ctor) hands the compiler every assembly loaded in the AppDomain.
+        // .NET loads the framework lazily, so TRUSTED_PLATFORM_ASSEMBLIES stands in for what
+        // mscorlib.dll + System.dll always covered under .NET Framework: without it a behavior
+        // referencing HttpClient, Uri or System.Windows.Forms fails to compile.
+        foreach (Assembly loadedAsm in AppDomain.CurrentDomain.GetAssemblies())
+        {
+            if (!loadedAsm.IsDynamic && !string.IsNullOrEmpty(loadedAsm.Location))
+                AddManagedReference(loadedAsm.Location, referencePaths);
+        }
+
         var trustedAssemblies = AppContext.GetData("TRUSTED_PLATFORM_ASSEMBLIES") as string;
         if (!string.IsNullOrEmpty(trustedAssemblies))
         {
             foreach (var asmPath in trustedAssemblies.Split(';'))
-            {
-                var fileName = System.IO.Path.GetFileName(asmPath);
-                if (fileName.Equals("PresentationCore.dll", StringComparison.OrdinalIgnoreCase) ||
-                    fileName.Equals("WindowsBase.dll", StringComparison.OrdinalIgnoreCase) ||
-                    fileName.Equals("PresentationFramework.dll", StringComparison.OrdinalIgnoreCase) ||
-                    fileName.Equals("System.Xaml.dll", StringComparison.OrdinalIgnoreCase))
-                {
-                    if (File.Exists(asmPath) && referencePaths.Add(asmPath))
-                        _defaultReferences.Add(MetadataReference.CreateFromFile(asmPath));
-                }
-            }
+                AddManagedReference(asmPath, referencePaths);
         }
         
         // Add CopilotBuddy itself (contains Styx.*, TreeSharp, etc.)
@@ -127,6 +126,22 @@ public class QuestBehaviorHelper
         Logging.WriteDebug("[QuestBehaviorHelper] Initialized with {0} assembly references", _defaultReferences.Count);
     }
     
+    private static void AddManagedReference(string path, HashSet<string> paths)
+    {
+        if (string.IsNullOrEmpty(path) || !File.Exists(path) || paths.Contains(path))
+            return;
+        try
+        {
+            AssemblyName.GetAssemblyName(path);
+        }
+        catch
+        {
+            return;
+        }
+        paths.Add(path);
+        _defaultReferences.Add(MetadataReference.CreateFromFile(path));
+    }
+
     private static void AddReferenceFromType<T>(HashSet<string> paths)
     {
         try
