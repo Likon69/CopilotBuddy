@@ -80,7 +80,13 @@ namespace Styx.WoWInternals.WoWObjects
             }
         }
 
-        private BitVector32 NpcFlags => GetDescriptor<BitVector32>(UnitFields.NpcFlags);
+        private BitVector32 NpcFlagsVector => GetDescriptor<BitVector32>(UnitFields.NpcFlags);
+
+        /// <summary>
+        /// UNIT_NPC_FLAGS as a raw mask. HB 4.3.4 WoWUnit.NpcFlags; the stock Quest Behaviors
+        /// compare it numerically, HasNpcFlag keeps reading the BitVector32 form.
+        /// </summary>
+        public uint NpcFlags => GetDescriptor<uint>(UnitFields.NpcFlags);
 
         private BitVector32 DynamicFlags => GetDescriptor<BitVector32>(UnitFields.DynamicFlags);
 
@@ -280,7 +286,7 @@ namespace Styx.WoWInternals.WoWObjects
 
         private bool HasNpcFlag(UnitNPCFlags flags)
         {
-            BitVector32 npcFlags = NpcFlags;
+            BitVector32 npcFlags = NpcFlagsVector;
             return npcFlags[(int)flags];
         }
 
@@ -661,6 +667,12 @@ namespace Styx.WoWInternals.WoWObjects
         public ulong CharmedByGuid => GetDescriptor<ulong>(UnitFields.CharmedBy);
 
         public WoWUnit? CharmedBy => ObjectManager.GetObjectByGuid<WoWUnit>(CharmedByGuid);
+
+        /// <summary>HB 4.3.4 name for CharmedByGuid, which the stock Quest Behaviors read.</summary>
+        public ulong CharmedByUnitGuid => CharmedByGuid;
+
+        /// <summary>HB 4.3.4 name for CharmedBy, which the stock Quest Behaviors read.</summary>
+        public WoWUnit? CharmedByUnit => CharmedBy;
 
         public ulong Summon => GetDescriptor<ulong>(UnitFields.Summon);
         public ulong Charmed => GetDescriptor<ulong>(UnitFields.Charm);
@@ -1138,6 +1150,9 @@ namespace Styx.WoWInternals.WoWObjects
         public int NativeDisplayId => GetDescriptor<int>(UnitFields.NativeDisplayId);
 
         public ulong CreatedByGuid => GetDescriptor<ulong>(UnitFields.CreatedBy);
+
+        /// <summary>HB 4.3.4 name for CreatedByGuid, which the stock Quest Behaviors read.</summary>
+        public ulong CreatedByUnitGuid => CreatedByGuid;
         public WoWUnit? CreatedBy => ObjectManager.GetObjectByGuid<WoWUnit>(CreatedByGuid);
         public uint CreatedBySpellId => GetDescriptor<uint>(UnitFields.CreatedBySpell);
         public int BaseMana => GetDescriptor<int>(UnitFields.BaseMana);
