@@ -379,7 +379,7 @@ namespace Styx.WoWInternals.WoWObjects
             }
         }
 
-        internal static WoWPoint InstanceDeathLocation { get; set; }
+        internal static WoWPoint InstanceDeathLocation { get; set; } = WoWPoint.Empty;
 
         public WoWPoint InstanceCorpseLocation
         {

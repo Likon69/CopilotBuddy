@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Threading;
 using Styx.Helpers;
 using Styx.Logic;
 using Styx.Logic.BehaviorTree;
+using Styx.Logic.Pathing;
 using Styx.WoWInternals;
 using Styx.WoWInternals.WoWObjects;
 
@@ -602,7 +604,7 @@ namespace Styx
 			}
 
 			/// <summary>
-			/// HB 3.3.5a Player.smethod_3: fire OnPlayerDied on the rising edge of
+			/// HB 4.3.4 Player.smethod_3: fire OnPlayerDied on the rising edge of
 			/// LocalPlayer.Dead.
 			/// </summary>
 			internal static void CheckPlayerDeath()
@@ -613,7 +615,18 @@ namespace Styx
 
 				bool dead = me.Dead;
 				if (dead && !_wasDead)
+				{
+					if (me.IsInInstance)
+					{
+						Vector2 entrance = new Styx.WoWInternals.DBC.Map(me.MapId).GhostEntranceLocation;
+						LocalPlayer.InstanceDeathLocation = new WoWPoint(entrance.X, entrance.Y, 0f);
+					}
+					else
+					{
+						LocalPlayer.InstanceDeathLocation = WoWPoint.Empty;
+					}
 					RaisePlayerDied();
+				}
 
 				_wasDead = dead;
 			}
