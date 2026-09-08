@@ -207,6 +207,13 @@ namespace Styx.Logic.Profiles
                    Type == other.Type;
         }
 
+        public override bool Equals(object obj) => Equals(obj as Vendor);
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Entry, Location, Name, Type);
+        }
+
         public override string ToString()
         {
             return $"[Vendor Name: {Name}, Entry: {Entry}, Type: {Type}, Location: {Location}, TrainClass: {TrainClass}]";

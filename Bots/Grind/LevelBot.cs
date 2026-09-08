@@ -946,16 +946,7 @@ namespace Bots.Grind
                                         new WaitContinue(5, ctx => IsVendorFrameOpen(),
                                             new PrioritySelector(
                                                 new DecoratorFrameIsVisible<GossipFrame>(new Sequence(
-                                                    new TreeSharp.Action(ctx =>
-                                                    {
-                                                        var entry = GossipFrame.Instance.GossipOptionEntries
-                                                            .FirstOrDefault(e => e.Type == BotPoi.Current.Type.GetGossipType());
-                                                        if (entry.Index >= 0)
-                                                            GossipFrame.Instance.SelectGossipOption(entry.Index);
-                                                    }),
-                                                    // HB 6.2.3 fix: delay after gossip selection to let the game
-                                                    // process the request and open the correct frame
-                                                    new ActionSleep(500),
+                                                    new TreeSharp.Action(ctx => SelectPoiGossipOption()),
                                                     new Wait(5, ctx => !GossipFrame.Instance.IsVisible, new ActionIdle())
                                                 )),
                                                 new ActionIdle()
@@ -980,6 +971,14 @@ namespace Bots.Grind
                                 new Decorator(
                                     ctx => IsVendorFrameOpen(),
                                     new PrioritySelector(
+                                        new Decorator(
+                                            ctx => GossipFrame.Instance.IsVisible &&
+                                                   BotPoi.Current.Type.GetGossipType() != GossipEntry.GossipEntryType.Unknown,
+                                            new Sequence(
+                                                new TreeSharp.Action(ctx => SelectPoiGossipOption()),
+                                                new Wait(5, ctx => !GossipFrame.Instance.IsVisible, new ActionIdle())
+                                            )
+                                        ),
                                         // Sell/Repair — HB 6.2.3 pattern: require MerchantFrame visible
                                         new DecoratorIsPoiType(new[] { PoiType.Sell, PoiType.Repair },
                                             new Decorator(ctx => MerchantFrame.Instance.IsVisible, new Sequence(
@@ -1056,12 +1055,13 @@ namespace Bots.Grind
                                             new ActionClearPoi("Done mailing")
                                         )),
                                         // Buy
-                                        new DecoratorIsPoiType(PoiType.Buy, new Sequence(
+                                        new DecoratorIsPoiType(PoiType.Buy,
+                                            new Decorator(ctx => MerchantFrame.Instance.IsVisible, new Sequence(
                                             new ActionDebugString("Buying items"),
                                             new ActionSetActivity("Buying Items"),
                                             new TreeSharp.Action(ctx => Vendors.BuyItems()),
                                             new ActionClearPoi("Done buying")
-                                        )),
+                                        ))),
                                         // Train
                                         new DecoratorIsPoiType(PoiType.Train, new Sequence(
                                             new Wait(3, ctx => TrainerFrame.Instance.IsVisible, null),
@@ -1230,6 +1230,34 @@ namespace Bots.Grind
 
             return me.Level >= currentProfile.MinMailLevel &&
                    (closestMailbox.Location.Distance(me.Location) < 200.0 || StyxWoW.Me.FreeBagSlots < 30);
+        }
+
+        private static bool SelectPoiGossipOption()
+        {
+            if (!GossipFrame.Instance.IsVisible)
+                return false;
+
+            GossipEntry.GossipEntryType gossipType = BotPoi.Current.Type.GetGossipType();
+            List<GossipEntry> entries = GossipFrame.Instance.GossipOptionEntries;
+            if (entries != null)
+            {
+                foreach (GossipEntry entry in entries)
+                {
+                    if (entry.Type != gossipType)
+                        continue;
+                    GossipFrame.Instance.SelectGossipOption(entry.Index);
+                    StyxWoW.Sleep(500);
+                    SleepForLag();
+                    return true;
+                }
+            }
+
+            Logging.Write("Failed to select gossip option {0}", gossipType);
+            if (BotPoi.Current.AsVendor != null)
+                ProfileManager.CurrentProfile?.VendorManager?.Blacklist.Add(BotPoi.Current.AsVendor);
+            BotPoi.Clear(string.Format("Couldn't find {0} in gossip options", gossipType));
+            GossipFrame.Instance.Close();
+            return false;
         }
 
         private static bool IsVendorFrameOpen()
