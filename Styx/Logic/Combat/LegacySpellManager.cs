@@ -173,21 +173,9 @@ namespace Styx.Logic.Combat
         /// <summary>
         /// Clicks a remote location for ground-targeted spells (trap placement, etc).
         /// </summary>
-        public static void ClickRemoteLocation(WoWPoint location)
+        public static bool ClickRemoteLocation(WoWPoint location)
         {
-            // In WotLK 3.3.5a, ground-targeted spells are confirmed via click at location
-            // This uses the in-game SpellTargetUnit/SpellTargetMapCoordinates
-            try
-            {
-                // Use Lua to click the pending spell at the location
-                Lua.DoString(string.Format(
-                    System.Globalization.CultureInfo.InvariantCulture,
-                    "SpellTargetUnit('player'); CameraOrSelectOrMoveStart(); CameraOrSelectOrMoveStop();"));
-            }
-            catch
-            {
-                // Fallback: just try to use the pending spell
-            }
+            return SpellManager.ClickRemoteLocation(location);
         }
     }
 }
