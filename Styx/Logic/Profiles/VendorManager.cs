@@ -146,11 +146,16 @@ namespace Styx.Logic.Profiles
                     {
                         try
                         {
+                            HashSet<int> excluded = new HashSet<int>();
+                            foreach (Vendor blacklisted in Blacklist)
+                                excluded.Add(blacklisted.Entry);
+
                             NpcResult nearestNpc = NpcQueries.GetNearestNpc(
                                 StyxWoW.Me.FactionTemplate.Faction,
                                 StyxWoW.Me.MapId,
                                 StyxWoW.Me.Location,
-                                type.AsNpcFlag());
+                                type.AsNpcFlag(),
+                                excluded);
                             if (nearestNpc != null)
                             {
                                 return new Vendor(nearestNpc.Entry, nearestNpc.Name, type, nearestNpc.Location);

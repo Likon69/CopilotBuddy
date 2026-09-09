@@ -336,24 +336,45 @@ namespace Styx.Logic.Inventory.Frames.Merchant
             int bestIndex = -1;
             int bestLevel = -1;
             int playerLevel = StyxWoW.Me?.Level ?? 1;
+            int examined = 0;
 
             foreach (var item in GetAllMerchantItems())
             {
+                examined++;
+
                 if (item.ItemInfo == null)
+                {
+                    Logging.WriteDebug("[Vendor] item {0} index {1}: no ItemInfo", item.ItemId, item.Index);
                     continue;
+                }
 
                 // Check if item has the spell effect (Food/Drink)
                 int[] spellIds = item.ItemInfo.SpellId;
                 if (spellIds == null || spellIds.Length == 0 || spellIds[0] == 0)
+                {
+                    Logging.WriteDebug("[Vendor] item {0} \"{1}\": no spell id", item.ItemId, item.ItemInfo.Name);
                     continue;
+                }
 
                 WoWSpell spell = WoWSpell.FromId(spellIds[0]);
-                if (spell == null || spell.Name != consumableType)
+                if (spell == null)
+                {
+                    Logging.WriteDebug("[Vendor] item {0} \"{1}\": spell {2} not found", item.ItemId, item.ItemInfo.Name, spellIds[0]);
                     continue;
+                }
+
+                if (spell.Name != consumableType)
+                {
+                    Logging.WriteDebug("[Vendor] item {0} \"{1}\": spell is \"{2}\", wanted \"{3}\"", item.ItemId, item.ItemInfo.Name, spell.Name, consumableType);
+                    continue;
+                }
 
                 // Check if player can use this item (level check)
                 if (item.ItemInfo.RequiredLevel > playerLevel)
+                {
+                    Logging.WriteDebug("[Vendor] item {0} \"{1}\": needs level {2}, we are {3}", item.ItemId, item.ItemInfo.Name, item.ItemInfo.RequiredLevel, playerLevel);
                     continue;
+                }
 
                 // Find highest level item that player can use
                 if (item.ItemInfo.RequiredLevel > bestLevel)
@@ -362,6 +383,9 @@ namespace Styx.Logic.Inventory.Frames.Merchant
                     bestIndex = item.Index;
                 }
             }
+
+            if (bestIndex == -1)
+                Logging.WriteDebug("[Vendor] no \"{0}\" found, {1} item(s) examined, MerchantNumItems={2}", consumableType, examined, MerchantNumItems);
 
             return bestIndex;
         }

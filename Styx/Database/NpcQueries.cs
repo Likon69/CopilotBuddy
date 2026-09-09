@@ -157,7 +157,7 @@ namespace Styx.Database
         /// <param name="searchLocation">The search location.</param>
         /// <param name="npcFlags">The NPC flags to search for.</param>
         /// <returns>The nearest NPC, or null if not found.</returns>
-        public static NpcResult GetNearestNpc(WoWFaction myFaction, uint mapId, WoWPoint searchLocation, UnitNPCFlags npcFlags)
+        public static NpcResult GetNearestNpc(WoWFaction myFaction, uint mapId, WoWPoint searchLocation, UnitNPCFlags npcFlags, ISet<int>? excludedEntries = null)
         {
             EnsureInitialized();
             if (_getNearestNpcCmd == null) return null;
@@ -184,7 +184,10 @@ namespace Styx.Database
             while (reader.Read())
             {
                 NpcResult result = new NpcResult(reader);
-                
+
+                if (excludedEntries != null && excludedEntries.Contains(result.Entry))
+                    continue;
+
                 // Skip NPCs with invalid faction
                 if (result.Faction == 0)
                     continue;
