@@ -232,6 +232,24 @@ namespace Styx.Logic
 			ForceSell = false;
 		}
 
+		private static void WaitForMerchantItemCache()
+		{
+			List<uint> unknown = _merchantFrame.GetAllMerchantItems().Where(i => i.ItemInfo == null).Select(i => i.ItemId).Distinct().ToList();
+			if (unknown.Count == 0)
+				return;
+			Lua.DoString(string.Join(" ", unknown.Select(id => "GetItemInfo(" + id + ")")));
+			var timer = System.Diagnostics.Stopwatch.StartNew();
+			int stillUnknown = unknown.Count;
+			while (timer.ElapsedMilliseconds < 3000)
+			{
+				Thread.Sleep(150);
+				stillUnknown = _merchantFrame.GetAllMerchantItems().Count(i => i.ItemInfo == null);
+				if (stillUnknown == 0)
+					break;
+			}
+			Logging.WriteDebug("[Vendor] {0} merchant item(s) were not in the item cache, {1} still unknown after {2} ms", unknown.Count, stillUnknown, timer.ElapsedMilliseconds);
+		}
+
 		/// <summary>
 		/// Buys items from vendor based on OnBuyItems event handlers and food/drink settings.
 		/// Ported from HB 4.3.4.
@@ -276,6 +294,8 @@ namespace Styx.Logic
 			Vendor asVendor = BotPoi.Current.AsVendor;
 			if (asVendor == null || (asVendor.Type != Vendor.VendorType.Food && asVendor.Type != Vendor.VendorType.Restock))
 				return;
+
+			WaitForMerchantItemCache();
 
 			bool usesMana = StyxWoW.Me.PowerType == WoWPowerType.Mana || StyxWoW.Me.Class == WoWClass.Druid;
 			int bestDrinkIndex = _merchantFrame.GetBestDrinkFromVendor();
