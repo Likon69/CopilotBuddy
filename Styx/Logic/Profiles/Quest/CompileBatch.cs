@@ -146,6 +146,13 @@ namespace Styx.Logic.Profiles.Quest
                 catch { /* dynamic or reflection-only, skip */ }
             }
 
+            string coreLib = typeof(object).Assembly.Location;
+            if (!string.IsNullOrEmpty(coreLib) && File.Exists(coreLib) && seenPaths.Add(coreLib))
+            {
+                Logging.WriteDebug("[CompileBatch] System.Private.CoreLib was not among the loaded assemblies, adding {0}", coreLib);
+                references.Add(MetadataReference.CreateFromFile(coreLib));
+            }
+
             // Ensure core runtime refs are present
             string runtimeDir = Path.GetDirectoryName(typeof(object).Assembly.Location);
             if (runtimeDir != null)
@@ -182,6 +189,12 @@ namespace Styx.Logic.Profiles.Quest
                     Errors = BuildErrors(errors);
                     foreach (var err in Errors)
                         Logging.Write(Color.Red, "[CompileBatch] Error (line {0}): {1}", err.Line, err.Error);
+                    Logging.Write(Color.Red, "[CompileBatch] {0} references, corlib at \"{1}\" (exists {2}), corlib referenced {3}, runtime dir \"{4}\"",
+                        references.Count, coreLib, !string.IsNullOrEmpty(coreLib) && File.Exists(coreLib),
+                        references.Any(r => r.Display != null && r.Display.IndexOf("System.Private.CoreLib", StringComparison.OrdinalIgnoreCase) >= 0),
+                        runtimeDir);
+                    foreach (var r in references)
+                        Logging.WriteDebug("[CompileBatch] reference: {0}", r.Display);
                     return false;
                 }
 
