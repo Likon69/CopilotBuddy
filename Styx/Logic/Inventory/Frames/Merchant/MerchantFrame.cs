@@ -163,7 +163,7 @@ namespace Styx.Logic.Inventory.Frames.Merchant
                 if (index.HasValue)
                 {
                     Logging.Write("Buying {0} {1}", stackCount, item.Name);
-                    Lua.DoString("BuyMerchantItem(" + index.Value + "," + stackCount + ")");
+                    Lua.DoString("BuyMerchantItem(" + index.Value + "," + PacksFor(GetMerchantItemAtIndex(index.Value - 1), stackCount) + ")");
                 }
             }
             else
@@ -178,12 +178,13 @@ namespace Styx.Logic.Inventory.Frames.Merchant
             if (index.HasValue)
             {
                 MerchantItem merchantItem = GetMerchantItemAtIndex(index.Value - 1);
-                if ((long)stackCount * (long)merchantItem.BuyPrice > (long)ObjectManager.Me.Coinage)
+                int packs = PacksFor(merchantItem, stackCount);
+                if ((long)packs * (long)merchantItem.BuyPrice > (long)ObjectManager.Me.Coinage)
                 {
                     Logging.Write("Not enough money to buy item {0}", itemId);
                     return;
                 }
-                Lua.DoString("BuyMerchantItem(" + index.Value + "," + stackCount + ")");
+                Lua.DoString("BuyMerchantItem(" + index.Value + "," + packs + ")");
             }
         }
 
@@ -197,13 +198,15 @@ namespace Styx.Logic.Inventory.Frames.Merchant
                 return false;
 
             MerchantItem merchantItem = GetMerchantItemAtIndex(index - 1);
-            if ((long)amount * (long)merchantItem.BuyPrice > (long)ObjectManager.Me.Coinage)
+            int packs = PacksFor(merchantItem, amount);
+            if ((long)packs * (long)merchantItem.BuyPrice > (long)ObjectManager.Me.Coinage)
             {
                 Logging.Write("Not enough money to buy {0}", amount);
                 return false;
             }
 
-            Lua.DoString("BuyMerchantItem(" + index + "," + amount + ")");
+            Logging.WriteDebug("[Vendor] BuyMerchantItem({0}, {1}) for {2} x {3}, sold by {4}", index, packs, amount, merchantItem.Name, merchantItem.Quantity);
+            Lua.DoString("BuyMerchantItem(" + index + "," + packs + ")");
             return true;
         }
 
@@ -259,7 +262,7 @@ namespace Styx.Logic.Inventory.Frames.Merchant
 
         private int? GetMerchantIndex(uint itemId)
         {
-            for (int i = 1; i < MerchantNumItems + 1; i++)
+            for (int i = 0; i < MerchantNumItems; i++)
             {
                 MerchantItem item = GetMerchantItemAtIndex(i);
                 if ((long)item.ItemId == (long)itemId)
@@ -395,9 +398,15 @@ namespace Styx.Logic.Inventory.Frames.Merchant
         /// </summary>
         public MerchantItem GetMerchantItemByIndex(int index)
         {
-            if (index < 0 || index >= MerchantNumItems)
+            if (index < 1 || index > MerchantNumItems)
                 return null;
-            return GetMerchantItemAtIndex(index);
+            return GetMerchantItemAtIndex(index - 1);
+        }
+
+        private static int PacksFor(MerchantItem merchantItem, int amount)
+        {
+            int perPack = merchantItem.Quantity > 0 ? merchantItem.Quantity : 1;
+            return Math.Max(1, (amount + perPack - 1) / perPack);
         }
 
         /// <summary>

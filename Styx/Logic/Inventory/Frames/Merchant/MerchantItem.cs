@@ -96,13 +96,12 @@ namespace Styx.Logic.Inventory.Frames.Merchant
 
         /// <summary>
         /// Internal structure for merchant item data.
-        /// Size: 40 bytes (10 ints) to match HB 4.3.4 Struct48
+        /// Size: 32 bytes (8 ints), the 3.3.5a layout of HB 3.3.5a MerchantItem.Struct55: ItemId at +4.
         /// </summary>
         [StructLayout(LayoutKind.Sequential)]
         private struct MerchantItemData
         {
             private uint _reserved0;
-            private uint _reserved1;
             public uint ItemId;
             public uint TextureId;
             public int NumAvailable;
@@ -110,7 +109,6 @@ namespace Styx.Logic.Inventory.Frames.Merchant
             private uint _unknown;
             public int Quantity;
             public uint ExtendedCostId;
-            private uint _reserved2;
 
             public override string ToString()
             {

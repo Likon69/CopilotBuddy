@@ -178,10 +178,16 @@ namespace Styx.Logic.Profiles
 
 			StyxWoW.AreaManager.SetArea(null);
 			Logging.WriteDebug("Loading profile from {0}", path);
-			CurrentOuterProfile = new Profile(path, null);
-			if (!CompileProfileCode(CurrentOuterProfile))
+			Profile profile = new Profile(path, null);
+			if (!CompileProfileCode(profile))
 			{
 				TreeRoot.Stop();
+				return;
+			}
+			CurrentOuterProfile = profile;
+			if (!ReferenceEquals(CurrentOuterProfile, profile))
+			{
+				Logging.WriteDebug("Profile {0} was replaced by a nested load of {1} while it was being announced", path, XmlLocation);
 				return;
 			}
 			LoadProfileForLevel();
