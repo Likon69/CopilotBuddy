@@ -732,9 +732,11 @@ namespace Bots.Grind
                                     BotPoi.Clear("Loot object despawned");
                                 })
                             ),
-                            // Move to lootable
                             new Decorator(
-                                ctx => BotPoi.Current.AsObject != null && !BotPoi.Current.AsObject.WithinInteractRange,
+                                ctx => BotPoi.Current.AsObject != null &&
+                                       (BotPoi.Current.AsObject is WoWUnit lootUnit
+                                           ? !lootUnit.WithinLootRange
+                                           : !BotPoi.Current.AsObject.WithinInteractRange),
                                 new ActionMoveToPoi()
                             ),
                             // Stop descending if flying
