@@ -1236,7 +1236,17 @@ namespace Styx.WoWInternals.WoWObjects
             }
         }
 
-        public override float InteractRange => CombatReach + 4f;
+        public override float InteractRange
+        {
+            get
+            {
+                if (Entry == 13158U)
+                    return 5f;
+                if (Entry == 49044U)
+                    return 6f;
+                return CombatReach + 2f;
+            }
+        }
 
         public WoWFactionTemplate? FactionTemplate => WoWFactionTemplate.FromId(FactionId);
 
