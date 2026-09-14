@@ -34,7 +34,7 @@ namespace Styx.WoWInternals
             try
             {
                 // Base address for ClientDb_RegisterBase
-                uint addr = (uint)GlobalOffsets.ClientDb_RegisterBase; // 0x633DD0
+                uint addr = (uint)GlobalOffsets.ClientDb_RegisterBase; // 0x6337D0
                 
                 // Walk through the registration table
                 while (true)
