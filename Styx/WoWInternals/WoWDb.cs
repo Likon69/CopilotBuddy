@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using GreenMagic;
 using Styx.Patchables;
 
@@ -122,6 +123,63 @@ namespace Styx.WoWInternals
 
                 return new Row(new IntPtr(rowPtr));
             }
+
+            public Row? GetLocalizedRow(int index)
+            {
+                var wow = ObjectManager.Wow;
+                if (wow == null)
+                    return null;
+
+                var header = wow.ReadStruct<DbTableHeader>((uint)_tablePtr.ToInt32() - 24);
+                if (index < header.MinIndex || index > header.MaxIndex)
+                    return null;
+
+                uint rowPtr = wow.Read<uint>((uint)(header.RowArrayPtr.ToInt32() + 4 * (index - header.MinIndex)));
+                if (rowPtr == 0)
+                    return null;
+
+                IntPtr buffer;
+                if (wow.Read<byte>((uint)GlobalOffsets.ClientDb_IsCompressed) == 1)
+                {
+                    buffer = Unpack(rowPtr, 704);
+                }
+                else
+                {
+                    byte[] bytes = wow.ReadBytes(rowPtr, 704);
+                    buffer = Marshal.AllocHGlobal(704);
+                    Marshal.Copy(bytes, 0, buffer, 704);
+                }
+                return new Row(buffer, true);
+            }
+
+            private static IntPtr Unpack(uint source, int size)
+            {
+                var wow = ObjectManager.Wow;
+                byte[] bytes = new byte[20480];
+                bytes[0] = wow.Read<byte>(source);
+                int written = 1;
+                uint src = source + 1;
+                while (written < size)
+                {
+                    bytes[written++] = wow.Read<byte>(src);
+                    if (wow.Read<byte>(src) == wow.Read<byte>(src - 1))
+                    {
+                        byte repeat = wow.Read<byte>(src + 1);
+                        while (repeat != 0)
+                        {
+                            repeat--;
+                            bytes[written++] = wow.Read<byte>(src);
+                        }
+                        src += 2;
+                        if (written < size)
+                            bytes[written++] = wow.Read<byte>(src);
+                    }
+                    src++;
+                }
+                IntPtr buffer = Marshal.AllocHGlobal(size);
+                Marshal.Copy(bytes, 0, buffer, size);
+                return buffer;
+            }
         }
         public class Row
         {
@@ -171,6 +229,9 @@ namespace Styx.WoWInternals
             {
                 try
                 {
+                    if (_ownsMemory)
+                        return Marshal.PtrToStructure<T>(_address);
+
                     var wow = ObjectManager.Wow;
                     if (wow == null)
                         return default;

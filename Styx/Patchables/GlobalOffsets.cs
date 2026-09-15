@@ -82,6 +82,7 @@ namespace Styx.Patchables
         
         // Client Database
         ClientDb_RegisterBase = 6502352,            // 0x6337D0
+        ClientDb_IsCompressed = 12967584,           // 0xC5DEA0
         
         // Doors
         CGDoor_C__CanOpenNow = 7412176,             // 0x7119D0

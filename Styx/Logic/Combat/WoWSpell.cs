@@ -472,7 +472,7 @@ namespace Styx.Logic.Combat
                 var db = StyxWoW.Db[ClientDb.Spell];
                 if (db != null)
                 {
-                    row = db.GetRow((uint)id);
+                    row = db.GetLocalizedRow(id);
                     _rowCache.Add(id, row);
                 }
             }
