@@ -121,7 +121,7 @@ namespace Styx.Logic.Inventory.Frames.Merchant
             }
 
             string lua = string.Format(
-                "{0}for b=0,4 do for s=1,GetContainerNumSlots(b) do local itemLink = GetContainerItemLink(b, s) if itemLink then local _, _, _, _, id, _, _, _, _, _, _, _, _, name = string.find(itemLink, \"|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?\") id = tonumber(id) name = string.lower(name) local _, _, quality = GetItemInfo(itemLink) if {1} then local skip = false if itemExceptions then for i=1, #itemExceptions do if (itemExceptions[i].i and id == itemExceptions[i].i) or (itemExceptions[i].n and name == itemExceptions[i].n) then skip = true break end end end if not skip then UseContainerItem(b, s) end end end end end",
+                "{0}for b=0,4 do for s=1,GetContainerNumSlots(b) do local itemLink = GetContainerItemLink(b, s) if itemLink then local _, _, _, _, id, _, _, _, _, _, _, _, _, name = string.find(itemLink, \"|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?\") id = tonumber(id) name = string.lower(name) local _, _, quality = GetItemInfo(itemLink) if {1} then local skip = false if itemExceptions then for i=1, #itemExceptions do if (itemExceptions[i].i and id == itemExceptions[i].i) or (itemExceptions[i].n and name == itemExceptions[i].n) then skip = true break end end end if not skip and GetContainerItemQuestInfo(b,s) then skip = true end if not skip then UseContainerItem(b, s) end end end end end",
                 exceptionsBuilder + " ",
                 qualityBuilder);
 
