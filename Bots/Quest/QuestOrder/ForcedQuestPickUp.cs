@@ -211,62 +211,58 @@ public class ForcedQuestPickUp : ForcedBehavior
         if (!GossipFrame.Instance.IsVisible && !ForcedQuestPickUp.QuestTitleButton.IsVisible)
             return RunStatus.Success;
 
-        // HB 4.3.4 ForcedQuestPickUp.method_4 pattern:
-        // Two distinct quest list sources in WotLK:
-        //   1) GossipFrame.AvailableQuests  → gossip-based quests (GossipFrame visible)
-        //   2) QuestFrame.AvailableQuests   → native multi-quest frame (QuestTitleButton1/2 visible, no GossipFrame)
-        // Both paths end with GossipFrame.Instance.SelectAvailableQuest(index) which calls
-        // SelectAvailableQuest(N) / SelectGossipAvailableQuest(N) — works for both frames.
         var gossipQuests = GossipFrame.Instance.AvailableQuests;
         var nativeQuests = QuestFrame.Instance.AvailableQuests;
-        // WotLK 3.3.5a: GossipQuestEntry.Id from memory is unreliable (wrong struct layout).
-        // GetGossipAvailableQuests() returns 5 values per quest: title, level, isTrivial, isRepeatable, isLegendary.
-        List<string> luaDump = gossipQuests.Count > 0 ? Lua.GetReturnValues("return GetGossipAvailableQuests()") : null;
 
         int questIndex = -1;
         if (gossipQuests.Count > 0)
         {
-            // Primary: match by quest ID from memory struct.
-            // Cast both sides to long (HB 4.3.4 / 3.3.5a pattern) to avoid sign extension issues.
             for (int i = 0; i < gossipQuests.Count; i++)
             {
                 if ((long)gossipQuests[i].Id == (long)this.QuestId)
                 {
                     questIndex = i;
+                    Logging.WriteDebug("[QuestPickUp] Matched quest {0} by memory ID at gossip index {1}.", this.QuestId, i);
                     break;
                 }
             }
 
-            // Fallback: match by Lua name from GetGossipAvailableQuests().
-            // WotLK 3.3.5a returns 5 values per quest: title, level, isTrivial, isRepeatable, isLegendary.
-            // The memory struct (GossipQuestEntry.Id) is unreliable in 3.3.5a — Lua is authoritative.
-            if (questIndex == -1 && luaDump != null && luaDump.Count >= 5)
+            // HB1 (WotLK source) used Lua-only quest matching — no memory IDs.
+            // GetGossipAvailableQuests() returns 3 values per quest in 3.3.5a: title, level, isTrivial.
+            if (questIndex == -1)
             {
-                // Try to match our quest by name (works when profile locale = client locale)
-                const int valuesPerQuest = 5;
-                for (int k = 0; k < luaDump.Count / valuesPerQuest; k++)
+                List<string> luaDump = Lua.GetReturnValues("return GetGossipAvailableQuests()");
+                string matchName = this.QuestName;
+                if (string.IsNullOrEmpty(matchName))
                 {
-                    if (string.Equals(luaDump[k * valuesPerQuest], this.QuestName, StringComparison.OrdinalIgnoreCase))
+                    var quest = Styx.Logic.Questing.Quest.FromId(this.QuestId);
+                    if (quest != null)
+                        matchName = quest.Name;
+                }
+
+                if (luaDump != null && luaDump.Count >= 3 && !string.IsNullOrEmpty(matchName))
+                {
+                    const int valuesPerQuest = 3;
+                    for (int k = 0; k < luaDump.Count / valuesPerQuest; k++)
                     {
-                        questIndex = k;
-                        Logging.WriteDebug("[QuestPickUp] Found quest \"{0}\" via Lua name match at gossip index {1}.", this.QuestName, k);
-                        break;
+                        if (string.Equals(luaDump[k * valuesPerQuest], matchName, StringComparison.OrdinalIgnoreCase))
+                        {
+                            questIndex = k;
+                            Logging.WriteDebug("[QuestPickUp] Matched quest \"{0}\" by Lua name at gossip index {1}.", matchName, k);
+                            break;
+                        }
                     }
                 }
 
-                // Last resort: if there is exactly ONE gossip quest available, select it.
-                // Safe assumption — if there's only one quest to accept and we're here to accept it, it's the right one.
                 if (questIndex == -1 && gossipQuests.Count == 1)
                 {
                     questIndex = 0;
-                    Logging.WriteDebug("[QuestPickUp] Single gossip quest available — selecting index 0 (quest id={0}, lua name='{1}').",
-                        gossipQuests[0].Id, luaDump.Count >= 1 ? luaDump[0] : "?");
+                    Logging.WriteDebug("[QuestPickUp] Single gossip quest — selecting index 0.");
                 }
             }
         }
         else
         {
-            // Native multi-quest frame (QuestTitleButton1/2/etc.) — no GossipFrame open.
             if (nativeQuests.Count <= 0)
                 return RunStatus.Success;
 
@@ -282,7 +278,7 @@ public class ForcedQuestPickUp : ForcedBehavior
 
         if (questIndex == -1)
         {
-            Logging.WriteDebug("[QuestPickUp] Quest \"{0}\" (id={1}) not found in gossip or native quest list (gossip={2}, native={3}).",
+            Logging.WriteDebug("[QuestPickUp] Quest \"{0}\" (id={1}) not found — gossip={2}, native={3}.",
                 this.QuestName, this.QuestId, gossipQuests.Count, nativeQuests.Count);
             return RunStatus.Failure;
         }
