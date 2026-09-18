@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using Styx.Helpers;
+using Styx.Localization;
 using Binding = System.Windows.Data.Binding;
 using CheckBox = System.Windows.Controls.CheckBox;
 using ComboBox = System.Windows.Controls.ComboBox;
@@ -34,9 +35,11 @@ namespace CopilotBuddy.UI
         public RoutineSettingsWindow(string title, string brand, string version)
         {
             InitializeComponent();
-            Title = title;
-            txtBrand.Text = brand;
+            Title = UiLocalization.Translate(title);
+            txtBrand.Text = UiLocalization.Translate(brand);
             txtVersion.Text = version;
+            btnCancel.Content = UiLocalization.Translate("Cancel");
+            btnSave.Content = UiLocalization.Translate("Save and Close");
             SectionForeground.Freeze();
             HintForeground.Freeze();
 
@@ -53,7 +56,7 @@ namespace CopilotBuddy.UI
             Snapshot(settings);
             tabs.Items.Add(new TabItem
             {
-                Header = header,
+                Header = UiLocalization.Translate(header),
                 Content = new ScrollViewer
                 {
                     VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
@@ -124,7 +127,7 @@ namespace CopilotBuddy.UI
 
                     var label = new TextBlock
                     {
-                        Text = Label(prop),
+                        Text = UiLocalization.Translate(Label(prop)),
                         Foreground = SectionForeground,
                         Margin = new Thickness(0, 6, 8, 6),
                         VerticalAlignment = VerticalAlignment.Center,
@@ -134,8 +137,9 @@ namespace CopilotBuddy.UI
                     var description = prop.GetCustomAttribute<DescriptionAttribute>()?.Description;
                     if (!string.IsNullOrWhiteSpace(description))
                     {
-                        label.ToolTip = description;
-                        editor.ToolTip = description;
+                        string localizedDescription = UiLocalization.Translate(description);
+                        label.ToolTip = localizedDescription;
+                        editor.ToolTip = localizedDescription;
                     }
 
                     Grid.SetRow(label, row);
@@ -150,14 +154,14 @@ namespace CopilotBuddy.UI
                 if (row == 0)
                     continue;
 
-                root.Children.Add(new GroupBox { Header = group.Key, Content = rows });
+                root.Children.Add(new GroupBox { Header = UiLocalization.Translate(group.Key), Content = rows });
             }
 
             if (root.Children.Count == 0)
             {
                 root.Children.Add(new TextBlock
                 {
-                    Text = "This section has no configurable settings.",
+                    Text = UiLocalization.Translate("This section has no configurable settings."),
                     Foreground = HintForeground,
                     Margin = new Thickness(8)
                 });

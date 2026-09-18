@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using Styx.Helpers;
 using Styx.Plugins;
+using Styx.Localization;
 
 namespace CopilotBuddy.UI
 {
@@ -14,6 +15,7 @@ namespace CopilotBuddy.UI
 		public PluginsWindow()
 		{
 			InitializeComponent();
+			UiLocalization.LocalizeWpf(this);
 			LoadPlugins();
 		}
 
@@ -66,7 +68,7 @@ namespace CopilotBuddy.UI
 			{
 				try
 				{
-					container.Plugin.OnButtonPress();
+					UiLocalization.RunWithWinFormsLocalization(container.Plugin.OnButtonPress);
 				}
 				catch (Exception ex)
 				{

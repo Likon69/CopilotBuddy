@@ -22,6 +22,7 @@ using Styx.CommonBot;
 using Styx.Helpers;
 using Styx.Logic.BehaviorTree;
 using Styx.Logic.Profiles;
+using Styx.Localization;
 using Styx.WoWInternals;
 
 using WpfFontFamily = System.Windows.Media.FontFamily;
@@ -57,6 +58,20 @@ namespace CopilotBuddy.UI
         /// HB 4.3.4 pattern.
         /// </summary>
         private int? _selectedWoWProc;
+
+        private sealed class BotOption
+        {
+            public string Name { get; }
+            public string DisplayName { get; }
+
+            public BotOption(string name)
+            {
+                Name = name;
+                DisplayName = UiLocalization.Translate(name);
+            }
+
+            public override string ToString() => DisplayName;
+        }
 
         #endregion
 
@@ -254,7 +269,7 @@ namespace CopilotBuddy.UI
                             cmbBotSelector.Items.Clear();
                             foreach (var bot in BotManager.Instance.Bots)
                             {
-                                cmbBotSelector.Items.Add(bot.Key);
+                                cmbBotSelector.Items.Add(new BotOption(bot.Key));
                             }
 
                             // Restore last selected bot (HB 4.3.4 pattern)
@@ -748,8 +763,10 @@ namespace CopilotBuddy.UI
                         BotManager.Instance.SetCurrent(match.Value);
                         // Sync the combobox so the UI matches what HBRelog requested; mirrors
                         // cmbBotSelector.SelectedItem = value at 4.3.4 Start():856.
-                        if (cmbBotSelector.Items.Contains(match.Key))
-                            cmbBotSelector.SelectedItem = match.Key;
+                        var comboOption = cmbBotSelector.Items.OfType<BotOption>()
+                            .FirstOrDefault(option => string.Equals(option.Name, match.Key, StringComparison.OrdinalIgnoreCase));
+                        if (comboOption != null)
+                            cmbBotSelector.SelectedItem = comboOption;
                         else
                             CharacterSettings.Instance.SelectedBotIndex = 0;
                     }
@@ -945,7 +962,8 @@ namespace CopilotBuddy.UI
         {
             if (cmbBotSelector.SelectedItem == null) return;
 
-            string? botName = cmbBotSelector.SelectedItem.ToString();
+            string? botName = (cmbBotSelector.SelectedItem as BotOption)?.Name
+                ?? cmbBotSelector.SelectedItem.ToString();
             if (botName != null && BotManager.Instance.Bots.TryGetValue(botName, out BotBase? bot) && bot != null)
             {
                 BotManager.Instance.SetCurrent(bot);
@@ -1007,6 +1025,7 @@ namespace CopilotBuddy.UI
             var configWindow = BotManager.Current.ConfigurationWindow;
             if (configWindow != null)
             {
+                UiLocalization.LocalizeWpf(configWindow);
                 configWindow.Owner = this;
                 configWindow.ShowDialog();
                 return;
@@ -1019,7 +1038,7 @@ namespace CopilotBuddy.UI
                 return;
             }
 
-            configForm.ShowDialog();
+            UiLocalization.RunWithWinFormsLocalization(() => configForm.ShowDialog());
         }
 
         private void btnClassConfig_Click(object sender, RoutedEventArgs e)

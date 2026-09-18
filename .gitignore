@@ -36,6 +36,7 @@ __pycache__/
 *.tmp
 *.temp
 *~
+.dotnet10/
 
 # Windows
 Thumbs.db

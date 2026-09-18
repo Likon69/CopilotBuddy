@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using Styx.Localization;
 using Styx.Plugins.PluginClass;
 
 namespace Styx.Plugins
@@ -52,6 +53,7 @@ namespace Styx.Plugins
 		}
 
 		public string Name => Plugin.Name;
+		public string DisplayName => UiLocalization.Translate(Plugin.Name);
 		public string Author => Plugin.Author;
 		public Version Version => Plugin.Version;
 		public bool WantButton => Plugin.WantButton;

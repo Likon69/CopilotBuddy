@@ -29,7 +29,7 @@
                         <CheckBox IsChecked="{Binding Enabled, Mode=TwoWay}"
                                   Checked="Plugin_CheckedChanged"
                                   Unchecked="Plugin_CheckedChanged"/>
-                        <Label HorizontalAlignment="Stretch" Content="{Binding Name}"/>
+                        <Label HorizontalAlignment="Stretch" Content="{Binding DisplayName}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
