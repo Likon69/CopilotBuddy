@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows7.0</TargetFramework>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
@@ -15,7 +16,7 @@
     <!-- Application icon (barre des tâches + exe) -->
     <ApplicationIcon>Resources\bender.ico</ApplicationIcon>
     <!-- FileVersion = right-click Properties → Details. AssemblyVersion intentionally omitted (BAML crash on .NET 10) -->
-    <FileVersion>1.6.7.0</FileVersion>
+    <FileVersion>1.6.7.4</FileVersion>
     <!-- Exclude satellite assemblies (localization folders like cs, de, es, fr, it, ja, ko, pl, pt-BR, ru, tr, zh-Hans, zh-Hant) -->
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     <!-- Force all NuGet package assemblies to be copied to the output directory,

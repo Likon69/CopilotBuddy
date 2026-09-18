@@ -484,12 +484,48 @@ namespace GreenMagic
             m_DataPtr = Memory.AllocateMemory(size, 0x1000, 0x04);
             if (m_DataPtr == 0) throw new Exception("Allocate data failed");
 
-            // Sauvegarder les bytes originaux de EndScene pour le prologue
-            // Read 16 bytes to cover all known prologue patterns (up to 7 bytes for Win8 KB3000850)
+            // Read original EndScene bytes.
+            // IMPORTANT: detect if a previous bot instance left our DXVK hook without restoring
+            // (force-kill / crash scenario). 0xB8 + FF E0 is unambiguous — real d3d9.dll
+            // on both Windows and Wine never starts with 0xB8 in a clean process.
+            // We do NOT treat E9 as a leftover because on Windows E9 is a legitimate
+            // "existing hook" case handled by the trampoline (chain to existing target).
             m_OriginalEndSceneBytes = Memory.ReadBytes(m_OrigEndScene, 16);
-            System.Diagnostics.Debug.WriteLine($"[InitializeDetour] Original EndScene bytes: {(m_OriginalEndSceneBytes != null ? BitConverter.ToString(m_OriginalEndSceneBytes) : "null")}");
+            Debug.WriteLine($"[InitializeDetour] Original EndScene bytes: {(m_OriginalEndSceneBytes != null ? BitConverter.ToString(m_OriginalEndSceneBytes) : "null")}");
+
             if (m_OriginalEndSceneBytes == null || m_OriginalEndSceneBytes.Length < 5)
                 throw new Exception("Failed to read original EndScene bytes.");
+
+            // Detect leftover 7-byte DXVK absolute JMP we install: B8 xx xx xx xx FF E0
+            bool leftoverDxvkHook = m_OriginalEndSceneBytes[0] == 0xB8 &&
+                                    m_OriginalEndSceneBytes.Length >= 7 &&
+                                    m_OriginalEndSceneBytes[5] == 0xFF &&
+                                    m_OriginalEndSceneBytes[6] == 0xE0;
+
+            if (leftoverDxvkHook)
+            {
+                Debug.WriteLine("[ExecutorRand] WARNING: EndScene has leftover DXVK hook (B8+FF E0) — previous bot crashed. Reconstructing original DXVK prologue.");
+                Debug.WriteLine("[InitializeDetour] Leftover DXVK hook detected — reconstructing original prologue bytes");
+
+                // IDA-verified DXVK d3d9 EndScene prologue (GCC/MinGW stack-alignment):
+                //   8D 4C 24 04  lea ecx, [esp+4]      (4 bytes)
+                //   83 E4 F8     and esp, 0FFFFFFF8h   (3 bytes)
+                //   FF 71 FC     push dword [ecx-4]    (3 bytes)
+                //   55           push ebp               (1 byte)
+                //   89 E5        mov ebp, esp           (2 bytes)
+                //   57 56 53     push edi/esi/ebx       (padding to 16)
+                m_OriginalEndSceneBytes = new byte[]
+                {
+                    0x8D, 0x4C, 0x24, 0x04,
+                    0x83, 0xE4, 0xF8,
+                    0xFF, 0x71, 0xFC,
+                    0x55,
+                    0x89, 0xE5,
+                    0x57, 0x56, 0x53
+                };
+            }
+
+            Debug.WriteLine($"[InitializeDetour] Original EndScene bytes: {BitConverter.ToString(m_OriginalEndSceneBytes)}");
 
             m_InjectionWaitingHandlePtr  = m_DataPtr;
             m_InjectionContinueHandlePtr = m_DataPtr + 4;
@@ -786,8 +822,30 @@ namespace GreenMagic
                         AddLine("jmp {0}", m_OrigEndScene + 5);
                     }
                 }
-                else if (prolog[0] == 0x8B && prolog[1] == 0xFF)
+                else if (prolog[0] == 0x8D && prolog[1] == 0x4C && prolog[2] == 0x24 &&
+                         prolog[4] == 0x83 && prolog[5] == 0xE4 && prolog.Length >= 13)
                 {
+                    // DXVK (Wine/GCC) stack-alignment prologue — real layout from IDA:
+                    //   8D 4C 24 04   lea ecx, [esp+4]       (4 bytes)  [3]=04 or 08
+                    //   83 E4 F8      and esp, 0FFFFFFF8h    (3 bytes)
+                    //   FF 71 FC      push dword [ecx-4]     (3 bytes)  ← saves original return address
+                    //   55            push ebp               (1 byte)
+                    //   89 E5         mov ebp, esp           (2 bytes)
+                    // Total = 13 bytes — our 7-byte hook (mov eax + jmp eax) overwrites first 7.
+                    // Trampoline must replay all 13 bytes before jumping to +13.
+                    byte espOffset  = prolog[3];   // 0x04 or 0x08
+                    byte alignMask  = prolog[6];   // 0xF8 = align-8, 0xF0 = align-16
+                    // Build the signed-extended mask correctly: 0xF8 → 0xFFFFFFF8
+                    uint andImm = (uint)(unchecked((int)(sbyte)alignMask));
+                    Debug.WriteLine($"[InjectDetour] Using 13-byte DXVK/GCC stack-align prologue (espOffset={espOffset:X2}, alignMask={alignMask:X2})");
+                    AddLine("lea ecx, [esp+{0}]", (int)espOffset);  // restore ecx
+                    AddLine("and esp, 0x{0:X8}", andImm);            // realign stack
+                    AddLine("push dword [ecx-4]");                   // restore saved return address
+                    AddLine("push ebp");
+                    AddLine("mov ebp, esp");
+                    AddLine("jmp {0}", m_OrigEndScene + 13);
+                }
+                else if (prolog[0] == 0x8B && prolog[1] == 0xFF)                {
                     // Standard D3D9 hotpatch: mov edi,edi; push ebp; mov ebp,esp
                     Debug.WriteLine("[InjectDetour] Using 5-byte prologue (8B FF 55 8B EC)");
                     AddLine("mov edi, edi");
@@ -835,10 +893,36 @@ namespace GreenMagic
             if (!Memory.Asm!.Inject(m_EndSceneDetour))
                 throw new Exception("Failed to inject detour trampoline");
                 
-            // Install 5-byte JMP at original EndScene to redirect to our detour
+            // Install JMP at original EndScene to redirect to our detour.
+            // DXVK (Wine) prologue starts with: 8D 4C 24 08 83 E4 xx (lea ecx + and esp — 7 bytes)
+            // A 5-byte E9 rel32 would cut "and esp" in half → crash.
+            // For DXVK we use a 7-byte absolute JMP: push imm32 + retn (6 bytes) won't fit either,
+            // so we use: push imm32 (5) + pop eax (1) ... actually simplest is FF 25 ptr (6 bytes indirect).
+            // Cleanest x86 7-byte absolute JMP: B8 imm32 (mov eax, addr) + FF E0 (jmp eax) = 7 bytes,
+            // but clobbers eax. Since we're at the very start of EndScene and eax is caller-saved this is fine.
             Clear();
-            AddLine("jmp {0}", m_EndSceneDetour);
-            Debug.WriteLine($"[InjectDetour] Installing JMP at EndScene 0x{m_OrigEndScene:X8} -> 0x{m_EndSceneDetour:X8}");
+            bool isDxvkPrologue = m_OriginalEndSceneBytes != null &&
+                                  m_OriginalEndSceneBytes.Length >= 7 &&
+                                  m_OriginalEndSceneBytes[0] == 0x8D &&
+                                  m_OriginalEndSceneBytes[1] == 0x4C &&
+                                  m_OriginalEndSceneBytes[2] == 0x24 &&
+                                  // [3] = esp offset: 0x04 or 0x08 depending on DXVK version
+                                  m_OriginalEndSceneBytes[4] == 0x83 &&
+                                  m_OriginalEndSceneBytes[5] == 0xE4;
+            if (isDxvkPrologue)
+            {
+                // 7-byte absolute JMP: mov eax, imm32 + jmp eax
+                // B8 [4 bytes addr] FF E0  = 7 bytes, covers lea ecx (4) + and esp (3) cleanly
+                Debug.WriteLine($"[InjectDetour] DXVK detected — installing 7-byte absolute JMP at 0x{m_OrigEndScene:X8} -> 0x{m_EndSceneDetour:X8}");
+                AddLine("mov eax, {0}", m_EndSceneDetour);  // B8 xx xx xx xx  (5 bytes)
+                AddLine("jmp eax");                          // FF E0            (2 bytes)
+            }
+            else
+            {
+                // Standard 5-byte relative JMP
+                Debug.WriteLine($"[InjectDetour] Installing 5-byte JMP at EndScene 0x{m_OrigEndScene:X8} -> 0x{m_EndSceneDetour:X8}");
+                AddLine("jmp {0}", m_EndSceneDetour);
+            }
             
             if (!Memory.Asm!.Inject(m_OrigEndScene))
                 throw new Exception("Failed to inject JMP at EndScene");
@@ -949,25 +1033,39 @@ namespace GreenMagic
 
                     // Verify that EndScene still has our JMP before restoring
                     // (another hook may have overwritten it since we installed ours)
-                    byte[]? currentBytes = Memory.ReadBytes(m_OrigEndScene, 5);
+                    byte[]? currentBytes = Memory.ReadBytes(m_OrigEndScene, 7);
+                    bool hookIsOurs = false;
+
                     if (currentBytes != null && currentBytes.Length >= 5 && currentBytes[0] == 0xE9)
                     {
-                        // Compute expected relative JMP target
+                        // Standard 5-byte relative JMP
                         int expectedRel = (int)(m_EndSceneDetour - (m_OrigEndScene + 5));
                         int actualRel = BitConverter.ToInt32(currentBytes, 1);
-                        if (expectedRel == actualRel)
-                        {
-                            Memory.WriteBytes(m_OrigEndScene, m_OriginalEndSceneBytes);
-                            Debug.WriteLine($"[ExecutorRand] Restored original EndScene bytes at 0x{m_OrigEndScene:X8}");
-                        }
-                        else
-                        {
-                            Debug.WriteLine($"[ExecutorRand] WARNING: EndScene JMP target mismatch (expected rel=0x{expectedRel:X8}, actual=0x{actualRel:X8}). Not restoring — another hook may be installed.");
-                        }
+                        hookIsOurs = (expectedRel == actualRel);
+                        if (!hookIsOurs)
+                            Debug.WriteLine($"[ExecutorRand] WARNING: JMP target mismatch (expected rel=0x{expectedRel:X8}, actual=0x{actualRel:X8}).");
+                    }
+                    else if (currentBytes != null && currentBytes.Length >= 7 && currentBytes[0] == 0xB8)
+                    {
+                        // 7-byte DXVK absolute JMP: mov eax, imm32 + jmp eax
+                        uint actualTarget = BitConverter.ToUInt32(currentBytes, 1);
+                        hookIsOurs = (actualTarget == m_EndSceneDetour);
+                        if (!hookIsOurs)
+                            Debug.WriteLine($"[ExecutorRand] WARNING: DXVK JMP target mismatch (expected=0x{m_EndSceneDetour:X8}, actual=0x{actualTarget:X8}).");
                     }
                     else
                     {
-                        Debug.WriteLine($"[ExecutorRand] WARNING: EndScene first byte is not E9 (JMP). Not restoring — bytes may have been modified by another hook.");
+                        Debug.WriteLine($"[ExecutorRand] WARNING: EndScene first byte is not E9 or B8. Not restoring.");
+                    }
+
+                    if (hookIsOurs)
+                    {
+                        Memory.WriteBytes(m_OrigEndScene, m_OriginalEndSceneBytes);
+                        Debug.WriteLine($"[ExecutorRand] Restored original EndScene bytes at 0x{m_OrigEndScene:X8}");
+                    }
+                    else
+                    {
+                        Debug.WriteLine($"[ExecutorRand] WARNING: Not restoring — another hook may be installed.");
                     }
 
                     // Clear injected code

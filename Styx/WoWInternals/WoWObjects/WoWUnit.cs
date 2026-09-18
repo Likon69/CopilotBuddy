@@ -1238,6 +1238,17 @@ namespace Styx.WoWInternals.WoWObjects
 
         public override float InteractRange => CombatReach + 4f;
 
+        public float LootRange
+        {
+            get
+            {
+                float playerCR = ObjectManager.Me?.CombatReach ?? 1.5f;
+                return Math.Max(5.0f, CombatReach + playerCR + 1.3333334f);
+            }
+        }
+
+        public bool WithinLootRange => DistanceSqr < LootRange * LootRange;
+
         public WoWFactionTemplate? FactionTemplate => WoWFactionTemplate.FromId(FactionId);
 
         #endregion

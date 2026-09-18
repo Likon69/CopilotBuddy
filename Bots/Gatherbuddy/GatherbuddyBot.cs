@@ -853,7 +853,8 @@ namespace Bots.Gatherbuddy
             if (ProfileManager.CurrentProfile.MailboxManager.GetClosestMailbox() == null)
                 return false;
 
-            if (StyxWoW.Me.FreeBagSlots > s.MinFreeBagSlots)
+            bool totalFull = StyxWoW.Me.FreeBagSlots <= s.MinFreeBagSlots;
+            if (!totalFull && !NeedsBagsEmptied(ctx))
                 return false;
 
             return GetItemsToMail().Length > 0;
