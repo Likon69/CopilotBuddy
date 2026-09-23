@@ -36,6 +36,8 @@ public class ForcedQuestPickUp : ForcedBehavior
     private static readonly Frame QuestFrameCompleteButton = new Frame("QuestFrameCompleteButton");
     private int lastShownQuestId = -1;
     private int _handleQuestFrameAttempts;
+    private readonly HashSet<int> _triedAvailableQuestIndices = new HashSet<int>();
+    private int _lastAvailableQuestCount = -1;
 
     public ForcedQuestPickUp(
         uint questId,
@@ -94,6 +96,9 @@ public class ForcedQuestPickUp : ForcedBehavior
 
     public override void OnStart()
     {
+        _triedAvailableQuestIndices.Clear();
+        _lastAvailableQuestCount = -1;
+        _handleQuestFrameAttempts = 0;
         if (ObjectManager.Me.QuestLog.GetAllQuests().Count >= 25)
         {
             Logging.Write(Color.Red, "You do not have any space in your quest log.");
@@ -213,6 +218,12 @@ public class ForcedQuestPickUp : ForcedBehavior
 
         var gossipQuests = GossipFrame.Instance.AvailableQuests;
         var nativeQuests = QuestFrame.Instance.AvailableQuests;
+        int availableQuestCount = gossipQuests.Count > 0 ? gossipQuests.Count : nativeQuests.Count;
+        if (_lastAvailableQuestCount != availableQuestCount)
+        {
+            _triedAvailableQuestIndices.Clear();
+            _lastAvailableQuestCount = availableQuestCount;
+        }
 
         int questIndex = -1;
         if (gossipQuests.Count > 0)
@@ -224,6 +235,26 @@ public class ForcedQuestPickUp : ForcedBehavior
                     questIndex = i;
                     Logging.WriteDebug("[QuestPickUp] Matched quest {0} by memory ID at gossip index {1}.", this.QuestId, i);
                     break;
+                }
+            }
+
+            // GossipQuestEntry.Name is localized by the game client. Use it when the
+            // profile/cache name is available in the same locale.
+            if (questIndex == -1)
+            {
+                string cachedQuestName = Styx.Logic.Questing.Quest.FromId(this.QuestId)?.Name;
+                for (int i = 0; i < gossipQuests.Count; i++)
+                {
+                    string entryName = gossipQuests[i].Name;
+                    if ((!string.IsNullOrEmpty(this.QuestName) &&
+                         string.Equals(entryName, this.QuestName, StringComparison.OrdinalIgnoreCase)) ||
+                        (!string.IsNullOrEmpty(cachedQuestName) &&
+                         string.Equals(entryName, cachedQuestName, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        questIndex = i;
+                        Logging.WriteDebug("[QuestPickUp] Matched quest \"{0}\" by localized gossip name at index {1}.", entryName, i);
+                        break;
+                    }
                 }
             }
 
@@ -278,11 +309,32 @@ public class ForcedQuestPickUp : ForcedBehavior
 
         if (questIndex == -1)
         {
-            Logging.WriteDebug("[QuestPickUp] Quest \"{0}\" (id={1}) not found — gossip={2}, native={3}.",
-                this.QuestName, this.QuestId, gossipQuests.Count, nativeQuests.Count);
-            return RunStatus.Failure;
+            // The client locale may differ from the profile locale, and the legacy
+            // gossip memory struct is not reliable on all 3.3.5a clients. Open each
+            // remaining menu item and validate its real QuestId on QuestFrame.
+            int count = gossipQuests.Count > 0 ? gossipQuests.Count : nativeQuests.Count;
+            for (int i = 0; i < count; i++)
+            {
+                if (_triedAvailableQuestIndices.Contains(i))
+                    continue;
+
+                questIndex = i;
+                Logging.WriteDebug("[QuestPickUp] No direct match for quest {0}; probing available quest index {1}/{2}.",
+                    this.QuestId, i, count - 1);
+                break;
+            }
+
+            if (questIndex == -1)
+            {
+                Logging.Write(Color.Red,
+                    "[QuestPickUp] Target quest {0} ({1}) was not found after checking all {2} NPC menu entries. Stopping to prevent an interaction loop.",
+                    this.QuestId, this.QuestName, count);
+                TreeRoot.Stop();
+                return RunStatus.Failure;
+            }
         }
 
+        _triedAvailableQuestIndices.Add(questIndex);
         GossipFrame.Instance.SelectAvailableQuest(questIndex);
         StyxWoW.Sleep(500);
         return RunStatus.Running;
@@ -329,8 +381,19 @@ public class ForcedQuestPickUp : ForcedBehavior
         // --- Accept our pickup quest ---
         if (acceptVisible)
         {
-            // AcceptButton is visible — this is a quest we can accept.
-            // Accept regardless of shownQuestId (memory read can return 0 for some quests).
+            // Never accept a different quest selected from a multi-quest gossip menu.
+            // The detail frame exposes the authoritative quest ID even when the
+            // gossip entry memory structure or localized title cannot be matched.
+            if (shownQuestId != this.QuestId)
+            {
+                Logging.WriteDebug("[QuestPickUp] AcceptButton belongs to quest {0}, expected {1} — closing and probing the next menu entry.",
+                    shownQuestId, this.QuestId);
+                QuestFrame.Instance.Close();
+                StyxWoW.Sleep(500);
+                _handleQuestFrameAttempts = 0;
+                return RunStatus.Success;
+            }
+
             Logging.WriteDebug("[QuestPickUp] AcceptButton visible — accepting quest.");
             QuestFrame.Instance.AcceptQuest();
             StyxWoW.Sleep(500);
@@ -366,6 +429,8 @@ public class ForcedQuestPickUp : ForcedBehavior
         {
             Logging.WriteDebug("[QuestPickUp] CompleteQuestButton visible (quest {0}) — completing turn-in.", shownQuestId);
             QuestFrame.Instance.CompleteQuest();
+            _triedAvailableQuestIndices.Clear();
+            _lastAvailableQuestCount = -1;
             StyxWoW.Sleep(500);
             return RunStatus.Running;
         }
