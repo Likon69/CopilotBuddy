@@ -206,7 +206,7 @@ namespace Styx.Logic.Profiles
 					return _sellGrey.Value;
 				if (Parent != null)
 					return Parent.SellGrey;
-				return true;
+				return CharacterSettings.Instance.SellGrey;
 			}
 		}
 
@@ -222,7 +222,7 @@ namespace Styx.Logic.Profiles
 					return _sellWhite.Value;
 				if (Parent != null)
 					return Parent.SellWhite;
-				return false;
+				return CharacterSettings.Instance.SellWhite;
 			}
 		}
 
@@ -238,7 +238,7 @@ namespace Styx.Logic.Profiles
 					return _sellGreen.Value;
 				if (Parent != null)
 					return Parent.SellGreen;
-				return false;
+				return CharacterSettings.Instance.SellGreen;
 			}
 		}
 
@@ -254,7 +254,7 @@ namespace Styx.Logic.Profiles
 					return _sellBlue.Value;
 				if (Parent != null)
 					return Parent.SellBlue;
-				return false;
+				return CharacterSettings.Instance.SellBlue;
 			}
 		}
 
@@ -270,7 +270,7 @@ namespace Styx.Logic.Profiles
 					return _sellPurple.Value;
 				if (Parent != null)
 					return Parent.SellPurple;
-				return false;
+				return CharacterSettings.Instance.SellPurple;
 			}
 		}
 
