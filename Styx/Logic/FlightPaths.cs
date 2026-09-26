@@ -242,6 +242,11 @@ namespace Styx.Logic
                 {
                     foreach (XElement element in XElement.Load(XmlPath).Elements("Node"))
                         XmlNodes.Add(new XmlFlightNode(element));
+
+                    // Files saved before the "|" separator split names like "Lakeshire, Redridge" apart.
+                    var knownNames = new HashSet<string>(XmlNodes.Select(n => n.Name));
+                    foreach (XmlFlightNode node in XmlNodes)
+                        node.RejoinLegacyConnections(knownNames);
                 }
                 catch (Exception ex)
                 {
@@ -582,9 +587,50 @@ namespace Styx.Logic
             var connectionsAttr = (string)element.Attribute("Connections");
             if (!string.IsNullOrEmpty(connectionsAttr))
             {
-                foreach (var conn in connectionsAttr.Split(','))
-                    Connections.Add(conn.Trim());
+                // Node names contain commas ("Stormwind, Elwynn"), so connections are saved with "|".
+                // Older files used ",": keep the pieces in order so RejoinLegacyConnections can put them back.
+                char separator = connectionsAttr.Contains('|') ? '|' : ',';
+                foreach (var conn in connectionsAttr.Split(separator))
+                {
+                    string name = conn.Trim();
+                    if (name.Length == 0)
+                        continue;
+                    Connections.Add(name);
+                    if (separator == ',')
+                        _legacyTokens.Add(name);
+                }
             }
+        }
+
+        private readonly List<string> _legacyTokens = new List<string>();
+
+        /// <summary>
+        /// Rebuilds connections read from a comma-separated file: adjacent pieces that together form a
+        /// known node name ("Lakeshire" + "Redridge") become that name again. No-op for "|" files.
+        /// </summary>
+        public void RejoinLegacyConnections(HashSet<string> knownNames)
+        {
+            if (_legacyTokens.Count < 2)
+                return;
+
+            var rebuilt = new HashSet<string>();
+            for (int i = 0; i < _legacyTokens.Count; i++)
+            {
+                if (i + 1 < _legacyTokens.Count && !knownNames.Contains(_legacyTokens[i]))
+                {
+                    string joined = _legacyTokens[i] + ", " + _legacyTokens[i + 1];
+                    if (knownNames.Contains(joined))
+                    {
+                        rebuilt.Add(joined);
+                        i++;
+                        continue;
+                    }
+                }
+                rebuilt.Add(_legacyTokens[i]);
+            }
+
+            Connections = rebuilt;
+            _legacyTokens.Clear();
         }
 
         public void Connect(string nodeName)
@@ -603,7 +649,7 @@ namespace Styx.Logic
                 new XAttribute("X", Location.X),
                 new XAttribute("Y", Location.Y),
                 new XAttribute("Z", Location.Z),
-                new XAttribute("Connections", string.Join(",", Connections))
+                new XAttribute("Connections", string.Join("|", Connections))
             );
         }
     }
