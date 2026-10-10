@@ -61,10 +61,31 @@ namespace GreenMagic.Native
 
 		private void ParseHeaders()
 		{
-			this.DosHeader = this._memory.ReadStruct<PeHeaderParser.ImageDosHeader>(this.ModulePtr.ToUInt32());
-			if (this.DosHeader.e_magic == 23117)
+			// Use 64-bit-capable reads so modules loaded above 4 GB
+			// (native x64 images) parse correctly as well.
+			ulong moduleAddress = (ulong)this.ModulePtr.ToInt64();
+
+			this.DosHeader = this._memory.ReadStruct64<PeHeaderParser.ImageDosHeader>(moduleAddress);
+			if (this.DosHeader.e_magic != 23117)
 			{
-				this.NtHeader = this._memory.ReadStruct<PeHeaderParser.ImageNtHeader>((uint)((long)this.ModulePtr.ToUInt32() + this.DosHeader.e_lfanew));
+				return;
+			}
+
+			ulong ntAddress = moduleAddress + (uint)this.DosHeader.e_lfanew;
+
+			// The optional header magic is the first field of the optional
+			// header: NT signature (4) + file header (20) bytes in.
+			const ulong OptionalHeaderOffset = 4UL + 20UL;
+			ushort optionalMagic = this._memory.ReadStruct64<PeHeaderParser.ImageOptionalHeader64>(ntAddress + OptionalHeaderOffset).Magic;
+			this.Is64BitImage = optionalMagic == PeHeaderConstants.IMAGE_NT_OPTIONAL_HDR64_MAGIC;
+
+			if (this.Is64BitImage)
+			{
+				this.NtHeader64 = this._memory.ReadStruct64<PeHeaderParser.ImageNtHeader64>(ntAddress);
+			}
+			else
+			{
+				this.NtHeader = this._memory.ReadStruct64<PeHeaderParser.ImageNtHeader>(ntAddress);
 			}
 		}
 
@@ -75,6 +96,35 @@ namespace GreenMagic.Native
         // Backing fields for auto-properties (compiler-generated)
         private ImageDosHeader _dosHeader;
         private ImageNtHeader _ntHeader;
+        private ImageNtHeader64 _ntHeader64;
+
+        /// <summary>
+        /// True when the parsed image is a PE32+ (64-bit) executable.
+        /// When true, <see cref="NtHeader64"/> holds the parsed headers
+        /// and <see cref="NtHeader"/> remains default-valued; otherwise
+        /// the reverse holds.
+        /// </summary>
+        public bool Is64BitImage
+        {
+            [CompilerGenerated]
+            get;
+            [CompilerGenerated]
+            private set;
+        }
+
+        public ImageNtHeader64 NtHeader64
+        {
+            [CompilerGenerated]
+            get
+            {
+                return this._ntHeader64;
+            }
+            [CompilerGenerated]
+            private set
+            {
+                this._ntHeader64 = value;
+            }
+        }
 
         public struct ImageDataDirectory
         {
@@ -204,6 +254,91 @@ namespace GreenMagic.Native
             public PeHeaderParser.ImageFileHeader FileHeader;
 
             public PeHeaderParser.ImageOptionalHeader OptionalHeader;
+        }
+
+        /// <summary>
+        /// IMAGE_NT_HEADERS64 — the PE32+ variant used by 64-bit images.
+        /// Selected by <see cref="ParseHeaders"/> when the optional header
+        /// magic is IMAGE_NT_OPTIONAL_HDR64_MAGIC (0x20B).
+        /// </summary>
+        public struct ImageNtHeader64
+        {
+            public uint Signature;
+
+            public PeHeaderParser.ImageFileHeader FileHeader;
+
+            public PeHeaderParser.ImageOptionalHeader64 OptionalHeader;
+        }
+
+        /// <summary>
+        /// IMAGE_OPTIONAL_HEADER64 (PE32+). Differences from the 32-bit
+        /// variant: no BaseOfData field, 8-byte ImageBase and four
+        /// Reserve/Commit sizes, and the magic is 0x20B instead of 0x10B.
+        /// </summary>
+        public struct ImageOptionalHeader64
+        {
+            public ushort Magic;
+
+            public byte MajorLinkerVersion;
+
+            public byte MinorLinkerVersion;
+
+            public uint SizeOfCode;
+
+            public uint SizeOfInitializedData;
+
+            public uint SizeOfUninitializedData;
+
+            public uint AddressOfEntryPoint;
+
+            public uint BaseOfCode;
+
+            // NOTE: PE32+ has no BaseOfData member.
+
+            public ulong ImageBase;
+
+            public uint SectionAlignment;
+
+            public uint FileAlignment;
+
+            public ushort MajorOperatingSystemVersion;
+
+            public ushort MinorOperatingSystemVersion;
+
+            public ushort MajorImageVersion;
+
+            public ushort MinorImageVersion;
+
+            public ushort MajorSubsystemVersion;
+
+            public ushort MinorSubsystemVersion;
+
+            public uint Win32VersionValue;
+
+            public uint SizeOfImage;
+
+            public uint SizeOfHeaders;
+
+            public uint CheckSum;
+
+            public ushort Subsystem;
+
+            public ushort DllCharacteristics;
+
+            public ulong SizeOfStackReserve;
+
+            public ulong SizeOfStackCommit;
+
+            public ulong SizeOfHeapReserve;
+
+            public ulong SizeOfHeapCommit;
+
+            public uint LoaderFlags;
+
+            public uint NumberOfRvaAndSizes;
+
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+            public PeHeaderParser.ImageDataDirectory[] DataDirectory;
         }
 
         public struct ImageOptionalHeader

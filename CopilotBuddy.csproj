@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -8,8 +8,21 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
-    <PlatformTarget>x86</PlatformTarget>
-    <Platforms>x86</Platforms>
+    <!--
+      Dual-platform build:
+        x86 (default) — the classic configuration for the 32-bit WoW 3.3.5a
+                        client; all existing offsets, asm injection and
+                        native Lib\*.dll binaries apply unchanged.
+        x64           — required to attach to a native 64-bit WoW client.
+                        A 32-bit process cannot fully drive a 64-bit one
+                        (WOW64 context, addresses above 4 GB) and cannot
+                        load x64 native helper DLLs. See
+                        X64_PORT_PLAN.md for what is ported and what
+                        still needs work before the x64 platform is usable.
+    -->
+    <Platforms>x86;x64</Platforms>
+    <PlatformTarget Condition="'$(Platform)' == 'x64'">x64</PlatformTarget>
+    <PlatformTarget Condition="'$(Platform)' != 'x64'">x86</PlatformTarget>
     <StartupObject>CopilotBuddy.UI.App</StartupObject>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ApplicationManifest>app.manifest</ApplicationManifest>

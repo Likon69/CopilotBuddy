@@ -32,6 +32,10 @@ namespace GreenMagic
         private readonly uint _imageBase;
         private readonly ManagedFasm _asm;
 
+        // x64 target support (see "x64 Target Support" region at the bottom).
+        private readonly bool _is64BitTarget;
+        private readonly ulong _imageBase64;
+
         // cache control mimics HB GreyMagic.ExternalProcessMemory
         private ThreadLocal<Dictionary<IntPtr, byte[]>> _cache = new ThreadLocal<Dictionary<IntPtr, byte[]>>(() => new Dictionary<IntPtr, byte[]>());
         // HB 6.2.3 StyxWoW: DefaultCacheValue = false. Cache is only enabled
@@ -88,10 +92,38 @@ namespace GreenMagic
             }
 
             _patchManager = new PatchManager(this);
-            _peHeaderParser = new PeHeaderParser(_process.MainModule.BaseAddress, this);
-            _aslrEnabled = (_peHeaderParser.NtHeader.OptionalHeader.DllCharacteristics & 64) != 0;
 
-            if (_aslrEnabled)
+            // PE header parsing. The parser understands both PE32 (32-bit)
+            // and PE32+ (64-bit) images. Guarded: a parse failure degrades
+            // to defaults instead of aborting the attach.
+            PeHeaderParser parser = null;
+            bool aslr = false;
+            try
+            {
+                parser = new PeHeaderParser(_process.MainModule.BaseAddress, this);
+                aslr = parser.Is64BitImage
+                    ? (parser.NtHeader64.OptionalHeader.DllCharacteristics & 64) != 0
+                    : (parser.NtHeader.OptionalHeader.DllCharacteristics & 64) != 0;
+            }
+            catch
+            {
+                parser = null;
+                aslr = false;
+            }
+            _peHeaderParser = parser;
+            _aslrEnabled = aslr;
+
+            // Detect whether the attached process is a native 64-bit
+            // executable (e.g. a modern x64 WoW client build). The check
+            // reads the PE machine field from the main module; if anything
+            // goes wrong we silently fall back to classic 32-bit behavior
+            // so the existing 3.3.5a attach path is unaffected.
+            _is64BitTarget = DetectTargetIs64Bit(_hProcess, _process.MainModule.BaseAddress);
+            _imageBase64 = _is64BitTarget
+                ? (ulong)_process.MainModule.BaseAddress.ToInt64()
+                : _imageBase;
+
+            if (!_is64BitTarget && _aslrEnabled)
                 _imageBase = (uint)_process.MainModule.BaseAddress.ToInt32();
         }
 
@@ -109,6 +141,20 @@ namespace GreenMagic
         public Process Process => _process;
         public uint ImageBase => _imageBase;
 
+        /// <summary>
+        /// True when the attached process is a native 64-bit executable
+        /// (IMAGE_FILE_MACHINE_AMD64). When true, the legacy uint-addressed
+        /// API of this class cannot represent addresses above 4 GB — use
+        /// the ulong-addressed methods in the "x64 Target Support" region.
+        /// </summary>
+        public bool Is64BitTarget => _is64BitTarget;
+
+        /// <summary>
+        /// Image base of the target's main module as a full 64-bit value.
+        /// For 32-bit targets this equals <see cref="ImageBase"/>.
+        /// </summary>
+        public ulong ImageBase64 => _imageBase64;
+
         #endregion
 
         #region Address Calculation
@@ -116,6 +162,15 @@ namespace GreenMagic
         public uint GetAbsolute(uint relative)
         {
             return relative + _imageBase;
+        }
+
+        /// <summary>
+        /// Converts an image-relative offset to an absolute 64-bit address.
+        /// The ulong equivalent of <see cref="GetAbsolute"/>.
+        /// </summary>
+        public ulong GetAbsolute64(ulong relative)
+        {
+            return relative + _imageBase64;
         }
 
         #endregion
@@ -806,6 +861,466 @@ namespace GreenMagic
         {
             return _process.Modules.Cast<ProcessModule>()
                 .FirstOrDefault(m => m.ModuleName.ToLower().Equals(moduleName.ToLower()));
+        }
+
+        #endregion
+
+        #region x64 Target Support
+
+        /// <summary>
+        /// Reads the PE machine field of the target's main module to decide
+        /// whether it is a native 64-bit process. Returns false on any
+        /// failure — the default keeps the legacy 32-bit behavior.
+        /// </summary>
+        private static bool DetectTargetIs64Bit(IntPtr hProcess, IntPtr moduleBase)
+        {
+            try
+            {
+                if (hProcess == IntPtr.Zero || moduleBase == IntPtr.Zero)
+                    return false;
+
+                byte[] dosHeader = new byte[64];
+                IntPtr bytesRead;
+                if (!Imports.ReadProcessMemory64(hProcess, moduleBase, dosHeader, (IntPtr)dosHeader.Length, out bytesRead)
+                    || (long)bytesRead != dosHeader.Length)
+                    return false;
+
+                if (dosHeader[0] != (byte)'M' || dosHeader[1] != (byte)'Z')
+                    return false;
+
+                uint eLfanew = BitConverter.ToUInt32(dosHeader, 0x3C);
+
+                // PE signature (4 bytes) + machine field (2 bytes)
+                byte[] ntStart = new byte[6];
+                if (!Imports.ReadProcessMemory64(hProcess, new IntPtr(moduleBase.ToInt64() + eLfanew), ntStart, (IntPtr)ntStart.Length, out bytesRead)
+                    || (long)bytesRead != ntStart.Length)
+                    return false;
+
+                if (ntStart[0] != (byte)'P' || ntStart[1] != (byte)'E' || ntStart[2] != 0 || ntStart[3] != 0)
+                    return false;
+
+                ushort machine = BitConverter.ToUInt16(ntStart, 4);
+                return machine == 0x8664; // IMAGE_FILE_MACHINE_AMD64
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        // ------------------------------------------------------------------
+        // 64-bit address read primitives.
+        //
+        // The uint-addressed methods above work unchanged for 32-bit
+        // targets. For 64-bit targets addresses may live above 4 GB, so
+        // this region mirrors the same API surface with ulong addresses
+        // and 8-byte pointer chains.
+        // ------------------------------------------------------------------
+
+        public byte[] ReadBytes64(ulong address, int count)
+        {
+            if (ProcessHandle == IntPtr.Zero)
+                throw new InvalidOperationException("Process handle is not open");
+
+            if (count == 0)
+                return Array.Empty<byte>();
+
+            IntPtr key = new IntPtr((long)address);
+            if (_cacheEnabled.Value)
+            {
+                var dict = _cache.Value;
+                if (dict.TryGetValue(key, out byte[]? cached))
+                {
+                    if (cached.Length == count)
+                        return cached;
+                    dict.Remove(key); // size mismatch — stale entry
+                }
+            }
+
+            byte[] buffer = new byte[count];
+            IntPtr bytesRead;
+            if (Imports.ReadProcessMemory64(ProcessHandle, key, buffer, (IntPtr)count, out bytesRead)
+                && (long)bytesRead == count)
+            {
+                if (_cacheEnabled.Value)
+                    _cache.Value[key] = buffer;
+                return buffer;
+            }
+
+            return null;
+        }
+
+        public int ReadRawMemory64(IntPtr hProcess, ulong address, IntPtr buffer, int size)
+        {
+            try
+            {
+                IntPtr bytesRead;
+                if (!Imports.ReadProcessMemory64(hProcess, new IntPtr((long)address), buffer, (IntPtr)size, out bytesRead))
+                    throw new Exception("ReadProcessMemory failed");
+                return (int)bytesRead.ToInt64();
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        private unsafe T ReadInternal64<T>(ulong address)
+        {
+            Type type = typeof(T);
+
+            if (type == typeof(string))
+                return (T)(object)ReadString64(address);
+
+            int size = FastSize<T>.Size;
+            byte[] buffer = ReadBytes64(address, size);
+
+            if (buffer == null)
+                return default;
+
+            fixed (byte* ptr = buffer)
+            {
+                return (T)Marshal.PtrToStructure(new IntPtr(ptr), type);
+            }
+        }
+
+        /// <summary>Reads a value from a full 64-bit address.</summary>
+        public T Read64<T>(ulong address)
+        {
+            return ReadInternal64<T>(address);
+        }
+
+        /// <summary>Reads an 8-byte pointer from a 64-bit address.</summary>
+        public ulong ReadPointer64(ulong address)
+        {
+            byte[] buffer = ReadBytes64(address, 8);
+            if (buffer == null)
+                return 0UL;
+            return BitConverter.ToUInt64(buffer, 0);
+        }
+
+        /// <summary>
+        /// Follows a pointer chain with 8-byte pointers (the x64 object
+        /// model): each intermediate entry is read as a pointer, the final
+        /// entry is read as T at (finalPointer + addresses[^1]).
+        /// 64-bit analog of <see cref="Read{T}(uint[])"/>.
+        /// </summary>
+        public T ReadChain64<T>(params ulong[] addresses)
+        {
+            if (addresses.Length == 0)
+                return default;
+
+            if (addresses.Length == 1)
+                return ReadInternal64<T>(addresses[0]);
+
+            ulong ptr = 0UL;
+            for (int i = 0; i < addresses.Length; i++)
+            {
+                if (i == addresses.Length - 1)
+                    return ReadInternal64<T>(ptr + addresses[i]);
+
+                ptr = ReadPointer64(ptr + addresses[i]);
+            }
+
+            return default;
+        }
+
+        /// <summary>
+        /// Image-relative variant of <see cref="ReadChain64{T}(ulong[])"/> —
+        /// the first address is resolved through <see cref="GetAbsolute64"/>.
+        /// 64-bit analog of <see cref="ReadRelative{T}(uint[])"/>.
+        /// </summary>
+        public T ReadChainRelative64<T>(params ulong[] addresses)
+        {
+            if (addresses.Length == 0)
+                return default;
+
+            if (addresses.Length == 1)
+                return ReadInternal64<T>(GetAbsolute64(addresses[0]));
+
+            ulong ptr = 0UL;
+            for (int i = 0; i < addresses.Length; i++)
+            {
+                if (i == addresses.Length - 1)
+                    return ReadInternal64<T>(GetAbsolute64(addresses[i]) + ptr);
+
+                ptr = ReadPointer64(ptr + GetAbsolute64(addresses[i]));
+            }
+
+            return default;
+        }
+
+        public unsafe T ReadStruct64<T>(ulong address) where T : struct
+        {
+            int size = FastSize<T>.Size;
+            byte[] buffer = ReadBytes64(address, size);
+
+            if (buffer == null || buffer.Length < size)
+                throw new ArgumentException("Buffer too small", "address");
+
+            fixed (byte* ptr = buffer)
+            {
+                return (T)Marshal.PtrToStructure(new IntPtr(ptr), typeof(T));
+            }
+        }
+
+        public string ReadString64(ulong address)
+        {
+            return ReadString64(address, 512);
+        }
+
+        public string ReadString64(ulong address, int length)
+        {
+            return ReadString64(Encoding.UTF8, address, length);
+        }
+
+        public string ReadString64(Encoding encoding, ulong address, int length)
+        {
+            byte[] buffer = ReadBytes64(address, length);
+            if (buffer == null)
+                return null;
+
+            string result = encoding.GetString(buffer);
+            int nullIndex = result.IndexOf('\0');
+            if (nullIndex != -1)
+                result = result.Remove(nullIndex);
+
+            return result;
+        }
+
+        // ------------------------------------------------------------------
+        // 64-bit address write primitives.
+        // ------------------------------------------------------------------
+
+        /// <summary>Writes raw bytes to a 64-bit address. Returns success.</summary>
+        public bool WriteBytes64(ulong address, byte[] data)
+        {
+            if (ProcessHandle == IntPtr.Zero)
+                throw new InvalidOperationException("Process handle is not open");
+
+            IntPtr bytesWritten;
+            if (!Imports.WriteProcessMemory64(ProcessHandle, new IntPtr((long)address), data, (IntPtr)data.Length, out bytesWritten))
+                throw new Exception($"WriteProcessMemory failed at 0x{address:X16}. Error: {Marshal.GetLastWin32Error()}");
+
+            return (long)bytesWritten == data.Length;
+        }
+
+        public int WriteRawMemory64(IntPtr hProcess, ulong address, IntPtr buffer, int size)
+        {
+            IntPtr bytesWritten;
+            if (!Imports.WriteProcessMemory64(hProcess, new IntPtr((long)address), buffer, (IntPtr)size, out bytesWritten))
+                return 0;
+
+            return (int)bytesWritten.ToInt64();
+        }
+
+        public bool Write64<T>(ulong address, T value)
+        {
+            try
+            {
+                if (typeof(T) == typeof(string))
+                    return WriteString64(address, Convert.ToString(value));
+
+                if (typeof(T) == typeof(byte[]))
+                {
+                    byte[] arr = (byte[])(object)value;
+                    return WriteBytes64(address, arr);
+                }
+
+                object obj = value;
+                TypeCode typeCode = Type.GetTypeCode(typeof(T));
+                byte[] bytes;
+
+                switch (typeCode)
+                {
+                    case TypeCode.Boolean:
+                        bytes = BitConverter.GetBytes((bool)obj);
+                        break;
+                    case TypeCode.Char:
+                        bytes = BitConverter.GetBytes((char)obj);
+                        break;
+                    case TypeCode.Byte:
+                        bytes = new byte[] { (byte)obj };
+                        break;
+                    case TypeCode.Int16:
+                        bytes = BitConverter.GetBytes((short)obj);
+                        break;
+                    case TypeCode.UInt16:
+                        bytes = BitConverter.GetBytes((ushort)obj);
+                        break;
+                    case TypeCode.Int32:
+                        bytes = BitConverter.GetBytes((int)obj);
+                        break;
+                    case TypeCode.UInt32:
+                        bytes = BitConverter.GetBytes((uint)obj);
+                        break;
+                    case TypeCode.Int64:
+                        bytes = BitConverter.GetBytes((long)obj);
+                        break;
+                    case TypeCode.UInt64:
+                        bytes = BitConverter.GetBytes((ulong)obj);
+                        break;
+                    case TypeCode.Single:
+                        bytes = BitConverter.GetBytes((float)obj);
+                        break;
+                    case TypeCode.Double:
+                        bytes = BitConverter.GetBytes((double)obj);
+                        break;
+                    default:
+                        return WriteObject64(address, obj);
+                }
+
+                return WriteBytes64(address, bytes);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool WritePointer64(ulong address, ulong pointer)
+        {
+            return WriteBytes64(address, BitConverter.GetBytes(pointer));
+        }
+
+        public bool WriteObject64(ulong address, object obj)
+        {
+            return WriteObject64(address, obj, obj.GetType());
+        }
+
+        public bool WriteObject64(ulong address, object obj, Type type)
+        {
+            IntPtr ptr = IntPtr.Zero;
+            try
+            {
+                int size = Marshal.SizeOf(type);
+                ptr = Marshal.AllocHGlobal(size);
+                Marshal.StructureToPtr(obj, ptr, false);
+                int written = WriteRawMemory64(_hProcess, address, ptr, size);
+                if (size != written)
+                    throw new Exception("WriteObject size mismatch");
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                if (ptr != IntPtr.Zero)
+                {
+                    Marshal.DestroyStructure(ptr, type);
+                    Marshal.FreeHGlobal(ptr);
+                }
+            }
+            return true;
+        }
+
+        private bool WriteString64(ulong address, string value)
+        {
+            IntPtr ptr = IntPtr.Zero;
+            try
+            {
+                // StringToHGlobalAnsi already adds the null terminator
+                ptr = Marshal.StringToHGlobalAnsi(value);
+                int length = value.Length + 1;
+                int written = WriteRawMemory64(_hProcess, address, ptr, length);
+                if (length != written)
+                    throw new Exception();
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                if (ptr != IntPtr.Zero)
+                    Marshal.FreeHGlobal(ptr);
+            }
+            return true;
+        }
+
+        // ------------------------------------------------------------------
+        // 64-bit allocation, query, thread-context and remote-thread.
+        // ------------------------------------------------------------------
+
+        /// <summary>
+        /// Allocates memory in the target with a full 64-bit address.
+        /// Same two-step RW-then-protect pattern as
+        /// <see cref="AllocateMemory(int, uint, uint)"/>.
+        /// </summary>
+        public ulong AllocateMemory64(int size, uint allocationType, uint protect)
+        {
+            ulong addr = (ulong)Imports.VirtualAllocEx64(ProcessHandle, IntPtr.Zero, (IntPtr)size, allocationType, 0x04).ToInt64(); // PAGE_READWRITE
+            if (addr != 0UL && protect != 0x04U)
+            {
+                if (!Imports.VirtualProtectEx64(ProcessHandle, new IntPtr((long)addr), (IntPtr)size, protect, out _))
+                    throw new System.ComponentModel.Win32Exception();
+            }
+            return addr;
+        }
+
+        public ulong AllocateMemory64(int size)
+        {
+            return AllocateMemory64(size, 0x1000U, 0x04U); // MEM_COMMIT, PAGE_READWRITE
+        }
+
+        public bool FreeMemory64(ulong address)
+        {
+            return Imports.VirtualFreeEx64(ProcessHandle, new IntPtr((long)address), IntPtr.Zero, 0x8000U); // MEM_RELEASE
+        }
+
+        /// <summary>Queries a 64-bit MEMORY_BASIC_INFORMATION for an address.</summary>
+        public MEMORY_BASIC_INFORMATION64 QueryMemory64(ulong address)
+        {
+            MEMORY_BASIC_INFORMATION64 info;
+            Imports.VirtualQueryEx64(ProcessHandle, new IntPtr((long)address), out info, (IntPtr)Marshal.SizeOf(typeof(MEMORY_BASIC_INFORMATION64)));
+            return info;
+        }
+
+        /// <summary>
+        /// Retrieves the thread context of a 64-bit thread. The FltSave and
+        /// VectorRegister arrays must be pre-allocated for the marshaller,
+        /// which this method handles.
+        /// </summary>
+        public Context64 GetThreadContext64(IntPtr hThread, ulong contextFlags)
+        {
+            Context64 context = new Context64
+            {
+                ContextFlags = (uint)contextFlags,
+                FltSave = new byte[512],
+                VectorRegister = new M128A[26]
+            };
+
+            if (!Imports.GetThreadContext64(hThread, ref context))
+                context.ContextFlags = 0U;
+
+            return context;
+        }
+
+        public Context64 GetThreadContext64(ulong contextFlags)
+        {
+            return GetThreadContext64(ThreadHandle, contextFlags);
+        }
+
+        public bool SetThreadContext64(IntPtr hThread, Context64 ctx)
+        {
+            return Imports.SetThreadContext64(hThread, ref ctx);
+        }
+
+        public bool SetThreadContext64(Context64 ctx)
+        {
+            return Imports.SetThreadContext64(ThreadHandle, ref ctx);
+        }
+
+        /// <summary>
+        /// Creates a remote thread in the target starting at a 64-bit
+        /// address. Only valid for a 64-bit target process.
+        /// </summary>
+        public IntPtr CreateRemoteThread64(ulong startAddress, ulong parameter)
+        {
+            IntPtr threadId;
+            return Imports.CreateRemoteThread(ProcessHandle, IntPtr.Zero, 0U,
+                new IntPtr((long)startAddress), new IntPtr((long)parameter), 0U, out threadId);
         }
 
         #endregion

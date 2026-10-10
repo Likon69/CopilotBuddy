@@ -124,10 +124,13 @@ The UI is translated into 15 languages (English, French, German, Spanish, Italia
 ## Build
 
 ```
-dotnet build CopilotBuddy.csproj -c Release
+dotnet build CopilotBuddy.csproj -c Release                  # x86 (default)
+dotnet build CopilotBuddy.csproj -c Release -p:Platform=x64  # x64
 ```
 
-The executable lands in `bin/Release/net10.0-windows7.0/CopilotBuddy.exe` with `Navigation.dll`, `data.bin`, and the `Bots/`, `Plugins/`, `Routines/`, `Profiles/`, `Settings/` and `Dungeon Scripts/` folders.
+The executable lands in `bin/<Platform>/Release/net10.0-windows7.0/CopilotBuddy.exe` with `Navigation.dll`, `data.bin`, and the `Bots/`, `Plugins/`, `Routines/`, `Profiles/`, `Settings/` and `Dungeon Scripts/` folders.
+
+The solution builds for both `x86` and `x64`. The x86 build is the classic, fully functional configuration for the 32-bit WoW 3.3.5a client. The x64 build is the foundation for attaching to a native 64-bit WoW client: the memory layer, thread-context handling and PE parsing are 64-bit capable, but the offset tables, assembly injection engine and native libraries still need x64 work — see `X64_PORT_PLAN.md` for the full audit and status.
 
 The C++ navigation wrapper is built separately with Visual Studio 2022 (see `Navigation C++/README.md`).
 
@@ -135,3 +138,4 @@ The C++ navigation wrapper is built separately with Visual Studio 2022 (see `Nav
 
 - Targets the WoW 3.3.5a client build 12340 only. No other clients or expansions are supported.
 - Features specific to Cataclysm and later are stubs that return neutral values. This is intentional; the bot targets WotLK.
+- Native 64-bit WoW client support is in progress: the bitness-agnostic memory/context/PE foundation has landed (see `X64_PORT_PLAN.md`), but offsets, the FASM injection engine and the x86-only native `Lib/*.dll` binaries still gate the x64 platform.

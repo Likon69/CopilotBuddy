@@ -136,5 +136,57 @@ namespace GreenMagic.Native
 		public static extern bool SetThreadContext(IntPtr hThread, ref Context lpContext);
 
 		public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
+
+		// =================================================================
+		// 64-bit target support
+		//
+		// The Win32 functions below take pointers, so their true signatures
+		// are 64-bit capable — the uint-addressed overloads above simply
+		// cannot express an address above 4 GB. These variants use
+		// IntPtr/ulong so a 64-bit CopilotBuddy can attach to a native
+		// 64-bit WoW process whose memory lives outside the low 4 GB.
+		// =================================================================
+
+		[DllImport("kernel32.dll", SetLastError = true)]
+		[return: MarshalAs(UnmanagedType.Bool)]
+		public static extern bool IsWow64Process(IntPtr hProcess, [MarshalAs(UnmanagedType.Bool)] out bool wow64Process);
+
+		[DllImport("kernel32.dll", EntryPoint = "ReadProcessMemory", SetLastError = true)]
+		[return: MarshalAs(UnmanagedType.Bool)]
+		public static extern bool ReadProcessMemory64(IntPtr hProcess, IntPtr lpBaseAddress, [Out] byte[] lpBuffer, IntPtr nSize, out IntPtr lpNumberOfBytesRead);
+
+		[DllImport("kernel32.dll", EntryPoint = "ReadProcessMemory", SetLastError = true)]
+		[return: MarshalAs(UnmanagedType.Bool)]
+		public static extern bool ReadProcessMemory64(IntPtr hProcess, IntPtr lpBaseAddress, IntPtr lpBuffer, IntPtr nSize, out IntPtr lpNumberOfBytesRead);
+
+		[DllImport("kernel32.dll", EntryPoint = "WriteProcessMemory", SetLastError = true)]
+		[return: MarshalAs(UnmanagedType.Bool)]
+		public static extern bool WriteProcessMemory64(IntPtr hProcess, IntPtr lpBaseAddress, byte[] lpBuffer, IntPtr nSize, out IntPtr lpNumberOfBytesWritten);
+
+		[DllImport("kernel32.dll", EntryPoint = "WriteProcessMemory", SetLastError = true)]
+		[return: MarshalAs(UnmanagedType.Bool)]
+		public static extern bool WriteProcessMemory64(IntPtr hProcess, IntPtr lpBaseAddress, IntPtr lpBuffer, IntPtr nSize, out IntPtr lpNumberOfBytesWritten);
+
+		[DllImport("kernel32.dll", EntryPoint = "VirtualAllocEx", SetLastError = true)]
+		public static extern IntPtr VirtualAllocEx64(IntPtr hProcess, IntPtr lpAddress, IntPtr dwSize, uint flAllocationType, uint flProtect);
+
+		[DllImport("kernel32.dll", EntryPoint = "VirtualFreeEx", SetLastError = true)]
+		[return: MarshalAs(UnmanagedType.Bool)]
+		public static extern bool VirtualFreeEx64(IntPtr hProcess, IntPtr lpAddress, IntPtr dwSize, uint dwFreeType);
+
+		[DllImport("kernel32.dll", EntryPoint = "VirtualProtectEx", SetLastError = true)]
+		[return: MarshalAs(UnmanagedType.Bool)]
+		public static extern bool VirtualProtectEx64(IntPtr hProcess, IntPtr lpAddress, IntPtr dwSize, uint flNewProtect, out uint lpflOldProtect);
+
+		[DllImport("kernel32.dll", EntryPoint = "VirtualQueryEx", SetLastError = true)]
+		public static extern IntPtr VirtualQueryEx64(IntPtr hProcess, IntPtr lpAddress, out MEMORY_BASIC_INFORMATION64 lpBuffer, IntPtr dwLength);
+
+		[DllImport("kernel32.dll", EntryPoint = "GetThreadContext", SetLastError = true)]
+		[return: MarshalAs(UnmanagedType.Bool)]
+		public static extern bool GetThreadContext64(IntPtr hThread, ref Context64 lpContext);
+
+		[DllImport("kernel32.dll", EntryPoint = "SetThreadContext", SetLastError = true)]
+		[return: MarshalAs(UnmanagedType.Bool)]
+		public static extern bool SetThreadContext64(IntPtr hThread, ref Context64 lpContext);
 	}
 }
