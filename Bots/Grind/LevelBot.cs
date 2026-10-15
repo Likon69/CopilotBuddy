@@ -319,9 +319,10 @@ namespace Bots.Grind
                     )
                 )),
                 // Ghost - near corpse, retrieve it.
-                // HB 4.3.4 LevelBot.smethod_89: IsGhost && Distance(CorpsePoint) < 40f.
+                // HB 4.3.4 LevelBot.smethod_89: (IsGhost && Distance(CorpsePoint) < 40f) || POI is Corpse.
                 new Decorator(
-                    ctx => StyxWoW.Me.IsGhost && StyxWoW.Me.Location.Distance(StyxWoW.Me.CorpsePoint) < 40f,
+                    ctx => (StyxWoW.Me.IsGhost && StyxWoW.Me.Location.Distance(StyxWoW.Me.CorpsePoint) < 40f) ||
+                           BotPoi.Current.Type == PoiType.Corpse,
                     CreateCorpseRetrievalBehavior()
                 ),
                 // Succeed if dead or ghost (to prevent other behaviors from running)
@@ -437,14 +438,6 @@ namespace Bots.Grind
                         )
                     )
                 )),
-                // Instance corpse - move to portal
-                new DecoratorContinue(
-                    ctx => StyxWoW.Me.InstanceCorpseLocation != WoWPoint.Empty,
-                    new Sequence(
-                        new ActionSetActivity("Moving to instance portal, since we died inside."),
-                        new NavigationAction(ctx => StyxWoW.Me.InstanceCorpseLocation)
-                    )
-                ),
                 // Move to POI
                 new Decorator(
                     ctx => BotPoi.Current.Location != WoWPoint.Zero,
