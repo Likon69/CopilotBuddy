@@ -110,7 +110,7 @@ namespace Styx.Database
         /// <param name="searchLocation">The search location.</param>
         /// <param name="searchClass">The class to search for.</param>
         /// <returns>The nearest trainer, or null if not found.</returns>
-        public static NpcResult GetNearestTrainer(WoWFactionTemplate myFaction, uint mapId, WoWPoint searchLocation, WoWClass searchClass)
+        public static NpcResult GetNearestTrainer(WoWFactionTemplate myFaction, uint mapId, WoWPoint searchLocation, WoWClass searchClass, ISet<int>? excludedEntries = null)
         {
             EnsureInitialized();
             if (_getNearestTrainerCmd == null) return null;
@@ -131,6 +131,8 @@ namespace Styx.Database
             while (reader.Read())
             {
                 NpcResult result = new NpcResult(reader);
+                if (excludedEntries != null && excludedEntries.Contains(result.Entry))
+                    continue;
                 if ((result.NpcFlags & 32U) != 0U && myFaction.GetReactionTowards(WoWFactionTemplate.FromId(result.Faction)) >= WoWUnitReaction.Neutral)
                 {
                     if (_trainerNavCache.TryGetValue(result, out bool cached))
@@ -167,7 +169,7 @@ namespace Styx.Database
             // If looking for class trainer, use specialized query
             if ((npcFlags & UnitNPCFlags.ClassTrainer) != UnitNPCFlags.None)
             {
-                return GetNearestTrainer(myFaction, mapId, searchLocation, myClass);
+                return GetNearestTrainer(myFaction, mapId, searchLocation, myClass, excludedEntries);
             }
 
             using var reader = Connection.ExecuteReader(_getNearestNpcCmd,
